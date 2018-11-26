@@ -1,5 +1,3 @@
-<!-- include(metadata.apib) -->
-
 # Аудит
 ## Аудит
 
@@ -75,7 +73,7 @@
 
 Возможные значение параметров `eventType` и `entityType` приведены в разделе [Фильтры](#аудит-фильтры)
 
-#### Получить Контексты [GET]
+### Получить Контексты [GET]
 
 Запрос всех изменений.
 Результат: Объект JSON, включающий в себя поля:
@@ -104,7 +102,7 @@
   + Body
   <!-- include(body/audit/get_context_list.json) -->
 
-#### Получить Контексты c фильтрацией [GET /audit?{filter}]
+### Получить Контексты c фильтрацией [GET /audit?{filter}]
 
 + Parameters
   + filter: `filter=entityType=customerorder` (required, string) - фильтр по типу сущности
@@ -183,7 +181,7 @@ https://online.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder
   + **oldValue** - значение атрибута до обновления `Только для чтения`
   + **newValue** - значение атрибута после обновления `Только для чтения`
 
-#### Получить События по Контексту [GET /audit/{id}/events]
+### Получить События по Контексту [GET /audit/{id}/events]
 Запрос на получение событий Контекста с указанным id. Результат: Объект JSON, включающий в себя поля:
 - **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос.
 - **meta** [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) событий
@@ -197,7 +195,7 @@ https://online.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder
   + Body
   <!-- include(body/audit/get_events_by_context.json) -->
 
-#### Получить События по Сущности [GET /entity/{type}/{id}/audit]
+### Получить События по Сущности [GET /entity/{type}/{id}/audit]
 Запрос на получение событий по сущности с указанным id. Результат: Объект JSON, включающий в себя поля:
 - **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос.
 - **meta** [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) событий

@@ -1,10 +1,8 @@
-<!-- include(metadata.apib) -->
-
-# Шаблон печатной формы
+## Шаблон печатной формы
 Средствами JSON API можно запрашивать списки шаблонов печатных форм для сущностей. Кодом сущности для стандартных шаблонов в составе JSON API является ключевое слово **embeddedtemplate**, а для пользовательских **customtemplate**.
 
-## Стандартные шаблоны [/entity/{type}/metadata/embeddedtemplate/]
-### Атрибуты сущности
+#### Стандартные шаблоны [/entity/{type}/metadata/embeddedtemplate/]
+#### Атрибуты сущности
 + **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о стандартном шаблоне
 + **id** - id шаблона
 + **name** - наименование шаблона
@@ -22,20 +20,20 @@
         <!-- include(body/template/embeddedtemplate.json) -->
 
 
-## Отдельный стандартный шаблон [/entity/{type}/metadata/embeddedtemplate/{id}]
+### Отдельный стандартный шаблон [/entity/{type}/metadata/embeddedtemplate/{id}]
 + Parameters
   + type: `demand` (required, string) - тип сущности, для которой запрашивается стандартный шаблон
   + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id отдельного шаблона
 
-### Отдельный стандартный шаблон [GET]
+#### Отдельный стандартный шаблон [GET]
 Запрос на получение информации об отдельном стандартном шаблоне печатной формы для указанного типа сущности по его id.
 + Response 200 (application/json)
 Успешный запрос. Результат - JSON представление стандартного шаблона для данного типа сущности.
   + Body
         <!-- include(body/template/embeddedtemplate_id.json) -->
 
-## Стандартные шаблоны для ценников и этикеток [/entity/assortment/metadata/embeddedtemplate/]
-### Атрибуты сущности
+#### Стандартные шаблоны для ценников и этикеток [/entity/assortment/metadata/embeddedtemplate/]
+#### Атрибуты сущности
 + **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о стандартном шаблоне
 + **id** - id шаблона
 + **name** - наименование шаблона
@@ -49,11 +47,11 @@
   + Body
         <!-- include(body/assortment/metadata/embeddedtemplate.json) -->
 
-## Отдельный стандартный шаблон для ценников и этикеток [/entity/assortment/metadata/embeddedtemplate/{id}]
+### Отдельный стандартный шаблон для ценников и этикеток [/entity/assortment/metadata/embeddedtemplate/{id}]
 + Parameters
   + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id отдельного шаблона
 
-### Отдельный стандартный ценник или этикетка [GET]
+#### Отдельный стандартный ценник или этикетка [GET]
 Запрос на получение информации об отдельном стандартном шаблоне печатной формы для товаров, модификаций, услуг и комплектов по его id.
 + Response 200 (application/json)
 Успешный запрос. Результат - JSON представление стандартного шаблона для товаров, модификаций, услуг и комплектов.
@@ -61,8 +59,8 @@
         <!-- include(body/assortment/metadata/embeddedtemplate_id.json) -->
 
 
-## Пользовательские шаблоны [/entity/{type}/metadata/customtemplate/]
-### Атрибуты сущности
+#### Пользовательские шаблоны [/entity/{type}/metadata/customtemplate/]
+#### Атрибуты сущности
 + **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о пользовательском шаблоне
 + **id** - id шаблона
 + **name** - наименование шаблона
@@ -80,20 +78,20 @@
         <!-- include(body/template/customtemplate.json) -->
 
 
-## Отдельный пользовательский шаблон [/entity/{type}/metadata/customtemplate/{id}]
+### Отдельный пользовательский шаблон [/entity/{type}/metadata/customtemplate/{id}]
 + Parameters
   + type: `customerorder` (required, string) - тип сущности, для которой запрашивается стандартный шаблон
   + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id отдельного шаблона
 
-### Отдельный пользовательский шаблон [GET]
+#### Отдельный пользовательский шаблон [GET]
 Запрос на получение информации об отдельном пользовательском шаблоне печатной формы для указанного типа сущности по его id.
 + Response 200 (application/json)
 Успешный запрос. Результат - JSON представление пользовательского шаблона для данного типа сущности.
   + Body
         <!-- include(body/template/customtemplate_id.json) -->
 
-## Пользовательские шаблоны для ценников и этикеток [/entity/assortment/metadata/customtemplate/]
-### Атрибуты сущности
+#### Пользовательские шаблоны для ценников и этикеток [/entity/assortment/metadata/customtemplate/]
+#### Атрибуты сущности
 + **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о пользовательском шаблоне
 + **id** - id шаблона
 + **name** - наименование шаблона
@@ -107,11 +105,11 @@
   + Body
         <!-- include(body/assortment/metadata/embeddedtemplate.json) -->
 
-## Отдельный пользовательский шаблон для ценников и этикеток [/entity/assortment/metadata/customtemplate/{id}]
+### Отдельный пользовательский шаблон для ценников и этикеток [/entity/assortment/metadata/customtemplate/{id}]
 + Parameters
   + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id отдельного шаблона
 
-### Отдельный пользовательский ценник или этикетка [GET]
+#### Отдельный пользовательский ценник или этикетка [GET]
 Запрос на получение информации об отдельном пользовательском шаблоне печатной формы для товаров, модификаций, услуг и комплектов по его id.
 + Response 200 (application/json)
 Успешный запрос. Результат - JSON представление пользовательского шаблона для товаров, модификаций, услуг и комплектов.

@@ -1,6 +1,4 @@
-<!-- include(metadata.apib) -->
-
-# Показатели
+## Показатели
 В рамках JSON API можно запросить показатели за день, месяц и неделю. Подробнее о разделе "Показатели"
 вы можете прочитать на портале поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/217235207-%D0%A0%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB-%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8).
 
@@ -20,7 +18,7 @@
   - **todayMovement** - Дельта за сегодня
   - **movement** - Дельта за период
 
-## День [/report/dashboard/day]
+#### День [/report/dashboard/day]
 ### Получить показатели за день [GET]
 Запрос на получение показателей за день.
 
@@ -29,7 +27,7 @@
   + Body
         <!-- include(body/dashboard/day.json) -->
 
-## Неделя [/report/dasboard/week]
+#### Неделя [/report/dasboard/week]
 ### Получить показатели за неделю [GET]
 Запрос на получение показателей за неделю.
 
@@ -38,7 +36,7 @@
   + Body
         <!-- include(body/dashboard/week.json) -->
 
-## Месяц [/report/dashboard/month]
+#### Месяц [/report/dashboard/month]
 ### Получить показатели за месяц [GET]
 Запрос на получение показателей за месяц.
 

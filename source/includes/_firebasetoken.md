@@ -1,5 +1,3 @@
-<!-- include(metadata.apib) -->
-
 # Уведомления
 
 ## Токен устройства [/notification/token/{deviceType}]
