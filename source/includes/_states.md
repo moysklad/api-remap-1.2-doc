@@ -2,7 +2,7 @@
 
 Статусы можно добавлять, изменять и удалять через api
 
-### Статусы [/entity/{entityType}/metadata/states]
+### Статусы 
 #### Атрибуты сущности
 + **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о Статусе `Только для чтения`
 + **id** - ID в формате UUID `Только для чтения`
@@ -29,7 +29,7 @@
 документа, например сделав GET запрос по URL http://online.moysklad.ru/api/remap/1.2/entity/demand/metadata
 Список статусов для документа `demand`(Отгрузка) будет выведен в коллекции states.
 
-### Получить метаданные [GET /entity/{entityType}/metadata]
+### Получить метаданные 
 Получить метаданные и в том числе статусы
 + Parameters
   + entityType: `counterparty` (required, string) - тип сущности
@@ -37,7 +37,7 @@
   + Body
         <!-- include(body/states/get.json) -->
 
-### Создать статус [POST /entity/{entityType}/metadata/states]
+### Создать статус 
 Создать новый статус.
 #### Описание
 Статус создаётся на основе переданного объекта JSON,
@@ -59,7 +59,7 @@
         <!-- include(body/states/post_one_response.json) -->
 
 
-### Обновить статус [PUT /entity/{entityType}/metadata/states/{id}]
+### Обновить статус 
 Обновить существующий статус.
 #### Описание
 Статус обновляется на основе переданного объекта JSON.
@@ -81,7 +81,7 @@
   + Body
         <!-- include(body/states/put_update_response.json) -->
 
-### Массовое создание и обновление Статусов [POST]
+### Массовое создание и обновление Статусов 
 [Массовое создание и обновление](/api/remap/1.2/doc/index.html#header-создание-и-обновление-нескольких-объектов) Статусов.
 В теле запроса нужно передать массив, содержащий JSON представления Статусов, которые вы хотите создать или обновить.
 Обновляемые Статусы должны содержать идентификатор в виде метаданных.
@@ -96,7 +96,7 @@
   + Body
         <!-- include(body/states/post_some_response.json) -->
 
-### Удалить Статус [DELETE /entity/{entityType}/metadata/states/{id}]
+### Удалить Статус 
 Запрос на удаление Статуса с указанным id.
 + Parameters
   + entityType: `counterparty` (required, string) - тип сущности

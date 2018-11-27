@@ -5,20 +5,20 @@
 Средствами JSON API можно создавать и обновлять сведения о Типах цен, запрашивать списки Типов цен и сведения по отдельным Типам цен по id.
 Кодом сущности для Типа цен в составе JSON API является ключевое слово **pricetype**. 
 
-## Типы цен [/context/companysettings/pricetype]
+## Типы цен 
 ### Атрибуты сущности
 + **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о Типе цены `Только для чтения`
 + **id** - ID в формате UUID `Только для чтения`
 + **name** - Наименование Типа цены `Необходимое`
 + **externalCode** - Внешний код Типа цены
 
-### Получить список всех типов цен [GET /context/companysettings/pricetype]
+### Получить список всех типов цен 
 Получить список всех типов цен
 + Response 200 (application/json)
   + Body
         <!-- include(body/pricetype/get_all.json) -->
         
-### Редактирование списка типов цен [POST /context/companysettings/pricetype]
+### Редактирование списка типов цен 
 
 Типы цен возможно редактировать только полным списком.
 + Для создания нового типа цены, необходимо передать существующий список типов цен и новый объект, 
@@ -55,9 +55,9 @@
   + Body
         <!-- include(body/pricetype/get_all.json) -->
 
-## Тип цены [/context/companysettings/pricetype]
+## Тип цены 
 
-### Получить тип цены по ID [GET /context/companysettings/pricetype/{id}]
+### Получить тип цены по ID 
 Получить тип цены по ID
 + Parameters
   + id: `a8967d6b-b026-11e7-9464-d04800000000` (required, string) - ID типа цены
@@ -65,7 +65,7 @@
   + Body
         <!-- include(body/pricetype/get.json) -->
 
-### Получить тип цены по умолчанию [GET /context/companysettings/pricetype/default]
+### Получить тип цены по умолчанию 
 Получить тип цены по умолчанию
 + Response 200 (application/json)
   + Body

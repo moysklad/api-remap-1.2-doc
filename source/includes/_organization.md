@@ -108,7 +108,7 @@ ___
 - **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой юрлица.
 + Parameters
-  + limit: 1000 (optional, enum[number])
+  + limit: 1000 (optional, enum)
   Максимальное количество сущностей для извлечения.
   <p>
     <code>Допустимые значения 1 - 1000</code>
@@ -123,7 +123,7 @@ ___
   + Body
         <!-- include(body/organization/get_list.json) -->
 
-### Создать юрлицо [POST]
+### Создать юрлицо 
 Запрос на создание нового юрлица.
 #### Описание
 Юрлицо создаётся на основе переданного объекта JSON,
@@ -149,7 +149,7 @@ ___
   + Body
         <!-- include(body/organization/post_with_attributes_response.json) -->
 
-### Массовое создание и обновление юрлиц [POST]
+### Массовое создание и обновление юрлиц 
 [Массовое создание и обновление](/api/remap/1.2/doc/index.html#header-создание-и-обновление-нескольких-объектов) юрлиц.
 В теле запроса нужно передать массив, содержащий JSON представления юрлиц, которые вы хотите создать или обновить.
 Обновляемые юрлица должны содержать идентификатор в виде метаданных.
@@ -164,7 +164,7 @@ ___
   + Body
         <!-- include(body/organization/post_massive_response.json) -->
 
-### Удалить юрлицо [DELETE /entity/organization/{id}]
+### Удалить юрлицо 
 + Parameters
   + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id юрлица
 
@@ -196,14 +196,14 @@ ___
   + Body
         <!-- include(body/organization/metadata_by_id.json) -->
 
-### Юрлицо [/entity/organization/{id}]
+### Юрлицо 
 + Parameters
   + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id юрлица.
 
-### Получить юрлицо [GET]
+### Получить юрлицо 
 Запрос на получение юрлица с указанным id.
 + Parameters
-  + limit: 1000 (optional, enum[number])
+  + limit: 1000 (optional, enum)
   Максимальное количество сущностей для извлечения.
   <p>
     <code>Допустимые значения 1 - 1000</code>
@@ -216,7 +216,7 @@ ___
 Успешный запрос. Результат - JSON представление нового юрлица.
   + Body
         <!-- include(body/organization/get_by_id.json) -->
-### Изменить юрлицо [PUT]
+### Изменить юрлицо 
 Запрос на обновление юрлица с указанным id.
 
 + Request Пример (application/json)
@@ -237,15 +237,15 @@ ___
   + Body
         <!-- include(body/organization/put_with_attributes_response.json) -->
 
-### Счета юрлица [/entity/organization/{id}/accounts]
+### Счета юрлица 
 Список счетов юрлица с указанным id.
 + Parameters
   + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id юрлица.
 
-### Получить список счетов юрлица [GET]
+### Получить список счетов юрлица 
 Возвращает массив JSON представлений счетов юрлица.
 + Parameters
-  + limit: 1000 (optional, enum[number])
+  + limit: 1000 (optional, enum)
   Максимальное количество сущностей для извлечения.
   <p>
     <code>Допустимые значения 1 - 1000</code>
@@ -260,7 +260,7 @@ ___
   + Body
         <!-- include(body/organization/get_accounts.json) -->
 
-### Изменить счета юрлица[POST]
+### Изменить счета юрлица
 #### Описание
 Обновляются счета юрлица с указанным id.
 Обновляются все поля, указанные в JSON объекте запроса, кроме

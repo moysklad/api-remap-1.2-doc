@@ -18,8 +18,8 @@
   - **todayMovement** - Дельта за сегодня
   - **movement** - Дельта за период
 
-#### День [/report/dashboard/day]
-### Получить показатели за день [GET]
+#### День 
+### Получить показатели за день 
 Запрос на получение показателей за день.
 
 + Response 200 (application/json)
@@ -27,8 +27,8 @@
   + Body
         <!-- include(body/dashboard/day.json) -->
 
-#### Неделя [/report/dasboard/week]
-### Получить показатели за неделю [GET]
+#### Неделя 
+### Получить показатели за неделю 
 Запрос на получение показателей за неделю.
 
 + Response 200 (application/json)
@@ -36,8 +36,8 @@
   + Body
         <!-- include(body/dashboard/week.json) -->
 
-#### Месяц [/report/dashboard/month]
-### Получить показатели за месяц [GET]
+#### Месяц 
+### Получить показатели за месяц 
 Запрос на получение показателей за месяц.
 
 + Response 200 (application/json)
