@@ -40,7 +40,10 @@ includes:
   - labels
   - publication
   - task
+  - bonus_operation
+  - bonus_program
   - states
+  - common_info
   - retailshift
   - enter
   - customerOrder
@@ -79,6 +82,6 @@ includes:
   - audit
   - firebasetoken
 
+
 search: true
 ---
-
