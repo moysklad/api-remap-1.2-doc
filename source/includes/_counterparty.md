@@ -2072,76 +2072,271 @@ curl -X GET
 ```
 
 ## События Контрагента [/entity/counterparty/{id}/notes]
-Получить список событий Контрагента с указанным id.
-+ Parameters
-  + id: `67e5a691-3c9c-11e7-8af5-581e00000056` (required, string) - id Контрагента.
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|id |  `string` (required) *Example: 67e5a691-3c9c-11e7-8af5-581e00000056* - id Контрагента.|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 
 ### Список событий [GET]
-Возвращает массив JSON представлений событий Контрагента.
-+ Parameters
-  + limit: 1000 (optional, enum[number])
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
 
-+ Response 200 (application/json)
-Успешный запрос.
-  + Body
-        <!-- include(body/counterparty/get_notes.json) -->
+> Список событи
 
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json). Успешный запрос.
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes",
+    "type": "note",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes/7e391b16-3efd-11e7-8af5-581e0000009d",
+        "type": "note",
+        "mediaType": "application/json"
+      },
+      "id": "7e391b16-3efd-11e7-8af5-581e0000009d",
+      "accountId": "b127966a-3efa-11e7-8af5-581e00000001",
+      "created": "2017-05-22 17:46:52",
+      "description": "второе событие",
+      "agent": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      },
+      "author": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b1876a85-3efa-11e7-8af5-581e0000002a",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes/7b919056-3efd-11e7-8af5-581e0000009a",
+        "type": "note",
+        "mediaType": "application/json"
+      },
+      "id": "7b919056-3efd-11e7-8af5-581e0000009a",
+      "accountId": "b127966a-3efa-11e7-8af5-581e00000001",
+      "created": "2017-05-22 17:46:47",
+      "description": "первое событие",
+      "agent": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      },
+      "author": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b1876a85-3efa-11e7-8af5-581e0000002a",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      }
+    }
+  ]
+}
+```
 ### Добавить событие [POST]
-+ Request Пример (application/json)
-Запрос на добавление нового события.
-  + Body
-        <!-- include(body/counterparty/post_note_request.json) -->
 
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление добавленного события.
-  + Body
-        <!-- include(body/counterparty/post_note_response.json) -->
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|id |  `string` (required) *Example: 67e5a691-3c9c-11e7-8af5-581e00000056* - id Контрагента.|
+
+> Запрос на добавление нового события.
+  
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+    -d '{
+          "description": "текст"
+        }'  
+```
+
+> Response 200 (application/json). Успешный запрос. Результат - JSON представление добавленного события.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes/50b318cb-3cb0-11e7-8af5-581e00000007",
+      "type": "note",
+      "mediaType": "application/json"
+    },
+    "id": "50b318cb-3cb0-11e7-8af5-581e00000007",
+    "accountId": "674f0d4f-3c9c-11e7-8af5-581e00000001",
+    "created": "2017-05-19 19:29:22",
+    "description": "текст",
+    "agent": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json"
+      }
+    },
+    "author": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/67b86071-3c9c-11e7-8af5-581e0000002a",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  }
+]
+```
 
 ## Событие [/entity/counterparty/{id}/notes/{noteId}]
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Контрагента.
-  + noteId: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id события.
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| id|  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента.|
+| noteId|  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id события.|
 
 ### Получить событие [GET]
-Возвращает JSON представление отдельного события Контрагента.
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Контрагента.
-  + noteId: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id события.
 
-+ Response 200 (application/json)
-Успешный запрос.
-  + Body
-      <!-- include(body/counterparty/get_note.json) -->
+> Получить событие 
+
+```shell
+curl -X GET
+  "GET https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/notes/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json). Возвращает JSON представление отдельного события Контрагента.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes/50b318cb-3cb0-11e7-8af5-581e00000007",
+    "type": "note",
+    "mediaType": "application/json"
+  },
+  "id": "50b318cb-3cb0-11e7-8af5-581e00000007",
+  "accountId": "674f0d4f-3c9c-11e7-8af5-581e00000001",
+  "created": "2017-05-19 19:29:22",
+  "description": "текст",
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "author": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/67b86071-3c9c-11e7-8af5-581e0000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
+
 ### Изменить событие [PUT]
 ### Описание
+
 Обновить событие Контрагента с указанным id.
 Обновляются все поля, указанные в JSON объекте запроса, кроме
 помеченных `Только для чтения` в описании [атрибутов событий Контрагента](#header-события-контрагента).
 Поля, которые не были указаны в JSON запроса, не изменяются.
-+ Request Пример (application/json)
-Пример запроса на обновление события Контрагента.
-  + Body
-      <!-- include(body/counterparty/put_note.json) -->
 
-+ Response 200 (application/json)
-Успешное обновление.
-  + Body
-      <!-- include(body/counterparty/put_note_response.json) -->
+> Пример запроса на обновление события Контрагента.
+
+  ```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/notes/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "description": "измененный текст"
+          }'  
+  ```
+
+> Response 200 (application/json). Успешное обновление.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes/50b318cb-3cb0-11e7-8af5-581e00000007",
+    "type": "note",
+    "mediaType": "application/json"
+  },
+  "id": "50b318cb-3cb0-11e7-8af5-581e00000007",
+  "accountId": "674f0d4f-3c9c-11e7-8af5-581e00000001",
+  "created": "2017-05-19 19:29:22",
+  "description": "измененный текст",
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "author": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/67b86071-3c9c-11e7-8af5-581e0000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
 
 ### Удалить событие [DELETE]
-+ Parameters
-  + id: `67e5a691-3c9c-11e7-8af5-581e00000056` (required, string) - id Контрагента.
-  + noteId: `50b318cb-3cb0-11e7-8af5-581e00000007` (required, string) - id события
 
-Запрос на удаление события с указанным id.
+> Запрос на удаление события с указанным id.
 
-+ Response 200 (application/json)
-Успешное удаление События.
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes/50b318cb-3cb0-11e7-8af5-581e00000007"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json). Успешное удаление События.
+
