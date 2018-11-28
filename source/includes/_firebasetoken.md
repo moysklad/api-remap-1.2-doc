@@ -1,10 +1,8 @@
-<!-- include(metadata.apib) -->
-
 # Уведомления
 
-## Токен устройства [/notification/token/{deviceType}]
+## Токен устройства
 
-### Зарегистрировать новый или обновить токен устройства [POST]
+### Зарегистрировать новый или обновить токен устройства
 
 + Parameters
   + deviceType: `ios` (required, string) - Тип устройства. Строка из множества {'android', 'ios', 'browser'}

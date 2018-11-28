@@ -11,13 +11,77 @@ toc_footers:
 includes:
   - general
   - errors
-  - entities
-  - documents
+  - counterparty
+  - assortment
+  - currency
+  - product
+  - service
+  - bundle
+  - productFolder
+  - variant
+  - consignment
+  - contract
+  - project
+  - companysettings
+  - expenseitem
+  - country
+  - group
+  - discount
+  - uom
+  - employee
+  - customentity
+  - store
+  - organization
+  - retailstore
+  - cashier
+  - webhook
+  - template
+  - print
+  - labels
+  - publication
+  - task
+  - bonus_operation
+  - bonus_program
+  - states
+  - common_info
+  - retailshift
+  - enter
+  - customerOrder
+  - purchaseOrder
+  - invoice_out
+  - invoice_in
+  - payment_in
+  - payment_out
+  - cashin
+  - cashout
+  - demand
+  - supply
+  - loss
+  - move
+  - retaildemand
+  - retail_sales_return
+  - retaildrawercashin
+  - retaildrawercashout
+  - sales_return
+  - purchase_return
+  - factureout
+  - facturein
+  - inventory
+  - commissionreportin
+  - commissionreportout
+  - pricelist
+  - processingplan
+  - processingorder
+  - processing
+  - internalOrder
   - recalc_calculated_quantity
-  - reports
+  - report_stock
+  - report_pnl
+  - report_counterparty
+  - dashboard
   - audit
   - firebasetoken
 
+
 search: true
 ---
-
