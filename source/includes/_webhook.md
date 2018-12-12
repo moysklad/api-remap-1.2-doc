@@ -38,84 +38,323 @@
 
 
 ### Получить список веб-хуков 
-Запрос на получение всех веб-хуков на данной учётной записи.
+> Запрос на получение всех веб-хуков на данной учётной записи.
 
-+ Response 200 (application/json)
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/webhook"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка веб-хуков.
-  + Body
-        <!-- include(body/webhook/get_list.json) -->
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+    "type": "webhook",
+    "mediaType": "application/json",
+    "size": 3,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/aec51463-bbd2-11e6-8a84-bae500000003",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+        "type": "webhook",
+        "mediaType": "application/json"
+      },
+      "id": "aec51463-bbd2-11e6-8a84-bae500000003",
+      "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+      "entityType": "demand",
+      "url": "http://www.example.com",
+      "method": "POST",
+      "enabled": true,
+      "action": "CREATE"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/d08f9217-bbd2-11e6-8a84-bae500000004",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+        "type": "webhook",
+        "mediaType": "application/json"
+      },
+      "id": "d08f9217-bbd2-11e6-8a84-bae500000004",
+      "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+      "entityType": "supply",
+      "url": "http://www.example.com",
+      "method": "POST",
+      "enabled": true,
+      "action": "CREATE"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/d946c7ff-bbd2-11e6-8a84-bae500000005",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+        "type": "webhook",
+        "mediaType": "application/json"
+      },
+      "id": "d946c7ff-bbd2-11e6-8a84-bae500000005",
+      "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+      "entityType": "cashin",
+      "url": "http://www.example.com",
+      "method": "POST",
+      "enabled": true,
+      "action": "UPDATE"
+    }
+  ]
+}
+```
 
 ### Создать веб-хук 
 Пример запроса на создание нового веб-хука. Убедитесь, что создаетё ещё не существующий веб-хук:
 сочетание **entityType**, **action** должно быть уникальным.
 
-+ Request Пример (application/json)
-Пример запроса на создание нового веб-хука.
-  + Body
-        <!-- include(body/webhook/post_request.json) -->
+> Пример запроса на создание нового веб-хука.
 
-+ Response 200 (application/json)
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/webhook"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "url": "http://www.example.com",
+            "action": "CREATE",
+            "entityType": "supply"
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданного веб-хука.
-  + Body
-        <!-- include(body/webhook/post_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/d08f9217-bbd2-11e6-8a84-bae500000004",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+    "type": "webhook",
+    "mediaType": "application/json"
+  },
+  "id": "d08f9217-bbd2-11e6-8a84-bae500000004",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "entityType": "supply",
+  "url": "http://www.example.com",
+  "method": "POST",
+  "enabled": true,
+  "action": "CREATE"
+}
+```
 
 ### Веб-хук 
 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id веб-хука
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id веб-хука|
 
 ### Массовое создание и обновление веб-хуков 
 [Массовое создание и обновление](/api/remap/1.2/doc/index.html#header-создание-и-обновление-нескольких-объектов) веб-хуков.
 В теле запроса нужно передать массив, содержащий JSON представления веб-хуков, которые вы хотите создать или обновить.
 Обновляемые веб-хуки должны содержать идентификатор в виде метаданных.
 
-+ Request Пример (application/json)
-Пример создания и обновления нескольких веб-хуков
-  + Body
-        <!-- include(body/webhook/post_massive_request.json) -->
+> Пример создания и обновления нескольких веб-хуков
 
-+ Response 200 (application/json)
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/webhook/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "url": "http://www.example.com",
+              "action": "CREATE",
+              "entityType": "supply"
+            },
+            {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/aec51463-bbd2-11e6-8a84-bae500000003",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+                "type": "webhook",
+                "mediaType": "application/json"
+              },
+              "url": "http://www.example.com",
+              "action": "DELETE"
+            }
+          ]'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - массив JSON представлений созданных и обновленных веб-хуков.
-  + Body
-        <!-- include(body/webhook/post_massive_response.json) -->
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/d08f9217-bbd2-11e6-8a84-bae500000004",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+      "type": "webhook",
+      "mediaType": "application/json"
+    },
+    "id": "d08f9217-bbd2-11e6-8a84-bae500000004",
+    "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+    "entityType": "supply",
+    "url": "http://www.example.com",
+    "method": "POST",
+    "enabled": true,
+    "action": "CREATE"
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/aec51463-bbd2-11e6-8a84-bae500000003",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+      "type": "webhook",
+      "mediaType": "application/json"
+    },
+    "id": "aec51463-bbd2-11e6-8a84-bae500000003",
+    "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+    "entityType": "demand",
+    "url": "http://www.example.com",
+    "method": "POST",
+    "enabled": true,
+    "action": "DELETE"
+  }
+]
+
+```
 
 ### Получить отдельный веб-хук 
-Запрос на получение отдельного веб-хука с указанным id.
-+ Response 200 (application/json)
+> Запрос на получение отдельного веб-хука с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/webhook/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление веб-хука с указанным id.
-  + Body
-        <!-- include(body/webhook/get_by_id.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/aec51463-bbd2-11e6-8a84-bae500000003",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+    "type": "webhook",
+    "mediaType": "application/json"
+  },
+  "id": "aec51463-bbd2-11e6-8a84-bae500000003",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "entityType": "demand",
+  "url": "http://www.example.com",
+  "method": "POST",
+  "enabled": true,
+  "action": "CREATE"
+}
+```
+
 ### Обновить веб-хук 
 Пример запроса на обновление сведений о веб-хуке.
 
-+ Request Пример (application/json)
-Пример запроса на обновление веб-хука.
-  + Body
-        <!-- include(body/webhook/put_request.json) -->
+> Пример запроса на обновление веб-хука.
 
-+ Response 200 (application/json)
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/webhook/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "url": "http://www.example.com",
+            "action": "DELETE"
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновлённого веб-хука.
-  + Body
-        <!-- include(body/webhook/put_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/aec51463-bbd2-11e6-8a84-bae500000003",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+    "type": "webhook",
+    "mediaType": "application/json"
+  },
+  "id": "aec51463-bbd2-11e6-8a84-bae500000003",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "entityType": "demand",
+  "url": "http://www.example.com",
+  "method": "POST",
+  "enabled": true,
+  "action": "DELETE"
+}
+```
 
 ### Отключить веб-хук 
 Пример запроса на отключение веб-хука.
 
-+ Request Пример (application/json)
-Пример запроса на отключение веб-хука.
-  + Body
-        <!-- include(body/webhook/disable_request.json) -->
+> Пример запроса на отключение веб-хука.
 
-+ Response 200 (application/json)
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/webhook/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "enabled": false
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление отключенного веб-хука.
-  + Body
-        <!-- include(body/webhook/disable_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/aec51463-bbd2-11e6-8a84-bae500000003",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+    "type": "webhook",
+    "mediaType": "application/json"
+  },
+  "id": "aec51463-bbd2-11e6-8a84-bae500000003",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "entityType": "demand",
+  "url": "http://www.example.com",
+  "method": "POST",
+  "enabled": false,
+  "action": "DELETE"
+}
+```
 
 ### Удалить веб-хук 
-Пример запроса на удаление веб-хука с указанным id.
 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id веб-хука
+**Параметры**
 
-+ Response 200 (application/json)
+|Параметр   |Описание   | 
+|---|---|
+|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id веб-хука|
+
+> Пример запроса на удаление веб-хука с указанным id.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/webhook/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешное удаление веб-хука.

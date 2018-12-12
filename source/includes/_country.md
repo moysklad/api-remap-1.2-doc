@@ -28,82 +28,431 @@
 - **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой Страны.
 
-+ Parameters
-  + limit: 1000 (optional, enum[number])
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
+**Параметры**
 
-+ Response 200 (application/json)
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+
+> Получить страны
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/country"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка Стран.
-  + Body
-        <!-- include(body/country/get_list.json) -->
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/?limit=5",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+    "type": "country",
+    "mediaType": "application/json",
+    "size": 248,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/000d77a9-3000-4f81-a995-6b9cffdee1d2",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      },
+      "id": "000d77a9-3000-4f81-a995-6b9cffdee1d2",
+      "updated": "2012-11-02 11:04:13",
+      "name": "Марокко",
+      "description": "Королевство Марокко",
+      "code": "504",
+      "externalCode": "504"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/00999522-23d6-40e6-870e-ec7f7bd8d354",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      },
+      "id": "00999522-23d6-40e6-870e-ec7f7bd8d354",
+      "updated": "2012-11-02 11:04:15",
+      "name": "Япония",
+      "code": "392",
+      "externalCode": "392"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/0238a888-c602-4e78-a199-d8f49c4d6c18",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      },
+      "id": "0238a888-c602-4e78-a199-d8f49c4d6c18",
+      "updated": "2012-11-02 11:04:15",
+      "name": "Хорватия",
+      "description": "Республика Хорватия",
+      "code": "191",
+      "externalCode": "191"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/02dc7934-0a88-49ea-a733-2da517a000c2",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      },
+      "id": "02dc7934-0a88-49ea-a733-2da517a000c2",
+      "updated": "2012-11-02 11:04:15",
+      "name": "Филиппины",
+      "description": "Республика Филиппины",
+      "code": "608",
+      "externalCode": "608"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/04cc9c56-96b1-4ccf-aa7f-78735710381c",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      },
+      "id": "04cc9c56-96b1-4ccf-aa7f-78735710381c",
+      "updated": "2012-11-02 11:04:15",
+      "name": "Эквадор",
+      "description": "Республика Эквадор",
+      "code": "218",
+      "externalCode": "218"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/04cc9c56-96b1-4ccf-aa7f-78735710381c",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      },
+      "accountId": "95004e42-79f2-11e8-1a0d-4e0d00000001",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/9bc5de98-79f2-11e8-1a0d-4e0d0000002b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=9bc5de98-79f2-11e8-1a0d-4e0d0000002b"
+        }
+      },
+      "shared": true,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/9504054f-79f2-11e8-1a0d-4e0d00000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "id": "04cc9c56-96b1-4ccf-aa7f-78735710381c",
+      "updated": "2012-11-02 11:04:15",
+      "name": "Моя страна",
+      "description": "Моя пользовательская страна",
+      "code": "999",
+      "externalCode": "999"
+    }
+  ]
+}
+```
 
 ### Создать Страну 
 Запрос на создание новой страны на данной учётной записи.
 Единственное поле, которое обязательно должно присутствовать в теле запроса
 на создание Страны - поле **name**.
-+ Request Пример (application/json)
-Пример запроса на создание новой страны.
-  + Body
-        <!-- include(body/country/post_request.json) -->
 
-+ Response 200 (application/json)
+> Пример запроса на создание новой страны.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/country"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "Панама 2",
+            "description": "Мы создали Панаму",
+            "code": "PanamaCode",
+            "externalCode": "panamaExtCode"
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданной Страны.
-  + Body
-        <!-- include(body/country/post_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/04331e4f-24c8-11e6-8a84-bae500000016",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+    "type": "country",
+    "mediaType": "application/json"
+  },
+  "id": "04331e4f-24c8-11e6-8a84-bae500000016",
+  "accountId": "45489428-24a5-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/9bc5de98-79f2-11e8-1a0d-4e0d0000002b",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=9bc5de98-79f2-11e8-1a0d-4e0d0000002b"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/9504054f-79f2-11e8-1a0d-4e0d00000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-05-30 09:02:21",
+  "name": "Панама 2",
+  "description": "Мы создали Панаму",
+  "code": "PanamaCode",
+  "externalCode": "panamaExtCode"
+}
+```
 
 ### Массовое создание и обновление Стран 
 [Массовое создание и обновление](/api/remap/1.2/doc/index.html#header-создание-и-обновление-нескольких-объектов) Стран.
 В теле запроса нужно передать массив, содержащий JSON представления Стран, которые вы хотите создать или обновить.
 Обновляемые Страны должны содержать идентификатор в виде метаданных.
 
-+ Request Пример (application/json)
-Пример создания и обновления нескольких Стран
-  + Body
-        <!-- include(body/country/post_massive_request.json) -->
+> Пример создания и обновления нескольких Стран
 
-+ Response 200 (application/json)
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/country"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "name": "Панама 2",
+              "description": "Мы создали Панаму",
+              "code": "PanamaCode",
+              "externalCode": "panamaExtCode"
+            },
+            {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/810b5344-24ca-11e6-8a84-bae500000018",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+                "type": "country",
+                "mediaType": "application/json"
+              },
+              "name": "Другая Россия",
+              "description": "Каждый может изменить Россию, но только если он её создал сам",
+              "code": "no1russia",
+              "externalCode": "gogorussia"
+            }
+          ]'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - массив JSON представлений созданных и обновленных Стран.
-  + Body
-        <!-- include(body/country/post_massive_response.json) -->
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/04331e4f-24c8-11e6-8a84-bae500000016",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+      "type": "country",
+      "mediaType": "application/json"
+    },
+    "id": "04331e4f-24c8-11e6-8a84-bae500000016",
+    "accountId": "45489428-24a5-11e6-8a84-bae500000001",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/9bc5de98-79f2-11e8-1a0d-4e0d0000002b",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=9bc5de98-79f2-11e8-1a0d-4e0d0000002b"
+      }
+    },
+    "shared": true,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/9504054f-79f2-11e8-1a0d-4e0d00000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2016-05-30 09:02:21",
+    "name": "Панама 2",
+    "description": "Мы создали Панаму",
+    "code": "PanamaCode",
+    "externalCode": "panamaExtCode"
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/810b5344-24ca-11e6-8a84-bae500000018",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+      "type": "country",
+      "mediaType": "application/json"
+    },
+    "id": "810b5344-24ca-11e6-8a84-bae500000018",
+    "accountId": "45489428-24a5-11e6-8a84-bae500000001",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/9bc5de98-79f2-11e8-1a0d-4e0d0000002b",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=9bc5de98-79f2-11e8-1a0d-4e0d0000002b"
+      }
+    },
+    "shared": true,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/9504054f-79f2-11e8-1a0d-4e0d00000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2016-05-30 09:20:10",
+    "name": "Другая Россия",
+    "description": "Каждый может изменить Россию, но только если он её создал сам",
+    "code": "no1russia",
+    "externalCode": "gogorussia"
+  }
+]
+```
 
 ### Удалить Страну 
 Запрос на удаление страны. Невозможно удаление предустановленных стран (стран имеющихся на учётной записи по умолчанию).
 Удалить можно только страны, созданные через основной интерфейс или через метод POST.
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Страны
 
-+ Response 200 (application/json)
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Страны|
+
+> удалить Страну
+
+```shell
+  curl -X DELETE
+    "https://online.moysklad.ru/api/remap/1.2/entity/country/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"  
+```
+
+> Response 200 (application/json)
 Успешное удаление Розничной продажи.
-+ Body
 
 ### Страна 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Страны
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Страны|
 
 ### Получить Страну 
-Запрос на получение страны с указанным id.
-+ Response 200 (application/json)
+> Запрос на получение страны с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/country/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление Страны с указанным id.
-  + Body
-        <!-- include(body/country/get_by_id.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/000d77a9-3000-4f81-a995-6b9cffdee1d2",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+    "type": "country",
+    "mediaType": "application/json"
+  },
+  "id": "000d77a9-3000-4f81-a995-6b9cffdee1d2",
+  "updated": "2012-11-02 11:04:13",
+  "name": "Марокко",
+  "description": "Королевство Марокко",
+  "code": "504",
+  "externalCode": "504"
+}
+```
 
 ### Изменить Страну 
 Запрос на изменение объекта, представляющего собой страну. Невозможно изменение предустановленных стран (стран имеющихся на учётной записи по умолчанию).
 Изменить можно только страны, созданные через основной интерфейс или через метод POST.
 
-+ Request Пример (application/json)
-Пример запроса на обновление страны.
-  + Body
-        <!-- include(body/country/put_request.json) -->
+> Пример запроса на обновление страны.
 
-+ Response 200 (application/json)
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/country/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "Другая Россия",
+            "description": "Каждый может изменить Россию, но только если он её создал сам",
+            "code": "no1russia",
+            "externalCode": "gogorussia"
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновлённой Страны.
-  + Body
-        <!-- include(body/country/put_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/810b5344-24ca-11e6-8a84-bae500000018",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+    "type": "country",
+    "mediaType": "application/json"
+  },
+  "id": "810b5344-24ca-11e6-8a84-bae500000018",
+  "accountId": "45489428-24a5-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/9bc5de98-79f2-11e8-1a0d-4e0d0000002b",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=9bc5de98-79f2-11e8-1a0d-4e0d0000002b"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/9504054f-79f2-11e8-1a0d-4e0d00000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-05-30 09:20:10",
+  "name": "Другая Россия",
+  "description": "Каждый может изменить Россию, но только если он её создал сам",
+  "code": "no1russia",
+  "externalCode": "gogorussia"
+}
+```

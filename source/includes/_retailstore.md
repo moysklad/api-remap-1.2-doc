@@ -114,37 +114,491 @@
 - **meta** [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о выдаче,
 - **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой Розничные точки продаж.
-+ Parameters
-  + limit: 1000 (optional, enum)
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
 
-+ Response 200 (application/json)
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+
+> Получить точки продаж
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/retailstore"
+  -H "Authorization: Basic <Access-Token>"
+```
+ 
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка Розничных точек продаж.
-  + Body
-        <!-- include(body/retailstore/get_list.json) -->
 
-### Удалить точку продаж 
-Запрос на удаление Розничной точки продаж с указанным id.
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Точки продаж
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+    "type": "retailstore",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/2b5eb22f-139e-11e6-9464-e4de00000073",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+        "type": "retailstore",
+        "mediaType": "application/json"
+      },
+      "id": "2b5eb22f-139e-11e6-9464-e4de00000073",
+      "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2016-05-06 18:21:13",
+      "name": "Точка2",
+      "description": "вторая точка",
+      "externalCode": "Et9M3cprgDiJPi7llDOhX0",
+      "controlShippingStock": false,
+      "active": true,
+      "controlCashierChoice": false,
+      "discountEnable": true,
+      "discountMaxPercent": 17,
+      "priceType": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+          "type": "pricetype",
+          "mediaType": "application/json"
+        },
+        "id": "672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+        "name": "Цена продажи",
+        "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+      },
+      "authTokenAttached": false,
+      "cashiers": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/2b5eb22f-139e-11e6-9464-e4de00000073/cashiers",
+          "type": "cashier",
+          "mediaType": "application/json",
+          "size": 1,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "egaisEnabled": true,
+      "frNumber": "134578",
+      "organization": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/30f01af0-137a-11e6-9464-e4de0000004e",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json"
+        }
+      },
+      "store": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/30fe30a0-137a-11e6-9464-e4de00000050",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+          "type": "store",
+          "mediaType": "application/json"
+        }
+      },
+      "issueOrders": false,
+      "sellReserves": false,
+      "lastOperationNames": [
+        {
+          "entity": "retaildemand",
+          "name": "00002"
+        }
+      ],
+      "ofdEnabled": false,
+      "allowCustomPrice": false,
+      "environment": {
+        "device": "Some device name",
+        "os": "Linux",
+        "software": {
+          "name": "Касса МойСклад",
+          "vendor": "МойСклад",
+          "version": "2.2"
+        },
+        "chequePrinter": {
+          "vendor": "АТОЛ",
+          "name": "30Ф",
+          "serial": "123456",
+          "fiscalDataVersion": "1.0",
+          "driver": {
+            "name": "АТОЛ (бета)",
+            "version": "9.1"
+          },
+          "fiscalMemory": {
+            "fiscalDataVersion": "1.0"
+          },
+          "firmwareVersion": "669"
+        },
+        "paymentTerminal": {
+          "acquiringType": "payme"
+        }
+      },
+      "state": {
+        "sync": {
+          "message": "Ошибка синхронизации, необходимо войти повторно",
+          "lastAttempMoment": "2016-09-06 21:41:00"
+        },
+        "lastCheckMoment": "2018-02-05 15:58:24",
+        "fiscalMemory": {
+          "error": {
+            "code": "1003",
+            "message": "Критическая ошибка"
+          },
+          "notSendDocCount": 25,
+          "notSendFirstDocMoment": "2016-09-06 21:41:00"
+        },
+        "paymentTerminal": {
+          "acquiringType": "payme"
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+        "type": "retailstore",
+        "mediaType": "application/json"
+      },
+      "id": "31b6349e-137a-11e6-9464-e4de0000005d",
+      "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2016-05-06 18:09:54",
+      "name": "Точка продаж",
+      "externalCode": "AEhB1gX7inNaXzAGSbDeh0",
+      "controlShippingStock": true,
+      "onlyInStock": false,
+      "active": true,
+      "controlCashierChoice": false,
+      "discountEnable": false,
+      "priceType": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+          "type": "pricetype",
+          "mediaType": "application/json"
+        },
+        "id": "672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+        "name": "Цена продажи",
+        "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+      },
+      "authTokenAttached": false,
+      "cashiers": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d/cashiers",
+          "type": "cashier",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "egaisEnabled": true,
+      "frNumber": "134578",
+      "organization": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/30f01af0-137a-11e6-9464-e4de0000004e",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json"
+        }
+      },
+      "store": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/30fe30a0-137a-11e6-9464-e4de00000050",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+          "type": "store",
+          "mediaType": "application/json"
+        }
+      },
+      "acquire": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/30fe66fd-137a-11e6-9464-e4de00000053",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      },
+      "issueOrders": false,
+      "sellReserves": false,
+      "lastOperationNames": [
+        {
+          "entity": "retaildemand",
+          "name": "00002"
+        }
+      ],
+      "ofdEnabled": false,
+      "allowCustomPrice": false,
+      "environment": {
+        "device": "Some device name",
+        "os": "Linux",
+        "software": {
+          "name": "Касса МойСклад",
+          "vendor": "МойСклад",
+          "version": "2.2"
+        },
+        "chequePrinter": {
+          "vendor": "АТОЛ",
+          "name": "30Ф",
+          "serial": "123456",
+          "fiscalDataVersion": "1.0",
+          "driver": {
+            "name": "АТОЛ (бета)",
+            "version": "9.1"
+          },
+          "fiscalMemory": {
+            "fiscalDataVersion": "1.0"
+          },
+          "firmwareVersion": "669"
+        },
+        "paymentTerminal": {
+          "acquiringType": "payme"
+        }
+      },
+      "state": {
+        "sync": {
+          "message": "Ошибка синхронизации, необходимо войти повторно",
+          "lastAttempMoment": "2016-09-06 21:41:00"
+        },
+        "lastCheckMoment": "2018-02-05 15:58:24",
+        "fiscalMemory": {
+          "error": {
+            "code": "1003",
+            "message": "Критическая ошибка"
+          },
+          "notSendDocCount": 25,
+          "notSendFirstDocMoment": "2016-09-06 21:41:00"
+        },
+        "paymentTerminal": {
+          "acquiringType": "payme"
+        }
+      }
+    }
+  ]
+}
+```
 
-+ Response 200 (application/json)
+### Удалить точку продаж
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Точки продаж|
+
+> Запрос на удаление Розничной точки продаж с указанным id.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешное удаление Розничной точки продаж.
 
 #### Точка продаж 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Точки продаж
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Точки продаж|
 
 ### Получить точку продаж 
-Запрос на получение отдельной Розничной точки продаж с указанным id.
-+ Response 200 (application/json)
+> Запрос на получение отдельной Розничной точки продаж с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление точки продаж.
-  + Body
-        <!-- include(body/retailstore/get_by_id.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+    "type": "retailstore",
+    "mediaType": "application/json"
+  },
+  "id": "31b6349e-137a-11e6-9464-e4de0000005d",
+  "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-05-06 18:09:54",
+  "name": "Точка продаж",
+  "externalCode": "AEhB1gX7inNaXzAGSbDeh0",
+  "controlShippingStock": true,
+  "onlyInStock": true,
+  "active": true,
+  "controlCashierChoice": false,
+  "discountEnable": true,
+  "discountMaxPercent": 17,
+  "priceType": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+      "type": "pricetype",
+      "mediaType": "application/json"
+    },
+    "id": "672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+    "name": "Цена продажи",
+    "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+  },
+  "authTokenAttached": false,
+  "cashiers": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d/cashiers",
+      "type": "cashier",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "egaisEnabled": true,
+  "frNumber": "134578",
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/30f01af0-137a-11e6-9464-e4de0000004e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "store": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/30fe30a0-137a-11e6-9464-e4de00000050",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "acquire": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/30fe66fd-137a-11e6-9464-e4de00000053",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "issueOrders": false,
+  "sellReserves": false,
+  "lastOperationNames": [
+    {
+      "entity": "retaildemand",
+      "name": "00002"
+    }
+  ],
+  "ofdEnabled": false,
+  "allowCustomPrice": false,
+  "environment": {
+    "device": "Some device name",
+    "os": "Linux",
+    "software": {
+      "name": "Касса МойСклад",
+      "vendor": "МойСклад",
+      "version": "2.2"
+    },
+    "chequePrinter": {
+      "vendor": "АТОЛ",
+      "name": "30Ф",
+      "serial": "15636313",
+      "fiscalDataVersion": "1.0",
+      "driver": {
+        "name": "АТОЛ (бета)",
+        "version": "9.1"
+      },
+      "fiscalMemory": {
+        "fiscalDataVersion": "1.0"
+      },
+      "firmwareVersion": "669"
+    },
+    "paymentTerminal": {
+      "acquiringType": "payme"
+    }
+  },
+  "state": {
+    "sync": {
+      "message": "Ошибка синхронизации, необходимо войти повторно",
+      "lastAttempMoment": "2016-09-06 21:41:00"
+    },
+    "lastCheckMoment": "2018-02-05 15:58:24",
+    "fiscalMemory": {
+      "error": {
+        "code": "1003",
+        "message": "Критическая ошибка"
+      },
+      "notSendDocCount": 25,
+      "notSendFirstDocMoment": "2016-09-06 21:41:00"
+    },
+    "paymentTerminal": {
+      "acquiringType": "payme"
+    }
+  }
+}
+```

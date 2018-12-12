@@ -70,44 +70,275 @@
 - **meta** [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о выдаче,
 - **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой сотрудников.
-+ Parameters
-  + limit: 1000 (optional, enum[number])
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
 
-+ Response 200 (application/json)
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+
+> Получить Сотрудников
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/employee"
+  -H "Authorization: Basic <Access-Token>"
+```
+ 
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка Сотрудников.
-  + Body
-        <!-- include(body/employee/get_list.json) -->
+
+```json
+{
+  "context": {
+    "employee": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+    "type": "employee",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/84f88b2f-f504-11e5-8a84-bae500000138",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      },
+      "id": "84f88b2f-f504-11e5-8a84-bae500000138",
+      "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+      "updated": "2016-03-28 19:45:46",
+      "name": "Администратор",
+      "externalCode": "4A039QXHgbZdAHdXbcUI71",
+      "archived": false,
+      "uid": "admin@reqwy1",
+      "email": "asdad@sfasf.erq",
+      "lastName": "Администратор",
+      "fullName": "Администратор",
+      "shortFio": "Администратор",
+      "cashiers": [
+        {
+          "meta": {
+            "href": "http://online.moysklad.ru/api/remap/1.2/entity/retailstore/8d2f2a2e-d6a1-11e7-9464-e4de00000060/cashiers/8d2f3fe1-d6a1-11e7-9464-e4de00000061",
+            "type": "cashier",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "http://online.moysklad.ru/api/remap/1.2/entity/retailstore/53302317-df24-11e7-9464-e4de00000001/cashiers/58dfeb3e-df24-11e7-9464-e4de00000004",
+            "type": "cashier",
+            "mediaType": "application/json"
+          }
+        }
+      ],
+      "retailStore": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+          "type": "retailstore",
+          "mediaType": "application/json"
+        }
+      },
+      "inn": "222490425273",
+      "position": "Директор"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/9e00ad58-0302-11e6-9464-e4de00000076",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      },
+      "id": "9e00ad58-0302-11e6-9464-e4de00000076",
+      "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+      "updated": "2016-04-15 15:07:25",
+      "name": "Друганов Л. А.",
+      "externalCode": "4pGL0jazh3dGTpJfdcP1a1",
+      "archived": false,
+      "uid": "employee@company",
+      "email": "company@company.ru",
+      "phone": "8 800 250-04-32",
+      "firstName": "Леонид",
+      "middleName": "Андреевич",
+      "lastName": "Друганов",
+      "fullName": "Леонид Андреевич Друганов",
+      "shortFio": "Друганов Л. А.",
+      "attributes": [
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          },
+          "id": "d49d59bd-12dc-11e6-9464-e4de0000006b",
+          "name": "КПД",
+          "type": "long",
+          "value": 200
+        }
+      ]
+    }
+  ]
+}
+
+```
 
 ### Массовое обновление Сотрудников 
 [Массовое обновление](/api/remap/1.2/doc/index.html#header-создание-и-обновление-нескольких-объектов) Сотрудников.
 В теле запроса нужно передать массив, содержащий JSON представления Сотрудников, которые вы хотите обновить.
 Обновляемые Сотрудники должны содержать идентификатор в виде метаданных.
 
-+ Request Пример (application/json)
-Пример обновления нескольких Сотрудников
-  + Body
-        <!-- include(body/employee/post_massive_request.json) -->
+> Пример обновления нескольких Сотрудников
 
-+ Response 200 (application/json)
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/employee"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                "type": "employee",
+                "mediaType": "application/json"
+              },
+              "firstName": "Петр",
+              "middleName": "Иванович",
+              "lastName": "Мойскладкин",
+              "inn": "222490425273",
+              "position": "Директор"
+            },
+            {
+              "firstName": "Иван",
+              "middleName": "Петрович",
+              "lastName": "Мойскладкин"
+            }
+          ]'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - массив JSON представлений обновленных Сотрудников.
-  + Body
-        <!-- include(body/employee/post_massive_response.json) -->
 
-### Удалить Сотрудника 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Сотрудника
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    },
+    "id": "7944ef04-f831-11e5-7a69-971500188b19",
+    "accountId": "ef07c35a-d1f6-11e8-7a33-904100000002",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "shared": true,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/ef0887b1-d1f6-11e8-7a33-904100000003",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2018-10-17 14:51:30",
+    "name": "Мойскладкин П. И.",
+    "externalCode": "wNxghfHlg5n2rJGO9Lpud0",
+    "archived": false,
+    "created": "2018-10-17 13:25:14",
+    "uid": "admin@company",
+    "email": "company@mail.ru",
+    "firstName": "Петр",
+    "middleName": "Иванович",
+    "lastName": "Мойскладкин",
+    "fullName": "Петр Иванович Мойскладкин",
+    "shortFio": "Мойскладкин П. И.",
+    "cashiers": [
+      {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/eff1b7cc-d1f6-11e8-7a33-904100000062/cashiers/eff1c76b-d1f6-11e8-7a33-904100000063",
+          "type": "cashier",
+          "mediaType": "application/json"
+        }
+      }
+    ],
+    "inn": "222490425273",
+    "position": "Директор"
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/fc86b89c-d202-11e8-7a33-90410000004a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    },
+    "id": "fc86b89c-d202-11e8-7a33-90410000004a",
+    "accountId": "ef07c35a-d1f6-11e8-7a33-904100000002",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "shared": true,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/ef0887b1-d1f6-11e8-7a33-904100000003",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2018-10-17 14:51:30",
+    "name": "Мойскладкин И. П.",
+    "externalCode": "0freFxtniG9a1MNZ7ADin2",
+    "archived": false,
+    "created": "2018-10-17 14:51:30",
+    "firstName": "Иван",
+    "middleName": "Петрович",
+    "lastName": "Мойскладкин",
+    "fullName": "Иван Петрович Мойскладкин",
+    "shortFio": "Мойскладкин И. П."
+  }
+]
+```
 
-Запрос на удаление Сотрудника с указанным id.
+### Удалить Сотрудника
 
-+ Response 200 (application/json)
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Сотрудника|
+
+> Запрос на удаление Сотрудника с указанным id.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешное удаление Сотрудника.
 
 ### Метаданные Сотрудников 
@@ -119,41 +350,337 @@
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](#header-работа-с-дополнительными-полями).
 
-+ Response 200 (application/json)
+> Метаданные Сотрудников
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление доп. полей Сотрудников.
-  + Body
-        <!-- include(body/employee/get_metadata.json) -->
 
-### Отдельное доп. поле 
-+ Parameters
-  + id: `5290a290-0313-11e6-9464-e4de00000020` (required, string) - id Доп. поля
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+    "mediaType": "application/json"
+  },
+  "attributes": [
+    {
+      "id": "5290a290-0313-11e6-9464-e4de00000020",
+      "name": "attribute_name",
+      "type": "boolean",
+      "required": false
+    }
+  ],
+  "createShared": true
+}
+```
+
+### Отдельное доп. поле
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Сотрудника|
+
 #### Отдельное доп. поле 
-Запрос на получение информации по отдельному дополнительному полю.
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельного доп. поля.
-  + Body
-        <!-- include(body/employee/metadata_by_id.json) -->
+> Запрос на получение информации по отдельному дополнительному полю.
 
-### Сотрудник 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Сотрудника
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отдельного доп. поля.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020",
+    "type": "attributemetadata",
+    "mediaType": "application/json"
+  },
+  "id": "5290a290-0313-11e6-9464-e4de00000020",
+  "name": "attribute_name",
+  "type": "boolean",
+  "required": false
+}
+```
+
+### Сотрудник
+ 
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Сотрудника|
 
 ### Получить Сотрудника 
-Запрос на получение отдельного сотрудника с указанным id.
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление Сотрудника.
-  + Body
-        <!-- include(body/employee/get_by_id.json) -->
+> Запрос на получение отдельного сотрудника с указанным id.
 
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Сотрудника.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/84f88b2f-f504-11e5-8a84-bae500000138",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+    "type": "employee",
+    "mediaType": "application/json"
+  },
+  "id": "84f88b2f-f504-11e5-8a84-bae500000138",
+  "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+  "updated": "2016-03-28 19:45:46",
+  "name": "Администратор",
+  "externalCode": "4A039QXHgbZdAHdXbcUI71",
+  "archived": false,
+  "uid": "admin@reqwy1",
+  "email": "asdad@sfasf.erq",
+  "lastName": "Администратор",
+  "fullName": "Администратор",
+  "shortFio": "Администратор",
+  "cashiers": [
+    {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/retailstore/8d2f2a2e-d6a1-11e7-9464-e4de00000060/cashiers/8d2f3fe1-d6a1-11e7-9464-e4de00000061",
+        "type": "cashier",
+        "mediaType": "application/json"
+      }
+    },
+    {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/retailstore/53302317-df24-11e7-9464-e4de00000001/cashiers/58dfeb3e-df24-11e7-9464-e4de00000004",
+        "type": "cashier",
+        "mediaType": "application/json"
+      }
+    }
+  ],
+  "retailStore": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+      "type": "retailstore",
+      "mediaType": "application/json"
+    }
+  },
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "d49d59bd-12dc-11e6-9464-e4de0000006b",
+      "name": "ЗП",
+      "type": "long",
+      "value": 200
+    }
+  ],
+  "inn": "222490425273",
+  "position": "Директор"
+}
+```
+
+### Создать Сотрудника
+Запрос на создание сотрудника. Обязательные для создания поля:
+
+ + **lastName** - Фамилия
+ 
+> Пример запроса на создание Сотрудника.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/employee/"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "firstName": "Петр",
+            "middleName": "Иванович",
+            "lastName": "Мойскладкин",
+            "inn": "222490425273",
+            "position": "Директор",
+            "phone": "+7(999)888-7766",
+            "description": "Описание",
+            "attributes": [
+              {
+                "id": "ed14b498-cae3-11e8-9dd2-f3a300000044",
+                "value": "Строковое доп поле"
+              }
+            ]
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного Сотрудника.  
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/bc962452-cd64-11e8-ac12-000800000000",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+    "type": "employee",
+    "mediaType": "application/json",
+  },
+  "id": "bc962452-cd64-11e8-ac12-000800000000",
+  "accountId": "ffb8f6b1-cd3a-11e8-ac12-000700000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/00f76fbb-cd3b-11e8-ac12-00080000002d",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/ffbc0889-cd3a-11e8-ac12-000700000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2018-10-11 17:48:37",
+  "name": "Мойскладкин П. И.",
+  "description": "Описание",
+  "externalCode": "tJfzU8g2hVgXFOiFGTMIe3",
+  "archived": false,
+  "created": "2018-10-11 17:48:37",
+  "phone": "+7(999)888-7766",
+  "firstName": "Петр",
+  "middleName": "Иванович",
+  "lastName": "Мойскладкин",
+  "fullName": "Петр Иванович Мойскладкин",
+  "shortFio": "Мойскладкин П. И.",
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata/attributes/ed14b498-cae3-11e8-9dd2-f3a300000044",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "ed14b498-cae3-11e8-9dd2-f3a300000044",
+      "name": "Название",
+      "type": "string",
+      "value": "Строковое доп поле"
+    }
+  ],
+  "inn": "222490425273",
+  "position": "Директор"
+}
+```
 
 ### Изменить Сотрудника 
 Запрос на обновление существующего Сотрудника. В теле запроса обязательно следует указать поле **lastName**.
-+ Request Пример (application/json)
-Пример запроса на обновление Сотрудника.
-  + Body
-        <!-- include(body/employee/put_request.json) -->
 
-+ Response 200 (application/json)
+> Пример запроса на обновление Сотрудника.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "firstName": "Петр",
+            "middleName": "Иванович",
+            "lastName": "Мойскладкин",
+            "inn": "222490425273",
+            "position": "Директор",
+            "phone": "+7(999)888-7766",
+            "description": "Описание",
+            "attributes": [
+              {
+                "id": "ed14b498-cae3-11e8-9dd2-f3a300000044",
+                "value": "Строковое доп поле"
+              }
+            ]
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновлённого Сотрудника.
-  + Body
-        <!-- include(body/employee/put_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+    "type": "employee",
+    "mediaType": "application/json"
+  },
+  "id": "7944ef04-f831-11e5-7a69-971500188b19",
+  "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+  "updated": "2016-03-28 19:45:46",
+  "name": "Мойскладкин П. И.",
+  "description": "Описание",
+  "externalCode": "4A039QXHgbZdAHdXbcUI71",
+  "archived": false,
+  "phone": "+7(999)888-7766",
+  "uid": "admin@reqwy1",
+  "email": "asdad@sfasf.erq",
+  "firstName": "Петр",
+  "middleName": "Иванович",
+  "lastName": "Мойскладкин",
+  "fullName": "Петр Иванович Мойскладкин",
+  "shortFio": "Мойскладкин П. И.",
+  "cashier": {
+    "id": "851fa2f7-f504-11e5-8a84-bae50000016d",
+    "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "retailStore": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+        "type": "retailstore",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "d49d59bd-12dc-11e6-9464-e4de0000006b",
+      "name": "ЗП",
+      "type": "long",
+      "value": 200
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata/attributes/ed14b498-cae3-11e8-9dd2-f3a300000044",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "ed14b498-cae3-11e8-9dd2-f3a300000044",
+      "name": "Строка",
+      "type": "string",
+      "value": "Строковое доп поле"
+    }
+  ],
+  "inn": "222490425273",
+  "position": "Директор"
+}
+```
