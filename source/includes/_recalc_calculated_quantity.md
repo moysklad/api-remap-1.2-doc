@@ -4,18 +4,26 @@
 
 ## Пересчёт расчётного остатка в инвентаризации 
 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id инвентаризации.
+**Параметры**
 
+|Параметр   |Описание   | 
+|---|---|
+|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id инвентаризации.|
 
 ### Пересчитать 
 
 Отправить запрос на пересчёт расчётных остатков у позиций инвентаризации.
 
-+ Request Пример (application/json)
-Пример запроса (с пустым телом) на пересчёт расчётных остатков у позиций инвентаризации.
-  + Body
-        <!-- include(body/rpc/recalcCalculatedQuantity.json) -->
-+ Response 201 (application/json)
+> Пример запроса (с пустым телом) на пересчёт расчётных остатков у позиций инвентаризации.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/rpc/inventory/7944ef04-f831-11e5-7a69-971500188b19/recalcCalculatedQuantity"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d ''  
+```
+
+> Response 201 (application/json)
 Успешный запрос. Результат - Пустое тело ответа.
-  + Body
+

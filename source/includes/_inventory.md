@@ -61,60 +61,482 @@
 - **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой Инвентаризации.
 
-+ Parameters
-  + limit: 1000 (optional, enum[number])
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
+**Параметры**
 
-  + search: `0001` (optional, string)
-    URL Параметр для поиска по имени документа.
-    Фильтр документов по указанной поисковой строке. Фильтрация происходит по
-    полю name.
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|search |  `string` (optional) *Example: 0001* URL Параметр для поиска по имени документа. Фильтр документов по указанной поисковой строке. Фильтрация происходит по полю name.|
 
-+ Response 200 (application/json)
+> Получить Инвентаризации
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/inventory"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка Инвентаризаций.
-  + Body
-        <!-- include(body/inventory/get_list.json) -->
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory",
+    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata",
+    "type": "inventory",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/7ee45d2d-ad65-11e6-8a84-bc52000000db",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata",
+        "type": "inventory",
+        "mediaType": "application/json"
+      },
+      "id": "7ee45d2d-ad65-11e6-8a84-bc52000000db",
+      "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
+      "owner": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/employee/c4b17cf2-99bb-11e6-8a84-bc520000002a",
+          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/group/c3cff163-99bb-11e6-8a84-bc5200000002",
+          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2016-11-18 11:03:31",
+      "name": "00001",
+      "externalCode": "HCUtF6T2jnNOzNbh-ZNNo1",
+      "moment": "2016-11-18 11:03:00",
+      "sum": 480000,
+      "store": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c4eddfc8-99bb-11e6-8a84-bc5200000053",
+          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+          "type": "store",
+          "mediaType": "application/json"
+        }
+      },
+      "organization": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/c4dee133-99bb-11e6-8a84-bc5200000051",
+          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json"
+        }
+      },
+      "positions": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/7ee45d2d-ad65-11e6-8a84-bc52000000db/positions",
+          "type": "inventoryposition",
+          "mediaType": "application/json",
+          "size": 1,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/8c3e615a-ad65-11e6-8a84-bc52000000df",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata",
+        "type": "inventory",
+        "mediaType": "application/json"
+      },
+      "id": "8c3e615a-ad65-11e6-8a84-bc52000000df",
+      "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
+      "owner": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/employee/c4b17cf2-99bb-11e6-8a84-bc520000002a",
+          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/group/c3cff163-99bb-11e6-8a84-bc5200000002",
+          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2016-11-18 11:03:53",
+      "name": "00002",
+      "externalCode": "aNpAW66rhIjZ4VmhA4igz0",
+      "moment": "2016-11-18 11:03:00",
+      "sum": 1020000,
+      "store": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c4eddfc8-99bb-11e6-8a84-bc5200000053",
+          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+          "type": "store",
+          "mediaType": "application/json"
+        }
+      },
+      "organization": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/c4dee133-99bb-11e6-8a84-bc5200000051",
+          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json"
+        }
+      },
+      "positions": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/8c3e615a-ad65-11e6-8a84-bc52000000df/positions",
+          "type": "inventoryposition",
+          "mediaType": "application/json",
+          "size": 2,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    }
+  ]
+}
+```
 
 ### Создать Инвентаризацию 
 Запрос на создание новой Инвентаризации
-+ Request Пример (application/json)
-Пример создания новой Инвентаризации с телом запроса, содержащим только необходимые поля.
-  + Body
-        <!-- include(body/inventory/post_request_short.json) -->
 
-+ Response 200 (application/json)
+> Пример создания новой Инвентаризации с телом запроса, содержащим только необходимые поля.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/inventory"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "store": {
+              "meta": {
+                "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c4eddfc8-99bb-11e6-8a84-bc5200000053",
+                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "type": "store",
+                "mediaType": "application/json"
+              }
+            },
+            "organization": {
+              "meta": {
+                "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/c4dee133-99bb-11e6-8a84-bc5200000051",
+                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "type": "organization",
+                "mediaType": "application/json"
+              }
+            }
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданной Инвентаризации.
-  + Body
-        <!-- include(body/inventory/post_response_short.json) -->
+
+```json
+{
+  "meta": {
+    "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/8a2a5d07-ad6d-11e6-8a84-bc520000000a",
+    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata",
+    "type": "inventory",
+    "mediaType": "application/json"
+  },
+  "id": "8a2a5d07-ad6d-11e6-8a84-bc520000000a",
+  "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
+  "owner": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/employee/c4b17cf2-99bb-11e6-8a84-bc520000002a",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/group/c3cff163-99bb-11e6-8a84-bc5200000002",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-11-18 12:01:06",
+  "name": "00005",
+  "externalCode": "n0vO68WUgOh9OcHApWSVc2",
+  "moment": "2016-11-18 12:01:06",
+  "sum": 0,
+  "store": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c4eddfc8-99bb-11e6-8a84-bc5200000053",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/c4dee133-99bb-11e6-8a84-bc5200000051",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "created": "2007-02-07 17:16:41",
+  "positions": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/8a2a5d07-ad6d-11e6-8a84-bc520000000a/positions",
+      "type": "inventoryposition",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
 
 ### Массовое создание и обновление Инвентаризаций 
 [Массовое создание и обновление](/api/remap/1.2/doc/index.html#header-создание-и-обновление-нескольких-объектов) Инвентаризаций.
 В теле запроса нужно передать массив, содержащий JSON представления Инвентаризаций, которые вы хотите создать или обновить.
 Обновляемые Инвентаризации должны содержать идентификатор в виде метаданных.
 
-+ Request Пример (application/json)
-Пример создания и обновления нескольких Инвентаризаций
-  + Body
-        <!-- include(body/inventory/post_massive_request.json) -->
+> Пример создания и обновления нескольких Инвентаризаций
 
-+ Response 200 (application/json)
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/inventory"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "store": {
+                "meta": {
+                  "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c4eddfc8-99bb-11e6-8a84-bc5200000053",
+                  "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                  "type": "store",
+                  "mediaType": "application/json"
+                }
+              },
+              "organization": {
+                "meta": {
+                  "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/c4dee133-99bb-11e6-8a84-bc5200000051",
+                  "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                  "type": "organization",
+                  "mediaType": "application/json"
+                }
+              }
+            },
+            {
+              "meta": {
+                "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7",
+                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata",
+                "type": "inventory",
+                "mediaType": "application/json"
+              },
+              "name": "newname",
+              "positions": {
+                "rows": [
+                  {
+                    "quantity": 140,
+                    "price": 5000,
+                    "assortment": {
+                      "meta": {
+                        "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
+                        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                        "type": "product",
+                        "mediaType": "application/json"
+                      }
+                    },
+                    "correctionAmount": -60,
+                    "calculatedQuantity": 200,
+                    "correctionSum": -300000
+                  },
+                  {
+                    "quantity": 80,
+                    "price": 4000,
+                    "assortment": {
+                      "meta": {
+                        "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/58948866-ad65-11e6-8a84-bc52000000cf",
+                        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                        "type": "product",
+                        "mediaType": "application/json"
+                      }
+                    },
+                    "correctionAmount": -20,
+                    "calculatedQuantity": 100,
+                    "correctionSum": -80000
+                  }
+                ]
+              }
+            }
+          ]'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - массив JSON представлений созданных и обновленных Инвентаризаций.
-  + Body
-        <!-- include(body/inventory/post_massive_response.json) -->
 
-### Удалить Инвентаризацию 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Инвентаризации
+```json
+[
+  {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/8a2a5d07-ad6d-11e6-8a84-bc520000000a",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata",
+      "type": "inventory",
+      "mediaType": "application/json"
+    },
+    "id": "8a2a5d07-ad6d-11e6-8a84-bc520000000a",
+    "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
+    "owner": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/employee/c4b17cf2-99bb-11e6-8a84-bc520000002a",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/group/c3cff163-99bb-11e6-8a84-bc5200000002",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2016-11-18 12:01:06",
+    "name": "00005",
+    "externalCode": "n0vO68WUgOh9OcHApWSVc2",
+    "moment": "2016-11-18 12:01:06",
+    "sum": 0,
+    "store": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c4eddfc8-99bb-11e6-8a84-bc5200000053",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+        "type": "store",
+        "mediaType": "application/json"
+      }
+    },
+    "organization": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/c4dee133-99bb-11e6-8a84-bc5200000051",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json"
+      }
+    },
+    "created": "2007-02-07 17:16:41",
+    "positions": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/8a2a5d07-ad6d-11e6-8a84-bc520000000a/positions",
+        "type": "inventoryposition",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    }
+  },
+  {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata",
+      "type": "inventory",
+      "mediaType": "application/json"
+    },
+    "id": "57a0bbfb-ad6d-11e6-8a84-bc52000000e7",
+    "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
+    "owner": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/employee/c4b17cf2-99bb-11e6-8a84-bc520000002a",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/group/c3cff163-99bb-11e6-8a84-bc5200000002",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2016-11-18 12:12:27",
+    "name": "newname",
+    "externalCode": "6iP5E4LLhpzxRKezcuKE90",
+    "moment": "2016-11-18 11:59:00",
+    "sum": 1020000,
+    "store": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c4eddfc8-99bb-11e6-8a84-bc5200000053",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+        "type": "store",
+        "mediaType": "application/json"
+      }
+    },
+    "organization": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/c4dee133-99bb-11e6-8a84-bc5200000051",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json"
+      }
+    },
+    "created": "2007-02-07 17:16:41",
+    "positions": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7/positions",
+        "type": "inventoryposition",
+        "mediaType": "application/json",
+        "size": 2,
+        "limit": 1000,
+        "offset": 0
+      }
+    }
+  }
+]
+```
 
-Запрос на удаление Инвентаризации с указанным id.
-+ Response 200 (application/json)
+### Удалить Инвентаризацию
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Инвентаризации|
+ 
+> Запрос на удаление Инвентаризации с указанным id.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/inventory/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешное удаление Инвентаризации.
 
 ### Метаданные Инвентаризаций 
@@ -127,90 +549,579 @@
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](/api/remap/1.2/doc/index.html#header-работа-с-дополнительными-полями).
 
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление метаданных Инвентаризаций.
-  + Body
-        <!-- include(body/inventory/get_metadata.json) -->
+> Метаданные Инвентаризаций
 
-### Отдельное доп. поле 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Доп. поля
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление метаданных Инвентаризаций.
+
+```json
+{
+  "meta": {
+    "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata",
+    "mediaType": "application/json"
+  },
+  "attributes": [
+    {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata/attributes/1f7dbb1b-ad6e-11e6-8a84-bc52000000eb",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "1f7dbb1b-ad6e-11e6-8a84-bc52000000eb",
+      "name": "доп.поле1",
+      "type": "string",
+      "required": false
+    },
+    {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata/attributes/1f7dc230-ad6e-11e6-8a84-bc52000000ec",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "1f7dc230-ad6e-11e6-8a84-bc52000000ec",
+      "name": "доп.поле2",
+      "type": "long",
+      "required": false
+    }
+  ],
+  "createShared": false
+}
+```
+
+### Отдельное доп. поле
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Доп. поля|
+ 
 #### Отдельное доп. поле 
-Запрос на получение информации по отдельному дополнительному полю.
-+ Response 200 (application/json)
+> Запрос на получение информации по отдельному дополнительному полю.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление отдельного доп. поля.
-  + Body
-        <!-- include(body/inventory/metadata_by_id.json) -->
+
+```json
+{
+  "meta": {
+    "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata/attributes/1f7dbb1b-ad6e-11e6-8a84-bc52000000eb",
+    "type": "attributemetadata",
+    "mediaType": "application/json"
+  },
+  "id": "1f7dbb1b-ad6e-11e6-8a84-bc52000000eb",
+  "name": "доп.поле1",
+  "type": "string",
+  "required": false
+}
+```
 
 ### Шаблон инвентаризации 
 #### Шаблон инвентаризации 
-Запрос на получение предзаполненого стандартными значениями шаблона инвентаризации без связи с каким-либо документом.
+> Запрос на получение предзаполненого стандартными значениями шаблона инвентаризации без связи с каким-либо документом.
 
-+ Request Пустое тело запроса (application/json)
-+ Response 200 (application/json)
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/inventory/new"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d ''  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление предзаполненного списания.
-  + Body
-        <!-- include(body/inventory/new_empty.json) -->
 
-### Инвентаризация 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Инвентаризации
-  
+```json
+{
+  "owner": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/employee/c4b17cf2-99bb-11e6-8a84-bc520000002a",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/group/c3cff163-99bb-11e6-8a84-bc5200000002",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "moment": "2016-11-25 17:52:33",
+  "sum": 0,
+  "store": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c4eddfc8-99bb-11e6-8a84-bc5200000053",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/c4dee133-99bb-11e6-8a84-bc5200000051",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "positions": {
+    "rows": []
+  }
+}
+```
+
+### Инвентаризация
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Инвентаризации|
+ 
 ### Получить Инвентаризацию 
-Запрос на получение отдельной инвентаризации с указанным id.
-+ Response 200 (application/json)
+> Запрос на получение отдельной инвентаризации с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/inventory/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление Инвентаризации.
-  + Body
-        <!-- include(body/inventory/get_by_id.json) -->
+
+```json
+{
+  "meta": {
+    "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7",
+    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata",
+    "type": "inventory",
+    "mediaType": "application/json"
+  },
+  "id": "57a0bbfb-ad6d-11e6-8a84-bc52000000e7",
+  "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
+  "owner": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/employee/c4b17cf2-99bb-11e6-8a84-bc520000002a",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/group/c3cff163-99bb-11e6-8a84-bc5200000002",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-11-18 11:59:41",
+  "name": "00004",
+  "externalCode": "6iP5E4LLhpzxRKezcuKE90",
+  "moment": "2016-11-18 11:59:00",
+  "sum": 0,
+  "store": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c4eddfc8-99bb-11e6-8a84-bc5200000053",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/c4dee133-99bb-11e6-8a84-bc5200000051",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "positions": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7/positions",
+      "type": "inventoryposition",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
 
 ### Изменить Инвентаризацию 
 Запрос на обновление инвентаризации с указанным id.
-+ Request Пример (application/json)
-Пример запроса на обновление отдельной Инвентаризации.
-  + Body
-        <!-- include(body/inventory/put_request.json) -->
 
-+ Response 200 (application/json)
+> Пример запроса на обновление отдельной Инвентаризации.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/inventory/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "newname",
+            "positions": {
+              "rows": [
+                {
+                  "quantity": 140,
+                  "price": 5000,
+                  "assortment": {
+                    "meta": {
+                      "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
+                      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                      "type": "product",
+                      "mediaType": "application/json"
+                    }
+                  },
+                  "correctionAmount": -60,
+                  "calculatedQuantity": 200,
+                  "correctionSum": -300000
+                },
+                {
+                  "quantity": 80,
+                  "price": 4000,
+                  "assortment": {
+                    "meta": {
+                      "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/58948866-ad65-11e6-8a84-bc52000000cf",
+                      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                      "type": "product",
+                      "mediaType": "application/json"
+                    }
+                  },
+                  "correctionAmount": -20,
+                  "calculatedQuantity": 100,
+                  "correctionSum": -80000
+                }
+              ]
+            }
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновлённой Инвентаризации.
-  + Body
-        <!-- include(body/inventory/put_response.json) -->
 
-+ Request Пример с доп. полями (application/json)
-Пример запроса на изменение Инвентаризации с дополнительными полями.
-  + Body
-        <!-- include(body/inventory/put_with_attributes_request.json) -->
+```json
+{
+  "meta": {
+    "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7",
+    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata",
+    "type": "inventory",
+    "mediaType": "application/json"
+  },
+  "id": "57a0bbfb-ad6d-11e6-8a84-bc52000000e7",
+  "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
+  "owner": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/employee/c4b17cf2-99bb-11e6-8a84-bc520000002a",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/group/c3cff163-99bb-11e6-8a84-bc5200000002",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-11-18 12:12:27",
+  "name": "newname",
+  "externalCode": "6iP5E4LLhpzxRKezcuKE90",
+  "moment": "2016-11-18 11:59:00",
+  "sum": 1020000,
+  "store": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c4eddfc8-99bb-11e6-8a84-bc5200000053",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/c4dee133-99bb-11e6-8a84-bc5200000051",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "created": "2007-02-07 17:16:41",
+  "positions": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7/positions",
+      "type": "inventoryposition",
+      "mediaType": "application/json",
+      "size": 2,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
 
-+ Response 200 (application/json)
+> Пример запроса на изменение Инвентаризации с дополнительными полями.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/inventory/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "store": {
+              "meta": {
+                "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c4eddfc8-99bb-11e6-8a84-bc5200000053",
+                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "type": "store",
+                "mediaType": "application/json"
+              }
+            },
+            "organization": {
+              "meta": {
+                "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/c4dee133-99bb-11e6-8a84-bc5200000051",
+                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "type": "organization",
+                "mediaType": "application/json"
+              }
+            },
+            "attributes": [
+              {
+                "meta": {
+                  "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata/attributes/1f7dbb1b-ad6e-11e6-8a84-bc52000000eb",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
+                "id": "1f7dbb1b-ad6e-11e6-8a84-bc52000000eb",
+                "name": "доп.поле1",
+                "type": "string",
+                "value": "text"
+              },
+              {
+                "meta": {
+                  "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata/attributes/1f7dc230-ad6e-11e6-8a84-bc52000000ec",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
+                "id": "1f7dc230-ad6e-11e6-8a84-bc52000000ec",
+                "name": "доп.поле2",
+                "type": "long",
+                "value": 42
+              }
+            ]
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновлённой Инвентаризации.
-  + Body
-        <!-- include(body/inventory/put_with_attributes_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7",
+    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata",
+    "type": "inventory",
+    "mediaType": "application/json"
+  },
+  "id": "57a0bbfb-ad6d-11e6-8a84-bc52000000e7",
+  "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
+  "owner": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/employee/c4b17cf2-99bb-11e6-8a84-bc520000002a",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/group/c3cff163-99bb-11e6-8a84-bc5200000002",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-11-18 12:12:27",
+  "name": "newname",
+  "externalCode": "6iP5E4LLhpzxRKezcuKE90",
+  "moment": "2016-11-18 11:59:00",
+  "sum": 1020000,
+  "store": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c4eddfc8-99bb-11e6-8a84-bc5200000053",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/c4dee133-99bb-11e6-8a84-bc5200000051",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "attributes": [
+    {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata/attributes/1f7dbb1b-ad6e-11e6-8a84-bc52000000eb",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "1f7dbb1b-ad6e-11e6-8a84-bc52000000eb",
+      "name": "доп.поле1",
+      "type": "string",
+      "value": "text"
+    },
+    {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata/attributes/1f7dc230-ad6e-11e6-8a84-bc52000000ec",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "1f7dc230-ad6e-11e6-8a84-bc52000000ec",
+      "name": "доп.поле2",
+      "type": "long",
+      "value": 42
+    }
+  ],
+  "created": "2007-02-07 17:16:41",
+  "positions": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7/positions",
+      "type": "inventoryposition",
+      "mediaType": "application/json",
+      "size": 2,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
 
 ### Позиции Инвентаризации 
 Отдельный ресурс для управления позициями Инвентаризации. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 100. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](/api/remap/1.2/doc/index.html#header-работа-с-позициями-документов).
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Инвентаризации
-  
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Инвентаризации|
+
 ### Получить позиции Инвентаризации 
 Запрос на получение списка всех позиций данной Инвентаризации.
 - **meta** [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о выдаче,
 - **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой позиции Инвентаризации.
 
-+ Parameters
-  + limit: 1000 (optional, enum[number])
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
+**Параметры**
 
-+ Response 200 (application/json)
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+
+> Получить позиции Инвентаризации
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/inventory/7944ef04-f831-11e5-7a69-971500188b19/positions"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка позиций отдельной Инвентаризации.
-  + Body
-        <!-- include(body/inventory/positions_get_list.json) -->
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7/positions",
+    "type": "inventoryposition",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7/positions/201452a2-ad6f-11e6-8a84-bc5200000010",
+        "type": "inventoryposition",
+        "mediaType": "application/json"
+      },
+      "id": "201452a2-ad6f-11e6-8a84-bc5200000010",
+      "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
+      "quantity": 140,
+      "price": 5000,
+      "assortment": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
+          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      },
+      "correctionAmount": -60,
+      "calculatedQuantity": 200,
+      "correctionSum": -300000
+    },
+    {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7/positions/20145d98-ad6f-11e6-8a84-bc5200000011",
+        "type": "inventoryposition",
+        "mediaType": "application/json"
+      },
+      "id": "20145d98-ad6f-11e6-8a84-bc5200000011",
+      "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
+      "quantity": 80,
+      "price": 4000,
+      "assortment": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/58948866-ad65-11e6-8a84-bc52000000cf",
+          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      },
+      "correctionAmount": -20,
+      "calculatedQuantity": 100,
+      "correctionSum": -80000
+    }
+  ]
+}
+```
 
 ### Создать позицию Инвентаризации 
 Запрос на создание новой позиции в Инвентаризации.
@@ -222,42 +1133,177 @@
 Одновременно можно создать как одну так и несколько позиций Инвентаризации. Все созданные данным запросом позиции
 будут добавлены к уже существующим.
 
-+ Request Пример (application/json)
-Пример создания позиций в Инвентаризации.
-  + Body
-        <!-- include(body/inventory/positions_post_one_request.json) -->
-+ Response 200 (application/json)
+> Пример создания позиций в Инвентаризации.
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/inventory/7944ef04-f831-11e5-7a69-971500188b19/positions"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "meta": {
+              "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7/positions/201452a2-ad6f-11e6-8a84-bc5200000010",
+              "type": "inventoryposition",
+              "mediaType": "application/json"
+            },
+            "id": "201452a2-ad6f-11e6-8a84-bc5200000010",
+            "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
+            "quantity": 140,
+            "price": 2000,
+            "assortment": {
+              "meta": {
+                "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
+                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                "type": "product",
+                "mediaType": "application/json"
+              }
+            }
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданной позиции отдельной Инвентаризации.
-  + Body
-        <!-- include(body/inventory/positions_post_one_response.json) -->
 
-### Позиция Инвентаризации 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Инвентаризации
-  + positionID: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id позиции
+```json
+[
+  {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7/positions/201452a2-ad6f-11e6-8a84-bc5200000010",
+      "type": "inventoryposition",
+      "mediaType": "application/json"
+    },
+    "id": "201452a2-ad6f-11e6-8a84-bc5200000010",
+    "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
+    "quantity": 140,
+    "price": 2000,
+    "assortment": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json"
+      }
+    },
+    "correctionAmount": -60,
+    "calculatedQuantity": 200,
+    "correctionSum": -120000
+  }
+]
+```
 
+### Позиция Инвентаризации
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Инвентаризации|
+|   positionID|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id позиции|
+ 
 ### Получить позицию 
-Запрос на получение отдельной позиции Инвентаризации с указанным id.
-+ Response 200 (application/json)
+> Запрос на получение отдельной позиции Инвентаризации с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/inventory/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление отдельной позиции Инвентаризации.
-  + Body
-        <!-- include(body/inventory/positions_get_by_id.json) -->
+
+```json
+{
+  "meta": {
+    "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7/positions/201452a2-ad6f-11e6-8a84-bc5200000010",
+    "type": "inventoryposition",
+    "mediaType": "application/json"
+  },
+  "id": "201452a2-ad6f-11e6-8a84-bc5200000010",
+  "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
+  "quantity": 140,
+  "price": 5000,
+  "assortment": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json"
+    }
+  },
+  "correctionAmount": -60,
+  "calculatedQuantity": 200,
+  "correctionSum": -300000
+}
+```
 
 ### Изменить позицию 
 Запрос на обновление отдельной позиции Инвентаризации. Для обновления позиции нет каких-либо
  обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
-+ Request Пример (application/json)
-Пример запроса на обновление отдельной позиции в Инвентаризации.
-  + Body
-        <!-- include(body/inventory/positions_put_request.json) -->
 
-+ Response 200 (application/json)
+> Пример запроса на обновление отдельной позиции в Инвентаризации.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/inventory/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "meta": {
+              "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7/positions/201452a2-ad6f-11e6-8a84-bc5200000010",
+              "type": "inventoryposition",
+              "mediaType": "application/json"
+            },
+            "id": "201452a2-ad6f-11e6-8a84-bc5200000010",
+            "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
+            "quantity": 45,
+            "price": 1000,
+            "assortment": {
+              "meta": {
+                "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
+                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                "type": "product",
+                "mediaType": "application/json"
+              }
+            }
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновлённой позиции Инвентаризации.
-  + Body
-        <!-- include(body/inventory/positions_put_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7/positions/201452a2-ad6f-11e6-8a84-bc5200000010",
+    "type": "inventoryposition",
+    "mediaType": "application/json"
+  },
+  "id": "201452a2-ad6f-11e6-8a84-bc5200000010",
+  "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
+  "quantity": 45,
+  "price": 1000,
+  "assortment": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json"
+    }
+  },
+  "correctionAmount": -155,
+  "calculatedQuantity": 200,
+  "correctionSum": -155000
+}
+```
 
 ### Удалить позицию 
-Запрос на удаление отдельной позиции Инвентаризации с указанным id.
+> Запрос на удаление отдельной позиции Инвентаризации с указанным id.
 
-+ Response 200 (application/json)
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/inventory/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешное удаление позиции Инвентаризации.

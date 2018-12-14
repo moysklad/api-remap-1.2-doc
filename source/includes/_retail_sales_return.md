@@ -89,8 +89,144 @@
 
 > Получить Розничные возвраты
 
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn"
+  -H "Authorization: Basic <Access-Token>"
+```
+
 > Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка Розничных возвратов.
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailSalesReturn",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailSalesReturn/metadata",
+    "type": "retailsalesreturn",
+    "mediaType": "application/json",
+    "size": 1,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/a62e39af-0c75-11e6-9464-e4de00000030",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata",
+        "type": "retailsalesreturn",
+        "mediaType": "application/json"
+      },
+      "id": "a62e39af-0c75-11e6-9464-e4de00000030",
+      "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+      "updated": "2016-04-27 15:43:31",
+      "name": "00001",
+      "externalCode": "33YOoIGVhdPXFBr8QNbD50",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "syncId": "eefa141e-0c65-4993-8b16-934905d47dbd",
+      "moment": "2016-04-27 15:43:00",
+      "applicable": true,
+      "vatEnabled": true,
+      "vatIncluded": true,
+      "sum": 14000,
+      "rate": {
+        "currency": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json"
+          }
+        }
+      },
+      "organization": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json"
+        }
+      },
+      "store": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/850ee995-f504-11e5-8a84-bae500000160",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+          "type": "store",
+          "mediaType": "application/json"
+        }
+      },
+      "agent": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/8518d001-f504-11e5-8a84-bae50000016a",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      },
+      "positions": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/a62e39af-0c75-11e6-9464-e4de00000030/positions",
+          "type": "salesreturnposition",
+          "mediaType": "application/json",
+          "size": 3,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "retailStore": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+          "type": "retailstore",
+          "mediaType": "application/json"
+        }
+      },
+      "demand": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/2ef43ba7-0c5a-11e6-9464-e4de0000000c",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+          "type": "retaildemand",
+          "mediaType": "application/json"
+        }
+      },
+      "retailShift": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/9e46db1e-0c75-11e6-9464-e4de0000002b",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+          "type": "retailshift",
+          "mediaType": "application/json"
+        }
+      }
+    }
+  ]
+}
+```
 
 ### Создать Розничный возврат 
 Розничная смена, на которую указывает ссылка при создании Розничного возврата обязательно должна быть активной.
@@ -118,23 +254,870 @@
 
 > Пример создания новой Розничного возврата с телом запроса, содержащим только необходимые поля.
 
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "123142vzvrt",
+            "organization": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/107430bc-36e7-11e7-8a7f-40d000000090",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "type": "organization",
+                "mediaType": "application/json"
+              }
+            },
+            "store": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/1076a96a-36e7-11e7-8a7f-40d000000092",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "type": "store",
+                "mediaType": "application/json"
+              }
+            },
+            "retailStore": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/10a79ac5-36e7-11e7-8a7f-40d00000009f",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+                "type": "retailstore",
+                "mediaType": "application/json"
+              }
+            },
+            "demand": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/700f8635-36f7-11e7-8a7f-40d00000011e",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+                "type": "retaildemand",
+                "mediaType": "application/json"
+              }
+            },
+            "retailShift": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/6fe7b0da-36f7-11e7-8a7f-40d00000011c",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+                "type": "retailshift",
+                "mediaType": "application/json"
+              }
+            }
+          }'  
+```
+
 > Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданного Розничного возврата.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/80a2ea3b-3713-11e7-8a7f-40d000000003",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata",
+    "type": "retailsalesreturn",
+    "mediaType": "application/json"
+  },
+  "id": "80a2ea3b-3713-11e7-8a7f-40d000000003",
+  "accountId": "103bff1b-36e7-11e7-8a7f-40d000000004",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/105a788e-36e7-11e7-8a7f-40d000000069",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/103cca6f-36e7-11e7-8a7f-40d000000005",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2017-05-12 16:04:15",
+  "name": "123142vzvrt",
+  "externalCode": "1-hpzSjAjCxS2dj55ZFeG2",
+  "moment": "2017-05-12 16:04:00",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "sum": 0,
+  "store": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/1076a96a-36e7-11e7-8a7f-40d000000092",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/109e931d-36e7-11e7-8a7f-40d00000009d",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/107430bc-36e7-11e7-8a7f-40d000000090",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "created": "2017-05-12 16:04:15",
+  "positions": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/80a2ea3b-3713-11e7-8a7f-40d000000003/positions",
+      "type": "salesreturnposition",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "vatSum": 0,
+  "demand": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/700f8635-36f7-11e7-8a7f-40d00000011e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+      "type": "retaildemand",
+      "mediaType": "application/json"
+    }
+  },
+  "retailStore": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/10a79ac5-36e7-11e7-8a7f-40d00000009f",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+      "type": "retailstore",
+      "mediaType": "application/json"
+    }
+  },
+  "retailShift": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/6fe7b0da-36f7-11e7-8a7f-40d00000011c",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+      "type": "retailshift",
+      "mediaType": "application/json"
+    }
+  },
+  "cashSum": 0,
+  "noCashSum": 0
+}
+```
 
 > Пример создания нового Розничного возврата с более насыщенным телом запроса.
 
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "123142vzvrt",
+            "description": "Розничный возврат по просьбе покупателя",
+            "code": "303",
+            "externalCode": "2250005aas-cszsz",
+            "moment": "2016-05-06 14:47:47",
+            "vatEnabled": true,
+            "vatIncluded": true,
+            "rate": {
+              "currency": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/ee37a4b0-137a-11e6-9464-e4de000000e4",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+                  "type": "currency",
+                  "mediaType": "application/json"
+                }
+              },
+              "value": 71
+            },
+            "organization": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/30f01af0-137a-11e6-9464-e4de0000004e",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "type": "organization",
+                "mediaType": "application/json"
+              }
+            },
+            "store": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/30fe30a0-137a-11e6-9464-e4de00000050",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "type": "store",
+                "mediaType": "application/json"
+              }
+            },
+            "retailStore": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+                "type": "retailstore",
+                "mediaType": "application/json"
+              }
+            },
+            "demand": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/5fa6624c-1380-11e6-9464-e4de00000205",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+                "type": "retaildemand",
+                "mediaType": "application/json"
+              }
+            },
+            "retailShift": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/5f67a979-1380-11e6-9464-e4de00000203",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+                "type": "retailshift",
+                "mediaType": "application/json"
+              }
+            },
+            "attributes": [
+              {
+                "id": "c72ffba9-1380-11e6-9464-e4de00000232",
+                "value": false
+              },
+              {
+                "id": "c72ff31e-1380-11e6-9464-e4de00000231",
+                "value": "3325-4214-42145-4211"
+              }
+            ]
+          }'  
+```
+
 > Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданного Розничного возврата.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/5d6c0d07-1381-11e6-9464-e4de00000000",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata",
+    "type": "retailsalesreturn",
+    "mediaType": "application/json"
+  },
+  "id": "5d6c0d07-1381-11e6-9464-e4de00000000",
+  "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+  "updated": "2016-05-06 14:55:01",
+  "name": "123142vzvrt",
+  "description": "Розничный возврат по просьбе покупателя",
+  "code": "303",
+  "externalCode": "2250005aas-cszsz",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "moment": "2016-05-06 14:47:47",
+  "applicable": true,
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/ee37a4b0-137a-11e6-9464-e4de000000e4",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    },
+    "value": 71
+  },
+  "sum": 0,
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/30f01af0-137a-11e6-9464-e4de0000004e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "store": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/30fe30a0-137a-11e6-9464-e4de00000050",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/31ace095-137a-11e6-9464-e4de0000005b",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "c72ff31e-1380-11e6-9464-e4de00000231",
+      "name": "Номер карты",
+      "type": "string",
+      "value": "3325-4214-42145-4211"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "c72ffba9-1380-11e6-9464-e4de00000232",
+      "name": "Возврат на карту",
+      "type": "boolean",
+      "value": false
+    }
+  ],
+  "created": "2007-02-07 17:16:41",
+  "positions": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/5d6c0d07-1381-11e6-9464-e4de00000000/positions",
+      "type": "salesreturnposition",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "retailStore": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+      "type": "retailstore",
+      "mediaType": "application/json"
+    }
+  },
+  "demand": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/5fa6624c-1380-11e6-9464-e4de00000205",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+      "type": "retaildemand",
+      "mediaType": "application/json"
+    }
+  },
+  "retailShift": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/5f67a979-1380-11e6-9464-e4de00000203",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+      "type": "retailshift",
+      "mediaType": "application/json"
+    }
+  },
+  "cashSum": 0,
+  "noCashSum": 0
+}
+```
 
 > Пример запроса на создание Розничного возврата с позициями в теле запроса.
 
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "123142vzvrt",
+            "description": "Розничный возврат по просьбе покупателя",
+            "code": "303",
+            "externalCode": "2250005aas-cszsz",
+            "moment": "2016-05-06 14:47:47",
+            "vatEnabled": true,
+            "vatIncluded": true,
+            "rate": {
+              "currency": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/ee37a4b0-137a-11e6-9464-e4de000000e4",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+                  "type": "currency",
+                  "mediaType": "application/json"
+                }
+              },
+              "value": 71
+            },
+            "organization": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/30f01af0-137a-11e6-9464-e4de0000004e",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "type": "organization",
+                "mediaType": "application/json"
+              }
+            },
+            "store": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/30fe30a0-137a-11e6-9464-e4de00000050",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "type": "store",
+                "mediaType": "application/json"
+              }
+            },
+            "retailStore": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+                "type": "retailstore",
+                "mediaType": "application/json"
+              }
+            },
+            "demand": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/5fa6624c-1380-11e6-9464-e4de00000205",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+                "type": "retaildemand",
+                "mediaType": "application/json"
+              }
+            },
+            "retailShift": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/5f67a979-1380-11e6-9464-e4de00000203",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+                "type": "retailshift",
+                "mediaType": "application/json"
+              }
+            },
+            "attributes": [
+              {
+                "id": "c72ffba9-1380-11e6-9464-e4de00000232",
+                "value": false
+              },
+              {
+                "id": "c72ff31e-1380-11e6-9464-e4de00000231",
+                "value": "3325-4214-42145-4211"
+              }
+            ],
+            "positions": [
+              {
+                "quantity": 5,
+                "price": 30000,
+                "discount": 0,
+                "vat": 20,
+                "assortment": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/0805a582-137b-11e6-9464-e4de0000010c",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                    "type": "variant",
+                    "mediaType": "application/json"
+                  }
+                }
+              },
+              {
+                "quantity": 7,
+                "price": 30000,
+                "discount": 0,
+                "vat": 20,
+                "assortment": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/07fe4cad-137b-11e6-9464-e4de000000fd",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                    "type": "variant",
+                    "mediaType": "application/json"
+                  }
+                }
+              }
+            ]
+          }'  
+```
+
 > Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданного Розничного возврата.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata",
+    "type": "retailsalesreturn",
+    "mediaType": "application/json"
+  },
+  "id": "c1ab79f5-1381-11e6-9464-e4de00000005",
+  "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+  "updated": "2016-05-06 14:57:50",
+  "name": "123142vzvrt",
+  "description": "Розничный возврат по просьбе покупателя",
+  "code": "303",
+  "externalCode": "2250005aas-cszsz",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "moment": "2016-05-06 14:47:47",
+  "applicable": true,
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/ee37a4b0-137a-11e6-9464-e4de000000e4",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    },
+    "value": 71
+  },
+  "sum": 360000,
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/30f01af0-137a-11e6-9464-e4de0000004e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "store": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/30fe30a0-137a-11e6-9464-e4de00000050",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/31ace095-137a-11e6-9464-e4de0000005b",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "c72ff31e-1380-11e6-9464-e4de00000231",
+      "name": "Номер карты",
+      "type": "string",
+      "value": "3325-4214-42145-4211"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "c72ffba9-1380-11e6-9464-e4de00000232",
+      "name": "Возврат на карту",
+      "type": "boolean",
+      "value": false
+    }
+  ],
+  "created": "2007-02-07 17:16:41",
+  "positions": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions",
+      "type": "salesreturnposition",
+      "mediaType": "application/json",
+      "size": 2,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "retailStore": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+      "type": "retailstore",
+      "mediaType": "application/json"
+    }
+  },
+  "demand": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/5fa6624c-1380-11e6-9464-e4de00000205",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+      "type": "retaildemand",
+      "mediaType": "application/json"
+    }
+  },
+  "retailShift": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/5f67a979-1380-11e6-9464-e4de00000203",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+      "type": "retailshift",
+      "mediaType": "application/json"
+    }
+  },
+  "cashSum": 360000,
+  "noCashSum": 0
+}
+```
 
 > Пример запроса на создание Розничного возврата без основания.
 
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "123142vzvrt",
+            "description": "Розничный возврат по просьбе покупателя",
+            "code": "303",
+            "externalCode": "2250005aas-cszsz",
+            "moment": "2016-05-06 14:47:47",
+            "vatEnabled": true,
+            "vatIncluded": true,
+            "rate": {
+              "currency": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/ee37a4b0-137a-11e6-9464-e4de000000e4",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+                  "type": "currency",
+                  "mediaType": "application/json"
+                }
+              },
+              "value": 71
+            },
+            "organization": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/30f01af0-137a-11e6-9464-e4de0000004e",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "type": "organization",
+                "mediaType": "application/json"
+              }
+            },
+            "store": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/30fe30a0-137a-11e6-9464-e4de00000050",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "type": "store",
+                "mediaType": "application/json"
+              }
+            },
+            "retailStore": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+                "type": "retailstore",
+                "mediaType": "application/json"
+              }
+            },
+            "retailShift": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/5f67a979-1380-11e6-9464-e4de00000203",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+                "type": "retailshift",
+                "mediaType": "application/json"
+              }
+            },
+            "attributes": [
+              {
+                "id": "c72ffba9-1380-11e6-9464-e4de00000232",
+                "value": false
+              },
+              {
+                "id": "c72ff31e-1380-11e6-9464-e4de00000231",
+                "value": "3325-4214-42145-4211"
+              }
+            ],
+            "positions": [
+              {
+                "quantity": 5,
+                "price": 30000,
+                "discount": 0,
+                "vat": 20,
+                "cost": 2500,
+                "assortment": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/0805a582-137b-11e6-9464-e4de0000010c",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                    "type": "variant",
+                    "mediaType": "application/json"
+                  }
+                }
+              },
+              {
+                "quantity": 7,
+                "price": 30000,
+                "discount": 0,
+                "vat": 20,
+                "cost": 3000,
+                "assortment": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/07fe4cad-137b-11e6-9464-e4de000000fd",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                    "type": "variant",
+                    "mediaType": "application/json"
+                  }
+                }
+              }
+            ],
+            "cashSum": 300000,
+            "noCashSum": 60000
+          }'  
+```
+
 > Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданного Розничного возврата.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata",
+    "type": "retailsalesreturn",
+    "mediaType": "application/json"
+  },
+  "id": "c1ab79f5-1381-11e6-9464-e4de00000005",
+  "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+  "updated": "2016-05-06 14:57:50",
+  "name": "123142vzvrt",
+  "description": "Розничный возврат по просьбе покупателя",
+  "code": "303",
+  "externalCode": "2250005aas-cszsz",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "moment": "2016-05-06 14:47:47",
+  "applicable": true,
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/ee37a4b0-137a-11e6-9464-e4de000000e4",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    },
+    "value": 71
+  },
+  "sum": 360000,
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/30f01af0-137a-11e6-9464-e4de0000004e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "store": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/30fe30a0-137a-11e6-9464-e4de00000050",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/31ace095-137a-11e6-9464-e4de0000005b",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "c72ff31e-1380-11e6-9464-e4de00000231",
+      "name": "Номер карты",
+      "type": "string",
+      "value": "3325-4214-42145-4211"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "c72ffba9-1380-11e6-9464-e4de00000232",
+      "name": "Возврат на карту",
+      "type": "boolean",
+      "value": false
+    }
+  ],
+  "created": "2007-02-07 17:16:41",
+  "positions": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions",
+      "type": "salesreturnposition",
+      "mediaType": "application/json",
+      "size": 2,
+      "limit": 100,
+      "offset": 0
+    }
+  },
+  "retailStore": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+      "type": "retailstore",
+      "mediaType": "application/json"
+    }
+  },
+  "retailShift": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/5f67a979-1380-11e6-9464-e4de00000203",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+      "type": "retailshift",
+      "mediaType": "application/json"
+    }
+  },
+  "cashSum": 300000,
+  "noCashSum": 60000
+}
+```
 
 ### Массовое создание и обновление Розничных возвратов 
 [Массовое создание и обновление](/api/remap/1.2/doc/index.html#header-создание-и-обновление-нескольких-объектов) Розничных возвратов.
@@ -143,8 +1126,375 @@
 
 > Пример создания и обновления нескольких Розничных возвратов
 
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "name": "123142vzvrt",
+              "organization": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/107430bc-36e7-11e7-8a7f-40d000000090",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                  "type": "organization",
+                  "mediaType": "application/json"
+                }
+              },
+              "store": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/1076a96a-36e7-11e7-8a7f-40d000000092",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                  "type": "store",
+                  "mediaType": "application/json"
+                }
+              },
+              "retailStore": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/10a79ac5-36e7-11e7-8a7f-40d00000009f",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+                  "type": "retailstore",
+                  "mediaType": "application/json"
+                }
+              },
+              "demand": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/700f8635-36f7-11e7-8a7f-40d00000011e",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+                  "type": "retaildemand",
+                  "mediaType": "application/json"
+                }
+              },
+              "retailShift": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/6fe7b0da-36f7-11e7-8a7f-40d00000011c",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+                  "type": "retailshift",
+                  "mediaType": "application/json"
+                }
+              }
+            },
+            {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata",
+                "type": "retailsalesreturn",
+                "mediaType": "application/json"
+              },
+              "vatEnabled": false,
+              "vatIncluded": false,
+              "name": "newName",
+              "code": "3033",
+              "positions": [
+                {
+                  "quantity": 6,
+                  "price": 30000,
+                  "discount": 0,
+                  "vat": 20,
+                  "assortment": {
+                    "meta": {
+                      "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/07f8fb39-137b-11e6-9464-e4de000000f3",
+                      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                      "type": "variant",
+                      "mediaType": "application/json"
+                    }
+                  },
+                  "cost": 250
+                },
+                {
+                  "quantity": 2,
+                  "price": 20000,
+                  "discount": 0,
+                  "vat": 0,
+                  "assortment": {
+                    "meta": {
+                      "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/27a803bd-137b-11e6-9464-e4de0000013a",
+                      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                      "type": "product",
+                      "mediaType": "application/json"
+                    }
+                  },
+                  "cost": 370
+                },
+                {
+                  "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+                  "quantity": 4,
+                  "price": 40000,
+                  "discount": 0,
+                  "vat": 0,
+                  "assortment": {
+                    "meta": {
+                      "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
+                      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                      "type": "variant",
+                      "mediaType": "application/json"
+                    }
+                  },
+                  "cost": 490
+                },
+                {
+                  "quantity": 4,
+                  "price": 40000,
+                  "discount": 0,
+                  "vat": 0,
+                  "assortment": {
+                    "meta": {
+                      "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609c2418-137b-11e6-9464-e4de00000174",
+                      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                      "type": "variant",
+                      "mediaType": "application/json"
+                    }
+                  },
+                  "cost": 510
+                }
+              ]
+            }
+          ]'  
+```
+
 > Response 200 (application/json)
 Успешный запрос. Результат - массив JSON представлений созданных и обновленных Розничных возвратов.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/80a2ea3b-3713-11e7-8a7f-40d000000003",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata",
+      "type": "retailsalesreturn",
+      "mediaType": "application/json"
+    },
+    "id": "80a2ea3b-3713-11e7-8a7f-40d000000003",
+    "accountId": "103bff1b-36e7-11e7-8a7f-40d000000004",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/105a788e-36e7-11e7-8a7f-40d000000069",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/103cca6f-36e7-11e7-8a7f-40d000000005",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2017-05-12 16:04:15",
+    "name": "123142vzvrt",
+    "externalCode": "1-hpzSjAjCxS2dj55ZFeG2",
+    "moment": "2017-05-12 16:04:00",
+    "applicable": true,
+    "rate": {
+      "currency": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "sum": 0,
+    "store": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/1076a96a-36e7-11e7-8a7f-40d000000092",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+        "type": "store",
+        "mediaType": "application/json"
+      }
+    },
+    "agent": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/109e931d-36e7-11e7-8a7f-40d00000009d",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json"
+      }
+    },
+    "organization": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/107430bc-36e7-11e7-8a7f-40d000000090",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json"
+      }
+    },
+    "created": "2017-05-12 16:04:15",
+    "positions": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/80a2ea3b-3713-11e7-8a7f-40d000000003/positions",
+        "type": "salesreturnposition",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
+    "vatEnabled": true,
+    "vatIncluded": true,
+    "vatSum": 0,
+    "demand": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/700f8635-36f7-11e7-8a7f-40d00000011e",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+        "type": "retaildemand",
+        "mediaType": "application/json"
+      }
+    },
+    "retailStore": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/10a79ac5-36e7-11e7-8a7f-40d00000009f",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+        "type": "retailstore",
+        "mediaType": "application/json"
+      }
+    },
+    "retailShift": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/6fe7b0da-36f7-11e7-8a7f-40d00000011c",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+        "type": "retailshift",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata",
+      "type": "retailsalesreturn",
+      "mediaType": "application/json"
+    },
+    "id": "c1ab79f5-1381-11e6-9464-e4de00000005",
+    "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+    "updated": "2016-05-06 15:02:27",
+    "name": "newName",
+    "description": "Розничный возврат по просьбе покупателя",
+    "code": "3033",
+    "externalCode": "2250005aas-cszsz",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "moment": "2016-05-06 14:47:47",
+    "applicable": true,
+    "vatEnabled": false,
+    "rate": {
+      "currency": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/ee37a4b0-137a-11e6-9464-e4de000000e4",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json"
+        }
+      },
+      "value": 71
+    },
+    "sum": 540000,
+    "organization": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/30f01af0-137a-11e6-9464-e4de0000004e",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json"
+      }
+    },
+    "store": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/30fe30a0-137a-11e6-9464-e4de00000050",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+        "type": "store",
+        "mediaType": "application/json"
+      }
+    },
+    "agent": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/31ace095-137a-11e6-9464-e4de0000005b",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json"
+      }
+    },
+    "attributes": [
+      {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+        },
+        "id": "c72ff31e-1380-11e6-9464-e4de00000231",
+        "name": "Номер карты",
+        "type": "string",
+        "value": "3325-4214-42145-4211"
+      },
+      {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+        },
+        "id": "c72ffba9-1380-11e6-9464-e4de00000232",
+        "name": "Возврат на карту",
+        "type": "boolean",
+        "value": false
+      }
+    ],
+    "created": "2007-02-07 17:16:41",
+    "positions": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions",
+        "type": "salesreturnposition",
+        "mediaType": "application/json",
+        "size": 4,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
+    "retailStore": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+        "type": "retailstore",
+        "mediaType": "application/json"
+      }
+    },
+    "demand": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/5fa6624c-1380-11e6-9464-e4de00000205",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+        "type": "retaildemand",
+        "mediaType": "application/json"
+      }
+    },
+    "retailShift": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/5f67a979-1380-11e6-9464-e4de00000203",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+        "type": "retailshift",
+        "mediaType": "application/json"
+      }
+    }
+  }
+]
+```
 
 ### Удалить Розничный возврат
 
@@ -155,6 +1505,12 @@
 |   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Розничного возврата|
  
 > Запрос на удаление Розничного возврата с указанным id.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
 
 > Response 200 (application/json)
 Успешное удаление Розничного возврата.
@@ -171,8 +1527,131 @@
 
 > Метаданные Розничных возвратов
 
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata"
+  -H "Authorization: Basic <Access-Token>"
+```
+
 > Response 200 (application/json)
 Успешный запрос. Результат - JSON представление доп. полей Розничных возвратов.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata",
+    "mediaType": "application/json"
+  },
+  "attributes": [
+    {
+      "id": "c72ff31e-1380-11e6-9464-e4de00000231",
+      "name": "Номер карты",
+      "type": "string",
+      "required": false
+    },
+    {
+      "id": "c72ffba9-1380-11e6-9464-e4de00000232",
+      "name": "Возврат на карту",
+      "type": "boolean",
+      "required": false
+    }
+  ],
+  "states": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "fb56c504-2e58-11e6-8a84-bae500000069",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "name": "Новый",
+      "color": 15106326,
+      "stateType": "Regular",
+      "entityType": "retailsalesreturn"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/states/fb56cae3-2e58-11e6-8a84-bae50000006a",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "fb56cae3-2e58-11e6-8a84-bae50000006a",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "name": "Подтвержден",
+      "color": 40931,
+      "stateType": "Regular",
+      "entityType": "retailsalesreturn"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/states/fb56cf4f-2e58-11e6-8a84-bae50000006b",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "fb56cf4f-2e58-11e6-8a84-bae50000006b",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "name": "Собран",
+      "color": 8767198,
+      "stateType": "Regular",
+      "entityType": "retailsalesreturn"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/states/fb56d433-2e58-11e6-8a84-bae50000006c",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "fb56d433-2e58-11e6-8a84-bae50000006c",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "name": "Отгружен",
+      "color": 10774205,
+      "stateType": "Regular",
+      "entityType": "retailsalesreturn"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/states/fb56d92f-2e58-11e6-8a84-bae50000006d",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "fb56d92f-2e58-11e6-8a84-bae50000006d",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "name": "Доставлен",
+      "color": 8825440,
+      "stateType": "Successful",
+      "entityType": "retailsalesreturn"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/states/fb56de0a-2e58-11e6-8a84-bae50000006e",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "fb56de0a-2e58-11e6-8a84-bae50000006e",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "name": "Возврат",
+      "color": 15280409,
+      "stateType": "Unsuccessful",
+      "entityType": "retailsalesreturn"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/states/fb56e2b4-2e58-11e6-8a84-bae50000006f",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "fb56e2b4-2e58-11e6-8a84-bae50000006f",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "name": "Отменен",
+      "color": 15280409,
+      "stateType": "Unsuccessful",
+      "entityType": "retailsalesreturn"
+    }
+  ],
+  "createShared": false
+}
+```
 
 ### Отдельное доп. поле
 
@@ -185,8 +1664,28 @@
 #### Отдельное доп. поле 
 > Запрос на получение информации по отдельному дополнительному полю.
 
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
 > Response 200 (application/json)
 Успешный запрос. Результат - JSON представление отдельного доп. поля.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/9b0c8d28-558c-11e6-8a84-bae50000008a",
+    "type": "attributemetadata",
+    "mediaType": "application/json"
+  },
+  "id": "9b0c8d28-558c-11e6-8a84-bae50000008a",
+  "name": "Дата возвращённого документа",
+  "type": "time",
+  "required": false
+}
+```
 
 ### Шаблон розничного возврата 
 #### Шаблон розничного возврата на основе 
@@ -201,13 +1700,235 @@
 
 > Пример запроса на создание шаблона розничного возврата на основе смены.
 
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/new"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "retailShift": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/ed8de012-479b-11e8-7ae5-8ba2000000ce",
+                "type": "retailshift",
+                "mediaType": "application/json"
+              }
+            }
+          }'  
+```
+
 > Response 200 (application/json)
 Успешный запрос. Результат - JSON представление предзаполненного розничного возврата.
+
+```json
+{
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/e346e355-2780-11e8-0532-9eed0000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=e346e355-2780-11e8-0532-9eed0000002a"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/e29e01d3-2780-11e8-0532-9eed00000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "name": "",
+  "moment": "2018-05-08 13:00:00",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/e37f9321-2780-11e8-0532-9eed00000058",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=e37f9321-2780-11e8-0532-9eed00000058"
+      }
+    }
+  },
+  "sum": 0,
+  "store": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/e37edd82-2780-11e8-0532-9eed00000053",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=e37edd82-2780-11e8-0532-9eed00000053"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/030a5127-3663-11e8-56c0-000800000000",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=030a5127-3663-11e8-56c0-000800000000"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/e37a6d1c-2780-11e8-0532-9eed00000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=e37a6d1c-2780-11e8-0532-9eed00000051"
+    }
+  },
+  "documents": {
+    "rows": []
+  },
+  "positions": {
+    "rows": []
+  },
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "retailShift": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/ed8de012-479b-11e8-7ae5-8ba2000000ce",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+      "type": "retailshift",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#retailshift/edit?id=ed8de012-479b-11e8-7ae5-8ba2000000ce"
+    }
+  }
+}
+```
 
 > Пример запроса на создание шаблона розничного возврата на основе розничной продажи.
 
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/new"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "demand": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/e806748e-9639-41da-8f2e-5e197312eac2",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+                "type": "retaildemand",
+                "mediaType": "application/json"
+              }
+            }
+          }'  
+```
+
 > Response 200 (application/json)
 Успешный запрос. Результат - JSON представление предзаполненного розничного возврата.
+
+```json
+{
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/e346e355-2780-11e8-0532-9eed0000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=e346e355-2780-11e8-0532-9eed0000002a"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/e29e01d3-2780-11e8-0532-9eed00000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "name": "",
+  "moment": "2018-05-08 13:00:00",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/e37f9321-2780-11e8-0532-9eed00000058",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=e37f9321-2780-11e8-0532-9eed00000058"
+      }
+    }
+  },
+  "sum": 0,
+  "store": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/e37edd82-2780-11e8-0532-9eed00000053",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=e37edd82-2780-11e8-0532-9eed00000053"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/030a5127-3663-11e8-56c0-000800000000",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=030a5127-3663-11e8-56c0-000800000000"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/e37a6d1c-2780-11e8-0532-9eed00000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=e37a6d1c-2780-11e8-0532-9eed00000051"
+    }
+  },
+  "documents": {
+    "rows": []
+  },
+  "positions": {
+    "rows": [
+      {
+        "quantity": 1,
+        "price": 16000,
+        "discount": 10,
+        "vat": 0,
+        "assortment": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/03216395-3663-11e8-56c0-000800000004",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+            "type": "product",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=03201fa1-3663-11e8-56c0-000800000002"
+          }
+        }
+      }
+    ]
+  },
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "demand": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/e806748e-9639-41da-8f2e-5e197312eac2",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+      "type": "retaildemand",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#retaildemand/edit?id=e806748e-9639-41da-8f2e-5e197312eac2"
+    }
+  },
+  "retailShift": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/ed8de012-479b-11e8-7ae5-8ba2000000ce",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+      "type": "retailshift",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#retailshift/edit?id=ed8de012-479b-11e8-7ae5-8ba2000000ce"
+    }
+  }
+}
+```
 
 ### Розничный возврат
 
@@ -220,8 +1941,121 @@
 ### Получить Розничный возврат 
 > Запрос на получение отдельного Розничного возврата с указанным id.
 
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
 > Response 200 (application/json)
 Успешный запрос. Результат - JSON представление Розничного возврата с указанным id.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/a62e39af-0c75-11e6-9464-e4de00000030",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata",
+    "type": "retailsalesreturn",
+    "mediaType": "application/json"
+  },
+  "id": "a62e39af-0c75-11e6-9464-e4de00000030",
+  "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+  "updated": "2016-04-27 15:43:31",
+  "name": "00001",
+  "externalCode": "33YOoIGVhdPXFBr8QNbD50",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "syncId": "eefa141e-0c65-4993-8b16-934905d47dbd",
+  "moment": "2016-04-27 15:43:00",
+  "applicable": true,
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "sum": 14000,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "store": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/850ee995-f504-11e5-8a84-bae500000160",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/8518d001-f504-11e5-8a84-bae50000016a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "positions": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/a62e39af-0c75-11e6-9464-e4de00000030/positions",
+      "type": "salesreturnposition",
+      "mediaType": "application/json",
+      "size": 3,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "retailStore": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+      "type": "retailstore",
+      "mediaType": "application/json"
+    }
+  },
+  "demand": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/2ef43ba7-0c5a-11e6-9464-e4de0000000c",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+      "type": "retaildemand",
+      "mediaType": "application/json"
+    }
+  },
+  "retailShift": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/9e46db1e-0c75-11e6-9464-e4de0000002b",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+      "type": "retailshift",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
 
 ### Изменить Розничный возврат 
 Запрос на обновление Розничного возврата с указанным id.
@@ -238,8 +2072,218 @@
 
 > Пример запроса на обновление Розничного возврата.
 
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "vatEnabled": false,
+            "vatIncluded": false,
+            "name": "newName",
+            "code": "3033",
+            "positions": [
+              {
+                "quantity": 6,
+                "price": 30000,
+                "discount": 0,
+                "vat": 20,
+                "assortment": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/07f8fb39-137b-11e6-9464-e4de000000f3",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                    "type": "variant",
+                    "mediaType": "application/json"
+                  }
+                },
+                "cost": 250
+              },
+              {
+                "quantity": 2,
+                "price": 20000,
+                "discount": 0,
+                "vat": 0,
+                "assortment": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/27a803bd-137b-11e6-9464-e4de0000013a",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                    "type": "product",
+                    "mediaType": "application/json"
+                  }
+                },
+                "cost": 370
+              },
+              {
+                "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+                "quantity": 4,
+                "price": 40000,
+                "discount": 0,
+                "vat": 0,
+                "assortment": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                    "type": "variant",
+                    "mediaType": "application/json"
+                  }
+                },
+                "cost": 490
+              },
+              {
+                "quantity": 4,
+                "price": 40000,
+                "discount": 0,
+                "vat": 0,
+                "assortment": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609c2418-137b-11e6-9464-e4de00000174",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                    "type": "variant",
+                    "mediaType": "application/json"
+                  }
+                },
+                "cost": 510
+              }
+            ]
+          }'  
+```
+
 > Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновлённого Розничного возврата.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata",
+    "type": "retailsalesreturn",
+    "mediaType": "application/json"
+  },
+  "id": "c1ab79f5-1381-11e6-9464-e4de00000005",
+  "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+  "updated": "2016-05-06 15:02:27",
+  "name": "newName",
+  "description": "Розничный возврат по просьбе покупателя",
+  "code": "3033",
+  "externalCode": "2250005aas-cszsz",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "moment": "2016-05-06 14:47:47",
+  "applicable": true,
+  "vatEnabled": false,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/ee37a4b0-137a-11e6-9464-e4de000000e4",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    },
+    "value": 71
+  },
+  "sum": 540000,
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/30f01af0-137a-11e6-9464-e4de0000004e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "store": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/30fe30a0-137a-11e6-9464-e4de00000050",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/31ace095-137a-11e6-9464-e4de0000005b",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "c72ff31e-1380-11e6-9464-e4de00000231",
+      "name": "Номер карты",
+      "type": "string",
+      "value": "3325-4214-42145-4211"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "c72ffba9-1380-11e6-9464-e4de00000232",
+      "name": "Возврат на карту",
+      "type": "boolean",
+      "value": false
+    }
+  ],
+  "created": "2007-02-07 17:16:41",
+  "positions": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions",
+      "type": "salesreturnposition",
+      "mediaType": "application/json",
+      "size": 4,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "retailStore": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+      "type": "retailstore",
+      "mediaType": "application/json"
+    }
+  },
+  "demand": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/5fa6624c-1380-11e6-9464-e4de00000205",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+      "type": "retaildemand",
+      "mediaType": "application/json"
+    }
+  },
+  "retailShift": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/5f67a979-1380-11e6-9464-e4de00000203",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+      "type": "retailshift",
+      "mediaType": "application/json"
+    }
+  }
+}
+
+```
  
 ### Позиции Розничного возврата 
 Отдельный ресурс для управления позициями Розничного возврата. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 100. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](/api/remap/1.2/doc/index.html#header-работа-с-позициями-документов).
@@ -265,8 +2309,127 @@
 
 > Получить Позиции 
 
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions"
+  -H "Authorization: Basic <Access-Token>"
+```
+
 > Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка позиций Розничного возврата.
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions",
+    "type": "salesreturnposition",
+    "mediaType": "application/json",
+    "size": 4,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/6702da17-1382-11e6-9464-e4de0000000e",
+        "type": "salesreturnposition",
+        "mediaType": "application/json"
+      },
+      "id": "6702da17-1382-11e6-9464-e4de0000000e",
+      "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+      "quantity": 6,
+      "price": 30000,
+      "discount": 0,
+      "vat": 0,
+      "assortment": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/07f8fb39-137b-11e6-9464-e4de000000f3",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+          "type": "variant",
+          "mediaType": "application/json"
+        }
+      },
+      "cost": 25
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/6702ecc7-1382-11e6-9464-e4de0000000f",
+        "type": "salesreturnposition",
+        "mediaType": "application/json"
+      },
+      "id": "6702ecc7-1382-11e6-9464-e4de0000000f",
+      "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+      "quantity": 2,
+      "price": 20000,
+      "discount": 0,
+      "vat": 0,
+      "assortment": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/27a803bd-137b-11e6-9464-e4de0000013a",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      },
+      "cost": 37
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/6703f8ae-1382-11e6-9464-e4de00000010",
+        "type": "salesreturnposition",
+        "mediaType": "application/json"
+      },
+      "id": "6703f8ae-1382-11e6-9464-e4de00000010",
+      "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+      "quantity": 4,
+      "price": 40000,
+      "discount": 0,
+      "vat": 0,
+      "assortment": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+          "type": "variant",
+          "mediaType": "application/json"
+        }
+      },
+      "cost": 49
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/67040794-1382-11e6-9464-e4de00000011",
+        "type": "salesreturnposition",
+        "mediaType": "application/json"
+      },
+      "id": "67040794-1382-11e6-9464-e4de00000011",
+      "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+      "quantity": 4,
+      "price": 40000,
+      "discount": 0,
+      "vat": 0,
+      "assortment": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609c2418-137b-11e6-9464-e4de00000174",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+          "type": "variant",
+          "mediaType": "application/json"
+        }
+      },
+      "cost": 51
+    }
+  ]
+}
+```
 
 ### Создать Позицию 
 Запрос на создание новой позиции в Розничном возврате.
@@ -282,8 +2445,134 @@
 
 > Пример запроса на создание позиций в Розничном возврате.
 
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "quantity": 103,
+              "price": 999,
+              "discount": 0,
+              "vat": 0,
+              "assortment": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                  "type": "variant",
+                  "mediaType": "application/json"
+                }
+              },
+              "cost": 25
+            },
+            {
+              "quantity": 21,
+              "price": 100,
+              "discount": 0,
+              "vat": 21,
+              "assortment": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/07f8fb39-137b-11e6-9464-e4de000000f3",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                  "type": "variant",
+                  "mediaType": "application/json"
+                }
+              },
+              "cost": 37
+            },
+            {
+              "quantity": 3,
+              "price": 35300,
+              "discount": 0,
+              "vat": 7,
+              "assortment": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                  "type": "variant",
+                  "mediaType": "application/json"
+                }
+              },
+              "cost": 49
+            }
+          ]
+'  
+```
+
 > Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданных позиций.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/13982b01-138a-11e6-9464-e4de00000018",
+      "type": "salesreturnposition",
+      "mediaType": "application/json"
+    },
+    "id": "13982b01-138a-11e6-9464-e4de00000018",
+    "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+    "quantity": 103,
+    "price": 999,
+    "discount": 0,
+    "vat": 0,
+    "variant": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+        "type": "variant",
+        "mediaType": "application/json"
+      }
+    },
+    "cost": 25
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/13998a65-138a-11e6-9464-e4de00000019",
+      "type": "salesreturnposition",
+      "mediaType": "application/json"
+    },
+    "id": "13998a65-138a-11e6-9464-e4de00000019",
+    "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+    "quantity": 21,
+    "price": 100,
+    "discount": 0,
+    "vat": 0,
+    "variant": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/07f8fb39-137b-11e6-9464-e4de000000f3",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+        "type": "variant",
+        "mediaType": "application/json"
+      }
+    },
+    "cost": 37
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/13999856-138a-11e6-9464-e4de0000001a",
+      "type": "salesreturnposition",
+      "mediaType": "application/json"
+    },
+    "id": "13999856-138a-11e6-9464-e4de0000001a",
+    "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+    "quantity": 3,
+    "price": 35300,
+    "discount": 0,
+    "vat": 0,
+    "variant": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+        "type": "variant",
+        "mediaType": "application/json"
+      }
+    },
+    "cost": 49
+  }
+]
+```
 
 ### Позиция Розничного возврата
 
@@ -297,8 +2586,39 @@
 ### Получить Позицию 
 > Запрос на получение отдельной позиции Розничного возврата с указанным id.
 
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
+  -H "Authorization: Basic <Access-Token>"
+```
+
 > Response 200 (application/json)
 Успешный запрос. Результат - JSON представление отдельной позиции Розничного возврата.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/13982b01-138a-11e6-9464-e4de00000018",
+    "type": "salesreturnposition",
+    "mediaType": "application/json"
+  },
+  "id": "13982b01-138a-11e6-9464-e4de00000018",
+  "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+  "quantity": 103,
+  "price": 999,
+  "discount": 0,
+  "vat": 0,
+  "assortment": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+      "type": "variant",
+      "mediaType": "application/json"
+    }
+  },
+  "cost": 25
+}
+```
         
 ### Изменить Позицию 
 Запрос на обновление отдельной позиции Розничного возврата.
@@ -307,11 +2627,57 @@
 
 > Пример запроса на обновление отдельной позиции в Розничном возврате.
 
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "quantity": 10,
+            "price": 3000,
+            "discount": 15,
+            "vat": 10,
+            "cost": 250
+          }'  
+```
+
 > Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновлённой позиции Розничного возврата.
 
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/13982b01-138a-11e6-9464-e4de00000018",
+    "type": "salesreturnposition",
+    "mediaType": "application/json"
+  },
+  "id": "13982b01-138a-11e6-9464-e4de00000018",
+  "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+  "quantity": 10,
+  "price": 3000,
+  "discount": 15,
+  "vat": 0,
+  "assortment": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+      "type": "variant",
+      "mediaType": "application/json"
+    }
+  },
+  "cost": 250
+}
+
+```
+
 ### Удалить позицию 
 > Запрос на удаление отдельной позиции Розничного возврата с указанным id.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
+  -H "Authorization: Basic <Access-Token>"
+```
 
 > Response 200 (application/json)
 Успешное удаление позиции Розничного возврата.
