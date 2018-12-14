@@ -42,13 +42,27 @@
 
 ### Получить Валюты
 
-> Запрос на получение списка всех валют на данной учётной записи.
-
 Результат успешного запроса - JSON представление списка валют с перечисленными полями:
+
+| Поле                | Описание  |
+| ------------------------------ |:---------------------------|
+| meta| [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о выдаче|
+| context| [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос|
+| rows| Массив JSON объектов, представляющих собой [валюты](#валюта-валюты)|
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+
+
+> Запрос на получение списка всех валют на данной учётной записи.
 
 ```shell
 curl -X GET 
-  "https://online.moysklad.ru/api/remap/1.2/entity/currency"
+  "https://online.moysklad.ru/api/remap/1.2/entity/currency/"
   -H "Authorization: Basic <Access-Token>"
 ```
 
@@ -147,12 +161,6 @@ curl -X GET
 }
 ```
 
-| Поле                | Описание  |
-| ------------------------------ |:---------------------------|
-| meta| [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о выдаче|
-| context| [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос|
-| rows| Массив JSON объектов, представляющих собой [валюты](#валюта-валюты)|
-
 ### Создать новую Валюту
 
 Обязательные поля для создание валюты: **name**, **code** и **isoCode**.
@@ -162,7 +170,7 @@ curl -X GET
 
 ```shell
 curl -X POST 
-  https://online.moysklad.ru/api/remap/1.2/entity/currency 
+  https://online.moysklad.ru/api/remap/1.2/entity/currency/
   -H "Authorization: Basic <Access-Token>"
   -H 'Content-Type: application/json' 
   -d '{
@@ -214,10 +222,10 @@ curl -X POST
 > Массовое создание и обновление Валют
 
 ```shell
-curl -X POST \
-  https://online.moysklad.ru/api/remap/1.2/entity/currency \
+curl -X POST
+  https://online.moysklad.ru/api/remap/1.2/entity/currency/
   -H "Authorization: Basic <Access-Token>"
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
   -d '[
   {
     "name": "доллар",
@@ -322,11 +330,17 @@ curl -X DELETE
 ### Валюта
 #### Получить Валюту
 
+**Параметры**
+
+Параметр | Описание
+-------- | --------
+id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Валюты|
+
 > Получить Валюту
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055"
+  "https://online.moysklad.ru/api/remap/1.2/entity/currency/7944ef04-f831-11e5-7a69-971500188b19"
   -H "Authorization: Basic <Access-Token>"
 ```
 
@@ -376,11 +390,17 @@ curl -X GET
 Нельзя изменять значения полей **name**, **fullName**, **code**, **isoCode**, **majorUnit**, **minorUnit**
 для валют, основанных на системном справочнике валют. Нельзя изменять курс валюты учета. Нельзя изменить курс валюты с автоматическим обновлением.
 
+**Параметры**
+
+Параметр | Описание
+-------- | --------
+id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Валюты|
+
 > Изменить Валюту
 
 ```shell
 curl -X PUT
-  "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055"
+  "https://online.moysklad.ru/api/remap/1.2/entity/currency/7944ef04-f831-11e5-7a69-971500188b19"
   -H "Authorization: Basic <Access-Token>"
   -d '{
   "name": "долл",
