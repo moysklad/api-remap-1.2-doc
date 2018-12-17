@@ -35,7 +35,7 @@
 
 |Параметр   |Описание   | 
 |---|---|
-|   entityType|   `counterparty` (required, string) - тип сущности|
+|entityType|  `string` (required) *Example: counterparty* тип сущности.|
 
 > Получить метаданные и в том числе статусы
 
@@ -113,7 +113,7 @@ curl -X GET
 
 |Параметр   |Описание   | 
 |---|---|
-|   entityType|   `counterparty` (required, string) - тип сущности|
+|entityType|  `string` (required) *Example: counterparty* тип сущности.|
 
 > Создание одного статуса.
 
@@ -162,8 +162,8 @@ curl -X GET
 
 |Параметр   |Описание   | 
 |---|---|
-|   entityType|   `counterparty` (required, string) - тип сущности|
-|   id|   `4dcb3f23-60c4-11e7-6adb-ede500000019` (required, string) - id Статуса|
+|entityType|  `string` (required) *Example: counterparty* тип сущности.|
+|id |  `string` (required) *Example: 4dcb3f23-60c4-11e7-6adb-ede500000019* id Статуса.|
 
 > Обновление статуса.
 
@@ -272,8 +272,8 @@ curl -X GET
 
 |Параметр   |Описание   | 
 |---|---|
-|   entityType|   `counterparty` (required, string) - тип сущности|
-|   id|   `4dcb3f23-60c4-11e7-6adb-ede500000019` (required, string) - id Статуса|
+|entityType|  `string` (required) *Example: counterparty* тип сущности.|
+|id |  `string` (required) *Example: 4dcb3f23-60c4-11e7-6adb-ede500000019* id Статуса.|
 
 > Запрос на удаление Статуса с указанным id.
 

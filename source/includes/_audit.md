@@ -144,7 +144,7 @@ curl -X GET
 
 |Параметр   |Описание   | 
 |---|---|
-|   filter|   `filter=entityType=customerorder` (required, string) - фильтр по типу сущности|
+|filter |  `string` (optional) *Example: filter=entityType=customerorder* фильтр по типу сущности|
 
 Пример запроса с фильтрацией контекстов по типу "заказ покупателя"
 https://online.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder
@@ -285,7 +285,7 @@ curl -X GET
 
 |Параметр   |Описание   | 
 |---|---|
-|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Контекста|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Контекста.|
 
 > Получить События по Контексту
 
@@ -363,8 +363,8 @@ curl -X GET
 
 |Параметр   |Описание   | 
 |---|---|
-|   type|   `product` (required, string) - тип сущности|
-|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id сущности|
+|type|  `string` (required) *Example: product* тип сущности.|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id сущности.|
 
 > Получить События по Сущности
 

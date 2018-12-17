@@ -10,14 +10,14 @@
 
 #### Печать документа 
 
+### Запрос на печать
+
 **Параметры**
 
 |Параметр   |Описание   | 
 |---|---|
-|   type|   `demand` (required, string) - тип сущности, для которой запрашивается печать|
-|   id|   `a86708d2-f8d3-4e67-8f04-6101158da808` (required, string) - id сущности, для которой запрашивается печать|
-
-### Запрос на печать 
+|type|  `string` (required) *Example: demand* тип сущности, для которой запрашивается печать.|
+|id |  `string` (required) *Example: a86708d2-f8d3-4e67-8f04-6101158da808* id сущности, для которой запрашивается печать.|
 
 Запрос на печать отдельного документа по шаблону печатной формы.
 #### Атрибуты запроса
@@ -52,7 +52,6 @@
 + Счёт-фактура выданный
 + Любой пользовательский шаблон для вышеперечисленных сущностей.
 
-
 > Пример запроса на печать отдельного документа по шаблону печатной формы.
 
 ```shell
@@ -75,22 +74,22 @@
 > Response 202 Headers
 
 ```json
-Location: ссылка на статус печати
-Content-Type: application/json
+  Location: ссылка на статус печати
+  Content-Type: application/json
 ```
 
 > Response 303 Headers
 
 ```json
-Location: ссылка на файл
-Content-Type: application/json
+  Location: ссылка на файл
+  Content-Type: application/json
 ```
 
 > Пример запроса на печать комплекта документов. В результате запроса будет напечатан комплект в сумме из 6 печатных форм.
 
 ```shell
   curl -X POST
-    ""
+    "https://online.moysklad.ru/api/remap/1.2/entity/demand/a86708d2-f8d3-4e67-8f04-6101158da808/export/"
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
       -d '{

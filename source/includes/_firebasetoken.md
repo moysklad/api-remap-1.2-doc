@@ -8,8 +8,7 @@
 
 |Параметр   |Описание   | 
 |---|---|
-|   deviceType|   `ios` (required, string) - Тип устройства. Строка из множества {'android', 'ios', 'browser'}|
-|   |   |
+|deviceType|  `string` (required) *Example: ios* - Тип устройства. Строка из множества {'android', 'ios', 'browser'}.|
 
 > Пример сохранения инфрмации о токена
 ```shell

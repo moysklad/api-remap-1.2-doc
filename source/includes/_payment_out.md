@@ -68,6 +68,7 @@
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 |search |  `string` (optional) *Example: 0001* URL Параметр для поиска по имени документа. Фильтр документов по указанной поисковой строке. Фильтрация происходит по полю name.|
+
 > Получить Исходящие платежи
 
 ```shell
@@ -762,7 +763,7 @@ curl -X GET
 
 |Параметр   |Описание   | 
 |---|---|
-|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Исходящего платежа|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Исходящего платежа.|
 
 > Запрос на удаление Исходящего платежа  с указанным id.
 
@@ -843,13 +844,14 @@ curl -X GET
 
 ### Отдельное доп. поле
 
+#### Отдельное доп. поле
+
 **Параметры**
 
 |Параметр   |Описание   | 
 |---|---|
-|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Доп. поля|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
  
-#### Отдельное доп. поле 
 > Запрос на получение информации по отдельному дополнительному полю.
 
 ```shell
@@ -925,7 +927,7 @@ curl -X GET
 
 ```shell
   curl -X PUT
-    "PUT https://online.moysklad.ru/api/remap/1.2/entity/paymentout/new"
+    "https://online.moysklad.ru/api/remap/1.2/entity/paymentout/new"
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
       -d '{
@@ -1009,7 +1011,7 @@ curl -X GET
 
 ```shell
   curl -X PUT
-    "PUT https://online.moysklad.ru/api/remap/1.2/entity/paymentout/new"
+    "https://online.moysklad.ru/api/remap/1.2/entity/paymentout/new"
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
       -d '{
@@ -1093,7 +1095,7 @@ curl -X GET
 
 ```shell
   curl -X PUT
-    "PUT https://online.moysklad.ru/api/remap/1.2/entity/paymentout/new"
+    "https://online.moysklad.ru/api/remap/1.2/entity/paymentout/new"
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
       -d '{
@@ -1176,7 +1178,7 @@ curl -X GET
 > Запрос на получение шаблона исходящего платежа на основе счёта поставщика.
 ```shell
   curl -X PUT
-    "PUT https://online.moysklad.ru/api/remap/1.2/entity/paymentout/new"
+    "https://online.moysklad.ru/api/remap/1.2/entity/paymentout/new"
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
       -d '{
@@ -1260,7 +1262,7 @@ curl -X GET
 
 ```shell
   curl -X PUT
-    "PUT https://online.moysklad.ru/api/remap/1.2/entity/paymentout/new"
+    "https://online.moysklad.ru/api/remap/1.2/entity/paymentout/new"
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
       -d '{
@@ -1376,14 +1378,15 @@ curl -X GET
 ```
 
 ### Исходящий платеж
+  
+### Получить Исходящий платеж
 
 **Параметры**
 
 |Параметр   |Описание   | 
 |---|---|
-|   id|   `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Исходящего платежа|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Исходящего платежа.|
   
-### Получить Исходящий платеж  
 > Запрос на получение отдельного Исходящего платежа с указанным id.
 
 ```shell
@@ -1524,6 +1527,12 @@ curl -X GET
 Для привязки исходящего платежа к другим документам
 нужно положить в поле под именем **operations** все **meta** тех документов, к которым вы хотите привязать финансовую операцию.
 Также для каждого документа можно указать cумму, оплаченную по данному документу из этого платежа **linkedSum**.
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Исходящего платежа.|
 
 > Пример запроса на обновление отдельного Исходящего платежа .
 

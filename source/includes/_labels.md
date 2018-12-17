@@ -12,13 +12,6 @@
 
 #### Печать этикеток и ценников 
 
-**Параметры**
-
-|Параметр   |Описание   | 
-|---|---|
-|   type|   `product` (required, string) - тип сущности, для которой запрашивается печать|
-|   id|   `a86708d2-f8d3-4e67-8f04-6101158da808` (required, string) - id сущности, для которой запрашивается печать|
-
 ### Запрос на печать этикеток и ценников 
 
 Запрос на печать этикеток и ценников по шаблону печатной формы.
@@ -28,6 +21,13 @@
 + **salePrice** - Цена продажи
   + **priceType** - Ссылка на тип цены в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные)
 + **template** - Ссылка на шаблон для печати в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные)
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|type|  `string` (required) *Example: product* тип сущности, для которой запрашивается печать.|
+|id |  `string` (required) *Example: a86708d2-f8d3-4e67-8f04-6101158da808* id сущности, для которой запрашивается печать.|
 
 > Пример запроса на печать этикеток и ценников по шаблону печатной формы для товаров.
 
@@ -69,13 +69,13 @@
 > Response 202 Headers
 
 ```json
-Location: ссылка на статус печати
-Content-Type: application/json
+  Location: ссылка на статус печати
+  Content-Type: application/json
 ```
 
 > Response 303 Headers
 
 ```json
-Location: ссылка на файл
-Content-Type: application/json
+  Location: ссылка на файл
+  Content-Type: application/json
 ```
