@@ -70,35 +70,266 @@
 восприниматься как "все позиции полученного отчёта комиссионера" и полностью заменит уже существующую коллекцию при обновлении объекта - лишние
 позиции будут удалены, новые добавлены, существующие - изменены.
 
-<!-- include(rate.apib) -->
-
-
 ### Получить отчёты комиссионера
 Запрос всех полученных отчётов комиссионера на учётной записи.
-+ Parameters
-  + limit: 1000 (optional, enum[number])
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
 
-  + search: `0001` (optional, string)
-    URL Параметр для поиска по имени документа.
-    Фильтр документов по указанной поисковой строке. Фильтрация происходит по
-    полю name.
+**Параметры**
 
-  + incomingDate: `2016-04-15 15:48:46` (optional, string)
-    Параметр для фильтрации выборки по входящей дате. Подробнее про данный параметр можно посмотреть в разделе [Фильтрация выборки с помощью параметра filter](/api/remap/1.2/doc/index.html#header-фильтрация-выборки-с-помощью-параметра-filter).
-    Формат строки : `ГГГГ-ММ-ДД ЧЧ:ММ:СС[.ммм]`, Часовой пояс: `MSK` (Московское время)
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|search |  `string` (optional) *Example: 0001* URL Параметр для поиска по имени документа. Фильтр документов по указанной поисковой строке. Фильтрация происходит по полю name.|
+|incomingDate |  `string` (optional) *Example: 2016-04-15 15:48:46* Параметр для фильтрации выборки по входящей дате. Подробнее про данный параметр можно посмотреть в разделе [Фильтрация выборки с помощью параметра filter](/api/remap/1.2/doc/index.html#header-фильтрация-выборки-с-помощью-параметра-filter). Формат строки : `ГГГГ-ММ-ДД ЧЧ:ММ:СС[.ммм]`, Часовой пояс: `MSK` (Московское время)|
 
-+ Response 200 (application/json)
+> Получить отчёты комиссионера
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка полученных отчётов комиссионера.
-  + Body
-        <!-- include(body/commissionreportin/get_list.json) -->
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata",
+    "type": "commissionreportin",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/392fb7a9-ab02-11e6-8a84-bae500000073",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata",
+        "type": "commissionreportin",
+        "mediaType": "application/json"
+      },
+      "id": "392fb7a9-ab02-11e6-8a84-bae500000073",
+      "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2016-11-15 10:11:35",
+      "name": "00001",
+      "externalCode": "DfZi0N0mggqmVRt2hVf8t2",
+      "moment": "2016-11-15 10:04:00",
+      "applicable": true,
+      "rate": {
+        "currency": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json"
+          }
+        }
+      },
+      "sum": 0,
+      "contract": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/92df2d9c-ab02-11e6-8a84-bae500000084",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+          "type": "contract",
+          "mediaType": "application/json"
+        }
+      },
+      "project": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/6c6dd3f9-97a1-11e6-8a84-bae500000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+          "type": "project",
+          "mediaType": "application/json"
+        }
+      },
+      "agent": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b942c396-9128-11e6-8a84-bae500000056",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      },
+      "organization": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json"
+        }
+      },
+      "organizationAccount": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051/accounts/b932bc5b-9128-11e6-8a84-bae500000052",
+          "type": "account",
+          "mediaType": "application/json"
+        }
+      },
+      "positions": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/392fb7a9-ab02-11e6-8a84-bae500000073/positions",
+          "type": "commissionreportinposition",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "vatEnabled": true,
+      "vatIncluded": true,
+      "vatSum": 0,
+      "commissionPeriodStart": "2016-11-09 10:07:00",
+      "commissionPeriodEnd": "2016-11-09 10:07:00",
+      "rewardType": "PercentOfSales",
+      "rewardPercent": 0,
+      "commitentSum": 0
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/6348c14c-ab39-11e6-8a84-bae500000064",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata",
+        "type": "commissionreportin",
+        "mediaType": "application/json"
+      },
+      "id": "6348c14c-ab39-11e6-8a84-bae500000064",
+      "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2016-11-17 17:10:23",
+      "name": "00002",
+      "externalCode": "ec21rBixjdrEm0CVkCiOJ0",
+      "moment": "2016-11-15 14:19:00",
+      "applicable": true,
+      "rate": {
+        "currency": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json"
+          }
+        }
+      },
+      "sum": 0,
+      "contract": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/92df2d9c-ab02-11e6-8a84-bae500000084",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+          "type": "contract",
+          "mediaType": "application/json"
+        }
+      },
+      "project": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/6c6dd3f9-97a1-11e6-8a84-bae500000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+          "type": "project",
+          "mediaType": "application/json"
+        }
+      },
+      "agent": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b942c396-9128-11e6-8a84-bae500000056",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      },
+      "organization": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json"
+        }
+      },
+      "organizationAccount": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051/accounts/b932bc5b-9128-11e6-8a84-bae500000052",
+          "type": "account",
+          "mediaType": "application/json"
+        }
+      },
+      "positions": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/6348c14c-ab39-11e6-8a84-bae500000064/positions",
+          "type": "commissionreportinposition",
+          "mediaType": "application/json",
+          "size": 1,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "vatEnabled": true,
+      "vatIncluded": true,
+      "vatSum": 0,
+      "commissionPeriodStart": "2016-11-15 14:19:00",
+      "commissionPeriodEnd": "2016-11-15 14:22:00",
+      "rewardType": "None",
+      "rewardPercent": 0,
+      "commitentSum": 0,
+      "payments": [
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/e39851ec-ab43-11e6-8a84-bae50000007a",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/metadata",
+            "type": "paymentin",
+            "mediaType": "application/json"
+          },
+          "linkedSum": 0
+        }
+      ]
+    }
+  ]
+}
+
+```
 
 ### Создать полученный отчёт комиссионера
 Запрос на создание нового полученного отчёта комиссионера.
@@ -116,40 +347,784 @@
 + Чтобы договор был заключён с указанным в поле **agent** контрагентом
 + Договор имел тип "Договор комиссии"
 
-+ Request Пример (application/json)
-Пример создания нового полученного отчёта комиссионера.
-  + Body
-        <!-- include(body/commissionreportin/post_request.json) -->
+> Пример создания нового полученного отчёта комиссионера.
 
-+ Response 200 (application/json)
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "owner": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                "type": "employee",
+                "mediaType": "application/json"
+              }
+            },
+            "shared": false,
+            "group": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                "type": "group",
+                "mediaType": "application/json"
+              }
+            },
+            "name": "3335551",
+            "externalCode": "extCod1",
+            "moment": "2016-12-16 11:22:33",
+            "applicable": true,
+            "sum": 0,
+            "contract": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/92df2d9c-ab02-11e6-8a84-bae500000084",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+                "type": "contract",
+                "mediaType": "application/json"
+              }
+            },
+            "project": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/6c6dd3f9-97a1-11e6-8a84-bae500000002",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+                "type": "project",
+                "mediaType": "application/json"
+              }
+            },
+            "agent": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b942c396-9128-11e6-8a84-bae500000056",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+                "type": "counterparty",
+                "mediaType": "application/json"
+              }
+            },
+            "organization": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "type": "organization",
+                "mediaType": "application/json"
+              }
+            },
+            "organizationAccount": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051/accounts/b932bc5b-9128-11e6-8a84-bae500000052",
+                "type": "account",
+                "mediaType": "application/json"
+              }
+            },
+            "positions": [
+              {
+                "assortment": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36eb1628-912b-11e6-8a84-bae500000124",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                    "type": "variant",
+                    "mediaType": "application/json"
+                  }
+                },
+                "quantity": 2,
+                "price": 132.05,
+                "vat": 10,
+                "reward": 123
+              },
+              {
+                "assortment": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                    "type": "variant",
+                    "mediaType": "application/json"
+                  }
+                },
+                "quantity": 15,
+                "price": 99.99,
+                "vat": 0,
+                "reward": 100
+              }
+            ],
+            "attributes": [
+              {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/4930a123-acda-11e6-8a84-bae50000006d",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
+                "id": "4930a123-acda-11e6-8a84-bae50000006d",
+                "value": "value"
+              },
+              {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/4930a9c5-acda-11e6-8a84-bae50000006e",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
+                "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
+                "value": "values"
+              }
+            ],
+            "vatEnabled": true,
+            "vatIncluded": true,
+            "vatSum": 0,
+            "commissionPeriodStart": "2016-11-01 10:07:00",
+            "commissionPeriodEnd": "2016-11-29 10:07:00",
+            "rewardType": "PercentOfSales",
+            "rewardPercent": 15
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданного полученного отчёта комиссионера.
-  + Body
-        <!-- include(body/commissionreportin/post_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/cc5beac8-acdb-11e6-8a84-bae500000000",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata",
+    "type": "commissionreportin",
+    "mediaType": "application/json"
+  },
+  "id": "cc5beac8-acdb-11e6-8a84-bae500000000",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-11-17 18:37:50",
+  "name": "3335551",
+  "externalCode": "extCod1",
+  "moment": "2016-12-16 11:22:33",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "sum": 1764,
+  "contract": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/92df2d9c-ab02-11e6-8a84-bae500000084",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+      "type": "contract",
+      "mediaType": "application/json"
+    }
+  },
+  "project": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/6c6dd3f9-97a1-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+      "type": "project",
+      "mediaType": "application/json"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b942c396-9128-11e6-8a84-bae500000056",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "organizationAccount": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051/accounts/b932bc5b-9128-11e6-8a84-bae500000052",
+      "type": "account",
+      "mediaType": "application/json"
+    }
+  },
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/4930a123-acda-11e6-8a84-bae50000006d",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "4930a123-acda-11e6-8a84-bae50000006d",
+      "name": "Поле1",
+      "type": "string",
+      "value": "value"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/4930a9c5-acda-11e6-8a84-bae50000006e",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
+      "name": "Поле2",
+      "type": "string",
+      "value": "values"
+    }
+  ],
+  "created": "2007-02-07 17:16:41",
+  "positions": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/cc5beac8-acdb-11e6-8a84-bae500000000/positions",
+      "type": "commissionreportinposition",
+      "mediaType": "application/json",
+      "size": 2,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "vatSum": 24,
+  "commissionPeriodStart": "2016-11-01 10:07:00",
+  "commissionPeriodEnd": "2016-11-29 10:07:00",
+  "rewardType": "PercentOfSales",
+  "rewardPercent": 15,
+  "commitentSum": 1499
+}
+```
 
 ### Массовое создание и обновление полученных отчётов комиссионера
 [Массовое создание и обновление](/api/remap/1.2/doc/index.html#header-создание-и-обновление-нескольких-объектов) полученных отчётов комиссионера.
 В теле запроса нужно передать массив, содержащий JSON представления полученных отчётов комиссионера, которые вы хотите создать или обновить.
 Обновляемые полученные отчёты комиссионера должны содержать идентификатор в виде метаданных.
 
-+ Request Пример (application/json)
-Пример создания и обновления нескольких полученных отчётов комиссионера
-  + Body
-        <!-- include(body/commissionreportin/post_massive_request.json) -->
+> Пример создания и обновления нескольких полученных отчётов комиссионера
 
-+ Response 200 (application/json)
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "owner": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                  "type": "employee",
+                  "mediaType": "application/json"
+                }
+              },
+              "shared": false,
+              "group": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                  "type": "group",
+                  "mediaType": "application/json"
+                }
+              },
+              "name": "3335551",
+              "externalCode": "extCod1",
+              "moment": "2016-12-16 11:22:33",
+              "applicable": true,
+              "sum": 0,
+              "contract": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/92df2d9c-ab02-11e6-8a84-bae500000084",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+                  "type": "contract",
+                  "mediaType": "application/json"
+                }
+              },
+              "project": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/6c6dd3f9-97a1-11e6-8a84-bae500000002",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+                  "type": "project",
+                  "mediaType": "application/json"
+                }
+              },
+              "agent": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b942c396-9128-11e6-8a84-bae500000056",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+                  "type": "counterparty",
+                  "mediaType": "application/json"
+                }
+              },
+              "organization": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                  "type": "organization",
+                  "mediaType": "application/json"
+                }
+              },
+              "organizationAccount": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051/accounts/b932bc5b-9128-11e6-8a84-bae500000052",
+                  "type": "account",
+                  "mediaType": "application/json"
+                }
+              },
+              "positions": [
+                {
+                  "assortment": {
+                    "meta": {
+                      "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36eb1628-912b-11e6-8a84-bae500000124",
+                      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                      "type": "variant",
+                      "mediaType": "application/json"
+                    }
+                  },
+                  "quantity": 2,
+                  "price": 132.05,
+                  "vat": 10,
+                  "reward": 123
+                },
+                {
+                  "assortment": {
+                    "meta": {
+                      "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
+                      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                      "type": "variant",
+                      "mediaType": "application/json"
+                    }
+                  },
+                  "quantity": 15,
+                  "price": 99.99,
+                  "vat": 0,
+                  "reward": 100
+                }
+              ],
+              "attributes": [
+                {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/4930a123-acda-11e6-8a84-bae50000006d",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
+                  "id": "4930a123-acda-11e6-8a84-bae50000006d",
+                  "value": "value"
+                },
+                {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/4930a9c5-acda-11e6-8a84-bae50000006e",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
+                  "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
+                  "value": "values"
+                }
+              ],
+              "vatEnabled": true,
+              "vatIncluded": true,
+              "vatSum": 0,
+              "commissionPeriodStart": "2016-11-01 10:07:00",
+              "commissionPeriodEnd": "2016-11-29 10:07:00",
+              "rewardType": "PercentOfSales",
+              "rewardPercent": 15
+            },
+            {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/cc5beac8-acdb-11e6-8a84-bae500000000",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata",
+                "type": "commissionreportin",
+                "mediaType": "application/json"
+              },
+              "externalCode": "extCod1",
+              "moment": "2016-12-16 11:22:33",
+              "applicable": true,
+              "sum": 0,
+              "contract": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/92df2d9c-ab02-11e6-8a84-bae500000084",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+                  "type": "contract",
+                  "mediaType": "application/json"
+                }
+              },
+              "project": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/6c6dd3f9-97a1-11e6-8a84-bae500000002",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+                  "type": "project",
+                  "mediaType": "application/json"
+                }
+              },
+              "agent": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b942c396-9128-11e6-8a84-bae500000056",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+                  "type": "counterparty",
+                  "mediaType": "application/json"
+                }
+              },
+              "organization": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                  "type": "organization",
+                  "mediaType": "application/json"
+                }
+              },
+              "organizationAccount": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051/accounts/b932bc5b-9128-11e6-8a84-bae500000052",
+                  "type": "account",
+                  "mediaType": "application/json"
+                }
+              },
+              "positions": [
+                {
+                  "assortment": {
+                    "meta": {
+                      "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36eb1628-912b-11e6-8a84-bae500000124",
+                      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                      "type": "variant",
+                      "mediaType": "application/json"
+                    }
+                  },
+                  "quantity": 12,
+                  "price": 132.05,
+                  "vat": 10,
+                  "reward": 123
+                },
+                {
+                  "assortment": {
+                    "meta": {
+                      "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
+                      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                      "type": "variant",
+                      "mediaType": "application/json"
+                    }
+                  },
+                  "quantity": 15,
+                  "price": 99.399,
+                  "vat": 0,
+                  "reward": 100
+                }
+              ],
+              "attributes": [
+                {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/4930a123-acda-11e6-8a84-bae50000006d",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
+                  "id": "4930a123-acda-11e6-8a84-bae50000006d",
+                  "value": "Newvalue"
+                }
+              ],
+              "vatEnabled": true,
+              "vatIncluded": true,
+              "vatSum": 0,
+              "commissionPeriodStart": "2016-11-01 10:07:00",
+              "commissionPeriodEnd": "2016-12-29 10:07:00",
+              "rewardType": "PercentOfSales",
+              "rewardPercent": 12
+            }
+          ]'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - массив JSON представлений созданных и обновленных полученных отчётов комиссионера.
-  + Body
-        <!-- include(body/commissionreportin/post_massive_response.json) -->
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/cc5beac8-acdb-11e6-8a84-bae500000000",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata",
+      "type": "commissionreportin",
+      "mediaType": "application/json"
+    },
+    "id": "cc5beac8-acdb-11e6-8a84-bae500000000",
+    "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2016-11-17 18:37:50",
+    "name": "3335551",
+    "externalCode": "extCod1",
+    "moment": "2016-12-16 11:22:33",
+    "applicable": true,
+    "rate": {
+      "currency": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "sum": 1764,
+    "contract": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/92df2d9c-ab02-11e6-8a84-bae500000084",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+        "type": "contract",
+        "mediaType": "application/json"
+      }
+    },
+    "project": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/6c6dd3f9-97a1-11e6-8a84-bae500000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+        "type": "project",
+        "mediaType": "application/json"
+      }
+    },
+    "agent": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b942c396-9128-11e6-8a84-bae500000056",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json"
+      }
+    },
+    "organization": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json"
+      }
+    },
+    "organizationAccount": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051/accounts/b932bc5b-9128-11e6-8a84-bae500000052",
+        "type": "account",
+        "mediaType": "application/json"
+      }
+    },
+    "attributes": [
+      {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/4930a123-acda-11e6-8a84-bae50000006d",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+        },
+        "id": "4930a123-acda-11e6-8a84-bae50000006d",
+        "name": "Поле1",
+        "type": "string",
+        "value": "value"
+      },
+      {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/4930a9c5-acda-11e6-8a84-bae50000006e",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+        },
+        "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
+        "name": "Поле2",
+        "type": "string",
+        "value": "values"
+      }
+    ],
+    "created": "2007-02-07 17:16:41",
+    "positions": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/cc5beac8-acdb-11e6-8a84-bae500000000/positions",
+        "type": "commissionreportinposition",
+        "mediaType": "application/json",
+        "size": 2,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
+    "vatEnabled": true,
+    "vatIncluded": true,
+    "vatSum": 24,
+    "commissionPeriodStart": "2016-11-01 10:07:00",
+    "commissionPeriodEnd": "2016-11-29 10:07:00",
+    "rewardType": "PercentOfSales",
+    "rewardPercent": 15,
+    "commitentSum": 1499
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/cc5beac8-acdb-11e6-8a84-bae500000000",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata",
+      "type": "commissionreportin",
+      "mediaType": "application/json"
+    },
+    "id": "cc5beac8-acdb-11e6-8a84-bae500000000",
+    "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2016-11-17 20:11:40",
+    "name": "3335551",
+    "externalCode": "extCod1",
+    "moment": "2016-12-16 11:22:33",
+    "applicable": true,
+    "rate": {
+      "currency": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "sum": 3069,
+    "contract": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/92df2d9c-ab02-11e6-8a84-bae500000084",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+        "type": "contract",
+        "mediaType": "application/json"
+      }
+    },
+    "project": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/6c6dd3f9-97a1-11e6-8a84-bae500000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+        "type": "project",
+        "mediaType": "application/json"
+      }
+    },
+    "agent": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b942c396-9128-11e6-8a84-bae500000056",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json"
+      }
+    },
+    "organization": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json"
+      }
+    },
+    "organizationAccount": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051/accounts/b932bc5b-9128-11e6-8a84-bae500000052",
+        "type": "account",
+        "mediaType": "application/json"
+      }
+    },
+    "state": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/states/40ca02eb-acda-11e6-8a84-bae500000069",
+        "type": "state",
+        "mediaType": "application/json"
+      }
+    },
+    "attributes": [
+      {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/4930a123-acda-11e6-8a84-bae50000006d",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+        },
+        "id": "4930a123-acda-11e6-8a84-bae50000006d",
+        "name": "Поле1",
+        "type": "string",
+        "value": "Newvalue"
+      },
+      {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/4930a9c5-acda-11e6-8a84-bae50000006e",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+        },
+        "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
+        "name": "Поле2",
+        "type": "string",
+        "value": "values"
+      }
+    ],
+    "created": "2007-02-07 17:16:41",
+    "positions": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/cc5beac8-acdb-11e6-8a84-bae500000000/positions",
+        "type": "commissionreportinposition",
+        "mediaType": "application/json",
+        "size": 2,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
+    "vatEnabled": true,
+    "vatIncluded": true,
+    "vatSum": 144,
+    "commissionPeriodStart": "2016-11-01 10:07:00",
+    "commissionPeriodEnd": "2016-12-29 10:07:00",
+    "rewardType": "PercentOfSales",
+    "rewardPercent": 12,
+    "commitentSum": 2701
+  }
+]
+```
 
 ### Удалить полученный отчёт комиссионера
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id полученного отчёта комиссионера
 
-Запрос на удаление полученного отчёта комиссионера с указанным id.
+**Параметры**
 
-+ Response 200 (application/json)
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id полученного отчёта комиссионера.|
+
+> Запрос на удаление полученного отчёта комиссионера с указанным id.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешное удаление полученного отчёта комиссионера.
-
 
 ### Метаданные полученного отчёта
 #### Метаданные полученного отчёта
@@ -161,31 +1136,226 @@
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](/api/remap/1.2/doc/index.html#header-работа-с-дополнительными-полями).
 
-+ Response 200 (application/json)
+> Метаданные полученного отчёта
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление метаданных полученного отчёта комиссионера.
-  + Body
-        <!-- include(body/commissionreportin/get_metadata.json) -->
 
-### Отдельное доп. поле 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Доп. поля
-#### Отдельное доп. поле 
-Запрос на получение информации по отдельному дополнительному полю.
-+ Response 200 (application/json)
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata",
+    "mediaType": "application/json"
+  },
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/4930a123-acda-11e6-8a84-bae50000006d",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "4930a123-acda-11e6-8a84-bae50000006d",
+      "name": "Поле1",
+      "type": "string",
+      "required": false
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/4930a9c5-acda-11e6-8a84-bae50000006e",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
+      "name": "Поле2",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "states": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/states/40ca02eb-acda-11e6-8a84-bae500000069",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "40ca02eb-acda-11e6-8a84-bae500000069",
+      "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+      "name": "Статус",
+      "color": 10066329,
+      "stateType": "Regular",
+      "entityType": "commissionreportin"
+    }
+  ],
+  "createShared": false
+}
+
+```
+
+### Отдельное доп. поле
+
+#### Отдельное доп. поле
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
+ 
+> Запрос на получение информации по отдельному дополнительному полю.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление отдельного доп. поля.
-  + Body
-        <!-- include(body/commissionreportin/metadata_by_id.json) -->
 
-### Полученный отчёт комиссионера 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id полученного отчёта комиссионера
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/4930a123-acda-11e6-8a84-bae50000006d",
+    "type": "attributemetadata",
+    "mediaType": "application/json"
+  },
+  "id": "4930a123-acda-11e6-8a84-bae50000006d",
+  "name": "Поле1",
+  "type": "string",
+  "required": false
+}
+```
 
-### Получить отчёт комиссионера 
-Запрос на получение отдельного отчёта комиссионера с указанным id.
-+ Response 200 (application/json)
+### Полученный отчёт комиссионера
+ 
+### Получить отчёт комиссионера
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id полученного отчёта комиссионера.|
+ 
+> Запрос на получение отдельного отчёта комиссионера с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление полученного отчёта комиссионера.
-  + Body
-        <!-- include(body/commissionreportin/get_by_id.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/392fb7a9-ab02-11e6-8a84-bae500000073",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata",
+    "type": "commissionreportin",
+    "mediaType": "application/json"
+  },
+  "id": "392fb7a9-ab02-11e6-8a84-bae500000073",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-11-15 10:11:35",
+  "name": "00001",
+  "externalCode": "DfZi0N0mggqmVRt2hVf8t2",
+  "moment": "2016-11-15 10:04:00",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "sum": 0,
+  "contract": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/92df2d9c-ab02-11e6-8a84-bae500000084",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+      "type": "contract",
+      "mediaType": "application/json"
+    }
+  },
+  "project": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/6c6dd3f9-97a1-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+      "type": "project",
+      "mediaType": "application/json"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b942c396-9128-11e6-8a84-bae500000056",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "organizationAccount": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051/accounts/b932bc5b-9128-11e6-8a84-bae500000052",
+      "type": "account",
+      "mediaType": "application/json"
+    }
+  },
+  "positions": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/392fb7a9-ab02-11e6-8a84-bae500000073/positions",
+      "type": "commissionreportinposition",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "vatSum": 0,
+  "commissionPeriodStart": "2016-11-09 10:07:00",
+  "commissionPeriodEnd": "2016-11-09 10:07:00",
+  "rewardType": "PercentOfSales",
+  "rewardPercent": 0,
+  "commitentSum": 0
+}
+
+```
 
 ### Изменить полученный отчёт комиссионера 
 Запрос на обновление полученного отчёта комиссионера с указанным id.
@@ -198,39 +1368,324 @@
 + Чтобы договор был заключён с указанным в поле **agent** контрагентом
 + Договор имел тип "Договор комиссии"
 
-+ Request Пример (application/json)
-Пример запроса на обновление отдельного отчёта комиссионера.
-  + Body
-        <!-- include(body/commissionreportin/put_request.json) -->
+**Параметры**
 
-+ Response 200 (application/json)
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id полученного отчёта комиссионера.|
+
+> Пример запроса на обновление отдельного отчёта комиссионера.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "externalCode": "extCod1",
+            "moment": "2016-12-16 11:22:33",
+            "applicable": true,
+            "sum": 0,
+            "contract": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/92df2d9c-ab02-11e6-8a84-bae500000084",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+                "type": "contract",
+                "mediaType": "application/json"
+              }
+            },
+            "project": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/6c6dd3f9-97a1-11e6-8a84-bae500000002",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+                "type": "project",
+                "mediaType": "application/json"
+              }
+            },
+            "agent": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b942c396-9128-11e6-8a84-bae500000056",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+                "type": "counterparty",
+                "mediaType": "application/json"
+              }
+            },
+            "organization": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "type": "organization",
+                "mediaType": "application/json"
+              }
+            },
+            "organizationAccount": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051/accounts/b932bc5b-9128-11e6-8a84-bae500000052",
+                "type": "account",
+                "mediaType": "application/json"
+              }
+            },
+            "positions": [
+              {
+                "assortment": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36eb1628-912b-11e6-8a84-bae500000124",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                    "type": "variant",
+                    "mediaType": "application/json"
+                  }
+                },
+                "quantity": 12,
+                "price": 132.05,
+                "vat": 10,
+                "reward": 123
+              },
+              {
+                "assortment": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                    "type": "variant",
+                    "mediaType": "application/json"
+                  }
+                },
+                "quantity": 15,
+                "price": 99.399,
+                "vat": 0,
+                "reward": 100
+              }
+            ],
+            "attributes": [
+              {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/4930a123-acda-11e6-8a84-bae50000006d",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
+                "id": "4930a123-acda-11e6-8a84-bae50000006d",
+                "value": "Newvalue"
+              }
+            ],
+            "vatEnabled": true,
+            "vatIncluded": true,
+            "vatSum": 0,
+            "commissionPeriodStart": "2016-11-01 10:07:00",
+            "commissionPeriodEnd": "2016-12-29 10:07:00",
+            "rewardType": "PercentOfSales",
+            "rewardPercent": 12
+          }
+'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновлённого отчёта комиссионера.
-  + Body
-        <!-- include(body/commissionreportin/put_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/cc5beac8-acdb-11e6-8a84-bae500000000",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata",
+    "type": "commissionreportin",
+    "mediaType": "application/json"
+  },
+  "id": "cc5beac8-acdb-11e6-8a84-bae500000000",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-11-17 20:11:40",
+  "name": "3335551",
+  "externalCode": "extCod1",
+  "moment": "2016-12-16 11:22:33",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "sum": 3069,
+  "contract": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/92df2d9c-ab02-11e6-8a84-bae500000084",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+      "type": "contract",
+      "mediaType": "application/json"
+    }
+  },
+  "project": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/6c6dd3f9-97a1-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+      "type": "project",
+      "mediaType": "application/json"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b942c396-9128-11e6-8a84-bae500000056",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "organizationAccount": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051/accounts/b932bc5b-9128-11e6-8a84-bae500000052",
+      "type": "account",
+      "mediaType": "application/json"
+    }
+  },
+  "state": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/states/40ca02eb-acda-11e6-8a84-bae500000069",
+      "type": "state",
+      "mediaType": "application/json"
+    }
+  },
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/4930a123-acda-11e6-8a84-bae50000006d",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "4930a123-acda-11e6-8a84-bae50000006d",
+      "name": "Поле1",
+      "type": "string",
+      "value": "Newvalue"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata/attributes/4930a9c5-acda-11e6-8a84-bae50000006e",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
+      "name": "Поле2",
+      "type": "string",
+      "value": "values"
+    }
+  ],
+  "created": "2007-02-07 17:16:41",
+  "positions": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/cc5beac8-acdb-11e6-8a84-bae500000000/positions",
+      "type": "commissionreportinposition",
+      "mediaType": "application/json",
+      "size": 2,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "vatSum": 144,
+  "commissionPeriodStart": "2016-11-01 10:07:00",
+  "commissionPeriodEnd": "2016-12-29 10:07:00",
+  "rewardType": "PercentOfSales",
+  "rewardPercent": 12,
+  "commitentSum": 2701
+}
+
+```
 
 ### Позиции отчёта комиссионера 
 Отдельный ресурс для управления позициями полученного отчёта комиссионера. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 100. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](/api/remap/1.2/doc/index.html#header-работа-с-позициями-документов).
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id полученного отчёта комиссионера
 
 ### Получить позиции 
 Запрос на получение списка всех позиций данного полученного отчёта комиссионера.
 
-+ Parameters
-  + limit: 1000 (optional, enum[number])
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
+**Параметры**
 
-+ Response 200 (application/json)
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id полученного отчёта комиссионера.|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+
+> Получить позиции
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/7944ef04-f831-11e5-7a69-971500188b19/positions"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка позиций отдельного отчёта комиссионера.
-  + Body
-        <!-- include(body/commissionreportin/positions_get_list.json) -->
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/6348c14c-ab39-11e6-8a84-bae500000064/positions",
+    "type": "commissionreportinposition",
+    "mediaType": "application/json",
+    "size": 1,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/6348c14c-ab39-11e6-8a84-bae500000064/positions/94aef79a-accf-11e6-8a84-bae500000064",
+        "type": "commissionreportinposition",
+        "mediaType": "application/json"
+      },
+      "id": "94aef79a-accf-11e6-8a84-bae500000064",
+      "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+      "quantity": 1,
+      "price": 0,
+      "vat": 0,
+      "assortment": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/ca976541-96d1-11e6-8a84-bae50000002e",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      },
+      "reward": 0
+    }
+  ]
+}
+```
 
 ### Создать позицию 
 Запрос на создание новой позиции в отчёте комиссионера.
@@ -242,47 +1697,265 @@
 Одновременно можно создать как одну так и несколько позиций отчёта комиссионера. Все созданные данным запросом позиции
 будут добавлены к уже существующим.
 
-+ Request Пример (application/json)
-Пример создания одной позиции в полученном отчёте комиссионера.
-  + Body
-        <!-- include(body/commissionreportin/positions_post_request.json) -->
-+ Response 200 (application/json)
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id полученного отчёта комиссионера.|
+
+> Пример создания одной позиции в полученном отчёте комиссионера.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/7944ef04-f831-11e5-7a69-971500188b19/positions"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "quantity": 15,
+              "price": 1300,
+              "vat": 0,
+              "assortment": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                  "type": "variant",
+                  "mediaType": "application/json"
+                }
+              },
+              "reward": 225
+            },
+            {
+              "quantity": 15,
+              "price": 1020,
+              "vat": 0,
+              "assortment": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                  "type": "variant",
+                  "mediaType": "application/json"
+                }
+              },
+              "reward": 225
+            },
+            {
+              "quantity": 15,
+              "price": 101,
+              "vat": 0,
+              "assortment": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                  "type": "variant",
+                  "mediaType": "application/json"
+                }
+              },
+              "reward": 225
+            }
+          ]'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданной позиции отдельного отчёта комиссионера.
-  + Body
-        <!-- include(body/commissionreportin/positions_post_response.json) -->
 
-### Удалить позицию [DELETE /entity/commissionreportin/{id}/positions/{positionID}]
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id полученного отчёта комиссионера
-  + positionID: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id позиции полученного отчёта комиссионера
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/cc5beac8-acdb-11e6-8a84-bae500000000/positions/a7a61c8b-acdd-11e6-8a84-bae500000000",
+      "type": "commissionreportinposition",
+      "mediaType": "application/json"
+    },
+    "id": "a7a61c8b-acdd-11e6-8a84-bae500000000",
+    "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+    "quantity": 15,
+    "price": 1300,
+    "vat": 0,
+    "assortment": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+        "type": "variant",
+        "mediaType": "application/json"
+      }
+    },
+    "reward": 2925
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/cc5beac8-acdb-11e6-8a84-bae500000000/positions/a7a6c749-acdd-11e6-8a84-bae500000001",
+      "type": "commissionreportinposition",
+      "mediaType": "application/json"
+    },
+    "id": "a7a6c749-acdd-11e6-8a84-bae500000001",
+    "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+    "quantity": 15,
+    "price": 1020,
+    "vat": 0,
+    "assortment": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+        "type": "variant",
+        "mediaType": "application/json"
+      }
+    },
+    "reward": 2295
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/cc5beac8-acdb-11e6-8a84-bae500000000/positions/a7a6d9cc-acdd-11e6-8a84-bae500000002",
+      "type": "commissionreportinposition",
+      "mediaType": "application/json"
+    },
+    "id": "a7a6d9cc-acdd-11e6-8a84-bae500000002",
+    "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+    "quantity": 15,
+    "price": 101,
+    "vat": 0,
+    "assortment": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+        "type": "variant",
+        "mediaType": "application/json"
+      }
+    },
+    "reward": 227
+  }
+]
+```
 
-Запрос на удаление позиции полученного отчёта комиссионера с указанным id.
+### Удалить позицию
 
-+ Response 200 (application/json)
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id полученного отчёта комиссионера.|
+|positionID|  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id позиции полученного отчёта комиссионера.|
+
+> Запрос на удаление позиции полученного отчёта комиссионера с указанным id.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешное удаление позиции полученного отчёта комиссионера.
 
-### Позиция отчёта комиссионера 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id полученного отчёта комиссионера
-  + positionID: `34f6344f-015e-11e6-9464-e4de0000006c` (required, string) - id позиции полученного отчёта комиссионера
+### Позиция отчёта комиссионера
+ 
+### Получить позицию
 
-### Получить позицию 
-Запрос на получение отдельной позиции полученного отчёта комиссионера с указанным id.
-+ Response 200 (application/json)
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id полученного отчёта комиссионера.|
+|positionID|  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id позиции полученного отчёта комиссионера.|
+ 
+> Запрос на получение отдельной позиции полученного отчёта комиссионера с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление отдельной позиции полученного отчёта комиссионера.
-  + Body
-        <!-- include(body/commissionreportin/positions_get_by_id.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/6348c14c-ab39-11e6-8a84-bae500000064/positions/94aef79a-accf-11e6-8a84-bae500000064",
+    "type": "commissionreportinposition",
+    "mediaType": "application/json"
+  },
+  "id": "94aef79a-accf-11e6-8a84-bae500000064",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "quantity": 1,
+  "price": 0,
+  "vat": 0,
+  "assortment": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/ca976541-96d1-11e6-8a84-bae50000002e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json"
+    }
+  },
+  "reward": 0
+}
+```
 
 ### Изменить позицию 
 Запрос на обновление отдельной позиции полученного отчёта комиссионера. Для обновления позиции нет каких-либо
  обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
 
-+ Request Пример (application/json)
-Пример запроса на обновление отдельной позиции в полученном отчёте комиссионера.
-  + Body
-        <!-- include(body/commissionreportin/positions_put_request.json) -->
+**Параметры**
 
-+ Response 200 (application/json)
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id полученного отчёта комиссионера.|
+|positionID|  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id позиции полученного отчёта комиссионера.|
+
+> Пример запроса на обновление отдельной позиции в полученном отчёте комиссионера.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "quantity": 14,
+            "price": 1301,
+            "vat": 10,
+            "assortment": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                "type": "variant",
+                "mediaType": "application/json"
+              }
+            },
+            "reward": 0
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновлённой позиции полученного отчёта комиссионера.
-  + Body
-        <!-- include(body/commissionreportin/positions_put_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/cc5beac8-acdb-11e6-8a84-bae500000000/positions/a7a6c749-acdd-11e6-8a84-bae500000001",
+    "type": "commissionreportinposition",
+    "mediaType": "application/json"
+  },
+  "id": "a7a6c749-acdd-11e6-8a84-bae500000001",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "quantity": 14,
+  "price": 1301,
+  "vat":**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id полученного отчёта комиссионера.|
+|positionID|  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id позиции полученного отчёта комиссионера.|
+ 10,
+  "assortment": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+      "type": "variant",
+      "mediaType": "application/json"
+    }
+  },
+  "reward": 0
+}
+```

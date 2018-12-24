@@ -81,39 +81,133 @@
 - **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос
 - **rows** - Массив JSON сущностей, представляющих собой изменения
 
-+ Parameters
-  + limit: 1000 (optional, number)
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
+**Параметры**
 
-  + filter: `source=jsonapi` (optional, string)
-    Подробное описание параметра в разделе [Фильтрация выборки с помощью параметра filter](/api/remap/1.2/doc/index.html#header-фильтрация-выборки-с-помощью-параметра-filter)
-    Атрибуты фильтрации для Контекстов аудита представлены в разделе [Фильтры](#аудит-фильтры)
-    Формат строки : `string`
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|filter |  `string` (optional) *Example: source=jsonapi* Подробное описание параметра в разделе [Фильтрация выборки с помощью параметра filter](/api/remap/1.2/doc/index.html#header-фильтрация-выборки-с-помощью-параметра-filter) Атрибуты фильтрации для Контекстов аудита представлены в разделе [Фильтры](#аудит-фильтры)|
 
-+ Response 200 (application/json)
+> Получить Контексты
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/audit"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка Изменений.
-  + Body
-  <!-- include(body/audit/get_context_list.json) -->
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/audit/",
+    "type": "audit",
+    "mediaType": "application/json",
+    "size": 1,
+    "limit": 25,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/audit/b912e9d1-3fbe-11e7-8a7f-40d000000000",
+        "type": "audit",
+        "mediaType": "application/json"
+      },
+      "id": "b912e9d1-3fbe-11e7-8a7f-40d000000000",
+      "uid": "admin@1",
+      "source": "loginlogout",
+      "moment": "2017-05-23 16:50:03",
+      "info": "Вход в МойСклад (127.0.0.1, Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0)"
+    }
+  ]
+}
+
+```
 
 ### Получить Контексты c фильтрацией
 
-+ Parameters
-  + filter: `filter=entityType=customerorder` (required, string) - фильтр по типу сущности
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|filter |  `string` (optional) *Example: filter=entityType=customerorder* фильтр по типу сущности|
 
 Пример запроса с фильтрацией контекстов по типу "заказ покупателя"
 https://online.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder
 
-+ Response 200 (application/json)
+> Получить Контексты c фильтрацией
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка событий аудита.
-  + Body
-  <!-- include(body/audit/get_audit_customerorder.json) -->
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder",
+    "type": "audit",
+    "mediaType": "application/json",
+    "size": 1,
+    "limit": 25,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/audit/83732f4b-792a-11e7-9464-d04800000005",
+        "type": "audit",
+        "mediaType": "application/json"
+      },
+      "id": "83732f4b-792a-11e7-9464-d04800000005",
+      "uid": "admin@11",
+      "source": "app",
+      "moment": "2017-08-04 18:35:15",
+      "objectCount": 1,
+      "eventType": "create",
+      "entityType": "customerorder",
+      "events": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/audit/83732f4b-792a-11e7-9464-d04800000005/events",
+          "type": "auditevent",
+          "mediaType": "application/json",
+          "size": 1,
+          "limit": 25,
+          "offset": 0
+        }
+      }
+    }
+  ]
+}
+```
 
 ### События
 События аудита содержат подробную информацию о произошедших изменениях, например, изменение значения поля.
@@ -187,13 +281,77 @@ https://online.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder
 - **meta** [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) событий
 - **rows** - Массив JSON сущностей, представляющих собой события
 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Контекста
+**Параметры**
 
-+ Response 200 (application/json)
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Контекста.|
+
+> Получить События по Контексту
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/audit/7944ef04-f831-11e5-7a69-971500188b19/events"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка событий.
-  + Body
-  <!-- include(body/audit/get_events_by_context.json) -->
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/audit/c107864f-3f88-11e7-8a7f-40d000000041/events",
+    "type": "auditevent",
+    "mediaType": "application/json",
+    "size": 1,
+    "limit": 25,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "source": "app",
+      "eventType": "update",
+      "entityType": "product",
+      "uid": "admin@1",
+      "moment": "2017-05-30 18:47:49",
+      "diff": {
+        "weighed": {
+          "oldValue": false,
+          "newValue": true
+        }
+      },
+      "name": "some product",
+      "audit": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/audit/7944ef04-f831-11e5-7a69-971500188b19",
+          "type": "audit",
+          "mediaType": "application/json"
+        }
+      },
+      "entity": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=7944ef04-f831-11e5-7a69-971500188b19"
+        }
+      }
+    }
+  ]
+}
+```
 
 ### Получить События по Сущности
 Запрос на получение событий по сущности с указанным id. Результат: Объект JSON, включающий в себя поля:
@@ -201,15 +359,78 @@ https://online.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder
 - **meta** [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) событий
 - **rows** - Массив JSON сущностей, представляющих собой события
 
-+ Parameters
-  + type: `product` (required, string) - тип сущности
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id сущности
+**Параметры**
 
-+ Response 200 (application/json)
+|Параметр   |Описание   | 
+|---|---|
+|type|  `string` (required) *Example: product* тип сущности.|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id сущности.|
+
+> Получить События по Сущности
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/audit"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка событий.
-  + Body
-  <!-- include(body/audit/get_events_by_entity.json) -->
 
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/audit",
+    "type": "auditevent",
+    "mediaType": "application/json",
+    "size": 1,
+    "limit": 25,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "source": "app",
+      "eventType": "update",
+      "entityType": "product",
+      "uid": "admin@1",
+      "moment": "2017-05-30 18:47:49",
+      "diff": {
+        "weighed": {
+          "oldValue": false,
+          "newValue": true
+        }
+      },
+      "name": "some product",
+      "audit": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/audit/7944ef04-f831-11e5-7a69-971500188b19",
+          "type": "audit",
+          "mediaType": "application/json"
+        }
+      },
+      "entity": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=7944ef04-f831-11e5-7a69-971500188b19"
+        }
+      }
+    }
+  ]
+}
+```
 
 ##### Фильтры
 
@@ -307,7 +528,109 @@ https://online.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder
 - **source** - типы действий, по которым могут быть отфильтрованы сущности аудита
 - **entityType** - названия сущностей, по которым могут быть отфильтрованы сущности аудита
 
-+ Response 200 (application/json)
+> Получить Фильтры
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/audit/metadata/filters"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка Фильтров аудита.
-  + Body
-  <!-- include(body/audit/get_audit_filters.json) -->
+
+```json
+{
+  "eventtype": [
+    "create",
+    "update",
+    "delete",
+    "puttorecyclebin",
+    "restorefromrecyclebin",
+    "puttoarchive",
+    "restorefromarchive",
+    "print",
+    "openpublication",
+    "closepublication",
+    "sendemailfromentity"
+  ],
+  "source": [
+    "copy",
+    "combine",
+    "import",
+    "restapi",
+    "jsonapi",
+    "posapi",
+    "retail",
+    "connectors",
+    "evotor",
+    "clearrecyclebin",
+    "loginlogout",
+    "emailsend"
+  ],
+  "entitytype": [
+    "organization",
+    "employee",
+    "store",
+    "retailstore",
+    "retailshift",
+    "retaildemand",
+    "retailsalesreturn",
+    "retaildrawercashin",
+    "retaildrawercashout",
+    "purchaseorder",
+    "invoicein",
+    "supply",
+    "purchasereturn",
+    "facturein",
+    "customerorder",
+    "invoiceout",
+    "demand",
+    "commissionreportin",
+    "commissionreportout",
+    "salesreturn",
+    "factureout",
+    "pricelist",
+    "loss",
+    "enter",
+    "move",
+    "inventory",
+    "processing",
+    "processingplan",
+    "processingplanfolder",
+    "processingorder",
+    "internalorder",
+    "cashin",
+    "paymentin",
+    "cashout",
+    "paymentout",
+    "service",
+    "product",
+    "bundle",
+    "productfolder",
+    "variant",
+    "counterparty",
+    "currency",
+    "project",
+    "contract",
+    "amiroconnectorsettings",
+    "cmlconnectorsettings",
+    "ecwidconnectorsettings",
+    "smartwebconnectorsettings",
+    "ymlconnectorsettings",
+    "vkconnectorsettings",
+    "yandexconnectorsettings",
+    "usersettings",
+    "group",
+    "user",
+    "accountrole",
+    "specialpricediscount",
+    "personaldiscount",
+    "accumulationdiscount",
+    "entitysettings",
+    "statesettings",
+    "templatesettings",
+    "https://online.moysklad.ru/api/remap/1.2/entity/customentity/eaacabaf-2655-11e6-8a84-bae500000045"
+  ]
+}
+```

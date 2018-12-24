@@ -57,20 +57,211 @@
 - **meta** [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) отчёта,
 - **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой отчёты по отдельным контрагентам.
-+ Parameters
-  + limit: 1000 (optional, enum)
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-  Отступ в выдаваемом списке сущностей
-      + Default: `0`
-+ Response 200 (application/json)
+
+> Запрос на получение отчёта по контрагентам.
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/report/counterparty"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление отчёта по контрагентам.
-  + Body
-        <!-- include(body/report_counterparty/get_list.json) -->
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/report/counterparty",
+    "type": "counterparty",
+    "mediaType": "application/json",
+    "size": 5,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/report/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
+        "type": "counterparty",
+        "mediaType": "application/json"
+      },
+      "counterparty": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        },
+        "id": "b80ea81b-7058-11e6-8a84-bae500000000",
+        "name": "ООО Радуга",
+        "externalCode": "o7732zkki541HDkZZD1Yt3",
+        "companyType": "legal"
+      },
+      "firstDemandDate": null,
+      "lastDemandDate": null,
+      "demandsCount": 0,
+      "demandsSum": 0,
+      "averageReceipt": 0,
+      "returnsCount": 0,
+      "returnsSum": 0,
+      "discountsSum": 0,
+      "balance": 0,
+      "profit": 0,
+      "lastEventDate": null,
+      "lastEventText": null,
+      "updated": "2016-09-01 18:32:17"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/report/counterparty/df2fdd2d-6934-11e6-8a84-bae500000049",
+        "type": "counterparty",
+        "mediaType": "application/json"
+      },
+      "counterparty": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/df2fdd2d-6934-11e6-8a84-bae500000049",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        },
+        "id": "df2fdd2d-6934-11e6-8a84-bae500000049",
+        "name": "rtr",
+        "externalCode": "rRlzrdZmjql9r9dveXPE43",
+        "companyType": "legal"
+      },
+      "firstDemandDate": null,
+      "lastDemandDate": null,
+      "demandsCount": 0,
+      "demandsSum": 0,
+      "averageReceipt": 0,
+      "returnsCount": 0,
+      "returnsSum": 0,
+      "discountsSum": 0,
+      "balance": 0,
+      "profit": 0,
+      "lastEventDate": "2016-09-08 13:07:30",
+      "lastEventText": "продажа",
+      "updated": "2016-08-23 16:24:08"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/report/counterparty/12c9ebcf-692c-11e6-8a84-bae50000005d",
+        "type": "counterparty",
+        "mediaType": "application/json"
+      },
+      "counterparty": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12c9ebcf-692c-11e6-8a84-bae50000005d",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        },
+        "id": "12c9ebcf-692c-11e6-8a84-bae50000005d",
+        "name": "Розничный покупатель",
+        "externalCode": "lBvYwLWMiBsct7sVRrFnJ2",
+        "companyType": "legal"
+      },
+      "firstDemandDate": "2016-08-26 15:49:00",
+      "lastDemandDate": "2016-08-26 15:49:00",
+      "demandsCount": 1,
+      "demandsSum": 80000,
+      "averageReceipt": 80000,
+      "returnsCount": 0,
+      "returnsSum": 0,
+      "discountsSum": 0,
+      "balance": 0,
+      "profit": -103040600,
+      "lastEventDate": null,
+      "lastEventText": null,
+      "updated": "2016-08-23 15:21:09"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/report/counterparty/12a8e347-692c-11e6-8a84-bae500000055",
+        "type": "counterparty",
+        "mediaType": "application/json"
+      },
+      "counterparty": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8e347-692c-11e6-8a84-bae500000055",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        },
+        "id": "12a8e347-692c-11e6-8a84-bae500000055",
+        "name": "ООО \"Покупатель\"",
+        "externalCode": "DTItQRbDhyl472ZqC5OWw2",
+        "inn": "7736570902",
+        "companyType": "legal"
+      },
+      "firstDemandDate": "2016-09-01 17:54:00",
+      "lastDemandDate": "2016-09-01 17:54:00",
+      "demandsCount": 1,
+      "demandsSum": 60000,
+      "averageReceipt": 60000,
+      "returnsCount": 0,
+      "returnsSum": 0,
+      "discountsSum": 0,
+      "balance": 1241255000,
+      "profit": 50000,
+      "lastEventDate": null,
+      "lastEventText": null,
+      "updated": "2016-08-23 15:21:09"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/report/counterparty/12a8b923-692c-11e6-8a84-bae500000053",
+        "type": "counterparty",
+        "mediaType": "application/json"
+      },
+      "counterparty": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8b923-692c-11e6-8a84-bae500000053",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        },
+        "id": "12a8b923-692c-11e6-8a84-bae500000053",
+        "name": "ООО \"Поставщик\"",
+        "externalCode": "aZBfWOKzj-lcq7c7IWZON3",
+        "inn": "7736570901",
+        "companyType": "legal"
+      },
+      "firstDemandDate": null,
+      "lastDemandDate": null,
+      "demandsCount": 0,
+      "demandsSum": 0,
+      "averageReceipt": 0,
+      "returnsCount": 0,
+      "returnsSum": 0,
+      "discountsSum": 0,
+      "balance": 0,
+      "profit": 0,
+      "lastEventDate": null,
+      "lastEventText": null,
+      "updated": "2016-08-23 15:21:09"
+    }
+  ]
+}
+```
 
 ### Выборочные показатели контрагентов 
 Запрос на получение отчёта по указанным контрагентам. Необходимо передать массив `counterparties`,
@@ -80,31 +271,189 @@
 - **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой отчёты по отдельным контрагентам.
 
-+ Request Пример (application/json)
-Пример запроса отчётов для нескольких контрагентов.
-  + Body
-        <!-- include(body/report_counterparty/request.json) -->
+> Пример запроса отчётов для нескольких контрагентов.
 
-+ Response 200 (application/json)
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/report/counterparty"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "counterparties": [
+              {
+                "counterparty": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/49b40d55-66cc-11e7-6adb-ede500000054",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+                    "type": "counterparty",
+                    "mediaType": "application/json"
+                  }
+                }
+              },
+              {
+                "counterparty": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/37e4efe0-6ade-11e7-6adb-ede50000001a",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+                    "type": "counterparty",
+                    "mediaType": "application/json"
+                  }
+                }
+              }
+            ]
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление отчёта по контрагентам.
-  + Body
-        <!-- include(body/report_counterparty/response.json) -->
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/report/counterparty",
+    "type": "counterparty",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/report/counterparty/49b40d55-66cc-11e7-6adb-ede500000054",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=49b40d55-66cc-11e7-6adb-ede500000054"
+      },
+      "counterparty": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/49b40d55-66cc-11e7-6adb-ede500000054",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=49b40d55-66cc-11e7-6adb-ede500000054"
+        },
+        "id": "49b40d55-66cc-11e7-6adb-ede500000054",
+        "name": "ООО \"Поставщик\"",
+        "externalCode": "btkD664AiiIaIYMdI50OW3",
+        "inn": "7736570901",
+        "companyType": "legal"
+      },
+      "firstDemandDate": null,
+      "lastDemandDate": null,
+      "demandsCount": 0,
+      "demandsSum": 0,
+      "averageReceipt": 0,
+      "returnsCount": 0,
+      "returnsSum": 0,
+      "discountsSum": 0,
+      "balance": 0,
+      "profit": 0,
+      "lastEventDate": null,
+      "lastEventText": null,
+      "updated": "2017-07-12 09:35:26"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/report/counterparty/37e4efe0-6ade-11e7-6adb-ede50000001a",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=37e4efe0-6ade-11e7-6adb-ede50000001a"
+      },
+      "counterparty": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/37e4efe0-6ade-11e7-6adb-ede50000001a",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=37e4efe0-6ade-11e7-6adb-ede50000001a"
+        },
+        "id": "37e4efe0-6ade-11e7-6adb-ede50000001a",
+        "name": "ООО \"Поставщик 2\"",
+        "externalCode": "WG4JRabzgb6aW9asZ20yy3",
+        "inn": "7736570901",
+        "companyType": "legal"
+      },
+      "firstDemandDate": null,
+      "lastDemandDate": null,
+      "demandsCount": 0,
+      "demandsSum": 0,
+      "averageReceipt": 0,
+      "returnsCount": 0,
+      "returnsSum": 0,
+      "discountsSum": 0,
+      "balance": 0,
+      "profit": 0,
+      "lastEventDate": null,
+      "lastEventText": null,
+      "updated": "2017-07-17 13:54:30"
+    }
+  ]
+}
+```
 
 ### Показатели контрагента 
-#### Показатели контрагента 
-Запрос на получение отчёта по контрагенту с указанным id.
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id контрагента
-  + limit: 1000 (optional, enum)
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-  Отступ в выдаваемом списке сущностей
-      + Default: `0`
-+ Response 200 (application/json)
+#### Показатели контрагента
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+ 
+> Запрос на получение отчёта по контрагенту с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/report/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление отчёта по контрагенту.
-  + Body
-        <!-- include(body/report_counterparty/get_by_id.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/report/counterparty/df2fdd2d-6934-11e6-8a84-bae500000049",
+    "type": "counterparty",
+    "mediaType": "application/json"
+  },
+  "counterparty": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/df2fdd2d-6934-11e6-8a84-bae500000049",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    },
+    "id": "df2fdd2d-6934-11e6-8a84-bae500000049",
+    "name": "rtr",
+    "externalCode": "rRlzrdZmjql9r9dveXPE43",
+    "companyType": "legal"
+  },
+  "firstDemandDate": "2016-09-01 17:54:00",
+  "lastDemandDate": "2016-09-01 17:54:00",
+  "demandsCount": 1,
+  "demandsSum": 60000,
+  "averageReceipt": 60000,
+  "returnsCount": 0,
+  "returnsSum": 0,
+  "discountsSum": 0,
+  "balance": -60000,
+  "profit": 50000,
+  "lastEventDate": "2016-09-08 13:07:30",
+  "lastEventText": "продажа",
+  "updated": "2016-08-23 16:24:08"
+}
+```

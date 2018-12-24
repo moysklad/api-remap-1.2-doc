@@ -48,8 +48,6 @@
 + Заказ поставщику (purchaseorder)
 + Выданный отчёт комиссионера (commissionreportout)
 
-<!-- include(rate.apib) -->
-
 О работе с доп. полями Расходных ордеров можно прочитать [здесь](/api/remap/1.2/doc/index.html#header-работа-с-дополнительными-полями)
 
 
@@ -59,26 +57,371 @@
 - **meta** [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о выдаче,
 - **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой Расходные ордера .
-+ Parameters
-  + limit: 1000 (optional, enum[number])
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
 
-  + search: `0001` (optional, string)
-    URL Параметр для поиска по имени документа.
-    Фильтр документов по указанной поисковой строке. Фильтрация происходит по
-    полю name.
+**Параметры**
 
-+ Response 200 (application/json)
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|search |  `string` (optional) *Example: 0001* URL Параметр для поиска по имени документа. Фильтр документов по указанной поисковой строке. Фильтрация происходит по полю name.|
+
+> Получить Расходные ордера
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/cashin"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка Расходных ордеров.
-  + Body
-        <!-- include(body/cash_out/get_list.json) -->
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata",
+    "type": "cashout",
+    "mediaType": "application/json",
+    "size": 3,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/235c14cf-41b1-11e6-8a84-bae500000073",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata",
+        "type": "cashout",
+        "mediaType": "application/json"
+      },
+      "id": "235c14cf-41b1-11e6-8a84-bae500000073",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      },
+      "shared": true,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2016-07-04 09:32:53",
+      "name": "00002",
+      "description": "Лол",
+      "externalCode": "wWfQT10VjQztCieUrE72r2",
+      "moment": "2016-07-04 09:31:00",
+      "applicable": true,
+      "rate": {
+        "currency": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/faf45b9a-2e58-11e6-8a84-bae500000055",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json"
+          }
+        }
+      },
+      "sum": 35000,
+      "organization": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json"
+        }
+      },
+      "contract": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/2b34d43f-3f52-11e6-8a84-bae500000066",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+          "type": "contract",
+          "mediaType": "application/json"
+        }
+      },
+      "agent": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/1489a08d-32ca-11e6-8a84-bae50000000d",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      },
+      "state": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/states/0eda7963-41b1-11e6-8a84-bae50000006e",
+          "type": "state",
+          "mediaType": "application/json"
+        }
+      },
+      "attributes": [
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c8857703-3f8e-11e6-8a84-bae5000000ff",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          },
+          "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
+          "name": "Поступил",
+          "type": "boolean",
+          "value": false
+        }
+      ],
+      "paymentPurpose": "Оплата ещё одной приёмки",
+      "expenseItem": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+          "type": "expenseitem",
+          "mediaType": "application/json"
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/489afb43-41b1-11e6-8a84-bae50000007a",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata",
+        "type": "cashout",
+        "mediaType": "application/json"
+      },
+      "id": "489afb43-41b1-11e6-8a84-bae50000007a",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2016-07-04 09:33:56",
+      "name": "00003",
+      "description": "Лмао",
+      "externalCode": "Q9wiyzIQiOhYhqpVkq6IE2",
+      "moment": "2016-07-04 09:32:00",
+      "applicable": true,
+      "rate": {
+        "currency": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/faf45b9a-2e58-11e6-8a84-bae500000055",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json"
+          }
+        }
+      },
+      "sum": 3535000,
+      "organization": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json"
+        }
+      },
+      "contract": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/37def9c0-41b1-11e6-8a84-bae500000077",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+          "type": "contract",
+          "mediaType": "application/json"
+        }
+      },
+      "project": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/722e39f0-313e-11e6-8a84-bae500000008",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+          "type": "project",
+          "mediaType": "application/json"
+        }
+      },
+      "agent": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/1509a2f7-32ca-11e6-8a84-bae500000068",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      },
+      "state": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/states/0eda7963-41b1-11e6-8a84-bae50000006e",
+          "type": "state",
+          "mediaType": "application/json"
+        }
+      },
+      "attributes": [
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c8857703-3f8e-11e6-8a84-bae5000000ff",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          },
+          "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
+          "name": "Поступил",
+          "type": "boolean",
+          "value": false
+        }
+      ],
+      "paymentPurpose": "Оплата ещё одной приёмки",
+      "expenseItem": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+          "type": "expenseitem",
+          "mediaType": "application/json"
+        }
+      },
+      "operations": [
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/supply/90ba347d-6b8b-11e6-8a84-bae5000000bd",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/supply/metadata",
+            "type": "supply",
+            "mediaType": "application/json"
+          },
+          "linkedSum": 80000
+        }
+      ]
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/fd9b07ea-41b0-11e6-8a84-bae500000069",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata",
+        "type": "cashout",
+        "mediaType": "application/json"
+      },
+      "id": "fd9b07ea-41b0-11e6-8a84-bae500000069",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2016-07-04 09:34:14",
+      "name": "00001",
+      "description": "Ордер созданный через UI.",
+      "externalCode": "Biim5OxdjUnFcC2saaU551",
+      "moment": "2016-07-04 09:30:00",
+      "applicable": true,
+      "rate": {
+        "currency": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/cdbc62de-3f68-11e6-8a84-bae500000050",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json"
+          }
+        },
+        "value": 63
+      },
+      "sum": 3174603,
+      "organization": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json"
+        }
+      },
+      "contract": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/e16fc992-41b0-11e6-8a84-bae500000066",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+          "type": "contract",
+          "mediaType": "application/json"
+        }
+      },
+      "project": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/722e39f0-313e-11e6-8a84-bae500000008",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+          "type": "project",
+          "mediaType": "application/json"
+        }
+      },
+      "agent": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/147c1f1b-32ca-11e6-8a84-bae500000004",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      },
+      "state": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/states/0eda8542-41b1-11e6-8a84-bae500000070",
+          "type": "state",
+          "mediaType": "application/json"
+        }
+      },
+      "attributes": [
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c8857703-3f8e-11e6-8a84-bae5000000ff",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          },
+          "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
+          "name": "Поступил",
+          "type": "boolean",
+          "value": false
+        }
+      ],
+      "paymentPurpose": "Оплата приёмки",
+      "expenseItem": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/82031d62-2e58-11e6-ab5c-d8cb8a84bae5",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+          "type": "expenseitem",
+          "mediaType": "application/json"
+        }
+      }
+    }
+  ]
+}
+
+```
 
 ### Создать Расходный ордер
 Запрос на создание нового Расходного ордера.
@@ -87,38 +430,388 @@
 + **organization** - Ссылка на ваше юрлицо в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные)
 + **agent** - Ссылка на контрагента  в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные)
 + **expenseItem** - Статья расходов в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные)
-+ Request Пример (application/json)
-Пример создания нового Расходного ордера  с телом запроса, содержащим только необходимые поля.
-  + Body
-        <!-- include(body/cash_out/post_request.json) -->
 
-+ Response 200 (application/json)
+> Пример создания нового Расходного ордера  с телом запроса, содержащим только необходимые поля.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/cashout"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "0721",
+            "organization": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "type": "organization",
+                "mediaType": "application/json"
+              }
+            },
+            "agent": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/147c1f1b-32ca-11e6-8a84-bae500000004",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+                "type": "counterparty",
+                "mediaType": "application/json"
+              }
+            },
+            "expenseItem": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+                "type": "expenseitem",
+                "mediaType": "application/json"
+              }
+            }
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданного Расходного ордера.
-  + Body
-        <!-- include(body/cash_out/post_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/e446a227-41b1-11e6-8a84-bae500000005",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata",
+    "type": "cashout",
+    "mediaType": "application/json"
+  },
+  "id": "e446a227-41b1-11e6-8a84-bae500000005",
+  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "name": "0721",
+  "moment": "2012-06-27 16:52:24",
+  "applicable": false,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/147c1f1b-32ca-11e6-8a84-bae500000004",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "expenseItem": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+      "type": "expenseitem",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
 
 ### Массовое создание и обновление  Расходных ордеров
 [Массовое создание и обновление](/api/remap/1.2/doc/index.html#header-создание-и-обновление-нескольких-объектов) Расходных ордеров.
 В теле запроса нужно передать массив, содержащий JSON представления Расходных ордеров, которые вы хотите создать или обновить.
 Обновляемые Расходные ордера должны содержать идентификатор в виде метаданных.
 
-+ Request Пример (application/json)
-Пример создания и обновления нескольких Расходных ордеров
-  + Body
-        <!-- include(body/cash_out/post_massive_request.json) -->
+> Пример создания и обновления нескольких Расходных ордеров
 
-+ Response 200 (application/json)
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/cashout"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "name": "0721",
+              "organization": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                  "type": "organization",
+                  "mediaType": "application/json"
+                }
+              },
+              "agent": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/147c1f1b-32ca-11e6-8a84-bae500000004",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+                  "type": "counterparty",
+                  "mediaType": "application/json"
+                }
+              },
+              "expenseItem": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+                  "type": "expenseitem",
+                  "mediaType": "application/json"
+                }
+              }
+            },
+            {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/e446a227-41b1-11e6-8a84-bae500000005",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata",
+                "type": "cashout",
+                "mediaType": "application/json"
+              },
+              "shared": true,
+              "name": "0722",
+              "description": "Расходный ордер созданный и обновлённый через API",
+              "code": "12412470912",
+              "externalCode": "unreal777slknf",
+              "moment": "2016-06-27 16:52:24",
+              "applicable": true,
+              "sum": 25190,
+              "paymentPurpose": "Оплата нового заказа поставщику",
+              "expenseItem": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be23a18-0479-11e5-a260-448a5b426e7e",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+                  "type": "expenseitem",
+                  "mediaType": "application/json"
+                }
+              },
+              "attributes": [
+                {
+                  "id": "c88569fc-3f8e-11e6-8a84-bae5000000fd",
+                  "value": 0.49
+                },
+                {
+                  "id": "c88570d2-3f8e-11e6-8a84-bae5000000fe",
+                  "value": 7501
+                },
+                {
+                  "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
+                  "value": true
+                }
+              ]
+            }
+          ]'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - массив JSON представлений созданных и обновленных Расходных ордеров.
-  + Body
-        <!-- include(body/cash_out/post_massive_response.json) -->
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/e446a227-41b1-11e6-8a84-bae500000005",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata",
+      "type": "cashout",
+      "mediaType": "application/json"
+    },
+    "id": "e446a227-41b1-11e6-8a84-bae500000005",
+    "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "name": "0721",
+    "moment": "2012-06-27 16:52:24",
+    "applicable": false,
+    "rate": {
+      "currency": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "organization": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json"
+      }
+    },
+    "agent": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/147c1f1b-32ca-11e6-8a84-bae500000004",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json"
+      }
+    },
+    "expenseItem": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+        "type": "expenseitem",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/e446a227-41b1-11e6-8a84-bae500000005",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata",
+      "type": "cashout",
+      "mediaType": "application/json"
+    },
+    "id": "e446a227-41b1-11e6-8a84-bae500000005",
+    "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "shared": true,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2016-07-04 09:41:17",
+    "name": "0722",
+    "description": "Расходный ордер созданный и обновлённый через API",
+    "code": "12412470912",
+    "externalCode": "unreal777slknf",
+    "moment": "2016-06-27 16:52:24",
+    "applicable": true,
+    "rate": {
+      "currency": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "sum": 900,
+    "organization": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json"
+      }
+    },
+    "agent": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/147c1f1b-32ca-11e6-8a84-bae500000004",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json"
+      }
+    },
+    "attributes": [
+      {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c88569fc-3f8e-11e6-8a84-bae5000000fd",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+        },
+        "id": "c88569fc-3f8e-11e6-8a84-bae5000000fd",
+        "name": "Доля",
+        "type": "double",
+        "value": 0.49
+      },
+      {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c88570d2-3f8e-11e6-8a84-bae5000000fe",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+        },
+        "id": "c88570d2-3f8e-11e6-8a84-bae5000000fe",
+        "name": "Попытки",
+        "type": "long",
+        "value": 7501
+      },
+      {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c8857703-3f8e-11e6-8a84-bae5000000ff",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+        },
+        "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
+        "name": "Поступил",
+        "type": "boolean",
+        "value": true
+      }
+    ],
+    "paymentPurpose": "Оплата нового заказа поставщику",
+    "expenseItem": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be23a18-0479-11e5-a260-448a5b426e7e",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+        "type": "expenseitem",
+        "mediaType": "application/json"
+      }
+    }
+  }
+]
+
+```
 
 ### Удалить Расходный ордер
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Расходного ордера
 
-Запрос на удаление Расходного ордера  с указанным id.
+**Параметры**
 
-+ Response 200 (application/json)
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Расходного ордера.|
+
+> Запрос на удаление Расходного ордера  с указанным id.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/cashout/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешное удаление Расходного ордера.
 
 ### Метаданные Расходных ордеров
@@ -131,89 +824,738 @@
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](/api/remap/1.2/doc/index.html#header-работа-с-дополнительными-полями).
 
-+ Response 200 (application/json)
+> Метаданные Расходных ордеров
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление доп. полей Расходных ордеров.
-  + Body
-        <!-- include(body/cash_out/metadata.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata",
+    "mediaType": "application/json"
+  },
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c88569fc-3f8e-11e6-8a84-bae5000000fd",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "c88569fc-3f8e-11e6-8a84-bae5000000fd",
+      "name": "Доля",
+      "type": "double",
+      "required": false
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c88570d2-3f8e-11e6-8a84-bae5000000fe",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "c88570d2-3f8e-11e6-8a84-bae5000000fe",
+      "name": "Попытки",
+      "type": "long",
+      "required": false
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c8857703-3f8e-11e6-8a84-bae5000000ff",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
+      "name": "Поступил",
+      "type": "boolean",
+      "required": false
+    }
+  ],
+  "states": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/states/0eda7963-41b1-11e6-8a84-bae50000006e",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "0eda7963-41b1-11e6-8a84-bae50000006e",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "name": "Kek",
+      "color": 10667543,
+      "stateType": "Regular",
+      "entityType": "cashout"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/states/0eda80ad-41b1-11e6-8a84-bae50000006f",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "0eda80ad-41b1-11e6-8a84-bae50000006f",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "name": "Lol",
+      "color": 4354177,
+      "stateType": "Regular",
+      "entityType": "cashout"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/states/0eda8542-41b1-11e6-8a84-bae500000070",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "0eda8542-41b1-11e6-8a84-bae500000070",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "name": "LMAO",
+      "color": 15491487,
+      "stateType": "Regular",
+      "entityType": "cashout"
+    }
+  ],
+  "createShared": false
+}
+```
 
 ### Отдельное доп. поле
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Доп. поля
+
 #### Отдельное доп. поле
-Запрос на получение информации по отдельному дополнительному полю.
-+ Response 200 (application/json)
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
+
+> Запрос на получение информации по отдельному дополнительному полю.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление отдельного доп. поля.
-  + Body
-        <!-- include(body/cash_out/metadata_by_id.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/b54f1d9c-558a-11e6-8a84-bae50000006c",
+    "type": "attributemetadata",
+    "mediaType": "application/json"
+  },
+  "id": "b54f1d9c-558a-11e6-8a84-bae50000006c",
+  "name": "Строка",
+  "type": "string",
+  "required": false
+}
+```
 
 ### Шаблон расходного ордера
 #### Шаблон расходного ордера
-Запрос на получение предзаполненого стандартными значениями шаблона расходного ордера без связи с каким-либо документом.
+> Запрос на получение предзаполненого стандартными значениями шаблона расходного ордера без связи с каким-либо документом.
 
-+ Request Пустой запрос (application/json)
-+ Response 200 (application/json)
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/cashout/new"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d ''  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление предзаполненного расходного ордера.
-  + Body
-        <!-- include(body/cash_out/new_empty.json) -->
+
+```json
+{
+  "applicable": true,
+  "sum": 0,
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "expenseItem": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+      "type": "expenseitem",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
 
 ### Шаблон расходного ордера на основе
 Запрос на получение предзаполненного представления расходного ордера на основе другого документа.
 
-+ Request заказ поставщику (application/json)
-Запрос на получение шаблона расходного ордера на основе заказа поставщику.
-  + Body
-        <!-- include(body/cash_out/new_purchaseorder_request.json) -->
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление предзаполненного расходного ордера.
-  + Body
-        <!-- include(body/cash_out/new_purchaseorder_response.json) -->
+> Запрос на получение шаблона расходного ордера на основе заказа поставщику.
 
-+ Request возврат покупателя (application/json)
-Запрос на получение шаблона расходного ордера на основе возврата покупателя.
-  + Body
-        <!-- include(body/cash_out/new_sales_return_request.json) -->
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление предзаполненного расходного ордера.
-  + Body
-        <!-- include(body/cash_out/new_sales_return_response.json) -->
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/cashout/new"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "operations": [
+              {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/17a06771-961b-11e6-8a84-bae500000080",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata",
+                  "type": "purchaseorder",
+                  "mediaType": "application/json"
+                }
+              }
+            ]
+          }'  
+```
 
-+ Request приёмка (application/json)
-Запрос на получение шаблона расходного ордера на основе приёмки.
-  + Body
-        <!-- include(body/cash_out/new_supply_request.json) -->
-+ Response 200 (application/json)
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление предзаполненного расходного ордера.
-  + Body
-        <!-- include(body/cash_out/new_supply_response.json) -->
 
-+ Request счёт поставщика (application/json)
-Запрос на получение шаблона расходного ордера на основе счёта поставщика.
-  + Body
-        <!-- include(body/cash_out/new_invoice_in_request.json) -->
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление предзаполненного расходного ордера.
-  + Body
-        <!-- include(body/cash_out/new_invoice_in_response.json) -->
+```json
+{
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "sum": 0,
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b942953e-9128-11e6-8a84-bae500000054",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "paymentPurpose": "Оплата по заказу № 00001 от 2016-10-19 19:42:00. Сумма: 0,00 без НДС",
+  "operations": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/17a06771-961b-11e6-8a84-bae500000080",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata",
+        "type": "purchaseorder",
+        "mediaType": "application/json"
+      },
+      "linkedSum": 0
+    }
+  ],
+  "expenseItem": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+      "type": "expenseitem",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
 
-+ Request выд отчёт комиссионера (application/json)
-Запрос на получение шаблона расходного ордера на основе выданного отчёта комиссионера.
-  + Body
-        <!-- include(body/cash_out/new_commissionreportout_request.json) -->
-+ Response 200 (application/json)
+> Запрос на получение шаблона расходного ордера на основе возврата покупателя.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/cashout/new"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "operations": [
+              {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/3b0f51a4-961b-11e6-8a84-bae500000086",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata",
+                  "type": "salesreturn",
+                  "mediaType": "application/json"
+                }
+              }
+            ]
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление предзаполненного расходного ордера.
-  + Body
-        <!-- include(body/cash_out/new_commissionreportout_response.json) -->
+
+```json
+{
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "sum": 0,
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/2b0f10e4-9169-11e6-8a84-bae500000000",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "paymentPurpose": "Возврат по накладной № 00001 от 2016-10-19 19:43:00. Сумма: 0,00 без НДС",
+  "operations": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/3b0f51a4-961b-11e6-8a84-bae500000086",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata",
+        "type": "salesreturn",
+        "mediaType": "application/json"
+      },
+      "linkedSum": 0
+    }
+  ],
+  "expenseItem": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2395a-0479-11e5-baee-448a5b426e7e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+      "type": "expenseitem",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
+
+> Запрос на получение шаблона расходного ордера на основе приёмки.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/cashout/new"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "operations": [
+              {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/supply/0f57efd5-91f3-11e6-8a84-bae500000086",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/supply/metadata",
+                  "type": "supply",
+                  "mediaType": "application/json"
+                }
+              }
+            ]
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление предзаполненного расходного ордера.
+
+```json
+{
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "sum": 0,
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b942c396-9128-11e6-8a84-bae500000056",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "paymentPurpose": "Оплата по накладной № 123 от 2016-10-14 12:46:00. Сумма: 0,00 без НДС",
+  "operations": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/supply/0f57efd5-91f3-11e6-8a84-bae500000086",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/supply/metadata",
+        "type": "supply",
+        "mediaType": "application/json"
+      },
+      "linkedSum": 0
+    }
+  ],
+  "expenseItem": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+      "type": "expenseitem",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
+
+> Запрос на получение шаблона расходного ордера на основе счёта поставщика.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/cashout/new"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "operations": [
+              {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoicein/e43b34bc-961a-11e6-8a84-bae50000006f",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/invoicein/metadata",
+                  "type": "invoicein",
+                  "mediaType": "application/json"
+                }
+              }
+            ]
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление предзаполненного расходного ордера.
+
+```json
+{
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "sum": 0,
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b942c396-9128-11e6-8a84-bae500000056",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "paymentPurpose": "Оплата по счету № 00001 от 2016-10-19 19:41:00. Сумма: 0,00 без НДС",
+  "operations": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoicein/e43b34bc-961a-11e6-8a84-bae50000006f",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/invoicein/metadata",
+        "type": "invoicein",
+        "mediaType": "application/json"
+      },
+      "linkedSum": 0
+    }
+  ],
+  "expenseItem": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+      "type": "expenseitem",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
+
+> Запрос на получение шаблона расходного ордера на основе выданного отчёта комиссионера.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/cashout/new"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "operations": [
+              {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportout/394e3f39-b322-11e6-8a84-bae50000009e",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportout/metadata",
+                  "type": "commissionreportout",
+                  "mediaType": "application/json"
+                }
+              }
+            ]
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление предзаполненного расходного ордера.
+
+```json
+{
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "moment": "2016-11-25 18:17:38",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "sum": 10200850,
+  "contract": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/c3057574-ab01-11e6-8a84-bae500000070",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+      "type": "contract",
+      "mediaType": "application/json"
+    }
+  },
+  "project": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/6c6dd3f9-97a1-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+      "type": "project",
+      "mediaType": "application/json"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b942c396-9128-11e6-8a84-bae500000056",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "vatSum": 0,
+  "operations": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportout/394e3f39-b322-11e6-8a84-bae50000009e",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportout/metadata",
+        "type": "commissionreportout",
+        "mediaType": "application/json"
+      },
+      "linkedSum": 10200850
+    }
+  ],
+  "expenseItem": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+      "type": "expenseitem",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
 
 ### Расходный ордер
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Расходного ордера
-  
+
 ### Получить Расходный ордер
-Запрос на получение отдельного Расходного ордера с указанным id.
-+ Response 200 (application/json)
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Расходного ордера.|
+
+> Запрос на получение отдельного Расходного ордера с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/cashout/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление Расходного ордера.
-  + Body
-        <!-- include(body/cash_out/get_by_id.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/fd9b07ea-41b0-11e6-8a84-bae500000069",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata",
+    "type": "cashout",
+    "mediaType": "application/json"
+  },
+  "id": "fd9b07ea-41b0-11e6-8a84-bae500000069",
+  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-07-04 09:34:14",
+  "name": "00001",
+  "description": "Ордер созданный через UI.",
+  "externalCode": "Biim5OxdjUnFcC2saaU551",
+  "moment": "2016-07-04 09:30:00",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/cdbc62de-3f68-11e6-8a84-bae500000050",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    },
+    "value": 63
+  },
+  "sum": 3174603,
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "contract": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/e16fc992-41b0-11e6-8a84-bae500000066",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+      "type": "contract",
+      "mediaType": "application/json"
+    }
+  },
+  "project": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/722e39f0-313e-11e6-8a84-bae500000008",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+      "type": "project",
+      "mediaType": "application/json"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/147c1f1b-32ca-11e6-8a84-bae500000004",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "state": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/states/0eda8542-41b1-11e6-8a84-bae500000070",
+      "type": "state",
+      "mediaType": "application/json"
+    }
+  },
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c8857703-3f8e-11e6-8a84-bae5000000ff",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
+      "name": "Поступил",
+      "type": "boolean",
+      "value": false
+    }
+  ],
+  "paymentPurpose": "Оплата приёмки",
+  "expenseItem": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/82031d62-2e58-11e6-ab5c-d8cb8a84bae5",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+      "type": "expenseitem",
+      "mediaType": "application/json"
+    }
+  },
+  "operations": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/supply/90ba347d-6b8b-11e6-8a84-bae5000000bd",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/supply/metadata",
+        "type": "supply",
+        "mediaType": "application/json"
+      },
+      "linkedSum": 80000
+    }
+  ]
+}
+```
 
 ### Изменить Расходный ордер
 Запрос на обновление Расходного ордера   с указанным id.
@@ -225,12 +1567,161 @@
 нужно положить в поле под именем **operations** все **meta** тех документов, к которым вы хотите привязать финансовую операцию.
 Также для каждого документа можно указать cумму, оплаченную по данному документу из этого платежа **linkedSum**.
 
-+ Request Пример (application/json)
-Пример запроса на обновление отдельного Расходного ордера.
-  + Body
-        <!-- include(body/cash_out/put_request.json) -->
+**Параметры**
 
-+ Response 200 (application/json)
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Расходного ордера.|
+
+> Пример запроса на обновление отдельного Расходного ордера.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/cashout/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "shared": true,
+            "name": "0722",
+            "description": "Расходный ордер созданный и обновлённый через API",
+            "code": "12412470912",
+            "externalCode": "unreal777slknf",
+            "moment": "2016-06-27 16:52:24",
+            "applicable": true,
+            "sum": 25190,
+            "paymentPurpose": "Оплата нового заказа поставщику",
+            "expenseItem": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be23a18-0479-11e5-a260-448a5b426e7e",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+                "type": "expenseitem",
+                "mediaType": "application/json"
+              }
+            },
+            "attributes": [
+              {
+                "id": "c88569fc-3f8e-11e6-8a84-bae5000000fd",
+                "value": 0.49
+              },
+              {
+                "id": "c88570d2-3f8e-11e6-8a84-bae5000000fe",
+                "value": 7501
+              },
+              {
+                "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
+                "value": true
+              }
+            ]
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновлённого Расходного ордера.
-  + Body
-        <!-- include(body/cash_out/put_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/e446a227-41b1-11e6-8a84-bae500000005",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata",
+    "type": "cashout",
+    "mediaType": "application/json"
+  },
+  "id": "e446a227-41b1-11e6-8a84-bae500000005",
+  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-07-04 09:41:17",
+  "name": "0722",
+  "description": "Расходный ордер созданный и обновлённый через API",
+  "code": "12412470912",
+  "externalCode": "unreal777slknf",
+  "moment": "2016-06-27 16:52:24",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "sum": 900,
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/147c1f1b-32ca-11e6-8a84-bae500000004",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c88569fc-3f8e-11e6-8a84-bae5000000fd",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "c88569fc-3f8e-11e6-8a84-bae5000000fd",
+      "name": "Доля",
+      "type": "double",
+      "value": 0.49
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c88570d2-3f8e-11e6-8a84-bae5000000fe",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "c88570d2-3f8e-11e6-8a84-bae5000000fe",
+      "name": "Попытки",
+      "type": "long",
+      "value": 7501
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c8857703-3f8e-11e6-8a84-bae5000000ff",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
+      "name": "Поступил",
+      "type": "boolean",
+      "value": true
+    }
+  ],
+  "paymentPurpose": "Оплата нового заказа поставщику",
+  "expenseItem": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be23a18-0479-11e5-a260-448a5b426e7e",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+      "type": "expenseitem",
+      "mediaType": "application/json"
+    }
+  }
+}
+```

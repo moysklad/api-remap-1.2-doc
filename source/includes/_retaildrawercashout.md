@@ -29,65 +29,485 @@
   - **fileName** - название файла печатной формы
   - **updated** - дата последнего изменения
 + **created** - Дата создания `Только для чтения`
+
 #### Связи с другими документами
 + **retailShift** - Ссылка на розничную смену, в рамках которой была выполнена выплата денег в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные) `Необходимое`
 
-<!-- include(rate.apib) -->
-
 ### Получить выплаты денег 
 Запрос на получение всех выплат денег на данной учётной записи.
-+ Parameters
-  + limit: 1000 (optional, enum)
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
 
-  + search: `0001` (optional, string)
-    URL Параметр для поиска по имени документа.
-    Фильтр документов по указанной поисковой строке. Фильтрация происходит по
-    полю name.
+**Параметры**
 
-+ Response 200 (application/json)
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|search |  `string` (optional) *Example: 0001* URL Параметр для поиска по имени документа. Фильтр документов по указанной поисковой строке. Фильтрация происходит по полю name.|
+
+> Получить выплаты денег
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка выплат денег.
-  + Body
-        <!-- include(body/retaildrawercashout/get_list.json) -->
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata",
+    "type": "retaildrawercashout",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/1c5afb86-9603-11e6-8a84-bae500000079",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata",
+        "type": "retaildrawercashout",
+        "mediaType": "application/json"
+      },
+      "id": "1c5afb86-9603-11e6-8a84-bae500000079",
+      "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2016-10-19 16:51:18",
+      "name": "00001",
+      "description": "Выплата",
+      "externalCode": "BYeqnCMUgjNIhODoqt5C52",
+      "syncId": "ece1344a-5a68-4d32-ac70-a56b943717b5",
+      "moment": "2016-10-19 16:51:00",
+      "applicable": true,
+      "rate": {
+        "currency": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json"
+          }
+        }
+      },
+      "sum": 12441200,
+      "organization": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json"
+        }
+      },
+      "retailShift": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/131aaeb6-9603-11e6-8a84-bae500000072",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+          "type": "retailshift",
+          "mediaType": "application/json"
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/1e24533f-9603-11e6-8a84-bae50000007c",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata",
+        "type": "retaildrawercashout",
+        "mediaType": "application/json"
+      },
+      "id": "1e24533f-9603-11e6-8a84-bae50000007c",
+      "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2016-10-19 16:51:21",
+      "name": "00002",
+      "externalCode": "ohO0hmq7jioNXhM5xuTVe3",
+      "moment": "2016-10-19 16:51:00",
+      "applicable": true,
+      "rate": {
+        "currency": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json"
+          }
+        }
+      },
+      "sum": 111800200,
+      "organization": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json"
+        }
+      },
+      "retailShift": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/131aaeb6-9603-11e6-8a84-bae500000072",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+          "type": "retailshift",
+          "mediaType": "application/json"
+        }
+      }
+    }
+  ]
+}
+```
 
 ### Создать выплату денег 
 Запрос на создание выплаты денег.
 
-+ Request Пример 1 (application/json)
-Пример создания новой выплаты денег.
-  + Body
-        <!-- include(body/retaildrawercashout/post_request.json) -->
-+ Response 200
-  + Body
-        <!-- include(body/retaildrawercashout/post_response.json) -->
+> Пример создания новой выплаты денег.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "agent": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                "type": "employee",
+                "mediaType": "application/json"
+              }
+            },
+            "retailShift": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/131aaeb6-9603-11e6-8a84-bae500000072",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+                "type": "retailshift",
+                "mediaType": "application/json"
+              }
+            },
+            "organization": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "type": "organization",
+                "mediaType": "application/json"
+              }
+            },
+            "sum": 100500,
+            "description": "Новая выплата через API"
+          }'  
+```
+
+> Response 200
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/c05a6fb8-960c-11e6-8a84-bae50000000c",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata",
+    "type": "retaildrawercashout",
+    "mediaType": "application/json"
+  },
+  "id": "c05a6fb8-960c-11e6-8a84-bae50000000c",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-10-19 18:00:19",
+  "name": "00003",
+  "description": "Новое внесение через API",
+  "externalCode": "n19Ol5mFidHzBBojcTzvo3",
+  "moment": "2016-10-19 18:00:19",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "sum": 100500,
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "retailShift": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/131aaeb6-9603-11e6-8a84-bae500000072",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+      "type": "retailshift",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
 
 ### Массовое создание и обновление выплат денег 
 [Массовое создание и обновление](/api/remap/1.2/doc/index.html#header-создание-и-обновление-нескольких-объектов) выплат денег.
 В теле запроса нужно передать массив, содержащий JSON представления выплат денег, которые вы хотите создать или обновить.
 Обновляемые выплаты денег должны содержать идентификатор в виде метаданных.
 
-+ Request Пример (application/json)
-Пример создания и обновления нескольких выплат денег
-  + Body
-        <!-- include(body/retaildrawercashout/post_massive_request.json) -->
+> Пример создания и обновления нескольких выплат денег
 
-+ Response 200 (application/json)
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "agent": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                  "type": "employee",
+                  "mediaType": "application/json"
+                }
+              },
+              "retailShift": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/131aaeb6-9603-11e6-8a84-bae500000072",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+                  "type": "retailshift",
+                  "mediaType": "application/json"
+                }
+              },
+              "organization": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                  "type": "organization",
+                  "mediaType": "application/json"
+                }
+              },
+              "sum": 100500,
+              "description": "Новая выплата через API"
+            },
+            {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/c05a6fb8-960c-11e6-8a84-bae50000000c",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata",
+                "type": "retaildrawercashout",
+                "mediaType": "application/json"
+              },
+              "name": "0000004",
+              "sum": 700,
+              "applicable": false
+            }
+          ]'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - массив JSON представлений созданных и обновленных выплат денег.
-  + Body
-        <!-- include(body/retaildrawercashout/post_massive_response.json) -->
 
-### Удалить внесение денег 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id выплаты денег
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/c05a6fb8-960c-11e6-8a84-bae50000000c",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata",
+      "type": "retaildrawercashout",
+      "mediaType": "application/json"
+    },
+    "id": "c05a6fb8-960c-11e6-8a84-bae50000000c",
+    "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2016-10-19 18:00:19",
+    "name": "00003",
+    "description": "Новое внесение через API",
+    "externalCode": "n19Ol5mFidHzBBojcTzvo3",
+    "moment": "2016-10-19 18:00:19",
+    "applicable": true,
+    "rate": {
+      "currency": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "sum": 100500,
+    "organization": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json"
+      }
+    },
+    "retailShift": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/131aaeb6-9603-11e6-8a84-bae500000072",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+        "type": "retailshift",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/c05a6fb8-960c-11e6-8a84-bae50000000c",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata",
+      "type": "retaildrawercashout",
+      "mediaType": "application/json"
+    },
+    "id": "c05a6fb8-960c-11e6-8a84-bae50000000c",
+    "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2016-10-19 18:01:38",
+    "name": "0000004",
+    "description": "Новое внесение через API",
+    "externalCode": "n19Ol5mFidHzBBojcTzvo3",
+    "moment": "2016-10-19 18:00:19",
+    "applicable": false,
+    "rate": {
+      "currency": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "sum": 700,
+    "organization": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json"
+      }
+    },
+    "retailShift": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/131aaeb6-9603-11e6-8a84-bae500000072",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+        "type": "retailshift",
+        "mediaType": "application/json"
+      }
+    }
+  }
+]
 
-Запрос на удаление выплаты денег с указанным id.
+```
+
+### Удалить внесение денег
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id выплаты денег.|
+
+> Запрос на удаление выплаты денег с указанным id.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. 
 
 ### Метаданные выплат денег 
 #### Метаданные выплат денег 
@@ -99,62 +519,327 @@
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](#header-работа-с-дополнительными-полями).
 
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление доп. полей выплат денег.
-  + Body
-        <!-- include(body/retaildrawercashout/get_metadata.json) -->
+> Метаданные выплат денег
 
-### Отдельное доп. поле 
-+ Parameters
-  + id: `5290a290-0313-11e6-9464-e4de00000020` (required, string) - id Доп. поля
-#### Отдельное доп. поле 
-Запрос на получение информации по отдельному дополнительному полю.
-+ Response 200 (application/json)
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление доп. полей выплат денег.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata",
+    "mediaType": "application/json"
+  },
+  "attributes": [
+    {
+      "id": "5290a290-0313-11e6-9464-e4de00000020",
+      "name": "attribute_name",
+      "type": "boolean",
+      "required": false
+    }
+  ],
+  "states": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "fb56c504-2e58-11e6-8a84-bae500000069",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "name": "Новый",
+      "color": 15106326,
+      "stateType": "Regular",
+      "entityType": "retaildrawercashout"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata/states/fb56cae3-2e58-11e6-8a84-bae50000006a",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "fb56cae3-2e58-11e6-8a84-bae50000006a",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "name": "Подтвержден",
+      "color": 40931,
+      "stateType": "Regular",
+      "entityType": "retaildrawercashout"
+    }
+  ],
+  "createShared": false
+}
+```
+
+### Отдельное доп. поле
+
+#### Отдельное доп. поле
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 5290a290-0313-11e6-9464-e4de00000020* id Доп. поля.|
+
+> Запрос на получение информации по отдельному дополнительному полю.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление отдельного доп. поля.
-  + Body
-        <!-- include(body/retaildrawercashout/metadata_by_id.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020",
+    "type": "attributemetadata",
+    "mediaType": "application/json"
+  },
+  "id": "5290a290-0313-11e6-9464-e4de00000020",
+  "name": "attribute_name",
+  "type": "boolean",
+  "required": false
+}
+```
 
 ### Шаблон выплаты денег 
 #### Шаблон выплаты денег 
-Запрос на получение предзаполненого стандартными значениями шаблона выплаты денег без связи с каким-либо документом.
+> Запрос на получение предзаполненого стандартными значениями шаблона выплаты денег без связи с каким-либо документом.
 
-+ Request Пустое тело запроса (application/json)
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/new"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d ''  
+```
 
-+ Response 200 (application/json)
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление предзаполненной выплаты денег.
-  + Body
-        <!-- include(body/retaildrawercashout/new_empty.json) -->
+
+```json
+{
+  "applicable": true,
+  "sum": 0,
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
 
 ### Шаблон выплаты денег на основе 
 Запрос на получение предзаполненной выплаты денег на основе розничной смены.
 В результате запроса, будет создан предзаполненный шаблон выплаты денег на основе переданной
 розничной смены.
 
-+ Request Пример с розничной сменой (application/json)
-Запрос на создание выплаты денег на основе розничной смены.
-  + Body
-        <!-- include(body/retaildrawercashout/new_shift_request.json) -->
-+ Response 200 (application/json)
+> Запрос на создание выплаты денег на основе розничной смены.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/new"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "retailShift": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/131aaeb6-9603-11e6-8a84-bae500000072",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+                "type": "retailshift",
+                "mediaType": "application/json"
+              }
+            }
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление предзаполненной выплаты денег.
-  + Body
-        <!-- include(body/retaildrawercashout/new_shift_response.json) -->
+
+```json
+{
+  "applicable": true,
+  "sum": 0,
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
 
 ### Выплата денег 
 
-### Получить выплату денег 
-Запрос на получение отдельной выплаты денег с указанным id.
+### Получить выплату денег
+ 
+> Запрос на получение отдельной выплаты денег с указанным id.
 
-+ Response 200 (application/json)
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление выплаты денег с указанным id.
-  + Body
-        <!-- include(body/retaildrawercashout/get_by_id.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/1c5afb86-9603-11e6-8a84-bae500000079",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata",
+    "type": "retaildrawercashout",
+    "mediaType": "application/json"
+  },
+  "id": "1c5afb86-9603-11e6-8a84-bae500000079",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-10-19 16:51:18",
+  "name": "00001",
+  "description": "Выплата",
+  "externalCode": "BYeqnCMUgjNIhODoqt5C52",
+  "syncId": "ece1344a-5a68-4d32-ac70-a56b943717b5",
+  "moment": "2016-10-19 16:51:00",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "sum": 12441200,
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "retailShift": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/131aaeb6-9603-11e6-8a84-bae500000072",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+      "type": "retailshift",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
 
 ### Изменить выплачу денег 
 Запрос на обновление выплаты денег.
-+ Request Пример 1 (application/json)
-Пример обновления выплаты денег.
-  + Body
-        <!-- include(body/retaildrawercashout/put_request.json) -->
-+ Response 200
-  + Body
-        <!-- include(body/retaildrawercashout/put_response.json) -->
+
+> Пример обновления выплаты денег.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "0000004",
+            "sum": 700,
+            "applicable": false
+          }'  
+```
+
+> Response 200
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/c05a6fb8-960c-11e6-8a84-bae50000000c",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata",
+    "type": "retaildrawercashout",
+    "mediaType": "application/json"
+  },
+  "id": "c05a6fb8-960c-11e6-8a84-bae50000000c",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-10-19 18:01:38",
+  "name": "0000004",
+  "description": "Новое внесение через API",
+  "externalCode": "n19Ol5mFidHzBBojcTzvo3",
+  "moment": "2016-10-19 18:00:19",
+  "applicable": false,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/baac25f0-50ac-11e5-300d-c79b00000055",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "sum": 700,
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "retailShift": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/131aaeb6-9603-11e6-8a84-bae500000072",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+      "type": "retailshift",
+      "mediaType": "application/json"
+    }
+  }
+}
+```

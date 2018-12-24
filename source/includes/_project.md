@@ -31,69 +31,399 @@
 - **meta** [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о выдаче,
 - **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой проекты.
-+ Parameters
-  + limit: 1000 (optional, enum)
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
 
-+ Response 200 (application/json)
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+
+> Получить Проекты
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/project"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка проектов.
-  + Body
-        <!-- include(body/project/get_list.json) -->
 
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/project",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+    "type": "project",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/51f263f9-0307-11e6-9464-e4de0000007c",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+        "type": "project",
+        "mediaType": "application/json"
+      },
+      "id": "51f263f9-0307-11e6-9464-e4de0000007c",
+      "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2016-04-15 15:41:05",
+      "name": "Аггрегатор томатной пасты",
+      "description": "Проект по сбору и переработке томатной пасты от всех поставщиков",
+      "code": "1248y12hrd",
+      "externalCode": "HZV7dGc8iAnf0aNjrvQvN0",
+      "archived": false,
+      "attributes": [
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          },
+          "id": "ddff1ee8-12c1-11e6-9464-e4de0000007a",
+          "name": "Приоритет проекта",
+          "type": "string",
+          "value": "Высокий"
+        }
+      ]
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/8477d916-0aef-11e6-9464-e4de00000103",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+        "type": "project",
+        "mediaType": "application/json"
+      },
+      "id": "8477d916-0aef-11e6-9464-e4de00000103",
+      "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2016-04-25 17:10:51",
+      "name": "План",
+      "description": "Проект отслеживающий выполнение плана продаж",
+      "code": "124721fsavy",
+      "externalCode": "lv7MmPK4jvaqq-nA3g3NL2",
+      "archived": false,
+      "attributes": [
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          },
+          "id": "ddff1ee8-12c1-11e6-9464-e4de0000007a",
+          "name": "Приоритет проекта",
+          "type": "string",
+          "value": "Низкий"
+        }
+      ]
+    }
+  ]
+}
+```
 
 ### Создать Проект 
 Запрос на создание нового проекта. Единственным необходимым полем в теле запроса
 для создания проекта является **name**.
 
-+ Request Пример (application/json)
-Пример запроса на создание нового проекта.
-  + Body
-        <!-- include(body/project/post_request.json) -->
+> Пример запроса на создание нового проекта.
 
-+ Response 200 (application/json)
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/project"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "Проект по вертикальной интеграциии с Поставщиком",
+            "description": "Интеграция с основным контрагентом",
+            "code": "006",
+            "externalCode": "814fhsafiwb124"
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданного проекта.
-  + Body
-        <!-- include(body/project/post_response.json) -->
 
-+ Request Пример с доп полями (application/json)
-Пример запроса на создание нового проекта с доп. полями в теле запроса.
-  + Body
-        <!-- include(body/project/post_with_attributes_request.json) -->
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/2c013eeb-0af0-11e6-9464-e4de00000026",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+    "type": "project",
+    "mediaType": "application/json"
+  },
+  "id": "2c013eeb-0af0-11e6-9464-e4de00000026",
+  "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-04-25 17:15:32",
+  "name": "Проект по вертикальной интеграциии с Поставщиком",
+  "description": "Интеграция с основным контрагентом",
+  "code": "006",
+  "externalCode": "814fhsafiwb124",
+  "archived": false
+}
+```
 
-+ Response 200 (application/json)
+
+> Пример запроса на создание нового проекта с доп. полями в теле запроса.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/project"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "Новая система учёта",
+            "description": "Проект по переходу на новую систему учёта продукции",
+            "code": "0026",
+            "externalCode": "213zzz",
+            "attributes": [
+              {
+                "id": "ddff1ee8-12c1-11e6-9464-e4de0000007a",
+                "value": "Средний"
+              }
+            ]
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданного проекта.
-  + Body
-        <!-- include(body/project/post_with_attributes_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/169ed74e-12c3-11e6-9464-e4de00000000",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+    "type": "project",
+    "mediaType": "application/json"
+  },
+  "id": "169ed74e-12c3-11e6-9464-e4de00000000",
+  "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-05-05 16:12:58",
+  "name": "Новая система учёта",
+  "description": "Проект по переходу на новую систему учёта продукции",
+  "code": "0026",
+  "externalCode": "213zzz",
+  "archived": false,
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "ddff1ee8-12c1-11e6-9464-e4de0000007a",
+      "name": "Приоритет проекта",
+      "type": "string",
+      "value": "Средний"
+    }
+  ]
+}
+```
 
 ### Массовое создание и обновление Проектов 
 [Массовое создание и обновление](/api/remap/1.2/doc/index.html#header-создание-и-обновление-нескольких-объектов) Проектов.
 В теле запроса нужно передать массив, содержащий JSON представления Проектов, которые вы хотите создать или обновить.
 Обновляемые Проекты должны содержать идентификатор в виде метаданных.
 
-+ Request Пример (application/json)
-Пример создания и обновления нескольких Проектов
-  + Body
-        <!-- include(body/project/post_massive_request.json) -->
+> Пример создания и обновления нескольких Проектов
 
-+ Response 200 (application/json)
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/project"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "name": "Проект по вертикальной интеграциии с Поставщиком",
+              "description": "Интеграция с основным контрагентом",
+              "code": "006",
+              "externalCode": "814fhsafiwb124"
+            },
+            {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/76e88dff-3f9b-11e6-8a84-bae50000009b",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+                "type": "project",
+                "mediaType": "application/json"
+              },
+              "description": "Обновление проекта",
+              "code": "9999",
+              "externalCode": "dfDGFSG44"
+            }
+          ]'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - массив JSON представлений созданных и обновленных Проектов.
-  + Body
-        <!-- include(body/project/post_massive_response.json) -->
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/2c013eeb-0af0-11e6-9464-e4de00000026",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+      "type": "project",
+      "mediaType": "application/json"
+    },
+    "id": "2c013eeb-0af0-11e6-9464-e4de00000026",
+    "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2016-04-25 17:15:32",
+    "name": "Проект по вертикальной интеграциии с Поставщиком",
+    "description": "Интеграция с основным контрагентом",
+    "code": "006",
+    "externalCode": "814fhsafiwb124",
+    "archived": false
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/76e88dff-3f9b-11e6-8a84-bae50000009b",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+      "type": "project",
+      "mediaType": "application/json"
+    },
+    "id": "76e88dff-3f9b-11e6-8a84-bae50000009b",
+    "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2016-04-25 17:17:21",
+    "name": "Важный проект",
+    "description": "Обновление проекта",
+    "code": "9999",
+    "externalCode": "dfDGFSG44",
+    "archived": false
+  }
+]
+```
 
 ### Удалить Проект 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Проекта
 
-Запрос на удаление Проекта с указанным id.
+**Параметры**
 
-+ Response 200 (application/json)
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Проекта.|
+
+> Запрос на удаление Проекта с указанным id.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/project/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешное удаление Проекта.
 
 ### Метаданные Проектов 
@@ -105,49 +435,271 @@
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](#header-работа-с-дополнительными-полями).
 
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление доп. полей Проектов.
-  + Body
-        <!-- include(body/project/get_metadata.json) -->
+> Методанные проектов
 
-### Отдельное доп. поле 
-+ Parameters
-  + id: `5290a290-0313-11e6-9464-e4de00000020` (required, string) - id Доп. поля
-#### Отдельное доп. поле 
-Запрос на получение информации по отдельному дополнительному полю.
-+ Response 200 (application/json)
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление доп. полей Проектов.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+    "mediaType": "application/json"
+  },
+  "attributes": [
+    {
+      "id": "5290a290-0313-11e6-9464-e4de00000020",
+      "name": "attribute_name",
+      "type": "boolean",
+      "required": false
+    }
+  ],
+  "createShared": true
+}
+```
+
+### Отдельное доп. поле
+
+#### Отдельное доп. поле
+ 
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 5290a290-0313-11e6-9464-e4de00000020* id Доп. поля.|
+
+> Запрос на получение информации по отдельному дополнительному полю.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление отдельного доп. поля.
-  + Body
-        <!-- include(body/project/metadata_by_id.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020",
+    "type": "attributemetadata",
+    "mediaType": "application/json"
+  },
+  "id": "5290a290-0313-11e6-9464-e4de00000020",
+  "name": "attribute_name",
+  "type": "boolean",
+  "required": false
+}
+```
 
 ### Проект 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Проекта
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Проекта.|
 
 ### Получить Проект 
-Запрос на получение отдельного проекта с указанным id.
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление проекта.
-  + Body
-        <!-- include(body/project/get_by_id.json) -->
+> Запрос на получение отдельного проекта с указанным id.
 
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/project/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление проекта.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/51f263f9-0307-11e6-9464-e4de0000007c",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+    "type": "project",
+    "mediaType": "application/json"
+  },
+  "id": "51f263f9-0307-11e6-9464-e4de0000007c",
+  "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-04-15 15:41:05",
+  "name": "Аггрегатор томатной пасты",
+  "description": "Проект по сбору и переработке томатной пасты от всех поставщиков",
+  "code": "1248y12hrd",
+  "externalCode": "HZV7dGc8iAnf0aNjrvQvN0",
+  "archived": false,
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "ddff1ee8-12c1-11e6-9464-e4de0000007a",
+      "name": "Приоритет проекта",
+      "type": "string",
+      "value": "Средний"
+    }
+  ]
+}
+```
 
 ### Изменить Проект 
 Запрос на обновление существующего проекта с указанным id.
-+ Request Пример (application/json)
-Пример запроса на обновление существующего проекта.
-  + Body
-        <!-- include(body/project/put_request.json) -->
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление обновлённого проекта.
-  + Body
-        <!-- include(body/project/put_response.json) -->
 
-+ Request Пример с доп полями(application/json)
-Пример запроса на обновление существующего проекта с доп полями в теле запроса.
-  + Body
-        <!-- include(body/project/put_with_attributes_request.json) -->
-+ Response 200 (application/json)
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Проекта.|
+
+> Пример запроса на обновление существующего проекта.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/project/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "Проект по вертикальной интеграциии с Поставщиком",
+            "description": "Интеграция с ключевым контрагентом",
+            "code": "006_1",
+            "externalCode": "cas12rgs"
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновлённого проекта.
-  + Body
-        <!-- include(body/project/put_with_attributes_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/2c013eeb-0af0-11e6-9464-e4de00000026",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+    "type": "project",
+    "mediaType": "application/json"
+  },
+  "id": "2c013eeb-0af0-11e6-9464-e4de00000026",
+  "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-04-25 17:17:21",
+  "name": "Проект по вертикальной интеграциии с Поставщиком",
+  "description": "Интеграция с ключевым контрагентом",
+  "code": "006_1",
+  "externalCode": "cas12rgs",
+  "archived": false
+}
+```
+
+> Пример запроса на обновление существующего проекта с доп полями в теле запроса.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/project/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "Новая система учёта и сбыта",
+            "description": "Проект по переходу на новую систему учёта и сбыта продукции",
+            "code": "123",
+            "externalCode": "fbeuf21dof1f",
+            "attributes": [
+              {
+                "id": "ddff1ee8-12c1-11e6-9464-e4de0000007a",
+                "value": "Крайне высокий"
+              }
+            ]
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновлённого проекта.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/169ed74e-12c3-11e6-9464-e4de00000000",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+    "type": "project",
+    "mediaType": "application/json"
+  },
+  "id": "169ed74e-12c3-11e6-9464-e4de00000000",
+  "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-05-05 16:18:18",
+  "name": "Новая система учёта и сбыта",
+  "description": "Проект по переходу на новую систему учёта и сбыта продукции",
+  "code": "123",
+  "externalCode": "fbeuf21dof1f",
+  "archived": false,
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "ddff1ee8-12c1-11e6-9464-e4de0000007a",
+      "name": "Приоритет проекта",
+      "type": "string",
+      "value": "Крайне высокий"
+    }
+  ]
+}
+```

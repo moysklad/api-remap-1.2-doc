@@ -20,27 +20,106 @@
 
 #### День 
 ### Получить показатели за день 
-Запрос на получение показателей за день.
+> Запрос на получение показателей за день.
 
-+ Response 200 (application/json)
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/report/dashboard/day"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление показателей.
-  + Body
-        <!-- include(body/dashboard/day.json) -->
+
+```json
+{
+  "sales": {
+    "count": 0,
+    "amount": 0,
+    "movementAmount": -80000
+  },
+  "orders": {
+    "count": 0,
+    "amount": 0,
+    "movementAmount": 0
+  },
+  "money": {
+    "income": 0,
+    "outcome": 0,
+    "balance": 69700,
+    "todayMovement": 0,
+    "movement": 0
+  }
+}
+```
 
 #### Неделя 
 ### Получить показатели за неделю 
-Запрос на получение показателей за неделю.
+> Запрос на получение показателей за неделю.
 
-+ Response 200 (application/json)
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/report/dasboard/week"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление показателей.
-  + Body
-        <!-- include(body/dashboard/week.json) -->
+
+```json
+{
+  "sales": {
+    "count": 0,
+    "amount": 0,
+    "movementAmount": -80000
+  },
+  "orders": {
+    "count": 0,
+    "amount": 0,
+    "movementAmount": 0
+  },
+  "money": {
+    "income": 0,
+    "outcome": 0,
+    "balance": 69700,
+    "todayMovement": 0,
+    "movement": 0
+  }
+}
+
+```
 
 #### Месяц 
 ### Получить показатели за месяц 
-Запрос на получение показателей за месяц.
+> Запрос на получение показателей за месяц.
 
-+ Response 200 (application/json)
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/report/dashboard/month"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление показателей.
-  + Body
-        <!-- include(body/dashboard/month.json) -->
+
+```json
+{
+  "sales": {
+    "count": 0,
+    "amount": 0,
+    "movementAmount": -80000
+  },
+  "orders": {
+    "count": 0,
+    "amount": 0,
+    "movementAmount": 0
+  },
+  "money": {
+    "income": 0,
+    "outcome": 0,
+    "balance": 69700,
+    "todayMovement": 0,
+    "movement": 0
+  }
+}
+```

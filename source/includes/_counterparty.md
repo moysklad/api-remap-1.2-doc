@@ -139,32 +139,19 @@ ___
 О работе с доп. полями Контрагентов можно прочитать [здесь](/api/remap/1.2/doc/index.html#header-работа-с-дополнительными-полями)
 
 
-### Получить список Контрагентов 
-Получить список всех Контрагентов.
-Результат: Объект JSON, включающий в себя поля:
-- **meta** [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о выдаче,
-- **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос.
-- **rows** - Массив JSON объектов, представляющих собой Контрагентов.
+### Получить список Контрагентов
 
-+ Parameters
-  + limit: 1000 (optional, enum[number])
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty"
+  -H "Authorization: Basic <Access-Token>"
+```
 
-  + tags: `рабочие`(optional, string)
-    Подробнее про данный параметр можно посмотреть в разделе [Фильтрация выборки с помощью параметра filter](/api/remap/1.2/doc/index.html#header-фильтрация-выборки-с-помощью-параметра-filter).
-    Формат строки : `string`
-
-+ Response 200 (application/json)
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка Контрагентов.
-  ```json
-  {
+ 
+ ```json
+{
   "context": {
     "employee": {
       "meta": {
@@ -478,111 +465,910 @@ ___
       "salesAmount": 0
     }
   ]
-}  
-```       
+}
+``` 
 
-### Создать Контрагента 
-Создать нового Контрагента
-#### Описание
+Получить список всех Контрагентов.
+Результат: Объект JSON, включающий в себя поля:
+
+| Поля    | Описание                   |
+| ------- |:--------------------------------------------------------------------|
+| meta    | [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о выдаче                        |
+| context | [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос|
+| rows    | Массив JSON объектов, представляющих собой Контрагентов|
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| limit    | `number` (optional) **Defaul:** 1000 *Example: 1000*. Максимальное количество сущностей для извлечения. `Допустимые значения 1 - 1000`                      |
+| offset | `number` (optional) **Defaul:** 0 *Example: 40*. Отступ в выдаваемом списке сущностей|
+| tags    | `string`(optional) *Example: рабочие*. Подробнее про данный параметр можно посмотреть в разделе [Фильтрация выборки с помощью параметра filter](/api/remap/1.2/doc/index.html#header-фильтрация-выборки-с-помощью-параметра-filter).       Формат строки : `string`|
+
+### Создать Контрагента
+> Пример 1
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '{
+    "name": "ООО Радуга",
+    "description": "Сеть стройматериалов Радуга ЭКСПО",
+    "code": "rainbowCode",
+    "externalCode": "extRainbw",
+    "email": "raduga@stroi.ru",
+    "phone": "+7 495 331 22 33",
+    "fax": "1257752",
+    "actualAddress": "г.Москва ул Академика Миля дом 15 к 21",
+    "legalTitle": "Общество с ограниченой ответственностью \"Радуга\"",
+    "legalAddress": "г.Москва ул Авиастроителей д 93 к 12",
+    "inn": "125152124152",
+    "kpp": "12155521",
+    "ogrn": "1251512",
+    "okpo": "201355",
+    "tags": [
+      "Строители",
+      "Радуга",
+      "Ремонт"
+    ],
+    "state": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+        "type": "state",
+        "mediaType": "application/json"
+      }
+    },
+    "priceType": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f2222",
+        "type": "pricetype",
+        "mediaType": "application/json"
+      }
+    }    
+  }'
+```
+
+> Response 200. Успешный запрос. Результат - JSON представление созданного Контрагента.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type": "counterparty",
+    "mediaType": "application/json"
+  },
+  "id": "b80ea81b-7058-11e6-8a84-bae500000000",
+  "accountId": "1185513e-692c-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-09-01 18:28:22",
+  "name": "ООО Радуга",
+  "externalCode": "o7732zkki541HDkZZD1Yt3",
+  "archived": false,
+  "companyType": "legal",
+  "accounts": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/accounts",
+      "type": "account",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "tags": [],
+  "contactpersons": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/contactpersons",
+      "type": "contactperson",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "notes": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/notes",
+      "type": "note",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "state": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+      "type": "state",
+      "mediaType": "application/json"
+    }
+  },
+  "priceType": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f2222",
+      "type": "pricetype",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
+
+> Пример 2
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '{
+        "name": "ООО Радуга"
+      }'
+```
+
+> Response 200. Успешный запрос. Результат - JSON представление созданного Контрагента.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type": "counterparty",
+    "mediaType": "application/json"
+  },
+  "id": "b80ea81b-7058-11e6-8a84-bae500000000",
+  "accountId": "1185513e-692c-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-09-01 18:28:22",
+  "name": "ООО Радуга",
+  "externalCode": "o7732zkki541HDkZZD1Yt3",
+  "archived": false,
+  "created": "2007-02-07 17:16:41",
+  "companyType": "legal",
+  "accounts": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/accounts",
+      "type": "account",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "tags": [],
+  "contactpersons": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/contactpersons",
+      "type": "contactperson",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "notes": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/notes",
+      "type": "note",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "state": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+      "type": "state",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
+
+> Пример с дополнительными полями
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '{
+        "name": "ООО Овощ Экспресс",
+        "description": "Сеть доставки овощей",
+        "code": "ovoshexpressCode",
+        "externalCode": "extVagetable",
+        "email": "ovosh@delivery.ru",
+        "phone": "+7 495 662 12 23",
+        "fax": "1052034",
+        "actualAddress": "г.Москва ул Кузнечная д 331",
+        "legalTitle": "Общество с ограниченой ответственностью \"Овощ Экспресс\"",
+        "legalAddress": "г.Москва ул Достоевская д 93 к 12",
+        "inn": "1251521244152",
+        "kpp": "121555212",
+        "ogrn": "1251552",
+        "okpo": "201323",
+        "tags": [
+          "Овощи",
+          "Еда",
+          "Доставка"
+        ],
+        "attributes": [
+          {
+            "id": "0d129ff5-2c8c-11e6-8a84-bae5000000f3",
+            "name": "Коэффициент скидки",
+            "type": "double",
+            "value": 0.75
+          },
+          {
+            "id": "0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
+            "name": "Последний заключённый договор",
+            "type": "time",
+            "value": "2016-06-07 12:52:33"
+          },
+          {
+            "id": "0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
+            "name": "Партнёрское юрлицо",
+            "type": "boolean",
+            "value": false
+          }
+        ],
+        "state": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+            "type": "state",
+            "mediaType": "application/json"
+          }
+        }
+      }'
+```
+
+> Response 200. Успешный запрос. Результат - JSON представление созданного Контрагента.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type": "counterparty",
+    "mediaType": "application/json"
+  },
+  "id": "88fc07ac-2c8d-11e6-8a84-bae500000050",
+  "accountId": "6270cd18-2c7f-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-06-07 11:55:08",
+  "name": "ООО Овощ Экспресс",
+  "description": "Сеть доставки овощей",
+  "code": "ovoshexpressCode",
+  "externalCode": "extVagetable",
+  "archived": false,
+  "created": "2007-02-07 17:16:41",
+  "legalTitle": "Общество с ограниченой ответственностью \"Овощ Экспресс\"",
+  "legalAddress": "г.Москва ул Достоевская д 93 к 12",
+  "actualAddress": "г.Москва ул Кузнечная д 331",
+  "inn": "1251521244152",
+  "kpp": "121555212",
+  "ogrn": "1251552",
+  "okpo": "201323",
+  "email": "ovosh@delivery.ru",
+  "phone": "+7 495 662 12 23",
+  "fax": "1052034",
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d129ff5-2c8c-11e6-8a84-bae5000000f3",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "0d129ff5-2c8c-11e6-8a84-bae5000000f3",
+      "type": "double",
+      "name": "Коэффициент скидки",
+      "value": 0.75
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
+      "name": "Последний заключённый договор",
+      "type": "time",
+      "value": "2016-06-07 12:52:33"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
+      "name": "Партнёрское юрлицо",
+      "type": "boolean",
+      "value": false
+    }
+  ],
+  "accounts": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050/accounts",
+      "type": "account",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "tags": [
+    "доставка",
+    "еда",
+    "овощи"
+  ],
+  "contactpersons": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050/contactpersons",
+      "type": "contactperson",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "notes": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050/notes",
+      "type": "note",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "state": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+      "type": "state",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
+
+##### Описание
+
 Контрагент создаётся на основе переданного объекта JSON,
 который содержит представление нового Контрагента.
-+ Request Пример 1 (application/json)
-Пример типичного запроса для создания Контрагента.
-  + Body
-        <!-- include(body/counterparty/post_request1.json) -->
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление созданного Контрагента.
-    + Body
-          <!-- include(body/counterparty/post_request2.json) -->
 
+### Массовое создание и обновление Контрагентов
+[
+> Массовое создание и обновление Контрагентов
 
-+ Request Пример 2 (application/json)
-Пример запроса на создание Контрагента с указанием только лишь его имени
-  + Body
-        <!-- include(body/counterparty/post_short.json) -->
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '
+  {
+    "name": "ООО Радуга",
+    "description": "Сеть стройматериалов Радуга ЭКСПО",
+    "code": "rainbowCode",
+    "externalCode": "extRainbw",
+    "email": "raduga@stroi.ru",
+    "phone": "+7 495 331 22 33",
+    "fax": "1257752",
+    "actualAddress": "г.Москва ул Академика Миля дом 15 к 21",
+    "legalTitle": "Общество с ограниченой ответственностью \"Радуга\"",
+    "legalAddress": "г.Москва ул Авиастроителей д 93 к 12",
+    "inn": "125152124152",
+    "kpp": "12155521",
+    "ogrn": "1251512",
+    "okpo": "201355",
+    "tags": [
+      "Строители",
+      "Радуга",
+      "Ремонт"
+    ],
+    "state": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+        "type": "state",
+        "mediaType": "application/json"
+      }
+    },
+    "priceType": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f2222",
+        "type": "pricetype",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    },
+    "name": "ООО Радуга ЭКСПО",
+    "description": "Сеть рынков стройматериалов Радуга ЭКСПО",
+    "code": "raduga",
+    "externalCode": "extRainbow",
+    "email": "raduga@retail.ru",
+    "phone": "+7 495 162 32 23",
+    "fax": "1052054",
+    "actualAddress": "г.Москва ул Строителей д 331",
+    "legalTitle": "Общество с ограниченой ответственностью \"Радуга ЭКСПО\"",
+    "legalAddress": "г.Москва ул Чернорабочего д 93 к 12",
+    "inn": "1251581244152",
+    "kpp": "121557212",
+    "ogrn": "1253552",
+    "okpo": "201313",
+    "tags": [
+      "Строители",
+      "Ремонт",
+      "Радуга",
+      "Бетон",
+      "ЖЖОТ"
+    ]
+  }
+]'
+```
 
+> Response  200. Успешный запрос. Результат - массив JSON представлений созданных и обновленных Контрагентов.
 
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление созданного Контрагента.
-  + Body
-        <!-- include(body/counterparty/post_short_response.json) -->
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    },
+    "id": "b80ea81b-7058-11e6-8a84-bae500000000",
+    "accountId": "1185513e-692c-11e6-8a84-bae500000001",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2016-09-01 18:28:22",
+    "name": "ООО Радуга",
+    "externalCode": "o7732zkki541HDkZZD1Yt3",
+    "archived": false,
+    "companyType": "legal",
+    "accounts": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/accounts",
+        "type": "account",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
+    "tags": [],
+    "contactpersons": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/contactpersons",
+        "type": "contactperson",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
+    "notes": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/notes",
+        "type": "note",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
+    "state": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+        "type": "state",
+        "mediaType": "application/json"
+      }
+    },
+    "priceType": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f2222",
+        "type": "pricetype",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    },
+    "id": "6a9c3857-2c8b-11e6-8a84-bae500000047",
+    "accountId": "6270cd18-2c7f-11e6-8a84-bae500000001",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2016-06-07 12:13:31",
+    "name": "ООО Радуга ЭКСПО",
+    "description": "Сеть рынков стройматериалов Радуга ЭКСПО",
+    "code": "raduga",
+    "externalCode": "extRainbow",
+    "archived": false,
+    "created": "2007-02-07 17:16:41",
+    "legalTitle": "Общество с ограниченой ответственностью \"Радуга ЭКСПО\"",
+    "legalAddress": "г.Москва ул Чернорабочего д 93 к 12",
+    "actualAddress": "г.Москва ул Строителей д 331",
+    "inn": "1251581244152",
+    "kpp": "121557212",
+    "ogrn": "1253552",
+    "okpo": "201313",
+    "email": "raduga@retail.ru",
+    "phone": "+7 495 162 32 23",
+    "fax": "1052054",
+    "accounts": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/accounts",
+        "type": "account",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
+    "tags": [
+      "жжот",
+      "строители",
+      "бетон",
+      "ремонт",
+      "радуга"
+    ],
+    "contactpersons": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/contactpersons",
+        "type": "contactperson",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
+    "notes": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/notes",
+        "type": "note",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    }
+  }
+] 
+```
 
-+ Request Пример с доп полями (application/json)
-Пример запроса для создания Контрагента с доп полями в теле запроса.
-    + Body
-          <!-- include(body/counterparty/post_with_attributes_request.json) -->
-
-
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление созданного Контрагента.
-    + Body
-          <!-- include(body/counterparty/post_with_attributes_response.json) -->
-
-### Массовое создание и обновление Контрагентов 
 [Массовое создание и обновление](/api/remap/1.2/doc/index.html#header-создание-и-обновление-нескольких-объектов) Контрагентов.
 В теле запроса нужно передать массив, содержащий JSON представления Контрагентов, которые вы хотите создать или обновить.
 Обновляемые Контрагентов должны содержать идентификатор в виде метаданных.
 
-+ Request Пример (application/json)
-Пример создания и обновления нескольких Контрагентов
-  + Body
-        <!-- include(body/counterparty/post_massive_request.json) -->
+### Удалить Контрагента
 
-+ Response 200 (application/json)
-Успешный запрос. Результат - массив JSON представлений созданных и обновленных Контрагентов.
-  + Body
-        <!-- include(body/counterparty/post_massive_response.json) -->
+**Параметры**
 
-### Удалить Контрагента 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Контрагента
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| id    | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b1*. id Контрагента|
 
-Запрос на удаление Контрагента с указанным id.
+> Запрос на удаление Контрагента с указанным id.
 
-+ Response 200 (application/json)
-Успешное удаление Контрагента.
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"  
+```
+
+> Response  200. Успешное удаление Контрагента.
 
 ### Метаданные Контрагентов 
-#### Метаданные Контрагентов 
+#### Метаданные Контрагентов
+
+> Запрос на получение метаданных Контрагентов. 
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata"
+  -H "Authorization: Basic <Access-Token>"  
+```
+
+> Успешный запрос. Результат - JSON представление доп. полей Контрагентов.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "mediaType": "application/json"
+  },
+  "attributes": [
+    {
+      "id": "5290a290-0313-11e6-9464-e4de00000020",
+      "name": "attribute_name",
+      "type": "boolean",
+      "required": false
+    }
+  ],
+  "states": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "fb56c504-2e58-11e6-8a84-bae500000069",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "name": "Новый",
+      "color": 15106326,
+      "stateType": "Regular",
+      "entityType": "counterparty"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56cae3-2e58-11e6-8a84-bae50000006a",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "fb56cae3-2e58-11e6-8a84-bae50000006a",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "name": "Подтвержден",
+      "color": 40931,
+      "stateType": "Regular",
+      "entityType": "counterparty"
+    }
+  ],
+  "tags": [
+    "Поставщики",
+    "Покупатели"
+  ],
+  "createShared": false
+}
+```
+
 Запрос на получение метаданных Контрагентов. Результат - объект JSON, включающий в себя:
-+ **meta** - Ссылка на метаданные Контрагентов
-+ **attributes** - Массив объектов доп. полей Контрагентов в формате [Метаданных](#header-метаданные)
-+ **states** - Массив статусов Контрагентов
-+ **createShared** - создавать новых Контрагентов с меткой "Общий"
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| meta         | Ссылка на метаданные Контрагентов|
+| attributes   | Массив объектов доп. полей Контрагентов в формате [Метаданных](#header-метаданные)|
+| states       | Массив статусов Контрагентов|
+| createShared | создавать новых Контрагентов с меткой "Общий"|
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](#header-работа-с-дополнительными-полями).
 
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление доп. полей Контрагентов.
-  + Body
-        <!-- include(body/counterparty/get_metadata.json) -->
-
 ### Отдельное доп. поле 
-+ Parameters
-  + id: `5290a290-0313-11e6-9464-e4de00000020` (required, string) - id Доп. поля
 #### Отдельное доп. поле 
-Запрос на получение информации по отдельному дополнительному полю.
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельного доп. поля.
-  + Body
-        <!-- include(body/counterparty/metadata_by_id.json) -->
 
-### Контрагент 
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| id         |  `string` (required) *Example: 5290a290-0313-11e6-9464-e4de00000020* - id Доп. поля.|
+
+> Запрос на получение информации по отдельному дополнительному полю.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020"
+  -H "Authorization: Basic <Access-Token>"  
+```
+
+>Response 200 (application/json). Успешный запрос. Результат - JSON представление отдельного доп. поля.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020",
+    "type": "attributemetadata",
+    "mediaType": "application/json"
+  },
+  "id": "5290a290-0313-11e6-9464-e4de00000020",
+  "name": "attribute_name",
+  "type": "boolean",
+  "required": false
+}
+```
+
+### Контрагент
+### Получить Контрагента
+
 Контрагент, обращение к которому происходит по значению его id.
 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Контрагента.
+**Параметры**
 
-### Получить Контрагента 
-Возвращает JSON представление Контрагента с указанным id.
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| id         |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента.|
 
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление Контрагента с указанным id.
-  + Body
-        <!-- include(body/counterparty/get_by_id.json) -->
+> Получить Контрагента
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"  
+```
+
+> Response 200 (application/json). Возвращает JSON представление Контрагента с указанным id.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type": "counterparty",
+    "mediaType": "application/json"
+  },
+  "id": "b80ea81b-7058-11e6-8a84-bae500000000",
+  "accountId": "1185513e-692c-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-09-01 18:28:22",
+  "name": "ООО Радуга",
+  "externalCode": "o7732zkki541HDkZZD1Yt3",
+  "archived": false,
+  "created": "2007-02-07 17:16:41",
+  "companyType": "legal",
+  "accounts": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/accounts",
+      "type": "account",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "tags": [],
+  "contactpersons": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/contactpersons",
+      "type": "contactperson",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "notes": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/notes",
+      "type": "note",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "state": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+      "type": "state",
+      "mediaType": "application/json"
+    }
+  },
+  "salesAmount": 0,
+  "priceType": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f2222",
+      "type": "pricetype",
+      "mediaType": "application/json"
+    },
+    "id": "672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+    "name": "Цена продажи",
+    "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+  }
+}
+```
 
 ### Изменить Контрагента 
 #### Описание
+
+
 Обновляется представление Контрагента с указанным id.
 В теле запроса можно указать только те поля, которые необходимо изменить у Контрагента, кроме тех, что
 помечены `Только для чтения` в описании [атрибутов Контрагента](#контрагент-контрагенты).
@@ -591,220 +1377,996 @@ ___
 переданные элементы данных коллекций обрабатываются как "Все элементы данной коллекции" и полностью заменяют
 элементы, ранее присутствовавшие в ней.
 
-+ Request Пример (application/json)
-В теле запроса можно указать только те поля, которые необходимо изменить у Контрагента
-+ Body
-    <!-- include(body/counterparty/put_request.json) -->
+**Параметры**
 
-+ Response 200 (application/json)
-Успешное обновление. Результат - JSON представление обновлённого Контрагента.
-  + Body
-      <!-- include(body/counterparty/put_response.json) -->
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| id         |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента.|
+> Пример
 
-+ Request Пример c доп полями(application/json)
-Пример запроса для обновления Контрагента с доп полями в теле запроса.
-    + Body
-          <!-- include(body/counterparty/put_with_attributes_request.json) -->
+```shell
+curl -X PUT
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+    -d '
+    {
+     
+    }'  
+```
 
-+ Response 200 (application/json)
-Успешное обновление. Результат - JSON представление обновлённого Контрагента.
-  + Body
-      <!-- include(body/counterparty/put_with_attributes_response.json) -->
+> Response 200 (application/json) Успешное обновление. Результат - JSON представление обновлённого Контрагента.
 
-#### Счета Контрагента 
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type": "counterparty",
+    "mediaType": "application/json"
+  },
+  "id": "6a9c3857-2c8b-11e6-8a84-bae500000047",
+  "accountId": "6270cd18-2c7f-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-06-07 12:13:31",
+  "name": "ООО Радуга ЭКСПО",
+  "description": "Сеть рынков стройматериалов Радуга ЭКСПО",
+  "code": "raduga",
+  "externalCode": "extRainbow",
+  "archived": false,
+  "created": "2007-02-07 17:16:41",
+  "legalTitle": "Общество с ограниченой ответственностью \"Радуга ЭКСПО\"",
+  "legalAddress": "г.Москва ул Чернорабочего д 93 к 12",
+  "actualAddress": "г.Москва ул Строителей д 331",
+  "inn": "1251581244152",
+  "kpp": "121557212",
+  "ogrn": "1253552",
+  "okpo": "201313",
+  "email": "raduga@retail.ru",
+  "phone": "+7 495 162 32 23",
+  "fax": "1052054",
+  "accounts": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/accounts",
+      "type": "account",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "tags": [
+    "жжот",
+    "строители",
+    "бетон",
+    "ремонт",
+    "радуга"
+  ],
+  "contactpersons": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/contactpersons",
+      "type": "contactperson",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "notes": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/notes",
+      "type": "note",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
+
+> Пример с дополнительными полями
+
+```shell
+curl -X PUT
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+    -d '
+    {
+      "name": "ООО Овощ Экспресс",
+      "description": "Сеть экспресс-доставки овощей",
+      "code": "ovoshexpresscode",
+      "externalCode": "externalVagetable",
+      "email": "ovoshi@delivery.ru",
+      "phone": "+7 495 162 12 23",
+      "fax": "1052014",
+      "actualAddress": "г.Москва ул Кузнецкая д 331",
+      "legalTitle": "Общество с ограниченой ответственностью \"Овощ Экспресс\"",
+      "legalAddress": "г.Москва ул Волжская д 93 к 12",
+      "inn": "1251581244152",
+      "kpp": "121557212",
+      "ogrn": "1253552",
+      "okpo": "201313",
+      "tags": [
+        "Овощи",
+        "Еда",
+        "Доставка",
+        "Экспресс",
+        "Едовозы"
+      ],
+      "contactpersons": [
+        {
+          "name": "Вася",
+          "description": "Овощерез Вася",
+          "position": "Овощерез"
+        },
+        {
+          "name": "Петя",
+          "position": "Овощевоз"
+        }
+      ],
+      "accounts": [
+        {
+          "isDefault": true,
+          "accountNumber": "12512568161257981",
+          "bankName": "ОАО Сбербанк",
+          "bankLocation": "г Москва Ул Вавилова 19",
+          "correspondentAccount": "375632785587",
+          "bic": "1234532"
+        },
+        {
+          "accountNumber": "12512568161257982",
+          "bankName": "ВТБ",
+          "bic": "7654352"
+        }
+      ],
+      "attributes": [
+        {
+          "id": "0d129ff5-2c8c-11e6-8a84-bae5000000f3",
+          "name": "Коэффициент скидки",
+          "type": "double",
+          "value": 0.35
+        },
+        {
+          "id": "0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
+          "name": "Последний заключённый договор",
+          "type": "time",
+          "value": "2016-06-07 10:52:33"
+        },
+        {
+          "id": "0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
+          "name": "Партнёрскоё юрлицо",
+          "type": "boolean",
+          "value": true
+        }
+      ]
+    }'  
+```
+
+> Response 200 (application/json). Успешное обновление. Результат - JSON представление обновлённого Контрагента.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type": "counterparty",
+    "mediaType": "application/json"
+  },
+  "id": "88fc07ac-2c8d-11e6-8a84-bae500000050",
+  "accountId": "6270cd18-2c7f-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-06-07 12:08:25",
+  "name": "ООО Овощ Экспресс",
+  "description": "Сеть экспресс-доставки овощей",
+  "code": "ovoshexpresscode",
+  "externalCode": "externalVagetable",
+  "archived": false,
+  "created": "2007-02-07 17:16:41",
+  "legalTitle": "Общество с ограниченой ответственностью \"Овощ Экспресс\"",
+  "legalAddress": "г.Москва ул Волжская д 93 к 12",
+  "actualAddress": "г.Москва ул Кузнецкая д 331",
+  "inn": "1251581244152",
+  "kpp": "121557212",
+  "ogrn": "1253552",
+  "okpo": "201313",
+  "email": "ovoshi@delivery.ru",
+  "phone": "+7 495 162 12 23",
+  "fax": "1052014",
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d129ff5-2c8c-11e6-8a84-bae5000000f3",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "0d129ff5-2c8c-11e6-8a84-bae5000000f3",
+      "name": "Коэффициент скидки",
+      "type": "double",
+      "value": 0.35
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
+      "name": "Последний заключённый договор",
+      "type": "time",
+      "value": "2016-06-07 10:52:33"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
+      "name": "Партнёрское юрлицо",
+      "type": "boolean",
+      "value": true
+    }
+  ],
+  "accounts": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050/accounts",
+      "type": "account",
+      "mediaType": "application/json",
+      "size": 2,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "tags": [
+    "овощи",
+    "доставка",
+    "еда",
+    "едовозы",
+    "экспресс"
+  ],
+  "contactpersons": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ee15550e-2c9e-11e6-8a84-bae500000003/contactpersons",
+      "type": "contactperson",
+      "mediaType": "application/json",
+      "size": 2,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "notes": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ee15550e-2c9e-11e6-8a84-bae500000003/notes",
+      "type": "note",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
+
+#### Счета Контрагента
+### Получить счета Контрагента
+
 Список счетов Контрагента с указанным id.
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Контрагента.
 
-### Получить счета Контрагента 
-Возвращает массив JSON представлений счетов Контрагента.
-+ Parameters
-  + limit: 1000 (optional, enum[number])
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
+**Параметры**
 
-+ Response 200 (application/json)
-Успешный запрос.
-  + Body
-      <!-- include(body/counterparty/get_accounts.json) -->
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| id         |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента.|
+| limit         |  `number` (optional) **Default: 1000** *Example: 1000* - Максимальное количество сущностей для извлечения. `Допустимые значения 1 - 1000`|
+| offset         |  `number` (optional) **Default: 0** *Example: 40* - Отступ в выдаваемом списке сущностей.|
 
-#### Счет Контрагента 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Контрагента.
-  + accountId: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Счёта.
+> Получить счета Контрагента
 
-### Получить счет Контрагента 
-Возвращает JSON представление счета Контрагента.
-+ Parameters
-  + limit: 1000 (optional, enum[number])
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
-+ Response 200 (application/json)
-Успешный запрос.
-  + Body
-      <!-- include(body/counterparty/get_account.json) -->
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts"
+  -H "Authorization: Basic <Access-Token>"
+```
 
-### Контактные лица Контрагента 
-Получить список контактных лиц Контрагента с указанным id.
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Контрагента.
+> Response 200 (application/json). Возвращает массив JSON представлений счетов Контрагента.
 
-### Список контактных лиц 
-Возвращает массив JSON представлений контактных лиц Контрагента.
-+ Parameters
-  + limit: 1000 (optional, enum[number])
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/accounts",
+    "type": "account",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/accounts/04c5d0dc-2c92-11e6-8a84-bae5000000f6",
+        "type": "account",
+        "mediaType": "application/json"
+      },
+      "id": "04c5d0dc-2c92-11e6-8a84-bae5000000f6",
+      "accountId": "6270cd18-2c7f-11e6-8a84-bae500000001",
+      "updated": "2016-06-07 12:27:13",
+      "isDefault": false,
+      "accountNumber": "125917666032321985647",
+      "bankName": "ВТБ",
+      "bankLocation": "ул Сахаровского д 153",
+      "correspondentAccount": "12512578256712",
+      "bic": "1258617"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/accounts/6a9c43ce-2c8b-11e6-8a84-bae500000048",
+        "type": "account",
+        "mediaType": "application/json"
+      },
+      "id": "6a9c43ce-2c8b-11e6-8a84-bae500000048",
+      "accountId": "6270cd18-2c7f-11e6-8a84-bae500000001",
+      "updated": "2016-06-07 11:39:58",
+      "isDefault": true,
+      "accountNumber": "236174374372272747234743274",
+      "bankName": "ОАО Сбербанк",
+      "bankLocation": "ул Ваивлова д 19",
+      "correspondentAccount": "251632427568",
+      "bic": "125125125"
+    }
+  ]
+}
+```
 
-+ Response 200 (application/json)
-Успешный запрос.
-  + Body
-        <!-- include(body/counterparty/get_contactpersons.json) -->
+#### Счет Контрагента
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента .|
+|accountId |  `string` (required) (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Счёта.|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+
+### Получить счет Контрагента
+
+> Получить счет Контрагент
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json). Возвращает JSON представление счета Контрагента.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ee15550e-2c9e-11e6-8a84-bae500000003/accounts/a6aa5466-2ca2-11e6-8a84-bae500000017",
+    "type": "account",
+    "mediaType": "application/json"
+  },
+  "id": "a6aa5466-2ca2-11e6-8a84-bae500000017",
+  "accountId": "da7d9bbe-2c97-11e6-8a84-bae500000001",
+  "updated": "2016-06-07 14:26:17",
+  "isDefault": false,
+  "accountNumber": "12512568161257982",
+  "bankName": "ВТБ",
+  "bic": "7654352"
+}
+```
+
+### Контактные лица Контрагента
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента.|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+
+### Список контактных лиц
+
+> Список контактных лиц
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json). Возвращает массив JSON представлений контактных лиц Контрагента.
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/contactpersons",
+    "type": "contactperson",
+    "mediaType": "application/json",
+    "size": 3,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/contactpersons/43e39375-7059-11e6-8a84-bae5000000cb",
+        "type": "contactperson",
+        "mediaType": "application/json"
+      },
+      "id": "43e39375-7059-11e6-8a84-bae5000000cb",
+      "accountId": "1185513e-692c-11e6-8a84-bae500000001",
+      "updated": "2016-09-01 18:32:17",
+      "name": "Адвокатов Петр Сергеевич",
+      "description": "Адвокат",
+      "externalCode": "asI0ncJch5jkgxxlCQKiH1",
+      "email": "advopetr@mail.ru",
+      "phone": "87127418",
+      "position": "Адвокат",
+      "agent": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/contactpersons/308142fc-7059-11e6-8a84-bae5000000c6",
+        "type": "contactperson",
+        "mediaType": "application/json"
+      },
+      "id": "308142fc-7059-11e6-8a84-bae5000000c6",
+      "accountId": "1185513e-692c-11e6-8a84-bae500000001",
+      "updated": "2016-09-01 18:31:44",
+      "name": "Travolta Jehn",
+      "description": "Траволта на связи",
+      "externalCode": "9QZNh3dbiLu1-V9bmmLKu0",
+      "email": "travolta@mail.ru",
+      "phone": "125815120",
+      "position": "Секретарь",
+      "agent": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/contactpersons/13af74bf-7059-11e6-8a84-bae5000000c3",
+        "type": "contactperson",
+        "mediaType": "application/json"
+      },
+      "id": "13af74bf-7059-11e6-8a84-bae5000000c3",
+      "accountId": "1185513e-692c-11e6-8a84-bae500000001",
+      "updated": "2016-09-01 18:30:56",
+      "name": "Панин Алексей Олегович",
+      "description": "Бухгалтерия",
+      "externalCode": "Gaizui5siLqoUbZ3jpE2I2",
+      "email": "mail@mail.rq",
+      "phone": "12412512512",
+      "position": "Бухгалтер",
+      "agent": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      }
+    }
+  ]
+}
+```
 
 ### Создать контактное лицо
 Создать контактное лицо Контрагента с указанным id.
 
-+ Request Пример (application/json)
-Пример запроса на создание контактного лица Контрагента.
-  + Body
-      <!-- include(body/counterparty/post_contactperson.json) -->
+**Параметры**
 
-+ Response 200 (application/json)
-Успешное создание.
-  + Body
-      <!-- include(body/counterparty/post_contactperson_response.json) -->
+|Параметр   |Описание   | 
+|---|---|
+|   id|   `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента.|
 
-### Контактное лицо 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Контрагента.
-  + contactpersonId: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id контактного лица.
+> Пример запроса на создание контактного лица Контрагента.
 
-### Получить контактное лицо 
-Возвращает JSON представление отдельного контактного лица Контрагента.
-+ Parameters
-  + limit: 1000 (optional, enum[number])
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+    -d '{
+          "name": "Пётр",
+          "code": "Petya the deliverer",
+          "externalCode": "-odJxBw7i06O0GhSc28S90",
+          "email": "petr@ovoshy.com",
+          "phone": "+777 666 228",
+          "position": "овощедоставщик"
+        }'  
+```
+> Response 200 (application/json). Успешное создание.
 
-+ Response 200 (application/json)
-Успешный запрос.
-  + Body
-  
+```json
+[
+  {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons/ceba215c-d5cb-11e7-0532-9eed00000005",
+      "type": "contactperson",
+      "mediaType": "application/json"
+    },
+    "id": "ceba215c-d5cb-11e7-0532-9eed00000005",
+    "accountId": "eb9ac8c0-d511-11e7-0532-9eed00000001",
+    "updated": "2017-11-30 15:41:38",
+    "name": "Пётр",
+    "code": "Petya the deliverer",
+    "externalCode": "-odJxBw7i06O0GhSc28S90",
+    "email": "petr@ovoshy.com",
+    "phone": "+777 666 228",
+    "position": "овощедоставщик",
+    "agent": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "http://online.moysklad.ru/app/#company/edit?id=7944ef04-f831-11e5-7a69-971500188b19"
+      }
+    }
+  }
+]
+```
+
+### Контактное лицо
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента.|
+|contactpersonId |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19*  - id контактного лица.|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+
+### Получить контактное лицо
+
+> Получить контактное лицо
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json). Возвращает JSON представление отдельного контактного лица Контрагента.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ee15550e-2c9e-11e6-8a84-bae500000003/contactpersons/94433ed3-2c9f-11e6-8a84-bae500000010",
+    "type": "contactperson",
+    "mediaType": "application/json"
+  },
+  "id": "94433ed3-2c9f-11e6-8a84-bae500000010",
+  "accountId": "da7d9bbe-2c97-11e6-8a84-bae500000001",
+  "updated": "2016-06-07 14:04:17",
+  "name": "Пётр",
+  "code": "Petya the deliverer",
+  "externalCode": "-odJxBw7i06O0GhSc28S90",
+  "email": "petr@ovoshy.com",
+  "phone": "+777 666 228",
+  "position": "овощедоставщик",
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ee15550e-2c9e-11e6-8a84-bae500000003",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
+
 ### Изменить контактное лицо
-+ Parameters
-  + contactpersonId: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id контактного лица.
-  
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента.|
+|contactpersonId |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19*  - id контактного лица.|
+
 #### Описание
 Обновить контактное лицо Контрагента с указанным id.
 Обновляются все поля, указанные в JSON объекте запроса, кроме
 помеченных `Только для чтения` в описании [атрибутов контактных лиц Контрагента](#header-контактные-лица-контрагентов).
 Поля, которые не были указаны в JSON запроса, не изменяются.
-+ Request Пример (application/json)
-Пример запроса на обновление контактного лица Контрагента.
-  + Body
-      <!-- include(body/counterparty/put_contactperson.json) -->
 
-+ Response 200 (application/json)
-Успешное обновление.
-  + Body
-      <!-- include(body/counterparty/put_contactperson_response.json) -->
+> Пример запроса на обновление контактного лица Контрагента.
+  
+  ```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "Пётр",
+            "code": "Petya the deliverer",
+            "email": "petr@ovoshy.com",
+            "phone": "+777 666 228",
+            "position": "овощедоставщик"
+          }'  
+  ```
 
-### События Контрагента 
-Получить список событий Контрагента с указанным id.
-+ Parameters
-  + id: `67e5a691-3c9c-11e7-8af5-581e00000056` (required, string) - id Контрагента.
+> Response 200 (application/json). Успешное обновление.
 
-### Список событий 
-Возвращает массив JSON представлений событий Контрагента.
-+ Parameters
-  + limit: 1000 (optional, enum[number])
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ee15550e-2c9e-11e6-8a84-bae500000003/contactpersons/94433ed3-2c9f-11e6-8a84-bae500000010",
+    "type": "contactperson",
+    "mediaType": "application/json"
+  },
+  "id": "94433ed3-2c9f-11e6-8a84-bae500000010",
+  "accountId": "da7d9bbe-2c97-11e6-8a84-bae500000001",
+  "updated": "2016-06-07 14:04:17",
+  "name": "Пётр",
+  "code": "Petya the deliverer",
+  "externalCode": "-odJxBw7i06O0GhSc28S90",
+  "email": "petr@ovoshy.com",
+  "phone": "+777 666 228",
+  "position": "овощедоставщик",
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ee15550e-2c9e-11e6-8a84-bae500000003",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
 
-+ Response 200 (application/json)
-Успешный запрос.
-  + Body
-        <!-- include(body/counterparty/get_notes.json) -->
+### События Контрагента
 
-### Добавить событие 
-+ Request Пример (application/json)
-Запрос на добавление нового события.
-  + Body
-        <!-- include(body/counterparty/post_note_request.json) -->
+**Параметры**
 
-+ Response 200 (application/json)
-Успешный запрос. Результат - JSON представление добавленного события.
-  + Body
-        <!-- include(body/counterparty/post_note_response.json) -->
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|id |  `string` (required) *Example: 67e5a691-3c9c-11e7-8af5-581e00000056* - id Контрагента.|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+
+### Список событий
+
+> Список событи
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json). Успешный запрос.
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes",
+    "type": "note",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes/7e391b16-3efd-11e7-8af5-581e0000009d",
+        "type": "note",
+        "mediaType": "application/json"
+      },
+      "id": "7e391b16-3efd-11e7-8af5-581e0000009d",
+      "accountId": "b127966a-3efa-11e7-8af5-581e00000001",
+      "created": "2017-05-22 17:46:52",
+      "description": "второе событие",
+      "agent": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      },
+      "author": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b1876a85-3efa-11e7-8af5-581e0000002a",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes/7b919056-3efd-11e7-8af5-581e0000009a",
+        "type": "note",
+        "mediaType": "application/json"
+      },
+      "id": "7b919056-3efd-11e7-8af5-581e0000009a",
+      "accountId": "b127966a-3efa-11e7-8af5-581e00000001",
+      "created": "2017-05-22 17:46:47",
+      "description": "первое событие",
+      "agent": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      },
+      "author": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b1876a85-3efa-11e7-8af5-581e0000002a",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      }
+    }
+  ]
+}
+```
+### Добавить событие
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|id |  `string` (required) *Example: 67e5a691-3c9c-11e7-8af5-581e00000056* - id Контрагента.|
+
+> Запрос на добавление нового события.
+  
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+    -d '{
+          "description": "текст"
+        }'  
+```
+
+> Response 200 (application/json). Успешный запрос. Результат - JSON представление добавленного события.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes/50b318cb-3cb0-11e7-8af5-581e00000007",
+      "type": "note",
+      "mediaType": "application/json"
+    },
+    "id": "50b318cb-3cb0-11e7-8af5-581e00000007",
+    "accountId": "674f0d4f-3c9c-11e7-8af5-581e00000001",
+    "created": "2017-05-19 19:29:22",
+    "description": "текст",
+    "agent": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json"
+      }
+    },
+    "author": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/67b86071-3c9c-11e7-8af5-581e0000002a",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  }
+]
+```
 
 ### Событие 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Контрагента.
-  + noteId: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id события.
 
-### Получить событие 
-Возвращает JSON представление отдельного события Контрагента.
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Контрагента.
-  + noteId: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id события.
+**Параметры**
 
-+ Response 200 (application/json)
-Успешный запрос.
-  + Body
-      <!-- include(body/counterparty/get_note.json) -->
-      
-### Изменить событие 
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| id|  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента.|
+| noteId|  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id события.|
+
+### Получить событие
+
+> Получить событие 
+
+```shell
+curl -X GET
+  "GET https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/notes/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json). Возвращает JSON представление отдельного события Контрагента.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes/50b318cb-3cb0-11e7-8af5-581e00000007",
+    "type": "note",
+    "mediaType": "application/json"
+  },
+  "id": "50b318cb-3cb0-11e7-8af5-581e00000007",
+  "accountId": "674f0d4f-3c9c-11e7-8af5-581e00000001",
+  "created": "2017-05-19 19:29:22",
+  "description": "текст",
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "author": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/67b86071-3c9c-11e7-8af5-581e0000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
+
+### Изменить событие
 #### Описание
+
 Обновить событие Контрагента с указанным id.
 Обновляются все поля, указанные в JSON объекте запроса, кроме
 помеченных `Только для чтения` в описании [атрибутов событий Контрагента](#header-события-контрагента).
 Поля, которые не были указаны в JSON запроса, не изменяются.
-+ Request Пример (application/json)
-Пример запроса на обновление события Контрагента.
-  + Body
-      <!-- include(body/counterparty/put_note.json) -->
 
-+ Response 200 (application/json)
-Успешное обновление.
-  + Body
-      <!-- include(body/counterparty/put_note_response.json) -->
+**Параметры**
 
-### Удалить событие 
-+ Parameters
-  + id: `67e5a691-3c9c-11e7-8af5-581e00000056` (required, string) - id Контрагента.
-  + noteId: `50b318cb-3cb0-11e7-8af5-581e00000007` (required, string) - id события
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| id|  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента.|
+| noteId|  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id события.|
 
-Запрос на удаление события с указанным id.
+> Пример запроса на обновление события Контрагента.
 
-+ Response 200 (application/json)
-Успешное удаление События.
+  ```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/notes/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "description": "измененный текст"
+          }'  
+  ```
+
+> Response 200 (application/json). Успешное обновление.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes/50b318cb-3cb0-11e7-8af5-581e00000007",
+    "type": "note",
+    "mediaType": "application/json"
+  },
+  "id": "50b318cb-3cb0-11e7-8af5-581e00000007",
+  "accountId": "674f0d4f-3c9c-11e7-8af5-581e00000001",
+  "created": "2017-05-19 19:29:22",
+  "description": "измененный текст",
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "author": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/67b86071-3c9c-11e7-8af5-581e0000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
+
+### Удалить событие
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| id|  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента.|
+| noteId|  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id события.|
+
+> Запрос на удаление события с указанным id.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes/50b318cb-3cb0-11e7-8af5-581e00000007"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json). Успешное удаление События.
+

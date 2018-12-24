@@ -10,11 +10,14 @@
 
 #### Печать документа 
 
-+ Parameters
-  + type: `demand` (required, string) - тип сущности, для которой запрашивается печать
-  + id: `a86708d2-f8d3-4e67-8f04-6101158da808` (required, string) - id сущности, для которой запрашивается печать
+### Запрос на печать
 
-### Запрос на печать 
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|type|  `string` (required) *Example: demand* тип сущности, для которой запрашивается печать.|
+|id |  `string` (required) *Example: a86708d2-f8d3-4e67-8f04-6101158da808* id сущности, для которой запрашивается печать.|
 
 Запрос на печать отдельного документа по шаблону печатной формы.
 #### Атрибуты запроса
@@ -49,41 +52,93 @@
 + Счёт-фактура выданный
 + Любой пользовательский шаблон для вышеперечисленных сущностей.
 
+> Пример запроса на печать отдельного документа по шаблону печатной формы.
 
-+ Request Пример (application/json)
-Пример запроса на печать отдельного документа по шаблону печатной формы.
-  + Body
-        <!-- include(requests/print_post.json) -->
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/demand/a86708d2-f8d3-4e67-8f04-6101158da808/export/"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "template": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/customtemplate/daca545a-1a35-11e7-8a84-bae500000001",
+                "type": "customtemplate",
+                "mediaType": "application/json"
+              }
+            },
+            "extension": "xls"
+          }'  
+```
 
-+ Response 202
-  + Headers
-    Location: ссылка на статус печати
-    Content-Type: application/json
-  + Body
-        <!-- include(responses/print_post.json) -->
+> Response 202 Headers
 
-+ Response 303
-  + Headers
-    Location: ссылка на файл
-    Content-Type: application/json
-  + Body
-        <!-- include(responses/print_post.json) -->
+```json
+  Location: ссылка на статус печати
+  Content-Type: application/json
+```
 
-+ Request Комплект (application/json)
-Пример запроса на печать комплекта документов. В результате запроса будет напечатан комплект в сумме из 6 печатных форм.
-  + Body
-        <!-- include(requests/print_bundle_post.json) -->
+> Response 303 Headers
 
-+ Response 202
-  + Headers
-    Location: ссылка на статус печати
-    Content-Type: application/json
-  + Body
-        <!-- include(responses/print_post.json) -->
+```json
+  Location: ссылка на файл
+  Content-Type: application/json
+```
 
-+ Response 303
-  + Headers
-    Location: ссылка на файл
-    Content-Type: application/json
-  + Body
-        <!-- include(responses/print_post.json) -->
+> Пример запроса на печать комплекта документов. В результате запроса будет напечатан комплект в сумме из 6 печатных форм.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/demand/a86708d2-f8d3-4e67-8f04-6101158da808/export/"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "templates": [
+              {
+                "template": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/customtemplate/daca545a-1a35-11e7-8a84-bae500000001",
+                    "type": "customtemplate",
+                    "mediaType": "application/json"
+                  }
+                },
+                "count": 2
+              },
+              {
+                "template": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/factureout/metadata/embeddedtemplate/3d2685b4-cf64-4fd1-87c8-e109966b364b",
+                    "type": "embeddedtemplate",
+                    "mediaType": "application/json"
+                  }
+                },
+                "count": 3
+              },
+              {
+                "template": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata/embeddedtemplate/6f3c9a47-6772-4944-9723-92d0d7be2a9c",
+                    "type": "embeddedtemplate",
+                    "mediaType": "application/json"
+                  }
+                },
+                "count": 1
+              }
+            ]
+          }'  
+```
+
+> Response 202 Headers
+
+```json
+Location: ссылка на статус печати
+Content-Type: application/json
+```
+
+> Response 303 Headers
+
+```json
+Location: ссылка на файл
+Content-Type: application/json
+```
+

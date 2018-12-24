@@ -4,11 +4,19 @@
 
 ### Зарегистрировать новый или обновить токен устройства
 
-+ Parameters
-  + deviceType: `ios` (required, string) - Тип устройства. Строка из множества {'android', 'ios', 'browser'}
-  + Request Пример (application/json)
-  Пример сохранения инфрмации о токена
-    + Body
-        <!-- include(body/notification/put_token.json) -->
+**Параметры**
 
-+ Response 201
+|Параметр   |Описание   | 
+|---|---|
+|deviceType|  `string` (required) *Example: ios* - Тип устройства. Строка из множества {'android', 'ios', 'browser'}.|
+
+> Пример сохранения инфрмации о токена
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/notification/token/ios"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d ''  
+```
+
+> Response 201

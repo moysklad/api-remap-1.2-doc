@@ -27,84 +27,423 @@
 - **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой Единицы измерения.
 
-+ Parameters
-  + limit: 1000 (optional, enum)
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
+**Параметры**
 
-+ Response 200 (application/json)
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+
+> Получить Единицы измерения
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/uom"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка единиц измерения.
-  + Body
-        <!-- include(body/uom/get_list.json) -->
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom?limit=5",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+    "type": "uom",
+    "mediaType": "application/json",
+    "size": 60,
+    "limit": 5,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/061721df-9197-49a5-b637-7f5b4d3be969",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+        "type": "uom",
+        "mediaType": "application/json"
+      },
+      "id": "061721df-9197-49a5-b637-7f5b4d3be969",
+      "updated": "2012-11-02 11:07:44",
+      "name": "дюйм",
+      "description": "Дюйм (25,4 мм)",
+      "code": "039",
+      "externalCode": "039"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/0dd4fe8b-e59e-486e-bde5-b52fe0e25415",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+        "type": "uom",
+        "mediaType": "application/json"
+      },
+      "id": "0dd4fe8b-e59e-486e-bde5-b52fe0e25415",
+      "updated": "2012-11-02 11:07:44",
+      "name": "мес",
+      "description": "Месяц",
+      "code": "362",
+      "externalCode": "362"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/151af5a2-3df9-4aca-851c-814c8b3a65e6",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+        "type": "uom",
+        "mediaType": "application/json"
+      },
+      "id": "151af5a2-3df9-4aca-851c-814c8b3a65e6",
+      "updated": "2012-11-02 11:07:44",
+      "name": "ц",
+      "description": "Центнер (метрический) (100 кг); гектокилограмм; квинтал1 (метрический); децитонна",
+      "code": "206",
+      "externalCode": "206"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/1700dfba-e9e7-4c98-9857-8d984ab48b2b",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+        "type": "uom",
+        "mediaType": "application/json"
+      },
+      "id": "1700dfba-e9e7-4c98-9857-8d984ab48b2b",
+      "updated": "2012-11-02 11:07:44",
+      "name": "ч",
+      "description": "Час",
+      "code": "356",
+      "externalCode": "356"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+        "type": "uom",
+        "mediaType": "application/json"
+      },
+      "id": "19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+      "updated": "2012-11-02 11:07:44",
+      "name": "шт",
+      "description": "Штука",
+      "code": "796",
+      "externalCode": "796"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/79e6d170-7df6-11e8-7e04-3e5a00000097",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+        "type": "uom",
+        "mediaType": "application/json"
+      },
+      "id": "79e6d170-7df6-11e8-7e04-3e5a00000097",
+      "accountId": "1902785b-7df4-11e8-7e04-3e5a00000001",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/1fe747fc-7df4-11e8-7e04-3e5a0000002d",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=1fe747fc-7df4-11e8-7e04-3e5a0000002d"
+        }
+      },
+      "shared": true,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/19062b38-7df4-11e8-7e04-3e5a00000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2018-07-02 15:50:19",
+      "name": "Попугаи",
+      "description": "Для измерения удавов",
+      "code": "papagei",
+      "externalCode": "parrotUnitOfMeasure"
+    }
+  ]
+}
+```
 
 ### Создать Единицу измерения 
 Запрос на создание новой единицы измерения на данной учётной записи.
 Единственное поле, которое обязательно должно присутствовать в теле запроса
 на создание Единицы измерения - поле **name**.
 
-+ Request Пример (application/json)
-Пример запроса на создание новой единицы измерения.
-  + Body
-        <!-- include(body/uom/post_request.json) -->
+> Пример запроса на создание новой единицы измерения.
 
-+ Response 200 (application/json)
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/uom"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "Попугаи",
+            "description": "Для измерения удавов",
+            "code": "papagei",
+            "externalCode": "parrotUnitOfMeasure"
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданной единицы измерения.
-  + Body
-        <!-- include(body/uom/post_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/b25681fd-24d0-11e6-8a84-bae500000019",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+    "type": "uom",
+    "mediaType": "application/json"
+  },
+  "id": "b25681fd-24d0-11e6-8a84-bae500000019",
+  "accountId": "45489428-24a5-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/1fe747fc-7df4-11e8-7e04-3e5a0000002d",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=1fe747fc-7df4-11e8-7e04-3e5a0000002d"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/19062b38-7df4-11e8-7e04-3e5a00000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-05-30 10:04:29",
+  "name": "Попугаи",
+  "description": "Для измерения удавов",
+  "code": "papagei",
+  "externalCode": "parrotUnitOfMeasure"
+}
+```
 
 ### Массовое создание и обновление единиц измерения 
 [Массовое создание и обновление](/api/remap/1.2/doc/index.html#header-создание-и-обновление-нескольких-объектов) единиц измерения.
 В теле запроса нужно передать массив, содержащий JSON представления единиц измерения, которые вы хотите создать или обновить.
 Обновляемые единицы измерения должны содержать идентификатор в виде метаданных.
 
-+ Request Пример (application/json)
-Пример создания и обновления нескольких единиц измерения
-  + Body
-        <!-- include(body/uom/post_massive_request.json) -->
+> Пример создания и обновления нескольких единиц измерения
 
-+ Response 200 (application/json)
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/uom"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "name": "Попугаи",
+              "description": "Для измерения удавов",
+              "code": "papagei",
+              "externalCode": "parrotUnitOfMeasure"
+            },
+            {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/01be5f70-24d1-11e6-8a84-bae50000001a",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+                "type": "uom",
+                "mediaType": "application/json"
+              },
+              "name": "Попугай",
+              "description": "Для точного измерения удавов",
+              "code": "papagai",
+              "externalCode": "papagaitUnitOfMeasure"
+            }
+          ]'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - массив JSON представлений созданных и обновленных единиц измерения.
-  + Body
-        <!-- include(body/uom/post_massive_response.json) -->
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/b25681fd-24d0-11e6-8a84-bae500000019",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+      "type": "uom",
+      "mediaType": "application/json"
+    },
+    "id": "b25681fd-24d0-11e6-8a84-bae500000019",
+    "accountId": "45489428-24a5-11e6-8a84-bae500000001",
+    "updated": "2016-05-30 10:04:29",
+    "name": "Попугаи",
+    "description": "Для измерения удавов",
+    "code": "papagei",
+    "externalCode": "parrotUnitOfMeasure"
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/01be5f70-24d1-11e6-8a84-bae50000001a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+      "type": "uom",
+      "mediaType": "application/json"
+    },
+    "id": "01be5f70-24d1-11e6-8a84-bae50000001a",
+    "accountId": "45489428-24a5-11e6-8a84-bae500000001",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/1fe747fc-7df4-11e8-7e04-3e5a0000002d",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=1fe747fc-7df4-11e8-7e04-3e5a0000002d"
+      }
+    },
+    "shared": true,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/19062b38-7df4-11e8-7e04-3e5a00000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2016-05-30 10:06:42",
+    "name": "Попугай",
+    "description": "Для точного измерения удавов",
+    "code": "papagai",
+    "externalCode": "papagaitUnitOfMeasure"
+  }
+]
+```
 
 ### Удалить Единицу измерения 
 Запрос на удаление единицы измерения. Невозможно удаление предустановленных единиц измерения (единиц измерений имеющихся на учётной записи по умолчанию).
 Удалить можно только единицы измерения, созданные через основной интерфейс или через метод POST.
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Единицы измерения
 
-+ Response 200 (application/json)
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Единицы измерения.|
+
+> Удалить Единицу измерения
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/uom/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешное удаление Розничной продажи.
-+ Body
 
-### Единица измерения 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Единицы измерения
+### Единица измерения
   
-### Получить Единицу измерения 
-Запрос на получение единицы измерения с указанным id.
-+ Response 200 (application/json)
+### Получить Единицу измерения
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Единицы измерения.|
+ 
+> Запрос на получение единицы измерения с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/uom/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление Единицы измерения с указанным id.
-  + Body
-        <!-- include(body/uom/get_by_id.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/061721df-9197-49a5-b637-7f5b4d3be969",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+    "type": "uom",
+    "mediaType": "application/json"
+  },
+  "id": "061721df-9197-49a5-b637-7f5b4d3be969",
+  "updated": "2012-11-02 11:07:44",
+  "name": "дюйм",
+  "description": "Дюйм (25,4 мм)",
+  "code": "039",
+  "externalCode": "039"
+}
+```
 
 ### Изменить Единицу измерения 
 Запрос на изменение объекта, представляющего собой единицу измерения. Невозможно изменение предустановленных единиц измерения
  (единиц измерения имеющихся на учётной записи по умолчанию).
 Изменить можно только единицы измерения, созданные через основной интерфейс или через метод POST.
 
-+ Request Пример (application/json)
-Пример запроса на обновление новой единицы измерения.
-  + Body
-        <!-- include(body/uom/put_request.json) -->
+**Параметры**
 
-+ Response 200 (application/json)
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Единицы измерения.|
+
+> Пример запроса на обновление новой единицы измерения.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/uom/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "Попугай",
+            "description": "Для точного измерения удавов",
+            "code": "papagai",
+            "externalCode": "papagaitUnitOfMeasure"
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновлённой Единицы измерения.
-  + Body
-        <!-- include(body/uom/put_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/01be5f70-24d1-11e6-8a84-bae50000001a",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+    "type": "uom",
+    "mediaType": "application/json"
+  },
+  "id": "01be5f70-24d1-11e6-8a84-bae50000001a",
+  "accountId": "45489428-24a5-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/1fe747fc-7df4-11e8-7e04-3e5a0000002d",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=1fe747fc-7df4-11e8-7e04-3e5a0000002d"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/19062b38-7df4-11e8-7e04-3e5a00000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-05-30 10:06:42",
+  "name": "Попугай",
+  "description": "Для точного измерения удавов",
+  "code": "papagai",
+  "externalCode": "papagaitUnitOfMeasure"
+}
+```

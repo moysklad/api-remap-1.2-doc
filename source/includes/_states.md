@@ -29,13 +29,77 @@
 документа, например сделав GET запрос по URL http://online.moysklad.ru/api/remap/1.2/entity/demand/metadata
 Список статусов для документа `demand`(Отгрузка) будет выведен в коллекции states.
 
-### Получить метаданные 
-Получить метаданные и в том числе статусы
-+ Parameters
-  + entityType: `counterparty` (required, string) - тип сущности
-+ Response 200 (application/json)
-  + Body
-        <!-- include(body/states/get.json) -->
+### Получить метаданные
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|entityType|  `string` (required) *Example: counterparty* тип сущности.|
+
+> Получить метаданные и в том числе статусы
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty",
+    "mediaType": "application/json"
+  },
+  "states": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/4f70c518-60a1-11e7-6adb-ede500000003",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "4f70c518-60a1-11e7-6adb-ede500000003",
+      "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
+      "name": "Новый",
+      "color": 15106326,
+      "stateType": "Regular",
+      "entityType": "counterparty"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/3b6eb61a-60c5-11e7-6adb-ede500000001",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "3b6eb61a-60c5-11e7-6adb-ede500000001",
+      "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
+      "name": "Подписан договор",
+      "color": 10667543,
+      "stateType": "Successful",
+      "entityType": "counterparty"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/3b6fd06a-60c5-11e7-6adb-ede500000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "3b6fd06a-60c5-11e7-6adb-ede500000002",
+      "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
+      "name": "Отклонен",
+      "color": 10774205,
+      "stateType": "Unsuccessful",
+      "entityType": "counterparty"
+    }
+  ],
+  "createShared": false
+}
+```
 
 ### Создать статус 
 Создать новый статус.
@@ -45,62 +109,179 @@
 Результат - JSON представление созданного Статуса. Для создания нового Статуса,
 необходимо и достаточно указать в переданном объекте не пустые поля `name`, `color`, `stateType`.
 
-+ Parameters
-  + entityType: `counterparty` (required, string) - тип сущности
+**Параметры**
 
-+ Request Пример (application/json)
-Создание одного статуса.
-  + Body
-        <!-- include(body/states/post_one_request.json) -->
+|Параметр   |Описание   | 
+|---|---|
+|entityType|  `string` (required) *Example: counterparty* тип сущности.|
 
-+ Response 200 (application/json)
+> Создание одного статуса.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "Одобрено",
+            "color": 69446,
+            "stateType": "Regular"
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданного Статуса.
-  + Body
-        <!-- include(body/states/post_one_response.json) -->
 
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/6262b270-60c3-11e7-6adb-ede50000000d",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type": "state",
+    "mediaType": "application/json"
+  },
+  "id": "6262b270-60c3-11e7-6adb-ede50000000d",
+  "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
+  "name": "Одобрено",
+  "color": 69446,
+  "stateType": "Regular",
+  "entityType": "counterparty"
+}
+```
 
 ### Обновить статус 
 Обновить существующий статус.
+
 #### Описание
 Статус обновляется на основе переданного объекта JSON.
 Результат - JSON представление обновленного или созданного Статуса.
 Для обновления Статуса, необходимо  указать в переданном объекте
 одно или несколько полей с новыми значениями: `name`, `color`, `stateType`.
 
-+ Parameters
-  + entityType: `counterparty` (required, string) - тип сущности
-  + id: `4dcb3f23-60c4-11e7-6adb-ede500000019` (required, string) - id Статуса
+**Параметры**
 
-+ Request Пример (application/json)
-Обновление статуса.
-  + Body
-        <!-- include(body/states/put_update_request.json) -->
+|Параметр   |Описание   | 
+|---|---|
+|entityType|  `string` (required) *Example: counterparty* тип сущности.|
+|id |  `string` (required) *Example: 4dcb3f23-60c4-11e7-6adb-ede500000019* id Статуса.|
 
-+ Response 200 (application/json)
+> Обновление статуса.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/4dcb3f23-60c4-11e7-6adb-ede500000019"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "color": 255,
+            "stateType": "Regular"
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновленного Статуса.
-  + Body
-        <!-- include(body/states/put_update_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/6262b270-60c3-11e7-6adb-ede50000000d",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type": "state",
+    "mediaType": "application/json"
+  },
+  "id": "6262b270-60c3-11e7-6adb-ede50000000d",
+  "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
+  "name": "Одобрено",
+  "color": 255,
+  "stateType": "Regular",
+  "entityType": "counterparty"
+}
+```
 
 ### Массовое создание и обновление Статусов 
 [Массовое создание и обновление](/api/remap/1.2/doc/index.html#header-создание-и-обновление-нескольких-объектов) Статусов.
 В теле запроса нужно передать массив, содержащий JSON представления Статусов, которые вы хотите создать или обновить.
 Обновляемые Статусы должны содержать идентификатор в виде метаданных.
 
-+ Request Пример (application/json)
-Пример создания и обновления нескольких Статусов
-  + Body
-        <!-- include(body/states/post_some_request.json) -->
+> Пример создания и обновления нескольких Статусов
 
-+ Response 200 (application/json)
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/metadata/states"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "name": "На рассмотрении",
+              "color": 8767198,
+              "stateType": "Regular"
+            },
+            {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/b56215dc-60c3-11e7-6adb-ede500000013",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+                "type": "state",
+                "mediaType": "application/json"
+              },
+              "name": "На подписании",
+              "color": 34617,
+              "stateType": "Regular"
+            }
+          ]'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - массив JSON представлений созданных и обновленных Статусов.
-  + Body
-        <!-- include(body/states/post_some_response.json) -->
 
-### Удалить Статус 
-Запрос на удаление Статуса с указанным id.
-+ Parameters
-  + entityType: `counterparty` (required, string) - тип сущности
-  + id: `4dcb3f23-60c4-11e7-6adb-ede500000019` (required, string) - id Статуса
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/b55d2ddf-60c3-11e7-6adb-ede500000010",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "state",
+      "mediaType": "application/json"
+    },
+    "id": "b55d2ddf-60c3-11e7-6adb-ede500000010",
+    "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
+    "name": "На рассмотрении",
+    "color": 8767198,
+    "stateType": "Regular",
+    "entityType": "counterparty"
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/b56215dc-60c3-11e7-6adb-ede500000013",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "state",
+      "mediaType": "application/json"
+    },
+    "id": "b56215dc-60c3-11e7-6adb-ede500000013",
+    "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
+    "name": "На подписании",
+    "color": 34617,
+    "stateType": "Regular",
+    "entityType": "counterparty"
+  }
+]
+```
 
-+ Response 200 (application/json)
+### Удалить Статус
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|entityType|  `string` (required) *Example: counterparty* тип сущности.|
+|id |  `string` (required) *Example: 4dcb3f23-60c4-11e7-6adb-ede500000019* id Статуса.|
+
+> Запрос на удаление Статуса с указанным id.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/4dcb3f23-60c4-11e7-6adb-ede500000019"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешное удаление Статуса.

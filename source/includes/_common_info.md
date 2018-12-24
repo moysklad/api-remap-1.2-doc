@@ -72,12 +72,23 @@
 
 ### Пример удаления Приёмки в корзину 
 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Приёмки
+**Параметры**
 
-Запрос на удаление Приёмки с указанным id в корзину.
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приёмки.|
 
-+ Response 200 (application/json)
+> Запрос на удаление Приёмки с указанным id в корзину.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/supply/be3a3a0e-370c-11e7-1542-821d00000001/trash"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d ''  
+```
+
+> Response 200 (application/json)
 Успешное удаление Приёмки.
 
 ##### Связи документов
@@ -90,37 +101,259 @@
 отвечает за связи с счетами покупателю. Если вы хотите привязать к отгрузке счёт, в это поле, в составе коллекции, нужно положить **meta** счёта покупателя который вы хотите привязать.
 Можно привязывать более 1 документа.
 
-+ Parameters
-  + docname: `move` (required, string) - ключевое слово для документа со связями
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id документа
-
 ### Пример привязки 1 
 
 Привязка внутреннего заказа к перемещению.
 
-+ Request Пример (application/json)
-Пример запроса на привязку внутреннего заказа к перемещению.
-  + Body
-        <!-- include(body/docgen/link1_request.json) -->
+**Параметры**
 
-+ Response 200 (application/json)
+|Параметр   |Описание   | 
+|---|---|
+|docname|  `string` (required) *Example: move* ключевое слово для документа со связями.|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id документа.|
+
+> Пример запроса на привязку внутреннего заказа к перемещению.
+
+```shell
+  curl -X PUT
+    "PUT https://online.moysklad.ru/api/remap/1.2/entity/move/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "internalOrder": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/internalorder/31d58bde-b2fd-11e6-8a84-bae500000068",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/internalorder/metadata",
+                "type": "internalorder",
+                "mediaType": "application/json"
+              }
+            }
+          }'  
+```
+
+> Response 200 (application/json)
 Результат - перемещение с заполненным полем internalOrder.
-  + Body
-        <!-- include(body/docgen/link1_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/d9318341-b0da-11e6-8a84-bae5000000c7",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/move/metadata",
+    "type": "move",
+    "mediaType": "application/json"
+  },
+  "id": "d9318341-b0da-11e6-8a84-bae5000000c7",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-11-22 20:41:07",
+  "name": "00001",
+  "externalCode": "8Fn2HqBbguhZxoYrjWYAf3",
+  "moment": "2016-11-22 20:40:00",
+  "applicable": true,
+  "sum": 0,
+  "project": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/6c6dd3f9-97a1-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+      "type": "project",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "created": "2007-02-07 17:16:41",
+  "positions": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/d9318341-b0da-11e6-8a84-bae5000000c7/positions",
+      "type": "moveposition",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "sourceStore": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/b942743c-9128-11e6-8a84-bae500000053",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "targetStore": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/85a8e439-b0d8-11e6-8a84-bae500000070",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "internalOrder": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/internalorder/31d58bde-b2fd-11e6-8a84-bae500000068",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/internalorder/metadata",
+      "type": "internalorder",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
 
 ### Пример привязки 2 
 
 Второй пример запроса на привязку одного документа к другому.
 
-+ Request Пример (application/json)
-Пример запроса на привязку счёта покупателю к отгрузке.
-  + Body
-        <!-- include(body/docgen/link2_request.json) -->
+**Параметры**
 
-+ Response 200 (application/json)
+|Параметр   |Описание   | 
+|---|---|
+|docname|  `string` (required) *Example: move* ключевое слово для документа со связями.|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id документа.|
+
+> Пример запроса на привязку счёта покупателю к отгрузке.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/demand/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "invoicesOut": [
+              {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/6cb87758-95f4-11e6-8a84-bae500000067",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata",
+                  "type": "invoiceout",
+                  "mediaType": "application/json"
+                }
+              }
+            ]
+          }'  
+```
+
+> Response 200 (application/json)
 Результат - отгрузка с новым элементом в коллекции invoicesOut.
-  + Body
-        <!-- include(body/docgen/link2_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/06406b97-9138-11e6-8a84-bae500000000",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata",
+    "type": "demand",
+    "mediaType": "application/json"
+  },
+  "id": "06406b97-9138-11e6-8a84-bae500000000",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-10-13 14:27:29",
+  "name": "000201",
+  "externalCode": "q5Ot--p3gHJrOFylVF2lQ2",
+  "moment": "2016-10-13 12:38:00",
+  "applicable": false,
+  "sum": 0,
+  "store": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/b942743c-9128-11e6-8a84-bae500000053",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "agentAccount": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051/accounts/b932bc5b-9128-11e6-8a84-bae500000052",
+      "type": "account",
+      "mediaType": "application/json"
+    }
+  },
+  "organizationAccount": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051/accounts/b932bc5b-9128-11e6-8a84-bae500000052",
+      "type": "account",
+      "mediaType": "application/json"
+    }
+  },
+  "created": "2007-02-07 17:16:41",
+  "positions": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/06406b97-9138-11e6-8a84-bae500000000/positions",
+      "type": "demandposition",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "vatSum": 0,
+  "payedSum": 0,
+  "invoicesOut": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/6cb87758-95f4-11e6-8a84-bae500000067",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata",
+        "type": "invoiceout",
+        "mediaType": "application/json"
+      }
+    }
+  ]
+}
+```
 
 ### Привязка платежей к документам 
 
@@ -130,37 +363,219 @@
 В результате привзяки платежа, в составе коллекции **operations** платежа появится новый объект, указывающий на документ, а в составе коллекции **payments** у документа, к которому
 привязывается платёж, появится новый элемент ссылающийся на данный платёж.
 
-+ Parameters
-  + docname2: `commissionreportin` (required, string) - ключевое слово для документа, к которому можно привязать платёж
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id документа
-
 ### Пример привязки платежа 1 
 
 Привязка входящего платежа к полученному отчёту комиссионера.
 
-+ Request Пример (application/json)
-Пример запроса на привязку платежа к полученному отчёту комиссионера.
-  + Body
-        <!-- include(body/docgen/link_payment_request.json) -->
+**Параметры**
 
-+ Response 200 (application/json)
+|Параметр   |Описание   | 
+|---|---|
+|docname2|  `string` (required) *Example: commissionreportin* ключевое слово для документа, к которому можно привязать платёж.|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id документа.|
+
+> Пример запроса на привязку платежа к полученному отчёту комиссионера.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "operations": [
+              {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/392fb7a9-ab02-11e6-8a84-bae500000073",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata",
+                  "type": "commissionreportin",
+                  "mediaType": "application/json"
+                }
+              }
+            ]
+          }'  
+```
+
+> Response 200 (application/json)
 Результат - входящий платёж с новым элементом в коллекции operations.
-  + Body
-        <!-- include(body/docgen/link_payment_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/94a9f8e9-b30b-11e6-8a84-bae500000017",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/metadata",
+    "type": "paymentin",
+    "mediaType": "application/json"
+  },
+  "id": "94a9f8e9-b30b-11e6-8a84-bae500000017",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-11-25 15:35:00",
+  "name": "lol2",
+  "externalCode": "-S9khhF3gNPa78SPCu81S2",
+  "moment": "2016-11-25 15:35:00",
+  "applicable": true,
+  "sum": 400,
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b942953e-9128-11e6-8a84-bae500000054",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/a8f3150d-9d39-11e6-8a84-bae500000074",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "vatSum": 0,
+  "operations": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/392fb7a9-ab02-11e6-8a84-bae500000073",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata",
+        "type": "commissionreportin",
+        "mediaType": "application/json"
+      },
+      "linkedSum": 0
+    }
+  ]
+}
+
+```
 
 ### Пример привязки платежа 2 
 
 Привязка приходного ордера к заказу покупателя.
 
-+ Request Пример (application/json)
-Пример запроса на привязку приходного ордера к заказу покупателя.
-  + Body
-        <!-- include(body/docgen/link_payment2_request.json) -->
+**Параметры**
 
-+ Response 200 (application/json)
+|Параметр   |Описание   | 
+|---|---|
+|docname2|  `string` (required) *Example: commissionreportin* ключевое слово для документа, к которому можно привязать платёж.|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id документа.|
+
+> Пример запроса на привязку приходного ордера к заказу покупателя.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/cashin/7944ef04-f831-11e5-7a69-971500188b19
+"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "operations": [
+              {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/559adab5-915c-11e6-8a84-bae500000014",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
+                  "type": "customerorder",
+                  "mediaType": "application/json"
+                }
+              }
+            ]
+          }'  
+```
+
+> Response 200 (application/json)
 Результат - приходный ордер с новым элементом в коллекции operations.
-  + Body
-        <!-- include(body/docgen/link_payment2_response.json) -->
-        
-        
-<!-- include(metadata.apib) -->        
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashin/834d731c-b313-11e6-8a84-bae50000008e",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/cashin/metadata",
+    "type": "cashin",
+    "mediaType": "application/json"
+  },
+  "id": "834d731c-b313-11e6-8a84-bae50000008e",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2016-11-25 16:31:47",
+  "name": "1111",
+  "externalCode": "WpAtzal3hGUnUfQS55x781",
+  "moment": "2016-11-25 16:31:00",
+  "applicable": true,
+  "sum": 32131000,
+  "contract": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/92df2d9c-ab02-11e6-8a84-bae500000084",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+      "type": "contract",
+      "mediaType": "application/json"
+    }
+  },
+  "project": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/6c6dd3f9-97a1-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
+      "type": "project",
+      "mediaType": "application/json"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b942c396-9128-11e6-8a84-bae500000056",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "vatSum": 0,
+  "operations": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/559adab5-915c-11e6-8a84-bae500000014",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
+        "type": "customerorder",
+        "mediaType": "application/json"
+      },
+      "linkedSum": 0
+    }
+  ]
+}
+```
+

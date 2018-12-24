@@ -11,31 +11,90 @@
 + **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) об Отделе
 + **name** - Наименование отдела.
 
-### Получить Отделы 
-Запрос на получение всех отделов на данной учётной записи.
-+ Parameters
-  + limit: 1000 (optional, enum[number])
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
+### Получить Отделы
 
-+ Response 200 (application/json)
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+ 
+> Запрос на получение всех отделов на данной учётной записи.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/group"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка отделов.
-  + Body
-        <!-- include(body/group/get_list.json) -->
 
-#### Отдел 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Отдела
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/group",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+    "type": "group",
+    "mediaType": "application/json",
+    "size": 1,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      },
+      "name": "Основной"
+    }
+  ]
+}
+```
 
-### Получить Отдел 
-Запрос на получение отдельного отдела с указанным id.
-+ Response 200 (application/json)
+#### Отдел
+
+### Получить Отдел
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Отдела.|
+ 
+> Запрос на получение отдельного отдела с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/group/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление отдельного отдела.
-  + Body
-        <!-- include(body/group/get_by_id.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+    "type": "group",
+    "mediaType": "application/json"
+  },
+  "name": "Основной"
+}
+```

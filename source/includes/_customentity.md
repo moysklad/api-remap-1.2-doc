@@ -19,38 +19,90 @@
 ### Создать справочник 
 Единственным необходимым полем для создания пользовательского справочника
 является поле **name**.
-+ Request Пример (application/json)
-Пример запроса на создание новой сущности пользовательского справочника.
-  + Body
-        <!-- include(body/customentity/post_request.json) -->
-+ Response 200 (application/json)
+
+> Пример запроса на создание новой сущности пользовательского справочника.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/customentity"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "custom dictionary"
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданной сущности пользовательского справочника.
-  + Body
-        <!-- include(body/customentity/post_response.json) -->
 
-### Изменить справочник 
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/customentity/3f9a2f30-76af-11e7-6adb-ede50000000b",
+    "type": "customentity",
+    "mediaType": "application/json"
+  },
+  "id": "3f9a2f30-76af-11e7-6adb-ede50000000b",
+  "name": "custom dictionary"
+}
+```
+
+### Изменить справочник
 Запрос на изменение справочника.
-+ Parameters
-  + metadata_id: `3f9a2f30-76af-11e7-6adb-ede50000000b` (required, string) - id пользовательского справочника
 
-+ Request Пример (application/json)
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|metadata_id |  `string` (required) *Example: 3f9a2f30-76af-11e7-6adb-ede50000000b* id пользовательского справочника.|
+
+> Request Пример (application/json)
 Пример запроса на обновление пользовательского справочника.
-  + Body
-        <!-- include(body/customentity/put_request.json) -->
 
-+ Response 200 (application/json)
+```shell
+  curl -X PUT
+    "ttps://online.moysklad.ru/api/remap/1.2/entity/customentity/3f9a2f30-76af-11e7-6adb-ede50000000b"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "new name"
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновлённого пользовательского справочника.
-  + Body
-        <!-- include(body/customentity/put_response.json) -->
 
-### Удалить справочник 
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/customentity/3f9a2f30-76af-11e7-6adb-ede50000000b",
+    "type": "customentity",
+    "mediaType": "application/json"
+  },
+  "id": "3f9a2f30-76af-11e7-6adb-ede50000000b",
+  "name": "new name"
+}
+```
+
+### Удалить справочник
 Запрос на удаление пользовательского справочника.
-+ Parameters
-  + metadata_id: `3f9a2f30-76af-11e7-6adb-ede50000000b` (required, string) - id пользовательского справочника
 
-+ Response 200 (application/json)
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|metadata_id |  `string` (required) *Example: 3f9a2f30-76af-11e7-6adb-ede50000000b* id пользовательского справочника.|
+
+> Удалить справочник
+ 
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/customentity/3f9a2f30-76af-11e7-6adb-ede50000000b"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешное удаление пользовательского справочника.
-+ Body
 
 ### Элементы Пользовательского справочника 
 #### Атрибуты элемента
@@ -63,11 +115,6 @@
 + **description** - Описание элемента пользовательского справочника
 + **externalCode** - Внешний элемента код пользовательского справочника
 
-
-+ Parameters
-  + metadata_id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id пользовательского справочника
-
-
 ### Получить элементы справочника 
 Запрос на получение всех элементов в указанном пользовательском справочнике.
 Результат: Объект JSON, включающий в себя поля:
@@ -75,54 +122,247 @@
 - **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой элементы пользовательского справочника.
 
-+ Response 200 (application/json)
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|metadata_id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id пользовательского справочника.|
+
+> Получить элементы справочника
+ 
+```shell
+ curl -X GET
+   "https://online.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19"
+   -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка элементов пользовательского справочника.
-  + Body
-        <!-- include(body/customentity_elements/get_list.json) -->
-        
+ 
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/customentity/metadata",
+    "type": "customentity",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#custom_7944ef04-f831-11e5-7a69-971500188b19",
+    "size": 3,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/01b29035-2656-11e6-8a84-bae500000048",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/7944ef04-f831-11e5-7a69-971500188b19",
+        "type": "customentity",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#custom_7944ef04-f831-11e5-7a69-971500188b19/edit?id=01b29035-2656-11e6-8a84-bae500000048"
+      },
+      "id": "01b29035-2656-11e6-8a84-bae500000048",
+      "accountId": "45489428-24a5-11e6-8a84-bae500000001",
+      "updated": "2017-08-13 17:55:08",
+      "name": "Партнёр1",
+      "code": "partner1",
+      "externalCode": "5434665867876"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/3fbe37f2-2659-11e6-8a84-bae500000013",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/7944ef04-f831-11e5-7a69-971500188b19",
+        "type": "customentity",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#custom_7944ef04-f831-11e5-7a69-971500188b19/edit?id=3fbe37f2-2659-11e6-8a84-bae500000013"
+      },
+      "id": "3fbe37f2-2659-11e6-8a84-bae500000013",
+      "accountId": "45489428-24a5-11e6-8a84-bae500000001",
+      "updated": "2017-08-13 11:06:23",
+      "name": "Партнёр 2",
+      "externalCode": "5434665867877"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/6343f631-265d-11e6-8a84-bae500000014",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/7944ef04-f831-11e5-7a69-971500188b19",
+        "type": "customentity",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#custom_7944ef04-f831-11e5-7a69-971500188b19/edit?id=6343f631-265d-11e6-8a84-bae500000014"
+      },
+      "id": "6343f631-265d-11e6-8a84-bae500000014",
+      "accountId": "45489428-24a5-11e6-8a84-bae500000001",
+      "updated": "2017-08-14 10:22:51",
+      "name": "Пётр михалыч из ООО Предприятие",
+      "code": "partner mikhalych",
+      "description": "Ключевой сотрудник ООО Предприятие",
+      "externalCode": "5434665867878"
+    }
+  ]
+} 
+```
+
 ### Создать элемент справочника 
 Единственным необходимым полем для создания элемента пользовательского справочника
 является поле **name**.
-+ Request Пример (application/json)
-Пример запроса на создание нового элемента пользовательского справочника.
-  + Body
-        <!-- include(body/customentity_elements/post_request.json) -->
-+ Response 200 (application/json)
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|metadata_id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id пользовательского справочника.|
+
+> Пример запроса на создание нового элемента пользовательского справочника.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "Партнёр 3",
+            "code": "partner3",
+            "description": "Описание",
+            "externalCode": "5434665867876"
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданного элемента пользовательского справочника.
-  + Body
-        <!-- include(body/customentity_elements/post_response.json) -->
-        
-### Удалить элемент справочника 
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/6343f631-265d-11e6-8a84-bae500000014",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/7944ef04-f831-11e5-7a69-971500188b19",
+    "type": "customentity",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#custom_7944ef04-f831-11e5-7a69-971500188b19/edit?id=6343f631-265d-11e6-8a84-bae500000014"
+  },
+  "id": "6343f631-265d-11e6-8a84-bae500000014",
+  "accountId": "45489428-24a5-11e6-8a84-bae500000001",
+  "updated": "2017-08-15 09:35:11",
+  "name": "Партнёр 3",
+  "code": "partner3",
+  "description": "Описание",
+  "externalCode": "5434665867876"
+}
+```
+
+### Удалить элемент справочника
 Запрос на удаление элемента пользовательского справочника.
-+ Parameters
-  + metadata_id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id пользовательского справочника
-  + id: `6343f631-265d-11e6-8a84-bae500000014` (required, string) - id элемента пользовательского справочника
+ 
+ **Параметры**
+ 
+|Параметр   |Описание   | 
+|---|---|
+|metadata_id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id пользовательского справочника.|
+|id |  `string` (required) *Example: 6343f631-265d-11e6-8a84-bae500000014* id элемента пользовательского справочника.|
 
-+ Response 200 (application/json)
+> Удалить элемент справочника
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/6343f631-265d-11e6-8a84-bae500000014"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешное удаление элемента пользовательского справочника.
-+ Body
 
-### Элемент пользовательского справочника 
-+ Parameters
-  + metadata_id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id пользовательского справочника
-  + id: `6343f631-265d-11e6-8a84-bae500000014` (required, string) - id элемента пользовательского справочника
+### Элемент пользовательского справочника
 
-### Получить элемент 
-Запрос на получение элемента пользовательского справочника с указанным id.
-+ Response 200 (application/json)
+### Получить элемент
+ 
+**Параметры**
+ 
+|Параметр   |Описание   | 
+|---|---|
+|metadata_id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id пользовательского справочника.|
+|id |  `string` (required) *Example: 6343f631-265d-11e6-8a84-bae500000014* id элемента пользовательского справочника.|
+
+> Запрос на получение элемента пользовательского справочника с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/6343f631-265d-11e6-8a84-bae500000014"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление элемента пользовательского справочника с указанным id.
-  + Body
-        <!-- include(body/customentity_elements/get_by_id.json) -->
 
-### Изменить элемент 
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/6343f631-265d-11e6-8a84-bae500000014",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/7944ef04-f831-11e5-7a69-971500188b19",
+    "type": "customentity",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#custom_7944ef04-f831-11e5-7a69-971500188b19/edit?id=6343f631-265d-11e6-8a84-bae500000014"
+  },
+  "id": "6343f631-265d-11e6-8a84-bae500000014",
+  "accountId": "45489428-24a5-11e6-8a84-bae500000001",
+  "updated": "2017-08-14 10:22:51",
+  "name": "Партнёр 3",
+  "code": "partner3",
+  "description": "Описание",
+  "externalCode": "5434665867876"
+}
+```
+
+### Изменить элемент
 Запрос на изменение объекта, представляющего собой элемент пользовательского справочника.
 
-+ Request Пример (application/json)
-Пример запроса на обновление элемента пользовательского справочника.
-  + Body
-        <!-- include(body/customentity_elements/put_request.json) -->
+**Параметры**
+ 
+|Параметр   |Описание   | 
+|---|---|
+|metadata_id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id пользовательского справочника.|
+|id |  `string` (required) *Example: 6343f631-265d-11e6-8a84-bae500000014* id элемента пользовательского справочника.|
 
-+ Response 200 (application/json)
+> Пример запроса на обновление элемента пользовательского справочника.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/6343f631-265d-11e6-8a84-bae500000014"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "Пётр михалыч из ООО Предприятие",
+            "code": "partner mikhalych",
+            "description": "Ключевой сотрудник ООО Предприятие",
+            "externalCode": "5434665867876"
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновлённого элемента пользовательского справочника.
-  + Body
-        <!-- include(body/customentity_elements/put_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/6343f631-265d-11e6-8a84-bae500000014",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/7944ef04-f831-11e5-7a69-971500188b19",
+    "type": "customentity",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#custom_7944ef04-f831-11e5-7a69-971500188b19/edit?id=6343f631-265d-11e6-8a84-bae500000014"
+  },
+  "id": "6343f631-265d-11e6-8a84-bae500000014",
+  "accountId": "45489428-24a5-11e6-8a84-bae500000001",
+  "updated": "2017-08-15 09:39:34",
+  "name": "Пётр михалыч из ООО Предприятие",
+  "code": "partner mikhalych",
+  "description": "Ключевой сотрудник ООО Предприятие",
+  "externalCode": "5434665867876"
+}
+```

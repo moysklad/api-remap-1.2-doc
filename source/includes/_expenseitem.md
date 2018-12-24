@@ -19,80 +19,381 @@
 + **externalCode** - Внешний код Статьи расходов
 + **archived** - Добавлена ли Статья расходов в архив
 
-### Получить Статьи расходов 
-Запрос на получение списка статей расходов.
-+ Parameters
-  + limit: 1000 (optional, enum[number])
-  Максимальное количество сущностей для извлечения.
-  <p>
-    <code>Допустимые значения 1 - 1000</code>
-  </p>
-      + Default: `1000`
-  + offset: 40 (optional, number)
-    Отступ в выдаваемом списке сущностей
-      + Default: `0`
+### Получить Статьи расходов
 
-+ Response 200 (application/json)
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+ 
+> Запрос на получение списка статей расходов.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка Статей расходов.
-  + Body
-        <!-- include(body/expense_item/get_list.json) -->
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+    "type": "expenseitem",
+    "mediaType": "application/json",
+    "size": 8,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+        "type": "expenseitem",
+        "mediaType": "application/json"
+      },
+      "id": "1be2350e-0479-11e5-b03a-448a5b426e7e",
+      "updated": "2015-05-27 17:03:10",
+      "name": "Закупка товаров",
+      "description": "Расходы на закупку товаров учитываются в отчете «Прибыли и убытки» как себестоимость проданных товаров",
+      "code": "1",
+      "externalCode": "1"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2395a-0479-11e5-baee-448a5b426e7e",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+        "type": "expenseitem",
+        "mediaType": "application/json"
+      },
+      "id": "1be2395a-0479-11e5-baee-448a5b426e7e",
+      "updated": "2015-05-27 17:03:10",
+      "name": "Возврат",
+      "description": "Расходы по возвратам не учитываются в отчете «Прибыли и убытки»",
+      "code": "3",
+      "externalCode": "3"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/1be23a18-0479-11e5-a260-448a5b426e7e",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+        "type": "expenseitem",
+        "mediaType": "application/json"
+      },
+      "id": "1be23a18-0479-11e5-a260-448a5b426e7e",
+      "updated": "2015-05-27 17:03:10",
+      "name": "Налоги и сборы",
+      "description": "Расходы по налогам и сборам учитываются как отдельная статья, не включенная в операционные расходы",
+      "code": "2",
+      "externalCode": "2"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/23f05a1e-0479-11e5-8bb9-448a5b426e7e",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+        "type": "expenseitem",
+        "mediaType": "application/json"
+      },
+      "id": "23f05a1e-0479-11e5-8bb9-448a5b426e7e",
+      "updated": "2015-05-27 17:03:24",
+      "name": "Списания",
+      "description": "Списания",
+      "code": "4",
+      "externalCode": "4"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/82031d62-2e58-11e6-ab5c-d8cb8a84bae5",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+        "type": "expenseitem",
+        "mediaType": "application/json"
+      },
+      "id": "82031d62-2e58-11e6-ab5c-d8cb8a84bae5",
+      "updated": "2016-06-09 18:40:35",
+      "name": "Перемещение",
+      "description": "Перемещения денег между кассами не учитываются в отчете «Прибыли и убытки».",
+      "code": "5",
+      "externalCode": "5"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/fb0a4b75-2e58-11e6-8a84-bae500000058",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+        "type": "expenseitem",
+        "mediaType": "application/json"
+      },
+      "id": "fb0a4b75-2e58-11e6-8a84-bae500000058",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "updated": "2016-06-09 18:43:58",
+      "name": "Аренда",
+      "description": "Аренда",
+      "code": "Аренда",
+      "externalCode": "IVslr34uhCUuglxPD7Idm0"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/fb0c8620-2e58-11e6-8a84-bae500000059",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+        "type": "expenseitem",
+        "mediaType": "application/json"
+      },
+      "id": "fb0c8620-2e58-11e6-8a84-bae500000059",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "updated": "2016-06-09 18:43:58",
+      "name": "Зарплата",
+      "description": "Зарплата",
+      "code": "Зарплата",
+      "externalCode": "RY7G3TULiTyjqYRrzr3V03"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/fb0dc966-2e58-11e6-8a84-bae50000005a",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+        "type": "expenseitem",
+        "mediaType": "application/json"
+      },
+      "id": "fb0dc966-2e58-11e6-8a84-bae50000005a",
+      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "updated": "2016-06-09 18:43:58",
+      "name": "Маркетинг и реклама",
+      "description": "Маркетинг и реклама",
+      "code": "Маркетинг и реклама",
+      "externalCode": "1PMtKJq-jjVJQbu5OWqBG1"
+    }
+  ]
+}
+
+```
 
 ### Создать Статью расходов 
 Запрос на создание новой статьи расходов. Обязательное поле для создание статьи расходов - **name**.
-+ Request Пример (application/json)
-Пример запроса на создание новой статьи расходов.
-  + Body
-        <!-- include(body/expense_item/post_request.json) -->
 
-+ Response 200 (application/json)
+> Пример запроса на создание новой статьи расходов.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "Налоги и не налоги",
+            "description": "Статья расходов налоги",
+            "code": "nalogi",
+            "externalCode": "wwoaon21431"
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление созданной статьи расходов.
-  + Body
-        <!-- include(body/expense_item/post_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/76e88dff-3f9b-11e6-8a84-bae50000009b",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+    "type": "expenseitem",
+    "mediaType": "application/json"
+  },
+  "id": "76e88dff-3f9b-11e6-8a84-bae50000009b",
+  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+  "updated": "2016-07-01 17:52:42",
+  "name": "Налоги и не налоги",
+  "description": "Статья расходов налоги",
+  "code": "nalogi",
+  "externalCode": "wwoaon21431"
+}
+```
 
 ### Массовое создание и обновление Статей расходов 
 [Массовое создание и обновление](/api/remap/1.2/doc/index.html#header-создание-и-обновление-нескольких-объектов) Статей расходов.
 В теле запроса нужно передать массив, содержащий JSON представления Статей расходов, которые вы хотите создать или обновить.
 Обновляемые Статьи расходов должны содержать идентификатор в виде метаданных.
 
-+ Request Пример (application/json)
-Пример создания и обновления нескольких Статей расходов
-  + Body
-        <!-- include(body/expense_item/post_massive_request.json) -->
+> Пример создания и обновления нескольких Статей расходов
 
-+ Response 200 (application/json)
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "name": "Налоги и не налоги",
+              "description": "Статья расходов налоги",
+              "code": "nalogi",
+              "externalCode": "wwoaon21431"
+            },
+            {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/7944ef04-f831-11e5-7a69-971500188b19",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+                "type": "expenseitem",
+                "mediaType": "application/json"
+              },
+              "name": "Дополнительные расходы",
+              "description": "Еще дополнительные расходы",
+              "code": "additional",
+              "externalCode": "sdeEfr32rfe"
+            }
+          ]'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - массив JSON представлений созданных и обновленных Статей расходов.
-  + Body
-        <!-- include(body/expense_item/post_massive_response.json) -->
 
-### Удалить Статью расходов 
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Статьи расходов
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/76e88dff-3f9b-11e6-8a84-bae50000009b",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+      "type": "expenseitem",
+      "mediaType": "application/json"
+    },
+    "id": "76e88dff-3f9b-11e6-8a84-bae50000009b",
+    "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+    "updated": "2016-07-01 17:52:42",
+    "name": "Налоги и не налоги",
+    "description": "Статья расходов налоги",
+    "code": "nalogi",
+    "externalCode": "wwoaon21431"
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/7944ef04-f831-11e5-7a69-971500188b19",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+      "type": "expenseitem",
+      "mediaType": "application/json"
+    },
+    "id": "7944ef04-f831-11e5-7a69-971500188b19",
+    "accountId": "7944ef04-f831-11e5-7a69-971500188b19",
+    "updated": "2016-07-01 17:52:42",
+    "name": "Дополнительные расходы",
+    "description": "Еще дополнительные расходы",
+    "code": "additional",
+    "externalCode": "sdeEfr32rfe"
+  }
+]
+```
 
-Запрос на удаление Статьи расходов с указанным id.
+### Удалить Статью расходов
 
-+ Response 200 (application/json)
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Статьи расходов.|
+
+> Запрос на удаление Статьи расходов с указанным id.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешное удаление статьи расходов.
+
 ### Статья расходов 
 
 Работа со статьёй расходов с указанным id.
-+ Parameters
-  + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id статьи расходов
-  
+
 ### Получить Статью расходов 
-Запрос на получение статьи расходов с указанным id.
-+ Response 200 (application/json)
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Статьи расходов.|
+
+
+> Запрос на получение статьи расходов с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление списка Статей расходов.
-  + Body
-        <!-- include(body/expense_item/get_by_id.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/fb0a4b75-2e58-11e6-8a84-bae500000058",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+    "type": "expenseitem",
+    "mediaType": "application/json"
+  },
+  "id": "fb0a4b75-2e58-11e6-8a84-bae500000058",
+  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+  "updated": "2016-06-09 18:43:58",
+  "name": "Аренда",
+  "description": "Аренда",
+  "code": "Аренда",
+  "externalCode": "IVslr34uhCUuglxPD7Idm0"
+}
+```
         
 ### Изменить Статью расходов 
 Запрос на изменение существующей статьи расходов.
-+ Request Пример (application/json)
-Пример запроса на обновление статьи расходов.
-  + Body
-        <!-- include(body/expense_item/put_request.json) -->
+ 
+**Параметры**
 
-+ Response 200 (application/json)
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Статьи расходов.|
+ 
+> Пример запроса на обновление статьи расходов.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "Не налоги и налоги",
+            "description": "Налоги и не налоги. Такая вот статья",
+            "code": "nalogi i net",
+            "externalCode": "wwoa1142aon21431"
+          }'  
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновлённой статьи расходов.
-  + Body
-        <!-- include(body/expense_item/put_response.json) -->
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/76e88dff-3f9b-11e6-8a84-bae50000009b",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+    "type": "expenseitem",
+    "mediaType": "application/json"
+  },
+  "id": "76e88dff-3f9b-11e6-8a84-bae50000009b",
+  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+  "updated": "2016-07-01 17:52:42",
+  "name": "Не налоги и налоги",
+  "description": "Налоги и не налоги. Такая вот статья",
+  "code": "nalogi i net",
+  "externalCode": "wwoa1142aon21431"
+}
+```
