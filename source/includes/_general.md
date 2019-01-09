@@ -1304,11 +1304,12 @@ curl -X GET
 ```
 
 > Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка доп. полей отгрузок.
 
 ```json
 {
   "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes",
       "mediaType": "application/json"
   },
   "rows": [
@@ -1444,6 +1445,7 @@ curl -X POST
 ```
 
 > Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданных доп. полей.
 
 ```json
 [
@@ -1501,6 +1503,7 @@ curl -X POST
 ```
 
 > Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного и обновленного доп. полей.
 
 ```json
 [
@@ -1560,13 +1563,14 @@ curl -X GET
 ```
 
 > Response 200 (application/json)
+Успешное удаление доп. полей.
 
 ### Отдельное доп. поле
 **Параметры**
 
 |Параметр   |Описание   | 
 |---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id доп. поля.|
+|id |  `string` (required) *Example: 7bc578d8-6501-11e8-9464-e4de00000004* id доп. поля.|
 
 #### Получить доп. поле
 Запрос на получение отдельного доп. поля отгрузок с указанным id.
@@ -1576,11 +1580,12 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19"
+  "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004"
   -H "Authorization: Basic <Access-Token>"
 ```
 
 > Response 200 (application/json)
+Успешный запрос. Результат - JSON представление доп. поля отгрузки.
 
 ```json
 {
@@ -1616,6 +1621,7 @@ curl -X PUT
 ```
 
 > Response 200 (application/json)
+Успешный запрос. Результат - JSON представление доп. поля отгрузки.
 
 ```json
 {
@@ -1645,3 +1651,4 @@ curl -X DELETE
 ```
 
 > Response 200 (application/json)
+Успешное удаление доп. поля.
