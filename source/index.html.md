@@ -81,6 +81,7 @@ includes:
   - dashboard
   - audit
   - firebasetoken
+  - notification
 
 
 search: true
