@@ -33,15 +33,15 @@
     "context": {
       "employee": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.1/context/employee",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/employee/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json"
         }
       }
     },
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.1/entity/notification",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/notification",
       "type": "usernotification",
       "mediaType": "application/json",
       "size": 1,
@@ -51,8 +51,8 @@
     "rows": [
       {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.1/entity/notification/b67c3127-f7b2-11e8-4508-904900000043",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/notification/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/notification/b67c3127-f7b2-11e8-4508-904900000043",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/notification/metadata",
           "type": "usernotification",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#usernotification/edit?id=b67c3127-f7b2-11e8-4508-904900000043"
@@ -82,8 +82,8 @@
   ```json
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.1/entity/notification/b67c3127-f7b2-11e8-4508-904900000043",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/notification/metadata",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/notification/b67c3127-f7b2-11e8-4508-904900000043",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/notification/metadata",
       "type": "usernotification",
       "mediaType": "application/json",
       "uuidHref": "https://online.moysklad.ru/app/#usernotification/edit?id=b67c3127-f7b2-11e8-4508-904900000043"
