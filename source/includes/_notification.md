@@ -5,11 +5,11 @@
 + **meta** - [Метаданные](/api/remap/1.2/doc/metadata.html) объекта
 + **id** - ID Уведомления в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
-+ **moment** - Дата и время формирования Уведомления
++ **moment** - Дата и время формирования Уведомления `Только для чтения`
 + **updated** - Момент последнего обновления сущности `Только для чтения`
 + **readed** - Признак того, было ли Уведомление прочитано
-+ **notificationType** - Тип Уведомления
-+ **notification** - Данные Уведомления в формате Escape JSON. Формат содержимого зависит от типа Уведомления.
++ **notificationType** - Тип Уведомления `Только для чтения`
++ **notification** - Данные Уведомления в формате Escape JSON. Формат содержимого зависит от типа Уведомления. `Только для чтения`
 
 ### Получить ленту Уведомлений [GET]
 Запрос на получение ленты Уведомлений.
@@ -19,8 +19,8 @@
 - **rows** - Массив JSON объектов, представляющих собой [Уведомления](#уведомления-уведомление).
 
 + Parameters
-  + limit: 100 (optional, enum[number]) - Максимальное количество сущностей для извлечения.
-    + Допустимые значения 1 - 100
+  + limit: 1000 (optional, enum[number]) - Максимальное количество сущностей для извлечения.
+    + Допустимые значения 1 - 1000
     + Default: `25`
   + offset: 40 (optional, number) - Отступ в выдаваемом списке сущностей
     + Default: `0`
@@ -42,7 +42,7 @@
     },
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/notification",
-      "type": "usernotification",
+      "type": "notification",
       "mediaType": "application/json",
       "size": 1,
       "limit": 1,
@@ -53,7 +53,7 @@
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/notification/b67c3127-f7b2-11e8-4508-904900000043",
           "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/notification/metadata",
-          "type": "usernotification",
+          "type": "notification",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#usernotification/edit?id=b67c3127-f7b2-11e8-4508-904900000043"
         },
@@ -62,7 +62,7 @@
         "moment": "2018-12-04 13:52:37",
         "readed": false,
         "notificationType": "PURPOSE_ASSIGNED",
-        "notification": "{\"type\": \"com.lognex.notificator.common.ntr.NotificationPurposeAssignedNTR\", \"rayID\": \"549f1ed4-fbea-473f-8064-3219e774ce2b\", \"purpose\": {\"id\": \"b665080a-f7b2-11e8-4508-904900000041\", \"date\": 1543920757074, \"name\": \"task1\"}, \"accountId\": null, \"performedBy\": {\"id\": null, \"name\": \"demo@demo\"}, \"subscribers\": [], \"notificationType\": \"PURPOSE_ASSIGNED\"}"
+        "notification": "{ \"notificationType\" : \"PURPOSE_ASSIGNED\", \"performedBy\" : { \"name\" : \"demo@demo\", \"id\" : null }, \"purpose\" : { \"name\" : \"task1\", \"id\" : \"2687daa6-196e-11e9-382e-97f200000041\", \"date\" : \"2019-01-16 12:07:29.459\" } }"
       }
     ]
   }
@@ -84,7 +84,7 @@
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/notification/b67c3127-f7b2-11e8-4508-904900000043",
       "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/notification/metadata",
-      "type": "usernotification",
+      "type": "notification",
       "mediaType": "application/json",
       "uuidHref": "https://online.moysklad.ru/app/#usernotification/edit?id=b67c3127-f7b2-11e8-4508-904900000043"
     },
@@ -93,7 +93,7 @@
     "moment": "2018-12-04 13:52:37",
     "readed": false,
     "notificationType": "PURPOSE_ASSIGNED",
-    "notification": "{\"type\": \"com.lognex.notificator.common.ntr.NotificationPurposeAssignedNTR\", \"rayID\": \"549f1ed4-fbea-473f-8064-3219e774ce2b\", \"purpose\": {\"id\": \"b665080a-f7b2-11e8-4508-904900000041\", \"date\": 1543920757074, \"name\": \"task1\"}, \"accountId\": null, \"performedBy\": {\"id\": null, \"name\": \"demo@demo\"}, \"subscribers\": [], \"notificationType\": \"PURPOSE_ASSIGNED\"}"
+    "notification": "{ \"notificationType\" : \"PURPOSE_ASSIGNED\", \"performedBy\" : { \"name\" : \"demo@demo\", \"id\" : null }, \"purpose\" : { \"name\" : \"task1\", \"id\" : \"2687daa6-196e-11e9-382e-97f200000041\", \"date\" : \"2019-01-16 12:07:29.459\" } }"
   }  
   ```
 
@@ -109,7 +109,7 @@
 ## Отметить Уведомление как прочитанное [/notification/read/{id}]
 Отметить конкретное уведомление, как прочитанное. Можно отмечать только Уведомления текущего пользователя.
 
-### Отметить Уведомление как прочитанное [POST /notification/read/{id}]
+### Отметить Уведомление как прочитанное [PUT /notification/read/{id}]
 + Parameters
   + id: `7944ef04-f831-11e5-7a69-971500188b19` (required, string) - id Уведомления.
 
@@ -120,7 +120,7 @@
 ## Отметить все Уведомления как прочитанные [/notification/readall]
 Отметить все Уведомления текущего пользователя как прочитанные
 
-### Отметить Уведомления как прочитанные [POST /notification/readall]
+### Отметить Уведомления как прочитанные [PUT /notification/readall]
 
 + Response 200 (application/json)
 Успешное проставление признака "прочитано" всем непрочитанным Уведомлениям.
@@ -185,8 +185,8 @@
   }
   ```
 
-### Сохранить настройки уведомлений [POST]
-Сохранение настроек уведомлений текущего пользователя.
+### Изменить настройки уведомлений [PUT]
+Изменение настроек уведомлений текущего пользователя.
 
 + Принимает JSON-представление настроек уведомлений
   + Body
