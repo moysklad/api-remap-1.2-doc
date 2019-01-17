@@ -21,7 +21,7 @@
 + Parameters
   + limit: 1000 (optional, enum[number]) - Максимальное количество сущностей для извлечения.
     + Допустимые значения 1 - 1000
-    + Default: `25`
+    + Default: `1000`
   + offset: 40 (optional, number) - Отступ в выдаваемом списке сущностей
     + Default: `0`
 
