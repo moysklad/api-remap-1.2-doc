@@ -58,7 +58,7 @@
         },
         "id": "b67c3127-f7b2-11e8-4508-904900000043",
         "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
-        "moment": "2018-12-04 13:52:37",
+        "updated": "2018-12-04 13:52:37",
         "readed": false,
         "notificationType": "PURPOSE_ASSIGNED",
         "notification": "{ \"notificationType\" : \"PURPOSE_ASSIGNED\", \"performedBy\" : { \"name\" : \"demo@demo\", \"id\" : null }, \"purpose\" : { \"name\" : \"task1\", \"id\" : \"2687daa6-196e-11e9-382e-97f200000041\", \"date\" : \"2019-01-16 12:07:29.459\" } }"
@@ -89,7 +89,7 @@
     },
     "id": "b67c3127-f7b2-11e8-4508-904900000043",
     "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
-    "moment": "2018-12-04 13:52:37",
+    "updated": "2018-12-04 13:52:37",
     "readed": false,
     "notificationType": "PURPOSE_ASSIGNED",
     "notification": "{ \"notificationType\" : \"PURPOSE_ASSIGNED\", \"performedBy\" : { \"name\" : \"demo@demo\", \"id\" : null }, \"purpose\" : { \"name\" : \"task1\", \"id\" : \"2687daa6-196e-11e9-382e-97f200000041\", \"date\" : \"2019-01-16 12:07:29.459\" } }"
