@@ -1427,7 +1427,8 @@ curl -X GET
             "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
             "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
             "type": "product",
-            "mediaType": "application/json"
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=4f785efd-3304-11e6-8a84-bae50001c6c4"
           }
         }
       }
@@ -1969,7 +1970,8 @@ curl -X GET
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
           "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "product",
-          "mediaType": "application/json"
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=4f785efd-3304-11e6-8a84-bae50001c6c4"
         }
       },
       "reserve": 45
@@ -1988,7 +1990,8 @@ curl -X GET
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/1267a23f-acdc-11e6-5bed-427b00000086",
           "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "product",
-          "mediaType": "application/json"
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=4f785efd-3304-11e6-8a84-bae50001c6c4"
         }
       },
       "reserve": 45
@@ -2035,7 +2038,8 @@ curl -X GET
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
       "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
       "type": "product",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=4f785efd-3304-11e6-8a84-bae50001c6c4"
     }
   },
   "reserve": 45
@@ -2099,7 +2103,8 @@ curl -X GET
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/eeef177f-f648-11e5-8a84-bae50000007a",
       "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
       "type": "product",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=4f785efd-3304-11e6-8a84-bae50001c6c4"
     }
   },
   "reserve": 0

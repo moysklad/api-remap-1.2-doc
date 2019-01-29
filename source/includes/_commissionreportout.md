@@ -1420,7 +1420,8 @@ curl -X GET
                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36eb1628-912b-11e6-8a84-bae500000124",
                     "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
                     "type": "variant",
-                    "mediaType": "application/json"
+                    "mediaType": "application/json",
+                    "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=36eb1628-912b-11e6-8a84-bae500000124"
                   }
                 },
                 "quantity": 12,
@@ -1665,7 +1666,8 @@ curl -X GET
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/ca976541-96d1-11e6-8a84-bae50000002e",
           "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "product",
-          "mediaType": "application/json"
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=ca976541-96d1-11e6-8a84-bae50000002e"
         }
       },
       "reward": 0
@@ -1785,7 +1787,8 @@ curl -X GET
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
         "type": "variant",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=36edadbe-912b-11e6-8a84-bae500000128"
       }
     },
     "reward": 2295
@@ -1806,7 +1809,8 @@ curl -X GET
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
         "type": "variant",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=36edadbe-912b-11e6-8a84-bae500000128"
       }
     },
     "reward": 227
@@ -1873,7 +1877,8 @@ curl -X GET
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/ca976541-96d1-11e6-8a84-bae50000002e",
       "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
       "type": "product",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=ca976541-96d1-11e6-8a84-bae50000002e"
     }
   },
   "reward": 0
@@ -1934,7 +1939,9 @@ curl -X GET
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
       "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
       "type": "variant",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=36edadbe-912b-11e6-8a84-bae500000128"
+
     }
   },
   "reward": 0

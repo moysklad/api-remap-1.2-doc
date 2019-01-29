@@ -1093,7 +1093,8 @@ curl -X GET
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
           "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "product",
-          "mediaType": "application/json"
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=b6be720e-ad63-11e6-8a84-bc520000008f"
         }
       },
       "correctionAmount": -60,
@@ -1115,7 +1116,8 @@ curl -X GET
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/58948866-ad65-11e6-8a84-bc52000000cf",
           "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "product",
-          "mediaType": "application/json"
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=58948866-ad65-11e6-8a84-bc52000000cf"
         }
       },
       "correctionAmount": -20,
@@ -1189,7 +1191,8 @@ curl -X GET
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
         "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "product",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=b6be720e-ad63-11e6-8a84-bc520000008f"
       }
     },
     "correctionAmount": -60,
@@ -1237,7 +1240,8 @@ curl -X GET
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
       "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
       "type": "product",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=b6be720e-ad63-11e6-8a84-bc520000008f"
     }
   },
   "correctionAmount": -60,
@@ -1304,7 +1308,8 @@ curl -X GET
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
       "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
       "type": "product",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=b6be720e-ad63-11e6-8a84-bc520000008f"
     }
   },
   "correctionAmount": -155,

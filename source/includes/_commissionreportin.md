@@ -1886,7 +1886,9 @@ curl -X GET
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/ca976541-96d1-11e6-8a84-bae50000002e",
       "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
       "type": "product",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=ca976541-96d1-11e6-8a84-bae50000002e"
+
     }
   },
   "reward": 0
@@ -1941,19 +1943,14 @@ curl -X GET
   "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
   "quantity": 14,
   "price": 1301,
-  "vat":**Параметры**
-
-|Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id полученного отчёта комиссионера.|
-|positionID|  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id позиции полученного отчёта комиссионера.|
- 10,
+  "vat": 10,
   "assortment": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
       "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
       "type": "variant",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=36edadbe-912b-11e6-8a84-bae500000128"
     }
   },
   "reward": 0
