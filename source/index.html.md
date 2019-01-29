@@ -80,7 +80,7 @@ includes:
   - report_counterparty
   - dashboard
   - audit
-  - firebasetoken
+  - notification
 
 
 search: true
