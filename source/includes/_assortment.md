@@ -116,22 +116,14 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
-      "image": {
+      "images": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/download/28ca8201-36e7-11e7-8a7f-40d0000000cd",
-          "mediaType": "application/octet-stream"
-        },
-        "title": "product_image",
-        "filename": "product_image.png",
-        "size": 64211,
-        "updated": "2017-05-12 10:46:50",
-        "miniature": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/download/28ca8201-36e7-11e7-8a7f-40d0000000cd?miniature=true",
-          "mediaType": "image/png"
-        },
-        "tiny": {
-          "href": "https://online.moysklad.ru/app/download/28ca6fbb-36e7-11e7-8a7f-40d0000000cc.png",
-          "mediaType": "image/png"
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d1/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
         }
       },
       "minPrice": {
@@ -364,6 +356,16 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
+      "images": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/bundle/4f75d130-36e7-11e7-8a7f-40d0000000ef/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
       "minPrice": {
         "value": 500,
         "currency": {
@@ -457,6 +459,16 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
+      "images": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/6830a346-36e7-11e7-8a7f-40d0000000f8/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },      
       "minPrice": {
         "value": 500,
         "currency": {
