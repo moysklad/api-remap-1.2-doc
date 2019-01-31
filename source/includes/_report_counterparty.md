@@ -20,6 +20,7 @@
 + **returnsSum** - Сумма возвратов
 + **discountsSum** - Сумма скидок
 + **balance** - Баланс
++ **bonusBalance** - Баллы
 + **profit** - Прибыль
 + **lastEventDate** - Дата последнего события
 + **lastEventText** - Текст последнего события
