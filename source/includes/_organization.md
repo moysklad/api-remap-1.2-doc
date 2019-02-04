@@ -201,16 +201,16 @@ curl -X GET
         "postalCode": "125009",
         "country": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.1/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/country/metadata",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
             "type": "country",
             "mediaType": "application/json"
           }
         },
         "region": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.1/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/region/metadata",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
             "type": "region",
             "mediaType": "application/json"
           }
@@ -227,16 +227,16 @@ curl -X GET
         "postalCode": "125009",
         "country": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.1/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/country/metadata",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
             "type": "country",
             "mediaType": "application/json"
           }
         },
         "region": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.1/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/region/metadata",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
             "type": "region",
             "mediaType": "application/json"
           }
@@ -299,16 +299,16 @@ curl -X GET
             "postalCode": "125009",
             "country": {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/country/metadata",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
                 "type": "country",
                 "mediaType": "application/json"
               }
             },
             "region": {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/entity/region/00000000-0000-0000-0000-000000000077",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/region/metadata",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
                 "type": "region",
                 "mediaType": "application/json"
               }
@@ -324,16 +324,16 @@ curl -X GET
             "postalCode": "125009",
             "country": {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/country/metadata",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
                 "type": "country",
                 "mediaType": "application/json"
               }
             },
             "region": {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/entity/region/00000000-0000-0000-0000-000000000077",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/region/metadata",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
                 "type": "region",
                 "mediaType": "application/json"
               }
@@ -403,16 +403,16 @@ curl -X GET
     "postalCode": "125009",
     "country": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/country/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
         "mediaType": "application/json"
       }
     },
     "region": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/region/00000000-0000-0000-0000-000000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/region/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
         "type": "region",
         "mediaType": "application/json"
       }
@@ -429,16 +429,16 @@ curl -X GET
     "postalCode": "125009",
     "country": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/country/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
         "mediaType": "application/json"
       }
     },
     "region": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/region/00000000-0000-0000-0000-000000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/region/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
         "type": "region",
         "mediaType": "application/json"
       }
@@ -493,16 +493,16 @@ curl -X GET
             "postalCode": "125009",
             "country": {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/country/metadata",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
                 "type": "country",
                 "mediaType": "application/json"
               }
             },
             "region": {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/entity/region/00000000-0000-0000-0000-000000000077",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/region/metadata",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
                 "type": "region",
                 "mediaType": "application/json"
               }
@@ -518,16 +518,16 @@ curl -X GET
             "postalCode": "125009",
             "country": {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/country/metadata",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
                 "type": "country",
                 "mediaType": "application/json"
               }
             },
             "region": {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/entity/region/00000000-0000-0000-0000-000000000077",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/region/metadata",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
                 "type": "region",
                 "mediaType": "application/json"
               }
@@ -598,16 +598,16 @@ curl -X GET
     "postalCode": "125009",
     "country": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/country/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
         "mediaType": "application/json"
       }
     },
     "region": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/region/00000000-0000-0000-0000-000000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/region/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
         "type": "region",
         "mediaType": "application/json"
       }
@@ -624,16 +624,16 @@ curl -X GET
     "postalCode": "125009",
     "country": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/country/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
         "mediaType": "application/json"
       }
     },
     "region": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/region/00000000-0000-0000-0000-000000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/region/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
         "type": "region",
         "mediaType": "application/json"
       }
@@ -1019,16 +1019,16 @@ curl -X GET
     "postalCode": "125009",
     "country": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/country/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
         "mediaType": "application/json"
       }
     },
     "region": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/region/00000000-0000-0000-0000-000000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/region/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
         "type": "region",
         "mediaType": "application/json"
       }
@@ -1045,16 +1045,16 @@ curl -X GET
     "postalCode": "125009",
     "country": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/country/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
         "mediaType": "application/json"
       }
     },
     "region": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/region/00000000-0000-0000-0000-000000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/region/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
         "type": "region",
         "mediaType": "application/json"
       }
@@ -1219,16 +1219,16 @@ curl -X GET
             "postalCode": "125009",
             "country": {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/country/metadata",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
                 "type": "country",
                 "mediaType": "application/json"
               }
             },
             "region": {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/entity/region/00000000-0000-0000-0000-000000000077",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/region/metadata",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
                 "type": "region",
                 "mediaType": "application/json"
               }
@@ -1244,16 +1244,16 @@ curl -X GET
             "postalCode": "125009",
             "country": {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/country/metadata",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
                 "type": "country",
                 "mediaType": "application/json"
               }
             },
             "region": {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/entity/region/00000000-0000-0000-0000-000000000077",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/region/metadata",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
                 "type": "region",
                 "mediaType": "application/json"
               }
@@ -1327,16 +1327,16 @@ curl -X GET
     "postalCode": "125009",
     "country": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/country/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
         "mediaType": "application/json"
       }
     },
     "region": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/region/00000000-0000-0000-0000-000000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/region/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
         "type": "region",
         "mediaType": "application/json"
       }
@@ -1353,16 +1353,16 @@ curl -X GET
     "postalCode": "125009",
     "country": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/country/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
         "mediaType": "application/json"
       }
     },
     "region": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/region/00000000-0000-0000-0000-000000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/region/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
         "type": "region",
         "mediaType": "application/json"
       }
