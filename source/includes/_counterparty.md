@@ -43,6 +43,7 @@
 + **phone** - Номер городского телефона
 + **fax** - Номер факса
 + **actualAddress** - Фактический адрес Контрагента
++ **actualAddressFull** - Фактический адрес Контрагента с отдельными полями
 + **accounts** - Ссылка на счета Контрагента (массив)
 + **companyType** - Тип Контрагента. `[Юридическое лицо, Индивидуальный предприниматель, Физическое лицо]`.
 В зависимости от значения данного поля набор выводимых реквизитов контрагента может меняться. Подробнее [тут](#header-тип-контрагента)
@@ -53,7 +54,8 @@
 ##### Поля реквизитов
 ___
 + **legalTitle** - Полное наименование Контрагента
-+ **legalAddress** - Юридический адрес Контрагента
++ **legalAddress** - Юридического адреса Контрагента
++ **legalAddressFull** -  Юридический адрес Контрагента с отдельными полями
 + **inn** - ИНН
 + **kpp** - КПП
 + **ogrn** - ОГРН
@@ -73,6 +75,19 @@ ___
 + **priceType** - Тип цены Контрагента (строка или null)
 
 #### Атрибуты вложенных сущностей
+#### Аттрибуты сущности Адрес
++ **postalCode** - Почтовый индекс
++ **country** - Ссылка на страну в формате [Метаданных](#header-метаданные)
++ **region** - Ссылка на регион в формате [Метаданных](#header-метаданные)
++ **city** - Город
++ **street** - Улица
++ **house** - Дом (Максимальная длина - 30 символов)
++ **apartment** - Квартира (Максимальная длина - 30 символов)
++ **addInfo** - Другое
++ **comment** - Комментарий
+
+Строка адреса получается конкатенацией в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
+
 ##### Счета Контрагентов
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
@@ -205,7 +220,58 @@ curl -X GET
       "created": "2007-02-07 17:16:41",
       "companyType": "legal",
       "legalTitle": "Общество с ограниченной ответственностью \"Поставщик\"",
-      "legalAddress": "г.Москва, ул.Строителей, д.12",
+      "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+      "legalAddressFull": {
+        "postalCode": "125009",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "Москва",
+        "street": "ул Тверская",
+        "house": "1",
+        "apartment": "123",
+        "addInfo": "addinfo",
+        "comment": "some words about address"
+      },
+      "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+      "actualAddressFull": {
+        "postalCode": "125009",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "Москва",
+        "street": "ул Тверская",
+        "house": "1",
+        "apartment": "111",
+        "addInfo": "addinfo",
+        "comment": "some words about address"
+      },
       "inn": "7736570901",
       "kpp": "773601001",
       "accounts": {
@@ -291,7 +357,58 @@ curl -X GET
       "archived": false,
       "companyType": "legal",
       "legalTitle": "Общество с ограниченной ответственностью \"Покупатель\"",
-      "legalAddress": "г.Москва, ул.Строителей, д.11",
+      "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+      "legalAddressFull": {
+        "postalCode": "125009",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "Москва",
+        "street": "ул Тверская",
+        "house": "1",
+        "apartment": "123",
+        "addInfo": "addinfo",
+        "comment": "some words about address"
+      },
+      "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+      "actualAddressFull": {
+        "postalCode": "125009",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "Москва",
+        "street": "ул Тверская",
+        "house": "1",
+        "apartment": "111",
+        "addInfo": "addinfo",
+        "comment": "some words about address"
+      },
       "inn": "7736570902",
       "kpp": "773601002",
       "accounts": {
@@ -359,6 +476,58 @@ curl -X GET
       "archived": false,
       "created": "2007-02-07 17:16:41",
       "companyType": "legal",
+      "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+      "legalAddressFull": {
+        "postalCode": "125009",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "Москва",
+        "street": "ул Тверская",
+        "house": "1",
+        "apartment": "123",
+        "addInfo": "addinfo",
+        "comment": "some words about address"
+      },
+      "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+      "actualAddressFull": {
+        "postalCode": "125009",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "Москва",
+        "street": "ул Тверская",
+        "house": "1",
+        "apartment": "111",
+        "addInfo": "addinfo",
+        "comment": "some words about address"
+      },      
       "accounts": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12c9ebcf-692c-11e6-8a84-bae50000005d/accounts",
@@ -424,6 +593,59 @@ curl -X GET
       "archived": false,
       "created": "2007-02-07 17:16:41",
       "companyType": "legal",
+      "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+            "legalAddressFull": {
+              "postalCode": "125009",
+              "country": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+                  "type": "country",
+                  "mediaType": "application/json"
+                }
+              },
+              "region": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+                  "type": "region",
+                  "mediaType": "application/json"
+                }
+              },
+              "city": "Москва",
+              "street": "ул Тверская",
+              "house": "1",
+              "apartment": "123",
+              "addInfo": "addinfo",
+              "comment": "some words about address"
+            },
+            "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+            "actualAddressFull": {
+              "postalCode": "125009",
+              "country": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+                  "type": "country",
+                  "mediaType": "application/json"
+                }
+              },
+              "region": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+                  "type": "region",
+                  "mediaType": "application/json"
+                }
+              },
+              "city": "Москва",
+              "street": "ул Тверская",
+              "house": "1",
+              "apartment": "111",
+              "addInfo": "addinfo",
+              "comment": "some words about address"
+            },      
+
       "accounts": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/df2fdd2d-6934-11e6-8a84-bae500000049/accounts",
@@ -715,9 +937,57 @@ curl -X POST
         "email": "ovosh@delivery.ru",
         "phone": "+7 495 662 12 23",
         "fax": "1052034",
-        "actualAddress": "г.Москва ул Кузнечная д 331",
         "legalTitle": "Общество с ограниченой ответственностью \"Овощ Экспресс\"",
-        "legalAddress": "г.Москва ул Достоевская д 93 к 12",
+          "legalAddressFull": {
+            "postalCode": "125009",
+            "country": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+                "type": "country",
+                "mediaType": "application/json"
+              }
+            },
+            "region": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+                "type": "region",
+                "mediaType": "application/json"
+              }
+            },
+            "city": "Москва",
+            "street": "ул Тверская",
+            "house": "1",
+            "apartment": "123",
+            "addInfo": "addinfo",
+            "comment": "some words about address"
+          },
+          "actualAddressFull": {
+            "postalCode": "125009",
+            "country": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+                "type": "country",
+                "mediaType": "application/json"
+              }
+            },
+            "region": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+                "type": "region",
+                "mediaType": "application/json"
+              }
+            },
+            "city": "Москва",
+            "street": "ул Тверская",
+            "house": "1",
+            "apartment": "111",
+            "addInfo": "addinfo",
+            "comment": "some words about address"
+          },
         "inn": "1251521244152",
         "kpp": "121555212",
         "ogrn": "1251552",
@@ -794,8 +1064,58 @@ curl -X POST
   "archived": false,
   "created": "2007-02-07 17:16:41",
   "legalTitle": "Общество с ограниченой ответственностью \"Овощ Экспресс\"",
-  "legalAddress": "г.Москва ул Достоевская д 93 к 12",
-  "actualAddress": "г.Москва ул Кузнечная д 331",
+  "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+  "legalAddressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "123",
+    "addInfo": "addinfo",
+    "comment": "some words about address"
+  },
+  "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+  "actualAddressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "111",
+    "addInfo": "addinfo",
+    "comment": "some words about address"
+  },
   "inn": "1251521244152",
   "kpp": "121555212",
   "ogrn": "1251552",
@@ -1361,6 +1681,58 @@ curl -X GET
     "id": "672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
     "name": "Цена продажи",
     "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+  },
+  "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+  "legalAddressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "123",
+    "addInfo": "addinfo",
+    "comment": "some words about address"
+  },
+  "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+  "actualAddressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "111",
+    "addInfo": "addinfo",
+    "comment": "some words about address"
   }
 }
 ```
@@ -1389,9 +1761,73 @@ curl -X PUT
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
   -H "Authorization: Basic <Access-Token>"
   -H "Content-Type: application/json"
-    -d '
-    {
-     
+    -d '{
+      "name": "ООО Радуга ЭКСПО",
+      "description" : "Сеть рынков стройматериалов Радуга ЭКСПО",
+      "code" : "raduga",
+      "externalCode" : "extRainbow",
+      "email" : "raduga@retail.ru",
+      "phone" : "+7 495 162 32 23",
+      "fax" : "1052054",
+      "actualAddress": "г.Москва ул Строителей д 331",
+      "legalTitle": "Общество с ограниченой ответственностью \"Радуга ЭКСПО\"",
+      "legalAddressFull": {
+        "postalCode": "125009",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "Москва",
+        "street": "ул Тверская",
+        "house": "1",
+        "apartment": "123",
+        "addInfo": "addinfo",
+        "comment": "some words about address"
+      },
+      "actualAddressFull": {
+        "postalCode": "125009",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "Москва",
+        "street": "ул Тверская",
+        "house": "1",
+        "apartment": "111",
+        "addInfo": "addinfo",
+        "comment": "some words about address"
+      },
+      "inn" : "1251581244152",
+      "kpp" : "121557212",
+      "ogrn" : "1253552",
+      "okpo" : "201313",
+      "tags" : [
+        "Строители", "Ремонт", "Радуга", "Бетон", "ЖЖОТ"
+      ]
     }'  
 ```
 
@@ -1432,8 +1868,58 @@ curl -X PUT
   "archived": false,
   "created": "2007-02-07 17:16:41",
   "legalTitle": "Общество с ограниченой ответственностью \"Радуга ЭКСПО\"",
-  "legalAddress": "г.Москва ул Чернорабочего д 93 к 12",
-  "actualAddress": "г.Москва ул Строителей д 331",
+  "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+  "legalAddressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "123",
+    "addInfo": "addinfo",
+    "comment": "some words about address"
+  },
+  "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+  "actualAddressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "111",
+    "addInfo": "addinfo",
+    "comment": "some words about address"
+  },
   "inn": "1251581244152",
   "kpp": "121557212",
   "ogrn": "1253552",
@@ -1497,9 +1983,57 @@ curl -X PUT
       "email": "ovoshi@delivery.ru",
       "phone": "+7 495 162 12 23",
       "fax": "1052014",
-      "actualAddress": "г.Москва ул Кузнецкая д 331",
       "legalTitle": "Общество с ограниченой ответственностью \"Овощ Экспресс\"",
-      "legalAddress": "г.Москва ул Волжская д 93 к 12",
+      "legalAddressFull": {
+        "postalCode": "125009",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "Москва",
+        "street": "ул Тверская",
+        "house": "1",
+        "apartment": "123",
+        "addInfo": "addinfo",
+        "comment": "some words about address"
+      },
+      "actualAddressFull": {
+        "postalCode": "125009",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "Москва",
+        "street": "ул Тверская",
+        "house": "1",
+        "apartment": "111",
+        "addInfo": "addinfo",
+        "comment": "some words about address"
+      },
       "inn": "1251581244152",
       "kpp": "121557212",
       "ogrn": "1253552",
@@ -1597,8 +2131,58 @@ curl -X PUT
   "archived": false,
   "created": "2007-02-07 17:16:41",
   "legalTitle": "Общество с ограниченой ответственностью \"Овощ Экспресс\"",
-  "legalAddress": "г.Москва ул Волжская д 93 к 12",
-  "actualAddress": "г.Москва ул Кузнецкая д 331",
+  "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+  "legalAddressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "123",
+    "addInfo": "addinfo",
+    "comment": "some words about address"
+  },
+  "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+  "actualAddressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "111",
+    "addInfo": "addinfo",
+    "comment": "some words about address"
+  },
   "inn": "1251581244152",
   "kpp": "121557212",
   "ogrn": "1253552",

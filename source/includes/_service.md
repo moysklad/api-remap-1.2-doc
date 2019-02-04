@@ -224,8 +224,8 @@ curl -X GET
         "value": 700,
         "currency": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json"
           }
@@ -361,8 +361,8 @@ curl -X GET
         "value": 700,
         "currency": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json"
           }
@@ -462,8 +462,8 @@ curl -X GET
               "value": 1047,
               "currency": {
                 "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
                   "type": "currency",
                   "mediaType": "application/json"
                 }
@@ -581,8 +581,8 @@ curl -X GET
     "value": 1047,
     "currency": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
         "type": "currency",
         "mediaType": "application/json"
       }
@@ -764,8 +764,8 @@ curl -X GET
               "value": 700,
               "currency": {
                 "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
                   "type": "currency",
                   "mediaType": "application/json"
                 }
@@ -896,8 +896,8 @@ curl -X GET
     "value": 700,
     "currency": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
         "type": "currency",
         "mediaType": "application/json"
       }
@@ -1021,8 +1021,8 @@ curl -X GET
                 "value": 700,
                 "currency": {
                   "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
                     "type": "currency",
                     "mediaType": "application/json"
                   }
@@ -1219,8 +1219,8 @@ curl -X GET
       "value": 700,
       "currency": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
           "type": "currency",
           "mediaType": "application/json"
         }
@@ -1467,8 +1467,8 @@ curl -X GET
     "value": 700,
     "currency": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
         "type": "currency",
         "mediaType": "application/json"
       }
@@ -1596,8 +1596,8 @@ curl -X GET
                 "value": 700,
                 "currency": {
                   "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
                     "type": "currency",
                     "mediaType": "application/json"
                   }
@@ -1715,8 +1715,8 @@ curl -X GET
      "value": 700,
      "currency": {
        "meta": {
-         "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-         "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+         "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
          "type": "currency",
          "mediaType": "application/json"
        }
@@ -1811,8 +1811,8 @@ curl -X GET
                "value": 700,
                "currency": {
                  "meta": {
-                   "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-                   "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+                   "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
                    "type": "currency",
                    "mediaType": "application/json"
                  }
@@ -1950,8 +1950,8 @@ curl -X GET
     "value": 700,
     "currency": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
         "type": "currency",
         "mediaType": "application/json"
       }
