@@ -152,7 +152,7 @@ html, body {
   }
 
   .toc-list-h1-title {
-    background-color: grey;
+    background-color: #F3F7F9;
     text-align: center;
   }
 
@@ -642,4 +642,43 @@ html, body {
 
 .highlight, .highlight .w {
   background-color: $code-bg;
+}
+
+
+//scrolls
+
+.toc-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,.16);
+}
+
+.toc-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background: #3B454E;
+  background: rgba(0,0,0,.16);
+}
+
+.toc-wrapper::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 2px;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,.16);
+}
+
+pre::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background: #3B454E;
+  background: rgba(0,0,0,.16);
+}
+
+pre::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  background: rgba(0,0,0,.10);
 }
