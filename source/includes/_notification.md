@@ -61,8 +61,7 @@ curl -X GET
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/notification/b67c3127-f7b2-11e8-4508-904900000043",
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/notification/metadata",
         "type": "notification",
-        "mediaType": "application/json",
-        "uuidHref": "https://online.moysklad.ru/app/#usernotification/edit?id=b67c3127-f7b2-11e8-4508-904900000043"
+        "mediaType": "application/json"
       },
       "id": "b67c3127-f7b2-11e8-4508-904900000043",
       "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
@@ -102,8 +101,7 @@ curl -X GET
     "href": "https://online.moysklad.ru/api/remap/1.2/entity/notification/b67c3127-f7b2-11e8-4508-904900000043",
     "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/notification/metadata",
     "type": "notification",
-    "mediaType": "application/json",
-    "uuidHref": "https://online.moysklad.ru/app/#usernotification/edit?id=b67c3127-f7b2-11e8-4508-904900000043"
+    "mediaType": "application/json"
   },
   "id": "b67c3127-f7b2-11e8-4508-904900000043",
   "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
