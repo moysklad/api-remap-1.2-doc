@@ -25,6 +25,7 @@ includes:
   - companysettings
   - expenseitem
   - country
+  - region
   - group
   - discount
   - uom
