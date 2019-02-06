@@ -1489,7 +1489,8 @@ curl -X GET
             "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/987148b8-9a09-11e6-8af5-581e0000006f",
             "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
             "type": "product",
-            "mediaType": "application/json"
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=987148b8-9a09-11e6-8af5-581e0000006f"
           }
         },
         "cells": []
@@ -1507,7 +1508,8 @@ curl -X GET
             "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/987148b8-9a09-11e6-8af5-581e0000006f",
             "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
             "type": "product",
-            "mediaType": "application/json"
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=987148b8-9a09-11e6-8af5-581e0000006f"
           }
         },
         "cells": [

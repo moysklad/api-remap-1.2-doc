@@ -2161,7 +2161,7 @@ curl -X GET
           "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "variant",
           "mediaType": "application/json",
-          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=56c73633-ffe4-11e5-9464-e4de000000c6"
+          "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=56c73633-ffe4-11e5-9464-e4de000000c6"
         }
       },
       "reserve": 1
@@ -2383,7 +2383,7 @@ curl -X GET
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
         "type": "variant",
         "mediaType": "application/json",
-        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=7a81082f-3c64-11e6-8a84-bae50000000e"
+        "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=7a81082f-3c64-11e6-8a84-bae50000000e"
       }
     },
     "shipped": 0,

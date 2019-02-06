@@ -1691,7 +1691,8 @@ curl -X GET
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/b5d328b3-cab0-11e7-6a80-332a0000000d",
             "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
             "type": "variant",
-            "mediaType": "application/json"
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=b5d328b3-cab0-11e7-6a80-332a0000000d"
           }
         }
       }

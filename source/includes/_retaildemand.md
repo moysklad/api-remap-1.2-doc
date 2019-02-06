@@ -1663,7 +1663,7 @@ curl -X GET
           "metadataHref": "http://localhost:8081/api/remap/1.2/entity/product/metadata",
           "type": "product",
           "mediaType": "application/json",
-          "uuidHref": "http://localhost:8081/app/#good/edit?id=9f97f569-e0e3-11e7-9464-e4de00000001"
+          "uuidHref": "http://localhost:8081/app/#good/edit?id=9f9ac08a-e0e3-11e7-9464-e4de00000003"
         }
       }
     }
@@ -2424,7 +2424,7 @@ curl -X GET
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
         "type": "service",
         "mediaType": "application/json",
-        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=c02e3a5c-007e-11e6-9464-e4de00000006"
+        "uuidHref": "https://online.moysklad.ru/app/#service/edit?id=c02e3a5c-007e-11e6-9464-e4de00000006"
       }
     },
     "cost": 130

@@ -1427,7 +1427,8 @@ curl -X GET
             "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
             "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
             "type": "product",
-            "mediaType": "application/json"
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=0de151c1-acdc-11e6-5bed-427b00000080"
           }
         }
       }

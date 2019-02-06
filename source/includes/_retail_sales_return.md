@@ -1902,7 +1902,7 @@ curl -X GET
             "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
             "type": "product",
             "mediaType": "application/json",
-            "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=03201fa1-3663-11e8-56c0-000800000002"
+            "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=03216395-3663-11e8-56c0-000800000004"
           }
         }
       }

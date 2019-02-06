@@ -1940,7 +1940,7 @@ curl -X GET
       "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
       "type": "variant",
       "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=36edadbe-912b-11e6-8a84-bae500000128"
+      "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=36edadbe-912b-11e6-8a84-bae500000128"
     }
   },
   "reward": 0

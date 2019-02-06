@@ -1728,7 +1728,8 @@ curl -X GET
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/b5d94dd1-cab0-11e7-6a80-332a00000011",
             "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
             "type": "variant",
-            "mediaType": "application/json"
+            "mediaType": "application/json",
+            
           }
         },
         "overhead": 0
