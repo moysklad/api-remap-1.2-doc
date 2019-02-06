@@ -2334,7 +2334,7 @@ curl -X GET
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions",
     "type": "salesreturnposition",
     "mediaType": "application/json",
     "size": 4,
@@ -2344,7 +2344,7 @@ curl -X GET
   "rows": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/6702da17-1382-11e6-9464-e4de0000000e",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/6702da17-1382-11e6-9464-e4de0000000e",
         "type": "salesreturnposition",
         "mediaType": "application/json"
       },
@@ -2359,14 +2359,15 @@ curl -X GET
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/07f8fb39-137b-11e6-9464-e4de000000f3",
           "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
           "type": "variant",
-          "mediaType": "application/json"
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=07f8fb39-137b-11e6-9464-e4de000000f3"
         }
       },
       "cost": 25
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/6702ecc7-1382-11e6-9464-e4de0000000f",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/6702ecc7-1382-11e6-9464-e4de0000000f",
         "type": "salesreturnposition",
         "mediaType": "application/json"
       },
@@ -2381,14 +2382,15 @@ curl -X GET
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/27a803bd-137b-11e6-9464-e4de0000013a",
           "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "product",
-          "mediaType": "application/json"
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=27a803bd-137b-11e6-9464-e4de0000013a"
         }
       },
       "cost": 37
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/6703f8ae-1382-11e6-9464-e4de00000010",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/6703f8ae-1382-11e6-9464-e4de00000010",
         "type": "salesreturnposition",
         "mediaType": "application/json"
       },
@@ -2403,14 +2405,15 @@ curl -X GET
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
           "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
           "type": "variant",
-          "mediaType": "application/json"
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=609e36c0-137b-11e6-9464-e4de00000179"
         }
       },
       "cost": 49
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/67040794-1382-11e6-9464-e4de00000011",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/67040794-1382-11e6-9464-e4de00000011",
         "type": "salesreturnposition",
         "mediaType": "application/json"
       },
@@ -2425,7 +2428,8 @@ curl -X GET
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609c2418-137b-11e6-9464-e4de00000174",
           "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
           "type": "variant",
-          "mediaType": "application/json"
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=609c2418-137b-11e6-9464-e4de00000174"
         }
       },
       "cost": 51
@@ -2516,7 +2520,7 @@ curl -X GET
 [
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/13982b01-138a-11e6-9464-e4de00000018",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/13982b01-138a-11e6-9464-e4de00000018",
       "type": "salesreturnposition",
       "mediaType": "application/json"
     },
@@ -2531,14 +2535,15 @@ curl -X GET
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
         "type": "variant",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=609e36c0-137b-11e6-9464-e4de00000179"
       }
     },
     "cost": 25
   },
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/13998a65-138a-11e6-9464-e4de00000019",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/13998a65-138a-11e6-9464-e4de00000019",
       "type": "salesreturnposition",
       "mediaType": "application/json"
     },
@@ -2553,14 +2558,15 @@ curl -X GET
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/07f8fb39-137b-11e6-9464-e4de000000f3",
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
         "type": "variant",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=07f8fb39-137b-11e6-9464-e4de000000f3"
       }
     },
     "cost": 37
   },
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/13999856-138a-11e6-9464-e4de0000001a",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/13999856-138a-11e6-9464-e4de0000001a",
       "type": "salesreturnposition",
       "mediaType": "application/json"
     },
@@ -2575,7 +2581,8 @@ curl -X GET
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
         "type": "variant",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=609e36c0-137b-11e6-9464-e4de00000179"
       }
     },
     "cost": 49
@@ -2608,11 +2615,11 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/13982b01-138a-11e6-9464-e4de00000018",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
     "type": "salesreturnposition",
     "mediaType": "application/json"
   },
-  "id": "13982b01-138a-11e6-9464-e4de00000018",
+  "id": "34f6344f-015e-11e6-9464-e4de0000006c",
   "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
   "quantity": 103,
   "price": 999,
@@ -2623,7 +2630,8 @@ curl -X GET
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
       "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
       "type": "variant",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=609e36c0-137b-11e6-9464-e4de00000179"
     }
   },
   "cost": 25
@@ -2664,11 +2672,11 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions/13982b01-138a-11e6-9464-e4de00000018",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
     "type": "salesreturnposition",
     "mediaType": "application/json"
   },
-  "id": "13982b01-138a-11e6-9464-e4de00000018",
+  "id": "34f6344f-015e-11e6-9464-e4de0000006c",
   "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
   "quantity": 10,
   "price": 3000,
@@ -2679,7 +2687,8 @@ curl -X GET
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
       "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
       "type": "variant",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=609e36c0-137b-11e6-9464-e4de00000179"
     }
   },
   "cost": 250
