@@ -50,6 +50,13 @@
 
 Структуры объектов отдельных коллекций:
 
+##### Штрих коды:
+При создании штрихкода требуется описать объект с полем, являющимся форматом представления штрихкода в нижнем регистре, со строковым значением самого штрихкода. Наименование полей отдельного объекта, представляющего штрихкод:
+
++ **ean13** - штрихкод в формате EAN13, если требуется создать штрихкод в формате EAN13
++ **ean8** - штрихкод в формате EAN8, если требуется создать штрихкод в формате EAN8
++ **code128** - штрихкод в формате Code128, если требуется создать штрихкод в формате Code128
+
 О работе с доп. полями Услуг можно прочитать [здесь](/api/remap/1.2/doc/index.html#header-работа-с-дополнительными-полями)
 
 ##### Цены продажи
@@ -217,8 +224,8 @@ curl -X GET
         "value": 700,
         "currency": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json"
           }
@@ -354,8 +361,8 @@ curl -X GET
         "value": 700,
         "currency": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json"
           }
@@ -384,6 +391,9 @@ curl -X GET
 который содержит представление новой Услуги.
 Результат - JSON представление созданной Услуги. Для создания новой Услуги,
 необходимо и достаточно указать в переданном объекте не пустое поле `name`
+
+При создании Услуги с указанным массивом штрихкодов для каждого штрихкода требуется указать к какому типу относится штрихкод. 
+Например, чтобы создать штрихкод с типом Code 128, в массив штрихкодов должен быть добавлен JSON-объект с полем code128 со значением штрихкода.
 
 > Пример наиболее полного по количеству полей запроса.
 
@@ -452,13 +462,24 @@ curl -X GET
               "value": 1047,
               "currency": {
                 "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
                   "type": "currency",
                   "mediaType": "application/json"
                 }
               }
-            }
+            },
+            "barcodes": [
+              {
+                "ean13": "34875834765872435"
+              },
+              {
+                "ean8": "234234234234"
+              },
+              {
+                "code128": "23423423452351"
+              }
+            ]            
           }'  
 ```
 
@@ -560,13 +581,24 @@ curl -X GET
     "value": 1047,
     "currency": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
         "type": "currency",
         "mediaType": "application/json"
       }
     }
-  }
+  },
+  "barcodes": [
+    {
+      "ean13": "34875834765872435"
+    },
+    {
+      "ean8": "234234234234"
+    },
+    {
+      "code128": "23423423452351"
+    }
+  ]  
 }
 ```
 > Пример запроса на создание Услуги с единственным необходимым полем.
@@ -732,13 +764,24 @@ curl -X GET
               "value": 700,
               "currency": {
                 "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
                   "type": "currency",
                   "mediaType": "application/json"
                 }
               }
             },
+            "barcodes": [
+              {
+                "ean13": "34875834765872435"
+              },
+              {
+                "ean8": "234234234234"
+              },
+              {
+                "code128": "23423423452351"
+              }
+            ],            
             "attributes": [
               {
                 "id": "0c2e54cd-2c80-11e6-8a84-bae50000009c",
@@ -853,13 +896,24 @@ curl -X GET
     "value": 700,
     "currency": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
         "type": "currency",
         "mediaType": "application/json"
       }
     }
   },
+  "barcodes": [
+    {
+      "ean13": "34875834765872435"
+    },
+    {
+      "ean8": "234234234234"
+    },
+    {
+      "code128": "23423423452351"
+    }
+  ],  
   "attributes": [
     {
       "meta": {
@@ -967,8 +1021,8 @@ curl -X GET
                 "value": 700,
                 "currency": {
                   "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
                     "type": "currency",
                     "mediaType": "application/json"
                   }
@@ -1165,8 +1219,8 @@ curl -X GET
       "value": 700,
       "currency": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
           "type": "currency",
           "mediaType": "application/json"
         }
@@ -1413,8 +1467,8 @@ curl -X GET
     "value": 700,
     "currency": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
         "type": "currency",
         "mediaType": "application/json"
       }
@@ -1466,6 +1520,9 @@ curl -X GET
 + Если же у данного атрибута значение уже присутствует - оно перезаписывается на переданное.
 + Если у данного атрибута в составе объекта значение присутствует, однако оно отсутствует
 в передаваемой в теле запроса коллекции (не передаётся совсем), то значение атрибута объекта не изменяется.
+
+При обновлении Услуги с указанным массивом штрихкодов для каждого штрихкода требуется указать к какому типу относится штрихкод. 
+Например, чтобы создать штрихкод с типом Code 128, в массив штрихкодов должен быть добавлен JSON-объект с полем code128 со значением штрихкода.
 
 **Параметры**
 
@@ -1539,8 +1596,8 @@ curl -X GET
                 "value": 700,
                 "currency": {
                   "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
                     "type": "currency",
                     "mediaType": "application/json"
                   }
@@ -1658,8 +1715,8 @@ curl -X GET
      "value": 700,
      "currency": {
        "meta": {
-         "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-         "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+         "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
          "type": "currency",
          "mediaType": "application/json"
        }
@@ -1754,13 +1811,24 @@ curl -X GET
                "value": 700,
                "currency": {
                  "meta": {
-                   "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-                   "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+                   "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
                    "type": "currency",
                    "mediaType": "application/json"
                  }
                }
              },
+             "barcodes": [
+               {
+                 "ean13": "34875834765872435"
+               },
+               {
+                 "ean8": "234234234234"
+               },
+               {
+                 "code128": "23423423452351"
+               }
+             ],             
              "attributes": [
                {
                  "id": "0c2e54cd-2c80-11e6-8a84-bae50000009c",
@@ -1882,13 +1950,24 @@ curl -X GET
     "value": 700,
     "currency": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/currency/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
         "type": "currency",
         "mediaType": "application/json"
       }
     }
   },
+  "barcodes": [
+    {
+      "ean13": "34875834765872435"
+    },
+    {
+      "ean8": "234234234234"
+    },
+    {
+      "code128": "23423423452351"
+    }
+  ],  
   "attributes": [
     {
       "meta": {

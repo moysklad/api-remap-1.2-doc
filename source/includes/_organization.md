@@ -23,6 +23,8 @@
 + **name** - Краткое наименование юрлица `Необходимое`
 + **description** - Комментарий к Юр. лицу
 + **code** - Код юрлица
++ **actualAddress** - Фактический адрес Юрлица
++ **actualAddressFull** - Фактический адрес Юрлица с отдельными полями.
 + **externalCode** - Внешний код юрлица
 + **archived** - Добавлено ли юрлицо в архив
 + **created** - Дата создания
@@ -33,6 +35,7 @@
 ___
 + **legalTitle** - Полное наименование юрлица
 + **legalAddress** - Юридический адрес юрлица
++ **legalAddressFull** - Юридический адрес юрлица с отдельными полями.
 + **inn** - ИНН
 + **kpp** - КПП
 + **ogrn** - ОГРН
@@ -51,11 +54,25 @@ ___
 + **payerVat** - Является ли данное юрлицо плательщиком НДС
 + **utmUrl** - IP-адрес УТМ
 + **actualAddress** - Фактический адрес юрлица
++ **actualAddressFull** - Фактический адрес юрлица с отдельными полями
 + **director** - Руководитель
 + **chiefAccountant** - Главный бухгалтер
 
 
 #### Атрибуты вложенных сущностей
+#### Аттрибуты сущности Адрес
++ **postalCode** - Почтовый индекс
++ **country** - Ссылка на страну в формате [Метаданных](#header-метаданные)
++ **region** - Ссылка на регион в формате [Метаданных](#header-метаданные)
++ **city** - Город
++ **street** - Улица
++ **house** - Дом (Максимальная длина - 30 символов)
++ **apartment** - Квартира (Максимальная длина - 30 символов)
++ **addInfo** - Другое
++ **comment** - Комментарий
+
+Строка адреса получается конкатенацией в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
+
 ##### Счета юрлица
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
@@ -179,8 +196,58 @@ curl -X GET
       "archived": false,
       "created": "2007-02-07 17:16:41",
       "legalTitle": "ООО Великое объединение любителей великих объединений",
-      "legalAddress": "г Москва ул Улица д дом/корпус",
-      "actualAddress": "Ул Вавилова д 75",
+      "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+      "legalAddressFull": {
+        "postalCode": "125009",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "Москва",
+        "street": "ул Тверская",
+        "house": "1",
+        "apartment": "123",
+        "addInfo": "addinfo",
+        "comment": "some words about address"
+      },
+      "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+      "actualAddressFull": {
+        "postalCode": "125009",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "Москва",
+        "street": "ул Тверская",
+        "house": "1",
+        "apartment": "111",
+        "addInfo": "addinfo",
+        "comment": "some words about address"
+      },
       "inn": "8274424278",
       "kpp": "123456789",
       "ogrn": "121410924",
@@ -228,8 +295,56 @@ curl -X GET
             "externalCode": "666АААА666",
             "archived": false,
             "legalTitle": "ООО Великое Свет Пром",
-            "legalAddress": "г Москва ул Ленин д 42/685",
-            "actualAddress": "г Пермь ул Сталина д 75",
+            "legalAddressFull": {
+            "postalCode": "125009",
+            "country": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+                "type": "country",
+                "mediaType": "application/json"
+              }
+            },
+            "region": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+                "type": "region",
+                "mediaType": "application/json"
+              }
+            },
+            "city": "Москва",
+            "street": "ул Тверская",
+            "house": "1",
+            "apartment": "123",
+            "addInfo": "addinfo",
+            "comment": "some words about address"
+          },
+          "actualAddressFull": {
+            "postalCode": "125009",
+            "country": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+                "type": "country",
+                "mediaType": "application/json"
+              }
+            },
+            "region": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+                "type": "region",
+                "mediaType": "application/json"
+              }
+            },
+            "city": "Москва",
+            "street": "ул Тверская",
+            "house": "1",
+            "apartment": "111",
+            "addInfo": "addinfo",
+            "comment": "some words about address"
+          },
             "inn": "87654321",
             "kpp": "15312532",
             "ogrn": "12345",
@@ -283,8 +398,58 @@ curl -X GET
   "externalCode": "666АААА666",
   "archived": false,
   "legalTitle": "ООО Великое Свет Пром",
-  "legalAddress": "г Москва ул Ленин д 42/685",
-  "actualAddress": "г Пермь ул Сталина д 75",
+  "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+  "legalAddressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "123",
+    "addInfo": "addinfo",
+    "comment": "some words about address"
+  },
+  "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+  "actualAddressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "111",
+    "addInfo": "addinfo",
+    "comment": "some words about address"
+  },
   "inn": "87654321",
   "kpp": "15312532",
   "ogrn": "12345",
@@ -324,8 +489,56 @@ curl -X GET
             "externalCode": "666АААА666",
             "archived": false,
             "legalTitle": "ООО Великое Свет Пром",
-            "legalAddress": "г Москва ул Ленин д 42/685",
-            "actualAddress": "г Пермь ул Сталина д 75",
+            "legalAddressFull": {
+            "postalCode": "125009",
+            "country": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+                "type": "country",
+                "mediaType": "application/json"
+              }
+            },
+            "region": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+                "type": "region",
+                "mediaType": "application/json"
+              }
+            },
+            "city": "Москва",
+            "street": "ул Тверская",
+            "house": "1",
+            "apartment": "123",
+            "addInfo": "addinfo",
+            "comment": "some words about address"
+          },
+          "actualAddressFull": {
+            "postalCode": "125009",
+            "country": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+                "type": "country",
+                "mediaType": "application/json"
+              }
+            },
+            "region": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+                "type": "region",
+                "mediaType": "application/json"
+              }
+            },
+            "city": "Москва",
+            "street": "ул Тверская",
+            "house": "1",
+            "apartment": "111",
+            "addInfo": "addinfo",
+            "comment": "some words about address"
+          },
             "inn": "87654321",
             "kpp": "15312532",
             "ogrn": "12345",
@@ -380,8 +593,58 @@ curl -X GET
   "archived": false,
   "created": "2007-02-07 17:16:41",
   "legalTitle": "ООО Великое Сообщество КАМАЗ ПРОМ",
-  "legalAddress": "г Москва ул Ленина д 42/685",
-  "actualAddress": "г Пермь ул Глумилина д 75",
+  "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+  "legalAddressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "123",
+    "addInfo": "addinfo",
+    "comment": "some words about address"
+  },
+  "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+  "actualAddressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "111",
+    "addInfo": "addinfo",
+    "comment": "some words about address"
+  },
   "inn": "87654321",
   "kpp": "15312532",
   "ogrn": "12345",
@@ -751,8 +1014,58 @@ curl -X GET
   "archived": false,
   "created": "2007-02-07 17:16:41",
   "legalTitle": "ООО Великое Свет Пром",
-  "legalAddress": "г Москва ул Ленин д 42/685",
-  "actualAddress": "г Пермь ул Сталина д 75",
+  "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+  "legalAddressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "123",
+    "addInfo": "addinfo",
+    "comment": "some words about address"
+  },
+  "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+  "actualAddressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "111",
+    "addInfo": "addinfo",
+    "comment": "some words about address"
+  },
   "inn": "87654321",
   "kpp": "15312532",
   "ogrn": "12345",
@@ -902,8 +1215,56 @@ curl -X GET
             "externalCode": "666АААА666",
             "archived": false,
             "legalTitle": "ООО Великое Свет Пром",
-            "legalAddress": "г Москва ул Ленин д 42/685",
-            "actualAddress": "г Уфа ул Маяковского д 65",
+            "legalAddressFull": {
+            "postalCode": "125009",
+            "country": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+                "type": "country",
+                "mediaType": "application/json"
+              }
+            },
+            "region": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+                "type": "region",
+                "mediaType": "application/json"
+              }
+            },
+            "city": "Москва",
+            "street": "ул Тверская",
+            "house": "1",
+            "apartment": "123",
+            "addInfo": "addinfo",
+            "comment": "some words about address"
+          },
+          "actualAddressFull": {
+            "postalCode": "125009",
+            "country": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+                "type": "country",
+                "mediaType": "application/json"
+              }
+            },
+            "region": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+                "type": "region",
+                "mediaType": "application/json"
+              }
+            },
+            "city": "Москва",
+            "street": "ул Тверская",
+            "house": "1",
+            "apartment": "111",
+            "addInfo": "addinfo",
+            "comment": "some words about address"
+          },
             "inn": "87654321",
             "kpp": "15312532",
             "ogrn": "12345",
@@ -961,8 +1322,58 @@ curl -X GET
   "archived": false,
   "created": "2007-02-07 17:16:41",
   "legalTitle": "ООО Великое Сообщество КАМАЗ ПРОМ",
-  "legalAddress": "г Москва ул Ленина д 42/685",
-  "actualAddress": "г Уфа ул Маяковского д 65",
+  "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+  "legalAddressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "123",
+    "addInfo": "addinfo",
+    "comment": "some words about address"
+  },
+  "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+  "actualAddressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "111",
+    "addInfo": "addinfo",
+    "comment": "some words about address"
+  },
   "inn": "87654321",
   "kpp": "15312532",
   "ogrn": "12345",
