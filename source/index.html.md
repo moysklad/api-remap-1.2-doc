@@ -14,6 +14,7 @@ includes:
   - counterparty
   - assortment
   - currency
+  - images
   - product
   - service
   - bundle
