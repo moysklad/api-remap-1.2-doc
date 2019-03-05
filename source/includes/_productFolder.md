@@ -367,6 +367,55 @@ curl -X GET
 > Response 200 (application/json)
 Успешное удаление Группы товаров.
 
+### Массовое удаление Групп товаров
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Групп товаров, которые вы хотите удалить.
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| id    | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b1*. id Группы товаров|
+| id    | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b2*. id Группы товаров|
+
+> Запрос на массовое удаление Групп товаров. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/productfolder"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/metadata",
+            "type": "productfolder",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/metadata",
+            "type": "productfolder",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информацио об удалении Групп товаров.
+
+```json
+[
+  {
+    "info":"Сущность 'productfolder' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'productfolder' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+```  
+
 ### Метаданные Групп товаров 
 #### Метаданные Групп товаров
  

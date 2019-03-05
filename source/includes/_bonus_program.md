@@ -165,3 +165,51 @@ curl -X GET
 > Response 200 (application/json)
 Успешное удаление Бонусной программы
 
+### Массовое удаление Бонусных программ
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Бонусных программ, которые вы хотите удалить.
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| id    | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b1*. id Бонусной программы|
+| id    | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b2*. id Бонусной программы|
+
+> Запрос на массовое удаление Бонусных программ. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram/metadata",
+            "type": "bonusprogram",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram/metadata",
+            "type": "bonusprogram",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информацио об удалении Бонусных программ.
+
+```json
+[
+  {
+    "info":"Сущность 'bonusprogram' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'bonusprogram' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+```

@@ -718,6 +718,55 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление Склада.
 
+### Массовое удаление Складов
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Складов, которые вы хотите удалить.
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| id    | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b1*. id Склада|
+| id    | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b2*. id Склада|
+
+> Запрос на массовое удаление Складов. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/store"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "type": "store",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "type": "store",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информацио об удалении Складов.
+
+```json
+[
+  {
+    "info":"Сущность 'store' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'store' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+```
+
 ### Метаданные Складов 
 #### Метаданные Складов 
 Запрос на получение метаданных Складов. Результат - объект JSON, включающий в себя:

@@ -514,6 +514,55 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление задачи.
 
+### Массовое удаление Задач
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Задач, которые вы хотите удалить.
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| id    | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b1*. id Задачи|
+| id    | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b2*. id Задачи|
+
+> Запрос на массовое удаление Задач. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/task"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
+            "type": "task",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
+            "type": "task",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информацио об удалении Задач.
+
+```json
+[
+  {
+    "info":"Сущность 'task' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'task' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+```
+
 ### Задача 
 
 ### Получить задачу

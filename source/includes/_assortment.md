@@ -665,5 +665,54 @@ curl -X GET
     }
   ]
 }
+```
+
+### Массовое удаление позиций в Ассортименте
+
+В теле запроса нужно передать массив, содержащий JSON метаданных позиций в Ассортименте, которые вы хотите удалить.
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| id    | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b1*. id Товара в Ассортименте|
+| id    | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b2*. id Услуги в Ассортименте|
+
+> Запрос на массовое удаление позиций в Ассортименте. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/assortment"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+            "type": "product",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+            "type": "service",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информацио об удалении позиций в Ассортименте.
+
+```json
+[
+  {
+    "info":"Сущность 'service' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  },
+  {
+    "info":"Сущность 'product' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  }
+]
 ```  
 
