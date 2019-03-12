@@ -35,6 +35,7 @@
   - **currency** - Валюта доп расходов
   - **value** - Значение доп расходов
 + **components** - Компоненты Комплекта
++ **trackingType** - Тип маркировки продукции (ИС МП)
 
 ##### Минимальная цена
 + **value** - Значение цены
@@ -248,6 +249,7 @@ curl -X GET
       ],
       "weight": 0,
       "volume": 0,
+      "trackingType": "NOT_TRACKED",
       "barcodes": [
         {
           "ean13": "2000000000039"
@@ -337,6 +339,7 @@ curl -X GET
             ],
             "weight": 0,
             "volume": 0,
+            "trackingType": "NOT_TRACKED",
             "barcodes": [
               {
                 "ean8": "20000000"
@@ -346,6 +349,9 @@ curl -X GET
               },
               {
                 "code128": "code128 barcode"
+              },
+              {
+                "gtin": "00000000000130"
               }
             ],
             "components": [
@@ -465,6 +471,7 @@ curl -X GET
   ],
   "weight": 0,
   "volume": 0,
+  "trackingType": "NOT_TRACKED",
   "barcodes": [
     {
       "ean8": "20000000"
@@ -474,6 +481,9 @@ curl -X GET
     },
     {
       "code128": "code128 barcode"
+    },
+    {
+      "gtin": "00000000000130"
     }
   ],
   "components": {
@@ -661,6 +671,7 @@ curl -X GET
   ],
   "weight": 0,
   "volume": 0,
+  "trackingType": "NOT_TRACKED",
   "barcodes": [
     {
       "ean13": "2000000000039"
@@ -780,6 +791,7 @@ curl -X GET
                 ],
                 "weight": 0,
                 "volume": 0,
+                "trackingType": "NOT_TRACKED",
                 "barcodes": [
                   {
                     "ean8": "20000000"
@@ -789,6 +801,9 @@ curl -X GET
                   },
                   {
                     "code128": "code128 barcode"
+                  },
+                  {
+                    "gtin": "00000000000130"
                   }
                 ],
                 "components": [
@@ -833,6 +848,9 @@ curl -X GET
                   },
                   {
                     "code128": "code128 barcode"
+                  },
+                  {
+                    "gtin": "00000000000130"
                   }
                 ]
               }
@@ -929,6 +947,7 @@ curl -X GET
       ],
       "weight": 0,
       "volume": 0,
+      "trackingType": "NOT_TRACKED",
       "barcodes": [
         {
           "ean8": "20000000"
@@ -938,6 +957,9 @@ curl -X GET
         },
         {
           "code128": "code128 barcode"
+        },
+        {
+          "gtin": "00000000000130"
         }
       ],
       "components": {
@@ -1075,6 +1097,7 @@ curl -X GET
       ],
       "weight": 0,
       "volume": 0,
+      "trackingType": "NOT_TRACKED",
       "barcodes": [
         {
           "ean8": "20000000"
@@ -1084,6 +1107,9 @@ curl -X GET
         },
         {
           "code128": "code128 barcode"
+        },
+        {
+          "gtin": "00000000000130"
         }
       ],
       "components": {
@@ -1322,6 +1348,7 @@ curl -X GET
   ],
   "weight": 0,
   "volume": 0,
+  "trackingType": "NOT_TRACKED",
   "barcodes": [
     {
       "ean13": "2000000000039"
@@ -1374,6 +1401,9 @@ curl -X GET
                },
                {
                  "code128": "code128 barcode"
+               },
+               {
+                 "gtin": "00000000000130"
                }
              ],
            }'  
@@ -1469,6 +1499,7 @@ curl -X GET
   ],
   "weight": 0,
   "volume": 0,
+  "trackingType": "NOT_TRACKED",
   "barcodes": [
     {
       "ean8": "20000000"
@@ -1478,6 +1509,9 @@ curl -X GET
     },
     {
       "code128": "code128 barcode"
+    },
+    {
+      "gtin": "00000000000130"
     }
   ],
   "components": {

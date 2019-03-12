@@ -219,6 +219,9 @@ curl -X GET
         },
         {
           "code128": "code128 barcode"
+        },
+        {
+          "gtin": "00000000000130"
         }
       ],
       "product": {
@@ -317,6 +320,9 @@ curl -X GET
               },
               {
                 "code128": "code128 barcode"
+              },
+              {
+                "gtin": "00000000000130"
               }
             ],
             "product": {
@@ -434,6 +440,9 @@ curl -X GET
     },
     {
       "code128": "code128 barcode"
+    },
+    {
+      "gtin": "00000000000130"
     }
   ],
   "product": {
@@ -527,6 +536,9 @@ curl -X GET
                 },
                 {
                   "code128": "code128 barcode"
+                },
+                {
+                  "gtin": "00000000000130"
                 }
               ],
               "product": {
@@ -605,6 +617,9 @@ curl -X GET
                 },
                 {
                   "code128": "code128 barcode"
+                },
+                {
+                  "gtin": "00000000000130"
                 }
               ],
               "minPrice": {
@@ -727,6 +742,9 @@ curl -X GET
       },
       {
         "code128": "code128 barcode"
+      },
+      {
+        "gtin": "00000000000130"
       }
     ],
     "product": {
@@ -848,6 +866,9 @@ curl -X GET
       },
       {
         "code128": "code128 barcode"
+      },
+      {
+        "gtin": "00000000000130"
       }
     ],
     "product": {
@@ -1053,6 +1074,9 @@ curl -X GET
     },
     {
       "code128": "code128 barcode"
+    },
+    {
+      "gtin": "00000000000130"
     }
   ],
   "product": {
@@ -1160,6 +1184,9 @@ curl -X GET
               },
               {
                 "code128": "code128 barcode"
+              },
+              {
+                "gtin": "00000000000130"
               }
             ],
             "minPrice": {
@@ -1290,6 +1317,9 @@ curl -X GET
     },
     {
       "code128": "code128 barcode"
+    },
+    {
+      "gtin": "00000000000130"
     }
   ],
   "product": {

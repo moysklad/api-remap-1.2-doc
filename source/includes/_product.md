@@ -51,6 +51,7 @@
 + **minimumBalance** - Неснижаемый остаток
 + **isSerialTrackable** - Учет по серийным номерам. Не может быть указан вместе с **alcoholic** и **weighed**
 + **things** - Серийные номера `Только для чтения`
++ **trackingType** - Тип маркировки продукции (ИС МП)
 
 Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить
 с помощью обновления атрибута **productFolder**.
@@ -351,6 +352,9 @@ curl -X GET
         },
         {
           "code128": "code128 barcode"
+        },
+        {
+          "gtin": "00000000000130"
         }
       ]
     },
@@ -538,8 +542,12 @@ curl -X GET
         },
         {
           "code128": "code128 barcode"
+        },
+        {
+          "gtin": "00000000000130"
         }
-      ]
+      ],
+      "trackingType": "NOT_TRACKED"
     }
   ]
 }
@@ -664,6 +672,9 @@ curl -X GET
               },
               {
                 "code128": "code128 barcode"
+              },
+              {
+                "gtin": "00000000000130"
               }
             ],
             "article": "Ar23",
@@ -683,7 +694,8 @@ curl -X GET
               }
             ],
             "isSerialTrackable": false,
-            "tobacco": false
+            "tobacco": false,
+            "trackingType": "NOT_TRACKED"
           }'  
   ```
 
@@ -836,7 +848,8 @@ curl -X GET
     }
   ],
   "isSerialTrackable": false,
-  "tobacco": false
+  "tobacco": false,
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -944,7 +957,8 @@ curl -X GET
   "pathName": "",
   "weight": 0,
   "volume": 0,
-  "isSerialTrackable": false
+  "isSerialTrackable": false,
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -1243,7 +1257,8 @@ curl -X GET
   "article": "Ar23",
   "weight": 200,
   "volume": 300,
-  "isSerialTrackable": false
+  "isSerialTrackable": false,
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -1348,7 +1363,8 @@ curl -X GET
     }
   ],
   "variantsCount": 0,
-  "isSerialTrackable": false
+  "isSerialTrackable": false,
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -1476,7 +1492,8 @@ curl -X GET
     },  
     "weight": 0,
     "volume": 0,
-    "isSerialTrackable": false
+    "isSerialTrackable": false,
+    "trackingType": "NOT_TRACKED"
   },
   {
     "meta": {
@@ -1677,7 +1694,8 @@ curl -X GET
       "strength": 0.6,
       "volume": 1.5
     },
-    "isSerialTrackable": false
+    "isSerialTrackable": false,
+    "trackingType": "NOT_TRACKED"
   }
 ]
 
@@ -1993,6 +2011,7 @@ curl -X GET
   ],
   "variantsCount": 0,
   "isSerialTrackable": true,
+  "trackingType": "NOT_TRACKED",
   "things": [
     "F564X056",
     "F564X057"
@@ -2006,6 +2025,9 @@ curl -X GET
     },
     {
       "code128": "code128 barcode"
+    },
+    {
+      "gtin": "00000000000130"
     }
   ]
 }
@@ -2379,7 +2401,8 @@ curl -X GET
     "strength": 0.6,
     "volume": 1.5
   },
-  "isSerialTrackable": false
+  "isSerialTrackable": false,
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -2649,6 +2672,7 @@ curl -X GET
   "article": "Ar23",
   "weight": 100,
   "volume": 400,
-  "isSerialTrackable": false
+  "isSerialTrackable": false,
+  "trackingType": "NOT_TRACKED"
 }
 ```
