@@ -226,6 +226,7 @@ curl -X GET
 + Восстановление из архива
 + Публикация документов
 + Отправка писем
++ Смена токена
 
 ##### Атрибуты сущности
 
@@ -472,6 +473,7 @@ curl -X GET
   | `closepublication`           | Удаление публикации    |
   | `sendemailfromentity`        | Отправка письма        |
   | `bulkoperation`              | Массовая операция      |
+  | `replacetoken`               | Смена токена для Точки продаж      |
 
 + **source**
   Параметр строкового типа. В качестве значения должен быть передан тип действия, по которому
@@ -552,7 +554,8 @@ curl -X GET
     "print",
     "openpublication",
     "closepublication",
-    "sendemailfromentity"
+    "sendemailfromentity",
+    "replacetoken"
   ],
   "source": [
     "copy",
