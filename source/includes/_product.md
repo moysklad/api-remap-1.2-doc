@@ -694,7 +694,6 @@ curl -X GET
               }
             ],
             "isSerialTrackable": false,
-            "tobacco": false,
             "trackingType": "NOT_TRACKED"
           }'  
   ```
@@ -848,7 +847,6 @@ curl -X GET
     }
   ],
   "isSerialTrackable": false,
-  "tobacco": false,
   "trackingType": "NOT_TRACKED"
 }
 ```
