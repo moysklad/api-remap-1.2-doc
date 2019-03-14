@@ -24,7 +24,7 @@
 + **description** - Комментарий к Юр. лицу
 + **code** - Код юрлица
 + **actualAddress** - Фактический адрес Юрлица
-+ **actualAddressFull** - Фактический адрес Юрлица с отдельными полями.
++ **actualAddressFull** - Фактический адрес Юрлица с детализацией по отдельными полям.
 + **externalCode** - Внешний код юрлица
 + **archived** - Добавлено ли юрлицо в архив
 + **created** - Дата создания
@@ -35,7 +35,7 @@
 ___
 + **legalTitle** - Полное наименование юрлица
 + **legalAddress** - Юридический адрес юрлица
-+ **legalAddressFull** - Юридический адрес юрлица с отдельными полями.
++ **legalAddressFull** - Юридический адрес юрлица с детализацией по отдельными полям.
 + **inn** - ИНН
 + **kpp** - КПП
 + **ogrn** - ОГРН
@@ -71,7 +71,10 @@ ___
 + **addInfo** - Другое
 + **comment** - Комментарий
 
-Строка адреса получается конкатенацией в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
+Строка адреса является конкатенацией полей структурированного адреса в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
+При передачи в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированнй.
+При передачи обоих адресов строковый будет игнорирован.
+При передачи только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
 
 ##### Счета юрлица
 + **id** - ID в формате UUID `Только для чтения`
@@ -489,56 +492,6 @@ curl -X GET
             "externalCode": "666АААА666",
             "archived": false,
             "legalTitle": "ООО Великое Свет Пром",
-            "legalAddressFull": {
-            "postalCode": "125009",
-            "country": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-                "type": "country",
-                "mediaType": "application/json"
-              }
-            },
-            "region": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-                "type": "region",
-                "mediaType": "application/json"
-              }
-            },
-            "city": "Москва",
-            "street": "ул Тверская",
-            "house": "1",
-            "apartment": "123",
-            "addInfo": "addinfo",
-            "comment": "some words about address"
-          },
-          "actualAddressFull": {
-            "postalCode": "125009",
-            "country": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-                "type": "country",
-                "mediaType": "application/json"
-              }
-            },
-            "region": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-                "type": "region",
-                "mediaType": "application/json"
-              }
-            },
-            "city": "Москва",
-            "street": "ул Тверская",
-            "house": "1",
-            "apartment": "111",
-            "addInfo": "addinfo",
-            "comment": "some words about address"
-          },
             "inn": "87654321",
             "kpp": "15312532",
             "ogrn": "12345",

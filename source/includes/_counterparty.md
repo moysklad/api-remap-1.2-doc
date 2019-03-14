@@ -43,7 +43,7 @@
 + **phone** - Номер городского телефона
 + **fax** - Номер факса
 + **actualAddress** - Фактический адрес Контрагента
-+ **actualAddressFull** - Фактический адрес Контрагента с отдельными полями
++ **actualAddressFull** - Фактический адрес Контрагента с детализацией по отдельными полям.
 + **accounts** - Ссылка на счета Контрагента (массив)
 + **companyType** - Тип Контрагента. `[Юридическое лицо, Индивидуальный предприниматель, Физическое лицо]`.
 В зависимости от значения данного поля набор выводимых реквизитов контрагента может меняться. Подробнее [тут](#header-тип-контрагента)
@@ -86,7 +86,10 @@ ___
 + **addInfo** - Другое
 + **comment** - Комментарий
 
-Строка адреса получается конкатенацией в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
+Строка адреса является конкатенацией полей структурированного адреса в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
+При передачи в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированнй.
+При передачи обоих адресов строковый будет игнорирован.
+При передачи только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
 
 ##### Счета Контрагентов
 + **id** - ID в формате UUID `Только для чтения`
@@ -1769,7 +1772,6 @@ curl -X PUT
       "email" : "raduga@retail.ru",
       "phone" : "+7 495 162 32 23",
       "fax" : "1052054",
-      "actualAddress": "г.Москва ул Строителей д 331",
       "legalTitle": "Общество с ограниченой ответственностью \"Радуга ЭКСПО\"",
       "legalAddressFull": {
         "postalCode": "125009",
@@ -1984,56 +1986,6 @@ curl -X PUT
       "phone": "+7 495 162 12 23",
       "fax": "1052014",
       "legalTitle": "Общество с ограниченой ответственностью \"Овощ Экспресс\"",
-      "legalAddressFull": {
-        "postalCode": "125009",
-        "country": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-            "type": "country",
-            "mediaType": "application/json"
-          }
-        },
-        "region": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-            "type": "region",
-            "mediaType": "application/json"
-          }
-        },
-        "city": "Москва",
-        "street": "ул Тверская",
-        "house": "1",
-        "apartment": "123",
-        "addInfo": "addinfo",
-        "comment": "some words about address"
-      },
-      "actualAddressFull": {
-        "postalCode": "125009",
-        "country": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-            "type": "country",
-            "mediaType": "application/json"
-          }
-        },
-        "region": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-            "type": "region",
-            "mediaType": "application/json"
-          }
-        },
-        "city": "Москва",
-        "street": "ул Тверская",
-        "house": "1",
-        "apartment": "111",
-        "addInfo": "addinfo",
-        "comment": "some words about address"
-      },
       "inn": "1251581244152",
       "kpp": "121557212",
       "ogrn": "1253552",
