@@ -39,6 +39,7 @@
   + **NOT_TRACKED** - Без маркировки
   + **TOBACCO** - Тип маркировки "Табак"
   + **SHOES** - Тип маркировки "Обувь"
++ **tnved** - Код ТН ВЭД
 
 ##### Минимальная цена
 + **value** - Значение цены
@@ -254,6 +255,7 @@ curl -X GET
       "weight": 0,
       "volume": 0,
       "trackingType": "NOT_TRACKED",
+      "tnved": "1112223334",
       "barcodes": [
         {
           "ean13": "2000000000039"
@@ -344,6 +346,7 @@ curl -X GET
             "weight": 0,
             "volume": 0,
             "trackingType": "NOT_TRACKED",
+            "tnved": "1112223334",
             "barcodes": [
               {
                 "ean8": "20000000"
@@ -476,6 +479,7 @@ curl -X GET
   "weight": 0,
   "volume": 0,
   "trackingType": "NOT_TRACKED",
+  "tnved": "1112223334",
   "barcodes": [
     {
       "ean8": "20000000"
@@ -676,6 +680,7 @@ curl -X GET
   "weight": 0,
   "volume": 0,
   "trackingType": "NOT_TRACKED",
+  "tnved": "1112223334",
   "barcodes": [
     {
       "ean13": "2000000000039"
@@ -796,6 +801,7 @@ curl -X GET
                 "weight": 0,
                 "volume": 0,
                 "trackingType": "NOT_TRACKED",
+                "tnved": "1112223334",
                 "barcodes": [
                   {
                     "ean8": "20000000"
@@ -952,6 +958,7 @@ curl -X GET
       "weight": 0,
       "volume": 0,
       "trackingType": "NOT_TRACKED",
+      "tnved": "1112223334",
       "barcodes": [
         {
           "ean8": "20000000"
@@ -1102,6 +1109,7 @@ curl -X GET
       "weight": 0,
       "volume": 0,
       "trackingType": "NOT_TRACKED",
+      "tnved": "1112223334",
       "barcodes": [
         {
           "ean8": "20000000"
@@ -1353,6 +1361,7 @@ curl -X GET
   "weight": 0,
   "volume": 0,
   "trackingType": "NOT_TRACKED",
+  "tnved": "1112223334",
   "barcodes": [
     {
       "ean13": "2000000000039"
@@ -1504,6 +1513,7 @@ curl -X GET
   "weight": 0,
   "volume": 0,
   "trackingType": "NOT_TRACKED",
+  "tnved": "1112223334",
   "barcodes": [
     {
       "ean8": "20000000"

@@ -55,6 +55,7 @@
   + **NOT_TRACKED** - Без маркировки
   + **TOBACCO** - Тип маркировки "Табак"
   + **SHOES** - Тип маркировки "Обувь"
++ **tnved** - Код ТН ВЭД
 
 Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить
 с помощью обновления атрибута **productFolder**.
@@ -551,7 +552,8 @@ curl -X GET
           "gtin": "00000000000130"
         }
       ],
-      "trackingType": "NOT_TRACKED"
+      "trackingType": "NOT_TRACKED",
+      "tnved": "1112223334"
     }
   ]
 }
@@ -698,7 +700,8 @@ curl -X GET
               }
             ],
             "isSerialTrackable": false,
-            "trackingType": "NOT_TRACKED"
+            "trackingType": "NOT_TRACKED",
+            "tnved": "1112223334"
           }'  
   ```
 
@@ -851,7 +854,8 @@ curl -X GET
     }
   ],
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED"
+  "trackingType": "NOT_TRACKED",
+  "tnved": "1112223334"
 }
 ```
 
@@ -960,7 +964,8 @@ curl -X GET
   "weight": 0,
   "volume": 0,
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED"
+  "trackingType": "NOT_TRACKED",
+  "tnved": "1112223334"
 }
 ```
 
@@ -1260,7 +1265,8 @@ curl -X GET
   "weight": 200,
   "volume": 300,
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED"
+  "trackingType": "NOT_TRACKED",
+  "tnved": "1112223334"
 }
 ```
 
@@ -1366,7 +1372,8 @@ curl -X GET
   ],
   "variantsCount": 0,
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED"
+  "trackingType": "NOT_TRACKED",
+  "tnved": "1112223334"
 }
 ```
 
@@ -1495,7 +1502,8 @@ curl -X GET
     "weight": 0,
     "volume": 0,
     "isSerialTrackable": false,
-    "trackingType": "NOT_TRACKED"
+    "trackingType": "NOT_TRACKED",
+    "tnved": "1112223334"
   },
   {
     "meta": {
@@ -1697,7 +1705,8 @@ curl -X GET
       "volume": 1.5
     },
     "isSerialTrackable": false,
-    "trackingType": "NOT_TRACKED"
+    "trackingType": "NOT_TRACKED",
+    "tnved": "1112223334"
   }
 ]
 
@@ -2031,7 +2040,8 @@ curl -X GET
     {
       "gtin": "00000000000130"
     }
-  ]
+  ],
+  "tnved": "1112223334"
 }
 ```
 
@@ -2404,7 +2414,8 @@ curl -X GET
     "volume": 1.5
   },
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED"
+  "trackingType": "NOT_TRACKED",
+  "tnved": "1112223334"
 }
 ```
 
@@ -2675,6 +2686,7 @@ curl -X GET
   "weight": 100,
   "volume": 400,
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED"
+  "trackingType": "NOT_TRACKED",
+  "tnved": "1112223334"
 }
 ```
