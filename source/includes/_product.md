@@ -552,8 +552,7 @@ curl -X GET
           "gtin": "00000000000130"
         }
       ],
-      "trackingType": "NOT_TRACKED",
-      "tnved": "1112223334"
+      "trackingType": "NOT_TRACKED"
     }
   ]
 }
@@ -700,8 +699,7 @@ curl -X GET
               }
             ],
             "isSerialTrackable": false,
-            "trackingType": "NOT_TRACKED",
-            "tnved": "1112223334"
+            "trackingType": "NOT_TRACKED"
           }'  
   ```
 
@@ -854,8 +852,7 @@ curl -X GET
     }
   ],
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED",
-  "tnved": "1112223334"
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -964,8 +961,7 @@ curl -X GET
   "weight": 0,
   "volume": 0,
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED",
-  "tnved": "1112223334"
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -1265,8 +1261,7 @@ curl -X GET
   "weight": 200,
   "volume": 300,
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED",
-  "tnved": "1112223334"
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -1372,8 +1367,7 @@ curl -X GET
   ],
   "variantsCount": 0,
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED",
-  "tnved": "1112223334"
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -1502,8 +1496,7 @@ curl -X GET
     "weight": 0,
     "volume": 0,
     "isSerialTrackable": false,
-    "trackingType": "NOT_TRACKED",
-    "tnved": "1112223334"
+    "trackingType": "NOT_TRACKED"
   },
   {
     "meta": {
@@ -1705,8 +1698,7 @@ curl -X GET
       "volume": 1.5
     },
     "isSerialTrackable": false,
-    "trackingType": "NOT_TRACKED",
-    "tnved": "1112223334"
+    "trackingType": "NOT_TRACKED"
   }
 ]
 
@@ -2040,8 +2032,7 @@ curl -X GET
     {
       "gtin": "00000000000130"
     }
-  ],
-  "tnved": "1112223334"
+  ]
 }
 ```
 
@@ -2414,8 +2405,7 @@ curl -X GET
     "volume": 1.5
   },
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED",
-  "tnved": "1112223334"
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -2686,7 +2676,6 @@ curl -X GET
   "weight": 100,
   "volume": 400,
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED",
-  "tnved": "1112223334"
+  "trackingType": "NOT_TRACKED"
 }
 ```
