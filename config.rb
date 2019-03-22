@@ -21,8 +21,6 @@ set :images_dir, 'images'
 set :fonts_dir, 'fonts'
 set :build_dir, 'build/api/remap/1.2/ru'
 
-set :http_prefix, '/doc'
-
 # Activate the syntax highlighter
 activate :syntax
 ready do
@@ -47,8 +45,6 @@ configure :build do
   # out the following two lines has been known to help
   activate :minify_css
   activate :minify_javascript
-  activate :relative_assets
-   set :site_url, "/doc"
   # activate :relative_assets
   # activate :asset_hash
   # activate :gzip
