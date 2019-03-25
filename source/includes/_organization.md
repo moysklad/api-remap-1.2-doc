@@ -30,6 +30,8 @@
 + **created** - Дата создания
 + **companyType** - Тип юрлица. `[Юридическое лицо, Индивидуальный предприниматель, Физическое лицо]`.
 В зависимости от значения данного поля набор выводимых реквизитов юрлица может меняться.  Подробнее [тут](#header-тип-юрлица)
++ **trackingContractNumber** - Номер договора с ЦРПТ
++ **trackingContractDate** - Дата договора с ЦРПТ
 
 #### Поля реквизитов
 ___
@@ -198,6 +200,8 @@ curl -X GET
       "externalCode": "6IRv89VSgKY7yQAmAuV7n0",
       "archived": false,
       "created": "2007-02-07 17:16:41",
+      "trackingContractNumber": "12345678",
+      "trackingContractDate": "2007-02-07 00:00:00",
       "legalTitle": "ООО Великое объединение любителей великих объединений",
       "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
       "legalAddressFull": {
@@ -297,6 +301,8 @@ curl -X GET
   "code":"666",
   "externalCode":"666АААА666",
   "archived":false,
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
   "legalTitle":"ООО Великое Свет Пром",
   "legalAddressFull":{  
     "postalCode":"125009",
@@ -400,6 +406,8 @@ curl -X GET
   "code": "666",
   "externalCode": "666АААА666",
   "archived": false,
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
   "legalTitle": "ООО Великое Свет Пром",
   "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
   "legalAddressFull": {
@@ -490,6 +498,8 @@ curl -X GET
   "description": "Новое юрлицо",
   "code": "666",
   "archived": false,
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
   "legalTitle": "ООО Великое Свет Пром",
   "inn": "87654321",
   "kpp": "15312532",
@@ -544,6 +554,8 @@ curl -X GET
   "externalCode": "sfwafn22-124124sa",
   "archived": false,
   "created": "2007-02-07 17:16:41",
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
   "legalTitle": "ООО Великое Свет Пром",
   "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
   "legalAddressFull": {
@@ -649,6 +661,8 @@ curl -X GET
     "code": "666",
     "externalCode": "666АААА666",
     "archived": false,
+    "trackingContractNumber": "12345678",
+    "trackingContractDate": "2007-02-07 00:00:00",
     "legalTitle": "ООО Великое Свет Пром",
     "legalAddress": "г Москва ул Ленин д 42/685",
     "actualAddress": "г Пермь ул Сталина д 75",
@@ -678,6 +692,8 @@ curl -X GET
     "code": "666",
     "externalCode": "666АААА666",
     "archived": false,
+    "trackingContractNumber": "12345678",
+    "trackingContractDate": "2007-02-07 00:00:00",
     "legalTitle": "ООО Великое Свет Пром",
     "legalAddress": "г Москва ул Ленин д 42/685",
     "actualAddress": "г Уфа ул Маяковского д 65",
@@ -732,6 +748,8 @@ curl -X GET
     "code": "666",
     "externalCode": "666АААА666",
     "archived": false,
+    "trackingContractNumber": "12345678",
+    "trackingContractDate": "2007-02-07 00:00:00",
     "legalTitle": "ООО Великое Свет Пром",
     "legalAddress": "г Москва ул Ленин д 42/685",
     "actualAddress": "г Пермь ул Сталина д 75",
@@ -791,6 +809,8 @@ curl -X GET
     "externalCode": "sfwafn22-124124sa",
     "archived": false,
     "created": "2007-02-07 17:16:41",
+    "trackingContractNumber": "12345678",
+    "trackingContractDate": "2007-02-07 00:00:00",
     "legalTitle": "ООО Великое Сообщество КАМАЗ ПРОМ",
     "legalAddress": "г Москва ул Ленина д 42/685",
     "actualAddress": "г Уфа ул Маяковского д 65",
@@ -965,6 +985,8 @@ curl -X GET
   "externalCode": "666АААА666",
   "archived": false,
   "created": "2007-02-07 17:16:41",
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
   "legalTitle": "ООО Великое Свет Пром",
   "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
   "legalAddressFull": {
@@ -1070,6 +1092,8 @@ curl -X GET
   "code": "666",
   "externalCode": "666АААА666",
   "archived": false,
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
   "legalTitle": "ООО Великое Свет Пром",
   "legalAddress": "г Москва ул Ленин д 42/685",
   "actualAddress": "г Пермь ул Сталина д 75",
@@ -1125,6 +1149,8 @@ curl -X GET
   "code": "666",
   "externalCode": "666АААА666",
   "archived": false,
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
   "legalTitle": "ООО Великое Свет Пром",
   "legalAddress": "г Москва ул Ленин д 42/685",
   "actualAddress": "г Пермь ул Сталина д 75",
@@ -1166,6 +1192,8 @@ curl -X GET
   "code": "666",
   "externalCode": "666АААА666",
   "archived": false,
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
   "legalTitle": "ООО Великое Свет Пром",
   "legalAddressFull": {
   "postalCode": "125009",
@@ -1272,6 +1300,8 @@ curl -X GET
   "code": "666",
   "externalCode": "sfwafn22-124124sa",
   "archived": false,
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
   "created": "2007-02-07 17:16:41",
   "legalTitle": "ООО Великое Сообщество КАМАЗ ПРОМ",
   "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",

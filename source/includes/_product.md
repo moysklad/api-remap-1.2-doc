@@ -51,6 +51,10 @@
 + **minimumBalance** - Неснижаемый остаток
 + **isSerialTrackable** - Учет по серийным номерам. Не может быть указан вместе с **alcoholic** и **weighed**
 + **things** - Серийные номера `Только для чтения`
++ **trackingType** - Тип маркируемой продукции
+  + **NOT_TRACKED** - Без маркировки
+  + **TOBACCO** - Тип маркировки "Табак"
+  + **SHOES** - Тип маркировки "Обувь"
 
 Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить
 с помощью обновления атрибута **productFolder**.
@@ -84,6 +88,7 @@
 + **ean13** - штрихкод в формате EAN13, если требуется создать штрихкод в формате EAN13
 + **ean8** - штрихкод в формате EAN8, если требуется создать штрихкод в формате EAN8
 + **code128** - штрихкод в формате Code128, если требуется создать штрихкод в формате Code128
++ **gtin** - штрихкод в формате GTIN, если требуется создать штрихкод в формате GTIN
 
 О работе с доп. полями Товаров можно прочитать [здесь](/api/remap/1.2/doc/index.html#header-работа-с-дополнительными-полями)
 
@@ -351,6 +356,9 @@ curl -X GET
         },
         {
           "code128": "code128 barcode"
+        },
+        {
+          "gtin": "00000000000130"
         }
       ]
     },
@@ -538,8 +546,12 @@ curl -X GET
         },
         {
           "code128": "code128 barcode"
+        },
+        {
+          "gtin": "00000000000130"
         }
-      ]
+      ],
+      "trackingType": "NOT_TRACKED"
     }
   ]
 }
@@ -664,6 +676,9 @@ curl -X GET
               },
               {
                 "code128": "code128 barcode"
+              },
+              {
+                "gtin": "00000000000130"
               }
             ],
             "article": "Ar23",
@@ -683,7 +698,7 @@ curl -X GET
               }
             ],
             "isSerialTrackable": false,
-            "tobacco": false
+            "trackingType": "NOT_TRACKED"
           }'  
   ```
 
@@ -836,7 +851,7 @@ curl -X GET
     }
   ],
   "isSerialTrackable": false,
-  "tobacco": false
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -944,7 +959,8 @@ curl -X GET
   "pathName": "",
   "weight": 0,
   "volume": 0,
-  "isSerialTrackable": false
+  "isSerialTrackable": false,
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -1243,7 +1259,8 @@ curl -X GET
   "article": "Ar23",
   "weight": 200,
   "volume": 300,
-  "isSerialTrackable": false
+  "isSerialTrackable": false,
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -1348,7 +1365,8 @@ curl -X GET
     }
   ],
   "variantsCount": 0,
-  "isSerialTrackable": false
+  "isSerialTrackable": false,
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -1476,7 +1494,8 @@ curl -X GET
     },  
     "weight": 0,
     "volume": 0,
-    "isSerialTrackable": false
+    "isSerialTrackable": false,
+    "trackingType": "NOT_TRACKED"
   },
   {
     "meta": {
@@ -1677,7 +1696,8 @@ curl -X GET
       "strength": 0.6,
       "volume": 1.5
     },
-    "isSerialTrackable": false
+    "isSerialTrackable": false,
+    "trackingType": "NOT_TRACKED"
   }
 ]
 
@@ -1993,6 +2013,7 @@ curl -X GET
   ],
   "variantsCount": 0,
   "isSerialTrackable": true,
+  "trackingType": "NOT_TRACKED",
   "things": [
     "F564X056",
     "F564X057"
@@ -2006,6 +2027,9 @@ curl -X GET
     },
     {
       "code128": "code128 barcode"
+    },
+    {
+      "gtin": "00000000000130"
     }
   ]
 }
@@ -2379,7 +2403,8 @@ curl -X GET
     "strength": 0.6,
     "volume": 1.5
   },
-  "isSerialTrackable": false
+  "isSerialTrackable": false,
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -2649,6 +2674,7 @@ curl -X GET
   "article": "Ar23",
   "weight": 100,
   "volume": 400,
-  "isSerialTrackable": false
+  "isSerialTrackable": false,
+  "trackingType": "NOT_TRACKED"
 }
 ```
