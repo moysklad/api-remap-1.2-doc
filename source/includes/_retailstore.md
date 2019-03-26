@@ -20,6 +20,7 @@
 + **externalCode** - Внешний код точки продаж `Только для чтения`
 + **archived** - Добавлена ли точка продаж в архив `Только для чтения`
 + **address** - Адрес `Только для чтения`
++ **addressFull** - Адрес с детализацией по отдельными полям. `Только для чтения`
 + **controlShippingStock** - Контроль остатков `Только для чтения`
 + **onlyInStock** - Выгружать только товары в наличии. Доступно только при активном контроле остатков. Влияет только на выгрузку остатков в POS API  `Только для чтения`
 + **active** - Включена `Только для чтения`
@@ -86,6 +87,21 @@
 + **message** - описание ошибки
 ###### Аттрибуты сущности Платежный Терминал
 + **acquiringType** - информация о типе эквайера (например: inpas/payme)
+###### Аттрибуты сущности Адрес
++ **postalCode** - Почтовый индекс
++ **country** - Ссылка на страну в формате [Метаданных](#header-метаданные)
++ **region** - Ссылка на регион в формате [Метаданных](#header-метаданные)
++ **city** - Город
++ **street** - Улица
++ **house** - Дом (Максимальная длина - 30 символов)
++ **apartment** - Квартира (Максимальная длина - 30 символов)
++ **addInfo** - Другое
++ **comment** - Комментарий
+
+Строка адреса является конкатенацией полей структурированного адреса в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
+При передачи в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
+При передачи обоих адресов строковый будет игнорирован.
+При передачи только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
 
 
 ##### Последние операции
@@ -185,6 +201,32 @@ curl -X GET
       "name": "Точка2",
       "description": "вторая точка",
       "externalCode": "Et9M3cprgDiJPi7llDOhX0",
+      "address": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+      "addressFull": {
+        "postalCode": "125009",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "Москва",
+        "street": "ул Тверская",
+        "house": "1",
+        "apartment": "123",
+        "addInfo": "addinfo",
+        "comment": "some words about address"
+      },
       "controlShippingStock": false,
       "active": true,
       "controlCashierChoice": false,
@@ -313,6 +355,32 @@ curl -X GET
       "updated": "2016-05-06 18:09:54",
       "name": "Точка продаж",
       "externalCode": "AEhB1gX7inNaXzAGSbDeh0",
+      "address": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+      "addressFull": {
+        "postalCode": "125009",
+        "country": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type": "country",
+            "mediaType": "application/json"
+          }
+        },
+        "region": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type": "region",
+            "mediaType": "application/json"
+          }
+        },
+        "city": "Москва",
+        "street": "ул Тверская",
+        "house": "1",
+        "apartment": "123",
+        "addInfo": "addinfo",
+        "comment": "some words about address"
+      },
       "controlShippingStock": true,
       "onlyInStock": false,
       "active": true,
@@ -494,7 +562,33 @@ curl -X GET
   "updated": "2016-05-06 18:09:54",
   "name": "Точка продаж",
   "externalCode": "AEhB1gX7inNaXzAGSbDeh0",
-  "controlShippingStock": true,
+  "address": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+  "addressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "123",
+    "addInfo": "addinfo",
+    "comment": "some words about address"
+  },
+"controlShippingStock": true,
   "onlyInStock": true,
   "active": true,
   "controlCashierChoice": false,

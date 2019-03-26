@@ -35,6 +35,7 @@ JSON представлений объектов, и содержит инфор
 + **mediaType** - Тип данных, которые приходят в ответ от сервиса, либо отправляются
 в теле запроса. В рамках данного  API всегда равен `application/json`
 + **uuidHref** -  Ссылка на объект на UI. Присутствует не во всех сущностях. Может быть использована для получения uuid
++ **downloadHref** - Ссылка на скачивание Изображения. Данный параметр указывается только в **meta** для Изображения у Товара или Комплекта.
 
 ###### Атрибуты расширенного объекта meta
 
@@ -207,6 +208,7 @@ curl -X GET
 + **name** - Наименование доп. поля
 + **type** - Тип доп. поля
 + **required** - Флажок о том, является ли доп. поле обязательным
++ **description** - Описание доп. поля
 
 
 
@@ -240,6 +242,7 @@ curl -X GET
 + **name** - Наименование доп. поля
 + **type** - Тип доп. поля
 + **required** - Флажок о том, является ли доп. поле обязательным
++ **description** - Описание доп. поля
 
 | Тип сущностей справочника | Значение поля type в JSON (entityType) |
 | ------------------------- |:---------------------------------------|
@@ -271,8 +274,6 @@ curl -X GET
 + Указаны **id**, доп. полей, которым в данной сущности уже присвоено значение - соответствующим доп. полям будет присвоено переданное значение.
 + Указаны **id**, доп. полей, которым в данной сущности ещё не присвоено значение - соответствующим доп. полям эти новые значения будут присвоены.
 
-В рамках JSON API нельзя создавать дополнительные поля.
-
 ### Доп. поля типа файл
 
 Для загрузки значения для доп. поля типа файл нужно в JSON при создании или обновлении для значения поля указать объект следующей структуры:
@@ -285,7 +286,10 @@ curl -X GET
 ### Работа с позициями документов
 
 API сервиса МойСклад позволяет оперировать с такими документами как [Отгрузка](/api/remap/1.2/doc/demand.html), [Заказ покупателя](/api/remap/1.2/doc/customerOrder.html), [Счёт покупателю](/api/remap/1.2/doc/invoice_out.html),
-[Розничная продажа](/api/remap/1.2/doc/retaildemand.html). Перечисленные документы содержат позиции, работать с которыми можно как в составе отдельного документа,
+[Розничная продажа](/api/remap/1.2/doc/retaildemand.html), [Полученный отчёт комиссионера](/api/remap/1.2/doc/commissionreportin.html), [Выданный отчёт комиссионера](/api/remap/1.2/doc/commissionreportout.html), [Оприходование](/api/remap/1.2/doc/enter.html),
+[Внутренний заказ](/api/remap/1.2/doc/internalOrder.html), [Инвентаризация](/api/remap/1.2/doc/inventory.html), [Списание](/api/remap/1.2/doc/loss.html), [Перемещение](/api/remap/1.2/doc/move.html), [Прайс-лист](/api/remap/1.2/doc/pricelist.html),
+[Заказ на производство](/api/remap/1.2/doc/processingorder.html), [Возврат поставщику](/api/remap/1.2/doc/purchase_return.html), [Заказ поставщику](/api/remap/1.2/doc/purchaseOrder.html),
+[Розничный возврат](/api/remap/1.2/doc/retail_sales_return.html), [Возврат покупателя](/api/remap/1.2/doc/sales_return.html), [Приёмка](/api/remap/1.2/doc/supply.html), [Счёт поставщика](/api/remap/1.2/doc/invoice_in.html). Перечисленные документы содержат позиции, работать с которыми можно как в составе отдельного документа,
 так и с помощью специальных ресурсов для управления позициями документа.
 
 ######  Работа с позициями в рамках отдельного документа
@@ -300,7 +304,7 @@ API сервиса МойСклад позволяет оперировать с
 
 В JSON API предусмотрены специальные ресурсы для управления позициями документов. Эти ресурсы как правило доступны по следующему URI и с помощью них вы сможете удалять позиции из документа, сделав запрос с методом DELETE по URL соответствующего ресурса с указание id позиции:
 
-+ `/{код сущности документа, в составе JSON API}/{id отдельного документа}/positions`
++ `/{код сущности документа, в составе JSON API}/{id отдельного документа}/positions/{id отдельной позиции}`
 
 > Пример URL для запроса на удаление с помощью DELETE:
 
@@ -1274,3 +1278,381 @@ curl -X PUT
     "payedSum": 0
 }
 ```
+
+### Доп. поля сущностей
+В JSON API есть возможность управлять набором существующих доп. полей для каждого из типов сущностей перечисленных [тут](/api/remap/1.2/doc/index.html#header-работа-с-дополнительными-полями).
+Используя соответствующие ресурсы, можно получать список всех доп. полей для указанного типа сущности, а также создавать новые, обновлять и удалять существующие доп. поля.
+
+Структура объекта доп. поля подробно описана в секции [Работа с дополнительными полями](/api/remap/1.2/doc/index.html#header-работа-с-дополнительными-полями).
+
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|entityType |  `string` (optional) *Example: demand* тип сущностей, для которых осуществляется управление доп. полями.|
+
+#### Получить все доп поля для указанного типа
+Запрос всех доп. полей для переданного типа сущностей.
+Результат: Объект JSON, включающий в себя поля:
+- **meta** [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о выдаче,
+- **rows** - Массив JSON объектов, представляющих собой доп. поля.
+
+> Получить доп поля отгрузок
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка доп. полей отгрузок.
+
+```json
+{
+  "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes",
+      "mediaType": "application/json"
+  },
+  "rows": [
+    {
+      "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/9862d46e-6500-11e8-9464-e4de00000045",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+      },
+      "id": "9862d46e-6500-11e8-9464-e4de00000045",
+      "name": "Строковое",
+      "type": "string",
+      "required": false,
+      "description": "Поле-строка"
+    },
+    {
+      "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/98630aee-6500-11e8-9464-e4de00000046",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+      },
+      "id": "98630aee-6500-11e8-9464-e4de00000046",
+      "name": "Целочисленное",
+      "type": "long",
+      "required": true
+    },
+    {
+      "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/98630f62-6500-11e8-9464-e4de00000047",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+      },
+      "id": "98630f62-6500-11e8-9464-e4de00000047",
+      "name": "Поле-дата",
+      "type": "time",
+      "required": false
+    },
+    {
+      "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/986314b4-6500-11e8-9464-e4de00000048",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+      },
+      "id": "986314b4-6500-11e8-9464-e4de00000048",
+      "name": "Справочник-товар",
+      "type": "productfolder",
+      "required": true
+    },
+    {
+      "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/986318cd-6500-11e8-9464-e4de00000049",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+      },
+      "id": "986318cd-6500-11e8-9464-e4de00000049",
+      "name": "Файловое",
+      "type": "file",
+      "required": false
+    },
+    {
+      "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/98631cbf-6500-11e8-9464-e4de0000004a",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+      },
+      "id": "98631cbf-6500-11e8-9464-e4de0000004a",
+      "name": "Дробное число",
+      "type": "double",
+      "required": true,
+      "description": "Поле-дробное"
+    },
+    {
+      "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/986320d6-6500-11e8-9464-e4de0000004b",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+      },
+      "id": "986320d6-6500-11e8-9464-e4de0000004b",
+      "name": "Булиновое",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/98632583-6500-11e8-9464-e4de0000004c",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+      },
+      "id": "98632583-6500-11e8-9464-e4de0000004c",
+      "name": "Текстовое",
+      "type": "text",
+      "required": true
+    },
+    {
+      "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/98632a03-6500-11e8-9464-e4de0000004d",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+      },
+      "id": "98632a03-6500-11e8-9464-e4de0000004d",
+      "name": "Ссылочное",
+      "type": "link",
+      "required": false
+    }
+  ]
+}
+```
+
+#### Создать доп. поля
+Действие доступно только для пользователя с правами администратора.<br>
+Запрос на создание нового доп. поля для указанного типа сущностей.
+
+> Создание двух новых доп. полей для отгрузок.
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
+  -H "Authorization: Basic <Access-Token>"
+  -H 'Content-Type: application/json' \
+  -d '[
+        {
+          "name": "Строковое",
+          "type": "string",
+          "required": false,
+          "description": "Поле-строка"
+        },
+        {
+          "name": "Целочисленное",
+          "type": "long",
+          "required": true
+        }
+      ]'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданных доп. полей.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004",
+      "type": "attributemetadata",
+      "mediaType": "application/json"
+    },
+    "id": "7bc578d8-6501-11e8-9464-e4de00000004",
+    "name": "Строковое",
+    "type": "string",
+    "required": false,
+    "description": "Поле-строка"
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bd3d688-6501-11e8-9464-e4de00000005",
+      "type": "attributemetadata",
+      "mediaType": "application/json"
+    },
+    "id": "7bd3d688-6501-11e8-9464-e4de00000005",
+    "name": "Целочисленное",
+    "type": "long",
+    "required": true
+  }
+]
+```
+
+> Пример создания нового доп. поля Отгрузок и обновления существующего одним запросом.
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
+  -H "Authorization: Basic <Access-Token>"
+  -H 'Content-Type: application/json' \
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          },
+          "id": "7bc578d8-6501-11e8-9464-e4de00000004",
+          "name": "Строковое поле",
+          "required": true,
+          "description": "Поле-строка"
+        },
+        {
+          "name": "Целочисленное2",
+          "type": "long",
+          "required": true
+        }
+      ]'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного и обновленного доп. полей.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004",
+      "type": "attributemetadata",
+      "mediaType": "application/json"
+    },
+    "id": "7bc578d8-6501-11e8-9464-e4de00000004",
+    "name": "Строковое поле",
+    "type": "string",
+    "required": true,
+    "description": "Поле-строка"
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/c66edb30-6501-11e8-9464-e4de00000008",
+      "type": "attributemetadata",
+      "mediaType": "application/json"
+    },
+    "id": "c66edb30-6501-11e8-9464-e4de00000008",
+    "name": "Целочисленное2",
+    "type": "long",
+    "required": true
+  }
+]
+```
+
+#### Удалить доп. поля
+Действие доступно только для пользователя с правами администратора.<br>
+Запрос на удаление нескольких доп. полей отгрузок.
+
+> Удаление двух доп полей одним запросом
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/delete"
+  -H "Authorization: Basic <Access-Token>"
+  -H 'Content-Type: application/json' \
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/986318cd-6500-11e8-9464-e4de00000049",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/98631cbf-6500-11e8-9464-e4de0000004a",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          }
+        }
+      ]'
+```
+
+> Response 200 (application/json)
+Успешное удаление доп. полей.
+
+### Отдельное доп. поле
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7bc578d8-6501-11e8-9464-e4de00000004* id доп. поля.|
+
+#### Получить доп. поле
+Запрос на получение отдельного доп. поля отгрузок с указанным id.
+
+
+> Запрос на получение отдельного доп. поля отгрузки
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление доп. поля отгрузки.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004",
+    "type": "attributemetadata",
+    "mediaType": "application/json"
+  },
+  "id": "7bc578d8-6501-11e8-9464-e4de00000004",
+  "name": "Строковое поле",
+  "type": "string",
+  "required": true,
+  "description": "Поле-строка"
+}
+```
+
+#### Изменить доп. поле
+Действие доступно только для пользователя с правами администратора.<br>
+Запрос на обновление отдельного доп. поля для переданного типа сущностей.
+
+> Запрос на обновление доп. поля отгрузки
+
+```shell
+curl -X PUT
+  "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004"
+  -H "Authorization: Basic <Access-Token>"
+  -H 'Content-Type: application/json' \
+  -d '{
+        "name": "обновлённое Строковое поле",
+        "required": false,
+        "description": "Обновлённое поле-строка"
+      }'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление доп. поля отгрузки.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004",
+    "type": "attributemetadata",
+    "mediaType": "application/json"
+  },
+  "id": "7bc578d8-6501-11e8-9464-e4de00000004",
+  "name": "обновлённое Строковое поле",
+  "type": "string",
+  "required": false,
+	"description": "Обновлённое поле-строка"
+}
+```
+
+#### Удалить доп. поле
+Действие доступно только для пользователя с правами администратора.<br>
+Запрос на удаление доп. поля отгрузок с указанным id.
+
+> Запрос на удаление доп. поля отгрузки
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
+Успешное удаление доп. поля.

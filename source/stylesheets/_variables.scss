@@ -1,40 +1,25 @@
-/*
-Copyright 2008-2013 Concur Technologies, Inc.
-
-Licensed under the Apache License, Version 2.0 (the "License"); you may
-not use this file except in compliance with the License. You may obtain
-a copy of the License at
-
-  http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
-License for the specific language governing permissions and limitations
-under the License.
-*/
 
 
 ////////////////////////////////////////////////////////////////////////////////
-// CUSTOMIZE SLATE
+// CUSTOMIZE DOCUMENTATION
 ////////////////////////////////////////////////////////////////////////////////
 // Use these settings to help adjust the appearance of Slate
 
 
 // BACKGROUND COLORS
 ////////////////////
-$nav-bg: #2E3336 !default;
-$examples-bg: #2E3336 !default;
-$code-bg: #1E2224 !default;
-$code-annotation-bg: #191D1F !default;
-$nav-subitem-bg: #1E2224 !default;
-$nav-active-bg: #0F75D4 !default;
-$nav-active-parent-bg: #1E2224 !default; // parent links of the current section
+$nav-bg: #F3F7F9 !default;
+$examples-bg: #304150 !default;
+$code-bg: #263440 !default;
+$code-annotation-bg: #263440 !default;
+$nav-subitem-bg: #F3F7F9 !default;
+$nav-active-bg: #ffffff !default;
+$nav-active-parent-bg: #F3F7F9 !default; // parent links of the current section
 $lang-select-border: #000 !default;
-$lang-select-bg: #1E2224 !default;
+$lang-select-bg: #304150 !default;
 $lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
 $lang-select-pressed-bg: #111 !default; // color of language tab bg when mouse is pressed
-$main-bg: #F3F7F9 !default;
+$main-bg: #FFFFFF !default;
 $aside-notice-bg: #8fbcd4 !default;
 $aside-warning-bg: #c97a7e !default;
 $aside-success-bg: #6ac174 !default;
@@ -43,10 +28,10 @@ $search-notice-bg: #c97a7e !default;
 
 // TEXT COLORS
 ////////////////////
-$main-text: #333 !default; // main content text color
-$nav-text: #fff !default;
-$nav-active-text: #fff !default;
-$nav-active-parent-text: #fff !default; // parent links of the current section
+$main-text: #304150 !default; // main content text color
+$nav-text: #5C6975 !default;
+$nav-active-text: #2855af !default;
+$nav-active-parent-text: #5C6975 !default; // parent links of the current section
 $lang-select-text: #fff !default; // color of unselected language tab text
 $lang-select-active-text: #fff !default; // color of selected language tab text
 $lang-select-pressed-text: #fff !default; // color of language tab text when mouse is pressed
@@ -76,7 +61,6 @@ $phone-width: $tablet-width - $nav-width !default; // min width before reverting
 
 %header-font {
   @extend %default-font;
-  font-weight: bold;
 }
 
 %code-font {

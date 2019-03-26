@@ -14,6 +14,7 @@ includes:
   - counterparty
   - assortment
   - currency
+  - images
   - product
   - service
   - bundle
@@ -25,6 +26,7 @@ includes:
   - companysettings
   - expenseitem
   - country
+  - region
   - group
   - discount
   - uom
@@ -80,7 +82,7 @@ includes:
   - report_counterparty
   - dashboard
   - audit
-  - firebasetoken
+  - notification
 
 
 search: true
