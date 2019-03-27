@@ -12,7 +12,8 @@
        "type":"product",
        "href":"https://online.moysklad.ru/api/remap/1.2/entity/product/c1557cfb-c2cc-11e6-7a31-d0fd000f0b00"
      },
-    "action":"DELETE"
+    "action": "DELETE",
+    "accountId": "b8b74698-9128-11e6-8a84-bae500000001"
    }
   ]
 }
