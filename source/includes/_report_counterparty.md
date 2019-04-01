@@ -454,6 +454,7 @@ curl -X GET
   "returnsSum": 0,
   "discountsSum": 0,
   "balance": -60000,
+  "bonusBalance": 200,
   "profit": 50000,
   "lastEventDate": "2016-09-08 13:07:30",
   "lastEventText": "продажа",
