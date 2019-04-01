@@ -601,6 +601,16 @@ curl -X POST
 + `filter=https://online.moysklad.ru/api/remap/1.2/entity/<type>/metadata/attributes/<id>
 =http://online.moysklad.ru/api/remap/1.2/entity/<type>/<id>`
 
+###### Дополнительные фильтры
+
+С помощью filter=state.name=<ИмяСтатуса> можно фильтровать документы по имени статуса. 
+state.name Параметр строкового типа. В отфильтрованную выборку попадут все документы данного типа, на которые выставлен статус с указанным именем.
+
+Пример запроса с использование фильтра state.name:
+
+`https://online.moysklad.ru/api/remap/1.2/entity/customerOrder?filter=state.name=Новый;state.name=Принят'
+
+
 ### Фильтрация по сущностям, на которые нет права просмотра
 
 При фильтрации по сущности, на которую у текущего пользователя нет прав на просмотр в ответе придёт пустой список.
