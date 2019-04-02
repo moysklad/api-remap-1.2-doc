@@ -39,7 +39,7 @@
   + **NOT_TRACKED** - Без маркировки
   + **TOBACCO** - Тип маркировки "Табак"
   + **SHOES** - Тип маркировки "Обувь"
-+ **russiaPaymentItemType** - Признак предмета расчета
++ **paymentItemType** - Признак предмета расчета
   + **GOOD** - Товар
   + **EXCISABLE_GOOD** - Подакцизный товар
   + **COMPOUND_PAYMENT_ITEM** - Составной предмет расчета

@@ -33,7 +33,7 @@
 + **barcodes** - Массив штрихкодов услуги
 + **attributes** - Дополнительные поля Услуги в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные)
 + **buyPrice** - Закупочная цена
-+ **russiaPaymentItemType** - Признак предмета расчета
++ **paymentItemType** - Признак предмета расчета
   + **SERVICE** - Услуга
   + **WORK** - Работа
   + **PROVIDING_RIL** - Предоставление РИЛ
