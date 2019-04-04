@@ -36,7 +36,7 @@
 + **paymentItemType** - Признак предмета расчета
   + **SERVICE** - Услуга
   + **WORK** - Работа
-  + **PROVIDING_RIL** - Предоставление РИЛ
+  + **PROVIDING_RID** - Предоставление РИД
   + **COMPOUND_PAYMENT_ITEM** - Составной предмет расчета
   + **ANOTHER_PAYMENT_ITEM** - Иной предмет расчета
 
