@@ -79,6 +79,8 @@ includes:
   - recalc_calculated_quantity
   - report_stock
   - report_pnl
+  - report_money
+  - report_sales_orders
   - report_counterparty
   - dashboard
   - audit
