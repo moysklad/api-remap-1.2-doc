@@ -341,6 +341,48 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление Сотрудника.
 
+### Массовое удаление Сотрудников
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Сотрудников, которые вы хотите удалить.
+
+> Запрос на массовое удаление Сотрудников. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/employee"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+            "type": "employee",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+            "type": "employee",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информацио об удалении Сотрудников.
+
+```json
+[
+  {
+    "info":"Сущность 'employee' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'employee' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+```
+
 ### Метаданные Сотрудников 
 #### Метаданные Сотрудников 
 Запрос на получение метаданных Сотрудников. Результат - объект JSON, включающий в себя:

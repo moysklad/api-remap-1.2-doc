@@ -903,6 +903,49 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление Модификации.
 
+### Массовое удаление Модификаций
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Модификаций, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Модификаций. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/variant"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+            "type": "variant",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+            "type": "variant",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информацио об удалении Модификаций.
+
+```json
+[
+  {
+    "info":"Сущность 'variant' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'variant' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+```
+
 ### Метаданные Модификаций 
 #### Метаданные Модификаций 
 
