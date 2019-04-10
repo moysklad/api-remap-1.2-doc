@@ -73,7 +73,8 @@ curl -X GET
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/000d77a9-3000-4f81-a995-6b9cffdee1d2",
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#country/edit?id=000d77a9-3000-4f81-a995-6b9cffdee1d2"
       },
       "id": "000d77a9-3000-4f81-a995-6b9cffdee1d2",
       "updated": "2012-11-02 11:04:13",
@@ -87,7 +88,8 @@ curl -X GET
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/00999522-23d6-40e6-870e-ec7f7bd8d354",
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#country/edit?id=00999522-23d6-40e6-870e-ec7f7bd8d354"
       },
       "id": "00999522-23d6-40e6-870e-ec7f7bd8d354",
       "updated": "2012-11-02 11:04:15",
@@ -100,7 +102,8 @@ curl -X GET
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/0238a888-c602-4e78-a199-d8f49c4d6c18",
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#country/edit?id=0238a888-c602-4e78-a199-d8f49c4d6c18"
       },
       "id": "0238a888-c602-4e78-a199-d8f49c4d6c18",
       "updated": "2012-11-02 11:04:15",
@@ -114,7 +117,8 @@ curl -X GET
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/02dc7934-0a88-49ea-a733-2da517a000c2",
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#country/edit?id=02dc7934-0a88-49ea-a733-2da517a000c2"
       },
       "id": "02dc7934-0a88-49ea-a733-2da517a000c2",
       "updated": "2012-11-02 11:04:15",
@@ -128,7 +132,8 @@ curl -X GET
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/04cc9c56-96b1-4ccf-aa7f-78735710381c",
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#country/edit?id=04cc9c56-96b1-4ccf-aa7f-78735710381c"
       },
       "id": "04cc9c56-96b1-4ccf-aa7f-78735710381c",
       "updated": "2012-11-02 11:04:15",
@@ -142,7 +147,8 @@ curl -X GET
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/04cc9c56-96b1-4ccf-aa7f-78735710381c",
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#country/edit?id=04cc9c56-96b1-4ccf-aa7f-78735710381c"
       },
       "accountId": "95004e42-79f2-11e8-1a0d-4e0d00000001",
       "owner": {
@@ -203,7 +209,8 @@ curl -X GET
     "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/04331e4f-24c8-11e6-8a84-bae500000016",
     "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
     "type": "country",
-    "mediaType": "application/json"
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#country/edit?id=04331e4f-24c8-11e6-8a84-bae500000016"
   },
   "id": "04331e4f-24c8-11e6-8a84-bae500000016",
   "accountId": "45489428-24a5-11e6-8a84-bae500000001",
@@ -277,7 +284,8 @@ curl -X GET
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/04331e4f-24c8-11e6-8a84-bae500000016",
       "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
       "type": "country",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#country/edit?id=04331e4f-24c8-11e6-8a84-bae500000016"
     },
     "id": "04331e4f-24c8-11e6-8a84-bae500000016",
     "accountId": "45489428-24a5-11e6-8a84-bae500000001",
@@ -310,7 +318,8 @@ curl -X GET
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/810b5344-24ca-11e6-8a84-bae500000018",
       "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
       "type": "country",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#country/edit?id=810b5344-24ca-11e6-8a84-bae500000018"
     },
     "id": "810b5344-24ca-11e6-8a84-bae500000018",
     "accountId": "45489428-24a5-11e6-8a84-bae500000001",
@@ -438,7 +447,8 @@ curl -X GET
     "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/000d77a9-3000-4f81-a995-6b9cffdee1d2",
     "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
     "type": "country",
-    "mediaType": "application/json"
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#country/edit?id=000d77a9-3000-4f81-a995-6b9cffdee1d2"
   },
   "id": "000d77a9-3000-4f81-a995-6b9cffdee1d2",
   "updated": "2012-11-02 11:04:13",
@@ -483,7 +493,8 @@ curl -X GET
     "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/810b5344-24ca-11e6-8a84-bae500000018",
     "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
     "type": "country",
-    "mediaType": "application/json"
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#country/edit?id=810b5344-24ca-11e6-8a84-bae500000018"
   },
   "id": "810b5344-24ca-11e6-8a84-bae500000018",
   "accountId": "45489428-24a5-11e6-8a84-bae500000001",
