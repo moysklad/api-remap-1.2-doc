@@ -82,7 +82,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/plotseries/sales?momentFrom=2018-09-06 00:00:00&momentTo=2018-09-10 01:00:01&interval=hour&retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/d9a8a213-6703-11e7-9464-e4de00000060&amp;project=https://online.moysklad.ru/api/remap/1.2/entity/project/d9a8a213-6703-11e7-9464-e4de00000060&amp;store=https://online.moysklad.ru/api/remap/1.2/entity/store/d9a8a213-6703-11e7-9464-e4de00000060&amp;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/d9a8a213-6703-11e7-9464-e4de00000060"
+  "https://online.moysklad.ru/api/remap/1.2/report/sales/plotseries?momentFrom=2018-09-06 00:00:00&momentTo=2018-09-10 01:00:01&interval=hour&retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/d9a8a213-6703-11e7-9464-e4de00000060&amp;project=https://online.moysklad.ru/api/remap/1.2/entity/project/d9a8a213-6703-11e7-9464-e4de00000060&amp;store=https://online.moysklad.ru/api/remap/1.2/entity/store/d9a8a213-6703-11e7-9464-e4de00000060&amp;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/d9a8a213-6703-11e7-9464-e4de00000060"
   -H "Authorization: Basic <Access-Token>"
 ```
 
@@ -102,7 +102,7 @@ curl -X GET
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/plotseries/sales?momentFrom=2018-09-06 00:00:00&momentTo=2018-09-10 01:00:01&interval=hour&retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/d9a8a213-6703-11e7-9464-e4de00000060&amp;project=https://online.moysklad.ru/api/remap/1.2/entity/project/d9a8a213-6703-11e7-9464-e4de00000060&amp;store=https://online.moysklad.ru/api/remap/1.2/entity/store/d9a8a213-6703-11e7-9464-e4de00000060&amp;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/d9a8a213-6703-11e7-9464-e4de00000060",
+    "href": "https://online.moysklad.ru/api/remap/1.2/report/sales/plotseries?momentFrom=2018-09-06 00:00:00&momentTo=2018-09-10 01:00:01&interval=hour&retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/d9a8a213-6703-11e7-9464-e4de00000060&amp;project=https://online.moysklad.ru/api/remap/1.2/entity/project/d9a8a213-6703-11e7-9464-e4de00000060&amp;store=https://online.moysklad.ru/api/remap/1.2/entity/store/d9a8a213-6703-11e7-9464-e4de00000060&amp;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/d9a8a213-6703-11e7-9464-e4de00000060",
     "type": "salesplotseries",
     "mediaType": "application/json"
   },
