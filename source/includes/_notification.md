@@ -42,403 +42,52 @@ curl -X GET
     "href": "https://online.moysklad.ru/api/remap/1.2/notification",
     "type": "notification",
     "mediaType": "application/json",
-    "size": 21,
+    "size": 3,
     "limit": 1000,
     "offset": 0
   },
   "rows": [
     {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/notification/32f118d3-5b8f-11e9-9bea-3ff700000070",
+      "type": "NotificationGoodCountTooLow",
+      "mediaType": "application/json"
+    },
+    "id": "32f118d3-5b8f-11e9-9bea-3ff700000070",
+    "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
+    "created": "2019-04-10 15:50:20.271",
+    "read": true,
+    "title": "Заканчивается товар Картофель (да)",
+    "description": "Остаток ниже 1",
+    "good": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/c896e175-5ae8-11e9-9bea-3ff700000052",
-        "type": "NotificationGoodCountTooLow",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/0daf8e9a-5b7a-11e9-727d-307300000007",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
         "mediaType": "application/json"
       },
-      "id": "c896e175-5ae8-11e9-9bea-3ff700000052",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 19:59:05.575",
-      "read": true,
-      "title": "Заканчивается товар 1",
-      "description": "Остаток ниже 100",
-      "good": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/430dd8bb-5ae8-11e9-727d-3073000000f7",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-          "type": "product",
-          "mediaType": "application/json"
-        },
-        "id": "430dd8bb-5ae8-11e9-727d-3073000000f7",
-        "name": "1"
-      },
-      "actualBalance": 49,
-      "minimumBalance": 100
+      "id": "0daf8e9a-5b7a-11e9-727d-307300000007",
+      "name": "Картофель (да)"
+    },
+    "actualBalance": 0,
+    "minimumBalance": 1
     },
     {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/a8dd11a2-5ae8-11e9-9bea-3ff70000004f",
-        "type": "NotificationOrderOverdue",
-        "mediaType": "application/json"
-      },
-      "id": "a8dd11a2-5ae8-11e9-9bea-3ff70000004f",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 19:58:12.348",
-      "read": true,
-      "title": "Заказ покупателя №00001 просрочен",
-      "description": "Дата отгрузки: 02.04.2019 19:57. Сумма: 500.00. Покупатель: Розничный покупатель.",
-      "order": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/4f5317ec-5ae8-11e9-727d-3073000000fe",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
-          "type": "customerorder",
-          "mediaType": "application/json"
-        },
-        "id": "4f5317ec-5ae8-11e9-727d-3073000000fe",
-        "name": "00001",
-        "deliveryPlannedMoment": "2019-04-02 19:57:00.000",
-        "sum": "500.00",
-        "agentName": "Розничный покупатель"
-      }
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/notification/0f423542-5b7a-11e9-9bea-3ff70000000f",
+      "type": "NotificationImportCompleted",
+      "mediaType": "application/json"
     },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/8fb7895d-5ae8-11e9-9bea-3ff70000004c",
-        "type": "NotificationInvoiceOutOverdue",
-        "mediaType": "application/json"
-      },
-      "id": "8fb7895d-5ae8-11e9-9bea-3ff70000004c",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 19:57:30.159",
-      "read": true,
-      "title": "Счет покупателю №00001 просрочен",
-      "description": "Дата оплаты: 08.04.2019 19:57. Сумма: 500.00. Покупатель: Розничный покупатель.",
-      "invoice": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/8409b67e-5ae8-11e9-727d-3073000001b0",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata",
-          "type": "invoiceout",
-          "mediaType": "application/json"
-        },
-        "id": "8409b67e-5ae8-11e9-727d-3073000001b0",
-        "name": "00001",
-        "paymentPlannedMoment": "2019-04-08 19:57:00.000",
-        "sum": "500.00",
-        "agentName": "Розничный покупатель"
-      }
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/4f7cc3e8-5ae8-11e9-9bea-3ff70000004a",
-        "type": "NotificationOrderNew",
-        "mediaType": "application/json"
-      },
-      "id": "4f7cc3e8-5ae8-11e9-9bea-3ff70000004a",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 19:55:42.400",
-      "read": true,
-      "title": "Новый заказ покупателя № 00001",
-      "description": "Сумма: 500,00. Покупатель: Розничный покупатель.",
-      "order": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/4f5317ec-5ae8-11e9-727d-3073000000fe",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
-          "type": "customerorder",
-          "mediaType": "application/json"
-        },
-        "id": "4f5317ec-5ae8-11e9-727d-3073000000fe",
-        "name": "00001",
-        "sum": "500.00",
-        "agentName": "Розничный покупатель"
-      }
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/15a1cd62-5ae8-11e9-9bea-3ff700000048",
-        "type": "NotificationExportCompleted",
-        "mediaType": "application/json"
-      },
-      "id": "15a1cd62-5ae8-11e9-9bea-3ff700000048",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 19:54:05.335",
-      "read": true,
-      "title": "Экспорт завершен",
-      "description": "Экспорт товаров (Excel). Экспортировано 0 товаров",
-      "message": "Экспортировано 0 товаров",
-      "taskType": "export_good",
-      "taskState": "completed"
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/704b8984-5ae7-11e9-9bea-3ff700000040",
-        "type": "NotificationTaskOverdue",
-        "mediaType": "application/json"
-      },
-      "id": "704b8984-5ae7-11e9-9bea-3ff700000040",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 19:49:27.945",
-      "read": true,
-      "title": "Просрочена задача: task_4",
-      "description": "Задача просрочена task_4 Срок: 08.04.2019 19:49",
-      "task": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/703c4ddc-5ae7-11e9-727d-3073000001a2",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
-          "type": "task",
-          "mediaType": "application/json"
-        },
-        "id": "703c4ddc-5ae7-11e9-727d-3073000001a2",
-        "name": "task_4",
-        "deadline": "2019-04-08 19:49:00.000"
-      }
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/55a666b2-5ae5-11e9-9bea-3ff70000003e",
-        "type": "NotificationTaskReopened",
-        "mediaType": "application/json"
-      },
-      "id": "55a666b2-5ae5-11e9-9bea-3ff70000003e",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 19:34:24.249",
-      "read": true,
-      "title": "Задача открыта: task_3",
-      "description": "1 открыл задачу task_3",
-      "performedBy": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/188cb787-5aa5-11e9-727d-30730000009c",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json"
-        },
-        "id": "188cb787-5aa5-11e9-727d-30730000009c",
-        "name": "1"
-      },
-      "task": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/da4616a9-5ae3-11e9-727d-307300000195",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
-          "type": "task",
-          "mediaType": "application/json"
-        },
-        "id": "da4616a9-5ae3-11e9-727d-307300000195",
-        "name": "task_3"
-      }
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/e4ac43c3-5ae3-11e9-9bea-3ff70000003c",
-        "type": "NotificationTaskCompleted",
-        "mediaType": "application/json"
-      },
-      "id": "e4ac43c3-5ae3-11e9-9bea-3ff70000003c",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 19:24:05.208",
-      "read": true,
-      "title": "Задача выполнена: task_3",
-      "description": "1 выполнил задачу task_3",
-      "performedBy": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/188cb787-5aa5-11e9-727d-30730000009c",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json"
-        },
-        "id": "188cb787-5aa5-11e9-727d-30730000009c",
-        "name": "1"
-      },
-      "task": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/da4616a9-5ae3-11e9-727d-307300000195",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
-          "type": "task",
-          "mediaType": "application/json"
-        },
-        "id": "da4616a9-5ae3-11e9-727d-307300000195",
-        "name": "task_3"
-      }
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/da52b652-5ae3-11e9-9bea-3ff70000003a",
-        "type": "NotificationTaskAssigned",
-        "mediaType": "application/json"
-      },
-      "id": "da52b652-5ae3-11e9-9bea-3ff70000003a",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 19:23:47.835",
-      "read": true,
-      "title": "Новая задача: task_3",
-      "description": "1 назначил вам задачу task_3",
-      "performedBy": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/188cb787-5aa5-11e9-727d-30730000009c",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json"
-        },
-        "id": "188cb787-5aa5-11e9-727d-30730000009c",
-        "name": "1"
-      },
-      "task": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/da4616a9-5ae3-11e9-727d-307300000195",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
-          "type": "task",
-          "mediaType": "application/json"
-        },
-        "id": "da4616a9-5ae3-11e9-727d-307300000195",
-        "name": "task_3"
-      }
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/990d8b9c-5ae3-11e9-9bea-3ff700000038",
-        "type": "NotificationTaskDeleted",
-        "mediaType": "application/json"
-      },
-      "id": "990d8b9c-5ae3-11e9-9bea-3ff700000038",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 19:21:58.339",
-      "read": true,
-      "title": "Задача удалена: Task_3",
-      "description": "1 удалил задачу Task_3",
-      "task": {
-        "name": "Task_3"
-      },
-      "performedBy": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/188cb787-5aa5-11e9-727d-30730000009c",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json"
-        },
-        "id": "188cb787-5aa5-11e9-727d-30730000009c",
-        "name": "1"
-      }
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/c1b761c6-5ae2-11e9-9bea-3ff700000032",
-        "type": "NotificationTaskAssigned",
-        "mediaType": "application/json"
-      },
-      "id": "c1b761c6-5ae2-11e9-9bea-3ff700000032",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 19:15:57.064",
-      "read": true,
-      "title": "Новая задача: Task_3",
-      "description": "1 назначил вам задачу Task_3 Срок: 10.04.2019 19:15",
-      "performedBy": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/188cb787-5aa5-11e9-727d-30730000009c",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json"
-        },
-        "id": "188cb787-5aa5-11e9-727d-30730000009c",
-        "name": "1"
-      },
-      "task": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/c1a869e8-5ae2-11e9-727d-30730000018d",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
-          "type": "task",
-          "mediaType": "application/json"
-        },
-        "id": "c1a869e8-5ae2-11e9-727d-30730000018d",
-        "name": "Task_3",
-        "deadline": "2019-04-10 19:15:00.000"
-      }
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/d00c4112-5ae0-11e9-9bea-3ff70000002c",
-        "type": "NotificationTaskUnassigned",
-        "mediaType": "application/json"
-      },
-      "id": "d00c4112-5ae0-11e9-9bea-3ff70000002c",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 19:02:02.115",
-      "read": true,
-      "title": "Задача снята: 1 (++)",
-      "description": "1 снял с вас задачу",
-      "performedBy": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/188cb787-5aa5-11e9-727d-30730000009c",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json"
-        },
-        "id": "188cb787-5aa5-11e9-727d-30730000009c",
-        "name": "1"
-      },
-      "task": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/14ac66b6-5add-11e9-727d-30730000002f",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
-          "type": "task",
-          "mediaType": "application/json"
-        },
-        "id": "14ac66b6-5add-11e9-727d-30730000002f",
-        "name": "1 (++)",
-        "deadline": "2019-04-02 18:53:00.000"
-      }
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/4a77b673-5ae0-11e9-9bea-3ff70000002a",
-        "type": "NotificationTaskAssigned",
-        "mediaType": "application/json"
-      },
-      "id": "4a77b673-5ae0-11e9-9bea-3ff70000002a",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 18:58:18.004",
-      "read": true,
-      "title": "Новая задача: 2",
-      "description": "1 назначил вам задачу 2 Срок: 11.04.2019 18:58",
-      "performedBy": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/188cb787-5aa5-11e9-727d-30730000009c",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json"
-        },
-        "id": "188cb787-5aa5-11e9-727d-30730000009c",
-        "name": "1"
-      },
-      "task": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/4a6bf5c7-5ae0-11e9-727d-30730000018a",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
-          "type": "task",
-          "mediaType": "application/json"
-        },
-        "id": "4a6bf5c7-5ae0-11e9-727d-30730000018a",
-        "name": "2",
-        "deadline": "2019-04-11 18:58:00.000"
-      }
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/a80b8eda-5adf-11e9-9bea-3ff700000027",
-        "type": "NotificationTaskOverdue",
-        "mediaType": "application/json"
-      },
-      "id": "a80b8eda-5adf-11e9-9bea-3ff700000027",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 18:53:45.504",
-      "read": true,
-      "title": "Просрочена задача: 1 (++)",
-      "description": "Задача просрочена 1 (++) Срок: 02.04.2019 18:53",
-      "task": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/14ac66b6-5add-11e9-727d-30730000002f",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
-          "type": "task",
-          "mediaType": "application/json"
-        },
-        "id": "14ac66b6-5add-11e9-727d-30730000002f",
-        "name": "1 (++)",
-        "deadline": "2019-04-02 18:53:00.000"
-      }
+    "id": "0f423542-5b7a-11e9-9bea-3ff70000000f",
+    "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
+    "created": "2019-04-10 13:19:01.123",
+    "read": true,
+    "title": "Импорт завершен",
+    "description": "Товары и остатки (Excel). Оприходование 00002 создано. Обработано 7 строк, создано 7 элементов, обновлено 0 элементов",
+    "message": "Обработано 7 строк, создано 7 элементов, обновлено 0 элементов",
+    "taskType": "importer_good",
+    "taskState": "completed",
+    "createdDocumentName": "00002"
     },
     {
       "meta": {
@@ -448,10 +97,10 @@ curl -X GET
       },
       "id": "a805beb5-5adf-11e9-9bea-3ff700000025",
       "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 18:53:45.466",
+      "created": "2019-04-09 18:53:45.314",
       "read": true,
-      "title": "Задача изменена: 1 (++)",
-      "description": "1 изменил задачу",
+      "title": "Задача изменена: Новое описание задачи",
+      "description": "admin изменил задачу",
       "performedBy": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/188cb787-5aa5-11e9-727d-30730000009c",
@@ -460,7 +109,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "188cb787-5aa5-11e9-727d-30730000009c",
-        "name": "1"
+        "name": "admin"
       },
       "task": {
         "meta": {
@@ -470,219 +119,17 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "14ac66b6-5add-11e9-727d-30730000002f",
-        "name": "1 (++)",
+        "name": "Новое описание задачи",
         "deadline": "2019-04-02 18:53:00.000"
       },
       "diff": {
         "description": {
-          "oldValue": "1",
-          "newValue": "1 (++)"
+          "oldValue": "Старое описание задачи",
+          "newValue": "Новое описание задачи"
         },
         "deadline": {
           "newValue": "2019-04-02 18:53:00.000"
         }
-      }
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/278f60c3-5adf-11e9-9bea-3ff70000001b",
-        "type": "NotificationTaskCommentDeleted",
-        "mediaType": "application/json"
-      },
-      "id": "278f60c3-5adf-11e9-9bea-3ff70000001b",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 18:50:09.942",
-      "read": true,
-      "title": "Комментарий удален: 1",
-      "description": "1 удалил комментарий 1231234444",
-      "performedBy": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/188cb787-5aa5-11e9-727d-30730000009c",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json"
-        },
-        "id": "188cb787-5aa5-11e9-727d-30730000009c",
-        "name": "1"
-      },
-      "task": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/64eec4ad-5aa3-11e9-727d-307300000098",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
-          "type": "task",
-          "mediaType": "application/json"
-        },
-        "id": "64eec4ad-5aa3-11e9-727d-307300000098",
-        "name": "1",
-        "deadline": "2019-04-08 11:42:00.000"
-      },
-      "noteContent": "1231234444"
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/92caa70b-5add-11e9-9bea-3ff700000011",
-        "type": "NotificationTaskCommentChanged",
-        "mediaType": "application/json"
-      },
-      "id": "92caa70b-5add-11e9-9bea-3ff700000011",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 18:38:50.853",
-      "read": true,
-      "title": "Комментарий изменен: 1",
-      "description": "1 изменил комментарий 1231234444, 123",
-      "performedBy": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/188cb787-5aa5-11e9-727d-30730000009c",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json"
-        },
-        "id": "188cb787-5aa5-11e9-727d-30730000009c",
-        "name": "1"
-      },
-      "task": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/64eec4ad-5aa3-11e9-727d-307300000098",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
-          "type": "task",
-          "mediaType": "application/json"
-        },
-        "id": "64eec4ad-5aa3-11e9-727d-307300000098",
-        "name": "1",
-        "deadline": "2019-04-08 11:42:00.000"
-      },
-      "diff": {
-        "noteContent": {
-          "oldValue": "123",
-          "newValue": "1231234444"
-        }
-      }
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/31f0d479-5add-11e9-9bea-3ff70000000f",
-        "type": "NotificationTaskNewComment",
-        "mediaType": "application/json"
-      },
-      "id": "31f0d479-5add-11e9-9bea-3ff70000000f",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 18:36:08.364",
-      "read": true,
-      "title": "Новый комментарий: 1",
-      "description": "1 добавил комментарий 123",
-      "performedBy": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/188cb787-5aa5-11e9-727d-30730000009c",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json"
-        },
-        "id": "188cb787-5aa5-11e9-727d-30730000009c",
-        "name": "1"
-      },
-      "task": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/64eec4ad-5aa3-11e9-727d-307300000098",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
-          "type": "task",
-          "mediaType": "application/json"
-        },
-        "id": "64eec4ad-5aa3-11e9-727d-307300000098",
-        "name": "1",
-        "deadline": "2019-04-08 11:42:00.000"
-      },
-      "noteContent": "123"
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/14c7b39b-5add-11e9-9bea-3ff70000000d",
-        "type": "NotificationTaskAssigned",
-        "mediaType": "application/json"
-      },
-      "id": "14c7b39b-5add-11e9-9bea-3ff70000000d",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 18:35:19.441",
-      "read": true,
-      "title": "Новая задача: 1",
-      "description": "1 назначил вам задачу 1",
-      "performedBy": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/188cb787-5aa5-11e9-727d-30730000009c",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json"
-        },
-        "id": "188cb787-5aa5-11e9-727d-30730000009c",
-        "name": "1"
-      },
-      "task": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/14ac66b6-5add-11e9-727d-30730000002f",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
-          "type": "task",
-          "mediaType": "application/json"
-        },
-        "id": "14ac66b6-5add-11e9-727d-30730000002f",
-        "name": "1"
-      }
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/bf7c735f-5aa5-11e9-9bea-3ff700000009",
-        "type": "NotificationTaskNewComment",
-        "mediaType": "application/json"
-      },
-      "id": "bf7c735f-5aa5-11e9-9bea-3ff700000009",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 11:59:14.021",
-      "read": true,
-      "title": "Новый комментарий: 1",
-      "description": "1 добавил комментарий 123",
-      "performedBy": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/188cb787-5aa5-11e9-727d-30730000009c",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json"
-        },
-        "id": "188cb787-5aa5-11e9-727d-30730000009c",
-        "name": "1"
-      },
-      "task": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/64eec4ad-5aa3-11e9-727d-307300000098",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
-          "type": "task",
-          "mediaType": "application/json"
-        },
-        "id": "64eec4ad-5aa3-11e9-727d-307300000098",
-        "name": "1",
-        "deadline": "2019-04-08 11:42:00.000"
-      },
-      "noteContent": "123"
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/659dadae-5aa3-11e9-9bea-3ff700000001",
-        "type": "NotificationTaskOverdue",
-        "mediaType": "application/json"
-      },
-      "id": "659dadae-5aa3-11e9-9bea-3ff700000001",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-09 11:42:24.236",
-      "read": true,
-      "title": "Просрочена задача: 1",
-      "description": "Задача просрочена 1 Срок: 08.04.2019 11:42",
-      "task": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/64eec4ad-5aa3-11e9-727d-307300000098",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
-          "type": "task",
-          "mediaType": "application/json"
-        },
-        "id": "64eec4ad-5aa3-11e9-727d-307300000098",
-        "name": "1",
-        "deadline": "2019-04-08 11:42:00.000"
       }
     }
   ]
