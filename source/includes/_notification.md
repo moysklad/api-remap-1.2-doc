@@ -261,7 +261,7 @@ curl -X PUT
 | NotificationTaskCommentChanged	    | Задача	        	| Комментарий у задачи был изменен |
 | NotificationImportCompleted		    | Обмен данными	    	| Импорт выполнен |
 | NotificationExportCompleted		    | Обмен данными	    	| Экспорт выполнен |
-| NotificationSubscribeExpired        | Биллинг               | Истекает подписка |
+| NotificationSubscribeExpired        | Биллинг               | Окончание подписки |
 | NotificationSubscribeTermsExpired   | Биллинг               | Истекают условия подписки |
 | NotificationRetailShiftOpened       | Розничная торговля    | Открыта смена |
 | NotificationRetailShiftClosed       | Розничная торговля    | Закрыта смена |
@@ -365,7 +365,7 @@ NotificationOrderOverdue
   + **agentName** - Имя контрагента `Только для чтения`
 
 
-### Подписка заканчивается
+### Окончание подписки
 #### Тип уведомления
 NotificationSubscribeExpired
 #### Атрибуты уведомления
@@ -388,6 +388,7 @@ NotificationSubscribeTermsExpired
 + **read** - Признак того, было ли Уведомление прочитано
 + **title** - Краткий текст уведомления `Только для чтения`
 + **description** - Описание уведомления `Только для чтения`
++ **daysLeft** - Количество оставшихся дней подписки `Только для чтения`
 
 ### Задача назначена
 #### Тип уведомления
