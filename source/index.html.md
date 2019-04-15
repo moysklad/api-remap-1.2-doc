@@ -6,7 +6,8 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 
 toc_footers:
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='https://moysklad.github.io/'>Workbook API</a>
+  - <a href='https://github.com/moysklad/java-remap-1.2-doc/issues'>Сообщите об ошибке</a>
 
 includes:
   - general
@@ -14,6 +15,7 @@ includes:
   - counterparty
   - assortment
   - currency
+  - images
   - product
   - service
   - bundle
@@ -80,6 +82,8 @@ includes:
   - recalc_calculated_quantity
   - report_stock
   - report_pnl
+  - report_money
+  - report_sales_orders
   - report_counterparty
   - dashboard
   - audit

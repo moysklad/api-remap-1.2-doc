@@ -39,7 +39,7 @@
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/report/sales/byproduct"
+  "https://online.moysklad.ru/api/remap/1.2/report/profit/byproduct"
   -H "Authorization: Basic <Access-Token>"
 ```
 
@@ -59,13 +59,13 @@ curl -X GET
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/report/sales/byproduct",
+    "href": "https://online.moysklad.ru/api/remap/1.2/report/profit/byproduct",
     "type": "salesbyproduct",
     "mediaType": "application/json",
     "size": 5,
     "limit": 2,
     "offset": 0,
-    "nextHref": "https://online.moysklad.ru/api/remap/1.2/report/sales/byproduct?limit=2&offset=2"
+    "nextHref": "https://online.moysklad.ru/api/remap/1.2/report/profit/byproduct?limit=2&offset=2"
   },
   "rows": [
     {
@@ -208,7 +208,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/report/sales/byvariant"
+  "https://online.moysklad.ru/api/remap/1.2/report/profit/byvariant"
   -H "Authorization: Basic <Access-Token>"
 ```
 
@@ -228,13 +228,13 @@ curl -X GET
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/report/sales/byvariant",
+    "href": "https://online.moysklad.ru/api/remap/1.2/report/profit/byvariant",
     "type": "salesbyvariant",
     "mediaType": "application/json",
     "size": 5,
     "limit": 2,
     "offset": 0,
-    "nextHref": "https://online.moysklad.ru/api/remap/1.2/report/sales/byvariant?limit=2&offset=2"
+    "nextHref": "https://online.moysklad.ru/api/remap/1.2/report/profit/byvariant?limit=2&offset=2"
   },
   "rows": [
     {
@@ -372,7 +372,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/report/sales/byemployee"
+  "https://online.moysklad.ru/api/remap/1.2/report/profit/byemployee"
   -H "Authorization: Basic <Access-Token>"
 ```
 
@@ -392,7 +392,7 @@ curl -X GET
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/report/sales/byEmployee",
+    "href": "https://online.moysklad.ru/api/remap/1.2/report/profit/byEmployee",
     "type": "salesbyemployee",
     "mediaType": "application/json",
     "size": 1,
@@ -456,7 +456,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/report/sales/bycounterparty"
+  "https://online.moysklad.ru/api/remap/1.2/report/profit/bycounterparty"
   -H "Authorization: Basic <Access-Token>"
 ```
 
@@ -476,13 +476,13 @@ curl -X GET
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/report/sales/bycounterparty",
+    "href": "https://online.moysklad.ru/api/remap/1.2/report/profit/bycounterparty",
     "type": "salesbyCounterparty",
     "mediaType": "application/json",
     "size": 3,
     "limit": 1,
     "offset": 0,
-    "nextHref": "https://online.moysklad.ru/api/remap/1.2/report/sales/bycounterparty?limit=1&offset=1"
+    "nextHref": "https://online.moysklad.ru/api/remap/1.2/report/profit/bycounterparty?limit=1&offset=1"
   },
   "rows": [
     {

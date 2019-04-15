@@ -12,7 +12,8 @@
        "type":"product",
        "href":"https://online.moysklad.ru/api/remap/1.2/entity/product/c1557cfb-c2cc-11e6-7a31-d0fd000f0b00"
      },
-    "action":"DELETE"
+    "action": "DELETE",
+    "accountId": "b8b74698-9128-11e6-8a84-bae500000001"
    }
   ]
 }
@@ -23,6 +24,9 @@
 
 #### Заголовок временного отключения через API
 Через JSON API или POS API при запросах можно отключить уведомления вебхуков в контексте данного запроса. Для этого нужно указать заголовок `X-Lognex-WebHook-Disable` с произвольным значением.
+
+#### SSL Handshake
+Если на адресе получателя используется SSL сертификат, то необходимо удостовериться, что сертификат имеет корректные Certification Paths. Проверить сертификат можно в сервисе https://www.ssllabs.com/ssltest/index.html
 
 #### Атрибуты сущности
 + **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) веб-хука
@@ -377,3 +381,46 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление веб-хука.
+
+### Массовое удаление Веб-хук
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Веб-хук, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Веб-хук. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/webhook"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+            "type": "webhook",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+            "type": "webhook",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информацио об удалении Веб-хук.
+
+```json
+[
+  {
+    "info":"Сущность 'webhook' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'webhook' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+```

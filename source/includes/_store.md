@@ -21,7 +21,7 @@
 + **externalCode** - Внешний код Склада
 + **archived** - Добавлен ли Склад в архив
 + **address** - Адрес склада
-+ **addressFull** - Адрес с отдельными полями
++ **addressFull** - Адрес с детализацией по отдельными полям.
 + **parent** - Родительский склад (Группа)
 + **pathName** - Группа Склада
 + **attributes** - Дополнительные поля Склада в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные)
@@ -37,8 +37,10 @@
 + **addInfo** - Другое
 + **comment** - Комментарий
 
-Строка адреса получается конкатенацией в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
-
+Строка адреса является конкатенацией полей структурированного адреса в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
+При передачи в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
+При передачи обоих адресов строковый будет игнорирован.
+При передачи только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
 
 О работе с доп. полями Складов можно прочитать [здесь](/api/remap/1.2/doc/index.html#header-работа-с-дополнительными-полями)
 
@@ -357,36 +359,36 @@ curl -X GET
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
       -d '{
-            "addressFull": {
-              "addInfo": "addinfo2",
-              "apartment": "412",
-              "city": "Moscow2",
-              "comment": "some words about address2",
-              "country": {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-                  "type": "country",
-                  "mediaType": "application/json"
-                }
-              },
-              "house": "32",
-              "postalCode": "11192342",
-              "region": {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-                  "type": "region",
-                  "mediaType": "application/json"
-                }
-              },
-              "street": "Leninskie goru2"
-            },
-            "pathName": "Основной склад",
-            "name": "Склад2",
-            "code": "code3",
-            "externalCode": "sfksjafwuiw1sf32141"
-          }'  
+  "addressFull": {
+    "addInfo": "addinfo2",
+    "apartment": "412",
+    "city": "Moscow2",
+    "comment": "some words about address2",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "house": "32",
+    "postalCode": "11192342",
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "street": "Leninskie goru2"
+  },
+  "pathName": "Основной склад",
+  "name": "Склад2",
+  "code": "code3",
+  "externalCode": "sfksjafwuiw1sf32141"
+}'  
 ```
 
 > Response 200 (application/json)
@@ -462,42 +464,42 @@ curl -X GET
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
       -d '{
-            "addressFull": {
-              "addInfo": "addinfo2",
-              "apartment": "412",
-              "city": "Moscow2",
-              "comment": "some words about address2",
-              "country": {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-                  "type": "country",
-                  "mediaType": "application/json"
-                }
-              },
-              "house": "32",
-              "postalCode": "11192342",
-              "region": {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-                  "type": "region",
-                  "mediaType": "application/json"
-                }
-              },
-              "street": "Leninskie goru2"
-            },
-            "pathName": "Основной склад",
-            "name": "Склад3",
-            "code": "code4",
-            "externalCode": "223ddxzv223",
-            "attributes": [
-              {
-                "id": "3a85cfe3-12c5-11e6-9464-e4de00000087",
-                "value": 4000
-              }
-            ]
-          }'  
+  "addressFull": {
+    "addInfo": "addinfo2",
+    "apartment": "412",
+    "city": "Moscow2",
+    "comment": "some words about address2",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "house": "32",
+    "postalCode": "11192342",
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "street": "Leninskie goru2"
+  },
+  "pathName": "Основной склад",
+  "name": "Склад3",
+  "code": "code4",
+  "externalCode": "223ddxzv223",
+  "attributes": [
+    {
+      "id": "3a85cfe3-12c5-11e6-9464-e4de00000087",
+      "value": 4000
+    }
+  ]
+}'  
 ```
 
 > Response 200 (application/json)
@@ -591,35 +593,35 @@ curl -X GET
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
       -d '[
-            {
-              "address": "г Москва ул Вавилова 19 к 116",
-              "pathName": "Основной склад",
-              "name": "Склад2",
-              "code": "code3",
-              "externalCode": "sfksjafwuiw1sf32141"
-            },
-            {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
-                "type": "store",
-                "mediaType": "application/json"
-              },
-              "address": "г Москва ул БаБилова 20 к 116",
-              "pathName": "Не Основной склад",
-              "name": "Склад3",
-              "code": "code31",
-              "externalCode": "EXTCODE",
-              "parent": {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
-                  "type": "store",
-                  "mediaType": "application/json"
-                }
-              }
-            }
-          ]'  
+  {
+    "address": "г Москва ул Вавилова 19 к 116",
+    "pathName": "Основной склад",
+    "name": "Склад2",
+    "code": "code3",
+    "externalCode": "sfksjafwuiw1sf32141"
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    },
+    "address": "г Москва ул БаБилова 20 к 116",
+    "pathName": "Не Основной склад",
+    "name": "Склад3",
+    "code": "code31",
+    "externalCode": "EXTCODE",
+    "parent": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+        "type": "store",
+        "mediaType": "application/json"
+      }
+    }
+  }
+]'  
 ```
 
 > Response 200 (application/json)
@@ -717,6 +719,49 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление Склада.
+
+### Массовое удаление Складов
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Складов, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Складов. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/store"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "type": "store",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "type": "store",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информацио об удалении Складов.
+
+```json
+[
+  {
+    "info":"Сущность 'store' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'store' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+```
 
 ### Метаданные Складов 
 #### Метаданные Складов 
@@ -918,44 +963,44 @@ curl -X GET
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
       -d '{
-            "addressFull": {
-              "addInfo": "addinfo2",
-              "apartment": "412",
-              "city": "Moscow2",
-              "comment": "some words about address2",
-              "country": {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-                  "type": "country",
-                  "mediaType": "application/json"
-                }
-              },
-              "house": "32",
-              "postalCode": "11192342",
-              "region": {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-                  "type": "region",
-                  "mediaType": "application/json"
-                }
-              },
-              "street": "Leninskie goru2"
-            },
-            "pathName": "Не Основной склад",
-            "name": "Склад3",
-            "code": "code31",
-            "externalCode": "EXTCODE",
-            "parent": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
-                "type": "store",
-                "mediaType": "application/json"
-              }
-            }
-          }'  
+  "addressFull": {
+    "addInfo": "addinfo2",
+    "apartment": "412",
+    "city": "Moscow2",
+    "comment": "some words about address2",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "house": "32",
+    "postalCode": "11192342",
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "street": "Leninskie goru2"
+  },
+  "pathName": "Не Основной склад",
+  "name": "Склад3",
+  "code": "code31",
+  "externalCode": "EXTCODE",
+  "parent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  }
+}'  
 ```
 
 > Response 200 (application/json)
@@ -1031,42 +1076,42 @@ curl -X GET
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
       -d '{
-            "addressFull": {
-              "addInfo": "addinfo2",
-              "apartment": "412",
-              "city": "Moscow2",
-              "comment": "some words about address2",
-              "country": {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-                  "type": "country",
-                  "mediaType": "application/json"
-                }
-              },
-              "house": "32",
-              "postalCode": "11192342",
-              "region": {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-                  "type": "region",
-                  "mediaType": "application/json"
-                }
-              },
-              "street": "Leninskie goru2"
-            },
-            "pathName": "Основной склад",
-            "name": "Склад 3",
-            "code": "code4",
-            "externalCode": "223ddxzv223",
-            "attributes": [
-              {
-                "id": "3a85cfe3-12c5-11e6-9464-e4de00000087",
-                "value": 4400
-              }
-            ]
-          }'  
+  "addressFull": {
+    "addInfo": "addinfo2",
+    "apartment": "412",
+    "city": "Moscow2",
+    "comment": "some words about address2",
+    "country": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "house": "32",
+    "postalCode": "11192342",
+    "region": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "street": "Leninskie goru2"
+  },
+  "pathName": "Основной склад",
+  "name": "Склад 3",
+  "code": "code4",
+  "externalCode": "223ddxzv223",
+  "attributes": [
+    {
+      "id": "3a85cfe3-12c5-11e6-9464-e4de00000087",
+      "value": 4400
+    }
+  ]
+}'  
 ```
 
 > Response 200 (application/json)
