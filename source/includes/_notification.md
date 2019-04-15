@@ -69,8 +69,8 @@ curl -X GET
         "id": "430dd8bb-5ae8-11e9-727d-3073000000f7",
         "name": "1"
       },
-      "actualBalance": 49.0,
-      "minimumBalance": 100.0
+      "actualBalance": 49,
+      "minimumBalance": 100
     },
     {
       "meta": {
@@ -95,7 +95,7 @@ curl -X GET
         "name": "00001",
         "deliveryPlannedMoment": "2019-04-02 19:57:00.000",
         "sum": "500.00",
-        "customerName": "Розничный покупатель"
+        "agentName": "Розничный покупатель"
       }
     },
     {
@@ -121,7 +121,7 @@ curl -X GET
         "name": "00001",
         "paymentPlannedMoment": "2019-04-08 19:57:00.000",
         "sum": "500.00",
-        "customerName": "Розничный покупатель"
+        "agentName": "Розничный покупатель"
       }
     },
     {
@@ -146,7 +146,7 @@ curl -X GET
         "id": "4f5317ec-5ae8-11e9-727d-3073000000fe",
         "name": "00001",
         "sum": "500.00",
-        "customerName": "Розничный покупатель"
+        "agentName": "Розничный покупатель"
       }
     },
     {
