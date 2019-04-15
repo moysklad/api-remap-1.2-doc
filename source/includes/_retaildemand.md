@@ -235,7 +235,10 @@ curl -X GET
         }
       },
       "cashSum": 5100,
-      "noCashSum": 0
+      "noCashSum": 0,
+      "prepaymentCashSum": 0,
+      "prepaymentNoCashSum": 0
+      
     },
     {
       "meta": {
@@ -342,7 +345,9 @@ curl -X GET
         }
       },
       "cashSum": 0,
-      "noCashSum": 1800
+      "noCashSum": 1800,
+      "prepaymentCashSum": 0,
+      "prepaymentNoCashSum": 0
     }
   ]
 }
@@ -485,7 +490,9 @@ curl -X GET
     }
   },
   "cashSum": 0,
-  "noCashSum": 0
+  "noCashSum": 0,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0
 }
 
 ```
@@ -630,7 +637,9 @@ curl -X GET
     }
   },
   "cashSum": 0,
-  "noCashSum": 0
+  "noCashSum": 0,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0
 }
 ```
 
@@ -816,7 +825,9 @@ curl -X GET
     }
   },
   "cashSum": 14000,
-  "noCashSum": 0
+  "noCashSum": 0,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0
 }
 ```
 
@@ -1020,7 +1031,9 @@ curl -X GET
     }
   },
   "cashSum": 14000,
-  "noCashSum": 0
+  "noCashSum": 0,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0
 }
 ```
 
@@ -1188,7 +1201,9 @@ curl -X GET
       }
     },
     "cashSum": 0,
-    "noCashSum": 0
+    "noCashSum": 0,
+    "prepaymentCashSum": 0,
+    "prepaymentNoCashSum": 0
   },
   {
     "meta": {
@@ -1307,7 +1322,9 @@ curl -X GET
       }
     },
     "cashSum": 17722,
-    "noCashSum": 0
+    "noCashSum": 0,
+    "prepaymentCashSum": 0,
+    "prepaymentNoCashSum": 0
   }
 ]
 ```
@@ -1586,7 +1603,9 @@ curl -X GET
   "payedSum": 0,
   "fiscal": false,
   "cashSum": 0,
-  "noCashSum": 0
+  "noCashSum": 0,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0
 }
 ```
 
@@ -1688,6 +1707,8 @@ curl -X GET
   "fiscal": false,
   "cashSum": 0,
   "noCashSum": 0,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0,
   "customerOrder": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/1b2b2caf-055e-11e6-9464-e4de0000007c",
@@ -1825,7 +1846,9 @@ curl -X GET
     }
   },
   "cashSum": 0,
-  "noCashSum": 1800
+  "noCashSum": 1800,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0
 }
 ```
 
@@ -1993,7 +2016,9 @@ curl -X GET
     }
   },
   "cashSum": 17722,
-  "noCashSum": 0
+  "noCashSum": 0,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0
 }
 ```
 
@@ -2189,7 +2214,9 @@ curl -X GET
     }
   },
   "cashSum": 17722,
-  "noCashSum": 0
+  "noCashSum": 0,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0
 }
 ```
 
