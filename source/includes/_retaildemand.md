@@ -52,6 +52,21 @@
 + **retailShift** - Ссылка на Розничную смену, в рамках которой была проведена продажа в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные) `Необходимое`
 + **cashSum**  - Оплачено наличными
 + **noCashSum** - Оплачено картой
++ **prepaymentCashSum** - Предоплата наличными
++ **prepaymentNoCashSum** - Предоплата картой
+
+#### Работа с полями оплаты розничной продажи
+Сумма полей **cashSum**, **noCashSum**, **prepaymentCashSum** и **prepaymentNoCashSum**
+должна совпадать с суммой по Розничной продаже
+(т.е. с суммарной стоимостью всех переданных вами позиций). Каждое из полей не может иметь отрицательное значение.
+
+При передаче значений нескольких полей кроме **cashSum**, оставшаяся часть суммы будет учтена в **cashSum**.
+
+При передаче значений нескольких полей включая **cashSum**, но не включая **noCashSum**, оставшаяся часть суммы будет учтена в **noCashSum**.
+
+Если передаются **cashSum** и **noCashSum**, сумма всех полей должна соответствовать сумме по Розничной продаже иначе вернется ошибка.
+
+Если **prepaymentCashSum** и **prepaymentNoCashSum** не передаются в запросе, считается, что они равны нулю.
 
 #### Позиции Розничной продажи
 Позиции Розничной продажи - это список товаров/услуг/модификаций/серий.
@@ -220,7 +235,10 @@ curl -X GET
         }
       },
       "cashSum": 5100,
-      "noCashSum": 0
+      "noCashSum": 0,
+      "prepaymentCashSum": 0,
+      "prepaymentNoCashSum": 0
+      
     },
     {
       "meta": {
@@ -327,7 +345,9 @@ curl -X GET
         }
       },
       "cashSum": 0,
-      "noCashSum": 1800
+      "noCashSum": 1800,
+      "prepaymentCashSum": 0,
+      "prepaymentNoCashSum": 0
     }
   ]
 }
@@ -337,8 +357,7 @@ curl -X GET
 Розничная смена, на которую указывает ссылка при создании Розничной продажи обязательно должна быть активной.
 При создании Розничной продажи через JSON API, дата, указанная в **moment** продажи
 должна быть позже даты, указанной в **moment** активной розничной смены, иначе
-произойдёт ошибка. Также, если вы указываете поля **cashSum** и **noCashSum** их сумма должна совпадать с суммой по Розничной продаже
-(т.е. с суммарной стоимостью всех переданных вами позиций).
+произойдёт ошибка.
 Обязательные поля при создании новой Розничной продажи:
 + **name** - Номер продажи
 + **retailShift** - Сссылка на Розничную смену, в рамках которой происходит продажа
@@ -471,7 +490,9 @@ curl -X GET
     }
   },
   "cashSum": 0,
-  "noCashSum": 0
+  "noCashSum": 0,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0
 }
 
 ```
@@ -616,7 +637,9 @@ curl -X GET
     }
   },
   "cashSum": 0,
-  "noCashSum": 0
+  "noCashSum": 0,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0
 }
 ```
 
@@ -802,7 +825,9 @@ curl -X GET
     }
   },
   "cashSum": 14000,
-  "noCashSum": 0
+  "noCashSum": 0,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0
 }
 ```
 
@@ -1006,7 +1031,9 @@ curl -X GET
     }
   },
   "cashSum": 14000,
-  "noCashSum": 0
+  "noCashSum": 0,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0
 }
 ```
 
@@ -1174,7 +1201,9 @@ curl -X GET
       }
     },
     "cashSum": 0,
-    "noCashSum": 0
+    "noCashSum": 0,
+    "prepaymentCashSum": 0,
+    "prepaymentNoCashSum": 0
   },
   {
     "meta": {
@@ -1293,7 +1322,9 @@ curl -X GET
       }
     },
     "cashSum": 17722,
-    "noCashSum": 0
+    "noCashSum": 0,
+    "prepaymentCashSum": 0,
+    "prepaymentNoCashSum": 0
   }
 ]
 ```
@@ -1572,7 +1603,9 @@ curl -X GET
   "payedSum": 0,
   "fiscal": false,
   "cashSum": 0,
-  "noCashSum": 0
+  "noCashSum": 0,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0
 }
 ```
 
@@ -1674,6 +1707,8 @@ curl -X GET
   "fiscal": false,
   "cashSum": 0,
   "noCashSum": 0,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0,
   "customerOrder": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/1b2b2caf-055e-11e6-9464-e4de0000007c",
@@ -1811,7 +1846,9 @@ curl -X GET
     }
   },
   "cashSum": 0,
-  "noCashSum": 1800
+  "noCashSum": 1800,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0
 }
 ```
 
@@ -1821,7 +1858,6 @@ curl -X GET
 помечены `Только для чтения` в описании [атрибутов Розничной продажи](#документ-розничная-продажа-розничные-продажи).
 При обновлении полей **organization** и **agent** нужно также обновить поля **organizationAccount** и
 **agentAccount** соответственно, иначе произойдёт ошибка.
-Также, если вы изменяете поля **cashSum** и **noCashSum** их сумма должна совпадать с суммой по Розничной продаже (т.е. с суммарной стоимостью всех позиций).
 
 **Параметры**
 
@@ -1980,7 +2016,9 @@ curl -X GET
     }
   },
   "cashSum": 17722,
-  "noCashSum": 0
+  "noCashSum": 0,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0
 }
 ```
 
@@ -2176,7 +2214,9 @@ curl -X GET
     }
   },
   "cashSum": 17722,
-  "noCashSum": 0
+  "noCashSum": 0,
+  "prepaymentCashSum": 0,
+  "prepaymentNoCashSum": 0
 }
 ```
 

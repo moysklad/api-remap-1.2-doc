@@ -63,6 +63,8 @@ includes:
   - move
   - retaildemand
   - retail_sales_return
+  - prepayment
+  - prepayment_return
   - retaildrawercashin
   - retaildrawercashout
   - sales_return
