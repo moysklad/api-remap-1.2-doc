@@ -106,22 +106,14 @@ curl -X GET
           "code128": "code128 barcode"
         }
       ],
-      "image": {
+      "images": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/download/10385ef8-0639-4fbc-8bb4-6898e5e8b897",
-          "mediaType": "application/octet-stream"
-        },
-        "title": "pear",
-        "filename": "pear.jpg",
-        "size": 46197,
-        "updated": "2018-06-04 12:59:01",
-        "miniature": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/download/10385ef8-0639-4fbc-8bb4-6898e5e8b897?miniature=true",
-          "mediaType": "image/png"
-        },
-        "tiny": {
-          "href": "https://online.moysklad.ru/app/download/6f38cce9-dbc5-407c-bcd4-f433a1b8c960/t.png",
-          "mediaType": "image/png"
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d1/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 1,
+          "limit": 1000,
+          "offset": 0
         }
       },
       "assortment": {
@@ -558,22 +550,14 @@ curl -X GET
       "code128": "code128 barcode"
     }
   ],
-  "image": {
+  "images": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/download/10385ef8-0639-4fbc-8bb4-6898e5e8b897",
-      "mediaType": "application/octet-stream"
-    },
-    "title": "pear",
-    "filename": "pear.jpg",
-    "size": 46197,
-    "updated": "2018-06-04 12:59:01",
-    "miniature": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/download/10385ef8-0639-4fbc-8bb4-6898e5e8b897?miniature=true",
-      "mediaType": "image/png"
-    },
-    "tiny": {
-      "href": "https://online.moysklad.ru/app/download/6f38cce9-dbc5-407c-bcd4-f433a1b8c960/t.png",
-      "mediaType": "image/png"
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d1/images",
+      "type": "image",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
     }
   },
   "assortment": {

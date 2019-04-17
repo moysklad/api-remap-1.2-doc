@@ -514,20 +514,14 @@ curl -X GET
         "name": "Товары Из кастомной группы",
         "pathName": "Группа"
       },
-      "image": {
+      "images": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/download/e2ba4863-ffed-11e5-9464-e4de00000034",
-          "mediaType": "application/octet-stream"
-        },
-        "updated": "2017-01-11 14:54:10",
-        "size": 0,
-        "miniature": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/download/e2ba4863-ffed-11e5-9464-e4de00000034?miniature=true",
-          "mediaType": "image/png"
-        },
-        "tiny": {
-          "href": "https://online.moysklad.ru/app/download/e2ba38fd-ffed-11e5-9464-e4de00000033.png",
-          "mediaType": "image/png"
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/d1bef0a1-ffe7-11e5-9464-e4de0000001c/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 1,
+          "limit": 1000,
+          "offset": 0
         }
       },
       "externalCode": "ibWbdtWWhXiIwfZVEal6z2"
