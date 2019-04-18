@@ -160,44 +160,44 @@ curl -X GET
 
 Список сущностей, у которых есть доп. поля:
 
-+ [Договор](/api/remap/1.2/doc/contract.html)
-+ [Контрагент](/api/remap/1.2/doc/counterparty.html)
-+ [Юрлицо](/api/remap/1.2/doc/organization.html)
-+ [Проект](/api/remap/1.2/doc/project.html)
-+ [Склад](/api/remap/1.2/doc/store.html)
-+ [Сотрудник](/api/remap/1.2/doc/employee.html)
-+ [Товар](/api/remap/1.2/doc/product.html)
-+ [Услуга](/api/remap/1.2/doc/service.html)
-+ [Комплект](/api/remap/1.2/doc/bundle.html)
-+ [Серия](/api/remap/1.2/doc/consignment.html)
++ [Договор](/java-remap-1.2-doc/api/remap/1.2/ru/#Договор)
++ [Контрагент](/java-remap-1.2-doc/api/remap/1.2/ru/#Контрагент)
++ [Юрлицо](/java-remap-1.2-doc/api/remap/1.2/ru/#Юрлицо)
++ [Проект](/java-remap-1.2-doc/api/remap/1.2/ru/#Проект)
++ [Склад](/java-remap-1.2-doc/api/remap/1.2/ru/#Склад)
++ [Сотрудник](/java-remap-1.2-doc/api/remap/1.2/ru/#Сотрудник)
++ [Товар](/java-remap-1.2-doc/api/remap/1.2/ru/#Товар)
++ [Услуга](/java-remap-1.2-doc/api/remap/1.2/ru/#Услуга)
++ [Комплект](/java-remap-1.2-doc/api/remap/1.2/ru/#Комплект)
++ [Серия](/java-remap-1.2-doc/api/remap/1.2/ru/#Серия)
 + Все документы:
-  - [Возврат покупателя](/api/remap/1.2/doc/sales_return.html)
-  - [Возврат поставщику](/api/remap/1.2/doc/purchase_return.html)
-  - [Входящий платеж](/api/remap/1.2/doc/payment_in.html)
-  - [Заказ покупателя](/api/remap/1.2/doc/customerOrder.html)
-  - [Заказ поставщику](/api/remap/1.2/doc/purchaseOrder.html)
-  - [Исходящий платеж](/api/remap/1.2/doc/payment_out.html)
-  - [Оприходование](/api/remap/1.2/doc/enter.html)
-  - [Отгрузка](/api/remap/1.2/doc/demand.html)
-  - [Перемещение](/api/remap/1.2/doc/move.html)
-  - [Приемка](/api/remap/1.2/doc/supply.html)
-  - [Приходный ордер](/api/remap/1.2/doc/cashin.html)
-  - [Расходный ордер](/api/remap/1.2/doc/cashout.html)
-  - [Розничная продажа](/api/remap/1.2/doc/retaildemand.html)
-  - [Розничная смена](/api/remap/1.2/doc/retailshift.html)
-  - [Розничный возврат](/api/remap/1.2/doc/retail_sales_return.html)
-  - [Списание](/api/remap/1.2/doc/loss.html)
-  - [Инвентаризация](/api/remap/1.2/doc/inventory.html)
-  - [Счет покупателю](/api/remap/1.2/doc/invoice_out.html)
-  - [Счет поставщика](/api/remap/1.2/doc/invoice_in.html)
-  - [Счет-фактура выданный](/api/remap/1.2/doc/factureout.html)
-  - [Счет-фактура полученный](/api/remap/1.2/doc/facturein.html)
-  - [Прайс-лист](/api/remap/1.2/doc/pricelist.html)
-  - [Внутренний заказ](/api/remap/1.2/doc/internalOrder.html)
-  - [Заказ на производство](/api/remap/1.2/doc/processingorder.html)
-  - [Тех. операция](/api/remap/1.2/doc/processing.html)
-  - [Полученный отчет комиссионера](/api/remap/1.2/doc/commissionreportin.html)
-  - [Выданный отчет комиссионера](/api/remap/1.2/doc/commissionreportout.html)
+  - [Возврат покупателя](/java-remap-1.2-doc/api/remap/1.2/ru/#Возврат покупателя)
+  - [Возврат поставщику](/java-remap-1.2-doc/api/remap/1.2/ru/#Возврат поставщику)
+  - [Входящий платеж](/java-remap-1.2-doc/api/remap/1.2/ru/#Входящий платеж)
+  - [Заказ покупателя](/java-remap-1.2-doc/api/remap/1.2/ru/#Заказ покупателя)
+  - [Заказ поставщику](/java-remap-1.2-doc/api/remap/1.2/ru/#Заказ поставщику)
+  - [Исходящий платеж](/java-remap-1.2-doc/api/remap/1.2/ru/#Исходящий платеж)
+  - [Оприходование](/java-remap-1.2-doc/api/remap/1.2/ru/#Оприходование)
+  - [Отгрузка](/java-remap-1.2-doc/api/remap/1.2/ru/#Отгрузка)
+  - [Перемещение](/java-remap-1.2-doc/api/remap/1.2/ru/#Перемещение)
+  - [Приемка](/java-remap-1.2-doc/api/remap/1.2/ru/#Приемка)
+  - [Приходный ордер](/java-remap-1.2-doc/api/remap/1.2/ru/#Приходный ордер)
+  - [Расходный ордер](/java-remap-1.2-doc/api/remap/1.2/ru/#Расходный ордер)
+  - [Розничная продажа](/java-remap-1.2-doc/api/remap/1.2/ru/#Розничная продажа)
+  - [Розничная смена](/java-remap-1.2-doc/api/remap/1.2/ru/#Розничная смена)
+  - [Розничный возврат](/java-remap-1.2-doc/api/remap/1.2/ru/#Розничный возврат)
+  - [Списание](/java-remap-1.2-doc/api/remap/1.2/ru/#Списание)
+  - [Инвентаризация](/java-remap-1.2-doc/api/remap/1.2/ru/#Инвентаризация)
+  - [Счет покупателю](/java-remap-1.2-doc/api/remap/1.2/ru/#Счет покупателю)
+  - [Счет поставщика](/java-remap-1.2-doc/api/remap/1.2/ru/#Счет поставщика)
+  - [Счет-фактура выданный](/java-remap-1.2-doc/api/remap/1.2/ru/#Счет-фактура выданный)
+  - [Счет-фактура полученный](/java-remap-1.2-doc/api/remap/1.2/ru/#Счет-фактура полученный)
+  - [Прайс-лист](/java-remap-1.2-doc/api/remap/1.2/ru/#Прайс-лист)
+  - [Внутренний заказ](/java-remap-1.2-doc/api/remap/1.2/ru/#Внутренний заказ)
+  - [Заказ на производство](/java-remap-1.2-doc/api/remap/1.2/ru/#Заказ на производство)
+  - [Тех. операция](/java-remap-1.2-doc/api/remap/1.2/ru/#Тех. операция)
+  - [Полученный отчет комиссионера](/java-remap-1.2-doc/api/remap/1.2/ru/#Полученный отчет комиссионера)
+  - [Выданный отчет комиссионера](/java-remap-1.2-doc/api/remap/1.2/ru/#Выданный отчет комиссионера)
 
 
 Дополнительные поля сущности - внутренняя коллекция **attributes**.
@@ -291,15 +291,15 @@ curl -X GET
 + **filename** - Имя файла `Необходимое`
 + **content** - Байты файла, закодированные в base64 `Необходимое`
 
-Пример указания значения для доп. поля типа файл есть в секции [создания товара](/api/remap/1.2/doc/product.html#товар-товары-post)
+Пример указания значения для доп. поля типа файл есть в секции [создания товара](/java-remap-1.2-doc/api/remap/1.2/ru/#товар-товары-post)
 
 ### Работа с позициями документов
 
-API сервиса МойСклад позволяет оперировать с такими документами как [Отгрузка](/api/remap/1.2/doc/demand.html), [Заказ покупателя](/api/remap/1.2/doc/customerOrder.html), [Счет покупателю](/api/remap/1.2/doc/invoice_out.html),
-[Розничная продажа](/api/remap/1.2/doc/retaildemand.html), [Полученный отчет комиссионера](/api/remap/1.2/doc/commissionreportin.html), [Выданный отчет комиссионера](/api/remap/1.2/doc/commissionreportout.html), [Оприходование](/api/remap/1.2/doc/enter.html),
-[Внутренний заказ](/api/remap/1.2/doc/internalOrder.html), [Инвентаризация](/api/remap/1.2/doc/inventory.html), [Списание](/api/remap/1.2/doc/loss.html), [Перемещение](/api/remap/1.2/doc/move.html), [Прайс-лист](/api/remap/1.2/doc/pricelist.html),
-[Заказ на производство](/api/remap/1.2/doc/processingorder.html), [Возврат поставщику](/api/remap/1.2/doc/purchase_return.html), [Заказ поставщику](/api/remap/1.2/doc/purchaseOrder.html),
-[Розничный возврат](/api/remap/1.2/doc/retail_sales_return.html), [Возврат покупателя](/api/remap/1.2/doc/sales_return.html), [Приемка](/api/remap/1.2/doc/supply.html), [Счет поставщика](/api/remap/1.2/doc/invoice_in.html). Перечисленные документы содержат позиции, работать с которыми можно как в составе отдельного документа,
+API сервиса МойСклад позволяет оперировать с такими документами как [Отгрузка](/java-remap-1.2-doc/api/remap/1.2/ru/#Отгрузка), [Заказ покупателя](/java-remap-1.2-doc/api/remap/1.2/ru/#Заказ покупателя), [Счет покупателю](/java-remap-1.2-doc/api/remap/1.2/ru/#Счет покупателю),
+[Розничная продажа](/java-remap-1.2-doc/api/remap/1.2/ru/#Розничная продажа), [Полученный отчет комиссионера](/java-remap-1.2-doc/api/remap/1.2/ru/#Полученный отчет комиссионера), [Выданный отчет комиссионера](/java-remap-1.2-doc/api/remap/1.2/ru/#Выданный отчет комиссионера), [Оприходование](/java-remap-1.2-doc/api/remap/1.2/ru/#Оприходование),
+[Внутренний заказ](/java-remap-1.2-doc/api/remap/1.2/ru/#Внутренний заказ), [Инвентаризация](/java-remap-1.2-doc/api/remap/1.2/ru/#Инвентаризация), [Списание](/java-remap-1.2-doc/api/remap/1.2/ru/#Списание), [Перемещение](/java-remap-1.2-doc/api/remap/1.2/ru/#Перемещение), [Прайс-лист](/java-remap-1.2-doc/api/remap/1.2/ru/#Прайс-лист),
+[Заказ на производство](/java-remap-1.2-doc/api/remap/1.2/ru/#Заказ на производство), [Возврат поставщику](/java-remap-1.2-doc/api/remap/1.2/ru/#Возврат поставщику), [Заказ поставщику](/java-remap-1.2-doc/api/remap/1.2/ru/#Заказ поставщику),
+[Розничный возврат](/java-remap-1.2-doc/api/remap/1.2/ru/#Розничный возврат), [Возврат покупателя](/java-remap-1.2-doc/api/remap/1.2/ru/#Возврат покупателя), [Приемка](/java-remap-1.2-doc/api/remap/1.2/ru/#Приемка), [Счет поставщика](/java-remap-1.2-doc/api/remap/1.2/ru/#Счет поставщика). Перечисленные документы содержат позиции, работать с которыми можно как в составе отдельного документа,
 так и с помощью специальных ресурсов для управления позициями документа.
 
 ######  Работа с позициями в рамках отдельного документа
@@ -684,13 +684,13 @@ curl -X POST
 на месте которых вы бы хотели видеть связанные объекты.
 В результате запроса с таким параметром, в ответе вы получите объект с развернутыми вложенными объектами вместо ссылок.
 К примеру, в документах, имеющих в составе поле **agent**, вместо ссылки на
-контрагента будет выведен объект со всеми полями сущности "Контрагент", описанными [тут](/api/remap/1.2/doc/counterparty.html#контрагент-контрагенты-get).
+контрагента будет выведен объект со всеми полями сущности "Контрагент", описанными [тут](/java-remap-1.2-doc/api/remap/1.2/ru/#контрагент-контрагенты-get).
 Максимальный уровень вложенности **expand** : 3.
 Expand разрешен только на размере выборки не более 100. Если указан больший лимит, но указан expand, то данный параметр будет игнорироваться.
 
 Также **expand** можно применять для результатов операций создания и обновления.
 
-+ Ниже показаны примеры использования **expand** на [Возврате покупателя](/api/remap/1.2/doc/sales_return.html). В примерах представлены только поля **meta** и **demand**.
++ Ниже показаны примеры использования **expand** на [Возврате покупателя](/java-remap-1.2-doc/api/remap/1.2/ru/#Возврат покупателя). В примерах представлены только поля **meta** и **demand**.
 
 ### Возврат без expand 
 
