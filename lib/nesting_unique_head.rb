@@ -8,8 +8,8 @@ class NestingUniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
   end
 
   def header(text, header_level)
-    friendly_text = text.gsub(/<[^>]*>/,"").parameterize
-    @@headers_history[header_level] = text.parameterize
+    friendly_text = Translit.convert(text, :english).gsub(/<[^>]*>/,"").parameterize
+    @@headers_history[header_level] = Translit.convert(text, :english).parameterize
 
     if header_level > 1
       for i in (header_level - 1).downto(1)

@@ -110,6 +110,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.5)
     tilt (2.0.6)
+    translit (0.1.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.4)
@@ -127,6 +128,7 @@ DEPENDENCIES
   redcarpet (~> 3.4.0)
   rouge (~> 2.0.5)
   therubyracer
+  translit
 
 RUBY VERSION
    ruby 2.3.3p222
