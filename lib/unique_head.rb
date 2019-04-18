@@ -1,6 +1,8 @@
 # Unique header generation
 require 'middleman-core/renderers/redcarpet'
 require 'digest'
+require 'translit'
+
 class UniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
   def initialize
     super

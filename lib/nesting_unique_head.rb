@@ -1,5 +1,6 @@
 # Nested unique header generation
 require 'middleman-core/renderers/redcarpet'
+require 'translit'
 
 class NestingUniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
   def initialize
