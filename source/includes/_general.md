@@ -169,12 +169,12 @@ curl -X GET
 + [Товар](#towar)
 + [Услуга](#usluga)
 + [Комплект](#komplekt)
-+ [Серия](#seriya)
++ [Серия](#seriq)
 + Все документы:
   - [Возврат покупателя](#vozwrat-pokupatelq)
   - [Возврат поставщику](#vozwrat-postawschiku)
   - [Входящий платеж](#vhodqschij-platezh)
-  - [Заказ покупателя](#zakaz-pokupatelya)
+  - [Заказ покупателя](#zakaz-pokupatelq)
   - [Заказ поставщику](#zakaz-postawschiku)
   - [Исходящий платеж](#ishodqschij-platezh)
   - [Оприходование](#oprihodowanie)
@@ -183,8 +183,8 @@ curl -X GET
   - [Приемка](#priemka)
   - [Приходный ордер](#prihodnyj-order)
   - [Расходный ордер](#rashodnyj-order)
-  - [Розничная продажа](#roznichnaya-prodazha)
-  - [Розничная смена](#roznichnaya-smena)
+  - [Розничная продажа](#roznichnaq-prodazha)
+  - [Розничная смена](#roznichnaq-smena)
   - [Розничный возврат](#roznichnyj-wozwrat)
   - [Списание](#spisanie)
   - [Инвентаризация](#inwentarizaciq)
@@ -295,8 +295,8 @@ curl -X GET
 
 ### Работа с позициями документов
 
-API сервиса МойСклад позволяет оперировать с такими документами как [Отгрузка](#otgruzka), [Заказ покупателя](#zakaz-pokupatelya), [Счет покупателю](#schet-pokupatelu),
-[Розничная продажа](#roznichnaya-prodazha), [Полученный отчет комиссионера](#poluchennyj-otchet-komissionera), [Выданный отчет комиссионера](#vydannyj-otchet-komissionera), [Оприходование](#oprihodowanie),
+API сервиса МойСклад позволяет оперировать с такими документами как [Отгрузка](#otgruzka), [Заказ покупателя](#zakaz-pokupatelq), [Счет покупателю](#schet-pokupatelu),
+[Розничная продажа](#roznichnaq-prodazha), [Полученный отчет комиссионера](#poluchennyj-otchet-komissionera), [Выданный отчет комиссионера](#vydannyj-otchet-komissionera), [Оприходование](#oprihodowanie),
 [Внутренний заказ](#vnutrennij-zakaz), [Инвентаризация](#inwentarizaciq), [Списание](#spisanie), [Перемещение](#peremeschenie), [Прайс-лист](#prajs-list),
 [Заказ на производство](#zakaz-na-proizwodstwo), [Возврат поставщику](#vozwrat-postawschiku), [Заказ поставщику](#zakaz-postawschiku),
 [Розничный возврат](#roznichnyj-wozwrat), [Возврат покупателя](#vozwrat-pokupatelq), [Приемка](#priemka), [Счет поставщика](#schet-postawschika). Перечисленные документы содержат позиции, работать с которыми можно как в составе отдельного документа,
@@ -1303,10 +1303,10 @@ curl -X PUT
 ```
 
 ### Доп. поля сущностей
-В JSON API есть возможность управлять набором существующих доп. полей для каждого из типов сущностей перечисленных [тут](#rabota-s-dopolnitel-nymi-polyami).
+В JSON API есть возможность управлять набором существующих доп. полей для каждого из типов сущностей перечисленных [тут](#rabota-s-dopolnitel-nymi-polqmi).
 Используя соответствующие ресурсы, можно получать список всех доп. полей для указанного типа сущности, а также создавать новые, обновлять и удалять существующие доп. поля.
 
-Структура объекта доп. поля подробно описана в секции [Работа с дополнительными полями](#rabota-s-dopolnitel-nymi-polyami).
+Структура объекта доп. поля подробно описана в секции [Работа с дополнительными полями](#rabota-s-dopolnitel-nymi-polqmi).
 
 **Параметры**
 
