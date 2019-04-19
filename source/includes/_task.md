@@ -47,7 +47,7 @@
 `https://online.moysklad.ru/api/remap/1.2/entity/task?filter=assignee=http://online.moysklad.ru/api/remap/1.2/entity/employee/<id текущего сотрудника>`
 + **Я поручил**: фильтр по полю **author** в значении которого указана ссылка на текущего сотрудника<br>
 `https://online.moysklad.ru/api/remap/1.2/entity/task?filter=author=http://online.moysklad.ru/api/remap/1.2/entity/employee/<id текущего сотрудника>`
-+ **Все задачи**: не требует фильтрации. Обратите внимание на пункт [Отображение списка по умолчанию](#otobrazhenie-spiska-po-umolchaniju)
++ **Все задачи**: не требует фильтрации. Обратите внимание на пункт [Отображение списка по умолчанию](#otobrazhenie-spiska-po-umolchaniu)
 + **Активные**: фильтр по полю **done** со значением false<br>
 `https://online.moysklad.ru/api/remap/1.2/entity/task?filter=done=false`
 + **Выполненные**: фильтр по полю **done** со значением true<br>
@@ -313,7 +313,7 @@ curl -X GET
 ```
 
 ### Массовое создание и обновление Задач 
-[Массовое создание и обновление](#sozdanie-i-obnovlenie-neskol-kih-ob#ektov) Задач.
+[Массовое создание и обновление](#sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Задач.
 В теле запроса нужно передать массив, содержащий JSON представления Задач, которые вы хотите создать или обновить.
 Обновляемые Задачи должны содержать идентификатор в виде метаданных.
 
@@ -765,9 +765,9 @@ curl -X GET
 |id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id задачи.|
 |   limit|   `number` (optional) **Default: 25** *Example: 100* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 100`.|
 |   offset|   `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей|
-|   updatedFrom| `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#parametry-fil-tracii-vyborki). Формат строки : `ГГГГ-ММ-ДД ЧЧ:ММ:СС[.ммм]`, Часовой пояс: `MSK` (Московское время)|
-|   updatedTo|   `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#parametry-fil-tracii-vyborki). Формат строки : `ГГГГ-ММ-ДД ЧЧ:ММ:СС[.ммм]`, Часовой пояс: `MSK` (Московское время)|
-|   updatedBy|   `string` (optional) *Example: admin@admin* Один из [параметров фильтрации выборки](#parametry-fil-tracii-vyborki). Формат строки : `uid`|
+|   updatedFrom| `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). Формат строки : `ГГГГ-ММ-ДД ЧЧ:ММ:СС[.ммм]`, Часовой пояс: `MSK` (Московское время)|
+|   updatedTo|   `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). Формат строки : `ГГГГ-ММ-ДД ЧЧ:ММ:СС[.ммм]`, Часовой пояс: `MSK` (Московское время)|
+|   updatedBy|   `string` (optional) *Example: admin@admin* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). Формат строки : `uid`|
 
 > Получить комментарии Задачи
 

@@ -160,42 +160,42 @@ curl -X GET
 
 Список сущностей, у которых есть доп. поля:
 
-+ [Договор](#dogovor)
++ [Договор](#dogowor)
 + [Контрагент](#kontragent)
 + [Юрлицо](#jurlico)
 + [Проект](#proekt)
 + [Склад](#sklad)
 + [Сотрудник](#sotrudnik)
-+ [Товар](#tovar)
++ [Товар](#towar)
 + [Услуга](#usluga)
 + [Комплект](#komplekt)
 + [Серия](#seriya)
 + Все документы:
-  - [Возврат покупателя](#vozvrat-pokupatelya)
-  - [Возврат поставщику](#vozvrat-postavshhiku)
-  - [Входящий платеж](#vhodyashhij-platezh)
+  - [Возврат покупателя](#vozwrat-pokupatelq)
+  - [Возврат поставщику](#vozwrat-postawschiku)
+  - [Входящий платеж](#vhodqschij-platezh)
   - [Заказ покупателя](#zakaz-pokupatelya)
-  - [Заказ поставщику](#zakaz-postavshhiku)
-  - [Исходящий платеж](#ishodyashhij-platezh)
-  - [Оприходование](#oprihodovanie)
+  - [Заказ поставщику](#zakaz-postawschiku)
+  - [Исходящий платеж](#ishodqschij-platezh)
+  - [Оприходование](#oprihodowanie)
   - [Отгрузка](#otgruzka)
-  - [Перемещение](#peremeshhenie)
+  - [Перемещение](#peremeschenie)
   - [Приемка](#priemka)
   - [Приходный ордер](#prihodnyj-order)
   - [Расходный ордер](#rashodnyj-order)
   - [Розничная продажа](#roznichnaya-prodazha)
   - [Розничная смена](#roznichnaya-smena)
-  - [Розничный возврат](#roznichnyj-vozvrat)
+  - [Розничный возврат](#roznichnyj-wozwrat)
   - [Списание](#spisanie)
-  - [Инвентаризация](#inventarizaciya)
-  - [Счет покупателю](#schet-pokupatelju)
-  - [Счет поставщика](#schet-postavshhika)
-  - [Счет-фактура выданный](#schet-faktura-vydannyj)
+  - [Инвентаризация](#inwentarizaciq)
+  - [Счет покупателю](#schet-pokupatelu)
+  - [Счет поставщика](#schet-postawschika)
+  - [Счет-фактура выданный](#schet-faktura-wydannyj)
   - [Счет-фактура полученный](#schet-faktura-poluchennyj)
   - [Прайс-лист](#prajs-list)
   - [Внутренний заказ](#vnutrennij-zakaz)
-  - [Заказ на производство](#zakaz-na-proizvodstvo)
-  - [Тех. операция](#teh.-operaciya)
+  - [Заказ на производство](#zakaz-na-proizwodstwo)
+  - [Тех. операция](#teh-operaciq)
   - [Полученный отчет комиссионера](#poluchennyj-otchet-komissionera)
   - [Выданный отчет комиссионера](#vydannyj-otchet-komissionera)
 
@@ -291,15 +291,15 @@ curl -X GET
 + **filename** - Имя файла `Необходимое`
 + **content** - Байты файла, закодированные в base64 `Необходимое`
 
-Пример указания значения для доп. поля типа файл есть в секции [создания товара](#tovar-tovary-post)
+Пример указания значения для доп. поля типа файл есть в секции [создания товара](#towar-towary-post)
 
 ### Работа с позициями документов
 
-API сервиса МойСклад позволяет оперировать с такими документами как [Отгрузка](#otgruzka), [Заказ покупателя](#zakaz-pokupatelya), [Счет покупателю](#schet-pokupatelju),
-[Розничная продажа](#roznichnaya-prodazha), [Полученный отчет комиссионера](#poluchennyj-otchet-komissionera), [Выданный отчет комиссионера](#vydannyj-otchet-komissionera), [Оприходование](#oprihodovanie),
-[Внутренний заказ](#vnutrennij-zakaz), [Инвентаризация](#inventarizaciya), [Списание](#spisanie), [Перемещение](#peremeshhenie), [Прайс-лист](#prajs-list),
-[Заказ на производство](#zakaz-na-proizvodstvo), [Возврат поставщику](#vozvrat-postavshhiku), [Заказ поставщику](#zakaz-postavshhiku),
-[Розничный возврат](#roznichnyj-vozvrat), [Возврат покупателя](#vozvrat-pokupatelya), [Приемка](#priemka), [Счет поставщика](#schet-postavshhika). Перечисленные документы содержат позиции, работать с которыми можно как в составе отдельного документа,
+API сервиса МойСклад позволяет оперировать с такими документами как [Отгрузка](#otgruzka), [Заказ покупателя](#zakaz-pokupatelya), [Счет покупателю](#schet-pokupatelu),
+[Розничная продажа](#roznichnaya-prodazha), [Полученный отчет комиссионера](#poluchennyj-otchet-komissionera), [Выданный отчет комиссионера](#vydannyj-otchet-komissionera), [Оприходование](#oprihodowanie),
+[Внутренний заказ](#vnutrennij-zakaz), [Инвентаризация](#inwentarizaciq), [Списание](#spisanie), [Перемещение](#peremeschenie), [Прайс-лист](#prajs-list),
+[Заказ на производство](#zakaz-na-proizwodstwo), [Возврат поставщику](#vozwrat-postawschiku), [Заказ поставщику](#zakaz-postawschiku),
+[Розничный возврат](#roznichnyj-wozwrat), [Возврат покупателя](#vozwrat-pokupatelq), [Приемка](#priemka), [Счет поставщика](#schet-postawschika). Перечисленные документы содержат позиции, работать с которыми можно как в составе отдельного документа,
 так и с помощью специальных ресурсов для управления позициями документа.
 
 ######  Работа с позициями в рамках отдельного документа
@@ -684,13 +684,13 @@ curl -X POST
 на месте которых вы бы хотели видеть связанные объекты.
 В результате запроса с таким параметром, в ответе вы получите объект с развернутыми вложенными объектами вместо ссылок.
 К примеру, в документах, имеющих в составе поле **agent**, вместо ссылки на
-контрагента будет выведен объект со всеми полями сущности "Контрагент", описанными [тут](#kontragent-kontragenty-get).
+контрагента будет выведен объект со всеми полями сущности "Контрагент", описанными [тут](#kontragent-get).
 Максимальный уровень вложенности **expand** : 3.
 Expand разрешен только на размере выборки не более 100. Если указан больший лимит, но указан expand, то данный параметр будет игнорироваться.
 
 Также **expand** можно применять для результатов операций создания и обновления.
 
-+ Ниже показаны примеры использования **expand** на [Возврате покупателя](#vozvrat-pokupatelya). В примерах представлены только поля **meta** и **demand**.
++ Ниже показаны примеры использования **expand** на [Возврате покупателя](#vozwrat-pokupatelq). В примерах представлены только поля **meta** и **demand**.
 
 ### Возврат без expand 
 

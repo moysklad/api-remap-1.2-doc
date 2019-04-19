@@ -34,8 +34,8 @@
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#parametry-fil-tracii-vyborki). |
-|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#parametry-fil-tracii-vyborki). |
+|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
 |product.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id товара или услуги, по которому нужно произвести фильтрацию. |
 |counterparty.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id контрагента, по которому нужно произвести фильтрацию. |
 |organization.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id юрлица, по которому нужно произвести фильтрацию. |
@@ -211,8 +211,8 @@ curl -X GET
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#parametry-fil-tracii-vyborki). |
-|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#parametry-fil-tracii-vyborki). |
+|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
 |product.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id товара или услуги, по которому нужно произвести фильтрацию. |
 |counterparty.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id контрагента, по которому нужно произвести фильтрацию. |
 |organization.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id юрлица, по которому нужно произвести фильтрацию. |
@@ -383,8 +383,8 @@ curl -X GET
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#parametry-fil-tracii-vyborki). |
-|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#parametry-fil-tracii-vyborki). |
+|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
 |product.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id товара или услуги, по которому нужно произвести фильтрацию. |
 |counterparty.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id контрагента, по которому нужно произвести фильтрацию. |
 |organization.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id юрлица, по которому нужно произвести фильтрацию. |
@@ -475,8 +475,8 @@ curl -X GET
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#parametry-fil-tracii-vyborki). |
-|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#parametry-fil-tracii-vyborki). |
+|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
 |product.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id товара или услуги, по которому нужно произвести фильтрацию. |
 |counterparty.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id контрагента, по которому нужно произвести фильтрацию. |
 |organization.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id юрлица, по которому нужно произвести фильтрацию. |
