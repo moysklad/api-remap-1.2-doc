@@ -1,0 +1,20 @@
+sudo: false
+
+language: ruby
+
+rvm:
+  - 2.4.0
+
+cache: bundler
+
+script:
+  - bundle exec middleman build --clean --build-dir=build
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir : build/
+  github_token: $GITHUB_TOKEN
+  target_branch : gh-pages
+  on:
+    branch: master

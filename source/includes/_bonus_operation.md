@@ -36,8 +36,9 @@
 
 ### Получить Бонусные операции
 
-Запрос на получения списка всех Бонусных операций для данной учётной записи.
+Запрос на получения списка всех Бонусных операций для данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
+
 - **meta** [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о выдаче,
 - **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой Бонусные операции.
@@ -253,7 +254,7 @@ curl -X GET
 
 ### Создать Бонусную операцию
 
-Запрос на создание новой бонусной операции на данной учётной записи.
+Запрос на создание новой бонусной операции на данной учетной записи.
 
 > Пример запроса на создание новой бонусной операции.
 
@@ -627,6 +628,49 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление Бонусной операции.
 
+### Массовое удаление Бонусных операций
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Бонусных операций, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Бонусных операций. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/bonustransaction"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/bonustransaction/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/bonustransaction/metadata",
+            "type": "bonustransaction",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/bonustransaction/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/bonustransaction/metadata",
+            "type": "bonustransaction",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информацио об удалении Бонусных операций.
+
+```json
+[
+  {
+    "info":"Сущность 'bonustransaction' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'bonustransaction' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+```
+
 ### Бонусная операция
 
 ## Получить Бонусную операцию
@@ -738,7 +782,7 @@ curl -X GET
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление обновлённой Бонусной операции.
+Успешный запрос. Результат - JSON представление обновленной Бонусной операции.
 
 ```json
 {

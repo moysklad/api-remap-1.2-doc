@@ -4,7 +4,8 @@
 [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203294033-%D0%92%D0%B0%D0%BB%D1%8E%D1%82%D1%8B).
 По данной сущности можно осуществлять контекстный поиск с помощью специального параметра `search`. Подробнее можно узнать по [ссылке](/api/remap/1.2/doc/index.html#header-контекстный-поиск). Поиск с параметром search отличается от других тем, что поиск не префиксный, без токенизации и идет только по одному полю одновременно. Ищет такие строки, в которые входит значение строки поиска.
 
-Поиск среди объектов валют на соответствие поисковой строке будет осуществлён по следующим полям:
+Поиск среди объектов валют на соответствие поисковой строке будет осуществлен по следующим полям:
+
 + по краткому наименованию Валюты **name**
 
 ##### Атрибуты Сущности
@@ -58,7 +59,7 @@
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 
 
-> Запрос на получение списка всех валют на данной учётной записи.
+> Запрос на получение списка всех валют на данной учетной записи.
 
 ```shell
 curl -X GET 
@@ -327,6 +328,49 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление Валюты.
 
+### Массовое удаление Валют
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Валют, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Валют. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/currency"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информацио об удалении Валют.
+
+```json
+[
+  {
+    "info":"Сущность 'currency' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'currency' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+```
+
 ### Валюта
 #### Получить Валюту
 
@@ -411,7 +455,7 @@ curl -X PUT
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление обновлённой Валюты.
+Успешный запрос. Результат - JSON представление обновленной Валюты.
 
 ```json
 {
