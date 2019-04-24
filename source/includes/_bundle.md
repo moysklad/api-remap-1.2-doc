@@ -39,6 +39,7 @@
   + **NOT_TRACKED** - Без маркировки
   + **TOBACCO** - Тип маркировки "Табак"
   + **SHOES** - Тип маркировки "Обувь"
++ **tnved** - Код ТН ВЭД
 + **paymentItemType** - Признак предмета расчета
   + **GOOD** - Товар
   + **EXCISABLE_GOOD** - Подакцизный товар
@@ -628,14 +629,13 @@ curl -X GET
     }
   },
   "images": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023/images",
-        "type": "image",
-        "mediaType": "application/json",
-        "size": 1,
-        "limit": 1000,
-        "offset": 0
-      }
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023/images",
+      "type": "image",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
     },
     "updated": "2017-01-11 14:54:10",
     "title": "birdimage.png",
