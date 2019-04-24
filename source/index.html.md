@@ -16,6 +16,7 @@ includes:
   - assortment
   - currency
   - images
+  - pricetypes
   - product
   - service
   - bundle
