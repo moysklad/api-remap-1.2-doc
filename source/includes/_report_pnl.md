@@ -19,7 +19,7 @@
 + **margin** - Рентабельность
 
 #### Структура объекта assortment
-+ **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные), представляющие собой ссылку на товар или услугу
++ **meta** - [Метаданные](#metadannye), представляющие собой ссылку на товар или услугу
 + **name** - Наименование товара или услуги
 + **code** - Код товара или услуги
 + **uom** - Единица измерения
@@ -34,8 +34,8 @@
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#header-параметры-фильтрации-выборки). |
-|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#header-параметры-фильтрации-выборки). |
+|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
 |product.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id товара или услуги, по которому нужно произвести фильтрацию. |
 |counterparty.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id контрагента, по которому нужно произвести фильтрацию. |
 |organization.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id юрлица, по которому нужно произвести фильтрацию. |
@@ -197,7 +197,7 @@ curl -X GET
 + **margin** - Рентабельность
 
 #### Структура объекта assortment
-+ **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные), представляющие собой ссылку на модификацию, услугу или комплект
++ **meta** - [Метаданные](#metadannye), представляющие собой ссылку на модификацию, услугу или комплект
 + **name** - Наименование сущности
 + **code** - Код сущности
 + **article** - Артикул модификации или комплекта
@@ -211,8 +211,8 @@ curl -X GET
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#header-параметры-фильтрации-выборки). |
-|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#header-параметры-фильтрации-выборки). |
+|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
 |product.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id товара или услуги, по которому нужно произвести фильтрацию. |
 |counterparty.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id контрагента, по которому нужно произвести фильтрацию. |
 |organization.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id юрлица, по которому нужно произвести фильтрацию. |
@@ -372,7 +372,7 @@ curl -X GET
 + **margin** - Рентабельность
 
 #### Структура объекта employee
-+ **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные), представляющие собой ссылку на сотрудника
++ **meta** - [Метаданные](#metadannye), представляющие собой ссылку на сотрудника
 + **name** - Имя сотрудника
 
 ### Получить Прибыльность по сотрудникам
@@ -383,8 +383,8 @@ curl -X GET
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#header-параметры-фильтрации-выборки). |
-|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#header-параметры-фильтрации-выборки). |
+|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
 |product.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id товара или услуги, по которому нужно произвести фильтрацию. |
 |counterparty.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id контрагента, по которому нужно произвести фильтрацию. |
 |organization.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id юрлица, по которому нужно произвести фильтрацию. |
@@ -464,7 +464,7 @@ curl -X GET
 + **margin** - Рентабельность
 
 #### Структура объекта counterparty
-+ **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные), представляющие собой ссылку на покупателя
++ **meta** - [Метаданные](#metadannye), представляющие собой ссылку на покупателя
 + **name** - Имя покупателя
 
 ### Получить Прибыльность по покупателям
@@ -475,8 +475,8 @@ curl -X GET
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#header-параметры-фильтрации-выборки). |
-|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#header-параметры-фильтрации-выборки). |
+|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
 |product.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id товара или услуги, по которому нужно произвести фильтрацию. |
 |counterparty.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id контрагента, по которому нужно произвести фильтрацию. |
 |organization.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id юрлица, по которому нужно произвести фильтрацию. |
