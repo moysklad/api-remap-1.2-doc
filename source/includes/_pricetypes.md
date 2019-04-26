@@ -17,7 +17,7 @@
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/companysettings/pricetype"
+  "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype"
   -H "Authorization: Basic <Access-Token>"
 ```
 
@@ -28,7 +28,7 @@ curl -X GET
 [
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/companysettings/pricetype/a8967d6b-b026-11e7-9464-d04800000000",
+      "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/a8967d6b-b026-11e7-9464-d04800000000",
       "type": "pricetype",
       "mediaType": "application/json"
     },
@@ -38,7 +38,7 @@ curl -X GET
   },
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/companysettings/pricetype/5fc65f53-a470-11e7-9464-d04800000035",
+      "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/5fc65f53-a470-11e7-9464-d04800000035",
       "type": "pricetype",
       "mediaType": "application/json"
     },
@@ -72,7 +72,7 @@ curl -X GET
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/companysettings/pricetype"
+    "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype"
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
     -d '[
@@ -125,7 +125,7 @@ curl -X GET
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/companysettings/pricetype"
+    "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype"
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
     -d '[
@@ -195,7 +195,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/companysettings/pricetype/a8967d6b-b026-11e7-9464-d04800000000"
+  "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/a8967d6b-b026-11e7-9464-d04800000000"
   -H "Authorization: Basic <Access-Token>"
 ```
 
@@ -221,7 +221,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/companysettings/pricetype/default"
+  "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/default"
   -H "Authorization: Basic <Access-Token>"
 ```
 
