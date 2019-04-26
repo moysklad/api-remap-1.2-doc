@@ -10,3 +10,4 @@ gem 'rouge', '~> 2.0.5'
 gem 'redcarpet', '~> 3.4.0'
 gem 'nokogiri', '~> 1.8.2'
 gem 'therubyracer', :platforms => :ruby
+gem 'translit'
