@@ -1,22 +1,53 @@
-<!-- include(metadata.apib) -->
-
-# Типы цен
+## Типы цен
+### Типы цен 
 
 Средствами JSON API можно создавать и обновлять сведения о Типах цен, запрашивать списки Типов цен и сведения по отдельным Типам цен по id.
 Кодом сущности для Типа цен в составе JSON API является ключевое слово **pricetype**. 
 
-## Типы цен 
-### Атрибуты сущности
-+ **meta** - [Метаданные](#metadannye) о Типе цены `Только для чтения`
+#### Атрибуты сущности
+
++ **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о Типе цены `Только для чтения`
 + **id** - ID в формате UUID `Только для чтения`
 + **name** - Наименование Типа цены `Необходимое`
 + **externalCode** - Внешний код Типа цены
 
-### Получить список всех типов цен 
-Получить список всех типов цен
-+ Response 200 (application/json)
-  + Body
-        <!-- include(body/pricetype/get_all.json) -->
+### Получить список всех типов цен
+ 
+> Получить список всех типов цен
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - массив всех типов цен
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/a8967d6b-b026-11e7-9464-d04800000000",
+      "type": "pricetype",
+      "mediaType": "application/json"
+    },
+    "id": "a8967d6b-b026-11e7-9464-d04800000000",
+    "name": "Цена продажи",
+    "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/5fc65f53-a470-11e7-9464-d04800000035",
+      "type": "pricetype",
+      "mediaType": "application/json"
+    },
+    "id": "5fc65f53-a470-11e7-9464-d04800000035",
+    "name": "Цена для друзей",
+    "externalCode": "3ea345e3-b56c-457a-bc77-3658546eb2bf"
+  }
+]
+```
         
 ### Редактирование списка типов цен 
 
@@ -37,38 +68,175 @@
 + При создании нового типа наименование не должно быть пустым или отсутствовать.
 + Внешний код нельзя удалить. При передаче пустой строки при редактировании типа цены будет сгенерирован случайный внешний код.
 
-+ Request Пример 1 (application/json)
-Создание нового типа цены. 
-  + Body
-        <!-- include(body/pricetype/create.json) -->
+> Пример создания нового типа цены.
 
-+ Response 200 (application/json)
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+    -d '[
+          {
+            "meta": {
+              "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/a8967d6b-b026-11e7-9464-d04800000000",
+              "type": "pricetype",
+              "mediaType": "application/json"
+            },
+            "id": "a8967d6b-b026-11e7-9464-d04800000000",
+            "name": "Цена продажи",
+            "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+          },
+          {
+            "name": "Цена для друзей",
+            "externalCode": "3ea345e3-b56c-457a-bc77-3658546eb2bf"
+          }
+        ]'
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновленного списка типов цен.
-  + Body
-        <!-- include(body/pricetype/get_all.json) -->
 
-+ Request Пример 2 (application/json)
-Обновление существующего списка.
-  + Body
-        <!-- include(body/pricetype/get_all.json) -->
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/a8967d6b-b026-11e7-9464-d04800000000",
+      "type": "pricetype",
+      "mediaType": "application/json"
+    },
+    "id": "a8967d6b-b026-11e7-9464-d04800000000",
+    "name": "Цена продажи",
+    "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/5fc65f53-a470-11e7-9464-d04800000035",
+      "type": "pricetype",
+      "mediaType": "application/json"
+    },
+    "id": "5fc65f53-a470-11e7-9464-d04800000035",
+    "name": "Цена для друзей",
+    "externalCode": "3ea345e3-b56c-457a-bc77-3658546eb2bf"
+  }
+]
+```
 
-+ Response 200 (application/json)
+> Пример обновления существующего списка.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype"
+    -H "Authorization: Basic <Access-Token>"
+    -H "Content-Type: application/json"
+    -d '[
+          {
+            "meta": {
+              "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/a8967d6b-b026-11e7-9464-d04800000000",
+              "type": "pricetype",
+              "mediaType": "application/json"
+            },
+            "id": "a8967d6b-b026-11e7-9464-d04800000000",
+            "name": "Цена продажи",
+            "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+          },
+          {
+            "meta": {
+              "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/5fc65f53-a470-11e7-9464-d04800000035",
+              "type": "pricetype",
+              "mediaType": "application/json"
+            },
+            "id": "5fc65f53-a470-11e7-9464-d04800000035",
+            "name": "Цена для друзей",
+            "externalCode": "3ea345e3-b56c-457a-bc77-3658546eb2bf"
+          }
+        ]'
+```
+
+> Response 200 (application/json)
 Успешный запрос. Результат - JSON представление обновленного списка типов цен.
-  + Body
-        <!-- include(body/pricetype/get_all.json) -->
 
-## Тип цены 
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/a8967d6b-b026-11e7-9464-d04800000000",
+      "type": "pricetype",
+      "mediaType": "application/json"
+    },
+    "id": "a8967d6b-b026-11e7-9464-d04800000000",
+    "name": "Цена продажи",
+    "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/5fc65f53-a470-11e7-9464-d04800000035",
+      "type": "pricetype",
+      "mediaType": "application/json"
+    },
+    "id": "5fc65f53-a470-11e7-9464-d04800000035",
+    "name": "Цена для друзей",
+    "externalCode": "3ea345e3-b56c-457a-bc77-3658546eb2bf"
+  }
+]
+```
 
-### Получить тип цены по ID 
+### Тип цены 
+### Получить тип цены по ID
+ 
 Получить тип цены по ID
-+ Parameters
-  + id: `a8967d6b-b026-11e7-9464-d04800000000` (required, string) - ID типа цены
-+ Response 200 (application/json)
-  + Body
-        <!-- include(body/pricetype/get.json) -->
 
-### Получить тип цены по умолчанию 
-Получить тип цены по умолчанию
-+ Response 200 (application/json)
-  + Body
-        <!-- include(body/pricetype/get.json) -->
+**Параметры**
+
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+|id |  `string` (required) *Example: a8967d6b-b026-11e7-9464-d04800000000* id типа цены|
+
+> Получить тип цены по ID
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/a8967d6b-b026-11e7-9464-d04800000000"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - обновленный тип цены.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/a8967d6b-b026-11e7-9464-d04800000000",
+    "type": "pricetype",
+    "mediaType": "application/json"
+  },
+  "id": "a8967d6b-b026-11e7-9464-d04800000000",
+  "name": "Цена продажи",
+  "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+}
+```
+
+### Получить тип цены по умолчанию
+ 
+> Получить тип цены по умолчанию
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/default"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - тип цены по умолчанию.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/a8967d6b-b026-11e7-9464-d04800000000",
+    "type": "pricetype",
+    "mediaType": "application/json"
+  },
+  "id": "a8967d6b-b026-11e7-9464-d04800000000",
+  "name": "Цена продажи",
+  "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+}
+```
