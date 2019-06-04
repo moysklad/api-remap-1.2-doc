@@ -11,6 +11,14 @@
   + **debit** - расход за период
   + **balance** - баланс (доход-расход)
 
+#### Параметры доступные для фильтрации
+
+Документы, попадающие в отчет, можно отфильтровать, используя параметр **filter**. Для каждого параметра можно указать несколько значений. Нельзя указывать пустые значения. Поддерживается фильтрация только на равенство.
+
++ **organization** - ссылка на юр. лицо
++ **project** - ссылка на проект
+
+
 **Параметры**
 
 | Параметр                | Описание  |
@@ -80,6 +88,65 @@ curl -X GET
       "credit":100,
       "debit":50,
       "balance":50
+    }
+  ]
+}
+```
+
+> Запрос графика с фильтрацией
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/report/money/plotseries?momentFrom=2018-09-01&momentTo=2018-09-04&interval=day&filter=organization=https://online.moysklad.ru/api/remap/1.1/entity/organization/00cd5a99-6897-11e7-7a6c-d2a9000c4fc0;project=https://online.moysklad.ru/api/remap/1.1/entity/project/02e64f51-6897-11e7-7a34-5acf000c8448"
+  -H "Authorization: Basic <Access-Token>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отчета.
+
+```json
+{  
+  "context":{  
+    "employee":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type":"employee",
+        "mediaType":"application/json"
+      }
+    }
+  },
+  "meta":{  
+    "href":"https://online.moysklad.ru/api/remap/1.2/report/money/plotseries?momentFrom=2018-09-01&momentTo=2018-09-04&interval=day&filter=organization=https://online.moysklad.ru/api/remap/1.1/entity/organization/00cd5a99-6897-11e7-7a6c-d2a9000c4fc0;project=https://online.moysklad.ru/api/remap/1.1/entity/project/02e64f51-6897-11e7-7a34-5acf000c8448",
+    "type":"moneyplotseries",
+    "mediaType":"application/json"
+  },
+  "credit":60,
+  "debit":20,
+  "series":[  
+    {  
+      "date":"2018-09-01 00:00:00",
+      "credit":50,
+      "debit":0,
+      "balance":50
+    },
+    {  
+      "date":"2018-09-02 00:00:00",
+      "credit":10,
+      "debit":20,
+      "balance":-10
+    },
+    {  
+      "date":"2018-09-03 00:00:00",
+      "credit":0,
+      "debit":0,
+      "balance":0
+    },
+    {  
+      "date":"2018-09-04 00:00:00",
+      "credit":0,
+      "debit":0,
+      "balance":0
     }
   ]
 }
