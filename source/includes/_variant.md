@@ -20,6 +20,7 @@
 + **externalCode** - Внешний код Модификации
 + **archived** - Добавлен ли товар в архив
 + **characteristics** - Характеристики Модификации `Необходимое`
++ **images** - Изображения Модификации. Изображений у Модификации может быть не более 10
 + **minPrice** - Минимальная цена
 + **buyPrice** - Закупочная цена
 + **salePrices** - Цены продажи
@@ -66,6 +67,30 @@
 + **name** - Наименование характеристики
 + **type** - Тип значения характеристики
 + **required** - Флажок о том, является ли характеристика обязательной
+
+##### Изображение: структура и загрузка.
+При запросе Модификации с изображениями будет выведено json представление этой Модификации, содержащее поле **images**. Данное поле является 
+массивом элементов. Элементы поля **images** имеют поля:
+
++ **meta** - Метаданные об изображении
++ **title** - Название изображения
++ **filename** - Имя файла
++ **size** - Размер файла в байтах
++ **updated** - Дата последнего изменения
++ **miniature** - Ссылка на миниатюру изображения в формате Метаданных
++ **tiny** - Ссылка на уменьшенное изображение в формате Метаданных
+
+<h4>Загрузка</h4>
+Для загрузки изображений нужно в теле запроса на [создание](#sozdat-modifikaciu) или [обновление](#izmenit-modifikaciu) модификации
+указать поле **images** со списком элементов, имеющих следующие атрибуты:
+
++ **filename** - имя файла с расширением. Например - "банан.png"
++ **content** - Изображение, закодированное в формате Base64.
+
+Если в запросе на обновление **images** будет содержать пустой массив элементов, то все Изображения у Модификации будут удалены, 
+т.к. сервер посчитает, что пользователь хочет обновить список Изображений Модификации.
+
+Документация API по работе с Изображениями приведена в главе [Изображение](#izobrazhenie).
 
 ##### Цены продажи
 Если у модификации не заданы отдельные цены продажи, в ответе будут выведены соответствующие цены продажи товара.
@@ -172,6 +197,16 @@ curl -X GET
           "value": "Вкусный"
         }
       ],
+      "images": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/671402e4-f7d2-11e5-8a84-bae50000007c/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0                                         
+        }
+      },
       "buyPrice": {
         "value": 0
       },
@@ -384,6 +419,16 @@ curl -X GET
       "value": "черный"
     }
   ],
+  "images": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/14553caa-2cb2-11e6-8a84-bae500000026/images",
+      "type": "image",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }                                
+  },
   "minPrice": {
     "value": 500,
     "currency": {
@@ -686,6 +731,16 @@ curl -X GET
         "value": "черный"
       }
     ],
+    "images": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/14553caa-2cb2-11e6-8a84-bae500000026/images",
+        "type": "image",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }                                
+    },    
     "minPrice": {
       "value": 500,
       "currency": {
@@ -810,6 +865,16 @@ curl -X GET
         "value": "Свежий"
       }
     ],
+    "images": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/b2347044-181d-11e6-9464-e4de00000015/images",
+        "type": "image",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }                                
+    },    
     "minPrice": {
       "value": 500,
       "currency": {
@@ -1076,6 +1141,16 @@ curl -X GET
       "value": "обхец"
     }
   ],
+  "images": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/7a81082f-3c64-11e6-8a84-bae50000000e/images",
+      "type": "image",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }                                
+  },
   "salePrices": [
     {
       "value": 0,
@@ -1307,6 +1382,16 @@ curl -X GET
       "value": "Свежий"
     }
   ],
+  "images": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/b2347044-181d-11e6-9464-e4de00000015/images",
+      "type": "image",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }                                
+  },  
   "minPrice": {
     "value": 500,
     "currency": {
@@ -1386,5 +1471,3 @@ curl -X GET
   }
 }
 ```
-
-
