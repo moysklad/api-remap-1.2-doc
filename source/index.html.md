@@ -12,6 +12,7 @@ toc_footers:
 includes:
   - general
   - errors
+  - security
   - counterparty
   - assortment
   - currency
