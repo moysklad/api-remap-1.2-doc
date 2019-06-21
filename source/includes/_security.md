@@ -12,7 +12,7 @@ Authorization: Bearer 0cbfc512618efa7d5fa306250bca064c1169b37c
 ### Получение нового токена
 Запрос на получение нового токена.
 
-* **accessToken** - токен для доступа
+* **access_token** - токен для доступа
 
 > Пример запроса на получение нового токена
 
@@ -26,6 +26,6 @@ curl -X POST
 
 ```json
 {
-  "accessToken": "0cbfc512618efa7d5fa306250bca064c1169b37c"
+  "access_token": "0cbfc512618efa7d5fa306250bca064c1169b37c"
 }
 ```
