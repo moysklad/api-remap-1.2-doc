@@ -35,7 +35,7 @@
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/report/orders/plotseries?momentFrom=2018-09-06 00:00:00&momentTo=2018-09-06 01:00:01&interval=hour"
+  "https://online.moysklad.ru/api/remap/1.2/report/orders/plotseries?momentFrom=2018-09-06 00:00:00&momentTo=2018-09-06 01:00:01&interval=hour"
   -H "Authorization: Basic <Access-Token>"
 ```
 
@@ -47,15 +47,15 @@ curl -X GET
   "context": {
     "employee": {
       "meta": {
-        "href": "https://online.moysklad.ru/context/employee",
-        "metaseriesHref": "https://online.moysklad.ru/employee/metaseries",
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/report/orders/plotseries?momentFrom=2018-09-06 00:00:00&momentTo=2016-09-06 01:00:01&interval=hour",
+    "href": "https://online.moysklad.ru/api/remap/1.2/report/orders/plotseries?momentFrom=2018-09-06 00:00:00&momentTo=2016-09-06 01:00:01&interval=hour",
     "type": "ordersplotseries",
     "mediaType": "application/json"
   },
