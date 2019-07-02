@@ -38,8 +38,8 @@
 |stockstore |  `string` (optional) Ссылка на склад, по которому нужно получить остатки. Формат - URI. .|
 |stockmoment |  `string` (optional) Момент времени, на который нужно вывести остатки. Формат строки: `YYYY-MM-DD HH:MM:SS` .|
 |scope |  `string` (optional) Параметр фильтрации по типу объектов. Принимает одно из значений: `product` - будут выведены только товары, `variant` - будут выведены товары и модификации, `consignment` - будут выведены все сущности (аналогично отсутствию параметра)|
-|stockmode |  `string` (optional) Вид Остатка. Параметр совместим только с параметрами:limit,offset,stockstore,stockmoment,scope. Если указаны параметры отличные от совместимых в ответ вернется ошибка с кодом 1069. Допустимые значения `all, positiveOnly, negativeOnly, empty, nonEmpty`.|
-|quantitymode |  `string` (optional) Фильтр по полю Доступно. Параметр совместим только с параметрами:limit,offset,stockstore,stockmoment,scope. Если указаны параметры отличные от совместимых в ответ вернется ошибка с кодом 1069. Допустимые значения `all, positiveOnly, negativeOnly, empty, nonEmpty`.|
+|stockmode |  `string` (optional) Вид Остатка. Параметр совместим только с параметрами: limit, offset, stockstore, stockmoment, quantitymode, scope. Если указаны параметры отличные от совместимых в ответ вернется ошибка с кодом 1069. Допустимые значения `all, positiveOnly, negativeOnly, empty, nonEmpty`.|
+|quantitymode |  `string` (optional) Фильтр по полю Доступно. Параметр совместим только с параметрами:limit, offset, stockstore, stockmoment, stockmode, scope. Если указаны параметры отличные от совместимых в ответ вернется ошибка с кодом 1069. Допустимые значения `all, positiveOnly, negativeOnly, empty, nonEmpty`.|
 
 По умолчанию параметры stockmode и quantitymode имеют значение all. Если вы хотите увидеть объекты
 с нулевым или отрицательным остатком/Доступно, нужно указать соответствующее значение данного параметра.
