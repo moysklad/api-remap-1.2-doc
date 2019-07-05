@@ -654,7 +654,6 @@ NotificationRetailShiftClosed
 | ------------------------ |--------------------|
 | `customer_order`         | Заказы покупателей |
 | `invoice`                | Счета покупателей  |
-| `call`                   | Звонки             |
 | `stock`                  | Складские остатки  |
 | `retail`                 | Розничная торговля |
 | `task`                   | Задачи             |
@@ -681,10 +680,6 @@ curl -X GET
       "channels" : [ "email", "push" ]
     },
     "invoice" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "call" : {
       "enabled" : true,
       "channels" : [ "email", "push" ]
     },
@@ -724,10 +719,6 @@ curl -X GET
                 "channels" : [ "email", "push" ]
               },
               "invoice" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "call" : {
                 "enabled" : true,
                 "channels" : [ "email", "push" ]
               },
