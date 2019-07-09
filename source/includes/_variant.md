@@ -1318,6 +1318,12 @@ curl -X GET
                 "gtin": "00000000000130"
               }
             ],
+            "images": [
+              {
+                "filename":"birdimageNew.png",
+                "content":"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAAEHRFWHRTb2Z0d2FyZQBTaHV0dGVyY4LQCQAAAAxJREFUCNdj+PePAQAE+gH90KA5ZAAAAABJRU5ErkJggg=="
+              }
+             ],
             "minPrice": {
               "value": 500,
               "currency": {
@@ -1387,7 +1393,7 @@ curl -X GET
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/b2347044-181d-11e6-9464-e4de00000015/images",
       "type": "image",
       "mediaType": "application/json",
-      "size": 0,
+      "size": 1,
       "limit": 1000,
       "offset": 0
     }                                
