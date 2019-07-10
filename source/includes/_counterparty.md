@@ -2,11 +2,12 @@
 ##  Контрагент
 ### Контрагенты 
 Средствами JSON API можно создавать и обновлять сведения о Контрагентах, запрашивать списки Контрагентов и сведения по отдельным Контрагентам. Счетами Контрагента и его контактными лицами можно управлять как в составе отдельного Контрагента, так и отдельно - с помощью специальных ресурсов для управления счетами и контактными лицами Контрагента. Кодом сущности для Контрагента в составе JSON API является ключевое слово **counterparty**. Больше о Контрагентах и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203053486-%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%B8%D0%BA-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2).
-По данной сущности можно осуществлять контекстный поиск с помощью специального параметра `search`. Подробнее можно узнать по [ссылке](/api/remap/1.2/doc/index.html#header-контекстный-поиск).
+По данной сущности можно осуществлять контекстный поиск с помощью специального параметра `search`. Подробнее можно узнать по [ссылке](#kontextnyj-poisk).
 
 Поиск среди объектов Контрагента осуществляется по нескольким условиям. Если значения полей контрагента удовлетворяют хотя бы одному из условий, то контрагент будет найден.
 
 Первое условие поиска:
+
 + По наименованию Контрагента **name**
 + По коду Контрагента **code**
 + По полному наименованию Контрагента **legalTitle**
@@ -14,23 +15,26 @@
 + По адресу электронной почты **email**
 
 Второе условие поиска:
+
 + По номеру городского телефона **phone**
 
 Третье условие поиска по полям из всех контактных лиц фирмы контрагента (contactpersons):
+
 + По имени контактного лица **name**
 + По почте контактного лица **email**
 
 Четвертое условие поиска по полям из всех контактных лиц фирмы контрагента (contactpersons):
+
 + По номеру телефона контактного лица **phone**
 
 #### Атрибуты сущности
 
-+ **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) объекта
++ **meta** - [Метаданные](#metadannye) объекта
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные)
++ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](#metadannye)
 + **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные)
++ **group** - Отдел сотрудника в формате [Метаданных](#metadannye)
 + **syncId** - ID синхронизации. После заполнения недоступен для изменения.
 + **updated** - Момент последнего обновления Контрагента `Только для чтения`
 + **name** - Наименование Контрагента `Необходимое`
@@ -43,19 +47,18 @@
 + **phone** - Номер городского телефона
 + **fax** - Номер факса
 + **actualAddress** - Фактический адрес Контрагента
-+ **actualAddressFull** - Фактический адрес Контрагента с отдельными полями
++ **actualAddressFull** - Фактический адрес Контрагента с детализацией по отдельным полям.
 + **accounts** - Ссылка на счета Контрагента (массив)
 + **companyType** - Тип Контрагента. `[Юридическое лицо, Индивидуальный предприниматель, Физическое лицо]`.
-В зависимости от значения данного поля набор выводимых реквизитов контрагента может меняться. Подробнее [тут](#header-тип-контрагента)
+В зависимости от значения данного поля набор выводимых реквизитов контрагента может меняться. Подробнее [тут](#tip-kontragenta)
 + **discountCardNumber** - номер дисконтной карты Контрагента
-+ **state** - Статус Контрагента в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные)
++ **state** - Статус Контрагента в формате [Метаданных](#metadannye)
 + **salesAmount** - Сумма продаж `Только для чтения`
 
 ##### Поля реквизитов
-___
 + **legalTitle** - Полное наименование Контрагента
 + **legalAddress** - Юридического адреса Контрагента
-+ **legalAddressFull** -  Юридический адрес Контрагента с отдельными полями
++ **legalAddressFull** -  Юридический адрес Контрагента с детализацией по отдельным полям
 + **inn** - ИНН
 + **kpp** - КПП
 + **ogrn** - ОГРН
@@ -66,19 +69,20 @@ ___
 ___
 + **tags** - Группы (массив)
 + **contactpersons** - Ссылка на контактные лица фирмы Контрагента (массив)
-+ **attributes** - Коллекция доп. полей в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные)
-+ **discounts** - Массив ссылок на скидки в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные) `Только для чтения`
++ **attributes** - Коллекция доп. полей в формате [Метаданных](#metadannye)
++ **discounts** - Массив ссылок на скидки в формате [Метаданных](#metadannye) `Только для чтения`
 
 Массив может содержать персональные и накопительные скидки. Персональная скидка выводится, если хотя бы раз изменялся **процент скидки** для контрагента, значение будет указано в поле **personalDiscount**.
-Накопительная скидка выводится, если для контрагента хотя бы раз устанавливалась **коррекция суммы накоплений по скидке**, значение будет указано в поле **demandSumCorrection**. Формат вывода скидок можно посмотреть в разделе [Скидки](#скидки).
-+ **notes** - Массив ссылок на события Контрагента в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные)
+Накопительная скидка выводится, если для контрагента хотя бы раз устанавливалась **коррекция суммы накоплений по скидке**, значение будет указано в поле **demandSumCorrection**. Формат вывода скидок можно посмотреть в разделе [Скидки](#skidki).
+
++ **notes** - Массив ссылок на события Контрагента в формате [Метаданных](#metadannye)
 + **priceType** - Тип цены Контрагента (строка или null)
 
 #### Атрибуты вложенных сущностей
 #### Аттрибуты сущности Адрес
 + **postalCode** - Почтовый индекс
-+ **country** - Ссылка на страну в формате [Метаданных](#header-метаданные)
-+ **region** - Ссылка на регион в формате [Метаданных](#header-метаданные)
++ **country** - Ссылка на страну в формате [Метаданных](#metadannye)
++ **region** - Ссылка на регион в формате [Метаданных](#metadannye)
 + **city** - Город
 + **street** - Улица
 + **house** - Дом (Максимальная длина - 30 символов)
@@ -86,14 +90,17 @@ ___
 + **addInfo** - Другое
 + **comment** - Комментарий
 
-Строка адреса получается конкатенацией в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
+Строка адреса является конкатенацией полей структурированного адреса в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
+При передачи в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
+При передачи обоих адресов строковый будет игнорирован.
+При передачи только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
 
 ##### Счета Контрагентов
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **updated** - Момент последнего обновления Контрагента `Только для чтения`
-+ **isDefault** - Является ли счёт основным счётом Контрагента
-+ **accountNumber** - Номер счёта `Необходимо`
++ **isDefault** - Является ли счет основным счетом Контрагента
++ **accountNumber** - Номер счета `Необходимо`
 + **bankName** - Наименование банка
 + **bankLocation** - Адрес банка
 + **correspondentAccount** - Корр счет
@@ -109,20 +116,21 @@ ___
 + **email** - Адрес электронной почты контактного лица
 + **phone** - Номер телефона контактного лица
 + **position** - Должность контактного лица
-+ **agent** - Ссылка на Контрагента (тип [Мета](/api/remap/1.2/doc/index.html#header-метаданные))
++ **agent** - Ссылка на Контрагента (тип [Мета](#metadannye))
 
 ##### События Контрагента
-+ **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) объекта
++ **meta** - [Метаданные](#metadannye) объекта
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **created** - Момент создания события Контрагента `Только для чтения`
 + **description** - Текст события Контрагента `Необходимое`
-+ **agent** - Ссылка на Контрагента (тип [Мета](/api/remap/1.2/doc/index.html#header-метаданные)) `Только для чтения`
-+ **author** - Создатель события, ссылка на сотрудника (тип [Мета](/api/remap/1.2/doc/index.html#header-метаданные)) `Только для чтения`
++ **agent** - Ссылка на Контрагента (тип [Мета](#metadannye)) `Только для чтения`
++ **author** - Создатель события, ссылка на сотрудника (тип [Мета](#metadannye)) `Только для чтения`
 
 #### Тип Контрагента
 В зависимости от типа контрагента **companyType** в составе его объекта будут выводиться разные наборы реквизитов.
 Типы контрагента и соответствующие значения, которые могут быть переданы в данном поле:
+
 | Тип контрагента                | Значение поля companyType  |
 | ------------------------------ |:---------------------------|
 | Юридическое лицо               | legal                      |
@@ -130,6 +138,7 @@ ___
 | Физическое лицо                | individual                 |
 
 Если тип контрагента `Юридическое лицо`, будут выведены следующие поля реквизитов:
+
 + **legalTitle** - Полное наименование Контрагента
 + **legalAddress** - Юридический адрес Контрагента
 + **inn** - ИНН
@@ -138,6 +147,7 @@ ___
 + **okpo** - ОКПО
 
 Если тип контрагента `Индивидуальный предприниматель`, будут выведены следующие поля реквизитов:
+
 + **legalTitle** - Полное наименование Контрагента
 + **legalAddress** - Юридический адрес Контрагента
 + **inn** - ИНН
@@ -147,11 +157,12 @@ ___
 + **certificateDate** - Дата свидетельства
 
 Если тип контрагента `Физическое лицо`, будут выведены следующие поля реквизитов:
+
 + **legalTitle** - Полное наименование Контрагента
 + **legalAddress** - Юридический адрес Контрагента
 + **inn** - ИНН
 
-О работе с доп. полями Контрагентов можно прочитать [здесь](/api/remap/1.2/doc/index.html#header-работа-с-дополнительными-полями)
+О работе с доп. полями Контрагентов можно прочитать [здесь](#rabota-s-dopolnitel-nymi-polqmi)
 
 
 ### Получить список Контрагентов
@@ -166,525 +177,532 @@ curl -X GET
 Успешный запрос. Результат - JSON представление списка Контрагентов.
  
  ```json
-{
-  "context": {
-    "employee": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-        "type": "employee",
-        "mediaType": "application/json"
+{  
+  "context":{  
+    "employee":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type":"employee",
+        "mediaType":"application/json"
       }
     }
   },
-  "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-    "type": "counterparty",
-    "mediaType": "application/json",
-    "size": 4,
-    "limit": 1000,
-    "offset": 0
+  "meta":{  
+    "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty",
+    "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type":"counterparty",
+    "mediaType":"application/json",
+    "size":4,
+    "limit":1000,
+    "offset":0
   },
-  "rows": [
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8b923-692c-11e6-8a84-bae500000053",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-        "type": "counterparty",
-        "mediaType": "application/json"
+  "rows":[  
+    {  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8b923-692c-11e6-8a84-bae500000053",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type":"counterparty",
+        "mediaType":"application/json"
       },
-      "id": "12a8b923-692c-11e6-8a84-bae500000053",
-      "accountId": "1185513e-692c-11e6-8a84-bae500000001",
-      "owner": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json"
+      "id":"12a8b923-692c-11e6-8a84-bae500000053",
+      "accountId":"1185513e-692c-11e6-8a84-bae500000001",
+      "owner":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
+          "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type":"employee",
+          "mediaType":"application/json"
         }
       },
-      "shared": false,
-      "group": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-          "type": "group",
-          "mediaType": "application/json"
+      "shared":false,
+      "group":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
+          "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type":"group",
+          "mediaType":"application/json"
         }
       },
-      "updated": "2016-08-23 15:21:09",
-      "name": "ООО \"Поставщик\"",
-      "externalCode": "aZBfWOKzj-lcq7c7IWZON3",
-      "archived": false,
-      "created": "2007-02-07 17:16:41",
-      "companyType": "legal",
-      "legalTitle": "Общество с ограниченной ответственностью \"Поставщик\"",
-      "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
-      "legalAddressFull": {
-        "postalCode": "125009",
-        "country": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-            "type": "country",
-            "mediaType": "application/json"
+      "updated":"2016-08-23 15:21:09",
+      "name":"ООО \"Поставщик\"",
+      "externalCode":"aZBfWOKzj-lcq7c7IWZON3",
+      "archived":false,
+      "created":"2007-02-07 17:16:41",
+      "companyType":"legal",
+      "legalTitle":"Общество с ограниченной ответственностью \"Поставщик\"",
+      "legalAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+      "legalAddressFull":{  
+        "postalCode":"125009",
+        "country":{  
+          "meta":{  
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type":"country",
+            "mediaType":"application/json"
           }
         },
-        "region": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-            "type": "region",
-            "mediaType": "application/json"
+        "region":{  
+          "meta":{  
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type":"region",
+            "mediaType":"application/json"
           }
         },
-        "city": "Москва",
-        "street": "ул Тверская",
-        "house": "1",
-        "apartment": "123",
-        "addInfo": "addinfo",
-        "comment": "some words about address"
+        "city":"Москва",
+        "street":"ул Тверская",
+        "house":"1",
+        "apartment":"123",
+        "addInfo":"addinfo",
+        "comment":"some words about address"
       },
-      "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
-      "actualAddressFull": {
-        "postalCode": "125009",
-        "country": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-            "type": "country",
-            "mediaType": "application/json"
+      "actualAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+      "actualAddressFull":{  
+        "postalCode":"125009",
+        "country":{  
+          "meta":{  
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type":"country",
+            "mediaType":"application/json"
           }
         },
-        "region": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-            "type": "region",
-            "mediaType": "application/json"
+        "region":{  
+          "meta":{  
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type":"region",
+            "mediaType":"application/json"
           }
         },
-        "city": "Москва",
-        "street": "ул Тверская",
-        "house": "1",
-        "apartment": "111",
-        "addInfo": "addinfo",
-        "comment": "some words about address"
+        "city":"Москва",
+        "street":"ул Тверская",
+        "house":"1",
+        "apartment":"111",
+        "addInfo":"addinfo",
+        "comment":"some words about address"
       },
-      "inn": "7736570901",
-      "kpp": "773601001",
-      "accounts": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8b923-692c-11e6-8a84-bae500000053/accounts",
-          "type": "account",
-          "mediaType": "application/json",
-          "size": 0,
-          "limit": 1000,
-          "offset": 0
+      "inn":"7736570901",
+      "kpp":"773601001",
+      "accounts":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8b923-692c-11e6-8a84-bae500000053/accounts",
+          "type":"account",
+          "mediaType":"application/json",
+          "size":0,
+          "limit":1000,
+          "offset":0
         }
       },
-      "tags": [],
-      "contactpersons": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8b923-692c-11e6-8a84-bae500000053/contactpersons",
-          "type": "contactperson",
-          "mediaType": "application/json",
-          "size": 0,
-          "limit": 1000,
-          "offset": 0
+      "tags":[  
+
+      ],
+      "contactpersons":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8b923-692c-11e6-8a84-bae500000053/contactpersons",
+          "type":"contactperson",
+          "mediaType":"application/json",
+          "size":0,
+          "limit":1000,
+          "offset":0
         }
       },
-      "notes": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8b923-692c-11e6-8a84-bae500000053/notes",
-          "type": "note",
-          "mediaType": "application/json",
-          "size": 0,
-          "limit": 1000,
-          "offset": 0
+      "notes":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8b923-692c-11e6-8a84-bae500000053/notes",
+          "type":"note",
+          "mediaType":"application/json",
+          "size":0,
+          "limit":1000,
+          "offset":0
         }
       },
-      "state": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
-          "type": "state",
-          "mediaType": "application/json"
+      "state":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+          "type":"state",
+          "mediaType":"application/json"
         }
       },
-      "salesAmount": 0,
-      "priceType": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f2222",
-          "type": "pricetype",
-          "mediaType": "application/json"
+      "salesAmount":0,
+      "priceType":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f2222",
+          "type":"pricetype",
+          "mediaType":"application/json"
         },
-        "id": "672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
-        "name": "Цена продажи",
-        "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+        "id":"672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+        "name":"Цена продажи",
+        "externalCode":"cbcf493b-55bc-11d9-848a-00112f43529a"
       }
     },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8e347-692c-11e6-8a84-bae500000055",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-        "type": "counterparty",
-        "mediaType": "application/json"
+    {  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8e347-692c-11e6-8a84-bae500000055",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type":"counterparty",
+        "mediaType":"application/json"
       },
-      "id": "12a8e347-692c-11e6-8a84-bae500000055",
-      "accountId": "1185513e-692c-11e6-8a84-bae500000001",
-      "owner": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json"
+      "id":"12a8e347-692c-11e6-8a84-bae500000055",
+      "accountId":"1185513e-692c-11e6-8a84-bae500000001",
+      "owner":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
+          "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type":"employee",
+          "mediaType":"application/json"
         }
       },
-      "shared": false,
-      "created": "2007-02-07 17:16:41",
-      "group": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-          "type": "group",
-          "mediaType": "application/json"
+      "shared":false,
+      "created":"2007-02-07 17:16:41",
+      "group":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
+          "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type":"group",
+          "mediaType":"application/json"
         }
       },
-      "updated": "2016-08-23 15:21:09",
-      "name": "ООО \"Покупатель\"",
-      "externalCode": "DTItQRbDhyl472ZqC5OWw2",
-      "archived": false,
-      "companyType": "legal",
-      "legalTitle": "Общество с ограниченной ответственностью \"Покупатель\"",
-      "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
-      "legalAddressFull": {
-        "postalCode": "125009",
-        "country": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-            "type": "country",
-            "mediaType": "application/json"
+      "updated":"2016-08-23 15:21:09",
+      "name":"ООО \"Покупатель\"",
+      "externalCode":"DTItQRbDhyl472ZqC5OWw2",
+      "archived":false,
+      "companyType":"legal",
+      "legalTitle":"Общество с ограниченной ответственностью \"Покупатель\"",
+      "legalAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+      "legalAddressFull":{  
+        "postalCode":"125009",
+        "country":{  
+          "meta":{  
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type":"country",
+            "mediaType":"application/json"
           }
         },
-        "region": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-            "type": "region",
-            "mediaType": "application/json"
+        "region":{  
+          "meta":{  
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type":"region",
+            "mediaType":"application/json"
           }
         },
-        "city": "Москва",
-        "street": "ул Тверская",
-        "house": "1",
-        "apartment": "123",
-        "addInfo": "addinfo",
-        "comment": "some words about address"
+        "city":"Москва",
+        "street":"ул Тверская",
+        "house":"1",
+        "apartment":"123",
+        "addInfo":"addinfo",
+        "comment":"some words about address"
       },
-      "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
-      "actualAddressFull": {
-        "postalCode": "125009",
-        "country": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-            "type": "country",
-            "mediaType": "application/json"
+      "actualAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+      "actualAddressFull":{  
+        "postalCode":"125009",
+        "country":{  
+          "meta":{  
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type":"country",
+            "mediaType":"application/json"
           }
         },
-        "region": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-            "type": "region",
-            "mediaType": "application/json"
+        "region":{  
+          "meta":{  
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type":"region",
+            "mediaType":"application/json"
           }
         },
-        "city": "Москва",
-        "street": "ул Тверская",
-        "house": "1",
-        "apartment": "111",
-        "addInfo": "addinfo",
-        "comment": "some words about address"
+        "city":"Москва",
+        "street":"ул Тверская",
+        "house":"1",
+        "apartment":"111",
+        "addInfo":"addinfo",
+        "comment":"some words about address"
       },
-      "inn": "7736570902",
-      "kpp": "773601002",
-      "accounts": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8e347-692c-11e6-8a84-bae500000055/accounts",
-          "type": "account",
-          "mediaType": "application/json",
-          "size": 0,
-          "limit": 1000,
-          "offset": 0
+      "inn":"7736570902",
+      "kpp":"773601002",
+      "accounts":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8e347-692c-11e6-8a84-bae500000055/accounts",
+          "type":"account",
+          "mediaType":"application/json",
+          "size":0,
+          "limit":1000,
+          "offset":0
         }
       },
-      "tags": [],
-      "contactpersons": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8e347-692c-11e6-8a84-bae500000055/contactpersons",
-          "type": "contactperson",
-          "mediaType": "application/json",
-          "size": 0,
-          "limit": 1000,
-          "offset": 0
-        }
-      },
-      "notes": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8e347-692c-11e6-8a84-bae500000055/notes",
-          "type": "note",
-          "mediaType": "application/json",
-          "size": 0,
-          "limit": 1000,
-          "offset": 0
-        }
-      },
-      "salesAmount": 0
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12c9ebcf-692c-11e6-8a84-bae50000005d",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-        "type": "counterparty",
-        "mediaType": "application/json"
-      },
-      "id": "12c9ebcf-692c-11e6-8a84-bae50000005d",
-      "accountId": "1185513e-692c-11e6-8a84-bae500000001",
-      "owner": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json"
-        }
-      },
-      "shared": false,
-      "group": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-          "type": "group",
-          "mediaType": "application/json"
-        }
-      },
-      "updated": "2016-08-23 15:21:09",
-      "name": "Розничный покупатель",
-      "externalCode": "lBvYwLWMiBsct7sVRrFnJ2",
-      "archived": false,
-      "created": "2007-02-07 17:16:41",
-      "companyType": "legal",
-      "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
-      "legalAddressFull": {
-        "postalCode": "125009",
-        "country": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-            "type": "country",
-            "mediaType": "application/json"
-          }
-        },
-        "region": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-            "type": "region",
-            "mediaType": "application/json"
-          }
-        },
-        "city": "Москва",
-        "street": "ул Тверская",
-        "house": "1",
-        "apartment": "123",
-        "addInfo": "addinfo",
-        "comment": "some words about address"
-      },
-      "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
-      "actualAddressFull": {
-        "postalCode": "125009",
-        "country": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-            "type": "country",
-            "mediaType": "application/json"
-          }
-        },
-        "region": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-            "type": "region",
-            "mediaType": "application/json"
-          }
-        },
-        "city": "Москва",
-        "street": "ул Тверская",
-        "house": "1",
-        "apartment": "111",
-        "addInfo": "addinfo",
-        "comment": "some words about address"
-      },      
-      "accounts": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12c9ebcf-692c-11e6-8a84-bae50000005d/accounts",
-          "type": "account",
-          "mediaType": "application/json",
-          "size": 0,
-          "limit": 1000,
-          "offset": 0
-        }
-      },
-      "tags": [],
-      "contactpersons": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12c9ebcf-692c-11e6-8a84-bae50000005d/contactpersons",
-          "type": "contactperson",
-          "mediaType": "application/json",
-          "size": 0,
-          "limit": 1000,
-          "offset": 0
-        }
-      },
-      "notes": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12c9ebcf-692c-11e6-8a84-bae50000005d/notes",
-          "type": "note",
-          "mediaType": "application/json",
-          "size": 0,
-          "limit": 1000,
-          "offset": 0
-        }
-      },
-      "salesAmount": 0
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/df2fdd2d-6934-11e6-8a84-bae500000049",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-        "type": "counterparty",
-        "mediaType": "application/json"
-      },
-      "id": "df2fdd2d-6934-11e6-8a84-bae500000049",
-      "accountId": "1185513e-692c-11e6-8a84-bae500000001",
-      "owner": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json"
-        }
-      },
-      "shared": false,
-      "group": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-          "type": "group",
-          "mediaType": "application/json"
-        }
-      },
-      "updated": "2016-08-23 16:24:08",
-      "name": "rtr",
-      "externalCode": "rRlzrdZmjql9r9dveXPE43",
-      "archived": false,
-      "created": "2007-02-07 17:16:41",
-      "companyType": "legal",
-      "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
-            "legalAddressFull": {
-              "postalCode": "125009",
-              "country": {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-                  "type": "country",
-                  "mediaType": "application/json"
-                }
-              },
-              "region": {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-                  "type": "region",
-                  "mediaType": "application/json"
-                }
-              },
-              "city": "Москва",
-              "street": "ул Тверская",
-              "house": "1",
-              "apartment": "123",
-              "addInfo": "addinfo",
-              "comment": "some words about address"
-            },
-            "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
-            "actualAddressFull": {
-              "postalCode": "125009",
-              "country": {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-                  "type": "country",
-                  "mediaType": "application/json"
-                }
-              },
-              "region": {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-                  "type": "region",
-                  "mediaType": "application/json"
-                }
-              },
-              "city": "Москва",
-              "street": "ул Тверская",
-              "house": "1",
-              "apartment": "111",
-              "addInfo": "addinfo",
-              "comment": "some words about address"
-            },      
+      "tags":[  
 
-      "accounts": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/df2fdd2d-6934-11e6-8a84-bae500000049/accounts",
-          "type": "account",
-          "mediaType": "application/json",
-          "size": 0,
-          "limit": 1000,
-          "offset": 0
+      ],
+      "contactpersons":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8e347-692c-11e6-8a84-bae500000055/contactpersons",
+          "type":"contactperson",
+          "mediaType":"application/json",
+          "size":0,
+          "limit":1000,
+          "offset":0
         }
       },
-      "tags": [],
-      "contactpersons": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/df2fdd2d-6934-11e6-8a84-bae500000049/contactpersons",
-          "type": "contactperson",
-          "mediaType": "application/json",
-          "size": 0,
-          "limit": 1000,
-          "offset": 0
+      "notes":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12a8e347-692c-11e6-8a84-bae500000055/notes",
+          "type":"note",
+          "mediaType":"application/json",
+          "size":0,
+          "limit":1000,
+          "offset":0
         }
       },
-      "notes": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/df2fdd2d-6934-11e6-8a84-bae500000049/notes",
-          "type": "note",
-          "mediaType": "application/json",
-          "size": 0,
-          "limit": 1000,
-          "offset": 0
+      "salesAmount":0
+    },
+    {  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12c9ebcf-692c-11e6-8a84-bae50000005d",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type":"counterparty",
+        "mediaType":"application/json"
+      },
+      "id":"12c9ebcf-692c-11e6-8a84-bae50000005d",
+      "accountId":"1185513e-692c-11e6-8a84-bae500000001",
+      "owner":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
+          "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type":"employee",
+          "mediaType":"application/json"
         }
       },
-      "state": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
-          "type": "state",
-          "mediaType": "application/json"
+      "shared":false,
+      "group":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
+          "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type":"group",
+          "mediaType":"application/json"
         }
       },
-      "salesAmount": 0
+      "updated":"2016-08-23 15:21:09",
+      "name":"Розничный покупатель",
+      "externalCode":"lBvYwLWMiBsct7sVRrFnJ2",
+      "archived":false,
+      "created":"2007-02-07 17:16:41",
+      "companyType":"legal",
+      "legalAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+      "legalAddressFull":{  
+        "postalCode":"125009",
+        "country":{  
+          "meta":{  
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type":"country",
+            "mediaType":"application/json"
+          }
+        },
+        "region":{  
+          "meta":{  
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type":"region",
+            "mediaType":"application/json"
+          }
+        },
+        "city":"Москва",
+        "street":"ул Тверская",
+        "house":"1",
+        "apartment":"123",
+        "addInfo":"addinfo",
+        "comment":"some words about address"
+      },
+      "actualAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+      "actualAddressFull":{  
+        "postalCode":"125009",
+        "country":{  
+          "meta":{  
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type":"country",
+            "mediaType":"application/json"
+          }
+        },
+        "region":{  
+          "meta":{  
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type":"region",
+            "mediaType":"application/json"
+          }
+        },
+        "city":"Москва",
+        "street":"ул Тверская",
+        "house":"1",
+        "apartment":"111",
+        "addInfo":"addinfo",
+        "comment":"some words about address"
+      },
+      "accounts":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12c9ebcf-692c-11e6-8a84-bae50000005d/accounts",
+          "type":"account",
+          "mediaType":"application/json",
+          "size":0,
+          "limit":1000,
+          "offset":0
+        }
+      },
+      "tags":[  
+
+      ],
+      "contactpersons":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12c9ebcf-692c-11e6-8a84-bae50000005d/contactpersons",
+          "type":"contactperson",
+          "mediaType":"application/json",
+          "size":0,
+          "limit":1000,
+          "offset":0
+        }
+      },
+      "notes":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/12c9ebcf-692c-11e6-8a84-bae50000005d/notes",
+          "type":"note",
+          "mediaType":"application/json",
+          "size":0,
+          "limit":1000,
+          "offset":0
+        }
+      },
+      "salesAmount":0
+    },
+    {  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/df2fdd2d-6934-11e6-8a84-bae500000049",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type":"counterparty",
+        "mediaType":"application/json"
+      },
+      "id":"df2fdd2d-6934-11e6-8a84-bae500000049",
+      "accountId":"1185513e-692c-11e6-8a84-bae500000001",
+      "owner":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
+          "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type":"employee",
+          "mediaType":"application/json"
+        }
+      },
+      "shared":false,
+      "group":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
+          "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type":"group",
+          "mediaType":"application/json"
+        }
+      },
+      "updated":"2016-08-23 16:24:08",
+      "name":"rtr",
+      "externalCode":"rRlzrdZmjql9r9dveXPE43",
+      "archived":false,
+      "created":"2007-02-07 17:16:41",
+      "companyType":"legal",
+      "legalAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+      "legalAddressFull":{  
+        "postalCode":"125009",
+        "country":{  
+          "meta":{  
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type":"country",
+            "mediaType":"application/json"
+          }
+        },
+        "region":{  
+          "meta":{  
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type":"region",
+            "mediaType":"application/json"
+          }
+        },
+        "city":"Москва",
+        "street":"ул Тверская",
+        "house":"1",
+        "apartment":"123",
+        "addInfo":"addinfo",
+        "comment":"some words about address"
+      },
+      "actualAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+      "actualAddressFull":{  
+        "postalCode":"125009",
+        "country":{  
+          "meta":{  
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type":"country",
+            "mediaType":"application/json"
+          }
+        },
+        "region":{  
+          "meta":{  
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type":"region",
+            "mediaType":"application/json"
+          }
+        },
+        "city":"Москва",
+        "street":"ул Тверская",
+        "house":"1",
+        "apartment":"111",
+        "addInfo":"addinfo",
+        "comment":"some words about address"
+      },
+      "accounts":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/df2fdd2d-6934-11e6-8a84-bae500000049/accounts",
+          "type":"account",
+          "mediaType":"application/json",
+          "size":0,
+          "limit":1000,
+          "offset":0
+        }
+      },
+      "tags":[  
+
+      ],
+      "contactpersons":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/df2fdd2d-6934-11e6-8a84-bae500000049/contactpersons",
+          "type":"contactperson",
+          "mediaType":"application/json",
+          "size":0,
+          "limit":1000,
+          "offset":0
+        }
+      },
+      "notes":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/df2fdd2d-6934-11e6-8a84-bae500000049/notes",
+          "type":"note",
+          "mediaType":"application/json",
+          "size":0,
+          "limit":1000,
+          "offset":0
+        }
+      },
+      "state":{  
+        "meta":{  
+          "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+          "type":"state",
+          "mediaType":"application/json"
+        }
+      },
+      "salesAmount":0
     }
   ]
 }
@@ -693,11 +711,9 @@ curl -X GET
 Получить список всех Контрагентов.
 Результат: Объект JSON, включающий в себя поля:
 
-| Поля    | Описание                   |
-| ------- |:--------------------------------------------------------------------|
-| meta    | [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о выдаче                        |
-| context | [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос|
-| rows    | Массив JSON объектов, представляющих собой Контрагентов|
+- **meta** [Метаданные](#metadannye) о выдаче.
+- **context** - [Метаданные](#metadannye) о сотруднике, выполнившем запрос.
+- **rows** - Массив JSON объектов, представляющих собой Контрагентов.
 
 **Параметры**
 
@@ -705,7 +721,7 @@ curl -X GET
 | ------------------------------ |:---------------------------|
 | limit    | `number` (optional) **Defaul:** 1000 *Example: 1000*. Максимальное количество сущностей для извлечения. `Допустимые значения 1 - 1000`                      |
 | offset | `number` (optional) **Defaul:** 0 *Example: 40*. Отступ в выдаваемом списке сущностей|
-| tags    | `string`(optional) *Example: рабочие*. Подробнее про данный параметр можно посмотреть в разделе [Фильтрация выборки с помощью параметра filter](/api/remap/1.2/doc/index.html#header-фильтрация-выборки-с-помощью-параметра-filter).       Формат строки : `string`|
+| tags    | `string`(optional) *Example: рабочие*. Подробнее про данный параметр можно посмотреть в разделе [Фильтрация выборки с помощью параметра filter](#fil-traciq-wyborki-s-pomosch-u-parametra-filter).       Формат строки : `string`|
 
 ### Создать Контрагента
 > Пример 1
@@ -755,80 +771,82 @@ curl -X POST
 > Response 200. Успешный запрос. Результат - JSON представление созданного Контрагента.
 
 ```json
-{
-  "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-    "type": "counterparty",
-    "mediaType": "application/json"
+{  
+  "meta":{  
+    "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
+    "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type":"counterparty",
+    "mediaType":"application/json"
   },
-  "id": "b80ea81b-7058-11e6-8a84-bae500000000",
-  "accountId": "1185513e-692c-11e6-8a84-bae500000001",
-  "owner": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-      "type": "employee",
-      "mediaType": "application/json"
+  "id":"b80ea81b-7058-11e6-8a84-bae500000000",
+  "accountId":"1185513e-692c-11e6-8a84-bae500000001",
+  "owner":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
+      "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type":"employee",
+      "mediaType":"application/json"
     }
   },
-  "shared": false,
-  "group": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-      "type": "group",
-      "mediaType": "application/json"
+  "shared":false,
+  "group":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
+      "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type":"group",
+      "mediaType":"application/json"
     }
   },
-  "updated": "2016-09-01 18:28:22",
-  "name": "ООО Радуга",
-  "externalCode": "o7732zkki541HDkZZD1Yt3",
-  "archived": false,
-  "companyType": "legal",
-  "accounts": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/accounts",
-      "type": "account",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
+  "updated":"2016-09-01 18:28:22",
+  "name":"ООО Радуга",
+  "externalCode":"o7732zkki541HDkZZD1Yt3",
+  "archived":false,
+  "companyType":"legal",
+  "accounts":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/accounts",
+      "type":"account",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
     }
   },
-  "tags": [],
-  "contactpersons": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/contactpersons",
-      "type": "contactperson",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
+  "tags":[  
+
+  ],
+  "contactpersons":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/contactpersons",
+      "type":"contactperson",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
     }
   },
-  "notes": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/notes",
-      "type": "note",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
+  "notes":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/notes",
+      "type":"note",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
     }
   },
-  "state": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
-      "type": "state",
-      "mediaType": "application/json"
+  "state":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+      "type":"state",
+      "mediaType":"application/json"
     }
   },
-  "priceType": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f2222",
-      "type": "pricetype",
-      "mediaType": "application/json"
+  "priceType":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f2222",
+      "type":"pricetype",
+      "mediaType":"application/json"
     }
   }
 }
@@ -849,74 +867,74 @@ curl -X POST
 > Response 200. Успешный запрос. Результат - JSON представление созданного Контрагента.
 
 ```json
-{
-  "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-    "type": "counterparty",
-    "mediaType": "application/json"
+{  
+  "meta":{  
+    "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
+    "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type":"counterparty",
+    "mediaType":"application/json"
   },
-  "id": "b80ea81b-7058-11e6-8a84-bae500000000",
-  "accountId": "1185513e-692c-11e6-8a84-bae500000001",
-  "owner": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-      "type": "employee",
-      "mediaType": "application/json"
+  "id":"b80ea81b-7058-11e6-8a84-bae500000000",
+  "accountId":"1185513e-692c-11e6-8a84-bae500000001",
+  "owner":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
+      "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type":"employee",
+      "mediaType":"application/json"
     }
   },
-  "shared": false,
-  "group": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-      "type": "group",
-      "mediaType": "application/json"
+  "shared":false,
+  "group":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
+      "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type":"group",
+      "mediaType":"application/json"
     }
   },
-  "updated": "2016-09-01 18:28:22",
-  "name": "ООО Радуга",
-  "externalCode": "o7732zkki541HDkZZD1Yt3",
-  "archived": false,
-  "created": "2007-02-07 17:16:41",
-  "companyType": "legal",
-  "accounts": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/accounts",
-      "type": "account",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
+  "updated":"2016-09-01 18:28:22",
+  "name":"ООО Радуга",
+  "externalCode":"o7732zkki541HDkZZD1Yt3",
+  "archived":false,
+  "created":"2007-02-07 17:16:41",
+  "companyType":"legal",
+  "accounts":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/accounts",
+      "type":"account",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
     }
   },
-  "tags": [],
-  "contactpersons": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/contactpersons",
-      "type": "contactperson",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
+  "tags":[],
+  "contactpersons":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/contactpersons",
+      "type":"contactperson",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
     }
   },
-  "notes": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/notes",
-      "type": "note",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
+  "notes":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/notes",
+      "type":"note",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
     }
   },
-  "state": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
-      "type": "state",
-      "mediaType": "application/json"
+  "state":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+      "type":"state",
+      "mediaType":"application/json"
     }
   }
 }
@@ -929,275 +947,275 @@ curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty"
   -H "Authorization: Basic <Access-Token>"
   -H "Content-Type: application/json"
-  -d '{
-        "name": "ООО Овощ Экспресс",
-        "description": "Сеть доставки овощей",
-        "code": "ovoshexpressCode",
-        "externalCode": "extVagetable",
-        "email": "ovosh@delivery.ru",
-        "phone": "+7 495 662 12 23",
-        "fax": "1052034",
-        "legalTitle": "Общество с ограниченой ответственностью \"Овощ Экспресс\"",
-          "legalAddressFull": {
-            "postalCode": "125009",
-            "country": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-                "type": "country",
-                "mediaType": "application/json"
-              }
-            },
-            "region": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-                "type": "region",
-                "mediaType": "application/json"
-              }
-            },
-            "city": "Москва",
-            "street": "ул Тверская",
-            "house": "1",
-            "apartment": "123",
-            "addInfo": "addinfo",
-            "comment": "some words about address"
-          },
-          "actualAddressFull": {
-            "postalCode": "125009",
-            "country": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-                "type": "country",
-                "mediaType": "application/json"
-              }
-            },
-            "region": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-                "type": "region",
-                "mediaType": "application/json"
-              }
-            },
-            "city": "Москва",
-            "street": "ул Тверская",
-            "house": "1",
-            "apartment": "111",
-            "addInfo": "addinfo",
-            "comment": "some words about address"
-          },
-        "inn": "1251521244152",
-        "kpp": "121555212",
-        "ogrn": "1251552",
-        "okpo": "201323",
-        "tags": [
-          "Овощи",
-          "Еда",
-          "Доставка"
-        ],
-        "attributes": [
-          {
-            "id": "0d129ff5-2c8c-11e6-8a84-bae5000000f3",
-            "name": "Коэффициент скидки",
-            "type": "double",
-            "value": 0.75
-          },
-          {
-            "id": "0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
-            "name": "Последний заключённый договор",
-            "type": "time",
-            "value": "2016-06-07 12:52:33"
-          },
-          {
-            "id": "0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
-            "name": "Партнёрское юрлицо",
-            "type": "boolean",
-            "value": false
-          }
-        ],
-        "state": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
-            "type": "state",
-            "mediaType": "application/json"
-          }
-        }
-      }'
+  -d '{  
+  "name":"ООО Овощ Экспресс",
+  "description":"Сеть доставки овощей",
+  "code":"ovoshexpressCode",
+  "externalCode":"extVagetable",
+  "email":"ovosh@delivery.ru",
+  "phone":"+7 495 662 12 23",
+  "fax":"1052034",
+  "legalTitle":"Общество с ограниченой ответственностью \"Овощ Экспресс\"",
+  "legalAddressFull":{  
+    "postalCode":"125009",
+    "country":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
+      }
+    },
+    "region":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
+      }
+    },
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"123",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
+  },
+  "actualAddressFull":{  
+    "postalCode":"125009",
+    "country":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
+      }
+    },
+    "region":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
+      }
+    },
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"111",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
+  },
+  "inn":"1251521244152",
+  "kpp":"121555212",
+  "ogrn":"1251552",
+  "okpo":"201323",
+  "tags":[  
+    "Овощи",
+    "Еда",
+    "Доставка"
+  ],
+  "attributes":[  
+    {  
+      "id":"0d129ff5-2c8c-11e6-8a84-bae5000000f3",
+      "name":"Коэффициент скидки",
+      "type":"double",
+      "value":0.75
+    },
+    {  
+      "id":"0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
+      "name":"Последний заключенный договор",
+      "type":"time",
+      "value":"2016-06-07 12:52:33"
+    },
+    {  
+      "id":"0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
+      "name":"Партнерское юрлицо",
+      "type":"boolean",
+      "value":false
+    }
+  ],
+  "state":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+      "type":"state",
+      "mediaType":"application/json"
+    }
+  }
+}'
 ```
 
 > Response 200. Успешный запрос. Результат - JSON представление созданного Контрагента.
 
 ```json
-{
-  "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-    "type": "counterparty",
-    "mediaType": "application/json"
+{  
+  "meta":{  
+    "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050",
+    "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type":"counterparty",
+    "mediaType":"application/json"
   },
-  "id": "88fc07ac-2c8d-11e6-8a84-bae500000050",
-  "accountId": "6270cd18-2c7f-11e6-8a84-bae500000001",
-  "owner": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-      "type": "employee",
-      "mediaType": "application/json"
+  "id":"88fc07ac-2c8d-11e6-8a84-bae500000050",
+  "accountId":"6270cd18-2c7f-11e6-8a84-bae500000001",
+  "owner":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type":"employee",
+      "mediaType":"application/json"
     }
   },
-  "shared": false,
-  "group": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-      "type": "group",
-      "mediaType": "application/json"
+  "shared":false,
+  "group":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type":"group",
+      "mediaType":"application/json"
     }
   },
-  "updated": "2016-06-07 11:55:08",
-  "name": "ООО Овощ Экспресс",
-  "description": "Сеть доставки овощей",
-  "code": "ovoshexpressCode",
-  "externalCode": "extVagetable",
-  "archived": false,
-  "created": "2007-02-07 17:16:41",
-  "legalTitle": "Общество с ограниченой ответственностью \"Овощ Экспресс\"",
-  "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
-  "legalAddressFull": {
-    "postalCode": "125009",
-    "country": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-        "type": "country",
-        "mediaType": "application/json"
+  "updated":"2016-06-07 11:55:08",
+  "name":"ООО Овощ Экспресс",
+  "description":"Сеть доставки овощей",
+  "code":"ovoshexpressCode",
+  "externalCode":"extVagetable",
+  "archived":false,
+  "created":"2007-02-07 17:16:41",
+  "legalTitle":"Общество с ограниченой ответственностью \"Овощ Экспресс\"",
+  "legalAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+  "legalAddressFull":{  
+    "postalCode":"125009",
+    "country":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
       }
     },
-    "region": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-        "type": "region",
-        "mediaType": "application/json"
+    "region":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
       }
     },
-    "city": "Москва",
-    "street": "ул Тверская",
-    "house": "1",
-    "apartment": "123",
-    "addInfo": "addinfo",
-    "comment": "some words about address"
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"123",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
   },
-  "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
-  "actualAddressFull": {
-    "postalCode": "125009",
-    "country": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-        "type": "country",
-        "mediaType": "application/json"
+  "actualAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+  "actualAddressFull":{  
+    "postalCode":"125009",
+    "country":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
       }
     },
-    "region": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-        "type": "region",
-        "mediaType": "application/json"
+    "region":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
       }
     },
-    "city": "Москва",
-    "street": "ул Тверская",
-    "house": "1",
-    "apartment": "111",
-    "addInfo": "addinfo",
-    "comment": "some words about address"
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"111",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
   },
-  "inn": "1251521244152",
-  "kpp": "121555212",
-  "ogrn": "1251552",
-  "okpo": "201323",
-  "email": "ovosh@delivery.ru",
-  "phone": "+7 495 662 12 23",
-  "fax": "1052034",
-  "attributes": [
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d129ff5-2c8c-11e6-8a84-bae5000000f3",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
+  "inn":"1251521244152",
+  "kpp":"121555212",
+  "ogrn":"1251552",
+  "okpo":"201323",
+  "email":"ovosh@delivery.ru",
+  "phone":"+7 495 662 12 23",
+  "fax":"1052034",
+  "attributes":[  
+    {  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d129ff5-2c8c-11e6-8a84-bae5000000f3",
+        "type":"attributemetadata",
+        "mediaType":"application/json"
       },
-      "id": "0d129ff5-2c8c-11e6-8a84-bae5000000f3",
-      "type": "double",
-      "name": "Коэффициент скидки",
-      "value": 0.75
+      "id":"0d129ff5-2c8c-11e6-8a84-bae5000000f3",
+      "type":"double",
+      "name":"Коэффициент скидки",
+      "value":0.75
     },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
+    {  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
+        "type":"attributemetadata",
+        "mediaType":"application/json"
       },
-      "id": "0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
-      "name": "Последний заключённый договор",
-      "type": "time",
-      "value": "2016-06-07 12:52:33"
+      "id":"0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
+      "name":"Последний заключенный договор",
+      "type":"time",
+      "value":"2016-06-07 12:52:33"
     },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
+    {  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
+        "type":"attributemetadata",
+        "mediaType":"application/json"
       },
-      "id": "0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
-      "name": "Партнёрское юрлицо",
-      "type": "boolean",
-      "value": false
+      "id":"0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
+      "name":"Партнерское юрлицо",
+      "type":"boolean",
+      "value":false
     }
   ],
-  "accounts": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050/accounts",
-      "type": "account",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
+  "accounts":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050/accounts",
+      "type":"account",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
     }
   },
-  "tags": [
+  "tags":[  
     "доставка",
     "еда",
     "овощи"
   ],
-  "contactpersons": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050/contactpersons",
-      "type": "contactperson",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
+  "contactpersons":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050/contactpersons",
+      "type":"contactperson",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
     }
   },
-  "notes": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050/notes",
-      "type": "note",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
+  "notes":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050/notes",
+      "type":"note",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
     }
   },
-  "state": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
-      "type": "state",
-      "mediaType": "application/json"
+  "state":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+      "type":"state",
+      "mediaType":"application/json"
     }
   }
 }
@@ -1205,11 +1223,11 @@ curl -X POST
 
 ##### Описание
 
-Контрагент создаётся на основе переданного объекта JSON,
+Контрагент создается на основе переданного объекта JSON,
 который содержит представление нового Контрагента.
 
 ### Массовое создание и обновление Контрагентов
-[
+
 > Массовое создание и обновление Контрагентов
 
 ```shell
@@ -1217,64 +1235,64 @@ curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty"
   -H "Authorization: Basic <Access-Token>"
   -H "Content-Type: application/json"
-  -d '
-  {
-    "name": "ООО Радуга",
-    "description": "Сеть стройматериалов Радуга ЭКСПО",
-    "code": "rainbowCode",
-    "externalCode": "extRainbw",
-    "email": "raduga@stroi.ru",
-    "phone": "+7 495 331 22 33",
-    "fax": "1257752",
-    "actualAddress": "г.Москва ул Академика Миля дом 15 к 21",
-    "legalTitle": "Общество с ограниченой ответственностью \"Радуга\"",
-    "legalAddress": "г.Москва ул Авиастроителей д 93 к 12",
-    "inn": "125152124152",
-    "kpp": "12155521",
-    "ogrn": "1251512",
-    "okpo": "201355",
-    "tags": [
+  -d '[  
+  {  
+    "name":"ООО Радуга",
+    "description":"Сеть стройматериалов Радуга ЭКСПО",
+    "code":"rainbowCode",
+    "externalCode":"extRainbw",
+    "email":"raduga@stroi.ru",
+    "phone":"+7 495 331 22 33",
+    "fax":"1257752",
+    "actualAddress":"г.Москва ул Академика Миля дом 15 к 21",
+    "legalTitle":"Общество с ограниченой ответственностью \"Радуга\"",
+    "legalAddress":"г.Москва ул Авиастроителей д 93 к 12",
+    "inn":"125152124152",
+    "kpp":"12155521",
+    "ogrn":"1251512",
+    "okpo":"201355",
+    "tags":[  
       "Строители",
       "Радуга",
       "Ремонт"
     ],
-    "state": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
-        "type": "state",
-        "mediaType": "application/json"
+    "state":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+        "type":"state",
+        "mediaType":"application/json"
       }
     },
-    "priceType": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f2222",
-        "type": "pricetype",
-        "mediaType": "application/json"
+    "priceType":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f2222",
+        "type":"pricetype",
+        "mediaType":"application/json"
       }
     }
   },
-  {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-      "type": "counterparty",
-      "mediaType": "application/json"
+  {  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047",
+      "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type":"counterparty",
+      "mediaType":"application/json"
     },
-    "name": "ООО Радуга ЭКСПО",
-    "description": "Сеть рынков стройматериалов Радуга ЭКСПО",
-    "code": "raduga",
-    "externalCode": "extRainbow",
-    "email": "raduga@retail.ru",
-    "phone": "+7 495 162 32 23",
-    "fax": "1052054",
-    "actualAddress": "г.Москва ул Строителей д 331",
-    "legalTitle": "Общество с ограниченой ответственностью \"Радуга ЭКСПО\"",
-    "legalAddress": "г.Москва ул Чернорабочего д 93 к 12",
-    "inn": "1251581244152",
-    "kpp": "121557212",
-    "ogrn": "1253552",
-    "okpo": "201313",
-    "tags": [
+    "name":"ООО Радуга ЭКСПО",
+    "description":"Сеть рынков стройматериалов Радуга ЭКСПО",
+    "code":"raduga",
+    "externalCode":"extRainbow",
+    "email":"raduga@retail.ru",
+    "phone":"+7 495 162 32 23",
+    "fax":"1052054",
+    "actualAddress":"г.Москва ул Строителей д 331",
+    "legalTitle":"Общество с ограниченой ответственностью \"Радуга ЭКСПО\"",
+    "legalAddress":"г.Москва ул Чернорабочего д 93 к 12",
+    "inn":"1251581244152",
+    "kpp":"121557212",
+    "ogrn":"1253552",
+    "okpo":"201313",
+    "tags":[  
       "Строители",
       "Ремонт",
       "Радуга",
@@ -1288,169 +1306,171 @@ curl -X POST
 > Response  200. Успешный запрос. Результат - массив JSON представлений созданных и обновленных Контрагентов.
 
 ```json
-[
-  {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-      "type": "counterparty",
-      "mediaType": "application/json"
+[  
+  {  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
+      "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type":"counterparty",
+      "mediaType":"application/json"
     },
-    "id": "b80ea81b-7058-11e6-8a84-bae500000000",
-    "accountId": "1185513e-692c-11e6-8a84-bae500000001",
-    "owner": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-        "type": "employee",
-        "mediaType": "application/json"
+    "id":"b80ea81b-7058-11e6-8a84-bae500000000",
+    "accountId":"1185513e-692c-11e6-8a84-bae500000001",
+    "owner":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type":"employee",
+        "mediaType":"application/json"
       }
     },
-    "shared": false,
-    "group": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-        "type": "group",
-        "mediaType": "application/json"
+    "shared":false,
+    "group":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type":"group",
+        "mediaType":"application/json"
       }
     },
-    "updated": "2016-09-01 18:28:22",
-    "name": "ООО Радуга",
-    "externalCode": "o7732zkki541HDkZZD1Yt3",
-    "archived": false,
-    "companyType": "legal",
-    "accounts": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/accounts",
-        "type": "account",
-        "mediaType": "application/json",
-        "size": 0,
-        "limit": 1000,
-        "offset": 0
+    "updated":"2016-09-01 18:28:22",
+    "name":"ООО Радуга",
+    "externalCode":"o7732zkki541HDkZZD1Yt3",
+    "archived":false,
+    "companyType":"legal",
+    "accounts":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/accounts",
+        "type":"account",
+        "mediaType":"application/json",
+        "size":0,
+        "limit":1000,
+        "offset":0
       }
     },
-    "tags": [],
-    "contactpersons": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/contactpersons",
-        "type": "contactperson",
-        "mediaType": "application/json",
-        "size": 0,
-        "limit": 1000,
-        "offset": 0
+    "tags":[  
+
+    ],
+    "contactpersons":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/contactpersons",
+        "type":"contactperson",
+        "mediaType":"application/json",
+        "size":0,
+        "limit":1000,
+        "offset":0
       }
     },
-    "notes": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/notes",
-        "type": "note",
-        "mediaType": "application/json",
-        "size": 0,
-        "limit": 1000,
-        "offset": 0
+    "notes":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/notes",
+        "type":"note",
+        "mediaType":"application/json",
+        "size":0,
+        "limit":1000,
+        "offset":0
       }
     },
-    "state": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
-        "type": "state",
-        "mediaType": "application/json"
+    "state":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+        "type":"state",
+        "mediaType":"application/json"
       }
     },
-    "priceType": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f2222",
-        "type": "pricetype",
-        "mediaType": "application/json"
+    "priceType":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f2222",
+        "type":"pricetype",
+        "mediaType":"application/json"
       }
     }
   },
-  {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-      "type": "counterparty",
-      "mediaType": "application/json"
+  {  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047",
+      "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type":"counterparty",
+      "mediaType":"application/json"
     },
-    "id": "6a9c3857-2c8b-11e6-8a84-bae500000047",
-    "accountId": "6270cd18-2c7f-11e6-8a84-bae500000001",
-    "owner": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-        "type": "employee",
-        "mediaType": "application/json"
+    "id":"6a9c3857-2c8b-11e6-8a84-bae500000047",
+    "accountId":"6270cd18-2c7f-11e6-8a84-bae500000001",
+    "owner":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type":"employee",
+        "mediaType":"application/json"
       }
     },
-    "shared": false,
-    "group": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-        "type": "group",
-        "mediaType": "application/json"
+    "shared":false,
+    "group":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type":"group",
+        "mediaType":"application/json"
       }
     },
-    "updated": "2016-06-07 12:13:31",
-    "name": "ООО Радуга ЭКСПО",
-    "description": "Сеть рынков стройматериалов Радуга ЭКСПО",
-    "code": "raduga",
-    "externalCode": "extRainbow",
-    "archived": false,
-    "created": "2007-02-07 17:16:41",
-    "legalTitle": "Общество с ограниченой ответственностью \"Радуга ЭКСПО\"",
-    "legalAddress": "г.Москва ул Чернорабочего д 93 к 12",
-    "actualAddress": "г.Москва ул Строителей д 331",
-    "inn": "1251581244152",
-    "kpp": "121557212",
-    "ogrn": "1253552",
-    "okpo": "201313",
-    "email": "raduga@retail.ru",
-    "phone": "+7 495 162 32 23",
-    "fax": "1052054",
-    "accounts": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/accounts",
-        "type": "account",
-        "mediaType": "application/json",
-        "size": 0,
-        "limit": 1000,
-        "offset": 0
+    "updated":"2016-06-07 12:13:31",
+    "name":"ООО Радуга ЭКСПО",
+    "description":"Сеть рынков стройматериалов Радуга ЭКСПО",
+    "code":"raduga",
+    "externalCode":"extRainbow",
+    "archived":false,
+    "created":"2007-02-07 17:16:41",
+    "legalTitle":"Общество с ограниченой ответственностью \"Радуга ЭКСПО\"",
+    "legalAddress":"г.Москва ул Чернорабочего д 93 к 12",
+    "actualAddress":"г.Москва ул Строителей д 331",
+    "inn":"1251581244152",
+    "kpp":"121557212",
+    "ogrn":"1253552",
+    "okpo":"201313",
+    "email":"raduga@retail.ru",
+    "phone":"+7 495 162 32 23",
+    "fax":"1052054",
+    "accounts":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/accounts",
+        "type":"account",
+        "mediaType":"application/json",
+        "size":0,
+        "limit":1000,
+        "offset":0
       }
     },
-    "tags": [
+    "tags":[  
       "жжот",
       "строители",
       "бетон",
       "ремонт",
       "радуга"
     ],
-    "contactpersons": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/contactpersons",
-        "type": "contactperson",
-        "mediaType": "application/json",
-        "size": 0,
-        "limit": 1000,
-        "offset": 0
+    "contactpersons":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/contactpersons",
+        "type":"contactperson",
+        "mediaType":"application/json",
+        "size":0,
+        "limit":1000,
+        "offset":0
       }
     },
-    "notes": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/notes",
-        "type": "note",
-        "mediaType": "application/json",
-        "size": 0,
-        "limit": 1000,
-        "offset": 0
+    "notes":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/notes",
+        "type":"note",
+        "mediaType":"application/json",
+        "size":0,
+        "limit":1000,
+        "offset":0
       }
     }
   }
-] 
+]
 ```
 
-[Массовое создание и обновление](/api/remap/1.2/doc/index.html#header-создание-и-обновление-нескольких-объектов) Контрагентов.
+[Массовое создание и обновление](#sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Контрагентов.
 В теле запроса нужно передать массив, содержащий JSON представления Контрагентов, которые вы хотите создать или обновить.
 Обновляемые Контрагентов должны содержать идентификатор в виде метаданных.
 
@@ -1472,6 +1492,49 @@ curl -X DELETE
 
 > Response  200. Успешное удаление Контрагента.
 
+### Массовое удаление Контрагентов
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Контрагентов, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Контрагентов. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+            "type": "counterparty",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+            "type": "counterparty",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информацио об удалении Контрагентов.
+
+```json
+[
+  {
+    "info":"Сущность 'counterparty' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'counterparty' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+```
+
 ### Метаданные Контрагентов 
 #### Метаданные Контрагентов
 
@@ -1486,52 +1549,52 @@ curl -X GET
 > Успешный запрос. Результат - JSON представление доп. полей Контрагентов.
 
 ```json
-{
-  "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-    "mediaType": "application/json"
+{  
+  "meta":{  
+    "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "mediaType":"application/json"
   },
-  "attributes": [
-    {
-      "id": "5290a290-0313-11e6-9464-e4de00000020",
-      "name": "attribute_name",
-      "type": "boolean",
-      "required": false
+  "attributes":[  
+    {  
+      "id":"5290a290-0313-11e6-9464-e4de00000020",
+      "name":"attribute_name",
+      "type":"boolean",
+      "required":false
     }
   ],
-  "states": [
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
-        "type": "state",
-        "mediaType": "application/json"
+  "states":[  
+    {  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+        "type":"state",
+        "mediaType":"application/json"
       },
-      "id": "fb56c504-2e58-11e6-8a84-bae500000069",
-      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-      "name": "Новый",
-      "color": 15106326,
-      "stateType": "Regular",
-      "entityType": "counterparty"
+      "id":"fb56c504-2e58-11e6-8a84-bae500000069",
+      "accountId":"f976ed28-2e58-11e6-8a84-bae500000001",
+      "name":"Новый",
+      "color":15106326,
+      "stateType":"Regular",
+      "entityType":"counterparty"
     },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56cae3-2e58-11e6-8a84-bae50000006a",
-        "type": "state",
-        "mediaType": "application/json"
+    {  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56cae3-2e58-11e6-8a84-bae50000006a",
+        "type":"state",
+        "mediaType":"application/json"
       },
-      "id": "fb56cae3-2e58-11e6-8a84-bae50000006a",
-      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-      "name": "Подтвержден",
-      "color": 40931,
-      "stateType": "Regular",
-      "entityType": "counterparty"
+      "id":"fb56cae3-2e58-11e6-8a84-bae50000006a",
+      "accountId":"f976ed28-2e58-11e6-8a84-bae500000001",
+      "name":"Подтвержден",
+      "color":40931,
+      "stateType":"Regular",
+      "entityType":"counterparty"
     }
   ],
-  "tags": [
+  "tags":[  
     "Поставщики",
     "Покупатели"
   ],
-  "createShared": false
+  "createShared":false
 }
 ```
 
@@ -1540,11 +1603,11 @@ curl -X GET
 | Параметр                | Описание  |
 | ------------------------------ |:---------------------------|
 | meta         | Ссылка на метаданные Контрагентов|
-| attributes   | Массив объектов доп. полей Контрагентов в формате [Метаданных](#header-метаданные)|
+| attributes   | Массив объектов доп. полей Контрагентов в формате [Метаданных](#metadannye)|
 | states       | Массив статусов Контрагентов|
 | createShared | создавать новых Контрагентов с меткой "Общий"|
 
-Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](#header-работа-с-дополнительными-полями).
+Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](#rabota-s-dopolnitel-nymi-polqmi).
 
 ### Отдельное доп. поле 
 #### Отдельное доп. поле 
@@ -1601,138 +1664,140 @@ curl -X GET
 > Response 200 (application/json). Возвращает JSON представление Контрагента с указанным id.
 
 ```json
-{
-  "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-    "type": "counterparty",
-    "mediaType": "application/json"
+{  
+  "meta":{  
+    "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
+    "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type":"counterparty",
+    "mediaType":"application/json"
   },
-  "id": "b80ea81b-7058-11e6-8a84-bae500000000",
-  "accountId": "1185513e-692c-11e6-8a84-bae500000001",
-  "owner": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-      "type": "employee",
-      "mediaType": "application/json"
+  "id":"b80ea81b-7058-11e6-8a84-bae500000000",
+  "accountId":"1185513e-692c-11e6-8a84-bae500000001",
+  "owner":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
+      "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type":"employee",
+      "mediaType":"application/json"
     }
   },
-  "shared": false,
-  "group": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-      "type": "group",
-      "mediaType": "application/json"
+  "shared":false,
+  "group":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
+      "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type":"group",
+      "mediaType":"application/json"
     }
   },
-  "updated": "2016-09-01 18:28:22",
-  "name": "ООО Радуга",
-  "externalCode": "o7732zkki541HDkZZD1Yt3",
-  "archived": false,
-  "created": "2007-02-07 17:16:41",
-  "companyType": "legal",
-  "accounts": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/accounts",
-      "type": "account",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
+  "updated":"2016-09-01 18:28:22",
+  "name":"ООО Радуга",
+  "externalCode":"o7732zkki541HDkZZD1Yt3",
+  "archived":false,
+  "created":"2007-02-07 17:16:41",
+  "companyType":"legal",
+  "accounts":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/accounts",
+      "type":"account",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
     }
   },
-  "tags": [],
-  "contactpersons": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/contactpersons",
-      "type": "contactperson",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
+  "tags":[  
+
+  ],
+  "contactpersons":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/contactpersons",
+      "type":"contactperson",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
     }
   },
-  "notes": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/notes",
-      "type": "note",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
+  "notes":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/notes",
+      "type":"note",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
     }
   },
-  "state": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
-      "type": "state",
-      "mediaType": "application/json"
+  "state":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+      "type":"state",
+      "mediaType":"application/json"
     }
   },
-  "salesAmount": 0,
-  "priceType": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f2222",
-      "type": "pricetype",
-      "mediaType": "application/json"
+  "salesAmount":0,
+  "priceType":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f2222",
+      "type":"pricetype",
+      "mediaType":"application/json"
     },
-    "id": "672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
-    "name": "Цена продажи",
-    "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+    "id":"672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+    "name":"Цена продажи",
+    "externalCode":"cbcf493b-55bc-11d9-848a-00112f43529a"
   },
-  "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
-  "legalAddressFull": {
-    "postalCode": "125009",
-    "country": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-        "type": "country",
-        "mediaType": "application/json"
+  "legalAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+  "legalAddressFull":{  
+    "postalCode":"125009",
+    "country":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
       }
     },
-    "region": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-        "type": "region",
-        "mediaType": "application/json"
+    "region":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
       }
     },
-    "city": "Москва",
-    "street": "ул Тверская",
-    "house": "1",
-    "apartment": "123",
-    "addInfo": "addinfo",
-    "comment": "some words about address"
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"123",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
   },
-  "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
-  "actualAddressFull": {
-    "postalCode": "125009",
-    "country": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-        "type": "country",
-        "mediaType": "application/json"
+  "actualAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+  "actualAddressFull":{  
+    "postalCode":"125009",
+    "country":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
       }
     },
-    "region": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-        "type": "region",
-        "mediaType": "application/json"
+    "region":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
       }
     },
-    "city": "Москва",
-    "street": "ул Тверская",
-    "house": "1",
-    "apartment": "111",
-    "addInfo": "addinfo",
-    "comment": "some words about address"
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"111",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
   }
 }
 ```
@@ -1743,7 +1808,7 @@ curl -X GET
 
 Обновляется представление Контрагента с указанным id.
 В теле запроса можно указать только те поля, которые необходимо изменить у Контрагента, кроме тех, что
-помечены `Только для чтения` в описании [атрибутов Контрагента](#контрагент-контрагенты).
+помечены `Только для чтения` в описании [атрибутов Контрагента](#kontragent).
 Поля, которые не были указаны в JSON запроса, не изменяются.
 Поля **account** и **contactpersons** обновляются как элементы вложенных коллекций. При обновлении,
 переданные элементы данных коллекций обрабатываются как "Все элементы данной коллекции" и полностью заменяют
@@ -1761,207 +1826,210 @@ curl -X PUT
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
   -H "Authorization: Basic <Access-Token>"
   -H "Content-Type: application/json"
-    -d '{
-      "name": "ООО Радуга ЭКСПО",
-      "description" : "Сеть рынков стройматериалов Радуга ЭКСПО",
-      "code" : "raduga",
-      "externalCode" : "extRainbow",
-      "email" : "raduga@retail.ru",
-      "phone" : "+7 495 162 32 23",
-      "fax" : "1052054",
-      "actualAddress": "г.Москва ул Строителей д 331",
-      "legalTitle": "Общество с ограниченой ответственностью \"Радуга ЭКСПО\"",
-      "legalAddressFull": {
-        "postalCode": "125009",
-        "country": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-            "type": "country",
-            "mediaType": "application/json"
-          }
-        },
-        "region": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-            "type": "region",
-            "mediaType": "application/json"
-          }
-        },
-        "city": "Москва",
-        "street": "ул Тверская",
-        "house": "1",
-        "apartment": "123",
-        "addInfo": "addinfo",
-        "comment": "some words about address"
-      },
-      "actualAddressFull": {
-        "postalCode": "125009",
-        "country": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-            "type": "country",
-            "mediaType": "application/json"
-          }
-        },
-        "region": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-            "type": "region",
-            "mediaType": "application/json"
-          }
-        },
-        "city": "Москва",
-        "street": "ул Тверская",
-        "house": "1",
-        "apartment": "111",
-        "addInfo": "addinfo",
-        "comment": "some words about address"
-      },
-      "inn" : "1251581244152",
-      "kpp" : "121557212",
-      "ogrn" : "1253552",
-      "okpo" : "201313",
-      "tags" : [
-        "Строители", "Ремонт", "Радуга", "Бетон", "ЖЖОТ"
-      ]
-    }'  
+    -d '{  
+  "name":"ООО Радуга ЭКСПО",
+  "description":"Сеть рынков стройматериалов Радуга ЭКСПО",
+  "code":"raduga",
+  "externalCode":"extRainbow",
+  "email":"raduga@retail.ru",
+  "phone":"+7 495 162 32 23",
+  "fax":"1052054",
+  "legalTitle":"Общество с ограниченой ответственностью \"Радуга ЭКСПО\"",
+  "legalAddressFull":{  
+    "postalCode":"125009",
+    "country":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
+      }
+    },
+    "region":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
+      }
+    },
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"123",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
+  },
+  "actualAddressFull":{  
+    "postalCode":"125009",
+    "country":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
+      }
+    },
+    "region":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
+      }
+    },
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"111",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
+  },
+  "inn":"1251581244152",
+  "kpp":"121557212",
+  "ogrn":"1253552",
+  "okpo":"201313",
+  "tags":[  
+    "Строители",
+    "Ремонт",
+    "Радуга",
+    "Бетон",
+    "ЖЖОТ"
+  ]
+}'  
 ```
 
-> Response 200 (application/json) Успешное обновление. Результат - JSON представление обновлённого Контрагента.
+> Response 200 (application/json) Успешное обновление. Результат - JSON представление обновленного Контрагента.
 
 ```json
-{
-  "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-    "type": "counterparty",
-    "mediaType": "application/json"
+{  
+  "meta":{  
+    "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047",
+    "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type":"counterparty",
+    "mediaType":"application/json"
   },
-  "id": "6a9c3857-2c8b-11e6-8a84-bae500000047",
-  "accountId": "6270cd18-2c7f-11e6-8a84-bae500000001",
-  "owner": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-      "type": "employee",
-      "mediaType": "application/json"
+  "id":"6a9c3857-2c8b-11e6-8a84-bae500000047",
+  "accountId":"6270cd18-2c7f-11e6-8a84-bae500000001",
+  "owner":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type":"employee",
+      "mediaType":"application/json"
     }
   },
-  "shared": false,
-  "group": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-      "type": "group",
-      "mediaType": "application/json"
+  "shared":false,
+  "group":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type":"group",
+      "mediaType":"application/json"
     }
   },
-  "updated": "2016-06-07 12:13:31",
-  "name": "ООО Радуга ЭКСПО",
-  "description": "Сеть рынков стройматериалов Радуга ЭКСПО",
-  "code": "raduga",
-  "externalCode": "extRainbow",
-  "archived": false,
-  "created": "2007-02-07 17:16:41",
-  "legalTitle": "Общество с ограниченой ответственностью \"Радуга ЭКСПО\"",
-  "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
-  "legalAddressFull": {
-    "postalCode": "125009",
-    "country": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-        "type": "country",
-        "mediaType": "application/json"
+  "updated":"2016-06-07 12:13:31",
+  "name":"ООО Радуга ЭКСПО",
+  "description":"Сеть рынков стройматериалов Радуга ЭКСПО",
+  "code":"raduga",
+  "externalCode":"extRainbow",
+  "archived":false,
+  "created":"2007-02-07 17:16:41",
+  "legalTitle":"Общество с ограниченой ответственностью \"Радуга ЭКСПО\"",
+  "legalAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+  "legalAddressFull":{  
+    "postalCode":"125009",
+    "country":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
       }
     },
-    "region": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-        "type": "region",
-        "mediaType": "application/json"
+    "region":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
       }
     },
-    "city": "Москва",
-    "street": "ул Тверская",
-    "house": "1",
-    "apartment": "123",
-    "addInfo": "addinfo",
-    "comment": "some words about address"
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"123",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
   },
-  "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
-  "actualAddressFull": {
-    "postalCode": "125009",
-    "country": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-        "type": "country",
-        "mediaType": "application/json"
+  "actualAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+  "actualAddressFull":{  
+    "postalCode":"125009",
+    "country":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
       }
     },
-    "region": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-        "type": "region",
-        "mediaType": "application/json"
+    "region":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
       }
     },
-    "city": "Москва",
-    "street": "ул Тверская",
-    "house": "1",
-    "apartment": "111",
-    "addInfo": "addinfo",
-    "comment": "some words about address"
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"111",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
   },
-  "inn": "1251581244152",
-  "kpp": "121557212",
-  "ogrn": "1253552",
-  "okpo": "201313",
-  "email": "raduga@retail.ru",
-  "phone": "+7 495 162 32 23",
-  "fax": "1052054",
-  "accounts": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/accounts",
-      "type": "account",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
+  "inn":"1251581244152",
+  "kpp":"121557212",
+  "ogrn":"1253552",
+  "okpo":"201313",
+  "email":"raduga@retail.ru",
+  "phone":"+7 495 162 32 23",
+  "fax":"1052054",
+  "accounts":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/accounts",
+      "type":"account",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
     }
   },
-  "tags": [
+  "tags":[  
     "жжот",
     "строители",
     "бетон",
     "ремонт",
     "радуга"
   ],
-  "contactpersons": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/contactpersons",
-      "type": "contactperson",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
+  "contactpersons":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/contactpersons",
+      "type":"contactperson",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
     }
   },
-  "notes": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/notes",
-      "type": "note",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
+  "notes":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/6a9c3857-2c8b-11e6-8a84-bae500000047/notes",
+      "type":"note",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
     }
   }
 }
@@ -1975,291 +2043,241 @@ curl -X PUT
   -H "Authorization: Basic <Access-Token>"
   -H "Content-Type: application/json"
     -d '
-    {
-      "name": "ООО Овощ Экспресс",
-      "description": "Сеть экспресс-доставки овощей",
-      "code": "ovoshexpresscode",
-      "externalCode": "externalVagetable",
-      "email": "ovoshi@delivery.ru",
-      "phone": "+7 495 162 12 23",
-      "fax": "1052014",
-      "legalTitle": "Общество с ограниченой ответственностью \"Овощ Экспресс\"",
-      "legalAddressFull": {
-        "postalCode": "125009",
-        "country": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-            "type": "country",
-            "mediaType": "application/json"
-          }
-        },
-        "region": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-            "type": "region",
-            "mediaType": "application/json"
-          }
-        },
-        "city": "Москва",
-        "street": "ул Тверская",
-        "house": "1",
-        "apartment": "123",
-        "addInfo": "addinfo",
-        "comment": "some words about address"
-      },
-      "actualAddressFull": {
-        "postalCode": "125009",
-        "country": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-            "type": "country",
-            "mediaType": "application/json"
-          }
-        },
-        "region": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-            "type": "region",
-            "mediaType": "application/json"
-          }
-        },
-        "city": "Москва",
-        "street": "ул Тверская",
-        "house": "1",
-        "apartment": "111",
-        "addInfo": "addinfo",
-        "comment": "some words about address"
-      },
-      "inn": "1251581244152",
-      "kpp": "121557212",
-      "ogrn": "1253552",
-      "okpo": "201313",
-      "tags": [
-        "Овощи",
-        "Еда",
-        "Доставка",
-        "Экспресс",
-        "Едовозы"
-      ],
-      "contactpersons": [
-        {
-          "name": "Вася",
-          "description": "Овощерез Вася",
-          "position": "Овощерез"
-        },
-        {
-          "name": "Петя",
-          "position": "Овощевоз"
-        }
-      ],
-      "accounts": [
-        {
-          "isDefault": true,
-          "accountNumber": "12512568161257981",
-          "bankName": "ОАО Сбербанк",
-          "bankLocation": "г Москва Ул Вавилова 19",
-          "correspondentAccount": "375632785587",
-          "bic": "1234532"
-        },
-        {
-          "accountNumber": "12512568161257982",
-          "bankName": "ВТБ",
-          "bic": "7654352"
-        }
-      ],
-      "attributes": [
-        {
-          "id": "0d129ff5-2c8c-11e6-8a84-bae5000000f3",
-          "name": "Коэффициент скидки",
-          "type": "double",
-          "value": 0.35
-        },
-        {
-          "id": "0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
-          "name": "Последний заключённый договор",
-          "type": "time",
-          "value": "2016-06-07 10:52:33"
-        },
-        {
-          "id": "0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
-          "name": "Партнёрскоё юрлицо",
-          "type": "boolean",
-          "value": true
-        }
-      ]
-    }'  
-```
-
-> Response 200 (application/json). Успешное обновление. Результат - JSON представление обновлённого Контрагента.
-
-```json
 {
-  "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-    "type": "counterparty",
-    "mediaType": "application/json"
-  },
-  "id": "88fc07ac-2c8d-11e6-8a84-bae500000050",
-  "accountId": "6270cd18-2c7f-11e6-8a84-bae500000001",
-  "owner": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-      "type": "employee",
-      "mediaType": "application/json"
-    }
-  },
-  "shared": false,
-  "group": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-      "type": "group",
-      "mediaType": "application/json"
-    }
-  },
-  "updated": "2016-06-07 12:08:25",
   "name": "ООО Овощ Экспресс",
   "description": "Сеть экспресс-доставки овощей",
   "code": "ovoshexpresscode",
   "externalCode": "externalVagetable",
-  "archived": false,
-  "created": "2007-02-07 17:16:41",
+  "email": "ovoshi@delivery.ru",
+  "phone": "+7 495 162 12 23",
+  "fax": "1052014",
   "legalTitle": "Общество с ограниченой ответственностью \"Овощ Экспресс\"",
-  "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
-  "legalAddressFull": {
-    "postalCode": "125009",
-    "country": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-        "type": "country",
-        "mediaType": "application/json"
-      }
-    },
-    "region": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-        "type": "region",
-        "mediaType": "application/json"
-      }
-    },
-    "city": "Москва",
-    "street": "ул Тверская",
-    "house": "1",
-    "apartment": "123",
-    "addInfo": "addinfo",
-    "comment": "some words about address"
-  },
-  "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
-  "actualAddressFull": {
-    "postalCode": "125009",
-    "country": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-        "type": "country",
-        "mediaType": "application/json"
-      }
-    },
-    "region": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-        "type": "region",
-        "mediaType": "application/json"
-      }
-    },
-    "city": "Москва",
-    "street": "ул Тверская",
-    "house": "1",
-    "apartment": "111",
-    "addInfo": "addinfo",
-    "comment": "some words about address"
-  },
   "inn": "1251581244152",
   "kpp": "121557212",
   "ogrn": "1253552",
   "okpo": "201313",
-  "email": "ovoshi@delivery.ru",
-  "phone": "+7 495 162 12 23",
-  "fax": "1052014",
+  "tags": [
+    "Овощи",
+    "Еда",
+    "Доставка",
+    "Экспресс",
+    "Едовозы"
+  ],
+  "contactpersons": [
+    {
+      "name": "Вася",
+      "description": "Овощерез Вася",
+      "position": "Овощерез"
+    },
+    {
+      "name": "Петя",
+      "position": "Овощевоз"
+    }
+  ],
+  "accounts": [
+    {
+      "isDefault": true,
+      "accountNumber": "12512568161257981",
+      "bankName": "ОАО Сбербанк",
+      "bankLocation": "г Москва Ул Вавилова 19",
+      "correspondentAccount": "375632785587",
+      "bic": "1234532"
+    },
+    {
+      "accountNumber": "12512568161257982",
+      "bankName": "ВТБ",
+      "bic": "7654352"
+    }
+  ],
   "attributes": [
     {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d129ff5-2c8c-11e6-8a84-bae5000000f3",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
-      },
       "id": "0d129ff5-2c8c-11e6-8a84-bae5000000f3",
       "name": "Коэффициент скидки",
       "type": "double",
       "value": 0.35
     },
     {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
-      },
       "id": "0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
-      "name": "Последний заключённый договор",
+      "name": "Последний заключенный договор",
       "type": "time",
       "value": "2016-06-07 10:52:33"
     },
     {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
-      },
       "id": "0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
-      "name": "Партнёрское юрлицо",
+      "name": "Партнерское юрлицо",
       "type": "boolean",
       "value": true
     }
-  ],
-  "accounts": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050/accounts",
-      "type": "account",
-      "mediaType": "application/json",
-      "size": 2,
-      "limit": 1000,
-      "offset": 0
+  ]
+}'  
+```
+
+> Response 200 (application/json). Успешное обновление. Результат - JSON представление обновленного Контрагента.
+
+```json
+{  
+  "meta":{  
+    "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050",
+    "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type":"counterparty",
+    "mediaType":"application/json"
+  },
+  "id":"88fc07ac-2c8d-11e6-8a84-bae500000050",
+  "accountId":"6270cd18-2c7f-11e6-8a84-bae500000001",
+  "owner":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type":"employee",
+      "mediaType":"application/json"
     }
   },
-  "tags": [
+  "shared":false,
+  "group":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type":"group",
+      "mediaType":"application/json"
+    }
+  },
+  "updated":"2016-06-07 12:08:25",
+  "name":"ООО Овощ Экспресс",
+  "description":"Сеть экспресс-доставки овощей",
+  "code":"ovoshexpresscode",
+  "externalCode":"externalVagetable",
+  "archived":false,
+  "created":"2007-02-07 17:16:41",
+  "legalTitle":"Общество с ограниченой ответственностью \"Овощ Экспресс\"",
+  "legalAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+  "legalAddressFull":{  
+    "postalCode":"125009",
+    "country":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
+      }
+    },
+    "region":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
+      }
+    },
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"123",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
+  },
+  "actualAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+  "actualAddressFull":{  
+    "postalCode":"125009",
+    "country":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
+      }
+    },
+    "region":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
+      }
+    },
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"111",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
+  },
+  "inn":"1251581244152",
+  "kpp":"121557212",
+  "ogrn":"1253552",
+  "okpo":"201313",
+  "email":"ovoshi@delivery.ru",
+  "phone":"+7 495 162 12 23",
+  "fax":"1052014",
+  "attributes":[  
+    {  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d129ff5-2c8c-11e6-8a84-bae5000000f3",
+        "type":"attributemetadata",
+        "mediaType":"application/json"
+      },
+      "id":"0d129ff5-2c8c-11e6-8a84-bae5000000f3",
+      "name":"Коэффициент скидки",
+      "type":"double",
+      "value":0.35
+    },
+    {  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
+        "type":"attributemetadata",
+        "mediaType":"application/json"
+      },
+      "id":"0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
+      "name":"Последний заключенный договор",
+      "type":"time",
+      "value":"2016-06-07 10:52:33"
+    },
+    {  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
+        "type":"attributemetadata",
+        "mediaType":"application/json"
+      },
+      "id":"0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
+      "name":"Партнерское юрлицо",
+      "type":"boolean",
+      "value":true
+    }
+  ],
+  "accounts":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/88fc07ac-2c8d-11e6-8a84-bae500000050/accounts",
+      "type":"account",
+      "mediaType":"application/json",
+      "size":2,
+      "limit":1000,
+      "offset":0
+    }
+  },
+  "tags":[  
     "овощи",
     "доставка",
     "еда",
     "едовозы",
     "экспресс"
   ],
-  "contactpersons": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ee15550e-2c9e-11e6-8a84-bae500000003/contactpersons",
-      "type": "contactperson",
-      "mediaType": "application/json",
-      "size": 2,
-      "limit": 1000,
-      "offset": 0
+  "contactpersons":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ee15550e-2c9e-11e6-8a84-bae500000003/contactpersons",
+      "type":"contactperson",
+      "mediaType":"application/json",
+      "size":2,
+      "limit":1000,
+      "offset":0
     }
   },
-  "notes": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ee15550e-2c9e-11e6-8a84-bae500000003/notes",
-      "type": "note",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
+  "notes":{  
+    "meta":{  
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ee15550e-2c9e-11e6-8a84-bae500000003/notes",
+      "type":"note",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
     }
   }
 }
@@ -2352,7 +2370,7 @@ curl -X GET
 | Параметр                | Описание  |
 | ------------------------------ |:---------------------------|
 |id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента .|
-|accountId |  `string` (required) (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Счёта.|
+|accountId |  `string` (required) (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Счета.|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 
@@ -2521,7 +2539,7 @@ curl -X POST
   -H "Authorization: Basic <Access-Token>"
   -H "Content-Type: application/json"
     -d '{
-          "name": "Пётр",
+          "name": "Петр",
           "code": "Petya the deliverer",
           "externalCode": "-odJxBw7i06O0GhSc28S90",
           "email": "petr@ovoshy.com",
@@ -2542,7 +2560,7 @@ curl -X POST
     "id": "ceba215c-d5cb-11e7-0532-9eed00000005",
     "accountId": "eb9ac8c0-d511-11e7-0532-9eed00000001",
     "updated": "2017-11-30 15:41:38",
-    "name": "Пётр",
+    "name": "Петр",
     "code": "Petya the deliverer",
     "externalCode": "-odJxBw7i06O0GhSc28S90",
     "email": "petr@ovoshy.com",
@@ -2594,7 +2612,7 @@ curl -X GET
   "id": "94433ed3-2c9f-11e6-8a84-bae500000010",
   "accountId": "da7d9bbe-2c97-11e6-8a84-bae500000001",
   "updated": "2016-06-07 14:04:17",
-  "name": "Пётр",
+  "name": "Петр",
   "code": "Petya the deliverer",
   "externalCode": "-odJxBw7i06O0GhSc28S90",
   "email": "petr@ovoshy.com",
@@ -2623,7 +2641,7 @@ curl -X GET
 #### Описание
 Обновить контактное лицо Контрагента с указанным id.
 Обновляются все поля, указанные в JSON объекте запроса, кроме
-помеченных `Только для чтения` в описании [атрибутов контактных лиц Контрагента](#header-контактные-лица-контрагентов).
+помеченных `Только для чтения` в описании [атрибутов контактных лиц Контрагента](#kontaktnye-lica-kontragenta).
 Поля, которые не были указаны в JSON запроса, не изменяются.
 
 > Пример запроса на обновление контактного лица Контрагента.
@@ -2634,7 +2652,7 @@ curl -X GET
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
       -d '{
-            "name": "Пётр",
+            "name": "Петр",
             "code": "Petya the deliverer",
             "email": "petr@ovoshy.com",
             "phone": "+777 666 228",
@@ -2654,7 +2672,7 @@ curl -X GET
   "id": "94433ed3-2c9f-11e6-8a84-bae500000010",
   "accountId": "da7d9bbe-2c97-11e6-8a84-bae500000001",
   "updated": "2016-06-07 14:04:17",
-  "name": "Пётр",
+  "name": "Петр",
   "code": "Petya the deliverer",
   "externalCode": "-odJxBw7i06O0GhSc28S90",
   "email": "petr@ovoshy.com",
@@ -2881,7 +2899,7 @@ curl -X GET
 
 Обновить событие Контрагента с указанным id.
 Обновляются все поля, указанные в JSON объекте запроса, кроме
-помеченных `Только для чтения` в описании [атрибутов событий Контрагента](#header-события-контрагента).
+помеченных `Только для чтения` в описании [атрибутов событий Контрагента](#sobytiq-kontragenta).
 Поля, которые не были указаны в JSON запроса, не изменяются.
 
 **Параметры**

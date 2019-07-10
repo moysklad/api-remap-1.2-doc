@@ -1,10 +1,10 @@
-## Отчёт Прибыльность
-Средствами JSON API можно запросить отчёт "Прибыльность" по всем товарам, услугам, модификациям, сотрудникам  и покупателям.
-О том, что представляет собой отчёт "Прибыльность" вы можете прочитать по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203025326-%D0%9E%D1%82%D1%87%D0%B5%D1%82-%D0%9F%D1%80%D0%B8%D0%B1%D1%8B%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C).
+## Отчет Прибыльность
+Средствами JSON API можно запросить отчет "Прибыльность" по всем товарам, услугам, модификациям, сотрудникам  и покупателям.
+О том, что представляет собой отчет "Прибыльность" вы можете прочитать по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203025326-%D0%9E%D1%82%D1%87%D0%B5%D1%82-%D0%9F%D1%80%D0%B8%D0%B1%D1%8B%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C).
 
 #### Прибыльность по товарам 
-#### Атрибуты объекта отчёта:
-+ **assortment**- Краткое представление товара или услуги в отчёте (структура ниже)
+#### Атрибуты объекта отчета:
++ **assortment**- Краткое представление товара или услуги в отчете (структура ниже)
 + **sellQuantity** - Проданное количество
 + **sellPrice** - Цена продаж (средняя)
 + **sellCost** - Себестоимость
@@ -19,7 +19,7 @@
 + **margin** - Рентабельность
 
 #### Структура объекта assortment
-+ **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные), представляющие собой ссылку на товар или услугу
++ **meta** - [Метаданные](#metadannye), представляющие собой ссылку на товар или услугу
 + **name** - Наименование товара или услуги
 + **code** - Код товара или услуги
 + **uom** - Единица измерения
@@ -34,17 +34,25 @@
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|product.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id товара или услуги, по которому нужно произвести фильтрацию. |
+|counterparty.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id контрагента, по которому нужно произвести фильтрацию. |
+|organization.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id юрлица, по которому нужно произвести фильтрацию. |
+|store.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id склада, по которому нужно произвести фильтрацию. |
+|project.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id проекта, по которому нужно произвести фильтрацию. |
+|retailStore.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id точки продаж, по которой нужно произвести фильтрацию. |
  
-> Запрос на получение отчёта "Прибыльность по товарам".
+> Запрос на получение отчета "Прибыльность по товарам".
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/report/sales/byproduct"
+  "https://online.moysklad.ru/api/remap/1.2/report/profit/byproduct"
   -H "Authorization: Basic <Access-Token>"
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отчёта.
+Успешный запрос. Результат - JSON представление отчета.
 
 ```json
 {
@@ -59,13 +67,13 @@ curl -X GET
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/report/sales/byproduct",
+    "href": "https://online.moysklad.ru/api/remap/1.2/report/profit/byproduct",
     "type": "salesbyproduct",
     "mediaType": "application/json",
     "size": 5,
     "limit": 2,
     "offset": 0,
-    "nextHref": "https://online.moysklad.ru/api/remap/1.2/report/sales/byproduct?limit=2&offset=2"
+    "nextHref": "https://online.moysklad.ru/api/remap/1.2/report/profit/byproduct?limit=2&offset=2"
   },
   "rows": [
     {
@@ -173,8 +181,8 @@ curl -X GET
 ```
 
 #### Прибыльность по модификациям 
-#### Атрибуты объекта отчёта:
-+ **assortment**- Краткое представление модификации, услуги или комплекта в отчёте (структура ниже)
+#### Атрибуты объекта отчета:
++ **assortment**- Краткое представление модификации, услуги или комплекта в отчете (структура ниже)
 + **sellQuantity** - Проданное количество
 + **sellPrice** - Цена продаж (средняя)
 + **sellCost** - Себестоимость
@@ -189,7 +197,7 @@ curl -X GET
 + **margin** - Рентабельность
 
 #### Структура объекта assortment
-+ **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные), представляющие собой ссылку на модификацию, услугу или комплект
++ **meta** - [Метаданные](#metadannye), представляющие собой ссылку на модификацию, услугу или комплект
 + **name** - Наименование сущности
 + **code** - Код сущности
 + **article** - Артикул модификации или комплекта
@@ -203,17 +211,25 @@ curl -X GET
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|product.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id товара или услуги, по которому нужно произвести фильтрацию. |
+|counterparty.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id контрагента, по которому нужно произвести фильтрацию. |
+|organization.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id юрлица, по которому нужно произвести фильтрацию. |
+|store.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id склада, по которому нужно произвести фильтрацию. |
+|project.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id проекта, по которому нужно произвести фильтрацию. |
+|retailStore.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id точки продаж, по которой нужно произвести фильтрацию. |
  
-> Запрос на получение отчёта "Прибыльность по модификациям".
+> Запрос на получение отчета "Прибыльность по модификациям".
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/report/sales/byvariant"
+  "https://online.moysklad.ru/api/remap/1.2/report/profit/byvariant"
   -H "Authorization: Basic <Access-Token>"
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отчёта.
+Успешный запрос. Результат - JSON представление отчета.
 
 ```json
 {
@@ -228,13 +244,13 @@ curl -X GET
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/report/sales/byvariant",
+    "href": "https://online.moysklad.ru/api/remap/1.2/report/profit/byvariant",
     "type": "salesbyvariant",
     "mediaType": "application/json",
     "size": 5,
     "limit": 2,
     "offset": 0,
-    "nextHref": "https://online.moysklad.ru/api/remap/1.2/report/sales/byvariant?limit=2&offset=2"
+    "nextHref": "https://online.moysklad.ru/api/remap/1.2/report/profit/byvariant?limit=2&offset=2"
   },
   "rows": [
     {
@@ -342,8 +358,8 @@ curl -X GET
 ```
 
 #### Прибыльность по сотрудникам 
-#### Атрибуты объекта отчёта:
-+ **employee**- Краткое представление сотрудника в отчёте (структура ниже)
+#### Атрибуты объекта отчета:
++ **employee**- Краткое представление сотрудника в отчете (структура ниже)
 + **salesCount** - Количество продаж
 + **salesAvgCheck** - Средний чек продаж
 + **sellSum** - Сумма продаж
@@ -356,7 +372,7 @@ curl -X GET
 + **margin** - Рентабельность
 
 #### Структура объекта employee
-+ **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные), представляющие собой ссылку на сотрудника
++ **meta** - [Метаданные](#metadannye), представляющие собой ссылку на сотрудника
 + **name** - Имя сотрудника
 
 ### Получить Прибыльность по сотрудникам
@@ -367,17 +383,25 @@ curl -X GET
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|product.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id товара или услуги, по которому нужно произвести фильтрацию. |
+|counterparty.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id контрагента, по которому нужно произвести фильтрацию. |
+|organization.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id юрлица, по которому нужно произвести фильтрацию. |
+|store.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id склада, по которому нужно произвести фильтрацию. |
+|project.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id проекта, по которому нужно произвести фильтрацию. |
+|retailStore.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id точки продаж, по которой нужно произвести фильтрацию. |
  
-> Запрос на получение отчёта "Прибыльность по сотрудникам".
+> Запрос на получение отчета "Прибыльность по сотрудникам".
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/report/sales/byemployee"
+  "https://online.moysklad.ru/api/remap/1.2/report/profit/byemployee"
   -H "Authorization: Basic <Access-Token>"
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отчёта.
+Успешный запрос. Результат - JSON представление отчета.
 
 ```json
 {
@@ -392,7 +416,7 @@ curl -X GET
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/report/sales/byEmployee",
+    "href": "https://online.moysklad.ru/api/remap/1.2/report/profit/byEmployee",
     "type": "salesbyemployee",
     "mediaType": "application/json",
     "size": 1,
@@ -426,8 +450,8 @@ curl -X GET
 ```
 
 #### Прибыльность по покупателям 
-#### Атрибуты объекта отчёта:
-+ **counterparty**- Краткое представление покупателя в отчёте (структура ниже)
+#### Атрибуты объекта отчета:
++ **counterparty**- Краткое представление покупателя в отчете (структура ниже)
 + **salesCount** - Количество продаж
 + **salesAvgCheck** - Средний чек продаж
 + **sellSum** - Сумма продаж
@@ -440,7 +464,7 @@ curl -X GET
 + **margin** - Рентабельность
 
 #### Структура объекта counterparty
-+ **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные), представляющие собой ссылку на покупателя
++ **meta** - [Метаданные](#metadannye), представляющие собой ссылку на покупателя
 + **name** - Имя покупателя
 
 ### Получить Прибыльность по покупателям
@@ -451,17 +475,25 @@ curl -X GET
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|product.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id товара или услуги, по которому нужно произвести фильтрацию. |
+|counterparty.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id контрагента, по которому нужно произвести фильтрацию. |
+|organization.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id юрлица, по которому нужно произвести фильтрацию. |
+|store.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id склада, по которому нужно произвести фильтрацию. |
+|project.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id проекта, по которому нужно произвести фильтрацию. |
+|retailStore.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id точки продаж, по которой нужно произвести фильтрацию. |
  
-> Запрос на получение отчёта "Прибыльность по покупателям".
+> Запрос на получение отчета "Прибыльность по покупателям".
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/report/sales/bycounterparty"
+  "https://online.moysklad.ru/api/remap/1.2/report/profit/bycounterparty"
   -H "Authorization: Basic <Access-Token>"
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отчёта.
+Успешный запрос. Результат - JSON представление отчета.
 
 ```json
 {
@@ -476,13 +508,13 @@ curl -X GET
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/report/sales/bycounterparty",
+    "href": "https://online.moysklad.ru/api/remap/1.2/report/profit/bycounterparty",
     "type": "salesbyCounterparty",
     "mediaType": "application/json",
     "size": 3,
     "limit": 1,
     "offset": 0,
-    "nextHref": "https://online.moysklad.ru/api/remap/1.2/report/sales/bycounterparty?limit=1&offset=1"
+    "nextHref": "https://online.moysklad.ru/api/remap/1.2/report/profit/bycounterparty?limit=1&offset=1"
   },
   "rows": [
     {

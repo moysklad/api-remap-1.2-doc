@@ -1,8 +1,9 @@
 ## Юрлицо
 Средствами JSON API можно создавать и обновлять сведения о юрлицах, запрашивать списки юрлиц и сведения по отдельным юрлицам. С помощью специального ресурса можно управлять счетами отдельного юрлица. Кодом сущности для юрлица в составе JSON API является ключевое слово **organization**.
-По данной сущности можно осуществлять контекстный поиск с помощью специального параметра `search`. Подробнее можно узнать по [ссылке](/api/remap/1.2/doc/index.html#header-контекстный-поиск).
+По данной сущности можно осуществлять контекстный поиск с помощью специального параметра `search`. Подробнее можно узнать по [ссылке](#kontextnyj-poisk).
 
-Поиск среди объектов юрлиц на соответствие поисковой строке будет осуществлён по следующим полям:
+Поиск среди объектов юрлиц на соответствие поисковой строке будет осуществлен по следующим полям:
+
 + По наименованию Юрлица **name**
 + По коду Юрлица **code**
 + По полному наименованию Юрлица **legalTitle**
@@ -12,30 +13,31 @@
 
 ### Юрлица
 
-+ **meta** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о юрлице
++ **meta** - [Метаданные](#metadannye) о юрлице
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **syncId** - ID синхронизации. После заполнения недоступен для изменения.
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные)
++ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](#metadannye)
 + **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные)
++ **group** - Отдел сотрудника в формате [Метаданных](#metadannye)
 + **updated** - Момент последнего обновления сущности `Только для чтения`
 + **name** - Краткое наименование юрлица `Необходимое`
 + **description** - Комментарий к Юр. лицу
 + **code** - Код юрлица
 + **actualAddress** - Фактический адрес Юрлица
-+ **actualAddressFull** - Фактический адрес Юрлица с отдельными полями.
++ **actualAddressFull** - Фактический адрес Юрлица с детализацией по отдельным полям.
 + **externalCode** - Внешний код юрлица
 + **archived** - Добавлено ли юрлицо в архив
 + **created** - Дата создания
 + **companyType** - Тип юрлица. `[Юридическое лицо, Индивидуальный предприниматель, Физическое лицо]`.
-В зависимости от значения данного поля набор выводимых реквизитов юрлица может меняться.  Подробнее [тут](#header-тип-юрлица)
+В зависимости от значения данного поля набор выводимых реквизитов юрлица может меняться.  Подробнее [тут](#tip-urlica)
++ **trackingContractNumber** - Номер договора с ЦРПТ
++ **trackingContractDate** - Дата договора с ЦРПТ
 
 #### Поля реквизитов
-___
 + **legalTitle** - Полное наименование юрлица
 + **legalAddress** - Юридический адрес юрлица
-+ **legalAddressFull** - Юридический адрес юрлица с отдельными полями.
++ **legalAddressFull** - Юридический адрес юрлица с детализацией по отдельным полям.
 + **inn** - ИНН
 + **kpp** - КПП
 + **ogrn** - ОГРН
@@ -47,14 +49,14 @@ ___
 + **email** - Электронная почта
 + **phone** - Телефон
 + **fax** - Факс
-+ **accounts** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные), представляющие собой ссылку на счета юрлица
-+ **attributes** - Коллекция доп. полей в формате [Метаданных](/api/remap/1.2/doc/index.html#header-метаданные)
++ **accounts** - [Метаданные](#metadannye), представляющие собой ссылку на счета юрлица
++ **attributes** - Коллекция доп. полей в формате [Метаданных](#metadannye)
 + **isEgaisEnable** - Включен ли ЕГАИС для данного юрлица
 + **fsrarId** - Идентификатор в ФСРАР
 + **payerVat** - Является ли данное юрлицо плательщиком НДС
 + **utmUrl** - IP-адрес УТМ
 + **actualAddress** - Фактический адрес юрлица
-+ **actualAddressFull** - Фактический адрес юрлица с отдельными полями
++ **actualAddressFull** - Фактический адрес юрлица с детализацией по отдельным полям
 + **director** - Руководитель
 + **chiefAccountant** - Главный бухгалтер
 
@@ -62,8 +64,8 @@ ___
 #### Атрибуты вложенных сущностей
 #### Аттрибуты сущности Адрес
 + **postalCode** - Почтовый индекс
-+ **country** - Ссылка на страну в формате [Метаданных](#header-метаданные)
-+ **region** - Ссылка на регион в формате [Метаданных](#header-метаданные)
++ **country** - Ссылка на страну в формате [Метаданных](#metadannye)
++ **region** - Ссылка на регион в формате [Метаданных](#metadannye)
 + **city** - Город
 + **street** - Улица
 + **house** - Дом (Максимальная длина - 30 символов)
@@ -71,23 +73,27 @@ ___
 + **addInfo** - Другое
 + **comment** - Комментарий
 
-Строка адреса получается конкатенацией в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
+Строка адреса является конкатенацией полей структурированного адреса в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
+При передачи в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
+При передачи обоих адресов строковый будет игнорирован.
+При передачи только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
 
 ##### Счета юрлица
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **updated** - Момент последнего обновления сущности`Только для чтения`
-+ **isDefault** - Является ли счёт основным счётом юрлица
-+ **accountNumber** - Номер счёта `Необходимо`
++ **isDefault** - Является ли счет основным счетом юрлица
++ **accountNumber** - Номер счета `Необходимо`
 + **bankName** - Наименование банка
 + **bankLocation** - Адрес банка
 + **correspondentAccount** - Корр счет
 + **bic** - БИК
-+ **agent** - Ссылка на юрлицо (тип [Мета](/api/remap/1.2/doc/index.html#header-метаданные)) `Необходимо`
++ **agent** - Ссылка на юрлицо (тип [Мета](#metadannye)) `Необходимо`
 
 #### Тип юрлица
 В зависимости от типа юрлица **companyType** в составе его объекта будут выводиться разные наборы реквизитов.
 Типы юрлица и соответствующие значения, которые могут быть переданы в значение данного поля:
+
 | Тип юрлица                | Значение поля companyType  |
 | ------------------------------ |:---------------------------|
 | Юридическое лицо               | legal                      |
@@ -95,6 +101,7 @@ ___
 | Физическое лицо                | individual                 |
 
 Если тип юрлица `Юридическое лицо`, будут выведены следующие поля реквизитов:
+
 + **legalTitle** - Полное наименование юрлица
 + **legalAddress** - Юридический адрес юрлица
 + **inn** - ИНН
@@ -103,6 +110,7 @@ ___
 + **okpo** - ОКПО
 
 Если тип юрлица `Индивидуальный предприниматель`, будут выведены следующие поля реквизитов:
+
 + **legalTitle** - Полное наименование юрлица
 + **legalAddress** - Юридический адрес юрлица
 + **inn** - ИНН
@@ -112,17 +120,19 @@ ___
 + **certificateDate** - Дата свидетельства
 
 Если тип юрлица `Физическое лицо`, будут выведены следующие поля реквизитов:
+
 + **legalTitle** - Полное наименование юрлица
 + **legalAddress** - Юридический адрес юрлица
 + **inn** - ИНН
 
-О работе с доп. полями юрлиц можно прочитать [здесь](/api/remap/1.2/doc/index.html#header-работа-с-дополнительными-полями)
+О работе с доп. полями юрлиц можно прочитать [здесь](#rabota-s-dopolnitel-nymi-polqmi)
 
 
 ### Получить список юрлиц
-Запрос на получение списка юрлиц на данной учётной записи.
-- **meta** [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о выдаче,
-- **context** - [Метаданные](/api/remap/1.2/doc/index.html#header-метаданные) о сотруднике, выполнившем запрос.
+Запрос на получение списка юрлиц на данной учетной записи.
+
+- **meta** [Метаданные](#metadannye) о выдаче,
+- **context** - [Метаданные](#metadannye) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой юрлица.
 
 **Параметры**
@@ -195,6 +205,8 @@ curl -X GET
       "externalCode": "6IRv89VSgKY7yQAmAuV7n0",
       "archived": false,
       "created": "2007-02-07 17:16:41",
+      "trackingContractNumber": "12345678",
+      "trackingContractDate": "2007-02-07 00:00:00",
       "legalTitle": "ООО Великое объединение любителей великих объединений",
       "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
       "legalAddressFull": {
@@ -278,7 +290,7 @@ curl -X GET
 ### Создать юрлицо 
 Запрос на создание нового юрлица.
 #### Описание
-Юрлицо создаётся на основе переданного объекта JSON,
+Юрлицо создается на основе переданного объекта JSON,
 который содержит представление нового юрлица.
 
 > Пример создания нового юрлица.
@@ -288,77 +300,79 @@ curl -X GET
     "https://online.moysklad.ru/api/remap/1.2/entity/organization"
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
-      -d '{
-            "name": "ОАО СветПром",
-            "description": "юрлицо, делающее маленькую прибыль",
-            "code": "666",
-            "externalCode": "666АААА666",
-            "archived": false,
-            "legalTitle": "ООО Великое Свет Пром",
-            "legalAddressFull": {
-            "postalCode": "125009",
-            "country": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-                "type": "country",
-                "mediaType": "application/json"
-              }
-            },
-            "region": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-                "type": "region",
-                "mediaType": "application/json"
-              }
-            },
-            "city": "Москва",
-            "street": "ул Тверская",
-            "house": "1",
-            "apartment": "123",
-            "addInfo": "addinfo",
-            "comment": "some words about address"
-          },
-          "actualAddressFull": {
-            "postalCode": "125009",
-            "country": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-                "type": "country",
-                "mediaType": "application/json"
-              }
-            },
-            "region": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-                "type": "region",
-                "mediaType": "application/json"
-              }
-            },
-            "city": "Москва",
-            "street": "ул Тверская",
-            "house": "1",
-            "apartment": "111",
-            "addInfo": "addinfo",
-            "comment": "some words about address"
-          },
-            "inn": "87654321",
-            "kpp": "15312532",
-            "ogrn": "12345",
-            "okpo": "12345",
-            "email": "svetprom@mail.svet",
-            "phone": "22222222",
-            "fax": "bello123",
-            "isEgaisEnable": true,
-            "fsrarId": "1963703",
-            "payerVat": true,
-            "utmUrl": "10.250.110.81",
-            "director": "Кипелова Александра",
-            "chiefAccountant": "Подкупников Иван"
-          }'  
+      -d '{  
+  "name":"ОАО СветПром",
+  "description":"юрлицо, делающее маленькую прибыль",
+  "code":"666",
+  "externalCode":"666АААА666",
+  "archived":false,
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
+  "legalTitle":"ООО Великое Свет Пром",
+  "legalAddressFull":{  
+    "postalCode":"125009",
+    "country":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
+      }
+    },
+    "region":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
+      }
+    },
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"123",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
+  },
+  "actualAddressFull":{  
+    "postalCode":"125009",
+    "country":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
+      }
+    },
+    "region":{  
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
+      }
+    },
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"111",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
+  },
+  "inn":"87654321",
+  "kpp":"15312532",
+  "ogrn":"12345",
+  "okpo":"12345",
+  "email":"svetprom@mail.svet",
+  "phone":"22222222",
+  "fax":"bello123",
+  "isEgaisEnable":true,
+  "fsrarId":"1963703",
+  "payerVat":true,
+  "utmUrl":"10.250.110.81",
+  "director":"Кипелова Александра",
+  "chiefAccountant":"Подкупников Иван"
+}'  
 ```
 
 > Response 200 (application/json)
@@ -397,6 +411,8 @@ curl -X GET
   "code": "666",
   "externalCode": "666АААА666",
   "archived": false,
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
   "legalTitle": "ООО Великое Свет Пром",
   "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
   "legalAddressFull": {
@@ -483,76 +499,27 @@ curl -X GET
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
       -d '{
-            "name": "ОАО СветПром",
-            "description": "юрлицо, делающее маленькую прибыль",
-            "code": "666",
-            "externalCode": "666АААА666",
-            "archived": false,
-            "legalTitle": "ООО Великое Свет Пром",
-            "legalAddressFull": {
-            "postalCode": "125009",
-            "country": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-                "type": "country",
-                "mediaType": "application/json"
-              }
-            },
-            "region": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-                "type": "region",
-                "mediaType": "application/json"
-              }
-            },
-            "city": "Москва",
-            "street": "ул Тверская",
-            "house": "1",
-            "apartment": "123",
-            "addInfo": "addinfo",
-            "comment": "some words about address"
-          },
-          "actualAddressFull": {
-            "postalCode": "125009",
-            "country": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-                "type": "country",
-                "mediaType": "application/json"
-              }
-            },
-            "region": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-                "type": "region",
-                "mediaType": "application/json"
-              }
-            },
-            "city": "Москва",
-            "street": "ул Тверская",
-            "house": "1",
-            "apartment": "111",
-            "addInfo": "addinfo",
-            "comment": "some words about address"
-          },
-            "inn": "87654321",
-            "kpp": "15312532",
-            "ogrn": "12345",
-            "okpo": "12345",
-            "email": "svetprom@mail.svet",
-            "phone": "22222222",
-            "fax": "bello123",
-            "attributes": [
-              {
-                "id": "7f4a6b38-12bb-11e6-9464-e4de00000076",
-                "value": "Строковое значение"
-              }
-            ]
-          }'  
+  "name": "ОАО СветПром",
+  "description": "Новое юрлицо",
+  "code": "666",
+  "archived": false,
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
+  "legalTitle": "ООО Великое Свет Пром",
+  "inn": "87654321",
+  "kpp": "15312532",
+  "ogrn": "12345",
+  "okpo": "12345",
+  "email": "svetprom@mail.svet",
+  "phone": "22222222",
+  "fax": "bello123",
+  "attributes": [
+    {
+      "id": "7f4a6b38-12bb-11e6-9464-e4de00000076",
+      "value": "Строковое значение"
+    }
+  ]
+}'  
 ```
 
 > Response 200 (application/json)
@@ -586,13 +553,15 @@ curl -X GET
     }
   },
   "updated": "2016-05-05 18:40:51",
-  "name": "ОАО СветГАЗКАМАЗПром",
+  "name": "ОАО СветПром",
   "description": "Новое юрлицо",
   "code": "666",
   "externalCode": "sfwafn22-124124sa",
   "archived": false,
   "created": "2007-02-07 17:16:41",
-  "legalTitle": "ООО Великое Сообщество КАМАЗ ПРОМ",
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
+  "legalTitle": "ООО Великое Свет Пром",
   "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
   "legalAddressFull": {
     "postalCode": "125009",
@@ -679,7 +648,7 @@ curl -X GET
 ```
 
 ### Массовое создание и обновление юрлиц 
-[Массовое создание и обновление](/api/remap/1.2/doc/index.html#header-создание-и-обновление-нескольких-объектов) юрлиц.
+[Массовое создание и обновление](#sozdanie-i-obnowlenie-neskol-kih-ob-ektow) юрлиц.
 В теле запроса нужно передать массив, содержащий JSON представления юрлиц, которые вы хотите создать или обновить.
 Обновляемые юрлица должны содержать идентификатор в виде метаданных.
 
@@ -691,56 +660,60 @@ curl -X GET
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
       -d '[
-            {
-              "name": "ОАО СветПром",
-              "description": "юрлицо, делающее маленькую прибыль",
-              "code": "666",
-              "externalCode": "666АААА666",
-              "archived": false,
-              "legalTitle": "ООО Великое Свет Пром",
-              "legalAddress": "г Москва ул Ленин д 42/685",
-              "actualAddress": "г Пермь ул Сталина д 75",
-              "inn": "87654321",
-              "kpp": "15312532",
-              "ogrn": "12345",
-              "okpo": "12345",
-              "email": "svetprom@mail.svet",
-              "phone": "22222222",
-              "fax": "bello123",
-              "isEgaisEnable": true,
-              "fsrarId": "1963703",
-              "payerVat": true,
-              "utmUrl": "10.250.110.81",
-              "director": "Кипелова Александра",
-              "chiefAccountant": "Подкупников Иван"
-            },
-            {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/bf182d24-12d7-11e6-9464-e4de00000012",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
-                "type": "organization",
-                "mediaType": "application/json"
-              },
-              "name": "ОАО СветПром",
-              "description": "юрлицо, делающее маленькую прибыль",
-              "code": "666",
-              "externalCode": "666АААА666",
-              "archived": false,
-              "legalTitle": "ООО Великое Свет Пром",
-              "legalAddress": "г Москва ул Ленин д 42/685",
-              "actualAddress": "г Уфа ул Маяковского д 65",
-              "inn": "87654321",
-              "kpp": "15312532",
-              "ogrn": "12345",
-              "okpo": "12345",
-              "email": "svetprom@mail.svet",
-              "phone": "22222222",
-              "fax": "bello123",
-              "payerVat": false,
-              "director": "Вздрыжженов Иван Валерьевич",
-              "chiefAccountant": "Кулумбекова Василиса Иисмаиловна"
-            }
-          ]'  
+  {
+    "name": "ОАО СветПром",
+    "description": "юрлицо, делающее маленькую прибыль",
+    "code": "666",
+    "externalCode": "666АААА666",
+    "archived": false,
+    "trackingContractNumber": "12345678",
+    "trackingContractDate": "2007-02-07 00:00:00",
+    "legalTitle": "ООО Великое Свет Пром",
+    "legalAddress": "г Москва ул Ленин д 42/685",
+    "actualAddress": "г Пермь ул Сталина д 75",
+    "inn": "87654321",
+    "kpp": "15312532",
+    "ogrn": "12345",
+    "okpo": "12345",
+    "email": "svetprom@mail.svet",
+    "phone": "22222222",
+    "fax": "bello123",
+    "isEgaisEnable": true,
+    "fsrarId": "1963703",
+    "payerVat": true,
+    "utmUrl": "10.250.110.81",
+    "director": "Кипелова Александра",
+    "chiefAccountant": "Подкупников Иван"
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/bf182d24-12d7-11e6-9464-e4de00000012",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    },
+    "name": "ОАО СветПром",
+    "description": "юрлицо, делающее маленькую прибыль",
+    "code": "666",
+    "externalCode": "666АААА666",
+    "archived": false,
+    "trackingContractNumber": "12345678",
+    "trackingContractDate": "2007-02-07 00:00:00",
+    "legalTitle": "ООО Великое Свет Пром",
+    "legalAddress": "г Москва ул Ленин д 42/685",
+    "actualAddress": "г Уфа ул Маяковского д 65",
+    "inn": "87654321",
+    "kpp": "15312532",
+    "ogrn": "12345",
+    "okpo": "12345",
+    "email": "svetprom@mail.svet",
+    "phone": "22222222",
+    "fax": "bello123",
+    "payerVat": false,
+    "director": "Вздрыжженов Иван Валерьевич",
+    "chiefAccountant": "Кулумбекова Василиса Иисмаиловна"
+  }
+]'  
 ```
 
 > Response 200 (application/json)
@@ -780,6 +753,8 @@ curl -X GET
     "code": "666",
     "externalCode": "666АААА666",
     "archived": false,
+    "trackingContractNumber": "12345678",
+    "trackingContractDate": "2007-02-07 00:00:00",
     "legalTitle": "ООО Великое Свет Пром",
     "legalAddress": "г Москва ул Ленин д 42/685",
     "actualAddress": "г Пермь ул Сталина д 75",
@@ -839,6 +814,8 @@ curl -X GET
     "externalCode": "sfwafn22-124124sa",
     "archived": false,
     "created": "2007-02-07 17:16:41",
+    "trackingContractNumber": "12345678",
+    "trackingContractDate": "2007-02-07 00:00:00",
     "legalTitle": "ООО Великое Сообщество КАМАЗ ПРОМ",
     "legalAddress": "г Москва ул Ленина д 42/685",
     "actualAddress": "г Уфа ул Маяковского д 65",
@@ -885,13 +862,57 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление юрлица.
 
+### Массовое удаление Организаций
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Организаций, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Организаций. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/organization"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+            "type": "organization",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+            "type": "organization",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информацио об удалении Организаций.
+
+```json
+[
+  {
+    "info":"Сущность 'organization' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'organization' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+```
+
 ### Метаданные юрлиц
 Запрос на получение метаданных юрлиц. Результат - объект JSON, включающий в себя:
+
 + **meta** - Ссылка на метаданные юрлиц
-+ **attributes** - Массив объектов доп. полей юрлиц в формате [Метаданных](#header-метаданные)
++ **attributes** - Массив объектов доп. полей юрлиц в формате [Метаданных](#metadannye)
 + **createShared** - создавать новые юрлица с меткой "Общий"
 
-Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](#header-работа-с-дополнительными-полями).
+Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](#rabota-s-dopolnitel-nymi-polqmi).
 
 > Метаданные юрлиц
 
@@ -1013,6 +1034,8 @@ curl -X GET
   "externalCode": "666АААА666",
   "archived": false,
   "created": "2007-02-07 17:16:41",
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
   "legalTitle": "ООО Великое Свет Пром",
   "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
   "legalAddressFull": {
@@ -1113,32 +1136,34 @@ curl -X GET
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
       -d '{
-            "name": "ОАО СветПром",
-            "description": "юрлицо, делающее маленькую прибыль",
-            "code": "666",
-            "externalCode": "666АААА666",
-            "archived": false,
-            "legalTitle": "ООО Великое Свет Пром",
-            "legalAddress": "г Москва ул Ленин д 42/685",
-            "actualAddress": "г Пермь ул Сталина д 75",
-            "inn": "87654321",
-            "kpp": "15312532",
-            "ogrn": "12345",
-            "okpo": "12345",
-            "email": "svetprom@mail.svet",
-            "phone": "22222222",
-            "fax": "bello123",
-            "isEgaisEnable": true,
-            "fsrarId": "1963703",
-            "payerVat": true,
-            "utmUrl": "10.250.110.81",
-            "director": "Кипелова Александра",
-            "chiefAccountant": "Подкупников Иван"
-          }'  
+  "name": "ОАО СветПром",
+  "description": "юрлицо, делающее маленькую прибыль",
+  "code": "666",
+  "externalCode": "666АААА666",
+  "archived": false,
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
+  "legalTitle": "ООО Великое Свет Пром",
+  "legalAddress": "г Москва ул Ленин д 42/685",
+  "actualAddress": "г Пермь ул Сталина д 75",
+  "inn": "87654321",
+  "kpp": "15312532",
+  "ogrn": "12345",
+  "okpo": "12345",
+  "email": "svetprom@mail.svet",
+  "phone": "22222222",
+  "fax": "bello123",
+  "isEgaisEnable": true,
+  "fsrarId": "1963703",
+  "payerVat": true,
+  "utmUrl": "10.250.110.81",
+  "director": "Кипелова Александра",
+  "chiefAccountant": "Подкупников Иван"
+}'  
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON обновлённого юрлица.
+Успешный запрос. Результат - JSON обновленного юрлица.
 
 ```json
 {
@@ -1173,6 +1198,8 @@ curl -X GET
   "code": "666",
   "externalCode": "666АААА666",
   "archived": false,
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
   "legalTitle": "ООО Великое Свет Пром",
   "legalAddress": "г Москва ул Ленин д 42/685",
   "actualAddress": "г Пермь ул Сталина д 75",
@@ -1209,83 +1236,85 @@ curl -X GET
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
       -d '{
-            "name": "ОАО СветПром",
-            "description": "юрлицо, делающее маленькую прибыль",
-            "code": "666",
-            "externalCode": "666АААА666",
-            "archived": false,
-            "legalTitle": "ООО Великое Свет Пром",
-            "legalAddressFull": {
-            "postalCode": "125009",
-            "country": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-                "type": "country",
-                "mediaType": "application/json"
-              }
-            },
-            "region": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-                "type": "region",
-                "mediaType": "application/json"
-              }
-            },
-            "city": "Москва",
-            "street": "ул Тверская",
-            "house": "1",
-            "apartment": "123",
-            "addInfo": "addinfo",
-            "comment": "some words about address"
-          },
-          "actualAddressFull": {
-            "postalCode": "125009",
-            "country": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
-                "type": "country",
-                "mediaType": "application/json"
-              }
-            },
-            "region": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
-                "type": "region",
-                "mediaType": "application/json"
-              }
-            },
-            "city": "Москва",
-            "street": "ул Тверская",
-            "house": "1",
-            "apartment": "111",
-            "addInfo": "addinfo",
-            "comment": "some words about address"
-          },
-            "inn": "87654321",
-            "kpp": "15312532",
-            "ogrn": "12345",
-            "okpo": "12345",
-            "email": "svetprom@mail.svet",
-            "phone": "22222222",
-            "fax": "bello123",
-            "attributes": [
-              {
-                "id": "7f4a6b38-12bb-11e6-9464-e4de00000076",
-                "value": "Такая Строка"
-              }
-            ],
-            "payerVat": false,
-            "director": "Вздрыжженов Иван Валерьевич",
-            "chiefAccountant": "Кулумбекова Василиса Иисмаиловна"
-          }'  
+  "name": "ОАО СветПром",
+  "description": "юрлицо, делающее маленькую прибыль",
+  "code": "666",
+  "externalCode": "666АААА666",
+  "archived": false,
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
+  "legalTitle": "ООО Великое Свет Пром",
+  "legalAddressFull": {
+  "postalCode": "125009",
+  "country": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+      "type": "country",
+      "mediaType": "application/json"
+    }
+  },
+  "region": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+      "type": "region",
+      "mediaType": "application/json"
+    }
+  },
+  "city": "Москва",
+  "street": "ул Тверская",
+  "house": "1",
+  "apartment": "123",
+  "addInfo": "addinfo",
+  "comment": "some words about address"
+},
+"actualAddressFull": {
+  "postalCode": "125009",
+  "country": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+      "type": "country",
+      "mediaType": "application/json"
+    }
+  },
+  "region": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+      "type": "region",
+      "mediaType": "application/json"
+    }
+  },
+  "city": "Москва",
+  "street": "ул Тверская",
+  "house": "1",
+  "apartment": "111",
+  "addInfo": "addinfo",
+  "comment": "some words about address"
+},
+  "inn": "87654321",
+  "kpp": "15312532",
+  "ogrn": "12345",
+  "okpo": "12345",
+  "email": "svetprom@mail.svet",
+  "phone": "22222222",
+  "fax": "bello123",
+  "attributes": [
+    {
+      "id": "7f4a6b38-12bb-11e6-9464-e4de00000076",
+      "value": "Такая Строка"
+    }
+  ],
+  "payerVat": false,
+  "director": "Вздрыжженов Иван Валерьевич",
+  "chiefAccountant": "Кулумбекова Василиса Иисмаиловна"
+}'  
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON обновлённого юрлица.
+Успешный запрос. Результат - JSON обновленного юрлица.
 
 ```json
 {
@@ -1320,6 +1349,8 @@ curl -X GET
   "code": "666",
   "externalCode": "sfwafn22-124124sa",
   "archived": false,
+  "trackingContractNumber": "12345678",
+  "trackingContractDate": "2007-02-07 00:00:00",
   "created": "2007-02-07 17:16:41",
   "legalTitle": "ООО Великое Сообщество КАМАЗ ПРОМ",
   "legalAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
@@ -1481,7 +1512,7 @@ curl -X GET
 #### Описание
 Обновляются счета юрлица с указанным id.
 Обновляются все поля, указанные в JSON объекте запроса, кроме
-помеченных `Только для чтения` в описании [атрибутов счетов юрлица](#header-счета-юрлица).
+помеченных `Только для чтения` в описании [атрибутов счетов юрлица](#scheta-urlica-2).
 Поля, которые не были указаны в JSON запроса, не изменяются.
 
 **Параметры**
@@ -1498,29 +1529,29 @@ curl -X GET
     -H "Authorization: Basic <Access-Token>"
     -H "Content-Type: application/json"
       -d '[
-            {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/d955aa70-6703-11e7-9464-e4de00000051/accounts/d9560d0e-6703-11e7-9464-e4de00000052",
-                "type": "account",
-                "mediaType": "application/json"
-              },
-              "id": "d9560d0e-6703-11e7-9464-e4de00000052",
-              "isDefault": false,
-              "accountNumber": "1234567876543",
-              "bankName": "\"ОАО Сбербm;анк\"",
-              "bankLocation": "г Моl;;lсква",
-              "correspondentAccount": "12314124jkjj2451",
-              "bic": "21412hhhh4"
-            },
-            {
-              "isDefault": false,
-              "accountNumber": "1234567876543",
-              "bankName": "\"ОАО БАНК\"",
-              "bankLocation": "г Москва",
-              "correspondentAccount": "12314124jkjj2451",
-              "bic": "21412555554"
-            }
-          ]'  
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/d955aa70-6703-11e7-9464-e4de00000051/accounts/d9560d0e-6703-11e7-9464-e4de00000052",
+      "type": "account",
+      "mediaType": "application/json"
+    },
+    "id": "d9560d0e-6703-11e7-9464-e4de00000052",
+    "isDefault": false,
+    "accountNumber": "1234567876543",
+    "bankName": "\"ОАО Сбербm;анк\"",
+    "bankLocation": "г Моl;;lсква",
+    "correspondentAccount": "12314124jkjj2451",
+    "bic": "21412hhhh4"
+  },
+  {
+    "isDefault": false,
+    "accountNumber": "1234567876543",
+    "bankName": "\"ОАО БАНК\"",
+    "bankLocation": "г Москва",
+    "correspondentAccount": "12314124jkjj2451",
+    "bic": "21412555554"
+  }
+]'  
 ```
 
 > Response 200 (application/json)

@@ -5,11 +5,13 @@
 Данные поля могут быть рассчитаны в зависимости от даты и склада с использованием параметров запроса `stockmoment` и `stockstore`.
 Особенность данной сущности заключается в наличии специального параметра `search` в фильтре по нескольким полям с помощью параметра `filter`.
 Используя этот параметр можно произвести контекстный поиск по объектам, выводимым в ассортименте.
-Чтобы это осуществить, нужно использовать [фильтр выборки по нескольким полям](/api/remap/1.2/doc/index.html#header-фильтрация-выборки-с-помощью-параметра-filter),
+Чтобы это осуществить, нужно использовать [фильтр выборки по нескольким полям](#fil-traciq-wyborki-s-pomosch-u-parametra-filter),
 указав в качестве одного из полей поле `search` и условие для этого поля - равенство поисковой строке.
+
 + Пример (не URL encoded): `filter=search=some_random_string`.
 
-Поиск `filter=search=some_random_string` среди объектов ассортимента на соответствие поисковой строке будет осуществлён по следующим полям:
+Поиск `filter=search=some_random_string` среди объектов ассортимента на соответствие поисковой строке будет осуществлен по следующим полям:
+
 + по наименованию элемента Ассортимента **name**
 + по имени модификации **name**
 + по коду **code**
@@ -18,9 +20,10 @@
 + по штрихкоду **barcode**
 + по штрихкоду модификации **barcode**
 
-Также по данной сущности можно осуществлять контекстный поиск с помощью специального параметра `search` (используется без `filter`). Подробнее можно узнать по [ссылке](#header-контекстный-поиск). Поиск с параметром search отличается от других тем, что поиск не префиксный, без токенизации и идет только по одному полю одновременно. Ищет такие строки, в которые входит значение строки поиска.
+Также по данной сущности можно осуществлять контекстный поиск с помощью специального параметра `search` (используется без `filter`). Подробнее можно узнать по [ссылке](#kontextnyj-poisk). Поиск с параметром search отличается от других тем, что поиск не префиксный, без токенизации и идет только по одному полю одновременно. Ищет такие строки, в которые входит значение строки поиска.
 
-Поиск `search=some_random_string` среди объектов ассортимента на соответствие поисковой строке будет осуществлён по следующим полям:
+Поиск `search=some_random_string` среди объектов ассортимента на соответствие поисковой строке будет осуществлен по следующим полям:
+
 + по наименованию элемента ассортимента **name**
 + по описанию **description**
 
@@ -116,22 +119,14 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
-      "image": {
+      "images": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/download/28ca8201-36e7-11e7-8a7f-40d0000000cd",
-          "mediaType": "application/octet-stream"
-        },
-        "title": "product_image",
-        "filename": "product_image.png",
-        "size": 64211,
-        "updated": "2017-05-12 10:46:50",
-        "miniature": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/download/28ca8201-36e7-11e7-8a7f-40d0000000cd?miniature=true",
-          "mediaType": "image/png"
-        },
-        "tiny": {
-          "href": "https://online.moysklad.ru/app/download/28ca6fbb-36e7-11e7-8a7f-40d0000000cc.png",
-          "mediaType": "image/png"
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d1/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
         }
       },
       "minPrice": {
@@ -364,6 +359,16 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
+      "images": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/bundle/4f75d130-36e7-11e7-8a7f-40d0000000ef/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
       "minPrice": {
         "value": 500,
         "currency": {
@@ -457,6 +462,16 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
+      "images": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/6830a346-36e7-11e7-8a7f-40d0000000f8/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },      
       "minPrice": {
         "value": 500,
         "currency": {
@@ -653,5 +668,48 @@ curl -X GET
     }
   ]
 }
+```
+
+### Массовое удаление позиций в Ассортименте
+
+В теле запроса нужно передать массив, содержащий JSON метаданных позиций в Ассортименте, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление позиций в Ассортименте. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/assortment"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+            "type": "product",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+            "type": "service",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информацио об удалении позиций в Ассортименте.
+
+```json
+[
+  {
+    "info":"Сущность 'service' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  },
+  {
+    "info":"Сущность 'product' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  }
+]
 ```  
 
