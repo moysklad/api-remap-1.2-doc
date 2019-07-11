@@ -35,23 +35,23 @@
 
 #### Атрибуты доступные для фильтрации
 
-Результаты отчета можно отфильтровать, используя параметр filter. Для каждого параметра кроме **store.id** можно указать несколько значений. Нельзя указывать пустые значения. Поддерживается фильтрация только на равенство.
+Результаты отчета можно отфильтровать, используя параметр filter. Для каждого параметра кроме **store** можно указать несколько значений. Нельзя указывать пустые значения. Поддерживается фильтрация только на равенство.
 
-+ **store.id** - id складов, по которым нужно произвести фильтрацию. Поддерживает только одно значение
-+ **product.id** - Параметр для фильтрации по нескольким id товаров. Значение параметра - id товара, который должен быть включен в выборку. В результате применения данного фильтра в отфильтрованную выборку попадут только те товары, id которых были перечислены в этом параметре. Данный параметр фильтрации можно комбинировать с параметрами `consignment.id` и `variant.id` Если в массиве UUID будет передан только 1 товар, то в итоговую выборку попадут только остатки по 1 товару.
-+ **consignment.id** - Параметр для фильтрации по нескольким id серий. Значение параметра - id серии, которая должна быть включена в выборку. В результате применения данного фильтра в отфильтрованную выборку попадут только те серии, id которых были перечислены в этом параметре. Данный параметр фильтрации можно комбинировать с параметрами `product.id` и `variant.id`.
-+ **variant.id** - Параметр для фильтрации по нескольким id модификаций. Значение параметра - id модификации, которая должна быть включена в выборку. В результате применения данного фильтра в отфильтрованную выборку попадут только те модификации, id которых были перечислены в этом параметре. Данный параметр фильтрации можно комбинировать с параметрами `product.id` и `consignment.id`.
-+ **productFolder.id** - id группы товаров, по которой нужно произвести фильтрацию.
++ **store** - ссылка на склад, по которому нужно произвести фильтрацию. Поддерживает только одно значение
++ **product** - Параметр для фильтрации по нескольким товарам. Значение параметра - ссылка на товар, услугу или комплект который должен быть включен в выборку. В результате применения данного фильтра в отфильтрованную выборку попадут только те товары, которые были перечислены в этом параметре. Данный параметр фильтрации можно комбинировать с параметрами `consignment` и `variant` Если будет передан только 1 товар, то в итоговую выборку попадут только остатки по 1 товару.
++ **consignment** - Параметр для фильтрации по нескольким сериям. Значение параметра - ссылка на серию, которая должна быть включена в выборку. В результате применения данного фильтра в отфильтрованную выборку попадут только те серии, которые были перечислены в этом параметре. Данный параметр фильтрации можно комбинировать с параметрами `product` и `variant`.
++ **variant** - Параметр для фильтрации по нескольким модификациям. Значение параметра - ссылка на модификацию, которая должна быть включена в выборку. В результате применения данного фильтра в отфильтрованную выборку попадут только те модификации, которые были перечислены в этом параметре. Данный параметр фильтрации можно комбинировать с параметрами `product` и `consignment`.
++ **productFolder** - ссылки на группы товаров, по которым нужно произвести фильтрацию.
 
 Примеры фильтрации:
 
-- `filter=store.id=656c4032-8667-11e6-8a84-bae500003321`
-- `filter=productFolder.id=c56d0702-85c7-11e9-ac12-000d000000b1`
-- `filter=productFolder.id=c56d0702-85c7-11e9-ac12-000d000000b1;productFolder.id=c56d0702-85c7-11e9-ac12-000d000000b2`
-- `filter=product.id=656c4032-8552-11e6-8a84-bae500000044;product.id=706b9cd3-8552-11e6-8a84-bae500000045;product.id=7a5f0ed5-8552-11e6-8a84-bae500000046`
-- `filter=consignment.id=656c4032-8552-11e6-8a84-bae500000044;consignment.id=706b9cd3-8552-11e6-8a84-bae500000045;product.id=7a5f0ed5-8552-11e6-8a84-bae500000046`
-- `filter=variant.id=656c4032-8552-11e6-8a84-bae500000044;consignment.id=706b9cd3-8552-11e6-8a84-bae500000045;product.id=7a5f0ed5-8552-11e6-8a84-bae500000046`
-- `filter=store.id=656c4032-8667-11e6-8a84-bae500003321;productFolder.id=c56d0702-85c7-11e9-ac12-000d000000b1;variant.id=656c4032-8552-11e6-8a84-bae500000044;consignment.id=706b9cd3-8552-11e6-8a84-bae500000045;product.id=7a5f0ed5-8552-11e6-8a84-bae500000046`
+- `filter=store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321`
+- `filter=productFolder=https://online.moysklad.ru/api/remap/1.2/entity/productfolder/c56d0702-85c7-11e9-ac12-000d000000b1`
+- `filter=productFolder=https://online.moysklad.ru/api/remap/1.2/entity/productfolder/c56d0702-85c7-11e9-ac12-000d000000b1;productFolder=https://online.moysklad.ru/api/remap/1.2/entity/productfolder/c56d0702-85c7-11e9-ac12-000d000000b2`
+- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;product=https://online.moysklad.ru/api/remap/1.2/entity/service/706b9cd3-8552-11e6-8a84-bae500000045;product=https://online.moysklad.ru/api/remap/1.2/entity/bundle/7a5f0ed5-8552-11e6-8a84-bae500000046`
+- `filter=consignment=https://online.moysklad.ru/api/remap/1.2/entity/consignment/656c4032-8552-11e6-8a84-bae500000044;consignment=https://online.moysklad.ru/api/remap/1.2/entity/consignment/706b9cd3-8552-11e6-8a84-bae500000045;product=https://online.moysklad.ru/api/remap/1.2/entity/product/7a5f0ed5-8552-11e6-8a84-bae500000046`
+- `filter=variant=https://online.moysklad.ru/api/remap/1.2/entity/variant/656c4032-8552-11e6-8a84-bae500000044;consignment=https://online.moysklad.ru/api/remap/1.2/entity/consignment/706b9cd3-8552-11e6-8a84-bae500000045;product=https://online.moysklad.ru/api/remap/1.2/entity/product/7a5f0ed5-8552-11e6-8a84-bae500000046`
+- `filter=store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;productFolder=https://online.moysklad.ru/api/remap/1.2/entity/productfolderhttps://online.moysklad.ru/api/remap/1.2/entity/productfolder/c56d0702-85c7-11e9-ac12-000d000000b1;variant=https://online.moysklad.ru/api/remap/1.2/entity/variant/656c4032-8552-11e6-8a84-bae500000044;consignment=https://online.moysklad.ru/api/remap/1.2/entity/consignment/706b9cd3-8552-11e6-8a84-bae500000045;product=https://online.moysklad.ru/api/remap/1.2/entity/product/7a5f0ed5-8552-11e6-8a84-bae500000046`
 
 ### Получить Остатки
 
@@ -562,14 +562,14 @@ curl -X GET
 
 Результаты отчета можно отфильтровать, используя параметр filter. Нельзя указывать пустые значения. Поддерживается фильтрация только на равенство.
 
-+ **product.id** - id товара по которому нужно произвести фильтрацию. Можно указать несколько значений.
-+ **productFolder.id** - id группы товаров, по которой нужно произвести фильтрацию. Можно указать только одно значение.
++ **product** - ссылка на товар, услугу, комплект, модификацию или серию по которым нужно произвести фильтрацию. Можно указать несколько значений.
++ **productFolder** - ссылка на группу товаров, по которой нужно произвести фильтрацию. Можно указать только одно значение.
 
 Примеры фильтрации:
 
-- `filter=product.id=656c4032-8552-11e6-8a84-bae500000044`
-- `filter=product.id=656c4032-8552-11e6-8a84-bae500000044;product.id=656c4032-8552-11e6-8a84-bae500000045`
-- `filter=productFolder.id=c56d0702-85c7-11e9-ac12-000d000000b1`
+- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044`
+- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000045`
+- `filter=productFolder=https://online.moysklad.ru/api/remap/1.2/entity/productfolderhttps://online.moysklad.ru/api/remap/1.2/entity/productfolder/c56d0702-85c7-11e9-ac12-000d000000b1`
 
 
 ### Получить Остатки по складам
