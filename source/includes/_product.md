@@ -2243,6 +2243,12 @@ curl -X GET
                 "quantity": 101
               }
             ],
+            "images": [
+              {
+                "filename":"birdimageNew.png",
+                "content":"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAAEHRFWHRTb2Z0d2FyZQBTaHV0dGVyY4LQCQAAAAxJREFUCNdj+PePAQAE+gH90KA5ZAAAAABJRU5ErkJggg=="
+              }
+             ],
             "alcoholic": {
               "excise": true,
               "type": 3100,
@@ -2309,7 +2315,7 @@ curl -X GET
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/26b36824-2c83-11e6-8a84-bae50000001b/images",
       "type": "image",
       "mediaType": "application/json",
-      "size": 0,
+      "size": 1,
       "limit": 1000,
       "offset": 0
     }
