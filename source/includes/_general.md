@@ -1573,7 +1573,7 @@ curl -X POST
 > Удаление двух доп полей одним запросом
 
 ```shell
-curl -X GET
+curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/delete"
   -H "Authorization: Basic <Access-Token>"
   -H 'Content-Type: application/json' \
