@@ -1566,6 +1566,47 @@ curl -X POST
 ]
 ```
 
+> Пример создания дополнительного поля типа пользовательский справочник.
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
+  -H "Authorization: Basic <Access-Token>"
+  -H 'Content-Type: application/json' \
+  -d '{
+        "customEntityMeta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/0347beb0-a785-11e9-ac12-000800000003",
+          "type": "customentitymetadata",
+          "mediaType": "application/json"
+        },
+        "name": "Доп поле типа пользовательский справочник",
+        "type": "customentity",
+        "required": false
+      }'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного доп. поля.
+
+```json
+{
+  "meta": {
+    "href": "hhttps://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/53eb36a5-a78a-11e9-ac12-000c00000000",
+    "type": "attributemetadata",
+    "mediaType": "application/json"
+  },
+  "customEntityMeta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/0347beb0-a785-11e9-ac12-000800000003",
+    "type": "customentitymetadata",
+    "mediaType": "application/json"
+  },
+  "id": "53eb36a5-a78a-11e9-ac12-000c00000000",
+  "name": "Доп поле типа пользовательский справочник",
+  "type": "customentity",
+  "required": false
+}
+```
+
 #### Удалить доп. поля
 Действие доступно только для пользователя с правами администратора.<br>
 Запрос на удаление нескольких доп. полей отгрузок.
