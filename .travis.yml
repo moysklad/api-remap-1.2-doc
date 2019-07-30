@@ -1,20 +1,26 @@
-sudo: false
-
 language: ruby
-
-rvm:
-  - 2.4.0
-
 cache: bundler
-
+env:
+- SERVER_IP_ADDRESS=dev.moysklad.ru
+branches:
+  only:
+  - master
+install: gem install jekyll jekyll-sitemap jekyll-paginate html-proofer jekyll-feed
 script:
-  - bundle exec middleman build --clean --build-dir=build
-
+- bundle install
+- jekyll build --destination site
 deploy:
-  provider: pages
+  provider: script
   skip_cleanup: true
-  local_dir : build/
-  github_token: $GITHUB_TOKEN
-  target_branch : gh-pages
+  script: rsync -r --quiet site/  app@${SERVER_IP_ADDRESS}:.
   on:
     branch: master
+before_install:
+- openssl aes-256-cbc -K $encrypted_fd0bb6467860_key -iv $encrypted_fd0bb6467860_iv
+  -in deploy_key.enc -out deploy_key -d
+- eval "$(ssh-agent -s)"
+- chmod 600 ./deploy_key
+- echo -e "Host ${SERVER_IP_ADDRESS}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- ssh-add ./deploy_key
+- ssh -i ./deploy_key app@${SERVER_IP_ADDRESS} pwd
+- rm deploy_key.enc deploy_key
