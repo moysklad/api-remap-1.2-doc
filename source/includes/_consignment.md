@@ -104,6 +104,12 @@ curl -X GET
         },
         {
           "code128": "code128 barcode"
+        },
+        {
+          "upca": "040000525509"
+        },
+        {
+          "upce": "405500"
         }
       ],
       "images": {
@@ -151,6 +157,12 @@ curl -X GET
     },
     {
       "code128": "code128 barcode"
+    },
+    {
+      "upca": "040000525509"
+    },
+    {
+      "upce": "405500"
     }
   ],
   "assortment": {
@@ -190,6 +202,12 @@ curl -X GET
     },
     {
       "code128": "code128 barcode"
+    },
+    {
+      "upca": "040000525509"
+    },
+    {
+      "upce": "405500"
     }
   ],
   "assortment": {
@@ -291,6 +309,12 @@ curl -X POST
                 },
                 {
                   "code128": "code128 barcode"
+                },
+                {
+                  "upca": "040000525509"
+                },
+                {
+                  "upce": "405500"
                 }
               ],
               "assortment": {
@@ -322,6 +346,12 @@ curl -X POST
                 },
                 {
                   "code128": "code128 barcode"
+                },
+                {
+                  "upca": "040000525509"
+                },
+                {
+                  "upce": "405500"
                 }
               ],
               "assortment": {
@@ -363,6 +393,12 @@ curl -X POST
       },
       {
         "code128": "code128 barcode"
+      },
+      {
+        "upca": "040000525509"
+      },
+      {
+        "upce": "405500"
       }
     ],
     "assortment": {
@@ -398,6 +434,12 @@ curl -X POST
       },
       {
         "code128": "code128 barcode"
+      },
+      {
+        "upca": "040000525509"
+      },
+      {
+        "upce": "405500"
       }
     ],
     "assortment": {
@@ -548,6 +590,12 @@ curl -X GET
     },
     {
       "code128": "code128 barcode"
+    },
+    {
+      "upca": "040000525509"
+    },
+    {
+      "upce": "405500"
     }
   ],
   "images": {
@@ -603,6 +651,12 @@ curl -X GET
               },
               {
                 "code128": "code128 barcode"
+              },
+              {
+                "upca": "040000525509"
+              },
+              {
+                "upce": "405500"
               }
             ],
             "assortment": {
@@ -644,6 +698,12 @@ curl -X GET
     },
     {
       "code128": "code128 barcode"
+    },
+    {
+      "upca": "040000525509"
+    },
+    {
+      "upce": "405500"
     }
   ],
   "assortment": {
