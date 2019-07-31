@@ -3,10 +3,14 @@
 ### Аутентификация
 
 Для того чтобы успешно взаимодействовать с JSON API онлайн-сервиса МойСклад необходимо аутентифицироваться
- в системе. МойСклад поддерживает аутентификацию по протоколу Basic Auth, при которой вместе с запросом
+ в системе. МойСклад поддерживает аутентификацию по протоколу Basic Auth и с использованием токена доступа. 
+ * При аутентификации по протоколу Basic Auth вместе с запросом
  передается заголовок `Authorization` со значением пары `логин:пароль`, зашифрованной в вариантом RFC2045-MIME
- кодировки Base64. Аутентификация по протоколу Basic Auth с автоматической генерацией соответствующего
- заголовка поддерживается во многих HTTP-клиентах, таких как Postman, curl и т.п.
+ кодировки Base64. 
+ * При аутентификации с использованием токена доступа вместе с запросом передается заголовок `Authorization` со значением `Bearer <Access-Token>`
+ 
+ Аутентификация по протоколу Basic Auth с автоматической генерацией соответствующего
+ заголовка и возможность указать заголовок для аутентификации по токену поддерживается во многих HTTP-клиентах, таких как Postman, curl и т.п.
 
 
 ### Замечания по разработке клиентских приложений
@@ -22,7 +26,7 @@
 
   + Не более 100 запросов за 5 секундный период
   + Не более 5 параллельных запросов от одного пользователя
-  + Не более 20 параллельных запросов от аккаунта
+  + Не более 15 параллельных запросов от аккаунта
   + Не более 500 запросов с одного ip-адреса
   + Не более 10 Мб данных в одном запросе, отправляемом на сервер
 
@@ -1564,6 +1568,47 @@ curl -X POST
     "required": true
   }
 ]
+```
+
+> Пример создания дополнительного поля типа пользовательский справочник.
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
+  -H "Authorization: Basic <Access-Token>"
+  -H 'Content-Type: application/json' \
+  -d '{
+        "customEntityMeta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/0347beb0-a785-11e9-ac12-000800000003",
+          "type": "customentitymetadata",
+          "mediaType": "application/json"
+        },
+        "name": "Доп поле типа пользовательский справочник",
+        "type": "customentity",
+        "required": false
+      }'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного доп. поля.
+
+```json
+{
+  "meta": {
+    "href": "hhttps://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/53eb36a5-a78a-11e9-ac12-000c00000000",
+    "type": "attributemetadata",
+    "mediaType": "application/json"
+  },
+  "customEntityMeta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/0347beb0-a785-11e9-ac12-000800000003",
+    "type": "customentitymetadata",
+    "mediaType": "application/json"
+  },
+  "id": "53eb36a5-a78a-11e9-ac12-000c00000000",
+  "name": "Доп поле типа пользовательский справочник",
+  "type": "customentity",
+  "required": false
+}
 ```
 
 #### Удалить доп. поля

@@ -1,5 +1,5 @@
 ## Отчет Прибыльность
-Средствами JSON API можно запросить отчет "Прибыльность" по всем товарам, услугам, модификациям, сотрудникам  и покупателям.
+Средствами JSON API можно запросить отчет "Прибыльность" по всем товарам, услугам, модификациям, сотрудникам  и покупателям. Для доступа к отчету через API требуется право на просмотр отчета *Прибыли и убытки*.
 О том, что представляет собой отчет "Прибыльность" вы можете прочитать по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203025326-%D0%9E%D1%82%D1%87%D0%B5%D1%82-%D0%9F%D1%80%D0%B8%D0%B1%D1%8B%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C).
 
 #### Прибыльность по товарам 
@@ -26,6 +26,27 @@
 + **article** - Артикул товара
 + **image** - Изображение товара
 
+#### Атрибуты доступные для фильтрации
+
+Результаты отчета можно отфильтровать, используя параметр filter. Для каждого параметра можно указать только одно значение. Нельзя указывать пустые значения. Поддерживается фильтрация только на равенство.
+
++ **product** - ссылка на товар, услугу, комплект, модификацию или серию, по которой нужно произвести фильтрацию.
++ **counterparty** - ссылка на контрагента, по которому нужно произвести фильтрацию.
++ **organization** - ссылка на юрлицо, по которому нужно произвести фильтрацию.
++ **store** - ссылка на склад, по которому нужно произвести фильтрацию.
++ **project** - ссылка на проект, по которому нужно произвести фильтрацию.
++ **retailStore** - ссылка на точку продаж, по которой нужно произвести фильтрацию.
+
+Примеры фильтрации:
+
+- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044`
+- `filter=counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
+- `filter=organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003`
+- `filter=store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321`
+- `filter=project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
+- `filter=retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
+- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
+
 ### Получить Прибыльность по товарам
 
 **Параметры**
@@ -36,12 +57,6 @@
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 |momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
 |momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
-|product.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id товара или услуги, по которому нужно произвести фильтрацию. |
-|counterparty.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id контрагента, по которому нужно произвести фильтрацию. |
-|organization.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id юрлица, по которому нужно произвести фильтрацию. |
-|store.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id склада, по которому нужно произвести фильтрацию. |
-|project.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id проекта, по которому нужно произвести фильтрацию. |
-|retailStore.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id точки продаж, по которой нужно произвести фильтрацию. |
  
 > Запрос на получение отчета "Прибыльность по товарам".
 
@@ -203,6 +218,27 @@ curl -X GET
 + **article** - Артикул модификации или комплекта
 + **image** - Изображение модификации
 
+#### Атрибуты доступные для фильтрации
+
+Результаты отчета можно отфильтровать, используя параметр filter. Для каждого параметра можно указать только одно значение. Нельзя указывать пустые значения. Поддерживается фильтрация только на равенство.
+
++ **product** - ссылка на товар, услугу, комплект, модификацию или серию, по которой нужно произвести фильтрацию.
++ **counterparty** - ссылка на контрагента, по которому нужно произвести фильтрацию.
++ **organization** - ссылка на юрлицо, по которому нужно произвести фильтрацию.
++ **store** - ссылка на склад, по которому нужно произвести фильтрацию.
++ **project** - ссылка на проект, по которому нужно произвести фильтрацию.
++ **retailStore** - ссылка на точку продаж, по которой нужно произвести фильтрацию.
+
+Примеры фильтрации:
+
+- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044`
+- `filter=counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
+- `filter=organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003`
+- `filter=store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321`
+- `filter=project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
+- `filter=retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
+- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
+
 ### Получить Прибыльность по модификациям
 
 **Параметры**
@@ -213,12 +249,6 @@ curl -X GET
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 |momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
 |momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
-|product.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id товара или услуги, по которому нужно произвести фильтрацию. |
-|counterparty.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id контрагента, по которому нужно произвести фильтрацию. |
-|organization.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id юрлица, по которому нужно произвести фильтрацию. |
-|store.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id склада, по которому нужно произвести фильтрацию. |
-|project.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id проекта, по которому нужно произвести фильтрацию. |
-|retailStore.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id точки продаж, по которой нужно произвести фильтрацию. |
  
 > Запрос на получение отчета "Прибыльность по модификациям".
 
@@ -375,6 +405,27 @@ curl -X GET
 + **meta** - [Метаданные](#metadannye), представляющие собой ссылку на сотрудника
 + **name** - Имя сотрудника
 
+#### Атрибуты доступные для фильтрации
+
+Результаты отчета можно отфильтровать, используя параметр filter. Для каждого параметра можно указать только одно значение. Нельзя указывать пустые значения. Поддерживается фильтрация только на равенство.
+
++ **product** - ссылка на товар, услугу, комплект, модификацию или серию, по которой нужно произвести фильтрацию.
++ **counterparty** - ссылка на контрагента, по которому нужно произвести фильтрацию.
++ **organization** - ссылка на юрлицо, по которому нужно произвести фильтрацию.
++ **store** - ссылка на склад, по которому нужно произвести фильтрацию.
++ **project** - ссылка на проект, по которому нужно произвести фильтрацию.
++ **retailStore** - ссылка на точку продаж, по которой нужно произвести фильтрацию.
+
+Примеры фильтрации:
+
+- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044`
+- `filter=counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
+- `filter=organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003`
+- `filter=store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321`
+- `filter=project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
+- `filter=retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
+- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
+
 ### Получить Прибыльность по сотрудникам
 
 **Параметры**
@@ -385,12 +436,6 @@ curl -X GET
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 |momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
 |momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
-|product.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id товара или услуги, по которому нужно произвести фильтрацию. |
-|counterparty.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id контрагента, по которому нужно произвести фильтрацию. |
-|organization.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id юрлица, по которому нужно произвести фильтрацию. |
-|store.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id склада, по которому нужно произвести фильтрацию. |
-|project.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id проекта, по которому нужно произвести фильтрацию. |
-|retailStore.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id точки продаж, по которой нужно произвести фильтрацию. |
  
 > Запрос на получение отчета "Прибыльность по сотрудникам".
 
@@ -467,6 +512,27 @@ curl -X GET
 + **meta** - [Метаданные](#metadannye), представляющие собой ссылку на покупателя
 + **name** - Имя покупателя
 
+#### Атрибуты доступные для фильтрации
+
+Результаты отчета можно отфильтровать, используя параметр filter. Для каждого параметра можно указать только одно значение. Нельзя указывать пустые значения. Поддерживается фильтрация только на равенство.
+
++ **product** - ссылка на товар, услугу, комплект, модификацию или серию, по которой нужно произвести фильтрацию.
++ **counterparty** - ссылка на контрагента, по которому нужно произвести фильтрацию.
++ **organization** - ссылка на юрлицо, по которому нужно произвести фильтрацию.
++ **store** - ссылка на склад, по которому нужно произвести фильтрацию.
++ **project** - ссылка на проект, по которому нужно произвести фильтрацию.
++ **retailStore** - ссылка на точку продаж, по которой нужно произвести фильтрацию.
+
+Примеры фильтрации:
+
+- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044`
+- `filter=counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
+- `filter=organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003`
+- `filter=store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321`
+- `filter=project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
+- `filter=retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
+- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
+
 ### Получить Прибыльность по покупателям
 
 **Параметры**
@@ -477,12 +543,6 @@ curl -X GET
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 |momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
 |momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
-|product.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id товара или услуги, по которому нужно произвести фильтрацию. |
-|counterparty.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id контрагента, по которому нужно произвести фильтрацию. |
-|organization.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id юрлица, по которому нужно произвести фильтрацию. |
-|store.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id склада, по которому нужно произвести фильтрацию. |
-|project.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id проекта, по которому нужно произвести фильтрацию. |
-|retailStore.id |  `string` (optional) *Example: 84e60e93-f504-11e5-8a84-bae500000008* id точки продаж, по которой нужно произвести фильтрацию. |
  
 > Запрос на получение отчета "Прибыльность по покупателям".
 
