@@ -1,8 +1,7 @@
 language: ruby
 cache: bundler
 env:
-- "SERVER_IP_ADDRESS=dev.moysklad.ru"
-- "APP_PREFIX=api-remap"
+- SERVER_IP_ADDRESS=dev.moysklad.ru APP_PREFIX=api-remap
 branches:
   only:
   - DO-720
