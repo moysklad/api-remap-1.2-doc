@@ -99,7 +99,7 @@ GEM
     redcarpet (3.4.0)
     ref (2.0.0)
     rouge (2.0.7)
-    sass (3.7.3)
+    sass (3.4.25)
     servolux (0.13.0)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
