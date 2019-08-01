@@ -7,6 +7,7 @@ branches:
   - test_ci
 install: gem install jekyll jekyll-sitemap jekyll-paginate html-proofer jekyll-feed
 script:
+- bundle install
 - jekyll build --destination site
 deploy:
   provider: script
