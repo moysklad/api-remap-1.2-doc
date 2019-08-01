@@ -1,13 +1,14 @@
 language: ruby
+rvm:
+  - 2.3.3
+  - 2.4.0
 cache: bundler
 env:
 - SERVER_IP_ADDRESS=dev.moysklad.ru
 branches:
   only:
   - test_ci
-install: gem install jekyll jekyll-sitemap jekyll-paginate html-proofer jekyll-feed
-script:
-- jekyll build --destination site
+script: bundle exec middleman build
 deploy:
   provider: script
   skip_cleanup: true
