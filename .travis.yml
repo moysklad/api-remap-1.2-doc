@@ -5,10 +5,9 @@ env:
 branches:
   only:
   - master
-install: gem install jekyll jekyll-sitemap jekyll-paginate html-proofer jekyll-feed
 script:
 - bundle install
-- jekyll build --destination site
+- bundle exec middleman build --build-dir=site
 deploy:
   provider: script
   skip_cleanup: true
