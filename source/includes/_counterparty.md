@@ -54,6 +54,8 @@
 + **discountCardNumber** - номер дисконтной карты Контрагента
 + **state** - Статус Контрагента в формате [Метаданных](#metadannye)
 + **salesAmount** - Сумма продаж `Только для чтения`
++ **bonusProgram** - Ссылка на активную Бонусную программу в формате [Метаданных](#metadannye)
++ **bonusPoints** - Бонусные баллы по активной бонусной программе `Только для чтения`
 
 ##### Поля реквизитов
 + **legalTitle** - Полное наименование Контрагента
@@ -335,7 +337,17 @@ curl -X GET
         "id":"672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
         "name":"Цена продажи",
         "externalCode":"cbcf493b-55bc-11d9-848a-00112f43529a"
-      }
+      },
+      "bonusProgram": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram/129626ee-ac91-11e9-ac12-000d00000009",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram/metadata",
+          "type": "bonusprogram",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=129626ee-ac91-11e9-ac12-000d00000009"
+        }
+      },
+      "bonusPoints": 0
     },
     {  
       "meta":{  
@@ -1798,7 +1810,17 @@ curl -X GET
     "apartment":"111",
     "addInfo":"addinfo",
     "comment":"some words about address"
-  }
+  },
+  "bonusProgram": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram/129626ee-ac91-11e9-ac12-000d00000009",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram/metadata",
+      "type": "bonusprogram",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=129626ee-ac91-11e9-ac12-000d00000009"
+    }
+  },
+  "bonusPoints": 0
 }
 ```
 
