@@ -235,6 +235,10 @@ html, body {
   transition-duration: 130ms;
 }
 
+.toc-other-page::after {
+  content: "→";
+}
+
 // button to show navigation on mobile devices
 #nav-button {
   span {
