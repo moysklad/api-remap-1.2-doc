@@ -23,7 +23,7 @@
 + **archived** - Добавлен ли Проект в архив
 + **attributes** - Коллекция доп. полей в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
 
-О работе с доп. полями Проектов можно прочитать [здесь](/#rabota-s-dopolnitel-nymi-polqmi)
+О работе с доп. полями Проектов можно прочитать [здесь](/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
 
 ### Получить Проекты 
@@ -479,7 +479,7 @@ curl -X POST
 + **attributes** - Массив объектов доп. полей Проектов в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **createShared** - создавать новые Проекты с меткой "Общий"
 
-Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](/#rabota-s-dopolnitel-nymi-polqmi).
+Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
 > Методанные проектов
 
