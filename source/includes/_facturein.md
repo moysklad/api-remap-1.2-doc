@@ -3,7 +3,7 @@
 Средствами JSON API можно создавать и изменять Счет-фактуры полученные, запрашивать списки полученных Счетов-фактур, сведения по отдельным Счетам-фактурам и удалять Счета-фактуры. Счет-фактура может быть создана только на основании приемки или исходящего платежа, без документа-основания счет-фактуру создать нельзя.  Кодом сущности для полученного Счета-фактуры в составе JSON API является ключевое слово **facturein**.
 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о полученном Счете-фактуре
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о полученном Счете-фактуре
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **syncId** - ID синхронизации. После заполнения недоступен для изменения.
@@ -16,14 +16,14 @@
 + **applicable** - Отметка о проведении
 + **sum** - Сумма полученного Счета-фактуры в установленной валюте `Только для чтения`
 + **rate** - Валюта
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Только для чтения`
-+ **agent** - Ссылка на контрагента в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Только для чтения`
-+ **contract** - Ссылка на договор в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **state** - Статус полученного Счета-фактуры в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **attributes** - Коллекция доп. полей в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Только для чтения`
++ **agent** - Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Только для чтения`
++ **contract** - Ссылка на договор в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **state** - Статус полученного Счета-фактуры в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 <br>Поля при expand'е:</br>
   - **name** - номер документа
   - **moment** - дата печати
@@ -33,24 +33,24 @@
 + **created** - Дата создания `Только для чтения`
 
 #### Связи с другими документами
-+ **supplies** - Массив ссылок на связанные приемки в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **supplies** - Массив ссылок на связанные приемки в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
   - **meta** - Ссылка на приемку, к которой привязан этот Счет-фактура в формате метаданных
-+ **payments** - Массив ссылок на связанные исходящие платежи в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **payments** - Массив ссылок на связанные исходящие платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
   - **meta** - Ссылка на исходящий платеж, к которой привязан этот Счет-фактура в формате метаданных
 
 ####  Другие поля 
 + **incomingNumber** - Входящий номер
 + **incomingDate** - Входящая дата
 
-О работе с доп. полями Счет-фактур можно прочитать [здесь](/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
+О работе с доп. полями Счет-фактур можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
 
 ### Получить полученные Счета-фактуры 
 Запрос всех полученных Счетов-фактур на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
+- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
+- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой полученные Счет-фактуры.
 
 **Параметры**
@@ -344,7 +344,7 @@ curl -X GET
 ```
 
 ### Массовое создание и обновление полученных Счетов-фактур 
-[Массовое создание и обновление](/#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) полученных Счетов-фактур.
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) полученных Счетов-фактур.
 В теле запроса нужно передать массив, содержащий JSON представления полученных Счетов-фактур, которые вы хотите создать или обновить.
 Обновляемые полученные Счета-фактуры должны содержать идентификатор в виде метаданных.
 
@@ -541,11 +541,11 @@ curl -X GET
 Запрос на получение метаданных полученных Счетов-фактур. Результат - объект JSON, включающий в себя:
 
 + **meta** - Ссылка на метаданные полученных Счетов-фактур
-+ **attributes** - Массив объектов доп. полей полученных Счетов-фактур в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **attributes** - Массив объектов доп. полей полученных Счетов-фактур в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **states** - Массив статусов полученных Счетов-фактур
 + **createShared** - создавать новые полученные Счета-фактуры с меткой "Общий"
 
-Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
+Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
 > Метаданные полученных Счетов-фактур
 

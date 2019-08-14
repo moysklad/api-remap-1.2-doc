@@ -2,7 +2,7 @@
 Средствами JSON API можно создавать и обновлять сведения об Отгрузках, запрашивать списки Отгрузок и сведения по отдельным Отгрузкам. Позициями Отгрузок можно управлять как в составе отдельной Отгрузки, так и отдельно - с помощью специальных ресурсов для управления позициями Отгрузки. Кодом сущности для Отгрузки в составе JSON API является ключевое слово **demand**. Больше об Отгрузках и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по  [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203325463-%D0%9E%D1%82%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0-%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2).
 ### Отгрузки 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) об Отгрузке
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) об Отгрузке
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **syncId** - ID синхронизации. После заполнения недоступен для изменения.
@@ -17,18 +17,18 @@
 + **vatIncluded** - Включен ли НДС в цену
 + **sum** - Сумма Отгрузки в копейках `Только для чтения`
 + **rate** - Валюта
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **agent** - Ссылка на контрагента в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **store** - Ссылка на склад в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **contract** - Ссылка на договор в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **project** - Ссылка на проект в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **state** - Статус Отгрузки в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organizationAccount** - Ссылка на счет вашего юрлица в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agentAccount** - Ссылка на счет контрагента в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **attributes** - Коллекция доп. полей в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **agent** - Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **store** - Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **contract** - Ссылка на договор в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **project** - Ссылка на проект в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **state** - Статус Отгрузки в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **organizationAccount** - Ссылка на счет вашего юрлица в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **agentAccount** - Ссылка на счет контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 <br>Поля при expand'е:</br>
   - **name** - номер документа
   - **moment** - дата печати
@@ -37,27 +37,27 @@
   - **updated** - дата последнего изменения
 + **created** - Дата создания `Только для чтения`
 + **vatSum** - Сумма НДС `Только для чтения`
-+ **positions** - Ссылка на позиции в Отгрузке в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **positions** - Ссылка на позиции в Отгрузке в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **overhead** - Накладные расходы. Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать
   - **sum** - сумма накладных расходов
   - **distribution** - Распределение накладных расходов `[weight, volume, price]` -> `[по весу, по объему, по цене]`
 + **payedSum** - Сумма входящих платежей по Отгрузке
 
 #### Связи с другими документами
-+ **customerOrder** - Ссылка на Заказ Покупателя, с которым связана эта Отгрузка в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **factureOut** - Ссылка на Счет-фактура выданный, с которым связана эта Отгрузка в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **returns** - Массив ссылок на связанные возвраты в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **payments** - Массив ссылок на связанные платежи в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **invoicesOut** - Массив ссылок на связанные счета покупателям в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **customerOrder** - Ссылка на Заказ Покупателя, с которым связана эта Отгрузка в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **factureOut** - Ссылка на Счет-фактура выданный, с которым связана эта Отгрузка в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **returns** - Массив ссылок на связанные возвраты в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **payments** - Массив ссылок на связанные платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **invoicesOut** - Массив ссылок на связанные счета покупателям в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 ####  Другие поля 
-+ **consignee** - Грузополучатель в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **consignee** - Грузополучатель в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **transportFacilityNumber** - Номер автомобиля
 + **shippingInstructions** - Указания грузоотправителя
 + **cargoName** - Наименование груза
 + **transportFacility** - Транспортное средство
 + **goodPackQuantity** - Всего мест
-+ **carrier**  - Перевозчик в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **carrier**  - Перевозчик в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **stateContractId** - Идентификатор государственного контракта, договора (соглашения)
 
 #### Позиции Отгрузки
@@ -70,7 +70,7 @@
 + **price** - Цена товара/услуги в копейках
 + **discount** - Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%
 + **vat** - НДС, которым облагается текущая позиция
-+ **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция, в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **pack** - Упаковка товара
 + **things** - Серийные номера
 Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете.
@@ -78,7 +78,7 @@
 
 + **cost** - Себестоимость (только для услуг)
 
-С позициями можно работать с помощью [специальных ресурсов для управления позициями Отгрузки](/documents/#dokumenty-otgruzka-pozicii-otgruzki),
+С позициями можно работать с помощью [специальных ресурсов для управления позициями Отгрузки](../documents/#dokumenty-otgruzka-pozicii-otgruzki),
 а также в составе отдельной Отгрузки. При работе в составе отдельной Отгрузки,
 вы можете отправлять запросы на создание отдельной Отгрузки с включенным в тело запроса
 массивом позиций Отгрузки. Если количество позиций превышает максимально допустимое, то для
@@ -90,15 +90,15 @@
 
 + **overhead** - Накладные расходы по позиции.
 
-О работе с доп. полями Отгрузок можно прочитать [здесь](/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
+О работе с доп. полями Отгрузок можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
 
 ### Получить список Отгрузок 
 Запрос всех Отгрузок на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
+- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
+- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой Отгрузки.
 
 **Параметры**
@@ -369,9 +369,9 @@ curl -X GET
 Обязательные для создания поля:
 
 + **name** - номер Отгрузки (номер)
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agent** - Ссылка на контрагента (покупателя) в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **store** - Ссылка на склад в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **agent** - Ссылка на контрагента (покупателя) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **store** - Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 > Пример создания новой Отгрузки с телом запроса, содержащим только необходимые поля.
 
@@ -1045,7 +1045,7 @@ curl -X GET
 ```
 
 ### Массовое создание и обновление Отгрузок 
-[Массовое создание и обновление](/#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Отгрузок.
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Отгрузок.
 В теле запроса нужно передать массив, содержащий JSON представления Отгрузок, которые вы хотите создать или обновить.
 Обновляемые Отгрузки должны содержать идентификатор в виде метаданных.
 
@@ -1382,11 +1382,11 @@ curl -X DELETE
 Запрос на получение метаданных Отгрузок. Результат - объект JSON, включающий в себя:
 
 + **meta** - Ссылка на метаданные Отгрузок
-+ **attributes** - Массив объектов доп. полей Отгрузок в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **attributes** - Массив объектов доп. полей Отгрузок в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **states** - Массив статусов Отгрузок
 + **createShared** - создавать новые Отгрузки с меткой "Общий"
 
-Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
+Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
 > Метаданные Отгрузок
 
@@ -2050,7 +2050,7 @@ curl -X GET
 ### Изменить Отгрузку 
 Запрос на обновление Отгрузки с указанным id.
 В теле запроса можно указать только те поля, которые необходимо изменить у Отгрузки, кроме тех, что
-помечены `Только для чтения` в описании [атрибутов Отгрузки](/documents/#dokumenty-otgruzka).
+помечены `Только для чтения` в описании [атрибутов Отгрузки](../documents/#dokumenty-otgruzka).
 При обновлении полей **organization** и **agent** нужно также обновить поля **organizationAccount** и
 **agentAccount** соответственно, иначе произойдет ошибка.
 
@@ -2716,13 +2716,13 @@ curl -X GET
 ```
 
 ### Позиции Отгрузки 
-Отдельный ресурс для управления позициями Отгрузки. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 100. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](/#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
+Отдельный ресурс для управления позициями Отгрузки. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 100. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
 
 ### Получить позиции Отгрузки 
 Запрос на получение списка всех позиций данной Отгрузки.
 
-- **meta** [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
+- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
+- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой позиции Отгрузки.
 
 **Параметры**
@@ -2872,7 +2872,7 @@ curl -X GET
 
 + **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция.
 Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
-чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Отгрузки](/documents/#dokumenty-otgruzka-otgruzki-pozicii-otgruzki)
+чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Отгрузки](../documents/#dokumenty-otgruzka-otgruzki-pozicii-otgruzki)
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
 Одновременно можно создать как одну так и несколько позиций Отгрузки. Все созданные данным запросом позиции
 будут добавлены к уже существующим.

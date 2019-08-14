@@ -2,27 +2,27 @@
 Средствами JSON API можно создавать и обновлять сведения о задачах, запрашивать списки задач и сведения по отдельным задачам. Кодом сущности для задачи в составе JSON API является ключевое слово **task**. Больше о задачах и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по  [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203392263-%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B8).
 ### Задачи 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) задачи
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) задачи
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
-+ **author** - Сотрудник создавший задачу. В формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Только для чтения`
++ **author** - Сотрудник создавший задачу. В формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Только для чтения`
 + **created** - Момент создания задачи `Только для чтения`
 + **updated** - Момент последнего обновления сущности `Только для чтения`
 + **description** - Текст задачи `Необходимое`
 + **dueToDate** - Срок задачи
-+ **assignee** - Сотрудник, ответственный за выполнение задачи. В формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **assignee** - Сотрудник, ответственный за выполнение задачи. В формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
 + **done** - Отметка о выполнении задачи.
 + **completed** - Время выполнения задачи. `Только для чтения`
-+ **implementer** - Сотрудник выполнивший задачу. В формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Только для чтения`
-+ **agent** - Контрагент или юрлицо, связанное с задачей. Задача может быть привязана либо к конрагенту, либо к юрлицу, либо к документу. В формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **operation** - Документ, связанный с задачей. Задача может быть привязана либо к конрагенту, либо к юрлицу, либо к документу. В формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **notes** - Ссылка на комментарии к задаче в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **implementer** - Сотрудник выполнивший задачу. В формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Только для чтения`
++ **agent** - Контрагент или юрлицо, связанное с задачей. Задача может быть привязана либо к конрагенту, либо к юрлицу, либо к документу. В формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **operation** - Документ, связанный с задачей. Задача может быть привязана либо к конрагенту, либо к юрлицу, либо к документу. В формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **notes** - Ссылка на комментарии к задаче в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 
 #### Комментарии задачи
 Объект комментария к задаче содержит следующие поля:
 
-+ **author** - Сотрудник создавший комментарий. В формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Только для чтения`
++ **author** - Сотрудник создавший комментарий. В формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Только для чтения`
 + **moment** - Момент создания комментария `Только для чтения`
 + **description** - Текст комментария `Необходимое`
 
@@ -47,7 +47,7 @@
 `https://online.moysklad.ru/api/remap/1.2/entity/task?filter=assignee=http://online.moysklad.ru/api/remap/1.2/entity/employee/<id текущего сотрудника>`
 + **Я поручил**: фильтр по полю **author** в значении которого указана ссылка на текущего сотрудника<br>
 `https://online.moysklad.ru/api/remap/1.2/entity/task?filter=author=http://online.moysklad.ru/api/remap/1.2/entity/employee/<id текущего сотрудника>`
-+ **Все задачи**: не требует фильтрации. Обратите внимание на пункт [Отображение списка по умолчанию](/dictionaries/#suschnosti-zadacha-zadachi-otobrazhenie-spiska-po-umolchaniu)
++ **Все задачи**: не требует фильтрации. Обратите внимание на пункт [Отображение списка по умолчанию](../dictionaries/#suschnosti-zadacha-zadachi-otobrazhenie-spiska-po-umolchaniu)
 + **Активные**: фильтр по полю **done** со значением false<br>
 `https://online.moysklad.ru/api/remap/1.2/entity/task?filter=done=false`
 + **Выполненные**: фильтр по полю **done** со значением true<br>
@@ -70,9 +70,9 @@
 Получить список задач.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
-- **rows** - Массив JSON объектов, представляющих собой [Задачи](/dictionaries/#suschnosti-zadacha).
+- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
+- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
+- **rows** - Массив JSON объектов, представляющих собой [Задачи](../dictionaries/#suschnosti-zadacha).
 
 **Параметры**
 
@@ -313,7 +313,7 @@ curl -X GET
 ```
 
 ### Массовое создание и обновление Задач 
-[Массовое создание и обновление](/#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Задач.
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Задач.
 В теле запроса нужно передать массив, содержащий JSON представления Задач, которые вы хотите создать или обновить.
 Обновляемые Задачи должны содержать идентификатор в виде метаданных.
 
@@ -754,8 +754,8 @@ curl -X GET
 ### Получить комментарии Задачи 
 Запрос на получение списка всех комментариев данной Задачи.
 
-- **meta** [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
+- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
+- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой комментарии Задачи.
 
 **Параметры**
@@ -765,9 +765,9 @@ curl -X GET
 |id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id задачи.|
 |   limit|   `number` (optional) **Default: 25** *Example: 100* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 100`.|
 |   offset|   `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей|
-|   updatedFrom| `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). Формат строки : `ГГГГ-ММ-ДД ЧЧ:ММ:СС[.ммм]`, Часовой пояс: `MSK` (Московское время)|
-|   updatedTo|   `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). Формат строки : `ГГГГ-ММ-ДД ЧЧ:ММ:СС[.ммм]`, Часовой пояс: `MSK` (Московское время)|
-|   updatedBy|   `string` (optional) *Example: admin@admin* Один из [параметров фильтрации выборки](/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). Формат строки : `uid`|
+|   updatedFrom| `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). Формат строки : `ГГГГ-ММ-ДД ЧЧ:ММ:СС[.ммм]`, Часовой пояс: `MSK` (Московское время)|
+|   updatedTo|   `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). Формат строки : `ГГГГ-ММ-ДД ЧЧ:ММ:СС[.ммм]`, Часовой пояс: `MSK` (Московское время)|
+|   updatedBy|   `string` (optional) *Example: admin@admin* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). Формат строки : `uid`|
 
 > Получить комментарии Задачи
 

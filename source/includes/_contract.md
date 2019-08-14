@@ -1,7 +1,7 @@
 ## Договор
 ### Договоры 
 Средствами JSON API можно создавать и обновлять сведения о Договорах, запрашивать списки Договоров и сведения по отдельным Договорам. Кодом сущности для Договора в составе JSON API является ключевое слово **contract**. Больше о Договорах и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/218121398-%D0%A3%D1%87%D0%B5%D1%82-%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%BE%D0%B2).
-По данной сущности можно осуществлять контекстный поиск с помощью специального параметра `search`. Подробнее можно узнать по [ссылке](/#mojsklad-json-api-obschie-swedeniq-kontextnyj-poisk). Поиск с параметром search отличается от других тем, что поиск не префиксный, без токенизации и идет только по одному полю одновременно. Ищет такие строки, в которые входит значение строки поиска.
+По данной сущности можно осуществлять контекстный поиск с помощью специального параметра `search`. Подробнее можно узнать по [ссылке](../#mojsklad-json-api-obschie-swedeniq-kontextnyj-poisk). Поиск с параметром search отличается от других тем, что поиск не префиксный, без токенизации и идет только по одному полю одновременно. Ищет такие строки, в которые входит значение строки поиска.
 
 Поиск среди объектов Договора на соответствие поисковой строке будет осуществлен по следующим полям:
 
@@ -9,12 +9,12 @@
 + по комментарию к Договору **description**
 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о Заказе Покупателя
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о Заказе Покупателя
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **updated** - Момент последнего обновления сущности `Только для чтения`
 + **name** - номер Договора
 + **description** - Комментарий к Договору
@@ -26,13 +26,13 @@
 + **contractType** - Тип Договора. Возможные значения: `Договор комиссии`, `Договор купли-продажи`
 + **rewardType** - Тип Вознаграждения. Возможные значения: `Процент от суммы продажи`, `Не рассчитывать`
 + **rewardPercent** - Вознаграждение в процентах (от 0 до 100).
-+ **ownAgent** - Ссылка на ваше юрлицо в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agent** - Ссылка на Контрагента в формате [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **state** - Статус договора в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organizationAccount** - Ссылка на счет вашего юрлица в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agentAccount** - Ссылка на счет контрагента в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **ownAgent** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **agent** - Ссылка на Контрагента в формате [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **state** - Статус договора в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **organizationAccount** - Ссылка на счет вашего юрлица в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **agentAccount** - Ссылка на счет контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **rate** - Ссылка на валюту
-+ **attributes** - Коллекция доп. полей в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 Таблица полей, их значений и их значений в JSON представлении:
 
@@ -43,15 +43,15 @@
 | **rewardType**   | Процент от суммы продажи|PercentOfSales                  |    Не рассчитывать    |
 |              | Не рассчитывать         |None                            |                       |
 
-О работе с доп. полями Договоров можно прочитать [здесь](/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
+О работе с доп. полями Договоров можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
 ### Получить список Договоров 
 
 Запрос на получение списка всех договоров на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
+- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
+- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой Договоры.
 
 **Параметры**
@@ -331,8 +331,8 @@ curl -X GET
 Обязательные для создания Договора поля:
 
 + **name** - Номер Договора
-+ **ownAgent** - Ссылка на ваше юрлицо в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agent** - Ссылка на Контрагента в формате [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **ownAgent** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **agent** - Ссылка на Контрагента в формате [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 > Пример создания нового Договора, с запросом, Тело которого содержит только обязательные поля.
 
@@ -806,7 +806,7 @@ curl -X GET
 ```
 
 ### Массовое создание и обновление Договоров 
-[Массовое создание и обновление](/#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Договоров.
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Договоров.
 В теле запроса нужно передать массив, содержащий JSON представления Договоров, которые вы хотите создать или обновить.
 Обновляемые Договора должны содержать идентификатор в виде метаданных.
 
@@ -1106,11 +1106,11 @@ curl -X POST
 Запрос на получение метаданных Договоров. Результат - объект JSON, включающий в себя:
 
 + **meta** - Ссылка на метаданные Договоров
-+ **attributes** - Массив объектов доп. полей Договоров в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **attributes** - Массив объектов доп. полей Договоров в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **states** - Массив статусов Договоров
 + **createShared** - создавать новые Договора с меткой "Общий"
 
-Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
+Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
 > Получение методанных Договора
  

@@ -3,7 +3,7 @@
 Средствами JSON API можно создавать и обновлять сведения о Счете поставщика, запрашивать списки Счетов и сведения по отдельным Счетам Поставщиков. Позициями Счетов можно управлять как в составе отдельного Счета, так и отдельно - с помощью специальных ресурсов для управления позициями Счета. Кодом сущности для Счета поставщика в составе JSON API является ключевое слово **invoicein**. Больше о Счетах Поставщиков и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203053506-%D0%A1%D1%87%D0%B5%D1%82%D0%B0-%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%BE%D0%B2).
 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о Счете поставщика
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о Счете поставщика
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **syncId** - ID синхронизации. После заполнения недоступен для изменения.
@@ -18,17 +18,17 @@
 + **vatIncluded** - Включен ли НДС в цену
 + **sum** - Сумма Счета в установленной валюте `Только для чтения`
 + **rate** - Валюта
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **agent** - Ссылка на контрагента в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **store** - Ссылка на склад в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **contract** - Ссылка на договор в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **state** - Статус Счета в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organizationAccount** - Ссылка на счет вашего юрлица в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agentAccount** - Ссылка на счет контрагента в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **attributes** - Коллекция доп. полей в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **agent** - Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **store** - Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **contract** - Ссылка на договор в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **state** - Статус Счета в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **organizationAccount** - Ссылка на счет вашего юрлица в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **agentAccount** - Ссылка на счет контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 <br>Поля при expand'е:</br>
   - **name** - номер документа
   - **moment** - дата печати
@@ -37,18 +37,18 @@
   - **updated** - дата последнего изменения
 + **created** - Дата создания `Только для чтения`
 + **vatSum** - Сумма НДС `Только для чтения`
-+ **positions** - Ссылка на позиции в Счете в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **positions** - Ссылка на позиции в Счете в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **paymentPlannedMoment** - Планируемая дата оплаты
 + **payedSum** - Сумма входящих платежей по Счету поставщика `Только для чтения`
 + **shippedSum** - Сумма отгруженного `Только для чтения`
-+ **project** - Ссылка на проект в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **project** - Ссылка на проект в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **incomingNumber** - Входящий номер
 + **incomingDate** - Входящая дата
 
 #### Связи с другими документами
-+ **payments** - Массив ссылок на связанные операции в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Только для чтения`
-+ **purchaseOrder** - Ссылка на связанный заказ поставщику в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **supplies** - Ссылки на связанные приемки в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **payments** - Массив ссылок на связанные операции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Только для чтения`
++ **purchaseOrder** - Ссылка на связанный заказ поставщику в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **supplies** - Ссылки на связанные приемки в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 #### Позиции Счета поставщика
 Позиции Счета - это список товаров/услуг/модификаций/серий.
@@ -60,7 +60,7 @@
 + **price** - Цена товара/услуги в копейках
 + **discount** - Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%
 + **vat** - НДС, которым облагается текущая позиция
-+ **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция, в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **pack** - Упаковка товара
 
 С позициями можно работать с помощью специальных ресурсов для управления позициями Счета,
@@ -73,15 +73,15 @@
 восприниматься как "все позиции Счета" и полностью заменит уже существующую коллекцию при обновлении объекта - лишние
 позиции будут удалены, новые добавлены, существующие - изменены.
 
-О работе с доп. полями Счетов поставщиков можно прочитать [здесь](/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
+О работе с доп. полями Счетов поставщиков можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
 
 ### Получить Счета поставщиков 
 Запрос всех Счетов поставщиков на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
+- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
+- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой Счета поставщиков.
 
 **Параметры**
@@ -337,8 +337,8 @@ curl -X GET
 Обязательные для создания поля:
 
 + **name** - номер Счета поставщика
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agent** - Ссылка на контрагента (поставщика) в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **agent** - Ссылка на контрагента (поставщика) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 > Пример создания нового Счета с телом запроса, содержащим только необходимые поля.
 
@@ -1023,7 +1023,7 @@ curl -X GET
 ```
 
 ### Массовое создание и обновление Счетов поставщика 
-[Массовое создание и обновление](/#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Счетов поставщика.
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Счетов поставщика.
 В теле запроса нужно передать массив, содержащий JSON представления Счетов поставщика, которые вы хотите создать или обновить.
 Обновляемые Счета поставщика должны содержать идентификатор в виде метаданных.
 
@@ -1330,11 +1330,11 @@ curl -X DELETE
 Запрос на получение метаданных Счетов поставщиков. Результат - объект JSON, включающий в себя:
 
 + **meta** - Ссылка на метаданные Счетов поставщиков
-+ **attributes** - Массив объектов доп. полей Счетов поставщиков в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **attributes** - Массив объектов доп. полей Счетов поставщиков в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **states** - Массив статусов Счетов поставщиков
 + **createShared** - создавать новые Счета поставщиков с меткой "Общий"
 
-Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
+Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
 > Метаданные Счетов поставщиков
 
@@ -1861,7 +1861,7 @@ curl -X GET
 ### Изменить Счет поставщика 
 Запрос на обновление Счета поставщика с указанным id.
 В теле запроса можно указать только те поля, которые необходимо изменить у Счета поставщика, кроме тех, что
-помечены `Только для чтения` в описании [атрибутов Счета поставщика](/documents/#dokumenty-schet-postawschika).
+помечены `Только для чтения` в описании [атрибутов Счета поставщика](../documents/#dokumenty-schet-postawschika).
 При обновлении полей **organization** и **agent** нужно также обновить поля **organizationAccount** и
 **agentAccount** соответственно, иначе произойдет ошибка.
 
@@ -2456,13 +2456,13 @@ curl -X GET
 ```
  
 ### Позиции Счета поставщика 
-Отдельный ресурс для управления позициями Счета поставщика. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 100. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](/#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
+Отдельный ресурс для управления позициями Счета поставщика. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 100. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
 
 ### Получить позиции Счета поставщика 
 Запрос на получение списка всех позиций данного Счета поставщика.
 
-- **meta** [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
+- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
+- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой позиции Счета поставщика.
 
 **Параметры**
@@ -2603,7 +2603,7 @@ curl -X GET
 
 + **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция.
 Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
-чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Счета](/documents/#dokumenty-schet-postawschika-scheta-postawschikow-pozicii-scheta-postawschika)
+чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Счета](../documents/#dokumenty-schet-postawschika-scheta-postawschikow-pozicii-scheta-postawschika)
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
 
 **Параметры**

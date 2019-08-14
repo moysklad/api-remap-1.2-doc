@@ -16,11 +16,11 @@
 
 Запрос на печать этикеток и ценников по шаблону печатной формы.
 #### Атрибуты запроса
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **count** - Количество ценников/термоэтикеток. Максимальное количество - `1000`
 + **salePrice** - Цена продажи
-  + **priceType** - Ссылка на тип цены в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **template** - Ссылка на шаблон для печати в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
+  + **priceType** - Ссылка на тип цены в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **template** - Ссылка на шаблон для печати в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 **Параметры**
 

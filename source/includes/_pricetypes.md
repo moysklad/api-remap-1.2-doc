@@ -6,7 +6,7 @@
 
 #### Атрибуты сущности
 
-+ **meta** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о Типе цены `Только для чтения`
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о Типе цены `Только для чтения`
 + **id** - ID в формате UUID `Только для чтения`
 + **name** - Наименование Типа цены `Необходимое`
 + **externalCode** - Внешний код Типа цены

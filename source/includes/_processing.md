@@ -3,7 +3,7 @@
 [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203325613-%D0%A1%D0%B1%D0%BE%D1%80%D0%BE%D1%87%D0%BD%D1%8B%D0%B5-%D0%B8-%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8).
 ### Тех. операции 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о Заказе на производство
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о Заказе на производство
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **syncId** - ID синхронизации. После заполнения недоступен для изменения.
@@ -14,13 +14,13 @@
 + **externalCode** - Внешний код Тех. операции на производство
 + **moment** - Дата Тех. операции
 + **applicable** - Отметка о проведении
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **organizationAccount** - Ссылка на счет вашего юрлица в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **state** - Статус Тех. операции в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **attributes** - Коллекция доп. полей в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **organizationAccount** - Ссылка на счет вашего юрлица в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **state** - Статус Тех. операции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 <br>Поля при expand'е:</br>
   - **name** - номер документа
   - **moment** - дата печати
@@ -30,15 +30,15 @@
 + **created** - Дата создания `Только для чтения`
 + **quantity** - Объем производства `Необходимое`
 + **processingSum** - Затраты на производство `Необходимое`
-+ **materials** - Список материалов Тех. операции в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **products** - Список готовых продуктов Тех. операции в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **productsStore** - Ссылка на склад для продукции в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **materialsStore** - Ссылка на склад для материалов в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **processingPlan** - Ссылка на Тех. операцию в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **project** - Ссылка на проект в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **materials** - Список материалов Тех. операции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **products** - Список готовых продуктов Тех. операции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **productsStore** - Ссылка на склад для продукции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **materialsStore** - Ссылка на склад для материалов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **processingPlan** - Ссылка на Тех. операцию в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **project** - Ссылка на проект в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 #### Связи с другими документами
-+ **processingOrder** - Ссылка на заказ на производство в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **processingOrder** - Ссылка на заказ на производство в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 #### Материалы Тех. операции
 Материалы Тех. операции - это список товаров/модификаций/серий, используемых для производства готовых продуктов согласно тех. карте.
@@ -46,7 +46,7 @@
 
 + **id** - ID товара в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
-+ **assortment** - Ссылка на товар/модификацию/серию, которую представляет собой позиция, в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **assortment** - Ссылка на товар/модификацию/серию, которую представляет собой позиция, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **quantity** - Количество товаров данного вида в позиции.
 
 #### Продукты Тех. операции
@@ -55,11 +55,11 @@
 
 + **id** - ID товара в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
-+ **assortment** - Ссылка на товар/модификацию/серию, которую представляет собой позиция, в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **assortment** - Ссылка на товар/модификацию/серию, которую представляет собой позиция, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **quantity** - Количество товаров данного вида в позиции.
 
 
-С материалами и продуктами можно работать с помощью [специальных ресурсов для управления позициями Тех. операции](/documents/#dokumenty-teh-operaciq-izmenit-teh-operaciu-materialy-teh-operacii),
+С материалами и продуктами можно работать с помощью [специальных ресурсов для управления позициями Тех. операции](../documents/#dokumenty-teh-operaciq-izmenit-teh-operaciu-materialy-teh-operacii),
 а также в составе отдельной Тех. операции. При работе в составе отдельной Тех. операции,
 вы можете отправлять запросы на создание отдельной Тех. операции с включенными в тело запроса
 массивами материалов и продуктов Тех. операции.
@@ -72,8 +72,8 @@
 Запрос всех Тех. операций на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
+- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
+- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой Тех. операции.
 
 **Параметры**
@@ -714,14 +714,14 @@ curl -X GET
 Запрос на создание новой Тех. операции.
 Обязательные для создания поля:
 
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **processingSum** - Затраты на производство
 + **quantity** - Объем производства
-+ **processingPlan** - Ссылка на Тех. операцию в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **productsStore** - Ссылка на склад для продукции в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **materialsStore** - Ссылка на склад для материалов в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **materials** - Список материалов Тех. операции в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **products** - Список готовых продуктов Тех. операции в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **processingPlan** - Ссылка на Тех. операцию в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **productsStore** - Ссылка на склад для продукции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **materialsStore** - Ссылка на склад для материалов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **materials** - Список материалов Тех. операции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **products** - Список готовых продуктов Тех. операции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 > Пример создания новой Тех.операции с телом запроса, содержащим только необходимые поля.
 
@@ -1202,7 +1202,7 @@ curl -X GET
 ```
 
 ### Массовое создание и обновление Тех.операций 
-[Массовое создание и обновление](/#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Тех.операций.
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Тех.операций.
 В теле запроса нужно передать массив, содержащий JSON представления Тех.операций, которые вы хотите создать или обновить.
 Обновляемые Тех.операции должны содержать идентификатор в виде метаданных.
 
@@ -1568,11 +1568,11 @@ curl -X DELETE
 Запрос на получение метаданных Тех. операций. Результат - объект JSON, включающий в себя:
 
 + **meta** - Ссылка на метаданные Тех. операций
-+ **attributes** - Массив объектов доп. полей Тех. операций в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **attributes** - Массив объектов доп. полей Тех. операций в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **states** - Массив статусов Тех. операций
 + **createShared** - создавать новые Тех. операции с меткой "Общий"
 
-Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
+Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
 > Метаданные Тех. операций
 
@@ -2116,7 +2116,7 @@ curl -X GET
 ### Изменить Тех. операцию 
 Запрос на обновление Тех. операции с указанным id.
 В теле запроса можно указать только те поля, которые необходимо изменить у Тех. операции, кроме тех, что
-помечены `Только для чтения` в описании [атрибутов Тех. операции](/documents/#dokumenty-teh-operaciq).
+помечены `Только для чтения` в описании [атрибутов Тех. операции](../documents/#dokumenty-teh-operaciq).
 
 **Параметры**
 
@@ -2247,13 +2247,13 @@ curl -X GET
 ```
 
 #### Материалы Тех. операции 
-Отдельный ресурс для управления материалами Тех. операции. С его помощью вы можете управлять материалами большого документа, количество материалов в котором превышает лимит на количество материалов, сохраняемых вместе с документом. Этот лимит равен 100. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](/#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
+Отдельный ресурс для управления материалами Тех. операции. С его помощью вы можете управлять материалами большого документа, количество материалов в котором превышает лимит на количество материалов, сохраняемых вместе с документом. Этот лимит равен 100. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
 
 ### Получить материалы Тех. операции 
 Запрос на получение списка всех материалов данной Тех. операции.
 
-- **meta** [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
+- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
+- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой материалы Тех. операции.
 
 **Параметры**
@@ -2442,13 +2442,13 @@ curl -X GET
 ```
 
 #### Продукты Тех. операции 
-Отдельный ресурс для управления продуктами Тех. операции. С его помощью вы можете управлять продуктами большого документа, количество продуктов в котором превышает лимит на количество продуктов, сохраняемых вместе с документом. Этот лимит равен 100. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](/#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
+Отдельный ресурс для управления продуктами Тех. операции. С его помощью вы можете управлять продуктами большого документа, количество продуктов в котором превышает лимит на количество продуктов, сохраняемых вместе с документом. Этот лимит равен 100. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
 
 ### Получить продукты Тех. операции 
 Запрос на получение списка всех продуктов данной Тех. операции.
 
-- **meta** [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
+- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
+- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой продукты Тех. операции.
 
 **Параметры**

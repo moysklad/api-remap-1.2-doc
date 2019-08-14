@@ -3,7 +3,7 @@
 ### Розничные продажи 
 #### Атрибуты сущности
 
-+ **meta** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о Розничной продаже
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о Розничной продаже
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **syncId** - ID синхронизации. После заполнения недоступен для изменения.
@@ -18,19 +18,19 @@
 + **vatIncluded** - Включен ли НДС в цену
 + **sum** - Сумма Розничной продажи в копейках `Только для чтения`
 + **rate** - Валюта
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agent** - Ссылка на контрагента в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **store** - Ссылка на склад в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **contract** - Ссылка на договор в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **project** - Ссылка на проект в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **state** - Статус Розничной продажи в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organizationAccount** - Ссылка на счет вашего юрлица в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agentAccount** - Ссылка на счет контрагента в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **attributes** - Коллекция доп. полей в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **documents** - Список печатных форм в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **agent** - Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **store** - Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **contract** - Ссылка на договор в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **project** - Ссылка на проект в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **state** - Статус Розничной продажи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **organizationAccount** - Ссылка на счет вашего юрлица в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **agentAccount** - Ссылка на счет контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **documents** - Список печатных форм в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 <br>Поля при expand'е:</br>
   - **name** - номер документа
   - **moment** - дата печати
@@ -39,7 +39,7 @@
   - **updated** - дата последнего изменения
 + **created** - Дата создания `Только для чтения`
 + **vatSum** - Сумма НДС `Только для чтения`
-+ **positions** - Ссылка на позиции Розничной продажи в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **positions** - Ссылка на позиции Розничной продажи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **fiscalPrinterInfo** - Информация о фискальном регистраторе
 + **documentNumber** - Номер документа
 + **checkNumber** - Номер чека
@@ -48,9 +48,9 @@
 + **sessionNumber** - Номер сессии
 + **ofdCode** -Код оператора фискальных данных
 + **payedSum** - Сумма входящих платежей по Розничной продаже `Только для чтения`
-+ **retailStore** - Ссылка на точку продаж в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **customerOrder** - Ссылка на Заказ Покупателя, с которым связана эта Розничная продажа в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **retailShift** - Ссылка на Розничную смену, в рамках которой была проведена продажа в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **retailStore** - Ссылка на точку продаж в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **customerOrder** - Ссылка на Заказ Покупателя, с которым связана эта Розничная продажа в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **retailShift** - Ссылка на Розничную смену, в рамках которой была проведена продажа в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
 + **cashSum**  - Оплачено наличными
 + **noCashSum** - Оплачено картой
 + **prepaymentCashSum** - Предоплата наличными
@@ -79,7 +79,7 @@
 + **price** - Цена товара/услуги в копейках
 + **discount** - Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%
 + **vat** - НДС, которым облагается текущая позиция
-+ **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция, в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **pack** - Упаковка товара
 + **things** - Серийные номера
 Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете.
@@ -87,7 +87,7 @@
 
 + **cost** - Себестоимость (только для услуг)
 
-С позициями можно работать с помощью специальных [ресурсов для управления позициями Розничной продажи](/documents/#dokumenty-roznichnaq-prodazha-pozicii-roznichnoj-prodazhi),
+С позициями можно работать с помощью специальных [ресурсов для управления позициями Розничной продажи](../documents/#dokumenty-roznichnaq-prodazha-pozicii-roznichnoj-prodazhi),
 а также в составе отдельной Розничной продажи. При работе в составе отдельной Розничной продажи,
 вы можете отправлять запросы на создание отдельной Розничной продажи с включенным в тело запроса
 массивом позиций Розничной продажи. Если количество позиций превышает максимально допустимое, то для
@@ -97,15 +97,15 @@
 восприниматься как "все позиции Розничной продажи" и полностью заменит уже существующую коллекцию при обновлении объекта - лишние
 позиции будут удалены, новые добавлены, существующие - изменены.
 
-О работе с доп. полями Розничных продаж можно прочитать [здесь](/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
+О работе с доп. полями Розничных продаж можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
 
 ### Получить Розничные продажи 
 Запрос всех Розничных продаж на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
+- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
+- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой Розничные продажи.
 
 **Параметры**
@@ -1043,7 +1043,7 @@ curl -X GET
 ```
 
 ### Массовое создание и обновление Розничных продаж 
-[Массовое создание и обновление](/#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Розничных продаж.
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Розничных продаж.
 В теле запроса нужно передать массив, содержащий JSON представления Розничных продаж, которые вы хотите создать или обновить.
 Обновляемые Розничные продажи должны содержать идентификатор в виде метаданных.
 
@@ -1358,11 +1358,11 @@ curl -X DELETE
 Запрос на получение метаданных Розничных продаж. Результат - объект JSON, включающий в себя:
 
 + **meta** - Ссылка на метаданные Розничных продаж
-+ **attributes** - Массив объектов доп. полей Розничных продаж в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **attributes** - Массив объектов доп. полей Розничных продаж в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **states** - Массив статусов Розничных продаж
 + **createShared** - создавать новые Розничные продажи с меткой "Общий"
 
-Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
+Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
 > Метаданные Розничных продаж
 
@@ -1862,7 +1862,7 @@ curl -X GET
 ### Изменить Розничную продажу 
 Запрос на обновление Розничной продажи с указанным id.
 В теле запроса можно указать только те поля, которые необходимо изменить у Розничной продажи, кроме тех, что
-помечены `Только для чтения` в описании [атрибутов Розничной продажи](/documents/#dokumenty-roznichnaq-prodazha).
+помечены `Только для чтения` в описании [атрибутов Розничной продажи](../documents/#dokumenty-roznichnaq-prodazha).
 При обновлении полей **organization** и **agent** нужно также обновить поля **organizationAccount** и
 **agentAccount** соответственно, иначе произойдет ошибка.
 
@@ -2228,13 +2228,13 @@ curl -X GET
 ```
 
 ### Позиции Розничной продажи 
-Отдельный ресурс для управления позициями Розничной продажи. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 100. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](/#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
+Отдельный ресурс для управления позициями Розничной продажи. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 100. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
 
 ### Получить Позиции 
 Запрос на получение списка всех позиций данной Розничной продажи.
 
-- **meta** [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
+- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
+- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой позиции Розничной продажи.
 
 **Параметры**
@@ -2336,7 +2336,7 @@ curl -X GET
 
 + **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция.
 Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
-чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Розничной продажи](/documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-pozicii-roznichnoj-prodazhi).
+чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Розничной продажи](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-pozicii-roznichnoj-prodazhi).
 
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
 Одновременно можно создать как одну так и несколько позиций Розничной продажи. Все созданные данным запросом позиции

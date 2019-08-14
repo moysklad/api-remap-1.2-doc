@@ -2,7 +2,7 @@
 Средствами JSON API можно создавать и обновлять сведения о внесениях денег, запрашивать списки внесений денег и сведения по отдельным внесениям денег. Кодом сущности для внесения денег в составе JSON API является ключевое слово **retaildrawercashin**. Больше о внесениях денег и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по  [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203325423-%D0%A0%D0%BE%D0%B7%D0%BD%D0%B8%D1%86%D0%B0#10).
 ### Внесения денег 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о внесении денег
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о внесении денег
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **syncId** - ID синхронизации. После заполнения недоступен для изменения.
@@ -15,13 +15,13 @@
 + **applicable** - Отметка о проведении
 + **sum** - Сумма внесения в установленной валюте `Только для чтения`
 + **rate** - Валюта
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **agent** - Ссылка на сотрудника, совершившего внесение, в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **state** - Статус внесения в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **attributes** - Коллекция доп. полей в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **agent** - Ссылка на сотрудника, совершившего внесение, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **state** - Статус внесения в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 <br>Поля при expand'е:</br>
   - **name** - номер документа
   - **moment** - дата печати
@@ -31,7 +31,7 @@
 + **created** - Дата создания `Только для чтения`
 
 #### Связи с другими документами
-+ **retailShift** - Ссылка на розничную смену, в рамках которой было выполнено внесение денег в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **retailShift** - Ссылка на розничную смену, в рамках которой было выполнено внесение денег в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
 
 ### Получить внесения денег 
 Запрос на получение всех внесений денег на данной учетной записи.
@@ -308,7 +308,7 @@ curl -X GET
 ```
 
 ### Массовое создание и обновление внесений денег 
-[Массовое создание и обновление](/#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) внесений денег.
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) внесений денег.
 В теле запроса нужно передать массив, содержащий JSON представления внесений денег, которые вы хотите создать или обновить.
 Обновляемые внесения денег должны содержать идентификатор в виде метаданных.
 
@@ -515,11 +515,11 @@ curl -X DELETE
 Запрос на получение метаданных внесений денег. Результат - объект JSON, включающий в себя:
 
 + **meta** - Ссылка на метаданные внесений денег
-+ **attributes** - Массив объектов доп. полей внесений денег в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **attributes** - Массив объектов доп. полей внесений денег в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **states** - Массив статусов внесений денег
 + **createShared** - создавать новые внесения денег с меткой "Общий"
 
-Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
+Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
 > Метаданные внесений денег
 

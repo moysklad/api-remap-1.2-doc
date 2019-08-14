@@ -165,44 +165,44 @@ curl -X GET
 
 Список сущностей, у которых есть доп. поля:
 
-+ [Договор](/dictionaries/#suschnosti-dogowor)
-+ [Контрагент](/dictionaries/#suschnosti-kontragent)
-+ [Юрлицо](/dictionaries/#suschnosti-jurlico)
-+ [Проект](/dictionaries/#suschnosti-proekt)
-+ [Склад](/dictionaries/#suschnosti-sklad)
-+ [Сотрудник](/dictionaries/#suschnosti-sotrudnik)
-+ [Товар](/dictionaries/#suschnosti-towar)
-+ [Услуга](/dictionaries/#suschnosti-usluga)
-+ [Комплект](/dictionaries/#suschnosti-komplekt)
-+ [Серия](/dictionaries/#suschnosti-seriq)
++ [Договор](../dictionaries/#suschnosti-dogowor)
++ [Контрагент](../dictionaries/#suschnosti-kontragent)
++ [Юрлицо](../dictionaries/#suschnosti-jurlico)
++ [Проект](../dictionaries/#suschnosti-proekt)
++ [Склад](../dictionaries/#suschnosti-sklad)
++ [Сотрудник](../dictionaries/#suschnosti-sotrudnik)
++ [Товар](../dictionaries/#suschnosti-towar)
++ [Услуга](../dictionaries/#suschnosti-usluga)
++ [Комплект](../dictionaries/#suschnosti-komplekt)
++ [Серия](../dictionaries/#suschnosti-seriq)
 + Все документы:
-  - [Возврат покупателя](/documents/#dokumenty-vozwrat-pokupatelq)
-  - [Возврат поставщику](/documents/#dokumenty-vozwrat-postawschiku)
-  - [Входящий платеж](/documents/#dokumenty-vhodqschij-platezh)
-  - [Заказ покупателя](/documents/#dokumenty-zakaz-pokupatelq)
-  - [Заказ поставщику](/documents/#dokumenty-zakaz-postawschiku)
-  - [Исходящий платеж](/documents/#dokumenty-ishodqschij-platezh)
-  - [Оприходование](/documents/#dokumenty-oprihodowanie)
-  - [Отгрузка](/documents/#dokumenty-otgruzka)
-  - [Перемещение](//documents/#dokumenty-peremeschenie)
-  - [Приемка](/documents/#dokumenty-priemka)
-  - [Приходный ордер](/documents/#dokumenty-prihodnyj-order)
-  - [Расходный ордер](/documents/#dokumenty-rashodnyj-order)
-  - [Розничная продажа](/documents/#dokumenty-roznichnaq-prodazha)
-  - [Розничная смена](/documents/#dokumenty-roznichnaq-smena)
-  - [Розничный возврат](/documents/#dokumenty-roznichnyj-wozwrat)
-  - [Списание](/documents/#dokumenty-spisanie)
-  - [Инвентаризация](/documents/#dokumenty-inwentarizaciq)
-  - [Счет покупателю](/documents/#dokumenty-schet-pokupatelu)
-  - [Счет поставщика](/documents/#dokumenty-schet-postawschika)
-  - [Счет-фактура выданный](/documents/#dokumenty-schet-faktura-wydannyj)
-  - [Счет-фактура полученный](/documents/#dokumenty-schet-faktura-poluchennyj)
-  - [Прайс-лист](/documents/#dokumenty-prajs-list)
-  - [Внутренний заказ](/documents/#dokumenty-vnutrennij-zakaz)
-  - [Заказ на производство](/documents/#dokumenty-zakaz-na-proizwodstwo)
-  - [Тех. операция](/documents/#dokumenty-teh-operaciq)
-  - [Полученный отчет комиссионера](/documents/#dokumenty-poluchennyj-otchet-komissionera)
-  - [Выданный отчет комиссионера](/documents/#dokumenty-vydannyj-otchet-komissionera)
+  - [Возврат покупателя](../documents/#dokumenty-vozwrat-pokupatelq)
+  - [Возврат поставщику](../documents/#dokumenty-vozwrat-postawschiku)
+  - [Входящий платеж](../documents/#dokumenty-vhodqschij-platezh)
+  - [Заказ покупателя](../documents/#dokumenty-zakaz-pokupatelq)
+  - [Заказ поставщику](../documents/#dokumenty-zakaz-postawschiku)
+  - [Исходящий платеж](../documents/#dokumenty-ishodqschij-platezh)
+  - [Оприходование](../documents/#dokumenty-oprihodowanie)
+  - [Отгрузка](../documents/#dokumenty-otgruzka)
+  - [Перемещение](..//documents/#dokumenty-peremeschenie)
+  - [Приемка](../documents/#dokumenty-priemka)
+  - [Приходный ордер](../documents/#dokumenty-prihodnyj-order)
+  - [Расходный ордер](../documents/#dokumenty-rashodnyj-order)
+  - [Розничная продажа](../documents/#dokumenty-roznichnaq-prodazha)
+  - [Розничная смена](../documents/#dokumenty-roznichnaq-smena)
+  - [Розничный возврат](../documents/#dokumenty-roznichnyj-wozwrat)
+  - [Списание](../documents/#dokumenty-spisanie)
+  - [Инвентаризация](../documents/#dokumenty-inwentarizaciq)
+  - [Счет покупателю](../documents/#dokumenty-schet-pokupatelu)
+  - [Счет поставщика](../documents/#dokumenty-schet-postawschika)
+  - [Счет-фактура выданный](../documents/#dokumenty-schet-faktura-wydannyj)
+  - [Счет-фактура полученный](../documents/#dokumenty-schet-faktura-poluchennyj)
+  - [Прайс-лист](../documents/#dokumenty-prajs-list)
+  - [Внутренний заказ](../documents/#dokumenty-vnutrennij-zakaz)
+  - [Заказ на производство](../documents/#dokumenty-zakaz-na-proizwodstwo)
+  - [Тех. операция](../documents/#dokumenty-teh-operaciq)
+  - [Полученный отчет комиссионера](../documents/#dokumenty-poluchennyj-otchet-komissionera)
+  - [Выданный отчет комиссионера](../documents/#dokumenty-vydannyj-otchet-komissionera)
 
 
 Дополнительные поля сущности - внутренняя коллекция **attributes**.
@@ -271,7 +271,7 @@ curl -X GET
 При выбранном типе Атрибута "Справочник" атрибут **value** в его представлении
 будет объектом со следующими свойствами:
 
-+ meta - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye), представляющие собой ссылку на сущность из соответствующего справочника
++ meta - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye), представляющие собой ссылку на сущность из соответствующего справочника
 + name - Наименование соответствующей сущности
 
 Обнуление доп. поля типа "Справочник" происходит так же, как и при работе с другими доп. полям.
@@ -296,15 +296,15 @@ curl -X GET
 + **filename** - Имя файла `Необходимое`
 + **content** - Байты файла, закодированные в base64 `Необходимое`
 
-Пример указания значения для доп. поля типа файл есть в секции [создания товара](/dictionaries/#suschnosti-towar-sozdat-towar)
+Пример указания значения для доп. поля типа файл есть в секции [создания товара](../dictionaries/#suschnosti-towar-sozdat-towar)
 
 ### Работа с позициями документов
 
-API сервиса МойСклад позволяет оперировать с такими документами как [Отгрузка](/documents/#dokumenty-otgruzka), [Заказ покупателя](/documents/#dokumenty-zakaz-pokupatelq), [Счет покупателю](/documents/#dokumenty-schet-pokupatelu),
-[Розничная продажа](/documents/#dokumenty-roznichnaq-prodazha), [Полученный отчет комиссионера](/documents/#dokumenty-poluchennyj-otchet-komissionera), [Выданный отчет комиссионера](/documents/#dokumenty-vydannyj-otchet-komissionera), [Оприходование](/documents/#dokumenty-oprihodowanie),
-[Внутренний заказ](/documents/#dokumenty-vnutrennij-zakaz), [Инвентаризация](/documents/#dokumenty-inwentarizaciq), [Списание](/documents/#dokumenty-spisanie), [Перемещение](/documents/#dokumenty-peremeschenie), [Прайс-лист](/documents/#dokumenty-prajs-list),
-[Заказ на производство](/documents/#dokumenty-zakaz-na-proizwodstwo), [Возврат поставщику](/documents/#dokumenty-vozwrat-postawschiku), [Заказ поставщику](/documents/#dokumenty-zakaz-postawschiku),
-[Розничный возврат](/documents/#dokumenty-roznichnyj-wozwrat), [Возврат покупателя](/documents/#dokumenty-vozwrat-pokupatelq), [Приемка](/documents/#dokumenty-priemka), [Счет поставщика](/documents/#dokumenty-schet-postawschika). Перечисленные документы содержат позиции, работать с которыми можно как в составе отдельного документа,
+API сервиса МойСклад позволяет оперировать с такими документами как [Отгрузка](../documents/#dokumenty-otgruzka), [Заказ покупателя](../documents/#dokumenty-zakaz-pokupatelq), [Счет покупателю](../documents/#dokumenty-schet-pokupatelu),
+[Розничная продажа](../documents/#dokumenty-roznichnaq-prodazha), [Полученный отчет комиссионера](../documents/#dokumenty-poluchennyj-otchet-komissionera), [Выданный отчет комиссионера](../documents/#dokumenty-vydannyj-otchet-komissionera), [Оприходование](../documents/#dokumenty-oprihodowanie),
+[Внутренний заказ](../documents/#dokumenty-vnutrennij-zakaz), [Инвентаризация](../documents/#dokumenty-inwentarizaciq), [Списание](../documents/#dokumenty-spisanie), [Перемещение](../documents/#dokumenty-peremeschenie), [Прайс-лист](../documents/#dokumenty-prajs-list),
+[Заказ на производство](../documents/#dokumenty-zakaz-na-proizwodstwo), [Возврат поставщику](../documents/#dokumenty-vozwrat-postawschiku), [Заказ поставщику](../documents/#dokumenty-zakaz-postawschiku),
+[Розничный возврат](../documents/#dokumenty-roznichnyj-wozwrat), [Возврат покупателя](../documents/#dokumenty-vozwrat-pokupatelq), [Приемка](../documents/#dokumenty-priemka), [Счет поставщика](../documents/#dokumenty-schet-postawschika). Перечисленные документы содержат позиции, работать с которыми можно как в составе отдельного документа,
 так и с помощью специальных ресурсов для управления позициями документа.
 
 ######  Работа с позициями в рамках отдельного документа
@@ -687,19 +687,19 @@ state.name Параметр строкового типа. В отфильтро
 ### Замена ссылок объектами с помощью expand 
 
 В JSON API, в составе сущностей можно встретить ссылки на связанные объекты.
-Ссылки выводятся в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye). Для того, чтобы вместо ссылок получить связанные объекты,
+Ссылки выводятся в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye). Для того, чтобы вместо ссылок получить связанные объекты,
 не обязательно делать отдельные запросы для каждого из них. Вместо этого, вместе с запросом на получение сущности, нужно передать параметр **expand**.
 В качестве значения данного параметра нужно перечислить через запятую все необходимые поля-ссылки,
 на месте которых вы бы хотели видеть связанные объекты.
 В результате запроса с таким параметром, в ответе вы получите объект с развернутыми вложенными объектами вместо ссылок.
 К примеру, в документах, имеющих в составе поле **agent**, вместо ссылки на
-контрагента будет выведен объект со всеми полями сущности "Контрагент", описанными [тут](/dictionaries/#suschnosti-kontragent).
+контрагента будет выведен объект со всеми полями сущности "Контрагент", описанными [тут](../dictionaries/#suschnosti-kontragent).
 Максимальный уровень вложенности **expand** : 3.
 Expand разрешен только на размере выборки не более 100. Если указан больший лимит, но указан expand, то данный параметр будет игнорироваться.
 
 Также **expand** можно применять для результатов операций создания и обновления.
 
-+ Ниже показаны примеры использования **expand** на [Возврате покупателя](/documents/#dokumenty-vozwrat-pokupatelq). В примерах представлены только поля **meta** и **demand**.
++ Ниже показаны примеры использования **expand** на [Возврате покупателя](../documents/#dokumenty-vozwrat-pokupatelq). В примерах представлены только поля **meta** и **demand**.
 
 ### Возврат без expand 
 
@@ -1312,10 +1312,10 @@ curl -X PUT
 ```
 
 ### Доп. поля сущностей
-В JSON API есть возможность управлять набором существующих доп. полей для каждого из типов сущностей перечисленных [тут](/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
+В JSON API есть возможность управлять набором существующих доп. полей для каждого из типов сущностей перечисленных [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 Используя соответствующие ресурсы, можно получать список всех доп. полей для указанного типа сущности, а также создавать новые, обновлять и удалять существующие доп. поля.
 
-Структура объекта доп. поля подробно описана в секции [Работа с дополнительными полями](/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
+Структура объекта доп. поля подробно описана в секции [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
 **Параметры**
 
@@ -1329,7 +1329,7 @@ curl -X PUT
 Запрос всех доп. полей для переданного типа сущностей.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
+- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
 - **rows** - Массив JSON объектов, представляющих собой доп. поля.
 
 > Получить доп поля отгрузок

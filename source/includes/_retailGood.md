@@ -7,7 +7,7 @@
 В списке розничных товаров выводятся как сами товары, так и их модификации.
 ### Структуры сущностей
 #### Товар
-+ **meta** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о Товаре
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о Товаре
 + **id** - id Товара
 + **name** - Наименование Товара
 + **code** - Код Товара
@@ -19,7 +19,7 @@
 + **image** - Изображение товара
 
 #### Модификация
-+ **meta** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о Модификации
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о Модификации
 + **id**- id Модификации
 + **name** - Наименование Модификации
 + **code** - Код Модификации

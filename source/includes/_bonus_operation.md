@@ -5,23 +5,23 @@
 
 ##### Атрибуты сущности
 
-+ **meta** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) бонусной операции
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) бонусной операции
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **shared** - Общий доступ
 + **updated** - Момент последнего обновления Бонусной операции
 + **created** - Момент создания Бонусной операции
-+ **group** - Отдел сотрудника в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **externalCode** - Внешний код Бонусной операции
 + **name** - Наименование бонусной операции
 + **applicable** - Отметка о проведении
 + **moment** - Время проведения бонусной операции
-+ **agent** - Контрагент, связанный с бонусной операцией в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **parentDocument** - Связанный документ бонусной операции в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **bonusProgram** - Бонусная программа в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **agent** - Контрагент, связанный с бонусной операцией в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **parentDocument** - Связанный документ бонусной операции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **bonusProgram** - Бонусная программа в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **bonusValue** - Количество бонусных баллов
-+ **organization** - ссылка на ваше юрлицо в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **organization** - ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **transactionType** - Тип бонусной операции. Возможные значения: `EARNING`, `SPENDING`. `Необходимое`
 
 ##### Атрибуты доступные для фильтрации
@@ -30,8 +30,8 @@
 + **moment** - Момент создания бонусной операции
 + **updated** - Момент последнего обновления бонусной операции
 + **updatedBy** - Автор последнего обновления бонусной операции в формате `uid` (`admin@admin`)
-+ **agent** - Ссылка на контрагента в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **bonusProgram** - Ссылка на бонусную программу в формате [Метаданных](/#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **agent** - Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **bonusProgram** - Ссылка на бонусную программу в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **bonusValue** - Бонусные баллы
 
 ### Получить Бонусные операции
@@ -39,8 +39,8 @@
 Запрос на получения списка всех Бонусных операций для данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](/#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
+- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
+- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
 - **rows** - Массив JSON объектов, представляющих собой Бонусные операции.
 
 **Параметры**
@@ -364,7 +364,7 @@ curl -X GET
 
 ### Массовое создание и обновление Бонусных операций
 
-[Массовое создание и обновление](/#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Бонусных операций.
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Бонусных операций.
 В теле запроса нужно передать массив, содержащий JSON представления Бонусных операций, которые вы хотите создать или обновить.
 Обновляемые Бонусные операции должны содержать идентификатор в виде метаданных.
 
