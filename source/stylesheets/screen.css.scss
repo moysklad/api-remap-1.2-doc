@@ -220,6 +220,15 @@ html, body {
       text-decoration: none;
     }
   }
+
+  .toc-other-page li {
+    background-color: #F3F7F9;
+    text-align: left;
+  }
+
+  .toc-other-page a {
+    font-size: 1.4em;
+  }
 }
 
 .toc-link, .toc-footer li {
@@ -235,9 +244,6 @@ html, body {
   transition-duration: 130ms;
 }
 
-.toc-other-page::after {
-  content: "→";
-}
 
 // button to show navigation on mobile devices
 #nav-button {
