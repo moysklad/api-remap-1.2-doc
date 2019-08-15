@@ -45,6 +45,20 @@
 + **customerOrderStates** - Ссылка на статусы, в которых выгружаются заказы в точку продаж (если указано), в формате [Метаданных](#metadannye) `Только для чтения`
 + **environment** - информация об окружении
 + **state** - информация о статусе точки продаж
++ **defaultTaxSystem** - Код системы налогообложения по умолчанию
+  + **GENERAL_TAX_SYSTEM** - ОСН
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
+  + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
+  + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
+  + **PATENT_BASED** - Патент
++ **orderTaxSystem** - Код системы налогообложения для заказов
+  + **GENERAL_TAX_SYSTEM** - ОСН
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
+  + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
+  + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
+  + **PATENT_BASED** - Патент
 
 ##### Аттрибуты сущности Окружение
 + **device** - информация об устройстве
@@ -335,7 +349,9 @@ curl -X GET
         "paymentTerminal": {
           "acquiringType": "payme"
         }
-      }
+      },
+      "defaultTaxSystem": "GENERAL_TAX_SYSTEM",
+      "orderTaxSystem": "GENERAL_TAX_SYSTEM"
     },
     {
       "meta": {

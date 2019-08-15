@@ -43,7 +43,13 @@
 + **retailShift** - Ссылка на Розничную смену, в рамках которой была проведена продажа в формате [Метаданных](#metadannye) `Необходимое`
 + **cashSum**  - Оплачено наличными. Поле является необходимым для возврата без основания
 + **noCashSum** - Оплачено картой. Поле является необходимым для возврата без основания
-
++ **taxSystem** - Код системы налогообложения
+  + **GENERAL_TAX_SYSTEM** - ОСН
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
+  + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
+  + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
+  + **PATENT_BASED** - Патент
 
 #### Позиции Розничного возврата
 Позиции Розничного возврата - это список товаров/услуг/модификаций/серий.
@@ -224,7 +230,8 @@ curl -X GET
           "type": "retailshift",
           "mediaType": "application/json"
         }
-      }
+      },
+      "taxSystem": "GENERAL_TAX_SYSTEM"
     }
   ]
 }

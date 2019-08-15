@@ -55,6 +55,13 @@
 + **noCashSum** - Оплачено картой
 + **prepaymentCashSum** - Предоплата наличными
 + **prepaymentNoCashSum** - Предоплата картой
++ **taxSystem** - Код системы налогообложения
+  + **GENERAL_TAX_SYSTEM** - ОСН
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
+  + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
+  + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
+  + **PATENT_BASED** - Патент
 
 #### Работа с полями оплаты розничной продажи
 Сумма полей **cashSum**, **noCashSum**, **prepaymentCashSum** и **prepaymentNoCashSum**
@@ -241,8 +248,8 @@ curl -X GET
       "cashSum": 5100,
       "noCashSum": 0,
       "prepaymentCashSum": 0,
-      "prepaymentNoCashSum": 0
-      
+      "prepaymentNoCashSum": 0,
+      "taxSystem": "GENERAL_TAX_SYSTEM"
     },
     {
       "meta": {

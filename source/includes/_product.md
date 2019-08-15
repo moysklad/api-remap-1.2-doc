@@ -62,6 +62,13 @@
   + **EXCISABLE_GOOD** - Подакцизный товар
   + **COMPOUND_PAYMENT_ITEM** - Составной предмет расчета
   + **ANOTHER_PAYMENT_ITEM** - Иной предмет расчета
++ **taxSystem** - Код системы налогообложения
+  + **GENERAL_TAX_SYSTEM** - ОСН
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
+  + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
+  + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
+  + **PATENT_BASED** - Патент
 
 Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить
 с помощью обновления атрибута **productFolder**.
@@ -566,7 +573,8 @@ curl -X GET
           "gtin": "00000000000130"
         }
       ],
-      "trackingType": "NOT_TRACKED"
+      "trackingType": "NOT_TRACKED",
+      "taxSystem": "GENERAL_TAX_SYSTEM"
     }
   ]
 }

@@ -25,6 +25,13 @@
 + **vat** - НДС %
 + **effectiveVat** - Реальный НДС % `Только для чтения`
 + **productFolder** - Ссылка на Группу товаров данной Группы товаров в формате [Метаданных](#metadannye)
++ **taxSystem** - Код системы налогообложения
+  + **GENERAL_TAX_SYSTEM** - ОСН
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
+  + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
+  + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
+  + **PATENT_BASED** - Патент
 
 ### Получить список групп товаров 
 Запрос всех Групп товаров на данной учетной записи.
@@ -122,7 +129,8 @@ curl -X GET
       "archived": false,
       "pathName": "",
       "vat": 3,
-      "effectiveVat": 3
+      "effectiveVat": 3,
+      "taxSystem": "GENERAL_TAX_SYSTEM"
     }
   ]
 }
