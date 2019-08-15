@@ -310,6 +310,15 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
+      "acquire" : {
+        "meta" : {
+          "href" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/30fe30a0-137a-11e6-9464-e4de00000051",
+          "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type" : "organization",
+          "mediaType" : "application/json"
+        }
+      },
+      "bankPercent" : 88.0,
       "issueOrders": false,
       "sellReserves": false,
       "lastOperationNames": [
@@ -363,7 +372,47 @@ curl -X GET
         "paymentTerminal": {
           "acquiringType": "payme"
         }
-      }
+      },
+      "ofdEnabled" : true,
+      "priorityOfdSend" : "email",
+      "allowCustomPrice" : true,
+      "allowSellTobaccoWithoutMRC" : true,
+      "allowCreateProducts" : false,
+      "productFolders" : {
+        "meta" : {
+          "href" : "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/2b5eb22f-139e-11e6-9464-e4de00000073/productfolders",
+          "mediaType" : "application/json",
+          "size" : 1,
+          "limit" : 1000,
+          "offset" : 0
+        }
+      },
+      "createAgentsTags" : [ "createagentstag" ],
+      "filterAgentsTags" : [ "filteragentstag" ],
+      "printAlways" : true,
+      "receiptTemplate" : {
+        "meta" : {
+          "href" : "https://online.moysklad.ru/api/remap/1.2/entity/receipttemplate/30fe30a0-137a-11e6-9464-e4de00000052",
+          "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/receipttemplate/metadata",
+          "type" : "receipttemplate",
+          "mediaType" : "application/json"
+        },
+        "header" : "headerReceiptTemplate",
+        "footer" : "footerReceiptTemplate"
+      },
+      "createPaymentInOnRetailShiftClosing" : true,
+      "createCashInOnRetailShiftClosing" : true,
+      "returnFromClosedShiftEnabled" : true,
+      "enableReturnsWithNoReason" : true,
+      "createOrderWithState" : {
+        "meta" : {
+          "href" : "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/states/30fe30a0-137a-11e6-9464-e4de00000053",
+          "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+          "type" : "state",
+          "mediaType" : "application/json"
+        }
+      },
+      "reservePrepaidGoods" : true  
     },
     {
       "meta": {
@@ -464,14 +513,15 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
-      "acquire": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/30fe66fd-137a-11e6-9464-e4de00000053",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-          "type": "counterparty",
-          "mediaType": "application/json"
-        }
-      },
+      "acquire" : {
+         "meta" : {
+           "href" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/30fe30a0-137a-11e6-9464-e4de00000052",
+           "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+           "type" : "organization",
+           "mediaType" : "application/json"
+         }
+       },
+      "bankPercent" : 12.0,      
       "issueOrders": false,
       "sellReserves": false,
       "lastOperationNames": [
@@ -525,7 +575,47 @@ curl -X GET
         "paymentTerminal": {
           "acquiringType": "payme"
         }
-      }
+      },
+      "ofdEnabled" : true,
+      "priorityOfdSend" : "email",
+      "allowCustomPrice" : true,
+      "allowSellTobaccoWithoutMRC" : true,
+      "allowCreateProducts" : false,
+      "productFolders" : {
+        "meta" : {
+          "href" : "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/2b5eb22f-139e-11e6-9464-e4de00000073/productfolders",
+          "mediaType" : "application/json",
+          "size" : 1,
+          "limit" : 1000,
+          "offset" : 0
+        }
+      },
+      "createAgentsTags" : [ "createagentstag" ],
+      "filterAgentsTags" : [ "filteragentstag" ],
+      "printAlways" : true,
+      "receiptTemplate" : {
+        "meta" : {
+          "href" : "https://online.moysklad.ru/api/remap/1.2/entity/receipttemplate/2b5eb22f-139e-11e6-9464-e4de00000074",
+          "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/receipttemplate/metadata",
+          "type" : "receipttemplate",
+          "mediaType" : "application/json"
+        },
+        "header" : "headerReceiptTemplate",
+        "footer" : "footerReceiptTemplate"
+      },
+      "createPaymentInOnRetailShiftClosing" : true,
+      "createCashInOnRetailShiftClosing" : true,
+      "returnFromClosedShiftEnabled" : true,
+      "enableReturnsWithNoReason" : true,
+      "createOrderWithState" : {
+        "meta" : {
+          "href" : "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/states/2b5eb22f-139e-11e6-9464-e4de00000075",
+          "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+          "type" : "state",
+          "mediaType" : "application/json"
+        }
+      },
+      "reservePrepaidGoods" : true  
     }
   ]
 }
@@ -738,6 +828,14 @@ curl -X GET
       "type" : "store",
       "mediaType" : "application/json",
       "uuidHref" : "https://online.moysklad.ru/app/#warehouse/edit?id=30fe66fd-137a-11e6-9464-e4de00000052"
+    }
+  },
+  "acquire" : {
+    "meta" : {
+      "href" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/30fe30a0-137a-11e6-9464-e4de00000052",
+      "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type" : "organization",
+      "mediaType" : "application/json"
     }
   },
   "bankPercent" : 20.0,
@@ -1227,6 +1325,14 @@ curl -X GET
         "uuidHref" : "https://online.moysklad.ru/app/#warehouse/edit?id=30fe66fd-137a-11e6-9464-e4de00000041"
       }
     },
+    "acquire" : {
+      "meta" : {
+        "href" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/30fe30a0-137a-11e6-9464-e4de00000152",
+        "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type" : "organization",
+        "mediaType" : "application/json"
+      }
+    },  
     "bankPercent" : 10.0,
     "issueOrders" : true,
     "sellReserves" : true,
@@ -1408,21 +1514,21 @@ curl -X GET
     "addInfo": "addinfo",
     "comment": "some words about address"
   },
-"controlShippingStock": true,
-  "onlyInStock": true,
-  "active": true,
-  "controlCashierChoice": false,
-  "discountEnable": true,
-  "discountMaxPercent": 17,
-  "priceType": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
-      "type": "pricetype",
-      "mediaType": "application/json"
-    },
-    "id": "672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
-    "name": "Цена продажи",
-    "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+  "controlShippingStock": true,
+    "onlyInStock": true,
+    "active": true,
+    "controlCashierChoice": false,
+    "discountEnable": true,
+    "discountMaxPercent": 17,
+    "priceType": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+        "type": "pricetype",
+        "mediaType": "application/json"
+      },
+      "id": "672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+      "name": "Цена продажи",
+      "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
   },
   "authTokenAttached": false,
   "cashiers": {
@@ -1461,6 +1567,7 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
+  "bankPercent": 10.0,
   "issueOrders": false,
   "sellReserves": false,
   "lastOperationNames": [
@@ -1615,6 +1722,14 @@ curl -X PUT
       "uuidHref" : "https://online.moysklad.ru/app/#warehouse/edit?id=30fe66fd-137a-11e6-9464-e4de00000051"
     }
   },
+  "acquire" : {
+    "meta" : {
+      "href" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/30fe30a0-137a-11e6-9464-e4de00000152",
+      "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type" : "organization",
+      "mediaType" : "application/json"
+    }
+  }, 
   "bankPercent" : 0.0,
   "issueOrders" : false,
   "sellReserves" : false,
