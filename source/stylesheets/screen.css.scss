@@ -154,6 +154,20 @@ html, body {
   .toc-list-h1-title {
     background-color: #F3F7F9;
     text-align: center;
+
+    a {
+      font-size: 1.4em;
+    }
+  }
+
+  .toc-other-page {
+    li {
+      text-align: left;
+    }
+
+    a {
+      font-size: 1.4em;
+    }
   }
 
   // This is the currently selected ToC entry
@@ -234,6 +248,7 @@ html, body {
   transition-timing-function: linear;
   transition-duration: 130ms;
 }
+
 
 // button to show navigation on mobile devices
 #nav-button {
