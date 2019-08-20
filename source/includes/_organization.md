@@ -33,6 +33,8 @@
 В зависимости от значения данного поля набор выводимых реквизитов юрлица может меняться.  Подробнее [тут](#tip-urlica)
 + **trackingContractNumber** - Номер договора с ЦРПТ
 + **trackingContractDate** - Дата договора с ЦРПТ
++ **bonusProgram** - Ссылка на активную Бонусную программу в формате [Метаданных](#metadannye)
++ **bonusPoints** - Бонусные баллы по активной бонусной программе `Только для чтения`
 
 #### Поля реквизитов
 + **legalTitle** - Полное наименование юрлица
@@ -281,7 +283,17 @@ curl -X GET
       "isEgaisEnable": true,
       "fsrarId": "1963703",
       "payerVat": true,
-      "utmUrl": "10.250.110.81"
+      "utmUrl": "10.250.110.81",
+      "bonusProgram": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram/129626ee-ac91-11e9-ac12-000d00000009",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram/metadata",
+          "type": "bonusprogram",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=129626ee-ac91-11e9-ac12-000d00000009"
+        }
+      },
+      "bonusPoints": 0
     }
   ]
 }
@@ -1115,7 +1127,17 @@ curl -X GET
   "payerVat": true,
   "utmUrl": "10.250.110.81",
   "director": "Администратор",
-  "chiefAccountant": "Администратор"
+  "chiefAccountant": "Администратор",
+  "bonusProgram": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram/129626ee-ac91-11e9-ac12-000d00000009",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram/metadata",
+      "type": "bonusprogram",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=129626ee-ac91-11e9-ac12-000d00000009"
+    }
+  },
+  "bonusPoints": 0
 }
 ```
 
