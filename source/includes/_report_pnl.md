@@ -19,7 +19,7 @@
 + **margin** - Рентабельность
 
 #### Структура объекта assortment
-+ **meta** - [Метаданные](#metadannye), представляющие собой ссылку на товар или услугу
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye), представляющие собой ссылку на товар или услугу
 + **name** - Наименование товара или услуги
 + **code** - Код товара или услуги
 + **uom** - Единица измерения
@@ -55,8 +55,8 @@
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
-|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
  
 > Запрос на получение отчета "Прибыльность по товарам".
 
@@ -212,7 +212,7 @@ curl -X GET
 + **margin** - Рентабельность
 
 #### Структура объекта assortment
-+ **meta** - [Метаданные](#metadannye), представляющие собой ссылку на модификацию, услугу или комплект
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye), представляющие собой ссылку на модификацию, услугу или комплект
 + **name** - Наименование сущности
 + **code** - Код сущности
 + **article** - Артикул модификации или комплекта
@@ -247,8 +247,8 @@ curl -X GET
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
-|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
  
 > Запрос на получение отчета "Прибыльность по модификациям".
 
@@ -402,7 +402,7 @@ curl -X GET
 + **margin** - Рентабельность
 
 #### Структура объекта employee
-+ **meta** - [Метаданные](#metadannye), представляющие собой ссылку на сотрудника
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye), представляющие собой ссылку на сотрудника
 + **name** - Имя сотрудника
 
 #### Атрибуты доступные для фильтрации
@@ -434,8 +434,8 @@ curl -X GET
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
-|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
  
 > Запрос на получение отчета "Прибыльность по сотрудникам".
 
@@ -509,7 +509,7 @@ curl -X GET
 + **margin** - Рентабельность
 
 #### Структура объекта counterparty
-+ **meta** - [Метаданные](#metadannye), представляющие собой ссылку на покупателя
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye), представляющие собой ссылку на покупателя
 + **name** - Имя покупателя
 
 #### Атрибуты доступные для фильтрации
@@ -541,8 +541,8 @@ curl -X GET
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
-|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentFrom |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
+|momentTo |  `string` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
  
 > Запрос на получение отчета "Прибыльность по покупателям".
 
