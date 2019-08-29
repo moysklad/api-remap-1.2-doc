@@ -41,6 +41,13 @@
 + **shippedSum** - Сумма отгруженного `Только для чтения`
 + **invoicedSum** - Сумма счетов покупателю `Только для чтения`
 + **project** - Ссылка на проект в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **taxSystem** - Код системы налогообложения
+  + **GENERAL_TAX_SYSTEM** - ОСН
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
+  + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
+  + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
+  + **PATENT_BASED** - Патент
 
 #### Связи с другими документами
 + **purchaseOrders** - Массив ссылок на связанные заказы поставщикам в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
@@ -62,6 +69,13 @@
 + **pack** - Упаковка товара
 + **shipped** - Доставлено
 + **reserve** - Резерв данной позиции
++ **taxSystem** - Код системы налогообложения
+  + **GENERAL_TAX_SYSTEM** - ОСН
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
+  + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
+  + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
+  + **PATENT_BASED** - Патент
 
 С позициями можно работать с помощью специальных ресурсов для управления позициями Заказа,
 а также в составе отдельного Заказа покупателя. При работе в составе отдельного Заказа покупателя,
@@ -246,7 +260,8 @@ curl -X GET
       "deliveryPlannedMoment": "2016-04-15 12:58:00",
       "payedSum": 365939611804,
       "shippedSum": 408739611676,
-      "invoicedSum": 408739611676
+      "invoicedSum": 408739611676,
+      "taxSystem": "GENERAL_TAX_SYSTEM"
     }
   ]
 }

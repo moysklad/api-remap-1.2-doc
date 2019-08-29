@@ -45,6 +45,13 @@
   + **EXCISABLE_GOOD** - Подакцизный товар
   + **COMPOUND_PAYMENT_ITEM** - Составной предмет расчета
   + **ANOTHER_PAYMENT_ITEM** - Иной предмет расчета
++ **taxSystem** - Код системы налогообложения
+  + **GENERAL_TAX_SYSTEM** - ОСН
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
+  + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
+  + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
+  + **PATENT_BASED** - Патент
 
 ##### Минимальная цена
 + **value** - Значение цены
@@ -282,7 +289,8 @@ curl -X GET
         }
       }
     }
-  ]
+  ],
+  "taxSystem": "GENERAL_TAX_SYSTEM"
 }
 ```
 

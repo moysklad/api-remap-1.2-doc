@@ -38,6 +38,13 @@
 + **prepayment** - Ссылка на Предоплату в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **cashSum**  - Возврат наличными
 + **noCashSum** - Возврат картой
++ **taxSystem** - Код системы налогообложения
+  + **GENERAL_TAX_SYSTEM** - ОСН
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
+  + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
+  + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
+  + **PATENT_BASED** - Патент
 
 #### Позиции Возврата предоплаты
 Позиции Возврата предоплаты - это список товаров/услуг/модификаций/серий.
@@ -250,7 +257,8 @@ curl -X GET
         }
       },
       "cashSum": 15000,
-      "noCashSum": 15000
+      "noCashSum": 15000,
+      "taxSystem": "GENERAL_TAX_SYSTEM"
     }
   ]
 }

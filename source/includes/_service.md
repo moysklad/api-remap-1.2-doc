@@ -40,6 +40,13 @@
   + **PROVIDING_RID** - Предоставление РИД
   + **COMPOUND_PAYMENT_ITEM** - Составной предмет расчета
   + **ANOTHER_PAYMENT_ITEM** - Иной предмет расчета
++ **taxSystem** - Код системы налогообложения
+  + **GENERAL_TAX_SYSTEM** - ОСН
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
+  + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
+  + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
+  + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
+  + **PATENT_BASED** - Патент
 
 Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить
 с помощью обновления атрибута **productFolder**.
@@ -272,7 +279,8 @@ curl -X GET
           "type": "counterparty",
           "value": "ООО Компания"
         }
-      ]
+      ],
+      "taxSystem": "GENERAL_TAX_SYSTEM"
     },
     {
       "meta": {
