@@ -46,13 +46,14 @@
 
 #### Доступные типы сущностей
 Создание вебхуков доступно для всех типов сущностей и документов, кроме следующих:
+* `webhook`
 * `metadata`
 * `discount`
 * `operation`
 * `customtemplate`
 * `embeddedtemplate`
-* `operationpublication`
 * `contractpublication`
+* `operationpublication`
 
 ### Получить список веб-хуков 
 > Запрос на получение всех веб-хуков на данной учетной записи.
