@@ -1,12 +1,12 @@
 ## Точка продаж
 ### Точки продаж 
-Средствами JSON API можно создавать и обновлять сведения о Точеках продаж, запрашивать списки Точек продаж и сведения по отдельным точкам продаж. 
+Средствами JSON API можно создавать и обновлять сведения о Точках продаж, запрашивать списки Точек продаж и сведения по отдельным Точкам продаж. 
 Также можно получить доступ к специальному ресурсу для управления кассирами точки продаж. Кодом сущности для точки продаж в составе JSON API является
  ключевое слово **retailstore**. Больше о точках продаж и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки
   по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203325423-%D0%A0%D0%BE%D0%B7%D0%BD%D0%B8%D1%86%D0%B0) в разделе "Создание точки продаж
    в основном интерфейсе".
 По данной сущности можно осуществлять контекстный поиск с помощью специального параметра `search`. Подробнее можно узнать
- по [ссылке](../#mojsklad-json-api-obschie-swedeniq-kontextnyj-poisk). Поиск с параметром search отличается от других тем, что поиск не префиксный, без токенизации и
+ по [ссылке](../#mojsklad-json-api-obschie-swedeniq-kontextnyj-poisk). Поиск с параметром `search` отличается от других тем, что поиск не префиксный, без токенизации и
   идет только по одному полю одновременно. Ищет такие строки, в которые входит значение строки поиска.
 
 Поиск среди объектов точек продаж на соответствие поисковой строке будет осуществлен по следующим полям:
@@ -27,17 +27,15 @@
 + **externalCode** - Внешний код точки продаж
 + **archived** - Добавлена ли точка продаж в архив
 + **address** - Адрес
-+ **addressFull** - Адрес с детализацией по отдельным полям.
-+ **controlShippingStock** - Контроль остатков. Не может быть `true`, если `AllowCreateProducts` имеет значение `true`.
++ **addressFull** - Адрес с детализацией по отдельным полям
++ **controlShippingStock** - Контроль остатков. Не может быть `true`, если `AllowCreateProducts` имеет значение `true`
 + **onlyInStock** - Выгружать только товары в наличии. Доступно только при активном контроле остатков. Влияет только на выгрузку остатков в POS API
-+ **active** - Включена
++ **active** - Cостояние точки продаж (Включена/Отключена)
 + **controlCashierChoice** - Выбор продавца
 + **discountEnable** - Разрешить скидки
 + **discountMaxPercent** - Максимальная скидка (в процентах)
 + **priceType** - Тип цен, с которыми будут продаваться товары в рознице `Необходимое`
 + **cashiers** - Ссылка на Кассиров в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **egaisEnabled** - Точка продаж должна передавать данные в ЕГАИС
-+ **frNumber** - Номер модели ФР
 + **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
 + **store** - Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
 + **acquire** - Банк-эквайер
@@ -46,16 +44,16 @@
 + **sellReserves** - Учет резервов
 + **lastOperationNames** - Последние операции
 + **ofdEnabled** - Отправлять электронный чек через ОФД
-+ **priorityOfdSend** - Приоритет отправки электронного чека. Активен только, когда отправка электронныъ чеков через ОФД включена. Принимает следующие строковые значения:
-  + **phone** - приоритет отправки чека на телефон
-  + **email** - приоритет по e-mail
-  + **none** - не отправлять
++ **priorityOfdSend** - Приоритет отправки электронного чека. Активен только, когда отправка электронных чеков через ОФД включена. Принимает следующие строковые значения:
+  + **phone** - Приоритет отправки на телефон
+  + **email** - Приоритет отправки на e-mail
+  + **none** - Отсутствие отправки чека
 + **allowCustomPrice** - Разрешить продажу по свободной цене
-+ **authTokenAttached** - создан ли токен для точки продаж `Только для чтения`
++ **authTokenAttached** - Создан ли токен для точки продаж `Только для чтения`
 + **orderToState** - Ссылка на статус, который проставится заказу после проведения продажи на его основании (если указано), в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **customerOrderStates** - Ссылка на статусы, в которых выгружаются заказы в точку продаж (если указано), в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **environment** - информация об окружении
-+ **state** - информация о статусе точки продаж
++ **environment** - Информация об окружении
++ **state** - Информация о статусе точки продаж
 + **defaultTaxSystem** - Код системы налогообложения по умолчанию
   + **GENERAL_TAX_SYSTEM** - ОСН
   + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
@@ -72,7 +70,7 @@
   + **PATENT_BASED** - Патент
 + **demandPrefix** - Префикс номера продаж
 + **allowSellTobaccoWithoutMRC** - Разрешить продавать табачную продукцию не по МРЦ
-+ **allowCreateProducts** - Разрешить создавать товары. Не может быть `true`, если `controlShippingStock` имеет значение `true`.
++ **allowCreateProducts** - Разрешить создавать товары. Не может быть `true`, если `controlShippingStock` имеет значение `true`
 + **productFolders** - Коллекция групп товаров, представленных в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye), из которых можно выгружать товары
 + **createAgentsTags** - Коллекция групп покупателей, представленных в формате строк. Определяет группы, в которые добавляются новые покупатели. Значения `null` игнорируются
 + **filterAgentsTags** - Коллекция групп покупателей, представленных в формате строк. Определяет группы, из которых выгружаются покупатели. Значения `null` игнорируются
@@ -89,54 +87,54 @@
  
 
 ##### Аттрибуты сущности Окружение
-+ **device** - информация об устройстве
-+ **os** - информация об операционной системе
-+ **software** - информация о ПО
-+ **chequePrinter** - данные о ККТ
-+ **paymentTerminal** - информация о платежном терминале
++ **device** - Информация об устройстве
++ **os** - Информация об операционной системе
++ **software** - Информация о ПО
++ **chequePrinter** - Данные о ККТ
++ **paymentTerminal** - Информация о платежном терминале
 
 ###### Аттрибуты сущности ПО
-+ **name** - наименование ПО. `Необходимое`
-+ **vendor** - Производитель.
-+ **version** - версия ПО.
++ **name** - Наименование ПО `Необходимое`
++ **vendor** - Производитель
++ **version** - Версия ПО
 
 ###### Аттрибуты сущности ККТ
 + **vendor** - Производитель
-+ **name** - Наименование. `Необходимое`
-+ **serial** - серийный номер
-+ **fiscalDataVersion** - формат фискальных данных
-+ **driver** - информация об используемом драйвере
-+ **fiscalMemory** - информация о фискальном накопителе
++ **name** - Наименование `Необходимое`
++ **serial** - Серийный номер
++ **fiscalDataVersion** - Формат фискальных данных
++ **driver** - Информация об используемом драйвере
++ **fiscalMemory** - Информация о фискальном накопителе
 + **firmwareVersion** - Версия прошивки ККТ
 
 ###### Аттрибуты сущности Драйвер
-+ **name** - наименования драйвера
++ **name** - Наименования драйвера
 + **version** - Версия драйвера
 
 ###### Аттрибуты сущности Фискальный накопитель
-+ **fiscalDataVersion** - версия фискальной памяти
++ **fiscalDataVersion** - Версия фискальной памяти
 
 ##### Аттрибуты сущности Статус
-+ **sync** - состояние синхронизации
-+ **lastCheckMoment** - дата и время последней синхронизации
-+ **fiscalMemory** - информация о фискальной памяти
-+ **paymentTerminal** - информация о платежном терминале `Deprecated`
++ **sync** - Состояние синхронизации
++ **lastCheckMoment** - Дата и время последней синхронизации
++ **fiscalMemory** - Информация о фискальной памяти
++ **paymentTerminal** - Информация о платежном терминале `Устаревшее`
 
 ###### Аттрибуты сущности Синхронизация
-+ **message** - состояние синхронизации.
-+ **lastAttempMoment** - Дата последней сихронизации (не обязательно успешной). `Необходимое`
++ **message** - Состояние синхронизации
++ **lastAttempMoment** - Дата последней сихронизации (не обязательно успешной) `Необходимое`
 
 ###### Аттрибуты сущности Фискальная Память
-+ **error** - информация об ошибке ФН
++ **error** - Информация об ошибке ФН
 + **notSendDocCount** - Количество неотправленных документов в ОФД
 + **notSendFirstDocMoment** - Дата первого документа в очереди на отправку
 
 ###### Аттрибуты сущности Ошибка
-+ **сode** - код ошибки ФН
-+ **message** - описание ошибки
++ **сode** - Код ошибки ФН
++ **message** - Описание ошибки
 
 ###### Аттрибуты сущности Платежный Терминал
-+ **acquiringType** - информация о типе эквайера (например: inpas/payme)
++ **acquiringType** - Информация о типе эквайера (например: inpas/payme)
 
 ###### Аттрибуты сущности Адрес
 + **postalCode** - Почтовый индекс
@@ -150,9 +148,9 @@
 + **comment** - Комментарий
 
 Строка адреса является конкатенацией полей структурированного адреса в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
-При передачи в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
-При передачи обоих адресов строковый будет игнорирован.
-При передачи только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
+При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
+При передаче обоих адресов строковый будет игнорирован.
+При передаче только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
 
 
 ##### Последние операции
@@ -161,7 +159,7 @@
 + **entity** - Ключевое слово, обозначающее тип последней операции `Только для чтения`
 + **name** - Наименование (номер) последней операции `Только для чтения`
 
-Представляет собой краткий список последних операций на данной точке продаж. Если продаж на данной точке по факту нет, то номера продаж будут фейковые
+Представляет собой краткий список последних операций на данной точке продаж. Если на данной точке не созданы документы Продажа/Внесение/Выплата/Возврат/Смена, то в ответе данные документы будут с номерами по умолчанию – 00001.
 
 ##### Кассиры
 Сущность кассир представляет собой объект, содержащий ссылки на [Сотрудника](../dictionaries/#suschnosti-sotrudnik), назначенного кассиром,
@@ -177,7 +175,7 @@
 
 
 ### Получить точки продаж 
-Запрос всех Розничных точек продаж на данной учетной записи.
+Запрос всех Розничных точек продаж данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
 - **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
@@ -306,8 +304,6 @@ curl -X GET
           "offset": 0
         }
       },
-      "egaisEnabled": true,
-      "frNumber": "134578",
       "organization": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/30f01af0-137a-11e6-9464-e4de0000004e",
@@ -410,9 +406,7 @@ curl -X GET
           "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/receipttemplate/metadata",
           "type" : "receipttemplate",
           "mediaType" : "application/json"
-        },
-        "header" : "headerReceiptTemplate",
-        "footer" : "footerReceiptTemplate"
+        }
       },
       "createPaymentInOnRetailShiftClosing" : true,
       "createCashInOnRetailShiftClosing" : true,
@@ -511,8 +505,6 @@ curl -X GET
           "offset": 0
         }
       },
-      "egaisEnabled": true,
-      "frNumber": "134578",
       "organization": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/30f01af0-137a-11e6-9464-e4de0000004e",
@@ -615,9 +607,7 @@ curl -X GET
           "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/receipttemplate/metadata",
           "type" : "receipttemplate",
           "mediaType" : "application/json"
-        },
-        "header" : "headerReceiptTemplate",
-        "footer" : "footerReceiptTemplate"
+        }
       },
       "createPaymentInOnRetailShiftClosing" : true,
       "createCashInOnRetailShiftClosing" : true,
@@ -645,12 +635,12 @@ curl -X GET
 
 Точка продаж создается на основе переданного объекта JSON,
 который содержит представление новой Точки продаж.
-Результат - JSON представление созданной Точки продаж. Для создания новой Точки продаж,
-необходимо и достаточно указать в переданном объекте не пустые поля `name`, `organization`, `store`, `priceType`.
+Результат - JSON представление созданной Точки продаж. Для создания новой Точки продаж
+необходимо и достаточно указать в переданном объекте непустые поля `name`, `organization`, `store`, `priceType`.
 
 Если не передать поле `active` при создании, то если позволяет тарифный план, точка продаж создается включенной, иначе - выключенной.
 
-При создании Точки продаж нельзя одновременн указывать значение `true` для `allowCreateProducts` и `controlShippingStock`.
+При создании Точки продаж нельзя одновременно указывать значение `true` для `allowCreateProducts` и `controlShippingStock`.
 
 > Пример наиболее полного по количеству полей запроса.
 
@@ -685,8 +675,6 @@ curl -X GET
                   "mediaType" : "application/json"
                 }
               }],
-              "egaisEnabled" : false,
-              "frNumber" : null,
               "organization" : {
                 "meta" : {
                   "href" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/30fe66fd-137a-11e6-9464-e4de00000052",
@@ -828,8 +816,6 @@ curl -X GET
       "offset" : 0
     }
   },
-  "egaisEnabled" : false,
-  "frNumber" : null,
   "organization" : {
     "meta" : {
       "href" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/30fe66fd-137a-11e6-9464-e4de00000051",
@@ -914,9 +900,7 @@ curl -X GET
       "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/receipttemplate/metadata",
       "type" : "receipttemplate",
       "mediaType" : "application/json"
-    },
-    "header" : "headerReceiptTemplate",
-    "footer" : "footerReceiptTemplate"
+    }
   },
   "createPaymentInOnRetailShiftClosing" : true,
   "createCashInOnRetailShiftClosing" : true,
@@ -944,7 +928,6 @@ curl -X GET
       -d '{
             {
               "name" : "retailstoretest",
-              "active": true,
               "organization" : {
                   "meta" : {
                   "href" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/30fe66fd-137a-11e6-9464-e4de00000050",
@@ -1033,8 +1016,6 @@ curl -X GET
       "offset" : 0
     }
   },
-  "egaisEnabled" : false,
-  "frNumber" : null,
   "organization" : {
     "meta" : {
       "href" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/30fe66fd-137a-11e6-9464-e4de00000050",
@@ -1207,8 +1188,6 @@ curl -X GET
         "offset" : 0
       }
     },
-    "egaisEnabled" : false,
-    "frNumber" : null,
     "organization" : {
       "meta" : {
         "href" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/30fe66fd-137a-11e6-9464-e4de00000050",
@@ -1323,8 +1302,6 @@ curl -X GET
         "offset" : 0
       }
     },
-    "egaisEnabled" : false,
-    "frNumber" : null,
     "organization" : {
       "meta" : {
         "href" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/30fe66fd-137a-11e6-9464-e4de00000040",
@@ -1420,7 +1397,7 @@ curl -X DELETE
 > Запрос на массовое удаление Точек продаж. 
 
 ```shell
-curl -X POST
+curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/retailstore"
   -H "Authorization: Basic <Access-Token>"
   -H "Content-Type: application/json"
@@ -1559,8 +1536,6 @@ curl -X GET
       "offset": 0
     }
   },
-  "egaisEnabled": true,
-  "frNumber": "134578",
   "organization": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/30f01af0-137a-11e6-9464-e4de0000004e",
@@ -1720,8 +1695,6 @@ curl -X PUT
       "offset" : 0
     }
   },
-  "egaisEnabled" : false,
-  "frNumber" : null,
   "organization" : {
     "meta" : {
       "href" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/30fe66fd-137a-11e6-9464-e4de00000050",
