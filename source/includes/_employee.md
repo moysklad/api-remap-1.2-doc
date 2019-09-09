@@ -353,7 +353,7 @@ curl -X DELETE
 
 ```shell
 curl -X POST
-  "https://online.moysklad.ru/api/remap/1.2/entity/employee"
+  "https://online.moysklad.ru/api/remap/1.2/entity/employee/delete"
   -H "Authorization: Basic <Access-Token>"
   -H "Content-Type: application/json"
   -d '[
