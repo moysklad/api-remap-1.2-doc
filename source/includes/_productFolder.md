@@ -387,7 +387,7 @@ curl -X GET
 
 ```shell
 curl -X POST
-  "https://online.moysklad.ru/api/remap/1.2/entity/productfolder"
+  "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/delete"
   -H "Authorization: Basic <Access-Token>"
   -H "Content-Type: application/json"
   -d '[

@@ -312,8 +312,8 @@ curl -X DELETE
 > Запрос на удаление нескольких Изображений
 
 ```shell
-curl -X DELETE
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images"
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images/delete"
   -H "Authorization: Basic <Access-Token>"
   -H "Content-Type: application/json"
         -d '[  
