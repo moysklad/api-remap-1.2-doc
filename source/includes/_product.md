@@ -1105,7 +1105,7 @@ curl -X GET
                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0f1e750e-e1b2-11e7-9464-e4de00000003",
                   "type": "attributemetadata",
                   "mediaType": "application/json"
-                }
+                },
                 "name": "not strange attribute name",
                 "type": "file",
                 "file": {
