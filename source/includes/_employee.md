@@ -564,7 +564,11 @@ curl -X GET
             "description": "Описание",
             "attributes": [
               {
-                "id": "ed14b498-cae3-11e8-9dd2-f3a300000044",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata/attributes/ed14b498-cae3-11e8-9dd2-f3a300000044",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "Строковое доп поле"
               }
             ]
@@ -657,7 +661,11 @@ curl -X GET
             "description": "Описание",
             "attributes": [
               {
-                "id": "ed14b498-cae3-11e8-9dd2-f3a300000044",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata/attributes/ed14b498-cae3-11e8-9dd2-f3a300000044",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "Строковое доп поле"
               }
             ]

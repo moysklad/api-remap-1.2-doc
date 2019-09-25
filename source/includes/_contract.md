@@ -1476,7 +1476,11 @@ curl -X GET
             "description": "Новый договор",
             "attributes": [
               {
-                "id": "25b6f76c-12d5-11e6-9464-e4de00000068",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": false
               }
             ]

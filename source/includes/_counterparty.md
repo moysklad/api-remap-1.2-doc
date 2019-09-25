@@ -1029,19 +1029,31 @@ curl -X POST
   ],
   "attributes":[  
     {  
-      "id":"0d129ff5-2c8c-11e6-8a84-bae5000000f3",
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d129ff5-2c8c-11e6-8a84-bae5000000f3",
+        "type":"attributemetadata",
+        "mediaType":"application/json"
+      },
       "name":"Коэффициент скидки",
       "type":"double",
       "value":0.75
     },
     {  
-      "id":"0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
+        "type":"attributemetadata",
+        "mediaType":"application/json"
+      },
       "name":"Последний заключенный договор",
       "type":"time",
       "value":"2016-06-07 12:52:33"
     },
     {  
-      "id":"0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
+        "type":"attributemetadata",
+        "mediaType":"application/json"
+      },
       "name":"Партнерское юрлицо",
       "type":"boolean",
       "value":false
@@ -2113,19 +2125,31 @@ curl -X PUT
   ],
   "attributes": [
     {
-      "id": "0d129ff5-2c8c-11e6-8a84-bae5000000f3",
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d129ff5-2c8c-11e6-8a84-bae5000000f3",
+        "type":"attributemetadata",
+        "mediaType":"application/json"
+      },
       "name": "Коэффициент скидки",
       "type": "double",
       "value": 0.35
     },
     {
-      "id": "0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
+        "type":"attributemetadata",
+        "mediaType":"application/json"
+      },
       "name": "Последний заключенный договор",
       "type": "time",
       "value": "2016-06-07 10:52:33"
     },
     {
-      "id": "0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
+      "meta":{  
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
+        "type":"attributemetadata",
+        "mediaType":"application/json"
+      },
       "name": "Партнерское юрлицо",
       "type": "boolean",
       "value": true

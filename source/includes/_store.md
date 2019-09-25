@@ -497,7 +497,11 @@ curl -X GET
   "externalCode": "223ddxzv223",
   "attributes": [
     {
-      "id": "3a85cfe3-12c5-11e6-9464-e4de00000087",
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
       "value": 4000
     }
   ]
@@ -1110,7 +1114,11 @@ curl -X GET
   "externalCode": "223ddxzv223",
   "attributes": [
     {
-      "id": "3a85cfe3-12c5-11e6-9464-e4de00000087",
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
       "value": 4400
     }
   ]
