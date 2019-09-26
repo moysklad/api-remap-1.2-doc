@@ -711,6 +711,49 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление Списания.
 
+### Массовое удаление Списаний
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Списаний, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Списаний. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/loss/delete"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/loss/metadata",
+            "type": "loss",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/loss/metadata",
+            "type": "loss",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Списаний.
+
+```json
+[
+  {
+    "info":"Сущность 'loss' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'loss' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+``` 
+
 ### Метаданные Списаний 
 #### Метаданные Списаний 
 Запрос на получение метаданных Списаний. Результат - объект JSON, включающий в себя:

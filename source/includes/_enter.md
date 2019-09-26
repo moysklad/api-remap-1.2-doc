@@ -832,6 +832,49 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление Оприходования.
 
+### Массовое удаление Оприходований
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Оприходований, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Оприходований. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/enter/delete"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/enter/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/enter/metadata",
+            "type": "enter",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/enter/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/enter/metadata",
+            "type": "enter",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Оприходований.
+
+```json
+[
+  {
+    "info":"Сущность 'enter' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'enter' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+``` 
+
 ### Метаданные Оприходований 
 #### Метаданные Оприходований 
 Запрос на получение метаданных Оприходований. Результат - объект JSON, включающий в себя:

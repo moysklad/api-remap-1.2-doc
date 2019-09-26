@@ -1513,6 +1513,49 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление Приемки.
 
+### Массовое удаление Приемок
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Приемок, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Приемок. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/supply/delete"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/supply/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/supply/metadata",
+            "type": "supply",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/supply/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/supply/metadata",
+            "type": "supply",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Приемок.
+
+```json
+[
+  {
+    "info":"Сущность 'supply' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'supply' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+``` 
+
 ### Метаданные Приемок 
 #### Метаданные Приемок 
 Запрос на получение метаданных Приемок. Результат - объект JSON, включающий в себя:

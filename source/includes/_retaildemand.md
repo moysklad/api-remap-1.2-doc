@@ -1360,6 +1360,49 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление Розничной продажи.
 
+### Массовое удаление Розничных продаж
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Розничных продаж, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Розничных продаж. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/delete"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+            "type": "retaildemand",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+            "type": "retaildemand",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Розничных продаж.
+
+```json
+[
+  {
+    "info":"Сущность 'retaildemand' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'retaildemand' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+``` 
+
 ### Метаданные Розничных продаж 
 #### Метаданные Розничных продаж 
 Запрос на получение метаданных Розничных продаж. Результат - объект JSON, включающий в себя:

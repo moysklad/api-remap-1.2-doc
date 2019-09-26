@@ -1130,6 +1130,49 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление полученного отчета комиссионера.
 
+### Массовое удаление Полученных отчетов комиссионера
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Полученных отчетов комиссионера, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Полученных отчетов комиссионера. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/delete"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata",
+            "type": "commissionreportin",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportin/metadata",
+            "type": "commissionreportin",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Полученных отчетов комиссионера.
+
+```json
+[
+  {
+    "info":"Сущность 'commissionreportin' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'commissionreportin' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+``` 
+
 ### Метаданные полученного отчета
 #### Метаданные полученного отчета
 Запрос на получение метаданных отчетов комиссионера. Результат - объект JSON, включающий в себя:

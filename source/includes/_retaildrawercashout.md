@@ -509,6 +509,49 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешный запрос. 
 
+### Массовое удаление Выплат денег
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Выплат денег, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Выплат денег. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/delete"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata",
+            "type": "retaildrawercashout",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata",
+            "type": "retaildrawercashout",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Выплат денег.
+
+```json
+[
+  {
+    "info":"Сущность 'retaildrawercashout' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'retaildrawercashout' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+``` 
+
 ### Метаданные выплат денег 
 #### Метаданные выплат денег 
 Запрос на получение метаданных выплат денег. Результат - объект JSON, включающий в себя:

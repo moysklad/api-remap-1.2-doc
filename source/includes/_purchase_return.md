@@ -1635,6 +1635,49 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление Возврата поставщику.
 
+### Массовое удаление Возвратов поставщикам
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Возвратов поставщикам, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Возвратов поставщикам. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/purchasereturn/delete"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchasereturn/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/purchasereturn/metadata",
+            "type": "purchasereturn",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchasereturn/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/purchasereturn/metadata",
+            "type": "purchasereturn",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Возвратов поставщикам.
+
+```json
+[
+  {
+    "info":"Сущность 'purchasereturn' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'purchasereturn' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+``` 
+
 ### Метаданные Возвратов поставщикам 
 #### Метаданные Возвратов поставщикам 
 Запрос на получение метаданных Возвратов поставщикам. Результат - объект JSON, включающий в себя:

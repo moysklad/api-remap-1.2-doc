@@ -893,6 +893,49 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление Прайс-листа.
 
+### Массовое удаление Прайс-листов
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Прайс-листов, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Прайс-листов. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/pricelist/delete"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/pricelist/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/pricelist/metadata",
+            "type": "pricelist",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/pricelist/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/pricelist/metadata",
+            "type": "pricelist",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Прайс-листов.
+
+```json
+[
+  {
+    "info":"Сущность 'pricelist' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'pricelist' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+``` 
+
 ### Метаданные Прайс-листов 
 #### Метаданные Прайс-листов 
 Запрос на получение метаданных Прайс-листов. Результат - объект JSON, включающий в себя:

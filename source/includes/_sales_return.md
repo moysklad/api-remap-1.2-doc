@@ -959,6 +959,49 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление Возврата покупателей.
 
+### Массовое удаление Возвратов покупателей
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Возвратов покупателей, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Возвратов покупателей. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/delete"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata",
+            "type": "salesreturn",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata",
+            "type": "salesreturn",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Возвратов покупателей.
+
+```json
+[
+  {
+    "info":"Сущность 'salesreturn' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'salesreturn' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+``` 
+
 ### Метаданные Возвратов покупателей 
 #### Метаданные Возвратов покупателей 
 Запрос на получение метаданных Возвратов покупателей. Результат - объект JSON, включающий в себя:

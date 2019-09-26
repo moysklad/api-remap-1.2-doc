@@ -1360,6 +1360,49 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление Счета покупателю.
 
+### Массовое удаление Счетов покупателям
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Счетов покупателям, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Счетов покупателям. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/delete"
+  -H "Authorization: Basic <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata",
+            "type": "invoiceout",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata",
+            "type": "invoiceout",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Счетов покупателям.
+
+```json
+[
+  {
+    "info":"Сущность 'invoiceout' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'invoiceout' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+``` 
+
 ### Метаданные Счетов покупателям 
 #### Метаданные Счетов покупателям 
 Запрос на получение метаданных Счетов покупателям. Результат - объект JSON, включающий в себя:
