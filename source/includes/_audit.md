@@ -548,20 +548,6 @@ curl -X GET
 
 ```json
 {
-  "eventtype": [
-    "create",
-    "update",
-    "delete",
-    "puttorecyclebin",
-    "restorefromrecyclebin",
-    "puttoarchive",
-    "restorefromarchive",
-    "print",
-    "openpublication",
-    "closepublication",
-    "sendemailfromentity",
-    "replacetoken"
-  ],
   "source": [
     "copy",
     "combine",
@@ -574,7 +560,9 @@ curl -X GET
     "evotor",
     "clearrecyclebin",
     "loginlogout",
-    "emailsend"
+    "emailsend",
+    "export",
+    "phone-1.0"
   ],
   "entitytype": [
     "organization",
@@ -635,10 +623,48 @@ curl -X GET
     "specialpricediscount",
     "personaldiscount",
     "accumulationdiscount",
+    "roundoffdiscount",
+    "bonusprogram",
+    "loyaltydiscount",
+    "bonustransaction",
+    "country",
+    "uom",
+    "purpose",
+    "notificationsubscription",
     "entitysettings",
     "statesettings",
     "templatesettings",
+    "phonecall",
+    "receipttemplate",
+    "prepayment",
+    "prepaymentreturn",
+    "enrollorder",
+    "retireorder",
+    "remarkingorder",
+    "emissionorder",
+    "crptdemand",
+    "cashboxadjustment",
+    "accountadjustment",
+    "counterpartyadjustment",
+    "crptcancellation",
+    "crptpackagecreation",
+    "evotorsetting",
     "https://online.moysklad.ru/api/remap/1.2/entity/customentity/eaacabaf-2655-11e6-8a84-bae500000045"
+  ],
+  "eventtype": [
+    "create",
+    "update",
+    "delete",
+    "puttorecyclebin",
+    "restorefromrecyclebin",
+    "puttoarchive",
+    "restorefromarchive",
+    "print",
+    "openpublication",
+    "closepublication",
+    "sendemailfromentity",
+    "bulkoperation",
+    "replacetoken"
   ]
 }
 ```
