@@ -1034,7 +1034,7 @@ curl -X POST
         "type":"attributemetadata",
         "mediaType":"application/json"
       },
-      "name":"Коэффициент скидки",
+      "name":"AttributeName1",
       "type":"double",
       "value":0.75
     },
@@ -1044,7 +1044,7 @@ curl -X POST
         "type":"attributemetadata",
         "mediaType":"application/json"
       },
-      "name":"Последний заключенный договор",
+      "name":"AttributeName2",
       "type":"time",
       "value":"2016-06-07 12:52:33"
     },
@@ -1054,7 +1054,7 @@ curl -X POST
         "type":"attributemetadata",
         "mediaType":"application/json"
       },
-      "name":"Партнерское юрлицо",
+      "name":"AttributeName3",
       "type":"boolean",
       "value":false
     }
@@ -1173,8 +1173,8 @@ curl -X POST
         "mediaType":"application/json"
       },
       "id":"0d129ff5-2c8c-11e6-8a84-bae5000000f3",
+      "name":"AttributeName1",
       "type":"double",
-      "name":"Коэффициент скидки",
       "value":0.75
     },
     {  
@@ -1184,7 +1184,7 @@ curl -X POST
         "mediaType":"application/json"
       },
       "id":"0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
-      "name":"Последний заключенный договор",
+      "name":"AttributeName2",
       "type":"time",
       "value":"2016-06-07 12:52:33"
     },
@@ -1195,7 +1195,7 @@ curl -X POST
         "mediaType":"application/json"
       },
       "id":"0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
-      "name":"Партнерское юрлицо",
+      "name":"AttributeName3",
       "type":"boolean",
       "value":false
     }
@@ -1581,7 +1581,7 @@ curl -X GET
   "attributes":[  
     {  
       "id":"5290a290-0313-11e6-9464-e4de00000020",
-      "name":"attribute_name",
+      "name":"AttributeName1",
       "type":"boolean",
       "required":false
     }
@@ -1660,7 +1660,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "5290a290-0313-11e6-9464-e4de00000020",
-  "name": "attribute_name",
+  "name": "AttributeName1",
   "type": "boolean",
   "required": false
 }
@@ -2130,7 +2130,7 @@ curl -X PUT
         "type":"attributemetadata",
         "mediaType":"application/json"
       },
-      "name": "Коэффициент скидки",
+      "name": "AttributeName1",
       "type": "double",
       "value": 0.35
     },
@@ -2140,7 +2140,7 @@ curl -X PUT
         "type":"attributemetadata",
         "mediaType":"application/json"
       },
-      "name": "Последний заключенный договор",
+      "name": "AttributeName2",
       "type": "time",
       "value": "2016-06-07 10:52:33"
     },
@@ -2150,7 +2150,7 @@ curl -X PUT
         "type":"attributemetadata",
         "mediaType":"application/json"
       },
-      "name": "Партнерское юрлицо",
+      "name": "AttributeName3",
       "type": "boolean",
       "value": true
     }
@@ -2262,7 +2262,7 @@ curl -X PUT
         "mediaType":"application/json"
       },
       "id":"0d129ff5-2c8c-11e6-8a84-bae5000000f3",
-      "name":"Коэффициент скидки",
+      "name":"AttributeName1",
       "type":"double",
       "value":0.35
     },
@@ -2273,7 +2273,7 @@ curl -X PUT
         "mediaType":"application/json"
       },
       "id":"0d12a9a5-2c8c-11e6-8a84-bae5000000f4",
-      "name":"Последний заключенный договор",
+      "name":"AttributeName2",
       "type":"time",
       "value":"2016-06-07 10:52:33"
     },
@@ -2284,7 +2284,7 @@ curl -X PUT
         "mediaType":"application/json"
       },
       "id":"0d12b1e7-2c8c-11e6-8a84-bae5000000f5",
-      "name":"Партнерское юрлицо",
+      "name":"AttributeName3",
       "type":"boolean",
       "value":true
     }

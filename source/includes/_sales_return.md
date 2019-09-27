@@ -524,7 +524,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
-      "name": "Причина возврата",
+      "name": "AttributeName1",
       "type": "string",
       "value": "отломана деталь"
     },
@@ -535,7 +535,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "50463893-3f81-11e6-8a84-bae5000000de",
-      "name": "Брак",
+      "name": "AttributeName2",
       "type": "boolean",
       "value": true
     }
@@ -782,7 +782,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
-        "name": "Причина возврата",
+        "name": "AttributeName1",
         "type": "string",
         "value": "отломана деталь"
       },
@@ -793,7 +793,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "50463893-3f81-11e6-8a84-bae5000000de",
-        "name": "Брак",
+        "name": "AttributeName2",
         "type": "boolean",
         "value": true
       }
@@ -918,7 +918,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
-        "name": "Причина возврата",
+        "name": "AttributeName1",
         "type": "string",
         "value": "отломана нога"
       },
@@ -929,7 +929,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "50463893-3f81-11e6-8a84-bae5000000de",
-        "name": "Брак",
+        "name": "AttributeName2",
         "type": "boolean",
         "value": true
       }
@@ -1015,7 +1015,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
-      "name": "Причина возврата",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     },
@@ -1026,7 +1026,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "50463893-3f81-11e6-8a84-bae5000000de",
-      "name": "Брак",
+      "name": "AttributeName2",
       "type": "boolean",
       "required": false
     }
@@ -1131,7 +1131,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "50463893-3f81-11e6-8a84-bae5000000de",
-  "name": "Брак",
+  "name": "AttributeName1",
   "type": "boolean",
   "required": false
 }
@@ -1574,7 +1574,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
-      "name": "Причина возврата",
+      "name": "AttributeName1",
       "type": "string",
       "value": "отломана нога"
     },
@@ -1585,7 +1585,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "50463893-3f81-11e6-8a84-bae5000000de",
-      "name": "Брак",
+      "name": "AttributeName2",
       "type": "boolean",
       "value": true
     }

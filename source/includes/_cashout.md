@@ -184,7 +184,7 @@ curl -X GET
             "mediaType": "application/json"
           },
           "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
-          "name": "Поступил",
+          "name": "AttributeName1",
           "type": "boolean",
           "value": false
         }
@@ -289,7 +289,7 @@ curl -X GET
             "mediaType": "application/json"
           },
           "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
-          "name": "Поступил",
+          "name": "AttributeName2",
           "type": "boolean",
           "value": false
         }
@@ -406,7 +406,7 @@ curl -X GET
             "mediaType": "application/json"
           },
           "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
-          "name": "Поступил",
+          "name": "AttributeName3",
           "type": "boolean",
           "value": false
         }
@@ -770,7 +770,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "c88569fc-3f8e-11e6-8a84-bae5000000fd",
-        "name": "Доля",
+        "name": "AttributeName1",
         "type": "double",
         "value": 0.49
       },
@@ -781,7 +781,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "c88570d2-3f8e-11e6-8a84-bae5000000fe",
-        "name": "Попытки",
+        "name": "AttributeName2",
         "type": "long",
         "value": 7501
       },
@@ -792,7 +792,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
-        "name": "Поступил",
+        "name": "AttributeName3",
         "type": "boolean",
         "value": true
       }
@@ -866,7 +866,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c88569fc-3f8e-11e6-8a84-bae5000000fd",
-      "name": "Доля",
+      "name": "AttributeName1",
       "type": "double",
       "required": false
     },
@@ -877,7 +877,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c88570d2-3f8e-11e6-8a84-bae5000000fe",
-      "name": "Попытки",
+      "name": "AttributeName2",
       "type": "long",
       "required": false
     },
@@ -888,7 +888,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
-      "name": "Поступил",
+      "name": "AttributeName3",
       "type": "boolean",
       "required": false
     }
@@ -967,7 +967,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "b54f1d9c-558a-11e6-8a84-bae50000006c",
-  "name": "Строка",
+  "name": "AttributeName1",
   "type": "string",
   "required": false
 }
@@ -1546,7 +1546,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
-      "name": "Поступил",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": false
     }
@@ -1716,7 +1716,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c88569fc-3f8e-11e6-8a84-bae5000000fd",
-      "name": "Доля",
+      "name": "AttributeName1",
       "type": "double",
       "value": 0.49
     },
@@ -1727,7 +1727,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c88570d2-3f8e-11e6-8a84-bae5000000fe",
-      "name": "Попытки",
+      "name": "AttributeName2",
       "type": "long",
       "value": 7501
     },
@@ -1738,7 +1738,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
-      "name": "Поступил",
+      "name": "AttributeName3",
       "type": "boolean",
       "value": true
     }

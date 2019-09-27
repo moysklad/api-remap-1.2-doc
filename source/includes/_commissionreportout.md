@@ -559,7 +559,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4930a123-acda-11e6-8a84-bae50000006d",
-      "name": "Поле1",
+      "name": "AttributeName1",
       "type": "string",
       "value": "value"
     },
@@ -570,7 +570,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
-      "name": "Поле2",
+      "name": "AttributeName2",
       "type": "string",
       "value": "values"
     }
@@ -942,7 +942,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "4930a123-acda-11e6-8a84-bae50000006d",
-        "name": "Поле1",
+        "name": "AttributeName1",
         "type": "string",
         "value": "value"
       },
@@ -953,7 +953,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
-        "name": "Поле2",
+        "name": "AttributeName2",
         "type": "string",
         "value": "values"
       }
@@ -1074,7 +1074,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "4930a123-acda-11e6-8a84-bae50000006d",
-        "name": "Поле1",
+        "name": "AttributeName3",
         "type": "string",
         "value": "Newvalue"
       },
@@ -1085,7 +1085,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
-        "name": "Поле2",
+        "name": "AttributeName2",
         "type": "string",
         "value": "values"
       }
@@ -1149,7 +1149,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4930a123-acda-11e6-8a84-bae50000006d",
-      "name": "Поле1",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     },
@@ -1160,7 +1160,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
-      "name": "Поле2",
+      "name": "AttributeName2",
       "type": "string",
       "required": false
     }
@@ -1213,7 +1213,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "4930a123-acda-11e6-8a84-bae50000006d",
-  "name": "Поле1",
+  "name": "AttributeName1",
   "type": "string",
   "required": false
 }
@@ -1564,7 +1564,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4930a123-acda-11e6-8a84-bae50000006d",
-      "name": "Поле1",
+      "name": "AttributeName1",
       "type": "string",
       "value": "Newvalue"
     },
@@ -1575,7 +1575,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
-      "name": "Поле2",
+      "name": "AttributeName2",
       "type": "string",
       "value": "values"
     }

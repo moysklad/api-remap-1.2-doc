@@ -598,7 +598,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c72ff31e-1380-11e6-9464-e4de00000231",
-      "name": "Номер карты",
+      "name": "AttributeName1",
       "type": "string",
       "value": "3325-4214-42145-4211"
     },
@@ -609,7 +609,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c72ffba9-1380-11e6-9464-e4de00000232",
-      "name": "Возврат на карту",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": false
     }
@@ -854,7 +854,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c72ff31e-1380-11e6-9464-e4de00000231",
-      "name": "Номер карты",
+      "name": "AttributeName1",
       "type": "string",
       "value": "3325-4214-42145-4211"
     },
@@ -865,7 +865,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c72ffba9-1380-11e6-9464-e4de00000232",
-      "name": "Возврат на карту",
+      "name": "AttributeName2",
       "type": "boolean",
       "value": false
     }
@@ -1106,7 +1106,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c72ff31e-1380-11e6-9464-e4de00000231",
-      "name": "Номер карты",
+      "name": "AttributeName1",
       "type": "string",
       "value": "3325-4214-42145-4211"
     },
@@ -1117,7 +1117,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c72ffba9-1380-11e6-9464-e4de00000232",
-      "name": "Возврат на карту",
+      "name": "AttributeName2",
       "type": "boolean",
       "value": false
     }
@@ -1476,7 +1476,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "c72ff31e-1380-11e6-9464-e4de00000231",
-        "name": "Номер карты",
+        "name": "AttributeName1",
         "type": "string",
         "value": "3325-4214-42145-4211"
       },
@@ -1487,7 +1487,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "c72ffba9-1380-11e6-9464-e4de00000232",
-        "name": "Возврат на карту",
+        "name": "AttributeName2",
         "type": "boolean",
         "value": false
       }
@@ -1586,7 +1586,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c72ff31e-1380-11e6-9464-e4de00000231",
-      "name": "Номер карты",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     },
@@ -1597,7 +1597,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c72ffba9-1380-11e6-9464-e4de00000232",
-      "name": "Возврат на карту",
+      "name": "AttributeName2",
       "type": "boolean",
       "required": false
     }
@@ -1728,7 +1728,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "9b0c8d28-558c-11e6-8a84-bae50000008a",
-  "name": "Дата возвращенного документа",
+  "name": "AttributeName1",
   "type": "time",
   "required": false
 }
@@ -2286,7 +2286,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c72ff31e-1380-11e6-9464-e4de00000231",
-      "name": "Номер карты",
+      "name": "AttributeName1",
       "type": "string",
       "value": "3325-4214-42145-4211"
     },
@@ -2297,7 +2297,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c72ffba9-1380-11e6-9464-e4de00000232",
-      "name": "Возврат на карту",
+      "name": "AttributeName2",
       "type": "boolean",
       "value": false
     }

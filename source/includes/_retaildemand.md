@@ -214,9 +214,9 @@ curl -X GET
             "mediaType": "application/json"
           },
           "id": "bb08dccf-0bd2-11e6-9464-e4de000000ae",
-          "name": "ыаыфацфыа",
+          "name": "AttributeName1",
           "type": "string",
-          "value": "Веселый атрибут"
+          "value": "AttributeValue1"
         }
       ],
       "positions": {
@@ -324,9 +324,9 @@ curl -X GET
             "mediaType": "application/json"
           },
           "id": "bb08dccf-0bd2-11e6-9464-e4de000000ae",
-          "name": "ыаыфацфыа",
+          "name": "AttributeName1",
           "type": "string",
-          "value": "Веселый атрибут"
+          "value": "AttributeValue1"
         }
       ],
       "positions": {
@@ -469,9 +469,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "bb08dccf-0bd2-11e6-9464-e4de000000ae",
-      "name": "ыаыфацфыа",
+      "name": "AttributeName1",
       "type": "string",
-      "value": "Веселый атрибут"
+      "value": "AttributeValue1"
     }
   ],
   "created": "2007-02-07 17:16:41",
@@ -920,7 +920,7 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "value": "Веселый атрибут"
+                "value": "AttributeValue1"
               }
             ]
           }'  
@@ -1007,9 +1007,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "bb08dccf-0bd2-11e6-9464-e4de000000ae",
-      "name": "ыаыфацфыа",
+      "name": "AttributeName1",
       "type": "string",
-      "value": "Веселый атрибут"
+      "value": "AttributeValue1"
     }
   ],
   "created": "2007-02-07 17:16:41",
@@ -1184,9 +1184,9 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "bb08dccf-0bd2-11e6-9464-e4de000000ae",
-        "name": "ыаыфацфыа",
+        "name": "AttributeName1",
         "type": "string",
-        "value": "Веселый атрибут"
+        "value": "AttributeValue1"
       }
     ],
     "created": "2007-02-07 17:16:41",
@@ -1298,9 +1298,9 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "bb08dccf-0bd2-11e6-9464-e4de000000ae",
-        "name": "ыаыфацфыа",
+        "name": "AttributeName1",
         "type": "string",
-        "value": "Веселый атрибут"
+        "value": "AttributeValue1"
       }
     ],
     "created": "2007-02-07 17:16:41",
@@ -1400,7 +1400,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "bb08dccf-0bd2-11e6-9464-e4de000000ae",
-      "name": "ыаыфацфыа",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     }
@@ -1531,7 +1531,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "f04d010f-558c-11e6-8a84-bae50000009d",
-  "name": "Инфо о клиенте",
+  "name": "AttributeName1",
   "type": "text",
   "required": true
 }
@@ -1837,9 +1837,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "bb08dccf-0bd2-11e6-9464-e4de000000ae",
-      "name": "ыаыфацфыа",
+      "name": "AttributeName1",
       "type": "string",
-      "value": "Веселый атрибут"
+      "value": "AttributeValue1"
     }
   ],
   "positions": {
@@ -1999,9 +1999,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "bb08dccf-0bd2-11e6-9464-e4de000000ae",
-      "name": "ыаыфацфыа",
+      "name": "AttributeName1",
       "type": "string",
-      "value": "Веселый атрибут"
+      "value": "AttributeValue1"
     }
   ],
   "created": "2007-02-07 17:16:41",
@@ -2107,9 +2107,7 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "name": "ыаыфацфыа",
-                "type": "string",
-                "value": "Веселый атрибут"
+                "value": "AttributeValue1"
               }
             ]
           }'  
@@ -2196,9 +2194,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "bb08dccf-0bd2-11e6-9464-e4de000000ae",
-      "name": "ыаыфацфыа",
+      "name": "AttributeName1",
       "type": "string",
-      "value": "Веселый атрибут"
+      "value": "AttributeValue1"
     }
   ],
   "created": "2007-02-07 17:16:41",

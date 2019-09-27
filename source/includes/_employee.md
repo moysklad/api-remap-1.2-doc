@@ -186,7 +186,7 @@ curl -X GET
             "mediaType": "application/json"
           },
           "id": "d49d59bd-12dc-11e6-9464-e4de0000006b",
-          "name": "КПД",
+          "name": "AttributeName1",
           "type": "long",
           "value": 200
         }
@@ -417,7 +417,7 @@ curl -X GET
   "attributes": [
     {
       "id": "5290a290-0313-11e6-9464-e4de00000020",
-      "name": "attribute_name",
+      "name": "AttributeName1",
       "type": "boolean",
       "required": false
     }
@@ -454,7 +454,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "5290a290-0313-11e6-9464-e4de00000020",
-  "name": "attribute_name",
+  "name": "AttributeName1",
   "type": "boolean",
   "required": false
 }
@@ -532,7 +532,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "d49d59bd-12dc-11e6-9464-e4de0000006b",
-      "name": "ЗП",
+      "name": "AttributeName1",
       "type": "long",
       "value": 200
     }
@@ -625,7 +625,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "ed14b498-cae3-11e8-9dd2-f3a300000044",
-      "name": "Название",
+      "name": "AttributeName1",
       "type": "string",
       "value": "Строковое доп поле"
     }
@@ -726,7 +726,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "d49d59bd-12dc-11e6-9464-e4de0000006b",
-      "name": "ЗП",
+      "name": "AttributeName1",
       "type": "long",
       "value": 200
     },
@@ -737,7 +737,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "ed14b498-cae3-11e8-9dd2-f3a300000044",
-      "name": "Строка",
+      "name": "AttributeName2",
       "type": "string",
       "value": "Строковое доп поле"
     }

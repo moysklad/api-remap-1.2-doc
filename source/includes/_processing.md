@@ -1598,7 +1598,7 @@ curl -X GET
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
-      "name": "Атрибут заказа",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     }
@@ -1729,7 +1729,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "57ab884e-558b-11e6-8a84-bae500000078",
-  "name": "Сопутствующий товар",
+  "name": "AttributeName1",
   "type": "productfolder",
   "required": false
 }

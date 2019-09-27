@@ -645,7 +645,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "7f4a6b38-12bb-11e6-9464-e4de00000076",
-      "name": "Строковое поле",
+      "name": "AttributeName1",
       "type": "string",
       "value": "Строковое значение"
     }
@@ -950,7 +950,7 @@ curl -X GET
   "attributes": [
     {
       "id": "5290a290-0313-11e6-9464-e4de00000020",
-      "name": "attribute_name",
+      "name": "AttributeName1",
       "type": "boolean",
       "required": false
     }
@@ -986,7 +986,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "5290a290-0313-11e6-9464-e4de00000020",
-  "name": "attribute_name",
+  "name": "AttributeName1",
   "type": "boolean",
   "required": false
 }
@@ -1450,7 +1450,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "7f4a6b38-12bb-11e6-9464-e4de00000076",
-      "name": "Строковое поле",
+      "name": "AttributeName1",
       "type": "string",
       "value": "Строковое значение"
     }

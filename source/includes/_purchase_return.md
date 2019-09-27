@@ -626,7 +626,7 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "value": "отломана деталь"
+                "value": "деталь"
               },
               {
                 "meta": {
@@ -800,7 +800,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4fc7e124-41be-11e6-8a84-bae5000000cb",
-      "name": "Брак продукции",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": false
     },
@@ -811,9 +811,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4fc7e7e7-41be-11e6-8a84-bae5000000cc",
-      "name": "Причина, отличная от брака",
+      "name": "AttributeName2",
       "type": "text",
-      "value": "отломана деталь"
+      "value": "деталь"
     }
   ],
   "vatEnabled": true,
@@ -903,7 +903,7 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "value": "отломана деталь"
+                "value": "деталь"
               },
               {
                 "meta": {
@@ -1069,7 +1069,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4fc7e124-41be-11e6-8a84-bae5000000cb",
-      "name": "Брак продукции",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": false
     },
@@ -1080,9 +1080,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4fc7e7e7-41be-11e6-8a84-bae5000000cc",
-      "name": "Причина, отличная от брака",
+      "name": "AttributeName2",
       "type": "text",
-      "value": "отломана деталь"
+      "value": "деталь"
     }
   ],
   "vatEnabled": true,
@@ -1170,7 +1170,7 @@ curl -X GET
                     "type": "attributemetadata",
                     "mediaType": "application/json"
                   },
-                  "value": "отломана деталь"
+                  "value": "деталь"
                 },
                 {
                   "meta": {
@@ -1466,7 +1466,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "4fc7e124-41be-11e6-8a84-bae5000000cb",
-        "name": "Брак продукции",
+        "name": "AttributeName1",
         "type": "boolean",
         "value": false
       },
@@ -1477,9 +1477,9 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "4fc7e7e7-41be-11e6-8a84-bae5000000cc",
-        "name": "Причина, отличная от брака",
+        "name": "AttributeName2",
         "type": "text",
-        "value": "отломана деталь"
+        "value": "деталь"
       }
     ],
     "vatEnabled": true,
@@ -1602,7 +1602,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "4fc7e124-41be-11e6-8a84-bae5000000cb",
-        "name": "Брак продукции",
+        "name": "AttributeName1",
         "type": "boolean",
         "value": true
       },
@@ -1613,9 +1613,9 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "4fc7e7e7-41be-11e6-8a84-bae5000000cc",
-        "name": "Причина, отличная от брака",
+        "name": "AttributeName2",
         "type": "text",
-        "value": "отломана деталь"
+        "value": "деталь"
       }
     ],
     "vatEnabled": true,
@@ -1699,7 +1699,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4fc7e124-41be-11e6-8a84-bae5000000cb",
-      "name": "Брак продукции",
+      "name": "AttributeName1",
       "type": "boolean",
       "required": false
     },
@@ -1710,7 +1710,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4fc7e7e7-41be-11e6-8a84-bae5000000cc",
-      "name": "Причина, отличная от брака",
+      "name": "AttributeName2",
       "type": "text",
       "required": false
     }
@@ -1789,7 +1789,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "4fc7e7e7-41be-11e6-8a84-bae5000000cc",
-  "name": "Причина, отличная от брака",
+  "name": "AttributeName1",
   "type": "text",
   "required": false
 }
@@ -2334,7 +2334,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4fc7e124-41be-11e6-8a84-bae5000000cb",
-      "name": "Брак продукции",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": true
     },
@@ -2345,9 +2345,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4fc7e7e7-41be-11e6-8a84-bae5000000cc",
-      "name": "Причина, отличная от брака",
+      "name": "AttributeName1",
       "type": "text",
-      "value": "отломана деталь"
+      "value": "деталь"
     }
   ],
   "vatEnabled": true,

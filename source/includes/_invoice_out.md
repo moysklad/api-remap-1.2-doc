@@ -885,7 +885,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "51d191f4-0887-11e6-9464-e4de00000079",
-      "name": "Атрибут счета",
+      "name": "AttributeName1",
       "type": "string",
       "value": "значение доп поля"
     }
@@ -1400,7 +1400,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "51d191f4-0887-11e6-9464-e4de00000079",
-      "name": "Атрибут счета",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     }
@@ -1438,7 +1438,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "d91965f1-558b-11e6-8a84-bae500000087",
-  "name": "Процент прибыли",
+  "name": "AttributeName1",
   "type": "double",
   "required": false
 }
@@ -2116,7 +2116,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "51d191f4-0887-11e6-9464-e4de00000079",
-      "name": "Атрибут счета",
+      "name": "AttributeName1",
       "type": "string",
       "value": "new_val"
     }
@@ -2273,7 +2273,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "51d191f4-0887-11e6-9464-e4de00000079",
-      "name": "Атрибут счета",
+      "name": "AttributeName1",
       "type": "string",
       "value": "new_val_again"
     }

@@ -780,7 +780,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "e97c5ea8-3f52-11e6-8a84-bae50000006f",
-      "name": "Карма",
+      "name": "AttributeName1",
       "type": "long",
       "value": 5
     },
@@ -791,7 +791,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "48c7b9af-3f55-11e6-8a84-bae500000076",
-      "name": "По акции",
+      "name": "AttributeName2",
       "type": "boolean",
       "value": true
     }
@@ -1369,7 +1369,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "e97c5ea8-3f52-11e6-8a84-bae50000006f",
-      "name": "Карма",
+      "name": "AttributeName1",
       "type": "long",
       "required": false
     }
@@ -1407,7 +1407,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "48c7b9af-3f55-11e6-8a84-bae500000076",
-  "name": "По акции",
+  "name": "AttributeName1",
   "type": "boolean",
   "required": false
 }
@@ -2210,7 +2210,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "e97c5ea8-3f52-11e6-8a84-bae50000006f",
-      "name": "Карма",
+      "name": "AttributeName1",
       "type": "long",
       "value": 1
     },
@@ -2221,7 +2221,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "48c7b9af-3f55-11e6-8a84-bae500000076",
-      "name": "По акции",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": false
     }
@@ -2443,7 +2443,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "e97c5ea8-3f52-11e6-8a84-bae50000006f",
-      "name": "Карма",
+      "name": "AttributeName1",
       "type": "long",
       "value": 1
     },
@@ -2454,7 +2454,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "48c7b9af-3f55-11e6-8a84-bae500000076",
-      "name": "По акции",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": false
     }

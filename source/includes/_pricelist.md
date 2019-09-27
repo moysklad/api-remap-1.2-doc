@@ -476,8 +476,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "name": "доп строка",
-                "type": "string",
                 "value": "значение"
               },
               {
@@ -486,8 +484,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "name": "доп число",
-                "type": "long",
                 "value": 1
               }
             ],
@@ -551,7 +547,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "666f86f9-afec-11e6-8af5-581e00000087",
-      "name": "доп строка",
+      "name": "AttributeName1",
       "type": "string",
       "value": "значение"
     },
@@ -562,7 +558,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "666ffdb9-afec-11e6-8af5-581e00000088",
-      "name": "доп число",
+      "name": "AttributeName2",
       "type": "long",
       "value": 1
     }
@@ -927,7 +923,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "666f86f9-afec-11e6-8af5-581e00000087",
-      "name": "доп строка",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     },
@@ -938,7 +934,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "666ffdb9-afec-11e6-8af5-581e00000088",
-      "name": "доп число",
+      "name": "AttributeName2",
       "type": "long",
       "required": false
     }
@@ -975,7 +971,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "666f86f9-afec-11e6-8af5-581e00000087",
-  "name": "доп строка",
+  "name": "AttributeName1",
   "type": "string",
   "required": false
 }
@@ -1228,8 +1224,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "name": "доп строка",
-                "type": "string",
                 "value": "новое значение"
               },
               {
@@ -1238,8 +1232,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "name": "доп число",
-                "type": "long",
                 "value": 2
               }
             ]
@@ -1297,7 +1289,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "666f86f9-afec-11e6-8af5-581e00000087",
-      "name": "доп строка",
+      "name": "AttributeName1",
       "type": "string",
       "value": "новое значение"
     },
@@ -1308,7 +1300,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "666ffdb9-afec-11e6-8af5-581e00000088",
-      "name": "доп число",
+      "name": "AttributeName2",
       "type": "long",
       "value": 2
     }
@@ -1452,7 +1444,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "666f86f9-afec-11e6-8af5-581e00000087",
-      "name": "доп строка",
+      "name": "AttributeName1",
       "type": "string",
       "value": "новое значение"
     },
@@ -1463,7 +1455,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "666ffdb9-afec-11e6-8af5-581e00000088",
-      "name": "доп число",
+      "name": "AttributeName2",
       "type": "long",
       "value": 2
     }

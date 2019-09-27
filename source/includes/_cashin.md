@@ -681,7 +681,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "c57c1f22-3fae-11e6-8a84-bae500000142",
-        "name": "Карма",
+        "name": "AttributeName1",
         "type": "long",
         "value": 12
       },
@@ -692,7 +692,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "c57c2526-3fae-11e6-8a84-bae500000143",
-        "name": "С основанием",
+        "name": "AttributeName2",
         "type": "boolean",
         "value": true
       },
@@ -703,7 +703,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "c57c2a5c-3fae-11e6-8a84-bae500000144",
-        "name": "Коэффициент",
+        "name": "AttributeName3",
         "type": "double",
         "value": 3.13
       }
@@ -768,7 +768,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c57c1f22-3fae-11e6-8a84-bae500000142",
-      "name": "Карма",
+      "name": "AttributeName1",
       "type": "long",
       "required": false
     },
@@ -779,7 +779,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c57c2526-3fae-11e6-8a84-bae500000143",
-      "name": "С основанием",
+      "name": "AttributeName2",
       "type": "boolean",
       "required": false
     },
@@ -790,7 +790,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c57c2a5c-3fae-11e6-8a84-bae500000144",
-      "name": "Коэффициент",
+      "name": "AttributeName3",
       "type": "double",
       "required": false
     }
@@ -883,7 +883,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "c7f589f9-558a-11e6-8a84-bae50000006f",
-  "name": "Карма",
+  "name": "AttributeName1",
   "type": "long",
   "required": false
 }
@@ -1565,7 +1565,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c57c1f22-3fae-11e6-8a84-bae500000142",
-      "name": "Карма",
+      "name": "AttributeName1",
       "type": "long",
       "value": 12
     },
@@ -1576,7 +1576,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c57c2526-3fae-11e6-8a84-bae500000143",
-      "name": "С основанием",
+      "name": "AttributeName2",
       "type": "boolean",
       "value": true
     },
@@ -1587,7 +1587,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c57c2a5c-3fae-11e6-8a84-bae500000144",
-      "name": "Коэффициент",
+      "name": "AttributeName3",
       "type": "double",
       "value": 3.13
     }

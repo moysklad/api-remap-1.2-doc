@@ -1132,7 +1132,7 @@ curl -X GET
   "attributes": [
     {
       "id": "5290a290-0313-11e6-9464-e4de00000020",
-      "name": "attribute_name",
+      "name": "AttributeName1",
       "type": "boolean",
       "required": false
     }
@@ -1198,7 +1198,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "5290a290-0313-11e6-9464-e4de00000020",
-  "name": "attribute_name",
+  "name": "AttributeName1",
   "type": "boolean",
   "required": false
 }
@@ -1316,7 +1316,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "25b6f76c-12d5-11e6-9464-e4de00000068",
-      "name": "Отметка о заключении",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": false
     }
@@ -1550,7 +1550,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "25b6f76c-12d5-11e6-9464-e4de00000068",
-      "name": "Отметка о заключении",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": false
     }

@@ -335,8 +335,7 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "name": "Строковое поле",
-                "value": "Вот такое значение поля у оприходования"
+                "value": "AttributeValue1"
               },
               {
                 "meta": {
@@ -344,7 +343,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "name": "Числовое поле",
                 "value": 404
               }
             ],
@@ -425,9 +423,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a9150cd-5338-11e6-8a84-bae50000009b",
-      "name": "Строковое поле",
+      "name": "AttributeName1",
       "type": "string",
-      "value": "Вот такое значение поля у оприходования"
+      "value": "AttributeValue1"
     },
     {
       "meta": {
@@ -436,7 +434,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a9158b2-5338-11e6-8a84-bae50000009c",
-      "name": "Числовое поле",
+      "name": "AttributeName2",
       "type": "long",
       "value": 404
     }
@@ -544,8 +542,7 @@ curl -X GET
                     "type": "attributemetadata",
                     "mediaType": "application/json"
                   },
-                  "name": "Строковое поле",
-                  "value": "Вот такое значение поля у оприходования"
+                  "value": "AttributeValue1"
                 },
                 {
                   "meta": {
@@ -553,7 +550,6 @@ curl -X GET
                     "type": "attributemetadata",
                     "mediaType": "application/json"
                   },
-                  "name": "Числовое поле",
                   "value": 404
                 }
               ],
@@ -597,7 +593,7 @@ curl -X GET
                     "type": "attributemetadata",
                     "mediaType": "application/json"
                   },
-                  "value": "Поменяли стрковое доп поле"
+                  "value": "AttributeValue2"
                 },
                 {
                   "meta": {
@@ -688,9 +684,9 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "6a9150cd-5338-11e6-8a84-bae50000009b",
-        "name": "Строковое поле",
+        "name": "AttributeName1",
         "type": "string",
-        "value": "Вот такое значение поля у оприходования"
+        "value": "AttributeValue1"
       },
       {
         "meta": {
@@ -699,7 +695,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "6a9158b2-5338-11e6-8a84-bae50000009c",
-        "name": "Числовое поле",
+        "name": "AttributeName2",
         "type": "long",
         "value": 404
       }
@@ -786,9 +782,9 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "6a9150cd-5338-11e6-8a84-bae50000009b",
-        "name": "Строковое поле",
+        "name": "AttributeName1",
         "type": "string",
-        "value": "Поменяли стрковое доп поле"
+        "value": "AttributeValue2"
       },
       {
         "meta": {
@@ -797,7 +793,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "6a9158b2-5338-11e6-8a84-bae50000009c",
-        "name": "Числовое поле",
+        "name": "AttributeName2",
         "type": "long",
         "value": 501
       }
@@ -872,8 +868,8 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a9150cd-5338-11e6-8a84-bae50000009b",
-      "name": "Строковое поле",
-      "type": "string",
+      "name": "AttributeName1",
+      "type": "boolean",
       "required": false
     },
     {
@@ -883,7 +879,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a9158b2-5338-11e6-8a84-bae50000009c",
-      "name": "Числовое поле",
+      "name": "AttributeName2",
       "type": "long",
       "required": false
     }
@@ -922,7 +918,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "6a9150cd-5338-11e6-8a84-bae50000009b",
-  "name": "Строковое поле",
+  "name": "AttributeName1",
   "type": "string",
   "required": false
 }
@@ -1066,7 +1062,7 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "value": "Поменяли стрковое доп поле"
+                "value": "AttributeValue1"
               },
               {
                 "meta": {
@@ -1155,9 +1151,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a9150cd-5338-11e6-8a84-bae50000009b",
-      "name": "Строковое поле",
+      "name": "AttributeName1",
       "type": "string",
-      "value": "Поменяли стрковое доп поле"
+      "value": "AttributeValue1"
     },
     {
       "meta": {
@@ -1166,7 +1162,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a9158b2-5338-11e6-8a84-bae50000009c",
-      "name": "Числовое поле",
+      "name": "AttributeName2",
       "type": "long",
       "value": 501
     }

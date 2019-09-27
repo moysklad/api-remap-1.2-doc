@@ -240,7 +240,7 @@ curl -X GET
             "mediaType": "application/json"
           },
           "id": "c2ecd338-015e-11e6-9464-e4de0000008f",
-          "name": "Атрибут заказа",
+          "name": "AttributeName1",
           "type": "string",
           "value": "1251252"
         }
@@ -706,7 +706,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c2ecd338-015e-11e6-9464-e4de0000008f",
-      "name": "Атрибут заказа",
+      "name": "AttributeName1",
       "type": "string",
       "value": "Атрибут заказа",
     }
@@ -1267,8 +1267,8 @@ curl -X GET
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
-      "name": "Атрибут заказа",
-      "type": "string",
+      "name": "AttributeName1",
+      "type": "boolean",
       "required": false
     }
   ],
@@ -1397,8 +1397,8 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "57ab884e-558b-11e6-8a84-bae500000078",
-  "name": "Товар по акции",
-  "type": "productfolder",
+  "name": "AttributeName1",
+  "type": "boolean",
   "required": false
 }
 ```
@@ -1530,7 +1530,8 @@ curl -X GET
       "mediaType": "application/json"
     },
     "id": "c2ecd338-015e-11e6-9464-e4de0000008f",
-    "name": "Атрибут заказа",
+    "name": "AttributeName1",
+    "type": "long",
     "value": "1251252"
   }],
   "positions": {
@@ -1862,9 +1863,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c2ecd338-015e-11e6-9464-e4de0000008f",
-      "name": "Атрибут заказа",
+      "name": "AttributeName1",
       "type": "string",
-      "value": "Обновленный Атрибут заказа",
+      "value": "Обновленный Атрибут заказа"
     }
   ],
   "created": "2007-02-07 17:16:41",

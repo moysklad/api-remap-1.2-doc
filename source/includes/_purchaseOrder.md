@@ -550,7 +550,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
-      "name": "Причина",
+      "name": "AttributeName1",
       "type": "string",
       "value": "Черный"
     },
@@ -561,7 +561,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
-      "name": "Коэффициент",
+      "name": "AttributeName2",
       "type": "double",
       "value": 0.4
     },
@@ -572,7 +572,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a886744-3f70-11e6-8a84-bae50000009f",
-      "name": "Кек?",
+      "name": "AttributeName3",
       "type": "boolean",
       "value": true
     }
@@ -848,7 +848,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
-      "name": "Причина",
+      "name": "AttributeName1",
       "type": "string",
       "value": "Черный"
     },
@@ -859,7 +859,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
-      "name": "Коэффициент",
+      "name": "AttributeName2",
       "type": "double",
       "value": 0.4
     },
@@ -870,7 +870,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a886744-3f70-11e6-8a84-bae50000009f",
-      "name": "Кек?",
+      "name": "AttributeName3",
       "type": "boolean",
       "value": true
     }
@@ -1049,7 +1049,7 @@ curl -X GET
                     "type": "attributemetadata",
                     "mediaType": "application/json"
                   },
-                  "value": "Я все еще пишу для вас документацию"
+                  "value": "AttributeValue1"
                 },
                 {
                   "meta": {
@@ -1187,9 +1187,9 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
-        "name": "Причина",
+        "name": "AttributeName1",
         "type": "string",
-        "value": "Черный"
+        "value": "AttributeValue1"
       },
       {
         "meta": {
@@ -1198,7 +1198,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
-        "name": "Коэффициент",
+        "name": "AttributeName2",
         "type": "double",
         "value": 0.4
       },
@@ -1209,7 +1209,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "6a886744-3f70-11e6-8a84-bae50000009f",
-        "name": "Кек?",
+        "name": "AttributeName1",
         "type": "boolean",
         "value": true
       }
@@ -1338,9 +1338,9 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
-        "name": "Причина",
+        "name": "AttributeName1",
         "type": "string",
-        "value": "Я все еще пишу для вас документацию"
+        "value": "AttributeValue1"
       },
       {
         "meta": {
@@ -1349,7 +1349,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
-        "name": "Коэффициент",
+        "name": "AttributeName2",
         "type": "double",
         "value": 0.99
       },
@@ -1360,7 +1360,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "6a886744-3f70-11e6-8a84-bae50000009f",
-        "name": "Кек?",
+        "name": "AttributeName3",
         "type": "boolean",
         "value": true
       }
@@ -1442,7 +1442,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
-      "name": "Причина",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     },
@@ -1453,7 +1453,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
-      "name": "Коэффициент",
+      "name": "AttributeName2",
       "type": "double",
       "required": false
     },
@@ -1464,7 +1464,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a886744-3f70-11e6-8a84-bae50000009f",
-      "name": "Кек?",
+      "name": "AttributeName3",
       "type": "boolean",
       "required": false
     }
@@ -1517,7 +1517,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
-  "name": "Коэффициент",
+  "name": "AttributeName3",
   "type": "double",
   "required": false
 }
@@ -2106,7 +2106,7 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "value": "Я все еще пишу для вас документацию"
+                "value": "AttributeValue1"
               },
               {
                 "meta": {
@@ -2241,9 +2241,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
-      "name": "Причина",
+      "name": "AttributeName1",
       "type": "string",
-      "value": "Я все еще пишу для вас документацию"
+      "value": "AttributeValue1"
     },
     {
       "meta": {
@@ -2252,7 +2252,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
-      "name": "Коэффициент",
+      "name": "AttributeName2",
       "type": "double",
       "value": 0.99
     },
@@ -2263,7 +2263,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a886744-3f70-11e6-8a84-bae50000009f",
-      "name": "Кек?",
+      "name": "AttributeName3",
       "type": "boolean",
       "value": true
     }

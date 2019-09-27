@@ -156,7 +156,7 @@ curl -X GET
             "mediaType": "application/json"
           },
           "id": "bb08dccf-0bd2-11e6-9464-e4de000000ae",
-          "name": "Праздничная смена",
+          "name": "AttributeName1",
           "type": "string",
           "value": "Да"
         }
@@ -296,7 +296,7 @@ curl -X GET
             "mediaType": "application/json"
           },
           "id": "bb08dccf-0bd2-11e6-9464-e4de000000ae",
-          "name": "Праздничная смена",
+          "name": "AttributeName1",
           "type": "string",
           "value": "Да"
         }
@@ -428,7 +428,7 @@ curl -X GET
   "attributes": [
     {
       "id": "bb08dccf-0bd2-11e6-9464-e4de000000ae",
-      "name": "ыаыфацфыа",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     }
@@ -559,7 +559,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "d335f74e-558c-11e6-8a84-bae50000009a",
-  "name": "Приложение",
+  "name": "AttributeName1",
   "type": "file",
   "required": false
 }
@@ -649,7 +649,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "bb08dccf-0bd2-11e6-9464-e4de000000ae",
-      "name": "Праздничная смена",
+      "name": "AttributeName1",
       "type": "string",
       "value": "Да"
     }
