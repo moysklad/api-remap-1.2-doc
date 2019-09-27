@@ -387,11 +387,19 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata/attributes/43dd9fd7-3f81-11e6-8a84-bae5000000db",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "отломана деталь"
               },
               {
-                "id": "50463893-3f81-11e6-8a84-bae5000000de",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata/attributes/50463893-3f81-11e6-8a84-bae5000000de",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": true
               }
             ],
@@ -603,11 +611,19 @@ curl -X GET
               },
               "attributes": [
                 {
-                  "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata/attributes/43dd9fd7-3f81-11e6-8a84-bae5000000db",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": "отломана деталь"
                 },
                 {
-                  "id": "50463893-3f81-11e6-8a84-bae5000000de",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata/attributes/50463893-3f81-11e6-8a84-bae5000000de",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": true
                 }
               ],
@@ -659,7 +675,11 @@ curl -X GET
               },
               "attributes": [
                 {
-                  "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata/attributes/43dd9fd7-3f81-11e6-8a84-bae5000000db",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": "отломана нога"
                 }
               ]
@@ -1432,7 +1452,11 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata/attributes/43dd9fd7-3f81-11e6-8a84-bae5000000db",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "отломана нога"
               }
             ],

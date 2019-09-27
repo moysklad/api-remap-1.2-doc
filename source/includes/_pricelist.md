@@ -476,7 +476,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "666f86f9-afec-11e6-8af5-581e00000087",
                 "name": "доп строка",
                 "type": "string",
                 "value": "значение"
@@ -487,7 +486,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "666ffdb9-afec-11e6-8af5-581e00000088",
                 "name": "доп число",
                 "type": "long",
                 "value": 1
@@ -1230,7 +1228,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "666f86f9-afec-11e6-8af5-581e00000087",
                 "name": "доп строка",
                 "type": "string",
                 "value": "новое значение"
@@ -1241,7 +1238,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "666ffdb9-afec-11e6-8af5-581e00000088",
                 "name": "доп число",
                 "type": "long",
                 "value": 2

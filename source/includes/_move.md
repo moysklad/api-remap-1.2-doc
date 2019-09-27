@@ -505,7 +505,6 @@ curl -X GET
                     "type": "attributemetadata",
                     "mediaType": "application/json"
                   },
-                  "id": "954d6ab9-4f67-11e6-8a84-bae5000000bc",
                   "name": "Кол-во машин",
                   "value": 43
                 }
@@ -1240,7 +1239,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "954d6ab9-4f67-11e6-8a84-bae5000000bc",
                 "name": "Кол-во машин",
                 "value": 43
               }

@@ -413,15 +413,27 @@ curl -X GET
             "deliveryPlannedMoment": "2015-02-15 14:12:19",
             "attributes": [
               {
-                "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a885b1b-3f70-11e6-8a84-bae50000009d",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "Черный"
               },
               {
-                "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a88619c-3f70-11e6-8a84-bae50000009e",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 0.4
               },
               {
-                "id": "6a886744-3f70-11e6-8a84-bae50000009f",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a886744-3f70-11e6-8a84-bae50000009f",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": true
               }
             ]
@@ -653,15 +665,27 @@ curl -X GET
             "deliveryPlannedMoment": "2015-02-15 14:12:19",
             "attributes": [
               {
-                "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a885b1b-3f70-11e6-8a84-bae50000009d",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "Черный"
               },
               {
-                "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a88619c-3f70-11e6-8a84-bae50000009e",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 0.4
               },
               {
-                "id": "6a886744-3f70-11e6-8a84-bae50000009f",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a886744-3f70-11e6-8a84-bae50000009f",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": true
               }
             ],
@@ -945,15 +969,27 @@ curl -X GET
               "deliveryPlannedMoment": "2015-02-15 14:12:19",
               "attributes": [
                 {
-                  "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a885b1b-3f70-11e6-8a84-bae50000009d",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": "Черный"
                 },
                 {
-                  "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a88619c-3f70-11e6-8a84-bae50000009e",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": 0.4
                 },
                 {
-                  "id": "6a886744-3f70-11e6-8a84-bae50000009f",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a886744-3f70-11e6-8a84-bae50000009f",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": true
                 }
               ]
@@ -1008,15 +1044,27 @@ curl -X GET
               },
               "attributes": [
                 {
-                  "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a885b1b-3f70-11e6-8a84-bae50000009d",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": "Я все еще пишу для вас документацию"
                 },
                 {
-                  "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a88619c-3f70-11e6-8a84-bae50000009e",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": 0.99
                 },
                 {
-                  "id": "6a886744-3f70-11e6-8a84-bae50000009f",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a886744-3f70-11e6-8a84-bae50000009f",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": true
                 }
               ],
@@ -2053,15 +2101,27 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a885b1b-3f70-11e6-8a84-bae50000009d",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "Я все еще пишу для вас документацию"
               },
               {
-                "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a88619c-3f70-11e6-8a84-bae50000009e",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 0.99
               },
               {
-                "id": "6a886744-3f70-11e6-8a84-bae50000009f",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a886744-3f70-11e6-8a84-bae50000009f",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": true
               }
             ],

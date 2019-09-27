@@ -335,7 +335,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "6a9150cd-5338-11e6-8a84-bae50000009b",
                 "name": "Строковое поле",
                 "value": "Вот такое значение поля у оприходования"
               },
@@ -345,7 +344,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "6a9158b2-5338-11e6-8a84-bae50000009c",
                 "name": "Числовое поле",
                 "value": 404
               }
@@ -546,7 +544,6 @@ curl -X GET
                     "type": "attributemetadata",
                     "mediaType": "application/json"
                   },
-                  "id": "6a9150cd-5338-11e6-8a84-bae50000009b",
                   "name": "Строковое поле",
                   "value": "Вот такое значение поля у оприходования"
                 },
@@ -556,7 +553,6 @@ curl -X GET
                     "type": "attributemetadata",
                     "mediaType": "application/json"
                   },
-                  "id": "6a9158b2-5338-11e6-8a84-bae50000009c",
                   "name": "Числовое поле",
                   "value": 404
                 }
@@ -596,11 +592,19 @@ curl -X GET
               },
               "attributes": [
                 {
-                  "id": "6a9150cd-5338-11e6-8a84-bae50000009b",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/enter/metadata/attributes/6a9150cd-5338-11e6-8a84-bae50000009b",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": "Поменяли стрковое доп поле"
                 },
                 {
-                  "id": "6a9158b2-5338-11e6-8a84-bae50000009c",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/enter/metadata/attributes/6a9158b2-5338-11e6-8a84-bae50000009c",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": 501
                 }
               ],
@@ -1057,11 +1061,19 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "6a9150cd-5338-11e6-8a84-bae50000009b",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/enter/metadata/attributes/6a9150cd-5338-11e6-8a84-bae50000009b",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "Поменяли стрковое доп поле"
               },
               {
-                "id": "6a9158b2-5338-11e6-8a84-bae50000009c",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/enter/metadata/attributes/6a9158b2-5338-11e6-8a84-bae50000009c",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 501
               }
             ],

@@ -457,7 +457,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "4930a123-acda-11e6-8a84-bae50000006d",
                 "value": "value"
               },
               {
@@ -466,7 +465,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
                 "value": "values"
               }
             ],
@@ -723,7 +721,6 @@ curl -X GET
                     "type": "attributemetadata",
                     "mediaType": "application/json"
                   },
-                  "id": "4930a123-acda-11e6-8a84-bae50000006d",
                   "value": "value"
                 },
                 {
@@ -732,7 +729,6 @@ curl -X GET
                     "type": "attributemetadata",
                     "mediaType": "application/json"
                   },
-                  "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
                   "value": "values"
                 }
               ],
@@ -831,7 +827,6 @@ curl -X GET
                     "type": "attributemetadata",
                     "mediaType": "application/json"
                   },
-                  "id": "4930a123-acda-11e6-8a84-bae50000006d",
                   "value": "Newvalue"
                 }
               ],
@@ -1468,7 +1463,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "4930a123-acda-11e6-8a84-bae50000006d",
                 "value": "Newvalue"
               }
             ],

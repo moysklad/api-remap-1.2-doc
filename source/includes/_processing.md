@@ -1593,7 +1593,11 @@ curl -X GET
   },
   "attributes": [
     {
-      "id": "c2ecd338-015e-11e6-9464-e4de0000008f",
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/processing/metadata/attributes/c2ecd338-015e-11e6-9464-e4de0000008f",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
       "name": "Атрибут заказа",
       "type": "string",
       "required": false

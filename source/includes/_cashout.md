@@ -606,15 +606,27 @@ curl -X GET
               },
               "attributes": [
                 {
-                  "id": "c88569fc-3f8e-11e6-8a84-bae5000000fd",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c88569fc-3f8e-11e6-8a84-bae5000000fd",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": 0.49
                 },
                 {
-                  "id": "c88570d2-3f8e-11e6-8a84-bae5000000fe",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c88570d2-3f8e-11e6-8a84-bae5000000fe",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": 7501
                 },
                 {
-                  "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c8857703-3f8e-11e6-8a84-bae5000000ff",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": true
                 }
               ]
@@ -1605,15 +1617,27 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "c88569fc-3f8e-11e6-8a84-bae5000000fd",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c88569fc-3f8e-11e6-8a84-bae5000000fd",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 0.49
               },
               {
-                "id": "c88570d2-3f8e-11e6-8a84-bae5000000fe",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c88570d2-3f8e-11e6-8a84-bae5000000fe",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 7501
               },
               {
-                "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c8857703-3f8e-11e6-8a84-bae5000000ff",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": true
               }
             ]

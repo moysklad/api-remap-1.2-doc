@@ -923,7 +923,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "1f7dbb1b-ad6e-11e6-8a84-bc52000000eb",
                 "name": "доп.поле1",
                 "type": "string",
                 "value": "text"
@@ -934,7 +933,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "1f7dc230-ad6e-11e6-8a84-bc52000000ec",
                 "name": "доп.поле2",
                 "type": "long",
                 "value": 42

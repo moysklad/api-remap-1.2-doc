@@ -1271,7 +1271,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "d0912ad5-4f3d-11e6-8a84-bae500000082",
                 "name": "Процент",
                 "value": 0.7643
               },
@@ -1281,7 +1280,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "d0911efc-4f3d-11e6-8a84-bae500000081",
                 "name": "Строковое поле",
                 "value": "Строковое значение"
               }
