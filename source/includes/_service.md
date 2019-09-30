@@ -41,6 +41,7 @@
   + **COMPOUND_PAYMENT_ITEM** - Составной предмет расчета
   + **ANOTHER_PAYMENT_ITEM** - Иной предмет расчета
 + **taxSystem** - Код системы налогообложения
+  + **TAX_SYSTEM_SAME_AS_GROUP** - Совпадает с группой
   + **GENERAL_TAX_SYSTEM** - ОСН
   + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
   + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
