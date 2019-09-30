@@ -51,7 +51,7 @@ ____
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/discount"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)

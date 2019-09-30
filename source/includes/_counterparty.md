@@ -172,7 +172,7 @@ ___
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -741,7 +741,7 @@ curl -X GET
 ```shell
 curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
   -d '{
     "name": "ООО Радуга",
@@ -869,7 +869,7 @@ curl -X POST
 ```shell
 curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
   -d '{
         "name": "ООО Радуга"
@@ -957,7 +957,7 @@ curl -X POST
 ```shell
 curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
   -d '{  
   "name":"ООО Овощ Экспресс",
@@ -1245,7 +1245,7 @@ curl -X POST
 ```shell
 curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
   -d '[  
   {  
@@ -1499,7 +1499,7 @@ curl -X POST
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"  
+  -H "Authorization: Basic <Credentials>"  
 ```
 
 > Response  200. Успешное удаление Контрагента.
@@ -1514,7 +1514,7 @@ curl -X DELETE
 ```shell
 curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/delete"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
   -d '[
         {
@@ -1555,7 +1555,7 @@ curl -X POST
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata"
-  -H "Authorization: Basic <Access-Token>"  
+  -H "Authorization: Basic <Credentials>"  
 ```
 
 > Успешный запрос. Результат - JSON представление доп. полей Контрагентов.
@@ -1635,7 +1635,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020"
-  -H "Authorization: Basic <Access-Token>"  
+  -H "Authorization: Basic <Credentials>"  
 ```
 
 >Response 200 (application/json). Успешный запрос. Результат - JSON представление отдельного доп. поля.
@@ -1670,7 +1670,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"  
+  -H "Authorization: Basic <Credentials>"  
 ```
 
 > Response 200 (application/json). Возвращает JSON представление Контрагента с указанным id.
@@ -1846,7 +1846,7 @@ curl -X GET
 ```shell
 curl -X PUT
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
     -d '{  
   "name":"ООО Радуга ЭКСПО",
@@ -2062,7 +2062,7 @@ curl -X PUT
 ```shell
 curl -X PUT
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
     -d '
 {
@@ -2323,7 +2323,7 @@ curl -X PUT
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json). Возвращает массив JSON представлений счетов Контрагента.
@@ -2403,7 +2403,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json). Возвращает JSON представление счета Контрагента.
@@ -2442,7 +2442,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json). Возвращает массив JSON представлений контактных лиц Контрагента.
@@ -2558,7 +2558,7 @@ curl -X GET
 ```shell
 curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
     -d '{
           "name": "Петр",
@@ -2619,7 +2619,7 @@ curl -X POST
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json). Возвращает JSON представление отдельного контактного лица Контрагента.
@@ -2671,7 +2671,7 @@ curl -X GET
   ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "Петр",
@@ -2728,7 +2728,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json). Успешный запрос.
@@ -2824,7 +2824,7 @@ curl -X GET
 ```shell
 curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
     -d '{
           "description": "текст"
@@ -2881,7 +2881,7 @@ curl -X POST
 ```shell
 curl -X GET
   "GET https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/notes/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json). Возвращает JSON представление отдельного события Контрагента.
@@ -2936,7 +2936,7 @@ curl -X GET
   ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/notes/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "description": "измененный текст"
@@ -2989,7 +2989,7 @@ curl -X GET
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes/50b318cb-3cb0-11e7-8af5-581e00000007"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json). Успешное удаление События.

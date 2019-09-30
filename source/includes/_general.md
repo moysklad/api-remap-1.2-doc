@@ -709,7 +709,7 @@ Expand разрешен только на размере выборки не б�
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/166909e6-4a99-11e6-8a84-bae500000089"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Объект возврата покупателя в его обычном представлении, имеющий ссылку на отгрузку
@@ -742,7 +742,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/166909e6-4a99-11e6-8a84-bae500000089?expand=demand"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > В ответ придет возврат покупателя, у которого вместо ссылки на отгрузку, по которой производится возврат, будет вложенный объект со всеми полями данной отгрузки.
@@ -821,7 +821,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/166909e6-4a99-11e6-8a84-bae500000089?expand=demand,demand.agent"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 ```json
@@ -895,7 +895,7 @@ curl -X GET
 ```shell
 curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/demand?expand=agent"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H 'Content-Type: application/json' \
   -d '{
   "name": "0001",
@@ -1097,7 +1097,7 @@ curl -X POST
 ```shell
 curl -X PUT
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/1c3f30d2-88b9-11e7-9464-e4de00000000?expand=agent,organization"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H 'Content-Type: application/json' \
   -d '{
   "name": "3738"
@@ -1338,7 +1338,7 @@ curl -X PUT
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1465,7 +1465,7 @@ curl -X GET
 ```shell
 curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H 'Content-Type: application/json' \
   -d '[
         {
@@ -1518,7 +1518,7 @@ curl -X POST
 ```shell
 curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H 'Content-Type: application/json' \
   -d '[
         {
@@ -1576,7 +1576,7 @@ curl -X POST
 ```shell
 curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H 'Content-Type: application/json' \
   -d '{
         "customEntityMeta": {
@@ -1621,7 +1621,7 @@ curl -X POST
 ```shell
 curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/delete"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H 'Content-Type: application/json' \
   -d '[
         {
@@ -1660,7 +1660,7 @@ curl -X POST
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1690,7 +1690,7 @@ curl -X GET
 ```shell
 curl -X PUT
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H 'Content-Type: application/json' \
   -d '{
         "name": "обновленное Строковое поле",
@@ -1726,7 +1726,7 @@ curl -X PUT
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)

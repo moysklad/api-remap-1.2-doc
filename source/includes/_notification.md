@@ -31,7 +31,7 @@
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -152,7 +152,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -202,7 +202,7 @@ curl -X GET
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/notification/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -223,7 +223,7 @@ curl -X DELETE
 ```shell
 curl -X PUT
   "https://online.moysklad.ru/api/remap/1.2/notification/7944ef04-f831-11e5-7a69-971500188b19/markasread"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -237,7 +237,7 @@ curl -X PUT
 ```shell
 curl -X PUT
   "https://online.moysklad.ru/api/remap/1.2/notification/markasreadall"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -351,7 +351,7 @@ NotificationExportCompleted - завершение экспорта
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/02950e3c-35f2-11e9-9ff4-34e8000799c0"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -404,7 +404,7 @@ NotificationImportCompleted - завершение импорта
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/02950e31-35f2-11e9-9ff4-34e8000799c0"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -455,7 +455,7 @@ NotificationGoodCountTooLow - снижение остатка товара ни�
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/9338c8bd-56e5-11e9-c0a8-100b00000023"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -516,7 +516,7 @@ NotificationInvoiceOutOverdue - просрочен счет покупателя
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/572d1dd9-56fc-11e9-c0a8-100b00000006"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -578,7 +578,7 @@ NotificationOrderNew - новый заказ
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/c6082a9e-56e1-11e9-c0a8-100b00000011"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -639,7 +639,7 @@ NotificationOrderOverdue - просроченный заказ
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/c6082a9e-56e1-11e9-c0a8-100b00000011"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -697,7 +697,7 @@ NotificationSubscribeExpired - окончание подписки
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000123"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -743,7 +743,7 @@ NotificationSubscribeTermsExpired - условия подписки истека
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000125"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -798,7 +798,7 @@ NotificationTaskAssigned - задача назначена
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/bcd815b9-56ca-11e9-c0a8-100b00000001"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -872,7 +872,7 @@ NotificationTaskUnassigned - задача снята
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/80c8a58b-56cb-11e9-c0a8-100b00000009"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -953,7 +953,7 @@ NotificationTaskChanged - задача изменена
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/bd0dbccf-56ca-11e9-c0a8-100b00000003"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1034,7 +1034,7 @@ NotificationTaskCompleted - задача выполнена
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/7945a089-56fd-11e9-c0a8-100b00000008"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1106,7 +1106,7 @@ NotificationTaskDeleted - задача удалена
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/8d07388c-56cb-11e9-c0a8-100b0000000d"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1169,7 +1169,7 @@ NotificationTaskOverdue - задача просрочена
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/51a5b0a3-56e4-11e9-c0a8-100b00000014"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1234,7 +1234,7 @@ NotificationTaskReopened - задача переоткрыта
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/df0c3e22-56fd-11e9-c0a8-100b0000000a"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1310,7 +1310,7 @@ NotificationTaskNewComment - новый комментарий к задаче
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/240706df-5704-11e9-c0a8-100b00000003"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1388,7 +1388,7 @@ NotificationTaskCommentChanged - изменен комментарий к зад
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/3d3423ee-5704-11e9-c0a8-100b00000007"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1470,7 +1470,7 @@ NotificationTaskCommentDeleted - удален комментарий к зада
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/3d2abf0f-5704-11e9-c0a8-100b00000005"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1545,7 +1545,7 @@ NotificationRetailShiftOpened - смена открыта
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/8002409b-351d-11e9-9ff4-34e80002a126"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1633,7 +1633,7 @@ NotificationRetailShiftClosed - смена закрыта
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/3929d717-351c-11e9-9ff4-34e800029ad4"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1716,7 +1716,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/notification/subscription"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1761,7 +1761,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/notification/subscription"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "groups" : {

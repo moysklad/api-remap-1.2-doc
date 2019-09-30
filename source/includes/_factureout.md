@@ -70,7 +70,7 @@
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/factureout"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -222,7 +222,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/factureout"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "demands": [
@@ -325,7 +325,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/factureout"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '[
             {
@@ -501,17 +501,17 @@ curl -X GET
 ]
 ```
 
-### Массовое удаление Счетов-фактур
+### Массовое удаление выданных Счетов-фактур
 
-В теле запроса нужно передать массив, содержащий JSON метаданных Счетов-фактур, которые вы хотите удалить.
+В теле запроса нужно передать массив, содержащий JSON метаданных выданных Счетов-фактур, которые вы хотите удалить.
 
 
-> Запрос на массовое удаление Счетов-фактур. 
+> Запрос на массовое удаление выданных Счетов-фактур. 
 
 ```shell
 curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/factureout/delete"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
   -d '[
         {
@@ -531,7 +531,7 @@ curl -X POST
       ]'
 ```        
 
-> Успешный запрос. Результат - JSON информация об удалении Счетов-фактур.
+> Успешный запрос. Результат - JSON информация об удалении выданных Счетов-фактур.
 
 ```json
 [
@@ -560,7 +560,7 @@ curl -X POST
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/factureout/metadata"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -619,7 +619,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/factureout/metadata/attributes/8b0b6c1d-aa6f-11e6-8a84-bc520000008a"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -650,7 +650,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/factureout/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "demands": [
@@ -748,7 +748,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/factureout/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "returns": [
@@ -847,7 +847,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/factureout/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "payments": [
@@ -956,7 +956,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/factureout/99d41b01-aa8a-11e6-8af5-581e0000007e"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1069,7 +1069,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/factureout/99d41b01-aa8a-11e6-8af5-581e0000007e"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "FactureOut2"
@@ -1167,7 +1167,7 @@ curl -X GET
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/factureout/7944ef04-f831-11e5-7a69-971500188b20"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
