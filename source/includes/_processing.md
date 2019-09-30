@@ -1593,8 +1593,12 @@ curl -X GET
   },
   "attributes": [
     {
-      "id": "c2ecd338-015e-11e6-9464-e4de0000008f",
-      "name": "Атрибут заказа",
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/processing/metadata/attributes/c2ecd338-015e-11e6-9464-e4de0000008f",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     }
@@ -1725,7 +1729,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "57ab884e-558b-11e6-8a84-bae500000078",
-  "name": "Сопутствующий товар",
+  "name": "AttributeName1",
   "type": "productfolder",
   "required": false
 }

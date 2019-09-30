@@ -724,9 +724,12 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "23d3965d-0313-11e6-9464-e4de00000097",
-                "type": "string",
-                "value": "Весело"
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
+                "value": "AttributeValue1"
               }
             ]
           }'  
@@ -822,14 +825,14 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "23d3965d-0313-11e6-9464-e4de00000097",
-      "name": "Веселость отгрузки",
-      "type": "boolean",
-      "value": "Весело"
+      "name": "AttributeName1",
+      "type": "string",
+      "value": "AttributeValue1"
     }
   ],
   "created": "2007-02-07 17:16:41",
@@ -1407,14 +1410,24 @@ curl -X GET
   },
   "attributes": [
     {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/23d3965d-0313-11e6-9464-e4de00000097",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
       "id": "23d3965d-0313-11e6-9464-e4de00000097",
-      "name": "Веселость отгрузки",
+      "name": "AttributeName1",
       "type": "boolean",
       "required": false
     },
     {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
       "id": "5290a290-0313-11e6-9464-e4de00000020",
-      "name": "attribute_name2",
+      "name": "AttributeName2",
       "type": "boolean",
       "required": false
     }
@@ -1545,8 +1558,8 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "127d484e-3f81-11e6-8a84-bae5000000cb",
-  "name": "Причина возврата",
-  "type": "string",
+  "name": "AttributeName1",
+  "type": "boolean",
   "required": false
 }
 
@@ -2283,10 +2296,14 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "23d3965d-0313-11e6-9464-e4de00000097",
-                "name": "Веселость отгрузки",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
+                "name": "AttributeName1",
                 "type": "boolean",
-                "value": "Печально"
+                "value": true
               }
             ],
             "consignee": {
@@ -2427,14 +2444,14 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "23d3965d-0313-11e6-9464-e4de00000097",
-      "name": "Веселость отгрузки",
+      "name": "AttributeName1",
       "type": "boolean",
-      "value": "Грустно"
+      "value": true
     }
   ],
   "created": "2007-02-07 17:16:41",

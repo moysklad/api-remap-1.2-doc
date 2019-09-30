@@ -184,7 +184,7 @@ curl -X GET
             "mediaType": "application/json"
           },
           "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
-          "name": "Поступил",
+          "name": "AttributeName1",
           "type": "boolean",
           "value": false
         }
@@ -289,7 +289,7 @@ curl -X GET
             "mediaType": "application/json"
           },
           "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
-          "name": "Поступил",
+          "name": "AttributeName2",
           "type": "boolean",
           "value": false
         }
@@ -406,7 +406,7 @@ curl -X GET
             "mediaType": "application/json"
           },
           "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
-          "name": "Поступил",
+          "name": "AttributeName3",
           "type": "boolean",
           "value": false
         }
@@ -606,15 +606,27 @@ curl -X GET
               },
               "attributes": [
                 {
-                  "id": "c88569fc-3f8e-11e6-8a84-bae5000000fd",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c88569fc-3f8e-11e6-8a84-bae5000000fd",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": 0.49
                 },
                 {
-                  "id": "c88570d2-3f8e-11e6-8a84-bae5000000fe",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c88570d2-3f8e-11e6-8a84-bae5000000fe",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": 7501
                 },
                 {
-                  "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c8857703-3f8e-11e6-8a84-bae5000000ff",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": true
                 }
               ]
@@ -758,7 +770,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "c88569fc-3f8e-11e6-8a84-bae5000000fd",
-        "name": "Доля",
+        "name": "AttributeName1",
         "type": "double",
         "value": 0.49
       },
@@ -769,7 +781,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "c88570d2-3f8e-11e6-8a84-bae5000000fe",
-        "name": "Попытки",
+        "name": "AttributeName2",
         "type": "long",
         "value": 7501
       },
@@ -780,7 +792,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
-        "name": "Поступил",
+        "name": "AttributeName3",
         "type": "boolean",
         "value": true
       }
@@ -854,7 +866,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c88569fc-3f8e-11e6-8a84-bae5000000fd",
-      "name": "Доля",
+      "name": "AttributeName1",
       "type": "double",
       "required": false
     },
@@ -865,7 +877,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c88570d2-3f8e-11e6-8a84-bae5000000fe",
-      "name": "Попытки",
+      "name": "AttributeName2",
       "type": "long",
       "required": false
     },
@@ -876,7 +888,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
-      "name": "Поступил",
+      "name": "AttributeName3",
       "type": "boolean",
       "required": false
     }
@@ -955,7 +967,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "b54f1d9c-558a-11e6-8a84-bae50000006c",
-  "name": "Строка",
+  "name": "AttributeName1",
   "type": "string",
   "required": false
 }
@@ -1534,7 +1546,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
-      "name": "Поступил",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": false
     }
@@ -1605,15 +1617,27 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "c88569fc-3f8e-11e6-8a84-bae5000000fd",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c88569fc-3f8e-11e6-8a84-bae5000000fd",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 0.49
               },
               {
-                "id": "c88570d2-3f8e-11e6-8a84-bae5000000fe",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c88570d2-3f8e-11e6-8a84-bae5000000fe",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 7501
               },
               {
-                "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashout/metadata/attributes/c8857703-3f8e-11e6-8a84-bae5000000ff",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": true
               }
             ]
@@ -1692,7 +1716,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c88569fc-3f8e-11e6-8a84-bae5000000fd",
-      "name": "Доля",
+      "name": "AttributeName1",
       "type": "double",
       "value": 0.49
     },
@@ -1703,7 +1727,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c88570d2-3f8e-11e6-8a84-bae5000000fe",
-      "name": "Попытки",
+      "name": "AttributeName2",
       "type": "long",
       "value": 7501
     },
@@ -1714,7 +1738,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c8857703-3f8e-11e6-8a84-bae5000000ff",
-      "name": "Поступил",
+      "name": "AttributeName3",
       "type": "boolean",
       "value": true
     }

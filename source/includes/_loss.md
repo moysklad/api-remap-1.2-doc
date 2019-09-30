@@ -181,7 +181,7 @@ curl -X GET
             "mediaType": "application/json"
           },
           "id": "d0912ad5-4f3d-11e6-8a84-bae500000082",
-          "name": "Процент",
+          "name": "AttributeName1",
           "type": "double",
           "value": 0.2
         }
@@ -263,7 +263,7 @@ curl -X GET
             "mediaType": "application/json"
           },
           "id": "d0912ad5-4f3d-11e6-8a84-bae500000082",
-          "name": "Процент",
+          "name": "AttributeName1",
           "type": "double",
           "value": 45.2
         }
@@ -747,7 +747,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "d0911efc-4f3d-11e6-8a84-bae500000081",
-      "name": "Строковое поле",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     },
@@ -758,7 +758,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "d0912ad5-4f3d-11e6-8a84-bae500000082",
-      "name": "Процент",
+      "name": "AttributeName2",
       "type": "double",
       "required": true
     }
@@ -796,7 +796,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "d0912ad5-4f3d-11e6-8a84-bae500000082",
-  "name": "Процент",
+  "name": "AttributeName1",
   "type": "double",
   "required": true
 }
@@ -1073,7 +1073,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "d0912ad5-4f3d-11e6-8a84-bae500000082",
-      "name": "Процент",
+      "name": "AttributeName1",
       "type": "double",
       "value": 0.2
     }
@@ -1271,8 +1271,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "d0912ad5-4f3d-11e6-8a84-bae500000082",
-                "name": "Процент",
                 "value": 0.7643
               },
               {
@@ -1281,8 +1279,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "d0911efc-4f3d-11e6-8a84-bae500000081",
-                "name": "Строковое поле",
                 "value": "Строковое значение"
               }
             ]
@@ -1359,7 +1355,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "d0911efc-4f3d-11e6-8a84-bae500000081",
-      "name": "Строковое поле",
+      "name": "AttributeName1",
       "type": "string",
       "value": "Строковое значение"
     },
@@ -1370,7 +1366,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "d0912ad5-4f3d-11e6-8a84-bae500000082",
-      "name": "Процент",
+      "name": "AttributeName2",
       "type": "double",
       "value": 0.7643
     }

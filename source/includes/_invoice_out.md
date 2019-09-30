@@ -779,7 +779,11 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "51d191f4-0887-11e6-9464-e4de00000079",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "значение доп поля"
               }
             ]
@@ -876,12 +880,12 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "51d191f4-0887-11e6-9464-e4de00000079",
-      "name": "Атрибут счета",
+      "name": "AttributeName1",
       "type": "string",
       "value": "значение доп поля"
     }
@@ -1396,7 +1400,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "51d191f4-0887-11e6-9464-e4de00000079",
-      "name": "Атрибут счета",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     }
@@ -1434,7 +1438,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "d91965f1-558b-11e6-8a84-bae500000087",
-  "name": "Процент прибыли",
+  "name": "AttributeName1",
   "type": "double",
   "required": false
 }
@@ -2006,7 +2010,11 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "51d191f4-0887-11e6-9464-e4de00000079",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "new_val"
               }
             ]
@@ -2103,12 +2111,12 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "51d191f4-0887-11e6-9464-e4de00000079",
-      "name": "Атрибут счета",
+      "name": "AttributeName1",
       "type": "string",
       "value": "new_val"
     }
@@ -2154,7 +2162,11 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "51d191f4-0887-11e6-9464-e4de00000079",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "new_val_again"
               }
             ],
@@ -2256,12 +2268,12 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "51d191f4-0887-11e6-9464-e4de00000079",
-      "name": "Атрибут счета",
+      "name": "AttributeName1",
       "type": "string",
       "value": "new_val_again"
     }

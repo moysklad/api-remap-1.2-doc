@@ -505,8 +505,6 @@ curl -X GET
                     "type": "attributemetadata",
                     "mediaType": "application/json"
                   },
-                  "id": "954d6ab9-4f67-11e6-8a84-bae5000000bc",
-                  "name": "Кол-во машин",
                   "value": 43
                 }
               ],
@@ -673,7 +671,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "954d62cc-4f67-11e6-8a84-bae5000000bb",
-        "name": "Запрос от",
+        "name": "AttributeName1",
         "type": "time",
         "value": "2016-07-21 20:28:53"
       },
@@ -684,7 +682,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "954d6ab9-4f67-11e6-8a84-bae5000000bc",
-        "name": "Кол-во машин",
+        "name": "AttributeName2",
         "type": "long",
         "value": 43
       }
@@ -989,7 +987,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "954d62cc-4f67-11e6-8a84-bae5000000bb",
-      "name": "Запрос от",
+      "name": "AttributeName1",
       "type": "time",
       "required": false
     },
@@ -1000,7 +998,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "954d6ab9-4f67-11e6-8a84-bae5000000bc",
-      "name": "Кол-во машин",
+      "name": "AttributeName2",
       "type": "long",
       "required": false
     }
@@ -1053,7 +1051,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "954d6ab9-4f67-11e6-8a84-bae5000000bc",
-  "name": "Кол-во машин",
+  "name": "AttributeName1",
   "type": "long",
   "required": false
 }
@@ -1240,8 +1238,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "954d6ab9-4f67-11e6-8a84-bae5000000bc",
-                "name": "Кол-во машин",
                 "value": 43
               }
             ],
@@ -1320,7 +1316,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "954d62cc-4f67-11e6-8a84-bae5000000bb",
-      "name": "Запрос от",
+      "name": "AttributeName1",
       "type": "time",
       "value": "2016-07-21 20:28:53"
     },
@@ -1331,7 +1327,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "954d6ab9-4f67-11e6-8a84-bae5000000bc",
-      "name": "Кол-во машин",
+      "name": "AttributeName2",
       "type": "long",
       "value": 43
     }

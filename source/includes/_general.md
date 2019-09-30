@@ -1527,7 +1527,6 @@ curl -X POST
             "type": "attributemetadata",
             "mediaType": "application/json"
           },
-          "id": "7bc578d8-6501-11e8-9464-e4de00000004",
           "name": "Строковое поле",
           "required": true,
           "description": "Поле-строка"
@@ -1596,7 +1595,7 @@ curl -X POST
 ```json
 {
   "meta": {
-    "href": "hhttps://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/53eb36a5-a78a-11e9-ac12-000c00000000",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/53eb36a5-a78a-11e9-ac12-000c00000000",
     "type": "attributemetadata",
     "mediaType": "application/json"
   },

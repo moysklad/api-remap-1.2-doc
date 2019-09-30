@@ -539,8 +539,13 @@ curl -X GET
   },
   "attributes": [
     {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
       "id": "5290a290-0313-11e6-9464-e4de00000020",
-      "name": "attribute_name",
+      "name": "AttributeName1",
       "type": "boolean",
       "required": false
     }
@@ -606,7 +611,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "5290a290-0313-11e6-9464-e4de00000020",
-  "name": "attribute_name",
+  "name": "AttributeName1",
   "type": "boolean",
   "required": false
 }
