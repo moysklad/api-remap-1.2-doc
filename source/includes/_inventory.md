@@ -541,6 +541,36 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление Инвентаризации.
 
+### Массовое удаление Инвентаризаций
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Инвентаризаций, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Инвентаризаций. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/inventory/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/inventory/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata",
+            "type": "inventory",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/inventory/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/inventory/metadata",
+            "type": "inventory",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
 ### Метаданные Инвентаризаций 
 #### Метаданные Инвентаризаций 
 Запрос на получение метаданных Инвентаризаций. Результат - объект JSON, включающий в себя:
