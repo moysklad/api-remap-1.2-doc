@@ -49,7 +49,7 @@
 Позиции Возврата поставщику - это список товаров/услуг/модификаций/серий.
 Объект позиции Возврата поставщику содержит следующие поля:
 
-+ **id** - ID товара в формате UUID `Только для чтения`
++ **id** - ID позиции в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **quantity** - Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.
 + **price** - Цена товара/услуги в копейках
@@ -621,11 +621,19 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "4fc7e7e7-41be-11e6-8a84-bae5000000cc",
-                "value": "отломана деталь"
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchasereturn/metadata/attributes/4fc7e124-41be-11e6-8a84-bae5000000cb",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
+                "value": "деталь"
               },
               {
-                "id": "4fc7e124-41be-11e6-8a84-bae5000000cb",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchasereturn/metadata/attributes/4fc7e7e7-41be-11e6-8a84-bae5000000cc",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": false
               }
             ],
@@ -792,7 +800,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4fc7e124-41be-11e6-8a84-bae5000000cb",
-      "name": "Брак продукции",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": false
     },
@@ -803,9 +811,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4fc7e7e7-41be-11e6-8a84-bae5000000cc",
-      "name": "Причина, отличная от брака",
+      "name": "AttributeName2",
       "type": "text",
-      "value": "отломана деталь"
+      "value": "деталь"
     }
   ],
   "vatEnabled": true,
@@ -890,11 +898,19 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "4fc7e7e7-41be-11e6-8a84-bae5000000cc",
-                "value": "отломана деталь"
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchasereturn/metadata/attributes/4fc7e124-41be-11e6-8a84-bae5000000cb",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
+                "value": "деталь"
               },
               {
-                "id": "4fc7e124-41be-11e6-8a84-bae5000000cb",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchasereturn/metadata/attributes/4fc7e7e7-41be-11e6-8a84-bae5000000cc",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": false
               }
             ],
@@ -1053,7 +1069,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4fc7e124-41be-11e6-8a84-bae5000000cb",
-      "name": "Брак продукции",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": false
     },
@@ -1064,9 +1080,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4fc7e7e7-41be-11e6-8a84-bae5000000cc",
-      "name": "Причина, отличная от брака",
+      "name": "AttributeName2",
       "type": "text",
-      "value": "отломана деталь"
+      "value": "деталь"
     }
   ],
   "vatEnabled": true,
@@ -1149,11 +1165,19 @@ curl -X GET
               },
               "attributes": [
                 {
-                  "id": "4fc7e7e7-41be-11e6-8a84-bae5000000cc",
-                  "value": "отломана деталь"
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchasereturn/metadata/attributes/4fc7e124-41be-11e6-8a84-bae5000000cb",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
+                  "value": "деталь"
                 },
                 {
-                  "id": "4fc7e124-41be-11e6-8a84-bae5000000cb",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchasereturn/metadata/attributes/4fc7e7e7-41be-11e6-8a84-bae5000000cc",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": false
                 }
               ],
@@ -1263,7 +1287,11 @@ curl -X GET
               },
               "attributes": [
                 {
-                  "id": "4fc7e124-41be-11e6-8a84-bae5000000cb",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchasereturn/metadata/attributes/4fc7e124-41be-11e6-8a84-bae5000000cb",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": true
                 }
               ],
@@ -1438,7 +1466,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "4fc7e124-41be-11e6-8a84-bae5000000cb",
-        "name": "Брак продукции",
+        "name": "AttributeName1",
         "type": "boolean",
         "value": false
       },
@@ -1449,9 +1477,9 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "4fc7e7e7-41be-11e6-8a84-bae5000000cc",
-        "name": "Причина, отличная от брака",
+        "name": "AttributeName2",
         "type": "text",
-        "value": "отломана деталь"
+        "value": "деталь"
       }
     ],
     "vatEnabled": true,
@@ -1574,7 +1602,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "4fc7e124-41be-11e6-8a84-bae5000000cb",
-        "name": "Брак продукции",
+        "name": "AttributeName1",
         "type": "boolean",
         "value": true
       },
@@ -1585,9 +1613,9 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "4fc7e7e7-41be-11e6-8a84-bae5000000cc",
-        "name": "Причина, отличная от брака",
+        "name": "AttributeName2",
         "type": "text",
-        "value": "отломана деталь"
+        "value": "деталь"
       }
     ],
     "vatEnabled": true,
@@ -1714,7 +1742,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4fc7e124-41be-11e6-8a84-bae5000000cb",
-      "name": "Брак продукции",
+      "name": "AttributeName1",
       "type": "boolean",
       "required": false
     },
@@ -1725,7 +1753,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4fc7e7e7-41be-11e6-8a84-bae5000000cc",
-      "name": "Причина, отличная от брака",
+      "name": "AttributeName2",
       "type": "text",
       "required": false
     }
@@ -1804,7 +1832,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "4fc7e7e7-41be-11e6-8a84-bae5000000cc",
-  "name": "Причина, отличная от брака",
+  "name": "AttributeName1",
   "type": "text",
   "required": false
 }
@@ -2165,7 +2193,11 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "4fc7e124-41be-11e6-8a84-bae5000000cb",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchasereturn/metadata/attributes/4fc7e124-41be-11e6-8a84-bae5000000cb",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": true
               }
             ],
@@ -2345,7 +2377,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4fc7e124-41be-11e6-8a84-bae5000000cb",
-      "name": "Брак продукции",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": true
     },
@@ -2356,9 +2388,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4fc7e7e7-41be-11e6-8a84-bae5000000cc",
-      "name": "Причина, отличная от брака",
+      "name": "AttributeName1",
       "type": "text",
-      "value": "отломана деталь"
+      "value": "деталь"
     }
   ],
   "vatEnabled": true,

@@ -526,15 +526,27 @@ curl -X GET
               "paymentPurpose": "Оплата заказа №0046",
               "attributes": [
                 {
-                  "id": "c57c1f22-3fae-11e6-8a84-bae500000142",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashin/metadata/attributes/c57c1f22-3fae-11e6-8a84-bae500000142",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": 12
                 },
                 {
-                  "id": "c57c2526-3fae-11e6-8a84-bae500000143",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashin/metadata/attributes/c57c2526-3fae-11e6-8a84-bae500000143",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": true
                 },
                 {
-                  "id": "c57c2a5c-3fae-11e6-8a84-bae500000144",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashin/metadata/attributes/c57c2a5c-3fae-11e6-8a84-bae500000144",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": 3.13
                 }
               ]
@@ -669,7 +681,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "c57c1f22-3fae-11e6-8a84-bae500000142",
-        "name": "Карма",
+        "name": "AttributeName1",
         "type": "long",
         "value": 12
       },
@@ -680,7 +692,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "c57c2526-3fae-11e6-8a84-bae500000143",
-        "name": "С основанием",
+        "name": "AttributeName2",
         "type": "boolean",
         "value": true
       },
@@ -691,7 +703,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "c57c2a5c-3fae-11e6-8a84-bae500000144",
-        "name": "Коэффициент",
+        "name": "AttributeName3",
         "type": "double",
         "value": 3.13
       }
@@ -799,7 +811,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c57c1f22-3fae-11e6-8a84-bae500000142",
-      "name": "Карма",
+      "name": "AttributeName1",
       "type": "long",
       "required": false
     },
@@ -810,7 +822,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c57c2526-3fae-11e6-8a84-bae500000143",
-      "name": "С основанием",
+      "name": "AttributeName2",
       "type": "boolean",
       "required": false
     },
@@ -821,7 +833,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c57c2a5c-3fae-11e6-8a84-bae500000144",
-      "name": "Коэффициент",
+      "name": "AttributeName3",
       "type": "double",
       "required": false
     }
@@ -914,7 +926,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "c7f589f9-558a-11e6-8a84-bae50000006f",
-  "name": "Карма",
+  "name": "AttributeName1",
   "type": "long",
   "required": false
 }
@@ -1497,15 +1509,27 @@ curl -X GET
             "paymentPurpose": "Оплата заказа №0046",
             "attributes": [
               {
-                "id": "c57c1f22-3fae-11e6-8a84-bae500000142",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashin/metadata/attributes/c57c1f22-3fae-11e6-8a84-bae500000142",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 12
               },
               {
-                "id": "c57c2526-3fae-11e6-8a84-bae500000143",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashin/metadata/attributes/c57c2526-3fae-11e6-8a84-bae500000143",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": true
               },
               {
-                "id": "c57c2a5c-3fae-11e6-8a84-bae500000144",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/cashin/metadata/attributes/c57c2a5c-3fae-11e6-8a84-bae500000144",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 3.13
               }
             ]
@@ -1584,7 +1608,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c57c1f22-3fae-11e6-8a84-bae500000142",
-      "name": "Карма",
+      "name": "AttributeName1",
       "type": "long",
       "value": 12
     },
@@ -1595,7 +1619,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c57c2526-3fae-11e6-8a84-bae500000143",
-      "name": "С основанием",
+      "name": "AttributeName2",
       "type": "boolean",
       "value": true
     },
@@ -1606,7 +1630,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c57c2a5c-3fae-11e6-8a84-bae500000144",
-      "name": "Коэффициент",
+      "name": "AttributeName3",
       "type": "double",
       "value": 3.13
     }

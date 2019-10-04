@@ -56,7 +56,7 @@
 Позиции Заказа - это список товаров/услуг/модификаций/серий.
 Объект позиции Заказа содержит следующие поля:
 
-+ **id** - ID товара в формате UUID `Только для чтения`
++ **id** - ID позиции в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **quantity** - Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.
 + **price** - Цена товара/услуги в копейках
@@ -413,15 +413,27 @@ curl -X GET
             "deliveryPlannedMoment": "2015-02-15 14:12:19",
             "attributes": [
               {
-                "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a885b1b-3f70-11e6-8a84-bae50000009d",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "Черный"
               },
               {
-                "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a88619c-3f70-11e6-8a84-bae50000009e",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 0.4
               },
               {
-                "id": "6a886744-3f70-11e6-8a84-bae50000009f",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a886744-3f70-11e6-8a84-bae50000009f",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": true
               }
             ]
@@ -538,7 +550,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
-      "name": "Причина",
+      "name": "AttributeName1",
       "type": "string",
       "value": "Черный"
     },
@@ -549,7 +561,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
-      "name": "Коэффициент",
+      "name": "AttributeName2",
       "type": "double",
       "value": 0.4
     },
@@ -560,7 +572,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a886744-3f70-11e6-8a84-bae50000009f",
-      "name": "Кек?",
+      "name": "AttributeName3",
       "type": "boolean",
       "value": true
     }
@@ -653,15 +665,27 @@ curl -X GET
             "deliveryPlannedMoment": "2015-02-15 14:12:19",
             "attributes": [
               {
-                "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a885b1b-3f70-11e6-8a84-bae50000009d",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "Черный"
               },
               {
-                "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a88619c-3f70-11e6-8a84-bae50000009e",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 0.4
               },
               {
-                "id": "6a886744-3f70-11e6-8a84-bae50000009f",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a886744-3f70-11e6-8a84-bae50000009f",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": true
               }
             ],
@@ -824,7 +848,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
-      "name": "Причина",
+      "name": "AttributeName1",
       "type": "string",
       "value": "Черный"
     },
@@ -835,7 +859,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
-      "name": "Коэффициент",
+      "name": "AttributeName2",
       "type": "double",
       "value": 0.4
     },
@@ -846,7 +870,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a886744-3f70-11e6-8a84-bae50000009f",
-      "name": "Кек?",
+      "name": "AttributeName3",
       "type": "boolean",
       "value": true
     }
@@ -945,15 +969,27 @@ curl -X GET
               "deliveryPlannedMoment": "2015-02-15 14:12:19",
               "attributes": [
                 {
-                  "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a885b1b-3f70-11e6-8a84-bae50000009d",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": "Черный"
                 },
                 {
-                  "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a88619c-3f70-11e6-8a84-bae50000009e",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": 0.4
                 },
                 {
-                  "id": "6a886744-3f70-11e6-8a84-bae50000009f",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a886744-3f70-11e6-8a84-bae50000009f",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": true
                 }
               ]
@@ -1008,15 +1044,27 @@ curl -X GET
               },
               "attributes": [
                 {
-                  "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
-                  "value": "Я все еще пишу для вас документацию"
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a885b1b-3f70-11e6-8a84-bae50000009d",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
+                  "value": "AttributeValue1"
                 },
                 {
-                  "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a88619c-3f70-11e6-8a84-bae50000009e",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": 0.99
                 },
                 {
-                  "id": "6a886744-3f70-11e6-8a84-bae50000009f",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a886744-3f70-11e6-8a84-bae50000009f",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": true
                 }
               ],
@@ -1139,9 +1187,9 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
-        "name": "Причина",
+        "name": "AttributeName1",
         "type": "string",
-        "value": "Черный"
+        "value": "AttributeValue1"
       },
       {
         "meta": {
@@ -1150,7 +1198,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
-        "name": "Коэффициент",
+        "name": "AttributeName2",
         "type": "double",
         "value": 0.4
       },
@@ -1161,7 +1209,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "6a886744-3f70-11e6-8a84-bae50000009f",
-        "name": "Кек?",
+        "name": "AttributeName1",
         "type": "boolean",
         "value": true
       }
@@ -1290,9 +1338,9 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
-        "name": "Причина",
+        "name": "AttributeName1",
         "type": "string",
-        "value": "Я все еще пишу для вас документацию"
+        "value": "AttributeValue1"
       },
       {
         "meta": {
@@ -1301,7 +1349,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
-        "name": "Коэффициент",
+        "name": "AttributeName2",
         "type": "double",
         "value": 0.99
       },
@@ -1312,7 +1360,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "6a886744-3f70-11e6-8a84-bae50000009f",
-        "name": "Кек?",
+        "name": "AttributeName3",
         "type": "boolean",
         "value": true
       }
@@ -1437,7 +1485,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
-      "name": "Причина",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     },
@@ -1448,7 +1496,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
-      "name": "Коэффициент",
+      "name": "AttributeName2",
       "type": "double",
       "required": false
     },
@@ -1459,7 +1507,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a886744-3f70-11e6-8a84-bae50000009f",
-      "name": "Кек?",
+      "name": "AttributeName3",
       "type": "boolean",
       "required": false
     }
@@ -1512,7 +1560,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
-  "name": "Коэффициент",
+  "name": "AttributeName3",
   "type": "double",
   "required": false
 }
@@ -2096,15 +2144,27 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
-                "value": "Я все еще пишу для вас документацию"
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a885b1b-3f70-11e6-8a84-bae50000009d",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
+                "value": "AttributeValue1"
               },
               {
-                "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a88619c-3f70-11e6-8a84-bae50000009e",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 0.99
               },
               {
-                "id": "6a886744-3f70-11e6-8a84-bae50000009f",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/6a886744-3f70-11e6-8a84-bae50000009f",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": true
               }
             ],
@@ -2224,9 +2284,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a885b1b-3f70-11e6-8a84-bae50000009d",
-      "name": "Причина",
+      "name": "AttributeName1",
       "type": "string",
-      "value": "Я все еще пишу для вас документацию"
+      "value": "AttributeValue1"
     },
     {
       "meta": {
@@ -2235,7 +2295,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a88619c-3f70-11e6-8a84-bae50000009e",
-      "name": "Коэффициент",
+      "name": "AttributeName2",
       "type": "double",
       "value": 0.99
     },
@@ -2246,7 +2306,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "6a886744-3f70-11e6-8a84-bae50000009f",
-      "name": "Кек?",
+      "name": "AttributeName3",
       "type": "boolean",
       "value": true
     }

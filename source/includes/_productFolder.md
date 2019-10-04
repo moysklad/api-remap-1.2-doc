@@ -26,6 +26,7 @@
 + **effectiveVat** - Реальный НДС % `Только для чтения`
 + **productFolder** - Ссылка на Группу товаров данной Группы товаров в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **taxSystem** - Код системы налогообложения
+  + **TAX_SYSTEM_SAME_AS_GROUP** - Совпадает с группой
   + **GENERAL_TAX_SYSTEM** - ОСН
   + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
   + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход

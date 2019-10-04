@@ -41,6 +41,7 @@
   + **COMPOUND_PAYMENT_ITEM** - Составной предмет расчета
   + **ANOTHER_PAYMENT_ITEM** - Иной предмет расчета
 + **taxSystem** - Код системы налогообложения
+  + **TAX_SYSTEM_SAME_AS_GROUP** - Совпадает с группой
   + **GENERAL_TAX_SYSTEM** - ОСН
   + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
   + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
@@ -799,12 +800,20 @@ curl -X GET
             ],            
             "attributes": [
               {
-                "id": "0c2e54cd-2c80-11e6-8a84-bae50000009c",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "name": "Экспорт",
                 "value": true
               },
               {
-                "id": "0c2e5dc5-2c80-11e6-8a84-bae50000009d",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "name": "Изготовитель",
                 "value": "ООО Компания"
               }
@@ -1891,12 +1900,20 @@ curl -X GET
              ],             
              "attributes": [
                {
-                 "id": "0c2e54cd-2c80-11e6-8a84-bae50000009c",
+                 "meta": {
+                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
+                   "type": "attributemetadata",
+                   "mediaType": "application/json"
+                 },
                  "name": "Экспорт",
                  "value": true
                },
                {
-                 "id": "0c2e5dc5-2c80-11e6-8a84-bae50000009d",
+                 "meta": {
+                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
+                   "type": "attributemetadata",
+                   "mediaType": "application/json"
+                 },
                  "name": "Изготовитель",
                  "value": "ООО Компания отдел доставки"
                }

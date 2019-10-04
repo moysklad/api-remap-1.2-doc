@@ -1132,7 +1132,7 @@ curl -X GET
   "attributes": [
     {
       "id": "5290a290-0313-11e6-9464-e4de00000020",
-      "name": "attribute_name",
+      "name": "AttributeName1",
       "type": "boolean",
       "required": false
     }
@@ -1198,7 +1198,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "5290a290-0313-11e6-9464-e4de00000020",
-  "name": "attribute_name",
+  "name": "AttributeName1",
   "type": "boolean",
   "required": false
 }
@@ -1311,12 +1311,12 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "25b6f76c-12d5-11e6-9464-e4de00000068",
-      "name": "Отметка о заключении",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": false
     }
@@ -1476,7 +1476,11 @@ curl -X GET
             "description": "Новый договор",
             "attributes": [
               {
-                "id": "25b6f76c-12d5-11e6-9464-e4de00000068",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": false
               }
             ]
@@ -1541,12 +1545,12 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/contract/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "25b6f76c-12d5-11e6-9464-e4de00000068",
-      "name": "Отметка о заключении",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": false
     }

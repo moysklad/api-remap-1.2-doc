@@ -54,7 +54,7 @@
 Позиции Счета - это список товаров/услуг/модификаций/серий.
 Объект позиции Счета содержит следующие поля:
 
-+ **id** - ID товара в формате UUID `Только для чтения`
++ **id** - ID позиции в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **quantity** - Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.
 + **price** - Цена товара/услуги в копейках
@@ -667,11 +667,19 @@ curl -X GET
             "incomingDate": "2016-06-17 10:52:24",
             "attributes": [
               {
-                "id": "e97c5ea8-3f52-11e6-8a84-bae50000006f",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoicein/metadata/attributes/e97c5ea8-3f52-11e6-8a84-bae50000006f",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 5
               },
               {
-                "id": "48c7b9af-3f55-11e6-8a84-bae500000076",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoicein/metadata/attributes/48c7b9af-3f55-11e6-8a84-bae500000076",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": true
               }
             ]
@@ -772,7 +780,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "e97c5ea8-3f52-11e6-8a84-bae50000006f",
-      "name": "Карма",
+      "name": "AttributeName1",
       "type": "long",
       "value": 5
     },
@@ -783,7 +791,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "48c7b9af-3f55-11e6-8a84-bae500000076",
-      "name": "По акции",
+      "name": "AttributeName2",
       "type": "boolean",
       "value": true
     }
@@ -1404,7 +1412,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "e97c5ea8-3f52-11e6-8a84-bae50000006f",
-      "name": "Карма",
+      "name": "AttributeName1",
       "type": "long",
       "required": false
     }
@@ -1442,7 +1450,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "48c7b9af-3f55-11e6-8a84-bae500000076",
-  "name": "По акции",
+  "name": "AttributeName1",
   "type": "boolean",
   "required": false
 }
@@ -2127,11 +2135,19 @@ curl -X GET
             "positions": [],
             "attributes": [
               {
-                "id": "e97c5ea8-3f52-11e6-8a84-bae50000006f",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoicein/metadata/attributes/e97c5ea8-3f52-11e6-8a84-bae50000006f",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 1
               },
               {
-                "id": "48c7b9af-3f55-11e6-8a84-bae500000076",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoicein/metadata/attributes/48c7b9af-3f55-11e6-8a84-bae500000076",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": false
               }
             ],
@@ -2237,7 +2253,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "e97c5ea8-3f52-11e6-8a84-bae50000006f",
-      "name": "Карма",
+      "name": "AttributeName1",
       "type": "long",
       "value": 1
     },
@@ -2248,7 +2264,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "48c7b9af-3f55-11e6-8a84-bae500000076",
-      "name": "По акции",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": false
     }
@@ -2353,11 +2369,19 @@ curl -X GET
             ],
             "attributes": [
               {
-                "id": "e97c5ea8-3f52-11e6-8a84-bae50000006f",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoicein/metadata/attributes/e97c5ea8-3f52-11e6-8a84-bae50000006f",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 1
               },
               {
-                "id": "48c7b9af-3f55-11e6-8a84-bae500000076",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoicein/metadata/attributes/48c7b9af-3f55-11e6-8a84-bae500000076",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": false
               }
             ],
@@ -2462,7 +2486,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "e97c5ea8-3f52-11e6-8a84-bae50000006f",
-      "name": "Карма",
+      "name": "AttributeName1",
       "type": "long",
       "value": 1
     },
@@ -2473,7 +2497,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "48c7b9af-3f55-11e6-8a84-bae500000076",
-      "name": "По акции",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": false
     }

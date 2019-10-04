@@ -55,7 +55,7 @@
 Позиции Розничного возврата - это список товаров/услуг/модификаций/серий.
 Объект позиции Розничного возврата содержит следующие поля:
 
-+ **id** - ID товара в формате UUID `Только для чтения`
++ **id** - ID позиции в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **quantity** - Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.
 + **price** - Цена товара/услуги в копейках
@@ -496,11 +496,19 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "c72ffba9-1380-11e6-9464-e4de00000232",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": false
               },
               {
-                "id": "c72ff31e-1380-11e6-9464-e4de00000231",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "3325-4214-42145-4211"
               }
             ]
@@ -585,23 +593,23 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "c72ff31e-1380-11e6-9464-e4de00000231",
-      "name": "Номер карты",
+      "name": "AttributeName1",
       "type": "string",
       "value": "3325-4214-42145-4211"
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "c72ffba9-1380-11e6-9464-e4de00000232",
-      "name": "Возврат на карту",
+      "name": "AttributeName1",
       "type": "boolean",
       "value": false
     }
@@ -714,11 +722,19 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "c72ffba9-1380-11e6-9464-e4de00000232",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": false
               },
               {
-                "id": "c72ff31e-1380-11e6-9464-e4de00000231",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "3325-4214-42145-4211"
               }
             ],
@@ -833,23 +849,23 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "c72ff31e-1380-11e6-9464-e4de00000231",
-      "name": "Номер карты",
+      "name": "AttributeName1",
       "type": "string",
       "value": "3325-4214-42145-4211"
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "c72ffba9-1380-11e6-9464-e4de00000232",
-      "name": "Возврат на карту",
+      "name": "AttributeName2",
       "type": "boolean",
       "value": false
     }
@@ -954,11 +970,19 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "c72ffba9-1380-11e6-9464-e4de00000232",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": false
               },
               {
-                "id": "c72ff31e-1380-11e6-9464-e4de00000231",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "3325-4214-42145-4211"
               }
             ],
@@ -1077,23 +1101,23 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "c72ff31e-1380-11e6-9464-e4de00000231",
-      "name": "Номер карты",
+      "name": "AttributeName1",
       "type": "string",
       "value": "3325-4214-42145-4211"
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "c72ffba9-1380-11e6-9464-e4de00000232",
-      "name": "Возврат на карту",
+      "name": "AttributeName2",
       "type": "boolean",
       "value": false
     }
@@ -1447,23 +1471,23 @@ curl -X GET
     "attributes": [
       {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
           "type": "attributemetadata",
           "mediaType": "application/json"
         },
         "id": "c72ff31e-1380-11e6-9464-e4de00000231",
-        "name": "Номер карты",
+        "name": "AttributeName1",
         "type": "string",
         "value": "3325-4214-42145-4211"
       },
       {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
           "type": "attributemetadata",
           "mediaType": "application/json"
         },
         "id": "c72ffba9-1380-11e6-9464-e4de00000232",
-        "name": "Возврат на карту",
+        "name": "AttributeName2",
         "type": "boolean",
         "value": false
       }
@@ -1556,14 +1580,24 @@ curl -X GET
   },
   "attributes": [
     {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/c72ff31e-1380-11e6-9464-e4de00000231",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
       "id": "c72ff31e-1380-11e6-9464-e4de00000231",
-      "name": "Номер карты",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     },
     {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/c72ffba9-1380-11e6-9464-e4de00000232",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
       "id": "c72ffba9-1380-11e6-9464-e4de00000232",
-      "name": "Возврат на карту",
+      "name": "AttributeName2",
       "type": "boolean",
       "required": false
     }
@@ -1694,7 +1728,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "9b0c8d28-558c-11e6-8a84-bae50000008a",
-  "name": "Дата возвращенного документа",
+  "name": "AttributeName1",
   "type": "time",
   "required": false
 }
@@ -2247,23 +2281,23 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "c72ff31e-1380-11e6-9464-e4de00000231",
-      "name": "Номер карты",
+      "name": "AttributeName1",
       "type": "string",
       "value": "3325-4214-42145-4211"
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "c72ffba9-1380-11e6-9464-e4de00000232",
-      "name": "Возврат на карту",
+      "name": "AttributeName2",
       "type": "boolean",
       "value": false
     }

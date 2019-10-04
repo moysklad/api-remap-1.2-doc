@@ -52,7 +52,7 @@
 Позиции Счета - это список товаров/услуг/модификаций/серий.
 Объект позиции Счета содержит следующие поля:
 
-+ **id** - ID товара в формате UUID `Только для чтения`
++ **id** - ID позиции в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **quantity** - Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.
 + **price** - Цена товара/услуги в копейках
@@ -779,7 +779,11 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "51d191f4-0887-11e6-9464-e4de00000079",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "значение доп поля"
               }
             ]
@@ -876,12 +880,12 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "51d191f4-0887-11e6-9464-e4de00000079",
-      "name": "Атрибут счета",
+      "name": "AttributeName1",
       "type": "string",
       "value": "значение доп поля"
     }
@@ -1439,7 +1443,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "51d191f4-0887-11e6-9464-e4de00000079",
-      "name": "Атрибут счета",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     }
@@ -1477,7 +1481,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "d91965f1-558b-11e6-8a84-bae500000087",
-  "name": "Процент прибыли",
+  "name": "AttributeName1",
   "type": "double",
   "required": false
 }
@@ -2049,7 +2053,11 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "51d191f4-0887-11e6-9464-e4de00000079",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "new_val"
               }
             ]
@@ -2146,12 +2154,12 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "51d191f4-0887-11e6-9464-e4de00000079",
-      "name": "Атрибут счета",
+      "name": "AttributeName1",
       "type": "string",
       "value": "new_val"
     }
@@ -2197,7 +2205,11 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "51d191f4-0887-11e6-9464-e4de00000079",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "new_val_again"
               }
             ],
@@ -2299,12 +2311,12 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "51d191f4-0887-11e6-9464-e4de00000079",
-      "name": "Атрибут счета",
+      "name": "AttributeName1",
       "type": "string",
       "value": "new_val_again"
     }

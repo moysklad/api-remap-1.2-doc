@@ -32,7 +32,7 @@
 Позиции Инвентаризации - это список товаров/модификаций/серий.
 Объект позиции Инвентаризации содержит следующие поля:
 
-+ **id** - ID товара в формате UUID `Только для чтения`
++ **id** - ID позиции в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **quantity** - Фактическое количество товаров/модификаций/серий.
 + **price** - Цена товара в копейках
@@ -577,7 +577,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "1f7dbb1b-ad6e-11e6-8a84-bc52000000eb",
-      "name": "доп.поле1",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     },
@@ -588,7 +588,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "1f7dc230-ad6e-11e6-8a84-bc52000000ec",
-      "name": "доп.поле2",
+      "name": "AttributeName2",
       "type": "long",
       "required": false
     }
@@ -626,7 +626,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "1f7dbb1b-ad6e-11e6-8a84-bc52000000eb",
-  "name": "доп.поле1",
+  "name": "AttributeName1",
   "type": "string",
   "required": false
 }
@@ -923,8 +923,7 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "1f7dbb1b-ad6e-11e6-8a84-bc52000000eb",
-                "name": "доп.поле1",
+                "name": "AttributeName1",
                 "type": "string",
                 "value": "text"
               },
@@ -934,8 +933,7 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "1f7dc230-ad6e-11e6-8a84-bc52000000ec",
-                "name": "доп.поле2",
+                "name": "AttributeName2",
                 "type": "long",
                 "value": 42
               }
@@ -1002,7 +1000,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "1f7dbb1b-ad6e-11e6-8a84-bc52000000eb",
-      "name": "доп.поле1",
+      "name": "AttributeName1",
       "type": "string",
       "value": "text"
     },
@@ -1013,7 +1011,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "1f7dc230-ad6e-11e6-8a84-bc52000000ec",
-      "name": "доп.поле2",
+      "name": "AttributeName2",
       "type": "long",
       "value": 42
     }

@@ -41,7 +41,7 @@
 Позиции Перемещения - это список товаров/услуг/модификаций/серий.
 Объект позиции Перемещения содержит следующие поля:
 
-+ **id** - ID товара в формате UUID `Только для чтения`
++ **id** - ID позиции в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **quantity** - Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.
 + **price** - Цена товара/услуги в копейках
@@ -505,8 +505,6 @@ curl -X GET
                     "type": "attributemetadata",
                     "mediaType": "application/json"
                   },
-                  "id": "954d6ab9-4f67-11e6-8a84-bae5000000bc",
-                  "name": "Кол-во машин",
                   "value": 43
                 }
               ],
@@ -673,7 +671,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "954d62cc-4f67-11e6-8a84-bae5000000bb",
-        "name": "Запрос от",
+        "name": "AttributeName1",
         "type": "time",
         "value": "2016-07-21 20:28:53"
       },
@@ -684,7 +682,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "954d6ab9-4f67-11e6-8a84-bae5000000bc",
-        "name": "Кол-во машин",
+        "name": "AttributeName2",
         "type": "long",
         "value": 43
       }
@@ -1032,7 +1030,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "954d62cc-4f67-11e6-8a84-bae5000000bb",
-      "name": "Запрос от",
+      "name": "AttributeName1",
       "type": "time",
       "required": false
     },
@@ -1043,7 +1041,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "954d6ab9-4f67-11e6-8a84-bae5000000bc",
-      "name": "Кол-во машин",
+      "name": "AttributeName2",
       "type": "long",
       "required": false
     }
@@ -1096,7 +1094,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "954d6ab9-4f67-11e6-8a84-bae5000000bc",
-  "name": "Кол-во машин",
+  "name": "AttributeName1",
   "type": "long",
   "required": false
 }
@@ -1283,8 +1281,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "954d6ab9-4f67-11e6-8a84-bae5000000bc",
-                "name": "Кол-во машин",
                 "value": 43
               }
             ],
@@ -1363,7 +1359,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "954d62cc-4f67-11e6-8a84-bae5000000bb",
-      "name": "Запрос от",
+      "name": "AttributeName1",
       "type": "time",
       "value": "2016-07-21 20:28:53"
     },
@@ -1374,7 +1370,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "954d6ab9-4f67-11e6-8a84-bae5000000bc",
-      "name": "Кол-во машин",
+      "name": "AttributeName2",
       "type": "long",
       "value": 43
     }

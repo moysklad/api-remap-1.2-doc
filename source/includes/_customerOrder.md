@@ -59,7 +59,7 @@
 Позиции Заказа - это список товаров/услуг/модификаций/серий.
 Объект позиции Заказа содержит следующие поля:
 
-+ **id** - ID товара в формате UUID `Только для чтения`
++ **id** - ID позиции в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **quantity** - Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.
 + **price** - Цена товара/услуги в копейках
@@ -235,12 +235,12 @@ curl -X GET
       "attributes": [
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
             "type": "attributemetadata",
             "mediaType": "application/json"
           },
           "id": "c2ecd338-015e-11e6-9464-e4de0000008f",
-          "name": "Атрибут заказа",
+          "name": "AttributeName1",
           "type": "string",
           "value": "1251252"
         }
@@ -601,7 +601,11 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "c2ecd338-015e-11e6-9464-e4de0000008f",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "Атрибут заказа",
               }
             ]
@@ -697,12 +701,12 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "c2ecd338-015e-11e6-9464-e4de0000008f",
-      "name": "Атрибут заказа",
+      "name": "AttributeName1",
       "type": "string",
       "value": "Атрибут заказа",
     }
@@ -1301,9 +1305,13 @@ curl -X GET
   },
   "attributes": [
     {
-      "id": "c2ecd338-015e-11e6-9464-e4de0000008f",
-      "name": "Атрибут заказа",
-      "type": "string",
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/attributes/c2ecd338-015e-11e6-9464-e4de0000008f",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "name": "AttributeName1",
+      "type": "boolean",
       "required": false
     }
   ],
@@ -1432,8 +1440,8 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "57ab884e-558b-11e6-8a84-bae500000078",
-  "name": "Товар по акции",
-  "type": "productfolder",
+  "name": "AttributeName1",
+  "type": "boolean",
   "required": false
 }
 ```
@@ -1558,11 +1566,17 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "attributes": {
+  "attributes": [{
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/attributes/c2ecd338-015e-11e6-9464-e4de0000008f",
+      "type": "attributemetadata",
+      "mediaType": "application/json"
+    },
     "id": "c2ecd338-015e-11e6-9464-e4de0000008f",
-    "name": "Атрибут заказа",
+    "name": "AttributeName1",
+    "type": "long",
     "value": "1251252"
-  },
+  }],
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/34efe2ee-015e-11e6-9464-e4de0000006b/positions",
@@ -1786,7 +1800,11 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "c2ecd338-015e-11e6-9464-e4de0000008f",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "Обновленный Атрибут заказа",
               }
             ]
@@ -1883,14 +1901,14 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
       "id": "c2ecd338-015e-11e6-9464-e4de0000008f",
-      "name": "Атрибут заказа",
+      "name": "AttributeName1",
       "type": "string",
-      "value": "Обновленный Атрибут заказа",
+      "value": "Обновленный Атрибут заказа"
     }
   ],
   "created": "2007-02-07 17:16:41",

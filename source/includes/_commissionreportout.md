@@ -53,7 +53,7 @@
 Позиции выданного отчета комиссионера - это список товаров/услуг/модификаций/серий.
 Объект позиции выданного отчета комиссионера содержит следующие поля:
 
-+ **id** - ID товара в формате UUID `Только для чтения`
++ **id** - ID позиции в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **quantity** - Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.
 + **price** - Цена товара/услуги в копейках
@@ -445,7 +445,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "4930a123-acda-11e6-8a84-bae50000006d",
                 "value": "value"
               },
               {
@@ -454,7 +453,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
                 "value": "values"
               }
             ],
@@ -561,7 +559,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4930a123-acda-11e6-8a84-bae50000006d",
-      "name": "Поле1",
+      "name": "AttributeName1",
       "type": "string",
       "value": "value"
     },
@@ -572,7 +570,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
-      "name": "Поле2",
+      "name": "AttributeName2",
       "type": "string",
       "value": "values"
     }
@@ -730,7 +728,6 @@ curl -X GET
                     "type": "attributemetadata",
                     "mediaType": "application/json"
                   },
-                  "id": "4930a123-acda-11e6-8a84-bae50000006d",
                   "value": "value"
                 },
                 {
@@ -739,7 +736,6 @@ curl -X GET
                     "type": "attributemetadata",
                     "mediaType": "application/json"
                   },
-                  "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
                   "value": "values"
                 }
               ],
@@ -838,7 +834,6 @@ curl -X GET
                     "type": "attributemetadata",
                     "mediaType": "application/json"
                   },
-                  "id": "4930a123-acda-11e6-8a84-bae50000006d",
                   "value": "Newvalue"
                 }
               ],
@@ -947,7 +942,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "4930a123-acda-11e6-8a84-bae50000006d",
-        "name": "Поле1",
+        "name": "AttributeName1",
         "type": "string",
         "value": "value"
       },
@@ -958,7 +953,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
-        "name": "Поле2",
+        "name": "AttributeName2",
         "type": "string",
         "value": "values"
       }
@@ -1079,7 +1074,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "4930a123-acda-11e6-8a84-bae50000006d",
-        "name": "Поле1",
+        "name": "AttributeName3",
         "type": "string",
         "value": "Newvalue"
       },
@@ -1090,7 +1085,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
-        "name": "Поле2",
+        "name": "AttributeName2",
         "type": "string",
         "value": "values"
       }
@@ -1197,7 +1192,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4930a123-acda-11e6-8a84-bae50000006d",
-      "name": "Поле1",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     },
@@ -1208,7 +1203,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
-      "name": "Поле2",
+      "name": "AttributeName2",
       "type": "string",
       "required": false
     }
@@ -1261,7 +1256,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "4930a123-acda-11e6-8a84-bae50000006d",
-  "name": "Поле1",
+  "name": "AttributeName1",
   "type": "string",
   "required": false
 }
@@ -1498,7 +1493,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "4930a123-acda-11e6-8a84-bae50000006d",
                 "value": "Newvalue"
               }
             ],
@@ -1613,7 +1607,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4930a123-acda-11e6-8a84-bae50000006d",
-      "name": "Поле1",
+      "name": "AttributeName1",
       "type": "string",
       "value": "Newvalue"
     },
@@ -1624,7 +1618,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4930a9c5-acda-11e6-8a84-bae50000006e",
-      "name": "Поле2",
+      "name": "AttributeName2",
       "type": "string",
       "value": "values"
     }

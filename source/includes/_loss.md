@@ -40,7 +40,7 @@
 Позиции Списания - это список товаров/услуг/модификаций/серий.
 Объект позиции Списания содержит следующие поля:
 
-+ **id** - ID товара в формате UUID `Только для чтения`
++ **id** - ID позиции в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **quantity** - Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.
 + **price** - Цена товара/услуги в копейках
@@ -181,7 +181,7 @@ curl -X GET
             "mediaType": "application/json"
           },
           "id": "d0912ad5-4f3d-11e6-8a84-bae500000082",
-          "name": "Процент",
+          "name": "AttributeName1",
           "type": "double",
           "value": 0.2
         }
@@ -263,7 +263,7 @@ curl -X GET
             "mediaType": "application/json"
           },
           "id": "d0912ad5-4f3d-11e6-8a84-bae500000082",
-          "name": "Процент",
+          "name": "AttributeName1",
           "type": "double",
           "value": 45.2
         }
@@ -790,7 +790,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "d0911efc-4f3d-11e6-8a84-bae500000081",
-      "name": "Строковое поле",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     },
@@ -801,7 +801,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "d0912ad5-4f3d-11e6-8a84-bae500000082",
-      "name": "Процент",
+      "name": "AttributeName2",
       "type": "double",
       "required": true
     }
@@ -839,7 +839,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "d0912ad5-4f3d-11e6-8a84-bae500000082",
-  "name": "Процент",
+  "name": "AttributeName1",
   "type": "double",
   "required": true
 }
@@ -1116,7 +1116,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "d0912ad5-4f3d-11e6-8a84-bae500000082",
-      "name": "Процент",
+      "name": "AttributeName1",
       "type": "double",
       "value": 0.2
     }
@@ -1314,8 +1314,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "d0912ad5-4f3d-11e6-8a84-bae500000082",
-                "name": "Процент",
                 "value": 0.7643
               },
               {
@@ -1324,8 +1322,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "d0911efc-4f3d-11e6-8a84-bae500000081",
-                "name": "Строковое поле",
                 "value": "Строковое значение"
               }
             ]
@@ -1402,7 +1398,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "d0911efc-4f3d-11e6-8a84-bae500000081",
-      "name": "Строковое поле",
+      "name": "AttributeName1",
       "type": "string",
       "value": "Строковое значение"
     },
@@ -1413,7 +1409,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "d0912ad5-4f3d-11e6-8a84-bae500000082",
-      "name": "Процент",
+      "name": "AttributeName2",
       "type": "double",
       "value": 0.7643
     }

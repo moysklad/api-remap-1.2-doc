@@ -38,7 +38,7 @@
 Позиции Прайс-листа - это список товаров/услуг/модификаций.
 Объект позиции Прайс-листа содержит следующие поля:
 
-+ **id** - ID товара в формате UUID `Только для чтения`
++ **id** - ID позиции в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **assortment** - Ссылка на товар/услугу/модификацию, которую представляет собой позиция, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **pack** - Упаковка товара
@@ -476,9 +476,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "666f86f9-afec-11e6-8af5-581e00000087",
-                "name": "доп строка",
-                "type": "string",
                 "value": "значение"
               },
               {
@@ -487,9 +484,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "666ffdb9-afec-11e6-8af5-581e00000088",
-                "name": "доп число",
-                "type": "long",
                 "value": 1
               }
             ],
@@ -553,7 +547,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "666f86f9-afec-11e6-8af5-581e00000087",
-      "name": "доп строка",
+      "name": "AttributeName1",
       "type": "string",
       "value": "значение"
     },
@@ -564,7 +558,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "666ffdb9-afec-11e6-8af5-581e00000088",
-      "name": "доп число",
+      "name": "AttributeName2",
       "type": "long",
       "value": 1
     }
@@ -972,7 +966,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "666f86f9-afec-11e6-8af5-581e00000087",
-      "name": "доп строка",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     },
@@ -983,7 +977,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "666ffdb9-afec-11e6-8af5-581e00000088",
-      "name": "доп число",
+      "name": "AttributeName2",
       "type": "long",
       "required": false
     }
@@ -1020,7 +1014,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "666f86f9-afec-11e6-8af5-581e00000087",
-  "name": "доп строка",
+  "name": "AttributeName1",
   "type": "string",
   "required": false
 }
@@ -1273,9 +1267,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "666f86f9-afec-11e6-8af5-581e00000087",
-                "name": "доп строка",
-                "type": "string",
                 "value": "новое значение"
               },
               {
@@ -1284,9 +1275,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "666ffdb9-afec-11e6-8af5-581e00000088",
-                "name": "доп число",
-                "type": "long",
                 "value": 2
               }
             ]
@@ -1344,7 +1332,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "666f86f9-afec-11e6-8af5-581e00000087",
-      "name": "доп строка",
+      "name": "AttributeName1",
       "type": "string",
       "value": "новое значение"
     },
@@ -1355,7 +1343,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "666ffdb9-afec-11e6-8af5-581e00000088",
-      "name": "доп число",
+      "name": "AttributeName2",
       "type": "long",
       "value": 2
     }
@@ -1499,7 +1487,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "666f86f9-afec-11e6-8af5-581e00000087",
-      "name": "доп строка",
+      "name": "AttributeName1",
       "type": "string",
       "value": "новое значение"
     },
@@ -1510,7 +1498,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "666ffdb9-afec-11e6-8af5-581e00000088",
-      "name": "доп число",
+      "name": "AttributeName2",
       "type": "long",
       "value": 2
     }

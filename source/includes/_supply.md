@@ -56,7 +56,7 @@
 Позиции Приемки - это список товаров/услуг/модификаций/серий.
 Объект позиции Приемки содержит следующие поля:
 
-+ **id** - ID товара в формате UUID `Только для чтения`
++ **id** - ID позиции в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **quantity** - Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.
 + **price** - Цена товара/услуги в копейках
@@ -645,15 +645,27 @@ curl -X GET
             "incomingDate": "2012-12-12 12:12:12",
             "attributes": [
               {
-                "id": "a31685ae-3f62-11e6-8a84-bae50000007b",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/supply/metadata/attributes/a31685ae-3f62-11e6-8a84-bae50000007b",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "2017-02-22 02:12:53"
               },
               {
-                "id": "c16fd9aa-3f62-11e6-8a84-bae50000007e",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/supply/metadata/attributes/c16fd9aa-3f62-11e6-8a84-bae50000007e",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 47
               },
               {
-                "id": "c16fe013-3f62-11e6-8a84-bae50000007f",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/supply/metadata/attributes/c16fe013-3f62-11e6-8a84-bae50000007f",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "Пример удачной сделки"
               }
             ]
@@ -761,7 +773,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "a31685ae-3f62-11e6-8a84-bae50000007b",
-      "name": "Доп. дата",
+      "name": "AttributeName1",
       "type": "time",
       "value": "2017-02-22 02:12:53"
     },
@@ -772,7 +784,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c16fd9aa-3f62-11e6-8a84-bae50000007e",
-      "name": "Повторить",
+      "name": "AttributeName2",
       "type": "long",
       "value": 47
     },
@@ -783,7 +795,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c16fe013-3f62-11e6-8a84-bae50000007f",
-      "name": "Комментарий начальства",
+      "name": "AttributeName3",
       "type": "text",
       "value": "Пример удачной сделки"
     }
@@ -869,15 +881,27 @@ curl -X GET
             "incomingDate": "2012-12-12 12:12:12",
             "attributes": [
               {
-                "id": "a31685ae-3f62-11e6-8a84-bae50000007b",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/supply/metadata/attributes/a31685ae-3f62-11e6-8a84-bae50000007b",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "2017-02-22 02:12:53"
               },
               {
-                "id": "c16fd9aa-3f62-11e6-8a84-bae50000007e",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/supply/metadata/attributes/c16fd9aa-3f62-11e6-8a84-bae50000007e",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": 47
               },
               {
-                "id": "c16fe013-3f62-11e6-8a84-bae50000007f",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/supply/metadata/attributes/c16fe013-3f62-11e6-8a84-bae50000007f",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "Пример удачной сделки"
               }
             ],
@@ -1018,7 +1042,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "a31685ae-3f62-11e6-8a84-bae50000007b",
-      "name": "Доп. дата",
+      "name": "AttributeName1",
       "type": "time",
       "value": "2017-02-22 02:12:53"
     },
@@ -1029,7 +1053,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c16fd9aa-3f62-11e6-8a84-bae50000007e",
-      "name": "Повторить",
+      "name": "AttributeName2",
       "type": "long",
       "value": 47
     },
@@ -1040,7 +1064,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c16fe013-3f62-11e6-8a84-bae50000007f",
-      "name": "Комментарий начальства",
+      "name": "AttributeName3",
       "type": "text",
       "value": "Пример удачной сделки"
     }
@@ -1196,11 +1220,19 @@ curl -X GET
               "incomingDate": "2012-12-12 12:12:12",
               "attributes": [
                 {
-                  "id": "a31685ae-3f62-11e6-8a84-bae50000007b",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/supply/metadata/attributes/a31685ae-3f62-11e6-8a84-bae50000007b",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": "2082-02-22 02:12:53"
                 },
                 {
-                  "id": "c16fe013-3f62-11e6-8a84-bae50000007f",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/supply/metadata/attributes/c16fd9aa-3f62-11e6-8a84-bae50000007e",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": "Пример крайне удачной сделки"
                 }
               ],
@@ -1446,7 +1478,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "a31685ae-3f62-11e6-8a84-bae50000007b",
-        "name": "Доп. дата",
+        "name": "AttributeName1",
         "type": "time",
         "value": "2082-02-22 02:12:53"
       },
@@ -1457,7 +1489,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "c16fd9aa-3f62-11e6-8a84-bae50000007e",
-        "name": "Повторить",
+        "name": "AttributeName2",
         "type": "long",
         "value": 47
       },
@@ -1468,7 +1500,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "c16fe013-3f62-11e6-8a84-bae50000007f",
-        "name": "Комментарий начальства",
+        "name": "AttributeName3",
         "type": "text",
         "value": "Пример крайне удачной сделки"
       }
@@ -1592,7 +1624,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "a31685ae-3f62-11e6-8a84-bae50000007b",
-      "name": "Доп. дата",
+      "name": "AttributeName1",
       "type": "time",
       "required": false
     },
@@ -1603,7 +1635,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c16fd9aa-3f62-11e6-8a84-bae50000007e",
-      "name": "Повторить",
+      "name": "AttributeName2",
       "type": "long",
       "required": false
     },
@@ -1614,7 +1646,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c16fe013-3f62-11e6-8a84-bae50000007f",
-      "name": "Комментарий начальства",
+      "name": "AttributeName3",
       "type": "text",
       "required": false
     }
@@ -1945,7 +1977,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "a31685ae-3f62-11e6-8a84-bae50000007b",
-  "name": "Доп. дата",
+  "name": "AttributeName1",
   "type": "time",
   "required": false
 }
@@ -2139,11 +2171,19 @@ curl -X GET
             "incomingDate": "2012-12-12 12:12:12",
             "attributes": [
               {
-                "id": "a31685ae-3f62-11e6-8a84-bae50000007b",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/supply/metadata/attributes/a31685ae-3f62-11e6-8a84-bae50000007b",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "2082-02-22 02:12:53"
               },
               {
-                "id": "c16fe013-3f62-11e6-8a84-bae50000007f",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/supply/metadata/attributes/c16fd9aa-3f62-11e6-8a84-bae50000007e",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "Пример крайне удачной сделки"
               }
             ],
@@ -2282,7 +2322,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "a31685ae-3f62-11e6-8a84-bae50000007b",
-      "name": "Доп. дата",
+      "name": "AttributeName1",
       "type": "time",
       "value": "2082-02-22 02:12:53"
     },
@@ -2293,7 +2333,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c16fd9aa-3f62-11e6-8a84-bae50000007e",
-      "name": "Повторить",
+      "name": "AttributeName2",
       "type": "long",
       "value": 47
     },
@@ -2304,7 +2344,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "c16fe013-3f62-11e6-8a84-bae50000007f",
-      "name": "Комментарий начальства",
+      "name": "AttributeName3",
       "type": "text",
       "value": "Пример крайне удачной сделки"
     }

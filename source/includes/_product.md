@@ -63,6 +63,7 @@
   + **COMPOUND_PAYMENT_ITEM** - Составной предмет расчета
   + **ANOTHER_PAYMENT_ITEM** - Иной предмет расчета
 + **taxSystem** - Код системы налогообложения
+  + **TAX_SYSTEM_SAME_AS_GROUP** - Совпадает с группой
   + **GENERAL_TAX_SYSTEM** - ОСН
   + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
   + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
@@ -1083,12 +1084,20 @@ curl -X GET
             "volume": 300,
             "attributes": [
               {
-                "id": "0c2e54cd-2c80-11e6-8a84-bae50000009c",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "name": "Экспорт",
                 "value": true
               },
               {
-                "id": "0c2e5dc5-2c80-11e6-8a84-bae50000009d",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "name": "Изготовитель",
                 "value": "фермерское хозяйство \"Петрович\" "
               },
@@ -1098,7 +1107,6 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "id": "0f1e750e-e1b2-11e7-9464-e4de00000003",
                 "name": "not strange attribute name",
                 "type": "file",
                 "file": {
@@ -2579,12 +2587,20 @@ curl -X GET
             "volume": 400,
             "attributes": [
               {
-                "id": "0c2e54cd-2c80-11e6-8a84-bae50000009c",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "name": "Экспорт",
                 "value": false
               },
               {
-                "id": "0c2e5dc5-2c80-11e6-8a84-bae50000009d",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "name": "Изготовитель",
                 "value": "Колхоз \"Иваново\" "
               }

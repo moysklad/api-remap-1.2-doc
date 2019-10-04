@@ -49,7 +49,7 @@
 Позиции Возврата покупателей - это список товаров/услуг/модификаций/серий.
 Объект позиции Возврата покупателей содержит следующие поля:
 
-+ **id** - ID товара в формате UUID `Только для чтения`
++ **id** - ID позиции в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **quantity** - Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.
 + **price** - Цена товара/услуги в копейках. Должна совпадать с указанной в продаже
@@ -387,11 +387,19 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata/attributes/43dd9fd7-3f81-11e6-8a84-bae5000000db",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "отломана деталь"
               },
               {
-                "id": "50463893-3f81-11e6-8a84-bae5000000de",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata/attributes/50463893-3f81-11e6-8a84-bae5000000de",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": true
               }
             ],
@@ -516,7 +524,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
-      "name": "Причина возврата",
+      "name": "AttributeName1",
       "type": "string",
       "value": "отломана деталь"
     },
@@ -527,7 +535,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "50463893-3f81-11e6-8a84-bae5000000de",
-      "name": "Брак",
+      "name": "AttributeName2",
       "type": "boolean",
       "value": true
     }
@@ -603,11 +611,19 @@ curl -X GET
               },
               "attributes": [
                 {
-                  "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata/attributes/43dd9fd7-3f81-11e6-8a84-bae5000000db",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": "отломана деталь"
                 },
                 {
-                  "id": "50463893-3f81-11e6-8a84-bae5000000de",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata/attributes/50463893-3f81-11e6-8a84-bae5000000de",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": true
                 }
               ],
@@ -659,7 +675,11 @@ curl -X GET
               },
               "attributes": [
                 {
-                  "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata/attributes/43dd9fd7-3f81-11e6-8a84-bae5000000db",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                  },
                   "value": "отломана нога"
                 }
               ]
@@ -762,7 +782,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
-        "name": "Причина возврата",
+        "name": "AttributeName1",
         "type": "string",
         "value": "отломана деталь"
       },
@@ -773,7 +793,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "50463893-3f81-11e6-8a84-bae5000000de",
-        "name": "Брак",
+        "name": "AttributeName2",
         "type": "boolean",
         "value": true
       }
@@ -898,7 +918,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
-        "name": "Причина возврата",
+        "name": "AttributeName1",
         "type": "string",
         "value": "отломана нога"
       },
@@ -909,7 +929,7 @@ curl -X GET
           "mediaType": "application/json"
         },
         "id": "50463893-3f81-11e6-8a84-bae5000000de",
-        "name": "Брак",
+        "name": "AttributeName2",
         "type": "boolean",
         "value": true
       }
@@ -1038,7 +1058,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
-      "name": "Причина возврата",
+      "name": "AttributeName1",
       "type": "string",
       "required": false
     },
@@ -1049,7 +1069,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "50463893-3f81-11e6-8a84-bae5000000de",
-      "name": "Брак",
+      "name": "AttributeName2",
       "type": "boolean",
       "required": false
     }
@@ -1154,7 +1174,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "50463893-3f81-11e6-8a84-bae5000000de",
-  "name": "Брак",
+  "name": "AttributeName1",
   "type": "boolean",
   "required": false
 }
@@ -1475,7 +1495,11 @@ curl -X GET
             },
             "attributes": [
               {
-                "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata/attributes/43dd9fd7-3f81-11e6-8a84-bae5000000db",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
                 "value": "отломана нога"
               }
             ],
@@ -1593,7 +1617,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "43dd9fd7-3f81-11e6-8a84-bae5000000db",
-      "name": "Причина возврата",
+      "name": "AttributeName1",
       "type": "string",
       "value": "отломана нога"
     },
@@ -1604,7 +1628,7 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "50463893-3f81-11e6-8a84-bae5000000de",
-      "name": "Брак",
+      "name": "AttributeName2",
       "type": "boolean",
       "value": true
     }
