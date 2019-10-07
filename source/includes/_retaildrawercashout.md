@@ -1,26 +1,26 @@
 ## Выплата денег
-Средствами JSON API можно создавать и обновлять сведения о выплатах денег, запрашивать списки выплат денег и сведения по отдельным выплатам денег. Кодом сущности для внесения денег в составе JSON API является ключевое слово **retaildrawercashout**. Больше о выплатах денег и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по  [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203325423-%D0%A0%D0%BE%D0%B7%D0%BD%D0%B8%D1%86%D0%B0#11)
+Средствами JSON API можно создавать и обновлять сведения о Выплатах денег, запрашивать списки Выплат денег и сведения по отдельным Выплатам денег. Кодом сущности для внесения денег в составе JSON API является ключевое слово **retaildrawercashout**. Больше о Выплатах денег и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по  [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203325423-%D0%A0%D0%BE%D0%B7%D0%BD%D0%B8%D1%86%D0%B0#11)
 ### Выплаты денег 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выплате денег
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о Выплате денег
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **syncId** - ID синхронизации. После заполнения недоступен для изменения.
 + **updated** - Момент последнего обновления сущности `Только для чтения`
 + **deleted** - Момент последнего удаления сущности `Только для чтения`
-+ **name** - номер выплаты денег
-+ **description** - Комментарий выплаты денег
-+ **externalCode** - Внешний код выплаты денег
-+ **moment** - Дата выплаты
++ **name** - номер Выплаты денег
++ **description** - Комментарий Выплаты денег
++ **externalCode** - Внешний код Выплаты денег
++ **moment** - Дата Выплаты
 + **applicable** - Отметка о проведении
-+ **sum** - Сумма выплата в установленной валюте `Только для чтения`
++ **sum** - Сумма Выплата в установленной валюте `Только для чтения`
 + **rate** - Валюта
 + **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **shared** - Общий доступ
 + **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **agent** - Ссылка на сотрудника, которому была совершена выплата, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **state** - Статус выплаты в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **agent** - Ссылка на сотрудника, которому была совершена Выплата, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **state** - Статус Выплаты в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 <br>Поля при expand'е:</br>
   - **name** - номер документа
@@ -31,10 +31,10 @@
 + **created** - Дата создания `Только для чтения`
 
 #### Связи с другими документами
-+ **retailShift** - Ссылка на розничную смену, в рамках которой была выполнена выплата денег в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **retailShift** - Ссылка на розничную смену, в рамках которой была выполнена Выплата денег в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
 
-### Получить выплаты денег 
-Запрос на получение всех выплат денег на данной учетной записи.
+### Получить Выплаты денег 
+Запрос на получение всех Выплат денег на данной учетной записи.
 
 **Параметры**
 
@@ -44,16 +44,16 @@
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 |search |  `string` (optional) *Example: 0001* URL Параметр для поиска по имени документа. Фильтр документов по указанной поисковой строке. Фильтрация происходит по полю name.|
 
-> Получить выплаты денег
+> Получить Выплаты денег
 
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление списка выплат денег.
+Успешный запрос. Результат - JSON представление списка Выплат денег.
 
 ```json
 {
@@ -201,15 +201,15 @@ curl -X GET
 }
 ```
 
-### Создать выплату денег 
-Запрос на создание выплаты денег.
+### Создать Выплату денег 
+Запрос на создание Выплаты денег.
 
-> Пример создания новой выплаты денег.
+> Пример создания новой Выплаты денег.
 
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "agent": {
@@ -306,17 +306,17 @@ curl -X GET
 }
 ```
 
-### Массовое создание и обновление выплат денег 
-[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) выплат денег.
-В теле запроса нужно передать массив, содержащий JSON представления выплат денег, которые вы хотите создать или обновить.
-Обновляемые выплаты денег должны содержать идентификатор в виде метаданных.
+### Массовое создание и обновление Выплат денег 
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Выплат денег.
+В теле запроса нужно передать массив, содержащий JSON представления Выплат денег, которые вы хотите создать или обновить.
+Обновляемые Выплаты денег должны содержать идентификатор в виде метаданных.
 
-> Пример создания и обновления нескольких выплат денег
+> Пример создания и обновления нескольких Выплат денег
 
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '[
             {
@@ -362,7 +362,7 @@ curl -X GET
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - массив JSON представлений созданных и обновленных выплат денег.
+Успешный запрос. Результат - массив JSON представлений созданных и обновленных Выплат денег.
 
 ```json
 [
@@ -490,46 +490,89 @@ curl -X GET
 
 ```
 
-### Удалить внесение денег
+### Удалить Выплату денег
 
 **Параметры**
 
 |Параметр   |Описание   | 
 |---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id выплаты денег.|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Выплаты денег.|
 
-> Запрос на удаление выплаты денег с указанным id.
+> Запрос на удаление Выплаты денег с указанным id.
 
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
 Успешный запрос. 
 
-### Метаданные выплат денег 
-#### Метаданные выплат денег 
-Запрос на получение метаданных выплат денег. Результат - объект JSON, включающий в себя:
+### Массовое удаление Выплат денег
 
-+ **meta** - Ссылка на метаданные выплат денег
-+ **attributes** - Массив объектов доп. полей выплат денег в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **states** - Массив статусов выплат денег
-+ **createShared** - создавать новые выплаты денег с меткой "Общий"
+В теле запроса нужно передать массив, содержащий JSON метаданных Выплат денег, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Выплат денег. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata",
+            "type": "retaildrawercashout",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata",
+            "type": "retaildrawercashout",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Выплат денег.
+
+```json
+[
+  {
+    "info":"Сущность 'retaildrawercashout' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'retaildrawercashout' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+``` 
+
+### Метаданные Выплат денег 
+#### Метаданные Выплат денег 
+Запрос на получение метаданных Выплат денег. Результат - объект JSON, включающий в себя:
+
++ **meta** - Ссылка на метаданные Выплат денег
++ **attributes** - Массив объектов доп. полей Выплат денег в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **states** - Массив статусов Выплат денег
++ **createShared** - создавать новые Выплаты денег с меткой "Общий"
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
-> Метаданные выплат денег
+> Метаданные Выплат денег
 
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление доп. полей выплат денег.
+Успешный запрос. Результат - JSON представление доп. полей Выплат денег.
 
 ```json
 {
@@ -597,7 +640,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -617,20 +660,20 @@ curl -X GET
 }
 ```
 
-### Шаблон выплаты денег 
-#### Шаблон выплаты денег 
-> Запрос на получение предзаполненого стандартными значениями шаблона выплаты денег без связи с каким-либо документом.
+### Шаблон Выплаты денег 
+#### Шаблон Выплаты денег 
+> Запрос на получение предзаполненого стандартными значениями шаблона Выплаты денег без связи с каким-либо документом.
 
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d ''  
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление предзаполненной выплаты денег.
+Успешный запрос. Результат - JSON представление предзаполненной Выплаты денег.
 
 ```json
 {
@@ -647,17 +690,17 @@ curl -X GET
 }
 ```
 
-### Шаблон выплаты денег на основе 
-Запрос на получение предзаполненной выплаты денег на основе розничной смены.
-В результате запроса, будет создан предзаполненный шаблон выплаты денег на основе переданной
+### Шаблон Выплаты денег на основе 
+Запрос на получение предзаполненной Выплаты денег на основе розничной смены.
+В результате запроса, будет создан предзаполненный шаблон Выплаты денег на основе переданной
 розничной смены.
 
-> Запрос на создание выплаты денег на основе розничной смены.
+> Запрос на создание Выплаты денег на основе розничной смены.
 
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "retailShift": {
@@ -672,7 +715,7 @@ curl -X GET
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление предзаполненной выплаты денег.
+Успешный запрос. Результат - JSON представление предзаполненной Выплаты денег.
 
 ```json
 {
@@ -691,18 +734,18 @@ curl -X GET
 
 ### Выплата денег 
 
-### Получить выплату денег
+### Получить Выплату денег
  
-> Запрос на получение отдельной выплаты денег с указанным id.
+> Запрос на получение отдельной Выплаты денег с указанным id.
 
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление выплаты денег с указанным id.
+Успешный запрос. Результат - JSON представление Выплаты денег с указанным id.
 
 ```json
 {
@@ -768,15 +811,15 @@ curl -X GET
 }
 ```
 
-### Изменить выплачу денег 
-Запрос на обновление выплаты денег.
+### Изменить Выплачу денег 
+Запрос на обновление Выплаты денег.
 
-> Пример обновления выплаты денег.
+> Пример обновления Выплаты денег.
 
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "0000004",

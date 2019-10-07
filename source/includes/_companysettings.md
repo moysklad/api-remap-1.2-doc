@@ -31,7 +31,7 @@
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/context/companysettings"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -110,7 +110,7 @@ curl -X GET
 ```shell
 curl -X GET
   "ttps://online.moysklad.ru/api/remap/1.2/context/companysettings/metadata"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)

@@ -64,7 +64,7 @@
 ```shell
 curl -X GET 
   "https://online.moysklad.ru/api/remap/1.2/entity/currency/"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -172,7 +172,7 @@ curl -X GET
 ```shell
 curl -X POST 
   https://online.moysklad.ru/api/remap/1.2/entity/currency/
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H 'Content-Type: application/json' 
   -d '{
   "name": "доллар",
@@ -225,7 +225,7 @@ curl -X POST
 ```shell
 curl -X POST
   https://online.moysklad.ru/api/remap/1.2/entity/currency/
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H 'Content-Type: application/json'
   -d '[
   {
@@ -322,7 +322,7 @@ id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id �
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/currency/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -338,7 +338,7 @@ curl -X DELETE
 ```shell
 curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/currency/delete"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
   -d '[
         {
@@ -358,7 +358,7 @@ curl -X POST
       ]'
 ```        
 
-> Успешный запрос. Результат - JSON информацио об удалении Валют.
+> Успешный запрос. Результат - JSON информация об удалении Валют.
 
 ```json
 [
@@ -385,7 +385,7 @@ id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id �
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/currency/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -445,7 +445,7 @@ id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id �
 ```shell
 curl -X PUT
   "https://online.moysklad.ru/api/remap/1.2/entity/currency/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -d '{
   "name": "долл",
   "rate": 66,

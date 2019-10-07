@@ -26,7 +26,7 @@
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/customentity"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "custom dictionary"
@@ -62,7 +62,7 @@
 ```shell
   curl -X PUT
     "ttps://online.moysklad.ru/api/remap/1.2/entity/customentity/3f9a2f30-76af-11e7-6adb-ede50000000b"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "new name"
@@ -98,7 +98,7 @@
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/customentity/3f9a2f30-76af-11e7-6adb-ede50000000b"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -134,7 +134,7 @@ curl -X DELETE
 ```shell
  curl -X GET
    "https://online.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19"
-   -H "Authorization: Basic <Access-Token>"
+   -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -227,7 +227,7 @@ curl -X DELETE
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "Партнер 3",
@@ -274,7 +274,7 @@ curl -X DELETE
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/6343f631-265d-11e6-8a84-bae500000014"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -296,7 +296,7 @@ curl -X DELETE
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/6343f631-265d-11e6-8a84-bae500000014"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -336,7 +336,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/6343f631-265d-11e6-8a84-bae500000014"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "Петр михалыч из ООО Предприятие",

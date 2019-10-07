@@ -65,7 +65,7 @@
 ```shell
 curl -X GET
   "GET https://online.moysklad.ru/api/remap/1.2/entity/assortment"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json). Успешный запрос. Результат - JSON представление списка всех товаров, услуг, модификация и серий.
@@ -695,7 +695,7 @@ curl -X GET
 ```shell
 curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/assortment/delete"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
   -d '[
         {
@@ -715,7 +715,7 @@ curl -X POST
       ]'
 ```        
 
-> Успешный запрос. Результат - JSON информацио об удалении позиций в Ассортименте.
+> Успешный запрос. Результат - JSON информация об удалении позиций в Ассортименте.
 
 ```json
 [

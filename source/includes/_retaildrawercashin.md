@@ -1,26 +1,26 @@
 ## Внесение денег
-Средствами JSON API можно создавать и обновлять сведения о внесениях денег, запрашивать списки внесений денег и сведения по отдельным внесениям денег. Кодом сущности для внесения денег в составе JSON API является ключевое слово **retaildrawercashin**. Больше о внесениях денег и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по  [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203325423-%D0%A0%D0%BE%D0%B7%D0%BD%D0%B8%D1%86%D0%B0#10).
+Средствами JSON API можно создавать и обновлять сведения о Внесениях денег, запрашивать списки Внесений денег и сведения по отдельным Внесениям денег. Кодом сущности для Внесения денег в составе JSON API является ключевое слово **retaildrawercashin**. Больше о Внесениях денег и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по  [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203325423-%D0%A0%D0%BE%D0%B7%D0%BD%D0%B8%D1%86%D0%B0#10).
 ### Внесения денег 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о внесении денег
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о Внесении денег
 + **id** - ID в формате UUID `Только для чтения`
 + **accountId** - ID учетной записи `Только для чтения`
 + **syncId** - ID синхронизации. После заполнения недоступен для изменения.
 + **updated** - Момент последнего обновления сущности `Только для чтения`
 + **deleted** - Момент последнего удаления сущности `Только для чтения`
-+ **name** - номер внесения денег
-+ **description** - Комментарий внесения денег
-+ **externalCode** - Внешний код внесения денег
-+ **moment** - Дата внесения
++ **name** - номер Внесения денег
++ **description** - Комментарий Внесения денег
++ **externalCode** - Внешний код Внесения денег
++ **moment** - Дата Внесения
 + **applicable** - Отметка о проведении
-+ **sum** - Сумма внесения в установленной валюте `Только для чтения`
++ **sum** - Сумма Внесения в установленной валюте `Только для чтения`
 + **rate** - Валюта
 + **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **shared** - Общий доступ
 + **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **agent** - Ссылка на сотрудника, совершившего внесение, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **state** - Статус внесения в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **agent** - Ссылка на сотрудника, совершившего Внесение, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **state** - Статус Внесения в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 <br>Поля при expand'е:</br>
   - **name** - номер документа
@@ -31,10 +31,10 @@
 + **created** - Дата создания `Только для чтения`
 
 #### Связи с другими документами
-+ **retailShift** - Ссылка на розничную смену, в рамках которой было выполнено внесение денег в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **retailShift** - Ссылка на розничную смену, в рамках которой было выполнено Внесение денег в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
 
-### Получить внесения денег 
-Запрос на получение всех внесений денег на данной учетной записи.
+### Получить Внесения денег 
+Запрос на получение всех Внесений денег на данной учетной записи.
 
 **Параметры**
 
@@ -44,16 +44,16 @@
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 |search |  `string` (optional) *Example: 0001* URL Параметр для поиска по имени документа. Фильтр документов по указанной поисковой строке. Фильтрация происходит по полю name.|
 
-> Получить внесения денег
+> Получить Внесения денег
 
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление списка внесений денег.
+Успешный запрос. Результат - JSON представление списка Внесений денег.
 
 ```json
 {
@@ -201,15 +201,15 @@ curl -X GET
 }
 ```
 
-### Создать внесение денег 
-Запрос на создание внесения денег.
+### Создать Внесение денег 
+Запрос на создание Внесения денег.
 
-> Пример создания нового внесения денег.
+> Пример создания нового Внесения денег.
 
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "agent": {
@@ -242,7 +242,7 @@ curl -X GET
 ```
 
 > Response 200
-Успешный запрос. Результат - массив JSON представлений созданного и обновленного внесения денег.
+Успешный запрос. Результат - массив JSON представлений созданного и обновленного Внесения денег.
 
 ```json
 {
@@ -307,17 +307,17 @@ curl -X GET
 }
 ```
 
-### Массовое создание и обновление внесений денег 
-[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) внесений денег.
-В теле запроса нужно передать массив, содержащий JSON представления внесений денег, которые вы хотите создать или обновить.
-Обновляемые внесения денег должны содержать идентификатор в виде метаданных.
+### Массовое создание и обновление Внесений денег 
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Внесений денег.
+В теле запроса нужно передать массив, содержащий JSON представления Внесений денег, которые вы хотите создать или обновить.
+Обновляемые Внесения денег должны содержать идентификатор в виде метаданных.
 
-> Пример создания и обновления нескольких внесений денег
+> Пример создания и обновления нескольких Внесений денег
 
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '[
             {
@@ -363,7 +363,7 @@ curl -X GET
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - массив JSON представлений созданных и обновленных внесений денег.
+Успешный запрос. Результат - массив JSON представлений созданных и обновленных Внесений денег.
 
 ```json
 [
@@ -490,47 +490,90 @@ curl -X GET
 ]
 ```
 
-### Удалить внесение денег
-Запрос на удаление внесения денег с указанным id.
+### Удалить Внесение денег
+Запрос на удаление Внесения денег с указанным id.
 
 **Параметры**
 
 |Параметр   |Описание   | 
 |---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id внесения денег.|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Внесения денег.|
 
-> Удалить внесение денег
+> Удалить Внесение денег
 
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
   Успешный запрос.
 
-### Метаданные внесений денег 
-#### Метаданные внесений денег 
-Запрос на получение метаданных внесений денег. Результат - объект JSON, включающий в себя:
+### Массовое удаление Внесений денег
 
-+ **meta** - Ссылка на метаданные внесений денег
-+ **attributes** - Массив объектов доп. полей внесений денег в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **states** - Массив статусов внесений денег
-+ **createShared** - создавать новые внесения денег с меткой "Общий"
+В теле запроса нужно передать массив, содержащий JSON метаданных Внесений денег, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Внесений денег. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/metadata",
+            "type": "retaildrawercashin",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/metadata",
+            "type": "retaildrawercashin",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Внесений денег.
+
+```json
+[
+  {
+    "info":"Сущность 'retaildrawercashin' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'retaildrawercashin' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+``` 
+
+### Метаданные Внесений денег 
+#### Метаданные Внесений денег 
+Запрос на получение метаданных Внесений денег. Результат - объект JSON, включающий в себя:
+
++ **meta** - Ссылка на метаданные Внесений денег
++ **attributes** - Массив объектов доп. полей Внесений денег в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **states** - Массив статусов Внесений денег
++ **createShared** - создавать новые Внесения денег с меткой "Общий"
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
-> Метаданные внесений денег
+> Метаданные Внесений денег
 
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/metadata"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление доп. полей внесений денег.
+Успешный запрос. Результат - JSON представление доп. полей Внесений денег.
 
 ```json
 {
@@ -599,7 +642,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -619,21 +662,21 @@ curl -X GET
 }
 ```
 
-### Шаблон внесения денег 
+### Шаблон Внесения денег 
 
-#### Шаблон внесения денег 
-> Запрос на получение предзаполненого стандартными значениями шаблона внесения денег без связи с каким-либо документом.
+#### Шаблон Внесения денег 
+> Запрос на получение предзаполненого стандартными значениями шаблона Внесения денег без связи с каким-либо документом.
 
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d ''  
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление предзаполненного внесения денег.
+Успешный запрос. Результат - JSON представление предзаполненного Внесения денег.
 
 ```json
 {
@@ -650,19 +693,19 @@ curl -X GET
 }
 ```
 
-### Шаблон внесения денег на основе 
-Запрос на получение предзаполненного внесения денег на основе розничной смены.
-В результате запроса, будет создан предзаполненный шаблон внесения денег на основе переданной
+### Шаблон Внесения денег на основе 
+Запрос на получение предзаполненного Внесения денег на основе розничной смены.
+В результате запроса, будет создан предзаполненный шаблон Внесения денег на основе переданной
 розничной смены.
 <br>
 Внимание! Не забывайте, что поле **retailShift** должно быть написано с большой S.
 
-> Запрос на создание внесения денег на основе розничной смены.
+> Запрос на создание Внесения денег на основе розничной смены.
 
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "retailShift": {
@@ -678,7 +721,7 @@ curl -X GET
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление предзаполненного внесения денег.
+Успешный запрос. Результат - JSON представление предзаполненного Внесения денег.
 
 ```json
 {
@@ -705,18 +748,18 @@ curl -X GET
 
 ### Внесение денег 
 
-### Получить внесение денег
+### Получить Внесение денег
  
-> Запрос на получение отдельного внесения денег с указанным id.
+> Запрос на получение отдельного Внесения денег с указанным id.
 
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление внесения денег с указанным id.
+Успешный запрос. Результат - JSON представление Внесения денег с указанным id.
 
 ```json
 {
@@ -782,15 +825,15 @@ curl -X GET
 
 ```
 
-### Изменить внесение денег 
-Запрос на обновление внесения денег.
+### Изменить Внесение денег 
+Запрос на обновление Внесения денег.
 
-> Пример обновления внесения денег.
+> Пример обновления Внесения денег.
 
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "0000004",

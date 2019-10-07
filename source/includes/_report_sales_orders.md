@@ -40,7 +40,7 @@
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/report/orders/plotseries?momentFrom=2018-09-06 00:00:00&momentTo=2018-09-06 01:00:01&interval=hour"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -83,7 +83,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/report/orders/plotseries?momentFrom=2018-09-06 00:00:00&momentTo=2018-09-06 01:00:01&interval=hour&filter=organization=https://online.moysklad.ru/api/remap/1.1/entity/organization/00cd5a99-6897-11e7-7a6c-d2a9000c4fc0;project=https://online.moysklad.ru/api/remap/1.1/entity/project/02e64f51-6897-11e7-7a34-5acf000c8448;store=https://online.moysklad.ru/api/remap/1.1/entity/store/32213d37-8101-11e8-9107-50480004c6c1"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -139,7 +139,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/report/sales/plotseries?momentFrom=2018-09-06 00:00:00&momentTo=2018-09-10 01:00:01&interval=hour&filter=retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/d9a8a213-6703-11e7-9464-e4de00000060&amp;project=https://online.moysklad.ru/api/remap/1.2/entity/project/d9a8a213-6703-11e7-9464-e4de00000060&amp;store=https://online.moysklad.ru/api/remap/1.2/entity/store/d9a8a213-6703-11e7-9464-e4de00000060&amp;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/d9a8a213-6703-11e7-9464-e4de00000060"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)

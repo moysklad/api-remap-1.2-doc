@@ -66,7 +66,7 @@
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/facturein"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -246,7 +246,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/facturein"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "incomingNumber": "356124365",
@@ -353,7 +353,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/facturein"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '[
             {
@@ -536,6 +536,49 @@ curl -X GET
 ]
 ```
 
+### Массовое удаление полученных Счетов-фактур
+
+В теле запроса нужно передать массив, содержащий JSON метаданных полученных Счетов-фактур, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление полученных Счетов-фактур. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/facturein/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/facturein/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/facturein/metadata",
+            "type": "facturein",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/facturein/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/facturein/metadata",
+            "type": "facturein",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении полученных Счетов-фактур.
+
+```json
+[
+  {
+    "info":"Сущность 'facturein' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'facturein' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+``` 
+
 ### Метаданные полученных Счетов-фактур 
 #### Метаданные Счетов-фактур 
 Запрос на получение метаданных полученных Счетов-фактур. Результат - объект JSON, включающий в себя:
@@ -552,7 +595,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/facturein/metadata"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -622,7 +665,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/facturein/metadata/attributes/8b0b6c1d-aa6f-11e6-8a84-bc520000008a"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -642,8 +685,8 @@ curl -X GET
 }
 ```
 
-### Шаблон полученного Счета-фактуры 
-#### Шаблон полученного Счета-фактуры на основе 
+### Шаблон Полученного Счета-фактуры 
+#### Шаблон Полученного Счета-фактуры на основе 
 Запрос на получение предзаполненного шаблона полученного Счета-фактуры на основе приемки или исходящего платежа.
 В ответ на запрос вернется предзаполненный шаблон полученного Счета-фактуры, который
 затем можно будет использовать для создания нового Счета-фактуры с помощью POST запроса.
@@ -653,7 +696,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/facturein/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "supplies": [
@@ -752,7 +795,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/facturein/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "payments": [
@@ -861,7 +904,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/facturein/209fe91a-ab00-11e6-8af5-581e00000076"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -953,7 +996,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/facturein/209fe91a-ab00-11e6-8af5-581e00000076"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "FactureIn2"
@@ -1052,7 +1095,7 @@ curl -X GET
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/facturein/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
