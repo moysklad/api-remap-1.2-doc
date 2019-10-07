@@ -130,7 +130,7 @@ curl -X GET
       },
       "updated": "2016-07-04 09:32:53",
       "name": "00002",
-      "description": "Лол",
+      "description": "Описание ордера",
       "externalCode": "wWfQT10VjQztCieUrE72r2",
       "moment": "2016-07-04 09:31:00",
       "applicable": true,

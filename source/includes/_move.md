@@ -459,8 +459,8 @@ curl -X GET
               },
               "name": "705507",
               "description": "Переезд 2",
-              "code": "kek",
-              "externalCode": "moveMOVEMOVE",
+              "code": "12345",
+              "externalCode": "12345678",
               "moment": "2016-07-21 19:44:33",
               "applicable": false,
               "state": {
@@ -633,8 +633,8 @@ curl -X GET
     "updated": "2016-07-21 20:44:20",
     "name": "705507",
     "description": "Переезд 2",
-    "code": "kek",
-    "externalCode": "moveMOVEMOVE",
+    "code": "12345",
+    "externalCode": "12345678",
     "moment": "2016-07-21 19:44:33",
     "applicable": false,
     "rate": {
@@ -1235,8 +1235,8 @@ curl -X GET
       -d '{
             "name": "705507",
             "description": "Переезд 2",
-            "code": "kek",
-            "externalCode": "moveMOVEMOVE",
+            "code": "12345",
+            "externalCode": "12345678",
             "moment": "2016-07-21 19:44:33",
             "applicable": false,
             "state": {
@@ -1321,8 +1321,8 @@ curl -X GET
   "updated": "2016-07-21 20:44:20",
   "name": "705507",
   "description": "Переезд 2",
-  "code": "kek",
-  "externalCode": "moveMOVEMOVE",
+  "code": "12345",
+  "externalCode": "12345678",
   "moment": "2016-07-21 19:44:33",
   "applicable": false,
   "rate": {
