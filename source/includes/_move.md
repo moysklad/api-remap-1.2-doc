@@ -1055,7 +1055,7 @@ curl -X GET
       },
       "id": "64c4689e-4f67-11e6-8a84-bae5000000b5",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-      "name": "Kek",
+      "name": "Ожидает исполнения",
       "color": 10066329,
       "stateType": "Regular",
       "entityType": "move"

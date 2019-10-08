@@ -945,7 +945,7 @@ curl -X GET
       },
       "id": "0eda7963-41b1-11e6-8a84-bae50000006e",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-      "name": "Kek",
+      "name": "Ожидает исполнения",
       "color": 10667543,
       "stateType": "Regular",
       "entityType": "cashout"
@@ -958,7 +958,7 @@ curl -X GET
       },
       "id": "0eda80ad-41b1-11e6-8a84-bae50000006f",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-      "name": "Lol",
+      "name": "Одобрено",
       "color": 4354177,
       "stateType": "Regular",
       "entityType": "cashout"
@@ -971,7 +971,7 @@ curl -X GET
       },
       "id": "0eda8542-41b1-11e6-8a84-bae500000070",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-      "name": "LMAO",
+      "name": "Подписано",
       "color": 15491487,
       "stateType": "Regular",
       "entityType": "cashout"
