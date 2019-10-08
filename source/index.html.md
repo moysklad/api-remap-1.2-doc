@@ -12,6 +12,7 @@ toc_footers:
 
 includes:
   - general
+  - register
   - security
   - errors
 
