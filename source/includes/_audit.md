@@ -88,7 +88,7 @@
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|filter |  `string` (optional) *Example: source=jsonapi* Подробное описание параметра в разделе [Фильтрация выборки с помощью параметра filter](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter) Атрибуты фильтрации для Контекстов аудита представлены в разделе [Фильтры](../other/#audit-audit-poluchit-fil-try)|
+|filter |  `string` (optional) *Example: source=jsonapi* Подробное описание параметра в разделе [Фильтрация выборки с помощью параметра filter](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter) Атрибуты фильтрации для Контекстов аудита представлены в разделе [Фильтры](../other/#audit-audit-fil-try)|
 
 > Получить Контексты
 
@@ -436,7 +436,7 @@ curl -X GET
 }
 ```
 
-##### Фильтры
+### Фильтры
 
 В JSON API сервиса МойСклад предусмотрена возможность фильтрации [Контекстов аудита](../other/#audit-audit-kontexty) с помощью url параметр ``filter``.
 Подробнее про данный параметр можно посмотреть в разделе [Фильтрация выборки с помощью параметра filter](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter)
