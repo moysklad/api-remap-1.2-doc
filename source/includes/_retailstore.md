@@ -77,8 +77,6 @@
 + **printAlways** - Всегда печатать кассовые чеки
 + **receiptTemplate** - Шаблон печати кассовых чеков `Только для чтения`
   + **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) шаблона печати кассовых чеков
-  + **header** - Заголовок шаблона печати кассовых чеков
-  + **footer** - Нижняя часть шаблона печати кассовых чеков
 + **createPaymentInOnRetailShiftClosing** - Создавать входящий платеж при закрытии смены
 + **createCashInOnRetailShiftClosing** - Создавать ПКО при закрытии смены
 + **returnFromClosedShiftEnabled** - Разрешить возвраты в закрытых сменах
@@ -604,9 +602,7 @@ curl -X GET
           "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/receipttemplate/metadata",
           "type" : "receipttemplate",
           "mediaType" : "application/json"
-        },
-        "header": "АКЦИЯ: 6 ЗА 5. ПОДРОБНЕЕ ЧИТАЙТЕ В НИЖНЕЙ ЧАСТИ ЧЕКА",
-        "footer": "КУПИТЕ 5 КОФЕ И ПОЛУЧИТЕ 6-й В ПОДАРОК, ПРЕДЪЯВИВ ЭТОТ ЧЕК"
+        }
       },
       "createPaymentInOnRetailShiftClosing" : true,
       "createCashInOnRetailShiftClosing" : true,
