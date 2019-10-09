@@ -498,7 +498,7 @@ curl -X GET
 | `emailsend`                    | Отправка сообщения             |
 | `export`                       | Экспорт                        |
 | `phone-1.0`                    | Phone API                      |
-| `scriptor`                     | Синхронизация с Сбербанк Бизнес Онлайн |
+| `scriptor`                     | Работа со сценариями           |
 
 + **uid**
   Параметр строкового типа. В качестве значения должен быть передан логин сотрудника, по которому
@@ -525,7 +525,7 @@ curl -X GET
 | `statesettings`                | Настройки статусов                  |
 | `templatesettings`             | Настройки шаблонов                  |
 | `scripttemplate`               | Сценарий                            |
-| `crptDemand`                   | Отгрузка маркированной продукции    |
+| `crptdemand`                   | Отгрузка маркированной продукции    |
 | `crptcancellation`             | Списание кодов маркировки           |
 | `crptpackagecreation`          | Формирование упаковки               |
 | `crptpackageitemremoval`       | Изъятие из упаковки                 |
@@ -660,7 +660,8 @@ curl -X GET
     "crptpackagecreation",
     "crptpackageitemremoval",
     "crptpackagedisaggregation",
-    "evotorsetting"
+    "evotorsetting",
+    "https://online.moysklad.ru/api/remap/1.2/entity/customentity/eaacabaf-2655-11e6-8a84-bae500000045"
   ],
   "eventtype": [
     "create",
