@@ -498,6 +498,7 @@ curl -X GET
 | `emailsend`                    | Отправка сообщения             |
 | `export`                       | Экспорт                        |
 | `phone-1.0`                    | Phone API                      |
+| `scriptor`                     | Синхронизация с Сбербанк Бизнес Онлайн |
 
 + **uid**
   Параметр строкового типа. В качестве значения должен быть передан логин сотрудника, по которому
@@ -516,12 +517,19 @@ curl -X GET
 | `ymlconnectorsettings`         | Настройка синхронизации (YML)       |
 | `vkconnectorsettings`          | Настройка синхронизации (Вконтакте) |
 | `yandexconnectorsettings`      | Настройка синхронизации (Яндекс.Маркет) |
+| `evotorsetting`                | Настройка синхронизации (Эвотор)    |
 | `usersettings`                 | Настройки пользователя              |
 | `user`                         | Пользователь                        |
 | `accountrole`                  | Роль                                |
 | `entitysettings`               | Настройки сущностей                 |
 | `statesettings`                | Настройки статусов                  |
 | `templatesettings`             | Настройки шаблонов                  |
+| `scripttemplate`               | Сценарий                            |
+| `crptDemand`                   | Отгрузка маркированной продукции    |
+| `crptcancellation`             | Списание кодов маркировки           |
+| `crptpackagecreation`          | Формирование упаковки               |
+| `crptpackageitemremoval`       | Изъятие из упаковки                 |
+| `crptpackagedisaggregation`    | Расформирование упаковки            |
 
 Также можно отфильтровать контексты аудита по пользовательскому справочнику. Для этого в качестве параметра **entityType** необходимо передать href пользовательского справочника.
 Пример: https://online.moysklad.ru/api/remap/1.2/entity/customentity/eaacabaf-2655-11e6-8a84-bae500000045
@@ -562,7 +570,8 @@ curl -X GET
     "loginlogout",
     "emailsend",
     "export",
-    "phone-1.0"
+    "phone-1.0",
+    "scriptor"
   ],
   "entitytype": [
     "organization",
@@ -643,13 +652,15 @@ curl -X GET
     "remarkingorder",
     "emissionorder",
     "crptdemand",
+    "scripttemplate",
     "cashboxadjustment",
     "accountadjustment",
     "counterpartyadjustment",
     "crptcancellation",
     "crptpackagecreation",
-    "evotorsetting",
-    "https://online.moysklad.ru/api/remap/1.2/entity/customentity/eaacabaf-2655-11e6-8a84-bae500000045"
+    "crptpackageitemremoval",
+    "crptpackagedisaggregation",
+    "evotorsetting"
   ],
   "eventtype": [
     "create",
