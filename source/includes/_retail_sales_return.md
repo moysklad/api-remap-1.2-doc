@@ -100,7 +100,7 @@
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -268,7 +268,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "123142vzvrt",
@@ -433,7 +433,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "123142vzvrt",
@@ -659,7 +659,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "123142vzvrt",
@@ -915,7 +915,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "123142vzvrt",
@@ -1164,7 +1164,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '[
             {
@@ -1544,7 +1544,7 @@ curl -X GET
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1566,7 +1566,7 @@ curl -X DELETE
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1714,7 +1714,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1734,8 +1734,8 @@ curl -X GET
 }
 ```
 
-### Шаблон розничного возврата 
-#### Шаблон розничного возврата на основе 
+### Шаблон Розничного возврата 
+#### Шаблон Розничного возврата на основе 
 Запрос на получение предзаполненого стандартными значениями
 шаблона розничного возврата на основе других документов.
 Шаблон розничного возврата можно получить на основе:
@@ -1751,7 +1751,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "retailShift": {
@@ -1854,7 +1854,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "demand": {
@@ -1993,7 +1993,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -2131,7 +2131,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "vatEnabled": false,
@@ -2344,7 +2344,7 @@ curl -X GET
 ### Позиции Розничного возврата 
 Отдельный ресурс для управления позициями Розничного возврата. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 100. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
 
-### Получить Позиции 
+### Получить позиции 
 Запрос на получение списка всех позиций данной Розничного возврата.
 
 - **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
@@ -2359,12 +2359,12 @@ curl -X GET
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 
-> Получить Позиции 
+> Получить позиции 
 
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -2487,7 +2487,7 @@ curl -X GET
 }
 ```
 
-### Создать Позицию 
+### Создать позицию 
 Запрос на создание новой позиции в Розничном возврате.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
@@ -2511,7 +2511,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '[
             {
@@ -2642,7 +2642,7 @@ curl -X GET
 
 ### Позиция Розничного возврата
    
-### Получить Позицию
+### Получить позицию
 
 **Параметры**
 
@@ -2656,7 +2656,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -2688,7 +2688,7 @@ curl -X GET
 }
 ```
         
-### Изменить Позицию 
+### Изменить позицию 
 Запрос на обновление отдельной позиции Розничного возврата.
 При обновлении отдельной позиции в возврате можно только изменить количество данной позиции.
 Причем это количество должно быть в пределах , где n - кол-во данной позиции в документе, по которому создан возврат.
@@ -2705,7 +2705,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "quantity": 10,
@@ -2760,7 +2760,7 @@ curl -X GET
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)

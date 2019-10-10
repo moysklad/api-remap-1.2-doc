@@ -61,7 +61,7 @@
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/demand/a86708d2-f8d3-4e67-8f04-6101158da808/export/"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "template": {
@@ -94,7 +94,7 @@
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/demand/a86708d2-f8d3-4e67-8f04-6101158da808/export/"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "templates": [

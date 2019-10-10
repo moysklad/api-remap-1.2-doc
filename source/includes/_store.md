@@ -66,7 +66,7 @@
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/store"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -358,7 +358,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/store"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
   "addressFull": {
@@ -463,7 +463,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/store"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
   "addressFull": {
@@ -596,7 +596,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/store"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '[
   {
@@ -720,7 +720,7 @@ curl -X GET
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -736,7 +736,7 @@ curl -X DELETE
 ```shell
 curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/store/delete"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
   -d '[
         {
@@ -756,7 +756,7 @@ curl -X POST
       ]'
 ```        
 
-> Успешный запрос. Результат - JSON информацио об удалении Складов.
+> Успешный запрос. Результат - JSON информация об удалении Складов.
 
 ```json
 [
@@ -784,7 +784,7 @@ curl -X POST
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -823,7 +823,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -859,7 +859,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -967,7 +967,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
   "addressFull": {
@@ -1080,7 +1080,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
   "addressFull": {

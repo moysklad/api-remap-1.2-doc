@@ -27,7 +27,7 @@ JSON API позволяет опубликовать для общего пол�
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/a86708d2-f8d3-4e67-8f04-6101158da808/publication"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -90,7 +90,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/demand/a86708d2-f8d3-4e67-8f04-6101158da808/publication"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "template": {
@@ -162,7 +162,7 @@ curl -X GET
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/a86708d2-f8d3-4e67-8f04-6101158da808/publication/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 204 (application/json)
@@ -182,7 +182,7 @@ curl -X DELETE
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/a86708d2-f8d3-4e67-8f04-6101158da808/publication/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)

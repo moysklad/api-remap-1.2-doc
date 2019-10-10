@@ -100,7 +100,7 @@
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -351,7 +351,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "103034",
@@ -603,7 +603,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "777",
@@ -906,7 +906,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '[
             {
@@ -1400,11 +1400,54 @@ curl -X GET
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
 Успешное удаление Заказа поставщику.
+
+### Массовое удаление Заказов Поставщикам
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Заказов Поставщикам, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Заказов Поставщикам. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata",
+            "type": "purchaseorder",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata",
+            "type": "purchaseorder",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Заказов Поставщикам.
+
+```json
+[
+  {
+    "info":"Сущность 'purchaseorder' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'purchaseorder' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+``` 
 
 ### Метаданные Заказов Поставщикам 
 #### Метаданные Заказов Поставщикам 
@@ -1422,7 +1465,7 @@ curl -X DELETE
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1503,7 +1546,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1523,8 +1566,8 @@ curl -X GET
 }
 ```
 
-### Шаблон заказа поставщику 
-#### Шаблон заказа поставщику 
+### Шаблон Заказа поставщику 
+#### Шаблон Заказа поставщику 
 Запрос на получение предзаполненого стандартными значениями шаблона заказа поставщику без связи с каким-либо документом.
 
 > Шаблон заказа поставщику
@@ -1532,7 +1575,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/new
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d ''  
 ```
@@ -1612,7 +1655,7 @@ curl -X GET
 }
 ```
 
-### Шаблон заказа поставщику на основе 
+### Шаблон Заказа поставщику на основе 
 Запрос на получение предзаполненного шаблона заказа поставщику на основе внутреннего заказа или заказа покупателя.
 В ответ на запрос вернется предзаполненный шаблон заказа поставщику, который
 затем можно будет использовать для создания нового заказа с помощью POST запроса.
@@ -1622,7 +1665,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "internalOrder": {
@@ -1789,7 +1832,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "customerOrders": [
@@ -1913,7 +1956,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -2055,7 +2098,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "updated": "2016-07-01 13:15:05",
@@ -2312,7 +2355,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/purchaseOrder/7944ef04-f831-11e5-7a69-971500188b19/positions"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -2483,7 +2526,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/purchaseOrder/7944ef04-f831-11e5-7a69-971500188b19/positions"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "quantity": 49,
@@ -2540,7 +2583,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/purchaseOrder/7944ef04-f831-11e5-7a69-971500188b19/positions"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '[
             {
@@ -2686,7 +2729,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -2735,7 +2778,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "quantity": 44,
@@ -2799,7 +2842,7 @@ curl -X GET
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)

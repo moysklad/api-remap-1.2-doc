@@ -114,7 +114,7 @@
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/demand"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -378,7 +378,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/demand"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "888",
@@ -514,7 +514,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/demand"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "888",
@@ -685,7 +685,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/demand"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "888",
@@ -856,7 +856,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/demand"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "888",
@@ -1057,7 +1057,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/demand"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '[
             {
@@ -1374,11 +1374,54 @@ curl -X GET
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
 Успешное удаление Отгрузки.
+
+### Массовое удаление Отгрузок
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Отгрузок, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Отгрузок. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/demand/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata",
+            "type": "demand",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata",
+            "type": "demand",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Отгрузок.
+
+```json
+[
+  {
+    "info":"Сущность 'demand' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'demand' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+``` 
 
 ### Метаданные Отгрузок 
 #### Метаданные Отгрузок 
@@ -1396,7 +1439,7 @@ curl -X DELETE
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1544,7 +1587,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1565,14 +1608,14 @@ curl -X GET
 
 ```
 
-### Шаблон отгрузки 
-#### Шаблон отгрузки 
+### Шаблон Отгрузки 
+#### Шаблон Отгрузки 
 > Запрос на получение предзаполненого стандартными значениями шаблона отгрузки без связи с каким-либо документом.
 
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/demand/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d ''  
 ```
@@ -1627,7 +1670,7 @@ curl -X GET
 }
 ```
 
-### Шаблон отгрузки на основе 
+### Шаблон Отгрузки на основе 
 Запрос на получение шаблона отгрузки на основе заказа покупателя или счета покупателю.
 В результате запроса, будет создан предзаполненный шаблон отгрузки на основе переданного
 документа.
@@ -1637,7 +1680,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/demand/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "customerOrder": {
@@ -1764,7 +1807,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/demand/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "invoicesOut": [
@@ -1901,7 +1944,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -2078,7 +2121,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/demand/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "887",
@@ -2257,7 +2300,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/demand/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "887",
@@ -2507,7 +2550,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/demand/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "887",
@@ -2755,7 +2798,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/7944ef04-f831-11e5-7a69-971500188b19/positions"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -2905,7 +2948,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/demand/7944ef04-f831-11e5-7a69-971500188b19/positions"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "quantity": 4,
@@ -2958,7 +3001,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/demand/7944ef04-f831-11e5-7a69-971500188b19/positions"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '[
             {
@@ -3113,7 +3156,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -3161,7 +3204,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/demand/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "quantity": 111,
@@ -3221,7 +3264,7 @@ curl -X GET
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)

@@ -42,7 +42,7 @@
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/country"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -192,7 +192,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/country"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "Панама 2",
@@ -252,7 +252,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/country"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '[
             {
@@ -367,7 +367,7 @@ curl -X GET
 ```shell
   curl -X DELETE
     "https://online.moysklad.ru/api/remap/1.2/entity/country/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Access-Token>"  
+    -H "Authorization: Basic <Credentials>"  
 ```
 
 > Response 200 (application/json)
@@ -383,7 +383,7 @@ curl -X GET
 ```shell
 curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/country/delete"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
   -d '[
         {
@@ -403,7 +403,7 @@ curl -X POST
       ]'
 ```        
 
-> Успешный запрос. Результат - JSON информацио об удалении Стран.
+> Успешный запрос. Результат - JSON информация об удалении Стран.
 
 ```json
 [
@@ -437,7 +437,7 @@ curl -X POST
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/country/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -476,7 +476,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/country/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "Другая Россия",

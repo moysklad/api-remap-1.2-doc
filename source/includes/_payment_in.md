@@ -77,7 +77,7 @@
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/paymentin"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -320,7 +320,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/paymentin"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "333222",
@@ -431,7 +431,7 @@ curl -X GET
 ```shell
   curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/paymentin"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '[
             {
@@ -643,11 +643,54 @@ curl -X GET
 ```shell
 curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
 Успешное удаление Входящего платежа.
+
+### Массовое удаление Входящих платежей
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Входящих платежей, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Входящих платежей. 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/metadata",
+            "type": "paymentin",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/metadata",
+            "type": "paymentin",
+            "mediaType": "application/json"
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Входящих платежей.
+
+```json
+[
+  {
+    "info":"Сущность 'paymentin' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'paymentin' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+``` 
 
 ### Метаданные Входящих платежей 
 #### Метаданные Входящих платежей 
@@ -665,7 +708,7 @@ curl -X DELETE
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/metadata"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -772,7 +815,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -792,14 +835,14 @@ curl -X GET
 }
 ```
 
-### Шаблон входящего платежа 
-#### Шаблон входящего платежа 
+### Шаблон Входящего платежа 
+#### Шаблон Входящего платежа 
 > Запрос на получение предзаполненого стандартными значениями шаблона входящего платежа без связи с каким-либо документом.
 
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d ''  
 ```
@@ -822,7 +865,7 @@ curl -X GET
 }
 ```
 
-### Шаблон входящего платежа на основе 
+### Шаблон Входящего платежа на основе 
 Запрос на получение предзаполненного входящего платежа на основе другого документа.
 В результате запроса, будет создан предзаполненный шаблон входящего платежа на основе переданного документа.
 
@@ -831,7 +874,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "operations": [
@@ -914,7 +957,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "operations": [
@@ -997,7 +1040,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "operations": [
@@ -1080,7 +1123,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "operations": [
@@ -1156,7 +1199,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/new"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "operations": [
@@ -1277,7 +1320,7 @@ curl -X GET
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -1407,7 +1450,7 @@ curl -X GET
 ```shell
   curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Access-Token>"
+    -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "name": "333444",

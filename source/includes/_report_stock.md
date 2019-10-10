@@ -155,7 +155,7 @@ C помощью параметра filter выборку также можно 
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/report/stock/all"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
@@ -731,7 +731,7 @@ C помощью параметра filter выборку также можно 
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/report/stock/bystore"
-  -H "Authorization: Basic <Access-Token>"
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
