@@ -30,13 +30,6 @@
 + **organizationAccount** - Ссылка на счет вашего юрлица в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **agentAccount** - Ссылка на счет контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **documents** - Список печатных форм в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-<br>Поля при expand'е:</br>
-  - **name** - номер документа
-  - **moment** - дата печати
-  - **href** - ссылка на файл печатной формы
-  - **fileName** - название файла печатной формы
-  - **updated** - дата последнего изменения
 + **created** - Дата создания `Только для чтения`
 + **vatSum** - Сумма НДС `Только для чтения`
 + **positions** - Ссылка на позиции Розничной продажи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
