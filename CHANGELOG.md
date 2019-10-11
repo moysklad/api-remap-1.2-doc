@@ -26,6 +26,7 @@
 - Время в поле `updated` отображается с точностью до миллисекунд
 
 ### Удалено
-- Заголовки `If-Modified-Since`, `debug`
+- Заголовки `If-Modified-Since`, `debug`, `X-Lognex-Format-Millisecond`
 - Поле `version`
+- Поле `documents` у документов
 - Передача заголовка `Accept`
