@@ -1167,7 +1167,7 @@ curl -X GET
                 "mediaType": "application/json"
               },
               "name": "2000700",
-              "description": "Приемка от толстого контрагента",
+              "description": "Приемка от контрагента",
               "code": "1241242ы421",
               "externalCode": "keksea2as12",
               "moment": "2011-12-12 11:11:11",
@@ -1408,7 +1408,7 @@ curl -X GET
     },
     "updated": "2016-07-01 11:51:34",
     "name": "2000700",
-    "description": "Приемка от толстого контрагента",
+    "description": "Приемка от контрагента",
     "code": "1241242ы421",
     "externalCode": "keksea2as12",
     "moment": "2011-12-12 10:11:11",
@@ -2118,7 +2118,7 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '{
             "name": "2000700",
-            "description": "Приемка от толстого контрагента",
+            "description": "Приемка от контрагента",
             "code": "1241242ы421",
             "externalCode": "keksea2as12",
             "moment": "2011-12-12 11:11:11",
@@ -2252,7 +2252,7 @@ curl -X GET
   },
   "updated": "2016-07-01 11:51:34",
   "name": "2000700",
-  "description": "Приемка от толстого контрагента",
+  "description": "Приемка от контрагента",
   "code": "1241242ы421",
   "externalCode": "keksea2as12",
   "moment": "2011-12-12 10:11:11",

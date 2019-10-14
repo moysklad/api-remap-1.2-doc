@@ -380,6 +380,7 @@ curl -X GET
 + **name** - номер Приходного ордера
 + **organization** - Ссылка на ваше орлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **agent** - Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+
 > Пример создания нового Приходного ордера с телом запроса, содержащим только необходимые поля.
 
 ```shell

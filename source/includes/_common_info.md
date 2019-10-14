@@ -427,7 +427,7 @@
     }
   },
   "updated": "2016-11-25 15:35:00",
-  "name": "lol2",
+  "name": "Платеж",
   "externalCode": "-S9khhF3gNPa78SPCu81S2",
   "moment": "2016-11-25 15:35:00",
   "applicable": true,
