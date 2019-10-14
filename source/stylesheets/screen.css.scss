@@ -604,9 +604,7 @@ html, body {
 
   pre {
     @extend %code-font;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    padding: 2em $main-padding;
+    padding: 1em $main-padding;
   }
 
   blockquote {
@@ -617,9 +615,13 @@ html, body {
     }
     &>span {
       background-color: $code-annotation-bg;
-      padding: 0 2em 1px;
+      padding: 0 2em $code-annotation-padding;
       color: #eee;
     }
+  }
+
+  pre + blockquote {
+    border-top: 4px solid #19252f;
   }
 }
 
