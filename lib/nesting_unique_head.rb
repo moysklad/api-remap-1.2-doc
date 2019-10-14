@@ -3,6 +3,10 @@ require 'middleman-core/renderers/redcarpet'
 require 'translit'
 
 class NestingUniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
+
+  BLOCKQUOTE_BUTTON = "<blockquote><span class=\"collapse-button\"><a class=\"close\">Свернуть</a><a class=\"open\">Показать</a></span></blockquote>"
+  DISPLAY_NONE = "style=\"display: none;\""
+
   def initialize
     super
     @@headers_history = {} if !defined?(@@headers_history)
@@ -20,4 +24,11 @@ class NestingUniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
 
     return "<h#{header_level} id='#{friendly_text}'>#{text}</h#{header_level}>"
   end
+
+  def block_code(code, language)
+    block = super
+    index = block.index('>')
+    BLOCKQUOTE_BUTTON + block.insert(index, DISPLAY_NONE)
+  end
+
 end

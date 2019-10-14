@@ -28,14 +28,18 @@ under the License.
     if (!language) return;
     if (language === "") return;
 
-    $(".lang-selector a").removeClass('active');
-    $(".lang-selector a[data-language-name='" + language + "']").addClass('active');
-    for (var i=0; i < languages.length; i++) {
-      $(".highlight.tab-" + languages[i]).hide();
-      $(".lang-specific." + languages[i]).hide();
-    }
-    $(".highlight.tab-" + language).show();
-    $(".lang-specific." + language).show();
+    // Из-за открытия (show()) всех блоков кода выбранного языка нарушается работа функции показа/скрытия блоков кода
+    // Сейчас язык один (shel:cURL), поэтому он всегда активен.
+    // При добавлении новых языков при переключении нужно будет отслеживать текущее состояние аналогичных блоков для предыдущего активного языка.
+
+    // $(".lang-selector a").removeClass('active');
+    // $(".lang-selector a[data-language-name='" + language + "']").addClass('active');
+    // for (var i=0; i < languages.length; i++) {
+    //   $(".highlight.tab-" + languages[i]).hide();
+    //   $(".lang-specific." + languages[i]).hide();
+    // }
+    // $(".highlight.tab-" + language).show();
+    // $(".lang-specific." + language).show();
 
     window.recacheHeights();
 
@@ -158,6 +162,15 @@ under the License.
       var language = $(this).data("language-name");
       pushURL(language);
       activateLanguage(language);
+      return false;
+    });
+  });
+
+  // Функция показа/скрытия блоков кода
+  $(function() {
+    $(".collapse-button").on("click", function() {
+      $( this ).parent().next().toggle();
+      $( this ).toggleClass("show");
       return false;
     });
   });
