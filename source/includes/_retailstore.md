@@ -704,7 +704,6 @@ curl -X GET
               } ],
               "issueOrders" : true,
               "sellReserves" : true,
-              "ofdEnabled" : true,
               "allowCustomPrice" : true,
               "allowSellTobaccoWithoutMRC" : true,
               "allowCreateProducts" : false,
@@ -1032,7 +1031,7 @@ curl -X GET
     "entity" : "retailshift",
     "name" : "00001"
   } ],
-  "ofdEnabled" : false,
+  "ofdEnabled" : true,
   "allowCustomPrice" : false,
   "allowSellTobaccoWithoutMRC" : false,
   "allowCreateProducts" : true,
@@ -1204,7 +1203,7 @@ curl -X GET
       "entity" : "retailshift",
       "name" : "00001"
     } ],
-    "ofdEnabled" : false,
+    "ofdEnabled" : true,
     "allowCustomPrice" : false,
     "allowSellTobaccoWithoutMRC" : false,
     "allowCreateProducts" : true,
@@ -1326,7 +1325,7 @@ curl -X GET
       "entity" : "retailshift",
       "name" : "00001"
     } ],
-    "ofdEnabled" : false,
+    "ofdEnabled" : true,
     "allowCustomPrice" : true,
     "allowSellTobaccoWithoutMRC" : true,
     "allowCreateProducts" : true,
@@ -1548,7 +1547,7 @@ curl -X GET
       "name": "00002"
     }
   ],
-  "ofdEnabled": false,
+  "ofdEnabled": true,
   "allowCustomPrice": false,
   "environment": {
     "device": "Some device name",
@@ -1719,7 +1718,7 @@ curl -X PUT
     "entity" : "retailshift",
     "name" : "00001"
   } ],
-  "ofdEnabled" : false,
+  "ofdEnabled" : true,
   "allowCustomPrice" : false,
   "allowSellTobaccoWithoutMRC" : false,
   "allowCreateProducts" : true,
