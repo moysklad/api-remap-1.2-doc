@@ -30,7 +30,7 @@
 + **addressFull** - Адрес с детализацией по отдельным полям
 + **controlShippingStock** - Контроль остатков. Не может быть `true`, если `AllowCreateProducts` имеет значение `true`
 + **onlyInStock** - Выгружать только товары в наличии. Доступно только при активном контроле остатков. Влияет только на выгрузку остатков в POS API
-+ **active** - Cостояние точки продаж (Включена/Отключена)
++ **active** - Состояние точки продаж (Включена/Отключена)
 + **controlCashierChoice** - Выбор продавца
 + **discountEnable** - Разрешить скидки
 + **discountMaxPercent** - Максимальная скидка (в процентах)
@@ -42,7 +42,7 @@
 + **bankPercent** - Комиссия банка-эквайера (в процентах)
 + **issueOrders** - Выдача заказов
 + **sellReserves** - Учет резервов
-+ **lastOperationNames** - Последние операции
++ **lastOperationNames** - Последние операции `Только для чтения`
 + **ofdEnabled** - Отправлять электронный чек через ОФД
 + **priorityOfdSend** - Приоритет отправки электронного чека. Активен только, когда отправка электронных чеков через ОФД включена. Принимает следующие строковые значения:
   + **phone** - Приоритет отправки на телефон
@@ -52,8 +52,8 @@
 + **authTokenAttached** - Создан ли токен для точки продаж `Только для чтения`
 + **orderToState** - Ссылка на статус, который проставится заказу после проведения продажи на его основании (если указано), в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **customerOrderStates** - Ссылка на статусы, в которых выгружаются заказы в точку продаж (если указано), в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **environment** - Информация об окружении
-+ **state** - Информация о статусе точки продаж
++ **environment** - Информация об окружении `Только для чтения`
++ **state** - Информация о статусе точки продаж `Только для чтения`
 + **defaultTaxSystem** - Код системы налогообложения по умолчанию
   + **GENERAL_TAX_SYSTEM** - ОСН
   + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
@@ -75,9 +75,8 @@
 + **createAgentsTags** - Коллекция групп покупателей, представленных в формате строк. Определяет группы, в которые добавляются новые покупатели. Значения `null` игнорируются
 + **filterAgentsTags** - Коллекция групп покупателей, представленных в формате строк. Определяет группы, из которых выгружаются покупатели. Значения `null` игнорируются
 + **printAlways** - Всегда печатать кассовые чеки
-+ **receiptTemplate** - Шаблон перчати кассовых чеков `Только для чтения`
-  + **header** - Заголовок шаблона перчати кассовых чеков
-  + **footer** - Нижняя часть шаблона перчати кассовых чеков
++ **receiptTemplate** - Шаблон печати кассовых чеков `Только для чтения`
+  + **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) шаблона печати кассовых чеков
 + **createPaymentInOnRetailShiftClosing** - Создавать входящий платеж при закрытии смены
 + **createCashInOnRetailShiftClosing** - Создавать ПКО при закрытии смены
 + **returnFromClosedShiftEnabled** - Разрешить возвраты в закрытых сменах
@@ -337,8 +336,6 @@ curl -X GET
           "name": "00002"
         }
       ],
-      "ofdEnabled": false,
-      "allowCustomPrice": false,
       "environment": {
         "device": "Some device name",
         "os": "Linux",
@@ -538,8 +535,6 @@ curl -X GET
           "name": "00002"
         }
       ],
-      "ofdEnabled": false,
-      "allowCustomPrice": false,
       "environment": {
         "device": "Some device name",
         "os": "Linux",
@@ -724,14 +719,6 @@ curl -X GET
               "createAgentsTags" : [ "createagentstag" ],
               "filterAgentsTags" : [ "filteragentstag" ],
               "printAlways" : true,
-              "receiptTemplate" : {
-                "meta" : {
-                  "href" : "https://online.moysklad.ru/api/remap/1.2/entity/receipttemplate/30fe66fd-137a-11e6-9464-e4de00000057",
-                  "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/receipttemplate/metadata",
-                  "type" : "receipttemplate",
-                  "mediaType" : "application/json"
-                }
-              },
               "bankPercent" : 20.0,
               "createPaymentInOnRetailShiftClosing" : true,
               "createCashInOnRetailShiftClosing" : true,
@@ -894,14 +881,6 @@ curl -X GET
   "createAgentsTags" : [ "createagentstag" ],
   "filterAgentsTags" : [ "filteragentstag" ],
   "printAlways" : true,
-  "receiptTemplate" : {
-    "meta" : {
-      "href" : "https://online.moysklad.ru/api/remap/1.2/entity/receipttemplate/30fe66fd-137a-11e6-9464-e4de00000056",
-      "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/receipttemplate/metadata",
-      "type" : "receipttemplate",
-      "mediaType" : "application/json"
-    }
-  },
   "createPaymentInOnRetailShiftClosing" : true,
   "createCashInOnRetailShiftClosing" : true,
   "returnFromClosedShiftEnabled" : true,
