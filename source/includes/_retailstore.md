@@ -83,6 +83,10 @@
 + **enableReturnsWithNoReason** - Разрешить возвраты без основания
 + **createOrderWithState** - Ссылка на статус, который будет указан при создании заказа
 + **reservePrepaidGoods** - Резервировать товары, за которые внесена предоплата
++ **fiscalType** - Тип формирования чеков
+  + **STANDARD** - Стандартное
+  + **MASTER** - Стандартное с обработкой облачных операций
+  + **CLOUD** - Облачное
  
 
 ##### Аттрибуты сущности Окружение
@@ -419,7 +423,8 @@ curl -X GET
       },
       "reservePrepaidGoods" : true,
       "defaultTaxSystem": "GENERAL_TAX_SYSTEM",
-      "orderTaxSystem": "GENERAL_TAX_SYSTEM"
+      "orderTaxSystem": "GENERAL_TAX_SYSTEM",
+      "fiscalType": "STANDARD"
     },
     {
       "meta": {
@@ -616,7 +621,8 @@ curl -X GET
           "mediaType" : "application/json"
         }
       },
-      "reservePrepaidGoods" : true  
+      "reservePrepaidGoods" : true,
+      "fiscalType": "MASTER"  
     }
   ]
 }
@@ -731,7 +737,8 @@ curl -X GET
                   "mediaType" : "application/json"
                 }
               },
-              "reservePrepaidGoods" : true
+              "reservePrepaidGoods" : true,
+              "fiscalType": "STANDARD"
           }'
 ```
 
@@ -1549,6 +1556,7 @@ curl -X GET
   ],
   "ofdEnabled": true,
   "allowCustomPrice": false,
+  "fiscalType": "CLOUD",
   "environment": {
     "device": "Some device name",
     "os": "Linux",
@@ -1736,6 +1744,7 @@ curl -X PUT
   "createCashInOnRetailShiftClosing" : true,
   "returnFromClosedShiftEnabled" : false,
   "enableReturnsWithNoReason" : false,
-  "reservePrepaidGoods" : false
+  "reservePrepaidGoods" : false,
+  "fiscalType": "MASTER"
 }
 ```
