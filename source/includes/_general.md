@@ -1730,3 +1730,154 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление доп. поля.
+
+### Доступ с использованием токена
+Средствами JSON API можно создавать токены доступа, которые можно использовать для доступа к JSON API без необходимости использования логина и пароля пользователя.
+
+Для доступа по токену необходимо указать заголовок `Authorization` со значением `Bearer <Access-Token>`
+
+> Пример заголовка
+
+```
+Authorization: Bearer 0cbfc512618efa7d5fa306250bca064c1169b37c
+```
+
+#### Получение нового токена
+Запрос на получение нового токена. Как и в других запросах, в заголовке `Authorization` пара `логин:пароль` указывается закодированной в варианте RFC2045-MIME стандарта Base64. 
+
+* **access_token** - токен для доступа
+
+> Пример запроса на получение нового токена
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/security/token"
+  -H "Authorization: Basic <Credentials>"
+``` 
+
+> Response 200 (application/json) Успешный запрос. Результат JSON объект, содержащий токен
+
+```json
+{
+  "access_token": "0cbfc512618efa7d5fa306250bca064c1169b37c"
+}
+```
+
+### Серверные приложения
+Для доступа к API может быть использован токен выданный Вендору при установке Серверного приложения пользователем МоегоСклада.
+
+Подробнее про процесс установки таких приложений см. [Руководство вендора приложений Маркетплейса](https://docs.google.com/document/d/1Clu4_2ZMYRlc8nrcN40NycAwQ8fxuTJqJ_cSNMfNgq8)
+
+Для доступа от лица Серверного приложения необходимо указать заголовок `Authorization` со значением `Bearer <Access-Token>`
+
+> Пример заголовка
+
+```
+Authorization: Bearer 0cbfc512618efa7d5fa306250bca064c1169b37c
+```
+
+При этом Серверному приложению доступны следующие действия:
+ 
+#### Получение контекста приложения
+Возвращает параметры приложения, в рамках которого присходит запрос (по аналогии с контекстом Сотрудника).
+
+> Пример запроса на получение контекста приложения
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/context/application"
+  -H "Authorization: Bearer <Access-Token>"
+``` 
+
+> Response 200 (application/json) Успешный запрос. Результат JSON объект, содержащий данные приложения
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/application/b58a6312-f958-11e9-ac12-000a00000020",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/application/metadata",
+    "type": "application",
+    "mediaType": "application/json"
+  },
+  "appUid": "test.moysklad@reqwy1",
+  "id": "b58a6312-f958-11e9-ac12-000a00000020"
+}
+```
+
+#### Получение сущности установленного приложения
+Возвращает параметры установленного приложения по id установленного на аккаунте приложения. 
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: b58a6312-f958-11e9-ac12-000a00000020* id установленного на аккаунте приложения|
+
+> Пример запроса на получение сущности установленного приложения
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/application/b58a6312-f958-11e9-ac12-000a00000020"
+  -H "Authorization: Bearer <Access-Token>"
+``` 
+
+> Response 200 (application/json) Успешный запрос. Результат JSON объект, содержащий данные приложения
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/application/b58a6312-f958-11e9-ac12-000a00000020",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/application/metadata",
+    "type": "application",
+    "mediaType": "application/json"
+  },
+  "appUid": "test.moysklad@reqwy1",
+  "id": "b58a6312-f958-11e9-ac12-000a00000020"
+}
+```
+
+#### Фильтрация выборки с помощью параметра filter=updatedBy
+Для фильтрации выборок сущностей по приложению укажите _uid_ изменившего их приложения.
+
+Uid приложения должен быть указан в виде:
+`<Application-Alias>.<Vendor-Alias>@<Account-Name>` 
+
+
+> Пример запроса на получение списка входящих платежей
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/paymentin?filter=updatedBy=test.moysklad@reqwy1"
+  -H "Authorization: Bearer <Access-Token>"
+``` 
+
+#### Фильтрация записей аудита с помощью параметра filter=uid
+Для фильтрации аудита по приложению укажите _uid_ приложения, которое изменяло сущности.
+
+Uid приложения должен быть указан в виде:
+`<Application-Alias>.<Vendor-Alias>@<Account-Name>` 
+
+
+> Пример запроса на получение списка записей
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/audit?filter=uid=test.moysklad@reqwy1"
+  -H "Authorization: Bearer <Access-Token>"
+``` 
+
+#### Фильтрация записей аудита с помощью параметра filter=application
+Для фильтрации аудита по приложению укажите _href_ приложения, которое изменяло сущности.
+
+Href приложения должен быть указан в виде:
+`https://online.moysklad.ru/api/remap/1.2/entity/application/{id}`, 
+где _id_ - UUID установленного на аккаунте приложения
+
+
+> Пример запроса на получение списка записей
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/audit?filter=application=https://online.moysklad.ru/api/remap/1.2/entity/application/46ea8005-2965-11e9-9ff4-34e80009ac49" 
+  -H "Authorization: Bearer <Access-Token>"
+``` 
