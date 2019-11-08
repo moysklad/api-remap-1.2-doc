@@ -1818,14 +1818,8 @@ curl -X GET
 Uid приложения должен быть указан в виде:
 `<Application-Alias>.<Vendor-Alias>@<Account-Name>` 
 
-
 Пример запроса на получение списка входящих платежей:
-
-```shell
-curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/paymentin?filter=updatedBy=test.moysklad@reqwy1"
-  -H "Authorization: Bearer <Access-Token>"
-``` 
+`https://online.moysklad.ru/api/remap/1.2/entity/paymentin?filter=updatedBy=test.moysklad@reqwy1` 
 
 #### Фильтрация записей аудита с помощью параметра filter=uid
 Для фильтрации аудита по приложению укажите _uid_ приложения, которое изменяло сущности.
@@ -1833,14 +1827,8 @@ curl -X GET
 Uid приложения должен быть указан в виде:
 `<Application-Alias>.<Vendor-Alias>@<Account-Name>` 
 
-
 Пример запроса на получение списка записей:
-
-```shell
-curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/audit?filter=uid=test.moysklad@reqwy1"
-  -H "Authorization: Bearer <Access-Token>"
-``` 
+`https://online.moysklad.ru/api/remap/1.2/audit?filter=uid=test.moysklad@reqwy1` 
 
 #### Фильтрация записей аудита с помощью параметра filter=application
 Для фильтрации аудита по приложению укажите _href_ приложения, которое изменяло сущности.
@@ -1849,11 +1837,5 @@ Href приложения должен быть указан в виде:
 `https://online.moysklad.ru/api/remap/1.2/entity/application/{id}`, 
 где _id_ - UUID установленного на аккаунте приложения
 
-
 Пример запроса на получение списка записей:
-
-```shell
-curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/audit?filter=application=https://online.moysklad.ru/api/remap/1.2/entity/application/46ea8005-2965-11e9-9ff4-34e80009ac49" 
-  -H "Authorization: Bearer <Access-Token>"
-``` 
+`https://online.moysklad.ru/api/remap/1.2/audit?filter=application=https://online.moysklad.ru/api/remap/1.2/entity/application/46ea8005-2965-11e9-9ff4-34e80009ac49` 
