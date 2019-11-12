@@ -12,7 +12,6 @@ toc_footers:
 
 includes:
   - general
-  - security
   - errors
 
 

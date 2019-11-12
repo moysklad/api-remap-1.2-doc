@@ -12,6 +12,26 @@
  Аутентификация по протоколу Basic Auth с автоматической генерацией соответствующего
  заголовка и возможность указать заголовок для аутентификации по токену поддерживается во многих HTTP-клиентах, таких как Postman, curl и т.п.
 
+#### Получение нового токена
+Запрос на получение нового токена. Как и в других запросах, в заголовке `Authorization` пара `логин:пароль` указывается закодированной в варианте RFC2045-MIME стандарта Base64. 
+
+* **access_token** - токен для доступа
+
+> Пример запроса на получение нового токена
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/security/token"
+  -H "Authorization: Basic <Credentials>"
+``` 
+
+> Response 200 (application/json) Успешный запрос. Результат JSON объект, содержащий токен
+
+```json
+{
+  "access_token": "0cbfc512618efa7d5fa306250bca064c1169b37c"
+}
+```
 
 ### Замечания по разработке клиентских приложений
 При разработке клиентского приложения необходимо учитывать следующие моменты:
@@ -1730,3 +1750,92 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление доп. поля.
+
+### Серверные приложения
+Для доступа к API может быть использован токен выданный Вендору при установке Серверного приложения пользователем МоегоСклада.
+
+#### Получение контекста приложения
+Возвращает параметры приложения, в рамках которого присходит запрос (по аналогии с контекстом Сотрудника).
+
+> Пример запроса на получение контекста приложения
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/context/application"
+  -H "Authorization: Bearer <Access-Token>"
+``` 
+
+> Response 200 (application/json) Успешный запрос. Результат JSON объект, содержащий данные приложения
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/application/b58a6312-f958-11e9-ac12-000a00000020",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/application/metadata",
+    "type": "application",
+    "mediaType": "application/json"
+  },
+  "appUid": "test.moysklad@reqwy1",
+  "id": "b58a6312-f958-11e9-ac12-000a00000020"
+}
+```
+
+#### Получение сущности установленного приложения
+Возвращает параметры установленного приложения по id установленного на аккаунте приложения. 
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: b58a6312-f958-11e9-ac12-000a00000020* id установленного на аккаунте приложения|
+
+> Пример запроса на получение сущности установленного приложения
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/application/b58a6312-f958-11e9-ac12-000a00000020"
+  -H "Authorization: Bearer <Access-Token>"
+``` 
+
+> Response 200 (application/json) Успешный запрос. Результат JSON объект, содержащий данные приложения
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/application/b58a6312-f958-11e9-ac12-000a00000020",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/application/metadata",
+    "type": "application",
+    "mediaType": "application/json"
+  },
+  "appUid": "test.moysklad@reqwy1",
+  "id": "b58a6312-f958-11e9-ac12-000a00000020"
+}
+```
+
+#### Фильтрация выборки с помощью параметра filter=updatedBy
+Для фильтрации выборок сущностей по приложению укажите _uid_ изменившего их приложения.
+
+Uid приложения должен быть указан в виде:
+`<Application-Alias>.<Vendor-Alias>@<Account-Name>` 
+
+Пример запроса на получение списка входящих платежей:
+`https://online.moysklad.ru/api/remap/1.2/entity/paymentin?filter=updatedBy=test.moysklad@reqwy1` 
+
+#### Фильтрация записей аудита с помощью параметра filter=uid
+Для фильтрации аудита по приложению укажите _uid_ приложения, которое изменяло сущности.
+
+Uid приложения должен быть указан в виде:
+`<Application-Alias>.<Vendor-Alias>@<Account-Name>` 
+
+Пример запроса на получение списка записей:
+`https://online.moysklad.ru/api/remap/1.2/audit?filter=uid=test.moysklad@reqwy1` 
+
+#### Фильтрация записей аудита с помощью параметра filter=application
+Для фильтрации аудита по приложению укажите _href_ приложения, которое изменяло сущности.
+
+Href приложения должен быть указан в виде:
+`https://online.moysklad.ru/api/remap/1.2/entity/application/{id}`, 
+где _id_ - UUID установленного на аккаунте приложения
+
+Пример запроса на получение списка записей:
+`https://online.moysklad.ru/api/remap/1.2/audit?filter=application=https://online.moysklad.ru/api/remap/1.2/entity/application/46ea8005-2965-11e9-9ff4-34e80009ac49` 
