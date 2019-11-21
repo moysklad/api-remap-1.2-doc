@@ -66,7 +66,7 @@
 | `connectors`                   | Синхронизация с ИМ             |
 | `evotor`                       | Синхронизация с Эвотор         |
 | `clearrecyclebin`              | Автоматическая очистка корзины |
-| `loginlogout`                  | Вход или выход из моего склада |
+| `loginlogout`                  | Вход или выход из МоегоСклада  |
 | `emailsend`                    | Отправка сообщения             |
 | `export`                       | Экспорт                        |
 | `phone-1.0`                    | Phone API                      |
@@ -88,7 +88,7 @@
 | ------------------------------ |:---------------------------|
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|filter |  `string` (optional) *Example: source=jsonapi* Подробное описание параметра в разделе [Фильтрация выборки с помощью параметра filter](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter) Атрибуты фильтрации для Контекстов аудита представлены в разделе [Фильтры](../other/#audit-audit-poluchit-fil-try)|
+|filter |  `string` (optional) *Example: source=jsonapi* Подробное описание параметра в разделе [Фильтрация выборки с помощью параметра filter](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter) Атрибуты фильтрации для Контекстов аудита представлены в разделе [Фильтры](../other/#audit-audit-fil-try)|
 
 > Получить Контексты
 
@@ -436,7 +436,7 @@ curl -X GET
 }
 ```
 
-##### Фильтры
+### Фильтры
 
 В JSON API сервиса МойСклад предусмотрена возможность фильтрации [Контекстов аудита](../other/#audit-audit-kontexty) с помощью url параметр ``filter``.
 Подробнее про данный параметр можно посмотреть в разделе [Фильтрация выборки с помощью параметра filter](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter)
@@ -444,7 +444,7 @@ curl -X GET
 
 ##### Атрибуты сущности
 
-+ **moment**
++ **moment** - 
   Параметр строкового типа. В качестве значения должна быть передана строка в формате
   дата + время с точностью до секунд.
 
@@ -452,13 +452,13 @@ curl -X GET
 
    Формат строки : `ГГГГ-ММ-ДД ЧЧ:ММ:СС[.ммм]`, Часовой пояс: `MSK` (Московское время)
 
-+ **employee**
++ **employee** - 
   Параметр строкового типа. В качестве значения должен быть передан ``href`` сущности сотрудника.
   В отфильтрованную выборку попадут все сущности аудита, автором изменений которых является данный пользователь.
 
    Формат строки : `href`
 
-+ **eventType**
++ **eventType** - 
   Параметр строкового типа. В качестве значения должен быть передан [тип События](../other/#audit-audit-sobytiq-tipy-sobytij), по которому
   должны быть отфильтрованы сущности аудита. Список возможных значений параметра:
 
@@ -478,7 +478,7 @@ curl -X GET
 | `bulkoperation`              | Массовая операция      |
 | `replacetoken`               | Смена токена для Точки продаж      |
 
-+ **source**
++ **source** - 
   Параметр строкового типа. В качестве значения должен быть передан тип действия, по которому
   должны быть отфильтрованы сущности аудита. Список возможных значений параметра:
 
@@ -494,17 +494,18 @@ curl -X GET
 | `connectors`                   | Синхронизация с ИМ             |
 | `evotor`                       | Синхронизация с Эвотор         |
 | `clearrecyclebin`              | Автоматическая очистка корзины |
-| `loginlogout`                  | Вход или выход из моего склада |
+| `loginlogout`                  | Вход или выход из МоегоСклада  |
 | `emailsend`                    | Отправка сообщения             |
 | `export`                       | Экспорт                        |
 | `phone-1.0`                    | Phone API                      |
+| `scriptor`                     | Работа со сценариями           |
 
-+ **uid**
++ **uid** - 
   Параметр строкового типа. В качестве значения должен быть передан логин сотрудника, по которому
   должны быть отфильтрованы события аудита.
-+ **entityType**
++ **entityType** - 
   Параметр строкового типа. В качестве значения должно быть передано название сущности, по которой
-  должны быть отфильтрованы сущности аудита. В качестве параметра может быть передано наименование из JSON API сущности/документа(move, enter, customerorder и т.д.) либо одно из значений следующего списка:
+  должны быть отфильтрованы сущности аудита. В качестве параметра может быть передано наименование из JSON API сущности/документа (move, enter, customerorder и т.д.) либо одно из значений следующего списка:
 
 | Значение параметра entityType  | Описание                            |
 | ------------------------------ |:------------------------------------|
@@ -516,12 +517,19 @@ curl -X GET
 | `ymlconnectorsettings`         | Настройка синхронизации (YML)       |
 | `vkconnectorsettings`          | Настройка синхронизации (Вконтакте) |
 | `yandexconnectorsettings`      | Настройка синхронизации (Яндекс.Маркет) |
+| `evotorsetting`                | Настройка обмена с Эвотор           |
 | `usersettings`                 | Настройки пользователя              |
 | `user`                         | Пользователь                        |
 | `accountrole`                  | Роль                                |
 | `entitysettings`               | Настройки сущностей                 |
 | `statesettings`                | Настройки статусов                  |
 | `templatesettings`             | Настройки шаблонов                  |
+| `scripttemplate`               | Сценарий                            |
+| `crptdemand`                   | Отгрузка маркированной продукции    |
+| `crptcancellation`             | Списание кодов маркировки           |
+| `crptpackagecreation`          | Формирование упаковки               |
+| `crptpackageitemremoval`       | Изъятие из упаковки                 |
+| `crptpackagedisaggregation`    | Расформирование упаковки            |
 
 Также можно отфильтровать контексты аудита по пользовательскому справочнику. Для этого в качестве параметра **entityType** необходимо передать href пользовательского справочника.
 Пример: https://online.moysklad.ru/api/remap/1.2/entity/customentity/eaacabaf-2655-11e6-8a84-bae500000045
@@ -562,7 +570,8 @@ curl -X GET
     "loginlogout",
     "emailsend",
     "export",
-    "phone-1.0"
+    "phone-1.0",
+    "scriptor"
   ],
   "entitytype": [
     "organization",
@@ -643,11 +652,14 @@ curl -X GET
     "remarkingorder",
     "emissionorder",
     "crptdemand",
+    "scripttemplate",
     "cashboxadjustment",
     "accountadjustment",
     "counterpartyadjustment",
     "crptcancellation",
     "crptpackagecreation",
+    "crptpackageitemremoval",
+    "crptpackagedisaggregation",
     "evotorsetting",
     "https://online.moysklad.ru/api/remap/1.2/entity/customentity/eaacabaf-2655-11e6-8a84-bae500000045"
   ],
