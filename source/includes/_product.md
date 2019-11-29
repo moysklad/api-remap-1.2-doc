@@ -2869,8 +2869,8 @@ curl -X GET
               {
                 "uom": {
                   "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.1/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/uom/metadata",
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/uom/metadata",
                     "type": "uom",
                     "mediaType": "application/json"
                   }
@@ -3022,8 +3022,8 @@ curl -X GET
       "id": "6314188d-2c7f-11e6-8a84-bae500000055",
       "uom": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.1/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/uom/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/uom/metadata",
           "type": "uom",
           "mediaType": "application/json"
         }
