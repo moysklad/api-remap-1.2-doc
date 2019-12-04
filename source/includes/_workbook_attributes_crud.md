@@ -1,12 +1,12 @@
 ## Работа с дополнительными полями через API.
 
-Для задания дополнительных свойств объекта в сервисе МойСклад есть возможность работы с дополнительными полями (атрибутами). Они представляют собой свойства сущности (объекта или документа), которые формируются пользователем и могут быть использованы для более подробного описания объекта или фильтрации по значениям этих полей. Подробнее о типах и свойствах дополнительных полей можно прочитать в [документации](https://online.moysklad.ru/api/remap/1.1/doc/index.html#header-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8-%D0%BF%D0%BE%D0%BB%D1%8F%D0%BC%D0%B8).
+Для задания дополнительных свойств объекта в сервисе МойСклад есть возможность работы с дополнительными полями (атрибутами). Они представляют собой свойства сущности (объекта или документа), которые формируются пользователем и могут быть использованы для более подробного описания объекта или фильтрации по значениям этих полей. Подробнее о типах и свойствах дополнительных полей можно прочитать в [документации](https://online.moysklad.ru/api/remap/1.2/doc/index.html#header-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8-%D0%BF%D0%BE%D0%BB%D1%8F%D0%BC%D0%B8).
 
 В данной статье рассмотрим на примере магазина ноутбуков просмотр, создание, редактирование и удаление дополнительных полей средствами JSON API.
 
-Значения дополнительных полей можно менять, обращаясь к конкретному объекту (документу). Это подробно описано в статье [Дополнительные поля](https://dev.moysklad.ru/workbook/api/remap/1.1/ru/attributes.html). 
+Значения дополнительных полей можно менять, обращаясь к конкретному объекту (документу). Это подробно описано в статье [Дополнительные поля](https://dev.moysklad.ru/workbook/api/remap/1.2/ru/attributes.html). 
 
-Предположим, что нам необходимо выбирать и сортировать ноутбуки по некоторым характеристикам, которых нет в свойствах товара по умолчанию. Например, материал корпуса, наличие CD/DVD-Rom, наличие разъема Type-C и т.д. Нужна возможность создавать, редактировать и удалять свойства товаров. Присваивать конкретным товарам значения этих свойств, а также осуществлять фильтрацию по ним. Фильтрация по значениям дополнительных полей в JSON API описана в статье [Дополнительные поля](https://dev.moysklad.ru/workbook/api/remap/1.1/ru/attributes.html).
+Предположим, что нам необходимо выбирать и сортировать ноутбуки по некоторым характеристикам, которых нет в свойствах товара по умолчанию. Например, материал корпуса, наличие CD/DVD-Rom, наличие разъема Type-C и т.д. Нужна возможность создавать, редактировать и удалять свойства товаров. Присваивать конкретным товарам значения этих свойств, а также осуществлять фильтрацию по ним. Фильтрация по значениям дополнительных полей в JSON API описана в статье [Дополнительные поля](https://dev.moysklad.ru/workbook/api/remap/1.2/ru/attributes.html).
 Для создания указанных характеристик будем использовать дополнительные поля (атрибуты) товара.
 
 В web-приложении атрибуты объектов назначаются на странице списка объектов при нажатии на кнопку с шестеренкой справа. Открывается окно редактирования свойств объектов, где последним пунктом идет "Дополнительные поля". Здесь доступен просмотр, создание, редактирование и удаление атрибутов объекта. Весь этот функционал доступен и через JSON API. 
@@ -39,7 +39,7 @@ curl -X POST \
   -u login:password \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
-  https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes \
+  https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes \
   -d '{
     "name": "Материал корпуса",
     "type": "string"
@@ -51,7 +51,7 @@ curl -X POST \
 ```json
 {
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
         "type": "attributemetadata",
         "mediaType": "application/json"
     },
@@ -67,7 +67,7 @@ curl -X POST \
 ### Создание нового дополнительного поля типа Справочник через JSON API
 Стоит обратить внимание на создание атрибута с типом Справочник. Этот тип позволяет атрибуту принимать в качестве значения другие объекты, в том числе и пользовательские. 
 
-Описание атрибутов типа Справочник в [документации](https://online.moysklad.ru/api/remap/1.1/doc/index.html#header-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8-%D0%BF%D0%BE%D0%BB%D1%8F%D0%BC%D0%B8) 
+Описание атрибутов типа Справочник в [документации](https://online.moysklad.ru/api/remap/1.2/doc/index.html#header-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8-%D0%BF%D0%BE%D0%BB%D1%8F%D0%BC%D0%B8) 
 
 Предположим, что в нашем магазине есть также чехлы для ноутбуков. Создадим атрибут Справочник типа Товар. Теперь Появилась возможность для каждого ноутбука указать подходящий ему чехол как одно из свойств ноутбука.
 
@@ -80,7 +80,7 @@ curl -X POST \
   -u login:password \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
-  https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes \
+  https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes \
   -d '{
     "name": "Чехол",
     "type": "product"
@@ -92,7 +92,7 @@ curl -X POST \
 ```json
 {
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/cc8ff599-c5c0-11e9-0a80-06b000000000",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/cc8ff599-c5c0-11e9-0a80-06b000000000",
         "type": "attributemetadata",
         "mediaType": "application/json"
     },
@@ -120,7 +120,7 @@ curl -X POST \
   -u login:password \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
-  https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes \
+  https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes \
   -d '[
         {
             "id": "acd884ce-b44f-11e9-7ae5-884b00009002",
@@ -144,7 +144,7 @@ curl -X POST \
 [
     {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
             "type": "attributemetadata",
             "mediaType": "application/json"
         },
@@ -155,7 +155,7 @@ curl -X POST \
     },
     {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f",
             "type": "attributemetadata",
             "mediaType": "application/json"
         },
@@ -166,7 +166,7 @@ curl -X POST \
     },
     {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/33b30b2e-b465-11e9-7ae5-884b00015630",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b30b2e-b465-11e9-7ae5-884b00015630",
             "type": "attributemetadata",
             "mediaType": "application/json"
         },
@@ -191,7 +191,7 @@ curl \
     -X GET \
     -u login:password \
     -H "Lognex-Pretty-Print-JSON: true" \
-    "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes"
+    "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes"
 ```
 
 > В ответ получим список созданных атрибутов
@@ -199,7 +199,7 @@ curl \
 
 ```json
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes",
         "type": "attributemetadata",
         "mediaType": "application/json",
         "size": 3,
@@ -209,7 +209,7 @@ curl \
     "rows": [
         {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
             "type": "attributemetadata",
             "mediaType": "application/json"
         },
@@ -220,7 +220,7 @@ curl \
     	},
     	{
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f",
             "type": "attributemetadata",
             "mediaType": "application/json"
         },
@@ -231,7 +231,7 @@ curl \
     	},
    	 	{
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/33b30b2e-b465-11e9-7ae5-884b00015630",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b30b2e-b465-11e9-7ae5-884b00015630",
             "type": "attributemetadata",
             "mediaType": "application/json"
         },
@@ -253,7 +253,7 @@ curl \
     -X GET \
     -u login:password \
     -H "Lognex-Pretty-Print-JSON: true" \
-    "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002"
+    "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002"
 ```
 
 > Результат
@@ -261,7 +261,7 @@ curl \
 ```json
       {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
             "type": "attributemetadata",
             "mediaType": "application/json"
         },
@@ -285,7 +285,7 @@ curl -X PUT \
   -u login:password \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
-  https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f \
+  https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f \
   -d '{
         "name":"Наличие CD/DVD-Rom"
       }'
@@ -296,7 +296,7 @@ curl -X PUT \
 ```json
 {
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f",
         "type": "attributemetadata",
         "mediaType": "application/json"
     },
@@ -320,7 +320,7 @@ curl -X DELETE \
   -u login:password \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
-  https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f \
+  https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f \
 ```
 
 Получим пустой ответ со статусом 200. Атрибут с указанным id будет удален.
@@ -335,18 +335,18 @@ curl -X POST \
   -u login:password \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
-  https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/delete \
+  https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/delete \
   -d '[
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
             "type": "attributemetadata",
             "mediaType": "application/json"
           }
         },
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/33b30b2e-b465-11e9-7ae5-884b00015630",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b30b2e-b465-11e9-7ae5-884b00015630",
             "type": "attributemetadata",
             "mediaType": "application/json"
           }

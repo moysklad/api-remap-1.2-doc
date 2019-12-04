@@ -83,7 +83,7 @@
 
 ```shell
 curl -X POST \
-https://online.moysklad.ru/api/remap/1.1/entity/product \
+https://online.moysklad.ru/api/remap/1.2/entity/product \
 -H 'Authorization: Basic token=' \
 -H 'Cache-Control: no-cache' \
 -H 'Content-Type: application/json' \
@@ -149,7 +149,7 @@ https://online.moysklad.ru/api/remap/1.1/entity/product \
 
 ```shell
 curl -X GET \
-'https://online.moysklad.ru/api/remap/1.1/entity/product?order=name' \
+'https://online.moysklad.ru/api/remap/1.2/entity/product?order=name' \
 -H 'Authorization: Basic token==' \
 -H 'Cache-Control: no-cache'
 ```
@@ -174,7 +174,7 @@ curl -X GET \
 
 ```shell
 curl -X GET \
-'https://online.moysklad.ru/api/remap/1.1/entity/product?order=name,desc' \
+'https://online.moysklad.ru/api/remap/1.2/entity/product?order=name,desc' \
 -H 'Authorization: Basic token==' \
 -H 'Cache-Control: no-cache'
 ```
@@ -198,7 +198,7 @@ curl -X GET \
 
 ```shell
 curl -X GET \
-'https://online.moysklad.ru/api/remap/1.1/entity/product?order=weighed,desc;name' \
+'https://online.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;name' \
 -H 'Authorization: Basic token=' \
 -H 'Cache-Control: no-cache' \
 -H 'Content-Type: application/json'
@@ -223,7 +223,7 @@ curl -X GET \
 
 ```shell
 curl -X GET \
-'https://online.moysklad.ru/api/remap/1.1/entity/product?order=weighed,desc;weight,desc;name' \
+'https://online.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;weight,desc;name' \
 -H 'Authorization: Basic token=' \
 -H 'Cache-Control: no-cache' \
 -H 'Content-Type: application/json'
@@ -249,7 +249,7 @@ curl -X GET \
 
 ```shell
 curl -X GET \
-'https://online.moysklad.ru/api/remap/1.1/entity/product?order=syncId' \
+'https://online.moysklad.ru/api/remap/1.2/entity/product?order=syncId' \
 -H 'Authorization: Basic token=' \
 -H 'Cache-Control: no-cache' \
 -H 'Content-Type: application/json'
