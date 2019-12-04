@@ -203,6 +203,11 @@ curl -X GET
 
 ### Создать Внесение денег 
 Запрос на создание Внесения денег.
+Обязательные для создания поля:
+
++ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **agent** - Ссылка на сотрудника, совершившего Внесение, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **retailShift** - Ссылка на розничную смену в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 > Пример создания нового Внесения денег.
 
