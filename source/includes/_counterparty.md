@@ -736,6 +736,10 @@ curl -X GET
 | tags    | `string`(optional) *Example: рабочие*. Подробнее про данный параметр можно посмотреть в разделе [Фильтрация выборки с помощью параметра filter](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter).       Формат строки : `string`|
 
 ### Создать Контрагента
+Обязательные для создания поля:
+
++ **name** - Наименование Контрагента
+
 > Пример 1
 
 ```shell
