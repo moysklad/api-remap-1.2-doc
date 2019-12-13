@@ -45,7 +45,7 @@
 
 #### Связи с другими документами
 + **customerOrder** - Ссылка на Заказ Покупателя, с которым связана эта Отгрузка в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **factureOut** - Ссылка на Счет-фактура выданный, с которым связана эта Отгрузка в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **factureOut** - Ссылка на Счет-фактуру выданный, с которым связана эта Отгрузка в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **returns** - Массив ссылок на связанные возвраты в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **payments** - Массив ссылок на связанные платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **invoicesOut** - Массив ссылок на связанные счета покупателям в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)

@@ -41,7 +41,7 @@
 #### Связи с другими документами
 + **positions** - Ссылка на позиции Возврата поставщику в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **supply** - Ссылка на приемку, по которой произошел возврат в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) Поле является необходимым для возврата с основанием.
-+ **factureOut** - Ссылка на счет-фактура выданный в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **factureOut** - Ссылка на Счет-фактуру выданный в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **payedSum** - Сумма входящих платежей по возврату поставщику
 + **payments** - Массив ссылок на связанные платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 

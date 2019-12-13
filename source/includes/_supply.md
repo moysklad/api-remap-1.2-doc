@@ -47,7 +47,7 @@
 
 #### Связи с другими документами
 + **purchaseOrder** - Ссылка на связанный заказ поставщику в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **factureIn** - Ссылка на Счет-фактура полученный, с которым связана эта Приемка в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **factureIn** - Ссылка на Счет-фактуру полученный, с которым связана эта Приемка в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **invoicesIn** - Массив ссылок на связанные счета поставщиков в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **payments** - Массив ссылок на связанные платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **returns** - Массив ссылок на связанные возвраты в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
