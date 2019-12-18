@@ -56,10 +56,10 @@
 > Запрос
 
 ```shell
-curl -X POST \
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook \
-  -H 'Authorization: Basic token==' \
-  -H 'Content-Type: application/json' \
+curl -X POST 
+  https://online.moysklad.ru/api/remap/1.2/entity/webhook 
+  -H 'Authorization: Basic token==' 
+  -H 'Content-Type: application/json' 
   -d '{
   "url": "http://www.example.com",
   "action": "CREATE",
@@ -94,10 +94,10 @@ curl -X POST \
 > Запрос
 
 ```shell
-curl -X GET \
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 \
-  -H 'Authorization: Basic token==' \
-  -H 'Content-Type: application/json' \
+curl -X GET 
+  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
+  -H 'Authorization: Basic token==' 
+  -H 'Content-Type: application/json' 
 ```
 
 У вебхука можно изменить поля, указанные при создании, а также включить/отключить его. Для этого выполняется PUT запрос с указанием идентификатора. Пример запроса с изменением события
@@ -105,10 +105,10 @@ curl -X GET \
 > Запрос
 
 ```shell
-curl -X PUT \
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 \
-  -H 'Authorization: Basic token==' \
-  -H 'Content-Type: application/json' \
+curl -X PUT 
+  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
+  -H 'Authorization: Basic token==' 
+  -H 'Content-Type: application/json' 
   -d '{
   "action": "UPDATE"
 }'
@@ -117,10 +117,10 @@ curl -X PUT \
 > Пример запроса с отключением вебхука.
 
 ```shell
-curl -X PUT \
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 \
-  -H 'Authorization: Basic token==' \
-  -H 'Content-Type: application/json' \
+curl -X PUT 
+  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
+  -H 'Authorization: Basic token==' 
+  -H 'Content-Type: application/json' 
   -d '{
   "enabled": false
 }'
@@ -129,19 +129,19 @@ curl -X PUT \
 > Удаление вебхука выполняется по аналогии, но только используется метод DELETE.
 
 ```shell
-curl -X DELETE \
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 \
-  -H 'Authorization: Basic token==' \
-  -H 'Content-Type: application/json' \
+curl -X DELETE 
+  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
+  -H 'Authorization: Basic token==' 
+  -H 'Content-Type: application/json' 
 ```
 
 > Получить все вебхуки можно с помощью типичного GET запроса.
 
 ```shell
-curl -X GET \
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook \
-  -H 'Authorization: Basic token==' \
-  -H 'Content-Type: application/json' \
+curl -X GET 
+  https://online.moysklad.ru/api/remap/1.2/entity/webhook 
+  -H 'Authorization: Basic token==' 
+  -H 'Content-Type: application/json' 
 ```
 
 > В ответ придет коллекция вебхуков.
@@ -205,33 +205,32 @@ curl -X GET \
  ![useful image](../images/webhooks/step-2.png?raw=true)
 3. Создаем вебхук, в примере ниже вебхук на создание услуги
 
-> Запрос
+    > Запрос
 
-```shell
-curl -X POST \
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook \
-  -H 'Authorization: Basic token==' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "url": "https://webhook.site/c314f269-d524-4b1a-bf9e-5c59060b220c",
-  "action": "CREATE",
-  "entityType": "service"
-}'
-```
-
+    ```shell
+    curl -X POST 
+      https://online.moysklad.ru/api/remap/1.2/entity/webhook 
+      -H 'Authorization: Basic token==' 
+      -H 'Cache-Control: no-cache' 
+      -H 'Content-Type: application/json' 
+      -d '{
+      "url": "https://webhook.site/c314f269-d524-4b1a-bf9e-5c59060b220c",
+      "action": "CREATE",
+      "entityType": "service"
+    }'
+    ```
 4. Создаем услугу в МоемСкладе, в примере ниже создание услуги через JSON API
 
-> Запрос
-
-```shell
-curl -X POST \
-  https://online.moysklad.ru/api/remap/1.2/entity/service \
-  -H 'Authorization: Basic token==' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "name": "Заточка коньков"
-}'
-```
+    > Запрос
+    
+    ```shell
+    curl -X POST 
+      https://online.moysklad.ru/api/remap/1.2/entity/service 
+      -H 'Authorization: Basic token==' 
+      -H 'Content-Type: application/json' 
+      -d '{
+      "name": "Заточка коньков"
+    }'
+    ```
 5. На наш уникальный  адрес пришло уведомление!
  ![useful image](../images/webhooks/step-5.png?raw=true)

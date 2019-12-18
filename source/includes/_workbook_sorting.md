@@ -82,11 +82,11 @@
 > Запрос
 
 ```shell
-curl -X POST \
-https://online.moysklad.ru/api/remap/1.2/entity/product \
--H 'Authorization: Basic token=' \
--H 'Cache-Control: no-cache' \
--H 'Content-Type: application/json' \
+curl -X POST 
+https://online.moysklad.ru/api/remap/1.2/entity/product 
+-H 'Authorization: Basic token=' 
+-H 'Cache-Control: no-cache' 
+-H 'Content-Type: application/json' 
 -d '[
  {
 "name":"12345",
@@ -148,9 +148,9 @@ https://online.moysklad.ru/api/remap/1.2/entity/product \
 > Запрос
 
 ```shell
-curl -X GET \
-'https://online.moysklad.ru/api/remap/1.2/entity/product?order=name' \
--H 'Authorization: Basic token==' \
+curl -X GET 
+'https://online.moysklad.ru/api/remap/1.2/entity/product?order=name' 
+-H 'Authorization: Basic token==' 
 -H 'Cache-Control: no-cache'
 ```
 Ответ будет содержать следующий порядок по возрастанию:
@@ -173,9 +173,9 @@ curl -X GET \
 > Запрос
 
 ```shell
-curl -X GET \
-'https://online.moysklad.ru/api/remap/1.2/entity/product?order=name,desc' \
--H 'Authorization: Basic token==' \
+curl -X GET 
+'https://online.moysklad.ru/api/remap/1.2/entity/product?order=name,desc' 
+-H 'Authorization: Basic token==' 
 -H 'Cache-Control: no-cache'
 ```
 
@@ -197,10 +197,10 @@ curl -X GET \
 > Запрос
 
 ```shell
-curl -X GET \
-'https://online.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;name' \
--H 'Authorization: Basic token=' \
--H 'Cache-Control: no-cache' \
+curl -X GET 
+'https://online.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;name' 
+-H 'Authorization: Basic token=' 
+-H 'Cache-Control: no-cache' 
 -H 'Content-Type: application/json'
 ```
 
@@ -222,10 +222,10 @@ curl -X GET \
 > Запрос
 
 ```shell
-curl -X GET \
-'https://online.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;weight,desc;name' \
--H 'Authorization: Basic token=' \
--H 'Cache-Control: no-cache' \
+curl -X GET 
+'https://online.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;weight,desc;name' 
+-H 'Authorization: Basic token=' 
+-H 'Cache-Control: no-cache' 
 -H 'Content-Type: application/json'
 ```
 
@@ -248,10 +248,10 @@ curl -X GET \
 > Запрос
 
 ```shell
-curl -X GET \
-'https://online.moysklad.ru/api/remap/1.2/entity/product?order=syncId' \
--H 'Authorization: Basic token=' \
--H 'Cache-Control: no-cache' \
+curl -X GET 
+'https://online.moysklad.ru/api/remap/1.2/entity/product?order=syncId' 
+-H 'Authorization: Basic token=' 
+-H 'Cache-Control: no-cache' 
 -H 'Content-Type: application/json'
 ```
 

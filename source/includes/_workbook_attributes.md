@@ -10,10 +10,10 @@
 > Запрос
 
 ```shell
-curl \
-    -X GET \
-    -u login:password \
-    -H "Lognex-Pretty-Print-JSON: true" \
+curl 
+    -X GET 
+    -u login:password 
+    -H "Lognex-Pretty-Print-JSON: true" 
     "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata"
 ```
 
@@ -151,12 +151,12 @@ curl \
 > Запрос
 
 ```shell
-curl \
-    -X POST \
-    -u login:password \
-    -H 'Accept: application/json' \
-    -H 'Content-Type: application/json' \
-    https://online.moysklad.ru/api/remap/1.2/entity/product \
+curl 
+    -X POST 
+    -u login:password 
+    -H 'Accept: application/json' 
+    -H 'Content-Type: application/json' 
+    https://online.moysklad.ru/api/remap/1.2/entity/product 
     -d '{
         "name": "Ноутбук",
         "vat": 18,
@@ -220,12 +220,12 @@ curl \
 > Запрос
 
 ```shell
-curl \
-    -X PUT \
-    -u login:password \
-    -H 'Accept: application/json' \
-    -H 'Content-Type: application/json' \
-    https://online.moysklad.ru/api/remap/1.2/entity/product/630c578a-cb05-11e8-9109-f8fc0037889a \
+curl 
+    -X PUT 
+    -u login:password 
+    -H 'Accept: application/json' 
+    -H 'Content-Type: application/json' 
+    https://online.moysklad.ru/api/remap/1.2/entity/product/630c578a-cb05-11e8-9109-f8fc0037889a 
     -d '{
   "name": "Ноутбук обновленный",
   "attributes": [
@@ -270,12 +270,12 @@ curl \
 > Запрос
 
 ```shell
-curl \
-    -X POST \
-    -u login:password \
-    -H 'Accept: application/json' \
-    -H 'Content-Type: application/json' \
-    https://online.moysklad.ru/api/remap/1.2/entity/product \
+curl 
+    -X POST 
+    -u login:password 
+    -H 'Accept: application/json' 
+    -H 'Content-Type: application/json' 
+    https://online.moysklad.ru/api/remap/1.2/entity/product 
     -d '{
     "name": "Ноутбук",
     "attributes": [
@@ -305,10 +305,10 @@ curl \
 > Запрос
 
 ```shell
-curl \
-    -X GET \
-    -u login:password \
-    -H "Lognex-Pretty-Print-JSON: true" \
+curl 
+    -X GET 
+    -u login:password 
+    -H "Lognex-Pretty-Print-JSON: true" 
     "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata"
 ```
 
@@ -433,12 +433,12 @@ curl \
 > Запрос
 
 ```shell
-curl \
-    -X POST \
-    -u login:password \
-    -H 'Accept: application/json' \
-    -H 'Content-Type: application/json' \
-    https://online.moysklad.ru/api/remap/1.2/entity/counterparty \
+curl 
+    -X POST 
+    -u login:password 
+    -H 'Accept: application/json' 
+    -H 'Content-Type: application/json' 
+    https://online.moysklad.ru/api/remap/1.2/entity/counterparty 
     -d '{
     "name": "ООО Восток",
     "attributes": [
@@ -599,11 +599,11 @@ curl \
 ### Фильтрация по значению дополнительного поля
 JSON API позволяет осуществлять фильтрацию по значению дополнительного поля. На примере дополнительных полей, приведенных выше, можно отфильтровать все товары, у которых значение дополнительного поля `Время работы от аккумулятора` больше или равно 5:
 ```shell
-curl \
-    -X GET \
-    -u login:password \
-    -H 'Accept: application/json' \
-    -H 'Content-Type: application/json' \
+curl 
+    -X GET 
+    -u login:password 
+    -H 'Accept: application/json' 
+    -H 'Content-Type: application/json' 
     "https://online.moysklad.ru/api/remap/1.2/entity/product?filter=https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/630c578a-cb05-11e8-9109-f8fc0037889a%3E%3D5"
 ```
 

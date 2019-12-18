@@ -246,11 +246,11 @@ curl -X GET \
 > Запрос
 
 ```shell
-curl -X POST \
-  'https://online.moysklad.ru/api/remap/1.2/entity/bundle?expand=components' \
-  -H 'Authorization: Basic token=' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
+curl -X POST 
+  'https://online.moysklad.ru/api/remap/1.2/entity/bundle?expand=components' 
+  -H 'Authorization: Basic token=' 
+  -H 'Cache-Control: no-cache' 
+  -H 'Content-Type: application/json' 
   -d '{
    "name":"Набор карандашей",
    "components":[
@@ -370,11 +370,11 @@ curl -X POST \
 > Запрос
 
 ```shell
-curl -X PUT \
-  https://online.moysklad.ru/api/remap/1.2/entity/product/3b336cc5-d10a-11e8-ac12-000b00000021 \
-  -H 'Authorization: Basic token=' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
+curl -X PUT 
+  https://online.moysklad.ru/api/remap/1.2/entity/product/3b336cc5-d10a-11e8-ac12-000b00000021 
+  -H 'Authorization: Basic token=' 
+  -H 'Cache-Control: no-cache' 
+  -H 'Content-Type: application/json' 
   -d '{
    "uom":{
       "meta":{
@@ -485,9 +485,9 @@ curl -X PUT \
 > Запрос
 
 ```shell
-curl -X GET \
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook \
-  -H 'Authorization: Basic token==' \
+curl -X GET 
+  https://online.moysklad.ru/api/remap/1.2/entity/webhook 
+  -H 'Authorization: Basic token==' 
   -H 'Cache-Control: no-cache'
 ```
 
@@ -545,9 +545,9 @@ curl -X GET \
 > Запрос
 
 ```shell
-curl -X GET \
-  'https://online.moysklad.ru/api/remap/1.2/entity/webhook?limit=1' \
-  -H 'Authorization: Basic token==' \
+curl -X GET 
+  'https://online.moysklad.ru/api/remap/1.2/entity/webhook?limit=1' 
+  -H 'Authorization: Basic token==' 
   -H 'Cache-Control: no-cache'
   ```
   
@@ -599,9 +599,9 @@ curl -X GET \
 > Запрос
 
 ```shell
-curl -X GET \
-  'https://online.moysklad.ru/api/remap/1.2/entity/webhook?limit=1&offset=1' \
-  -H 'Authorization: Basic token==' \
+curl -X GET 
+  'https://online.moysklad.ru/api/remap/1.2/entity/webhook?limit=1&offset=1' 
+  -H 'Authorization: Basic token==' 
   -H 'Cache-Control: no-cache'
 ``` 
 
@@ -659,9 +659,9 @@ curl -X GET \
 > Запрос
 
 ```shell
-curl -X GET \
-  https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata \
-  -H 'Authorization: Basic token==' \
+curl -X GET 
+  https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata 
+  -H 'Authorization: Basic token==' 
   -H 'Cache-Control: no-cache'
 ```
 
