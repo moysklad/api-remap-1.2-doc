@@ -203,6 +203,11 @@ curl -X GET
 
 ### Создать Выплату денег 
 Запрос на создание Выплаты денег.
+Обязательные для создания поля:
+
++ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **agent** - Ссылка на сотрудника, которому была совершена Выплата, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **retailShift** - Ссылка на розничную смену в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 > Пример создания новой Выплаты денег.
 
