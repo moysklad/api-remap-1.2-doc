@@ -31,6 +31,7 @@
 + **weight** - Вес
 + **volume** - Объем
 + **barcodes** - Массив штрихкодов Комплекта
++ **discountProhibited** - Признак запрета скидок.
 + **overhead** - Дополнительные расходы
   - **currency** - Валюта доп расходов
   - **value** - Значение доп расходов
@@ -219,6 +220,7 @@ curl -X GET
       "externalCode": "iOzqxcTCiAK1-6-eAjVR12",
       "archived": false,
       "pathName": "",
+      "discountProhibited": false,
       "uom": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
@@ -442,6 +444,7 @@ curl -X GET
   "externalCode": "iOzqxcTCiAK1-6-eAjVR12",
   "archived": false,
   "pathName": "",
+  "discountProhibited": false,
   "uom": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
@@ -629,6 +632,7 @@ curl -X GET
   "externalCode": "iOzqxcTCiAK1-6-eAjVR12",
   "archived": false,
   "pathName": "",
+  "discountProhibited": false,
   "uom": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
@@ -917,6 +921,7 @@ curl -X GET
       "externalCode": "iOzqxcTCiAK1-6-eAjVR12",
       "archived": false,
       "pathName": "",
+      "discountProhibited": false,
       "uom": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
@@ -1067,6 +1072,7 @@ curl -X GET
       "externalCode": "iOzqxcTCiAK1-6-eAjVR12",
       "archived": false,
       "pathName": "",
+      "discountProhibited": false,
       "uom": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
@@ -1319,6 +1325,7 @@ curl -X GET
   "externalCode": "iOzqxcTCiAK1-6-eAjVR12",
   "archived": false,
   "pathName": "",
+  "discountProhibited": false,
   "uom": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
@@ -1471,6 +1478,7 @@ curl -X GET
   "externalCode": "iOzqxcTCiAK1-6-eAjVR12",
   "archived": false,
   "pathName": "",
+  "discountProhibited": false,
   "uom": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",

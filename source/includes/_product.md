@@ -44,6 +44,7 @@
 + **volume** - Объем
 + **packs** - Упаковки Товара
 + **barcodes** - Массив штрихкодов товара
++ **discountProhibited** - Признак запрета скидок.
 + **alcoholic** - Объект, содержащий поля алкогольной продукции.
   + **excise** - Содержит акцизную марку
   + **type**  - Код вида продукции
@@ -251,6 +252,7 @@ curl -X GET
       "pathName": "",
       "vat": 18,
       "effectiveVat": 18,
+      "discountProhibited": false,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
@@ -421,6 +423,7 @@ curl -X GET
       "pathName": "",
       "vat": 18,
       "effectiveVat": 18,
+      "discountProhibited": false,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
@@ -767,6 +770,7 @@ curl -X GET
   "pathName": "",
   "vat": 18,
   "effectiveVat": 18,
+  "discountProhibited": false,
   "uom": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
@@ -1158,6 +1162,7 @@ curl -X GET
   "pathName": "",
   "vat": 18,
   "effectiveVat": 18,
+  "discountProhibited": false,
   "uom": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
@@ -1565,6 +1570,7 @@ curl -X GET
     "pathName": "",
     "vat": 3,
     "effectiveVat": 3,
+    "discountProhibited": false,
     "uom": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
@@ -1954,6 +1960,7 @@ curl -X GET
   "pathName": "",
   "vat": 18,
   "effectiveVat": 18,
+  "discountProhibited": false,
   "uom": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
@@ -2324,6 +2331,7 @@ curl -X GET
   "pathName": "",
   "vat": 3,
   "effectiveVat": 3,
+  "discountProhibited": false,
   "uom": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
@@ -2648,6 +2656,7 @@ curl -X GET
   "pathName": "",
   "vat": 3,
   "effectiveVat": 3,
+  "discountProhibited": false,
   "uom": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
@@ -2925,6 +2934,7 @@ curl -X GET
   "pathName": "",
   "vat": 3,
   "effectiveVat": 3,
+  "discountProhibited": false,
   "uom": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
