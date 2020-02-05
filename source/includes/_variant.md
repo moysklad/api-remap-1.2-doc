@@ -1273,6 +1273,7 @@ curl -X GET
                 "value": "Свежий"
               }
             ],
+            "discountProhibited": false,
             "code": "orangeCode",
             "externalCode": "orange303",
             "buyPrice": {
