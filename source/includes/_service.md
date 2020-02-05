@@ -427,6 +427,7 @@ curl -X GET
             "description": "Доставка выбранного товара",
             "vat": 10,
             "effectiveVat": 10,
+            "discountProhibited": false,
             "minPrice": {
               "value": 500,
               "currency": {

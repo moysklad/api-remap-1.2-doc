@@ -620,6 +620,7 @@ curl -X GET
             "description": "Бананы, Африка",
             "vat": 18,
             "effectiveVat": 18,
+            "discountProhibited": false,
             "uom": {
               "meta": {
                 "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
