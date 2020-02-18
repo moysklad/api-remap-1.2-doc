@@ -25,9 +25,9 @@
 > Запрос
 
 ```shell
-curl -X GET \
-  https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ab4dd5fc-d100-11e8-ac12-00080000006d \
-  -H 'Authorization: Basic token==' \
+curl -X GET 
+  https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ab4dd5fc-d100-11e8-ac12-00080000006d 
+  -H 'Authorization: Basic token==' 
   -H 'Cache-Control: no-cache'
 ```
 
@@ -115,12 +115,12 @@ curl -X GET \
 
 ```json
 "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ab4dd5fc-d100-11e8-ac12-00080000006d",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-        "type": "counterparty",
-        "mediaType": "application/json",
-        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=ab4dd5fc-d100-11e8-ac12-00080000006d"
-    }
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/ab4dd5fc-d100-11e8-ac12-00080000006d",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type": "counterparty",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=ab4dd5fc-d100-11e8-ac12-00080000006d"
+}
 ```
 
 Ссылки на сотрудника, создавшего контрагента, и отдел сотрудника указаны в полях `owner` и `group`, и содержат также поля `meta`.
@@ -129,22 +129,22 @@ curl -X GET \
 
 ```json
 "owner": {
-        "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/ab306d83-d100-11e8-ac12-000800000042",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-            "type": "employee",
-            "mediaType": "application/json",
-            "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=ab306d83-d100-11e8-ac12-000800000042"
-        }
-    },
-    "group": {
-        "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/aab73291-d100-11e8-ac12-000a00000001",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-            "type": "group",
-            "mediaType": "application/json"
-        }
+    "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/ab306d83-d100-11e8-ac12-000800000042",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=ab306d83-d100-11e8-ac12-000800000042"
     }
+},
+"group": {
+    "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/aab73291-d100-11e8-ac12-000a00000001",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+    }
+}
 ```
 
 Очевидно, что поля `href` и `uuidHref` содержат url для доступа к объектам и могут быть использованы для запроса.
@@ -153,9 +153,9 @@ curl -X GET \
 > Запрос
 
 ```shell
-curl -X GET \
-  https://online.moysklad.ru/api/remap/1.2/entity/employee/ab306d83-d100-11e8-ac12-000800000042 \
-  -H 'Authorization: Basic token=' \
+curl -X GET 
+  https://online.moysklad.ru/api/remap/1.2/entity/employee/ab306d83-d100-11e8-ac12-000800000042 
+  -H 'Authorization: Basic token=' 
   -H 'Cache-Control: no-cache'
 ```
 
@@ -234,12 +234,12 @@ curl -X GET \
 Имея метаданные товара
 ```json
 "meta":{
-               "href":"https://online.moysklad.ru/api/remap/1.2/entity/product/3b336cc5-d10a-11e8-ac12-000b00000021",
-               "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-               "type":"product",
-               "mediaType":"application/json",
-               "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=3b335997-d10a-11e8-ac12-000b0000001f"
-            }
+   "href":"https://online.moysklad.ru/api/remap/1.2/entity/product/3b336cc5-d10a-11e8-ac12-000b00000021",
+   "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+   "type":"product",
+   "mediaType":"application/json",
+   "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=3b335997-d10a-11e8-ac12-000b0000001f"
+}
 ```
 выполним запрос на создание комплекта, указав товар в компонентах
 

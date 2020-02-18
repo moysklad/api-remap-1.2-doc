@@ -268,7 +268,7 @@ curl -X GET
 ``` shell
 curl -X GET 
   -u login:password 
-  -H "Lognex-Pretty-Print-JSON: true" "
+  -H "Lognex-Pretty-Print-JSON: true"
   "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata"
 ```
 

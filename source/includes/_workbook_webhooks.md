@@ -205,32 +205,34 @@ curl -X GET
  ![useful image](../images/webhooks/step-2.png?raw=true)
 3. Создаем вебхук, в примере ниже вебхук на создание услуги
 
-    > Запрос
+> Запрос
 
-    ```shell
-    curl -X POST 
-      https://online.moysklad.ru/api/remap/1.2/entity/webhook 
-      -H 'Authorization: Basic token==' 
-      -H 'Cache-Control: no-cache' 
-      -H 'Content-Type: application/json' 
-      -d '{
-      "url": "https://webhook.site/c314f269-d524-4b1a-bf9e-5c59060b220c",
-      "action": "CREATE",
-      "entityType": "service"
-    }'
-    ```
+```shell
+curl -X POST 
+  https://online.moysklad.ru/api/remap/1.2/entity/webhook 
+  -H 'Authorization: Basic token==' 
+  -H 'Cache-Control: no-cache' 
+  -H 'Content-Type: application/json' 
+  -d '{
+  "url": "https://webhook.site/c314f269-d524-4b1a-bf9e-5c59060b220c",
+  "action": "CREATE",
+  "entityType": "service"
+}'
+```
+
 4. Создаем услугу в МоемСкладе, в примере ниже создание услуги через JSON API
 
-    > Запрос
-    
-    ```shell
-    curl -X POST 
-      https://online.moysklad.ru/api/remap/1.2/entity/service 
-      -H 'Authorization: Basic token==' 
-      -H 'Content-Type: application/json' 
-      -d '{
-      "name": "Заточка коньков"
-    }'
-    ```
+> Запрос
+
+```shell
+curl -X POST 
+  https://online.moysklad.ru/api/remap/1.2/entity/service 
+  -H 'Authorization: Basic token==' 
+  -H 'Content-Type: application/json' 
+  -d '{
+  "name": "Заточка коньков"
+}'
+```
+
 5. На наш уникальный  адрес пришло уведомление!
  ![useful image](../images/webhooks/step-5.png?raw=true)
