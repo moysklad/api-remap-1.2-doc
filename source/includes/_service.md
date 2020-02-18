@@ -34,6 +34,7 @@
 + **barcodes** - Массив штрихкодов услуги
 + **attributes** - Дополнительные поля Услуги в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **buyPrice** - Закупочная цена
++ **discountProhibited** - Признак запрета скидок.
 + **paymentItemType** - Признак предмета расчета
   + **SERVICE** - Услуга
   + **WORK** - Работа
@@ -180,6 +181,7 @@ curl -X GET
       "pathName": "",
       "vat": 6,
       "effectiveVat": 6,
+      "discountProhibited": false,
       "minPrice": {
         "value": 500,
         "currency": {
@@ -425,6 +427,7 @@ curl -X GET
             "description": "Доставка выбранного товара",
             "vat": 10,
             "effectiveVat": 10,
+            "discountProhibited": false,
             "minPrice": {
               "value": 500,
               "currency": {
@@ -538,6 +541,7 @@ curl -X GET
   "pathName": "",
   "vat": 10,
   "effectiveVat": 10,
+  "discountProhibited": false,
   "minPrice": {
     "value": 500,
     "currency": {
@@ -861,6 +865,7 @@ curl -X GET
   "pathName": "",
   "vat": 6,
   "effectiveVat": 6,
+  "discountProhibited": false,
   "minPrice": {
     "value": 500,
     "currency": {
@@ -1185,6 +1190,7 @@ curl -X GET
     "pathName": "",
     "vat": 11,
     "effectiveVat": 11,
+    "discountProhibited": false,
     "minPrice": {
       "value": 500,
       "currency": {
@@ -1477,6 +1483,7 @@ curl -X GET
   "pathName": "",
   "vat": 6,
   "effectiveVat": 6,
+  "discountProhibited": false,
   "minPrice": {
     "value": 500,
     "currency": {
@@ -1726,6 +1733,7 @@ curl -X GET
    "pathName": "",
    "vat": 11,
    "effectiveVat": 11,
+   "discountProhibited": false,
    "minPrice": {
      "value": 500,
      "currency": {
@@ -1969,6 +1977,7 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
+  "discountProhibited": false,
   "minPrice": {
     "value": 500,
     "currency": {

@@ -27,6 +27,7 @@
 + **barcodes** - Массив штрихкодов модификации
 + **product** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye), представляющие с собой ссылку на [товар](../dictionaries/#suschnosti-towar), к которому привязана Модификация. `Необходимое`
 + **things** - Серийные номера `Только для чтения`
++ **discountProhibited** - Признак запрета скидок.
 
 #### Атрибуты доступные для сортировки
 + **code** - Код Модификации
@@ -165,6 +166,7 @@ curl -X GET
       "code": "00005",
       "externalCode": "rAhHA0T1glL2xY3d1aHFT2",
       "archived": false,
+      "discountProhibited": false,
       "characteristics": [
         {
           "meta": {
@@ -397,6 +399,7 @@ curl -X GET
   "code": "00011",
   "externalCode": "tQcC7LdEjTZMh85Em6FTW1",
   "archived": false,
+  "discountProhibited": false,
   "characteristics": [
     {
       "meta": {
@@ -709,6 +712,7 @@ curl -X GET
     "code": "00011",
     "externalCode": "tQcC7LdEjTZMh85Em6FTW1",
     "archived": false,
+    "discountProhibited": false,
     "characteristics": [
       {
         "meta": {
@@ -833,6 +837,7 @@ curl -X GET
     "code": "orangeCode",
     "externalCode": "orange303",
     "archived": false,
+    "discountProhibited": false,
     "characteristics": [
       {
         "meta": {
@@ -1129,6 +1134,7 @@ curl -X GET
   "code": "00003",
   "externalCode": "YQ3kNHfDgtHOVhf20Md7Q0",
   "archived": false,
+  "discountProhibited": false,
   "characteristics": [
     {
       "meta": {
@@ -1267,6 +1273,7 @@ curl -X GET
                 "value": "Свежий"
               }
             ],
+            "discountProhibited": false,
             "code": "orangeCode",
             "externalCode": "orange303",
             "buyPrice": {
@@ -1356,6 +1363,7 @@ curl -X GET
   "code": "orangeCode",
   "externalCode": "orange303",
   "archived": false,
+  "discountProhibited": false,
   "characteristics": [
     {
       "meta": {
