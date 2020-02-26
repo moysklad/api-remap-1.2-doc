@@ -323,7 +323,7 @@ curl -X POST
 
 Ошибки возвращаются в виде массива errors, содержащего объекты error, каждый из которых описывает отдельную ошибку.
 
-Подробнее о структуре и видах ошибок [в документации](https://online.moysklad.ru/api/remap/1.2/doc/index.html#header-%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D0%BE%D1%88%D0%B8%D0%B1%D0%BE%D0%BA).
+Подробнее о структуре и видах ошибок [в документации](../#mojsklad-json-api-obschie-swedeniq-obrabotka-oshibok).
 
 ### Методы HTTP (GET, POST, PUT, DELETE)
 
