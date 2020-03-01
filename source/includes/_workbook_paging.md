@@ -587,6 +587,7 @@ curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://onlin
 curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://online.moysklad.ru/api/remap/1.2/entity/customerorder?offset=160&limit=40"  
 ```
 В таком виде вы получите в мете ответа 2 дополнительных параметра:
+
 * nextHref - значение - href (ссылка, в которой уже проставлены параметры limit & offset), для следующей страницы
 * previousHref - значение - href (ссылка, в которой уже проставлены параметры limit & offset), для предыдущей страницы
 
@@ -597,6 +598,7 @@ curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://onlin
 ```
 
 При таком запросе
+
 * `"nextHref": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder?offset=163&limit=3"`
 * `"previousHref": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder?offset=157&limit=3"`
 
