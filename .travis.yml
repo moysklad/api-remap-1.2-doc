@@ -19,7 +19,7 @@ before_install:
   -in deploy_key.enc -out deploy_key -d
 - eval "$(ssh-agent -s)"
 - chmod 600 ./deploy_key
-- echo -e "Host ${SERVER_IP_ADDRESS}\n\tStrictHostKeyChecking no\nPort 8022\n" >> ~/.ssh/config
+- echo -e "Host ${SERVER_IP_ADDRESS}\n\tStrictHostKeyChecking no\nPort 22\n" >> ~/.ssh/config
 - ssh-add ./deploy_key
 - ssh -i ./deploy_key app@${SERVER_IP_ADDRESS} pwd
 - rm deploy_key.enc deploy_key
