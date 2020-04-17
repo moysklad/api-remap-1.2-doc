@@ -607,9 +607,9 @@ curl -X GET
         "name": "Товары Из кастомной группы",
         "pathName": "Группа"
       },
-      "images": {
+      "image": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/d1bef0a1-ffe7-11e5-9464-e4de0000001c/images",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/d1bef0a1-ffe7-11e5-9464-e4de0000001c/image",
           "type": "image",
           "mediaType": "application/json",
           "size": 1,

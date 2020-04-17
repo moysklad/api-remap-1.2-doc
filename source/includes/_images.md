@@ -13,6 +13,7 @@
 + **filename** - Имя файла
 + **size** - Размер файла в байтах
 + **updated** - Время загрузки файла на сервер
++ **download** - Ссылка на скачивание изображения в формате Метаданных
 + **miniature** - Ссылка на миниатюру изображения в формате Метаданных
 + **tiny** - Ссылка на уменьшенное изображение в формате Метаданных
 
@@ -36,7 +37,7 @@
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images"
+  "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/image"
   -H "Authorization: Basic <Credentials>"
 ```
 
@@ -53,7 +54,7 @@ curl -X GET
         }
     },
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/image",
         "type": "image",
         "mediaType": "application/json",
         "size": 2,
@@ -63,45 +64,53 @@ curl -X GET
     "rows": [
         {
             "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images/f2728180-6afd-4d37-8a13-f3b48069bbb6",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/image/f2728180-6afd-4d37-8a13-f3b48069bbb6",
                 "type": "image",
-                "mediaType": "application/json",
-                "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6"
+                "mediaType": "application/json"
             },
             "title": "birdimage",
             "filename": "birdimage.png",
             "size": 14052,
             "updated": "2019-01-24 16:55:24.567",
+            "download": {
+                "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6",
+                "type": "file",
+                "mediaType": "application/octet-stream"
+            },
             "miniature": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6?miniature=true",
-                "type": "image",
+                "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6?miniature=true",
+                "type": "file",
                 "mediaType": "image/png"
             },
             "tiny": {
-                "href": "https://online.moysklad.ru/static/tinyimage/f2aab4d2-1fd3-11e9-ac12-000800000001/tinyimage/ebb10350-0272-45db-9d33-ca5a01fd5543/t.png",
-                "type": "image",
+                "downloadHref": "https://online.moysklad.ru/static/tinyimage/f2aab4d2-1fd3-11e9-ac12-000800000001/tinyimage/ebb10350-0272-45db-9d33-ca5a01fd5543/t.png",
+                "type": "file",
                 "mediaType": "image/png"
             }
         },
         {
             "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images/933e41ac-1946-4bf0-9b21-51f2051f3e9f",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/image/933e41ac-1946-4bf0-9b21-51f2051f3e9f",
                 "type": "image",
-                "mediaType": "application/json",
-                "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/933e41ac-1946-4bf0-9b21-51f2051f3e9f"
+                "mediaType": "application/json"
             },
             "title": "birdimage1",
             "filename": "birdimage1.png",
             "size": 14052,
             "updated": "2019-01-24 16:55:25.047",
+            "download": {
+                "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/933e41ac-1946-4bf0-9b21-51f2051f3e9f",
+                "type": "file",
+                "mediaType": "application/octet-stream"
+            },
             "miniature": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/download/933e41ac-1946-4bf0-9b21-51f2051f3e9f?miniature=true",
-                "type": "image",
+                "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/933e41ac-1946-4bf0-9b21-51f2051f3e9f?miniature=true",
+                "type": "file",
                 "mediaType": "image/png"
             },
             "tiny": {
-                "href": "https://online.moysklad.ru/static/tinyimage/f2aab4d2-1fd3-11e9-ac12-000800000001/tinyimage/c960c879-8128-4511-addf-b933f37dc0d4/t.png",
-                "type": "image",
+                "downloadHref": "https://online.moysklad.ru/static/tinyimage/f2aab4d2-1fd3-11e9-ac12-000800000001/tinyimage/c960c879-8128-4511-addf-b933f37dc0d4/t.png",
+                "type": "file",
                 "mediaType": "image/png"
             }
         }
@@ -131,7 +140,7 @@ curl -X GET
   
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images"
+    "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/image"
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
     -d '{  
@@ -147,45 +156,53 @@ curl -X GET
 [
   {
       "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images/f2728180-6afd-4d37-8a13-f3b48069bbb6",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/image/f2728180-6afd-4d37-8a13-f3b48069bbb6",
           "type": "image",
-          "mediaType": "application/json",
-          "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6"
+          "mediaType": "application/json"
       },
       "title": "birdimage",
       "filename": "birdimage.png",
       "size": 14052,
       "updated": "2019-01-24 16:55:24.567",
+      "download": {
+          "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6",
+          "type": "file",
+          "mediaType": "application/octet-stream"
+      },
       "miniature": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6?miniature=true",
-          "type": "image",
+          "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6?miniature=true",
+          "type": "file",
           "mediaType": "image/png"
       },
       "tiny": {
-          "href": "https://online.moysklad.ru/static/tinyimage/f2aab4d2-1fd3-11e9-ac12-000800000001/tinyimage/ebb10350-0272-45db-9d33-ca5a01fd5543/t.png",
-          "type": "image",
+          "downloadHref": "https://online.moysklad.ru/static/tinyimage/f2aab4d2-1fd3-11e9-ac12-000800000001/tinyimage/ebb10350-0272-45db-9d33-ca5a01fd5543/t.png",
+          "type": "file",
           "mediaType": "image/png"
       }
   },
   {
       "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images/933e41ac-1946-4bf0-9b21-51f2051f3e9f",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/image/933e41ac-1946-4bf0-9b21-51f2051f3e9f",
           "type": "image",
-          "mediaType": "application/json",
-          "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/933e41ac-1946-4bf0-9b21-51f2051f3e9f"
+          "mediaType": "application/json"
       },
       "title": "birdimageNew",
       "filename": "birdimageNew.png",
       "size": 16,
       "updated": "2019-01-24 16:55:25.047",
+      "download": {
+          "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/933e41ac-1946-4bf0-9b21-51f2051f3e9f",
+          "type": "file",
+          "mediaType": "application/octet-stream"
+      },
       "miniature": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/download/933e41ac-1946-4bf0-9b21-51f2051f3e9f?miniature=true",
-          "type": "image",
+          "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/933e41ac-1946-4bf0-9b21-51f2051f3e9f?miniature=true",
+          "type": "file",
           "mediaType": "image/png"
       },
       "tiny": {
-          "href": "https://online.moysklad.ru/static/tinyimage/f2aab4d2-1fd3-11e9-ac12-000800000001/tinyimage/c960c879-8128-4511-addf-b933f37dc0d4/t.png",
-          "type": "image",
+          "downloadHref": "https://online.moysklad.ru/static/tinyimage/f2aab4d2-1fd3-11e9-ac12-000800000001/tinyimage/c960c879-8128-4511-addf-b933f37dc0d4/t.png",
+          "type": "file",
           "mediaType": "image/png"
       }
   }
@@ -207,16 +224,15 @@ curl -X GET
 
 ```shell
 curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images"
+    "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/image"
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
     -d '[  
   {  
     "meta":{  
-      "href":"https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images/f2728180-6afd-4d37-8a13-f3b48069bbb6",
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/image/f2728180-6afd-4d37-8a13-f3b48069bbb6",
       "type":"image",
-      "mediaType":"application/json",
-      "downloadHref":"https://online.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6"
+      "mediaType":"application/json"
     }
   },
   {  
@@ -233,45 +249,53 @@ curl -X POST
 [
   {
       "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images/f2728180-6afd-4d37-8a13-f3b48069bbb6",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/image/f2728180-6afd-4d37-8a13-f3b48069bbb6",
           "type": "image",
-          "mediaType": "application/json",
-          "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6"
+          "mediaType": "application/json"
       },
       "title": "birdimage",
       "filename": "birdimage.png",
       "size": 14052,
       "updated": "2019-01-24 16:55:24.567",
+      "download": {
+          "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6",
+          "type": "file",
+          "mediaType": "application/octet-stream"
+      },
       "miniature": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6?miniature=true",
-          "type": "image",
+          "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6?miniature=true",
+          "type": "file",
           "mediaType": "image/png"
       },
       "tiny": {
-          "href": "https://online.moysklad.ru/static/tinyimage/f2aab4d2-1fd3-11e9-ac12-000800000001/tinyimage/ebb10350-0272-45db-9d33-ca5a01fd5543/t.png",
-          "type": "image",
+          "downloadHref": "https://online.moysklad.ru/static/tinyimage/f2aab4d2-1fd3-11e9-ac12-000800000001/tinyimage/ebb10350-0272-45db-9d33-ca5a01fd5543/t.png",
+          "type": "file",
           "mediaType": "image/png"
       }
   },
   {
       "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images/933e41ac-1946-4bf0-9b21-51f2051f3e9f",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/image/933e41ac-1946-4bf0-9b21-51f2051f3e9f",
           "type": "image",
-          "mediaType": "application/json",
-          "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/933e41ac-1946-4bf0-9b21-51f2051f3e9f"
+          "mediaType": "application/json"
       },
       "title": "birdimageNew",
       "filename": "birdimageNew.png",
       "size": 16,
       "updated": "2019-01-24 16:55:25.047",
+      "download": {
+          "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/933e41ac-1946-4bf0-9b21-51f2051f3e9f",
+          "type": "file",
+          "mediaType": "application/octet-stream"
+      },
       "miniature": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/download/933e41ac-1946-4bf0-9b21-51f2051f3e9f?miniature=true",
-          "type": "image",
+          "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/933e41ac-1946-4bf0-9b21-51f2051f3e9f?miniature=true",
+          "type": "file",
           "mediaType": "image/png"
       },
       "tiny": {
-          "href": "https://online.moysklad.ru/static/tinyimage/f2aab4d2-1fd3-11e9-ac12-000800000001/tinyimage/c960c879-8128-4511-addf-b933f37dc0d4/t.png",
-          "type": "image",
+          "downloadHref": "https://online.moysklad.ru/static/tinyimage/f2aab4d2-1fd3-11e9-ac12-000800000001/tinyimage/c960c879-8128-4511-addf-b933f37dc0d4/t.png",
+          "type": "file",
           "mediaType": "image/png"
       }
   }
@@ -293,7 +317,7 @@ curl -X POST
 
 ```shell
 curl -X DELETE
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images/19f1edc0-fc42-4001-94cb-c9ec9c62ec10"
+  "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/image/19f1edc0-fc42-4001-94cb-c9ec9c62ec10"
   -H "Authorization: Basic <Credentials>"
 ```
 > Response 200 (application/json)
@@ -313,24 +337,22 @@ curl -X DELETE
 
 ```shell
 curl -X POST
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images/delete"
+  "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/image/delete"
   -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
         -d '[  
   {  
     "meta":{  
-      "href":"https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images/1aadd77f-90f9-4be6-bede-373f350b0e03",
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/image/1aadd77f-90f9-4be6-bede-373f350b0e03",
       "type":"image",
-      "mediaType":"application/json",
-      "downloadHref":"https://online.moysklad.ru/api/remap/1.2/download/1aadd77f-90f9-4be6-bede-373f350b0e03"
+      "mediaType":"application/json"
     }
   },
   {  
     "meta":{  
-      "href":"https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images/f6aaab17-65a0-4425-841b-277aeef5b089",
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/image/f6aaab17-65a0-4425-841b-277aeef5b089",
       "type":"image",
-      "mediaType":"application/json",
-      "downloadHref":"https://online.moysklad.ru/api/remap/1.2/download/f6aaab17-65a0-4425-841b-277aeef5b089"
+      "mediaType":"application/json"
     }
   }
 ]'

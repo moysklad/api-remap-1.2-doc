@@ -106,9 +106,9 @@ curl -X GET
           "code128": "code128 barcode"
         }
       ],
-      "images": {
+      "image": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d1/images",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d1/image",
           "type": "image",
           "mediaType": "application/json",
           "size": 1,
@@ -550,9 +550,9 @@ curl -X GET
       "code128": "code128 barcode"
     }
   ],
-  "images": {
+  "image": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d1/images",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d1/image",
       "type": "image",
       "mediaType": "application/json",
       "size": 1,
