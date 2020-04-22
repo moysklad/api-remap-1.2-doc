@@ -7,6 +7,8 @@
 + **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о Характеристике `Только для чтения`
 + **id** - ID в формате UUID `Только для чтения`
 + **name** - Наименование Характеристики `Необходимое`
++ **type** - Тип значения Характеристики, всегда имеет значение string `Только для чтения`
++ **required** - Обязательность указания Характеристики в модификации, всегда имеет значение false `Только для чтения`
 
 Посмотреть списки существующих характеристик можно в контексте метаданных
 модификаций, например сделав GET запрос по URL http://online.moysklad.ru/api/remap/1.2/entity/variant/metadata или http://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic
@@ -38,7 +40,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "4f70c518-60a1-11e7-6adb-ede500000003",
-      "name": "Размер"
+      "name": "Размер",
+      "type": "string",
+      "required": false
     },
     {
       "meta": {
@@ -47,7 +51,9 @@ curl -X GET
         "mediaType": "application/json"
       },
       "id": "3b6eb61a-60c5-11e7-6adb-ede500000001",
-      "name": "Цвет"
+      "name": "Цвет",
+      "type": "string",
+      "required": false
     }
   ]
 }
@@ -84,7 +90,9 @@ curl -X GET
     "mediaType": "application/json"
   },
   "id": "6262b270-60c3-11e7-6adb-ede50000000d",
-  "name": "Размер"
+  "name": "Размер",
+  "type": "string",
+  "required": false
 }
 ```
 
@@ -121,7 +129,9 @@ curl -X GET
       "mediaType": "application/json"
     },
     "id": "b55d2ddf-60c3-11e7-6adb-ede500000010",
-    "name": "Размер"
+    "name": "Размер",
+    "type": "string",
+    "required": false
   },
   {
     "meta": {
@@ -130,7 +140,9 @@ curl -X GET
       "mediaType": "application/json"
     },
     "id": "b56215dc-60c3-11e7-6adb-ede500000013",
-    "name": "Цвет"
+    "name": "Цвет",
+    "type": "string",
+    "required": false
   }
 ]
 ```
