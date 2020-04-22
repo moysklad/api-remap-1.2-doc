@@ -45,6 +45,7 @@ includes:
   - bonus_operation
   - bonus_program
   - states  
+  - characteristic
   
 search: true
 ---  
