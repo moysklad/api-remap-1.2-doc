@@ -146,3 +146,38 @@ curl -X GET
   }
 ]
 ```
+
+### Характеристика 
+
+### Получить Характеристику
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Характеристики.|
+
+> Запрос на получение отдельной Характеристики с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/b55d2ddf-60c3-11e7-6adb-ede500000010"
+  -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Характеристики.
+
+```json
+{
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/b55d2ddf-60c3-11e7-6adb-ede500000010",
+      "type": "attributemetadata",
+      "mediaType": "application/json"
+    },
+    "id": "b55d2ddf-60c3-11e7-6adb-ede500000010",
+    "name": "Размер",
+    "type": "string",
+    "required": false
+}
+```
