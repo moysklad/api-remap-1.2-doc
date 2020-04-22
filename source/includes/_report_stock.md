@@ -116,7 +116,7 @@ C помощью параметра filter выборку также можно 
 
 Для фильтрации по значению характеристики нужно передать ссылку на характеристику и значение:
 
-`filter=https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/<id>=<Значение>`
+`filter=https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/<id>=<Значение>`
 
 Для фильтрации по значению характеристики нужно использовать оператор `=`. Также можно использовать операторы `=` и `!=` с пустым значением, чтобы получить товары или модификации только с незаполеной харакетеристикой или только заполненой, соответственно. 
 
@@ -701,7 +701,7 @@ C помощью параметра filter выборку также можно 
 
 Для фильтрации по значению характеристики нужно передать ссылку на характеристику и значение:
 
-`filter=https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/<id>=<Значение>`
+`filter=https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/<id>=<Значение>`
 
 Для фильтрации по значению характеристики нужно использовать оператор `=`. 
 

@@ -590,10 +590,10 @@ curl -X GET
       "code": "00002",
       "externalCode": "BrmW28jLhRMI-jOPUdfWW0",
       "archived": false,
-      "characteristics": [
+      "characteristic": [
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/682beecc-36e7-11e7-8a7f-40d0000000f5",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/682beecc-36e7-11e7-8a7f-40d0000000f5",
             "type": "attributemetadata",
             "mediaType": "application/json"
           },
@@ -657,10 +657,10 @@ curl -X GET
       "code": "00003",
       "externalCode": "i0u4rktiiVX6BWL60IVkJ1",
       "archived": false,
-      "characteristics": [
+      "characteristic": [
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/682beecc-36e7-11e7-8a7f-40d0000000f5",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/682beecc-36e7-11e7-8a7f-40d0000000f5",
             "type": "attributemetadata",
             "mediaType": "application/json"
           },

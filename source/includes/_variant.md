@@ -19,7 +19,7 @@
 + **code** - Код Модификации
 + **externalCode** - Внешний код Модификации
 + **archived** - Добавлен ли товар в архив
-+ **characteristics** - Характеристики Модификации `Необходимое`
++ **characteristic** - Характеристики Модификации `Необходимое`
 + **images** - Изображения Модификации. Изображений у Модификации может быть не более 10
 + **minPrice** - Минимальная цена
 + **buyPrice** - Закупочная цена
@@ -46,7 +46,7 @@
 
 ##### Метаданные Модификаций
 Метаданные Модификаций содержат информацию о характеристиках Модификаций, а также о типах цен.
-Характеристики Модификации - внутренняя коллекция **characteristics**. Представлена в виде массива объектов с полями:
+Характеристики Модификации - внутренняя коллекция **characteristic**. Представлена в виде массива объектов с полями:
 
 + **meta** - метаданные характеристики
 + **id** - id соответствующей характеристики.
@@ -58,11 +58,11 @@
 Ответ - объект, со следующей структурой:
 
 + **meta** - Метаданные
-+ **characteristics** - коллекция всех созданных характеристик Модификаций.
++ **characteristic** - коллекция всех созданных характеристик Модификаций.
 
 Структуры отдельных объектов коллекций:
 
-###### *characteristics*
+###### *characteristic*
 + **meta** - Метаданные характеристики
 + **id** - ID характеристики
 + **name** - Наименование характеристики
@@ -167,10 +167,10 @@ curl -X GET
       "externalCode": "rAhHA0T1glL2xY3d1aHFT2",
       "archived": false,
       "discountProhibited": false,
-      "characteristics": [
+      "characteristic": [
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/7a6078e4-3c64-11e6-8a84-bae500000003",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/7a6078e4-3c64-11e6-8a84-bae500000003",
             "type": "attributemetadata",
             "mediaType": "application/json"
           },
@@ -180,7 +180,7 @@ curl -X GET
         },
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/7a6078e4-3c64-11e6-8a84-bae500000003",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/7a6078e4-3c64-11e6-8a84-bae500000003",
             "type": "attributemetadata",
             "mediaType": "application/json"
           },
@@ -190,7 +190,7 @@ curl -X GET
         },
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/7a6078e4-3c64-11e6-8a84-bae500000003",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/7a6078e4-3c64-11e6-8a84-bae500000003",
             "type": "attributemetadata",
             "mediaType": "application/json"
           },
@@ -282,8 +282,8 @@ curl -X GET
 
 
 ### Создать Модификацию 
-Создать новую Модификацию. Для создания новой Модификации необходимы поля **product**, **characteristics**.
-Поле **characteristics** указывается как массив объектов со следующей структурой:
+Создать новую Модификацию. Для создания новой Модификации необходимы поля **product**, **characteristic**.
+Поле **characteristic** указывается как массив объектов со следующей структурой:
 
 + **id** - uuid характеристики
 + **value** - значение характеристики
@@ -300,7 +300,7 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '{
             "name": "(оверспелый, желтый)",
-            "characteristics": [
+            "characteristic": [
               {
                 "id": "627610e3-2cb1-11e6-8a84-bae500000054",
                 "value": "оверспелый"
@@ -400,10 +400,10 @@ curl -X GET
   "externalCode": "tQcC7LdEjTZMh85Em6FTW1",
   "archived": false,
   "discountProhibited": false,
-  "characteristics": [
+  "characteristic": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/627610e3-2cb1-11e6-8a84-bae500000054",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/627610e3-2cb1-11e6-8a84-bae500000054",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
@@ -413,7 +413,7 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/627617d8-2cb1-11e6-8a84-bae500000055",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/627617d8-2cb1-11e6-8a84-bae500000055",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
@@ -527,7 +527,7 @@ curl -X GET
       -d '[
             {
               "name": "(оверспелый, желтый)",
-              "characteristics": [
+              "characteristic": [
                 {
                   "id": "627610e3-2cb1-11e6-8a84-bae500000054",
                   "value": "оверспелый"
@@ -613,7 +613,7 @@ curl -X GET
                 "type": "variant",
                 "mediaType": "application/json"
               },
-              "characteristics": [
+              "characteristic": [
                 {
                   "id": "07e9aa56-137b-11e6-9464-e4de000000e7",
                   "value": "Средний"
@@ -713,10 +713,10 @@ curl -X GET
     "externalCode": "tQcC7LdEjTZMh85Em6FTW1",
     "archived": false,
     "discountProhibited": false,
-    "characteristics": [
+    "characteristic": [
       {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/627610e3-2cb1-11e6-8a84-bae500000054",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/627610e3-2cb1-11e6-8a84-bae500000054",
           "type": "attributemetadata",
           "mediaType": "application/json"
         },
@@ -726,7 +726,7 @@ curl -X GET
       },
       {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/627617d8-2cb1-11e6-8a84-bae500000055",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/627617d8-2cb1-11e6-8a84-bae500000055",
           "type": "attributemetadata",
           "mediaType": "application/json"
         },
@@ -838,10 +838,10 @@ curl -X GET
     "externalCode": "orange303",
     "archived": false,
     "discountProhibited": false,
-    "characteristics": [
+    "characteristic": [
       {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/627610e3-2cb1-11e6-8a84-bae500000054",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/627610e3-2cb1-11e6-8a84-bae500000054",
           "type": "attributemetadata",
           "mediaType": "application/json"
         },
@@ -851,7 +851,7 @@ curl -X GET
       },
       {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/627610e3-2cb1-11e6-8a84-bae500000054",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/627610e3-2cb1-11e6-8a84-bae500000054",
           "type": "attributemetadata",
           "mediaType": "application/json"
         },
@@ -861,7 +861,7 @@ curl -X GET
       },
       {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/627610e3-2cb1-11e6-8a84-bae500000054",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/627610e3-2cb1-11e6-8a84-bae500000054",
           "type": "attributemetadata",
           "mediaType": "application/json"
         },
@@ -1029,7 +1029,7 @@ curl -X POST
 Запрос на получение метаданных Модификаций. Результат - объект JSON, включающий в себя:
 
 + **meta** - Метаданные
-+ **characteristics** - коллекция всех созданных характеристик Модификаций.
++ **characteristic** - коллекция всех созданных характеристик Модификаций.
 
 > Получить метаданные модификаций
 
@@ -1048,7 +1048,7 @@ curl -X GET
     "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
     "mediaType": "application/json"
   },
-  "characteristics": [
+  "characteristic": [
     {
       "id": "fd68704f-f67d-11e5-8a84-bae50000006b",
       "name": "feature",
@@ -1135,10 +1135,10 @@ curl -X GET
   "externalCode": "YQ3kNHfDgtHOVhf20Md7Q0",
   "archived": false,
   "discountProhibited": false,
-  "characteristics": [
+  "characteristic": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/7a6078e4-3c64-11e6-8a84-bae500000003",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/7a6078e4-3c64-11e6-8a84-bae500000003",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
@@ -1233,7 +1233,7 @@ curl -X GET
 + Если у данного атрибута в составе объекта значение присутствует, однако оно отсутствует
 в передаваемой в теле запроса коллекции (не передается совсем), то значение атрибута объекта не изменяется.
 
-При обновлении характеристик Модификации поле **characteristics** указывается как
+При обновлении характеристик Модификации поле **characteristic** указывается как
 массив объектов со следующей структурой:
 
 + **id** - uuid характеристики
@@ -1241,7 +1241,7 @@ curl -X GET
 + **value** - значение характеристики
 Если поле **id** не указано у какого-либо объекта характеристики, производится поиск соответствующей этому объекту
 характеристики по полю **name**. Если же не указаны ни **id** ни **name** произойдет ошибка.
-При обновлении, поле **characteristics** в теле запроса обрабатывается как "все характеристики модификации",
+При обновлении, поле **characteristic** в теле запроса обрабатывается как "все характеристики модификации",
 т.е. полностью заменяет предыдущий массив характеристик. Если какая то из характеристик, имевшая значение в обновляемом
 объекте не указана в запросе на обновление, после запроса ее значение будет аннулированно.
 
@@ -1259,7 +1259,7 @@ curl -X GET
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
-            "characteristics": [
+            "characteristic": [
               {
                 "id": "07e9aa56-137b-11e6-9464-e4de000000e7",
                 "value": "Средний"
@@ -1364,10 +1364,10 @@ curl -X GET
   "externalCode": "orange303",
   "archived": false,
   "discountProhibited": false,
-  "characteristics": [
+  "characteristic": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/627610e3-2cb1-11e6-8a84-bae500000054",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/627610e3-2cb1-11e6-8a84-bae500000054",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
@@ -1377,7 +1377,7 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/627610e3-2cb1-11e6-8a84-bae500000054",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/627610e3-2cb1-11e6-8a84-bae500000054",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
@@ -1387,7 +1387,7 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/627610e3-2cb1-11e6-8a84-bae500000054",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristic/627610e3-2cb1-11e6-8a84-bae500000054",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
