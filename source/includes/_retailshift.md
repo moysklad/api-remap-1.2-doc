@@ -19,7 +19,6 @@
 + **description** - Комментарий смены`Только для чтения`
 + **externalCode** - Внешний код смены `Только для чтения`
 + **moment** - Дата смены `Только для чтения`
-+ **applicable** - Отметка о проведении `Только для чтения`
 + **vatEnabled** - Учитывается ли НДС `Только для чтения`
 + **vatIncluded** - Включен ли НДС в цену `Только для чтения`
 + **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Только для чтения`
@@ -124,7 +123,6 @@ curl -X GET
         }
       },
       "moment": "2016-04-18 15:06:51",
-      "applicable": true,
       "vatEnabled": true,
       "vatIncluded": true,
       "organization": {
@@ -264,7 +262,6 @@ curl -X GET
         }
       },
       "moment": "2016-04-18 15:48:04",
-      "applicable": true,
       "vatEnabled": true,
       "vatIncluded": true,
       "organization": {
@@ -617,7 +614,6 @@ curl -X GET
     }
   },
   "moment": "2016-04-25 13:10:19",
-  "applicable": true,
   "vatEnabled": true,
   "vatIncluded": true,
   "organization": {

@@ -70,6 +70,8 @@
 | `emailsend`                    | Отправка сообщения             |
 | `export`                       | Экспорт                        |
 | `phone-1.0`                    | Phone API                      |
+| `exportediclient1c`            | Экспорт в 1С Клиент ЭДО        |
+| `importediclient1c`            | Импорт в 1С Клиент ЭДО         |
 
 Возможные значение параметров `eventType` и `entityType` приведены в разделе [Фильтры](../other/#audit-audit-poluchit-fil-try)
 
@@ -499,6 +501,8 @@ curl -X GET
 | `export`                       | Экспорт                        |
 | `phone-1.0`                    | Phone API                      |
 | `scriptor`                     | Работа со сценариями           |
+| `exportediclient1c`            | Экспорт в 1С Клиент ЭДО        |
+| `importediclient1c`            | Импорт в 1С Клиент ЭДО         |
 
 + **uid** - 
   Параметр строкового типа. В качестве значения должен быть передан логин сотрудника, по которому
@@ -571,7 +575,9 @@ curl -X GET
     "emailsend",
     "export",
     "phone-1.0",
-    "scriptor"
+    "scriptor",
+    "exportediclient1c",
+    "importediclient1c"
   ],
   "entitytype": [
     "organization",
