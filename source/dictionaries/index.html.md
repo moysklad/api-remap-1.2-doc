@@ -19,6 +19,7 @@ includes:
   - service
   - bundle
   - productFolder
+  - goodsSettings
   - variant
   - consignment
   - contract
