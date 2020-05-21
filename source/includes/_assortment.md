@@ -3,6 +3,7 @@
 Сущность assortment представляет собой список всех товаров, услуг, комплектов, серий и модификаций с полями `stock`,
 `reserve`, `inTransit`, `quantity`, показывающими остаток, резерв, ожидание и доступно каждой из сущностей (для комплектов и услуг эти поля не выводятся).
 Данные поля могут быть рассчитаны в зависимости от даты и склада с использованием параметров фильтрации `stockMoment` и `stockStore`.
+Также имеется возможность получать/редактировать настройки справочника товаров.
 
 #### Атрибуты доступные для фильтрации
 
@@ -86,6 +87,19 @@
 |limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 |groupBy |  `string` (optional) Параметр группировки. Принимает одно из значений: `product` - будут выведены только товары, `variant` - будут выведены товары и модификации (аналогично отсутствию параметра), `consignment` - будут выведены все сущности |
+
+
+#### Настройки справочника 
+#### Атрибуты сущности
++ **uniqueCodeRules** - Объект, отвечающий за проверки уникальности кода
+  + **checkUniqueCode** - Проверка уникальности кода справочника. Возможные значения: true, false
+  + **fillUniqueCode** - Устанавливать уникальный код при создании создании. Возможные значения: true, false
++ **barcodeRules** - Объект, отвечающий за проверки штрихкодов
+  + **fillEAN13Barcode** - Автоматически создавать штрихкод EAN13 для новых товаров, комплектов, модификаций и услуг. Возможные значения: true, false
+  + **weightBarcode** - Использовать префиксы штрихкодов для весовых товаров. Возможные значения: true, false
+  + **weightBarcodePrefix** - Префикс штрихкодов для весовых товаров. Возможные значения: число формата X или XX
++ **createdShared** - Создавать новые документы с меткой «Общий». Возможные значения: true, false
++ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) настроек
 
 ### Получить Ассортимент
 
@@ -757,3 +771,82 @@ curl -X POST
 ]
 ```  
 
+### Получить Настройки справочника
+
+> Запрос на получение настроек справочника товаров
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/settings"
+  -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление настроек компании.
+
+```json
+{
+  "barcodeRules" : {
+    "fillEAN13Barcode" : true,
+    "weightBarcode" : true,
+    "weightBarcodePrefix" : 77
+  },
+  "uniqueCodeRules" : {
+    "checkUniqueCode" : true,
+    "fillUniqueCode" : true
+  },
+  "createdShared" : true,
+  "meta" : {
+    "href" : "http://localhost/api/remap/1.2/assortment/settings",
+    "type" : "GoodsSettings",
+    "mediaType" : "application/json"
+  }
+}
+```
+
+### Обновить настройки справочника компании 
+
+В теле запроса нужно передать массив, содержащий новый JSON настроек компании.
+Обновлять настройки можно частично, для этого в тело запроса нужно добавить лишь те поля, которые необходимо обновлять, остальные поля останутся прежними. Каждое поле является необязательным.
+
+> Запрос на обновление метаданных настроек компании.
+
+```shell
+curl -X PUT
+  "https://online.moysklad.ru/api/remap/1.2/entity/settings"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '{
+  "uniqueCodeRules": {
+    "checkUniqueCodeBoolean": true,
+    "fillUniqueCode": true
+  },
+  "barcodeRules": {
+    "fillEAN13Barcode": true,
+    "weightBarcodePrefix": 55
+  },
+  "createdShared": false
+}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление настроек компании.
+
+```json
+{
+  "uniqueCodeRules": {
+    "checkUniqueCodeBoolean": true,
+    "fillUniqueCode": true
+  },
+  "barcodeRules": {
+    "fillEAN13Barcode": true,
+    "weightBarcodePrefix": 55
+  },
+  "createdShared": false,
+  "meta" : {
+    "href" : "http://localhost/api/remap/1.2/assortment/settings",
+    "type" : "GoodsSettings",
+    "mediaType" : "application/json"
+  }
+}
+```
