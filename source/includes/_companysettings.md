@@ -120,7 +120,7 @@ curl -X GET
 
 ```shell
 curl -X PUT
-  "https://online.moysklad.ru/api/remap/1.2/context/companysettings/metadata"
+  "https://online.moysklad.ru/api/remap/1.2/context/companysettings"
   -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
       -d '{
