@@ -798,7 +798,7 @@ curl -X GET
 {
   "meta" : {
     "href" : "http://localhost/api/remap/1.2/entity/assortment/settings",
-    "type" : "AssortmentSettings",
+    "type" : "assortmentsettings",
     "mediaType" : "application/json"
   },
   "barcodeRules" : {
@@ -847,7 +847,7 @@ curl -X PUT
 {
   "meta" : {
     "href" : "http://localhost/api/remap/1.2/entity/assortment/settings",
-    "type" : "AssortmentSettings",
+    "type" : "assortmentsettings",
     "mediaType" : "application/json"
   },
   "uniqueCodeRules": {
