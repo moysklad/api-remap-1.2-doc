@@ -72,10 +72,14 @@
 + **vat** - НДС, которым облагается текущая позиция
 + **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **pack** - Упаковка товара
-+ **things** - Серийные номера
-Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете.
-В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.
-
++ **things** - Серийные номера.
+  Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете.
+  В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.
++ **trackingCodes** - Коды маркировки товаров и транспортных упаковок. Поддержаны в виде иерархической структуры JSON. 
+  Значение кода указывается в атрибуте **cis**. Для каждого кода указывается тип **type: trackingcode** (код маркировки товара) или **transportpack** (код транспортной упаковки). 
+  Допустима вложенность кодов маркировки товаров в транспортные упаковки. Транспортные упаковки не могут иметь вложенных упаковок. 
+  Коды упаковок могут отсутствовать - в этом случае структура не будет вложенной. Если продукция не является маркированной, то коды маркировки для позиции не будут сохранены. 
+  Количество кодов маркировки может отличаться от фактического количества единиц продукции.
 + **cost** - Себестоимость (только для услуг)
 
 С позициями можно работать с помощью [специальных ресурсов для управления позициями Отгрузки](../documents/#dokumenty-otgruzka-pozicii-otgruzki),
@@ -91,6 +95,18 @@
 + **overhead** - Накладные расходы по позиции.
 
 О работе с доп. полями Отгрузок можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
+
+#### Коды маркировки и серийные номера для позиции документа
+
+При работе с позицией Отгрузки следует учитывать следующие особенности.
+
++ Количество кодов маркировки **trackingCodes** в позиции документа не влияет на количество единиц **quantity** в позиции.
++ Количество серийных номеров **things** в позиции документа строго соответствует количеству единиц **quantity** в позиции. 
+  Изменение **quantity** на значение, не соответствующее количеству серийных номеров, недопустимо. 
++ Для обновления списка кодов маркировки **trackingCodes** и списка серийных номеров **things** позиции Отгрузки, 
+  необходимо передавать их полный список, включающий как старые, так и новые значения. Отсутствующие значения при обновлении будут удалены.
+  
+Недопустимо сохранение дублирующихся кодов маркировки и серийных номеров внутри документа Отгрузки. 
 
 
 ### Получить список Отгрузок 
@@ -899,6 +915,22 @@ curl -X GET
                     "mediaType": "application/json"
                   }
                 },
+               "trackingCodes": [
+                {
+                  "cis": "012345678912345672",
+                  "type": "transportpack",
+                    "trackingCodes": [
+                     {
+                      "cis": "010463003759026521uHpIIf2111114",
+                      "type": "trackingcode"
+                      },
+                      {
+                       "cis": "010463003759026521uHpIIf2111111",
+                       "type": "trackingcode"
+                      }
+                    ]
+                  }
+                ],
                 "reserve": 10,
                 "overhead": 20
               },
@@ -2926,6 +2958,139 @@ curl -X GET
 }
 ```
 
+> Пример с кодами маркировки
+
+```shell
+curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/demand/8830a022-8a03-11ea-0a80-01cb00000040/positions' \
+--header 'Authorization: Basic <Credentials>'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка позиций отдельной Отгрузки.
+
+```json
+{
+   "context":{
+      "employee":{
+         "meta":{
+            "href":"https://online.moysklad.ru/api/remap/1.2/context/employee",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+            "type":"employee",
+            "mediaType":"application/json"
+         }
+      }
+   },
+   "meta":{
+      "href":"https://online.moysklad.ru/api/remap/1.2/entity/demand/8830a022-8a03-11ea-0a80-01cb00000040/positions",
+      "type":"demandposition",
+      "mediaType":"application/json",
+      "size":2,
+      "limit":1000,
+      "offset":0
+   },
+   "rows":[
+      {
+         "meta":{
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/demand/8830a022-8a03-11ea-0a80-01cb00000040/positions/8830b0fe-8a03-11ea-0a80-01cb00000041",
+            "type":"demandposition",
+            "mediaType":"application/json"
+         },
+         "id":"8830b0fe-8a03-11ea-0a80-01cb00000041",
+         "accountId":"de6b5113-8491-11ea-0a80-134500000014",
+         "quantity":20.0,
+         "price":200.0,
+         "discount":0.0,
+         "vat":21,
+         "assortment":{
+            "meta":{
+               "href":"https://online.moysklad.ru/api/remap/1.2/entity/product/aa1b1814-8493-11ea-0a80-037a00000307",
+               "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+               "type":"product",
+               "mediaType":"application/json",
+               "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=aa1b0d42-8493-11ea-0a80-037a00000305"
+            }
+         },
+         "trackingCodes":[
+            {
+               "cis":"012345678912345672",
+               "type":"transportpack",
+               "trackingCodes":[
+                  {
+                     "cis":"010463003759026521uHpIIf2111111",
+                     "type":"trackingcode"
+                  },
+                  {
+                     "cis":"010463003759026521uHpIIf2111114",
+                     "type":"trackingcode"
+                  }
+               ]
+            }
+         ],
+         "overhead":0.0
+      },
+      {
+         "meta":{
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/demand/8830a022-8a03-11ea-0a80-01cb00000040/positions/770f45b4-8a04-11ea-0a80-01cb00000060",
+            "type":"demandposition",
+            "mediaType":"application/json"
+         },
+         "id":"770f45b4-8a04-11ea-0a80-01cb00000060",
+         "accountId":"de6b5113-8491-11ea-0a80-134500000014",
+         "quantity":10.0,
+         "price":0.0,
+         "discount":0.0,
+         "vat":0,
+         "assortment":{
+            "meta":{
+               "href":"https://online.moysklad.ru/api/remap/1.2/entity/product/b20184da-8493-11ea-0a80-037a00000314",
+               "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+               "type":"product",
+               "mediaType":"application/json",
+               "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=b20178fb-8493-11ea-0a80-037a00000312"
+            }
+         },
+         "trackingCodes":[
+            {
+               "cis":"010463003759026521uHpIIf-nXIH>1",
+               "type":"trackingcode"
+            },
+            {
+               "cis":"012345678912345671",
+               "type":"transportpack"
+            },
+            {
+               "cis":"012345678912345678",
+               "type":"transportpack",
+               "trackingCodes":[
+                  {
+                     "cis":"010463003759026521uHpIIf-nXIH>0",
+                     "type":"trackingcode"
+                  },
+                  {
+                     "cis":"010463003759026521uHpIIf-nXIH>4",
+                     "type":"trackingcode"
+                  },
+                  {
+                     "cis":"010463003759026521uHpIIf-111114",
+                     "type":"trackingcode"
+                  }
+               ]
+            },
+            {
+               "cis":"010463003759026521uHpIIf-111122",
+               "type":"trackingcode"
+            },
+            {
+               "cis":"010463003759026521uHpIIf-nXIH>2",
+               "type":"trackingcode"
+            }
+         ],
+         "overhead":0.0
+      }
+   ]
+}
+```
+
 ### Создать позицию Отгрузки 
 Запрос на создание новой позиции в Отгрузке.
 Для успешного создания необходимо в теле запроса указать следующие поля:
@@ -3140,6 +3305,133 @@ curl -X GET
 ]
 ```
 
+> Пример с кодами маркировки.
+
+```shell
+curl --location --request POST 'https://online.moysklad.ru/api/remap/1.2/entity/demand/8830a022-8a03-11ea-0a80-01cb00000040/positions' \
+--header 'Authorization: Basic <Credentials>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+   "quantity":10.0,
+   "price":100.0,
+   "discount":0.0,
+   "vat":0,
+   "assortment":{
+      "meta":{
+         "href":"https://online.moysklad.ru/api/remap/1.2/entity/product/b20184da-8493-11ea-0a80-037a00000314",
+         "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+         "type":"product",
+         "mediaType":"application/json",
+         "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=b20178fb-8493-11ea-0a80-037a00000312"
+      }
+   },
+   "trackingCodes":[
+      {
+         "cis":"010463003759026521uHpIIf-111122",
+         "type":"trackingcode"
+      },
+      {
+         "cis":"012345678912345671",
+         "type":"transportpack"
+      },
+      {
+         "cis":"010463003759026521uHpIIf-nXIH>1",
+         "type":"trackingcode"
+      },
+      {
+         "cis":"012345678912345678",
+         "type":"transportpack",
+         "trackingCodes":[
+            {
+               "cis":"010463003759026521uHpIIf-111114",
+               "type":"trackingcode"
+            },
+            {
+               "cis":"010463003759026521uHpIIf-nXIH>4",
+               "type":"trackingcode"
+            },
+            {
+               "cis":"010463003759026521uHpIIf-nXIH>0",
+               "type":"trackingcode"
+            }
+         ]
+      },
+      {
+         "cis":"010463003759026521uHpIIf-nXIH>2",
+         "type":"trackingcode"
+      }
+   ],
+   "overhead":0.0
+}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной позиции отдельной Отгрузки.
+
+```json
+[
+   {
+      "meta":{
+         "href":"https://online.moysklad.ru/api/remap/1.2/entity/demand/8830a022-8a03-11ea-0a80-01cb00000040/positions/770f45b4-8a04-11ea-0a80-01cb00000060",
+         "type":"demandposition",
+         "mediaType":"application/json"
+      },
+      "id":"770f45b4-8a04-11ea-0a80-01cb00000060",
+      "accountId":"de6b5113-8491-11ea-0a80-134500000014",
+      "quantity":10.0,
+      "price":100.0,
+      "discount":0.0,
+      "vat":0,
+      "assortment":{
+         "meta":{
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/product/b20184da-8493-11ea-0a80-037a00000314",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+            "type":"product",
+            "mediaType":"application/json",
+            "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=b20178fb-8493-11ea-0a80-037a00000312"
+         }
+      },
+      "trackingCodes":[
+         {
+            "cis":"010463003759026521uHpIIf-111122",
+            "type":"trackingcode"
+         },
+         {
+            "cis":"012345678912345671",
+            "type":"transportpack"
+         },
+         {
+            "cis":"010463003759026521uHpIIf-nXIH>1",
+            "type":"trackingcode"
+         },
+         {
+            "cis":"012345678912345678",
+            "type":"transportpack",
+            "trackingCodes":[
+               {
+                  "cis":"010463003759026521uHpIIf-111114",
+                  "type":"trackingcode"
+               },
+               {
+                  "cis":"010463003759026521uHpIIf-nXIH>4",
+                  "type":"trackingcode"
+               },
+               {
+                  "cis":"010463003759026521uHpIIf-nXIH>0",
+                  "type":"trackingcode"
+               }
+            ]
+         },
+         {
+            "cis":"010463003759026521uHpIIf-nXIH>2",
+            "type":"trackingcode"
+         }
+      ],
+      "overhead":0.0
+   }
+]
+```
+
 ### Позиция Отгрузки
  
 ### Получить позицию
@@ -3191,6 +3483,9 @@ curl -X GET
 ### Изменить позицию 
 Запрос на обновление отдельной позиции Отгрузки. Для обновления позиции нет каких-либо
  обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
+ 
+При обновлении списка кодов маркировки учитывать, что их количество может отличаться от фактического количества единиц продукции. 
+ Для изменения количества единиц продукции необходимо использовать параметр **quantity**.
 
 **Параметры**
 
