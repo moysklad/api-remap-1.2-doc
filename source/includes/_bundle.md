@@ -32,7 +32,7 @@
 |**country**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Страны|---|нет
 |**article**         |String(255)|Артикул|---|нет
 |**weight**         |Int|Вес|---|нет
-|**weight**         |Int|Объем|---|нет
+|**volume**         |Int|Объем|---|нет
 |**barcodes**         |Array(String)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta-shtrih-kody)|---|нет
 |**discountProhibited**        |Boolean|Признак запрета скидок|---|да
 |**overhead**         |Object|Дополнительные расходы. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-wlozhennyh-suschnostej-dopolnitel-nye-rashody)|---|нет

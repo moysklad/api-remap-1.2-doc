@@ -12,76 +12,95 @@
 + по артикулу (article)
 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) объекта
-+ **id** - ID Товара в формате UUID `Только для чтения`
-+ **accountId** - ID учетной записи `Только для чтения`
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **syncId** - ID синхронизации. После заполнения недоступен для изменения.
-+ **updated** - Момент последнего обновления сущности `Только для чтения`
-+ **name** - Наименование Товара `Необходимое`
-+ **description** - Описание Товара
-+ **code** - Код Товара
-+ **externalCode** - Внешний код Товара
-+ **archived** - Отметка о том, добавлен ли Товар в архив
-+ **pathName** - Наименование группы, в которую входит Товар `Только для чтения`
-+ **vat** - НДС %
-+ **effectiveVat** - Реальный НДС % `Только для чтения`
-+ **productFolder** - Ссылка на группу Товаров в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **uom** - Ссылка на единицы измерения в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **images** - Изображения Товара. Изображений у Товара может быть не более 10
-+ **minPrice** - Минимальная цена
-+ **buyPrice** - Закупочная цена
-+ **salePrices** - Цены продажи
-+ **supplier** - Ссылка на контрагента-поставщика в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **country** - Ссылка на страну в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **article** - Артикул
-+ **weighed** - Весовой товар
-+ **tobacco** - Табачная продукция. Не может быть указан вместе с **alcoholic**, **weighed** и **isSerialTrackable**
-+ **weight** - Вес
-+ **volume** - Объем
-+ **packs** - Упаковки Товара
-+ **barcodes** - Массив штрихкодов товара
-+ **discountProhibited** - Признак запрета скидок.
-+ **alcoholic** - Объект, содержащий поля алкогольной продукции.
-  + **excise** - Содержит акцизную марку
-  + **type**  - Код вида продукции
-  + **strength** - Крепость
-  + **volume** - Объём тары
-+ **variantsCount** - Количество модификаций у данного товара `Только для чтения`
-+ **minimumBalance** - Неснижаемый остаток
-+ **isSerialTrackable** - Учет по серийным номерам. Не может быть указан вместе с **alcoholic** и **weighed**
-+ **things** - Серийные номера `Только для чтения`
-+ **trackingType** - Тип маркируемой продукции
-  + **NOT_TRACKED** - Без маркировки
-  + **TOBACCO** - Тип маркировки "Табак"
-  + **SHOES** - Тип маркировки "Обувь"
-+ **tnved** - Код ТН ВЭД
-+ **paymentItemType** - Признак предмета расчета
-  + **GOOD** - Товар
-  + **EXCISABLE_GOOD** - Подакцизный товар
-  + **COMPOUND_PAYMENT_ITEM** - Составной предмет расчета
-  + **ANOTHER_PAYMENT_ITEM** - Иной предмет расчета
-+ **taxSystem** - Код системы налогообложения
-  + **TAX_SYSTEM_SAME_AS_GROUP** - Совпадает с группой
-  + **GENERAL_TAX_SYSTEM** - ОСН
-  + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
-  + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
-  + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
-  + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
-  + **PATENT_BASED** - Патент
+
+| Название  | Тип | Описание                    | Поле в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Товара|---|да
+|**id**                |UUID|ID Товара|Только для чтения|да
+|**accountId**         |UUID|ID учетной записи|Только для чтения|да
+|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|---|да
+|**shared**         |Boolean|Общий доступ|---|да
+|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|---|да
+|**syncId**                |UUID|ID синхронизации|После заполнения недоступно для изменения|нет
+|**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да
+|**name**         |String(255)|Наименование Товара|Необходимое при создании|да
+|**description**        |String(4096)|Описание Товара|---|нет
+|**code**         |String(255)|Код Товара|---|нет
+|**externalCode**         |String(255)|Внешний код Товара|---|да
+|**archived**        |Boolean|Добавлен ли Товар в архив|---|да
+|**pathName**         |String(unlimited)|Наименование группы, в которую входит Товар|Только для чтения|да
+|**vat**         |Int|НДС %|---|нет
+|**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
+|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Товара|---|нет
+|**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|---|нет
+|**images**       |Array(Object)|Изображения Комплекта. Изображений у Модификации может быть не более 10. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-izobrazhenie-struktura-i-zagruzka)|---|нет
+|**minPrice**         |Double|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-minimal-naq-cena)|---|нет
+|**salePrices**         |Array(Object)|Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-ceny-prodazhi)|---|нет
+|**buyPrice**         |Array(Object)|Закупочная цена. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-zakupochnaq-cena)|---|нет
+|**supplier**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента-поставщика|---|нет
+|**attributes**         |Array(Meta)|Коллекция доп. полей|---|нет
+|**country**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Страны|---|нет
+|**article**         |String(255)|Артикул|---|нет
+|**weight**         |Int|Вес|---|нет
+|**volume**         |Int|Объем|---|нет
+|**packs**         |Array(String)|Упаковки Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)|---|нет
+|**alcoholic**         |Object|Объект, содержащий поля алкогольной продукции. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-ob-ekt-soderzhaschij-polq-alkogol-noj-produkcii)|---|нет
+|**variantsCount**         |Int|Количество модификаций у данного товара|Только для чтения|да
+|**minimumBalance**         |Int|Неснижаемый остаток|---|да
+|**isSerialTrackable**         |Boolean|Учет по серийным номерам. Не может быть указан вместе с **alcoholic** и **weighed**|---|нет
+|**things**       |Array(String)|Серийные номера|---|нет
+|**barcodes**         |Array(String)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-shtrih-kody)|---|нет
+|**discountProhibited**        |Boolean|Признак запрета скидок|---|да
+|**tnved**         |String(255)|Код ТН ВЭД|---|нет
+|**trackingType**         |Enum|Тип маркируемой продукции. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-tip-markiruemoj-produkcii)|---|нет
+|**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-priznak-predmeta-rascheta)|---|нет
+|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|---|нет
 
 Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить
 с помощью обновления атрибута **productFolder**.
 
+##### Тип маркируемой продукции
+Значения поля trackingType.
+
+| Значение                | Описание  |
+| ------------------------------ |:---------------------------|
+| **NOT_TRACKED**           | Без маркировки|
+| **TOBACCO**                 |Тип маркировки "Табак"|
+| **SHOES**        |Тип маркировки "Обувь"|
+
+##### Признак предмета расчета
+Значения поля paymentItemType.
+
+| Значение                | Описание  |
+| ------------------------------ |:---------------------------|
+| **GOOD**                        | Товар|
+| **EXCISABLE_GOOD**               |Подакцизный товар|
+| **COMPOUND_PAYMENT_ITEM**       |Составной предмет расчета|
+| **ANOTHER_PAYMENT_ITEM**        |Иной предмет расчета|
+
+##### Код системы налогообложения
+Значения поля taxSystem.
+
+| Значение                | Описание  |
+| ------------------------------ |:---------------------------|
+| **TAX_SYSTEM_SAME_AS_GROUP**            | Совпадает с группой|
+| **GENERAL_TAX_SYSTEM**                  | ОСН|
+| **SIMPLIFIED_TAX_SYSTEM_INCOME**        | УСН. Доход|
+| **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME**| УСН. Доход-Расход|
+| **UNIFIED_AGRICULTURAL_TAX**            | ЕСХН|
+| **PRESUMPTIVE_TAX_SYSTEM**              | ЕНВД|
+| **PATENT_BASED**                        | Патент|
+
 #### Атрибуты вложенных сущностей
 ##### Упаковки Товара:
-+ **id** - ID в формате UUID `Только для чтения`
-+ **uom** - Ссылка на единицы измерения в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **quantity** - Количество Товаров в упаковке данного вида `Необходимое`
-+ **barcodes** - Массив штрихкодов упаковок товаров. Данный массив может содержать не более одного штрихкода. Если штрихкод в массиве отсутствует, то данное поле не выводится.
+
+| Название  | Тип | Описание                    | Поле в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:---------
+|**id**             |UUID|ID упаковки товара|Только для чтения|да
+|**uom**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные единиц измерения|---|да
+|**quantity**            |Int|Количество Товаров в упаковке данного вида|Необходимое при создании|да
+|**barcodes**         |Array(String)|Массив штрихкодов упаковок товаров. Данный массив может содержать не более одного штрихкода. Если штрихкод в массиве отсутствует, то данное поле не выводится|---|нет
+
 В версии API 1.2 был удален отдельный ресурс для работы с упаковками товаров. Теперь упаковки - вложенная коллекция.
 Для того, чтобы создать новую упаковку для данного товара, нужно в запросе на обновление товара указать ее как элемент
 поля **packs**, а в ее составе указать ссылку в формате meta на единицу измерения и количество товаров в упаковке.
@@ -114,6 +133,15 @@
 
 О работе с доп. полями Товаров можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
+##### Объект, содержащий поля алкогольной продукции
+
+| Название  | Тип | Описание                    | Поле в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**excise**              |Boolean|Содержит акцизную марку|---|нет
+|**type**              |String(255)|Код вида продукции|---|нет
+|**strength**              |Int| Крепость|---|нет
+|**volume **              |Boolean|Объём тары|---|нет
+
 ##### Поставщик Товара:
 + **meta** - Метаданные, содержащие ссылку на поставщика.
 Тип поставщика - Контрагент. Описание сущности Контрагент вы можете посмотреть [здесь](../dictionaries/#suschnosti-kontragent)
@@ -122,7 +150,6 @@
 + **value** - Значение цены
 + **currency** - Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **priceType** - Тип цены
-
 
 ##### Закупочная цена
 + **value** - Значение цены
@@ -136,13 +163,15 @@
 При запросе Товара с изображениями будет выведено json представление этого Товара, содержащее поле **images**. Данное поле является 
 массивом элементов. Элементы поля **images** имеют поля:
 
-+ **meta** - Метаданные об изображении
-+ **title** - Название изображения
-+ **filename** - Имя файла
-+ **size** - Размер файла в байтах
-+ **updated** - Дата последнего изменения
-+ **miniature** - Ссылка на миниатюру изображения в формате Метаданных
-+ **tiny** - Ссылка на уменьшенное изображение в формате Метаданных
+| Название  | Тип | Описание                    | Поле в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**               |Meta|Метаданные объекта|---|да
+|**title**               |Meta|Название Изображения|---|да
+|**filename**               |Meta|Имя файла|---|да
+|**size**               |Meta|Размер файла в байтах|---|да
+|**updated**               |Meta|Время загрузки файла на сервер|---|да
+|**miniature**               |Meta|Ссылка на миниатюру изображения в формате Метаданных|---|да
+|**tiny**               |Meta|Ссылка на уменьшенное изображение в формате Метаданных|---|да
 
 <h4>Загрузка</h4>
 Для загрузки изображений нужно в теле запроса на [создание](../dictionaries/#suschnosti-towar-sozdat-towar) или [обновление](../dictionaries/#suschnosti-towar-izmenit-towar) товара
