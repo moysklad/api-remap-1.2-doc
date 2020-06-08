@@ -9,38 +9,48 @@
 + по коду Группы товаров (code)
 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о Группе товаров
-+ **id** - ID в формате UUID `Только для чтения`
-+ **accountId** - ID учетной записи `Только для чтения`
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye))
-+ **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **updated** - Момент последнего обновления сущности `Только для чтения`
-+ **name** - Наименование Группы товаров `Необходимое`
-+ **description** - Описание Группы товаров
-+ **code** - Код Группы товаров
-+ **externalCode** - Внешний код Группы товаров
-+ **archived** - Добавлена ли Группа товаров в архив `Только для чтения`
-+ **pathName** - Наименование Группы товаров, в которую входит данная Группа товаров `Только для чтения`
-+ **vat** - НДС %
-+ **effectiveVat** - Реальный НДС % `Только для чтения`
-+ **productFolder** - Ссылка на Группу товаров данной Группы товаров в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **taxSystem** - Код системы налогообложения
-  + **TAX_SYSTEM_SAME_AS_GROUP** - Совпадает с группой
-  + **GENERAL_TAX_SYSTEM** - ОСН
-  + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
-  + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
-  + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
-  + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
-  + **PATENT_BASED** - Патент
+| Название  | Тип | Описание                    | Поле в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Группы товаров|---|да
+|**id**                |UUID|ID Группы товаров|Только для чтения|да
+|**accountId**         |UUID|ID учетной записи|Только для чтения|да
+|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|---|да
+|**shared**         |Boolean|Общий доступ|---|да
+|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|---|да
+|**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да
+|**name**         |String(255)|Наименование Группы товаров|Необходимое при создании|да
+|**description**        |String(4096)|Описание Группы товаров|---|нет
+|**code**         |String(255)|Код Группы товаров|---|нет
+|**externalCode**         |String(255)|Внешний код Группы товаров|---|да
+|**archived**        |Boolean|Добавлена ли Группа товаров в архив|Только для чтения|да
+|**pathName**         |String(unlimited)|Наименование Группы товаров, в которую входит данная Группа товаров|Только для чтения|да
+|**vat**         |Int|НДС %|---|нет
+|**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
+|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы товаров данной группы товаров|---|нет
+|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-gruppa-towarow-kod-sistemy-nalogooblozheniq)|---|нет
+
+### Код системы налогообложения
+Значения поля taxSystem.
+| Значение                | Описание  |
+| ------------------------------ |:---------------------------|
+| **TAX_SYSTEM_SAME_AS_GROUP**            | Совпадает с группой|
+| **GENERAL_TAX_SYSTEM**                  | ОСН|
+| **SIMPLIFIED_TAX_SYSTEM_INCOME**        | УСН. Доход|
+| **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME**| УСН. Доход-Расход|
+| **UNIFIED_AGRICULTURAL_TAX**            | ЕСХН|
+| **PRESUMPTIVE_TAX_SYSTEM**              | ЕНВД|
+| **PATENT_BASED**                        | Патент|
 
 ### Получить список групп товаров 
 Запрос всех Групп товаров на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
-- **rows** - Массив JSON объектов, представляющих собой Группы товаров.
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
+**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
+**rows** |Array(Object)| Массив JSON объектов, представляющих собой группы товаров.
+
 **Параметры**
 
 | Параметр                | Описание  |
