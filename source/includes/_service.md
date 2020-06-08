@@ -11,47 +11,61 @@
 
 ### Услуги 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) объекта
-+ **id** - ID Услуги в формате UUID `Только для чтения`
-+ **accountId** - ID учетной записи `Только для чтения`
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **syncId** - ID синхронизации. После заполнения недоступен для изменения.
-+ **updated** - Момент последнего обновления сущности `Только для чтения`
-+ **name** - Наименование Услуги `Необходимое`
-+ **description** - Описание Услуги
-+ **code** - Код Услуги
-+ **externalCode** - Внешний код Услуги
-+ **archived** - Отметка о том, добавлен ли Услуга в архив
-+ **pathName** - Наименование группы, в которую входит Услуга `Только для чтения`
-+ **vat** - НДС %
-+ **effectiveVat** - Реальный НДС % `Только для чтения`
-+ **productFolder** - Ссылка на группу Услуги
-+ **uom** - Единицы измерения
-+ **minPrice** - Минимальная цена
-+ **salePrices** - Цены продажи
-+ **barcodes** - Массив штрихкодов услуги
-+ **attributes** - Дополнительные поля Услуги в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **buyPrice** - Закупочная цена
-+ **discountProhibited** - Признак запрета скидок.
-+ **paymentItemType** - Признак предмета расчета
-  + **SERVICE** - Услуга
-  + **WORK** - Работа
-  + **PROVIDING_RID** - Предоставление РИД
-  + **COMPOUND_PAYMENT_ITEM** - Составной предмет расчета
-  + **ANOTHER_PAYMENT_ITEM** - Иной предмет расчета
-+ **taxSystem** - Код системы налогообложения
-  + **TAX_SYSTEM_SAME_AS_GROUP** - Совпадает с группой
-  + **GENERAL_TAX_SYSTEM** - ОСН
-  + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
-  + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
-  + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
-  + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
-  + **PATENT_BASED** - Патент
+
+| Название  | Тип | Описание                    | Поле в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Услуги|---|да
+|**id**                |UUID|ID Услуги|Только для чтения|да
+|**accountId**         |UUID|ID учетной записи|Только для чтения|да
+|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|---|да
+|**shared**         |Boolean|Общий доступ|---|да
+|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|---|да
+|**syncId**                |UUID|ID синхронизации|После заполнения недоступно для изменения|нет
+|**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да
+|**name**         |String(255)|Наименование Услуги|Необходимое при создании|да
+|**description**        |String(4096)|Описание Услуги|---|нет
+|**code**         |String(255)|Код Услуги|---|нет
+|**externalCode**         |String(255)|Внешний код Услуги|---|да
+|**archived**        |Boolean|Добавлена ли Услуга в архив|---|да
+|**pathName**         |String(unlimited)|Наименование группы, в которую входит Услуга|Только для чтения|да
+|**vat**         |Int|НДС %|---|нет
+|**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
+|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|---|нет
+|**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|---|нет
+|**minPrice**         |Double|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-zakupochnaq-cena)|---|нет
+|**salePrices**         |Array(Object)|Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-ceny-prodazhi)|---|нет
+|**buyPrice**         |Array(Object)|Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-minimal-naq-cena)|---|нет
+|**attributes**         |Array(Meta)|Коллекция доп. полей|---|нет
+|**barcodes**         |Array(String)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-shtrih-kody)|---|нет
+|**discountProhibited**        |Boolean|Признак запрета скидок|---|да
+|**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-atributy-suschnosti-priznak-predmeta-rascheta)|---|нет
+|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|---|нет
 
 Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить
 с помощью обновления атрибута **productFolder**.
+
+##### Признак предмета расчета
+Значения поля paymentItemType.
+
+| Значение                | Описание  |
+| ------------------------------ |:---------------------------|
+| **GOOD**                        | Товар|
+| **EXCISABLE_GOOD**               |Подакцизный товар|
+| **COMPOUND_PAYMENT_ITEM**       |Составной предмет расчета|
+| **ANOTHER_PAYMENT_ITEM**        |Иной предмет расчета|
+
+##### Код системы налогообложения
+Значения поля taxSystem.
+
+| Значение                | Описание  |
+| ------------------------------ |:---------------------------|
+| **TAX_SYSTEM_SAME_AS_GROUP**            | Совпадает с группой|
+| **GENERAL_TAX_SYSTEM**                  | ОСН|
+| **SIMPLIFIED_TAX_SYSTEM_INCOME**        | УСН. Доход|
+| **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME**| УСН. Доход-Расход|
+| **UNIFIED_AGRICULTURAL_TAX**            | ЕСХН|
+| **PRESUMPTIVE_TAX_SYSTEM**              | ЕНВД|
+| **PATENT_BASED**                        | Патент|
 
 #### Атрибуты вложенных сущностей
 
