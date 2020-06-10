@@ -158,19 +158,25 @@ curl -X GET
     "mediaType": "application/json"
   },
   "defaultCompany": {
-    "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
-    "type": "organization",
-    "mediaType": "application/json"
+    "meta": {
+      "metadataHref": "http://localhost/api/remap/1.2/entity/organization/5f13f655-a419-11ea-ac12-000a00000072",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
   },
   "defaultCustomerCounterparty": {
-    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
-    "type": "counterparty",
-    "mediaType": "application/json"
+    "meta": {
+      "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
   },
   "defaultPurchaseCounterparty": {
-    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
-    "type": "counterparty",
-    "mediaType": "application/json"
+    "meta": {
+      "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
   },
   "defaultProject": {
     "href": "http://localhost/api/remap/1.2/entity/project/59e1cf55-a70f-11ea-ac12-000d00000001",
@@ -178,9 +184,11 @@ curl -X GET
     "mediaType": "application/json"
   },
   "defaultPlace": {
-    "href": "http://localhost/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
-    "type": "store",
-    "mediaType": "application/json"
+    "meta": {
+      "href": "http://localhost/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
+      "type": "store",
+      "mediaType": "application/json"
+    }
   },
   "locale": "ru_RU",
   "mailFooter": "подпись в письме",
@@ -200,19 +208,25 @@ curl -X PUT
   -H "Content-Type: application/json"
       -d '{
   "defaultCompany": {
-    "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
-    "type": "organization",
-    "mediaType": "application/json"
+    "meta": {
+      "metadataHref": "http://localhost/api/remap/1.2/entity/organization/5f13f655-a419-11ea-ac12-000a00000072",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
   },
   "defaultCustomerCounterparty": {
-    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
-    "type": "counterparty",
-    "mediaType": "application/json"
+    "meta": {
+      "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
   },
   "defaultPurchaseCounterparty": {
-    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
-    "type": "counterparty",
-    "mediaType": "application/json"
+    "meta": {
+      "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
   },
   "defaultProject": {
     "href": "http://localhost/api/remap/1.2/entity/project/59e1cf55-a70f-11ea-ac12-000d00000001",
@@ -220,9 +234,11 @@ curl -X PUT
     "mediaType": "application/json"
   },
   "defaultPlace": {
-    "href": "http://localhost/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
-    "type": "store",
-    "mediaType": "application/json"
+    "meta": {
+      "href": "http://localhost/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
+      "type": "store",
+      "mediaType": "application/json"
+    }
   },
   "locale": "ru_RU",
   "mailFooter": "подпись в письме",
@@ -245,19 +261,25 @@ curl -X PUT
     "mediaType": "application/json"
   },
   "defaultCompany": {
-    "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
-    "type": "organization",
-    "mediaType": "application/json"
+    "meta": {
+      "metadataHref": "http://localhost/api/remap/1.2/entity/organization/5f13f655-a419-11ea-ac12-000a00000072",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
   },
   "defaultCustomerCounterparty": {
-    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
-    "type": "counterparty",
-    "mediaType": "application/json"
+    "meta": {
+      "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
   },
   "defaultPurchaseCounterparty": {
-    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
-    "type": "counterparty",
-    "mediaType": "application/json"
+    "meta": {
+      "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
   },
   "defaultProject": {
     "href": "http://localhost/api/remap/1.2/entity/project/59e1cf55-a70f-11ea-ac12-000d00000001",
@@ -265,9 +287,11 @@ curl -X PUT
     "mediaType": "application/json"
   },
   "defaultPlace": {
-    "href": "http://localhost/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
-    "type": "store",
-    "mediaType": "application/json"
+    "meta": {
+      "href": "http://localhost/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
+      "type": "store",
+      "mediaType": "application/json"
+    }
   },
   "locale": "ru_RU",
   "mailFooter": "подпись в письме",
