@@ -1,19 +1,23 @@
 ## Настройки пользователя
 Средствами JSON API можно получать и редактировать настройки пользователя. Допускается частичное редактирование - отредактированы буду только присутствующие в запросе поля.
 #### Настройки пользователя 
+
 #### Атрибуты сущности
 + **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) настроек
-+ **defaultCompany** - Ссылка на организацию по умолчанию в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **defaultCustomerCounterparty** - Ссылка на покупателя по умолчанию в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **defaultPurchaseCounterparty** - Ссылка на поставщика по умолчанию в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **defaultProject** - Ссылка на проект по умолчанию в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **defaultPlace** - Ссылка на склад по умолчанию в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **locale** - Язык ("ru_RU" или "en_US")
-+ **printFormat** - Правила печати документов 
-+ **fieldsPerRow** - Число дополнительных полей в строке
-+ **defaultScreen** - Стартовый экран
-+ **autoShowReports** - Обновлять отчеты автоматически
-+ **mailFooter** - Подпись в отправляемых письмах
++ **defaultCompany** - Организация , которая будет использоваться по умолчанию в документах. Задается в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **defaultCustomerCounterparty** - Покупатель, который будет использоваться по умолчанию в документах раздела "Продажи". Задается в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **defaultPurchaseCounterparty** - Поставщик, который будет использоваться по умолчанию в документах раздела "Закупки". Задается в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **defaultProject** - Проект, который будет использоваться по умолчанию в документах. Задается в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **defaultPlace** - Склад, который будет использоваться по умолчанию в документах. Задается в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **locale** - Язык системы. Допустимые значения "ru_RU" и "en_US"
++ **printFormat** - [Правила печати документов] (./#suschnosti-nastrojki-pol-zowatelq-poluchit-metadannye-nastroek-kompanii-prawila-pechati-dokumentow) 
++ **fieldsPerRow** - Количество столбцов, в которых будут располагаться дополнительные поля в документах.
++ **defaultScreen** - [Страница, которая открывается у пользователя при логине] (./#suschnosti-nastrojki-pol-zowatelq-poluchit-metadannye-nastroek-kompanii-startowyj-akran)
++ **autoShowReports** - Строить ил отчетыавтоматически при переходе на вкладку с отчетом. Допустимые значения false true 
++ **mailFooter** - Подставляется в подпись в письмах, отправляемых из МС.
+
+#### Объекты по умолчанию
+В случае создания объекта со ссылкой на организацию, покупателя, поставщика, проект или склад и заполненных объектов по умолчанию в настройках пользователя возможно автозаполнение этих полей нового объекта значениями из настроек пользователя (общей логики автозаполнения нет, каждый случай нужно рассматривать отдельно) 
 
 #### Правила печати документов
 Допустимые правила печати:
@@ -129,14 +133,6 @@
 | Журнал запросов в систему лояльности   | loyaltylog                  |
 | Журнал запросов в ИС МП                | crptlog                     |
 
-#### Метаданные настроек
-В метаданных Настроек пользователя, в поле **customEntities** показан список пользовательских справочников.
-Каждый пользовательский справочник содержит поля:
-
-+ **meta** - Ссылка на представление пользовательского справочника
-+ **entityMeta** - Ссылка на список сущностей данного пользовательского справочника
-+ **name** - Наименование справочника
-
 ### Получить Настройки пользователя 
 > Запрос на получение Настроек пользователя:
 
@@ -147,7 +143,7 @@ curl -X GET
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление Настроек пользователя:
+Успешный запрос. Результат - JSON представление Настроек компании:
 
 ```json
 {
@@ -158,25 +154,19 @@ curl -X GET
     "mediaType": "application/json"
   },
   "defaultCompany": {
-    "meta": {
-      "metadataHref": "http://localhost/api/remap/1.2/entity/organization/5f13f655-a419-11ea-ac12-000a00000072",
-      "type": "organization",
-      "mediaType": "application/json"
-    }
+    "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+    "type": "organization",
+    "mediaType": "application/json"
   },
   "defaultCustomerCounterparty": {
-    "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
-      "type": "counterparty",
-      "mediaType": "application/json"
-    }
+    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
+    "type": "counterparty",
+    "mediaType": "application/json"
   },
   "defaultPurchaseCounterparty": {
-    "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
-      "type": "counterparty",
-      "mediaType": "application/json"
-    }
+    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
+    "type": "counterparty",
+    "mediaType": "application/json"
   },
   "defaultProject": {
     "href": "http://localhost/api/remap/1.2/entity/project/59e1cf55-a70f-11ea-ac12-000d00000001",
@@ -184,11 +174,9 @@ curl -X GET
     "mediaType": "application/json"
   },
   "defaultPlace": {
-    "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
-      "type": "store",
-      "mediaType": "application/json"
-    }
+    "href": "http://localhost/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
+    "type": "store",
+    "mediaType": "application/json"
   },
   "locale": "ru_RU",
   "mailFooter": "подпись в письме",
@@ -208,25 +196,19 @@ curl -X PUT
   -H "Content-Type: application/json"
       -d '{
   "defaultCompany": {
-    "meta": {
-      "metadataHref": "http://localhost/api/remap/1.2/entity/organization/5f13f655-a419-11ea-ac12-000a00000072",
-      "type": "organization",
-      "mediaType": "application/json"
-    }
+    "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+    "type": "organization",
+    "mediaType": "application/json"
   },
   "defaultCustomerCounterparty": {
-    "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
-      "type": "counterparty",
-      "mediaType": "application/json"
-    }
+    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
+    "type": "counterparty",
+    "mediaType": "application/json"
   },
   "defaultPurchaseCounterparty": {
-    "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
-      "type": "counterparty",
-      "mediaType": "application/json"
-    }
+    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
+    "type": "counterparty",
+    "mediaType": "application/json"
   },
   "defaultProject": {
     "href": "http://localhost/api/remap/1.2/entity/project/59e1cf55-a70f-11ea-ac12-000d00000001",
@@ -234,11 +216,9 @@ curl -X PUT
     "mediaType": "application/json"
   },
   "defaultPlace": {
-    "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
-      "type": "store",
-      "mediaType": "application/json"
-    }
+    "href": "http://localhost/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
+    "type": "store",
+    "mediaType": "application/json"
   },
   "locale": "ru_RU",
   "mailFooter": "подпись в письме",
@@ -251,7 +231,7 @@ curl -X PUT
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление Настроек пользователя.
+Успешный запрос. Результат - JSON представление Настроек компании.
 ```json
 {
   "meta": {
@@ -261,25 +241,19 @@ curl -X PUT
     "mediaType": "application/json"
   },
   "defaultCompany": {
-    "meta": {
-      "metadataHref": "http://localhost/api/remap/1.2/entity/organization/5f13f655-a419-11ea-ac12-000a00000072",
-      "type": "organization",
-      "mediaType": "application/json"
-    }
+    "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+    "type": "organization",
+    "mediaType": "application/json"
   },
   "defaultCustomerCounterparty": {
-    "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
-      "type": "counterparty",
-      "mediaType": "application/json"
-    }
+    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
+    "type": "counterparty",
+    "mediaType": "application/json"
   },
   "defaultPurchaseCounterparty": {
-    "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
-      "type": "counterparty",
-      "mediaType": "application/json"
-    }
+    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
+    "type": "counterparty",
+    "mediaType": "application/json"
   },
   "defaultProject": {
     "href": "http://localhost/api/remap/1.2/entity/project/59e1cf55-a70f-11ea-ac12-000d00000001",
@@ -287,11 +261,9 @@ curl -X PUT
     "mediaType": "application/json"
   },
   "defaultPlace": {
-    "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
-      "type": "store",
-      "mediaType": "application/json"
-    }
+    "href": "http://localhost/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
+    "type": "store",
+    "mediaType": "application/json"
   },
   "locale": "ru_RU",
   "mailFooter": "подпись в письме",
