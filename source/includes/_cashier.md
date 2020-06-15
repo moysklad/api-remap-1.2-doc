@@ -2,28 +2,33 @@
 ### Кассиры
 Средствами JSON API можно запрашивать списки Кассиров и сведения по отдельным кассирам. Кодом сущности для кассира в составе JSON API является ключевое слово **cashier**.
 #### Атрибуты сущности
-+ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о смене`Только для чтения`
-+ **id** - ID в формате UUID `Только для чтения`
-+ **accountId** - ID учетной записи`Только для чтения`
-+ **employee** - Ссылка на сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **retailStore** - Ссылка на точку продаже в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**                |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Кассира|Только для чтения|да
+|**id**                 |UUID|ID Кассира|Только для чтения|да
+|**accountId**          |UUID| ID учетной записи Кассира|Только для чтения|да
+|**employee**           |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные сотрудника, которого представляет собой кассир|---|да
+|**retailStore**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные точки продаж, к которой прикреплен кассир|---|да
+
 
 
 ### Получить Кассиров
 Запрос на получение списка всех кассиров на данной точке продаж.
 Результат: Объект JSON, включающий в себя поля:
 
-- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
-- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче.
-- **rows** - Массив JSON объектов, представляющих собой кассиров.
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+|**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
+|**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
+|**rows** |Array(Object)|Массив JSON объектов, представляющих Кассиров.
 
 **Параметры**
 
 | Параметр                | Описание  |
 | ------------------------------ |:---------------------------|
-|retailStoreId|  `string` (required) *Example: ea05e0c9-8667-11e7-8a7f-40d000000060* id Точки продаж.|
-|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
-|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|**retailStoreId**|  `string` (required) *Example: ea05e0c9-8667-11e7-8a7f-40d000000060* id Точки продаж.|
+|**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 
 > Получить Кассиров
 
@@ -124,7 +129,7 @@ curl -X GET
 |Параметр   |Описание   | 
 |---|---|
 |retailStoreId |  `string` (required) *Example: ea05e0c9-8667-11e7-8a7f-40d000000060* id Точки продаж.|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Кассира.|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Кассира.|
 
 
 > Запрос на получение отдельного кассира с указанным id.
