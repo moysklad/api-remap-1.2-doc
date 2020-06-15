@@ -30,8 +30,8 @@
 |**archived**           |Boolean|Добавлено ли Юрлицо в архив|---| да
 |**created**            |DateTime|Дата создания|---| да
 |**actualAddress**      |String(255)|Фактический адрес Юрлица  |---| нет
-|**actualAddressFull**  |Object|Фактический адрес Юрлица с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres) |---|нет
-|**companyType**        |Enum|Тип Юрлица . В зависимости от значения данного поля набор выводимых реквизитов контрагента может меняться. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta) |---| да |
+|**actualAddressFull**  |Object|Фактический адрес Юрлица с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres) |---|нет
+|**companyType**        |Enum|Тип Юрлица . В зависимости от значения данного поля набор выводимых реквизитов контрагента может меняться. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-tip-urlica) |---| да |
 |**trackingContractNumber**|String(255)|Номер договора с ЦРПТ|---| нет
 |**trackingContractDate**  |DateTime|Дата договора с ЦРПТ|---| нет
 |**bonusProgram**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные активной бонусной программы|---|нет
