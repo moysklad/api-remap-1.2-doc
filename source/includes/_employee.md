@@ -409,7 +409,7 @@ curl -X POST
 | --------- |:----|:----------------------------|
 |**meta** |Meta| Ссылка на метаданные Сотрудников
 |**attributes** |Array(Meta)| Массив объектов доп. полей Сотрудников в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-|**createShared** |Boolean| создавать новых Сотрудников с меткой "Общий"
+|**createShared** |Boolean| Создавать новых Сотрудников с меткой "Общий"
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 

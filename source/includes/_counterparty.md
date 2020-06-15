@@ -50,7 +50,7 @@
 |**fax**                |String(255)|Номер факса |---| нет
 |**actualAddress**      |String(255)|Фактический адрес Контрагента |---| нет
 |**actualAddressFull**  |Object|Фактический адрес Контрагента с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres) |---|нет
-|**accounts**           |Array(Object)|Cчета Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-scheta-kontragentow)|---| да
+|**accounts**           |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные счетов Контрагента|---| да
 |**companyType**        |Enum|Тип Контрагента. В зависимости от значения данного поля набор выводимых реквизитов контрагента может меняться. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta) |---| да |
 |**discountCardNumber** |String(255)|Номер дисконтной карты Контрагента |---| нет 
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Статуса Контрагента|---| да
