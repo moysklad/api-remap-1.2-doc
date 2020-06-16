@@ -186,6 +186,7 @@ curl -X GET
 
 ### Обновить Настройки пользователя 
 > Запрос на обновление пользователя:
+
 ```shell
 curl -X PUT
   "https://online.moysklad.ru/api/remap/1.2/context/usersettings"
@@ -229,6 +230,7 @@ curl -X PUT
 
 > Response 200 (application/json)
 Успешный запрос. Результат - JSON представление Настроек компании.
+
 ```json
 {
   "meta": {
