@@ -18,6 +18,7 @@
 |**moment**             |DateTime|Дата Счета|---|да
 |**applicable**         |Boolean|Отметка о проведении|---|да
 |**sum**                |Int|Сумма Входящего платежа в установленной валюте|Только для чтения|нет
+|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
 |**rate**               |Object|Валюта|---|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
 |**shared**             |Boolean|Общий доступ|---|да
