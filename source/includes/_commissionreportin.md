@@ -6,15 +6,15 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной смены|Только для чтения|да
-|**id**                 |UUID|ID Розничной смены|Только для чтения|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Полученного отчета комиссионера|Только для чтения|да
+|**id**                 |UUID|ID Полученного отчета комиссионераы|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|Только для чтения|нет
-|**updated**            |DateTime|Момент последнего обновления Розничной смены|Только для чтения|да
-|**deleted**            |DateTime|Момент последнего удаления Розничной смены|Только для чтения|да
-|**name**               |String(255)|Наименование Розничной смены|Только для чтения|да
-|**description**        |String(4096)|Комментарий Розничной смены|Только для чтения|нет
-|**externalCode**       |String(255)|Внешний код Розничной смены|Только для чтения| да
+|**updated**            |DateTime|Момент последнего обновления Полученного отчета комиссионераТолько для чтения|да
+|**deleted**            |DateTime|Момент последнего удаления Полученного отчета комиссионера|Только для чтения|да
+|**name**               |String(255)|Наименование Полученного отчета комиссионера|Только для чтения|да
+|**description**        |String(4096)|Комментарий Полученного отчета комиссионера|Только для чтения|нет
+|**externalCode**       |String(255)|Внешний код Полученного отчета комиссионера|Только для чтения| да
 |**moment**             |DateTime|Дата смены|Только для чтения|да
 |**applicable**         |Boolean|Отметка о проведении|---|да
 |**vatEnabled**         |Boolean|Учитывается ли НДС|---|да
@@ -29,7 +29,7 @@
 |**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Только для чтения|нет
 |**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Только для чтения|нет
 |**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|Только для чтения|нет
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Инвентаризации|---|нет
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Полученного отчета комиссионера|---|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|да
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|---|да
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |Только для чтения|нет
