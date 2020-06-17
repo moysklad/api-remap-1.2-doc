@@ -12,8 +12,8 @@
 |**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|Только для чтения|нет
 |**updated**            |DateTime|Момент последнего обновления Полученного отчета комиссионера|Только для чтения|да
 |**deleted**            |DateTime|Момент последнего удаления Полученного отчета комиссионера|Только для чтения|да
-|**name**               |String(255)|Наименование Полученного отчета комиссионера|Только для чтения|да
-|**description**        |String(4096)|Комментарий Полученного отчета комиссионера|Только для чтения|нет
+|**name**               |String(255)|Наименование Полученного отчета комиссионера|Необходимое при создании|да
+|**description**        |String(4096)|Комментарий Полученного отчета комиссионера|---|нет
 |**externalCode**       |String(255)|Внешний код Полученного отчета комиссионера|Только для чтения| да
 |**moment**             |DateTime|Дата смены|Только для чтения|да
 |**applicable**         |Boolean|Отметка о проведении|---|да
@@ -22,9 +22,9 @@
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
 |**sum**                |Int|Сумма Полученного отчета комиссионера в копейках|Только для чтения|нет
 |**rate**               |Object|Валюта|---|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|Только для чтения|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
 |**shared**             |Boolean|Общий доступ|Только для чтения|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|Только для чтения|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|нет
 |**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|нет
 |**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|нет
@@ -32,7 +32,7 @@
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Полученного отчета комиссионера|---|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|да
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|---|да
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |Только для чтения|нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |---|нет
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**vatSum**                |Int|Сумма включая НДС|Только для чтения|нет
 |**payedSum**                |Int|Оплаченная сумма|Только для чтения|нет
@@ -47,11 +47,11 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**name**            |String(255)|Номер документа|Только для чтения|нет
-|**moment**          |DateTime|Дата печати|Только для чтения|да
-|**href**            |URL|Ссылка на файл печатной формы|Только для чтения|да
-|**fileName**        |String(255)|Название файла печатной формы|Только для чтения|нет
-|**updated**         |DateTime|Момент последнего обновления|Только для чтения|да
+|**name**            |String(255)|Номер документа|---|нет
+|**moment**          |DateTime|Дата печати|---|да
+|**href**            |URL|Ссылка на файл печатной формы|---|да
+|**fileName**        |String(255)|Название файла печатной формы|---|нет
+|**updated**         |DateTime|Момент последнего обновления|---|да
 
 #### Связи с другими документами
 
