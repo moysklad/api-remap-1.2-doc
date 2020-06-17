@@ -16,8 +16,6 @@
 |**externalCode**       |String(255)|Внешний код Внесения денег  |---| да
 |**moment**             |DateTime|Дата Счета|---|да
 |**applicable**         |Boolean|Отметка о проведении|---|да
-|**vatEnabled**         |Boolean|Учитывается ли НДС|---|да
-|**vatIncluded**        |Boolean| Включен ли НДС в цену|---|да
 |**sum**                |Int|Сумма Входящего платежа в копейках|Только для чтения|нет
 |**rate**               |Object|Валюта|---|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
