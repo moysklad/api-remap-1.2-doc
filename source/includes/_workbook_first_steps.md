@@ -23,11 +23,11 @@ JSON API доступен пользователям на всех тарифа�
 
 ### Первый запрос
 
-Для запросов JSON API используются логин и пароль аккаунта МоегоСклада (Basic Auth).
+Для запросов JSON API используются логин и пароль аккаунта МоегоСклада (Basic Auth) или [токен для Аутентификации в json api](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-autentifikaciq).
 
 Создадим первый товар. Для этого нужно только его наименование.
 
-> Запрос на создание товара
+> Запрос на создание товара c логином и паролем
 
 ```shell
 curl -X POST 
@@ -38,7 +38,20 @@ curl -X POST
   -d '{"name":"Просто замечательный товар"}'
 ```
 
+> Запрос на создание товара c токеном
+
+```shell
+curl -X POST 
+  -H "Authorization: Bearer <Access-Token>" 
+  -H "Content-Type: application/json" 
+  -H "Lognex-Pretty-Print-JSON: true" 
+  "https://online.moysklad.ru/api/remap/1.2/entity/product" 
+  -d '{"name":"Просто замечательный товар"}'
+```
+
 `login:password` - логин и пароль от МоегоСклада
+
+`Authorization: Bearer <Access-Token>` - токен для Аутентификации в json api
 
 `Content-Type: application/json` - JSON API работает только с json
 
@@ -48,75 +61,109 @@ curl -X POST
 
 ```json
 {
-    "isSerialTrackable": false,
-    "modificationsCount": 0,
-    "barcodes": [
-        "2000000000268"
-    ],
-    "volume": 0.0,
-    "weight": 0.0,
-    "buyPrice": {
-        "currency": {
-            "meta": {
-                "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=e37f9321-2780-11e8-0532-9eed00000058",
-                "mediaType": "application/json",
-                "type": "currency",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/e37f9321-2780-11e8-0532-9eed00000058"
-            }
-        },
-        "value": 0.0
-    },
-    "salePrices": [
-        {
-            "priceType": "Цена продажи",
-            "currency": {
-                "meta": {
-                    "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=e37f9321-2780-11e8-0532-9eed00000058",
-                    "mediaType": "application/json",
-                    "type": "currency",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/e37f9321-2780-11e8-0532-9eed00000058"
-                }
-            },
-            "value": 0.0
-        }
-    ],
-    "minPrice": 0.0,
-    "pathName": "",
-    "archived": false,
-    "externalCode": "KIClF9t5gfh4qA3LD9a7u3",
-    "code": "00001",
-    "name": "Просто замечательный товар",
-    "updated": "2018-05-11 14:37:15.000",
-    "version": 0,
-    "group": {
-        "meta": {
-            "mediaType": "application/json",
-            "type": "group",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/e29e01d3-2780-11e8-0532-9eed00000002"
-        }
-    },
-    "shared": false,
-    "owner": {
-        "meta": {
-            "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=e346e355-2780-11e8-0532-9eed0000002a",
-            "mediaType": "application/json",
-            "type": "employee",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/e346e355-2780-11e8-0532-9eed0000002a"
-        }
-    },
-    "accountId": "e29ac72f-2780-11e8-0532-9eed00000001",
-    "id": "a7404318-550f-11e8-56c0-000800000010",
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+    "type": "product",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=6b3fd459-b0ac-11ea-ac14-000a00000000"
+  },
+  "id": "6b44332f-b0ac-11ea-ac14-000a00000002",
+  "accountId": "17e26927-b0ac-11ea-ac14-000d00000001",
+  "owner": {
     "meta": {
-        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=a740332f-550f-11e8-56c0-00080000000e",
-        "mediaType": "application/json",
-        "type": "product",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/a7404318-550f-11e8-56c0-000800000010"
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/19113b38-b0ac-11ea-ac14-000c00000034",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=19113b38-b0ac-11ea-ac14-000c00000034"
     }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/17e5e244-b0ac-11ea-ac14-000d00000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2020-06-17 18:08:32.000",
+  "name": "Просто замечательный товар",
+  "code": "00001",
+  "externalCode": "hNDALaQDh6E96GubbHybr0",
+  "archived": false,
+  "pathName": "",
+  "images": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002/images",
+      "type": "image",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "minPrice": {
+    "value": 0.0,
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+      }
+    }
+  },
+  "salePrices": [
+    {
+      "value": 0.0,
+      "currency": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+        }
+      },
+      "priceType": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/1a1d768e-b0ac-11ea-ac14-000c00000078",
+          "type": "pricetype",
+          "mediaType": "application/json"
+        },
+        "id": "1a1d768e-b0ac-11ea-ac14-000c00000078",
+        "name": "Цена продажи",
+        "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+      }
+    }
+  ],
+  "buyPrice": {
+    "value": 0.0,
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+      }
+    }
+  },
+  "barcodes": [
+    {
+      "ean13": "2000000000015"
+    }
+  ],
+  "paymentItemType": "GOOD",
+  "discountProhibited": false,
+  "weight": 0.0,
+  "volume": 0.0,
+  "variantsCount": 0,
+  "isSerialTrackable": false,
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -133,97 +180,131 @@ curl -X GET
 
 ```json
 {
-    "context": {
-        "employee": {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-                "type": "employee",
-                "mediaType": "application/json"
-            }
-        }
-    },
-    "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product",
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product",
+    "type": "product",
+    "mediaType": "application/json",
+    "size": 1,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "product",
         "mediaType": "application/json",
-        "size": 1,
-        "limit": 25,
-        "offset": 0
-    },
-    "rows": [
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/a7404318-550f-11e8-56c0-000800000010",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-                "type": "product",
-                "mediaType": "application/json",
-                "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=a740332f-550f-11e8-56c0-00080000000e"
-            },
-            "id": "a7404318-550f-11e8-56c0-000800000010",
-            "accountId": "e29ac72f-2780-11e8-0532-9eed00000001",
-            "owner": {
-                "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/e346e355-2780-11e8-0532-9eed0000002a",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-                    "type": "employee",
-                    "mediaType": "application/json",
-                    "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=e346e355-2780-11e8-0532-9eed0000002a"
-                }
-            },
-            "shared": false,
-            "group": {
-                "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/e29e01d3-2780-11e8-0532-9eed00000002",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-                    "type": "group",
-                    "mediaType": "application/json"
-                }
-            },
-            "version": 0,
-            "updated": "2018-05-11 14:37:15.000",
-            "name": "Просто замечательный товар",
-            "code": "00001",
-            "externalCode": "KIClF9t5gfh4qA3LD9a7u3",
-            "archived": false,
-            "pathName": "",
-            "minPrice": 0,
-            "salePrices": [
-                {
-                    "value": 0,
-                    "currency": {
-                        "meta": {
-                            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/e37f9321-2780-11e8-0532-9eed00000058",
-                            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-                            "type": "currency",
-                            "mediaType": "application/json",
-                            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=e37f9321-2780-11e8-0532-9eed00000058"
-                        }
-                    },
-                    "priceType": "Цена продажи"
-                }
-            ],
-            "buyPrice": {
-                "value": 0,
-                "currency": {
-                    "meta": {
-                        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/e37f9321-2780-11e8-0532-9eed00000058",
-                        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-                        "type": "currency",
-                        "mediaType": "application/json",
-                        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=e37f9321-2780-11e8-0532-9eed00000058"
-                    }
-                }
-            },
-            "weight": 0,
-            "volume": 0,
-            "barcodes": [
-                "2000000000268"
-            ],
-            "modificationsCount": 0,
-            "isSerialTrackable": false
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=6b3fd459-b0ac-11ea-ac14-000a00000000"
+      },
+      "id": "6b44332f-b0ac-11ea-ac14-000a00000002",
+      "accountId": "17e26927-b0ac-11ea-ac14-000d00000001",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/19113b38-b0ac-11ea-ac14-000c00000034",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=19113b38-b0ac-11ea-ac14-000c00000034"
         }
-    ]
+      },
+      "shared": true,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/17e5e244-b0ac-11ea-ac14-000d00000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2020-06-17 18:08:32.000",
+      "name": "Просто замечательный товар",
+      "code": "00001",
+      "externalCode": "hNDALaQDh6E96GubbHybr0",
+      "archived": false,
+      "pathName": "",
+      "images": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "minPrice": {
+        "value": 0.0,
+        "currency": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+          }
+        }
+      },
+      "salePrices": [
+        {
+          "value": 0.0,
+          "currency": {
+            "meta": {
+              "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+              "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+              "type": "currency",
+              "mediaType": "application/json",
+              "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+            }
+          },
+          "priceType": {
+            "meta": {
+              "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/1a1d768e-b0ac-11ea-ac14-000c00000078",
+              "type": "pricetype",
+              "mediaType": "application/json"
+            },
+            "id": "1a1d768e-b0ac-11ea-ac14-000c00000078",
+            "name": "Цена продажи",
+            "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+          }
+        }
+      ],
+      "buyPrice": {
+        "value": 0.0,
+        "currency": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+          }
+        }
+      },
+      "barcodes": [
+        {
+          "ean13": "2000000000015"
+        }
+      ],
+      "paymentItemType": "GOOD",
+      "discountProhibited": false,
+      "weight": 0.0,
+      "volume": 0.0,
+      "variantsCount": 0,
+      "isSerialTrackable": false,
+      "trackingType": "NOT_TRACKED"
+    }
+  ]
 }
 ```
 
@@ -236,11 +317,11 @@ curl -X GET
 ```json
 {
     "meta": {
-        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=a740332f-550f-11e8-56c0-00080000000e",
-        "mediaType": "application/json",
-        "type": "product",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002",
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/a7404318-550f-11e8-56c0-000800000010"
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=6b3fd459-b0ac-11ea-ac14-000a00000000"
     }
 }
 ```
@@ -276,17 +357,22 @@ curl -X GET
 
 ```json
  {
-    "createShared": true,
-    "priceTypes": [
-        {
-            "name": "Цена продажи"
-        }
-    ],
-    "meta": {
-        "mediaType": "application/json",
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata"
-    }
-}
+   "meta": {
+     "href": "http://localhost/api/remap/1.2/entity/product/metadata",
+     "mediaType": "application/json"
+   },
+   "attributes": {
+     "meta": {
+       "href": "http://localhost/api/remap/1.2/entity/product/metadata/attributes",
+       "type": "attributemetadata",
+       "mediaType": "application/json",
+       "size": 0,
+       "limit": 1000,
+       "offset": 0
+     }
+   },
+   "createShared": true
+ }
 ```
 
 
@@ -330,7 +416,7 @@ curl -X POST
 В JSON API различным методам HTTP соответствуют различные действия:
 
 -   GET - получение информации
--   POST - создание новых объектов, также используется для массового создания и обновления
+-   POST - создание новых объектов, также используется для массового создания, обновления и удаления объектов
 -   PUT - изменение существующих объектов
 -   DELETE - удаление объектов
 
@@ -347,97 +433,131 @@ curl -X GET
 
 ```json
 {
-    "context": {
-        "employee": {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-                "type": "employee",
-                "mediaType": "application/json"
-            }
-        }
-    },
-    "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product",
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product",
+    "type": "product",
+    "mediaType": "application/json",
+    "size": 1,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "product",
         "mediaType": "application/json",
-        "size": 1,
-        "limit": 25,
-        "offset": 0
-    },
-    "rows": [
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/a7404318-550f-11e8-56c0-000800000010",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-                "type": "product",
-                "mediaType": "application/json",
-                "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=a740332f-550f-11e8-56c0-00080000000e"
-            },
-            "id": "a7404318-550f-11e8-56c0-000800000010",
-            "accountId": "e29ac72f-2780-11e8-0532-9eed00000001",
-            "owner": {
-                "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/e346e355-2780-11e8-0532-9eed0000002a",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-                    "type": "employee",
-                    "mediaType": "application/json",
-                    "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=e346e355-2780-11e8-0532-9eed0000002a"
-                }
-            },
-            "shared": false,
-            "group": {
-                "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/e29e01d3-2780-11e8-0532-9eed00000002",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-                    "type": "group",
-                    "mediaType": "application/json"
-                }
-            },
-            "version": 0,
-            "updated": "2018-05-11 14:37:15.000",
-            "name": "Просто замечательный товар",
-            "code": "00001",
-            "externalCode": "KIClF9t5gfh4qA3LD9a7u3",
-            "archived": false,
-            "pathName": "",
-            "minPrice": 0,
-            "salePrices": [
-                {
-                    "value": 0,
-                    "currency": {
-                        "meta": {
-                            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/e37f9321-2780-11e8-0532-9eed00000058",
-                            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-                            "type": "currency",
-                            "mediaType": "application/json",
-                            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=e37f9321-2780-11e8-0532-9eed00000058"
-                        }
-                    },
-                    "priceType": "Цена продажи"
-                }
-            ],
-            "buyPrice": {
-                "value": 0,
-                "currency": {
-                    "meta": {
-                        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/e37f9321-2780-11e8-0532-9eed00000058",
-                        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-                        "type": "currency",
-                        "mediaType": "application/json",
-                        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=e37f9321-2780-11e8-0532-9eed00000058"
-                    }
-                }
-            },
-            "weight": 0,
-            "volume": 0,
-            "barcodes": [
-                "2000000000268"
-            ],
-            "modificationsCount": 0,
-            "isSerialTrackable": false
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=6b3fd459-b0ac-11ea-ac14-000a00000000"
+      },
+      "id": "6b44332f-b0ac-11ea-ac14-000a00000002",
+      "accountId": "17e26927-b0ac-11ea-ac14-000d00000001",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/19113b38-b0ac-11ea-ac14-000c00000034",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=19113b38-b0ac-11ea-ac14-000c00000034"
         }
-    ]
+      },
+      "shared": true,
+      "group": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/17e5e244-b0ac-11ea-ac14-000d00000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2020-06-17 18:08:32.000",
+      "name": "Просто замечательный товар",
+      "code": "00001",
+      "externalCode": "hNDALaQDh6E96GubbHybr0",
+      "archived": false,
+      "pathName": "",
+      "images": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "minPrice": {
+        "value": 0.0,
+        "currency": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+          }
+        }
+      },
+      "salePrices": [
+        {
+          "value": 0.0,
+          "currency": {
+            "meta": {
+              "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+              "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+              "type": "currency",
+              "mediaType": "application/json",
+              "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+            }
+          },
+          "priceType": {
+            "meta": {
+              "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/1a1d768e-b0ac-11ea-ac14-000c00000078",
+              "type": "pricetype",
+              "mediaType": "application/json"
+            },
+            "id": "1a1d768e-b0ac-11ea-ac14-000c00000078",
+            "name": "Цена продажи",
+            "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+          }
+        }
+      ],
+      "buyPrice": {
+        "value": 0.0,
+        "currency": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+          }
+        }
+      },
+      "barcodes": [
+        {
+          "ean13": "2000000000015"
+        }
+      ],
+      "paymentItemType": "GOOD",
+      "discountProhibited": false,
+      "weight": 0.0,
+      "volume": 0.0,
+      "variantsCount": 0,
+      "isSerialTrackable": false,
+      "trackingType": "NOT_TRACKED"
+    }
+  ]
 }
 ```
 
@@ -456,75 +576,109 @@ curl -X POST
 
 ```json
 {
-    "isSerialTrackable": false,
-    "modificationsCount": 0,
-    "barcodes": [
-        "2000000000268"
-    ],
-    "volume": 0.0,
-    "weight": 0.0,
-    "buyPrice": {
-        "currency": {
-            "meta": {
-                "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=e37f9321-2780-11e8-0532-9eed00000058",
-                "mediaType": "application/json",
-                "type": "currency",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/e37f9321-2780-11e8-0532-9eed00000058"
-            }
-        },
-        "value": 0.0
-    },
-    "salePrices": [
-        {
-            "priceType": "Цена продажи",
-            "currency": {
-                "meta": {
-                    "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=e37f9321-2780-11e8-0532-9eed00000058",
-                    "mediaType": "application/json",
-                    "type": "currency",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/e37f9321-2780-11e8-0532-9eed00000058"
-                }
-            },
-            "value": 0.0
-        }
-    ],
-    "minPrice": 0.0,
-    "pathName": "",
-    "archived": false,
-    "externalCode": "KIClF9t5gfh4qA3LD9a7u3",
-    "code": "00001",
-    "name": "Просто замечательный товар",
-    "updated": "2018-05-11 14:37:15.000",
-    "version": 0,
-    "group": {
-        "meta": {
-            "mediaType": "application/json",
-            "type": "group",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/e29e01d3-2780-11e8-0532-9eed00000002"
-        }
-    },
-    "shared": false,
-    "owner": {
-        "meta": {
-            "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=e346e355-2780-11e8-0532-9eed0000002a",
-            "mediaType": "application/json",
-            "type": "employee",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/e346e355-2780-11e8-0532-9eed0000002a"
-        }
-    },
-    "accountId": "e29ac72f-2780-11e8-0532-9eed00000001",
-    "id": "a7404318-550f-11e8-56c0-000800000010",
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+    "type": "product",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=6b3fd459-b0ac-11ea-ac14-000a00000000"
+  },
+  "id": "6b44332f-b0ac-11ea-ac14-000a00000002",
+  "accountId": "17e26927-b0ac-11ea-ac14-000d00000001",
+  "owner": {
     "meta": {
-        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=a740332f-550f-11e8-56c0-00080000000e",
-        "mediaType": "application/json",
-        "type": "product",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/a7404318-550f-11e8-56c0-000800000010"
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/19113b38-b0ac-11ea-ac14-000c00000034",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=19113b38-b0ac-11ea-ac14-000c00000034"
     }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/17e5e244-b0ac-11ea-ac14-000d00000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2020-06-17 18:08:32.000",
+  "name": "Просто замечательный товар",
+  "code": "00001",
+  "externalCode": "hNDALaQDh6E96GubbHybr0",
+  "archived": false,
+  "pathName": "",
+  "images": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002/images",
+      "type": "image",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "minPrice": {
+    "value": 0.0,
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+      }
+    }
+  },
+  "salePrices": [
+    {
+      "value": 0.0,
+      "currency": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+        }
+      },
+      "priceType": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/1a1d768e-b0ac-11ea-ac14-000c00000078",
+          "type": "pricetype",
+          "mediaType": "application/json"
+        },
+        "id": "1a1d768e-b0ac-11ea-ac14-000c00000078",
+        "name": "Цена продажи",
+        "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+      }
+    }
+  ],
+  "buyPrice": {
+    "value": 0.0,
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+      }
+    }
+  },
+  "barcodes": [
+    {
+      "ean13": "2000000000015"
+    }
+  ],
+  "paymentItemType": "GOOD",
+  "discountProhibited": false,
+  "weight": 0.0,
+  "volume": 0.0,
+  "variantsCount": 0,
+  "isSerialTrackable": false,
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -537,82 +691,116 @@ curl -X POST
 curl -X GET 
   -u login:password 
   -H "Lognex-Pretty-Print-JSON: true" 
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/a7404318-550f-11e8-56c0-000800000010"
+  "https://online.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002"
 ```
 
 > Ответ:
 
 ```json
 {
-    "isSerialTrackable": false,
-    "modificationsCount": 0,
-    "barcodes": [
-        "2000000000268"
-    ],
-    "volume": 0.0,
-    "weight": 0.0,
-    "buyPrice": {
-        "currency": {
-            "meta": {
-                "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=e37f9321-2780-11e8-0532-9eed00000058",
-                "mediaType": "application/json",
-                "type": "currency",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/e37f9321-2780-11e8-0532-9eed00000058"
-            }
-        },
-        "value": 0.0
-    },
-    "salePrices": [
-        {
-            "priceType": "Цена продажи",
-            "currency": {
-                "meta": {
-                    "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=e37f9321-2780-11e8-0532-9eed00000058",
-                    "mediaType": "application/json",
-                    "type": "currency",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/e37f9321-2780-11e8-0532-9eed00000058"
-                }
-            },
-            "value": 0.0
-        }
-    ],
-    "minPrice": 0.0,
-    "pathName": "",
-    "archived": false,
-    "externalCode": "KIClF9t5gfh4qA3LD9a7u3",
-    "code": "00001",
-    "name": "Просто замечательный товар",
-    "updated": "2018-05-11 14:37:15.000",
-    "version": 0,
-    "group": {
-        "meta": {
-            "mediaType": "application/json",
-            "type": "group",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/e29e01d3-2780-11e8-0532-9eed00000002"
-        }
-    },
-    "shared": false,
-    "owner": {
-        "meta": {
-            "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=e346e355-2780-11e8-0532-9eed0000002a",
-            "mediaType": "application/json",
-            "type": "employee",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/e346e355-2780-11e8-0532-9eed0000002a"
-        }
-    },
-    "accountId": "e29ac72f-2780-11e8-0532-9eed00000001",
-    "id": "a7404318-550f-11e8-56c0-000800000010",
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+    "type": "product",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=6b3fd459-b0ac-11ea-ac14-000a00000000"
+  },
+  "id": "6b44332f-b0ac-11ea-ac14-000a00000002",
+  "accountId": "17e26927-b0ac-11ea-ac14-000d00000001",
+  "owner": {
     "meta": {
-        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=a740332f-550f-11e8-56c0-00080000000e",
-        "mediaType": "application/json",
-        "type": "product",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/a7404318-550f-11e8-56c0-000800000010"
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/19113b38-b0ac-11ea-ac14-000c00000034",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=19113b38-b0ac-11ea-ac14-000c00000034"
     }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/17e5e244-b0ac-11ea-ac14-000d00000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2020-06-17 18:08:32.000",
+  "name": "Просто замечательный товар",
+  "code": "00001",
+  "externalCode": "hNDALaQDh6E96GubbHybr0",
+  "archived": false,
+  "pathName": "",
+  "images": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002/images",
+      "type": "image",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "minPrice": {
+    "value": 0.0,
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+      }
+    }
+  },
+  "salePrices": [
+    {
+      "value": 0.0,
+      "currency": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+        }
+      },
+      "priceType": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/1a1d768e-b0ac-11ea-ac14-000c00000078",
+          "type": "pricetype",
+          "mediaType": "application/json"
+        },
+        "id": "1a1d768e-b0ac-11ea-ac14-000c00000078",
+        "name": "Цена продажи",
+        "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+      }
+    }
+  ],
+  "buyPrice": {
+    "value": 0.0,
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+      }
+    }
+  },
+  "barcodes": [
+    {
+      "ean13": "2000000000015"
+    }
+  ],
+  "paymentItemType": "GOOD",
+  "discountProhibited": false,
+  "weight": 0.0,
+  "volume": 0.0,
+  "variantsCount": 0,
+  "isSerialTrackable": false,
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -624,83 +812,117 @@ curl -X GET
 curl -X PUT 
   -u login:password 
   -H "Lognex-Pretty-Print-JSON: true" 
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/a7404318-550f-11e8-56c0-000800000010"
-  -d '{"name":"Новое наименование"}
+  "https://online.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002"
+  -d '{"name":"Новое наименование"}'
 ```
 
 > Ответ:
 
 ``` json
 {
-    "isSerialTrackable": false,
-    "modificationsCount": 0,
-    "barcodes": [
-        "2000000000268"
-    ],
-    "volume": 0,
-    "weight": 0,
-    "buyPrice": {
-        "currency": {
-            "meta": {
-                "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=e37f9321-2780-11e8-0532-9eed00000058",
-                "mediaType": "application/json",
-                "type": "currency",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/e37f9321-2780-11e8-0532-9eed00000058"
-            }
-        },
-        "value": 0
-    },
-    "salePrices": [
-        {
-            "priceType": "Цена продажи",
-            "currency": {
-                "meta": {
-                    "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=e37f9321-2780-11e8-0532-9eed00000058",
-                    "mediaType": "application/json",
-                    "type": "currency",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/e37f9321-2780-11e8-0532-9eed00000058"
-                }
-            },
-            "value": 0
-        }
-    ],
-    "minPrice": 0,
-    "pathName": "",
-    "archived": false,
-    "externalCode": "KIClF9t5gfh4qA3LD9a7u3",
-    "code": "00001",
-    "name": "Новое наименование",
-    "updated": "2018-05-11 16:46:50.000",
-    "version": 1,
-    "group": {
-        "meta": {
-            "mediaType": "application/json",
-            "type": "group",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/e29e01d3-2780-11e8-0532-9eed00000002"
-        }
-    },
-    "shared": false,
-    "owner": {
-        "meta": {
-            "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=e346e355-2780-11e8-0532-9eed0000002a",
-            "mediaType": "application/json",
-            "type": "employee",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/e346e355-2780-11e8-0532-9eed0000002a"
-        }
-    },
-    "accountId": "e29ac72f-2780-11e8-0532-9eed00000001",
-    "id": "a7404318-550f-11e8-56c0-000800000010",
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+    "type": "product",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=6b3fd459-b0ac-11ea-ac14-000a00000000"
+  },
+  "id": "6b44332f-b0ac-11ea-ac14-000a00000002",
+  "accountId": "17e26927-b0ac-11ea-ac14-000d00000001",
+  "owner": {
     "meta": {
-        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=a740332f-550f-11e8-56c0-00080000000e",
-        "mediaType": "application/json",
-        "type": "product",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/a7404318-550f-11e8-56c0-000800000010"
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/19113b38-b0ac-11ea-ac14-000c00000034",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=19113b38-b0ac-11ea-ac14-000c00000034"
     }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/17e5e244-b0ac-11ea-ac14-000d00000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2020-06-17 18:08:32.000",
+  "name": "Новое наименование",
+  "code": "00001",
+  "externalCode": "hNDALaQDh6E96GubbHybr0",
+  "archived": false,
+  "pathName": "",
+  "images": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002/images",
+      "type": "image",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "minPrice": {
+    "value": 0.0,
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+      }
+    }
+  },
+  "salePrices": [
+    {
+      "value": 0.0,
+      "currency": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+        }
+      },
+      "priceType": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/1a1d768e-b0ac-11ea-ac14-000c00000078",
+          "type": "pricetype",
+          "mediaType": "application/json"
+        },
+        "id": "1a1d768e-b0ac-11ea-ac14-000c00000078",
+        "name": "Цена продажи",
+        "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+      }
+    }
+  ],
+  "buyPrice": {
+    "value": 0.0,
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/199e466a-b0ac-11ea-ac14-000c00000077",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=199e466a-b0ac-11ea-ac14-000c00000077"
+      }
+    }
+  },
+  "barcodes": [
+    {
+      "ean13": "2000000000015"
+    }
+  ],
+  "paymentItemType": "GOOD",
+  "discountProhibited": false,
+  "weight": 0.0,
+  "volume": 0.0,
+  "variantsCount": 0,
+  "isSerialTrackable": false,
+  "trackingType": "NOT_TRACKED"
 }
 ```
 
@@ -712,10 +934,10 @@ curl -X PUT
 ``` shell
 curl -X DELETE 
   -u login:password 
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/a7404318-550f-11e8-56c0-000800000010"
+  "https://online.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002"
 ```
 
-При успешном удалении возвращается пустой ответ с кодом 200, иначе ошибка с кодом 404.
+> При успешном удалении возвращается пустой ответ с кодом 200, иначе ошибка с кодом 404.
 
 ### Пустые поля
 
@@ -730,7 +952,8 @@ curl -X PUT
   -u login:password 
   -H "Content-Type: application/json" 
   -H "Lognex-Pretty-Print-JSON: true" 
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/a7404318-550f-11e8-56c0-000800000010" -d
+  "https://online.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002" 
+  -d {"country": null}
 ```
 
 > Ответ:
@@ -741,8 +964,8 @@ curl -X PUT
         "meta": {
             "mediaType": "application/json",
             "type": "country",
-            "metadataHref": "<https://online.moysklad.ru/api/remap/1.1>[/entity/country/metadata](http://localhost:8081/api/remap/1.2/entity/country/metadata)",
-            "href": "<https://online.moysklad.ru/api/remap/1.1>/[entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608](http://localhost:8081/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608)"
+            "metadataHref": "<https://online.moysklad.ru/api/remap/1.2>[/entity/country/metadata](http://localhost:8081/api/remap/1.2/entity/country/metadata)",
+            "href": "<https://online.moysklad.ru/api/remap/1.2>/[entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608](http://localhost:8081/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608)"
         }
     }
 }
