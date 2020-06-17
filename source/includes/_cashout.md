@@ -35,6 +35,7 @@
 + **paymentPurpose** - Основание
 + **vatSum** - Сумма включая НДС
 + **expenseItem** - Статья расходов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
++ **files** - [Файлы] (../dictionaries/#suschnosti-fajly) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) (Максимальное количество файлов - 100)
 
 #### Связи с другими документами
 + **factureIn** - Ссылка на Счет-фактуру полученный, с которым связан этот Расходный ордер в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)

@@ -33,6 +33,7 @@
   - **updated** - дата последнего изменения
 + **created** - Дата создания `Только для чтения`
 + **positions** - Ссылка на позиции в Прайс-листе в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **files** - [Файлы] (../dictionaries/#suschnosti-fajly) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) (Максимальное количество файлов - 100)
 
 #### Позиции Прайс-листа
 Позиции Прайс-листа - это список товаров/услуг/модификаций.

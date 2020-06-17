@@ -56,6 +56,7 @@
 + **salesAmount** - Сумма продаж `Только для чтения`
 + **bonusProgram** - Ссылка на активную Бонусную программу в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **bonusPoints** - Бонусные баллы по активной бонусной программе `Только для чтения`
++ **files** - [Файлы] (../dictionaries/#suschnosti-fajly) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) (Максимальное количество файлов - 100)
 
 ##### Поля реквизитов
 + **legalTitle** - Полное наименование Контрагента
