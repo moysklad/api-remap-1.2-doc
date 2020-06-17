@@ -34,7 +34,7 @@
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |---|нет
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**vatSum**                |Int|Сумма включая НДС|---|нет
-|**positions**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные позиций Оприходования|---|нет
+|**positions**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные позиций Приемки|---|нет
 |**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-oprihodowanie-oprihodowaniq-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|---|нет
 |**payedSum**            |Int|Сумма входящих платежей по Приемке |Только для чтения|нет
 |**incomingNumber**             |Int|Входящий номер |---|нет
