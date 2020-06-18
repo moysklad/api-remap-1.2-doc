@@ -21,122 +21,21 @@ curl
 
 ```json
 {
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+    "mediaType": "application/json"
+  },
+  "attributes": {
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-        "mediaType": "application/json"
-    },
-    "attributes": [
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a2",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "id": "839ca663-75f7-11e8-9107-5048001126a2",
-            "name": "Особенности",
-            "type": "string",
-            "required": false
-        },
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "id": "839ca663-75f7-11e8-9107-5048001126a2",
-            "name": "Объем накопителя",
-            "type": "number",
-            "required": false
-        },
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "id": "839ca663-75f7-11e8-9107-5048001126a2",
-            "name": "Дата поступления на склад",
-            "type": "time",
-            "required": false
-        },
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/46908d10-c4e5-11e8-9109-f8fc00209552",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "customEntityMeta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/companysettings/metadata/customEntities/9e690967-1703-4038-a8f7-95ef64d54ae6",
-                "type": "customentitymetadata",
-                "mediaType": "application/json"
-            },
-            "id": "46908d10-c4e5-11e8-9109-f8fc00209552",
-            "name": "Материал изготовления",
-            "type": "customentity",
-            "required": false
-        },
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "id": "839ca663-75f7-11e8-9107-5048001126a2",
-            "name": "Спецификация",
-            "type": "file",
-            "required": false
-        },
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "id": "839ca663-75f7-11e8-9107-5048001126a2",
-            "name": "Время работы от аккумулятора",
-            "type": "double",
-            "required": false
-        },
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "id": "839ca663-75f7-11e8-9107-5048001126a2",
-            "name": "Подсветка клавиатуры",
-            "type": "boolean",
-            "required": false
-        },
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "id": "839ca663-75f7-11e8-9107-5048001126a2",
-            "name": "Описание от производителя",
-            "type": "text",
-            "required": false
-        },
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/7385ab6e-ad06-11e8-9ff4-34e80004fb35",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "id": "7385ab6e-ad06-11e8-9ff4-34e80004fb35",
-            "name": "Ссылка на интернет-магазин",
-            "type": "link",
-            "required": false
-        }
-    ],
-    "priceTypes": [
-        {
-            "name": "Цена продажи"
-        }
-    ],
-    "createShared": true
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes",
+      "type": "attributemetadata",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "createShared": true
 }
 ```
 
