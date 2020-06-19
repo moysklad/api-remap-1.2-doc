@@ -129,7 +129,7 @@ curl -X GET
 
 |Параметр   |Описание   | 
 |---|---|
-|retailStoreId |  `string` (required) *Example: ea05e0c9-8667-11e7-8a7f-40d000000060* id Точки продаж.|
+|**retailStoreId** |  `string` (required) *Example: ea05e0c9-8667-11e7-8a7f-40d000000060* id Точки продаж.|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Кассира.|
 
 
