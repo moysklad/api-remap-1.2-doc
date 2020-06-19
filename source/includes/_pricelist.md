@@ -97,7 +97,7 @@
 | --------- |:----|:----------------------------|
 **meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
 **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
-**rows** |Array(Object)|Массив JSON объектов, представляющих собой Прайс-листы..
+**rows** |Array(Object)|Массив JSON объектов, представляющих собой Прайс-листы.
 
 **Параметры**
 
