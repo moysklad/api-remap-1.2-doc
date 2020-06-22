@@ -9,7 +9,7 @@
 | --------- |:----|:----------------------------|:------------------------|
 |**credit**               |Float|Доход|да
 |**debit**              |Float|Расход|да
-|**series**                |Array(Object)|Массив показателей  [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|да
+|**series**                |Array(Object)|Массив показателей.  [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|да
 
 #### Показатели
 
