@@ -5,7 +5,7 @@
 
 | Название  | Тип | Описание                    | Обязательное при ответе|
 | --------- |:----|:----------------------------|:------------------------|
-|**series**                |Array(Object)|Массив показателей  [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|да
+|**series**                |Array(Object)|Массив показателей. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|да
 
 #### Показатели
 

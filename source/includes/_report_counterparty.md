@@ -4,49 +4,60 @@
 
 ### Показатели контрагентов 
 #### Атрибуты показателей
-+ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) отчета по данному контрагенту
-+ **counterparty** - Контрагент
-  - **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) контрагента
-  - **id** - id контрагента
-  - **name** - Имя контрагента
-  - **externalCode** - Внешний код контрагента
-  - **companyType** - Тип контрагента
-+ **firstDemandDate** - Дата первой продажи
-+ **lastDemandDate** - Дата последней продажи
-+ **demandsCount** - Количество продаж
-+ **demandsSum** - Сумма продаж
-+ **averageReceipt** - Средний чек
-+ **returnsCount** - Количество возвратов
-+ **returnsSum** - Сумма возвратов
-+ **discountsSum** - Сумма скидок
-+ **balance** - Баланс
-+ **bonusBalance** - Баллы
-+ **profit** - Прибыль
-+ **lastEventDate** - Дата последнего события
-+ **lastEventText** - Текст последнего события
-+ **updated** - Момент последнего изменения контрагента
+
+| Название  | Тип | Описание                    | Обязательное при ответе|
+| --------- |:----|:----------------------------|:------------------------|
+|**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Отчета по данному контрагенту|да
+|**counterparty** |Object|Контрагент. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|да
+|**firstDemandDate**             |DateTime|Дата первой продажи|да
+|**lastDemandDate**            |DateTime| Дата последней продажи|да
+|**demandsCount**             |Int|Количество продаж|да
+|**demandsSum**             |Float|Сумма продаж|да
+|**averageReceipt**             |Float|Средний чек|да
+|**returnsCount**             |Int|Количество возвратов|да
+|**returnsSum**             |Float|Сумма возвратов|да
+|**discountsSum**             |Float|Сумма скидок|да
+|**balance**            |Float|Баланс|да
+|**bonusBalance**            |Float|Баллы|да
+|**profit**           |Float|Прибыль|да
+|**lastEventDate**           |DateTime|Дата последнего события|да
+|**lastEventText**           |String(255)|Текст последнего события|да
+|**updated**          |DateTime|Момент последнего изменения контрагента|да
+
+#### Контрагент
+
+| Название  | Тип | Описание                    | Обязательное при ответе|
+| --------- |:----|:----------------------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контрагента|да
+|**id**                 |UUID|ID Контрагента|да
+|**name**               |String(255)|Наименование Контрагента|да
+|**externalCode**       |String(255)|Внешний код контрагента|да
+|**companyType*       |Enum|Тип контрагентаа|да
 
 #### Атрибуты доступные для фильтрации
-+ **id** - id контрагента
-+ **counterparty****.name** - Имя контрагента
-+ **counterparty.phone** - Номер телефона
-+ **counterparty.email** - Адрес электронной почты
-+ **counterparty.inn** - Тип контрагента
-+ **counterparty.companyType** - Тип контрагента
-+ **counterparty.description** - Комментарий к Контрагенту
-+ **firstDemandDate** - Дата первой продажи
-+ **lastDemandDate** - Дата последней продажи
-+ **demandsCount** - Количество продаж
-+ **demandsSum** - Сумма продаж
-+ **averageReceipt** - Средний чек
-+ **returnsCount** - Количество возвратов
-+ **returnsSum** - Сумма возвратов
-+ **discountsSum** - Сумма скидок
-+ **balance** - Баланс
-+ **profit** - Прибыль
-+ **lastEventDate** - Дата последнего события
-+ **lastEventText** - Текст последнего события
-+ **updated** - Момент последнего изменения контрагента
+
+|Значение|Описание|
+|--------------|-----------------------------------|
+|**id** | id контрагента
+|**counterparty****.name** | Имя контрагента
+|**counterparty.phone** | Номер телефона
+|**counterparty.email** | Адрес электронной почты
+|**counterparty.inn** | Тип контрагента
+|**counterparty.companyType** | Тип контрагента
+|**counterparty.description** | Комментарий к Контрагенту
+|**firstDemandDate** | Дата первой продажи
+|**lastDemandDate** | Дата последней продажи
+|**demandsCount** | Количество продаж
+|**demandsSum** | Сумма продаж
+|**averageReceipt** | Средний чек
+|**returnsCount** | Количество возвратов
+|**returnsSum** | Сумма возвратов
+|**discountsSum** | Сумма скидок
+|**balance** | Баланс
+|**profit** | Прибыль
+|**lastEventDate** | Дата последнего события
+|**lastEventText** | Текст последнего события
+|**updated** | Момент последнего изменения контрагента
 
 #### Тарифные ограничения
 Если в вашем тарифе не предусмотрена опция CRM вы не сможете получить этот запрос через API.
@@ -56,16 +67,19 @@
 Запрос на получение отчета по контрагентам.
 Результат успешного запроса - JSON представление списка отчетов по отдельным котрагентам:
 
-- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) отчета,
-- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
-- **rows** - Массив JSON объектов, представляющих собой отчеты по отдельным контрагентам.
+
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+|**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
+|**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
+|**rows** |Array(Object)|Массив JSON объектов, представляющих отчеты по отдельным контрагентам.
 
 **Параметры**
 
 | Параметр                | Описание  |
 | ------------------------------ |:---------------------------|
-|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
-|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 
 > Запрос на получение отчета по контрагентам.
 
@@ -272,9 +286,12 @@ curl -X GET
 содержащий метаданные контрагентов, по которым требуются отчеты.
 Результат успешного запроса - JSON представление списка отчетов по указанным котрагентам:
 
-- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) отчета,
-- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
-- **rows** - Массив JSON объектов, представляющих собой отчеты по отдельным контрагентам.
+
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+|**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
+|**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
+|**rows** |Array(Object)|Массив JSON объектов, представляющих отчеты по отдельным контрагентам.
 
 > Пример запроса отчетов для нескольких контрагентов.
 
@@ -414,8 +431,8 @@ curl -X GET
 
 | Параметр                | Описание  |
 | ------------------------------ |:---------------------------|
-|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
-|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
  
 > Запрос на получение отчета по контрагенту с указанным id.
 
