@@ -946,6 +946,48 @@ curl -X DELETE
 
 > При успешном удалении возвращается пустой ответ с кодом 200, иначе ошибка с кодом 404.
 
+
+Если нужно удалить больше чем один товар, то можно воспользоваться массовым удаление. Для этого нужно послать `post` запрос, 
+в теле которого указать `meta` удаляемых сущностей. Результатом успешного удаления будет сообщение об успешном удалении сущностей.
+
+> Пример массового удаление Товаров 
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/product/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+            "type": "product",
+            "mediaType": "application/json"
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+            "type": "product",
+            "mediaType": "application/json"
+        }
+      ]'
+``` 
+
+> Успешный запрос. Результат - JSON информация об удалении Товаров.
+
+```json
+[
+  {
+    "info":"Сущность 'product' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'product' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+```
+
 ### Пустые поля
 
 У товаров есть необязательное поле country (страна). Создавая товар мы его не заполнили, поэтому в выдаче этого товара оно отсутствует:

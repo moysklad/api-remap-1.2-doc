@@ -55,7 +55,7 @@ curl
     -u login:password 
     -H 'Accept: application/json' 
     -H 'Content-Type: application/json' 
-    https://online.moysklad.ru/api/remap/1.2/entity/product 
+    "https://online.moysklad.ru/api/remap/1.2/entity/product" 
     -d '{
         "name": "Ноутбук",
         "vat": 18,
@@ -124,7 +124,7 @@ curl
     -u login:password 
     -H 'Accept: application/json' 
     -H 'Content-Type: application/json' 
-    https://online.moysklad.ru/api/remap/1.2/entity/product/630c578a-cb05-11e8-9109-f8fc0037889a 
+    "https://online.moysklad.ru/api/remap/1.2/entity/product/630c578a-cb05-11e8-9109-f8fc0037889a" 
     -d '{
   "name": "Ноутбук обновленный",
   "attributes": [
@@ -174,7 +174,7 @@ curl
     -u login:password 
     -H 'Accept: application/json' 
     -H 'Content-Type: application/json' 
-    https://online.moysklad.ru/api/remap/1.2/entity/product 
+    "https://online.moysklad.ru/api/remap/1.2/entity/product" 
     -d '{
     "name": "Ноутбук",
     "attributes": [
@@ -337,7 +337,7 @@ curl
     -u login:password 
     -H 'Accept: application/json' 
     -H 'Content-Type: application/json' 
-    https://online.moysklad.ru/api/remap/1.2/entity/counterparty 
+    "https://online.moysklad.ru/api/remap/1.2/entity/counterparty" 
     -d '{
     "name": "ООО Восток",
     "attributes": [

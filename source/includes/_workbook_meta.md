@@ -31,7 +31,7 @@ json-элемент, содержащий краткое описание объ
 
 ```shell
 curl -X GET 
-  https://online.moysklad.ru/api/remap/1.2/entity/counterparty/d92bcdc1-b0e2-11ea-ac12-000d00000073 
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/d92bcdc1-b0e2-11ea-ac12-000d00000073" 
   -H 'Authorization: Basic token==' 
   -H 'Cache-Control: no-cache'
 ```
@@ -161,7 +161,7 @@ curl -X GET
 
 ```shell
 curl -X GET 
-  https://online.moysklad.ru/api/remap/1.2/entity/employee/d8ed648c-b0e2-11ea-ac12-000d00000034 
+  "https://online.moysklad.ru/api/remap/1.2/entity/employee/d8ed648c-b0e2-11ea-ac12-000d00000034" 
   -H 'Authorization: Basic token=' 
   -H 'Cache-Control: no-cache'
 ```
@@ -377,7 +377,7 @@ curl -X POST
 
 ```shell
 curl -X PUT 
-  https://online.moysklad.ru/api/remap/1.2/entity/product/0884d27a-b0e3-11ea-ac12-000b00000002 
+  "https://online.moysklad.ru/api/remap/1.2/entity/product/0884d27a-b0e3-11ea-ac12-000b00000002" 
   -H 'Authorization: Basic token=' 
   -H 'Cache-Control: no-cache' 
   -H 'Content-Type: application/json' 
@@ -519,7 +519,7 @@ curl -X PUT
 
 ```shell
 curl -X GET 
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook 
+  "https://online.moysklad.ru/api/remap/1.2/entity/webhook" 
   -H 'Authorization: Basic token==' 
   -H 'Cache-Control: no-cache'
 ```
@@ -695,7 +695,7 @@ curl -X GET
 
 ```shell
 curl -X GET 
-  https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata 
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata" 
   -H 'Authorization: Basic token==' 
   -H 'Cache-Control: no-cache'
 ```

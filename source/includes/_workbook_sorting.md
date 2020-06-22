@@ -88,7 +88,7 @@
 
 ```shell
 curl -X POST 
-https://online.moysklad.ru/api/remap/1.2/entity/product 
+"https://online.moysklad.ru/api/remap/1.2/entity/product" 
 -H 'Authorization: Basic token=' 
 -H 'Cache-Control: no-cache' 
 -H 'Content-Type: application/json' 

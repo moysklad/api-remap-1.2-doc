@@ -52,7 +52,7 @@ curl -X POST
   -u login:password 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
-  https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes 
+  "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes" 
   -d '{
     "name": "Материал корпуса",
     "type": "string"
@@ -96,7 +96,7 @@ curl -X POST
   -u login:password 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
-  https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes 
+  "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes" 
   -d '{
     "name": "Чехол",
     "type": "product"
@@ -142,7 +142,7 @@ curl -X POST
   -u login:password 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
-  https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes 
+  "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes" 
   -d '[
         {
             "id": "acd884ce-b44f-11e9-7ae5-884b00009002",
@@ -310,7 +310,7 @@ curl -X PUT
   -u login:password 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
-  https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f 
+  "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f" 
   -d '{
         "name":"Наличие CD/DVD-Rom"
       }'
@@ -346,7 +346,7 @@ curl -X DELETE
   -u login:password 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
-  https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f 
+  "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f" 
 ```
 
 Получим пустой ответ со статусом 200. Атрибут с указанным id будет удален.
@@ -361,7 +361,7 @@ curl -X POST
   -u login:password 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
-  https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/delete 
+  "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/delete" 
   -d '[
         {
           "meta": {
