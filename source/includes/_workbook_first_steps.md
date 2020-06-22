@@ -3,7 +3,7 @@
 
 Для перехода с версии 1.1 на 1.2 необходимо:
 
-* ознакомиться со [списком изменений](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-spisok-izmeneniq)
+* ознакомиться со [списком изменений](https://dev.moysklad.ru/doc/api/remap/1.2/changelog/#spisok-izmenenij)
 
 * просмотреть соответствующие разделы в документации по списку изменений
 
