@@ -13,7 +13,7 @@
 + **printFormat** - [Правила печати документов] (./#suschnosti-nastrojki-pol-zowatelq-poluchit-metadannye-nastroek-kompanii-prawila-pechati-dokumentow) 
 + **fieldsPerRow** - Количество столбцов, в которых будут располагаться дополнительные поля в документах.
 + **defaultScreen** - [Страница, которая открывается у пользователя при логине] (./#suschnosti-nastrojki-pol-zowatelq-poluchit-metadannye-nastroek-kompanii-startowyj-akran)
-+ **autoShowReports** - Строить ил отчетыавтоматически при переходе на вкладку с отчетом. Допустимые значения false true 
++ **autoShowReports** - Строить ли отчеты автоматически при переходе на вкладку с отчетом. Допустимые значения false true 
 + **mailFooter** - Подставляется в подпись в письмах, отправляемых из МС.
 
 #### Правила печати документов
