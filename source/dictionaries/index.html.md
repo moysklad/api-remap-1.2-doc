@@ -24,6 +24,7 @@ includes:
   - contract
   - project
   - companysettings
+  - usersettings
   - expenseitem
   - country
   - region
