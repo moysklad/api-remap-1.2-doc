@@ -242,3 +242,196 @@ curl -X GET
   ]
 }
 ```
+
+### Создать накопительную скидку 
+Запрос на создание новой накопительной ссылки. Обязательные поля для заполнения: name, active, allProducts, allAgents
+
+> Пример создания новой накопительной скидки
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/accumulationdiscount"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+	  "name": "discountName",
+	  "active": true,
+	  "allProducts": true,
+	  "allAgents": false,
+	  "agentTags": ["tag1", "tag2"],
+	  "levels": [
+	    {
+	      "amount": 100,
+	      "discount": 10
+	    }
+	  ]
+	  "assortment": [
+	    {
+	      "meta": {
+	      "href": "http://localhost/api/remap/1.3/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+	      "metadataHref": "http://localhost/api/remap/1.3/entity/product/metadata",
+	      "type": "product",
+	      "mediaType": "application/json"
+	      }
+	    }],
+	  "productFolders": [
+	  {
+	    "meta": {
+	    "href": "http://localhost/api/remap/1.3/entity/product/39c62b64-a722-11ea-ac12-000d00000015",
+	    "metadataHref": "http://localhost/api/remap/1.3/entity/product/metadata",
+	    "type": "productfolder",
+	    "mediaType": "application/json"
+	  }
+	  }]
+	}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной накопительной скидки.
+
+```json
+{
+  "meta": {
+    "href": "http://localhost/api/remap/1.3/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001",
+    "metadataHref": "http://localhost/api/remap/1.3/entity/accumulationdiscount/metadata",
+    "type": "accumulationdiscount",
+    "mediaType": "application/json",
+    "uuidHref": "http://localhost/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+  },
+  "id" : "8ae26646-b1aa-11ea-ac12-000b00000001",
+  "accountId" : "5e8a41b1-a419-11ea-ac12-000c00000001",
+  "name" : "updateddiscount",
+  "active" : false,
+  "allAgents": false,
+  "agentTags" : ["tag2", "tag1" ],
+  "allProducts" : false,
+  "assortment": [
+    {
+      "meta": {
+        "href": "http://localhost/api/remap/1.3/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+        "metadataHref": "http://localhost/api/remap/1.3/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#good/edit?id=833eac42-b6f4-11ea-ac12-000e00000003"
+      }
+    }
+  ],
+  "productFolders": [
+    {
+      "meta": {
+        "href": "http://localhost/api/remap/1.3/entity/productfolder/39c62b64-a722-11ea-ac12-000d00000015",
+        "metadataHref": "http://localhost/api/remap/1.3/entity/productfolder/metadata",
+        "type": "productfolder",
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#good/edit?id=39c62b64-a722-11ea-ac12-000d00000015"
+      }
+    }
+  ],
+  "levels" : [ {
+    "amount" : 100.0,
+    "discount" : 10.0
+  }]
+}
+```
+
+### Обновить накопительную скидку 
+Запрос на обновление накопительной ссылки. В теле запроса необходимо передать поля, которые будут обновлены
+
+> Пример обновления накопительной скидки
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+	  "name": "updatedName",
+	  "active": false,
+	  "allProducts": false,
+	  "allAgents": false,
+	  "agentTags": ["tag2"],
+	  "levels": [
+	    {
+	      "amount": 100,
+	      "discount": 10
+	    }
+	  ]
+	  "assortment": [
+	    {
+	      "meta": {
+	      "href": "http://localhost/api/remap/1.3/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+	      "metadataHref": "http://localhost/api/remap/1.3/entity/product/metadata",
+	      "type": "product",
+	      "mediaType": "application/json"
+	      }
+	    }],
+	  "productFolders": [
+	  {
+	    "meta": {
+	    "href": "http://localhost/api/remap/1.3/entity/product/39c62b64-a722-11ea-ac12-000d00000015",
+	    "metadataHref": "http://localhost/api/remap/1.3/entity/product/metadata",
+	    "type": "productfolder",
+	    "mediaType": "application/json"
+	  }
+	  }]
+	}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной накопительной скидки.
+
+```json
+{
+  "meta": {
+    "href": "http://localhost/api/remap/1.3/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001",
+    "metadataHref": "http://localhost/api/remap/1.3/entity/accumulationdiscount/metadata",
+    "type": "accumulationdiscount",
+    "mediaType": "application/json",
+    "uuidHref": "http://localhost/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+  },
+  "id" : "8ae26646-b1aa-11ea-ac12-000b00000001",
+  "accountId" : "5e8a41b1-a419-11ea-ac12-000c00000001",
+  "name": "updatedName",
+  "active": false,
+  "allProducts": false,
+  "allAgents": false,
+  "agentTags": ["tag2"],
+  "assortment": [
+    {
+      "meta": {
+        "href": "http://localhost/api/remap/1.3/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+        "metadataHref": "http://localhost/api/remap/1.3/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#good/edit?id=833eac42-b6f4-11ea-ac12-000e00000003"
+      }
+    }
+  ],
+  "productFolders": [
+    {
+      "meta": {
+        "href": "http://localhost/api/remap/1.3/entity/productfolder/39c62b64-a722-11ea-ac12-000d00000015",
+        "metadataHref": "http://localhost/api/remap/1.3/entity/productfolder/metadata",
+        "type": "productfolder",
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#good/edit?id=39c62b64-a722-11ea-ac12-000d00000015"
+      }
+    }
+  ],
+  "levels" : [ {
+    "amount" : 100.0,
+    "discount" : 10.0
+  }]
+}
+```
+
+### Удалить накопительную скидку 
+Запрос на удаление накопительной ссылки
+
+> Запрос на удаление накопительной ссылки.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001"
+  -H "Authorization: Basic <Credentials>"
+```
