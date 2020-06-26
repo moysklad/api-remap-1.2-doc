@@ -116,6 +116,7 @@
 
 ###### Аттрибуты сущности Фискальный накопитель
 + **fiscalDataVersion** - Версия фискальной памяти
++ **fiscalValidityDate** - Срок действия фискального накопителя
 
 ##### Аттрибуты сущности Статус
 + **sync** - Состояние синхронизации
@@ -358,7 +359,8 @@ curl -X GET
             "version": "9.1"
           },
           "fiscalMemory": {
-            "fiscalDataVersion": "1.0"
+            "fiscalDataVersion": "1.0",
+            "fiscalValidityDate": "2019-09-06 21:41:00"
           },
           "firmwareVersion": "669"
         },
@@ -558,7 +560,8 @@ curl -X GET
             "version": "9.1"
           },
           "fiscalMemory": {
-            "fiscalDataVersion": "1.0"
+            "fiscalDataVersion": "1.0",
+            "fiscalValidityDate": "2019-09-06 21:41:00"
           },
           "firmwareVersion": "669"
         },
@@ -1575,7 +1578,8 @@ curl -X GET
         "version": "9.1"
       },
       "fiscalMemory": {
-        "fiscalDataVersion": "1.0"
+        "fiscalDataVersion": "1.0",
+        "fiscalValidityDate": "2019-09-06 21:41:00"
       },
       "firmwareVersion": "669"
     },
