@@ -49,6 +49,7 @@
   + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
   + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
   + **PATENT_BASED** - Патент
++ **files** - [Файлы] (../dictionaries/#suschnosti-fajly) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) (Максимальное количество файлов - 100)
 
 Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить
 с помощью обновления атрибута **productFolder**.
