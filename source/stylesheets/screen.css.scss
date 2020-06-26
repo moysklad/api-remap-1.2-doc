@@ -444,7 +444,7 @@ html, body {
   table {
     margin-bottom: 1em;
     overflow: auto;
-    flex: 20% 20%;
+    table-layout: fixed;
     th,td {
       text-align: left;
       vertical-align: top;
@@ -476,6 +476,22 @@ html, body {
     tr:nth-child(even)>td {
       background-color: #f5f8fa;
     }
+
+    //td:nth-child(1){
+    //  min-width: 5em;
+    //  width: 10em;
+    //  max-width: 20em;
+    //}
+    //
+    //td:nth-child(2){
+    //  min-width: 5em;
+    //  width: 25em;
+    //  max-width: 30%;
+    //}
+    //
+    //td:nth-child(3){
+    //  min-width: 20em;
+    //}
   }
 
   dt {
