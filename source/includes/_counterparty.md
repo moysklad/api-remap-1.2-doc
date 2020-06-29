@@ -57,7 +57,6 @@
 |**salesAmount**        |Int|Сумма продаж|Только для чтения| да
 |**bonusProgram**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные активной Бонусной программы|---| нет
 |**bonusPoints**        |Int|Бонусные баллы по активной бонусной программе|Только для чтения| нет            
-|**bonusProgram**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные активной Бонусной программы|---| нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
 
 ##### Поля реквизитов

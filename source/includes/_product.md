@@ -12,7 +12,6 @@
 + по артикулу (article)
 
 #### Атрибуты сущности
-<<<<<<< HEAD
 
 | Название  | Тип | Описание                    | Свойство поля в запросее | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
@@ -50,7 +49,7 @@
 |**minimumBalance**         |Int|Неснижаемый остаток|---|да
 |**isSerialTrackable**         |Boolean|Учет по серийным номерам. Не может быть указан вместе с **alcoholic** и **weighed**|---|нет
 |**things**       |Array(String)|Серийные номера|---|нет
-|**barcodes**         |Array(String)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-shtrih-kody)|---|нет
+|**barcodes**         |Array(Object)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-shtrihkody)|---|нет
 |**discountProhibited**        |Boolean|Признак запрета скидок|---|да
 |**tnved**         |String(255)|Код ТН ВЭД|---|нет
 |**trackingType**         |Enum|Тип маркируемой продукции. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-tip-markiruemoj-produkcii)|---|нет

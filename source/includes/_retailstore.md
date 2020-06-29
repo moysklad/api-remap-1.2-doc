@@ -1,3 +1,4 @@
+## Точка продаж
 ### Точки продаж 
 Средствами JSON API можно создавать и обновлять сведения о Точках продаж, запрашивать списки Точек продаж и сведения по отдельным Точкам продаж. 
 Также можно получить доступ к специальному ресурсу для управления кассирами точки продаж. Кодом сущности для точки продаж в составе JSON API является
@@ -29,14 +30,14 @@
 |**externalCode**        |String(255)|Внешний код Точки продаж|Только для чтения| да
 |**archived**            |Boolean|Добавлена ли Точка продаж в архив|---| да
 |**address**             |String(255)| Адрес Точки продаж|---|нет
-|**addressFull**         |Object|Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|---|нет
+|**addressFull**         |Object|Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-adres)|---|нет
 |**controlShippingStock**|Boolean|Контроль остатков. Не может быть `true`, если `AllowCreateProducts` имеет значение `true`|---|да
 |**onlyInStock**         |Boolean|Выгружать только товары в наличии. Доступно только при активном контроле остатков. Влияет только на выгрузку остатков в POS API|---|да
 |**active**              |Boolean|Состояние точки продаж (Включена/Отключена)|---| да
 |**controlCashierChoice**|Boolean|Выбор продавца|---| да
 |**discountEnable**      |Boolean|Разрешить скидки|---| да
 |**discountMaxPercent**  |Int|Максимальная скидка (в процентах)|---| нет
-|**priceType**           |Object|Тип цен, с которыми будут продаваться товары в рознице. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|Необходимое при создании| да
+|**priceType**           |Object|Тип цен, с которыми будут продаваться товары в рознице|Необходимое при создании| да
 |**cashiers**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Кассиров|---| да
 |**organization**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Юрлица|Необходимое при создании| да
 |**store**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Склада|Необходимое при создании| да
@@ -44,17 +45,17 @@
 |**bankPercent**         |Int|Комиссия банка-эквайера (в процентах)|---| нет
 |**issueOrders**         |Boolean|Выдача заказов|---| да
 |**sellReserves**        |Boolean|Учет резервов|---| да
-|**lastOperationNames**  |Array(Object)| Последние операции |Только для чтения|да
+|**lastOperationNames**  |Array(Object)| Последние операции. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-poslednie-operacii) |Только для чтения|да
 | **ofdEnabled**         |Boolean| Отправлять электронный чек через ОФД |Только для чтения|да
-|**priorityOfdSend**     |Enum| Приоритет отправки электронного чека. Активен только, когда отправка электронных чеков через ОФД включена. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|---|да|
+|**priorityOfdSend**     |Enum| Приоритет отправки электронного чека. Активен только, когда отправка электронных чеков через ОФД включена. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-prioritet-otprawki-alektronnogo-cheka)|---|да|
 | **allowCustomPrice**   |Boolean|Разрешить продажу по свободной цене|Только для чтения|да
 | **authTokenAttached**  |Boolean|Создан ли токен для точки продаж|Только для чтения|да
 |**orderToState**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса, который проставится заказу после проведения продажи на его основании (если указано)|---| нет
 |**customerOrderStates** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статусов, в которых выгружаются заказы в точку продаж (если указано)|---| нет
-|**environment**         |Object|Информация об окружении. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|Только для чтения| да
-|**state**               |Object|Информация статусе точки продаж. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|Только для чтения| нет
-|**defaultTaxSystem**    |Enum| Код системы налогообложения по умолчанию. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|---|да|
-|**orderTaxSystem**      |Enum| Код системы налогообложения для заказов. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|---|да|
+|**environment**         |Object|Информация об окружении. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie)|Только для чтения| да
+|**state**               |Object|Информация статусе точки продаж. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status)|Только для чтения| нет
+|**defaultTaxSystem**    |Enum| Код системы налогообложения по умолчанию. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-kod-sistemy-nalogooblozheniq-po-umolchaniu)|---|да|
+|**orderTaxSystem**      |Enum| Код системы налогообложения для заказов. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-kod-sistemy-nalogooblozheniq-dlq-zakazow)|---|да|
 |**demandPrefix**        |String(255)|Префикс номера продаж|---| нет
 |**allowSellTobaccoWithoutMRC** |Boolean|Разрешить продавать табачную продукцию не по МРЦ|---|да
 |**allowCreateProducts** |Boolean|Контроль остатков. Не может быть `true`, если `AllowCreateProducts` имеет значение `true`|---|да
@@ -69,7 +70,7 @@
 |**enableReturnsWithNoReason**|Boolean|Разрешить возвраты без основания|---| да
 |**createOrderWithState**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса, который будет указан при создании заказа|---| нет
 |**reservePrepaidGoods**|Boolean|Резервировать товары, за которые внесена предоплата|---| да
-|**fiscalType**     |Enum| Тип формирования чеков. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|---|да|
+|**fiscalType**     |Enum| Тип формирования чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-formirowaniq-chekow)|---|да|
  
 ##### Код системы налогообложения по умолчанию
 
@@ -115,8 +116,8 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**device**          |String(255)|Информация об устройстве|---|нет
 |**os**              |String(255)|Информация об операционной системе|---|нет
-|**software**        |Object|Информация о ПО. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|---|нет
-|**chequePrinter**   |Object|Данные о ККТ. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|---|нет
+|**software**        |Object|Информация о ПО. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-po)|---|нет
+|**chequePrinter**   |Object|Данные о ККТ. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-kkt)|---|нет
 |**paymentTerminal** |String(255)|Информация о платежном терминале|---|нет
 
 ###### Аттрибуты сущности ПО
@@ -135,8 +136,8 @@
 | **name**          |String(255)|Наименование ПО|Необходимое при создании|да
 | **serial**         |String(255)|Серийный номер|нет
 |**fiscalDataVersion**       |String(255)|Формат фискальных данных|---|нет
-|**driver**  |Object|Информация об используемом драйвере. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|---|нет
-|**fiscalMemory**  |Object|Информация о фискальном накопителе. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|---|нет
+|**driver**  |Object|Информация об используемом драйвере. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-drajwer)|---|нет
+|**fiscalMemory**  |Object|Информация о фискальном накопителе. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-fiskal-nyj-nakopitel)|---|нет
 |**firmwareVersion**       |String(255)|Версия прошивки ККТ|---|нет
 
 ###### Аттрибуты сущности Драйвер
@@ -157,10 +158,10 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**sync** |Object| Состояние синхронизации. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|---|нет
+|**sync** |Object| Состояние синхронизации. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-sinhronizaciq)|---|нет
 |**lastCheckMoment** |DateTime| Дата и время последней синхронизации|---|нет
-|**fiscalMemory**  |Object|Информация о фискальном накопителе. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|---|нет
-|**paymentTerminal** |Object| Информация о платежном терминале. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)| `Устаревшее`|нет
+|**fiscalMemory**  |Object|Информация о фискальном накопителе. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-fiskal-naq-pamqt)|---|нет
+|**paymentTerminal** |Object| Информация о платежном терминале. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-platezhnyj-terminal)| `Устаревшее`|нет
 
 ###### Аттрибуты сущности Синхронизация
 
@@ -173,7 +174,7 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**error** |Object| Информация об ошибке ФН. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|---|нет
+|**error** |Object| Информация об ошибке ФН. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-oshibka)|---|нет
 |**notSendDocCount**|Int| Количество неотправленных документов в ОФД|---|нет
 
 ###### Аттрибуты сущности Ошибка

@@ -25,7 +25,7 @@
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
 |**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|---|нет
 |**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|---|нет
-|**images**       |Array(Object)|Изображения Комплекта. Изображений у Модификации может быть не более 10. [Подробнее тут](../dictionaries/#suschnosti-komplekt-kod-sistemy-nalogooblozheniq-komponenty-komplekta-izobrazhenie-struktura-i-zagruzka)|---|нет
+|**images**       |Array(Object)|Изображения Комплекта. Изображений у Модификации может быть не более 10. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta-izobrazhenie-struktura-i-zagruzka)|---|нет
 |**minPrice**         |Double|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-wlozhennyh-suschnostej-minimal-naq-cena)|---|нет
 |**salePrices**         |Array(Object)|Цены продажи|---|нет
 |**attributes**         |Array(Meta)|Коллекция доп. полей|---|нет
@@ -33,7 +33,7 @@
 |**article**         |String(255)|Артикул|---|нет
 |**weight**         |Int|Вес|---|нет
 |**volume**         |Int|Объем|---|нет
-|**barcodes**         |Array(String)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta-shtrih-kody)|---|нет
+|**barcodes**         |Array(Object)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta-shtrih-kody)|---|нет
 |**discountProhibited**        |Boolean|Признак запрета скидок|---|да
 |**overhead**         |Object|Дополнительные расходы. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-wlozhennyh-suschnostej-dopolnitel-nye-rashody)|---|нет
 |**components**         |Array(Object)|Компоненты Комплекта. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta)|---|нет
