@@ -50,19 +50,25 @@
 |**fax**                |String(255)|Номер факса |---| нет
 |**actualAddress**      |String(255)|Фактический адрес Контрагента |---| нет
 |**actualAddressFull**  |Object|Фактический адрес Контрагента с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres) |---|нет
-|**accounts**           |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные счетов Контрагента|---| да
+|**accounts**           |Array(Object)|Массив счетов Контрагентов. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-scheta-kontragentow)|---| да
 |**companyType**        |Enum|Тип Контрагента. В зависимости от значения данного поля набор выводимых реквизитов контрагента может меняться. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta) |---| да |
 |**discountCardNumber** |String(255)|Номер дисконтной карты Контрагента |---| нет 
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Статуса Контрагента|---| да
 |**salesAmount**        |Int|Сумма продаж|Только для чтения| да
 |**bonusProgram**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные активной Бонусной программы|---| нет
 |**bonusPoints**        |Int|Бонусные баллы по активной бонусной программе|Только для чтения| нет            
+|**bonusProgram**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные активной Бонусной программы|---| нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
 
 ##### Поля реквизитов
+
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
-|**legalTitle**       |String(4096)|Полное наименование Контрагента|---|нет
-|**legalAddress**     |String(255)|Юридический адреса Контрагента|---|нет
+|**legalTitle**       |String(4096)|Полное наименование для Контрагента типа `[Юридическое лицо]`. Игнорируется для Контрагентов типа `[Индивидуальный предприниматель, Физическое лицо]`, если передано одно из значений для ФИО и формируется автоматически на основе получаемых ФИО Контрагента|---|нет
+|**legalLastName**     |String(255)|Фамилия для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`|---|нет
+|**legalFirstName**     |String(255)|Имя для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`|---|нет
+|**legalMiddleName**     |String(255)|Отчество для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`|---|нет
+|**legalAddress**     |String(255)|Юридический адрес Контрагента|---|нет
 |**legalAddressFull** |Object|Юридический адрес Контрагента с детализацией по отдельным полям|---|нет
 |**inn**              |String(255)|ИНН|---|нет
 |**kpp**              |String(255)|КПП|---|нет
@@ -72,13 +78,12 @@
 |**certificateNumber**|Meta|Номер свидетельства|---|нет
 |**certificateDate**  |DateTime|Дата свидетельства|---|нет
 |**tags**             |Array(String)|Группы (массив)|---|нет
-|**contactpersons**   |Array(Meta)|Массив метаданных контактных лиц фирмы Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-kontaktnye-lica-kontragentow) |---|нет
-|**attributes**       |Array(Meta)|Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)|---|нет
-|**discounts**        |Array(Meta)|Массив ссылок на скидки в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)|---|нет
-|**notes**            |Array(Meta)|Массив ссылок на события Контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)|---|нет
-|**priceType**        |String(255)|Тип цены Контрагента|---|нет
+|**contactpersons**   |Array(Object)|Массив контактных лиц фирмы Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-kontaktnye-lica-kontragentow)|---|нет
+|**attributes**       |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных доп. полей|---|нет
+|**discounts**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных скидок. Массив может содержать персональные и накопительные скидки. Персональная скидка выводится, если хотя бы раз изменялся **процент скидки** для контрагента, значение будет указано в поле **personalDiscount**|Только для чтения|нет
+|**notes**            |Array(Object)|Массив событий Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-sobytiq-kontragenta)|---|нет
+|**priceType**        |Object|Тип цены Контрагента. [Подробнее тут](../dictionaries/#suschnosti-tipy-cen-tipy-cen)|---|нет
 
-Массив **discounts** может содержать персональные и накопительные скидки. Персональная скидка выводится, если хотя бы раз изменялся **процент скидки** для контрагента, значение будет указано в поле **personalDiscount**.
 Накопительная скидка выводится, если для контрагента хотя бы раз устанавливалась **коррекция суммы накоплений по скидке**, значение будет указано в поле **demandSumCorrection**. Формат вывода скидок можно посмотреть в разделе [Скидки](../dictionaries/#suschnosti-skidki).
 
 #### Атрибуты вложенных сущностей
@@ -164,7 +169,10 @@
 
 | Название  |Описание | 
 | --------- |:----|
-|**legalTitle**       |Полное наименование Контрагента
+|**legalTitle**       |Полное наименование Контрагента. Игнорируется, если передано одно из значений для ФИО. Формируется автоматически на основе получаемых ФИО Контрагента
+|**legalLastName**    |Фамилия для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`
+|**legalFirstName**   |Имя для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`
+|**legalMiddleName**  |Отчество для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`
 |**legalAddress**     |Юридического адреса Контрагента
 |**legalAddressFull** |Юридический адрес Контрагента с детализацией по отдельным полям
 |**inn**              |ИНН
@@ -177,7 +185,10 @@
 
 | Название  |Описание
 | --------- |-----|
-|**legalTitle**       |Полное наименование Контрагента
+|**legalTitle**       |Полное наименование Контрагента. Игнорируется, если передано одно из значений для ФИО. Формируется автоматически на основе получаемых ФИО Контрагента
+|**legalLastName**    |Фамилия для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`
+|**legalFirstName**   |Имя для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`
+|**legalMiddleName**  |Отчество для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`
 |**legalAddress**     |Юридического адреса Контрагента
 |**legalAddressFull** |Юридический адрес Контрагента с детализацией по отдельным полям
 |**inn**              |ИНН
@@ -986,6 +997,127 @@ curl -X POST
 }
 ```
 
+> Пример 3
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '{
+        "name": "ИП Иванов",
+        "code" : "someCode",
+        "externalCode" : "extCode",
+        "companyType": "entrepreneur",
+        "legalLastName": "Иванов",
+        "legalFirstName": "Иван",
+        "legalMiddleName": "Иванович",
+        "actualAddress": "г.Москва ул Академика Миля дом 15 к 21",
+        "legalAddress": "г.Москва ул Авиастроителей д 93 к 12",
+        "inn": "87654321",
+        "kpp": "15312532",
+        "ogrn": "12345",
+        "okpo": "12345",
+        "ogrnip": "58632598y21jk"
+      }'
+```
+> Response 200. Успешный запрос. Результат - JSON представление созданного Контрагента.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/45fd2f10-b0ae-11ea-0a80-163500000000",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type": "counterparty",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=45fd2f10-b0ae-11ea-0a80-163500000000"
+  },
+  "id": "45fd2f10-b0ae-11ea-0a80-163500000000",
+  "accountId": "02865f48-b0ae-11ea-0a80-203a00000002",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/02e06bea-b0ae-11ea-0a80-1d9c00000034",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=02e06bea-b0ae-11ea-0a80-1d9c00000034"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/02877fda-b0ae-11ea-0a80-203a00000003",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "version": 0,
+  "updated": "2020-06-17 18:21:53",
+  "name": "ИП Иванов",
+  "code": "someCode",
+  "externalCode": "extCode",
+  "archived": false,
+  "created": "2020-06-17 18:21:53",
+  "companyType": "entrepreneur",
+  "legalTitle": "Индивидуальный предприниматель Иванов Иван Иванович",
+  "legalAddress": "г.Москва ул Авиастроителей д 93 к 12",
+  "legalAddressFull": {
+    "addInfo": "г.Москва ул Авиастроителей д 93 к 12"
+  },
+  "actualAddress": "г.Москва ул Академика Миля дом 15 к 21",
+  "actualAddressFull": {
+    "addInfo": "г.Москва ул Академика Миля дом 15 к 21"
+  },
+  "inn": "87654321",
+  "okpo": "12345",
+  "ogrnip": "58632598y21jk",
+  "legalLastName": "Иванов",
+  "legalFirstName": "Иван",
+  "legalMiddleName": "Иванович",
+  "accounts": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/45fd2f10-b0ae-11ea-0a80-163500000000/accounts",
+      "type": "account",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 100,
+      "offset": 0
+    }
+  },
+  "tags": [],
+  "contactpersons": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/45fd2f10-b0ae-11ea-0a80-163500000000/contactpersons",
+      "type": "contactperson",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 100,
+      "offset": 0
+    }
+  },
+  "notes": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/45fd2f10-b0ae-11ea-0a80-163500000000/notes",
+      "type": "note",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 100,
+      "offset": 0
+    }
+  },
+  "state": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/03935900-b0ae-11ea-0a80-1d9c0000008c",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "state",
+      "mediaType": "application/json"
+    }
+  },
+  "salesAmount": 0.0
+}
+```
+
 > Пример с дополнительными полями
 
 ```shell
@@ -1706,7 +1838,7 @@ curl -X GET
 | ------------------------------ |:---------------------------|
 | **id**         |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента.|
 
-> Получить Контрагента
+> Пример 1
 
 ```shell
 curl -X GET
@@ -1714,7 +1846,7 @@ curl -X GET
   -H "Authorization: Basic <Credentials>"  
 ```
 
-> Response 200 (application/json). Возвращает JSON представление Контрагента с указанным id.
+> Response 200 (application/json). Результат - JSON представление Контрагента с указанным id.
 
 ```json
 {  
@@ -1864,6 +1996,112 @@ curl -X GET
   "bonusPoints": 0
 }
 ```
+
+> Пример 2
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Credentials>"  
+```
+
+> Response 200 (application/json). Успешный запрос. Результат - JSON представление Контрагента типа Индивидуальный Предприниматель с указанным id.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type": "counterparty",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=7944ef04-f831-11e5-7a69-971500188b19"
+  },
+  "id": "7944ef04-f831-11e5-7a69-971500188b19",
+  "accountId": "02865f48-b0ae-11ea-0a80-203a00000002",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/02e06bea-b0ae-11ea-0a80-1d9c00000034",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=02e06bea-b0ae-11ea-0a80-1d9c00000034"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/02877fda-b0ae-11ea-0a80-203a00000003",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "version": 0,
+  "updated": "2020-06-17 18:21:53",
+  "name": "ИП Иванов",
+  "code": "someCode",
+  "externalCode": "extCode",
+  "archived": false,
+  "created": "2020-06-17 18:21:53",
+  "companyType": "entrepreneur",
+  "legalTitle": "Индивидуальный предприниматель Иванов Иван Иванович",
+  "legalAddress": "г.Москва ул Авиастроителей д 93 к 12",
+  "legalAddressFull": {
+    "addInfo": "г.Москва ул Авиастроителей д 93 к 12"
+  },
+  "actualAddress": "г.Москва ул Академика Миля дом 15 к 21",
+  "actualAddressFull": {
+    "addInfo": "г.Москва ул Академика Миля дом 15 к 21"
+  },
+  "inn": "87654321",
+  "okpo": "12345",
+  "ogrnip": "58632598y21jk",
+  "legalLastName": "Иванов",
+  "legalFirstName": "Иван",
+  "legalMiddleName": "Иванович",
+  "accounts": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts",
+      "type": "account",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 100,
+      "offset": 0
+    }
+  },
+  "tags": [],
+  "contactpersons": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons",
+      "type": "contactperson",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 100,
+      "offset": 0
+    }
+  },
+  "notes": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/notes",
+      "type": "note",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 100,
+      "offset": 0
+    }
+  },
+  "state": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/03935900-b0ae-11ea-0a80-1d9c0000008c",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "state",
+      "mediaType": "application/json"
+    }
+  },
+  "salesAmount": 0.0
+}
+```
+
 
 ### Изменить Контрагента 
 #### Описание

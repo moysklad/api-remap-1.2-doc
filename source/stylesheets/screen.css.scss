@@ -445,6 +445,7 @@ html, body {
     margin-bottom: 1em;
     overflow: auto;
     table-layout: fixed;
+    width: 50%;
     th,td {
       text-align: left;
       vertical-align: top;
@@ -477,21 +478,35 @@ html, body {
       background-color: #f5f8fa;
     }
 
-    //td:nth-child(1){
-    //  min-width: 5em;
-    //  width: 10em;
-    //  max-width: 20em;
-    //}
-    //
-    //td:nth-child(2){
-    //  min-width: 5em;
-    //  width: 25em;
-    //  max-width: 30%;
-    //}
-    //
-    //td:nth-child(3){
-    //  min-width: 20em;
-    //}
+    td:nth-child(1){
+      min-width: 5%;
+      width: 15%;
+      max-width: 15%;
+    }
+
+    td:nth-child(2){
+      min-width: 5%;
+      width: 15%;
+      max-width: 30%;
+    }
+
+    td:nth-child(3){
+      min-width: 10%;
+      width: 30%;
+      max-width: 30%;
+    }
+
+    td:nth-child(5){
+      min-width: 10%;
+      width: 5%;
+      max-width: 10%;
+    }
+
+    td:nth-child(5){
+      min-width: 10%;
+      width: 5%;
+      max-width: 10%;
+    }
   }
 
   dt {

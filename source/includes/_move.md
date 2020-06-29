@@ -25,6 +25,7 @@
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|нет
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Списания|---|нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |---|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**positions**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные позиций Оприходования|---|нет
 |**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-oprihodowanie-oprihodowaniq-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|---|нет

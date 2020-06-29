@@ -51,6 +51,7 @@
 |**prepaymentCashSum**               |Int|Предоплата наличными|---|нет
 |**prepaymentNoCashSum**                |Int|Предоплата картой|---|нет
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|---|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
 
 ##### Поля при expand'е доп. полей
 

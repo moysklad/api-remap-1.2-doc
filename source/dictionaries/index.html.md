@@ -14,6 +14,7 @@ includes:
   - assortment
   - currency
   - images
+  - files
   - pricetypes
   - product
   - service
@@ -24,6 +25,7 @@ includes:
   - contract
   - project
   - companysettings
+  - usersettings
   - expenseitem
   - country
   - region
@@ -45,6 +47,7 @@ includes:
   - bonus_operation
   - bonus_program
   - states  
+  - characteristic
   
 search: true
 ---  

@@ -2,6 +2,7 @@
 Средствами JSON API можно создавать и обновлять сведения о Инвентаризации, запрашивать списки Инвентаризаций и сведения по отдельным Инвентаризациям. Позициями Инвентаризации можно управлять как в составе отдельной Инвентаризации, так и отдельно - с помощью специальных ресурсов для управления позициями Инвентаризации. Кодом сущности для Инвентаризации в составе JSON API является ключевое слово **inventory**. Больше о Инвентаризациях можно прочитать [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203309933-%D0%98%D0%BD%D0%B2%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2).
 ### Инвентаризация 
 #### Атрибуты сущности
+
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Инвентаризации|---|да
@@ -21,6 +22,7 @@
 |**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Инвентаризации|---|нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |---|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**positions**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные позиций Инвентаризации|---|нет
 

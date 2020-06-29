@@ -41,7 +41,10 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
-|**legalTitle**       |String(4096)|Полное наименование Юрлица|---|нет
+|**legalTitle**       |String(4096)|Полное наименование. Игнорируется, если передано одно из значений для ФИО. Формируется автоматически на основе получаемых ФИО Юрлица|---|нет
+|**legalLastName**     |String(255)|Фамилия для Юрлица типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Юрлиц типа `[Юридическое лицо]`|---|нет
+|**legalFirstName**     |String(255)|Имя для Юрлица типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Юрлиц типа `[Юридическое лицо]`|---|нет
+|**legalMiddleName**     |String(255)|Отчество для Юрлица типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Юрлиц типа `[Юридическое лицо]`|---|нет
 |**legalAddress**     |String(255)|Юридический адреса Юрлица|---|нет
 |**legalAddressFull** |Object|Юридический адрес Юрлица с детализацией по отдельным полям|---|нет
 |**inn**              |String(255)|ИНН|---|нет
@@ -108,6 +111,8 @@
 | **entrepreneur**        |Индивидуальный предприниматель     |
 | **individual**          |Физическое лицо                    |
 
+<br>
+
 Если тип юрлица `Юридическое лицо`, будут выведены следующие поля реквизитов:
 
 | Название  | Описание|              
@@ -119,11 +124,17 @@
 |**ogrn**             |ОГРН|
 |**okpo**             |ОКПО|
 
+<br>
+
+
 Если тип юрлица `Индивидуальный предприниматель`, будут выведены следующие поля реквизитов:
 
 | Название  |Описание | 
 | --------- |:----|
-|**legalTitle**       |Полное наименование юрлица
+|**legalTitle**       |Полное наименование. Игнорируется, если передано одно из значений для ФИО. Формируется автоматически на основе получаемых ФИО Юрлица
+|**legalLastName**    |Фамилия для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`
+|**legalFirstName**   |Имя для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`
+|**legalMiddleName**  |Отчество для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`
 |**legalAddress**     |Юридического адреса юрлица
 |**legalAddressFull** |Юридический адрес Контрагента с детализацией по отдельным полям
 |**inn**              |ИНН
@@ -132,11 +143,16 @@
 |**certificateNumber**|Номер свидетельства
 |**certificateDate**  |Дата свидетельства
 
+<br>
+
 Если тип юрлица `Физическое лицо`, будут выведены следующие поля реквизитов:
 
 | Название  |Описание
 | --------- |-----|
-|**legalTitle**       |Полное наименование юрлица
+|**legalTitle**       |Полное наименование. Игнорируется, если передано одно из значений для ФИО. Формируется автоматически на основе получаемых ФИО Юрлица
+|**legalLastName**    |Фамилия для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`
+|**legalFirstName**   |Имя для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`
+|**legalMiddleName**  |Отчество для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`
 |**legalAddress**     |Юридического адреса юрлица
 |**inn**              |ИНН
 
@@ -515,6 +531,102 @@ curl -X GET
   "fsrarId": "1963703",
   "payerVat": true,
   "utmUrl": "10.250.110.81"
+}
+```
+
+> Пример запроса на создание юрлица с указанием юридических реквизитов для типа Индивидуальный Предприниматель.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/organization"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "ИП Иванов",
+            "code" : "someCode",
+            "externalCode" : "extCode",
+            "companyType": "entrepreneur",
+            "legalLastName": "Иванов",
+            "legalFirstName": "Иван",
+            "legalMiddleName": "Иванович",
+            "actualAddress": "г.Москва ул Академика Миля дом 15 к 21",
+            "legalAddress": "г.Москва ул Авиастроителей д 93 к 12",
+            "inn": "87654321",
+            "kpp": "15312532",
+            "ogrn": "12345",
+            "okpo": "12345",
+            "ogrnip": "58632598y21jk"
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного юрлица.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/713e2125-b147-11ea-0a80-163500000006",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+    "type": "organization",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=713e2125-b147-11ea-0a80-163500000006"
+  },
+  "id": "713e2125-b147-11ea-0a80-163500000006",
+  "accountId": "02865f48-b0ae-11ea-0a80-203a00000002",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/02e06bea-b0ae-11ea-0a80-1d9c00000034",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=02e06bea-b0ae-11ea-0a80-1d9c00000034"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/02877fda-b0ae-11ea-0a80-203a00000003",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "version": 0,
+  "updated": "2020-06-18 12:38:18",
+  "name": "ИП Иванов",
+  "code": "someCode",
+  "externalCode": "extCode",
+  "archived": false,
+  "created": "2020-06-18 12:38:18",
+  "companyType": "entrepreneur",
+  "legalTitle": "Индивидуальный предприниматель Иванов Иван Иванович",
+  "legalAddress": "г.Москва ул Авиастроителей д 93 к 12",
+  "legalAddressFull": {
+    "addInfo": "г.Москва ул Авиастроителей д 93 к 12"
+  },
+  "actualAddress": "г.Москва ул Академика Миля дом 15 к 21",
+  "actualAddressFull": {
+    "addInfo": "г.Москва ул Академика Миля дом 15 к 21"
+  },
+  "inn": "87654321",
+  "okpo": "12345",
+  "ogrnip": "58632598y21jk",
+  "legalLastName": "Иванов",
+  "legalFirstName": "Иван",
+  "legalMiddleName": "Иванович",
+  "accounts": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/713e2125-b147-11ea-0a80-163500000006/accounts",
+      "type": "account",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 100,
+      "offset": 0
+    }
+  },
+  "isEgaisEnable": false,
+  "payerVat": true,
+  "trackingContractDate": null
 }
 ```
 
@@ -1022,7 +1134,7 @@ curl -X GET
 |**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 
-> Получить юрлицо 
+> Пример 1
 
 ```shell
 curl -X GET
@@ -1031,7 +1143,7 @@ curl -X GET
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление нового юрлица.
+Успешный запрос. Результат - JSON представление юрлица с указанным id.
 
 ```json
 {
@@ -1159,6 +1271,85 @@ curl -X GET
     }
   },
   "bonusPoints": 0
+}
+```
+
+> Пример 2
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/organization/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление юрлица с указанным id.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/7944ef04-f831-11e5-7a69-971500188b19",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+    "type": "organization",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=7944ef04-f831-11e5-7a69-971500188b19"
+  },
+  "id": "7944ef04-f831-11e5-7a69-971500188b19",
+  "accountId": "02865f48-b0ae-11ea-0a80-203a00000002",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/02e06bea-b0ae-11ea-0a80-1d9c00000034",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=02e06bea-b0ae-11ea-0a80-1d9c00000034"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/02877fda-b0ae-11ea-0a80-203a00000003",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "version": 0,
+  "updated": "2020-06-18 12:38:18",
+  "name": "ИП Иванов",
+  "code": "someCode",
+  "externalCode": "extCode",
+  "archived": false,
+  "created": "2020-06-18 12:38:18",
+  "companyType": "entrepreneur",
+  "legalTitle": "Индивидуальный предприниматель Иванов Иван Иванович",
+  "legalAddress": "г.Москва ул Авиастроителей д 93 к 12",
+  "legalAddressFull": {
+    "addInfo": "г.Москва ул Авиастроителей д 93 к 12"
+  },
+  "actualAddress": "г.Москва ул Академика Миля дом 15 к 21",
+  "actualAddressFull": {
+    "addInfo": "г.Москва ул Академика Миля дом 15 к 21"
+  },
+  "inn": "87654321",
+  "okpo": "12345",
+  "ogrnip": "58632598y21jk",
+  "legalLastName": "Иванов",
+  "legalFirstName": "Иван",
+  "legalMiddleName": "Иванович",
+  "accounts": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/7944ef04-f831-11e5-7a69-971500188b19/accounts",
+      "type": "account",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 100,
+      "offset": 0
+    }
+  },
+  "isEgaisEnable": false,
+  "payerVat": true,
+  "trackingContractDate": null
 }
 ```
 

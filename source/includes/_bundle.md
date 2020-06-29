@@ -41,6 +41,7 @@
 |**tnved**         |String(255)|Код ТН ВЭД|---|нет
 |**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-priznak-predmeta-rascheta)|---|нет
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|---|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
 
 ##### Тип маркируемой продукции
 Значения поля trackingType.

@@ -3,6 +3,7 @@
 
 ### Оприходования 
 #### Атрибуты сущности
+
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Оприходования|---|да
@@ -27,6 +28,7 @@
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса оприходования|---|нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../dictionaries/#dokumenty-oprihodowanie-oprihodowaniq-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**positions**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные позиций Оприходования|---|нет
 |**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-oprihodowanie-oprihodowaniq-nakladnye-rashody).  Если Позиции Оприходования не заданы, то накладные расходы нельзя задать|---|нет

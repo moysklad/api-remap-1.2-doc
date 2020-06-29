@@ -40,6 +40,7 @@
 |**discountProhibited**        |Boolean|Признак запрета скидок|---|да
 |**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-atributy-suschnosti-priznak-predmeta-rascheta)|---|нет
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|---|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
 
 Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить
 с помощью обновления атрибута **productFolder**.

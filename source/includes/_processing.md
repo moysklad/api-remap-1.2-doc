@@ -25,6 +25,7 @@
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Тех. операции |---|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|да
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |---|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**quantity**               |Int|Объем производства|Необходимое при создании|да
 |**processingSum**              |Int|Затраты на производство|Необходимое при создании|да
@@ -43,7 +44,6 @@
 |**href**            |URL|Ссылка на файл печатной формы|---|да
 |**fileName**        |String(255)|Название файла печатной формы|---|нет
 |**updated**         |DateTime|Момент последнего обновления|---|да
-
 
 #### Связи с другими документами
 

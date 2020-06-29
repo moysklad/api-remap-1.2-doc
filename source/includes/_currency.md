@@ -22,8 +22,8 @@
 |**multiplicity** |Int| Кратность курса Валюты|---|да
 |**indirect** |Boolean| Признак обратного курса Валюты|---|да
 |**rateUpdateType** |Boolean| Способ обновления курса Валюты|Только для чтения|да
-|**majorUnit** |Object| Формы единиц целой части Валюты.  [Подробнее тут](../dictionaries/#suschnosti-valuta-massowoe-udalenie-pozicij-w-assortimente-atributy-dostupnye-dlq-fil-tracii-formy-edinic)|---|да
-|**minorUnit** |Object| Формы единиц дробной части Валюты.  [Подробнее тут](../dictionaries/#suschnosti-valuta-massowoe-udalenie-pozicij-w-assortimente-atributy-dostupnye-dlq-fil-tracii-formy-edinic)|---|да
+|**majorUnit** |Object| Формы единиц целой части Валюты.  [Подробнее тут](../dictionaries/#suschnosti-valuta-obnowit-nastrojki-sprawochnika-towarow-atributy-wlozhennyh-suschnostej-formy-edinic)|---|да
+|**minorUnit** |Object| Формы единиц дробной части Валюты.  [Подробнее тут](../dictionaries/#suschnosti-valuta-obnowit-nastrojki-sprawochnika-towarow-atributy-wlozhennyh-suschnostej-formy-edinic)|---|да
 |**archived** |Boolean| Добавлена ли Валюта в архив|---|да
 |**system** |Boolean| Основана ли валюта на валюте из системного справочника|Только для чтения|нет
 |**default** |Boolean| Является ли валюта валютой учета|Только для чтения|да

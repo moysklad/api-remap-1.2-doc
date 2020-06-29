@@ -29,6 +29,7 @@
 |**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|---|нет
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Внутреннего заказа|---|нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |Только для чтения|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**vatSum**                |Int|Сумма включая НДС|Только для чтения|нет
 |**positions**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Внутреннего заказа|Только для чтения|да

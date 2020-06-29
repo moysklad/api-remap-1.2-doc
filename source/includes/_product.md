@@ -12,6 +12,7 @@
 + по артикулу (article)
 
 #### Атрибуты сущности
+<<<<<<< HEAD
 
 | Название  | Тип | Описание                    | Свойство поля в запросее | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
@@ -55,6 +56,7 @@
 |**trackingType**         |Enum|Тип маркируемой продукции. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-tip-markiruemoj-produkcii)|---|нет
 |**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-priznak-predmeta-rascheta)|---|нет
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|---|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
 
 Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить
 с помощью обновления атрибута **productFolder**.
