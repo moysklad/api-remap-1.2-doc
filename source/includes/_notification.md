@@ -305,26 +305,26 @@ curl -X PUT
 ### Сводная таблица типов уведомлений
 | Тип уведомления                     | Группа               | О чем уведомление            |
 |-------------------------------------|----------------------|-------------------------------|
-| NotificationOrderNew		            | Заказ покупателя   	| Новый заказа покупателя |
-| NotificationOrderOverdue		    | Заказ покупателя		| Просрочен заказ |
-| NotificationInvoiceOutOverdue		| Счет		            | Просрочен счёт, который не оплатил или не полностью оплатил покупатель |
-| NotificationGoodCountTooLow		    | Остатки	        	| Снижение количества товара до неснижаемого остатка |
-| NotificationTaskAssigned	    	| Задача	        	| Задача назначена |
-| NotificationTaskUnassigned	    	| Задача		        | Задача снята |
-| NotificationTaskOverdue		        | Задача		        | Задача просрочена |
-| NotificationTaskCompleted	        | Задача		        | Задача выполнена |
-| NotificationTaskReopened	    	| Задача		        | Задача переоткрыта |
-| NotificationTaskNewComment		    | Задача	        	| У задачи появился новый комментарий |
-| NotificationTaskChanged	    	    | Задача	        	| Задача поменялась |
-| NotificationTaskDeleted		        | Задача	        	| Задача удалена |
-| NotificationTaskCommentDeleted	    | Задача	        	| Комментарий у задачи был удален |
-| NotificationTaskCommentChanged	    | Задача	        	| Комментарий у задачи был изменен |
-| NotificationImportCompleted		    | Обмен данными	    	| Импорт выполнен |
-| NotificationExportCompleted		    | Обмен данными	    	| Экспорт выполнен |
-| NotificationSubscribeExpired        | Биллинг               | Окончание подписки |
-| NotificationSubscribeTermsExpired   | Биллинг               | Истекают условия подписки |
-| NotificationRetailShiftOpened       | Розничная торговля    | Открыта смена |
-| NotificationRetailShiftClosed       | Розничная торговля    | Закрыта смена |
+| **NotificationOrderNew**		            | Заказ покупателя   	| Новый заказа покупателя |
+| **NotificationOrderOverdue**		    | Заказ покупателя		| Просрочен заказ |
+| **NotificationInvoiceOutOverdue**		| Счет		            | Просрочен счёт, который не оплатил или не полностью оплатил покупатель |
+| **NotificationGoodCountTooLow**		    | Остатки	        	| Снижение количества товара до неснижаемого остатка |
+| **NotificationTaskAssigned**	    	| Задача	        	| Задача назначена |
+| **NotificationTaskUnassigned**	    	| Задача		        | Задача снята |
+| **NotificationTaskOverdue**		        | Задача		        | Задача просрочена |
+| **NotificationTaskCompleted**	        | Задача		        | Задача выполнена |
+| **NotificationTaskReopened**	    	| Задача		        | Задача переоткрыта |
+| **NotificationTaskNewComment**		    | Задача	        	| У задачи появился новый комментарий |
+| **NotificationTaskChanged**	    	    | Задача	        	| Задача поменялась |
+| **NotificationTaskDeleted**		        | Задача	        	| Задача удалена |
+| **NotificationTaskCommentDeleted**	    | Задача	        	| Комментарий у задачи был удален |
+| **NotificationTaskCommentChanged**	    | Задача	        	| Комментарий у задачи был изменен |
+| **NotificationImportCompleted**		    | Обмен данными	    	| Импорт выполнен |
+| **NotificationExportCompleted**		    | Обмен данными	    	| Экспорт выполнен |
+| **NotificationSubscribeExpired**        | Биллинг               | Окончание подписки |
+| **NotificationSubscribeTermsExpired**   | Биллинг               | Истекают условия подписки |
+| **NotificationRetailShiftOpened**       | Розничная торговля    | Открыта смена |
+| **NotificationRetailShiftClosed**       | Розничная торговля    | Закрыта смена |
 
 ## Подробное описание типов уведомлений
 
@@ -1866,12 +1866,12 @@ curl -X GET
 
 | Код группы уведомлений   | Описание           |
 | ------------------------ |--------------------|
-| `customer_order`         | Заказы покупателей |
-| `invoice`                | Счета покупателей  |
-| `stock`                  | Складские остатки  |
-| `retail`                 | Розничная торговля |
-| `task`                   | Задачи             |
-| `data_exchange`          | Обмен данными      |
+| **customer_order**         | Заказы покупателей |
+| **invoice**                | Счета покупателей  |
+| **stock**                  | Складские остатки  |
+| **retail**                 | Розничная торговля |
+| **task**                   | Задачи             |
+| **data_exchange**          | Обмен данными      |
 
 ### Получить настройки уведомлений
 Запрос настроек Уведомлений текущего пользователя.
