@@ -43,7 +43,7 @@
   - В позициях документов [Приемка](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka) и [Отгрузка](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka) появилось 
     поле `trackingCodes` - коды маркировок товаров и транспортных упаковок. Для каждого кода указывается тип `type`, которое принимает значения:
     - `trackingcode` - код маркировки товара
-    - `transportpack` - код странспортной упаковки  
+    - `transportpack` - код транспортной упаковки  
 - Фильтрация
   - Новая фильтрация в отчетах [Деньги](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-den-gi), 
     [Показатели продаж](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-pokazateli-prodazh-i-zakazow-pokazateli-prodazh) 
@@ -66,7 +66,7 @@
 ## Изменено
 - Общие изменения
   - Фильтрация только через `filter`. Раньше фильтровать некоторые сущности можно было не используя ключевое слово `filter`
-  - Увеличен лимит выборки до *1000* вместо *100*
+  - Увеличен лимит выборки до *1000* вместо *100* для полей-коллекций объектов
   - Можно создавать не более 5 [Веб-хуков](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbook) одного типа на разные url, а не 1 как было ранее
 - Изменения формата JSON
   - Формат [Типов цен](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tipy-cen). Теперь тип цены оторажается как объект в сущностях, а не как поле
@@ -77,7 +77,7 @@
     - штрихкоды без указания типа теперь игнорируются
     - штрихкоды вида `null` теперь игнорируются
   - Вывод "денежных" полей, таких как: `vatSum`, `sum`, `commitentSum`, `linkedSum`, `processingSum`, `proceedsNoCash`, `proceedsCash`, 
-    `receivedNoCash`, `receivedCash`, `shippedSum`, `payedSum`, `invoicedSum`, `overhead.sum`, `checkSum` - в валюте (соответствует полю rate) [Документа](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny)
+    `receivedNoCash`, `receivedCash`, `shippedSum`, `payedSum`, `invoicedSum`, `overhead.sum`, `checkSum` теперь в валюте (соответствует полю rate) [Документа](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny)
   - В составе [Контрагента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent) поле `groups` заменено на `tags`  
   - Переименовано поле `modificationsCount` в `variantsCount` в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar)  
   - Время в полях типа `дата-время` отображается с точностью до миллисекунд
