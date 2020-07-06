@@ -106,6 +106,99 @@ curl -X GET
 
 ### Бонусная программа
 
+### Создать Бонусную программу
+Запрос на создание новой бонусной программы. Обязательные поля для заполнения: name, active, allProducts, allAgents
+
+> Пример создания новой бонусной программы
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+	  "name": "bonusprogram",
+	  "active": true,
+	  "allProducts": true,
+	  "allAgents": false,
+	  "agentTags": ["tag1", "tag2"],
+	  "earnRateRoublesToPoint": 7,
+          "spendRatePointsToRouble": 4,
+          "maxPaidRatePercents": 50
+	}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной бонусной программы.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram/87c69fae-c1ad-4700-a852-f21939470760",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram/metadata",
+    "type": "bonusprogram",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=1223d051-ba76-11e8-3353-995e0000005a"
+  },
+  "id": "87c69fae-c1ad-4700-a852-f21939470760",
+  "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
+  "name": "bonusprogram",
+  "active": false,
+  "agentTags": ["tag1", "tag2"],
+  "earnRateRoublesToPoint": 7,
+  "spendRatePointsToRouble": 4,
+  "maxPaidRatePercents": 50
+}
+```
+
+### Обновить Бонусную программу 
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|---|---|
+|id |  `string` (required) *Example: 87c69fae-c1ad-4700-a852-f21939470760* id Бонусной программы.|
+
+Запрос на обновление бонусной программы. В теле запроса необходимо передать поля, которые будут обновлены
+
+> Пример обновления бонусной программы
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram/87c69fae-c1ad-4700-a852-f21939470760"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+	  "name": "updatedName",
+	  "active": true,
+	  "agentTags": ["tag2"]
+	}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленной бонусной программы.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram/87c69fae-c1ad-4700-a852-f21939470760",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/bonusprogram/metadata",
+    "type": "bonusprogram",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=87c69fae-c1ad-4700-a852-f21939470760"
+  },
+  "id": "87c69fae-c1ad-4700-a852-f21939470760",
+  "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
+  "name": "bonusprogram",
+  "active": false,
+  "agentTags": ["tag1", "tag2"],
+  "earnRateRoublesToPoint": 7,
+  "spendRatePointsToRouble": 4,
+  "maxPaidRatePercents": 50
+}
+```
+
+
 ### Получить Бонусную программу
 
 **Параметры**
