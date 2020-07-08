@@ -34,6 +34,7 @@
 + **created** - Дата создания `Только для чтения`
 + **paymentPurpose** - Основание
 + **vatSum** - Сумма включая НДС
++ **files** - [Файлы] (../dictionaries/#suschnosti-fajly) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) (Максимальное количество файлов - 100)
 
 #### Связи с другими документами
 + **factureOut** - Ссылка на Счет-фактуру выданный, с которым связан этот Приходный ордер, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)

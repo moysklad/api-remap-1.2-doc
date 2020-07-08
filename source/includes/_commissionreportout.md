@@ -44,6 +44,7 @@
 + **rewardType** - Тип вознаграждения
 + **rewardPercent** - Процент вознаграждения (всегда 0 если вознаграждение не рассчитывается)
 + **commitentSum** - Сумма коммитента в установленной валюте `Только для чтения`
++ **files** - [Файлы] (../dictionaries/#suschnosti-fajly) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) (Максимальное количество файлов - 100)
 
 #### Связи с другими документами
 + **payments** - Массив ссылок на связанные платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
