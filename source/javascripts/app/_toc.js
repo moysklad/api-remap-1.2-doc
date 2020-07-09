@@ -45,6 +45,10 @@
     };
 
     var refreshToc = function() {
+      if (pageHeight !== $(document).height()) {
+        recacheHeights(); //recalculate when content changed (blocks opened / closed)
+      }
+
       var currentTop = $(document).scrollTop() + scrollOffset;
 
       if (currentTop + windowHeight >= pageHeight) {
