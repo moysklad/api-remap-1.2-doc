@@ -11,7 +11,7 @@
 + **name** - Наименование бонусной программы.
 + **active** - Индикатор, является ли бонусная программа активной на данный момент
 + **allProducts** - Индикатор, действует ли бонусная программа на все товары (всегда `true`, см. [Скидки](../dictionaries/#suschnosti-skidki))
-+ **agentTags** - Тэги контрагентов, к которым применяется бонусная программа, если применяется не ко всем контрагентам
++ **agentTags** - Тэги контрагентов, к которым применяется бонусная программа. В случае пустого значения контрагентов в результате выводится пустой массив.
 + **earnRateRoublesToPoint** - Курс начисления
 + **spendRatePointsToRouble** - Курс списания
 + **maxPaidRatePercents** - Максимальный процент оплаты баллами
@@ -77,6 +77,10 @@ curl -X GET
       "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
       "name": "test",
       "active": true,
+      "allAgents": true,
+      "agentTags": [
+        "группа агентов"
+      ],
       "earnRateRoublesToPoint": 1,
       "spendRatePointsToRouble": 1,
       "maxPaidRatePercents": 100
@@ -93,6 +97,7 @@ curl -X GET
       "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
       "name": "bonusprogram",
       "active": false,
+      "allAgents": true,
       "agentTags": [
         "группа агентов"
       ],
@@ -107,7 +112,7 @@ curl -X GET
 ### Бонусная программа
 
 ### Создать Бонусную программу
-Запрос на создание новой бонусной программы. Обязательные поля для заполнения: name, active, allProducts, allAgents
+Запрос на создание новой бонусной программы. Обязательные поля для заполнения: **name** (имя скидки), **active** (активна ли скидка), **allProducts** (действует ли скидка на все товары), **allAgents** (действует ли скидка на всех контрагентов)
 
 > Пример создания новой бонусной программы
 
@@ -191,7 +196,7 @@ curl -X GET
   "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
   "name": "bonusprogram",
   "active": false,
-  "agentTags": ["tag1", "tag2"],
+  "agentTags": ["tag2"],
   "earnRateRoublesToPoint": 7,
   "spendRatePointsToRouble": 4,
   "maxPaidRatePercents": 50
