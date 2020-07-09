@@ -12,21 +12,21 @@
 + **active** - Индикатор, является ли скидка активной на данный момент
 + **allProducts** - Индикатор, действует ли скидка на все товары
 + **allAgents** - Индикатор, действует ли скидка на всех контрагентов
-+ **agentTags** - Тэги контрагентов, к которым применяется скидка, если применяется не ко всем контрагентам
-+ **assortment** - Товары и услуги, которые были выбраны для применения скидки, если та применяется не ко всем товарам
++ **agentTags** - Тэги контрагентов, к которым применяется скидка. В случае пустого значения контрагентов в результате выводится пустой массив.
++ **assortment** - Товары и услуги, которые были выбраны для применения скидки. В случае отсуствия товаров и услуг не выводится в результате.
   - **meta** - метаданные товара или услуги
 _____
 #### Поля Спец. цен
-+ **productfolders** - Группы товаров, к которым применяется скидка, если применяется не ко всем товарам
++ **productfolders** - Группы товаров, к которым применяется скидка. В случае отсутствия групп товаров не выводится в результате.
   - **meta** - метаданные папки
-+ **discount** - Процент скидки если выбран фиксированный процент
-+ **specialPrice** - Спец. цена (если выбран тип цен)
++ **discount** - Процент скидки
++ **specialPrice** - Спец. цена
   - **priceType** - Наименование типа цены
   - **value** - Значение цены, если выбрано фиксированное значение
 
 ____
 #### Поля накопительных скидок
-+ **productfolders** - Группы товаров, к которым применяется скидка, если применяется не ко всем товарам
++ **productfolders** - Группы товаров, к которым применяется скидка
   - **meta** - метаданные папки
 + **levels** - проценты скидок при определенной сумме продаж
   - **amount** - Сумма накоплений в копейках
@@ -91,7 +91,21 @@ curl -X GET
       "accountId": "9560e3e3-9609-11e6-8af5-581e00000008",
       "name": "Персональная скидка",
       "active": true,
-      "allProducts": true
+      "allProducts": true,
+      "allAgents": true,
+      "agentTags": [
+        "группа агентов"
+      ],
+      "assortment": [
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/9881531b-9a09-11e6-8af5-581e00000078",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+            "type": "variant",
+            "mediaType": "application/json"
+          }
+        }
+      ],
     },
     {
       "meta": {
@@ -104,6 +118,7 @@ curl -X GET
       "accountId": "9560e3e3-9609-11e6-8af5-581e00000008",
       "name": "Специальная процентная сидка",
       "active": true,
+      "allAgents": true,
       "agentTags": [
         "группа агентов"
       ],
@@ -132,6 +147,10 @@ curl -X GET
       "name": "Скидка номер 2",
       "active": true,
       "allProducts": false,
+      "allAgents": true,
+      "agentTags": [
+        "группа агентов"
+      ],
       "productFolders": [
         {
           "meta": {
@@ -186,6 +205,10 @@ curl -X GET
       "name": "Скидки на сапоги",
       "active": true,
       "allProducts": false,
+      "allAgents": true,
+      "agentTags": [
+        "группа агентов"
+      ],
       "assortment": [
         {
           "meta": {
@@ -235,6 +258,10 @@ curl -X GET
       "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
       "name": "test",
       "active": true,
+      "allAgents": true,
+      "agentTags": [
+        "группа агентов"
+      ],
       "earnRateRoublesToPoint": 1,
       "spendRatePointsToRouble": 1,
       "maxPaidRatePercents": 100
@@ -579,7 +606,7 @@ curl -X POST
     "tag2",
     "tag1"
   ],
-  "allProducts": false,
+  "allProducts": true,
   "assortment": [
     {
       "meta": {
@@ -1086,6 +1113,7 @@ curl -X PUT
   "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
   "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
   "name": "updatedName",
-  "active": true
+  "active": true,
+  "agentTags": []
 }
 ```
