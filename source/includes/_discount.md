@@ -1050,3 +1050,42 @@ curl -X DELETE
 "https://online.moysklad.ru/api/remap/1.2/entity/specialpricediscount/8ae26646-b1aa-11ea-ac12-000b00000001"
 -H "Authorization: Basic <Credentials>"
 ```
+
+### Изменить округление копеек
+Запрос на изменение округления копеек. В теле запроса необходимо передать поля, которые будут обновлены (**name** или **active**) 
+
+|Параметр   |Описание   |
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id скидки округления копеек.|
+
+> Пример обновления специальной цены
+
+```shell
+curl -X PUT
+"https://online.moysklad.ru/api/remap/1.2/entity/discount/8ae26646-b1aa-11ea-ac12-000b00000001"
+-H "Authorization: Basic <Credentials>"
+-H "Content-Type: application/json"
+-d '{
+"name": "updatedName",
+"active": true
+}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной персональной скидки.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/discount/8ae26646-b1aa-11ea-ac12-000b00000001",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/discount/metadata",
+    "type": "discount",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+  },
+  "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
+  "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
+  "name": "updatedName",
+  "active": true
+}
+```
