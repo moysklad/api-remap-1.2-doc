@@ -15,7 +15,6 @@
 + **agentTags** - Тэги контрагентов, к которым применяется скидка. В случае пустого значения контрагентов в результате выводится пустой массив.
 + **assortment** - Товары и услуги, которые были выбраны для применения скидки. В случае отсуствия товаров и услуг не выводится в результате.
   - **meta** - метаданные товара или услуги
-_____
 #### Поля Спец. цен
 + **productfolders** - Группы товаров, к которым применяется скидка. В случае отсутствия групп товаров не выводится в результате.
   - **meta** - метаданные папки
@@ -24,7 +23,6 @@ _____
   - **priceType** - Наименование типа цены
   - **value** - Значение цены, если выбрано фиксированное значение
 
-____
 #### Поля накопительных скидок
 + **productfolders** - Группы товаров, к которым применяется скидка
   - **meta** - метаданные папки
@@ -283,7 +281,7 @@ curl -X POST
 -d '{
 "name": "discountName",
 "active": true,
-"allProducts": true,
+"allProducts": false,
 "allAgents": false,
 "agentTags": ["tag1", "tag2"],
 "levels": [
@@ -327,8 +325,8 @@ curl -X POST
   },
   "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
   "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
-  "name": "updateddiscount",
-  "active": false,
+  "name": "discountName",
+  "active": true,
   "allAgents": false,
   "agentTags": [
     "tag2",
@@ -561,7 +559,7 @@ curl -X POST
 -d '{
 "name": "discountName",
 "active": true,
-"allProducts": true,
+"allProducts": false,
 "allAgents": false,
 "agentTags": ["tag1", "tag2"],
 "assortment": [
@@ -599,14 +597,14 @@ curl -X POST
   },
   "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
   "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
-  "name": "updateddiscount",
-  "active": false,
+  "name": "discountName",
+  "active": true,
   "allAgents": false,
   "agentTags": [
     "tag2",
     "tag1"
   ],
-  "allProducts": true,
+  "allProducts": false,
   "assortment": [
     {
       "meta": {
@@ -639,7 +637,7 @@ curl -X POST
 |---|---|
 |id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id скидки.|
 
-> Пример получения накопительной скидки
+> Пример получения персональной скидки
 
 ```shell
 curl -X GET
@@ -714,12 +712,6 @@ curl -X PUT
 "allProducts": false,
 "allAgents": false,
 "agentTags": ["tag2"],
-"levels": [
-{
-"amount": 100,
-"discount": 10
-}
-]
 "assortment": [
 {
 "meta": {
@@ -803,9 +795,9 @@ curl -X DELETE
 ```
 
 ### Создать специальную цену
-Запрос на создание новой специальной цены. Обязательные поля для заполнения: **name** (имя скидки), **active** (активна ли скидка), **allProducts** (действует ли скидка на все товары), **allAgents** (действует ли скидка на всех контрагентов), **usePriceType** (использовать ли специальную цену)
+Запрос на создание новой специальной цены. Обязательные поля для заполнения: **name** (имя скидки), **active** (активна ли скидка), **allProducts** (действует ли скидка на все товары), **allAgents** (действует ли скидка на всех контрагентов), **usePriceType** (использовать ли специальную цену). 
 
-> Пример создания новой персональной скидки
+> Пример создания новой специальной цены
 
 ```shell
 curl -X POST
@@ -824,7 +816,6 @@ curl -X POST
 "mediaType": "application/json"
 }
 },
-"discount": 30,
 "assortment": [
 {
 "meta": {
@@ -914,7 +905,7 @@ curl -X POST
 |---|---|
 |id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id скидки.|
 
-> Пример получения накопительной скидки
+> Пример получения специальной цены
 
 ```shell
 curl -X GET
@@ -998,12 +989,14 @@ curl -X PUT
 -H "Authorization: Basic <Credentials>"
 -H "Content-Type: application/json"
 -d '{
-"name": "updatedName"
+"name": "updatedName",
+"usePriceType": false,
+"discount": 50
 }'
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление созданной персональной скидки.
+Успешный запрос. Результат - JSON представление измененнной специальной цены.
 
 ```json
 {
@@ -1016,7 +1009,7 @@ curl -X PUT
   },
   "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
   "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
-  "name": "Специальная цена",
+  "name": "updatedName",
   "active": false,
   "allAgents": false,
   "agentTags": [
@@ -1024,7 +1017,8 @@ curl -X PUT
     "tag1"
   ],
   "allProducts": false,
-  "usePriceType": true,
+  "usePriceType": false,
+  "discount": 50,
   "assortment": [
     {
       "meta": {
@@ -1079,13 +1073,13 @@ curl -X DELETE
 ```
 
 ### Изменить округление копеек
-Запрос на изменение округления копеек. В теле запроса необходимо передать поля, которые будут обновлены (**name** или **active**) 
+Запрос на изменение округления копеек. В теле запроса необходимо передать поля, которые будут обновлены (**name** или **active**). В ответе также будут приходить поля **agentTags** и **allAgents**, но их нельзя изменить.
 
 |Параметр   |Описание   |
 |---|---|
 |id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id скидки округления копеек.|
 
-> Пример обновления специальной цены
+> Пример обновления округления копеек
 
 ```shell
 curl -X PUT
@@ -1099,7 +1093,7 @@ curl -X PUT
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление созданной персональной скидки.
+Успешный запрос. Результат - JSON представление измененного округления копеек.
 
 ```json
 {
@@ -1114,6 +1108,7 @@ curl -X PUT
   "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
   "name": "updatedName",
   "active": true,
+  "allAgents": true,
   "agentTags": []
 }
 ```
