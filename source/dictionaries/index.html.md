@@ -24,11 +24,14 @@ includes:
   - contract
   - project
   - companysettings
+  - usersettings
   - expenseitem
   - country
   - region
   - group
   - discount
+  - bonus_program
+  - bonus_operation
   - uom  
   - employee
   - customentity
@@ -42,10 +45,7 @@ includes:
   - labels
   - publication
   - task
-  - bonus_operation
-  - bonus_program
   - states  
-  - characteristic
   
 search: true
 ---  
