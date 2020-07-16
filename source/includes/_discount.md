@@ -15,17 +15,16 @@
 + **agentTags** - Тэги контрагентов, к которым применяется скидка. В случае пустого значения контрагентов в результате выводится пустой массив.
 + **assortment** - Товары и услуги, которые были выбраны для применения скидки. В случае отсуствия товаров и услуг не выводится в результате.
   - **meta** - метаданные товара или услуги
-#### Поля Спец. цен
-+ **productfolders** - Группы товаров, к которым применяется скидка. В случае отсутствия групп товаров не выводится в результате.
++ **productfolders** - Группы товаров, к которым применяется скидка
   - **meta** - метаданные папки
+
+#### Поля Спец. цен
 + **discount** - Процент скидки
 + **specialPrice** - Спец. цена
   - **priceType** - Наименование типа цены
   - **value** - Значение цены, если выбрано фиксированное значение
 
 #### Поля накопительных скидок
-+ **productfolders** - Группы товаров, к которым применяется скидка
-  - **meta** - метаданные папки
 + **levels** - проценты скидок при определенной сумме продаж
   - **amount** - Сумма накоплений в копейках
   - **discount** - Процент скидки, соответствующий данной сумме
@@ -263,7 +262,22 @@ curl -X GET
       "earnRateRoublesToPoint": 1,
       "spendRatePointsToRouble": 1,
       "maxPaidRatePercents": 100
-    }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/discount/8ae26646-b1aa-11ea-ac12-000b00000001",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/discount/metadata",
+        "type": "discount",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+      },
+      "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
+      "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
+      "name": "Округление копеек",
+      "active": true,
+      "allAgents": true,
+      "agentTags": []
+	}
   ]
 }
 ```
@@ -546,6 +560,9 @@ curl -X DELETE
 -H "Authorization: Basic <Credentials>"
 ```
 
+> Response 200 (application/json)
+Успешное удаление накопительной скидки
+
 ### Создать персональную скидку
 Запрос на создание новой персональной скидки. Обязательные поля для заполнения: **name** (имя скидки), **active** (активна ли скидка), **allProducts** (действует ли скидка на все товары), **allAgents** (действует ли скидка на всех контрагентов)
 
@@ -793,6 +810,9 @@ curl -X DELETE
 "https://online.moysklad.ru/api/remap/1.2/entity/personaldiscount/8ae26646-b1aa-11ea-ac12-000b00000001"
 -H "Authorization: Basic <Credentials>"
 ```
+
+> Response 200 (application/json)
+Успешное удаление персональной скидки
 
 ### Создать специальную цену
 Запрос на создание новой специальной цены. Обязательные поля для заполнения: **name** (имя скидки), **active** (активна ли скидка), **allProducts** (действует ли скидка на все товары), **allAgents** (действует ли скидка на всех контрагентов), **usePriceType** (использовать ли специальную цену). 
@@ -1071,6 +1091,9 @@ curl -X DELETE
 "https://online.moysklad.ru/api/remap/1.2/entity/specialpricediscount/8ae26646-b1aa-11ea-ac12-000b00000001"
 -H "Authorization: Basic <Credentials>"
 ```
+
+> Response 200 (application/json)
+Успешное удаление специальной цены
 
 ### Изменить округление копеек
 Запрос на изменение округления копеек. В теле запроса необходимо передать поля, которые будут обновлены (**name** или **active**). В ответе также будут приходить поля **agentTags** и **allAgents**, но их нельзя изменить.
