@@ -31,6 +31,8 @@ includes:
   - region
   - group
   - discount
+  - bonus_operation
+  - bonus_program
   - uom  
   - employee
   - customentity
@@ -44,8 +46,6 @@ includes:
   - labels
   - publication
   - task
-  - bonus_operation
-  - bonus_program
   - states  
   - characteristic
   
