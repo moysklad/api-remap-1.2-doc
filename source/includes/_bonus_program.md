@@ -196,7 +196,7 @@ curl -X GET
   "id": "87c69fae-c1ad-4700-a852-f21939470760",
   "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
   "name": "bonusprogram",
-  "active": false,
+  "active": true,
   "agentTags": ["tag2"],
   "earnRateRoublesToPoint": 7,
   "spendRatePointsToRouble": 4,
