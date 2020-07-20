@@ -118,10 +118,10 @@
 В данном разделе приведен список последних изменений в API Remap 1.2 за последние 6 месяцев.
 
 ### 15-07-2020
-### Добавлено
+#### Добавлено
 - Эндпоинты [управления скидками](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-skidki)
 
-### Документация
+#### Документация
 - Дополнен раздел [Скидки](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-skidki) новыми примерами
 
 ### 26-06-2020
