@@ -113,8 +113,8 @@
 - Описание заголовка `Lognex-Pretty-Print-JSON` в Общих сведениях
 - В [Розничной смене](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena) удалено поле `applicable` в перечислении полей
 
-## <a name="lastchanges"></a>Список последних изменений
-
+## Список последних изменений
+<a name="lastchanges"></a>
 В данном разделе приведен список последних изменений в API Remap 1.2 за последние 6 месяцев.
 
 ### 15-07-2020
