@@ -88,8 +88,8 @@
 
 ```shell
 curl -X POST 
-"https://online.moysklad.ru/api/remap/1.2/entity/product" 
--H 'Authorization: Basic token=' 
+https://online.moysklad.ru/api/remap/1.2/entity/product 
+-H 'Authorization: Bearer <Access-Token>' 
 -H 'Cache-Control: no-cache' 
 -H 'Content-Type: application/json' 
 -d '[
@@ -155,7 +155,7 @@ curl -X POST
 ```shell
 curl -X GET 
 'https://online.moysklad.ru/api/remap/1.2/entity/product?order=name' 
--H 'Authorization: Basic token==' 
+-H 'Authorization: Bearer <Access-Token>' 
 -H 'Cache-Control: no-cache'
 ```
 Ответ будет содержать следующий порядок по возрастанию:
@@ -180,7 +180,7 @@ curl -X GET
 ```shell
 curl -X GET 
 'https://online.moysklad.ru/api/remap/1.2/entity/product?order=name,desc' 
--H 'Authorization: Basic token==' 
+-H 'Authorization: Bearer <Access-Token>' 
 -H 'Cache-Control: no-cache'
 ```
 
@@ -204,7 +204,7 @@ curl -X GET
 ```shell
 curl -X GET 
 'https://online.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;name' 
--H 'Authorization: Basic token=' 
+-H 'Authorization: Bearer <Access-Token>' 
 -H 'Cache-Control: no-cache' 
 -H 'Content-Type: application/json'
 ```
@@ -229,7 +229,7 @@ curl -X GET
 ```shell
 curl -X GET 
 'https://online.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;weight,desc;name' 
--H 'Authorization: Basic token=' 
+-H 'Authorization: Bearer <Access-Token>' 
 -H 'Cache-Control: no-cache' 
 -H 'Content-Type: application/json'
 ```
@@ -255,7 +255,7 @@ curl -X GET
 ```shell
 curl -X GET 
 'https://online.moysklad.ru/api/remap/1.2/entity/product?order=syncId' 
--H 'Authorization: Basic token=' 
+-H 'Authorization: Bearer <Access-Token>' 
 -H 'Cache-Control: no-cache' 
 -H 'Content-Type: application/json'
 ```

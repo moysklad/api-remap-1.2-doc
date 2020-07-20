@@ -21,6 +21,7 @@
 + **store** - Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **state** - Статус Заказа в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **files** - [Файлы] (../dictionaries/#suschnosti-fajly) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) (Максимальное количество файлов - 100)
 <br>Поля при expand'е:</br>
   - **name** - номер документа
   - **moment** - дата печати

@@ -65,8 +65,8 @@
 
 ```shell
 curl -X POST 
-  "https://online.moysklad.ru/api/remap/1.2/entity/webhook" 
-  -H 'Authorization: Basic token==' 
+  https://online.moysklad.ru/api/remap/1.2/entity/webhook 
+  -H 'Authorization: Bearer <Access-Token>' 
   -H 'Content-Type: application/json' 
   -d '{
   "url": "http://www.example.com",
@@ -104,8 +104,8 @@ curl -X POST
 
 ```shell
 curl -X GET 
-  "https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3" 
-  -H 'Authorization: Basic token==' 
+  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
+  -H 'Authorization: Bearer <Access-Token>' 
   -H 'Content-Type: application/json' 
 ```
 
@@ -116,8 +116,8 @@ curl -X GET
 
 ```shell
 curl -X PUT 
-  "https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3" 
-  -H 'Authorization: Basic token==' 
+  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
+  -H 'Authorization: Bearer <Access-Token>' 
   -H 'Content-Type: application/json' 
   -d '{
   "action": "UPDATE"
@@ -128,8 +128,8 @@ curl -X PUT
 
 ```shell
 curl -X PUT 
-  "https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3" 
-  -H 'Authorization: Basic token==' 
+  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
+  -H 'Authorization: Bearer <Access-Token>' 
   -H 'Content-Type: application/json' 
   -d '{
   "enabled": false
@@ -140,8 +140,8 @@ curl -X PUT
 
 ```shell
 curl -X DELETE 
-  "https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3" 
-  -H 'Authorization: Basic token==' 
+  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
+  -H 'Authorization: Bearer <Access-Token>' 
   -H 'Content-Type: application/json' 
 ```
 
@@ -149,8 +149,8 @@ curl -X DELETE
 
 ```shell
 curl -X GET 
-  "https://online.moysklad.ru/api/remap/1.2/entity/webhook" 
-  -H 'Authorization: Basic token==' 
+  https://online.moysklad.ru/api/remap/1.2/entity/webhook 
+  -H 'Authorization: Bearer <Access-Token>' 
   -H 'Content-Type: application/json' 
 ```
 
@@ -226,8 +226,8 @@ curl -X GET
  
  ```shell
  curl -X POST 
-   "https://online.moysklad.ru/api/remap/1.2/entity/webhook" 
-   -H 'Authorization: Basic token==' 
+   https://online.moysklad.ru/api/remap/1.2/entity/webhook 
+   -H 'Authorization: Bearer <Access-Token>' 
    -H 'Cache-Control: no-cache' 
    -H 'Content-Type: application/json' 
    -d '{
@@ -243,8 +243,8 @@ curl -X GET
 
 ```shell
 curl -X POST 
-  "https://online.moysklad.ru/api/remap/1.2/entity/service" 
-  -H 'Authorization: Basic token==' 
+  https://online.moysklad.ru/api/remap/1.2/entity/service 
+  -H 'Authorization: Bearer <Access-Token>' 
   -H 'Content-Type: application/json' 
   -d '{
   "name": "Заточка коньков"

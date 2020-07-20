@@ -29,6 +29,7 @@
 + **organizationAccount** - Ссылка на счет вашего юрлица в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **agentAccount** - Ссылка на счет контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **files** - [Файлы] (../dictionaries/#suschnosti-fajly) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) (Максимальное количество файлов - 100)
 <br>Поля при expand'е:</br>
   - **name** - номер документа
   - **moment** - дата печати
@@ -44,6 +45,7 @@
 + **losses** - Массив ссылок на связанные списания в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **payments** - Массив ссылок на связанные платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **payedSum** - Сумма исходящих платежей по возврату покупателя
++ **factureOut** - Ссылка на Счет-фактуру выданный, с которым связан этот возврат, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 #### Позиции Возврата покупателя
 Позиции Возврата покупателей - это список товаров/услуг/модификаций/серий.
