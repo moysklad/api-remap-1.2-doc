@@ -117,6 +117,13 @@
 
 В данном разделе приведен список последних изменений в API Remap 1.2 за последние 6 месяцев.
 
+### 15-07-2020
+### Добавлено
+- Эндпоинты [управления скидками](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-skidki)
+
+### Документация
+- Дополнен раздел [Скидки](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-skidki) новыми примерами
+
 ### 26-06-2020
 #### Документация
 - [Информация](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq) в документацию про отзыв прошлых токенов при создании нового
