@@ -45,7 +45,7 @@
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn"
+    "https://online.moysklad.ru/api/remap/1.2/autofill"
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '
@@ -155,7 +155,7 @@
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn"
+    "https://online.moysklad.ru/api/remap/1.2/autofill"
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '
@@ -260,7 +260,7 @@
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/salesreturn"
+    "https://online.moysklad.ru/api/remap/1.2/autofill"
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '
