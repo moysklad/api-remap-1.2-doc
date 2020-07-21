@@ -36,7 +36,6 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**productfolders**|Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных Групп товаров, к которым применяется скидка, если применяется не ко всем товарам|---|нет
 |**levels**|Array(Object)|Проценты скидок при определенной сумме продаж. [Подробнее тут](../dictionaries/#suschnosti-skidki-poluchit-otdel-levels)|---|нет
 
 #### levels
@@ -45,6 +44,7 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**amount**     |Int|Сумма накоплений в копейках|---|да
 |**discount**        |Int|Процент скидки, соответствующий данной сумме|---|нет
+
 
 ### Получить все скидки 
 Запрос на получение всех скидок учетной записи.
@@ -107,7 +107,21 @@ curl -X GET
       "accountId": "9560e3e3-9609-11e6-8af5-581e00000008",
       "name": "Персональная скидка",
       "active": true,
-      "allProducts": true
+      "allProducts": true,
+      "allAgents": true,
+      "agentTags": [
+        "группа агентов"
+      ],
+      "assortment": [
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/9881531b-9a09-11e6-8af5-581e00000078",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+            "type": "variant",
+            "mediaType": "application/json"
+          }
+        }
+      ],
     },
     {
       "meta": {
@@ -120,6 +134,7 @@ curl -X GET
       "accountId": "9560e3e3-9609-11e6-8af5-581e00000008",
       "name": "Специальная процентная сидка",
       "active": true,
+      "allAgents": true,
       "agentTags": [
         "группа агентов"
       ],
@@ -148,6 +163,10 @@ curl -X GET
       "name": "Скидка номер 2",
       "active": true,
       "allProducts": false,
+      "allAgents": true,
+      "agentTags": [
+        "группа агентов"
+      ],
       "productFolders": [
         {
           "meta": {
@@ -202,6 +221,10 @@ curl -X GET
       "name": "Скидки на сапоги",
       "active": true,
       "allProducts": false,
+      "allAgents": true,
+      "agentTags": [
+        "группа агентов"
+      ],
       "assortment": [
         {
           "meta": {
@@ -251,10 +274,883 @@ curl -X GET
       "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
       "name": "test",
       "active": true,
+      "allAgents": true,
+      "agentTags": [
+        "группа агентов"
+      ],
       "earnRateRoublesToPoint": 1,
       "spendRatePointsToRouble": 1,
       "maxPaidRatePercents": 100
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/discount/8ae26646-b1aa-11ea-ac12-000b00000001",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/discount/metadata",
+        "type": "discount",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+      },
+      "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
+      "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
+      "name": "Округление копеек",
+      "active": true,
+      "allAgents": true,
+      "agentTags": []
+	}
+  ]
+}
+```
+
+### Создать накопительную скидку
+Запрос на создание новой накопительной скидки. Обязательные поля для заполнения: **name** (имя скидки), **active** (активна ли скидка), **allProducts** (действует ли скидка на все товары), **allAgents** (действует ли скидка на всех контрагентов)
+
+> Пример создания новой накопительной скидки
+
+```shell
+curl -X POST
+"https://online.moysklad.ru/api/remap/1.2/entity/accumulationdiscount"
+-H "Authorization: Basic <Credentials>"
+-H "Content-Type: application/json"
+-d '{
+"name": "discountName",
+"active": true,
+"allProducts": false,
+"allAgents": false,
+"agentTags": ["tag1", "tag2"],
+"levels": [
+{
+"amount": 100,
+"discount": 10
+}
+],
+"assortment": [
+{
+"meta": {
+"href": "https://online.moysklad.ru/api/remap/1.2/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+"metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+"type": "product",
+"mediaType": "application/json"
+}
+}],
+"productFolders": [
+{
+"meta": {
+"href": "https://online.moysklad.ru/api/remap/1.2/entity/product/39c62b64-a722-11ea-ac12-000d00000015",
+"metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+"type": "productfolder",
+"mediaType": "application/json"
+}
+}]
+}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной накопительной скидки.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/metadata",
+    "type": "accumulationdiscount",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+  },
+  "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
+  "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
+  "name": "discountName",
+  "active": true,
+  "allAgents": false,
+  "agentTags": [
+    "tag2",
+    "tag1"
+  ],
+  "allProducts": false,
+  "assortment": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=833eac42-b6f4-11ea-ac12-000e00000003"
+      }
+    }
+  ],
+  "productFolders": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/39c62b64-a722-11ea-ac12-000d00000015",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/metadata",
+        "type": "productfolder",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=39c62b64-a722-11ea-ac12-000d00000015"
+      }
+    }
+  ],
+  "levels": [
+    {
+      "amount": 100,
+      "discount": 10
     }
   ]
+}
+```
+
+### Получить накопительную скидку
+Запрос на получение накопительной скидки.
+
+|Параметр   |Описание   |
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id скидки.|
+
+> Пример получения накопительной скидки
+
+```shell
+curl -X GET
+"https://online.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001"
+-H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление накопительной скидки.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/metadata",
+    "type": "accumulationdiscount",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+  },
+  "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
+  "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
+  "name": "updatedName",
+  "active": false,
+  "allProducts": false,
+  "allAgents": false,
+  "agentTags": [
+    "tag2"
+  ],
+  "assortment": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=833eac42-b6f4-11ea-ac12-000e00000003"
+      }
+    }
+  ],
+  "productFolders": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/39c62b64-a722-11ea-ac12-000d00000015",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/metadata",
+        "type": "productfolder",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=39c62b64-a722-11ea-ac12-000d00000015"
+      }
+    }
+  ],
+  "levels": [
+    {
+      "amount": 100,
+      "discount": 10
+    }
+  ]
+}
+```
+
+
+### Изменить накопительную скидку
+Запрос на изменение накопительной скидки. В теле запроса необходимо передать поля, которые будут обновлены. При обновлении полей-массивов необходимо передавать новый массив полностью. При передаче пустого массива или null значение поля удаляется.
+
+|Параметр   |Описание   |
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id скидки.|
+
+> Пример обновления накопительной скидки
+
+```shell
+curl -X PUT
+"https://online.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001"
+-H "Authorization: Basic <Credentials>"
+-H "Content-Type: application/json"
+-d '{
+"name": "updatedName",
+"active": false,
+"allProducts": false,
+"allAgents": false,
+"agentTags": ["tag2"],
+"levels": [
+{
+"amount": 100,
+"discount": 10
+}
+],
+"assortment": [
+{
+"meta": {
+"href": "https://online.moysklad.ru/api/remap/1.2/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+"metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+"type": "product",
+"mediaType": "application/json"
+}
+}],
+"productFolders": [
+{
+"meta": {
+"href": "https://online.moysklad.ru/api/remap/1.2/entity/product/39c62b64-a722-11ea-ac12-000d00000015",
+"metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+"type": "productfolder",
+"mediaType": "application/json"
+}
+}]
+}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной накопительной скидки.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/metadata",
+    "type": "accumulationdiscount",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+  },
+  "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
+  "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
+  "name": "updatedName",
+  "active": false,
+  "allProducts": false,
+  "allAgents": false,
+  "agentTags": [
+    "tag2"
+  ],
+  "assortment": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=833eac42-b6f4-11ea-ac12-000e00000003"
+      }
+    }
+  ],
+  "productFolders": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/39c62b64-a722-11ea-ac12-000d00000015",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/metadata",
+        "type": "productfolder",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=39c62b64-a722-11ea-ac12-000d00000015"
+      }
+    }
+  ],
+  "levels": [
+    {
+      "amount": 100,
+      "discount": 10
+    }
+  ]
+}
+```
+
+### Удалить накопительную скидку
+Запрос на удаление накопительной скидки
+
+|Параметр   |Описание   |
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id скидки.|
+
+> Запрос на удаление накопительной скидки.
+
+```shell
+curl -X DELETE
+"https://online.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001"
+-H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешное удаление накопительной скидки
+
+### Создать персональную скидку
+Запрос на создание новой персональной скидки. Обязательные поля для заполнения: **name** (имя скидки), **active** (активна ли скидка), **allProducts** (действует ли скидка на все товары), **allAgents** (действует ли скидка на всех контрагентов)
+
+> Пример создания новой персональной скидки
+
+```shell
+curl -X POST
+"https://online.moysklad.ru/api/remap/1.2/entity/personaldiscount"
+-H "Authorization: Basic <Credentials>"
+-H "Content-Type: application/json"
+-d '{
+"name": "discountName",
+"active": true,
+"allProducts": false,
+"allAgents": false,
+"agentTags": ["tag1", "tag2"],
+"assortment": [
+{
+"meta": {
+"href": "https://online.moysklad.ru/api/remap/1.2/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+"metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+"type": "product",
+"mediaType": "application/json"
+}
+}],
+"productFolders": [
+{
+"meta": {
+"href": "https://online.moysklad.ru/api/remap/1.2/entity/product/39c62b64-a722-11ea-ac12-000d00000015",
+"metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+"type": "productfolder",
+"mediaType": "application/json"
+}
+}]
+}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной персональной скидки.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/personaldiscount/8ae26646-b1aa-11ea-ac12-000b00000001",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/personaldiscount/metadata",
+    "type": "personaldiscount",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+  },
+  "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
+  "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
+  "name": "discountName",
+  "active": true,
+  "allAgents": false,
+  "agentTags": [
+    "tag2",
+    "tag1"
+  ],
+  "allProducts": false,
+  "assortment": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=833eac42-b6f4-11ea-ac12-000e00000003"
+      }
+    }
+  ],
+  "productFolders": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/39c62b64-a722-11ea-ac12-000d00000015",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/metadata",
+        "type": "productfolder",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=39c62b64-a722-11ea-ac12-000d00000015"
+      }
+    }
+  ]
+}
+```
+
+### Получить персональную скидку
+Запрос на получение персональной скидки.
+
+|Параметр   |Описание   |
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id скидки.|
+
+> Пример получения персональной скидки
+
+```shell
+curl -X GET
+"https://online.moysklad.ru/api/remap/1.2/entity/personaldiscount/8ae26646-b1aa-11ea-ac12-000b00000001"
+-H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление персональной скидки.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/personaldiscount/8ae26646-b1aa-11ea-ac12-000b00000001",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/personaldiscount/metadata",
+    "type": "personaldiscount",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+  },
+  "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
+  "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
+  "name": "updateddiscount",
+  "active": false,
+  "allAgents": false,
+  "agentTags": [
+    "tag2",
+    "tag1"
+  ],
+  "allProducts": false,
+  "assortment": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=833eac42-b6f4-11ea-ac12-000e00000003"
+      }
+    }
+  ],
+  "productFolders": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/39c62b64-a722-11ea-ac12-000d00000015",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/metadata",
+        "type": "productfolder",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=39c62b64-a722-11ea-ac12-000d00000015"
+      }
+    }
+  ]
+}
+```
+
+### Изменить персональную скидку
+Запрос на изменение персональной скидки. В теле запроса необходимо передать поля, которые будут обновлены. При обновлении полей-массивов необходимо передавать новый массив полностью. При передаче пустого массива или null значение поля удаляется.
+
+|Параметр   |Описание   |
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id скидки.|
+
+> Пример обновления персональной скидки
+
+```shell
+curl -X PUT
+"https://online.moysklad.ru/api/remap/1.2/entity/personaldiscount/8ae26646-b1aa-11ea-ac12-000b00000001"
+-H "Authorization: Basic <Credentials>"
+-H "Content-Type: application/json"
+-d '{
+"name": "updatedName",
+"active": false,
+"allProducts": false,
+"allAgents": false,
+"agentTags": ["tag2"],
+"assortment": [
+{
+"meta": {
+"href": "https://online.moysklad.ru/api/remap/1.2/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+"metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+"type": "product",
+"mediaType": "application/json"
+}
+}],
+"productFolders": [
+{
+"meta": {
+"href": "https://online.moysklad.ru/api/remap/1.2/entity/product/39c62b64-a722-11ea-ac12-000d00000015",
+"metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+"type": "productfolder",
+"mediaType": "application/json"
+}
+}]
+}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной персональной скидки.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/personaldiscount/8ae26646-b1aa-11ea-ac12-000b00000001",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/personaldiscount/metadata",
+    "type": "personaldiscount",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+  },
+  "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
+  "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
+  "name": "updatedName",
+  "active": false,
+  "allProducts": false,
+  "allAgents": false,
+  "agentTags": [
+    "tag2"
+  ],
+  "assortment": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=833eac42-b6f4-11ea-ac12-000e00000003"
+      }
+    }
+  ],
+  "productFolders": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/39c62b64-a722-11ea-ac12-000d00000015",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/metadata",
+        "type": "productfolder",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=39c62b64-a722-11ea-ac12-000d00000015"
+      }
+    }
+  ]
+}
+```
+
+### Удалить персональную скидку
+Запрос на удаление персональной скидки
+
+|Параметр   |Описание   |
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id скидки.|
+
+> Запрос на удаление персональной скидки.
+
+```shell
+curl -X DELETE
+"https://online.moysklad.ru/api/remap/1.2/entity/personaldiscount/8ae26646-b1aa-11ea-ac12-000b00000001"
+-H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешное удаление персональной скидки
+
+### Создать специальную цену
+Запрос на создание новой специальной цены. Обязательные поля для заполнения: **name** (имя скидки), **active** (активна ли скидка), **allProducts** (действует ли скидка на все товары), **allAgents** (действует ли скидка на всех контрагентов), **usePriceType** (использовать ли специальную цену). 
+
+> Пример создания новой специальной цены
+
+```shell
+curl -X POST
+"https://online.moysklad.ru/api/remap/1.2/entity/specialpricediscount"
+-H "Authorization: Basic <Credentials>"
+-H "Content-Type: application/json"
+-d '{
+"name": "Специальная цена",
+"active": false,
+"allProducts": false,
+"allAgents": false,
+"usePriceType": true,
+"specialPrice": {"meta": {
+"href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/5f441404-a419-11ea-ac12-000a00000078",
+"type": "pricetype",
+"mediaType": "application/json"
+}
+},
+"assortment": [
+{
+"meta": {
+"href": "https://online.moysklad.ru/api/remap/1.2/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+"metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+"type": "product",
+"mediaType": "application/json"
+}
+}],
+"productFolders": [
+{
+"meta": {
+"href": "https://online.moysklad.ru/api/remap/1.2/entity/product/39c62b64-a722-11ea-ac12-000d00000015",
+"metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+"type": "productfolder",
+"mediaType": "application/json"
+}
+}]
+}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной специальной цены.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/specialpricediscount/8ae26646-b1aa-11ea-ac12-000b00000001",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/specialpricediscount/metadata",
+    "type": "specialpricediscount",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+  },
+  "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
+  "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
+  "name": "Специальная цена",
+  "active": false,
+  "allAgents": false,
+  "agentTags": [
+    "tag2",
+    "tag1"
+  ],
+  "allProducts": false,
+  "usePriceType": true,
+  "assortment": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=833eac42-b6f4-11ea-ac12-000e00000003"
+      }
+    }
+  ],
+  "productFolders": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/39c62b64-a722-11ea-ac12-000d00000015",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/metadata",
+        "type": "productfolder",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=39c62b64-a722-11ea-ac12-000d00000015"
+      }
+    }
+  ],
+  "specialPrice": {
+    "value": 0,
+    "priceType": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/39c62b64-a722-11ea-ac12-000d00000015",
+        "type": "pricetype",
+        "mediaType": "application/json"
+      },
+      "id": "39c62b64-a722-11ea-ac12-000d00000015",
+      "name": "Цена продажи",
+      "externalCode": "39c62b64-a722-11ea-ac12-000d00000016"
+    }
+  }
+}
+```
+
+### Получить специальную цену
+Запрос на получение специальной цены.
+
+|Параметр   |Описание   |
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id скидки.|
+
+> Пример получения специальной цены
+
+```shell
+curl -X GET
+"https://online.moysklad.ru/api/remap/1.2/entity/specialpricediscount/8ae26646-b1aa-11ea-ac12-000b00000001"
+-H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление специальной цены.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/specialpricediscount/8ae26646-b1aa-11ea-ac12-000b00000001",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/specialpricediscount/metadata",
+    "type": "specialpricediscount",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+  },
+  "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
+  "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
+  "name": "Специальная цена",
+  "active": false,
+  "allAgents": false,
+  "agentTags": [
+    "tag2",
+    "tag1"
+  ],
+  "allProducts": false,
+  "usePriceType": true,
+  "assortment": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=833eac42-b6f4-11ea-ac12-000e00000003"
+      }
+    }
+  ],
+  "productFolders": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/39c62b64-a722-11ea-ac12-000d00000015",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/metadata",
+        "type": "productfolder",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=39c62b64-a722-11ea-ac12-000d00000015"
+      }
+    }
+  ],
+  "specialPrice": {
+    "value": 0,
+    "priceType": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/39c62b64-a722-11ea-ac12-000d00000015",
+        "type": "pricetype",
+        "mediaType": "application/json"
+      },
+      "id": "39c62b64-a722-11ea-ac12-000d00000015",
+      "name": "Цена продажи",
+      "externalCode": "39c62b64-a722-11ea-ac12-000d00000016"
+    }
+  }
+}
+```
+
+### Изменить специальную цену
+Запрос на изменение специальной цены. В теле запроса необходимо передать поля, которые будут обновлены. При обновлении полей-массивов необходимо передавать новый массив полностью. При передаче пустого массива или null значение поля удаляется.
+
+|Параметр   |Описание   |
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id скидки.|
+
+> Пример обновления специальной цены
+
+```shell
+curl -X PUT
+"https://online.moysklad.ru/api/remap/1.2/entity/specialpricediscount/8ae26646-b1aa-11ea-ac12-000b00000001"
+-H "Authorization: Basic <Credentials>"
+-H "Content-Type: application/json"
+-d '{
+"name": "updatedName",
+"usePriceType": false,
+"discount": 50
+}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление измененнной специальной цены.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/specialpricediscount/8ae26646-b1aa-11ea-ac12-000b00000001",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/specialpricediscount/metadata",
+    "type": "specialpricediscount",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+  },
+  "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
+  "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
+  "name": "updatedName",
+  "active": false,
+  "allAgents": false,
+  "agentTags": [
+    "tag2",
+    "tag1"
+  ],
+  "allProducts": false,
+  "usePriceType": false,
+  "discount": 50,
+  "assortment": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/833eac42-b6f4-11ea-ac12-000e00000006",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=833eac42-b6f4-11ea-ac12-000e00000003"
+      }
+    }
+  ],
+  "productFolders": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/39c62b64-a722-11ea-ac12-000d00000015",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/metadata",
+        "type": "productfolder",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=39c62b64-a722-11ea-ac12-000d00000015"
+      }
+    }
+  ],
+  "specialPrice": {
+    "value": 0,
+    "priceType": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/39c62b64-a722-11ea-ac12-000d00000015",
+        "type": "pricetype",
+        "mediaType": "application/json"
+      },
+      "id": "39c62b64-a722-11ea-ac12-000d00000015",
+      "name": "Цена продажи",
+      "externalCode": "39c62b64-a722-11ea-ac12-000d00000016"
+    }
+  }
+}
+```
+
+### Удалить специальную цену
+Запрос на удаление специальной цены
+
+|Параметр   |Описание   |
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id скидки.|
+
+> Запрос на удаление специальной цены.
+
+```shell
+curl -X DELETE
+"https://online.moysklad.ru/api/remap/1.2/entity/specialpricediscount/8ae26646-b1aa-11ea-ac12-000b00000001"
+-H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешное удаление специальной цены
+
+### Изменить округление копеек
+Запрос на изменение округления копеек. В теле запроса необходимо передать поля, которые будут обновлены (**name** или **active**). В ответе также будут приходить поля **agentTags** и **allAgents**, но их нельзя изменить.
+
+|Параметр   |Описание   |
+|---|---|
+|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id скидки округления копеек.|
+
+> Пример обновления округления копеек
+
+```shell
+curl -X PUT
+"https://online.moysklad.ru/api/remap/1.2/entity/discount/8ae26646-b1aa-11ea-ac12-000b00000001"
+-H "Authorization: Basic <Credentials>"
+-H "Content-Type: application/json"
+-d '{
+"name": "updatedName",
+"active": true
+}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление измененного округления копеек.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/discount/8ae26646-b1aa-11ea-ac12-000b00000001",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/discount/metadata",
+    "type": "discount",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+  },
+  "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
+  "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
+  "name": "updatedName",
+  "active": true,
+  "allAgents": true,
+  "agentTags": []
 }
 ```
