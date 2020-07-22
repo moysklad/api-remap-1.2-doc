@@ -30,7 +30,7 @@
 |**processingPlan**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Тех. плана|Необходимое при создании|да
 |**positions**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Заказа на производство|Необходимое при создании|да
 |**deliveryPlannedMoment**            |DateTime|Планируемая дата производства|---|нет
-|**quantity**            |Int|Объем производства|---|нет
+|**quantity**            |Int|Объем производства|---|да
 
 ##### Поля при expand'е доп. полей
 Описание полей при expand'е attributes
