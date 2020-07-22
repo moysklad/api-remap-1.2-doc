@@ -35,7 +35,7 @@
 |**volume**         |Int|Объем|---|нет
 |**barcodes**         |Array(Object)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta-shtrih-kody)|---|нет
 |**discountProhibited**        |Boolean|Признак запрета скидок|---|да
-|**overhead**         |Object|Дополнительные расходы. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-wlozhennyh-suschnostej-dopolnitel-nye-rashody)|---|да
+|**overhead**         |Object|Дополнительные расходы. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-wlozhennyh-suschnostej-dopolnitel-nye-rashody)|---|нет
 |**components**         |Array(Object)|Компоненты Комплекта. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta)|---|нет
 |**trackingType**         |Enum|Тип маркируемой продукции. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-tip-markiruemoj-produkcii)|---|нет
 |**tnved**         |String(255)|Код ТН ВЭД|---|нет

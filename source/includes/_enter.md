@@ -31,7 +31,7 @@
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Оприходования|---|да
-|**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-oprihodowanie-oprihodowaniq-nakladnye-rashody).  Если Позиции Оприходования не заданы, то накладные расходы нельзя задать|---|да
+|**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-oprihodowanie-oprihodowaniq-nakladnye-rashody).  Если Позиции Оприходования не заданы, то накладные расходы нельзя задать|---|нет
 
 ##### Поля при expand'е доп. полей
 Описание полей при expand'е attributes
