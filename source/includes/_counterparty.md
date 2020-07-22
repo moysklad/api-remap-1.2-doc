@@ -179,6 +179,8 @@ ___
 
 ### Получить список Контрагентов
 
+> Запрос на получения списка Контрагентов
+
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/counterparty"
