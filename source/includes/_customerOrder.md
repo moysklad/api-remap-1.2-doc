@@ -29,16 +29,16 @@
 |**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|---|нет
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса заказа|---|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|нет
-|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|---|да
+|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|---|нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|да
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
-|**created**            |DateTime|Дата создания|Только для чтения|нет
-|**vatSum**             |Float|Сумма НДС |Только для чтения|нет
-|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Заказа покупателя|---|нет
+|**created**            |DateTime|Дата создания|Только для чтения|да
+|**vatSum**             |Float|Сумма НДС |Только для чтения|да
+|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Заказа покупателя|---|да
 |**deliveryPlannedMoment**          |DateTime|Планируемая дата отгрузки|---|нет
-|**payedSum**            |Float|Сумма входящих платежей по Заказу |Только для чтения|нет
-|**shippedSum**             |Float|Сумма отгруженного |Только для чтения|нет
-|**invoicedSum**            |Float|Сумма счетов покупателю |Только для чтения|нет
+|**payedSum**            |Float|Сумма входящих платежей по Заказу |Только для чтения|да
+|**shippedSum**             |Float|Сумма отгруженного |Только для чтения|да
+|**invoicedSum**            |Float|Сумма счетов покупателю |Только для чтения|да
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|---|нет
 
@@ -84,11 +84,11 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID позиции|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|---|нет
-|**price**          |Int|Цена товара/услуги в копейках|---|нет
-|**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|---|нет
+|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|---|да
+|**price**          |Int|Цена товара/услуги в копейках|---|да
+|**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|---|да
 |**vat**        |Int|НДС, которым облагается текущая позиция|---|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|---|нет
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|---|да
 |**pack**            |String(255)|Упаковка товара|---|нет
 |**shipped**        |Boolean|Доставлено|---|да
 |**reserve**          |Int|Резерв данной позиции|---|нет
