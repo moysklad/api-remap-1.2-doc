@@ -23,9 +23,9 @@
 + **price** - Цена товара/услуги в копейках.
 + **discount** - Процент скидки или наценки.
 + **vat** - НДС, которым облагается текущая позиция.
-+ **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **assortment** - Ссылка на товар/услугу/серию/модификацию/комплект, которую представляет собой позиция, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **discountedPrice** - Цена товара/услуги с учетом скидок и ндс в копейках.
-+ **sum** - Общая сумма за указанное количество товара в позиции в копейках.
++ **sum** - Общая сумма с учетом скидки за указанное количество товара в позиции в копейках.
 
 ### Запрос автозаполения
 
@@ -45,7 +45,7 @@
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/autofill"
+    "https://online.moysklad.ru/api/remap/1.2/autofill?fill=price"
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '
@@ -155,7 +155,7 @@
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/autofill"
+    "https://online.moysklad.ru/api/remap/1.2/autofill?fill=discount"
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '
@@ -260,7 +260,7 @@
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/autofill"
+    "https://online.moysklad.ru/api/remap/1.2/autofill?fill=vat"
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '
