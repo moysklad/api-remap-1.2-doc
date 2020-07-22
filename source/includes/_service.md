@@ -1374,7 +1374,7 @@ curl -X POST
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные |---|да
-|**attributes**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция всех существующих доп. полей Услуг|---|да
+|**attributes**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция всех существующих доп. полей Услуг|---|нет
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 

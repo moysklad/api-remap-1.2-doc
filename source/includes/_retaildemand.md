@@ -31,7 +31,7 @@
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Розничной продажи|---|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|нет
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|---|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|да  
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|нет  
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**vatSum**                |Float|Сумма включая НДС|---|да
 |**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Розничной продажи|---|да

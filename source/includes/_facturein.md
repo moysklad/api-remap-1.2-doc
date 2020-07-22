@@ -26,7 +26,7 @@
 |**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|---|нет
 |**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|---|нет
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Счета-фактуры полученного|---|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-schet-faktura-poluchennyj-scheta-faktury-poluchennye-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|да
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-schet-faktura-poluchennyj-scheta-faktury-poluchennye-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 

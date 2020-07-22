@@ -24,7 +24,7 @@
 |**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Заказа на производство|---|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-zakaz-na-proizwodstwo-zakazy-na-proizwodstwo-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |Только для чтения|да
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-zakaz-na-proizwodstwo-zakazy-na-proizwodstwo-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |Только для чтения|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**processingPlan**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Тех. плана|Необходимое при создании|да

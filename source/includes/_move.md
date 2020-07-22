@@ -24,7 +24,7 @@
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Списания|---|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-peremeschenie-peremescheniq-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|да
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-peremeschenie-peremescheniq-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Оприходования|---|да

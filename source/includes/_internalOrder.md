@@ -28,7 +28,7 @@
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
 |**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|---|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Внутреннего заказа|---|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-vnutrennij-zakaz-vnutrennie-zakazy-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |Только для чтения|да
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. |Только для чтения|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**vatSum**                |Float|Сумма включая НДС|Только для чтения|да

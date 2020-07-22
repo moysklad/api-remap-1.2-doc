@@ -32,7 +32,7 @@
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Предоплаты |---|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-predoplata-predoplaty-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|да
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-predoplata-predoplaty-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|нет
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**vatSum**                |Float|Сумма включая НДС|---|да
 |**retailStore**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Точки продаж|---|нет

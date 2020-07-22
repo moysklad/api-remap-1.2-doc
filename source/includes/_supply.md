@@ -31,7 +31,7 @@
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Приемки|---|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|нет
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|---|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-priemka-priemki-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|да
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-priemka-priemki-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 |**vatSum**             |Float|Сумма включая НДС|---|да
 |**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Приемки|---|да
