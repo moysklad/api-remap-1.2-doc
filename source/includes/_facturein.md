@@ -45,8 +45,8 @@
 
 |Название          | Описание  |
 | ------------------------------ |:---------------------------|
-|**demands** | Массив ссылок на связанные отгрузки в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-| **payments** | Массив ссылок на связанные входящие платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+|**supplies** | Массив ссылок на связанные приемки в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| **payments** | Массив ссылок на связанные исходящие платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 ####  Другие поля 
 
