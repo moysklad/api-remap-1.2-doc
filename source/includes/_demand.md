@@ -37,7 +37,7 @@
 |**vatSum**                |Float|Сумма включая НДС|---|да
 |**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Отгрузки|---|да
 |**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-otgruzka-otgruzki-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|---|нет
-|**payedSum**            |Float|Сумма входящих платежей по Отгрузке |Только для чтения|нет
+|**payedSum**            |Float|Сумма входящих платежей по Отгрузке |Только для чтения|да
 
 ##### Поля при expand'е доп. полей
 Описание полей при expand'е attributes

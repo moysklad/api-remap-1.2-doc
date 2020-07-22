@@ -35,7 +35,7 @@
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**vatSum**                |Float|Сумма включая НДС|Только для чтения|да
-|**payedSum**                |Float|Оплаченная сумма|Только для чтения|нет
+|**payedSum**                |Float|Оплаченная сумма|Только для чтения|да
 |**positions**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Выданного отчета|Только для чтения|да
 |**commissionPeriodStart**           |DateTime|Начало периода|Необходимое при создании|да
 |**commissionPeriodEnd**            |DateTime|Конец периода|Необходимое при создани|да

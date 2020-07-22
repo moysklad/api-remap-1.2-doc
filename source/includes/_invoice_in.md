@@ -37,8 +37,8 @@
 |**vatSum**             |Float|Сумма НДС |Только для чтения|да
 |**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Счета поставщика|---|да
 |**paymentPlannedMoment**          |DateTime|Планируемая дата оплаты|---|нет
-|**payedSum**            |Float|Сумма входящих платежей по Счету поставщика |Только для чтения|нет
-|**shippedSum**             |Float|Сумма отгруженного |Только для чтения|нет
+|**payedSum**            |Float|Сумма входящих платежей по Счету поставщика |Только для чтения|да
+|**shippedSum**             |Float|Сумма отгруженного |Только для чтения|да
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
 |**incomingNumber**             |Float|Входящий номер |---|нет
 |**incomingDate**         |DateTime| Входящая дата|---|нет

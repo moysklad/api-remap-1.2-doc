@@ -42,7 +42,7 @@
 |**fiscal**        |Boolean|Отметка о том, был ли использован ФР|Только для чтения|да
 |**sessionNumber**               |String(255)|Номер сессии|---|нет
 |**ofdCode**              |String(255)|Код оператора фискальных данных|---|нет
-|**payedSum**            |Float|Сумма входящих платежей по Отгрузке |Только для чтения|нет
+|**payedSum**            |Float|Сумма входящих платежей по Отгрузке |Только для чтения|да
 |**retailStore**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Точки продаж|---|нет
 |**customerOrder**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Заказа Покупателя|---|нет
 |**retailShift**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной смены|Необходимое при создании|да
