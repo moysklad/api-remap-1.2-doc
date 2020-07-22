@@ -37,13 +37,13 @@
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да|
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**closeDate**          |DateTime|Дата закрытия смены|Только для чтения|нет
-|**proceedsNoCash**     |Int|Выручка безнал|Только для чтения|да
-|**proceedsCash**       |Int|Выручка наличными|Только для чтения|да
-|**receivedNoCash**     |Int|Получено безнал|Только для чтения|да
-|**receivedCash**       |Int|Получено наличными|Только для чтения|да
+|**proceedsNoCash**     |Float|Выручка безнал|Только для чтения|да
+|**proceedsCash**       |Float|Выручка наличными|Только для чтения|да
+|**receivedNoCash**     |Float|Получено безнал|Только для чтения|да
+|**receivedCash**       |Float|Получено наличными|Только для чтения|да
 |**retailStore**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные точки продаж|Только для чтения|да
 |**operations**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных связанных операций|Только для чтения|да
-|**paymentOperations**  |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных платежных операций|Только для чтения|да
+|**paymentOperations**  |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных платежных операций|Только для чтения|нет
 
 О работе с доп. полями Розничных смен можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
