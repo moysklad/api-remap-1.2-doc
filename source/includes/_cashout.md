@@ -29,9 +29,9 @@
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Расходного ордера|---|нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-rashodnyj-order-rashodnye-ordera-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|да
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
-|**created**            |DateTime|Дата создания|Только для чтения|нет
+|**created**            |DateTime|Дата создания|Только для чтения|да
 |**paymentPurpose**     |String(255)|Основание|---|да
-|**vatSum**                |Float|Сумма включая НДС|---|нет
+|**vatSum**                |Float|Сумма включая НДС|---|да
 |**expenseItem**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Статьи расходов|Необходимое при создании|да
 
 ##### Поля при expand'е доп. полей

@@ -33,7 +33,7 @@
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**paymentPurpose**     |String(255)|Назначение платежа|---|да
-|**vatSum**                |Float|Сумма включая НДС|---|нет
+|**vatSum**                |Float|Сумма включая НДС|---|да
 |**expenseItem**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Статьи расходов|Необходимое при создании|да
 
 ##### Поля при expand'е доп. полей

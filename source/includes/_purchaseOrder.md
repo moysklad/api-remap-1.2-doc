@@ -19,29 +19,29 @@
 |**applicable**         |Boolean|Отметка о проведении|---|да
 |**vatEnabled**         |Boolean|Учитывается ли НДС|---|да
 |**vatIncluded**        |Boolean| Включен ли НДС в цену|---|да
-|**sum**                |Int|Сумма Оприходования в установленной валюте|Только для чтения|да
+|**sum**                |Int|Сумма Заказа поставщику в установленной валюте|Только для чтения|да
 |**rate**               |Object|Валюта|---|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
 |**shared**             |Boolean|Общий доступ|---|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
 |**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
-|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|---|нет
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|---|да
 |**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|---|нет
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса заказа|---|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|нет
-|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|---|да
+|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|---|нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-zakaz-postawschiku-zakazy-postawschikam-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|да
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да|
-|**created**            |DateTime|Дата создания|Только для чтения|нет
-|**vatSum**             |Float|Сумма НДС |Только для чтения|нет
+|**created**            |DateTime|Дата создания|Только для чтения|да
+|**vatSum**             |Float|Сумма НДС |Только для чтения|да
 |**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Заказа поставщику|---|да
 |**deliveryPlannedMoment**          |DateTime|Планируемая дата отгрузки|---|нет
-|**payedSum**            |Float|Сумма входящих платежей по Заказу |Только для чтения|нет
-|**shippedSum**             |Float|Сумма отгруженного |Только для чтения|нет
-|**invoicedSum**            |Float|Сумма счетов поставщику |Только для чтения|нет
+|**payedSum**            |Float|Сумма входящих платежей по Заказу |Только для чтения|да
+|**shippedSum**             |Float|Сумма отгруженного |Только для чтения|да
+|**invoicedSum**            |Float|Сумма счетов поставщику |Только для чтения|да
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
-|**waitSum**            |Float|Сумма товаров в пути|---|нет
+|**waitSum**            |Float|Сумма товаров в пути|---|да
 
 ##### Поля при expand'е доп. полей
 Описание полей при expand'е attributes
@@ -78,7 +78,7 @@
 |**vat**        |Int|НДС, которым облагается текущая позиция|---|да
 |**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|---|да
 |**pack**            |String(255)|Упаковка товара|---|нет
-|**shipped**        |Boolean|Принято|---|да
+|**shipped**        |Int|Принято|---|да
 |**wait**        |Boolean|Ожидается данной позиции|---|нет
 
 С позициями можно работать с помощью специальных ресурсов для управления позициями Заказа,

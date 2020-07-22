@@ -35,7 +35,7 @@
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-poluchennyj-otchet-komissionera-poluchennye-otchety-komissionera-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|да
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
-|**vatSum**                |Float|Сумма включая НДС|Только для чтения|нет
+|**vatSum**                |Float|Сумма включая НДС|Только для чтения|да
 |**payedSum**                |Float|Оплаченная сумма|Только для чтения|нет
 |**positions**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Полученного отчета|Только для чтения|да
 |**commissionPeriodStart**           |DateTime|Начало периода|Необходимое при создании|да
