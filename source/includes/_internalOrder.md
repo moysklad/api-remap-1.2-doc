@@ -25,7 +25,7 @@
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
 |**shared**             |Boolean|Общий доступ|Только для чтения|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|нет
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
 |**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|---|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Внутреннего заказа|---|нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-vnutrennij-zakaz-vnutrennie-zakazy-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |Только для чтения|да
@@ -34,8 +34,8 @@
 |**vatSum**                |Float|Сумма включая НДС|Только для чтения|да
 |**positions**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Внутреннего заказа|Только для чтения|да
 |**deliveryPlannedMoment**            |DateTime|Планируемая дата приемки|---|нет
-|**purchaseOrders**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))| Коллекция метаданных на связанные заказы поставщику|да
-|**moves**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных на связанные заказы перемещения|да
+|**purchaseOrders**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))| Коллекция метаданных на связанные заказы поставщику|---|да
+|**moves**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных на связанные заказы перемещения|---|да
 
 ##### Поля при expand'е доп. полей
 
@@ -58,7 +58,7 @@
 |**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|---|да
 |**price**          |Int|Цена товара/услуги в копейках|---|да
 |**vat**        |Int|НДС, которым облагается текущая позиция|---|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|---|нет
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|---|да
 |**pack**            |String(255)|Упаковка товара|---|нет
 
 С позициями можно работать с помощью [специальных ресурсов для управления позициями Внутреннего заказа](../documents/#dokumenty-vnutrennij-zakaz-pozicii-wnutrennego-zakaza),
