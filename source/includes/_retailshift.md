@@ -17,7 +17,7 @@
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|Только для чтения|нет
 |**updated**            |DateTime|Момент последнего обновления Розничной смены|Только для чтения|да
-|**deleted**            |DateTime|Момент последнего удаления Розничной смены|Только для чтения|да
+|**deleted**            |DateTime|Момент последнего удаления Розничной смены|Только для чтения|нет
 |**name**               |String(255)|Наименование Розничной смены|Только для чтения|да
 |**description**        |String(4096)|Комментарий Розничной смены|Только для чтения|нет
 |**externalCode**       |String(255)|Внешний код Розничной смены|Только для чтения| да
@@ -33,8 +33,8 @@
 |**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|Только для чтения|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|Только для чтения|да
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|Только для чтения|да
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |Только для чтения|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |Только для чтения|да
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да|
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**closeDate**          |DateTime|Дата закрытия смены|Только для чтения|нет
 |**proceedsNoCash**     |Int|Выручка безнал|Только для чтения|нет
@@ -48,6 +48,8 @@
 О работе с доп. полями Розничных смен можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
 ##### Поля при expand'е доп. полей
+
+Описание полей при expand'е attributes
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|

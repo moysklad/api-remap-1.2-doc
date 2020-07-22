@@ -10,7 +10,7 @@
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|---|нет
 |**updated**            |DateTime|Момент последнего обновления Розничного возврата|Только для чтения|да
-|**deleted**            |DateTime|Момент последнего удаления Розничного возврата|Только для чтения|да
+|**deleted**            |DateTime|Момент последнего удаления Розничного возврата|Только для чтения|нет
 |**name**               |String(255)|Наименование Розничного возврата|---|да
 |**description**        |String(4096)|Комментарий Розничного возврата|---|нет
 |**externalCode**       |String(255)|Внешний код Розничного возврата|---| да
@@ -18,31 +18,32 @@
 |**applicable**         |Boolean|Отметка о проведении|---|да
 |**vatEnabled**         |Boolean|Учитывается ли НДС|---|да
 |**vatIncluded**        |Boolean| Включен ли НДС в цену|---|да
-|**sum**                |Int|Сумма Входящего платежа в копейках|Только для чтения|нет
+|**sum**                |Int|Сумма Розничного возврата в копейках|Только для чтения|да
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
 |**rate**               |Object|Валюта|---|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
 |**shared**             |Boolean|Общий доступ|---|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|нет
-|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|нет
-|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|нет
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|да
 |**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|---|нет
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Розничного возврата|---|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|да
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|---|да
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |---|нет
-|**created**            |DateTime|Дата создания|Только для чтения|да
-|**vatSum**                |Int|Сумма включая НДС|---|нет
-|**positions**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные позиций Розничного возврата|---|нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnyj-wozwrat-roznichnye-wozwraty-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|да
+|**created**            |DateTime|Дата создания|Только для чтения|нет
+|**vatSum**                |Float|Сумма включая НДС|---|нет
+|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Розничного возврата|---|да
 |**demand**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные позиций Розничного возврата, по которой произошел возврат|---|нет
 |**retailStore**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Точки продаж|---|нет
 |**retailShift**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной смены|Необходимое при создании|да
-|**cashSum**                |Int|Оплачено наличными|---|нет
-|**noCashSum**                |Int|Оплачено картой|---|нет
-|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|---|нет
+|**cashSum**                |Float|Оплачено наличными|---|нет
+|**noCashSum**                |Float|Оплачено картой|---|нет
+|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-roznichnyj-wozwrat-roznichnye-wozwraty-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|---|нет
 
 ##### Поля при expand'е доп. полей
+Описание полей при expand'е attributes
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|

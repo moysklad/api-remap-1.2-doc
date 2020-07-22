@@ -10,7 +10,7 @@
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|---|нет
 |**updated**            |DateTime|Момент последнего обновления Отгрузки|Только для чтения|да
-|**deleted**            |DateTime|Момент последнего удаления Отгрузки|Только для чтения|да
+|**deleted**            |DateTime|Момент последнего удаления Отгрузки|Только для чтения|нет
 |**name**               |String(255)|Наименование Отгрузки|---|да
 |**description**        |String(4096)|Комментарий Отгрузки|---|нет
 |**externalCode**       |String(255)|Внешний код Отгрузки|---| да
@@ -18,28 +18,29 @@
 |**applicable**         |Boolean|Отметка о проведении|---|да
 |**vatEnabled**         |Boolean|Учитывается ли НДС|---|да
 |**vatIncluded**        |Boolean| Включен ли НДС в цену|---|да
-|**sum**                |Int|Сумма Входящего платежа в копейках|Только для чтения|нет
+|**sum**                |Int|Сумма Отгрузки в копейках|Только для чтения|да
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
 |**rate**               |Object|Валюта|---|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
 |**shared**             |Boolean|Общий доступ|---|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|нет
-|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|нет
-|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|нет
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|да
 |**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|---|нет
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Отгрузки|---|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|да
-|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|---|д
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |---|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
-|**created**            |DateTime|Дата создания|Только для чтения|да
+|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|---|да
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |---|да
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
+|**created**            |DateTime|Дата создания|Только для чтения|нет
 |**vatSum**                |Int|Сумма включая НДС|---|нет
-|**positions**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные позиций Отгрузки|---|нет
-|**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-oprihodowanie-oprihodowaniq-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|---|нет
-|**payedSum**            |Int|Сумма входящих платежей по Отгрузке |Только для чтения|нет
+|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Отгрузки|---|да
+|**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-otgruzka-otgruzki-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|---|нет
+|**payedSum**            |Float|Сумма входящих платежей по Отгрузке |Только для чтения|нет
 
 ##### Поля при expand'е доп. полей
+Описание полей при expand'е attributes
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
@@ -50,6 +51,7 @@
 |**updated**         |DateTime|Момент последнего обновления|Только для чтения|да
 
 #### Накладные расходы
+Описание полей overhead
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|

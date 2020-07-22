@@ -10,7 +10,7 @@
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|---|нет
 |**updated**            |DateTime|Момент последнего обновления Розничной продажи|Только для чтения|да
-|**deleted**            |DateTime|Момент последнего удаления Розничной продажи|Только для чтения|да
+|**deleted**            |DateTime|Момент последнего удаления Розничной продажи|Только для чтения|нет
 |**name**               |String(255)|Наименование Розничной продажи|---|да
 |**description**        |String(4096)|Комментарий Розничной продажи|---|нет
 |**externalCode**       |String(255)|Внешний код Розничной продажи|---| да
@@ -18,42 +18,43 @@
 |**applicable**         |Boolean|Отметка о проведении|---|да
 |**vatEnabled**         |Boolean|Учитывается ли НДС|---|да
 |**vatIncluded**        |Boolean| Включен ли НДС в цену|---|да
-|**sum**                |Int|Сумма Входящего платежа в копейках|Только для чтения|нет
+|**sum**                |Int|Сумма Розничной продажи в копейках|Только для чтения|да
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
 |**rate**               |Object|Валюта|---|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
 |**shared**             |Boolean|Общий доступ|---|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|нет
-|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|нет
-|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|нет
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|да
 |**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|---|нет
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Розничной продажи|---|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|да
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|---|да
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |---|нет
-|**created**            |DateTime|Дата создания|Только для чтения|да
-|**vatSum**                |Int|Сумма включая НДС|---|нет
-|**positions**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные позиций Розничной продажи|---|нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|да  
+|**created**            |DateTime|Дата создания|Только для чтения|нет
+|**vatSum**                |Float|Сумма включая НДС|---|нет
+|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Розничной продажи|---|да
 |**fiscalPrinterInfo**            |String(255)| Информация о фискальном регистраторе|---|нет
 |**documentNumber**                |String(255)|Номер документа|---|нет
 |**checkNumber**               |String(255)|Номер чека|---|нет
-|**checkSum**                |Int|Сумма Чека|---|нет
+|**checkSum**                |Float|Сумма Чека|---|нет
 |**fiscal**        |Boolean|Отметка о том, был ли использован ФР|Только для чтения|да
 |**sessionNumber**               |String(255)|Номер сессии|---|нет
 |**ofdCode**              |String(255)|Код оператора фискальных данных|---|нет
-|**payedSum**            |Int|Сумма входящих платежей по Отгрузке |Только для чтения|нет
+|**payedSum**            |Float|Сумма входящих платежей по Отгрузке |Только для чтения|нет
 |**retailStore**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Точки продаж|---|нет
 |**customerOrder**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Заказа Покупателя|---|нет
 |**retailShift**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной смены|Необходимое при создании|да
-|**cashSum**                |Int|Оплачено наличными|---|нет
-|**noCashSum**                |Int|Оплачено картой|---|нет
-|**prepaymentCashSum**               |Int|Предоплата наличными|---|нет
-|**prepaymentNoCashSum**                |Int|Предоплата картой|---|нет
-|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|---|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
+|**cashSum**                |Float|Оплачено наличными|---|нет
+|**noCashSum**                |Float|Оплачено картой|---|нет
+|**prepaymentCashSum**               |Float|Предоплата наличными|---|нет
+|**prepaymentNoCashSum**                |Float|Предоплата картой|---|нет
+|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|---|да
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 
 ##### Поля при expand'е доп. полей
+Описание полей при expand'е attributes
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|

@@ -11,30 +11,31 @@
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|---|нет
 |**updated**            |DateTime|Момент последнего обновления Расходного ордера|Только для чтения|да
-|**deleted**            |DateTime|Момент последнего удаления Расходного ордера|Только для чтения|да
+|**deleted**            |DateTime|Момент последнего удаления Расходного ордера|Только для чтения|нет
 |**name**               |String(255)|Наименование Расходного ордера|---|да
 |**description**        |String(4096)|Комментарий Расходного ордера|---|нет
 |**externalCode**       |String(255)|Внешний код Расходного ордера|---| да
 |**moment**             |DateTime|Дата Счета|---|да
 |**applicable**         |Boolean|Отметка о проведении|---|да
-|**sum**                |Int|Сумма Входящего платежа в установленной валюте|Только для чтения|нет
+|**sum**                |Int|Сумма Сумма расходного ордера в установленной валюте|Только для чтения|да
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
 |**rate**               |Object|Валюта|---|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
 |**shared**             |Boolean|Общий доступ|---|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|нет
-|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|нет
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
 |**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|---|нет
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Расходного ордера|---|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |---|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
-|**created**            |DateTime|Дата создания|Только для чтения|да
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-rashodnyj-order-rashodnye-ordera-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|да
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
+|**created**            |DateTime|Дата создания|Только для чтения|нет
 |**paymentPurpose**     |String(255)|Основание|---|да
-|**vatSum**                |Int|Сумма включая НДС|---|нет
+|**vatSum**                |Float|Сумма включая НДС|---|нет
 |**expenseItem**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Статьи расходов|Необходимое при создании|да
 
 ##### Поля при expand'е доп. полей
+Описание полей при expand'е attributes
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|

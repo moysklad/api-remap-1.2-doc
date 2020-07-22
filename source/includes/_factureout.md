@@ -11,27 +11,28 @@
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|---|нет
 |**updated**            |DateTime|Момент последнего обновления выданного Счета-фактуры|Только для чтения|да
-|**deleted**            |DateTime|Момент последнего удаления выданного Счета-фактуры|Только для чтения|да
+|**deleted**            |DateTime|Момент последнего удаления выданного Счета-фактуры|Только для чтения|нет
 |**name**               |String(255)|Наименование выданного Счета-фактуры|---|да
 |**description**        |String(4096)|Комментарий выданного Счета-фактуры|---|нет
 |**externalCode**       |String(255)|Внешний код выданного Счета-фактуры|---| да
 |**moment**             |DateTime|Дата Счета|---|да
 |**applicable**         |Boolean|Отметка о проведении|---|да
-|**sum**                |Int|Сумма Возврата Покупателя в копейках|Только для чтения|нет
+|**sum**                |Int|Сумма выданного Счета-фактуры в копейках|Только для чтения|да
 |**rate**               |Object|Валюта|---|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
 |**shared**             |Boolean|Общий доступ|---|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|нет
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
 |**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|---|нет
 |**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|---|нет
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса выданного Счета-фактуры|---|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |---|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
-|**created**            |DateTime|Дата создания|Только для чтения|да
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#ddokumenty-schet-faktura-wydannyj-scheta-faktury-wydannye-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|да
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
+|**created**            |DateTime|Дата создания|Только для чтения|нет
 |**stateContractId**       |String(255)|Идентификатор государственного контракта, договора (соглашения)|---| да
 
 ##### Поля при expand'е доп. полей
+Описание полей при expand'е attributes
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|

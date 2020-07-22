@@ -10,30 +10,31 @@
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|---|нет
 |**updated**            |DateTime|Момент последнего обновления Списания|Только для чтения|да
-|**deleted**            |DateTime|Момент последнего удаления Списания|Только для чтения|да
+|**deleted**            |DateTime|Момент последнего удаления Списания|Только для чтения|нет
 |**name**               |String(255)|Наименование Списания|---|да
 |**description**        |String(4096)|Комментарий Списания|---|нет
 |**externalCode**       |String(255)|Внешний код Списания|---| да
 |**moment**             |DateTime|Дата Списания|---|да
 |**applicable**         |Boolean|Отметка о проведении|---|да
-|**sum**                |Int|Сумма Входящего платежа в копейках|Только для чтения|нет
+|**sum**                |Int|Сумма Перемещения в копейках|Только для чтения|да
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
 |**rate**               |Object|Валюта|---|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
 |**shared**             |Boolean|Общий доступ|---|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|нет
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Списания|---|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |---|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-peremeschenie-peremescheniq-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|да
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
-|**positions**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные позиций Оприходования|---|нет
-|**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-oprihodowanie-oprihodowaniq-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|---|нет
-|**sourceStore**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада, с которого совершается перемещение|Необходимое при создании|нет
-|**targetStore**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада, на который совершается перемещение|Необходимое при создании|нет
+|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Оприходования|---|да
+|**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-peremeschenie-peremescheniq-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|---|нет
+|**sourceStore**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада, с которого совершается перемещение|Необходимое при создании|да
+|**targetStore**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада, на который совершается перемещение|Необходимое при создании|да
 |**internalOrder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Внутреннего заказа, связанного с Перемещением|---|нет
 
 ##### Поля при expand'е доп. полей
+Описание полей при expand'е attributes
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
