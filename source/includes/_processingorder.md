@@ -10,7 +10,7 @@
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|Только для чтения|нет
 |**updated**            |DateTime|Момент последнего обновленияЗаказа на производство|Только для чтения|да
-|**deleted**            |DateTime|Момент последнего удаления Заказа на производство|Только для чтения|да
+|**deleted**            |DateTime|Момент последнего удаления Заказа на производство|Только для чтения|нет
 |**name**               |String(255)|Наименование Заказа на производство|Необходимое при создании|да
 |**description**        |String(4096)|Комментарий Заказа на производство|---|нет
 |**externalCode**       |String(255)|Внешний код Заказа на производство|Только для чтения| да
@@ -20,19 +20,20 @@
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
 |**shared**             |Boolean|Общий доступ|Только для чтения|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|нет
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
 |**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Заказа на производство|---|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|да
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |Только для чтения|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-zakaz-na-proizwodstwo-zakazy-na-proizwodstwo-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |Только для чтения|да
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
-|**processingPlan**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Тех. плана|Необходимое при создании|нда
+|**processingPlan**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Тех. плана|Необходимое при создании|да
 |**positions**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Заказа на производство|Необходимое при создании|да
 |**deliveryPlannedMoment**            |DateTime|Планируемая дата производства|---|нет
 |**quantity**            |Int|Объем производства|---|нет
 
 ##### Поля при expand'е доп. полей
+Описание полей при expand'е attributes
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|

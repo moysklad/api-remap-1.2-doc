@@ -20,7 +20,7 @@
 |**vatEnabled**         |Boolean|Учитывается ли НДС|---|да
 |**vatIncluded**        |Boolean| Включен ли НДС в цену|---|да
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
-|**sum**                |Int|Сумма Внутреннего заказа в копейках|Только для чтения|нет
+|**sum**                |Int|Сумма Внутреннего заказа в копейках|Только для чтения|да
 |**rate**               |Object|Валюта|---|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
 |**shared**             |Boolean|Общий доступ|Только для чтения|да
@@ -28,10 +28,10 @@
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|нет
 |**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|---|нет
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Внутреннего заказа|---|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |Только для чтения|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-vnutrennij-zakaz-vnutrennie-zakazy-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |Только для чтения|да
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
-|**vatSum**                |Int|Сумма включая НДС|Только для чтения|нет
+|**vatSum**                |Float|Сумма включая НДС|Только для чтения|нет
 |**positions**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Внутреннего заказа|Только для чтения|да
 |**deliveryPlannedMoment**            |DateTime|Планируемая дата приемки|---|нет
 |**purchaseOrders**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))| Коллекция метаданных на связанные заказы поставщику|да
@@ -57,7 +57,7 @@
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|---|нет
 |**price**          |Int|Цена товара/услуги в копейках|---|нет
-|**vat**        |Boolean|НДС, которым облагается текущая позиция|---|нет
+|**vat**        |Int|НДС, которым облагается текущая позиция|---|нет
 |**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|---|нет
 |**pack**            |String(255)|Упаковка товара|---|нет
 

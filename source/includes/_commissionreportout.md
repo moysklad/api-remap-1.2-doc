@@ -11,7 +11,7 @@
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|Только для чтения|нет
 |**updated**            |DateTime|Момент последнего обновления Выданного  отчета комиссионера|Только для чтения|да
-|**deleted**            |DateTime|Момент последнего удаления Выданного  отчета комиссионера|Только для чтения|да
+|**deleted**            |DateTime|Момент последнего удаления Выданного  отчета комиссионера|Только для чтения|нет
 |**name**               |String(255)|Наименование Выданного отчета комиссионера|Необходимое при создании|да
 |**description**        |String(4096)|Комментарий Выданного отчета комиссионера|---|нет
 |**externalCode**       |String(255)|Внешний код Выданного отчета комиссионера|Только для чтения| да
@@ -20,30 +20,31 @@
 |**vatEnabled**         |Boolean|Учитывается ли НДС|---|да
 |**vatIncluded**        |Boolean| Включен ли НДС в цену|---|да
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
-|**sum**                |Int|Сумма Выданного отчета комиссионера в копейках|Только для чтения|нет
+|**sum**                |Int|Сумма Выданного отчета комиссионера в копейках|Только для чтения|да
 |**rate**               |Object|Валюта|---|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
 |**shared**             |Boolean|Общий доступ|Только для чтения|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|нет
-|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|нет
-|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|Необходимое при создании|нет
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
+|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|Необходимое при создании|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Выданного отчета комиссионера|---|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|да
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|---|да
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |Только для чтения|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
-|**created**            |DateTime|Дата создания|Только для чтения|да
-|**vatSum**                |Int|Сумма включая НДС|Только для чтения|нет
-|**payedSum**                |Int|Оплаченная сумма|Только для чтения|нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-vydannyj-otchet-komissionera-vydannye-otchety-komissionera-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |Только для чтения|да
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
+|**created**            |DateTime|Дата создания|Только для чтения|нет
+|**vatSum**                |Float|Сумма включая НДС|Только для чтения|нет
+|**payedSum**                |Float|Оплаченная сумма|Только для чтения|нет
 |**positions**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Выданного отчета|Только для чтения|да
 |**commissionPeriodStart**           |DateTime|Начало периода|Необходимое при создании|да
 |**commissionPeriodEnd**            |DateTime|Конец периода|Необходимое при создани|да
 |**rewardType**      |String(255)|Тип вознаграждения|---| нет
 |**rewardPercent**              |Int|Процент вознаграждения (всегда 0 если вознаграждение не рассчитывается)|---|нет
-|**commitentSum**                |Int|Сумма коммитента в установленной валюте|Только для чтения|нет
+|**commitentSum**                |Float|Сумма коммитента в установленной валюте|Только для чтения|нет
 
 ##### Поля при expand'е доп. полей
+Описание полей при expand'е attributes
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
@@ -69,7 +70,7 @@
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|---|нет
 |**price**          |Int|Цена товара/услуги в копейках|---|нет
-|**vat**        |Boolean|НДС, которым облагается текущая позиция|---|нет
+|**vat**        |Int|НДС, которым облагается текущая позиция|---|нет
 |**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|---|нет
 |**pack**            |String(255)|Упаковка товара|---|нет
 |**reward**      |String(255)|Вознаграждение|---| нет
