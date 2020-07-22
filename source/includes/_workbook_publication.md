@@ -1,7 +1,10 @@
 ## Публикация документов
-МойСклад позволяет печатать документы - формировать файлы в формате _pdf_ или _xls_ по специальным шаблонам, которые называются шаблонами печатных форм. Для большинства документов есть встроенные шаблоны, о создании собственных шаблонов можно прочитать в [статье поддержки](https://support.moysklad.ru/hc/ru/articles/219361888).
+МойСклад позволяет печатать документы - формировать файлы в формате _pdf_ или _xls_ по специальным шаблонам, которые называются шаблонами печатных 
+форм. Для большинства документов есть встроенные шаблоны, о создании собственных шаблонов можно прочитать в 
+[статье поддержки](https://support.moysklad.ru/hc/ru/articles/219361888).
 
-Публикация - это ссылка на печатную форму документа. Ее можно отправить по электронной почте. При публикации файлы формируются только в формате _pdf_. Публикации доступны для следующих видов документов:
+Публикация - это ссылка на печатную форму документа. Ее можно отправить по электронной почте. При публикации файлы формируются только в 
+формате _pdf_. Публикации доступны для следующих видов документов:
 
 + Заказ покупателя
 + Счет покупателю
@@ -29,7 +32,8 @@
 
 ## Шаблоны печатной формы
 
-В JSON API возможно запросить списки встроенных и пользовательских шаблонов печатных форм, чтобы впоследствии использовать их для печати и публикации документов. 
+В JSON API возможно запросить списки встроенных и пользовательских шаблонов печатных форм, чтобы впоследствии использовать их для печати и 
+публикации документов. 
 
 > Запрос встроенных шаблонов заказов покупателей:
 
@@ -45,38 +49,38 @@ curl
 
 ```json
 {
-    "context": {
-        "employee": {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-                "type": "employee",
-                "mediaType": "application/json"
-            }
-        }
-    },
-    "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/",
-        "type": "embeddedtemplate",
-        "mediaType": "application/json",
-        "size": 1,
-        "limit": 25,
-        "offset": 0
-    },
-    "rows": [
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/6ffea5e5-1b69-4a88-be59-4856281d439c",
-                "type": "embeddedtemplate",
-                "mediaType": "application/json"
-            },
-            "id": "6ffea5e5-1b69-4a88-be59-4856281d439c",
-            "name": "Заказ",
-            "type": "entity",
-            "content": "https://online.moysklad.ru/api/remap/1.2/download-template/order.xls"
-        }
-    ]
-}
+   "context": {
+     "employee": {
+       "meta": {
+         "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+         "type": "employee",
+         "mediaType": "application/json"
+       }
+     }
+   },
+   "meta": {
+     "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/",
+     "type": "embeddedtemplate",
+     "mediaType": "application/json",
+     "size": 1,
+     "limit": 100,
+     "offset": 0
+   },
+   "rows": [
+     {
+       "meta": {
+         "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/6ffea5e5-1b69-4a88-be59-4856281d439c",
+         "type": "embeddedtemplate",
+         "mediaType": "application/json"
+       },
+       "id": "6ffea5e5-1b69-4a88-be59-4856281d439c",
+       "name": "Заказ",
+       "type": "entity",
+       "content": "https://online.moysklad.ru/api/remap/1.2/download-template/order.xls"
+     }
+   ]
+ }
 ```
 
 > Запрос пользовательских шаблонов заказов покупателей:
@@ -108,7 +112,7 @@ curl
             "type": "customtemplate",
             "mediaType": "application/json",
             "size": 1,
-            "limit": 25,
+            "limit": 100,
             "offset": 0
         },
         "rows": [
@@ -133,7 +137,8 @@ curl
 
 ## Создание публикаций в JSON API
 
-Создание публикаций возможно средствами JSON API. Чтобы создать публикацию нужен документ, например, заказ покупателя, и шаблон печатной формы - встроенный или пользовательский.
+Создание публикаций возможно средствами JSON API. Чтобы создать публикацию нужен документ, например, заказ покупателя, и шаблон печатной формы - 
+встроенный или пользовательский.
 
 Создадим публикацию для заказа покупателя
 
@@ -212,7 +217,7 @@ curl
         "type": "demand",
         "mediaType": "application/json",
         "size": 1,
-        "limit": 25,
+        "limit": 100,
         "offset": 0
     },
     "rows": [
