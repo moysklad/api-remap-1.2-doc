@@ -39,8 +39,8 @@
 |**customerOrder**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Заказа Покупателя|---|нет
 |**retailShift**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной смены|Необходимое при создании|да
 |**returns**       |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных на связанные возвраты|---|нет
-|**cashSum**                |Float|Оплачено наличными|---|нет
-|**noCashSum**                |Float|Оплачено картой|---|нет
+|**cashSum**                |Float|Оплачено наличными|---|да
+|**noCashSum**                |Float|Оплачено картой|---|да
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-predoplata-predoplaty-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|---|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 

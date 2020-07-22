@@ -43,13 +43,13 @@
 |**sessionNumber**               |String(255)|Номер сессии|---|нет
 |**ofdCode**              |String(255)|Код оператора фискальных данных|---|нет
 |**payedSum**            |Float|Сумма входящих платежей по Отгрузке |Только для чтения|да
-|**retailStore**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Точки продаж|---|нет
+|**retailStore**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Точки продаж|---|да
 |**customerOrder**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Заказа Покупателя|---|нет
 |**retailShift**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной смены|Необходимое при создании|да
-|**cashSum**                |Float|Оплачено наличными|---|нет
-|**noCashSum**                |Float|Оплачено картой|---|нет
-|**prepaymentCashSum**               |Float|Предоплата наличными|---|нет
-|**prepaymentNoCashSum**                |Float|Предоплата картой|---|нет
+|**cashSum**                |Float|Оплачено наличными|---|да
+|**noCashSum**                |Float|Оплачено картой|---|да
+|**prepaymentCashSum**               |Float|Предоплата наличными|---|да
+|**prepaymentNoCashSum**                |Float|Предоплата картой|---|да
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|---|да
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 

@@ -38,8 +38,8 @@
 |**demand**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные позиций Розничного возврата, по которой произошел возврат|---|нет
 |**retailStore**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Точки продаж|---|нет
 |**retailShift**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной смены|Необходимое при создании|да
-|**cashSum**                |Float|Оплачено наличными|---|нет
-|**noCashSum**                |Float|Оплачено картой|---|нет
+|**cashSum**                |Float|Оплачено наличными|---|да
+|**noCashSum**                |Float|Оплачено картой|---|да
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-roznichnyj-wozwrat-roznichnye-wozwraty-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|---|нет
 
 ##### Поля при expand'е доп. полей
