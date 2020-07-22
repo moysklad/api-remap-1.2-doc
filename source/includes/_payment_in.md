@@ -17,7 +17,7 @@
 |**externalCode**       |String(255)|Внешний код Входящего платежа|---| да
 |**moment**             |DateTime|Дата Счета|---|да
 |**applicable**         |Boolean|Отметка о проведении|---|да
-|**sum**                |Int|Сумма Входящего платежа в установленной валюте|Только для чтения|нет
+|**sum**                |Int|Сумма Входящего платежа в установленной валюте|Только для чтения|да
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
 |**rate**               |Object|Валюта|---|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
