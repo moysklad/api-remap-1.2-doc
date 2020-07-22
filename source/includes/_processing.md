@@ -23,7 +23,7 @@
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Тех. операции |---|нет
-|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|да
+|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-teh-operaciq-teh-operacii-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|да
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
@@ -31,7 +31,7 @@
 |**processingSum**              |Int|Затраты на производство|Необходимое при создании|да
 | **materials**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Список Метаданных материалов Тех. операции|Необходимое при создании|да
 | **products**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Список Метаданных готовых продуктов Тех. операции|Необходимое при создании|да
-| **productsStore***         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада для продукции|Необходимое при создании|да
+| **productsStore**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада для продукции|Необходимое при создании|да
 | **materialsStore**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада для материалов|Необходимое при создании|да
 | **processingPlan**           |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Тех. операции|Необходимое при создании|да
 
@@ -60,8 +60,8 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID Тех. операции |Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/серии/модификации, которую представляет собой позиция|---|нет
-|**quantity**          |Int|Количество товаров данного вида в позиции|---|нет
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/серии/модификации, которую представляет собой позиция|---|да
+|**quantity**          |Int|Количество товаров данного вида в позиции|---|да
 
 #### Продукты Тех. операции
 Продукты Тех. операции - это список товаров/модификаций/серий, получаемых при производстве согласно тех. карте.
@@ -71,8 +71,8 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID Тех. операции |Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/серии/модификации, которую представляет собой позиция|---|нет
-|**quantity**          |Int|Количество товаров данного вида в позиции|---|нет
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/серии/модификации, которую представляет собой позиция|---|да
+|**quantity**          |Int|Количество товаров данного вида в позиции|---|да
 
 С материалами и продуктами можно работать с помощью [специальных ресурсов для управления позициями Тех. операции](../documents/#dokumenty-teh-operaciq-izmenit-teh-operaciu-materialy-teh-operacii),
 а также в составе отдельной Тех. операции. При работе в составе отдельной Тех. операции,
@@ -99,7 +99,7 @@
 | ------------------------------ |:---------------------------|
 |**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|**search** |  `string` (optional) *Example: 0001* URL Параметр для поиска по имени документа. Фильтр документов по указанной поисковой строке. Фильтрация происходит по полю name.|
+|**search** |  `string` (optional) *Example: 0001* Фильтр документов по указанной поисковой строке.
 
 > Получить список Тех. операций
 

@@ -12,7 +12,7 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Заказа покупателя|---|да
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Договора|---|да
 |**id**                |UUID|ID Договора|Только для чтения|да
 |**accountId**         |UUID|ID учетной записи|Только для чтения|да
 |**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|---|да
@@ -27,12 +27,12 @@
 |**moment**         |DateTime|Дата Договора|---|да
 |**sum**         |Int|Сумма Договора|---|да
 |**contractType**         |Enum|Тип Договора. Возможные значения: `Договор комиссии`, `Договор купли-продажи`|---|да
-|**rewardType**         |Enum|Тип Договора. Тип Вознаграждения. Возможные значения: `Процент от суммы продажи`, `Не рассчитывать`|---|нет
+|**rewardType**         |Enum|Тип Вознаграждения. Возможные значения: `Процент от суммы продажи`, `Не рассчитывать`|---|нет
 |**rewardPercent**        |Int|Вознаграждение в процентах (от 0 до 100)|---|нет
 |**ownAgent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные вашего юрлица|Необходимое при создании|да
 |**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контрагента|Необходимое при создании|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса договора|---|нет
-|**organizationAccount**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета вашего юрлица|---|да
+|**organizationAccount**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета вашего юрлица|---|нет
 |**agentAccount**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|---|да
 |**rate**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные валюты|---|да
 |**attributes**         |Array(Meta)|Коллекция доп. полей|---|нет

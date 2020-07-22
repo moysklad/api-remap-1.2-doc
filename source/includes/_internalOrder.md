@@ -26,12 +26,12 @@
 |**shared**             |Boolean|Общий доступ|Только для чтения|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|нет
-|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|---|нет
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|---|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Внутреннего заказа|---|нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-vnutrennij-zakaz-vnutrennie-zakazy-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |Только для чтения|да
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
-|**vatSum**                |Float|Сумма включая НДС|Только для чтения|нет
+|**vatSum**                |Float|Сумма включая НДС|Только для чтения|да
 |**positions**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Внутреннего заказа|Только для чтения|да
 |**deliveryPlannedMoment**            |DateTime|Планируемая дата приемки|---|нет
 |**purchaseOrders**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))| Коллекция метаданных на связанные заказы поставщику|да
@@ -55,9 +55,9 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID позиции|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|---|нет
-|**price**          |Int|Цена товара/услуги в копейках|---|нет
-|**vat**        |Int|НДС, которым облагается текущая позиция|---|нет
+|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|---|да
+|**price**          |Int|Цена товара/услуги в копейках|---|да
+|**vat**        |Int|НДС, которым облагается текущая позиция|---|да
 |**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|---|нет
 |**pack**            |String(255)|Упаковка товара|---|нет
 
@@ -82,7 +82,7 @@
 | ------------------------------ |:---------------------------|
 |**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|**search** |  `string` (optional) *Example: 0001* URL Параметр для поиска по имени документа. Фильтр документов по указанной поисковой строке. Фильтрация происходит по полю name.|
+|**search** |  `string` (optional) *Example: 0001* Фильтр документов по указанной поисковой строке.
 
 > Получить Внутренние заказы
 
@@ -1544,7 +1544,7 @@ curl -X GET
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Внутреннего заказа.|
 |**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|**search** |  `string` (optional) *Example: 0001* URL Параметр для поиска по имени документа. Фильтр документов по указанной поисковой строке. Фильтрация происходит по полю name.|
+|**search** |  `string` (optional) *Example: 0001* Фильтр документов по указанной поисковой строке.
 
 > Получить позиции Внутреннего заказа
 
