@@ -1,7 +1,7 @@
 ### Список сущностей
 Список сущностей, для которых есть возможность создать доп. поля, вы можете посмотреть в [документации](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
-### Работа с дополнительными полями в АПИ
+### Работа с дополнительными полями в JSON API
 В рамках JSON API можно создавать дополнительные поля и редактировать существующие. Подробно это описано в статье [Работа с дополнительными полями через API.](../workbook/#workbook-rabota-s-dopolnitel-nymi-polqmi-cherez-api)
 
 ### Получение дополнительных полей
@@ -21,126 +21,25 @@ curl
 
 ```json
 {
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+    "mediaType": "application/json"
+  },
+  "attributes": {
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-        "mediaType": "application/json"
-    },
-    "attributes": [
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a2",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "id": "839ca663-75f7-11e8-9107-5048001126a2",
-            "name": "Особенности",
-            "type": "string",
-            "required": false
-        },
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "id": "839ca663-75f7-11e8-9107-5048001126a2",
-            "name": "Объем накопителя",
-            "type": "number",
-            "required": false
-        },
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "id": "839ca663-75f7-11e8-9107-5048001126a2",
-            "name": "Дата поступления на склад",
-            "type": "time",
-            "required": false
-        },
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/46908d10-c4e5-11e8-9109-f8fc00209552",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "customEntityMeta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/companysettings/metadata/customEntities/9e690967-1703-4038-a8f7-95ef64d54ae6",
-                "type": "customentitymetadata",
-                "mediaType": "application/json"
-            },
-            "id": "46908d10-c4e5-11e8-9109-f8fc00209552",
-            "name": "Материал изготовления",
-            "type": "customentity",
-            "required": false
-        },
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "id": "839ca663-75f7-11e8-9107-5048001126a2",
-            "name": "Спецификация",
-            "type": "file",
-            "required": false
-        },
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "id": "839ca663-75f7-11e8-9107-5048001126a2",
-            "name": "Время работы от аккумулятора",
-            "type": "double",
-            "required": false
-        },
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "id": "839ca663-75f7-11e8-9107-5048001126a2",
-            "name": "Подсветка клавиатуры",
-            "type": "boolean",
-            "required": false
-        },
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "id": "839ca663-75f7-11e8-9107-5048001126a2",
-            "name": "Описание от производителя",
-            "type": "text",
-            "required": false
-        },
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/7385ab6e-ad06-11e8-9ff4-34e80004fb35",
-                "type": "attributemetadata",
-                "mediaType": "application/json"
-            },
-            "id": "7385ab6e-ad06-11e8-9ff4-34e80004fb35",
-            "name": "Ссылка на интернет-магазин",
-            "type": "link",
-            "required": false
-        }
-    ],
-    "priceTypes": [
-        {
-            "name": "Цена продажи"
-        }
-    ],
-    "createShared": true
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes",
+      "type": "attributemetadata",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "createShared": true
 }
 ```
 
-### Задание значений дополнительных полей через АПИ
+### Задание значений дополнительных полей через JSON API
 Задать значение дополнительному полю можно как при создании объекта, так и при его обновлении.
 
 После того, как выше мы получили идентификаторы дополнительных полей товаров, 
@@ -156,7 +55,7 @@ curl
     -u login:password 
     -H 'Accept: application/json' 
     -H 'Content-Type: application/json' 
-    https://online.moysklad.ru/api/remap/1.2/entity/product 
+    "https://online.moysklad.ru/api/remap/1.2/entity/product" 
     -d '{
         "name": "Ноутбук",
         "vat": 18,
@@ -225,7 +124,7 @@ curl
     -u login:password 
     -H 'Accept: application/json' 
     -H 'Content-Type: application/json' 
-    https://online.moysklad.ru/api/remap/1.2/entity/product/630c578a-cb05-11e8-9109-f8fc0037889a 
+    "https://online.moysklad.ru/api/remap/1.2/entity/product/630c578a-cb05-11e8-9109-f8fc0037889a" 
     -d '{
   "name": "Ноутбук обновленный",
   "attributes": [
@@ -275,7 +174,7 @@ curl
     -u login:password 
     -H 'Accept: application/json' 
     -H 'Content-Type: application/json' 
-    https://online.moysklad.ru/api/remap/1.2/entity/product 
+    "https://online.moysklad.ru/api/remap/1.2/entity/product" 
     -d '{
     "name": "Ноутбук",
     "attributes": [
@@ -438,7 +337,7 @@ curl
     -u login:password 
     -H 'Accept: application/json' 
     -H 'Content-Type: application/json' 
-    https://online.moysklad.ru/api/remap/1.2/entity/counterparty 
+    "https://online.moysklad.ru/api/remap/1.2/entity/counterparty" 
     -d '{
     "name": "ООО Восток",
     "attributes": [
