@@ -46,6 +46,7 @@
 - Изменения формата JSON
   - Новые поля `bonusProgram` и `bonusPoints` в [Контрагентах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent)
     и [Организациях](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico)
+  - Новое поле `factureIn` в [Возврат поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-postawschiku)
 - Фильтрация
   - Новая фильтрация в отчетах [Деньги](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-den-gi), 
     [Показатели продаж](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-pokazateli-prodazh-i-zakazow-pokazateli-prodazh) 
@@ -115,6 +116,10 @@
 ## Список последних изменений
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
+
+### 22-07-2020
+#### Добавлено
+- Новое поле `factureIn` в [Возврат поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-postawschiku)
 
 ### 15-07-2020
 #### Добавлено
