@@ -15,13 +15,13 @@
 |**description**        |String(4096)|Комментарий Прайс-листа |---|нет
 |**externalCode**       |String(255)|Внешний код Прайс-листа |---| да
 |**priceType**          |Object|Объект типа цены|Только для чтения|да
-|**columns**            |Array(Object)|Массив столбцов описания таблицы|Необходимое при создании. После создания изменить нельзя|нет
+|**columns**            |Array(Object)|Массив столбцов описания таблицы|Необходимое при создании. После создания изменить нельзя|да
 |**moment**             |DateTime|Дата Прайс-листа|---|да
 |**applicable**         |Boolean|Отметка о проведении|---|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
 |**shared**             |Boolean|Общий доступ|---|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|---|нет
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|---|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Прайс-листа---|нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-prajs-list-prajs-listy-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|нет
 |**created**            |DateTime|Дата создания|Только для чтения|да
