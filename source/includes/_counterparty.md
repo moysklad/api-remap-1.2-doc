@@ -57,7 +57,7 @@
 |**salesAmount**        |Int|Сумма продаж|Только для чтения| да
 |**bonusProgram**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные активной Бонусной программы|---| нет
 |**bonusPoints**        |Int|Бонусные баллы по активной бонусной программе|Только для чтения| нет            
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да|
 
 ##### Поля реквизитов
 
@@ -2119,6 +2119,7 @@ curl -X GET
 | Параметр                | Описание  |
 | ------------------------------ |:---------------------------|
 | **id**         |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента.|
+
 > Пример
 
 ```shell
