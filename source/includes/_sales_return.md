@@ -35,7 +35,7 @@
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**vatSum**                |Float|Сумма включая НДС|---|да
-|**positions**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные позиций Возврата Покупателя|---|нет
+|**positions**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные позиций Возврата Покупателя|---|да
 
 ##### Поля при expand'е доп. полей
 Описание полей при expand'е attributes

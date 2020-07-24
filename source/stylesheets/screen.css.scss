@@ -446,8 +446,6 @@ html, body {
     overflow: auto;
     table-layout: fixed;
     width: 100% - $examples-width;
-    //display: grid;
-    //grid-template-columns: minmax(20%, 25%) minmax(20%, 20%) minmax(30%, 60%);
     th,td {
       text-align: left;
       vertical-align: top;
