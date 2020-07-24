@@ -24,7 +24,7 @@
 |**bonusProgram**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные бонусной программы|---|нет
 |**bonusValue**             |Int|Количество бонусных баллов|---|нет
 |**organization**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|---|нет
-|**transactionType**              |Enum|Тип бонусной операции. Возможные значения: `EARNING`, `SPENDING`|Необходимое при создании|нет
+|**transactionType**              |Enum|Тип бонусной операции. Возможные значения: `EARNING`, `SPENDING`|Необходимое при создании|да
 
 ##### Атрибуты доступные для фильтрации
 

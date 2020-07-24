@@ -182,6 +182,7 @@ curl -X DELETE
 |**type**|  `string` (required) *Example: demand* тип сущности.|
 |**id** |  `string` (required) *Example: a86708d2-f8d3-4e67-8f04-6101158da808* id сущности.|
 |**publicationId**|  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Публикации.|
+
 ```shell
 curl -X GET
   "https://online.moysklad.ru/api/remap/1.2/entity/demand/a86708d2-f8d3-4e67-8f04-6101158da808/publication/7944ef04-f831-11e5-7a69-971500188b19"

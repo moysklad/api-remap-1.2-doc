@@ -11,7 +11,7 @@
 |**author**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Сотрудника создавшего задачу|Только для чтения|да
 |**created**            |DateTime|Момент создания|Только для чтения| да
 |**updated**            |DateTime|Момент последнего обновления Задачи|Только для чтения|да
-|**description**        |String(4096)|Текст задачи|Необходимое при создании|нет
+|**description**        |String(4096)|Текст задачи|Необходимое при создании|да
 |**dueToDate**            |DateTime|Срок задачи|---|нет
 |**assignee**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные ответственного за выполнение задачи|Необходимое при создании|да
 |**done**                 |Boolean|Отметка о выполнении задачи|---|да
