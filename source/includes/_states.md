@@ -17,7 +17,7 @@
 
 ##### Тип статуса
 |Название   |Описание   | 
-|---|---|
+|:----|:----|
 Regular|Обычный (значение по умолчанию)
 Successful|Финальный положительный
 Unsuccessful| Финальный отрицательный
@@ -41,7 +41,7 @@ Unsuccessful| Финальный отрицательный
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:----|:----|
 |**entityType**|  `string` (required) *Example: counterparty* тип сущности.|
 
 > Получить метаданные и в том числе статусы
@@ -119,7 +119,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:----|:----|
 |**entityType**|  `string` (required) *Example: counterparty* тип сущности.|
 
 > Создание одного статуса.
@@ -168,7 +168,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:----|:----|
 |**entityType**|  `string` (required) *Example: counterparty* тип сущности.|
 |**id** |  `string` (required) *Example: 4dcb3f23-60c4-11e7-6adb-ede500000019* id Статуса.|
 
@@ -278,7 +278,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:----|:----|
 |**entityType**|  `string` (required) *Example: counterparty* тип сущности.|
 |**id** |  `string` (required) *Example: 4dcb3f23-60c4-11e7-6adb-ede500000019* id Статуса.|
 
