@@ -6,28 +6,28 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Счета-фактуры полученного|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Счета-фактуры полученного|&mdash;|да
 |**id**                 |UUID|ID Счета-фактуры полученного|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|---|нет
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет
 |**updated**            |DateTime|Момент последнего обновления Счета-фактуры полученного|Только для чтения|да
 |**deleted**            |DateTime|Момент последнего удаления Счета-фактуры полученного|Только для чтения|нет
-|**name**               |String(255)|Наименование выданного Счета-фактуры полученного|---|да
-|**description**        |String(4096)|Комментарий выданного Счета-фактуры полученного|---|нет
-|**externalCode**       |String(255)|Внешний код выданного Счета-фактуры полученного|---| да
-|**moment**             |DateTime|Дата Счета|---|да
-|**applicable**         |Boolean|Отметка о проведении|---|да
+|**name**               |String(255)|Наименование выданного Счета-фактуры полученного|&mdash;|да
+|**description**        |String(4096)|Комментарий выданного Счета-фактуры полученного|&mdash;|нет
+|**externalCode**       |String(255)|Внешний код выданного Счета-фактуры полученного|&mdash;| да
+|**moment**             |DateTime|Дата Счета|&mdash;|да
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
 |**sum**                |Int|Сумма Счета-фактуры полученного в установленной валюте|Только для чтения|да
-|**rate**               |Object|Валюта|---|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
-|**shared**             |Boolean|Общий доступ|---|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
+|**rate**               |Object|Валюта|&mdash;|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
-|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|---|да
-|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|---|нет
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Счета-фактуры полученного|---|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-schet-faktura-poluchennyj-scheta-faktury-poluchennye-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|&mdash;|да
+|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Счета-фактуры полученного|&mdash;|нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-schet-faktura-poluchennyj-scheta-faktury-poluchennye-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 
 ##### Поля при expand'е доп. полей
@@ -35,11 +35,11 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**name**            |String(255)|Номер документа|---|нет
-|**moment**          |DateTime|Дата печати|---|да
-|**href**            |URL|Ссылка на файл печатной формы|---|да
-|**fileName**        |String(255)|Название файла печатной формы|---|нет
-|**updated**         |DateTime|Момент последнего обновления|---|да
+|**name**            |String(255)|Номер документа|&mdash;|нет
+|**moment**          |DateTime|Дата печати|&mdash;|да
+|**href**            |URL|Ссылка на файл печатной формы|&mdash;|да
+|**fileName**        |String(255)|Название файла печатной формы|&mdash;|нет
+|**updated**         |DateTime|Момент последнего обновления|&mdash;|да
 
 #### Связи с другими документами
 
@@ -52,8 +52,8 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**incomingNumber**             |Int|Входящий номер |---|нет
-|**incomingDate**         |DateTime| Входящая дата|---|нет
+|**incomingNumber**             |Int|Входящий номер |&mdash;|нет
+|**incomingDate**         |DateTime| Входящая дата|&mdash;|нет
 
 О работе с доп. полями Счетов-фактур можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 

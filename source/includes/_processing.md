@@ -13,19 +13,19 @@
 |**updated**            |DateTime|Момент последнего обновления Тех. операции |Только для чтения|да
 |**deleted**            |DateTime|Момент последнего удаления Тех. операции |Только для чтения|нет
 |**name**               |String(255)|Наименование Тех. операции |Необходимое при создании|да
-|**description**        |String(4096)|Комментарий Тех. операции |---|нет
+|**description**        |String(4096)|Комментарий Тех. операции |&mdash;|нет
 |**externalCode**       |String(255)|Внешний код Тех. операции |Только для чтения| да
 |**moment**             |DateTime|Дата смены|Только для чтения|да
-|**applicable**         |Boolean|Отметка о проведении|---|да
-|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
+|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
 |**shared**             |Boolean|Общий доступ|Только для чтения|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Тех. операции |---|нет
-|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-teh-operaciq-teh-operacii-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Тех. операции |&mdash;|нет
+|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-teh-operaciq-teh-operacii-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**quantity**               |Int|Объем производства|Необходимое при создании|да
 |**processingSum**              |Int|Затраты на производство|Необходимое при создании|да
@@ -40,11 +40,11 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**name**            |String(255)|Номер документа|---|нет
-|**moment**          |DateTime|Дата печати|---|да
-|**href**            |URL|Ссылка на файл печатной формы|---|да
-|**fileName**        |String(255)|Название файла печатной формы|---|нет
-|**updated**         |DateTime|Момент последнего обновления|---|да
+|**name**            |String(255)|Номер документа|&mdash;|нет
+|**moment**          |DateTime|Дата печати|&mdash;|да
+|**href**            |URL|Ссылка на файл печатной формы|&mdash;|да
+|**fileName**        |String(255)|Название файла печатной формы|&mdash;|нет
+|**updated**         |DateTime|Момент последнего обновления|&mdash;|да
 
 #### Связи с другими документами
 
@@ -60,8 +60,8 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID Тех. операции |Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/серии/модификации, которую представляет собой позиция|---|да
-|**quantity**          |Int|Количество товаров данного вида в позиции|---|да
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/серии/модификации, которую представляет собой позиция|&mdash;|да
+|**quantity**          |Int|Количество товаров данного вида в позиции|&mdash;|да
 
 #### Продукты Тех. операции
 Продукты Тех. операции - это список товаров/модификаций/серий, получаемых при производстве согласно тех. карте.
@@ -71,8 +71,8 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID Тех. операции |Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/серии/модификации, которую представляет собой позиция|---|да
-|**quantity**          |Int|Количество товаров данного вида в позиции|---|да
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/серии/модификации, которую представляет собой позиция|&mdash;|да
+|**quantity**          |Int|Количество товаров данного вида в позиции|&mdash;|да
 
 С материалами и продуктами можно работать с помощью [специальных ресурсов для управления позициями Тех. операции](../documents/#dokumenty-teh-operaciq-izmenit-teh-operaciu-materialy-teh-operacii),
 а также в составе отдельной Тех. операции. При работе в составе отдельной Тех. операции,

@@ -13,39 +13,39 @@
 |**updated**            |DateTime|Момент последнего обновления Внутреннего заказа|Только для чтения|да
 |**deleted**            |DateTime|Момент последнего удаления Внутреннего заказа|Только для чтения|да
 |**name**               |String(255)|Наименование Внутреннего заказа|Необходимое при создании|да
-|**description**        |String(4096)|Комментарий Внутреннего заказа|---|нет
+|**description**        |String(4096)|Комментарий Внутреннего заказа|&mdash;|нет
 |**externalCode**       |String(255)|Внешний код Внутреннего заказа|Только для чтения| да
 |**moment**             |DateTime|Дата смены|Только для чтения|да
-|**applicable**         |Boolean|Отметка о проведении|---|да
-|**vatEnabled**         |Boolean|Учитывается ли НДС|---|да
-|**vatIncluded**        |Boolean| Включен ли НДС в цену|---|да
-|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
+|**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да
+|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|да
+|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
 |**sum**                |Int|Сумма Внутреннего заказа в копейках|Только для чтения|да
-|**rate**               |Object|Валюта|---|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
+|**rate**               |Object|Валюта|&mdash;|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
 |**shared**             |Boolean|Общий доступ|Только для чтения|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
-|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|---|да
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Внутреннего заказа|---|нет
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|&mdash;|да
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Внутреннего заказа|&mdash;|нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. |Только для чтения|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**vatSum**                |Float|Сумма включая НДС|Только для чтения|да
 |**positions**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Внутреннего заказа|Только для чтения|да
-|**deliveryPlannedMoment**            |DateTime|Планируемая дата приемки|---|нет
-|**purchaseOrders**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))| Коллекция метаданных на связанные заказы поставщику|---|да
-|**moves**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных на связанные заказы перемещения|---|да
+|**deliveryPlannedMoment**            |DateTime|Планируемая дата приемки|&mdash;|нет
+|**purchaseOrders**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))| Коллекция метаданных на связанные заказы поставщику|&mdash;|да
+|**moves**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных на связанные заказы перемещения|&mdash;|да
 
 ##### Поля при expand'е доп. полей
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**name**            |String(255)|Номер документа|---|нет
-|**moment**          |DateTime|Дата печати|---|да
-|**href**            |URL|Ссылка на файл печатной формы|---|да
-|**fileName**        |String(255)|Название файла печатной формы|---|нет
-|**updated**         |DateTime|Момент последнего обновления|---|да
+|**name**            |String(255)|Номер документа|&mdash;|нет
+|**moment**          |DateTime|Дата печати|&mdash;|да
+|**href**            |URL|Ссылка на файл печатной формы|&mdash;|да
+|**fileName**        |String(255)|Название файла печатной формы|&mdash;|нет
+|**updated**         |DateTime|Момент последнего обновления|&mdash;|да
 
 #### Позиции Внутреннего заказа
 Позиции Внутреннего заказа - это список товаров/услуг/модификаций/серий.
@@ -55,11 +55,11 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID позиции|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|---|да
-|**price**          |Float|Цена товара/услуги в копейках|---|да
-|**vat**        |Int|НДС, которым облагается текущая позиция|---|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|---|да
-|**pack**            |String(255)|Упаковка товара|---|нет
+|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|&mdash;|да
+|**price**          |Float|Цена товара/услуги в копейках|&mdash;|да
+|**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да
+|**pack**            |String(255)|Упаковка товара|&mdash;|нет
 
 С позициями можно работать с помощью [специальных ресурсов для управления позициями Внутреннего заказа](../documents/#dokumenty-vnutrennij-zakaz-pozicii-wnutrennego-zakaza),
 а также в составе отдельного Внутреннего заказа. При работе в составе отдельного Внутреннего заказа,

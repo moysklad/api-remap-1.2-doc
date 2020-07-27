@@ -5,21 +5,21 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Задачи|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Задачи|&mdash;|да
 |**id**                 |UUID|ID Задачи|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи Кассира|Только для чтения|да
 |**author**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Сотрудника создавшего задачу|Только для чтения|да
 |**created**            |DateTime|Момент создания|Только для чтения| да
 |**updated**            |DateTime|Момент последнего обновления Задачи|Только для чтения|да
 |**description**        |String(4096)|Текст задачи|Необходимое при создании|да
-|**dueToDate**            |DateTime|Срок задачи|---|нет
+|**dueToDate**            |DateTime|Срок задачи|&mdash;|нет
 |**assignee**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные ответственного за выполнение задачи|Необходимое при создании|да
-|**done**                 |Boolean|Отметка о выполнении задачи|---|да
+|**done**                 |Boolean|Отметка о выполнении задачи|&mdash;|да
 |**completed**           |DateTime|Время выполнения задачи|Только для чтения|да
 |**implementer**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Сотрудника, выполнившего задачу|Только для чтения|нет
-|**agent**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контрагента или юрлица, связанного с задачей. Задача может быть привязана либо к конрагенту, либо к юрлицу, либо к документу|---|нет
-|**operation**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Документа, связанного с задачей. Задача может быть привязана либо к конрагенту, либо к юрлицу, либо к документу|---|нет
-|**notes**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные комментария к задаче|---|нет
+|**agent**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контрагента или юрлица, связанного с задачей. Задача может быть привязана либо к конрагенту, либо к юрлицу, либо к документу|&mdash;|нет
+|**operation**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Документа, связанного с задачей. Задача может быть привязана либо к конрагенту, либо к юрлицу, либо к документу|&mdash;|нет
+|**notes**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные комментария к задаче|&mdash;|нет
 
 #### Комментарии задачи
 Объект комментария к задаче содержит следующие поля:

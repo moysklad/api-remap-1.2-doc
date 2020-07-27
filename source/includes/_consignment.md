@@ -12,17 +12,17 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Серии|---|да
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Серии|&mdash;|да
 |**id**                |UUID|ID Серии|Только для чтения|да
 |**accountId**         |UUID|ID учетной записи|Только для чтения|да
 |**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да
 |**name**         |String(255)|Наименование Серии. "Собирается" и отображается как "Наименование товара / Метка Серии"|Только для чтения|да
-|**description**        |String(4096)|Описание Серии|---|нет
-|**code**         |String(255)|Код Серии|---|нет
-|**externalCode**         |String(255)|Внешний код Серии|---|да
+|**description**        |String(4096)|Описание Серии|&mdash;|нет
+|**code**         |String(255)|Код Серии|&mdash;|нет
+|**externalCode**         |String(255)|Внешний код Серии|&mdash;|да
 |**label**         |String(255)| Метка Серии|Необходимое при создании|да
-|**barcodes**         |Array(String)|Штрихкоды серии|---|нет
-|**image**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Внешний код Серии|---|нет
+|**barcodes**         |Array(String)|Штрихкоды серии|&mdash;|нет
+|**image**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Внешний код Серии|&mdash;|нет
 |**attributes**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные ссылки или модификации|Необходимое при создании|да
 
 #### Атрибуты вложенных сущностей
@@ -33,8 +33,8 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Серии|---|да
-|**attributes**         |Array(Meta)|Коллекция доп. полей|---|нет
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Серии|&mdash;|да
+|**attributes**         |Array(Meta)|Коллекция доп. полей|&mdash;|нет
 
 ### Получить список Серий 
 Запрос на получение списка всех пользовательских Серий на данной учетной записи.

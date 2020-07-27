@@ -11,23 +11,23 @@
 #### Атрибуты сущности
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Группы товаров|---|да
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Группы товаров|&mdash;|да
 |**id**                |UUID|ID Группы товаров|Только для чтения|да
 |**accountId**         |UUID|ID учетной записи|Только для чтения|да
-|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|---|да
-|**shared**         |Boolean|Общий доступ|---|да
-|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|---|да
+|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|да
+|**shared**         |Boolean|Общий доступ|&mdash;|да
+|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|&mdash;|да
 |**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да
 |**name**         |String(255)|Наименование Группы товаров|Необходимое при создании|да
-|**description**        |String(4096)|Описание Группы товаров|---|нет
-|**code**         |String(255)|Код Группы товаров|---|нет
-|**externalCode**         |String(255)|Внешний код Группы товаров|---|да
+|**description**        |String(4096)|Описание Группы товаров|&mdash;|нет
+|**code**         |String(255)|Код Группы товаров|&mdash;|нет
+|**externalCode**         |String(255)|Внешний код Группы товаров|&mdash;|да
 |**archived**        |Boolean|Добавлена ли Группа товаров в архив|Только для чтения|да
 |**pathName**         |String(unlimited)|Наименование Группы товаров, в которую входит данная Группа товаров|Только для чтения|да
-|**vat**         |Int|НДС %|---|нет
+|**vat**         |Int|НДС %|&mdash;|нет
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
-|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы товаров данной группы товаров|---|нет
-|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-gruppa-towarow-kod-sistemy-nalogooblozheniq)|---|нет
+|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы товаров данной группы товаров|&mdash;|нет
+|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-gruppa-towarow-kod-sistemy-nalogooblozheniq)|&mdash;|нет
 
 ### Код системы налогообложения
 Значения поля taxSystem.
@@ -442,8 +442,8 @@ curl -X POST
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Групп товаров|---|да
-|**attributes**         |Array(Meta)|Коллекция доп. полей|---|нет
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Групп товаров|&mdash;|да
+|**attributes**         |Array(Meta)|Коллекция доп. полей|&mdash;|нет
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 

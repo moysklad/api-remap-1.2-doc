@@ -13,23 +13,23 @@
 #### Атрибуты Сущности
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Модификации|---|да
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Модификации|&mdash;|да
 |**id**                |UUID|ID Модификации|Только для чтения|да
 |**accountId**         |UUID|ID учетной записи|Только для чтения|да
 |**updated**           |DateTime|Момент последнего обновления сущности|Только для чтения|да
-|**name**              |String(255)|Наименование товара с Модификацией|---|да
-|**code**              |String(255)|Код Модификации|---|нет
-|**externalCode**      |String(255)|Внешний код Модификации|---|да
-|**archived**          |Boolean|Добавлен ли товар в архив|---|да
+|**name**              |String(255)|Наименование товара с Модификацией|&mdash;|да
+|**code**              |String(255)|Код Модификации|&mdash;|нет
+|**externalCode**      |String(255)|Внешний код Модификации|&mdash;|да
+|**archived**          |Boolean|Добавлен ли товар в архив|&mdash;|да
 |**characteristics**   |Array(Object)|Характеристики Модификации. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-metadannye-modifikacij-harakteristiki-modifikacii)|Необходимое при создании|да
-|**images**            |Array(Object)|Изображения Модификации. Изображений у Модификации может быть не более 10. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-izobrazhenie-struktura-i-zagruzka)|---|да
-|**minPrice**          |Double|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-minimal-naq-cena)|---|нет
-|**buyPrice**          |Object|Закупочная цена|---|нет
-|**salePrices**        |Array(Object)|Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-ceny-prodazhi)|---|нет
-|**barcodes**          |Array(Object)|Массив штрихкодов модификации. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-shtrih-kody)|---|нет
+|**images**            |Array(Object)|Изображения Модификации. Изображений у Модификации может быть не более 10. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-izobrazhenie-struktura-i-zagruzka)|&mdash;|да
+|**minPrice**          |Double|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-minimal-naq-cena)|&mdash;|нет
+|**buyPrice**          |Object|Закупочная цена|&mdash;|нет
+|**salePrices**        |Array(Object)|Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-ceny-prodazhi)|&mdash;|нет
+|**barcodes**          |Array(Object)|Массив штрихкодов модификации. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-shtrih-kody)|&mdash;|нет
 |**product**           |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные [товара](../dictionaries/#suschnosti-towar), к которому привязана Модификация|Необходимое при создании|да
 |**things**            |Array(String)|Серийные номера|Только для чтения|нет
-|**discountProhibited**|Boolean|Признак запрета скидок|---|да
+|**discountProhibited**|Boolean|Признак запрета скидок|&mdash;|да
 
 #### Атрибуты доступные для сортировки
 
@@ -70,9 +70,9 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные характеристики|---|да
-|**id**                |UUID|ID соответствующей характеристики|---|да
-|**name**                |String(255)|Наименование характеристики|---|да
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные характеристики|&mdash;|да
+|**id**                |UUID|ID соответствующей характеристики|&mdash;|да
+|**name**                |String(255)|Наименование характеристики|&mdash;|да
 |**value**                |String(255)|Значение характеристики|Необходимое при создании|да
 
 Посмотреть все созданные в основном интерфейсе характеристики Модификаций,
@@ -81,19 +81,19 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные |---|да
-|**characteristics**         |Array(Object)|Коллекция всех созданных характеристик Модификаций|---|да
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные |&mdash;|да
+|**characteristics**         |Array(Object)|Коллекция всех созданных характеристик Модификаций|&mdash;|да
 
 Структуры отдельных объектов коллекций:
 
 ###### Характеристики модификации
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные характеристики|---|да
-|**id**                |UUID|ID соответствующей характеристики|---|да
-|**name**                |String(255)|Наименование характеристики|---|да
-|**type**                |String(255)|Тип значения характеристики|---|да
-|**required**        |Boolean|Флаг о том, является ли характеристика обязательной|---|да
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные характеристики|&mdash;|да
+|**id**                |UUID|ID соответствующей характеристики|&mdash;|да
+|**name**                |String(255)|Наименование характеристики|&mdash;|да
+|**type**                |String(255)|Тип значения характеристики|&mdash;|да
+|**required**        |Boolean|Флаг о том, является ли характеристика обязательной|&mdash;|да
 
 ##### Изображение: структура и загрузка.
 При запросе Модификации с изображениями будет выведено json представление этой Модификации, содержащее поле **images**. Данное поле является 
@@ -101,13 +101,13 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |Meta|Метаданные объекта|---|да
-|**title**               |String(255)|Название Изображения|---|да
-|**filename**               |String(255)|Имя файла|---|да
-|**size**               |Int|Размер файла в байтах|---|да
-|**updated**               |DateTime|Время загрузки файла на сервер|---|да
-|**miniature**               |Meta|Метаданные миниатюры изображения|---|да
-|**tiny**               |Meta|Метаданные уменьшенного изображения|---|да
+|**meta**               |Meta|Метаданные объекта|&mdash;|да
+|**title**               |String(255)|Название Изображения|&mdash;|да
+|**filename**               |String(255)|Имя файла|&mdash;|да
+|**size**               |Int|Размер файла в байтах|&mdash;|да
+|**updated**               |DateTime|Время загрузки файла на сервер|&mdash;|да
+|**miniature**               |Meta|Метаданные миниатюры изображения|&mdash;|да
+|**tiny**               |Meta|Метаданные уменьшенного изображения|&mdash;|да
 
 <h4>Загрузка</h4>
 Для загрузки изображений нужно в теле запроса на [создание](../dictionaries/#suschnosti-modifikaciq-sozdat-modifikaciu) или [обновление](../dictionaries/#suschnosti-modifikaciq-izmenit-modifikaciu) модификации
@@ -128,16 +128,16 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
-|**value**   |Float|Значение цены| --- | да
-|**currency**|Meta| Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| --- | да
-|**priceType**   |Object|Тип цены| --- | да
+|**value**   |Float|Значение цены| &mdash; | да
+|**currency**|Meta| Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
+|**priceType**   |Object|Тип цены| &mdash; | да
 
 ##### Минимальная цена
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
-**value**   |Float|Значение цены| --- | да
-**currency**|Meta|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| --- | да
+**value**   |Float|Значение цены| &mdash; | да
+**currency**|Meta|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
 
 ### Получить список Модификаций 
 Запрос на получение списка всех Модификаций на данной учетной записи.
@@ -324,8 +324,8 @@ curl -X GET
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**id**     |UUID| ID характеристики|---|нет
-| **name**  |String(255)|Наименование характеристики|---|нет
+|**id**     |UUID| ID характеристики|&mdash;|нет
+| **name**  |String(255)|Наименование характеристики|&mdash;|нет
 | **value** |String(255)|Значение характеристики|Необходимое при создании|да
 
 Если поле **id** не указано у какого-либо объекта характеристики, производится поиск соответствующей этому объекту
@@ -1279,8 +1279,8 @@ curl -X GET
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**id** |UUID| ID характеристики|---|нет
-| **name**  |String(255)|Наименование характеристики|---|нет
+|**id** |UUID| ID характеристики|&mdash;|нет
+| **name**  |String(255)|Наименование характеристики|&mdash;|нет
 | **value** |String(255)|Значение характеристики|Необходимое при создании|да
 
 Если поле **id** не указано у какого-либо объекта характеристики, производится поиск соответствующей этому объекту

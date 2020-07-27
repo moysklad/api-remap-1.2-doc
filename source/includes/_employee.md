@@ -13,31 +13,31 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Сотрудника|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Сотрудника|&mdash;|да
 |**id**                 |UUID|ID Сотрудника|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
-|**shared**             |Boolean|Общий доступ|---|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**updated**            |DateTime|Момент последнего обновления Сотрудника|Только для чтения|да
 |**name**               |String(255)|Наименование Сотрудника|Только для чтения|да
-|**description**        |String(4096)|Комментарий к Сотруднику|---|нет
+|**description**        |String(4096)|Комментарий к Сотруднику|&mdash;|нет
 |**externalCode**       |String(255)|Внешний код Сотрудника|Только для чтения| да
-|**archived**           |Boolean|Добавлен ли Сотрудник в архив|---| да
+|**archived**           |Boolean|Добавлен ли Сотрудник в архив|&mdash;| да
 |**created**            |DateTime|Момент создания Сотрудника|Только для чтения| да
 |**uid**                |String(255)|Логин Сотрудника|Только для чтения| нет
-|**email**              |String(255)|Электронная почта сотрудника|---| нет
-|**phone**              |String(255)|Телефон сотрудника|---| нет
-|**firstName**          |String(255)|Имя|---| нет
-|**middleName**         |String(255)|Отчество|---|нет
+|**email**              |String(255)|Электронная почта сотрудника|&mdash;| нет
+|**phone**              |String(255)|Телефон сотрудника|&mdash;| нет
+|**firstName**          |String(255)|Имя|&mdash;| нет
+|**middleName**         |String(255)|Отчество|&mdash;|нет
 |**lastName**           |String(255)|Фамилия|Необходимое|да
 |**fullName**           |String(255)|Имя Отчество Фамилия|Только для чтения| нет
 |**shortFio**           |String(255)|Краткое ФИО|Только для чтения| нет
 |**cashiers**           |Array(Object)|Массив кассиров.  [Подробнее тут](../dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-kassir)|Только для чтения| нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Дополнительные поля Сотрудника|---| нет
-|**image**              |Object|Фотография сотрудника.  [Подробнее тут](../dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-fotografiq-sotrudnika-struktura-i-zagruzka)|---| нет
-|**inn**                |String(255)|ИНН сотрудника (в формате ИНН физического лица)|---| нет
-|**position**           |String(255)|Должность сотрудника |---| нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Дополнительные поля Сотрудника|&mdash;| нет
+|**image**              |Object|Фотография сотрудника.  [Подробнее тут](../dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-fotografiq-sotrudnika-struktura-i-zagruzka)|&mdash;| нет
+|**inn**                |String(255)|ИНН сотрудника (в формате ИНН физического лица)|&mdash;| нет
+|**position**           |String(255)|Должность сотрудника |&mdash;| нет
 
 Поля **owner**, **group** и **archived** может изменять только администратор. Поле **email** может изменять администратор и сам сотрудник.
 
@@ -56,13 +56,13 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |Meta|Метаданные объекта|---|да
-|**title**               |String(255)|Название Изображения|---|да
-|**filename**               |String(255)|Имя файла|---|да
-|**size**               |Int|Размер файла в байтах|---|да
-|**updated**               |DateTime|Время последнего изменения|---|да
-|**miniature**               |Meta|Метаданные миниатюры изображения|---|да
-|**tiny**               |Meta|Метаданные уменьшенного изображения|---|да
+|**meta**               |Meta|Метаданные объекта|&mdash;|да
+|**title**               |String(255)|Название Изображения|&mdash;|да
+|**filename**               |String(255)|Имя файла|&mdash;|да
+|**size**               |Int|Размер файла в байтах|&mdash;|да
+|**updated**               |DateTime|Время последнего изменения|&mdash;|да
+|**miniature**               |Meta|Метаданные миниатюры изображения|&mdash;|да
+|**tiny**               |Meta|Метаданные уменьшенного изображения|&mdash;|да
 
 #### Загрузка
 Для загрузки фотографии сотрудника необходимо сформировать запрос на [обновление](../dictionaries/#suschnosti-sotrudnik-izmenit-sotrudnika) сотрудника (PUT) и в теле запроса

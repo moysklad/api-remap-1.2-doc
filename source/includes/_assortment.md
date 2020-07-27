@@ -116,26 +116,26 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Настроек справочника|---|да
-|**uniqueCodeRules**  |Object|Настройки уникальности кода для сущностей справочника. [Подробнее тут](../dictionaries/#suschnosti-assortiment-udalit-sobytie-atributy-wlozhennyh-suschnostej-nastrojki-unikal-nosti-koda-dlq-suschnostej-sprawochnika) |---|да
-|**barcodeRules**  |Object|Настройки правил штрихкодов для сущностей справочника. [Подробнее тут](../dictionaries/#suschnosti-assortiment-udalit-sobytie-atributy-wlozhennyh-suschnostej-nastrojki-prawil-shtrihkodow-dlq-suschnostej-sprawochnika) |---|да
-|**createdShared**           |Boolean|Создавать новые документы с меткой «Общий»|---| да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Настроек справочника|&mdash;|да
+|**uniqueCodeRules**  |Object|Настройки уникальности кода для сущностей справочника. [Подробнее тут](../dictionaries/#suschnosti-assortiment-udalit-sobytie-atributy-wlozhennyh-suschnostej-nastrojki-unikal-nosti-koda-dlq-suschnostej-sprawochnika) |&mdash;|да
+|**barcodeRules**  |Object|Настройки правил штрихкодов для сущностей справочника. [Подробнее тут](../dictionaries/#suschnosti-assortiment-udalit-sobytie-atributy-wlozhennyh-suschnostej-nastrojki-prawil-shtrihkodow-dlq-suschnostej-sprawochnika) |&mdash;|да
+|**createdShared**           |Boolean|Создавать новые документы с меткой «Общий»|&mdash;| да
 
 #### Атрибуты вложенных сущностей
 ##### Настройки уникальности кода для сущностей справочника
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
-|**checkUniqueCode**          |Boolean|Проверка уникальности кода сущностей справочника товаров|---| да
-|**fillUniqueCode**         |Boolean|Устанавливать уникальный код при создании создании сущностей справочника товаров|---| да
+|**checkUniqueCode**          |Boolean|Проверка уникальности кода сущностей справочника товаров|&mdash;| да
+|**fillUniqueCode**         |Boolean|Устанавливать уникальный код при создании создании сущностей справочника товаров|&mdash;| да
 
 ##### Настройки правил штрихкодов для сущностей справочника
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
-|**fillEAN13Barcode**          |Boolean|Автоматически создавать штрихкод EAN13 для новых товаров, комплектов, модификаций и услуг|---| да
-|**weightBarcode**         |Boolean| Использовать префиксы штрихкодов для весовых товаров|---| да
-|**weightBarcodePrefix**         |Int|Префикс штрихкодов для весовых товаров. Возможные значения: число формата X или XX|---| да
+|**fillEAN13Barcode**          |Boolean|Автоматически создавать штрихкод EAN13 для новых товаров, комплектов, модификаций и услуг|&mdash;| да
+|**weightBarcode**         |Boolean| Использовать префиксы штрихкодов для весовых товаров|&mdash;| да
+|**weightBarcodePrefix**         |Int|Префикс штрихкодов для весовых товаров. Возможные значения: число формата X или XX|&mdash;| да
 
 ### Получить Ассортимент
 

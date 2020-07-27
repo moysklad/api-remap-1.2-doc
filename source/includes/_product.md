@@ -15,48 +15,48 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросее | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Товара|---|да
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Товара|&mdash;|да
 |**id**                |UUID|ID Товара|Только для чтения|да
 |**accountId**         |UUID|ID учетной записи|Только для чтения|да
-|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|---|да
-|**shared**         |Boolean|Общий доступ|---|да
-|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|---|да
+|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|да
+|**shared**         |Boolean|Общий доступ|&mdash;|да
+|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|&mdash;|да
 |**syncId**                |UUID|ID синхронизации|После заполнения недоступно для изменения|нет
 |**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да
 |**name**         |String(255)|Наименование Товара|Необходимое при создании|да
-|**description**        |String(4096)|Описание Товара|---|нет
-|**code**         |String(255)|Код Товара|---|нет
-|**externalCode**         |String(255)|Внешний код Товара|---|да
-|**archived**        |Boolean|Добавлен ли Товар в архив|---|да
+|**description**        |String(4096)|Описание Товара|&mdash;|нет
+|**code**         |String(255)|Код Товара|&mdash;|нет
+|**externalCode**         |String(255)|Внешний код Товара|&mdash;|да
+|**archived**        |Boolean|Добавлен ли Товар в архив|&mdash;|да
 |**pathName**         |String(unlimited)|Наименование группы, в которую входит Товар|Только для чтения|да
-|**vat**         |Int|НДС %|---|нет
+|**vat**         |Int|НДС %|&mdash;|нет
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
-|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Товара|---|нет
-|**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|---|нет
-|**images**       |Array(Object)|Изображения Комплекта. Изображений у Модификации может быть не более 10. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-izobrazhenie-struktura-i-zagruzka)|---|нет
-|**minPrice**         |Double|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-minimal-naq-cena)|---|нет
-|**salePrices**         |Array(Object)|Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-ceny-prodazhi)|---|нет
-|**buyPrice**         |Array(Object)|Закупочная цена. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-zakupochnaq-cena)|---|нет
-|**supplier**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента-поставщика|---|нет
-|**attributes**         |Array(Meta)|Коллекция доп. полей|---|нет
-|**country**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Страны|---|нет
-|**article**         |String(255)|Артикул|---|нет
-|**weight**         |Int|Вес|---|нет
-|**volume**         |Int|Объем|---|нет
-|**packs**         |Array(Object)|Упаковки Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)|---|нет
-|**alcoholic**         |Object|Объект, содержащий поля алкогольной продукции. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-ob-ekt-soderzhaschij-polq-alkogol-noj-produkcii)|---|нет
+|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Товара|&mdash;|нет
+|**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет
+|**images**       |Array(Object)|Изображения Комплекта. Изображений у Модификации может быть не более 10. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-izobrazhenie-struktura-i-zagruzka)|&mdash;|нет
+|**minPrice**         |Double|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-minimal-naq-cena)|&mdash;|нет
+|**salePrices**         |Array(Object)|Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-ceny-prodazhi)|&mdash;|нет
+|**buyPrice**         |Array(Object)|Закупочная цена. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-zakupochnaq-cena)|&mdash;|нет
+|**supplier**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента-поставщика|&mdash;|нет
+|**attributes**         |Array(Meta)|Коллекция доп. полей|&mdash;|нет
+|**country**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Страны|&mdash;|нет
+|**article**         |String(255)|Артикул|&mdash;|нет
+|**weight**         |Int|Вес|&mdash;|нет
+|**volume**         |Int|Объем|&mdash;|нет
+|**packs**         |Array(Object)|Упаковки Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)|&mdash;|нет
+|**alcoholic**         |Object|Объект, содержащий поля алкогольной продукции. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-ob-ekt-soderzhaschij-polq-alkogol-noj-produkcii)|&mdash;|нет
 |**variantsCount**         |Int|Количество модификаций у данного товара|Только для чтения|да
-|**minimumBalance**         |Int|Неснижаемый остаток|---|да
-|**isSerialTrackable**         |Boolean|Учет по серийным номерам. Не может быть указан вместе с **alcoholic** и **weighed**|---|нет
-|**things**       |Array(String)|Серийные номера|---|нет
-|**barcodes**         |Array(Object)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-shtrihkody)|---|нет
-|**discountProhibited**        |Boolean|Признак запрета скидок|---|да
-|**tnved**         |String(255)|Код ТН ВЭД|---|нет
-|**trackingType**         |Enum|Тип маркируемой продукции. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-tip-markiruemoj-produkcii)|---|нет
-|**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-priznak-predmeta-rascheta)|---|нет
-|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|---|нет
-|**ppeType**        |Enum|Код вида номенклатурной классификации медицинских средств индивидуальной защиты (EAN-13). [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-wida-nomenklaturnoj-klassifikacii-medicinskih-sredstw-indiwidual-noj-zaschity)|---|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|нет|
+|**minimumBalance**         |Int|Неснижаемый остаток|&mdash;|да
+|**isSerialTrackable**         |Boolean|Учет по серийным номерам. Не может быть указан вместе с **alcoholic** и **weighed**|&mdash;|нет
+|**things**       |Array(String)|Серийные номера|&mdash;|нет
+|**barcodes**         |Array(Object)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-shtrihkody)|&mdash;|нет
+|**discountProhibited**        |Boolean|Признак запрета скидок|&mdash;|да
+|**tnved**         |String(255)|Код ТН ВЭД|&mdash;|нет
+|**trackingType**         |Enum|Тип маркируемой продукции. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-tip-markiruemoj-produkcii)|&mdash;|нет
+|**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-priznak-predmeta-rascheta)|&mdash;|нет
+|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет
+|**ppeType**        |Enum|Код вида номенклатурной классификации медицинских средств индивидуальной защиты (EAN-13). [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-wida-nomenklaturnoj-klassifikacii-medicinskih-sredstw-indiwidual-noj-zaschity)|&mdash;|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|нет|
 
 Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить
 с помощью обновления атрибута **productFolder**.
@@ -152,9 +152,9 @@
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:---------
 |**id**             |UUID|ID упаковки товара|Только для чтения|да
-|**uom**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные единиц измерения|---|да
+|**uom**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные единиц измерения|&mdash;|да
 |**quantity**            |Int|Количество Товаров в упаковке данного вида|Необходимое при создании|да
-|**barcodes**         |Array(String)|Массив штрихкодов упаковок товаров. Данный массив может содержать не более одного штрихкода. Если штрихкод в массиве отсутствует, то данное поле не выводится|---|нет
+|**barcodes**         |Array(String)|Массив штрихкодов упаковок товаров. Данный массив может содержать не более одного штрихкода. Если штрихкод в массиве отсутствует, то данное поле не выводится|&mdash;|нет
 
 В версии API 1.2 был удален отдельный ресурс для работы с упаковками товаров. Теперь упаковки - вложенная коллекция.
 Для того, чтобы создать новую упаковку для данного товара, нужно в запросе на обновление товара указать ее как элемент
@@ -207,16 +207,16 @@
 
  Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**excise**              |Boolean|Содержит акцизную марку|---|нет
-|**type**              |Int|Код вида продукции|---|нет
-|**strength**              |Float| Крепость|---|нет
-|**volume**              |Float|Объём тары|---|нет
+|**excise**              |Boolean|Содержит акцизную марку|&mdash;|нет
+|**type**              |Int|Код вида продукции|&mdash;|нет
+|**strength**              |Float| Крепость|&mdash;|нет
+|**volume**              |Float|Объём тары|&mdash;|нет
 
 ##### Поставщик Товара:
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
-| **meta**  |Meta| Метаданные, содержащие ссылку на группу поставщика.|---| да
+| **meta**  |Meta| Метаданные, содержащие ссылку на группу поставщика.|&mdash;| да
 
 Тип поставщика - Контрагент. Описание сущности Контрагент вы можете посмотреть [здесь](../dictionaries/#suschnosti-kontragent)
 
@@ -224,24 +224,24 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
-|**value**   |Float|Значение цены| --- | да
-|**currency**|Meta| Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| --- | да
-|**priceType**   |Object|Тип цены| --- | да
+|**value**   |Float|Значение цены| &mdash; | да
+|**currency**|Meta| Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
+|**priceType**   |Object|Тип цены| &mdash; | да
 
 
 ##### Закупочная цена
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
-**value**   |Float|Значение цены| --- | да
-**currency**|Meta|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| --- | да
+**value**   |Float|Значение цены| &mdash; | да
+**currency**|Meta|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
 
 ##### Минимальная цена
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
-**value**   |Float|Значение цены| --- | да
-**currency**|Meta|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| --- | да
+**value**   |Float|Значение цены| &mdash; | да
+**currency**|Meta|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
 
 ##### Изображение: структура и загрузка.
 При запросе Товара с изображениями будет выведено json представление этого Товара, содержащее поле **images**. Данное поле является 
@@ -249,13 +249,13 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |Meta|Метаданные объекта|---|да
-|**title**               |String(255)|Название Изображения|---|да
-|**filename**               |String(255)|Имя файла|---|да
-|**size**               |Int|Размер файла в байтах|---|да
-|**updated**               |DateTime|Время загрузки файла на сервер|---|да
-|**miniature**               |Meta|Метаданные миниатюры изображения|---|да
-|**tiny**               |Meta|Метаданные уменьшенного изображения|---|да
+|**meta**               |Meta|Метаданные объекта|&mdash;|да
+|**title**               |String(255)|Название Изображения|&mdash;|да
+|**filename**               |String(255)|Имя файла|&mdash;|да
+|**size**               |Int|Размер файла в байтах|&mdash;|да
+|**updated**               |DateTime|Время загрузки файла на сервер|&mdash;|да
+|**miniature**               |Meta|Метаданные миниатюры изображения|&mdash;|да
+|**tiny**               |Meta|Метаданные уменьшенного изображения|&mdash;|да
 
 <h4>Загрузка</h4>
 Для загрузки изображений нужно в теле запроса на [создание](../dictionaries/#suschnosti-towar-sozdat-towar) или [обновление](../dictionaries/#suschnosti-towar-izmenit-towar) товара
@@ -275,7 +275,7 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
-| **meta**  |Meta| Метаданные, содержащие ссылку на группу Товара.|---| да
+| **meta**  |Meta| Метаданные, содержащие ссылку на группу Товара.|&mdash;| да
 
 Описание сущности Группа вы можете посмотреть [здесь](../dictionaries/#suschnosti-gruppa-towarow)
 Обновление этого атрибута также обновит атрибут **pathName**.
@@ -284,7 +284,7 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
-| **weighed**  |Boolean|Поле, показывающее является ли товар весовым. Если его значение false - поле не отображается.|---| да
+| **weighed**  |Boolean|Поле, показывающее является ли товар весовым. Если его значение false - поле не отображается.|&mdash;| да
 
 Если в основном интерфейсе у товара стоит отметка об учете его по серийным номерам, выставить значение данного поля на true невозможно.
 

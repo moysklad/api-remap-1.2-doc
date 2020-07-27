@@ -5,11 +5,11 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта. Содержит тип конкретного уведомления|---да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта. Содержит тип конкретного уведомления|&mdash;да
 |**id**                 |UUID|ID Уведомления|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**created**            |DateTime|Дата и время формирования Уведомления|Только для чтения|да
-|**read**        |Boolean|Признак того, было ли Уведомление прочитано|---|да
+|**read**        |Boolean|Признак того, было ли Уведомление прочитано|&mdash;|да
 |**title**       |String(255)|Краткий текст уведомления|Только для чтения| да
 |**description**       |String(4096)|Описание уведомления|Только для чтения| да
 
@@ -342,9 +342,9 @@ NotificationExportCompleted - завершение экспорта
 |**read**        |Boolean|Признак того, было ли Уведомление прочитано|Необходимое при создании|да
 |**title**       |String(255)|Краткий текст уведомления|Необходимое при создании| да
 |**description**       |String(4096)|Описание уведомления|Необходимое при создании| да
-|**message**      |String(255)|Сообщение о завершении экспорта|---|нет
-|**errorMessage**      |String(255)|Сообщение об ошибке|---|нет
-|**createdDocumentName**      |String(255)|Имя экспортированного документа|---|нет
+|**message**      |String(255)|Сообщение о завершении экспорта|&mdash;|нет
+|**errorMessage**      |String(255)|Сообщение об ошибке|&mdash;|нет
+|**createdDocumentName**      |String(255)|Имя экспортированного документа|&mdash;|нет
 |**taskType**                 |Object|[Тип экспорта](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-vozmozhnye-znacheniq-tipa-axporta)|Необходимое при создании|да
 |**taskState**                 |Object|Статус завершения. Может принимать значения `completed`, `interrupted`, `interrupted_by_user`, `interrupted_by_timeout`, `interrupted_by_system`|Необходимое при создании|да
 
@@ -398,9 +398,9 @@ NotificationImportCompleted - завершение импорта
 |**read**        |Boolean|Признак того, было ли Уведомление прочитано|Необходимое при создании|да
 |**title**       |String(255)|Краткий текст уведомления|Необходимое при создании| да
 |**description**       |String(4096)|Описание уведомления|Необходимое при создании| да
-|**message**      |String(255)|Сообщение о завершении экспорта|---|нет
-|**errorMessage**      |String(255)|Сообщение об ошибке|---|нет
-|**createdDocumentName**      |String(255)|Имя экспортированного документа|---|нет
+|**message**      |String(255)|Сообщение о завершении экспорта|&mdash;|нет
+|**errorMessage**      |String(255)|Сообщение об ошибке|&mdash;|нет
+|**createdDocumentName**      |String(255)|Имя экспортированного документа|&mdash;|нет
 |**taskType**                 |Object|[Тип экспорта](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-vozmozhnye-znacheniq-tipa-axporta)|Необходимое при создании|да
 |**taskState**                 |Object|Статус завершения. Может принимать значения `completed`, `interrupted`, `interrupted_by_user`, `interrupted_by_timeout`, `interrupted_by_system`|Необходимое при создании|да
 
@@ -518,9 +518,9 @@ NotificationInvoiceOutOverdue - просрочен счет покупателя
 |**title**       |String(255)|Краткий текст уведомления|Необходимое при создании| да
 |**description**       |String(4096)|Описание уведомления|Необходимое при создании| да
 |**invoice**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета|Необходимое при создании|да
-|**paymentPlannedMoment**           |DateTime|Запланированная дата оплаты|---|да
-|**sum**           |Int|Сумма счета|---|да
-|**agentName*           |String(255)|Имя контрагента|---|да
+|**paymentPlannedMoment**           |DateTime|Запланированная дата оплаты|&mdash;|да
+|**sum**           |Int|Сумма счета|&mdash;|да
+|**agentName*           |String(255)|Имя контрагента|&mdash;|да
 
 **Параметры**
 
@@ -583,9 +583,9 @@ NotificationOrderNew - новый заказ
 |**title**       |String(255)|Краткий текст уведомления|Необходимое при создании| да
 |**description**       |String(4096)|Описание уведомления|Необходимое при создании| да
 |**order**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные заказа|Необходимое при создании|да
-|**deliveryPlannedMoment**           |DateTime|Планируемое время отгрузки|---|да
-|**sum**           |Int|Сумма счета|---|да
-|**agentName*           |String(255)|Имя контрагента|---|да
+|**deliveryPlannedMoment**           |DateTime|Планируемое время отгрузки|&mdash;|да
+|**sum**           |Int|Сумма счета|&mdash;|да
+|**agentName*           |String(255)|Имя контрагента|&mdash;|да
 
 **Параметры**
 
@@ -647,9 +647,9 @@ NotificationOrderOverdue - просроченный заказ
 |**title**       |String(255)|Краткий текст уведомления|Необходимое при создании| да
 |**description**       |String(4096)|Описание уведомления|Необходимое при создании| да
 |**order**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные заказа|Необходимое при создании|да
-|**deliveryPlannedMoment**           |DateTime|Планируемое время отгрузки|---|да
-|**sum**           |Int|Сумма счета|---|да
-|**agentName*           |String(255)|Имя контрагента|---|да
+|**deliveryPlannedMoment**           |DateTime|Планируемое время отгрузки|&mdash;|да
+|**sum**           |Int|Сумма счета|&mdash;|да
+|**agentName*           |String(255)|Имя контрагента|&mdash;|да
 
 **Параметры**
 
@@ -817,18 +817,18 @@ NotificationTaskAssigned - задача назначена
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
 
 ##### Задача
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
-|**deadline**                |DateTime|Планируемая дата завершения задачи|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
+|**deadline**                |DateTime|Планируемая дата завершения задачи|&mdash;|да
 
 
 **Параметры**
@@ -906,18 +906,18 @@ NotificationTaskUnassigned - задача снята
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
 
 ##### Задача
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
-|**deadline**                |DateTime|Планируемая дата завершения задачи|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
+|**deadline**                |DateTime|Планируемая дата завершения задачи|&mdash;|да
 
 **Параметры**
 
@@ -996,28 +996,28 @@ NotificationTaskChanged - задача изменена
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
 
 ##### Измененные поля
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**description**               |String(255)|Изменение описания задачи в [формате изменения поля](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)|---|да
-|**deadline**              |String(255)|Изменение планируемой даты завершения задачи в [формате изменения поля](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)|---|да
-|**agentLink**               |String(255)|Изменение контрагента в [формате изменения поля](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)|---|да
-|**documentLink**               |String(255)|Изменение связанного документа в [формате изменения поля](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)|---|да
-|**assignee**              |String(255)|Изменение исполнителя в [формате изменения поля](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)|---|да
+|**description**               |String(255)|Изменение описания задачи в [формате изменения поля](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)|&mdash;|да
+|**deadline**              |String(255)|Изменение планируемой даты завершения задачи в [формате изменения поля](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)|&mdash;|да
+|**agentLink**               |String(255)|Изменение контрагента в [формате изменения поля](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)|&mdash;|да
+|**documentLink**               |String(255)|Изменение связанного документа в [формате изменения поля](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)|&mdash;|да
+|**assignee**              |String(255)|Изменение исполнителя в [формате изменения поля](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)|&mdash;|да
 
 ##### Задача
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
-|**deadline**                |DateTime|Планируемая дата завершения задачи|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
+|**deadline**                |DateTime|Планируемая дата завершения задачи|&mdash;|да
 
 **Параметры**
 
@@ -1101,18 +1101,18 @@ NotificationTaskCompleted - задача выполнена
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
 
 ##### Задача
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
-|**deadline**                |DateTime|Планируемая дата завершения задачи|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
+|**deadline**                |DateTime|Планируемая дата завершения задачи|&mdash;|да
 
 **Параметры**
 
@@ -1190,15 +1190,15 @@ NotificationTaskDeleted - задача удалена
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
 
 ##### Задача
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**name**               |String(255)|Наименование Контрагента|---|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
 
 **Параметры**
 
@@ -1267,9 +1267,9 @@ NotificationTaskOverdue - задача просрочена
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
 
 **Параметры**
 
@@ -1337,18 +1337,18 @@ NotificationTaskReopened - задача переоткрыта
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
 
 ##### Задача
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
-|**deadline**                |DateTime|Планируемая дата завершения задачи|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
+|**deadline**                |DateTime|Планируемая дата завершения задачи|&mdash;|да
 
 **Параметры**
 
@@ -1427,18 +1427,18 @@ NotificationTaskNewComment - новый комментарий к задаче
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
 
 ##### Задача
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
-|**deadline**                |DateTime|Планируемая дата завершения задачи|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
+|**deadline**                |DateTime|Планируемая дата завершения задачи|&mdash;|да
 
 **Параметры**
 
@@ -1520,18 +1520,18 @@ NotificationTaskCommentChanged - изменен комментарий к зад
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
 
 ##### Задача
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
-|**deadline**                |DateTime|Планируемая дата завершения задачи|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
+|**deadline**                |DateTime|Планируемая дата завершения задачи|&mdash;|да
 
 **Параметры**
 
@@ -1616,18 +1616,18 @@ NotificationTaskCommentDeleted - удален комментарий к зада
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
 
 ##### Задача
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|---|да
-|**id**                 |UUID|ID Уведомления|---|да
-|**name**               |String(255)|Наименование Контрагента|---|да
-|**deadline**                |DateTime|Планируемая дата завершения задачи|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**id**                 |UUID|ID Уведомления|&mdash;|да
+|**name**               |String(255)|Наименование Контрагента|&mdash;|да
+|**deadline**                |DateTime|Планируемая дата завершения задачи|&mdash;|да
 
 **Параметры**
 

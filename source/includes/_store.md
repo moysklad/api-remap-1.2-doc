@@ -12,37 +12,37 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Склада|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Склада|&mdash;|да
 |**id**                 |UUID|ID Склада|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
-|**shared**             |Boolean|Общий доступ|---|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**updated**            |DateTime|Момент последнего обновления Склада|Только для чтения|да
 |**name**               |String(255)|Наименование Склада|Необходимое при создании|да
-|**description**        |String(4096)|Комментарий к Складу|---|нет
-|**code**               |String(255)|Код Склада---| нет
+|**description**        |String(4096)|Комментарий к Складу|&mdash;|нет
+|**code**               |String(255)|Код Склада&mdash;| нет
 |**externalCode**       |String(255)|Внешний код Склада|Только для чтения| да
-|**archived**           |Boolean|Добавлен ли Склад в архив|---| да
-|**address**            |String(255)| Адрес склада|---|нет
-|**addressFull**        |Object|Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|---|нет
-|**parent**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Метаданные родительского склада (Группы)|---|нет
-|**pathName**            |String(unlimited)| Группа Склада|---|да
-|**attributes**            |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных дополнительных полей склада|---|нет
+|**archived**           |Boolean|Добавлен ли Склад в архив|&mdash;| да
+|**address**            |String(255)| Адрес склада|&mdash;|нет
+|**addressFull**        |Object|Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|&mdash;|нет
+|**parent**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Метаданные родительского склада (Группы)|&mdash;|нет
+|**pathName**            |String(unlimited)| Группа Склада|&mdash;|да
+|**attributes**            |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных дополнительных полей склада|&mdash;|нет
 
 #### Аттрибуты сущности Адрес
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
-|**postalCode**      |String(6)|Почтовый индекс|---|нет
-|**country**      |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные страны|---|нет
-|**region**      |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные региона|---|нет
-|**city**      |String(255)|Город|---|нет
-|**street**      |String(255)|Улица|---|нет
-|**house**      |String(30)|Дом|---|да
-|**apartment**      |String(30)|Квартира|---|нет
-|**addInfo**      |String(255)|Другое|---|нет
-|**comment**      |String(255)|Комментарий|---|нет
+|**postalCode**      |String(6)|Почтовый индекс|&mdash;|нет
+|**country**      |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные страны|&mdash;|нет
+|**region**      |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные региона|&mdash;|нет
+|**city**      |String(255)|Город|&mdash;|нет
+|**street**      |String(255)|Улица|&mdash;|нет
+|**house**      |String(30)|Дом|&mdash;|да
+|**apartment**      |String(30)|Квартира|&mdash;|нет
+|**addInfo**      |String(255)|Другое|&mdash;|нет
+|**comment**      |String(255)|Комментарий|&mdash;|нет
 
 Строка адреса является конкатенацией полей структурированного адреса в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
 При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.

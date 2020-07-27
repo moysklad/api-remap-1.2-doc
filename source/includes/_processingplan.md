@@ -6,19 +6,19 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Тех. карты|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Тех. карты|&mdash;|да
 |**id**                 |UUID|ID Тех. карты|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**updated**            |DateTime|Момент последнего обновления Тех. карты|Только для чтения|да
 |**deleted**            |DateTime|Момент последнего удаления Тех. карты|Только для чтения|нет
 |**name**               |String(255)|Наименование Тех. карты|Необходимое при создании|да
-|**externalCode**       |String(255)|Внешний код Тех. карты|---| да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
-|**shared**             |Boolean|Общий доступ|---|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
+|**externalCode**       |String(255)|Внешний код Тех. карты|&mdash;| да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**pathName**       |String(unlimited)|Наименование группы, в которую входит Тех. карта|Только для чтения| да
-|**parent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Тех. карты|---|да
-|**cost**                |Int| Стоимость производства|---|нет
+|**parent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Тех. карты|&mdash;|да
+|**cost**                |Int| Стоимость производства|&mdash;|нет
 |**materials**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных материалов Тех. карты|Необходимое при создании|да
 |**products**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных готовых продуктов Тех. карты|Необходимое при создании|да
 
@@ -30,8 +30,8 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID Материала|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**products**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара позиции|---|нет
-|**quantity**               |Int|Количество товаров данного вида в позиции|---|да
+|**products**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара позиции|&mdash;|нет
+|**quantity**               |Int|Количество товаров данного вида в позиции|&mdash;|да
 
 #### Продукты Тех. карты
 Продукты Тех. карты - это список товаров, получаемых при производстве.
@@ -41,8 +41,8 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID Продукта|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**products**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара позиции|---|нет
-|**quantity**               |Int|Количество товаров данного вида в позиции|---|да
+|**products**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара позиции|&mdash;|нет
+|**quantity**               |Int|Количество товаров данного вида в позиции|&mdash;|да
 
 С материалами и продуктами можно работать с помощью [специальных ресурсов для управления позициями Тех. карты](../documents/#dokumenty-teh-karta-materialy-teh-karty),
 а также в составе отдельной Тех. карты. При работе в составе отдельной Тех. карты,
