@@ -106,7 +106,7 @@
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
 **value**   |Float|Значение цены| &mdash; | да
-**currency**|Meta|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
+**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
 
 ##### Минимальная цена
 Структура объекта minPrice.
@@ -114,7 +114,7 @@
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
 **value**   |Float|Значение цены| &mdash; | да
-**currency**|Meta|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
+**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
 
 #### Компоненты Комплекта
 Компоненты Комплекта - это список товаров/услуг/модификаций, который входят в состав комплекта. Компонентов у комплекта может быть от 1 до 50.
@@ -171,13 +171,13 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |Meta|Метаданные объекта|&mdash;|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
 |**title**               |String(255)|Название Изображения|&mdash;|да
 |**filename**               |String(255)|Имя файла|&mdash;|да
 |**size**               |Int|Размер файла в байтах|&mdash;|да
 |**updated**               |DateTime|Время загрузки файла на сервер|&mdash;|да
-|**miniature**               |Meta|Метаданные миниатюры изображения|&mdash;|да
-|**tiny**               |Meta|Метаданные уменьшенного изображения|&mdash;|да
+|**miniature**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные миниатюры изображения|&mdash;|да
+|**tiny**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные уменьшенного изображения|&mdash;|да
 
 <h4>Загрузка</h4>
 Для загрузки изображения нужно в теле запроса на [создание](../dictionaries/#suschnosti-komplekt-sozdat-komplekt) или [обновление](../dictionaries/#suschnosti-komplekt-izmenit-komplekt) Комплекта

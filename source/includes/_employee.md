@@ -56,13 +56,13 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |Meta|Метаданные объекта|&mdash;|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
 |**title**               |String(255)|Название Изображения|&mdash;|да
 |**filename**               |String(255)|Имя файла|&mdash;|да
 |**size**               |Int|Размер файла в байтах|&mdash;|да
 |**updated**               |DateTime|Время последнего изменения|&mdash;|да
-|**miniature**               |Meta|Метаданные миниатюры изображения|&mdash;|да
-|**tiny**               |Meta|Метаданные уменьшенного изображения|&mdash;|да
+|**miniature**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные миниатюры изображения|&mdash;|да
+|**tiny**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные уменьшенного изображения|&mdash;|да
 
 #### Загрузка
 Для загрузки фотографии сотрудника необходимо сформировать запрос на [обновление](../dictionaries/#suschnosti-sotrudnik-izmenit-sotrudnika) сотрудника (PUT) и в теле запроса
@@ -407,7 +407,7 @@ curl -X POST
 
 | Название  | Тип | Описание                    |
 | --------- |:----|:----------------------------|
-|**meta** |Meta| Ссылка на метаданные Сотрудников
+|**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Ссылка на метаданные Сотрудников
 |**attributes** |Array(Meta)| Массив объектов доп. полей Сотрудников в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 |**createShared** |Boolean| Создавать новых Сотрудников с меткой "Общий"
 

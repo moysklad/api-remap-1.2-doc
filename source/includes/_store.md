@@ -783,7 +783,7 @@ curl -X POST
 
 | Название  | Тип | Описание                    |
 | --------- |:----|:----------------------------|
-|**meta** |Meta| Ссылка на метаданные Складов
+|**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Ссылка на метаданные Складов
 |**attributes** |Array(Meta)| Массив объектов доп. полей Складов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 |**createShared** |Boolean|создавать новые Склады с меткой "Общий"
 

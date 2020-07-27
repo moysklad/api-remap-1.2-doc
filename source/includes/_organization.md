@@ -52,7 +52,7 @@
 |**ogrn**             |String(255)|ОГРН|&mdash;|нет
 |**ogrnip**           |String(255)|ОГРНИП|&mdash;|нет
 |**okpo**             |String(255)|ОКПО|&mdash;|нет
-|**certificateNumber**|Meta|Номер свидетельства|&mdash;|нет
+|**certificateNumber**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Номер свидетельства|&mdash;|нет
 |**certificateDate**  |DateTime|Дата свидетельства|&mdash;|нет
 |**email**            |String(255)|Адрес электронной почты |&mdash;| нет
 |**phone**            |String(255)|Номер городского телефона |&mdash;| нет
@@ -1053,7 +1053,7 @@ curl -X POST
 
 | Название  | Тип | Описание                    |
 | --------- |:----|:----------------------------|
-|**meta** |Meta| Ссылка на метаданные юрлиц
+|**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Ссылка на метаданные юрлиц
 |**attributes** |Array(Meta)| Массив объектов доп. полей юрлиц в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 |**createShared** |Boolean| Создавать новые юрлица с меткой "Общий"
 
