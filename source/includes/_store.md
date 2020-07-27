@@ -27,7 +27,7 @@
 |**address**            |String(255)| Адрес склада|&mdash;|нет
 |**addressFull**        |Object|Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|&mdash;|нет
 |**parent**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Метаданные родительского склада (Группы)|&mdash;|нет
-|**pathName**            |String(unlimited)| Группа Склада|&mdash;|да
+|**pathName**            |String| Группа Склада|&mdash;|да
 |**attributes**            |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных дополнительных полей склада|&mdash;|нет
 
 #### Аттрибуты сущности Адрес

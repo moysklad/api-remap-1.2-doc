@@ -16,7 +16,7 @@
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
 |**shared**             |Boolean|Общий доступ|&mdash;|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
-|**pathName**       |String(unlimited)|Наименование группы, в которую входит Тех. карта|Только для чтения| да
+|**pathName**       |String|Наименование группы, в которую входит Тех. карта|Только для чтения| да
 |**parent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Тех. карты|&mdash;|да
 |**cost**                |Int| Стоимость производства|&mdash;|нет
 |**materials**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных материалов Тех. карты|Необходимое при создании|да

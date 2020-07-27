@@ -20,7 +20,7 @@
 |**code**         |String(255)|Код Комплекта|&mdash;|нет
 |**externalCode**         |String(255)|Внешний код Комплекта|&mdash;|да
 |**archived**        |Boolean|Добавлен ли Комплект в архив|&mdash;|да
-|**pathName**         |String(unlimited)|Наименование группы, в которую входит Комплект|Только для чтения|да
+|**pathName**         |String|Наименование группы, в которую входит Комплект|Только для чтения|да
 |**vat**         |Int|НДС %|&mdash;|нет
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
 |**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|&mdash;|нет

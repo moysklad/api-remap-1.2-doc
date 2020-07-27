@@ -27,7 +27,7 @@
 |**code**         |String(255)|Код Услуги|&mdash;|нет
 |**externalCode**         |String(255)|Внешний код Услуги|&mdash;|да
 |**archived**        |Boolean|Добавлена ли Услуга в архив|&mdash;|да
-|**pathName**         |String(unlimited)|Наименование группы, в которую входит Услуга|Только для чтения|да
+|**pathName**         |String|Наименование группы, в которую входит Услуга|Только для чтения|да
 |**vat**         |Int|НДС %|&mdash;|нет
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
 |**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|&mdash;|нет
