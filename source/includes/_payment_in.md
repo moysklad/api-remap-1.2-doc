@@ -3,48 +3,56 @@
 Средствами JSON API можно создавать и обновлять сведения о платеже , запрашивать списки Входящих платежей и сведения по отдельным Входящим платежам. Кодом сущности для Входящего платежа в составе JSON API является ключевое слово **paymentin**. Больше о платежах  и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203025346-%D0%9F%D0%BB%D0%B0%D1%82%D0%B5%D0%B6%D0%B8).
 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о платеже
-+ **id** - ID в формате UUID `Только для чтения`
-+ **accountId** - ID учетной записи `Только для чтения`
-+ **syncId** - ID синхронизации. После заполнения недоступен для изменения.
-+ **updated** - Момент последнего обновления сущности `Только для чтения`
-+ **deleted** - Момент последнего удаления сущности `Только для чтения`
-+ **name** - номер Входящего платежа
-+ **description** - Комментарий Входящего платежа
-+ **externalCode** - Внешний код Входящего платежа
-+ **moment** - Дата Входящего платежа
-+ **applicable** - Отметка о проведении
-+ **sum** - Сумма Входящего платежа в установленной валюте
-+ **project** - Ссылка на проект в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **rate** - Валюта
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **agent** - Ссылка на контрагента или юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **contract** - Ссылка на договор в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **state** - Статус Входящего платежа в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organizationAccount** - Ссылка на счет вашего юрлица в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agentAccount** - Ссылка на счет контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **files** - [Файлы] (../dictionaries/#suschnosti-fajly) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) (Максимальное количество файлов - 100)
-<br>Поля при expand'е:</br>
-  - **name** - номер документа
-  - **moment** - дата печати
-  - **href** - ссылка на файл печатной формы
-  - **fileName** - название файла печатной формы
-  - **updated** - дата последнего изменения
-+ **created** - Дата создания `Только для чтения`
-+ **paymentPurpose** - Назначение платежа
-+ **vatSum** - Сумма включая НДС
-+ **incomingDate** - Входящая дата
-+ **incomingNumber** - Входящий номер
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Входящего платежа|&mdash;|да
+|**id**                 |UUID|ID Входящего платежа|Только для чтения|да
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет
+|**updated**            |DateTime|Момент последнего обновления Входящего платежа|Только для чтения|да
+|**deleted**            |DateTime|Момент последнего удаления Входящего платежаа|Только для чтения|нет
+|**name**               |String(255)|Наименование Входящего платежа|&mdash;|да
+|**description**        |String(4096)|Комментарий Входящего платежа|&mdash;|нет
+|**externalCode**       |String(255)|Внешний код Входящего платежа|&mdash;| да
+|**moment**             |DateTime|Дата Счета|&mdash;|да
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
+|**sum**                |Int|Сумма Входящего платежа в установленной валюте|Только для чтения|да
+|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
+|**rate**               |Object|Валюта|&mdash;|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
+|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Входящего платежа|&mdash;|нет
+|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
+|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-ishodqschij-platezh-ishodqschie-platezhi-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**created**            |DateTime|Дата создания|Только для чтения|да
+|**paymentPurpose**     |String(255)|Назначение платежа|&mdash;|да
+|**incomingNumber**             |Int|Входящий номер |&mdash;|нет
+|**incomingDate**         |DateTime| Входящая дата|&mdash;|нет
+
+##### Поля при expand'е доп. полей
+Описание полей при expand'е attributes
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**name**            |String(255)|Номер документа|Только для чтения|нет
+|**moment**          |DateTime|Дата печати|Только для чтения|да
+|**href**            |URL|Ссылка на файл печатной формы|Только для чтения|да
+|**fileName**        |String(255)|Название файла печатной формы|Только для чтения|нет
+|**updated**         |DateTime|Момент последнего обновления|Только для чтения|да
 
 #### Связи с другими документами
-+ **factureOut** - Ссылка на Счет-фактуру выданный, с которым связан этот платеж в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **operations** - Массив ссылок на связанные операции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-  - **meta** - Ссылка на операцию, к которой привязан этот платеж в формате метаданных
-  - **linkedSum** - Сумма, оплаченная по данному документу из этого платежа
+
+|Название          | Описание  |
+| ------------------------------ |:---------------------------|
+|**factureOut** | Ссылка на Счет-фактуру выданный, с которым связан этот платеж в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+|**operations** | Массив ссылок на связанные операции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 Разрешенные типы связанных операций:
 
@@ -61,17 +69,19 @@
 Запрос всех Входящих платежей на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
-- **rows** - Массив JSON объектов, представляющих собой Входящие платежи.
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
+**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
+**rows** |Array(Object)|Массив JSON объектов, представляющих собой Входящие платежи.
 
 **Параметры**
 
 | Параметр                | Описание  |
 | ------------------------------ |:---------------------------|
-|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
-|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|search |  `string` (optional) *Example: 0001* URL Параметр для поиска по имени документа. Фильтр документов по указанной поисковой строке. Фильтрация происходит по полю name.|
+|**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|**search** |  `string` (optional) *Example: 0001* Фильтр документов по указанной поисковой строке.
 
 > Получить Входящие платежи
 
@@ -312,9 +322,11 @@ curl -X GET
 Запрос на создание нового Входящего платежа.
 Обязательные для создания поля:
 
-+ **name** - номер Входящего платежа
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agent** - Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| **name** | номер Счета поставщика
+| **organization** | Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| **agent** | Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 > Пример создания нового Входящего платежа с телом запроса, содержащим только необходимые поля.
 
@@ -636,8 +648,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Входящего платежа.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Входящего платежа.|
 
 > Запрос на удаление Входящего платежа с указанным id.
 
@@ -697,10 +709,12 @@ curl -X POST
 #### Метаданные Входящих платежей 
 Запрос на получение метаданных Входящих платежей. Результат - объект JSON, включающий в себя:
 
-+ **meta** - Ссылка на метаданные Входящих платежей
-+ **attributes** - Массив объектов доп. полей Входящих платежей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **states** - Массив статусов Входящих платежей
-+ **createShared** - создавать новые Входящие платежи с меткой "Общий"
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| **meta**         | Ссылка на метаданные Входящих платежей|
+| **attributes**   | Массив объектов доп. полей Входящих платежей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)|
+| **states**       | Массив статусов Входящих платежей|
+| **createShared** | создавать новые Входящие платежи с меткой "Общий"|
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
@@ -803,13 +817,12 @@ curl -X GET
 
 ### Отдельное доп. поле
 
-#### Отдельное доп. поле
 
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
  
 > Запрос на получение информации по отдельному дополнительному полю.
 
@@ -1313,8 +1326,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Входящего платежа.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Входящего платежа.|
  
 > Запрос на получение отдельного Входящего платежа с указанным id.
 
@@ -1443,8 +1456,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Входящего платежа.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Входящего платежа.|
 
 > Пример запроса на обновление отдельного Входящего платежа.
 

@@ -9,30 +9,33 @@
 + по комментарию к Договору **description**
 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о Заказе Покупателя
-+ **id** - ID в формате UUID `Только для чтения`
-+ **accountId** - ID учетной записи `Только для чтения`
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **updated** - Момент последнего обновления сущности `Только для чтения`
-+ **name** - номер Договора
-+ **description** - Комментарий к Договору
-+ **code** - Код Договора
-+ **externalCode** - Внешний код Договора
-+ **archived** - Добавлен ли Договор в архив
-+ **moment** - Дата Договора,
-+ **sum** - Сумма Договора,
-+ **contractType** - Тип Договора. Возможные значения: `Договор комиссии`, `Договор купли-продажи`
-+ **rewardType** - Тип Вознаграждения. Возможные значения: `Процент от суммы продажи`, `Не рассчитывать`
-+ **rewardPercent** - Вознаграждение в процентах (от 0 до 100).
-+ **ownAgent** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agent** - Ссылка на Контрагента в формате [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **state** - Статус договора в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organizationAccount** - Ссылка на счет вашего юрлица в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agentAccount** - Ссылка на счет контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **rate** - Ссылка на валюту
-+ **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Договора|&mdash;|да
+|**id**                |UUID|ID Договора|Только для чтения|да
+|**accountId**         |UUID|ID учетной записи|Только для чтения|да
+|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|да
+|**shared**         |Boolean|Общий доступ|&mdash;|да
+|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|&mdash;|да
+|**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да
+|**name**         |String(255)|Номер договора|Необходимое при создании|да
+|**description**        |String(4096)|Описание Договора|&mdash;|нет
+|**code**         |String(255)|Код Договора|&mdash;|нет
+|**externalCode**         |String(255)|Внешний код Договора|&mdash;|да
+|**archived**        |Boolean|Добавлен ли Договор в архив|&mdash;|да
+|**moment**         |DateTime|Дата Договора|&mdash;|да
+|**sum**         |Int|Сумма Договора|&mdash;|да
+|**contractType**         |Enum|Тип Договора. Возможные значения: `Договор комиссии`, `Договор купли-продажи`|&mdash;|да
+|**rewardType**         |Enum|Тип Вознаграждения. Возможные значения: `Процент от суммы продажи`, `Не рассчитывать`|&mdash;|нет
+|**rewardPercent**        |Int|Вознаграждение в процентах (от 0 до 100)|&mdash;|нет
+|**ownAgent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные вашего юрлица|Необходимое при создании|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контрагента|Необходимое при создании|да
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса договора|&mdash;|нет
+|**organizationAccount**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета вашего юрлица|&mdash;|нет
+|**agentAccount**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|да
+|**rate**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные валюты|&mdash;|да
+|**attributes**         |Array(Meta)|Коллекция доп. полей|&mdash;|нет
 
 Таблица полей, их значений и их значений в JSON представлении:
 
@@ -50,16 +53,18 @@
 Запрос на получение списка всех договоров на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
-- **rows** - Массив JSON объектов, представляющих собой Договоры.
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
+**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
+**rows** |Array(Object)| Массив JSON объектов, представляющих собой договора.
 
 **Параметры**
 
 | Параметр                | Описание  |
 | ------------------------------ |:---------------------------|
-|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
-|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 
 > Получить список договоров
 
@@ -328,11 +333,14 @@ curl -X GET
 
 ### Создать новый Договор 
 Запрос на создание нового Договора.
-Обязательные для создания Договора поля:
+Необходимые при создании для создания Договора поля:
 
-+ **name** - Номер Договора
-+ **ownAgent** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agent** - Ссылка на Контрагента в формате [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| Название  | Тип | Описание                    | Поле в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**name**         |String(255)|Номер договора|Необходимое при создании|да
+|**ownAgent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные вашего юрлица|Необходимое при создании|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контрагента|Необходимое при создании|да
+
 
 > Пример создания нового Договора, с запросом, Тело которого содержит только обязательные поля.
 
@@ -1045,8 +1053,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Договора.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Договора.|
 
 > Запрос на удаление Договора с указанным id.
 
@@ -1105,10 +1113,12 @@ curl -X POST
 #### Метаданные Договоров 
 Запрос на получение метаданных Договоров. Результат - объект JSON, включающий в себя:
 
-+ **meta** - Ссылка на метаданные Договоров
-+ **attributes** - Массив объектов доп. полей Договоров в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **states** - Массив статусов Договоров
-+ **createShared** - создавать новые Договора с меткой "Общий"
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Заказа покупателя|&mdash;|да
+|**attributes**         |Array(Meta)|Коллекция доп. полей|&mdash;|нет
+|**states**              |Array(Meta)|Массив статусов договоров|&mdash;|нет
+|**createShared**        |Boolean|Создавать новые договора с меткой "Общий"|&mdash;|да
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
@@ -1174,8 +1184,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 5290a290-0313-11e6-9464-e4de00000020* id Доп. поля.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 5290a290-0313-11e6-9464-e4de00000020* id Доп. поля.|
 
 #### Отдельное доп. поле
  
@@ -1209,8 +1219,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Договора.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Договора.|
 
 ### Получить Договор
  
@@ -1333,8 +1343,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Договора.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Договора.|
 
 > Пример запроса на обновление отдельного Договора.
 
