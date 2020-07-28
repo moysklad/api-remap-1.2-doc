@@ -11,48 +11,62 @@
 
 ### Услуги 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) объекта
-+ **id** - ID Услуги в формате UUID `Только для чтения`
-+ **accountId** - ID учетной записи `Только для чтения`
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **syncId** - ID синхронизации. После заполнения недоступен для изменения.
-+ **updated** - Момент последнего обновления сущности `Только для чтения`
-+ **name** - Наименование Услуги `Необходимое`
-+ **description** - Описание Услуги
-+ **code** - Код Услуги
-+ **externalCode** - Внешний код Услуги
-+ **archived** - Отметка о том, добавлен ли Услуга в архив
-+ **pathName** - Наименование группы, в которую входит Услуга `Только для чтения`
-+ **vat** - НДС %
-+ **effectiveVat** - Реальный НДС % `Только для чтения`
-+ **productFolder** - Ссылка на группу Услуги
-+ **uom** - Единицы измерения
-+ **minPrice** - Минимальная цена
-+ **salePrices** - Цены продажи
-+ **barcodes** - Массив штрихкодов услуги
-+ **attributes** - Дополнительные поля Услуги в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **buyPrice** - Закупочная цена
-+ **discountProhibited** - Признак запрета скидок.
-+ **paymentItemType** - Признак предмета расчета
-  + **SERVICE** - Услуга
-  + **WORK** - Работа
-  + **PROVIDING_RID** - Предоставление РИД
-  + **COMPOUND_PAYMENT_ITEM** - Составной предмет расчета
-  + **ANOTHER_PAYMENT_ITEM** - Иной предмет расчета
-+ **taxSystem** - Код системы налогообложения
-  + **TAX_SYSTEM_SAME_AS_GROUP** - Совпадает с группой
-  + **GENERAL_TAX_SYSTEM** - ОСН
-  + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
-  + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
-  + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
-  + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
-  + **PATENT_BASED** - Патент
-+ **files** - [Файлы] (../dictionaries/#suschnosti-fajly) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) (Максимальное количество файлов - 100)
+
+| Название  | Тип | Описание                    | Поле в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Услуги|&mdash;|да
+|**id**                |UUID|ID Услуги|Только для чтения|да
+|**accountId**         |UUID|ID учетной записи|Только для чтения|да
+|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|да
+|**shared**         |Boolean|Общий доступ|&mdash;|да
+|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|&mdash;|да
+|**syncId**                |UUID|ID синхронизации|После заполнения недоступно для изменения|нет
+|**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да
+|**name**         |String(255)|Наименование Услуги|Необходимое при создании|да
+|**description**        |String(4096)|Описание Услуги|&mdash;|нет
+|**code**         |String(255)|Код Услуги|&mdash;|нет
+|**externalCode**         |String(255)|Внешний код Услуги|&mdash;|да
+|**archived**        |Boolean|Добавлена ли Услуга в архив|&mdash;|да
+|**pathName**         |String|Наименование группы, в которую входит Услуга|Только для чтения|да
+|**vat**         |Int|НДС %|&mdash;|нет
+|**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
+|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|&mdash;|нет
+|**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет
+|**minPrice**         |Double|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-minimal-naq-cena)|&mdash;|нет
+|**salePrices**         |Array(Object)|Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-ceny-prodazhi)|&mdash;|нет
+|**buyPrice**         |Array(Object)|Закупочная продажи. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-zakupochnaq-cena)|&mdash;|нет
+|**attributes**         |Array(Meta)|Коллекция доп. полей|&mdash;|нет
+|**barcodes**         |Array(Object)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-shtrih-kody)|&mdash;|нет
+|**discountProhibited**        |Boolean|Признак запрета скидок|&mdash;|да
+|**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-atributy-suschnosti-priznak-predmeta-rascheta)|&mdash;|нет
+|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|нет|
 
 Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить
 с помощью обновления атрибута **productFolder**.
+
+##### Признак предмета расчета
+Значения поля paymentItemType.
+
+| Значение                | Описание  |
+| ------------------------------ |:---------------------------|
+| **GOOD**                        | Товар|
+| **EXCISABLE_GOOD**               |Подакцизный товар|
+| **COMPOUND_PAYMENT_ITEM**       |Составной предмет расчета|
+| **ANOTHER_PAYMENT_ITEM**        |Иной предмет расчета|
+
+##### Код системы налогообложения
+Значения поля taxSystem.
+
+| Значение                | Описание  |
+| ------------------------------ |:---------------------------|
+| **TAX_SYSTEM_SAME_AS_GROUP**            | Совпадает с группой|
+| **GENERAL_TAX_SYSTEM**                  | ОСН|
+| **SIMPLIFIED_TAX_SYSTEM_INCOME**        | УСН. Доход|
+| **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME**| УСН. Доход-Расход|
+| **UNIFIED_AGRICULTURAL_TAX**            | ЕСХН|
+| **PRESUMPTIVE_TAX_SYSTEM**              | ЕНВД|
+| **PATENT_BASED**                        | Патент|
 
 #### Атрибуты вложенных сущностей
 
@@ -63,35 +77,52 @@
 а также все типы цен можно с помощью запроса на получение метаданных Услуг.
 Ответ - объект, со следующей структурой:
 
-+ **meta** - Метаданные
-+ **attributes** - коллекция всех существующих доп. полей Услуг в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные |&mdash;|да
+|**attributes**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция всех существующих доп. полей Услуг|&mdash;|да
 
 Структуры объектов отдельных коллекций:
 
 ##### Штрих коды:
 При создании штрихкода требуется описать объект с полем, являющимся форматом представления штрихкода в нижнем регистре, со строковым значением самого штрихкода. Наименование полей отдельного объекта, представляющего штрихкод:
 
-+ **ean13** - штрихкод в формате EAN13, если требуется создать штрихкод в формате EAN13
-+ **ean8** - штрихкод в формате EAN8, если требуется создать штрихкод в формате EAN8
-+ **code128** - штрихкод в формате Code128, если требуется создать штрихкод в формате Code128
+|Название|Описание|
+|--------------|-----------------------------------|
+| **ean13**          | штрихкод в формате EAN13, если требуется создать штрихкод в формате EAN13           |
+| **ean8**           | штрихкод в формате EAN8, если требуется создать штрихкод в формате EAN8             |
+| **code128**        | штрихкод в формате Code128, если требуется создать штрихкод в формате Code128       |
 
 О работе с доп. полями Услуг можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
 ##### Цены продажи
-+ **value** - Значение цены
-+ **currency** - Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **priceType** - Тип цены
+
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|
+|**value**   |Float|Значение цены| &mdash; | да
+|**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
+|**priceType**   |Object|Тип цены| &mdash; | да
+
 
 ##### Закупочная цена
-+ **value** - Значение цены
-+ **currency** - Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|
+**value**   |Float|Значение цены| &mdash; | да
+**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
 
 ##### Минимальная цена
-+ **value** - Значение цены
-+ **currency** - Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|
+**value**   |Float|Значение цены| &mdash; | да
+**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
 
 ##### Группа Услуги
-+ **meta** - Метаданные, содержащие ссылку на группу Услуги.
+
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|
+| **meta**  |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Метаданные, содержащие ссылку на группу Услуги.|&mdash;| да
 Описание сущности Группа вы можете посмотреть [здесь](../dictionaries/#suschnosti-gruppa-towarow).
 Обновление этого атрибута также обновит атрибут **pathName**.
 
@@ -103,16 +134,18 @@
 Запрос на получение всех Услуг для данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче.
-- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
-- **rows** - Массив JSON объектов, представляющих собой [Услуги](../dictionaries/#suschnosti-usluga).
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
+**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
+**rows** |Array(Object)| Массив JSON объектов, представляющих собой [Услуги](../dictionaries/#suschnosti-usluga).
 
 **Параметры**
 
 | Параметр                | Описание  |
 | ------------------------------ |:---------------------------|
-|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
-|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 
 > Получить список услуг
 
@@ -1278,8 +1311,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Услуги.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Услуги.|
 
 > Запрос на удаление Услуги с указанным id.
 
@@ -1338,8 +1371,10 @@ curl -X POST
 #### Метаданные Услуг 
 Запрос на получение метаданных Услуг. Результат - объект JSON, включающий в себя:
 
-+ **meta** - Метаданные
-+ **attributes** - коллекция всех существующих доп. полей Услуг в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные |&mdash;|да
+|**attributes**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция всех существующих доп. полей Услуг|&mdash;|нет
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
@@ -1390,8 +1425,8 @@ curl -X GET
 ### Отдельное доп. поле
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
  
 #### Отдельное доп. поле
  
@@ -1434,8 +1469,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Услуги.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Услуги.|
 
 > Запрос на получение Услуги с указанным id.
 
@@ -1605,8 +1640,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Услуги.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Услуги.|
 
 > Пример запроса на обновление Услуги
   

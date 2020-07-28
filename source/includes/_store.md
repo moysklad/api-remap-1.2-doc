@@ -9,34 +9,40 @@
 + По коду Склада **code**
 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о Складе
-+ **id** - ID в формате UUID `Только для чтения`
-+ **accountId** - ID учетной записи `Только для чтения`
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **updated** - Момент последнего обновления сущности `Только для чтения`
-+ **name** - Наименование Склада `Необходимое`
-+ **description** - комментарий к Складу
-+ **code** - Код Склада
-+ **externalCode** - Внешний код Склада
-+ **archived** - Добавлен ли Склад в архив
-+ **address** - Адрес склада
-+ **addressFull** - Адрес с детализацией по отдельным полям.
-+ **parent** - Родительский склад (Группа)
-+ **pathName** - Группа Склада
-+ **attributes** - Дополнительные поля Склада в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Склада|&mdash;|да
+|**id**                 |UUID|ID Склада|Только для чтения|да
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
+|**updated**            |DateTime|Момент последнего обновления Склада|Только для чтения|да
+|**name**               |String(255)|Наименование Склада|Необходимое при создании|да
+|**description**        |String(4096)|Комментарий к Складу|&mdash;|нет
+|**code**               |String(255)|Код Склада&mdash;| нет
+|**externalCode**       |String(255)|Внешний код Склада|Только для чтения| да
+|**archived**           |Boolean|Добавлен ли Склад в архив|&mdash;| да
+|**address**            |String(255)| Адрес склада|&mdash;|нет
+|**addressFull**        |Object|Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|&mdash;|нет
+|**parent**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Метаданные родительского склада (Группы)|&mdash;|нет
+|**pathName**            |String| Группа Склада|&mdash;|да
+|**attributes**            |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных дополнительных полей склада|&mdash;|нет
 
 #### Аттрибуты сущности Адрес
-+ **postalCode** - Почтовый индекс
-+ **country** - Ссылка на страну в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **region** - Ссылка на регион в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **city** - Город
-+ **street** - Улица
-+ **house** - Дом (Максимальная длина - 30 символов)
-+ **apartment** - Квартира (Максимальная длина - 30 символов)
-+ **addInfo** - Другое
-+ **comment** - Комментарий
+
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|
+|**postalCode**      |String(6)|Почтовый индекс|&mdash;|нет
+|**country**      |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные страны|&mdash;|нет
+|**region**      |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные региона|&mdash;|нет
+|**city**      |String(255)|Город|&mdash;|нет
+|**street**      |String(255)|Улица|&mdash;|нет
+|**house**      |String(30)|Дом|&mdash;|да
+|**apartment**      |String(30)|Квартира|&mdash;|нет
+|**addInfo**      |String(255)|Другое|&mdash;|нет
+|**comment**      |String(255)|Комментарий|&mdash;|нет
 
 Строка адреса является конкатенацией полей структурированного адреса в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
 При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
@@ -50,16 +56,18 @@
 Получить список всех Складов.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
-- **rows** - Массив JSON объектов, представляющих собой [Склады](../dictionaries/#suschnosti-sklad).
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+|**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
+|**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
+|**rows** |Array(Object)|Массив JSON объектов, представляющих Склады.
 
 **Параметры**
 
 | Параметр                | Описание  |
 | ------------------------------ |:---------------------------|
-|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
-|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 
 > Получить Склады 
 
@@ -712,8 +720,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Склада.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Склада.|
 
 > Запрос на удаление Склада с указанным id.
 
@@ -773,9 +781,11 @@ curl -X POST
 #### Метаданные Складов 
 Запрос на получение метаданных Складов. Результат - объект JSON, включающий в себя:
 
-+ **meta** - Ссылка на метаданные Складов
-+ **attributes** - Массив объектов доп. полей Складов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **createShared** - создавать новые Склады с меткой "Общий"
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+|**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Ссылка на метаданные Складов
+|**attributes** |Array(Meta)| Массив объектов доп. полей Складов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+|**createShared** |Boolean|создавать новые Склады с меткой "Общий"
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
@@ -810,13 +820,13 @@ curl -X GET
 
 ### Отдельное доп. поле
 
-#### Отдельное доп. поле
+
  
  **Параметры**
  
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 5290a290-0313-11e6-9464-e4de00000020* id Доп. поля.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 5290a290-0313-11e6-9464-e4de00000020* id Доп. поля.|
  
 > Запрос на получение информации по отдельному дополнительному полю.
 
@@ -851,8 +861,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Склада.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Склада.|
 
 > Запрос на получение отдельного Склада с указанным id.
 
@@ -958,8 +968,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Склада.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Склада.|
 
 
 > Пример запроса на обновление существующего Склада.

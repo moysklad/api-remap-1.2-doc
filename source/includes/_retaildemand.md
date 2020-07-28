@@ -3,59 +3,78 @@
 ### Розничные продажи 
 #### Атрибуты сущности
 
-+ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о Розничной продаже
-+ **id** - ID в формате UUID `Только для чтения`
-+ **accountId** - ID учетной записи `Только для чтения`
-+ **syncId** - ID синхронизации. После заполнения недоступен для изменения.
-+ **updated** - Момент последнего обновления сущности `Только для чтения`
-+ **deleted** - Момент последнего удаления сущности `Только для чтения`
-+ **name** - номер Розничной продажи
-+ **description** - Комментарий Розничной продажи
-+ **externalCode** - Внешний код Розничной продажи
-+ **moment** - Дата Розничной продажи
-+ **applicable** - Отметка о проведении
-+ **vatEnabled** - Учитывается ли НДС
-+ **vatIncluded** - Включен ли НДС в цену
-+ **sum** - Сумма Розничной продажи в копейках `Только для чтения`
-+ **rate** - Валюта
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agent** - Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **store** - Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **contract** - Ссылка на договор в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **project** - Ссылка на проект в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **state** - Статус Розничной продажи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organizationAccount** - Ссылка на счет вашего юрлица в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agentAccount** - Ссылка на счет контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **created** - Дата создания `Только для чтения`
-+ **vatSum** - Сумма НДС `Только для чтения`
-+ **positions** - Ссылка на позиции Розничной продажи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **fiscalPrinterInfo** - Информация о фискальном регистраторе
-+ **documentNumber** - Номер документа
-+ **checkNumber** - Номер чека
-+ **checkSum** - Сумма Чека
-+ **fiscal** - Отметка о том, был ли использован ФР `Только для чтения`
-+ **sessionNumber** - Номер сессии
-+ **ofdCode** -Код оператора фискальных данных
-+ **payedSum** - Сумма входящих платежей по Розничной продаже `Только для чтения`
-+ **retailStore** - Ссылка на точку продаж в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **customerOrder** - Ссылка на Заказ Покупателя, с которым связана эта Розничная продажа в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **retailShift** - Ссылка на Розничную смену, в рамках которой была проведена продажа в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **cashSum**  - Оплачено наличными
-+ **noCashSum** - Оплачено картой
-+ **prepaymentCashSum** - Предоплата наличными
-+ **prepaymentNoCashSum** - Предоплата картой
-+ **taxSystem** - Код системы налогообложения
-  + **GENERAL_TAX_SYSTEM** - ОСН
-  + **SIMPLIFIED_TAX_SYSTEM_INCOME** - УСН. Доход
-  + **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** - УСН. Доход-Расход
-  + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
-  + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
-  + **PATENT_BASED** - Патент
-+ **files** - [Файлы] (../dictionaries/#suschnosti-fajly) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) (Максимальное количество файлов - 100)
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной продажи|&mdash;|да
+|**id**                 |UUID|ID Розничной продажи|Только для чтения|да
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет
+|**updated**            |DateTime|Момент последнего обновления Розничной продажи|Только для чтения|да
+|**deleted**            |DateTime|Момент последнего удаления Розничной продажи|Только для чтения|нет
+|**name**               |String(255)|Наименование Розничной продажи|&mdash;|да
+|**description**        |String(4096)|Комментарий Розничной продажи|&mdash;|нет
+|**externalCode**       |String(255)|Внешний код Розничной продажи|&mdash;| да
+|**moment**             |DateTime|Дата Счета|&mdash;|да
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
+|**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да
+|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|да
+|**sum**                |Int|Сумма Розничной продажи в копейках|Только для чтения|да
+|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
+|**rate**               |Object|Валюта|&mdash;|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|да
+|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Розничной продажи|&mdash;|нет
+|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
+|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет  
+|**created**            |DateTime|Дата создания|Только для чтения|да
+|**vatSum**                |Float|Сумма включая НДС|&mdash;|да
+|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Розничной продажи|&mdash;|да
+|**fiscalPrinterInfo**            |String(255)| Информация о фискальном регистраторе|&mdash;|нет
+|**documentNumber**                |String(255)|Номер документа|&mdash;|нет
+|**checkNumber**               |String(255)|Номер чека|&mdash;|нет
+|**checkSum**                |Float|Сумма Чека|&mdash;|нет
+|**fiscal**        |Boolean|Отметка о том, был ли использован ФР|Только для чтения|да
+|**sessionNumber**               |String(255)|Номер сессии|&mdash;|нет
+|**ofdCode**              |String(255)|Код оператора фискальных данных|&mdash;|нет
+|**payedSum**            |Float|Сумма входящих платежей по Отгрузке |Только для чтения|да
+|**retailStore**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Точки продаж|&mdash;|да
+|**customerOrder**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Заказа Покупателя|&mdash;|нет
+|**retailShift**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной смены|Необходимое при создании|да
+|**cashSum**                |Float|Оплачено наличными|&mdash;|да
+|**noCashSum**                |Float|Оплачено картой|&mdash;|да
+|**prepaymentCashSum**               |Float|Предоплата наличными|&mdash;|да
+|**prepaymentNoCashSum**                |Float|Предоплата картой|&mdash;|да
+|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|да
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+
+##### Поля при expand'е доп. полей
+Описание полей при expand'е attributes
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**name**            |String(255)|Номер документа|Только для чтения|нет
+|**moment**          |DateTime|Дата печати|Только для чтения|да
+|**href**            |URL|Ссылка на файл печатной формы|Только для чтения|да
+|**fileName**        |String(255)|Название файла печатной формы|Только для чтения|нет
+|**updated**         |DateTime|Момент последнего обновления|Только для чтения|да
+
+##### Код системы налогообложения
+Значения поля taxSystem.
+
+| Значение                | Описание  |
+| ------------------------------ |:---------------------------|
+| **GENERAL_TAX_SYSTEM**                  | ОСН|
+| **SIMPLIFIED_TAX_SYSTEM_INCOME**        | УСН. Доход|
+| **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME**| УСН. Доход-Расход|
+| **UNIFIED_AGRICULTURAL_TAX**            | ЕСХН|
+| **PRESUMPTIVE_TAX_SYSTEM**              | ЕНВД|
+| **PATENT_BASED**                        | Патент|
 
 #### Работа с полями оплаты розничной продажи
 Сумма полей **cashSum**, **noCashSum**, **prepaymentCashSum** и **prepaymentNoCashSum**
@@ -74,19 +93,18 @@
 Позиции Розничной продажи - это список товаров/услуг/модификаций/серий.
 Объект позиции Розничной продажи содержит следующие поля:
 
-+ **id** - ID позиции в формате UUID `Только для чтения`
-+ **accountId** - ID учетной записи `Только для чтения`
-+ **quantity** - Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.
-+ **price** - Цена товара/услуги в копейках
-+ **discount** - Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%
-+ **vat** - НДС, которым облагается текущая позиция
-+ **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **pack** - Упаковка товара
-+ **things** - Серийные номера
-Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете.
-В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.
-
-+ **cost** - Себестоимость (только для услуг)
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**id**                 |UUID|ID позиции|Только для чтения|да
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да
+|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|&mdash;|да
+|**price**          |Float|Цена товара/услуги в копейках|&mdash;|да
+|**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|&mdash;|да
+|**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да
+|**pack**            |String(255)|Упаковка товара|&mdash;|нет
+|**things**            |Array(String)|Серийные номера. Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете. В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.|&mdash;|нет
+|**cost**          |Int|Себестоимость (только для услуг)|&mdash;|нет
 
 С позициями можно работать с помощью специальных [ресурсов для управления позициями Розничной продажи](../documents/#dokumenty-roznichnaq-prodazha-pozicii-roznichnoj-prodazhi),
 а также в составе отдельной Розничной продажи. При работе в составе отдельной Розничной продажи,
@@ -105,16 +123,18 @@
 Запрос всех Розничных продаж на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
-- **rows** - Массив JSON объектов, представляющих собой Розничные продажи.
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
+**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
+**rows** |Array(Object)|Массив JSON объектов, представляющих собой Розничные продажи.
 
 **Параметры**
 
 | Параметр                | Описание  |
 | ------------------------------ |:---------------------------|
-|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
-|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 
 > Получить Розничные продажи
 
@@ -1344,8 +1364,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной продажи.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной продажи.|
  
 > Запрос на удаление Розничной продажи с указанным id.
 
@@ -1405,10 +1425,12 @@ curl -X POST
 #### Метаданные Розничных продаж 
 Запрос на получение метаданных Розничных продаж. Результат - объект JSON, включающий в себя:
 
-+ **meta** - Ссылка на метаданные Розничных продаж
-+ **attributes** - Массив объектов доп. полей Розничных продаж в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **states** - Массив статусов Розничных продаж
-+ **createShared** - создавать новые Розничные продажи с меткой "Общий"
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| **meta**         | Ссылка на метаданные Розничных продаж|
+| **attributes**   | Массив объектов доп. полей Розничных продаж в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)|
+| **states**       | Массив статусов Розничных продаж|
+| **createShared** | создавать новые Розничные продажи с меткой "Общий"|
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
@@ -1541,13 +1563,13 @@ curl -X GET
 
 ### Отдельное доп. поле
  
-#### Отдельное доп. поле
+
 
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
  
 > Запрос на получение информации по отдельному дополнительному полю.
 
@@ -1786,8 +1808,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной продажи.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной продажи.|
  
 > Запрос на получение отдельной Розничной продажи с указанным id.
 
@@ -1922,8 +1944,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной продажи.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной продажи.|
 
 > Пример запроса на обновление Розничной продажи.
 
@@ -2283,17 +2305,19 @@ curl -X GET
 ### Получить позиции 
 Запрос на получение списка всех позиций данной Розничной продажи.
 
-- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
-- **rows** - Массив JSON объектов, представляющих собой позиции Розничной продажи.
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
+**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
+**rows** |Array(Object)|Массив JSON объектов, представляющих собой позиции Розничной продажи.
 
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной продажи.|
-|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
-|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной продажи.|
+|**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 
 > Получить позиции
 
@@ -2395,8 +2419,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной продажи.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной продажи.|
 
 > Пример запроса на создание позиций в Розничной продаже.
 
@@ -2539,9 +2563,9 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной продажи.|
-|positionID|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Розничной продажи.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной продажи.|
+|**positionID**|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Розничной продажи.|
  
 > Запрос на получение отдельной позиции Розничной продажи с указанным id.
 
@@ -2585,9 +2609,9 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной продажи.|
-|positionID|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Розничной продажи.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной продажи.|
+|**positionID**|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Розничной продажи.|
  
 Запрос на обновление отдельной позиции Розничной продажи.
 
@@ -2646,9 +2670,9 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной продажи.|
-|positionID|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Розничной продажи.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной продажи.|
+|**positionID**|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Розничной продажи.|
  
 > Запрос на удаление отдельной позиции Розничной продажи с указанным id.
 

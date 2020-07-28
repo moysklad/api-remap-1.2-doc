@@ -3,45 +3,54 @@
 Средствами JSON API можно создавать и обновлять сведения о Расходном ордере, запрашивать списки Расходных ордеров  и сведения по отдельным Расходных ордеров. Кодом сущности для Расходного ордера  в составе JSON API является ключевое слово **cashout**.
 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о Расходном ордере
-+ **id** - ID в формате UUID `Только для чтения`
-+ **accountId** - ID учетной записи `Только для чтения`
-+ **syncId** - ID синхронизации. После заполнения недоступен для изменения.
-+ **updated** - Момент последнего обновления сущности `Только для чтения`
-+ **deleted** - Момент последнего удаления сущности `Только для чтения`
-+ **name** - номер Расходного ордера
-+ **description** - Комментарий Расходного ордера
-+ **externalCode** - Внешний код Расходного ордера
-+ **moment** - Дата Расходного ордера
-+ **applicable** - Отметка о проведении
-+ **sum** - Сумма Расходного ордера  в установленной валюте
-+ **project** - Ссылка на проект в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **rate** - Валюта
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **agent** - Ссылка на контрагента, юрлицо или сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **contract** - Ссылка на договор в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **state** - Статус Расходного ордера  в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-<br>Поля при expand'е:</br>
-  - **name** - номер документа
-  - **moment** - дата печати
-  - **href** - ссылка на файл печатной формы
-  - **fileName** - название файла печатной формы
-  - **updated** - дата последнего изменения
-+ **created** - Дата создания `Только для чтения`
-+ **paymentPurpose** - Основание
-+ **vatSum** - Сумма включая НДС
-+ **expenseItem** - Статья расходов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **files** - [Файлы] (../dictionaries/#suschnosti-fajly) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) (Максимальное количество файлов - 100)
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Расходного ордера|&mdash;|да
+|**id**                 |UUID|ID Расходного ордера|Только для чтения|да
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет
+|**updated**            |DateTime|Момент последнего обновления Расходного ордера|Только для чтения|да
+|**deleted**            |DateTime|Момент последнего удаления Расходного ордера|Только для чтения|нет
+|**name**               |String(255)|Наименование Расходного ордера|&mdash;|да
+|**description**        |String(4096)|Комментарий Расходного ордера|&mdash;|нет
+|**externalCode**       |String(255)|Внешний код Расходного ордера|&mdash;| да
+|**moment**             |DateTime|Дата Счета|&mdash;|да
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
+|**sum**                |Int|Сумма Сумма расходного ордера в установленной валюте|Только для чтения|да
+|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
+|**rate**               |Object|Валюта|&mdash;|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
+|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Расходного ордера|&mdash;|нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-rashodnyj-order-rashodnye-ordera-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**created**            |DateTime|Дата создания|Только для чтения|да
+|**paymentPurpose**     |String(255)|Основание|&mdash;|да
+|**vatSum**                |Float|Сумма включая НДС|&mdash;|да
+|**expenseItem**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Статьи расходов|Необходимое при создании|да
+
+##### Поля при expand'е доп. полей
+Описание полей при expand'е attributes
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**name**            |String(255)|Номер документа|Только для чтения|нет
+|**moment**          |DateTime|Дата печати|Только для чтения|да
+|**href**            |URL|Ссылка на файл печатной формы|Только для чтения|да
+|**fileName**        |String(255)|Название файла печатной формы|Только для чтения|нет
+|**updated**         |DateTime|Момент последнего обновления|Только для чтения|да
 
 #### Связи с другими документами
-+ **factureIn** - Ссылка на Счет-фактуру полученный, с которым связан этот Расходный ордер в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **operations** - Массив ссылок на связанные операции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-  - **meta** - Ссылка на операцию, к которой привязан этот платеж в формате метаданных
-  - **linkedSum** - Сумма, оплаченная по данному документу из этого платежа
+
+|Название          | Описание  |
+| ------------------------------ |:---------------------------|
+|**factureOut** | Ссылка на Счет-фактуру выданный, с которым связан этот платеж в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+|**operations** | Массив ссылок на связанные операции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 Разрешенные типы связанных операций:
 
@@ -58,23 +67,25 @@
 Запрос всех Расходных ордеров на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
-- **rows** - Массив JSON объектов, представляющих собой Расходные ордера .
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
+**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
+**rows** |Array(Object)|Массив JSON объектов, представляющих собой Расходные ордера.
 
 **Параметры**
 
 | Параметр                | Описание  |
 | ------------------------------ |:---------------------------|
-|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
-|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|search |  `string` (optional) *Example: 0001* URL Параметр для поиска по имени документа. Фильтр документов по указанной поисковой строке. Фильтрация происходит по полю name.|
+|**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|**search** |  `string` (optional) *Example: 0001* Фильтр документов по указанной поисковой строке.|
 
 > Получить Расходные ордера
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/cashin"
+  "https://online.moysklad.ru/api/remap/1.2/entity/cashout"
   -H "Authorization: Basic <Credentials>"
 ```
 
@@ -431,10 +442,12 @@ curl -X GET
 Запрос на создание нового Расходного ордера.
 Обязательные для создания поля:
 
-+ **name** - номер Расходного ордера
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agent** - Ссылка на контрагента  в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **expenseItem** - Статья расходов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| **name** | номер Приходного ордера
+| **organization** | Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| **agent** | Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| **expenseItem** | Статья расходов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 > Пример создания нового Расходного ордера  с телом запроса, содержащим только необходимые поля.
 
@@ -817,8 +830,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Расходного ордера.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Расходного ордера.|
 
 > Запрос на удаление Расходного ордера  с указанным id.
 
@@ -878,10 +891,12 @@ curl -X POST
 #### Метаданные Расходных ордеров
 Запрос на получение метаданных Расходных ордеров. Результат - объект JSON, включающий в себя:
 
-+ **meta** - Ссылка на метаданные Расходных ордеров
-+ **attributes** - Массив объектов доп. полей Расходных ордеров в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **states** - Массив статусов Расходных ордеров
-+ **createShared** - создавать новые Расходные ордера с меткой "Общий"
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| **meta**         | Ссылка на метаданные Расходных ордеров|
+| **attributes**   | Массив объектов доп. полей Расходных ордеров в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)|
+| **states**       | Массив статусов Расходных ордеров|
+| **createShared** | создавать новые Расходные ордера с меткой "Общий"|
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
@@ -984,13 +999,13 @@ curl -X GET
 
 ### Отдельное доп. поле
 
-#### Отдельное доп. поле
+
 
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
 
 > Запрос на получение информации по отдельному дополнительному полю.
 
@@ -1484,8 +1499,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Расходного ордера.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Расходного ордера.|
 
 > Запрос на получение отдельного Расходного ордера с указанным id.
 
@@ -1631,8 +1646,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Расходного ордера.|
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Расходного ордера.|
 
 > Пример запроса на обновление отдельного Расходного ордера.
 
