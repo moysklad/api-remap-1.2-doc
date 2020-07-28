@@ -986,10 +986,12 @@ curl -X GET
   "minionToMasterType:" "CHOSEN",
   "masterRetailStores": [{
     "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d",
-      "metadataHref" : "http://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+      "href": "http://localhost/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d/masterRetailStores",
       "type": "retailstore",
-      "mediaType": "application/json"
+      "mediaType" : "application/json",
+      "size" : 1,
+      "limit" : 1000,
+      "offset" : 0
     }
   }]
 }
