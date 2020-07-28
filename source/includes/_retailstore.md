@@ -812,7 +812,7 @@ curl -X GET
               },
               "reservePrepaidGoods" : true,
               "fiscalType": "CLOUD",
-              "minionToMasterType:" "CHOSEN",
+              "minionToMasterType": "CHOSEN",
               "masterRetailStores": [{
                 "meta": {
                   "href": "http://localhost/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d",
@@ -983,7 +983,7 @@ curl -X GET
   },
   "reservePrepaidGoods" : true,
   "fiscalType": "CLOUD",
-  "minionToMasterType:" "CHOSEN",
+  "minionToMasterType": "CHOSEN",
   "masterRetailStores": [{
     "meta": {
       "href": "http://localhost/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d/masterRetailStores",
