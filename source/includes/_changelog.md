@@ -76,7 +76,7 @@
   - Формат [Штрихкодов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary):
     - можно сохранять ean8 как ean13
     - можно сохранять ean13 как ean8  
-    - в значение штрихкода теперь нелья зпередавать `null`
+    - в значение штрихкода теперь нельзя передавать `null`
     - штрихкоды без указания типа теперь игнорируются
     - штрихкоды вида `null` теперь игнорируются
   - Вывод "денежных" полей, таких как: `vatSum`, `sum`, `commitentSum`, `linkedSum`, `processingSum`, `proceedsNoCash`, `proceedsCash`, 
@@ -154,7 +154,7 @@
 #### Добавлено
 - Эндпоинт [Настройка аккаунта компании](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-kompanii)
 
-### 03-96-2020
+### 03-06-2020
 #### Добавлено
 - Эндпоинт [Управления настройками справочника товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment)
 
@@ -212,3 +212,6 @@
 ### 04-03-2020
 #### Документация
 - Добавлен новый раздел [Workbook](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbook)
+
+##
+[Более полный список изменений](https://github.com/moysklad/api-remap-1.2-doc/blob/master/CHANGELOG.md)
