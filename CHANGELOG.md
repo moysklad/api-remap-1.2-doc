@@ -2,20 +2,26 @@
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
 ## 28-07-2020
-- Добавлена возможность изменять настройки применения скидок в настройках компании
+### Добавлено
+ - Добавлена возможность изменять настройки применения скидок в [настройках компании]((https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-kompanii))
 
 ## 27-07-2020
 ### Добавлено
- - Поля `minionToMasterType` и `masterRetailStores` в точку продаж, позволяющие указывать стратегию выбора мастер точки продаж для фискализации облачных чеков.
+ - Поля `minionToMasterType` и `masterRetailStores` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), позволяющие указывать стратегию выбора мастер точки продаж для фискализации облачных чеков.
  
 ## 24-07-2020
 ### Добавлено
-- Новая ошибка 1083 - ошибка формирования ответа на стороне сервера
-- Новый формат описания атрибутов сущностей с помощью таблиц
+ - Новая [ошибка](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki) 1083 - ошибка формирования ответа на стороне сервера
+ - Новый формат описания атрибутов сущностей с помощью таблиц
+
+## 15-07-2020
+### Добавлено
+ - Эндпоинты [управления скидками](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-skidki)
+ - Дополнен раздел [Скидки](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-skidki) новыми примерами
 
 ## 09-07-2020
 ### Добавлено
- - Описание КМ ПУ в сущностях [`Отгрузка`](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka) и [`Приемка`](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka)
+ - Описание кодов маркировки пользовательской упаковки (КМ ПУ) в сущностях [`Отгрузка`](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka) и [`Приемка`](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka)
  - Ошибки при импорте КМ ПУ из xml  
  - Поле [factureOut](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-pokupatelq-vozwraty-pokupatelej-swqzi-s-drugimi-dokumentami) для возврата поставщику, представляющее собой ссылку на связанный с возвратом счет-фактуру выданный
 
@@ -23,35 +29,46 @@
 ### Добавлено
  - Поле `ppeType` (код средства индивидуальной защиты) [в сущность `Товары`](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary-atributy-suschnosti).
 
-## 7-07-2020
+## 07-07-2020
 ### Добавлено
- - [Фильтрация комплектов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment-udalit-sobytie-atributy-dostupnye-dlq-fil-tracii) по артикулу в ассортименте 
+ - [Фильтрация комплектов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment-udalit-sobytie-atributy-dostupnye-dlq-fil-tracii) по артикулу в ассортименте
 
 ## 26-06-2020
 ### Добавлено
- - [Текст](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-autentifikaciq-poluchenie-nowogo-tokena) про отзыв прошлых токенов при создании нового
+ - Раздел про [получение токена](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-autentifikaciq-poluchenie-nowogo-tokena) дополнен информацией про отзыв прошлых токенов при создании нового
 ### Исправлено
- - Указание аутентификации через токен в примерах приведено к единому виду
+ - В примерах исправлен заголовок авторизации через токен
+
+## 23-06-2020
+### Добавлено
+- Эндпоинт [Настройки пользователя](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-pol-zowatelq)
 
 ## 18-06-2020
 ### Добавлено
- - Описание полей ФИО для [Юрлиц](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico) и [Контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent) типа индивидуальный предприниматель и физическое лицо
- - Возможность работы с файлами в [Операциях](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty), [Товарах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar) и [Контрагентах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent)
+ - Поля ФИО для [Юрлиц](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico) и [Контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent) типа индивидуальный предприниматель и физическое лицо
+ - Добавлена возможность работы с [файлами](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-fajly) и поле `files` в сущностях и документах
  
 ## 11-06-2020
 ### Исправлено
- - Информация о лимитах на число элементов в коллекциях и вложенных сущностях (1000 элементов)
+ - Информация о лимитах на число элементов в коллекциях и вложенных сущностях ([1000 элементов](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow))
+
+## 10-06-2020
+### Добавлено
+ - Эндпоинт [Настройка аккаунта компании](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-kompanii)
+
+## 03-06-2020
+### Добавлено
+ - Эндпоинт [Управления настройками справочника товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment)
 
 ## 28-05-2020
 ### Добавлено
+ - Для работы с маркированной продукцией добавлены поля `trackingType` - тип маркированной продукции, `tnved` - код ТНВЭД в сущности [Товар](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-sozdat-towar)
  - Добавлена информация об [ограничениях](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbook-chto-nuzhno-znat-dlq-nachala-raboty-s-json-api-ogranicheniq) и новом [параметре в Вебхуках](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki)
-
-## 28-05-2020
-### Добавлено
- - Описание [ошибок 16102-16110](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-towarow), связанных с маркированными товарами
+ - [Ошибки 16102-16110](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-towarow), связанные с маркированными товарами
 
 ## 15-05-2020
 ### Добавлено
+ - Возможность изменения полей [Сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sotrudnik): `email`, `group`, `archived`, `owner`, `shared`
  - Пояснение об ограничениях при изменении [атрибутов сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-suschnosti)
 
 ## 08-05-2020
@@ -67,7 +84,7 @@
  
 ## 06-05-2020
 ### Добавлено
- - Формулировка об ограничении выборки в блоке [Остатки в позициях документов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty)
+ - [Уточнение](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-ostatki-w-poziciqh-dokumentow) о том, что позиции документов возвращаются при лимите 100 и менее
 
 ## 27-04-2020
 ### Удалено
@@ -76,10 +93,7 @@
 ## 26-04-2020
 ### Изменено
  - [Изменено описание](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-ogranicheniq) ограничения по запросу на один ip
-
-## 26-04-2020
-### Изменено
-- исправление опечатки в описании email [Сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sotrudnik)
+ - исправлена опечатка в описании email [Сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sotrudnik)
 
 ## 14-04-2020
 ### Добавлено
@@ -91,7 +105,7 @@
 
 ## 10-03-2020
 ### Добавлено
-- Описание полей `printed` и `published` в эндпоинте `entity/operation`
+- Фильтрация по `printed` и `published` в раздел [Фильтрация документов](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-poluchenie-nowogo-tokena-fil-traciq-dokumentow)
 
 ## 04-03-2020
 ### Добавлено
