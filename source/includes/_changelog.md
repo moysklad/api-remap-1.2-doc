@@ -116,6 +116,9 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+## 28-07-2020
+- Добавлена возможность изменять настройки применения скидок в [настройках компании]((https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-kompanii))
+
 ### 15-07-2020
 #### Добавлено
 - Эндпоинты [управления скидками](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-skidki)
