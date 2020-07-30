@@ -88,7 +88,8 @@
   - Нельзя добавлять пустое значение в массив тэгов в [Контрагентах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-kontragenty),
    [Точках продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh) и т.д. Такие значения будут игнорироваться  
   - Фильтры в запросе [Ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment)
-    - все фильтры по полям, по доступно и остаток, по search и сортировки теперь могут работать вместе  
+    - все фильтры по полям, по доступно и остаток, по search и сортировки теперь могут работать вместе
+  - [Дополнительные поля](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbook-rabota-s-dopolnitel-nymi-polqmi-cherez-json-api) у Товаров, Услуг, Модификаций и Комплектов общие и располагаются в метаданных Товаров.  
 - Путь эндпоинта
   - Изменен путь к эндпоинтам [Показателям по деньгам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-pokazateli) (`report`)      
 - Документация
@@ -116,6 +117,10 @@
 ## Список последних изменений
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
+
+### 30-07-2020
+#### Изменено
+[Дополнительные поля](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbook-rabota-s-dopolnitel-nymi-polqmi-cherez-json-api) Товаров, Услуг, Модификаций и Комплектов объединены и располагаются в метаданных Товаров.
 
 ### 28-07-2020
 #### Добавлено

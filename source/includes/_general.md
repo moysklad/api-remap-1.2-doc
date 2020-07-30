@@ -216,8 +216,8 @@ curl -X GET
 + [Склад](dictionaries/#suschnosti-sklad)
 + [Сотрудник](dictionaries/#suschnosti-sotrudnik)
 + [Товар](dictionaries/#suschnosti-towar)
-+ [Услуга](dictionaries/#suschnosti-usluga)
-+ [Комплект](dictionaries/#suschnosti-komplekt)
++ [Услуга](dictionaries/#suschnosti-usluga) (располагаются в метаданных Товаров)
++ [Комплект](dictionaries/#suschnosti-komplekt) (располагаются в метаданных Товаров)
 + [Серия](dictionaries/#suschnosti-seriq)
 + Все документы:
   - [Возврат покупателя](documents/#dokumenty-vozwrat-pokupatelq)
