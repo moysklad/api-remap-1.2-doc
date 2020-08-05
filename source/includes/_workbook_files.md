@@ -43,11 +43,11 @@
             "files": [
               {
                 "filename": "description.png",
-                "content": "Base64"
+                "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
               },
               {
                 "filename": "additional_description.txt",
-                "content": "Base64"
+                "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
               }                
             ]
           }'  
@@ -374,7 +374,7 @@ curl -X GET
       -d '[
             {
               "filename": "new_instruction.txt",
-              "content": "Base64"
+              "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
             },
             "meta": {
                 "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/bd1c0a3e-95ee-11e6-8a84-bae500000004/files/f2728180-6afd-4d37-8a13-f3b48069bbb6",

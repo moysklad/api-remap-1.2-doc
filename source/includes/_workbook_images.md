@@ -21,11 +21,11 @@
             "images": [
               {
                 "filename": "birdimage.png",
-                "content": "Base64"
+                "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
               },
               {
                 "filename": "birdimage2.png",
-                "content": "Base64"
+                "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
               }                
             ]
           }'  
@@ -278,7 +278,7 @@ curl -X GET
       -d '[
             {
               "filename": "birdimage.png",
-              "content": "Base64"
+              "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
             },
             {
               "meta": {
