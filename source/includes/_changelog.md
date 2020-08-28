@@ -1,10 +1,12 @@
 # Список изменений
 
-Список последних изменений включает в себя описание отличий между версиями API Remap 1.1 и 1.2 и [список изменений в 
-версии 1.2](#lastchanges) с момента её создания. Перечислены изменения и расширения возможностей существующих эндпоинтов, 
-а также новые эндпоинты, которые позволяют эффективнее работать с API МоегоСклада. Более подробно с особенностями API 
-МоегоСклада  можно ознакомиться в разделе [Workbook](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbook), 
-а также по ссылкам на основные разделы данной документации.
+В разделе перечислены изменения и расширения возможностей существующих эндпоинтов, а также новые эндпоинты,
+ которые позволяют эффективнее работать с API МоегоСклада.
+
+Более подробно с особенностями API МоегоСклада  можно ознакомиться в
+ разделе [Workbook](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbook), а также по ссылкам на основные разделы данной документации.
+
+Список изменений в версии 1.2 с момента её создания можно найти в [github репозитории](https://github.com/moysklad/api-remap-1.2-doc/blob/master/CHANGELOG.md)
 
 ## Отличия API Remap 1.2 от API Remap 1.1
 ### Добавлено
@@ -47,6 +49,7 @@
 - Изменения формата JSON
   - Новые поля `bonusProgram` и `bonusPoints` в [Контрагентах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent)
     и [Организациях](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico)
+  - Новые поля `minionToMasterType` и `masterRetailStores` в [Точке продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh)
 - Фильтрация
   - Новая фильтрация в отчетах [Деньги](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-den-gi), 
     [Показатели продаж](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-pokazateli-prodazh-i-zakazow-pokazateli-prodazh) 
@@ -76,7 +79,7 @@
   - Формат [Штрихкодов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary):
     - можно сохранять ean8 как ean13
     - можно сохранять ean13 как ean8  
-    - в значение штрихкода теперь нелья зпередавать `null`
+    - в значение штрихкода теперь нельзя передавать `null`
     - штрихкоды без указания типа теперь игнорируются
     - штрихкоды вида `null` теперь игнорируются
   - Вывод "денежных" полей, таких как: `vatSum`, `sum`, `commitentSum`, `linkedSum`, `processingSum`, `proceedsNoCash`, `proceedsCash`, 
@@ -88,7 +91,8 @@
   - Нельзя добавлять пустое значение в массив тэгов в [Контрагентах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-kontragenty),
    [Точках продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh) и т.д. Такие значения будут игнорироваться  
   - Фильтры в запросе [Ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment)
-    - все фильтры по полям, по доступно и остаток, по search и сортировки теперь могут работать вместе  
+    - все фильтры по полям, по доступно и остаток, по search и сортировки теперь могут работать вместе
+  - [Дополнительные поля](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbook-rabota-s-dopolnitel-nymi-polqmi-cherez-json-api) у Товаров, Услуг, Модификаций и Комплектов общие и располагаются в метаданных Товаров.  
 - Путь эндпоинта
   - Изменен путь к эндпоинтам [Показателям по деньгам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-pokazateli) (`report`)      
 - Документация
@@ -117,9 +121,25 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
-### 21-07-2020
+### 28-08-2020
 #### Добавлено
 - Эндпоинт [Автозаполнения цен, скидок, ндс позиций](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie)
+
+### 30-07-2020
+#### Изменено
+[Дополнительные поля](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbook-rabota-s-dopolnitel-nymi-polqmi-cherez-json-api) Товаров, Услуг, Модификаций и Комплектов объединены и располагаются в метаданных Товаров.
+
+### 28-07-2020
+#### Добавлено
+- Добавлена возможность изменять настройки применения скидок в [настройках компании]((https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-kompanii))
+
+### 27-07-2020
+#### Добавлено
+ - Поля `minionToMasterType` и `masterRetailStores` в точку продаж, позволяющие указывать стратегию выбора мастер точки продаж для фискализации облачных чеков.
+
+### 22-07-2020
+#### Добавлено
+- Новое поле `factureIn` в [Возврат поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-postawschiku)
 
 ### 15-07-2020
 #### Добавлено
@@ -150,7 +170,7 @@
 #### Добавлено
 - Эндпоинт [Настройка аккаунта компании](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-kompanii)
 
-### 03-96-2020
+### 03-06-2020
 #### Добавлено
 - Эндпоинт [Управления настройками справочника товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment)
 
@@ -208,3 +228,6 @@
 ### 04-03-2020
 #### Документация
 - Добавлен новый раздел [Workbook](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbook)
+
+##
+[Более полный список изменений](https://github.com/moysklad/api-remap-1.2-doc/blob/master/CHANGELOG.md)

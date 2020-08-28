@@ -19,6 +19,7 @@ includes:
   - workbook_attributes_crud
   - workbook_attributes
   - workbook_images
+  - workbook_files
   - workbook_barcode
   - workbook_modification
   

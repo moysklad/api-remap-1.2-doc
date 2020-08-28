@@ -1,20 +1,23 @@
 ## Настройки пользователя
-Средствами JSON API можно получать и редактировать настройки пользователя. Допускается частичное редактирование - отредактированы буду только присутствующие в запросе поля.
+Средствами JSON API можно получать и редактировать настройки пользователя.
 #### Настройки пользователя 
 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) настроек
-+ **defaultCompany** - Организация , которая будет использоваться по умолчанию в документах. Задается в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **defaultCustomerCounterparty** - Покупатель, который будет использоваться по умолчанию в документах раздела "Продажи". Задается в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **defaultPurchaseCounterparty** - Поставщик, который будет использоваться по умолчанию в документах раздела "Закупки". Задается в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **defaultProject** - Проект, который будет использоваться по умолчанию в документах. Задается в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **defaultPlace** - Склад, который будет использоваться по умолчанию в документах. Задается в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **locale** - Язык системы. Допустимые значения "ru_RU" и "en_US"
-+ **printFormat** - [Правила печати документов] (./#suschnosti-nastrojki-pol-zowatelq-poluchit-metadannye-nastroek-kompanii-prawila-pechati-dokumentow) 
-+ **fieldsPerRow** - Количество столбцов, в которых будут располагаться дополнительные поля в документах.
-+ **defaultScreen** - [Страница, которая открывается у пользователя при логине] (./#suschnosti-nastrojki-pol-zowatelq-poluchit-metadannye-nastroek-kompanii-startowyj-akran)
-+ **autoShowReports** - Строить ли отчеты автоматически при переходе на вкладку с отчетом. Допустимые значения false true 
-+ **mailFooter** - Подставляется в подпись в письмах, отправляемых из МС.
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные настроек|&mdash;|да
+|**defaultCompany**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Организации, которая будет использоваться по умолчанию в документах|&mdash;|да
+|**defaultCustomerCounterparty**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Покупателя, который будет использоваться по умолчанию в документах раздела "Продажи"|&mdash;|да
+|**defaultPurchaseCounterparty**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Поставщика, который будет использоваться по умолчанию в документах раздела "Закупки"|&mdash;|да
+|**defaultProject**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Проекта, который будет использоваться по умолчанию в документах|&mdash;|да
+|**defaultPlace**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Склада, который будет использоваться по умолчанию в документах|&mdash;|да
+|**locale**             |Enum|Язык системы. Допустимые значения "ru_RU" и "en_US"|&mdash;|да
+|**printFormat**        |Enum|[Правила печати документов](./#suschnosti-nastrojki-pol-zowatelq-poluchit-metadannye-nastroek-kompanii-prawila-pechati-dokumentow) |&mdash;|да
+|**fieldsPerRow**       |Int|Количество столбцов, в которых будут располагаться дополнительные поля в документах|&mdash;|да
+|**defaultScreen**      |Enum|[Страница, которая открывается у пользователя при логине](./#suschnosti-nastrojki-pol-zowatelq-poluchit-metadannye-nastroek-kompanii-startowyj-akran)|&mdash;|да
+|**autoShowReports**    |Boolean|Строить ли отчеты автоматически при переходе на вкладку с отчетом|&mdash;|да
+|**mailFooter**         |Boolean|Подставляется в подпись в письмах, отправляемых из МС|&mdash;|да
 
 #### Правила печати документов
 Допустимые правила печати:
@@ -185,6 +188,23 @@ curl -X GET
 ```
 
 ### Изменить Настройки пользователя 
+Редактировать можно следующие настройки пользователя:
+
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+|**defaultCompany**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Организации, которая будет использоваться по умолчанию в документах
+|**defaultCustomerCounterparty**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Покупателя, который будет использоваться по умолчанию в документах раздела "Продажи"
+|**defaultPurchaseCounterparty**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Поставщика, который будет использоваться по умолчанию в документах раздела "Закупки"
+|**defaultProject**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Проекта, который будет использоваться по умолчанию в документах
+|**defaultPlace**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Склада, который будет использоваться по умолчанию в документах
+|**locale**             |Enum|Язык системы. Допустимые значения "ru_RU" и "en_US"
+|**mailFooter**         |Boolean|Подставляется в подпись в письмах, отправляемых из МС
+|**fieldsPerRow**       |Int|Количество столбцов, в которых будут располагаться дополнительные поля в документах
+|**printFormat**        |Enum|[Правила печати документов](./#suschnosti-nastrojki-pol-zowatelq-poluchit-metadannye-nastroek-kompanii-prawila-pechati-dokumentow)
+|**defaultScreen**      |Enum|[Страница, которая открывается у пользователя при логине](./#suschnosti-nastrojki-pol-zowatelq-poluchit-metadannye-nastroek-kompanii-startowyj-akran)
+|**autoShowReports**    |Boolean|Строить ли отчеты автоматически при переходе на вкладку с отчетом
+
+Допускается частичное редактирование - отредактированы будут только присутствующие в запросе поля.
 > Запрос на изменение настроек пользователя:
 
 ```shell

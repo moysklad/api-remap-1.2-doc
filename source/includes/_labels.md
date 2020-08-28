@@ -16,18 +16,28 @@
 
 Запрос на печать этикеток и ценников по шаблону печатной формы.
 #### Атрибуты запроса
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **count** - Количество ценников/термоэтикеток. Максимальное количество - `1000`
-+ **salePrice** - Цена продажи
-  + **priceType** - Ссылка на тип цены в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **template** - Ссылка на шаблон для печати в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**organization** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Юрлица|&mdash;|да
+|**count**        |Int|Количество ценников/термоэтикеток. Максимальное количество - `1000`|&mdash;|да
+|**salePrice**    |Object|Цена продажи. [Подробнее тут](../dictionaries/#suschnosti-pechat-atiketok-i-cennikow-zapros-na-pechat-atiketok-i-cennikow-atributy-zaprosa-cena-prodazhi)|&mdash;|да
+|**template**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Шаблона печати|&mdash;|да
+
+##### Цена продажи
+Атрибуты вложенной сущности
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**priceType**    |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные типа цены|&mdash;|да
+
 
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|type|  `string` (required) *Example: product* тип сущности, для которой запрашивается печать.|
-|id |  `string` (required) *Example: a86708d2-f8d3-4e67-8f04-6101158da808* id сущности, для которой запрашивается печать.|
+|:----|:----|
+|**type**|  `string` (required) *Example: product* тип сущности, для которой запрашивается печать.|
+|**id** |  `string` (required) *Example: a86708d2-f8d3-4e67-8f04-6101158da808* id сущности, для которой запрашивается печать.|
 
 > Пример запроса на печать этикеток и ценников по шаблону печатной формы для товаров.
 
