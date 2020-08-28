@@ -310,7 +310,7 @@
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/autofill?fill=vat"
+    "https://online.moysklad.ru/api/remap/1.2/wizard/demand?action=evaluate_vat"
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '
