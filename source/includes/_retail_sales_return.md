@@ -40,6 +40,7 @@
 |**retailShift**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной смены|Необходимое при создании|да
 |**cashSum**                |Float|Оплачено наличными|&mdash;|да
 |**noCashSum**                |Float|Оплачено картой|&mdash;|да
+|**qrSum**                |Float|Оплачено по QR-коду|&mdash;|да
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-roznichnyj-wozwrat-roznichnye-wozwraty-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет
 
 ##### Поля при expand'е доп. полей
@@ -440,7 +441,8 @@ curl -X GET
     }
   },
   "cashSum": 0,
-  "noCashSum": 0
+  "noCashSum": 0,
+  "qrSum": 0
 }
 ```
 
@@ -666,7 +668,8 @@ curl -X GET
     }
   },
   "cashSum": 0,
-  "noCashSum": 0
+  "noCashSum": 0,
+  "qrSum": 0
 }
 ```
 
@@ -922,7 +925,8 @@ curl -X GET
     }
   },
   "cashSum": 360000,
-  "noCashSum": 0
+  "noCashSum": 0,
+  "qrSum": 0
 }
 ```
 
@@ -1166,7 +1170,8 @@ curl -X GET
     }
   },
   "cashSum": 300000,
-  "noCashSum": 60000
+  "noCashSum": 60000,
+  "qrSum": 0
 }
 ```
 
