@@ -120,6 +120,10 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 18-09-2020
+#### Добавлены
+- Новые поля `directorPosition`, `directorSign`, `chiefAccountSign`, `stamp` в [Юрлице](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico)
+
 ### 31-08-2020
 #### Изменено
 - Описание атрибута `allowCreateProducts` в [Точке продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh)
