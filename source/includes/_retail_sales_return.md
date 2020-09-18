@@ -248,7 +248,10 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
-      "taxSystem": "GENERAL_TAX_SYSTEM"
+      "taxSystem": "GENERAL_TAX_SYSTEM",
+      "cashSum": 14000,
+      "noCashSum": 0,
+      "qrSum": 0
     }
   ]
 }
@@ -1417,7 +1420,10 @@ curl -X GET
         "type": "retailshift",
         "mediaType": "application/json"
       }
-    }
+    },
+    "cashSum": 0,
+    "noCashSum": 0,
+    "qrSum": 0
   },
   {
     "meta": {
@@ -1547,7 +1553,10 @@ curl -X GET
         "type": "retailshift",
         "mediaType": "application/json"
       }
-    }
+    },
+    "cashSum": 540000,
+    "noCashSum": 0,
+    "qrSum": 0
   }
 ]
 ```
@@ -1868,7 +1877,10 @@ curl -X GET
       "mediaType": "application/json",
       "uuidHref": "https://online.moysklad.ru/app/#retailshift/edit?id=ed8de012-479b-11e8-7ae5-8ba2000000ce"
     }
-  }
+  },
+  "cashSum": 0,
+  "noCashSum": 0,
+  "qrSum": 0
 }
 ```
 
@@ -1997,7 +2009,10 @@ curl -X GET
       "mediaType": "application/json",
       "uuidHref": "https://online.moysklad.ru/app/#retailshift/edit?id=ed8de012-479b-11e8-7ae5-8ba2000000ce"
     }
-  }
+  },
+  "cashSum": 0,
+  "noCashSum": 0,
+  "qrSum": 0
 }
 ```
 
@@ -2125,7 +2140,10 @@ curl -X GET
       "type": "retailshift",
       "mediaType": "application/json"
     }
-  }
+  },
+  "cashSum": 14000,
+  "noCashSum": 0,
+  "qrSum": 0
 }
 ```
 
@@ -2359,7 +2377,10 @@ curl -X GET
       "type": "retailshift",
       "mediaType": "application/json"
     }
-  }
+  },
+  "cashSum": 540000,
+  "noCashSum": 0,
+  "qrSum": 0
 }
 
 ```
