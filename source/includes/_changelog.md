@@ -120,6 +120,10 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 22-09-2020
+#### Документация
+- Исправлено описание поля `productFolder` у [Групп товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-gruppa-towarow)
+
 ### 31-08-2020
 #### Изменено
 - Описание атрибута `allowCreateProducts` в [Точке продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh)
