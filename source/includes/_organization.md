@@ -65,10 +65,10 @@
 |**utmUrl**           |String(255)|IP-адрес УТМ|&mdash;|нет
 |**director**         |String(255)|Руководитель|&mdash;|нет
 |**directorPosition** |String(255)|Должность руководителя|&mdash;|нет
-|**directorSign**     |Object|Подпись руководителя|&mdash;|нет
+|**directorSign**     |Object|Подпись руководителя. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres-podpisi-i-pechat)|&mdash;|нет
 |**chiefAccountant**  |String(255)|Главный бухгалтер|&mdash;|нет
-|**chiefAccountSign** |Object|Подпись главного бухгалтера|&mdash;|нет
-|**stamp**            |Object|Печать|&mdash;|нет
+|**chiefAccountSign** |Object|Подпись главного бухгалтера. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres-podpisi-i-pechat) |&mdash;|нет
+|**stamp**            |Object|Печать. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres-podpisi-i-pechat) |&mdash;|нет
 
 #### Атрибуты вложенных сущностей
 #### Аттрибуты сущности Адрес
@@ -429,7 +429,20 @@ curl -X GET
   "payerVat":true,
   "utmUrl":"10.250.110.81",
   "director":"Кипелова Александра",
-  "chiefAccountant":"Подкупников Иван"
+  "directorPosition":"Руководитель отдела",
+  "directorSign" : {
+      "filename": "directorSignTest.png",
+      "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
+  },
+  "chiefAccountant":"Подкупников Иван",
+  "chiefAccountSign" : {
+      "filename": "chiefAccountSignTest.png",
+      "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg=="
+  },
+ "stamp" : {
+    "filename": "stampTest.png",
+    "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+ }
 }'  
 ```
 
@@ -545,7 +558,52 @@ curl -X GET
   "isEgaisEnable": true,
   "fsrarId": "1963703",
   "payerVat": true,
-  "utmUrl": "10.250.110.81"
+  "utmUrl": "10.250.110.81",
+  "director":"Кипелова Александра",
+   "directorPosition":"Руководитель отдела",
+   "directorSign" : {
+       "meta" : {
+         "href" : "http://localhost/api/remap/1.2/download/7da0feb5-e110-4021-a49f-35db4ae75f13",
+         "mediaType" : "application/octet-stream"
+       },
+       "title" : "directorSignTest",
+       "filename" : "directorSignTest.png",
+       "size" : 70,
+       "updated" : "2020-09-23 07:37:26.417",
+       "miniature" : {
+         "href" : "http://localhost/api/remap/1.2/download/7da0feb5-e110-4021-a49f-35db4ae75f13?miniature=true",
+         "mediaType" : "image/png"
+       }
+   },
+   "chiefAccountant":"Подкупников Иван",
+   "chiefAccountSign" : {
+       "meta" : {
+         "href" : "http://localhost/api/remap/1.2/download/cdd282d7-7e65-40b7-83a1-c0ef07365769",
+         "mediaType" : "application/octet-stream"
+       },
+       "title" : "chiefAccountSignTest",
+       "filename" : "chiefAccountSignTest.png",
+       "size" : 70,
+       "updated" : "2020-09-23 07:37:26.434",
+       "miniature" : {
+         "href" : "http://localhost/api/remap/1.2/download/cdd282d7-7e65-40b7-83a1-c0ef07365769?miniature=true",
+         "mediaType" : "image/png"
+       }
+   },
+   "stamp" : {
+       "meta" : {
+         "href" : "http://localhost/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383",
+         "mediaType" : "application/octet-stream"
+       },
+       "title" : "stampTest",
+       "filename" : "stampTest.png",
+       "size" : 70,
+       "updated" : "2020-09-23 07:37:26.443",
+       "miniature" : {
+         "href" : "http://localhost/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383?miniature=true",
+         "mediaType" : "image/png"
+       }
+   }
 }
 ```
 
