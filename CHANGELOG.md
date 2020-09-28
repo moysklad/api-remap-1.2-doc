@@ -1,6 +1,18 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 20-09-2020
+#### Изменено
+- Изменено описание установленных ограничений в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq)
+
+### 22-09-2020
+#### Исправлено
+- Описание поля `productFolder` у [Групп товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-gruppa-towarow)
+
+### 08-09-2020
+#### Добавлено
+- Добавлена информация об ошибке **1090**
+
 ## 16-09-2020
 ### Добавлено
 - Информация о новых типах маркированной продукции (духи и фотокамеры) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar)
@@ -9,21 +21,25 @@
 ### Добавлено
 - Информация о новых типах маркированной продукции в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar)
 
+### 31-08-2020
+#### Изменено
+- Описание атрибута `allowCreateProducts` в [Точке продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh)
+
 ### 13-08-2020
 #### Изменено
-- Обновлена информация об ошибке **17102**
+- Обновлена информация об [ошибке](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki) **17102**
 
 ### 04-08-2020
 #### Добавлено
-- Дополнена информация об ошибке **17102**
+- Дополнена информация об [ошибке](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki) **17102**
 
 ## 30-07-2020
 #### Изменено
-Дополнительные поля Товаров, Услуг, Модификаций и Комплектов объединены и располагаются в метаданных Товаров.
+Дополнительные поля Товаров, Услуг, Модификаций и Комплектов объединены и располагаются в метаданных [Товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar)
 
 ## 28-07-2020
 ### Добавлено
- - Добавлена возможность изменять настройки применения скидок в [настройках компании]((https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-kompanii))
+ - Добавлена возможность изменять настройки применения скидок в [Настройках компании]((https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-kompanii))
 
 ## 27-07-2020
 ### Добавлено
@@ -36,7 +52,7 @@
 
 ## 22-07-2020
 ### Добавлено
- - Поле `factureIn` для [возврата поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-postawschiku), представляющее собой ссылку на связанный с возвратом [счет-фактуру полученный](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-faktura-poluchennyj)
+ - Поле `factureIn` для [Возврата поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-postawschiku), представляющее собой ссылку на связанный с возвратом [счет-фактуру полученный](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-faktura-poluchennyj)
 
 ## 15-07-2020
 ### Добавлено
