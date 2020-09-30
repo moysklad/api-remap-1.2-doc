@@ -563,22 +563,22 @@ curl -X GET
    "directorPosition":"Руководитель отдела",
    "directorSign" : {
        "meta" : {
-         "href" : "http://localhost/api/remap/1.2/download/7da0feb5-e110-4021-a49f-35db4ae75f13",
-         "mediaType" : "application/octet-stream"
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/7da0feb5-e110-4021-a49f-35db4ae75f13",
+         "mediaType" : "application/octet-stream"~~~~
        },
        "title" : "directorSignTest",
        "filename" : "directorSignTest.png",
        "size" : 70,
        "updated" : "2020-09-23 07:37:26.417",
        "miniature" : {
-         "href" : "http://localhost/api/remap/1.2/download/7da0feb5-e110-4021-a49f-35db4ae75f13?miniature=true",
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/7da0feb5-e110-4021-a49f-35db4ae75f13?miniature=true",
          "mediaType" : "image/png"
        }
    },
    "chiefAccountant":"Подкупников Иван",
    "chiefAccountSign" : {
        "meta" : {
-         "href" : "http://localhost/api/remap/1.2/download/cdd282d7-7e65-40b7-83a1-c0ef07365769",
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/cdd282d7-7e65-40b7-83a1-c0ef07365769",
          "mediaType" : "application/octet-stream"
        },
        "title" : "chiefAccountSignTest",
@@ -586,13 +586,13 @@ curl -X GET
        "size" : 70,
        "updated" : "2020-09-23 07:37:26.434",
        "miniature" : {
-         "href" : "http://localhost/api/remap/1.2/download/cdd282d7-7e65-40b7-83a1-c0ef07365769?miniature=true",
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/cdd282d7-7e65-40b7-83a1-c0ef07365769?miniature=true",
          "mediaType" : "image/png"
        }
    },
    "stamp" : {
        "meta" : {
-         "href" : "http://localhost/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383",
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383",
          "mediaType" : "application/octet-stream"
        },
        "title" : "stampTest",
@@ -600,7 +600,7 @@ curl -X GET
        "size" : 70,
        "updated" : "2020-09-23 07:37:26.443",
        "miniature" : {
-         "href" : "http://localhost/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383?miniature=true",
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383?miniature=true",
          "mediaType" : "image/png"
        }
    }
