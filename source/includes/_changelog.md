@@ -120,6 +120,10 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 8-10-2020
+#### Изменено
+- Исправлены опечатки
+
 ### 30-07-2020
 #### Изменено
 [Дополнительные поля](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbook-rabota-s-dopolnitel-nymi-polqmi-cherez-json-api) Товаров, Услуг, Модификаций и Комплектов объединены и располагаются в метаданных Товаров.

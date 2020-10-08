@@ -418,7 +418,7 @@ curl -X GET
 
 | Параметр                | Описание  |
 | ------------------------------ |:---------------------------|
-| **name** | номер Счета поставщика
+| **name** | номер Исходящего платежа
 | **organization** | Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 | **agent** | Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 | **expenseItem** | Статья расходов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
