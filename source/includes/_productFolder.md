@@ -26,7 +26,7 @@
 |**pathName**         |String|Наименование Группы товаров, в которую входит данная Группа товаров|Только для чтения|да
 |**vat**         |Int|НДС %|&mdash;|нет
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
-|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы товаров данной группы товаров|&mdash;|нет
+|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на Группу товаров, в которую входит данная Группа товаров, в формате Метаданных|&mdash;|нет
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-gruppa-towarow-kod-sistemy-nalogooblozheniq)|&mdash;|нет
 
 ### Код системы налогообложения
