@@ -48,8 +48,10 @@
 |**retailShift**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной смены|Необходимое при создании|да
 |**cashSum**                |Float|Оплачено наличными|&mdash;|да
 |**noCashSum**                |Float|Оплачено картой|&mdash;|да
+|**qrSum**                  |Float|Оплачено по QR-коду|&mdash;|да
 |**prepaymentCashSum**               |Float|Предоплата наличными|&mdash;|да
 |**prepaymentNoCashSum**                |Float|Предоплата картой|&mdash;|да
+|**prepaymentQrSum**                |Float|Предоплата по QR-коду|&mdash;|да
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|да
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 
@@ -77,17 +79,28 @@
 | **PATENT_BASED**                        | Патент|
 
 #### Работа с полями оплаты розничной продажи
-Сумма полей **cashSum**, **noCashSum**, **prepaymentCashSum** и **prepaymentNoCashSum**
-должна совпадать с суммой по Розничной продаже
+Сумма полей **cashSum**, **noCashSum**, **qrSum**, **prepaymentCashSum**, **prepaymentNoCashSum** и **prepaymentNoCashSum** должна совпадать с суммой по Розничной продаже
 (т.е. с суммарной стоимостью всех переданных вами позиций). Каждое из полей не может иметь отрицательное значение.
 
-При передаче значений нескольких полей кроме **cashSum**, оставшаяся часть суммы будет учтена в **cashSum**.
+Смешанная оплата со способом по QR-коду недопустима. Если **qrSum** или **prepaymentQrSum** ненулевое, то другие поля не могут быть использованы, иначе вернется ошибка.
 
-При передаче значений нескольких полей включая **cashSum**, но не включая **noCashSum**, оставшаяся часть суммы будет учтена в **noCashSum**.
+Если не используются **qrSum** и **prepaymentQrSum** (отсутствуют в запросе или передаются нулевыми):
 
-Если передаются **cashSum** и **noCashSum**, сумма всех полей должна соответствовать сумме по Розничной продаже иначе вернется ошибка.
+- При передаче значений нескольких полей кроме **cashSum**, оставшаяся часть суммы будет учтена в **cashSum**.
 
-Если **prepaymentCashSum** и **prepaymentNoCashSum** не передаются в запросе, считается, что они равны нулю.
+- При передаче значений нескольких полей включая **cashSum**, но не включая **noCashSum**, оставшаяся часть суммы будет учтена в **noCashSum**.
+
+- Если передаются **cashSum** и **noCashSum**, сумма всех полей должна соответствовать сумме по Розничной продаже иначе вернется ошибка.
+
+- Если **prepaymentCashSum** и **prepaymentNoCashSum** не передаются в запросе, считается, что они равны нулю.
+
+Если используются **qrSum** и **prepaymentQrSum**:
+
+- При передаче **prepaymentQrSum**, но не включая **qrSum**, оставшаяся часть суммы будет учтена в **qrSum**.
+
+- При передаче **qrSum**, но не включая **prepaymentQrSum,** оставшаяся часть суммы будет учтена в **prepaymentQrSum**.
+
+- Если передаются **qrSum** и **prepaymentQrSum**, сумма всех полей должна соответствовать сумме по Розничной продаже, иначе вернется ошибка.
 
 #### Позиции Розничной продажи
 Позиции Розничной продажи - это список товаров/услуг/модификаций/серий.
@@ -261,8 +274,10 @@ curl -X GET
       },
       "cashSum": 5100,
       "noCashSum": 0,
+      "qrSum": 0,
       "prepaymentCashSum": 0,
       "prepaymentNoCashSum": 0,
+      "prepaymentQrSum": 0,
       "taxSystem": "GENERAL_TAX_SYSTEM"
     },
     {
@@ -371,8 +386,10 @@ curl -X GET
       },
       "cashSum": 0,
       "noCashSum": 1800,
+      "qrSum": 0,
       "prepaymentCashSum": 0,
-      "prepaymentNoCashSum": 0
+      "prepaymentNoCashSum": 0,
+      "prepaymentQrSum": 0
     }
   ]
 }
@@ -517,8 +534,10 @@ curl -X GET
   },
   "cashSum": 0,
   "noCashSum": 0,
+  "qrSum": 0,
   "prepaymentCashSum": 0,
-  "prepaymentNoCashSum": 0
+  "prepaymentNoCashSum": 0,
+  "prepaymentQrSum": 0
 }
 
 ```
@@ -664,8 +683,10 @@ curl -X GET
   },
   "cashSum": 0,
   "noCashSum": 0,
+  "qrSum": 0,
   "prepaymentCashSum": 0,
-  "prepaymentNoCashSum": 0
+  "prepaymentNoCashSum": 0,
+  "prepaymentQrSum": 0
 }
 ```
 
@@ -852,8 +873,10 @@ curl -X GET
   },
   "cashSum": 14000,
   "noCashSum": 0,
+  "qrSum": 0,
   "prepaymentCashSum": 0,
-  "prepaymentNoCashSum": 0
+  "prepaymentNoCashSum": 0,
+  "prepaymentQrSum": 0
 }
 ```
 
@@ -1062,8 +1085,10 @@ curl -X GET
   },
   "cashSum": 14000,
   "noCashSum": 0,
+  "qrSum": 0,
   "prepaymentCashSum": 0,
-  "prepaymentNoCashSum": 0
+  "prepaymentNoCashSum": 0,
+  "prepaymentQrSum": 0
 }
 ```
 
@@ -1232,8 +1257,10 @@ curl -X GET
     },
     "cashSum": 0,
     "noCashSum": 0,
+    "qrSUm": 0,
     "prepaymentCashSum": 0,
-    "prepaymentNoCashSum": 0
+    "prepaymentNoCashSum": 0,
+    "prepaymentQrSum": 0
   },
   {
     "meta": {
@@ -1353,8 +1380,10 @@ curl -X GET
     },
     "cashSum": 17722,
     "noCashSum": 0,
+    "qrSum": 0,
     "prepaymentCashSum": 0,
-    "prepaymentNoCashSum": 0
+    "prepaymentNoCashSum": 0,
+    "prepaymentQrSum": 0
   }
 ]
 ```
@@ -1686,8 +1715,10 @@ curl -X GET
   "fiscal": false,
   "cashSum": 0,
   "noCashSum": 0,
+  "qrSum": 0,
   "prepaymentCashSum": 0,
-  "prepaymentNoCashSum": 0
+  "prepaymentNoCashSum": 0,
+  "prepaymentQrSum": 0
 }
 ```
 
@@ -1789,8 +1820,10 @@ curl -X GET
   "fiscal": false,
   "cashSum": 0,
   "noCashSum": 0,
+  "qrSum": 0,
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
+  "prepaymentQrSum": 0,
   "customerOrder": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/1b2b2caf-055e-11e6-9464-e4de0000007c",
@@ -1929,8 +1962,10 @@ curl -X GET
   },
   "cashSum": 0,
   "noCashSum": 1800,
+  "qrSum": 0,
   "prepaymentCashSum": 0,
-  "prepaymentNoCashSum": 0
+  "prepaymentNoCashSum": 0,
+  "prepaymentQrSum": 0
 }
 ```
 
@@ -2099,8 +2134,10 @@ curl -X GET
   },
   "cashSum": 17722,
   "noCashSum": 0,
+  "qrSum": 0,
   "prepaymentCashSum": 0,
-  "prepaymentNoCashSum": 0
+  "prepaymentNoCashSum": 0,
+  "prepaymentQrSum": 0
 }
 ```
 
@@ -2294,8 +2331,10 @@ curl -X GET
   },
   "cashSum": 17722,
   "noCashSum": 0,
+  "qrSum": 0,
   "prepaymentCashSum": 0,
-  "prepaymentNoCashSum": 0
+  "prepaymentNoCashSum": 0,
+  "prepaymentQrSum": 0
 }
 ```
 

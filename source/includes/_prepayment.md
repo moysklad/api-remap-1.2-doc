@@ -41,6 +41,7 @@
 |**returns**       |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных на связанные возвраты|&mdash;|нет
 |**cashSum**                |Float|Оплачено наличными|&mdash;|да
 |**noCashSum**                |Float|Оплачено картой|&mdash;|да
+|**qrSum**                  |Float|Оплачено по QR-коду|&mdash;|да
 |**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Предоплаты|&mdash;|да
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-predoplata-predoplaty-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
@@ -279,6 +280,7 @@ curl -X GET
       },
       "cashSum": 15000,
       "noCashSum": 15000,
+      "qrSum": 0,
       "taxSystem": "GENERAL_TAX_SYSTEM"
     }
   ]
@@ -520,7 +522,8 @@ curl -X GET
     }
   },
   "cashSum": 15000,
-  "noCashSum": 15000
+  "noCashSum": 15000,
+  "qrSum": 0
 }
 ```
 
