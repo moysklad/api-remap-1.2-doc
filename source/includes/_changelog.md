@@ -121,9 +121,25 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
-### 28-08-2020
+### 16-10-2020
 #### Добавлено
 - Эндпоинт [Автозаполнения цен, скидок, ндс позиций](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie)
+
+### 8-10-2020
+#### Изменено
+- Исправлены опечатки
+
+### 20-09-2020
+#### Изменено
+- Изменено описание установленных ограничений в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq)
+
+### 22-09-2020
+#### Документация
+- Исправлено описание поля `productFolder` у [Групп товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-gruppa-towarow)
+
+### 31-08-2020
+#### Изменено
+- Описание атрибута `allowCreateProducts` в [Точке продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh)
 
 ### 30-07-2020
 #### Изменено

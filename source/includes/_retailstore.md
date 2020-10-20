@@ -58,7 +58,7 @@
 |**orderTaxSystem**      |Enum| Код системы налогообложения для заказов. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-kod-sistemy-nalogooblozheniq-dlq-zakazow)|&mdash;|да|
 |**demandPrefix**        |String(255)|Префикс номера продаж|&mdash;| нет
 |**allowSellTobaccoWithoutMRC** |Boolean|Разрешить продавать табачную продукцию не по МРЦ|&mdash;|да
-|**allowCreateProducts** |Boolean|Контроль остатков. Не может быть `true`, если `AllowCreateProducts` имеет значение `true`|&mdash;|да
+|**allowCreateProducts** |Boolean|Контроль остатков. Не может быть `true`, если `controlShippingStock` имеет значение `true`|&mdash;|да
 |**productFolders**      |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция Метаданных групп товаров, из которых можно выгружать товары|&mdash;| нет
 |**createAgentsTags**    |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция групп покупателей, представленных в формате строк. Определяет группы, в которые добавляются новые покупатели. Значения `null` игнорируются|&mdash;| нет
 |**filterAgentsTags**    |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция групп покупателей, представленных в формате строк. Определяет группы, из которых выгружаются покупатели. Значения `null` игнорируются|&mdash;| нет
