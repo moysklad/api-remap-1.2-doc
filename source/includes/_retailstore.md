@@ -41,8 +41,8 @@
 |**cashiers**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Кассиров|&mdash;| да
 |**organization**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Юрлица|Необходимое при создании| да
 |**store**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Склада|Необходимое при создании| да
-|**acquire**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Банка-эквайера|&mdash;| да
-|**bankPercent**         |Int|Комиссия банка-эквайера (в процентах)|&mdash;| нет
+|**acquire**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Банка-эквайера по операциям по карте|&mdash;| да
+|**bankPercent**         |Int|Комиссия банка-эквайера по операциям по карте (в процентах)|&mdash;| нет
 |**issueOrders**         |Boolean|Выдача заказов|&mdash;| да
 |**sellReserves**        |Boolean|Учет резервов|&mdash;| да
 |**lastOperationNames**  |Array(Object)| Последние операции. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-poslednie-operacii) |Только для чтения|да
@@ -72,7 +72,10 @@
 |**reservePrepaidGoods**|Boolean|Резервировать товары, за которые внесена предоплата|&mdash;| да
 |**fiscalType**     |Enum| Тип формирования чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-formirowaniq-chekow)|&mdash;|да
 |**minionToMasterType**|Enum|Стратегия выбора кассы для фискализации облачных чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-strategiq-wybora-kassy-dlq-fiskalizacii-oblachnyh-chekow)|&mdash;|да
-|**masterRetailStores**|Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Ссылка на точки продаж, которые могут фискализировать операции с текущей точки продаж, если `minionToMaster` = `CHOSEN`|&mdash;|нет|
+|**masterRetailStores**|Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Ссылка на точки продаж, которые могут фискализировать операции с текущей точки продаж, если `minionToMaster` = `CHOSEN`|&mdash;|нет
+|**qrAcquire**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Банка-эквайера по операциям по QR-коду|&mdash;|нет
+|**qrBankPercent**     |Int|Комиссия банка-эквайера по операция по QR-коду (в процентах)|&mdash;| нет
+|**qrPayEnabled**      |Boolean|Возможность оплаты по QR-коду на точке продаж|&mdash;| да |
  
 ##### Код системы налогообложения по умолчанию
 
@@ -496,7 +499,17 @@ curl -X GET
       "defaultTaxSystem": "GENERAL_TAX_SYSTEM",
       "orderTaxSystem": "GENERAL_TAX_SYSTEM",
       "fiscalType": "STANDARD",
-      "minionToMasterType": "ANY"
+      "minionToMasterType": "ANY",
+      "qrPayEnabled": true,
+      "qrAcquire" : {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/30fe66fd-137a-11e6-9464-e4de00000053",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      },
+      "qrBankPercent" : 11.0
     },
     {
       "meta": {
@@ -696,7 +709,17 @@ curl -X GET
       },
       "reservePrepaidGoods" : true,
       "fiscalType": "MASTER",
-      "minionToMasterType": "ANY"
+      "minionToMasterType": "ANY",
+      "qrPayEnabled": true,
+      "qrAcquire" : {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/30fe66fd-137a-11e6-9464-e4de00000053",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      },
+      "qrBankPercent" : 11.0
     }
   ]
 }
@@ -820,7 +843,17 @@ curl -X GET
                   "type": "retailstore",
                   "mediaType": "application/json"
                 }
-              }]
+              }],
+              "qrPayEnabled": true,
+              "qrBankPercent": 10,
+              "qrAcquire" : {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/30fe66fd-137a-11e6-9464-e4de00000053",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+                  "type": "counterparty",
+                  "mediaType": "application/json"
+                }
+              }
           }'
 ```
 
@@ -993,7 +1026,17 @@ curl -X GET
       "limit" : 1000,
       "offset" : 0
     }
-  }]
+  }],
+  "qrPayEnabled": true,
+  "qrBankPercent": 10,
+  "qrAcquire" : {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/30fe66fd-137a-11e6-9464-e4de00000053",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  }
 }
 ```
 
@@ -1150,7 +1193,8 @@ curl -X GET
   "createCashInOnRetailShiftClosing" : true,
   "returnFromClosedShiftEnabled" : false,
   "enableReturnsWithNoReason" : false,
-  "reservePrepaidGoods" : false
+  "reservePrepaidGoods" : false,
+  "qrPayEnabled": false
 }
 ```
 
@@ -1322,7 +1366,8 @@ curl -X GET
     "createCashInOnRetailShiftClosing" : true,
     "returnFromClosedShiftEnabled" : false,
     "enableReturnsWithNoReason" : false,
-    "reservePrepaidGoods" : false
+    "reservePrepaidGoods" : false,
+    "qrPayEnabled": false
   }
   ,{
     "meta" : {
@@ -1444,7 +1489,8 @@ curl -X GET
     "createCashInOnRetailShiftClosing" : true,
     "returnFromClosedShiftEnabled" : true,
     "enableReturnsWithNoReason" : true,
-    "reservePrepaidGoods" : true
+    "reservePrepaidGoods" : true,
+    "qrPayEnabled": false
   }
 ]
 ```
@@ -1696,6 +1742,16 @@ curl -X GET
     "paymentTerminal": {
       "acquiringType": "payme"
     }
+  },
+  "qrPayEnabled": true,
+  "qrBankPercent": 10,
+  "qrAcquire" : {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/30fe66fd-137a-11e6-9464-e4de00000053",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
   }
 }
 ```
@@ -1842,6 +1898,7 @@ curl -X PUT
   "enableReturnsWithNoReason" : false,
   "reservePrepaidGoods" : false,
   "fiscalType": "MASTER",
-  "minionToMasterType": "ANY"
+  "minionToMasterType": "ANY",
+  "qrPayEnabled": false
 }
 ```
