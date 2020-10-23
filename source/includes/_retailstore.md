@@ -76,6 +76,8 @@
 |**qrAcquire**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Банка-эквайера по операциям по QR-коду|&mdash;|нет
 |**qrBankPercent**     |Int|Комиссия банка-эквайера по операция по QR-коду (в процентах)|&mdash;| нет
 |**qrPayEnabled**      |Boolean|Возможность оплаты по QR-коду на точке продаж|&mdash;| да |
+|**idQR**              |String(255)|Идентификатор устройства QR (IdQR) для приложения оплаты по QR|&mdash;| да |
+|**qrTerminalId**      |String(255)|Идентификатор терминала (TerminalID) для приложения оплаты по QR|&mdash;| да |
  
 ##### Код системы налогообложения по умолчанию
 
@@ -501,6 +503,8 @@ curl -X GET
       "fiscalType": "STANDARD",
       "minionToMasterType": "ANY",
       "qrPayEnabled": true,
+      "idQR" : "y8349n93",
+      "qrTerminalId" : "fb736ft372",
       "qrAcquire" : {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/30fe66fd-137a-11e6-9464-e4de00000053",
@@ -711,6 +715,8 @@ curl -X GET
       "fiscalType": "MASTER",
       "minionToMasterType": "ANY",
       "qrPayEnabled": true,
+      "idQR" : "y8349n93",
+      "qrTerminalId" : "fb736ft372",
       "qrAcquire" : {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/30fe66fd-137a-11e6-9464-e4de00000053",
@@ -845,6 +851,8 @@ curl -X GET
                 }
               }],
               "qrPayEnabled": true,
+              "idQR" : "y8349n93",
+              "qrTerminalId" : "fb736ft372",
               "qrBankPercent": 10,
               "qrAcquire" : {
                 "meta": {
@@ -1028,6 +1036,8 @@ curl -X GET
     }
   }],
   "qrPayEnabled": true,
+  "idQR" : "y8349n93",
+  "qrTerminalId" : "fb736ft372",
   "qrBankPercent": 10,
   "qrAcquire" : {
     "meta": {
@@ -1194,7 +1204,9 @@ curl -X GET
   "returnFromClosedShiftEnabled" : false,
   "enableReturnsWithNoReason" : false,
   "reservePrepaidGoods" : false,
-  "qrPayEnabled": false
+  "qrPayEnabled": false,
+  "idQR" : null,
+  "qrTerminalId" : null
 }
 ```
 
@@ -1367,7 +1379,9 @@ curl -X GET
     "returnFromClosedShiftEnabled" : false,
     "enableReturnsWithNoReason" : false,
     "reservePrepaidGoods" : false,
-    "qrPayEnabled": false
+    "qrPayEnabled": false,
+    "idQR" : null,
+    "qrTerminalId" : null
   }
   ,{
     "meta" : {
@@ -1490,7 +1504,9 @@ curl -X GET
     "returnFromClosedShiftEnabled" : true,
     "enableReturnsWithNoReason" : true,
     "reservePrepaidGoods" : true,
-    "qrPayEnabled": false
+    "qrPayEnabled": false,
+    "idQR" : null,
+    "qrTerminalId" : null
   }
 ]
 ```
@@ -1744,6 +1760,8 @@ curl -X GET
     }
   },
   "qrPayEnabled": true,
+  "idQR" : "y8349n93",
+  "qrTerminalId" : "fb736ft372",
   "qrBankPercent": 10,
   "qrAcquire" : {
     "meta": {
@@ -1899,6 +1917,8 @@ curl -X PUT
   "reservePrepaidGoods" : false,
   "fiscalType": "MASTER",
   "minionToMasterType": "ANY",
-  "qrPayEnabled": false
+  "qrPayEnabled": false,
+  "idQR" : null,
+  "qrTerminalId" : null
 }
 ```
