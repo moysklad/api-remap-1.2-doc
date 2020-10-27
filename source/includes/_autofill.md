@@ -2,9 +2,9 @@
 
 Средствами JSON API можно рассчитать значение скидок, цен и ндс для позиций следующих документов:
 
-- [Опреходование](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-oprihodowanie)
+- [Оприходование](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-oprihodowanie)
 - [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq)
-- [Закказ постовщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-postawschiku)
+- [Заказ поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-postawschiku)
 - [Счет покупателю](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-pokupatelu)
 - [Счет поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-postawschika)
 - [Отгрузка](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka)
@@ -25,7 +25,7 @@
 - [Инвентаризация](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-inwentarizaciq)
 - [Перемещение](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-peremeschenie)
 - [Внутренний заказ](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vnutrennij-zakaz)
-- [Опреходование](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-oprihodowanie)
+- [Оприходование](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-oprihodowanie)
 - [Списание](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-spisanie)
 
 Заполнение цен не поддерживает [Инвентаризация](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-inwentarizaciq)
@@ -35,7 +35,7 @@
 
 #### Атрибуты сущности
 
-Аттрибуты сущности нужно передавать в зависимости от типа документа, для которого будет выполнено автозаполнение. В 
+Атрибуты сущности нужно передавать в зависимости от типа документа, для которого будет выполнено автозаполнение. В 
 соответствие с типом, будут обрабатываться соответствующие поля.
 
 Ниже приводятся поля, которые влияют на заполнение скидок, цен и ндс.
