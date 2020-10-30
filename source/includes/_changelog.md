@@ -120,6 +120,10 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+## 29-10-2020
+### Добавлено
+- Исправлена ошибка регистра кода сущности в  [Группе товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-gruppa-towarow)
+
 ### 21-10-2020
 #### Изменено
 - Добавлена возможность создавать, изменять и удалять [Отделы](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-otdel)
