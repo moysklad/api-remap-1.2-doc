@@ -37,7 +37,6 @@
 ### 13-08-2020
 #### Изменено
 - Обновлена информация об [ошибке](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki) **17102**
->>>>>>> origin/master
 
 ### 04-08-2020
 #### Добавлено
@@ -56,7 +55,7 @@
  - Поля `minionToMasterType` и `masterRetailStores` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), позволяющие указывать стратегию выбора мастер точки продаж для фискализации облачных чеков.
  
 ## 24-07-2020
-### Добав**лено
+### Добавлено
  - Новая [ошибка](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki) 1083 - ошибка формирования ответа на стороне сервера
  - Новый формат описания атрибутов сущностей с помощью таблиц
 
