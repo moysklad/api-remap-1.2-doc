@@ -154,10 +154,6 @@
   },
   "positions": [
     {
-      "price": 3300.0,
-      "discountedPrice": 3300.0,
-      "quantity": 12.0,
-      "sum": 39600.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/46628fb5-c1c8-11ea-c0a8-f00c0000001a",
@@ -166,12 +162,13 @@
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=46628fb5-c1c8-11ea-c0a8-f00c00000018"
         }
-      }
+      },
+      "price": 3300.0,
+      "discountedPrice": 3300.0,
+      "quantity": 12.0,
+      "sum": 39600.0
     },
     {
-      "price": 3300.0,
-      "discountedPrice": 2640.0,
-      "discount": 20.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/bb989405-bf9e-11ea-c0a8-f0100000000e",
@@ -181,6 +178,9 @@
           "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=bb96904c-bf9e-11ea-c0a8-f0100000000c"
         }
       }
+      "price": 3300.0,
+      "discountedPrice": 2640.0,
+      "discount": 20.0
     }
   ]
 }
@@ -254,7 +254,6 @@
   },
   "positions": [
     {
-      "discount": 65.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/46628fb5-c1c8-11ea-c0a8-f00c0000001a",
@@ -264,7 +263,8 @@
           "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=46628fb5-c1c8-11ea-c0a8-f00c00000018"
         }
       },
-      "quantity": 12.0
+      "quantity": 12.0,
+      "discount": 65.0
     },
     {
       "discount": 40.0,
