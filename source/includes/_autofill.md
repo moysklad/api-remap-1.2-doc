@@ -51,7 +51,9 @@
 При этом, если помимо вышеперечисленных полей были добавлены другие, не влияющие на заполнение, то они будут присутствовать в
 ответе в том же порядке и с теми же значениями.
 
-**Примечание**
+**Примечания**
+
+Значения `evaluate_price`и `evaluate_discount` параметра `action` можно передавать через запятую.
 
 Если в документе не используется поле `agent`, то для расчета цен `evaluate_price` и скидок `evaluate_discount` 
 используется значение поля `organization`.
@@ -82,7 +84,7 @@
 
 ### Запрос автозаполения цен
 
-Запрос автозаполения с параметром `action` со значением `evaluate_price`. Требуется заполнение поля **agent**. 
+Запрос автозаполения с параметром `action` со значением `evaluate_price`. Требуется заполнение поля **agent** (или **organization**, если поле **agent** отсутствует). 
 Заполняет поле цены товара **price** (если явно не передано) ценой переданного в поле **agent** контрагента, 
 а также поле **discountedPrice**, с учетом рассчитанной или переданной скидки **discount** 
 (принимается за 0, если значение отсутствует) и НДС **vat** (не учитывается, если пустое, поле **vatEnabled** 
@@ -150,17 +152,6 @@
       "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=eff93a94-c03a-11ea-c0a8-f00c0000001f"
     }
   },
-  "rate": {
-    "currency": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/44126ea6-bf76-11ea-c0a8-f01000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-        "type": "currency",
-        "mediaType": "application/json",
-        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=44126ea6-bf76-11ea-c0a8-f01000000077"
-      }
-    }
-  },
   "positions": [
     {
       "price": 3300.0,
@@ -197,7 +188,7 @@
 
 ### Запрос автозаполения скидок
 
-Запрос автозаполения с параметром `action` со значением `evaluate_discount`. Требуется заполнение поля **agent**. 
+Запрос автозаполения с параметром `action` со значением `evaluate_discount`. Требуется заполнение поля **agent** (или **organization**, если поле **agent** отсутствует). 
 Заполняет поле скидки **discount** (если явно не передано) суммой применимых к данному товару активных скидок 
 переданного в поле **agent** контрагента.
 
@@ -259,17 +250,6 @@
       "type": "counterparty",
       "mediaType": "application/json",
       "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=eff93a94-c03a-11ea-c0a8-f00c0000001f"
-    }
-  },
-  "rate": {
-    "currency": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/44126ea6-bf76-11ea-c0a8-f01000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-        "type": "currency",
-        "mediaType": "application/json",
-        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=44126ea6-bf76-11ea-c0a8-f01000000077"
-      }
     }
   },
   "positions": [
