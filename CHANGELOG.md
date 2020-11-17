@@ -2,6 +2,10 @@
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
 
+### 18-11-2020
+#### Добавлено
+- Фильтрация по `assortment` для [Документов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-poluchenie-nowogo-tokena-dopolnitel-nye-fil-try)
+
 ## 21-10-2020
 ### Добавлено
 - Информация о новых типах маркированной продукции (Альтернативная табачная продукция) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar)
