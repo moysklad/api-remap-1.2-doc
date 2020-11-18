@@ -30,6 +30,10 @@
 
 Заполнение цен не поддерживает [Инвентаризация](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-inwentarizaciq)
 
+Заполнение себестоимости поддерживается только для возвратов без основания следующих типов:
+- [Возврат покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-pokupatelq)
+- [Розничный возврат](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnyj-wozwrat)
+
 
 ### Шаблон автозаполнения
 
@@ -38,7 +42,7 @@
 Атрибуты сущности нужно передавать в зависимости от типа документа, для которого будет выполнено автозаполнение. В 
 соответствие с типом, будут обрабатываться соответствующие поля.
 
-Ниже приводятся поля, которые влияют на заполнение скидок, цен и ндс.
+Ниже приводятся поля, которые влияют на заполнение скидок, цен, ндс и себестоимости.
 
 + **organization** - Ссылка на юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye). Обязателен со значением `evaluate_vat` параметра `action`
 + **agent** - Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye). 
@@ -46,6 +50,8 @@
 + **vatEnabled** - Учитывается ли НДС
 + **vatIncluded** - Включен ли НДС в цену
 + **rate** - Валюта. Если не передано, заполняется валютой учета
++ **store** - Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye). Обязателен со значением `evaluate_cost` параметра `action`
++ **moment** - Дата проведения документа. Влияет на расчет себестоимости 
 + **positions** - Позиции документа
 
 При этом, если помимо вышеперечисленных полей были добавлены другие, не влияющие на заполнение, то они будут присутствовать в
@@ -80,7 +86,7 @@
 
 | Параметр | Описание | 
 | --------- |:----|
-| action | `enum` (optional) *Example: evaluate_discount, evaluate_price, evaluate_discount* Определяет какую информацию нужно заполнить: цены (evaluate_price), ндс (evaluate_vat) или скидки (evaluate_discount). `Допустимые значения: evaluate_price, evaluate_discount, evaluate_vat`. |
+| action | `enum` (optional) *Example: evaluate_discount, evaluate_price, evaluate_discount* Определяет какую информацию нужно заполнить: цены (evaluate_price), ндс (evaluate_vat), скидки (evaluate_discount) или себестоимость (evaluate_cost). `Допустимые значения: evaluate_price, evaluate_discount, evaluate_vat, evaluate_cost`. |
 
 ### Запрос автозаполения цен
 
@@ -397,6 +403,102 @@
           "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=bb96904c-bf9e-11ea-c0a8-f0100000000c"
         }
       }
+    }
+  ]
+}
+```
+
+
+### Запрос автозаполения себестоимости
+
+Запрос автозаполения с параметром `action` со значением `evaluate_cost`. Выполняется только для Возвратов Покупателя и Розничных Возвратов *без основания*. Требуется заполнение поля **store**. 
+Заполняет поля **cost** у позиций значением себестоимости, рассчитанным по FIFO на момент **moment**. Если поле **moment** не указано, то себестоимость рассчитывается на текущую дату.
+
+> Запрос автозаполения себестоимости
+
+```shell
+  curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/wizard/salesreturn?action=evaluate_cost"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+    -d '
+{
+  "store": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/16a3019e-1204-11eb-c0a8-300c00000072",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "http://online.moysklad.ru/app/#warehouse/edit?id=16a3019e-1204-11eb-c0a8-300c00000072"
+    }
+  },
+  "moment": "2020-10-20 17:45:00.000",
+  "positions": [
+    {
+      "assortment": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/46628fb5-c1c8-11ea-c0a8-f00c0000001a",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=466222d6-c1c8-11ea-c0a8-f00c00000018"
+        }
+      }
+    },
+    {
+      "assortment": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/bb989405-bf9e-11ea-c0a8-f0100000000e",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=bb96904c-bf9e-11ea-c0a8-f0100000000c"
+        }
+      }
+    }
+  ]
+}'  
+```
+
+> Response 200 (application/json)
+> Успешный запрос. Результат - JSON представление заполненного шаблона документа.
+
+```json
+{
+  "store": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/16a3019e-1204-11eb-c0a8-300c00000072",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "http://online.moysklad.ru/app/#warehouse/edit?id=16a3019e-1204-11eb-c0a8-300c00000072"
+    }
+  },
+  "moment": "2020-10-20 17:45:00.000",
+  "positions": [
+    {
+      "assortment": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/46628fb5-c1c8-11ea-c0a8-f00c0000001a",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=466222d6-c1c8-11ea-c0a8-f00c00000018"
+        }
+      },
+    "cost": 1200.0
+    },
+    {
+      "assortment": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/bb989405-bf9e-11ea-c0a8-f0100000000e",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=bb96904c-bf9e-11ea-c0a8-f0100000000c"
+        }
+      },
+      "cost": 3500.0
     }
   ]
 }
