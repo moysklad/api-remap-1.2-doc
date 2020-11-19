@@ -121,6 +121,10 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 19-11-2020
+#### Документация
+- Исправлено форматирование таблицы описания полей результата запроса на [получение дополнительных полей](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-dop-polq-suschnostej-poluchit-wse-dop-polq-dlq-ukazannogo-tipa)
+
 ### 05-11-2020
 #### Добавлено
 - Эндпоинт [Управления настройками справочника контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-nastrojki-sprawochnika-kontragentow)
