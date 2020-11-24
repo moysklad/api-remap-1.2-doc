@@ -121,7 +121,7 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
-## 21-10-2020
+### 21-10-2020
 ### Изменено
 - Описание ограничений в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq)
 
@@ -133,7 +133,7 @@
 #### Добавлено
 - добавлены коды [ошибкок 1083, 1084](/doc/api/remap/1.2/#mojsklad-json-api-oshibki-oshibki-formata).
 
-## 29-10-2020
+### 29-10-2020
 ### Добавлено
 - Исправлена ошибка регистра кода сущности в  [Группе товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-gruppa-towarow)
 
