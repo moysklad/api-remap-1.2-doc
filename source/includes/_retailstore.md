@@ -838,7 +838,7 @@ curl -X GET
               "minionToMasterType": "CHOSEN",
               "masterRetailStores": [{
                 "meta": {
-                  "href": "http://localhost/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d",
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d",
                   "metadataHref" : "http://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
                   "type": "retailstore",
                   "mediaType": "application/json"
@@ -1019,7 +1019,7 @@ curl -X GET
   "minionToMasterType": "CHOSEN",
   "masterRetailStores": [{
     "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d/masterRetailStores",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d/masterRetailStores",
       "type": "retailstore",
       "mediaType" : "application/json",
       "size" : 1,

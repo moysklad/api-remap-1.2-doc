@@ -823,7 +823,7 @@ curl -X GET
 ```json
 {
   "meta" : {
-    "href" : "http://localhost/api/remap/1.2/entity/assortment/settings",
+    "href" : "https://online.moysklad.ru/api/remap/1.2/entity/assortment/settings",
     "type" : "assortmentsettings",
     "mediaType" : "application/json"
   },
@@ -872,7 +872,7 @@ curl -X PUT
 ```json
 {
   "meta" : {
-    "href" : "http://localhost/api/remap/1.2/entity/assortment/settings",
+    "href" : "https://online.moysklad.ru/api/remap/1.2/entity/assortment/settings",
     "type" : "assortmentsettings",
     "mediaType" : "application/json"
   },
