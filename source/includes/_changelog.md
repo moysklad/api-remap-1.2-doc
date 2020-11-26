@@ -119,8 +119,12 @@
 - В [Розничной смене](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena) удалено поле `applicable` в перечислении полей
 
 ## Список последних изменений
-<a name="lastchanges"></a>
+<a name="lastchanges"></a><
 Список последних изменений в API Remap 1.2
+
+### 26-11-2020
+#### Изменено
+- Исправлен некорректный url в примерах json [Управления настройками справочника контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-nastrojki-sprawochnika-kontragentow)
 
 ### 05-11-2020
 #### Добавлено
