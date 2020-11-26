@@ -3285,3 +3285,89 @@ curl -X DELETE
 
 > Response 200 (application/json). Успешное удаление События.
 
+### Настройки справочника контрагентов
+
+Средствами JSON API можно управлять настройками справочника контрагентов. 
+
+#### Атрибуты настроек справочника контрагентов
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Настроек справочника контрагентов|&mdash;|да
+|**uniqueCodeRules**    |Object|Настройки кодов контрагентов|&mdash;|да
+|**createShared**       |Boolean|Создавать новые документы с меткой «Общий»|&mdash;|да
+
+#### Настройки кодов контрагентов
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**checkUniqueCode**    |Boolean|Проверка уникальности кода справочника|&mdash;|да
+|**fillUniqueCode**     |Boolean|Устанавливать уникальный код|&mdash;|да
+
+### Получить Настройки справочника контрагентов
+
+> Запрос на получение настроек справочника контрагентов
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/settings"
+  -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление настроек справочника контрагентов.
+
+```json
+{
+  "meta" : {
+    "href" : "http://localhost/api/remap/1.2/entity/counterparty/settings",
+    "type" : "counterpartysettings",
+    "mediaType" : "application/json"
+  },
+  "uniqueCodeRules" : {
+    "checkUniqueCode" : true,
+    "fillUniqueCode" : true
+  },
+  "createShared" : true
+}
+```
+
+### Изменить настройки справочника контрагентов 
+
+В теле запроса нужно передать объект, содержащий новый JSON настроек справочника контрагентов.
+Изменять настройки можно частично, для этого в тело запроса нужно добавить лишь те поля, которые необходимо обновлять, остальные поля останутся прежними. Каждое поле является необязательным.
+В ответе придет полная сущность, даже если обновление было частичным. 
+
+> Запрос на изменение метаданных справочника контрагентов.
+
+```shell
+curl -X PUT
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/settings"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '{
+  "uniqueCodeRules": {
+    "checkUniqueCode": true,
+    "fillUniqueCode": true
+  },
+  "createShared": false
+}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление настроек справочника контрагентов.
+
+```json
+{
+  "meta" : {
+    "href" : "http://localhost/api/remap/1.2/entity/counterparty/settings",
+    "type" : "counterpartysettings",
+    "mediaType" : "application/json"
+  },
+  "uniqueCodeRules": {
+    "checkUniqueCode": true,
+    "fillUniqueCode": true
+  },
+  "createShared": false
+}
+```
