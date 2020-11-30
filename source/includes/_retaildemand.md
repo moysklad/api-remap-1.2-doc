@@ -1805,11 +1805,11 @@ curl -X GET
       "vat": 0,
       "assortment": {
         "meta": {
-          "href": "http://localhost:8081/api/remap/1.2/entity/product/9f9ac08a-e0e3-11e7-9464-e4de00000003",
-          "metadataHref": "http://localhost:8081/api/remap/1.2/entity/product/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/9f9ac08a-e0e3-11e7-9464-e4de00000003",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "product",
           "mediaType": "application/json",
-          "uuidHref": "http://localhost:8081/app/#good/edit?id=3bb1af6c-2842-11e9-ac12-000c00000061"
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3bb1af6c-2842-11e9-ac12-000c00000061"
         }
       }
     }

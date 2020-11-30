@@ -154,27 +154,27 @@ curl -X GET
     "mediaType": "application/json"
   },
   "defaultCompany": {
-    "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
     "type": "organization",
     "mediaType": "application/json"
   },
   "defaultCustomerCounterparty": {
-    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
     "type": "counterparty",
     "mediaType": "application/json"
   },
   "defaultPurchaseCounterparty": {
-    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
     "type": "counterparty",
     "mediaType": "application/json"
   },
   "defaultProject": {
-    "href": "http://localhost/api/remap/1.2/entity/project/59e1cf55-a70f-11ea-ac12-000d00000001",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/59e1cf55-a70f-11ea-ac12-000d00000001",
     "type": "project",
     "mediaType": "application/json"
   },
   "defaultPlace": {
-    "href": "http://localhost/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
     "type": "store",
     "mediaType": "application/json"
   },
@@ -214,27 +214,27 @@ curl -X PUT
   -H "Content-Type: application/json"
       -d '{
   "defaultCompany": {
-    "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
     "type": "organization",
     "mediaType": "application/json"
   },
   "defaultCustomerCounterparty": {
-    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
     "type": "counterparty",
     "mediaType": "application/json"
   },
   "defaultPurchaseCounterparty": {
-    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
     "type": "counterparty",
     "mediaType": "application/json"
   },
   "defaultProject": {
-    "href": "http://localhost/api/remap/1.2/entity/project/59e1cf55-a70f-11ea-ac12-000d00000001",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/59e1cf55-a70f-11ea-ac12-000d00000001",
     "type": "project",
     "mediaType": "application/json"
   },
   "defaultPlace": {
-    "href": "http://localhost/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
     "type": "store",
     "mediaType": "application/json"
   },
@@ -260,27 +260,27 @@ curl -X PUT
     "mediaType": "application/json"
   },
   "defaultCompany": {
-    "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
     "type": "organization",
     "mediaType": "application/json"
   },
   "defaultCustomerCounterparty": {
-    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000073",
     "type": "counterparty",
     "mediaType": "application/json"
   },
   "defaultPurchaseCounterparty": {
-    "href": "http://localhost/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/5f13f655-a419-11ea-ac12-000a00000074",
     "type": "counterparty",
     "mediaType": "application/json"
   },
   "defaultProject": {
-    "href": "http://localhost/api/remap/1.2/entity/project/59e1cf55-a70f-11ea-ac12-000d00000001",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/project/59e1cf55-a70f-11ea-ac12-000d00000001",
     "type": "project",
     "mediaType": "application/json"
   },
   "defaultPlace": {
-    "href": "http://localhost/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/5f13ac1b-a419-11ea-ac12-000a00000072",
     "type": "store",
     "mediaType": "application/json"
   },
