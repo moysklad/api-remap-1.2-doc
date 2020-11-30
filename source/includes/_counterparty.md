@@ -3320,7 +3320,7 @@ curl -X GET
 ```json
 {
   "meta" : {
-    "href" : "http://localhost/api/remap/1.2/entity/counterparty/settings",
+    "href" : "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/settings",
     "type" : "counterpartysettings",
     "mediaType" : "application/json"
   },
@@ -3360,7 +3360,7 @@ curl -X PUT
 ```json
 {
   "meta" : {
-    "href" : "http://localhost/api/remap/1.2/entity/counterparty/settings",
+    "href" : "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/settings",
     "type" : "counterpartysettings",
     "mediaType" : "application/json"
   },
