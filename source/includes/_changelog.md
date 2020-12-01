@@ -122,6 +122,10 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 21-10-2020
+#### Изменено
+- Описание ограничений в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq) и [воркбуке](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbook)
+
 ### 30-11-2020
 #### Документация
 - Исправлено форматирование таблицы описания полей результата запроса на [получение дополнительных полей](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-dop-polq-suschnostej-poluchit-wse-dop-polq-dlq-ukazannogo-tipa)
