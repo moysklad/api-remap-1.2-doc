@@ -122,6 +122,10 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 18-01-2020
+#### Изменено
+- Для доступа к аудиту не нужно быть администратором
+
 ### 22-12-2020
 #### Изменено
 - Исправлен http метод в запросе на удаление группы товаров с GET на DELETE в [Группа товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-gruppa-towarow-udalit-gruppu-towarow)
