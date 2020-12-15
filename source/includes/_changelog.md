@@ -122,6 +122,10 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 15-12-2020
+#### Изменено
+- Добавлены поля `printed` и `published` в [документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/)
+
 ### 04-12-2020
 #### Документация
 - Исправлены неточности в разделе [Отчет остатки](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki)
