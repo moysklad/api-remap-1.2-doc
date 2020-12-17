@@ -250,7 +250,9 @@ curl -X GET
           "offset": 0
         }
       },
-      "created": "2019-02-25 12:28:42",
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "positions": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/prepaymentreturn/bdf4e318-38df-11e9-ac12-000c0000004e/positions",
@@ -490,7 +492,9 @@ curl -X GET
       "offset": 0
     }
   },
-  "created": "2019-02-25 12:28:42",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/prepaymentreturn/7944ef04-f831-11e5-7a69-971500188b19/positions",

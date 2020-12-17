@@ -407,7 +407,9 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "created": "2017-05-12 16:04:15",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/80a2ea3b-3713-11e7-8a7f-40d000000003/positions",
@@ -637,7 +639,9 @@ curl -X GET
       "value": false
     }
   ],
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/5d6c0d07-1381-11e6-9464-e4de00000000/positions",
@@ -894,7 +898,9 @@ curl -X GET
       "value": false
     }
   ],
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions",
@@ -1147,7 +1153,9 @@ curl -X GET
       "value": false
     }
   ],
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions",
@@ -1385,7 +1393,9 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
-    "created": "2017-05-12 16:04:15",
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/80a2ea3b-3713-11e7-8a7f-40d000000003/positions",
@@ -1521,7 +1531,9 @@ curl -X GET
         "value": false
       }
     ],
-    "created": "2007-02-07 17:16:41",
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions",
@@ -2345,7 +2357,9 @@ curl -X GET
       "value": false
     }
   ],
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/c1ab79f5-1381-11e6-9464-e4de00000005/positions",

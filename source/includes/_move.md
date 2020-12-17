@@ -407,7 +407,9 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/544236cb-4f6a-11e6-8a84-bae500000003/positions",
@@ -602,7 +604,9 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
-    "created": "2007-02-07 17:16:41",
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/544236cb-4f6a-11e6-8a84-bae500000003/positions",
@@ -713,7 +717,9 @@ curl -X GET
         "value": 43
       }
     ],
-    "created": "2007-02-07 17:16:41",
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/544236cb-4f6a-11e6-8a84-bae500000003/positions",
@@ -940,7 +946,9 @@ curl -X POST
       "mediaType": "application/json"
     }
   },
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "rows": [
       {
@@ -1403,7 +1411,9 @@ curl -X GET
       "value": 43
     }
   ],
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/544236cb-4f6a-11e6-8a84-bae500000003/positions",

@@ -167,6 +167,9 @@ curl -X GET
       "externalCode": "xmlPt1lUie1p18VedA1M-3",
       "moment": "2016-07-26 16:51:00",
       "applicable": true,
+      "created": "2007-02-07 17:16:41",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -236,6 +239,9 @@ curl -X GET
       "externalCode": "9CC4OgVhhJwPTl3289w0q1",
       "moment": "2016-07-21 12:51:00",
       "applicable": true,
+      "created": "2007-02-07 17:16:41",
+      "printed": true,
+      "published": true,
       "sum": 13200,
       "organization": {
         "meta": {
@@ -461,6 +467,8 @@ curl -X GET
     }
   ],
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/enter/7cfff21a-533b-11e6-8a84-bae50000001f/positions",
@@ -722,6 +730,8 @@ curl -X GET
       }
     ],
     "created": "2007-02-07 17:16:41",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/enter/7cfff21a-533b-11e6-8a84-bae50000001f/positions",
@@ -819,7 +829,9 @@ curl -X GET
         "value": 501
       }
     ],
-    "created": "2007-02-07 17:16:41",
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/enter/7cfff21a-533b-11e6-8a84-bae50000001f/positions",
@@ -1234,6 +1246,8 @@ curl -X GET
     }
   ],
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/enter/7cfff21a-533b-11e6-8a84-bae50000001f/positions",

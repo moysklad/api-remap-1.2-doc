@@ -591,6 +591,8 @@ curl -X GET
     }
   ],
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportout/cc5beac8-acdb-11e6-8a84-bae500000000/positions",
@@ -974,6 +976,8 @@ curl -X GET
       }
     ],
     "created": "2007-02-07 17:16:41",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportout/cc5beac8-acdb-11e6-8a84-bae500000000/positions",
@@ -1106,6 +1110,8 @@ curl -X GET
       }
     ],
     "created": "2007-02-07 17:16:41",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportout/cc5beac8-acdb-11e6-8a84-bae500000000/positions",
@@ -1641,6 +1647,8 @@ curl -X GET
     }
   ],
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportout/cc5beac8-acdb-11e6-8a84-bae500000000/positions",

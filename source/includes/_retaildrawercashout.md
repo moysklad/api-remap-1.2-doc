@@ -124,6 +124,9 @@ curl -X GET
       "syncId": "ece1344a-5a68-4d32-ac70-a56b943717b5",
       "moment": "2016-10-19 16:51:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -183,6 +186,9 @@ curl -X GET
       "externalCode": "ohO0hmq7jioNXhM5xuTVe3",
       "moment": "2016-10-19 16:51:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -295,6 +301,9 @@ curl -X GET
   "externalCode": "n19Ol5mFidHzBBojcTzvo3",
   "moment": "2016-10-19 18:00:19",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -417,6 +426,9 @@ curl -X GET
     "externalCode": "n19Ol5mFidHzBBojcTzvo3",
     "moment": "2016-10-19 18:00:19",
     "applicable": true,
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "rate": {
       "currency": {
         "meta": {
@@ -477,6 +489,9 @@ curl -X GET
     "externalCode": "n19Ol5mFidHzBBojcTzvo3",
     "moment": "2016-10-19 18:00:19",
     "applicable": false,
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "rate": {
       "currency": {
         "meta": {
@@ -699,6 +714,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "sum": 0,
   "organization": {
     "meta": {
@@ -741,6 +759,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "sum": 0,
   "organization": {
     "meta": {
@@ -802,6 +823,9 @@ curl -X GET
   "syncId": "ece1344a-5a68-4d32-ac70-a56b943717b5",
   "moment": "2016-10-19 16:51:00",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -884,6 +908,9 @@ curl -X GET
   "externalCode": "n19Ol5mFidHzBBojcTzvo3",
   "moment": "2016-10-19 18:00:19",
   "applicable": false,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {

@@ -316,6 +316,8 @@ curl -X GET
     }
   },
   "created": "2017-04-27 18:27:09",
+  "printed": true,
+  "published": true,
   "demands": [
     {
       "meta": {
@@ -431,6 +433,8 @@ curl -X GET
       }
     },
     "created": "2017-04-27 18:27:09",
+    "printed": true,
+    "published": true,
     "demands": [
       {
         "meta": {
@@ -501,6 +505,8 @@ curl -X GET
       }
     },
     "created": "2017-04-27 18:27:09",
+    "printed": true,
+    "published": true,
     "stateContractId": "005674",
     "demands": [
       {
@@ -1156,6 +1162,8 @@ curl -X GET
     }
   },
   "created": "2017-04-27 18:27:09",
+  "printed": true,
+  "published": true,
   "stateContractId": "005674",
   "demands": [
     {

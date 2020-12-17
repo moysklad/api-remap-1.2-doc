@@ -296,6 +296,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/7370448e-afe9-11e6-8af5-581e00000036/positions",
@@ -443,6 +445,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/c41abcd9-afea-11e6-8af5-581e0000003c/positions",
@@ -587,6 +591,8 @@ curl -X GET
     }
   ],
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/a6d8eee9-afee-11e6-8af5-581e00000049/positions",
@@ -693,6 +699,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/d983f7fc-afef-11e6-8af5-581e00000050/positions",
@@ -801,6 +809,8 @@ curl -X GET
       }
     },
     "created": "2007-02-07 17:16:41",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/7370448e-afe9-11e6-8af5-581e00000036/positions",
@@ -858,6 +868,8 @@ curl -X GET
       }
     },
     "created": "2007-02-07 17:16:41",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/312cc207-afe9-11e6-8af5-581e0000002c/positions",
@@ -1219,6 +1231,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/312cc207-afe9-11e6-8af5-581e0000002c/positions",
@@ -1374,6 +1388,8 @@ curl -X GET
     }
   ],
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/28bd7720-afee-11e6-8af5-581e00000093/positions",
@@ -1529,6 +1545,8 @@ curl -X GET
     }
   ],
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/28bd7720-afee-11e6-8af5-581e00000093/positions",

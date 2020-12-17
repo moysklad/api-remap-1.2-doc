@@ -148,6 +148,9 @@ curl -X GET
       "externalCode": "wWfQT10VjQztCieUrE72r2",
       "moment": "2016-07-04 09:31:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -245,6 +248,9 @@ curl -X GET
       "externalCode": "Q9wiyzIQiOhYhqpVkq6IE2",
       "moment": "2016-07-04 09:32:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -361,6 +367,9 @@ curl -X GET
       "externalCode": "Biim5OxdjUnFcC2saaU551",
       "moment": "2016-07-04 09:30:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -519,6 +528,9 @@ curl -X GET
   "name": "0721",
   "moment": "2012-06-27 16:52:24",
   "applicable": false,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -683,6 +695,9 @@ curl -X GET
     "name": "0721",
     "moment": "2012-06-27 16:52:24",
     "applicable": false,
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "rate": {
       "currency": {
         "meta": {
@@ -751,6 +766,9 @@ curl -X GET
     "externalCode": "unreal777slknf",
     "moment": "2016-06-27 16:52:24",
     "applicable": true,
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "rate": {
       "currency": {
         "meta": {
@@ -1052,6 +1070,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "sum": 0,
   "organization": {
     "meta": {
@@ -1102,6 +1123,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1179,6 +1203,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1256,6 +1283,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1333,6 +1363,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1428,6 +1461,9 @@ curl -X GET
   },
   "moment": "2016-11-25 18:17:38",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1548,6 +1584,9 @@ curl -X GET
   "externalCode": "Biim5OxdjUnFcC2saaU551",
   "moment": "2016-07-04 09:30:00",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1742,6 +1781,9 @@ curl -X GET
   "externalCode": "unreal777slknf",
   "moment": "2016-06-27 16:52:24",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {

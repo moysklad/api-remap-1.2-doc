@@ -345,6 +345,8 @@ curl -X GET
     }
   },
   "created": "2017-04-27 15:55:04",
+  "printed": true,
+  "published": true,
   "incomingNumber": "356124365",
   "incomingDate": "2017-04-06 00:00:00",
   "supplies": [
@@ -464,6 +466,8 @@ curl -X GET
       }
     },
     "created": "2017-04-27 15:55:04",
+    "printed": true,
+    "published": true,
     "incomingNumber": "356124365",
     "incomingDate": "2017-04-06 00:00:00",
     "supplies": [
@@ -537,6 +541,8 @@ curl -X GET
       }
     },
     "created": "2017-04-27 15:55:04",
+    "printed": true,
+    "published": true,
     "incomingNumber": "356124365",
     "incomingDate": "2017-04-06 00:00:00",
     "supplies": [
@@ -1086,6 +1092,8 @@ curl -X GET
     }
   },
   "created": "2017-04-27 15:55:04",
+  "printed": true,
+  "published": true,
   "incomingNumber": "356124365",
   "incomingDate": "2017-04-06 00:00:00",
   "supplies": [

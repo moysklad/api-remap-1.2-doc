@@ -239,7 +239,9 @@ curl -X GET
           "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=7906d621-2e92-11e9-ac12-000e0000005a"
         }
       },
-      "created": "2019-02-22 09:31:44",
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,      
       "positions": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/prepayment/857c7a16-366b-11e9-ac12-000b00000070/positions",
@@ -482,7 +484,9 @@ curl -X GET
       "offset": 0
     }
   },
-  "created": "2019-02-22 09:31:44",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/prepayment/7944ef04-f831-11e5-7a69-971500188b19/positions",

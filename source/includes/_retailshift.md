@@ -137,6 +137,9 @@ curl -X GET
         }
       },
       "moment": "2016-04-18 15:06:51",
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "vatEnabled": true,
       "vatIncluded": true,
       "organization": {
@@ -276,6 +279,9 @@ curl -X GET
         }
       },
       "moment": "2016-04-18 15:48:04",
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "vatEnabled": true,
       "vatIncluded": true,
       "organization": {
@@ -630,6 +636,9 @@ curl -X GET
     }
   },
   "moment": "2016-04-25 13:10:19",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "vatEnabled": true,
   "vatIncluded": true,
   "organization": {

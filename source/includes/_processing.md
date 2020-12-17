@@ -167,6 +167,8 @@ curl -X GET
       "externalCode": "JhQJY8u1isyuqHyn7B6Wx3",
       "moment": "2016-11-21 17:46:00.000",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "project": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/project/7f3a7d7a-97a1-11e6-5bed-427b0000009c",
@@ -269,6 +271,8 @@ curl -X GET
       "externalCode": "pJCPjt45j2MH-RF6joC801",
       "moment": "2016-11-21 18:51:23.000",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "project": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/project/7f3a7d7a-97a1-11e6-5bed-427b0000009c",
@@ -372,6 +376,8 @@ curl -X GET
       "externalCode": "wI2vDDTVgkW48xeO4nQx83",
       "moment": "2016-11-17 18:15:00.000",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "project": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/project/7f3a7d7a-97a1-11e6-5bed-427b0000009c",
@@ -466,6 +472,8 @@ curl -X GET
       "externalCode": "299q4AXMhEnfW6V49y5nK3",
       "moment": "2016-11-21 18:51:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "project": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/project/7f3a7d7a-97a1-11e6-5bed-427b0000009c",
@@ -568,6 +576,8 @@ curl -X GET
       "externalCode": "P81TjGDDiO5p7oUzSsvtk3",
       "moment": "2016-11-17 18:44:00.000",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "project": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/project/7f3a7d7a-97a1-11e6-5bed-427b0000009c",
@@ -662,6 +672,8 @@ curl -X GET
       "externalCode": "9VU4bcd7jcC3nOhk5M2Ul0",
       "moment": "2016-11-18 19:59:00.000",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "project": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/project/7f3a7d7a-97a1-11e6-5bed-427b0000009c",
@@ -889,6 +901,8 @@ curl -X GET
   "externalCode": "JhQJY8u1isyuqHyn7B6Wx3",
   "moment": "2016-11-21 17:46:00",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "project": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/project/7f3a7d7a-97a1-11e6-5bed-427b0000009c",
@@ -1147,6 +1161,8 @@ curl -X GET
   "externalCode": "JhQJY8u1isyuqHyn7B6Wx3",
   "moment": "2016-11-21 17:46:00",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "project": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/project/7f3a7d7a-97a1-11e6-5bed-427b0000009c",
@@ -1386,6 +1402,8 @@ curl -X GET
     "externalCode": "JhQJY8u1isyuqHyn7B6Wx3",
     "moment": "2016-11-21 17:46:00",
     "applicable": true,
+    "printed": true,
+    "published": true,
     "project": {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/project/7f3a7d7a-97a1-11e6-5bed-427b0000009c",
@@ -1488,6 +1506,8 @@ curl -X GET
     "externalCode": "JhQJY8u1isyuqHyn7B6Wx3",
     "moment": "2016-11-21 17:46:00",
     "applicable": true,
+    "printed": true,
+    "published": true,
     "project": {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/project/7f3a7d7a-97a1-11e6-5bed-427b0000009c",
@@ -1847,6 +1867,8 @@ curl -X GET
   },
   "moment": "2016-12-05 14:35:47",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "project": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/project/7f3a7d7a-97a1-11e6-5bed-427b0000009c",
@@ -1976,6 +1998,8 @@ curl -X GET
   },
   "moment": "2016-12-05 14:35:47",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "organization": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/a1331985-a1c8-11e6-5bed-427b00000084",
@@ -2107,6 +2131,8 @@ curl -X GET
   "externalCode": "JhQJY8u1isyuqHyn7B6Wx3",
   "moment": "2016-11-21 17:46:00",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "project": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/project/7f3a7d7a-97a1-11e6-5bed-427b0000009c",
@@ -2240,6 +2266,8 @@ curl -X GET
   "externalCode": "JhQJY8u1isyuqHyn7B6Wx3",
   "moment": "2016-11-21 17:46:00",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "project": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/project/7f3a7d7a-97a1-11e6-5bed-427b0000009c",
