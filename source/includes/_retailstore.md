@@ -74,7 +74,7 @@
 |**minionToMasterType**|Enum|Стратегия выбора кассы для фискализации облачных чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-strategiq-wybora-kassy-dlq-fiskalizacii-oblachnyh-chekow)|&mdash;|да
 |**masterRetailStores**|Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Ссылка на точки продаж, которые могут фискализировать операции с текущей точки продаж, если `minionToMaster` = `CHOSEN`|&mdash;|нет
 |**qrAcquire**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Банка-эквайера по операциям по QR-коду|&mdash;|нет
-|**qrBankPercent**     |Int|Комиссия банка-эквайера по операция по QR-коду (в процентах)|&mdash;| нет
+|**qrBankPercent**     |Double|Комиссия банка-эквайера по операция по QR-коду (в процентах)|&mdash;| нет
 |**qrPayEnabled**      |Boolean|Возможность оплаты по QR-коду на точке продаж|&mdash;| да |
  
 ##### Код системы налогообложения по умолчанию
