@@ -147,6 +147,10 @@
 ### Исправлено
  - В примерах исправлен заголовок авторизации через токен
 
+## 21-12-2020
+### Добавлено
+- добавлен код [ошибки 14012](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-dop-polq)
+
 ## 23-06-2020
 ### Добавлено
 - Эндпоинт [Настройки пользователя](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-pol-zowatelq)
