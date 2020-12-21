@@ -384,7 +384,7 @@ curl -X GET
 > Запрос на удаление Группы товаров с указанным id.
 
 ```shell
-curl -X GET
+curl -X DELETE
   "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/7944ef04-f831-11e5-7a69-971500188b19"
   -H "Authorization: Basic <Credentials>"
 ```
