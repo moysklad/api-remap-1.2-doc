@@ -414,7 +414,6 @@ curl -X DELETE
 | ------------------------------ |:---------------------------|
 | **meta**         | Ссылка на метаданные Розничных смен|
 | **attributes**   | Массив объектов доп. полей Розничных смен в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)|
-| **states**       | Массив статусов Розничных смен|
 | **createShared** | создавать новые Розничные смены с меткой "Общий"|
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
@@ -442,99 +441,6 @@ curl -X GET
       "name": "AttributeName1",
       "type": "string",
       "required": false
-    }
-  ],
-  "states": [
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
-        "type": "state",
-        "mediaType": "application/json"
-      },
-      "id": "fb56c504-2e58-11e6-8a84-bae500000069",
-      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-      "name": "Новый",
-      "color": 15106326,
-      "stateType": "Regular",
-      "entityType": "customerorder"
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata/states/fb56cae3-2e58-11e6-8a84-bae50000006a",
-        "type": "state",
-        "mediaType": "application/json"
-      },
-      "id": "fb56cae3-2e58-11e6-8a84-bae50000006a",
-      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-      "name": "Подтвержден",
-      "color": 40931,
-      "stateType": "Regular",
-      "entityType": "customerorder"
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata/states/fb56cf4f-2e58-11e6-8a84-bae50000006b",
-        "type": "state",
-        "mediaType": "application/json"
-      },
-      "id": "fb56cf4f-2e58-11e6-8a84-bae50000006b",
-      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-      "name": "Собран",
-      "color": 8767198,
-      "stateType": "Regular",
-      "entityType": "customerorder"
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata/states/fb56d433-2e58-11e6-8a84-bae50000006c",
-        "type": "state",
-        "mediaType": "application/json"
-      },
-      "id": "fb56d433-2e58-11e6-8a84-bae50000006c",
-      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-      "name": "Отгружен",
-      "color": 10774205,
-      "stateType": "Regular",
-      "entityType": "customerorder"
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata/states/fb56d92f-2e58-11e6-8a84-bae50000006d",
-        "type": "state",
-        "mediaType": "application/json"
-      },
-      "id": "fb56d92f-2e58-11e6-8a84-bae50000006d",
-      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-      "name": "Доставлен",
-      "color": 8825440,
-      "stateType": "Successful",
-      "entityType": "customerorder"
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata/states/fb56de0a-2e58-11e6-8a84-bae50000006e",
-        "type": "state",
-        "mediaType": "application/json"
-      },
-      "id": "fb56de0a-2e58-11e6-8a84-bae50000006e",
-      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-      "name": "Возврат",
-      "color": 15280409,
-      "stateType": "Unsuccessful",
-      "entityType": "customerorder"
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata/states/fb56e2b4-2e58-11e6-8a84-bae50000006f",
-        "type": "state",
-        "mediaType": "application/json"
-      },
-      "id": "fb56e2b4-2e58-11e6-8a84-bae50000006f",
-      "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-      "name": "Отменен",
-      "color": 15280409,
-      "stateType": "Unsuccessful",
-      "entityType": "customerorder"
     }
   ],
   "createShared": false
