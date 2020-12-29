@@ -764,3 +764,770 @@ curl -X GET
   "position": "Директор"
 }
 ```
+
+### Работа с правами Сотрудника
+
+В данном резделе приведены примеры запрос на получение и изменение прав сотрудника. Получать и изменять права может только 
+сотрудник с правами `Системный администратор`.
+
+#### Атрибуты сущности
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**isActive**               |Boolean|Доступ к сервису МойСклад|&mdash;|да
+|**login**               |String(255)|Логин сотрудника для входа в МойСклад|&mdash;|нет
+|**email**               |String(255)|Почта сотрудника|&mdash;|нет
+|**group**               |Object|Метаданные Группы, а также ее идентификатор и имя|&mdash;|да
+|**role**               |Object|Информация о роли Сотрудника. [Подробнее тут]()|&mdash;|нет
+
+#### Атрибуты вложенных сущностей
+##### Роль
+
+Роли бывают четырех типов: `Системный администратор`, `Кассир`, `Пользовательская роль` и `Индивидуальная роль`. Использовать
+`Пользовательскую роль` (с пермиссиями не по умолчанию) и `Индивидуальную роль` можно только на тарифах `Профессиональный` 
+или `Корпоративный`. Для `Пользовательской роли` можно настраивать список пермиссий, заполняя поле `permission`.
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**                 |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные роли|&mdash;|да
+|**permissions**          |Array(Object)| Список пермиссий|&mdash;|нет
+
+###### Список пользовательских пермиссий 
+
+| Название         | Возможные значения | Значение по умолчанию                    | Описание| 
+| ---------------- |:-------------------|:---------------------|:----------------------------------|
+|**importData**    |Boolean|true|Импорт
+|**exportData**    |Boolean|true|Экспорт
+|**onlineShops**    |Boolean|true|Интернет магазины
+|**apiRequest**    |Boolean|true|Доступ по АПИ
+|**sendEmail**    |Boolean|true|Отправлять почту
+|**viewProductCostAndProfit**    |Boolean|true|Видеть себестоимость, цену закупки и прибыль товаров
+|**viewDashboard**    |Boolean|true|Просматривать показатели
+|**viewRecycleBin**    |Boolean|true|Просматривать корзину
+|**viewAudit**    |Boolean|false|Просматривать аудит
+|**viewSaleProfit**    |Boolean|true|Прибыльность
+|**viewCommissionGoods**    |Boolean|true|Товары на реализации
+|**viewPurchaseFunnel**    |Boolean|true|Воронка продаж
+|**viewStockReport**    |Boolean|true|Остатки
+|**viewTurnover**    |Boolean|true|Обороты
+|**viewSerialNumbers**    |Boolean|true|Сер. Номера
+|**viewCashFlow**    |Boolean|true|Движение денежных средств
+|**viewCustomerBalanceList**    |Boolean|true|Взаиморасчеты
+|**viewProfitAndLoss**    |Boolean|true|Прибыль и убытки
+|**viewCompanyCRM**    |Boolean|true|Показатели
+|**viewMoneyDashboard**    |Boolean|false|Видеть остатки денег
+|**restoreFromRecycleBin**    |Boolean|true|Востанавливать документы
+|**deleteFromRecycleBin**    |Boolean|true|Очищать корзину
+|**editDocumentsOfRestrictedPeriod**    |Boolean|false| Редактировать документы закрытого периода
+|**editDocumentTemplates**    |Boolean|true|Редактироватьшаблоны документов и отчетов
+|**editCurrencyRateOfDocument**    |Boolean|true|Редактировать курс валюты документа
+|**subscriptionControl**    |Boolean|false|Управление подпиской
+|**purchaseControl**    |Boolean|true|Управление закупками
+|**listenCalls**    |Boolean|true|Прослушивание звонков
+
+###### Список пермиссий сущностей
+
+Имеется три возможных типа значений пермиссий сущности: `OPERATION`, `DICTIONARY`, `BASE`.
+Данные типы имеют следующие поля:
+
+* **view**, **create**, **update**, **delete**, **approve**, **print** для **OPERATION**
+* **view**, **create**, **update**, **delete**, **print** для **DICTIONARY**
+* **view**, **create**, **update**, **delete** для **BASE**
+
+| Название         | Описание | Родительская пермиссия | Одинакеовы уровень доступа с родительской пермиссией |
+| ---------------- |:-------------------|:-------------------| :-------------------|
+|**view**    |Смотреть |- |нет
+|**create**    |Создавать |view |да
+|**update**    |Редактировать |view |нет
+|**delete**    |Удалять |update |да
+|**print**    |Печатать |view |да
+|**approve**    |Проводить |view |да
+
+Значение поля `create`, `print`, `approve` - должно совпадать с `view` или отсутствовать.
+Значение поля `update` должно быть не шире значения поля `view` или отсутствовать.
+Значение поля `delete` должно совпадать с `update` или отсутствовать.
+
+Возможные значения полей `view`, `create`, `update`, `delete`, `approve`, `print`:
+
+| Название         | На кого распространяется |
+| ---------------- |:-------------------|
+|**own**    |Только свои
+|**ownShared**    |Свои и общие
+|**ownGroup**    |Свои и отдела
+|**ownGroupShared**    |Свои, отдела и общие
+|**all**    |Все
+
+Значения в порядке их сужения `own` > `ownShared` > `ownGroup` > `ownGroupShared` > `all`  
+ Если не указывать одно из полей, то данное действие будет запрещено к выполнению для данного сотрудника. 
+ 
+ Список пермиссий сущнойстей
+ 
+
+| Название         | Возможные значения | Значение по умолчанию                    | Описание| 
+| ---------------- |:-------------------|:---------------------|:----------------------------------|
+|**company**    |DICTIONARY|Все all|Контрагенты
+|**myCompany**    |BASE|view: all, create: -, edit: -, delete: -|Юр. Лица
+|**good**    |DICTIONARY|Все all|Товары и Услуги
+|**project**    |BASE|Все all|Проекты
+|**contract**    |DICTIONARY|Все all|Договоры
+|**employee**    |BASE|Все all|Сотрудники
+|**currency**    |BASE|Все all|Валюты
+|**warehouse**    |BASE|Все all|Склады
+|**customEntity**    |BASE|Все all|Дополнительные справочники
+|**retailStore**    |BASE|Все all|Точка продаж
+|**country**    |BASE|Все all|Страны
+|**uom**    |BASE|Все all|Единицы измерения
+|**purchaseReturn**    |OPERATION|Все all|Возврат поставщику
+|**demand**    |OPERATION|Все all|Отгрузка
+|**salesReturn**    |OPERATION|Все all|Возврат покупателя
+|**loss**    |OPERATION|Все all|Списание
+|**enter**    |OPERATION|Все all|Оприходование
+|**move**    |OPERATION|Все all|Перемещение
+|**inventory**    |DICTIONARY|Все all|Инвентаризация
+|**processing**    |BASE|Все all|Тех. операции
+|**invoiceIn**    |OPERATION|Все all|Счет поставщику
+|**invoiceOut**    |OPERATION|Все all|Счет покупателям
+|**purchaseOrder**    |OPERATION|Все all|Заказ поставщикам
+|**customerOrder**    |OPERATION|Все all|Заказ покупателям
+|**internalOrder**    |OPERATION|Все all|Внутренние заказы
+|**processingOrder**    |OPERATION|Все all|Заказ на производство
+|**factureIn**    |OPERATION|Все all|Счета-фактуры полученные
+|**factureOut**    |OPERATION|Все all|Счета-фактуры выданные
+|**paymentIn**    |OPERATION|Все all|Входящий платеж
+|**paymentOut**    |OPERATION|Все all|Исходящий платеж
+|**cashIn**    |OPERATION|Все all|Приходной ордер
+|**cashOut**    |OPERATION|Все all|Расходной ордер
+|**priceList**    |OPERATION|Все all|Прайс-лист
+|**retailDemand**    |OPERATION|Все all|Продажи
+|**retailSalesReturn**    |OPERATION|Все all|Возвраты
+|**supply**    |OPERATION|Все all|Приемки
+|**processingPlan**    |BASE|Все all|Тех. Карты
+|**commissionReportIn**    |OPERATION|Все all|Полученный отчет комиссионера
+|**commissionReportOut**    |OPERATION|Все all|Выданный отчет комиссионер
+|**retailShift**    |DICTIONARY|Все all|Смены
+|**retailDrawerCashIn**    |OPERATION|Все all|Внесения
+|**retailDrawerCashOut**    |OPERATION|Все all|Выплаты
+|**bonusTransaction**    |OPERATION|Все all|Бонусные баллы
+|**prepayment**    |OPERATION|Все all|Предоплаты
+|**prepaymentReturn**    |OPERATION|Все all|Возврат предоплаты
+|**cashboxAdjustment**    |DICTIONARY|Все all|Корректировка остатков в кассе
+|**accountAdjustment**    |DICTIONARY|Все all|Корректировка остатков на счете
+|**counterpartyAdjustment**    |DICTIONARY|Все all|Корректировка баланса контрагента
+
+###### Пермисии для задач
+
+Пермисии `script` для задач имеют следующие поля:
+
+| Название         | Описание | Родительская пермиссия | Одинакеовы уровень доступа с родительской пермиссией | Возможные значения |
+| ---------------- |:-------------------|:-------------------| :-------------------| :-------------------|
+|**view**    |Смотреть |- |нет |authorOrAssignee, all
+|**create**    |Создавать |view |нет |all
+|**update**    |Редактировать |view |да |assignee, authorOrAssignee, all
+|**delete**    |Удалять |update |да |author, authorOrAssignee, all
+|**done**    |Выполнять |view |да |author, authorOrAssignee, all
+
+Значение поля `create`, `update`, `done` - должно быть не шире значения поля `view` или отсутствовать.
+Значение поля `delete` должно быть не шире значения поля `update` или отсутствовать.
+
+Возможные значения полей `view`, `create`, `update`, `delete`, `done`:
+
+| Название         | На кого распространяется |
+| ---------------- |:-------------------|
+|**authorOrAssignee**    |Созданные и назначенные
+|**assignee**    |Назначенные
+|**author**    |Созданные
+|**all**    |Все
+
+### Получить информацию о правах Сотрудника
+
+Запрос на получение информации о правах Сотрудника.
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Сотрудника.|
+
+> Пример запроса на получения информации о правах Сотрудника.
+
+```shell
+  curl -X GET
+    "https://online.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19/security"
+    -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление информации о правах Сотрудника c пользовательской ролью.
+
+```json
+{
+    "isActive": true,
+    "login": "example@lognex",
+    "email": "example@example.ru",
+    "group": {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f4b74c5e-443a-11eb-ac12-001000000002",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+            "type": "group",
+            "mediaType": "application/json"
+        },
+        "id": "f4b74c5e-443a-11eb-ac12-001000000002",
+        "name": "Основной"
+    },
+    "role": {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/individual",
+            "type": "individualrole",
+            "mediaType": "application/json"
+        },
+        "permissions": {
+            "importData": true,
+            "exportData": true,
+            "onlineShops": true,
+            "apiRequest": true,
+            "sendEmail": true,
+            "viewProductCostAndProfit": true,
+            "viewDashboard": true,
+            "viewRecycleBin": true,
+            "viewAudit": false,
+            "viewSaleProfit": true,
+            "viewCommissionGoods": true,
+            "viewPurchaseFunnel": true,
+            "viewStockReport": true,
+            "viewTurnover": true,
+            "viewSerialNumbers": true,
+            "viewCashFlow": true,
+            "viewCustomerBalanceList": true,
+            "viewProfitAndLoss": true,
+            "viewCompanyCRM": true,
+            "viewMoneyDashboard": false,
+            "restoreFromRecycleBin": true,
+            "deleteFromRecycleBin": true,
+            "editDocumentsOfRestrictedPeriod": false,
+            "editDocumentTemplates": true,
+            "editCurrencyRateOfDocument": true,
+            "subscriptionControl": false,
+            "purchaseControl": true,
+            "listenCalls": true,
+            "company": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all"
+            },
+            "myCompany": {
+                "view": "all"
+            },
+            "good": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all"
+            },
+            "project": {
+                "view": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all"
+            },
+            "contract": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all"
+            },
+            "employee": {
+                "view": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all"
+            },
+            "currency": {
+                "view": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all"
+            },
+            "warehouse": {
+                "view": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all"
+            },
+            "customEntity": {
+                "view": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all"
+            },
+            "retailStore": {
+                "view": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all"
+            },
+            "country": {
+                "view": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all"
+            },
+            "uom": {
+                "view": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all"
+            },
+            "purchaseReturn": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "demand": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "salesReturn": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "loss": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "enter": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "move": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "inventory": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all"
+            },
+            "processing": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "invoiceIn": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "invoiceOut": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "purchaseOrder": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "customerOrder": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "internalOrder": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "processingOrder": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "factureIn": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "factureOut": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "paymentIn": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "paymentOut": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "cashIn": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "cashOut": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "priceList": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "retailDemand": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "retailSalesReturn": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "supply": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "processingPlan": {
+                "view": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all"
+            },
+            "commissionReportIn": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "commissionReportOut": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "retailShift": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all"
+            },
+            "retailDrawerCashIn": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "retailDrawerCashOut": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "bonusTransaction": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "prepayment": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "prepaymentReturn": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all",
+                "approve": "all"
+            },
+            "cashboxAdjustment": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all"
+            },
+            "accountAdjustment": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all"
+            },
+            "counterpartyAdjustment": {
+                "view": "all",
+                "print": "all",
+                "create": "all",
+                "update": "all",
+                "delete": "all"
+            },
+            "script": {
+                "view": "authorOrAssignee",
+                "create": "all",
+                "done": "authorOrAssignee",
+                "update": "author",
+                "delete": "author"
+            }
+        }
+    }
+}
+```
+
+### Изменить информацию о правах Сотрудника
+
+Запрос на изменение информации о правах Сотрудника.
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Сотрудника.|
+
+> Пример запроса на измененик информации о правах Сотрудника.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19/security"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+            "group": {
+                "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f4b74c5e-443a-11eb-ac12-001000000003",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                    "type": "group",
+                    "mediaType": "application/json"
+                }
+            },
+            "role": {
+                "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/admin",
+                    "type": "systemrole",
+                    "mediaType": "application/json"
+                }
+            }
+          }'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленной информации о правах Сотрудника c ролью администратора.
+
+```json
+{
+    "isActive": true,
+    "login": "example@lognex",
+    "email": "example@example.ru",
+    "group": {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f4b74c5e-443a-11eb-ac12-001000000003",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+            "type": "group",
+            "mediaType": "application/json"
+        },
+        "id": "f4b74c5e-443a-11eb-ac12-001000000003",
+        "name": "Новая группа"
+    },
+    "role": {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/admin",
+            "type": "systemrole",
+            "mediaType": "application/json"
+        }
+    }
+}
+```
+
+### Активация Сотрудника
+
+Запрос на активацию Сотрудника в сервисе МойСклад.
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Сотрудника.|
+
+Если пользователь ранее не был активным, то при запросе необходимо указать поле `login`. Формат поля аналогичен формату 
+в сервисе МойСклад. Успешным результатом выполнения запросы будет json содержащий поле `mailActivationRequired` со значением 
+true. Это означает, что на указанную у сотрудника почту было выслано письмо с ссылкой на вход для сотрудника.
+
+Если пользователь уже был ранее активным, то при активации не нужно указывать поле `login`. 
+Успешным результатом выполнения запросы будет json содержащий поле `mailActivationRequired` со значением false. В данном 
+случае можно использовать ранее заданный пароль для данного пользователя.
+
+> Пример запроса на активацию Сотрудника.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19/access/activate"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+            "login": "newcashier@lognex",
+            "group": {
+                "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f4b74c5e-443a-11eb-ac12-001000000003",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                    "type": "group",
+                    "mediaType": "application/json"
+                }
+            },
+            "role": {
+                "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/cashier",
+                    "type": "systemrole",
+                    "mediaType": "application/json"
+                }
+            }
+          }'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленной информации об активированном Сотруднике c ролью кассира.
+
+```json
+{
+    "mailActivationRequired": true
+}
+```
+
+### Деактивация Сотрудника
+
+Запрос на деактивацию Сотрудника в сервисе МойСклад.
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Сотрудника.|
+
+> Пример запроса на деактивацию Сотрудника.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19/access/deactivate"
+    -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+
+### Сброс пароля Сотрудника
+
+Запрос на сброс пароля Сотрудника в сервисе МойСклад. Новый пароль буде выслан на почту, указанную у данного сотрудника.
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Сотрудника.|
+
+> Пример запроса на сброс пароля Сотрудника.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19/access/resetpassword"
+    -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)

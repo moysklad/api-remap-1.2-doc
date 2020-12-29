@@ -47,6 +47,8 @@
   - Создание [характеристик Модификаций](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-harakteristiki-modifikacij)  
   - Эндпоинты [управления скидками](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-skidki)
   - Эндпоинт [Автозаполнения цен, скидок, ндс позиций](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie)
+  - Эндпоинты для [упралвения правами сотрудника]() 
+  - Эндпоинты для [доступа сотрудника к основному сервису МойСклад]()
 - Изменения формата JSON
   - Новые поля `bonusProgram` и `bonusPoints` в [Контрагентах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent)
     и [Организациях](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico)
@@ -121,6 +123,12 @@
 ## Список последних изменений
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
+
+### 28-12-2020
+#### Добавлено
+- Новые [эндпоинты для упралвения правами сотрудника]() и [эндпоинты для доступа сотрудника к основному сервису 
+МойСклад]() в раздел [Сотрудники](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sotrudnik)
+- Новые ошибки [3024-3025]() и [43007-43027]()
 
 ## 22-12-2020
 ### Изменено
