@@ -1129,7 +1129,8 @@ curl -X GET
     },
     "created": "2007-02-07 17:16:41",
     "printed": true,
-    "published": true,    "positions": {
+    "published": true,
+    "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/d9ceb08f-01ae-11e6-9464-e4de00000020/positions",
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
@@ -1541,6 +1542,8 @@ curl -X GET
   "applicable": true,
   "vatEnabled": true,
   "vatIncluded": true,
+  "printed": true,
+  "published": true,
   "sum": 346453701206,
   "rate": {
     "currency": {

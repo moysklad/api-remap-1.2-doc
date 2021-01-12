@@ -160,6 +160,8 @@ curl -X GET
       "externalCode": "Avqi0FZqi8W400cwO1oHh2",
       "moment": "2016-07-21 20:19:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -252,6 +254,8 @@ curl -X GET
       "externalCode": "l7eb7QKZj1DtnXCLBuuUa1",
       "moment": "2016-07-21 19:37:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -848,6 +852,8 @@ curl -X POST
   },
   "moment": "2016-11-25 18:02:50",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "sum": 0,
   "project": {
     "meta": {

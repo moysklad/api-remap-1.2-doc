@@ -164,6 +164,8 @@ curl -X GET
       "externalCode": "DfZi0N0mggqmVRt2hVf8t2",
       "moment": "2016-11-15 10:04:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -264,6 +266,8 @@ curl -X GET
       "externalCode": "ec21rBixjdrEm0CVkCiOJ0",
       "moment": "2016-11-15 14:19:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {

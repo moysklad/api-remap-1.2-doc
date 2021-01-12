@@ -184,6 +184,8 @@ curl -X GET
       "externalCode": "m-9OZzfBiAjolWhnBjTff0",
       "moment": "2016-11-21 15:51:16",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "organization": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/95920812-9609-11e6-8af5-581e000000d4",
@@ -1111,6 +1113,8 @@ curl -X GET
   "externalCode": "m-9OZzfBiAjolWhnBjTff0",
   "moment": "2016-11-21 15:51:16",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "organization": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/95920812-9609-11e6-8af5-581e000000d4",

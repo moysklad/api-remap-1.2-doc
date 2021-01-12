@@ -155,6 +155,8 @@ curl -X GET
       "externalCode": "Tzn6ewsegfp90BCJ6xgWe2",
       "moment": "2016-11-18 19:30:00.000",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "store": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/d5e311c0-91f1-11e6-5bed-427b00000053",
@@ -250,6 +252,8 @@ curl -X GET
       "externalCode": "Tzn6ewsegfp90BCJ6xgWe2",
       "moment": "2016-11-18 19:30:00.000",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "store": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/d5e311c0-91f1-11e6-5bed-427b00000053",
@@ -326,6 +330,8 @@ curl -X GET
       "externalCode": "JZQBX9gshwrrTRcHkCcaR2",
       "moment": "2016-11-21 11:47:00.000",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "store": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/d5e311c0-91f1-11e6-5bed-427b00000053",
@@ -403,6 +409,8 @@ curl -X GET
       "externalCode": "wWAJXKZFgoOZVKd41Dzzz2",
       "moment": "2016-11-23 13:00:00.000",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "store": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/d5e311c0-91f1-11e6-5bed-427b00000053",
@@ -479,6 +487,8 @@ curl -X GET
       "externalCode": "5nSDOrCfjyxt0W1RbY7XZ3",
       "moment": "2016-11-21 12:27:00.000",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "store": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/d5e311c0-91f1-11e6-5bed-427b00000053",

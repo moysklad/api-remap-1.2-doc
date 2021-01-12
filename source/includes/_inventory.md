@@ -151,6 +151,8 @@ curl -X GET
       "externalCode": "HCUtF6T2jnNOzNbh-ZNNo1",
       "moment": "2016-11-18 11:03:00",
       "sum": 480000,
+      "printed": true,
+      "published": true,
       "store": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c4eddfc8-99bb-11e6-8a84-bc5200000053",
@@ -756,6 +758,8 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
+  "printed": true,
+  "published": true,
   "positions": {
     "rows": []
   }
@@ -815,6 +819,8 @@ curl -X GET
   "externalCode": "6iP5E4LLhpzxRKezcuKE90",
   "moment": "2016-11-18 11:59:00",
   "sum": 0,
+  "printed": true,
+  "published": true,
   "store": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c4eddfc8-99bb-11e6-8a84-bc5200000053",

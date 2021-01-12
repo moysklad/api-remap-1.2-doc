@@ -172,6 +172,8 @@ curl -X GET
       },
       "moment": "2016-03-30 13:41:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -266,6 +268,8 @@ curl -X GET
       },
       "moment": "2016-04-14 11:02:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -377,6 +381,8 @@ curl -X GET
       },
       "moment": "2016-04-18 15:53:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {

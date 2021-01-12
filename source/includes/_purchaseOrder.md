@@ -178,6 +178,8 @@ curl -X GET
       "externalCode": "FfSmVuSKi7h8L-jLADHV80",
       "moment": "2016-07-01 12:40:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -292,6 +294,8 @@ curl -X GET
       "externalCode": "pk6fh0NthbBSgrqI931uA0",
       "moment": "2016-06-10 10:06:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -797,6 +801,8 @@ curl -X GET
   "externalCode": "37KNBm71gw7Zm00T5JdAt0",
   "moment": "2016-12-05 15:30:14",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1680,6 +1686,8 @@ curl -X GET
   },
   "vatEnabled": true,
   "vatIncluded": true,
+  "printed": true,
+  "published": true,
   "payedSum": 0,
   "shippedSum": 0,
   "invoicedSum": 0
@@ -1956,6 +1964,8 @@ curl -X GET
   },
   "vatEnabled": true,
   "vatIncluded": true,
+  "printed": true,
+  "published": true,
   "payedSum": 0,
   "shippedSum": 0,
   "invoicedSum": 0,
@@ -2095,6 +2105,8 @@ curl -X GET
   },
   "vatEnabled": true,
   "vatIncluded": true,
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/172fb2f6-3f70-11e6-8a84-bae50000008e/positions",

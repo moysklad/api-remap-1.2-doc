@@ -173,6 +173,8 @@ curl -X GET
       "externalCode": "PDJ7P5kVhEWomlQtd67up2",
       "moment": "2016-07-01 14:39:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -268,6 +270,8 @@ curl -X GET
       "externalCode": "3ZaZZNCVhYzDgTunfKsTy3",
       "moment": "2016-07-01 14:40:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {

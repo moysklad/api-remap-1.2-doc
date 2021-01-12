@@ -181,6 +181,8 @@ curl -X GET
       "applicable": true,
       "vatEnabled": true,
       "vatIncluded": true,
+      "printed": true,
+      "published": true,
       "sum": 14000,
       "rate": {
         "currency": {

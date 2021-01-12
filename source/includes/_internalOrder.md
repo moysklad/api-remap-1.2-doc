@@ -151,6 +151,8 @@ curl -X GET
       "externalCode": "00KNqzWbjDRhZ1A0411hS2",
       "moment": "2016-11-25 13:50:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -240,6 +242,8 @@ curl -X GET
       "externalCode": "80QQopc4h8yBc0LnmTPpT3",
       "moment": "2016-11-22 20:23:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -558,6 +562,8 @@ curl -X GET
   },
   "moment": "2016-11-25 14:59:18",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "sum": 0,
   "store": {
     "meta": {
@@ -1226,6 +1232,8 @@ curl -X GET
   "externalCode": "00KNqzWbjDRhZ1A0411hS2",
   "moment": "2016-11-25 13:50:00",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
