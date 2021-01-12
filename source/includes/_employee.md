@@ -1520,7 +1520,7 @@ true. Это означает, что на указанную у сотрудн�
     -H "Authorization: Basic <Credentials>"
 ```
 
-> Response 200 (application/json)
+> Response 204
 
 ### Сброс пароля Сотрудника
 
@@ -1540,4 +1540,4 @@ true. Это означает, что на указанную у сотрудн�
     -H "Authorization: Basic <Credentials>"
 ```
 
-> Response 200 (application/json)
+> Response 204
