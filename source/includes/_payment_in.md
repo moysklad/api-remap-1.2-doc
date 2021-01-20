@@ -32,6 +32,8 @@
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-ishodqschij-platezh-ishodqschie-platezhi-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**paymentPurpose**     |String(255)|Назначение платежа|&mdash;|да
 |**incomingNumber**             |Int|Входящий номер |&mdash;|нет
 |**incomingDate**         |DateTime| Входящая дата|&mdash;|нет
@@ -148,6 +150,9 @@ curl -X GET
       "externalCode": "8hBoVBUMiDeumkozzjwX83",
       "moment": "2016-07-01 16:19:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -258,6 +263,9 @@ curl -X GET
       "externalCode": "221dSpiQiVQuVfCbRun623",
       "moment": "2015-06-22 00:00:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -390,6 +398,9 @@ curl -X GET
   "name": "333222",
   "moment": "2016-06-27 17:52:24",
   "applicable": false,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -521,6 +532,9 @@ curl -X GET
     "name": "333222",
     "moment": "2016-06-27 17:52:24",
     "applicable": false,
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "rate": {
       "currency": {
         "meta": {
@@ -596,6 +610,9 @@ curl -X GET
     "externalCode": "2213sfkksbajf214812slkanf",
     "moment": "2012-06-27 16:52:24",
     "applicable": true,
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "rate": {
       "currency": {
         "meta": {
@@ -910,6 +927,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -993,6 +1013,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1076,6 +1099,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1159,6 +1185,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1253,6 +1282,9 @@ curl -X GET
   },
   "moment": "2016-11-25 18:13:31",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1373,6 +1405,9 @@ curl -X GET
   "externalCode": "8hBoVBUMiDeumkozzjwX83",
   "moment": "2016-07-01 16:19:00",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1516,6 +1551,9 @@ curl -X GET
   "externalCode": "2213sfkksbajf214812slkanf",
   "moment": "2012-06-27 16:52:24",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {

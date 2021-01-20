@@ -33,6 +33,8 @@
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет  
 |**created**            |DateTime|Дата создания|Только для чтения|да
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**vatSum**                |Float|Сумма включая НДС|&mdash;|да
 |**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Розничной продажи|&mdash;|да
 |**fiscalPrinterInfo**            |String(255)| Информация о фискальном регистраторе|&mdash;|нет
@@ -201,6 +203,8 @@ curl -X GET
       "applicable": true,
       "vatEnabled": true,
       "vatIncluded": true,
+      "printed": true,
+      "published": true,
       "sum": 5100,
       "rate": {
         "currency": {
@@ -313,6 +317,8 @@ curl -X GET
       "applicable": true,
       "vatEnabled": true,
       "vatIncluded": true,
+      "printed": true,
+      "published": true,
       "sum": 1800,
       "rate": {
         "currency": {
@@ -505,7 +511,9 @@ curl -X GET
       "value": "AttributeValue1"
     }
   ],
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/fb5cbcba-0c4e-11e6-9464-e4de00000000/positions",
@@ -647,7 +655,9 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/debee00e-0c59-11e6-9464-e4de00000008/positions",
@@ -837,7 +847,9 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/2ef43ba7-0c5a-11e6-9464-e4de0000000c/positions",
@@ -1049,7 +1061,9 @@ curl -X GET
       "value": "AttributeValue1"
     }
   ],
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/d6dd9a8a-0c5a-11e6-9464-e4de00000016/positions",
@@ -1228,7 +1242,9 @@ curl -X GET
         "value": "AttributeValue1"
       }
     ],
-    "created": "2007-02-07 17:16:41",
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/fb5cbcba-0c4e-11e6-9464-e4de00000000/positions",
@@ -1344,7 +1360,9 @@ curl -X GET
         "value": "AttributeValue1"
       }
     ],
-    "created": "2007-02-07 17:16:41",
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/d6dd9a8a-0c5a-11e6-9464-e4de00000016/positions",
@@ -2098,7 +2116,9 @@ curl -X GET
       "value": "AttributeValue1"
     }
   ],
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/d6dd9a8a-0c5a-11e6-9464-e4de00000016/positions",
@@ -2295,7 +2315,9 @@ curl -X GET
       "value": "AttributeValue1"
     }
   ],
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/d6dd9a8a-0c5a-11e6-9464-e4de00000016/positions",

@@ -36,6 +36,8 @@
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |Только для чтения|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|
 |**created**            |DateTime|Дата создания|Только для чтения|да
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**closeDate**          |DateTime|Дата закрытия смены|Только для чтения|нет
 |**proceedsNoCash**     |Float|Выручка безнал|Только для чтения|да
 |**proceedsCash**       |Float|Выручка наличными|Только для чтения|да
@@ -135,6 +137,9 @@ curl -X GET
         }
       },
       "moment": "2016-04-18 15:06:51",
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "vatEnabled": true,
       "vatIncluded": true,
       "organization": {
@@ -274,6 +279,9 @@ curl -X GET
         }
       },
       "moment": "2016-04-18 15:48:04",
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "vatEnabled": true,
       "vatIncluded": true,
       "organization": {
@@ -534,6 +542,9 @@ curl -X GET
     }
   },
   "moment": "2016-04-25 13:10:19",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "vatEnabled": true,
   "vatIncluded": true,
   "organization": {

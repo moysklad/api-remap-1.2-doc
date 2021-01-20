@@ -25,6 +25,8 @@
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-inwentarizaciq-inwentarizaciq-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Инвентаризации|&mdash;|да
 
 ##### Поля при expand'е доп. полей
@@ -149,6 +151,8 @@ curl -X GET
       "externalCode": "HCUtF6T2jnNOzNbh-ZNNo1",
       "moment": "2016-11-18 11:03:00",
       "sum": 480000,
+      "printed": true,
+      "published": true,
       "store": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c4eddfc8-99bb-11e6-8a84-bc5200000053",
@@ -325,6 +329,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/8a2a5d07-ad6d-11e6-8a84-bc520000000a/positions",
@@ -468,6 +474,8 @@ curl -X GET
       }
     },
     "created": "2007-02-07 17:16:41",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/8a2a5d07-ad6d-11e6-8a84-bc520000000a/positions",
@@ -527,6 +535,8 @@ curl -X GET
       }
     },
     "created": "2007-02-07 17:16:41",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7/positions",
@@ -748,6 +758,8 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
+  "printed": true,
+  "published": true,
   "positions": {
     "rows": []
   }
@@ -807,6 +819,8 @@ curl -X GET
   "externalCode": "6iP5E4LLhpzxRKezcuKE90",
   "moment": "2016-11-18 11:59:00",
   "sum": 0,
+  "printed": true,
+  "published": true,
   "store": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c4eddfc8-99bb-11e6-8a84-bc5200000053",
@@ -943,6 +957,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7/positions",
@@ -1081,6 +1097,8 @@ curl -X GET
     }
   ],
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/inventory/57a0bbfb-ad6d-11e6-8a84-bc52000000e7/positions",

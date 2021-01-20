@@ -34,6 +34,8 @@
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-schet-pokupatelu-scheta-pokupatelqm-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**vatSum**             |Float|Сумма НДС |Только для чтения|да
 |**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Счета покупателю|&mdash;|да
 |**paymentPlannedMoment**          |DateTime|Планируемая дата оплаты|&mdash;|нет
@@ -170,6 +172,8 @@ curl -X GET
       },
       "moment": "2016-03-30 13:41:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -264,6 +268,8 @@ curl -X GET
       },
       "moment": "2016-04-14 11:02:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -375,6 +381,8 @@ curl -X GET
       },
       "moment": "2016-04-18 15:53:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -566,7 +574,9 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/726e5b8c-0886-11e6-9464-e4de0000002a/positions",
@@ -725,7 +735,9 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/128465fd-0887-11e6-9464-e4de0000002e/positions",
@@ -907,7 +919,9 @@ curl -X GET
       "value": "значение доп поля"
     }
   ],
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/c358e3ac-0887-11e6-9464-e4de00000032/positions",
@@ -1094,7 +1108,9 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/6afee657-0888-11e6-9464-e4de00000037/positions",
@@ -1246,7 +1262,9 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
-    "created": "2007-02-07 17:16:41",
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/726e5b8c-0886-11e6-9464-e4de0000002a/positions",
@@ -1344,7 +1362,9 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
-    "created": "2007-02-07 17:16:41",
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/6afee657-0888-11e6-9464-e4de00000037/positions",
@@ -1633,7 +1653,9 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2",
@@ -2031,7 +2053,9 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/6afee657-0888-11e6-9464-e4de00000037/positions",
@@ -2183,7 +2207,9 @@ curl -X GET
       "value": "new_val"
     }
   ],
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/6afee657-0888-11e6-9464-e4de00000037/positions",
@@ -2340,7 +2366,9 @@ curl -X GET
       "value": "new_val_again"
     }
   ],
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/6afee657-0888-11e6-9464-e4de00000037/positions",

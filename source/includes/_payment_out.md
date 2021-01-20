@@ -32,6 +32,8 @@
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-vhodqschij-platezh-vhodqschie-platezhi-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**paymentPurpose**     |String(255)|Назначение платежа|&mdash;|да
 |**vatSum**                |Float|Сумма включая НДС|&mdash;|да
 |**expenseItem**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Статьи расходов|Необходимое при создании|да
@@ -148,6 +150,9 @@ curl -X GET
       "externalCode": "1PPP5fDei13CwEHXYUpV62",
       "moment": "2016-07-01 17:07:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -252,6 +257,9 @@ curl -X GET
       "externalCode": "ixPEZ2RyieYILZJ73FkAT1",
       "moment": "2016-07-01 17:09:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -357,6 +365,9 @@ curl -X GET
       "externalCode": "Q7wBn7oYh-B70arUTG08u3",
       "moment": "2015-06-19 00:00:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -493,6 +504,9 @@ curl -X GET
   "name": "333222",
   "moment": "2016-06-27 17:52:24",
   "applicable": false,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -637,6 +651,9 @@ curl -X GET
     "name": "333222",
     "moment": "2016-06-27 17:52:24",
     "applicable": false,
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "rate": {
       "currency": {
         "meta": {
@@ -720,6 +737,9 @@ curl -X GET
     "externalCode": "o34bajf214812slkanf",
     "moment": "2012-10-31 14:52:24",
     "applicable": true,
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "rate": {
       "currency": {
         "meta": {
@@ -1013,6 +1033,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1097,6 +1120,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1181,6 +1207,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1265,6 +1294,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1367,6 +1399,9 @@ curl -X GET
   },
   "moment": "2016-11-25 18:19:15",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1495,6 +1530,9 @@ curl -X GET
   "externalCode": "1PPP5fDei13CwEHXYUpV62",
   "moment": "2016-07-01 17:07:00",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1653,6 +1691,9 @@ curl -X GET
   "externalCode": "o34bajf214812slkanf",
   "moment": "2012-10-31 14:52:24",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
