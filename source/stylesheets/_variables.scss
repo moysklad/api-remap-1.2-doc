@@ -8,22 +8,23 @@
 
 // BACKGROUND COLORS
 ////////////////////
-$nav-bg: #F3F7F9 !default;
-$examples-bg: #304150 !default;
-$code-bg: #263440 !default;
-$code-annotation-bg: #263440 !default;
-$nav-subitem-bg: #F3F7F9 !default;
-$nav-active-bg: #ffffff !default;
-$nav-active-parent-bg: #F3F7F9 !default; // parent links of the current section
+$nav-bg: #FFFFFF !default;
+$examples-bg: #102860 !default;
+$code-bg: #081326 !default;
+$code-annotation-bg: #081326 !default;
+$nav-subitem-bg: #FFFFFF !default;
+$nav-active-bg: #E6F0FF !default;
+$nav-active-parent-bg: #FFFFFF !default; // parent links of the current section
 $lang-select-border: #000 !default;
-$lang-select-bg: #304150 !default;
+$lang-select-bg: #102860 !default;
 $lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
 $lang-select-pressed-bg: #111 !default; // color of language tab bg when mouse is pressed
 $main-bg: #FFFFFF !default;
-$aside-notice-bg: #8fbcd4 !default;
+$aside-notice-bg: #FFFFFF !default;
 $aside-warning-bg: #c97a7e !default;
 $aside-success-bg: #6ac174 !default;
 $search-notice-bg: #c97a7e !default;
+$list-divider: #2855AF !default;
 
 
 // TEXT COLORS

@@ -141,7 +141,6 @@ html, body {
     list-style: none;
     margin: 0;
     padding: 0;
-    line-height: 28px;
   }
 
   li {
@@ -149,12 +148,11 @@ html, body {
     transition-property: background;
     transition-timing-function: linear;
     transition-duration: 200ms;
+    line-height: 48px;
   }
 
   .toc-list-h1-title {
-    background-color: #F3F7F9;
-    text-align: center;
-
+    background-color: $nav-bg;
     a {
       font-size: 1.4em;
     }
@@ -195,17 +193,22 @@ html, body {
   }
 
    .toc-list-h3 {
-    display: none;
-    background-color: $nav-subitem-bg;
+     display: none;
+     background-color: $nav-subitem-bg;
+     li {
+       line-height: 36px;
+     }
   }
 
   .toc-h3 {
-    padding-left: $nav-padding + $nav-padding + $nav-indent;
+    padding-left: $nav-padding + $nav-indent;
+    border-left: 1px solid $list-divider;
+    margin-left: $nav-padding + $nav-indent;
     font-size: 12px;
   }
 
   .toc-list-h4 {
-   display: none;
+    display: none;
    background-color: $nav-subitem-bg;
  }
 
