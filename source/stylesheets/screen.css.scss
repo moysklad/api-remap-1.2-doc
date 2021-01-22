@@ -49,7 +49,7 @@ html, body {
 
 .toc-wrapper {
   transition: left 0.3s ease-in-out;
-
+  border-right: 1px solid $toc-divider;
   overflow-y: auto;
   overflow-x: hidden;
   position: fixed;
@@ -80,6 +80,7 @@ html, body {
 
   &>.search {
     position: relative;
+    border-down: 1px solid $toc-divider;
 
     input {
       background: $nav-bg;
@@ -187,7 +188,7 @@ html, body {
   }
 
   .toc-h2 {
-    padding-left: $nav-padding + $nav-indent;
+    padding-left: $nav-padding;
     font-size: 14px;
     font-weight: bold;
   }
@@ -201,10 +202,9 @@ html, body {
   }
 
   .toc-h3 {
-    padding-left: $nav-padding + $nav-indent;
+    padding-left: $nav-indent;
     border-left: 1px solid $list-divider;
-    margin-left: $nav-padding + $nav-indent;
-    font-size: 12px;
+    margin-left: $nav-padding;
   }
 
   .toc-list-h4 {
@@ -220,7 +220,7 @@ html, body {
   .toc-footer {
     padding: 1em 0;
     margin-top: 1em;
-    border-top: 1px dashed $nav-footer-border-color;
+    border-top: 1px solid $toc-divider;
 
     li,a {
       color: $nav-text;
@@ -393,11 +393,7 @@ html, body {
     font-size: 25px;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    margin-bottom: $h1-margin-bottom;
-    margin-top: 2em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    background-color: #fdfdfd;
+    margin-bottom: 48px;
     clear:both;
   }
 
@@ -460,25 +456,17 @@ html, body {
 
     th {
       padding: 5px 10px;
-      border-bottom: 1px solid #ccc;
       vertical-align: bottom;
-      background-color: #c3d6de;
+      background: $general-table-bg;
+      color: $table-header-text;
     }
 
     td {
       padding: 10px;
     }
 
-    tr:last-child {
-      border-bottom: 1px solid #ccc;
-    }
-
-    tr:nth-child(odd)>td {
-      background-color: lighten($main-bg,4.2%);
-    }
-
-    tr:nth-child(even)>td {
-      background-color: #f5f8fa;
+    tr {
+      border: 1px solid $toc-divider;
     }
 
     td:nth-child(1){
@@ -530,9 +518,15 @@ html, body {
   }
 
   code {
-    background-color: rgba(0,0,0,0.05);
-    padding: 3px;
+    background: $code-tag-text;
+    border: 1px solid $code-tag-border;
+    color: $table-header-text;
     border-radius: 3px;
+    padding-top: 4px;
+    padding-down: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    word-break: normal;
     @extend %break-words;
     @extend %code-font;
   }
@@ -615,6 +609,11 @@ html, body {
 // This is all the stuff that appears in the right half of the page
 
 .content {
+
+  .highlight code {
+    border: 0px solid $code-tag-border;
+  }
+
   pre, blockquote {
     background-color: $code-bg;
     color: #fff;
