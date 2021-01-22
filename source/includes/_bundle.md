@@ -22,6 +22,8 @@
 |**archived**        |Boolean|Добавлен ли Комплект в архив|&mdash;|да
 |**pathName**         |String|Наименование группы, в которую входит Комплект|Только для чтения|да
 |**vat**         |Int|НДС %|&mdash;|нет
+|**vatEnabled**     |Boolean|Включен ли НДС для товара. С помощью этого флага для товара можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.|&mdash;|да
+|**useParentVat**   |Boolean|Использует ли товар НДС с родительской группы|&mdash;|да
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
 |**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|&mdash;|нет
 |**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет
@@ -344,6 +346,8 @@ curl -X GET
           "ean13": "2000000000039"
         }
       ],
+      "vatEnabled": false,
+      "useParentVat": true,
       "components": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023/components",
@@ -445,6 +449,8 @@ curl -X GET
                 "gtin": "00000000000130"
               }
             ],
+            "vat": 20,
+            "useParentVat": false,
             "components": [
               {
                 "assortment": {
@@ -578,6 +584,9 @@ curl -X GET
       "gtin": "00000000000130"
     }
   ],
+  "vat": 20,
+  "useParentVat": false,
+  "vatEnabled": true,
   "components": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023/components",
@@ -769,6 +778,8 @@ curl -X GET
       "ean13": "2000000000039"
     }
   ],
+  "useParentVat": true,
+  "vatEnabled": false,
   "components": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023/components",
@@ -1055,6 +1066,8 @@ curl -X GET
           "gtin": "00000000000130"
         }
       ],
+      "useParentVat": true,
+      "vatEnabled": false,
       "components": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023/components",
@@ -1206,6 +1219,8 @@ curl -X GET
           "gtin": "00000000000130"
         }
       ],
+      "useParentVat": true,
+      "vatEnabled": false,
       "components": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023/components",
@@ -1452,6 +1467,8 @@ curl -X GET
       "ean13": "2000000000039"
     }
   ],
+  "useParentVat": true,
+  "vatEnabled": false,
   "components": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023/components",
@@ -1614,6 +1631,8 @@ curl -X GET
       "gtin": "00000000000130"
     }
   ],
+  "useParentVat": true,
+  "vatEnabled": false,
   "components": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023/components",
