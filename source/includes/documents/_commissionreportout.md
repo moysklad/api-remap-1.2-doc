@@ -34,6 +34,8 @@
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-vydannyj-otchet-komissionera-vydannye-otchety-komissionera-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |Только для чтения|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**vatSum**                |Float|Сумма включая НДС|Только для чтения|да
 |**payedSum**                |Float|Оплаченная сумма|Только для чтения|да
 |**positions**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Выданного отчета|Только для чтения|да
@@ -160,6 +162,8 @@ curl -X GET
       "externalCode": "DfZi0N0mggqmVRt2hVf8t2",
       "moment": "2016-11-15 10:04:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -260,6 +264,8 @@ curl -X GET
       "externalCode": "ec21rBixjdrEm0CVkCiOJ0",
       "moment": "2016-11-15 14:19:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "sum": 0,
       "contract": {
         "meta": {
@@ -589,6 +595,8 @@ curl -X GET
     }
   ],
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportout/cc5beac8-acdb-11e6-8a84-bae500000000/positions",
@@ -972,6 +980,8 @@ curl -X GET
       }
     ],
     "created": "2007-02-07 17:16:41",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportout/cc5beac8-acdb-11e6-8a84-bae500000000/positions",
@@ -1104,6 +1114,8 @@ curl -X GET
       }
     ],
     "created": "2007-02-07 17:16:41",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportout/cc5beac8-acdb-11e6-8a84-bae500000000/positions",
@@ -1330,6 +1342,8 @@ curl -X GET
   "externalCode": "DfZi0N0mggqmVRt2hVf8t2",
   "moment": "2016-11-15 10:04:00",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1639,6 +1653,8 @@ curl -X GET
     }
   ],
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/commissionreportout/cc5beac8-acdb-11e6-8a84-bae500000000/positions",

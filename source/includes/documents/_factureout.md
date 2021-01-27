@@ -29,6 +29,8 @@
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#ddokumenty-schet-faktura-wydannyj-scheta-faktury-wydannye-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**stateContractId**       |String(255)|Идентификатор государственного контракта, договора (соглашения)|&mdash;|нет
 
 ##### Поля при expand'е доп. полей
@@ -143,6 +145,8 @@ curl -X GET
       "externalCode": "pb8w9ZcVhQbFff4R58SQ30",
       "moment": "2016-11-14 16:25:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -314,6 +318,8 @@ curl -X GET
     }
   },
   "created": "2017-04-27 18:27:09",
+  "printed": true,
+  "published": true,
   "demands": [
     {
       "meta": {
@@ -429,6 +435,8 @@ curl -X GET
       }
     },
     "created": "2017-04-27 18:27:09",
+    "printed": true,
+    "published": true,
     "demands": [
       {
         "meta": {
@@ -499,6 +507,8 @@ curl -X GET
       }
     },
     "created": "2017-04-27 18:27:09",
+    "printed": true,
+    "published": true,
     "stateContractId": "005674",
     "demands": [
       {
@@ -706,6 +716,8 @@ curl -X GET
   },
   "moment": "2017-07-20 14:54:48",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -805,6 +817,8 @@ curl -X GET
   },
   "moment": "2017-07-20 15:26:40",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -904,6 +918,8 @@ curl -X GET
   },
   "moment": "2017-07-20 15:25:09",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1009,6 +1025,8 @@ curl -X GET
   "externalCode": "iXXMP3d-gJI8avpfWsDAU3",
   "moment": "2016-11-08 17:26:00",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1154,6 +1172,8 @@ curl -X GET
     }
   },
   "created": "2017-04-27 18:27:09",
+  "printed": true,
+  "published": true,
   "stateContractId": "005674",
   "demands": [
     {

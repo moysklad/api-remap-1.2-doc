@@ -34,6 +34,8 @@
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-zakaz-postawschiku-zakazy-postawschikam-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|
 |**created**            |DateTime|Дата создания|Только для чтения|да
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**vatSum**             |Float|Сумма НДС |Только для чтения|да
 |**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Заказа поставщику|&mdash;|да
 |**deliveryPlannedMoment**          |DateTime|Планируемая дата отгрузки|&mdash;|нет
@@ -176,6 +178,8 @@ curl -X GET
       "externalCode": "FfSmVuSKi7h8L-jLADHV80",
       "moment": "2016-07-01 12:40:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -290,6 +294,8 @@ curl -X GET
       "externalCode": "pk6fh0NthbBSgrqI931uA0",
       "moment": "2016-06-10 10:06:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -597,7 +603,9 @@ curl -X GET
   ],
   "vatEnabled": true,
   "vatIncluded": true,
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/22b4caaa-3f74-11e6-8a84-bae500000069/positions",
@@ -793,6 +801,8 @@ curl -X GET
   "externalCode": "37KNBm71gw7Zm00T5JdAt0",
   "moment": "2016-12-05 15:30:14",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -895,7 +905,9 @@ curl -X GET
   ],
   "vatEnabled": true,
   "vatIncluded": true,
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/ae7fa9fb-3f74-11e6-8a84-bae500000070/positions",
@@ -1234,7 +1246,9 @@ curl -X GET
     ],
     "vatEnabled": true,
     "vatIncluded": true,
-    "created": "2007-02-07 17:16:41",
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/22b4caaa-3f74-11e6-8a84-bae500000069/positions",
@@ -1385,7 +1399,9 @@ curl -X GET
     ],
     "vatEnabled": true,
     "vatIncluded": false,
-    "created": "2007-02-07 17:16:41",
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/ae7fa9fb-3f74-11e6-8a84-bae500000070/positions",
@@ -1670,6 +1686,8 @@ curl -X GET
   },
   "vatEnabled": true,
   "vatIncluded": true,
+  "printed": true,
+  "published": true,
   "payedSum": 0,
   "shippedSum": 0,
   "invoicedSum": 0
@@ -1759,7 +1777,9 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "rows": [
       {
@@ -1944,6 +1964,8 @@ curl -X GET
   },
   "vatEnabled": true,
   "vatIncluded": true,
+  "printed": true,
+  "published": true,
   "payedSum": 0,
   "shippedSum": 0,
   "invoicedSum": 0,
@@ -2083,6 +2105,8 @@ curl -X GET
   },
   "vatEnabled": true,
   "vatIncluded": true,
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/172fb2f6-3f70-11e6-8a84-bae50000008e/positions",
@@ -2334,7 +2358,9 @@ curl -X GET
   ],
   "vatEnabled": true,
   "vatIncluded": false,
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/purchaseorder/ae7fa9fb-3f74-11e6-8a84-bae500000070/positions",

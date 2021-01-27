@@ -25,6 +25,8 @@
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Прайс-листа&mdash;|нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-prajs-list-prajs-listy-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
 |**created**            |DateTime|Дата создания|Только для чтения|да
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Прайс-листа|&mdash;|да
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 
@@ -182,6 +184,8 @@ curl -X GET
       "externalCode": "m-9OZzfBiAjolWhnBjTff0",
       "moment": "2016-11-21 15:51:16",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "organization": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/95920812-9609-11e6-8af5-581e000000d4",
@@ -294,6 +298,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/7370448e-afe9-11e6-8af5-581e00000036/positions",
@@ -441,6 +447,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/c41abcd9-afea-11e6-8af5-581e0000003c/positions",
@@ -585,6 +593,8 @@ curl -X GET
     }
   ],
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/a6d8eee9-afee-11e6-8af5-581e00000049/positions",
@@ -691,6 +701,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/d983f7fc-afef-11e6-8af5-581e00000050/positions",
@@ -799,6 +811,8 @@ curl -X GET
       }
     },
     "created": "2007-02-07 17:16:41",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/7370448e-afe9-11e6-8af5-581e00000036/positions",
@@ -856,6 +870,8 @@ curl -X GET
       }
     },
     "created": "2007-02-07 17:16:41",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/312cc207-afe9-11e6-8af5-581e0000002c/positions",
@@ -1097,6 +1113,8 @@ curl -X GET
   "externalCode": "m-9OZzfBiAjolWhnBjTff0",
   "moment": "2016-11-21 15:51:16",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "organization": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/95920812-9609-11e6-8af5-581e000000d4",
@@ -1217,6 +1235,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/312cc207-afe9-11e6-8af5-581e0000002c/positions",
@@ -1372,6 +1392,8 @@ curl -X GET
     }
   ],
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/28bd7720-afee-11e6-8af5-581e00000093/positions",
@@ -1527,6 +1549,8 @@ curl -X GET
     }
   ],
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/pricelist/28bd7720-afee-11e6-8af5-581e00000093/positions",

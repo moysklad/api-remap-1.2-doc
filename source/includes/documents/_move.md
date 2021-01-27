@@ -27,6 +27,8 @@
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-peremeschenie-peremescheniq-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Перемещения|&mdash;|да
 |**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-peremeschenie-peremescheniq-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|&mdash;|нет
 |**sourceStore**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада, с которого совершается перемещение|Необходимое при создании|да
@@ -158,6 +160,8 @@ curl -X GET
       "externalCode": "Avqi0FZqi8W400cwO1oHh2",
       "moment": "2016-07-21 20:19:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -250,6 +254,8 @@ curl -X GET
       "externalCode": "l7eb7QKZj1DtnXCLBuuUa1",
       "moment": "2016-07-21 19:37:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -405,7 +411,9 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/544236cb-4f6a-11e6-8a84-bae500000003/positions",
@@ -600,7 +608,9 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
-    "created": "2007-02-07 17:16:41",
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/544236cb-4f6a-11e6-8a84-bae500000003/positions",
@@ -711,7 +721,9 @@ curl -X GET
         "value": 43
       }
     ],
-    "created": "2007-02-07 17:16:41",
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/544236cb-4f6a-11e6-8a84-bae500000003/positions",
@@ -840,6 +852,8 @@ curl -X POST
   },
   "moment": "2016-11-25 18:02:50",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "sum": 0,
   "project": {
     "meta": {
@@ -938,7 +952,9 @@ curl -X POST
       "mediaType": "application/json"
     }
   },
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "rows": [
       {
@@ -1401,7 +1417,9 @@ curl -X GET
       "value": 43
     }
   ],
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/544236cb-4f6a-11e6-8a84-bae500000003/positions",

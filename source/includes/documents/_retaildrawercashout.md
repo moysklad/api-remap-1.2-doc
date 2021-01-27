@@ -27,6 +27,8 @@
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-vyplata-deneg-vyplaty-deneg-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 
 ##### Поля при expand'е доп. полей
 Описание полей при expand'е attributes
@@ -122,6 +124,9 @@ curl -X GET
       "syncId": "ece1344a-5a68-4d32-ac70-a56b943717b5",
       "moment": "2016-10-19 16:51:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -181,6 +186,9 @@ curl -X GET
       "externalCode": "ohO0hmq7jioNXhM5xuTVe3",
       "moment": "2016-10-19 16:51:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -293,6 +301,9 @@ curl -X GET
   "externalCode": "n19Ol5mFidHzBBojcTzvo3",
   "moment": "2016-10-19 18:00:19",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -415,6 +426,9 @@ curl -X GET
     "externalCode": "n19Ol5mFidHzBBojcTzvo3",
     "moment": "2016-10-19 18:00:19",
     "applicable": true,
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "rate": {
       "currency": {
         "meta": {
@@ -475,6 +489,9 @@ curl -X GET
     "externalCode": "n19Ol5mFidHzBBojcTzvo3",
     "moment": "2016-10-19 18:00:19",
     "applicable": false,
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "rate": {
       "currency": {
         "meta": {
@@ -697,6 +714,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "sum": 0,
   "organization": {
     "meta": {
@@ -739,6 +759,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "sum": 0,
   "organization": {
     "meta": {
@@ -800,6 +823,9 @@ curl -X GET
   "syncId": "ece1344a-5a68-4d32-ac70-a56b943717b5",
   "moment": "2016-10-19 16:51:00",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -882,6 +908,9 @@ curl -X GET
   "externalCode": "n19Ol5mFidHzBBojcTzvo3",
   "moment": "2016-10-19 18:00:19",
   "applicable": false,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {

@@ -29,6 +29,8 @@
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-schet-faktura-poluchennyj-scheta-faktury-poluchennye-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 
 ##### Поля при expand'е доп. полей
 Описание полей при expand'е attributes
@@ -140,6 +142,8 @@ curl -X GET
       "externalCode": "sylr1937hnp9AAftWLeYl3",
       "moment": "2016-11-15 09:52:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -209,6 +213,8 @@ curl -X GET
       "externalCode": "M0YjPeX8gqISsVA32pRQu0",
       "moment": "2016-11-15 09:51:00",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -343,6 +349,8 @@ curl -X GET
     }
   },
   "created": "2017-04-27 15:55:04",
+  "printed": true,
+  "published": true,
   "incomingNumber": "356124365",
   "incomingDate": "2017-04-06 00:00:00",
   "supplies": [
@@ -462,6 +470,8 @@ curl -X GET
       }
     },
     "created": "2017-04-27 15:55:04",
+    "printed": true,
+    "published": true,
     "incomingNumber": "356124365",
     "incomingDate": "2017-04-06 00:00:00",
     "supplies": [
@@ -535,6 +545,8 @@ curl -X GET
       }
     },
     "created": "2017-04-27 15:55:04",
+    "printed": true,
+    "published": true,
     "incomingNumber": "356124365",
     "incomingDate": "2017-04-06 00:00:00",
     "supplies": [
@@ -755,6 +767,8 @@ curl -X GET
   },
   "moment": "2017-07-20 15:30:01",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -854,6 +868,8 @@ curl -X GET
   },
   "moment": "2017-07-20 15:29:19",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -959,6 +975,8 @@ curl -X GET
   "externalCode": "sylr1937hnp9AAftWLeYl3",
   "moment": "2016-11-15 09:52:00",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1084,6 +1102,8 @@ curl -X GET
     }
   },
   "created": "2017-04-27 15:55:04",
+  "printed": true,
+  "published": true,
   "incomingNumber": "356124365",
   "incomingDate": "2017-04-06 00:00:00",
   "supplies": [

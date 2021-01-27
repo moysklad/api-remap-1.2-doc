@@ -30,6 +30,8 @@
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-prihodnyj-order-prihodnye-ordera-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**paymentPurpose**     |String(255)|Основание|&mdash;|да
 |**vatSum**                |Float|Сумма включая НДС|&mdash;|да
 
@@ -146,6 +148,9 @@ curl -X GET
       "externalCode": "0fI6AjAHh-x1oYYNwBYeN1",
       "moment": "2016-07-04 08:57:00",
       "applicable": false,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -233,6 +238,9 @@ curl -X GET
       "externalCode": "E7vH1TaKii9bkuw2pekD22",
       "moment": "2016-07-04 08:54:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -329,6 +337,9 @@ curl -X GET
       "externalCode": "FEYR3meShqh5ICWNygGeq0",
       "moment": "2016-07-04 08:56:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -661,6 +672,9 @@ curl -X GET
     "externalCode": "103kek312",
     "moment": "2016-06-10 09:52:24",
     "applicable": false,
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "rate": {
       "currency": {
         "meta": {
@@ -1010,6 +1024,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1079,6 +1096,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1148,6 +1168,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1217,6 +1240,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1305,6 +1331,9 @@ curl -X GET
   },
   "moment": "2016-11-25 18:09:50",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1417,6 +1446,9 @@ curl -X GET
   "externalCode": "E7vH1TaKii9bkuw2pekD22",
   "moment": "2016-07-04 08:54:00",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1590,6 +1622,9 @@ curl -X GET
   "externalCode": "103kek312",
   "moment": "2016-06-10 09:52:24",
   "applicable": false,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
