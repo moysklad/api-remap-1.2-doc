@@ -219,7 +219,7 @@ curl -X GET
 }
 ```
 Аналогично и для значения из поля `uuidHref` можно открыть объект в веб-версии.
-![useful image](../images/meta/owner.png?raw=true)
+![useful image](../../images/meta/owner.png?raw=true)
 
 #### Использование meta при создании/изменении объекта
 `meta` используется в качестве ссылки на другой объект, рассмотрим на примерах.
