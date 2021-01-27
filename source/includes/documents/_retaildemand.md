@@ -57,17 +57,6 @@
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|да
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 
-##### Поля при expand'е доп. полей
-Описание полей при expand'е attributes
-
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**name**            |String(255)|Номер документа|Только для чтения|нет
-|**moment**          |DateTime|Дата печати|Только для чтения|да
-|**href**            |URL|Ссылка на файл печатной формы|Только для чтения|да
-|**fileName**        |String(255)|Название файла печатной формы|Только для чтения|нет
-|**updated**         |DateTime|Момент последнего обновления|Только для чтения|да
-
 ##### Код системы налогообложения
 Значения поля taxSystem.
 
