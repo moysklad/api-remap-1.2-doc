@@ -4,6 +4,8 @@
 ## 27-01-2021
 ### Добавлено
 - Все разделы раcпределены по соответствующим пакетам
+### Документация
+- Изменен тип поля quantity с Int на Float в разделе описания вложенной [Упаковки товара](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)
 
 ## 18-01-2020
 ### Изменено

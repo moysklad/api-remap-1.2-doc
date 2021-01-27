@@ -122,6 +122,10 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 27-01-2021
+#### Документация
+- Изменен тип поля quantity с Int на Float в разделе описания вложенной [Упаковки товара](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)
+
 ### 20-01-2021
 #### Изменено
 - Добавлены поля `printed` и `published` в [документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/)
