@@ -122,6 +122,11 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 27-01-2021
+#### Документация
+- Удалено описание полей объекта доп. полей из документов. 
+  Его по-прежнему можно найти в разделе [Работа с доп. полями](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
+
 ### 20-01-2021
 #### Изменено
 - Добавлены поля `printed` и `published` в [документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/)
