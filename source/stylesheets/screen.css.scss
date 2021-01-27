@@ -60,7 +60,7 @@ html, body {
   width: $nav-width;
   background-color: $nav-bg;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: normal;
 
   // language selector for mobile devices
   .lang-selector {
@@ -84,21 +84,24 @@ html, body {
 
     input {
       background: $nav-bg;
-      border-width:  1px;
-      border-color: $toc-divider;
+      border: 1px solid $toc-divider;
       padding: 12px 20px 12px 20px;
       margin: 0px 20px 25px 40px;
       box-sizing: border-box;
       width: $nav-width - 60px;
       outline: none;
-      color: $toc-divider;
       border-radius: 3px; /* ios has a default border radius */
+      font-size: 14px;
+    }
+
+    input::-webkit-input-placeholder { /* WebKit browsers */
+      padding-left: 10px;
     }
 
     &:before {
       position: absolute;
-      top: 0px;
-      left: $nav-padding;
+      left: 50px;
+      top: 13px;
       color: $table-header-text;
       @extend %icon-search;
     }
@@ -155,7 +158,7 @@ html, body {
   .toc-list-h1-title {
     background-color: $nav-bg;
     a {
-      font-size: 1.4em;
+      font-size: 16px;
     }
   }
 
@@ -165,7 +168,7 @@ html, body {
     }
 
     a {
-      font-size: 1.4em;
+      font-size: 16px;
     }
   }
 
@@ -178,19 +181,19 @@ html, body {
   // this is parent links of the currently selected ToC entry
   .toc-link.active-parent {
     background-color: $nav-active-parent-bg;
-    color: $nav-active-parent-text;
+    color: $nav-active-text;
   }
 
   .toc-list-h2 {
     display: none;
     background-color: $nav-subitem-bg;
-    font-weight: 500;
+    font-weight: normal;
   }
 
   .toc-h2 {
     padding-left: $nav-padding;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: normal;
   }
 
    .toc-list-h3 {
@@ -205,6 +208,7 @@ html, body {
     padding-left: $nav-indent;
     border-left: 1px solid $list-divider;
     margin-left: $nav-padding;
+    color: $active-toc-text;
   }
 
   .toc-list-h4 {
@@ -214,7 +218,7 @@ html, body {
 
  .toc-h4 {
    padding-left: $nav-padding + $nav-padding + $nav-padding + $nav-indent;
-   font-size: 12px;
+   font-size: 16px;
  }
 
   .toc-footer {
@@ -223,7 +227,7 @@ html, body {
     border-top: 1px solid $toc-divider;
 
     li,a {
-      color: $nav-text;
+      color: $nav-active-text;
       text-decoration: none;
     }
 
@@ -232,8 +236,8 @@ html, body {
     }
 
     li {
-      font-size: 0.8em;
-      line-height: 1.7;
+      font-size: 14px;
+      line-height: 2.5;
       text-decoration: none;
     }
   }
