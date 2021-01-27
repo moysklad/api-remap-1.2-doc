@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 27-01-2021
+### Документация
+- Исправлен ряд опечаток в списке изменений
+
 ## 15-12-2020
 ### Изменено
 - Добавлены поля `printed` и `published` в [документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/)
@@ -16,7 +20,7 @@
 ## 22-12-2020
 ### Изменено
 - Исправлен http метод в запросе на удаление группы товаров с GET на DELETE в [Группа товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-gruppa-towarow-udalit-gruppu-towarow)
-  и тип полей `minPrice`, `buyPrice` c Double а Object в [Товаре](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
+  и тип полей `minPrice`, `buyPrice` c Double на Object в [Товаре](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
 
 ## 22-12-2020
 ### Документация
@@ -52,7 +56,7 @@
 
 ## 02-11-2020
 ### Добавлено
-- добавлены коды [ошибкок 1083, 1084](/doc/api/remap/1.2/#mojsklad-json-api-oshibki-oshibki-formata).
+- добавлены коды [ошибок 1083, 1084](/doc/api/remap/1.2/#mojsklad-json-api-oshibki-oshibki-formata).
 
 ## 29-10-2020
 ### Добавлено
