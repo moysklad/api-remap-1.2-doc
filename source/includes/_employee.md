@@ -853,14 +853,15 @@ curl -X GET
 
 | Название         | На кого распространяется |
 | ---------------- |:-------------------|
-|**own**    |Только свои
-|**ownShared**    |Свои и общие
-|**ownGroup**    |Свои и отдела
-|**ownGroupShared**    |Свои, отдела и общие
-|**all**    |Все
+|**NO**    |Ни на кого
+|**OWN**    |Только свои
+|**OWN_SHARED**    |Свои и общие
+|**OWN_GROUP**    |Свои и отдела
+|**OWN_GROUP_SHARED**    |Свои, отдела и общие
+|**ALL**    |Все
 
-Значения в порядке их расширения области действия: `own` &#8594;  `ownShared` &#8594; `ownGroupShared` &#8594; `all` и 
-`own` &#8594; `ownGroup` &#8594; `ownGroupShared` &#8594; `all`  
+Значения в порядке их расширения области действия: `NO` &#8594; `OWN` &#8594;  `OWN_SHARED` &#8594; `OWN_GROUP_SHARED` &#8594; `ALL` и 
+`NO` &#8594; `OWN` &#8594; `OWN GROUP` &#8594; `OWN_GROUP_SHARED` &#8594; `ALL`  
  Если не указывать одно из полей, то данное действие будет запрещено к выполнению для данного сотрудника. 
  
  Список пермиссий сущностей
@@ -868,56 +869,56 @@ curl -X GET
 
 | Название         | Возможные значения | Значение по умолчанию                    | Описание| 
 | ---------------- |:-------------------|:---------------------|:----------------------------------|
-|**company**    |DICTIONARY|Все all|Контрагенты
-|**myCompany**    |BASE|view: all, create: -, edit: -, delete: -|Юр. Лица
-|**good**    |DICTIONARY|Все all|Товары и Услуги
-|**project**    |BASE|Все all|Проекты
-|**contract**    |DICTIONARY|Все all|Договоры
-|**employee**    |BASE|Все all|Сотрудники
-|**currency**    |BASE|Все all|Валюты
-|**warehouse**    |BASE|Все all|Склады
-|**customEntity**    |BASE|Все all|Дополнительные справочники
-|**retailStore**    |BASE|Все all|Точка продаж
-|**country**    |BASE|Все all|Страны
-|**uom**    |BASE|Все all|Единицы измерения
-|**purchaseReturn**    |OPERATION|Все all|Возврат поставщику
-|**demand**    |OPERATION|Все all|Отгрузка
-|**salesReturn**    |OPERATION|Все all|Возврат покупателя
-|**loss**    |OPERATION|Все all|Списание
-|**enter**    |OPERATION|Все all|Оприходование
-|**move**    |OPERATION|Все all|Перемещение
-|**inventory**    |DICTIONARY|Все all|Инвентаризация
-|**processing**    |BASE|Все all|Тех. операции
-|**invoiceIn**    |OPERATION|Все all|Счет поставщику
-|**invoiceOut**    |OPERATION|Все all|Счет покупателям
-|**purchaseOrder**    |OPERATION|Все all|Заказ поставщикам
-|**customerOrder**    |OPERATION|Все all|Заказ покупателям
-|**internalOrder**    |OPERATION|Все all|Внутренние заказы
-|**processingOrder**    |OPERATION|Все all|Заказ на производство
-|**factureIn**    |OPERATION|Все all|Счета-фактуры полученные
-|**factureOut**    |OPERATION|Все all|Счета-фактуры выданные
-|**paymentIn**    |OPERATION|Все all|Входящий платеж
-|**paymentOut**    |OPERATION|Все all|Исходящий платеж
-|**cashIn**    |OPERATION|Все all|Приходной ордер
-|**cashOut**    |OPERATION|Все all|Расходной ордер
-|**priceList**    |OPERATION|Все all|Прайс-лист
-|**retailDemand**    |OPERATION|Все all|Продажи
-|**retailSalesReturn**    |OPERATION|Все all|Возвраты
-|**supply**    |OPERATION|Все all|Приемки
-|**processingPlan**    |BASE|Все all|Тех. Карты
-|**commissionReportIn**    |OPERATION|Все all|Полученный отчет комиссионера
-|**commissionReportOut**    |OPERATION|Все all|Выданный отчет комиссионер
-|**retailShift**    |DICTIONARY|Все all|Смены
-|**retailDrawerCashIn**    |OPERATION|Все all|Внесения
-|**retailDrawerCashOut**    |OPERATION|Все all|Выплаты
-|**bonusTransaction**    |OPERATION|Все all|Бонусные баллы
-|**prepayment**    |OPERATION|Все all|Предоплаты
-|**prepaymentReturn**    |OPERATION|Все all|Возврат предоплаты
-|**cashboxAdjustment**    |DICTIONARY|Все all|Корректировка остатков в кассе
-|**accountAdjustment**    |DICTIONARY|Все all|Корректировка остатков на счете
-|**counterpartyAdjustment**    |DICTIONARY|Все all|Корректировка баланса контрагента
+|**company**    |DICTIONARY|Все ALL|Контрагенты
+|**myCompany**    |BASE|view: ALL, create: NO, edit: NO, delete: NO|Юр. Лица
+|**good**    |DICTIONARY|Все ALL|Товары и Услуги
+|**project**    |BASE|Все ALL|Проекты
+|**contract**    |DICTIONARY|Все ALL|Договоры
+|**employee**    |BASE|Все ALL|Сотрудники
+|**currency**    |BASE|Все ALL|Валюты
+|**warehouse**    |BASE|Все ALL|Склады
+|**customEntity**    |BASE|Все ALL|Дополнительные справочники
+|**retailStore**    |BASE|Все ALL|Точка продаж
+|**country**    |BASE|Все ALL|Страны
+|**uom**    |BASE|Все ALL|Единицы измерения
+|**purchaseReturn**    |OPERATION|Все ALL|Возврат поставщику
+|**demand**    |OPERATION|Все ALL|Отгрузка
+|**salesReturn**    |OPERATION|Все ALL|Возврат покупателя
+|**loss**    |OPERATION|Все ALL|Списание
+|**enter**    |OPERATION|Все ALL|Оприходование
+|**move**    |OPERATION|Все ALL|Перемещение
+|**inventory**    |DICTIONARY|Все ALL|Инвентаризация
+|**processing**    |BASE|Все ALL|Тех. операции
+|**invoiceIn**    |OPERATION|Все ALL|Счет поставщику
+|**invoiceOut**    |OPERATION|Все ALL|Счет покупателям
+|**purchaseOrder**    |OPERATION|Все ALL|Заказ поставщикам
+|**customerOrder**    |OPERATION|Все ALL|Заказ покупателям
+|**internalOrder**    |OPERATION|Все ALL|Внутренние заказы
+|**processingOrder**    |OPERATION|Все ALL|Заказ на производство
+|**factureIn**    |OPERATION|Все ALL|Счета-фактуры полученные
+|**factureOut**    |OPERATION|Все ALL|Счета-фактуры выданные
+|**paymentIn**    |OPERATION|Все ALL|Входящий платеж
+|**paymentOut**    |OPERATION|Все ALL|Исходящий платеж
+|**cashIn**    |OPERATION|Все ALL|Приходной ордер
+|**cashOut**    |OPERATION|Все ALL|Расходной ордер
+|**priceList**    |OPERATION|Все ALL|Прайс-лист
+|**retailDemand**    |OPERATION|Все ALL|Продажи
+|**retailSalesReturn**    |OPERATION|Все ALL|Возвраты
+|**supply**    |OPERATION|Все ALL|Приемки
+|**processingPlan**    |BASE|Все ALL|Тех. Карты
+|**commissionReportIn**    |OPERATION|Все ALL|Полученный отчет комиссионера
+|**commissionReportOut**    |OPERATION|Все ALL|Выданный отчет комиссионер
+|**retailShift**    |DICTIONARY|Все ALL|Смены
+|**retailDrawerCashIn**    |OPERATION|Все ALL|Внесения
+|**retailDrawerCashOut**    |OPERATION|Все ALL|Выплаты
+|**bonusTransaction**    |OPERATION|Все ALL|Бонусные баллы
+|**prepayment**    |OPERATION|Все ALL|Предоплаты
+|**prepaymentReturn**    |OPERATION|Все ALL|Возврат предоплаты
+|**cashboxAdjustment**    |DICTIONARY|Все ALL|Корректировка остатков в кассе
+|**accountAdjustment**    |DICTIONARY|Все ALL|Корректировка остатков на счете
+|**counterpartyAdjustment**    |DICTIONARY|Все ALL|Корректировка баланса контрагента
 
-Для пермиссий `currency`, `country` и `uom` значение `view` не изменяемое и равно `all`. При попытке изменить значение `view`
+Для пермиссий `currency`, `country` и `uom` значение `view` не изменяемое и равно `ALL`. При попытке изменить значение `view`
  для данных пермиссий, будет возвращена ошибка.
 
 ###### Пермиссии для задач
@@ -926,20 +927,21 @@ curl -X GET
 
 | Название         | Описание | Ограничения | Возможные значения |
 | ---------------- |:-------------------|:-------------------| :-------------------|
-|**view**    |Смотреть |нет |authorOrAssignee, all
-|**create**    |Создавать |не шире, чем у view или отсутствует |all
-|**update**    |Редактировать |не шире, чем у view или отсутствует |assignee, authorOrAssignee, all
-|**delete**    |Удалять |не шире значения поля update или отсутствует |author, authorOrAssignee, all
-|**done**    |Выполнять |не шире, чем у view или отсутствует |author, authorOrAssignee, all
+|**view**    |Смотреть |нет |NO, AUTHOR_OR_ASSIGNEE, ALL
+|**create**    |Создавать |не шире, чем у view или отсутствует |NO, ALL
+|**update**    |Редактировать |не шире, чем у view или отсутствует |NO, ASSIGNEE, AUTHOR_OR_ASSIGNEE, ALL
+|**delete**    |Удалять |не шире значения поля update или отсутствует |NO, AUTHOR, AUTHOR_OR_ASSIGNEE, ALL
+|**done**    |Выполнять |не шире, чем у view или отсутствует |NO, AUTHOR, AUTHOR_OR_ASSIGNEE, ALL
 
 Возможные значения полей `view`, `create`, `update`, `delete`, `done`:
 
 | Название         | На кого распространяется |
 | ---------------- |:-------------------|
-|**authorOrAssignee**    |Созданные и назначенные
-|**assignee**    |Назначенные
-|**author**    |Созданные
-|**all**    |Все
+|**NO**    |Ни на кого
+|**AUTHOR_OR_ASSIGNEE**    |Созданные и назначенные
+|**ASSIGNEE**    |Назначенные
+|**AUTHOR**    |Созданные
+|**ALL**    |Все
 
 ### Получить информацию о правах Сотрудника
 
@@ -1013,364 +1015,368 @@ curl -X GET
             "purchaseControl": true,
             "listenCalls": true,
             "company": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "myCompany": {
-                "view": "all"
+                "view": "ALL",
+                "print": "NO",
+                "create": "NO",
+                "update": "NO",
+                "delete": "NO"
             },
             "good": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "project": {
-                "view": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all"
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "contract": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "employee": {
-                "view": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all"
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "currency": {
-                "view": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all"
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "warehouse": {
-                "view": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all"
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "customEntity": {
-                "view": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all"
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "retailStore": {
-                "view": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all"
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "country": {
-                "view": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all"
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "uom": {
-                "view": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all"
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "purchaseReturn": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "demand": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "salesReturn": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "loss": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "enter": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "move": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "inventory": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "processing": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "invoiceIn": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "invoiceOut": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "purchaseOrder": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "customerOrder": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "internalOrder": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "processingOrder": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "factureIn": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "factureOut": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "paymentIn": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "paymentOut": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "cashIn": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "cashOut": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "priceList": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "retailDemand": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "retailSalesReturn": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "supply": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "processingPlan": {
-                "view": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all"
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "commissionReportIn": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "commissionReportOut": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "retailShift": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "retailDrawerCashIn": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "retailDrawerCashOut": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "bonusTransaction": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "prepayment": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "prepaymentReturn": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all",
-                "approve": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "cashboxAdjustment": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "accountAdjustment": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "counterpartyAdjustment": {
-                "view": "all",
-                "print": "all",
-                "create": "all",
-                "update": "all",
-                "delete": "all"
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "script": {
-                "view": "authorOrAssignee",
-                "create": "all",
-                "done": "authorOrAssignee",
-                "update": "author",
-                "delete": "author"
+                "view": "AUTHOR_OR_ASSIGNEE",
+                "create": "ALL",
+                "done": "AUTHOR_OR_ASSIGNEE",
+                "update": "AUTHOR",
+                "delete": "AUTHOR"
             }
         }
     }
@@ -1380,8 +1386,8 @@ curl -X GET
 ### Изменить информацию о правах Сотрудника
 
 Если у пользователя есть возможность настраивать пермиссии для индивидуальной роли, 
-то пермиссии выставятся в соответствии с теми, что указаны в `permissions`, остальные пермиссии 
-будут отсутствовать, кроме `view` равное `all` для `currency`, `country` и `uom`. В случае отсутствия поля `permissions` 
+то пермиссии выставятся в соответствии с теми, что указаны в `permissions`, остальные пермисии 
+будут отсутствовать, кроме `view` равное `ALL` для `currency`, `country` и `uom`. В случае отсутствия поля `permissions` 
 будут заданы значения пермиссий, которые были у сотрудника до смены роли.
 
 Если у пользователя нет возможности настраивать пермиссии для индивидуальной роли, то при наличии `permissions` 
