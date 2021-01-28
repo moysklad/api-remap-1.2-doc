@@ -21,13 +21,13 @@ JSON API описана в статье [Дополнительные поля](
 редактирование и удаление атрибутов объекта. Весь этот функционал доступен и через JSON API. 
 
 Процесс создания атрибута товара через UI
-![Settings UI](../images/attributes/Screenshot_1.jpg?raw=true)
+![Settings UI](../../images/attributes/Screenshot_1.jpg?raw=true)
 
-![Creating attribute](../images/attributes/Screenshot_2.jpg?raw=true)
+![Creating attribute](../../images/attributes/Screenshot_2.jpg?raw=true)
 
-![Created attribute](../images/attributes/Screenshot_3.jpg?raw=true)
+![Created attribute](../../images/attributes/Screenshot_3.jpg?raw=true)
 
-![UI filter](../images/attributes/Screenshot_7.jpg?raw=true)
+![UI filter](../../images/attributes/Screenshot_7.jpg?raw=true)
 
 ### Дополнительные поля Услуг, Модификаций и Комплектов
 Дополнительные поля у Товаров, Услуг, Модификаций и Комплектов общие и располагаются в метаданных Товаров.

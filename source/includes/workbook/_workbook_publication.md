@@ -260,7 +260,7 @@ curl
 
 По ссылке публикации (например, https://doc.moysklad.ru/board/ef371086-c7c8-11e8-9dd2-f3a300000000/publication/aec51463-bbd2-11e6-8a84-bae500000003.html) открывается страница, с которой можно скачать pdf-документ. 
 
- ![useful image](../images/publication/publication_download.png?raw=true)
+ ![useful image](../../images/publication/publication_download.png?raw=true)
  
 По ссылке будет доступна самая последняя версия документа, даже если вы вносите изменения в документ после его публикации.
 
