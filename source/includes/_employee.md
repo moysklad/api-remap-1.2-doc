@@ -785,7 +785,10 @@ curl -X GET
 
 Роли бывают четырех типов: `Системный администратор`, `Кассир`, `Пользовательская роль` и `Индивидуальная роль`. Использовать
 `Пользовательскую роль` (с пермиссиями не по умолчанию) и `Индивидуальную роль` можно только на тарифах `Профессиональный` 
-или `Корпоративный`. Для `Пользовательской роли` можно настраивать список пермиссий, заполняя поле `permission`.
+или `Корпоративный`. Для `Пользовательской роли` можно настраивать список пермиссий, заполняя поле `permissions`. 
+Если в поле `permissions` указывать не все пермиссии, то не переданные будут выключены. 
+Значения по умолчанию выставляются, если пользователь не указывая индивидуальные пермиссии задает индивидуальную роль сотруднику, 
+у которого ранее не было задано индивидуальных пермиссий.
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
@@ -796,8 +799,8 @@ curl -X GET
 
 | Название         | Возможные значения | Значение по умолчанию                    | Описание| 
 | ---------------- |:-------------------|:---------------------|:----------------------------------|
-|**importData**    |Boolean|true|Импорт
-|**exportData**    |Boolean|true|Экспорт
+|**importData**    |Boolean|true|Импортировать данные
+|**exportData**    |Boolean|true|Экспортировать данные
 |**onlineShops**    |Boolean|true|Интернет магазины
 |**apiRequest**    |Boolean|true|Доступ по АПИ
 |**sendEmail**    |Boolean|true|Отправлять почту
@@ -805,16 +808,16 @@ curl -X GET
 |**viewDashboard**    |Boolean|true|Просматривать показатели
 |**viewRecycleBin**    |Boolean|true|Просматривать корзину
 |**viewAudit**    |Boolean|false|Просматривать аудит
-|**viewSaleProfit**    |Boolean|true|Прибыльность
-|**viewCommissionGoods**    |Boolean|true|Товары на реализации
-|**viewPurchaseFunnel**    |Boolean|true|Воронка продаж
-|**viewStockReport**    |Boolean|true|Остатки
-|**viewTurnover**    |Boolean|true|Обороты
-|**viewSerialNumbers**    |Boolean|true|Сер. Номера
-|**viewCashFlow**    |Boolean|true|Движение денежных средств
-|**viewCustomerBalanceList**    |Boolean|true|Взаиморасчеты
-|**viewProfitAndLoss**    |Boolean|true|Прибыль и убытки
-|**viewCompanyCRM**    |Boolean|true|Показатели
+|**viewSaleProfit**    |Boolean|true|Просматривать прибыльность
+|**viewCommissionGoods**    |Boolean|true|Просматривать товары на реализации
+|**viewPurchaseFunnel**    |Boolean|true|Просматривать воронку продаж
+|**viewStockReport**    |Boolean|true|Просматривать остатки по товарам
+|**viewTurnover**    |Boolean|true|Просматривать обороты
+|**viewSerialNumbers**    |Boolean|true|Просматривать серийные номера
+|**viewCashFlow**    |Boolean|true|Просматривать движение денежных средств
+|**viewCustomerBalanceList**    |Boolean|true|Просматривать взаиморасчеты
+|**viewProfitAndLoss**    |Boolean|true|Просматривать прибыль и убытки
+|**viewCompanyCRM**    |Boolean|true|Просматривать показатели
 |**viewMoneyDashboard**    |Boolean|false|Видеть остатки денег
 |**restoreFromRecycleBin**    |Boolean|true|Востанавливать документы
 |**deleteFromRecycleBin**    |Boolean|true|Очищать корзину
@@ -824,9 +827,6 @@ curl -X GET
 |**subscriptionControl**    |Boolean|false|Управление подпиской
 |**purchaseControl**    |Boolean|true|Управление закупками
 |**listenCalls**    |Boolean|true|Прослушивание звонков
-
-Значения по умолчанию выставляются, если пользователь не указывая индивидуальные пермиссии задает индивидуальную роль сотруднику, 
-у которого ранее не было задано индивидуальных пермиссий.
 
 ###### Список пермиссий сущностей
 
