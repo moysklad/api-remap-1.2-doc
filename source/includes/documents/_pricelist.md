@@ -23,23 +23,12 @@
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|&mdash;|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Прайс-листа&mdash;|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-prajs-list-prajs-listy-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
 |**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Прайс-листа|&mdash;|да
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
-
-##### Поля при expand'е доп. полей
-Описание полей при expand'е attributes
-
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**name**            |String(255)|Номер документа|&mdash;|нет
-|**moment**          |DateTime|Дата печати|&mdash;|да
-|**href**            |URL|Ссылка на файл печатной формы|&mdash;|да
-|**fileName**        |String(255)|Название файла печатной формы|&mdash;|нет
-|**updated**         |DateTime|Момент последнего обновления|&mdash;|да
 
 #### Тип цены
 | Название  | Тип | Описание                    | Поле в запросе | Обязательное при ответе|
