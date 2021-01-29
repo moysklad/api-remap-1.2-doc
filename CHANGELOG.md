@@ -3,8 +3,10 @@
 
 ## 27-01-2021
 ### Добавлено
-- Все разделы распределены по соответствующим пакетам
+- Все разделы раcпределены по соответствующим пакетам
 ### Документация
+- Изменен тип поля quantity с Int на Float в разделе описания вложенной [Упаковки товара](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)
+- Все разделы распределены по соответствующим пакетам
 - Удалено описание полей объекта доп. полей из документов. 
   Его по-прежнему можно найти в разделе [Работа с доп. полями](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 - Исправлен ряд опечаток в списке изменений
