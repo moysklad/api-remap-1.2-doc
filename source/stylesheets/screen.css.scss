@@ -59,7 +59,7 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: normal;
 
   // language selector for mobile devices
@@ -85,10 +85,10 @@ html, body {
     input {
       background: $nav-bg;
       border: 1px solid $toc-divider;
-      padding: 12px 20px 12px 20px;
-      margin: 0px 20px 25px 40px;
+      padding: 12px 30px 12px 25px;
+      margin: 0px 25px 25px 30px;
       box-sizing: border-box;
-      width: $nav-width - 60px;
+      width: $nav-width - 50px;
       outline: none;
       border-radius: 3px; /* ios has a default border radius */
       font-size: 14px;
@@ -100,7 +100,7 @@ html, body {
 
     &:before {
       position: absolute;
-      left: 50px;
+      left: 43px;
       top: 13px;
       color: $table-header-text;
       @extend %icon-search;
@@ -151,23 +151,29 @@ html, body {
     transition-property: background;
     transition-timing-function: linear;
     transition-duration: 200ms;
-    line-height: 48px;
   }
 
   .toc-list-h1-title {
     background-color: $nav-bg;
     a {
-      font-size: 16px;
+      font-size: 14px;
+    }
+  }
+
+  .toc-list-h1 {
+    li {
+      line-height: 42px;
     }
   }
 
   .toc-other-page {
     li {
       text-align: left;
+      line-height: 42px;
     }
 
     a {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 
@@ -187,6 +193,9 @@ html, body {
     display: none;
     background-color: $nav-subitem-bg;
     font-weight: normal;
+    li {
+      line-height: 42px;
+    }
   }
 
   .toc-h2 {
@@ -205,7 +214,7 @@ html, body {
      display: none;
      background-color: $nav-subitem-bg;
      li {
-       line-height: 36px;
+       line-height: 42px;
      }
   }
 
@@ -224,7 +233,7 @@ html, body {
 
  .toc-h4 {
    padding-left: $nav-padding + $nav-padding + $nav-padding + $nav-indent;
-   font-size: 16px;
+   font-size: 14px;
  }
 
   .toc-footer {

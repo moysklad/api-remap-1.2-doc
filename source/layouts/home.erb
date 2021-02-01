@@ -71,7 +71,10 @@ under the License.
       <ul id="toc" class="toc-list-h1">
         <% toc_data(page_content).each do |h1| %>
           <li class="toc-list-h1-title">
-            <a href="#<%= h1[:id] %>" class="toc-h1 toc-link" data-title="<%=h h1[:title] %>"><%=h h1[:content] %></a>
+            <a href="#<%= h1[:id] %>" class="toc-h1 toc-link arrow-icon" data-title="<%=h h1[:title] %>"><%=h h1[:content] %>
+              <span class="left-bar"></span>
+              <span class="right-bar"></span>
+            </a>
             <% if h1[:children].any? %>
             <% h1[:children].each do |h2| %>
               <li>
