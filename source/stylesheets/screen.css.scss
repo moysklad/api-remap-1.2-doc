@@ -143,7 +143,6 @@ html, body {
   // styling of an unordered list because it is ugly.
   ul, li {
     list-style: none;
-    margin: 0;
     padding: 0;
   }
 
@@ -191,12 +190,18 @@ html, body {
   }
 
   .toc-h2 {
-    padding-left: $nav-padding;
+    padding-left: $nav-indent;
     font-size: 14px;
     font-weight: normal;
+    color: $active-toc-text;
   }
 
-   .toc-list-h3 {
+  .second-boarder {
+    border-left: 1px solid $list-divider;
+    margin-left: $nav-padding;
+  }
+
+  .toc-list-h3 {
      display: none;
      background-color: $nav-subitem-bg;
      li {
@@ -205,15 +210,16 @@ html, body {
   }
 
   .toc-h3 {
+    position: relative;
     padding-left: $nav-indent;
     border-left: 1px solid $list-divider;
-    margin-left: $nav-padding;
+    margin-left: $nav-indent;
     color: $active-toc-text;
   }
 
   .toc-list-h4 {
     display: none;
-   background-color: $nav-subitem-bg;
+    background-color: $nav-subitem-bg;
  }
 
  .toc-h4 {
@@ -265,7 +271,6 @@ html, body {
     padding: $side-pad $side-pad $side-pad;
     background-color: rgba($main-bg, 0.7);
     transform-origin: 0 0;
-    transform: rotate(-90deg) translate(-100%, 0);
     border-radius: 0 0 0 5px;
   }
   padding: 0 1.5em 5em 0; // increase touch size area
@@ -279,10 +284,7 @@ html, body {
   font-weight: bold;
   opacity: 0.7;
   line-height: 16px;
-  img {
-    height: 16px;
-    vertical-align: bottom;
-  }
+
 
   transition: left 0.3s ease-in-out;
 
@@ -473,34 +475,26 @@ html, body {
       border: 1px solid $toc-divider;
     }
 
-    td:nth-child(1){
-      min-width: 5%;
-      width: 15%;
-      max-width: 15%;
-    }
-
-    td:nth-child(2){
-      min-width: 5%;
-      width: 15%;
-      max-width: 30%;
-    }
-
     td:nth-child(3){
       min-width: 10%;
-      width: 30%;
-      max-width: 30%;
     }
 
     td:nth-child(4){
-      min-width: 10%;
-      width: 5%;
-      max-width: 10%;
+      width: 128px;
     }
 
     td:nth-child(5){
+      width: 96px;
+    }
+  }
+
+  .error-table table {
+    td:nth-child(2){
       min-width: 10%;
-      width: 5%;
-      max-width: 10%;
+    }
+
+    td:nth-child(3){
+      min-width: 20%;
     }
   }
 
