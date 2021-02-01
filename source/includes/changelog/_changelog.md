@@ -123,7 +123,7 @@
 Список последних изменений в API Remap 1.2
 
 ## 04-02-2021
-### Документация
+### Изменено
 - Добавлен новый тип уведомлений [Уведомление из сценария](https://dev.moysklad.ru/doc/api/remap/1.2/other/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-uwedomlenie-iz-scenariq)
 - Добавлена новая группа уведомлений [Сценарии](https://dev.moysklad.ru/doc/api/remap/1.2/other/#uwedomleniq-nastrojki-uwedomlenij-atributy-suschnosti)
 
