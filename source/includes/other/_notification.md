@@ -325,6 +325,7 @@ curl -X PUT
 | **NotificationSubscribeTermsExpired**   | Биллинг               | Истекают условия подписки |
 | **NotificationRetailShiftOpened**       | Розничная торговля    | Открыта смена |
 | **NotificationRetailShiftClosed**       | Розничная торговля    | Закрыта смена |
+| **NotificationScript**       | Сценарии    | Уведомление из сценария |
 
 ## Подробное описание типов уведомлений
 
@@ -1855,6 +1856,93 @@ curl -X GET
 }
 ```
 
+### Уведомление из сценария
+#### Тип уведомления
+NotificationScript - уведомление из сценария
+#### Атрибуты уведомления
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|Только для чтения|да
+|**id**                 |UUID|ID Уведомления|Только для чтения|да
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да
+|**created**            |DateTime|Дата и время формирования Уведомления|Только для чтения|да
+|**read**        |Boolean|Признак того, было ли Уведомление прочитано|Только для чтения|да
+|**title**       |String(255)|Краткий текст уведомления|Только для чтения| да
+|**description**       |String(255)|Описание уведомления|Только для чтения| да
+|**eventType**       |Событие|Тип события сценария|Только для чтения| да
+|**entity**       |Объект|Ссылка на объект сценария|Только для чтения| да
+
+#### Атрибуты вложенных сущностей
+##### Событие
+Тип события сценария. Возможные значения:
+
++ **ADD** - создан
++ **MODIFY** - изменен
++ **CHANGE_STATUS** - изменен статус
+
+##### Объект
+Объект, на который сработал сценарий.
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|Только для чтения|да
+|**id**                 |UUID|ID объекта|Только для чтения|да
+|**name**               |String(255)|Наименование объекта|Только для чтения|да
+
+Допустимые значения для **meta.type**:
+
++ **customerorder** - заказ покупателя
++ **invoiceout** - счет покупателю
++ **demand** - отгрузка
++ **purchaseorder** - заказ поставщику
++ **invoicein** - счет поставщика
++ **supply** - приемка
+
+**Параметры**
+
+| Параметр   | Описание   | 
+|:---|:---|
+| **id** |  `string` (required) *Example: 3929d717-351c-11e9-9ff4-34e800029ad4* id Уведомления.|
+
+> Запрос на получение Уведомления с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/notification/b22dc861-645b-11eb-0a80-1f8500000044"
+  -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Уведомления.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/notification/b22dc861-645b-11eb-0a80-1f8500000044",
+    "type": "NotificationScript",
+    "mediaType": "application/json"
+  },
+  "id": "b22dc861-645b-11eb-0a80-1f8500000044",
+  "accountId": "882bbcfa-645b-11eb-0a80-1f8000000016",
+  "created": "2021-02-01 10:04:15.907",
+  "read": false,
+  "title": "тема",
+  "description": "текст уведомления",
+  "eventType": "MODIFY",
+  "entity": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/afa8525a-645b-11eb-0a80-2b47000003b7",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
+      "type": "customerorder",
+      "mediaType": "application/json"
+    },
+    "id": "afa8525a-645b-11eb-0a80-2b47000003b7",
+    "name": "00001"
+  }
+}
+```
+
 ## Настройки уведомлений
 ### Атрибуты сущности
 + **groups** - Подписка на уведомления по группам
@@ -1872,6 +1960,7 @@ curl -X GET
 | **retail**                 | Розничная торговля |
 | **task**                   | Задачи             |
 | **data_exchange**          | Обмен данными      |
+| **scripts**                | Сценарии           |
 
 ### Получить настройки уведомлений
 Запрос настроек Уведомлений текущего пользователя.
@@ -1913,6 +2002,10 @@ curl -X GET
     "data_exchange" : {
       "enabled" : true,
       "channels" : [ "email", "push" ]
+    },
+    "scripts" : {
+      "enabled" : true,
+      "channels" : [ "email", "push" ]
     }
   }
 }
@@ -1920,6 +2013,8 @@ curl -X GET
 
 ### Изменить настройки уведомлений
 Изменение настроек Уведомлений текущего пользователя.
+
+Отключение уведомлений из сценариев недопустимо. Параметр **enabled** игнорируется.
 
 > Изменение настроек Уведомлений текущего пользователя.
 
@@ -1951,6 +2046,10 @@ curl -X GET
                 "channels" : [ "email", "push" ]
               },
               "data_exchange" : {
+                "enabled" : true,
+                "channels" : [ "email", "push" ]
+              },
+              "scripts" : {
                 "enabled" : true,
                 "channels" : [ "email", "push" ]
               }
