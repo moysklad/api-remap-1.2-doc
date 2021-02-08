@@ -97,16 +97,6 @@ html, body {
 
     input[type=text] {
       padding-left: 33px;
-      //margin-right: 20px;
-    }
-    input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-      padding-left: 10px;
-    }
-    input::-moz-placeholder { /* Mozilla Firefox 19+ */
-      padding-left: 10px;
-    }
-    input:-ms-input-placeholder { /* Internet Explorer 10+ */
-      padding-left: 10px;
     }
 
     &:before {
