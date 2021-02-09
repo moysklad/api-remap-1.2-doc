@@ -180,7 +180,7 @@ curl
       "mediaType": "application/json"
     }
   },
-  "href": "https://online.moysklad.ru/link/QS6YOArOjJ"
+  "href": "https://mskld.ru/QS6YOArOjJ"
 }
 ```
 
@@ -234,7 +234,7 @@ curl
                     "mediaType": "application/json"
                 }
             },
-            "href": "https://online.moysklad.ru/link/fhzHJPqIM7"
+            "href": "https://mskld.ru/fhzHJPqIM7"
         }
     ]
 }
@@ -258,7 +258,7 @@ curl
 
 ## Ссылки публикаций
 
-По ссылке публикации (например, https://online.moysklad.ru/link/7sDZyGqk5M) открывается страница, с которой можно скачать pdf-документ. 
+По ссылке публикации (например, https://mskld.ru/7sDZyGqk5M) открывается страница, с которой можно скачать pdf-документ. 
 
  ![useful image](../../images/publication/publication_download.png?raw=true)
  

@@ -71,7 +71,7 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
-      "href": "https://online.moysklad.ru/link/73NIpnAbPr"
+      "href": "https://mskld.ru/73NIpnAbPr"
     }
   ]
 }
@@ -123,7 +123,7 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "href": "https://online.moysklad.ru/link/reu92ZrjCM"
+  "href": "https://mskld.ru/reu92ZrjCM"
 }
 ```
 
@@ -144,7 +144,7 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "href": "https://online.moysklad.ru/link/f00HzRGx8Q"
+  "href": "https://mskld.ru/f00HzRGx8Q"
 }
 ```
 
@@ -206,6 +206,6 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "href": "https://online.moysklad.ru/link/fuXrdd7Uii"
+  "href": "https://mskld.ru/fuXrdd7Uii"
 }
 ```
