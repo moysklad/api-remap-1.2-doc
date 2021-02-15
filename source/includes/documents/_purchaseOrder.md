@@ -18,7 +18,7 @@
 |**moment**             |DateTime|Дата Заказа|&mdash;|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да
 |**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да
-|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|да
+|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет
 |**sum**                |Int|Сумма Заказа поставщику в установленной валюте|Только для чтения|да
 |**rate**               |Object|Валюта|&mdash;|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да

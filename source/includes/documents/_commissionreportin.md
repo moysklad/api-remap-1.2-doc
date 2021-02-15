@@ -18,7 +18,7 @@
 |**moment**             |DateTime|Дата смены|Только для чтения|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да
 |**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да
-|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|да
+|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
 |**sum**                |Int|Сумма Полученного отчета комиссионера в копейках|Только для чтения|да
 |**rate**               |Object|Валюта|&mdash;|да
