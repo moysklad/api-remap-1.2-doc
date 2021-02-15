@@ -61,7 +61,7 @@ html, body {
   background-color: $nav-bg;
   font-size: 14px;
   font-weight: normal;
-  scrollbar-width: none;
+  scrollbar-width: 1px;
 
   // language selector for mobile devices
   .lang-selector {
@@ -173,6 +173,7 @@ html, body {
         border-bottom: 0;
         margin-top: 20px;
         right: 5%;
+        color: $nav-active-text;
       }
     }
   }
@@ -219,7 +220,6 @@ html, body {
   // this is parent links of the currently selected ToC entry
   .toc-link.active-parent {
     background-color: $nav-active-parent-bg;
-    color: $nav-active-text;
   }
 
   .toc-list-h2 {
@@ -530,11 +530,22 @@ html, body {
 
     tr {
       border: 1px solid $toc-divider;
+      &:hover {
+        background-color: $toc-divider
+      }
     }
 
-    td:nth-child(3){
-      min-width: 10%;
-    }
+    //td:nth-child(1){
+    //  min-width: 10%;
+    //}
+    //
+    //td:nth-child(2){
+    //  min-width: 10%;
+    //}
+
+    //td:nth-child(3){
+    //  min-width: 10%;
+    //}
 
     td:nth-child(4){
       width: 128px;
@@ -578,11 +589,11 @@ html, body {
     border: 1px solid $code-tag-border;
     color: $table-header-text;
     border-radius: 3px;
-    padding-top: 4px;
-    padding-down: 4px;
+    padding-top: 3px;
+    padding-bottom: 1px;
     padding-left: 8px;
     padding-right: 8px;
-    word-break: normal;
+    word-break: break-word;
     @extend %break-words;
     @extend %code-font;
   }
@@ -781,63 +792,60 @@ html, body {
 }
 
 
-//scrolls
-
-.toc-wrapper::-webkit-scrollbar-thumb:hover {
-  width: 0px;
-  background: rgba(0,0,0,.16);
-}
-
-.toc-wrapper::-webkit-scrollbar-thumb {
-  width: 0px;
-
-  border-radius: 2px;
-  background: #3B454E;
-  background: rgba(0,0,0,.16);
-}
-
-.toc-wrapper::-webkit-scrollbar {
-  width: 0px;
-  border-radius: 2px;
-}
-
-pre::-webkit-scrollbar-thumb:hover {
-  width: 0px;
-  background: rgba(0,0,0,.16);
-}
-
-pre::-webkit-scrollbar-thumb {
-  width: 0px;
-  border-radius: 2px;
-  background: #3B454E;
-  background: rgba(0,0,0,.16);
-}
-
-pre::-webkit-scrollbar {
-  width: 0px;
-  height: 4px;
-  border-radius: 2px;
-}
-
-pre::-webkit-scrollbar-track {
-  width: 0px;
-  background: #f1f1f1;
-  background: rgba(0,0,0,.10);
-}
-
-.search-results::-webkit-scrollbar-thumb:hover {
-  width: 0px;
-  background: rgba(0,0,0,.16);
-}
-
-.search-results::-webkit-scrollbar-thumb {
-  width: 0px;
-  border-radius: 2px;
-  background: #3B454E;
-  background: rgba(0,0,0,.16);
-}
-
-.search-results::-webkit-scrollbar {
-  width: 0px;
-  border-radius: 2px;
-}
+////scrolls
+//
+//.toc-wrapper::-webkit-scrollbar-thumb:hover {
+//  width: 6px;
+//  background: rgba(0,0,0,.16);
+//}
+//
+//.toc-wrapper::-webkit-scrollbar-thumb {
+//  width: 6px;
+//  border-radius: 2px;
+//  background: rgba(0,0,0,.16);
+//}
+//
+//.toc-wrapper::-webkit-scrollbar {
+//  width: 6px;
+//  border-radius: 2px;
+//}
+//
+//pre::-webkit-scrollbar-thumb:hover {
+//  width: 20px;
+//  background: $active-toc-h1;
+//}
+//
+//pre::-webkit-scrollbar-thumb {
+//  width: 20px;
+//  border-radius: 2px;
+//  background: $active-toc-h1;
+//}
+//
+//pre::-webkit-scrollbar {
+//  width: 20px;
+//  height: 4px;
+//  border-radius: 2px;
+//}
+//
+//pre::-webkit-scrollbar-track {
+//  width: 20px;
+//  background: $active-toc-h1;
+//  background: rgba(0,0,0,.10);
+//}
+//
+//.search-results::-webkit-scrollbar-thumb:hover {
+//  width: 6px;
+//  background: rgba(0,0,0,.16);
+//}
+//
+//.search-results::-webkit-scrollbar-thumb {
+//  width: 6px;
+//  border-radius: 2px;
+//  background: $active-toc-h1;
+//  background: rgba(0,0,0,.16);
+//}
+//
+//.search-results::-webkit-scrollbar {
+//  width: 6px;
+//  border-radius: 2px;
+//}
