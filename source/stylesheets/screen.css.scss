@@ -531,7 +531,7 @@ html, body {
     tr {
       border: 1px solid $toc-divider;
       &:hover {
-        background-color: $toc-divider
+        background-color: $nav-active-bg;
       }
     }
 
