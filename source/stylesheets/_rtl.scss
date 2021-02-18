@@ -85,9 +85,6 @@ $default: auto;
         aside:before {
             padding-#{left}: 0.5em;
         }
-        .search-highlight {
-            background: linear-gradient(to top right, #F7E633 0%, #F1D32F 100%);
-        }
     }
     pre,
     blockquote {

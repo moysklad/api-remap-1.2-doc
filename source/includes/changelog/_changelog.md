@@ -124,6 +124,10 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 18-02-2021
+#### Изменено
+- Изменены CSS стили
+
 ### 11-02-2021
 #### Изменено
 - Исправлены битые ссылки в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq)
