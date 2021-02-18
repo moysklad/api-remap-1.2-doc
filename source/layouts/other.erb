@@ -64,6 +64,7 @@ under the License.
       <% end %>
       <% if current_page.data.search %>
         <div class="search">
+          <%= image_tag "search.svg", class: 'loupe' %>
           <input type="text" class="search" id="input-search" placeholder="По ключевому слову">
         </div>
         <ul class="search-results"></ul>

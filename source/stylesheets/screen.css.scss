@@ -87,7 +87,7 @@ html, body {
       background: $nav-bg;
       border: 1px solid $toc-divider;
       padding: 12px 30px 12px 25px;
-      margin: 0px 25px 25px 30px;
+      margin: 0px 25px 25px 25px;
       box-sizing: border-box;
       width: $nav-width - 50px;
       outline: none;
@@ -95,17 +95,23 @@ html, body {
       font-size: 14px;
     }
 
-    input[type=text] {
-      padding-left: 33px;
+    img {
+      position:absolute;
+      left:38px;
+      bottom: 40px;
     }
 
-    &:before {
-      position: absolute;
-      left: 43px;
-      top: 13px;
-      color: $table-header-text;
-      @extend %icon-search;
+    input[type=text] {
+      padding-left: 35px;
     }
+
+    //&:before {
+    //  position: absolute;
+    //  left: 43px;
+    //  top: 13px;
+    //  color: $table-header-text;
+    //  @extend %icon-search;
+    //}
   }
 
   .search-results {
@@ -531,7 +537,7 @@ html, body {
     tr {
       border: 1px solid $toc-divider;
       &:hover {
-        background-color: $nav-active-bg;
+        background-color: $general-table-bg;
       }
     }
 
@@ -679,12 +685,12 @@ html, body {
 
   .highlight code {
     border: 0px solid $code-tag-border;
-    color: #eee;
+    color: rgba(255, 255, 255, 0.9);
   }
 
   pre, blockquote {
     background-color: $code-bg;
-    color: #fff;
+    color: rgba(230, 219, 116, 0.9);
 
     margin: 0;
     width: $examples-width;
@@ -714,12 +720,12 @@ html, body {
     &>p {
       background-color: $code-annotation-bg;
       padding: $code-annotation-padding 2em;
-      color: #eee;
+      color: rgba(255, 255, 255, 0.9);
     }
     &>span {
       background-color: $code-annotation-bg;
       padding: 0 2em $code-annotation-padding;
-      color: #eee;
+      color: rgba(255, 255, 255, 0.9);
     }
   }
 
@@ -793,8 +799,8 @@ html, body {
 }
 
 
-////scrolls
-//
+//scrolls
+
 //.toc-wrapper::-webkit-scrollbar-thumb:hover {
 //  width: 6px;
 //  background: rgba(0,0,0,.16);
@@ -811,22 +817,22 @@ html, body {
 //  border-radius: 2px;
 //}
 //
-//pre::-webkit-scrollbar-thumb:hover {
-//  width: 20px;
-//  background: $active-toc-h1;
-//}
-//
-//pre::-webkit-scrollbar-thumb {
-//  width: 20px;
-//  border-radius: 2px;
-//  background: $active-toc-h1;
-//}
-//
-//pre::-webkit-scrollbar {
-//  width: 20px;
-//  height: 4px;
-//  border-radius: 2px;
-//}
+pre::-webkit-scrollbar-thumb:hover {
+  width: 20px;
+  background: $active-toc-h1;
+}
+
+pre::-webkit-scrollbar-thumb {
+  width: 20px;
+  border-radius: 2px;
+  background: $active-toc-h1;
+}
+
+pre::-webkit-scrollbar {
+  width: 20px;
+  height: 8px;
+  border-radius: 2px;
+}
 //
 //pre::-webkit-scrollbar-track {
 //  width: 20px;
