@@ -65,9 +65,9 @@ curl -X POST
 **Boolean**|Представляет значение `true` или `false`.
 **Int**|Представляет целое числовое значение. Пример значения: `200`.
 **Float**|Представляет дробное числовое значение. Пример значения: `200.8`.
-**DateTime**|Представляет строку в формате "гггг-мм-дд чч-мм-сс". Пример значения: `"2016-08-23 15:21:09"`. [Подробнее тут](../#mojsklad-json-api-obschie-swedeniq-format-daty-i-wremeni)
+**DateTime**|Представляет строку в формате "гггг-мм-дд чч-мм-сс". Пример значения: `"2016-08-23 15:21:09"`. [Подробнее тут](#mojsklad-json-api-obschie-swedeniq-format-daty-i-wremeni)
 **Object**|Представляет сущность с вложенными полями.
-**Meta**|Представляет объект в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye).
+**Meta**|Представляет объект в формате [Метаданных](#mojsklad-json-api-obschie-swedeniq-metadannye).
 **Array(Type)**|Массив объектов/значений. Type - тип элементов массива.
 **Enum**|Представляет строку, принимающую константное множество значений.
 
@@ -253,7 +253,7 @@ curl -X GET
 
 | Название  | Тип | Описание                    | 
 | --------- |:----|:----------------------------|
-|**meta**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на метаданные доп. поля|
+|**meta**|[Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на метаданные доп. поля|
 |**id** |UUID|Id соответствующего доп. поля|
 |**name**|String(255)|Наименование доп. поля|
 |**value**|См. ниже|Значение, указанное в доп. поле.|
@@ -265,7 +265,7 @@ curl -X GET
 
 | Название  | Тип | Описание                    | 
 | --------- |:----|:----------------------------|
-|**meta**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на метаданные доп. поля|
+|**meta**|[Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на метаданные доп. поля|
 |**id** |UUID|Id доп. поля|
 |**name**|String(255)|Наименование доп. поля|
 |**type**|См. ниже|Тип доп. поля|
@@ -299,8 +299,8 @@ curl -X GET
 
 | Название  | Тип | Описание                    | 
 | --------- |:----|:----------------------------|
-|**meta**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на метаданные доп. поля|
-|**customEntityMeta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на метаданные пользовательского справочника|
+|**meta**|[Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на метаданные доп. поля|
+|**customEntityMeta** |[Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на метаданные пользовательского справочника|
 |**id** |UUID|Id доп. поля|
 |**name**|String(255)|Наименование доп. поля|
 |**type**|См. выше|Тип доп. поля|
