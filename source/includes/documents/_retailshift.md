@@ -23,7 +23,7 @@
 |**externalCode**       |String(255)|Внешний код Розничной смены|Только для чтения| да
 |**moment**             |DateTime|Дата смены|Только для чтения|да
 |**vatEnabled**         |Boolean|Учитывается ли НДС|Только для чтения|да
-|**vatIncluded**        |Boolean| Включен ли НДС в цену|Только для чтения|да
+|**vatIncluded**        |Boolean| Включен ли НДС в цену|Только для чтения|нет
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|Только для чтения|да
 |**shared**             |Boolean|Общий доступ|Только для чтения|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|Только для чтения|да

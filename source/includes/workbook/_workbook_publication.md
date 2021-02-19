@@ -180,7 +180,7 @@ curl
       "mediaType": "application/json"
     }
   },
-  "href": "https://doc.moysklad.ru/board/ef371086-c7c8-11e8-9dd2-f3a300000000/publication/aec51463-bbd2-11e6-8a84-bae500000003.html"
+  "href": "https://mskld.ru/QS6YOArOjJ"
 }
 ```
 
@@ -234,7 +234,7 @@ curl
                     "mediaType": "application/json"
                 }
             },
-            "href": "https://doc.moysklad.ru/board/45eb22e0-0e7b-11e2-1c31-3c4a92f3a0a7/publication/242ce894-b0fc-4090-a4bd-2ddd1e2a910b.html"
+            "href": "https://mskld.ru/fhzHJPqIM7"
         }
     ]
 }
@@ -258,7 +258,7 @@ curl
 
 ## Ссылки публикаций
 
-По ссылке публикации (например, https://doc.moysklad.ru/board/ef371086-c7c8-11e8-9dd2-f3a300000000/publication/aec51463-bbd2-11e6-8a84-bae500000003.html) открывается страница, с которой можно скачать pdf-документ. 
+По ссылке публикации (например, https://mskld.ru/7sDZyGqk5M) открывается страница, с которой можно скачать pdf-документ. 
 
  ![useful image](../../images/publication/publication_download.png?raw=true)
  
