@@ -26,7 +26,7 @@
 |**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|&mdash;|нет
 |**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет
 |**images**       |Array(Object)|Изображения Комплекта. Изображений у Модификации может быть не более 10. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta-izobrazhenie-struktura-i-zagruzka)|&mdash;|нет
-|**minPrice**         |Double|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-wlozhennyh-suschnostej-minimal-naq-cena)|&mdash;|нет
+|**minPrice**         |Object|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-wlozhennyh-suschnostej-minimal-naq-cena)|&mdash;|нет
 |**salePrices**         |Array(Object)|Цены продажи|&mdash;|нет
 |**attributes**         |Array(Meta)|Коллекция доп. полей|&mdash;|нет
 |**country**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Страны|&mdash;|нет
