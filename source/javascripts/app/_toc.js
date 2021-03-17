@@ -24,6 +24,10 @@
     $("#nav-button").removeClass('open');
   };
 
+  $( ".arrow-icon" ).click(function() {
+    $(this).toggleClass("open");
+  });
+
   function loadToc($toc, tocLinkSelector, tocListSelector, scrollOffset) {
     var headerHeights = {};
     var pageHeight = 0;
