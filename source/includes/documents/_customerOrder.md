@@ -41,7 +41,7 @@
 |**payedSum**            |Float|Сумма входящих платежей по Заказу |Только для чтения|да
 |**shippedSum**             |Float|Сумма отгруженного |Только для чтения|да
 |**invoicedSum**            |Float|Сумма счетов покупателю |Только для чтения|да
-|**reservedSum**            |Float|Сумма товаров в резерве |Только для чтения|нет
+|**reservedSum**            |Float|Сумма товаров в резерве |Только для чтения|да
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет
 
