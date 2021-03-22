@@ -35,8 +35,8 @@ curl -X GET
 Успешное создание Асинхронной задачи
 
 ```shell
-Location: https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089
-Content-Location: https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089/result
+Location: https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089/result
+Content-Location: https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089
 ```
 
 Чтобы выполнить запрос в асинхронном режиме, нужно в параметрах запроса указать `async=true`. 
@@ -52,8 +52,8 @@ Content-Location: https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-1
 
 |Параметр   |Описание   | 
 |:----|:----|
-|**Location** | URL статуса Асинхронной задачи.
-|**Content-Location** | URL результата выполнения Асинхронной задачи.
+|**Location** | URL результата выполнения Асинхронной задачи.
+|**Content-Location** | URL статуса Асинхронной задачи.
 
 ### Асинхронная задача
 
