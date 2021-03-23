@@ -14,17 +14,17 @@
 |**shared**             |Boolean|Общий доступ|&mdash;|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**updated**            |DateTime|Момент последнего обновления Бонусной операции|&mdash;|да
-|**created**            |DateTime|Момент создания Бонусной операции|&mdash;|да
+|**created**           |DateTime|Момент создания Бонусной операции|&mdash;|да
 |**externalCode**       |String(255)|Внешний код Бонусной операции|&mdash;| да
 |**name**               |String(255)|Наименование Бонусной операции|&mdash;|нет
-|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
-|**moment**             |DateTime|Время проведения бонусной операции|&mdash;|нет
-|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контрагента, связанного с бонусной операцией|Необходимое при создании|да
-|**parentDocument**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные связанного документа бонусной операции|&mdash;|нет
-|**bonusProgram**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные бонусной программы|&mdash;|нет
-|**bonusValue**         |Int|Количество бонусных баллов|&mdash;|нет
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|&mdash;|нет
-|**transactionType**    |Enum|Тип бонусной операции. Возможные значения: `EARNING`, `SPENDING`|Необходимое при создании|да
+|**applicable**             |Boolean|Отметка о проведении|&mdash;|да
+|**moment**            |DateTime|Время проведения бонусной операции|&mdash;|нет
+|**agent**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контрагента, связанного с бонусной операцией|Необходимое при создании|да
+|**parentDocument**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные связанного документа бонусной операции|&mdash;|нет
+|**bonusProgram**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные бонусной программы|&mdash;|нет
+|**bonusValue**             |Int|Количество бонусных баллов|&mdash;|нет
+|**organization**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|&mdash;|нет
+|**transactionType**              |Enum|Тип бонусной операции. Возможные значения: `EARNING`, `SPENDING`|Необходимое при создании|да
 |**transactionStatus**  |Enum |Статус бонусной операции. Возможные значения: `WAIT_PROCESSING`, `COMPLETED`, `CANCELED` |Только для чтения |да
 |**executionDate**      |DateTime |Дата начисления бонусной операции. |&mdash; |да
 |**categoryType**       |Enum |Категория бонусной операции. Возможные значения: `REGULAR`, `WELCOME` |Только для чтения |да
