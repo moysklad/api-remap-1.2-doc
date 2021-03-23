@@ -25,9 +25,9 @@
 |**bonusValue**             |Int|Количество бонусных баллов|&mdash;|нет
 |**organization**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|&mdash;|нет
 |**transactionType**              |Enum|Тип бонусной операции. Возможные значения: `EARNING`, `SPENDING`|Необходимое при создании|да
-|**transactionStatus**  |Enum |Статус бонусной операции. Возможные значения: `WAIT_PROCESSING`, `COMPLETED`, `CANCELED` |Только для чтения |да
-|**executionDate**      |DateTime |Дата начисления бонусной операции. |&mdash; |да
-|**categoryType**       |Enum |Категория бонусной операции. Возможные значения: `REGULAR`, `WELCOME` |Только для чтения |да
+|**transactionStatus**  |Enum |Статус бонусной операции. Возможные значения: `WAIT_PROCESSING`, `COMPLETED`, `CANCELED` |Только для чтения |нет
+|**executionDate**      |DateTime |Дата начисления бонусной операции. |&mdash; |нет
+|**categoryType**       |Enum |Категория бонусной операции. Возможные значения: `REGULAR`, `WELCOME` |Только для чтения |нет
 
 ##### Аттрибут "executionDate".
 При создании или редактировании бонусной операции начисления данный аттрибут позволяет указать дату обработки операции.
