@@ -131,95 +131,11 @@ curl -X GET
   -H "Authorization: Bearer <Access-Token>"
 ```
 
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление результата выполнения Асинхронной задачи.
+> Response 302
+Успешный запрос. Результат - ответ с заголовком Location, в котором содержится URL файла результата.
 
-```json
-{
-  "context": {
-    "employee": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-      "type": "employee",
-      "mediaType": "application/json"
-    }
-  },
-  "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/report/stock/bystore?async=true",
-    "type": "stockbystore",
-    "mediaType": "application/json",
-    "size": 3
-  },
-  "rows": [
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/c02e3a5c-007e-11e6-9464-e4de00000006?expand=supplier",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-        "type": "product",
-        "mediaType": "application/json"
-      },
-      "stockByStore": [
-        {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/86c857d6-0302-11e6-9464-e4de00000072",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
-            "type": "store",
-            "mediaType": "application/json"
-          },
-          "name": "Не основной склад",
-          "stock": -30,
-          "reserve": 0,
-          "inTransit": 0
-        },
-        {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/850ee995-f504-11e5-8a84-bae500000160",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
-            "type": "store",
-            "mediaType": "application/json"
-          },
-          "name": "Основной склад",
-          "stock": 0,
-          "reserve": 0,
-          "inTransit": 0
-        }
-      ]
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/cc99c055-fa34-11e5-9464-e4de00000069?expand=supplier",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-        "type": "product",
-        "mediaType": "application/json"
-      },
-      "stockByStore": [
-        {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/86c857d6-0302-11e6-9464-e4de00000072",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
-            "type": "store",
-            "mediaType": "application/json"
-          },
-          "name": "Не основной склад",
-          "stock": 0,
-          "reserve": 0,
-          "inTransit": 0
-        },
-        {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/850ee995-f504-11e5-8a84-bae500000160",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
-            "type": "store",
-            "mediaType": "application/json"
-          },
-          "name": "Основной склад",
-          "stock": 4,
-          "reserve": 0,
-          "inTransit": 0
-        }
-      ]
-    }
-  ]
-}
+```shell
+Location: https://example.com/path/to/result.json
 ```
 
 Запрос на получение результата выполнения Асинхронной задачи. 
@@ -231,9 +147,9 @@ curl -X GET
 |**id** |  `string` (required) *Example: 498b8673-0308-11e6-9464-e4de00000089* id Асинхронной задачи.|
 
 Если статус задачи имеет значение `DONE`, 
-результат выполнения запроса будет иметь статус `200 OK` с результатом выполнения запроса в теле.
-Если первоначальный запрос содержал ошибку, тело ответа будет иметь описание этой ошибки, 
-а статус также будет равен `200 OK`, в отличие от синхронного варианта. 
+результат выполнения запроса будет иметь статус `302 FOUND` с заголовком **Location**, 
+в котором указана ссылка на файл с результатом выполнения Асинхронной задачи. С момента получения ссылка действительна 5 минут.
+Если первоначальный запрос содержал ошибку, то результат выполнения будет иметь описание этой ошибки. 
 
 После наступления даты, указанной в поле **deletionDate**, результат становится недоступен. 
 Для получения результата потребуется создать новую задачу.
