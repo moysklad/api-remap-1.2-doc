@@ -7,17 +7,18 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Бонусной программы|&mdash;|да
-|**id**                 |UUID|ID Бонусной программы|Только для чтения|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**name**               |String(255)|Наименование Бонусной программы|&mdash;|нет
-|**active**               |Boolean|Индикатор, является ли бонусная программа активной на данный момент|&mdash;|да
-|**allProducts**               |Boolean|Индикатор, действует ли бонусная программа на все товары (всегда `true`, см. [Скидки](../dictionaries/#suschnosti-skidki))|&mdash;|да
-|**allAgents**              |Boolean|Индикатор, действует ли скидка на всех контрагентов (см. [Скидки](../dictionaries/#suschnosti-skidki))|&mdash;|да
-|**agentTags**             |Array(String)|Тэги контрагентов, к которым применяется бонусная программа. В случае пустого значения контрагентов в результате выводится пустой массив.|&mdash;|да
-|**earnRateRoublesToPoint**              |Int| Курс начисления|&mdash;|нет
-|**spendRatePointsToRouble**              |Int|Курс списания|&mdash;|нет
-|**maxPaidRatePercents**             |Int|Максимальный процент оплаты баллами|&mdash;|нет
+|**meta**                         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Бонусной программы|&mdash;|да
+|**id**                           |UUID |ID Бонусной программы|Только для чтения|да
+|**accountId**                    |UUID |ID учетной записи|Только для чтения|да
+|**name**                         |String(255) |Наименование Бонусной программы|&mdash;|нет
+|**active**                       |Boolean |Индикатор, является ли бонусная программа активной на данный момент|&mdash;|да
+|**allProducts**                  |Boolean |Индикатор, действует ли бонусная программа на все товары (всегда `true`, см. [Скидки](../dictionaries/#suschnosti-skidki))|&mdash;|да
+|**allAgents**                    |Boolean |Индикатор, действует ли скидка на всех контрагентов (см. [Скидки](../dictionaries/#suschnosti-skidki))|&mdash;|да
+|**agentTags**                    |Array(String) |Тэги контрагентов, к которым применяется бонусная программа. В случае пустого значения контрагентов в результате выводится пустой массив.|&mdash;|да
+|**earnRateRoublesToPoint**       |Int |Курс начисления|&mdash;|нет
+|**spendRatePointsToRouble**      |Int |Курс списания|&mdash;|нет
+|**maxPaidRatePercents**          |Int |Максимальный процент оплаты баллами|&mdash;|нет
+|**postponedBonusesDelayDays**    |Int |Баллы начисляются через [N] дней |Только при наличии тарифной опции "Расширенная бонусная программа" |нет
 
 ### Получить все Бонусные программы
 
@@ -88,7 +89,8 @@ curl -X GET
       ],
       "earnRateRoublesToPoint": 1,
       "spendRatePointsToRouble": 1,
-      "maxPaidRatePercents": 100
+      "maxPaidRatePercents": 100,
+      "postponedBonusesDelayDays": 14
     },
     {
       "meta": {
@@ -108,7 +110,8 @@ curl -X GET
       ],
       "earnRateRoublesToPoint": 7,
       "spendRatePointsToRouble": 4,
-      "maxPaidRatePercents": 50
+      "maxPaidRatePercents": 50,
+      "postponedBonusesDelayDays": 7
     }
   ]
 }
@@ -134,7 +137,8 @@ curl -X GET
 	  "agentTags": ["tag1", "tag2"],
 	  "earnRateRoublesToPoint": 7,
     "spendRatePointsToRouble": 4,
-    "maxPaidRatePercents": 50
+    "maxPaidRatePercents": 50,
+    "postponedBonusesDelayDays": 7
 	}'
 ```
 
@@ -157,7 +161,8 @@ curl -X GET
   "agentTags": ["tag1", "tag2"],
   "earnRateRoublesToPoint": 7,
   "spendRatePointsToRouble": 4,
-  "maxPaidRatePercents": 50
+  "maxPaidRatePercents": 50,
+  "postponedBonusesDelayDays": 7
 }
 ```
 
@@ -246,7 +251,8 @@ curl -X GET
   ],
   "earnRateRoublesToPoint": 7,
   "spendRatePointsToRouble": 4,
-  "maxPaidRatePercents": 50
+  "maxPaidRatePercents": 50,
+  "postponedBonusesDelayDays": 7
 }
 ```
 
