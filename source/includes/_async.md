@@ -31,7 +31,7 @@ curl -X GET
   -H "Authorization: Bearer <Access-Token>"
 ```
 
-> Response 204
+> Response 202
 Успешное создание Асинхронной задачи
 
 ```shell
