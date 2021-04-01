@@ -22,6 +22,7 @@ includes:
   - workbook/workbook_files
   - workbook/workbook_barcode
   - workbook/workbook_modification
+  - workbook/workbook_async
   
 search: true
 ---  
