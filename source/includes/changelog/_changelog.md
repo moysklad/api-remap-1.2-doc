@@ -126,8 +126,8 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
-## 06-04-2021
-### Добавлено
+### 06-04-2021
+#### Добавлено
 - Добавлено [описание](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost-poluchit-pribyl-nost-po-towaram) отчета по прибыльности по товарам
 - Добавлено [описание](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost-poluchit-pribyl-nost-po-modifikaciqm) отчета по прибыльности по модификациям
 
