@@ -23,7 +23,7 @@
 |**code**         |String(255)|Код Проекта|&mdash;|нет
 |**externalCode**         |String(255)|Внешний код Проекта|&mdash;|да
 |**archived**        |Boolean|Добавлен ли Проект в архив|&mdash;|да
-|**attributes**         |Array(Meta)|Коллекция доп. полей|&mdash;|нет
+|**attributes**         |Array(Object)|Коллекция доп. полей|&mdash;|нет
 
 О работе с доп. полями Проектов можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
@@ -486,7 +486,7 @@ curl -X POST
 | Название  | Тип | Описание                    | Поле в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Проекта|&mdash;|да
-|**attributes**         |Array(Meta)|Коллекция доп. полей|&mdash;|нет
+|**attributes**         |Array(Object)|Коллекция доп. полей|&mdash;|нет
 |**createShared**        |Boolean|Создавать новые Проекты с меткой "Общий"|&mdash;|да
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
