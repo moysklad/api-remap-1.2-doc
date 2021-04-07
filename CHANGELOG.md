@@ -6,12 +6,12 @@
 - Переработан раздел [Работа с доп. полями](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 - Добавлен тип MetaArray - объект с полями **meta** и **rows**
 - Упоминание Array(Meta) изменено на Array(Object) или на MetaArray
-- Немного изменен формат описания поля **trackingCodes** в Отгрузках и Приёмках
-- Добавлен раздел с описанием поля [Валюта в документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)
-- Добавлены отсутствовавшие поля **meta** в Счета и Контактные лица Контрагента
+- Изменен формат описания поля **trackingCodes** в Отгрузках и Приёмках
+- Добавлен раздел [Валюта в документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah) с описанием поля **rate**
+- В описание добавлены отсутствовавшие поля **meta** в Счета и Контактные лица Контрагента
 - Убрано возможное разночтение в описании поля **tags** Контрагента
-- Для полей **consignee** и **carrier** Отгрузки и Счет-фактура выданный добавлена пометка про тип сущностей
-- Убрана пометка об обязательности поля **house** в адресах
+- Для полей **consignee** и **carrier** в Отгрузках и Счетах-фактурах выданных добавлена пометка про тип сущностей
+- Удалена пометка об обязательности поля **house** в адресах
 - Исправлен тип поля **certificateNumber** у Юрлиц на корректный
 
 ## 05-04-2021
