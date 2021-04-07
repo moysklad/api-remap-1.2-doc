@@ -126,6 +126,10 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 07-04-2021
+#### Добавлено
+- Добавлен [пример](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-poluchit-ostatki) в отчет остатки по параметру includeRelated 
+
 ### 26-03-2021
 #### Добавлено
 - Возможность выполнять запросы [асинхронно](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)
