@@ -7,6 +7,7 @@
  разделе [Workbook](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbook), а также по ссылкам на основные разделы данной документации.
 
 Список изменений в версии 1.2 с момента её создания можно найти в [github репозитории](https://github.com/moysklad/api-remap-1.2-doc/blob/master/CHANGELOG.md)
+Чтобы узнавать об изменениях в документации и api, вы можете подписаться через любой RSS reader на https://github.com/moysklad/api-remap-1.2-doc/commits/master.atom
 
 ## Отличия API Remap 1.2 от API Remap 1.1
 ### Добавлено
