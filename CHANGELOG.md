@@ -1,7 +1,7 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-## 06-04-2021
+## 09-04-2021
 ### Документация
 - Переработан раздел [Работа с доп. полями](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 - Добавлен тип MetaArray - объект с полями **meta** и **rows**
@@ -13,8 +13,6 @@
 - Для полей **consignee** и **carrier** в Отгрузках и Счетах-фактурах выданных добавлена пометка про тип сущностей
 - Удалена пометка об обязательности поля **house** в адресах
 - Исправлен тип поля **certificateNumber** у Юрлиц на корректный
-
-## 09-04-2021
 ### Изменено
 - Изменен регистр ключевого слова в [заказе покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq)
 - Изменен регистр ключевого слова в [заказе поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-postawschiku)
