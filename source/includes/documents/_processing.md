@@ -24,15 +24,15 @@
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Тех. операции |&mdash;|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
+|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
 |**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**quantity**               |Int|Объем производства|Необходимое при создании|да
 |**processingSum**              |Int|Затраты на производство|Необходимое при создании|да
-| **materials**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Список Метаданных материалов Тех. операции|Необходимое при создании|да
-| **products**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Список Метаданных готовых продуктов Тех. операции|Необходимое при создании|да
+| **materials**          |Array(Object)|Список Метаданных материалов Тех. операции|Необходимое при создании|да
+| **products**          |Array(Object)|Список Метаданных готовых продуктов Тех. операции|Необходимое при создании|да
 | **productsStore**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада для продукции|Необходимое при создании|да
 | **materialsStore**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада для материалов|Необходимое при создании|да
 | **processingPlan**           |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Тех. операции|Необходимое при создании|да

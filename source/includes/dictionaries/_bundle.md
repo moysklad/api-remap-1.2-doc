@@ -28,7 +28,7 @@
 |**images**       |Array(Object)|Изображения Комплекта. Изображений у Модификации может быть не более 10. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta-izobrazhenie-struktura-i-zagruzka)|&mdash;|нет
 |**minPrice**         |Object|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-wlozhennyh-suschnostej-minimal-naq-cena)|&mdash;|нет
 |**salePrices**         |Array(Object)|Цены продажи|&mdash;|нет
-|**attributes**         |Array(Meta)|Коллекция доп. полей|&mdash;|нет
+|**attributes**         |Array(Object)|Коллекция доп. полей|&mdash;|нет
 |**country**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Страны|&mdash;|нет
 |**article**         |String(255)|Артикул|&mdash;|нет
 |**weight**         |Int|Вес|&mdash;|нет
@@ -42,7 +42,7 @@
 |**partialDisposal**         |Boolean|Управление состоянием частичного выбытия маркированного товара. «true» - возможность включена.|&mdash;|нет
 |**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-priznak-predmeta-rascheta)|&mdash;|нет
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|нет|
+|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|нет|
 
 ##### Тип маркируемой продукции
 Значения поля trackingType.
@@ -144,7 +144,7 @@
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные |&mdash;|да
-|**attributes**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|коллекция всех существующих доп. полей Комплектов|&mdash;|да
+|**attributes**        |Array(Object)|коллекция всех существующих доп. полей Комплектов|&mdash;|да
 
 
 Структуры объектов отдельных коллекций:
@@ -1266,7 +1266,7 @@ curl -X GET
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные |&mdash;|да
-|**attributes**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция всех существующих доп. полей Комплектов|&mdash;|да
+|**attributes**        |Array(Object)|Коллекция всех существующих доп. полей Комплектов|&mdash;|да
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
