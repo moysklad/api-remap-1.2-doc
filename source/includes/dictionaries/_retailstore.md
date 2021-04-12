@@ -59,9 +59,9 @@
 |**demandPrefix**        |String(255)|Префикс номера продаж|&mdash;| нет
 |**allowSellTobaccoWithoutMRC** |Boolean|Разрешить продавать табачную продукцию не по МРЦ|&mdash;|да
 |**allowCreateProducts** |Boolean|Контроль остатков. Не может быть `true`, если `controlShippingStock` имеет значение `true`|&mdash;|да
-|**productFolders**      |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция Метаданных групп товаров, из которых можно выгружать товары|&mdash;| нет
-|**createAgentsTags**    |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция групп покупателей, представленных в формате строк. Определяет группы, в которые добавляются новые покупатели. Значения `null` игнорируются|&mdash;| нет
-|**filterAgentsTags**    |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция групп покупателей, представленных в формате строк. Определяет группы, из которых выгружаются покупатели. Значения `null` игнорируются|&mdash;| нет
+|**productFolders**      |Array(Object)|Коллекция Метаданных групп товаров, из которых можно выгружать товары|&mdash;| нет
+|**createAgentsTags**    |Array(Object)|Коллекция групп покупателей, представленных в формате строк. Определяет группы, в которые добавляются новые покупатели. Значения `null` игнорируются|&mdash;| нет
+|**filterAgentsTags**    |Array(Object)|Коллекция групп покупателей, представленных в формате строк. Определяет группы, из которых выгружаются покупатели. Значения `null` игнорируются|&mdash;| нет
 |**printAlways**         |Boolean|Всегда печатать кассовые чеки|&mdash;| да
 |**receiptTemplate**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные шаблона печати кассовых чеков|&mdash;| нет
 |**createPaymentInOnRetailShiftClosing**|Boolean| Создавать входящий платеж при закрытии смены|&mdash;| да
@@ -72,7 +72,7 @@
 |**reservePrepaidGoods**|Boolean|Резервировать товары, за которые внесена предоплата|&mdash;| да
 |**fiscalType**     |Enum| Тип формирования чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-formirowaniq-chekow)|&mdash;|да
 |**minionToMasterType**|Enum|Стратегия выбора кассы для фискализации облачных чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-strategiq-wybora-kassy-dlq-fiskalizacii-oblachnyh-chekow)|&mdash;|да
-|**masterRetailStores**|Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Ссылка на точки продаж, которые могут фискализировать операции с текущей точки продаж, если `minionToMaster` = `CHOSEN`|&mdash;|нет
+|**masterRetailStores**|Array(Object)|Ссылка на точки продаж, которые могут фискализировать операции с текущей точки продаж, если `minionToMaster` = `CHOSEN`|&mdash;|нет
 |**qrAcquire**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Банка-эквайера по операциям по QR-коду|&mdash;|нет
 |**qrBankPercent**     |Double|Комиссия банка-эквайера по операция по QR-коду (в процентах)|&mdash;| нет
 |**qrPayEnabled**      |Boolean|Возможность оплаты по QR-коду на точке продаж|&mdash;| да |
@@ -213,7 +213,7 @@
 |**region**      |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные региона|&mdash;|нет
 |**city**      |String(255)|Город|&mdash;|нет
 |**street**      |String(255)|Улица|&mdash;|нет
-|**house**      |String(30)|Дом|&mdash;|да
+|**house**      |String(30)|Дом|&mdash;|нет
 |**apartment**      |String(30)|Квартира|&mdash;|нет
 |**addInfo**      |String(255)|Другое|&mdash;|нет
 |**comment**      |String(255)|Комментарий|&mdash;|нет

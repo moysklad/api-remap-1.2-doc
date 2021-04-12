@@ -50,14 +50,14 @@
 |**fax**                |String(255)|Номер факса |&mdash;| нет
 |**actualAddress**      |String(255)|Фактический адрес Контрагента |&mdash;| нет
 |**actualAddressFull**  |Object|Фактический адрес Контрагента с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres) |&mdash;|нет
-|**accounts**           |Array(Object)|Массив счетов Контрагентов. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-scheta-kontragentow)|&mdash;| да
+|**accounts**           |MetaArray|Массив счетов Контрагентов. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-scheta-kontragentow)|&mdash;| да
 |**companyType**        |Enum|Тип Контрагента. В зависимости от значения данного поля набор выводимых реквизитов контрагента может меняться. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta) |&mdash;| да |
 |**discountCardNumber** |String(255)|Номер дисконтной карты Контрагента |&mdash;| нет 
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Статуса Контрагента|&mdash;| да
 |**salesAmount**        |Int|Сумма продаж|Только для чтения| да
 |**bonusProgram**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные активной Бонусной программы|&mdash;| нет
 |**bonusPoints**        |Int|Бонусные баллы по активной бонусной программе|Только для чтения| нет            
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|
+|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|
 
 ##### Поля реквизитов
 
@@ -76,11 +76,11 @@
 |**okpo**             |String(255)|ОКПО|&mdash;|нет
 |**certificateNumber**|String(255)|Номер свидетельства|&mdash;|нет
 |**certificateDate**  |DateTime|Дата свидетельства|&mdash;|нет
-|**tags**             |Array(String)|Группы (массив)|&mdash;|нет
-|**contactpersons**   |Array(Object)|Массив контактных лиц фирмы Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-kontaktnye-lica-kontragentow)|&mdash;|нет
-|**attributes**       |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных доп. полей|&mdash;|нет
-|**discounts**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных скидок. Массив может содержать персональные и накопительные скидки. Персональная скидка выводится, если хотя бы раз изменялся **процент скидки** для контрагента, значение будет указано в поле **personalDiscount**|Только для чтения|нет
-|**notes**            |Array(Object)|Массив событий Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-sobytiq-kontragenta)|&mdash;|нет
+|**tags**             |Array(String)|Группы контрагента|&mdash;|нет
+|**contactpersons**   |MetaArray|Массив контактных лиц фирмы Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-kontaktnye-lica-kontragentow)|&mdash;|нет
+|**attributes**       |Array(Object)|Массив метаданных доп. полей|&mdash;|нет
+|**discounts**        |Array(Object)|Массив метаданных скидок. Массив может содержать персональные и накопительные скидки. Персональная скидка выводится, если хотя бы раз изменялся **процент скидки** для контрагента, значение будет указано в поле **personalDiscount**|Только для чтения|нет
+|**notes**            |MetaArray|Массив событий Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-sobytiq-kontragenta)|&mdash;|нет
 |**priceType**        |Object|Тип цены Контрагента. [Подробнее тут](../dictionaries/#suschnosti-tipy-cen-tipy-cen)|&mdash;|нет
 
 Накопительная скидка выводится, если для контрагента хотя бы раз устанавливалась **коррекция суммы накоплений по скидке**, значение будет указано в поле **demandSumCorrection**. Формат вывода скидок можно посмотреть в разделе [Скидки](../dictionaries/#suschnosti-skidki).
@@ -94,7 +94,7 @@
 |**region**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные региона|&mdash;|нет
 |**city**            |String(255)|Город|&mdash;|нет
 |**street**          |String(255)|Улица|&mdash;|нет
-|**house**           |String(30)|Дом|&mdash;|да
+|**house**           |String(30)|Дом|&mdash;|нет
 |**apartment**       |String(30)|Квартира|&mdash;|нет
 |**addInfo**         |String(255)|Другое|&mdash;|нет
 |**comment**         |String(255)|Комментарий|&mdash;|нет
@@ -107,6 +107,7 @@
 ##### Счета Контрагентов
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
+|**meta**           |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Счета Контрагента|&mdash;|да
 |**id**      |UUID|ID Счета|Только для чтения|да
 |**accountId**      |UUID|ID учетной записи|Только для чтения|да
 |**updated**        |DateTime|Момент последнего обновления Контрагента|Только для чтения|да
@@ -120,6 +121,7 @@
 ##### Контактные лица Контрагентов
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
+|**meta**           |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контактного лица Контрагента|&mdash;|да
 |**id**            |UUID|ID Контактного лица|Только для чтения|да
 |**accountId**     |UUID|ID учетной записи|Только для чтения|да
 |**updated**       |DateTime|Момент последнего обновления|Только для чтения|да
