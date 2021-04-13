@@ -80,18 +80,6 @@ body {
     color: #000;
   }
 
-  h1 {
-    @extend %header-font;
-    font-size: 2.5em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    margin-top: 1em;
-    margin-bottom: $h1-margin-bottom;
-    border: 2px solid $print-color-light;
-    border-width: 2px 0;
-    text-align: center;
-  }
-
   h2 {
     @extend %header-font;
     font-size: 1.8em;

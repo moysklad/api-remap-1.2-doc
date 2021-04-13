@@ -49,7 +49,7 @@ html, body {
 
 .toc-wrapper {
   transition: left 0.3s ease-in-out;
-
+  border-right: 1px solid $toc-divider;
   overflow-y: auto;
   overflow-x: hidden;
   position: fixed;
@@ -59,8 +59,9 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 13px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: normal;
+  scrollbar-width: 1px;
 
   // language selector for mobile devices
   .lang-selector {
@@ -75,32 +76,42 @@ html, body {
   .logo {
     display: block;
     max-width: 100%;
-    margin-bottom: $logo-margin;
+    margin: 35px 0px 25px 40px;
   }
 
   &>.search {
     position: relative;
+    border-bottom: 1px solid $toc-divider;
 
     input {
       background: $nav-bg;
-      border-width: 0 0 1px 0;
-      border-color: $search-box-border-color;
-      padding: 6px 0 6px 20px;
+      border: 1px solid $toc-divider;
+      padding: 12px 30px 12px 25px;
+      margin: 0px 25px 25px 25px;
       box-sizing: border-box;
-      margin: $nav-v-padding $nav-padding;
-      width: $nav-width - ($nav-padding*2);
+      width: $nav-width - 50px;
       outline: none;
-      color: $nav-text;
-      border-radius: 0; /* ios has a default border radius */
+      border-radius: 3px; /* ios has a default border radius */
+      font-size: 14px;
     }
 
-    &:before {
-      position: absolute;
-      top: 17px;
-      left: $nav-padding;
-      color: $nav-text;
-      @extend %icon-search;
+    img {
+      position:absolute;
+      left:38px;
+      bottom: 40px;
     }
+
+    input[type=text] {
+      padding-left: 35px;
+    }
+
+    //&:before {
+    //  position: absolute;
+    //  left: 43px;
+    //  top: 13px;
+    //  color: $table-header-text;
+    //  @extend %icon-search;
+    //}
   }
 
   .search-results {
@@ -139,9 +150,7 @@ html, body {
   // styling of an unordered list because it is ugly.
   ul, li {
     list-style: none;
-    margin: 0;
     padding: 0;
-    line-height: 28px;
   }
 
   li {
@@ -152,21 +161,59 @@ html, body {
   }
 
   .toc-list-h1-title {
-    background-color: #F3F7F9;
-    text-align: center;
-
+    background-color: $nav-bg;
     a {
-      font-size: 1.4em;
+      font-size: 14px;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border: 2px solid;
+        border-color: $active-toc-h1;
+        -ms-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        border-radius: 1px;
+        border-left: 0;
+        border-bottom: 0;
+        margin-top: 20px;
+        right: 5%;
+        color: $nav-active-text;
+      }
+    }
+  }
+
+  .toc-list-h1 {
+    li {
+      line-height: 42px;
     }
   }
 
   .toc-other-page {
     li {
       text-align: left;
+      line-height: 42px;
     }
 
     a {
-      font-size: 1.4em;
+      font-size: 14px;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border: 2px solid;
+        border-color: $table-header-text;
+        -ms-transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+        border-radius: 1px;
+        border-left: 0;
+        border-bottom: 0;
+        margin-top: 14px;
+        right: 5%;
+      }
     }
   }
 
@@ -179,48 +226,62 @@ html, body {
   // this is parent links of the currently selected ToC entry
   .toc-link.active-parent {
     background-color: $nav-active-parent-bg;
-    color: $nav-active-parent-text;
   }
 
   .toc-list-h2 {
     display: none;
     background-color: $nav-subitem-bg;
-    font-weight: 500;
+    font-weight: normal;
+    li {
+      line-height: 42px;
+    }
   }
 
   .toc-h2 {
-    padding-left: $nav-padding + $nav-indent;
+    padding-left: $nav-indent;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: normal;
+    color: $active-toc-text;
   }
 
-   .toc-list-h3 {
-    display: none;
-    background-color: $nav-subitem-bg;
+  .second-boarder {
+    border-left: 1px solid $list-divider;
+    margin-left: $nav-padding;
+  }
+
+  .toc-list-h3 {
+     display: none;
+     background-color: $nav-subitem-bg;
+     li {
+       line-height: 42px;
+     }
   }
 
   .toc-h3 {
-    padding-left: $nav-padding + $nav-padding + $nav-indent;
-    font-size: 12px;
+    position: relative;
+    padding-left: $nav-indent;
+    border-left: 1px solid $list-divider;
+    margin-left: $nav-indent;
+    color: $active-toc-text;
   }
 
   .toc-list-h4 {
-   display: none;
-   background-color: $nav-subitem-bg;
+    display: none;
+    background-color: $nav-subitem-bg;
  }
 
  .toc-h4 {
    padding-left: $nav-padding + $nav-padding + $nav-padding + $nav-indent;
-   font-size: 12px;
+   font-size: 14px;
  }
 
   .toc-footer {
     padding: 1em 0;
     margin-top: 1em;
-    border-top: 1px dashed $nav-footer-border-color;
+    border-top: 1px solid $toc-divider;
 
     li,a {
-      color: $nav-text;
+      color: $nav-active-text;
       text-decoration: none;
     }
 
@@ -229,9 +290,15 @@ html, body {
     }
 
     li {
-      font-size: 0.8em;
-      line-height: 1.7;
+      font-size: 14px;
+      line-height: 2.5;
       text-decoration: none;
+    }
+
+    .arrow-footer {
+      position: absolute;
+      right: 5%;
+      padding-top: 10px;
     }
   }
 }
@@ -258,7 +325,6 @@ html, body {
     padding: $side-pad $side-pad $side-pad;
     background-color: rgba($main-bg, 0.7);
     transform-origin: 0 0;
-    transform: rotate(-90deg) translate(-100%, 0);
     border-radius: 0 0 0 5px;
   }
   padding: 0 1.5em 5em 0; // increase touch size area
@@ -272,10 +338,7 @@ html, body {
   font-weight: bold;
   opacity: 0.7;
   line-height: 16px;
-  img {
-    height: 16px;
-    vertical-align: bottom;
-  }
+
 
   transition: left 0.3s ease-in-out;
 
@@ -376,6 +439,11 @@ html, body {
     @extend %left-col;
   }
 
+  p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
   &>ul, &>ol {
     padding-left: $main-padding + 15px;
   }
@@ -387,51 +455,51 @@ html, body {
 
   h1 {
     @extend %header-font;
-    font-size: 25px;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    margin-bottom: $h1-margin-bottom;
-    margin-top: 2em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    background-color: #fdfdfd;
+    font-size: 24px;
+    line-height: 28px;
+    padding-top: 40px;
+    padding-bottom: 48px;
+    margin-top: 0;
+    margin-buttom: 0;
     clear:both;
   }
 
   h1:first-child, div:first-child + h1 {
-    border-top-width: 0;
     margin-top: 0;
   }
 
   h2 {
     @extend %header-font;
-    font-size: 19px;
-    margin-top: 4em;
-    margin-bottom: 0;
-    border-top: 1px solid #ccc;
-    padding-top: 1.2em;
-    padding-bottom: 1.2em;
-    background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
+    font-size: 20px;
+    line-height: 24px;
+    padding-bottom: 32px;
+    padding-top: 48px;
     clear:both;
+  }
+
+  h3 {
+    padding-top: 32px;
   }
 
   // h2s right after h1s should bump right up
   // against the h1s.
-  h1 + h2, h1 + div + h2 {
-    margin-top: $h1-margin-bottom * -1;
+  h1 + h2, h1 + div + h2, h2 + h3 {
+    padding-top: 0px;
     border-top: none;
   }
 
   h3, h4, h5, h6 {
     @extend %header-font;
-    font-size: 18px;
-    margin-top: 2.5em;
-    margin-bottom: 0.8em;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 16px;
     clear:both;
   }
 
   h4, h5, h6 {
     font-size: 14px;
+    padding-top: 24px;
+    padding-bottom: 16px;
     clear: both;
   }
 
@@ -457,57 +525,53 @@ html, body {
 
     th {
       padding: 5px 10px;
-      border-bottom: 1px solid #ccc;
-      vertical-align: bottom;
-      background-color: #c3d6de;
+      vertical-align: top;
+      background: $general-table-bg;
+      color: $table-header-text;
     }
 
     td {
       padding: 10px;
     }
 
-    tr:last-child {
-      border-bottom: 1px solid #ccc;
+    tr {
+      border: 1px solid $toc-divider;
+      &:hover {
+        background-color: $general-table-bg;
+      }
     }
 
-    tr:nth-child(odd)>td {
-      background-color: lighten($main-bg,4.2%);
+    //td:nth-child(1){
+    //  min-width: 10%;
+    //}
+    //
+    //td:nth-child(2){
+    //  min-width: 10%;
+    //}
+
+    //td:nth-child(3){
+    //  min-width: 10%;
+    //}
+
+    td:nth-child(4){
+      width: 128px;
     }
 
-    tr:nth-child(even)>td {
-      background-color: #f5f8fa;
+    td:nth-child(5){
+      width: 96px;
     }
+  }
 
-    td:nth-child(1){
-      min-width: 5%;
-      width: 5%;
-      max-width: 5%;
-    }
-
+  .error-table table {
     td:nth-child(2){
-      min-width: 20%;
-      width: 20%;
-      max-width: 20%;
+      min-width: 10%;
     }
 
     td:nth-child(3){
-      min-width: 10%;
-      width: 40%;
-      max-width: 40%;
-    }
-
-    td:nth-child(5){
-      min-width: 15%;
-      width: 15%;
-      max-width: 15%;
-    }
-
-    td:nth-child(5){
-      min-width: 15%;
-      width: 15%;
-      max-width: 15%;
+      min-width: 20%;
     }
   }
+
 
   dt {
     font-weight: bold;
@@ -519,7 +583,7 @@ html, body {
 
   p, li, dt, dd {
     line-height: 1.6;
-    margin-top: 0;
+    margin-top: 0px;
   }
 
   img {
@@ -527,9 +591,15 @@ html, body {
   }
 
   code {
-    background-color: rgba(0,0,0,0.05);
-    padding: 3px;
+    background: $code-tag-text;
+    border: 1px solid $code-tag-border;
+    color: $table-header-text;
     border-radius: 3px;
+    padding-top: 3px;
+    padding-bottom: 1px;
+    padding-left: 8px;
+    padding-right: 8px;
+    word-break: break-word;
     @extend %break-words;
     @extend %code-font;
   }
@@ -612,9 +682,15 @@ html, body {
 // This is all the stuff that appears in the right half of the page
 
 .content {
+
+  .highlight code {
+    border: 0px solid $code-tag-border;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
   pre, blockquote {
     background-color: $code-bg;
-    color: #fff;
+    color: rgba(230, 219, 116, 0.9);
 
     margin: 0;
     width: $examples-width;
@@ -644,12 +720,12 @@ html, body {
     &>p {
       background-color: $code-annotation-bg;
       padding: $code-annotation-padding 2em;
-      color: #eee;
+      color: rgba(255, 255, 255, 0.9);
     }
     &>span {
       background-color: $code-annotation-bg;
       padding: 0 2em $code-annotation-padding;
-      color: #eee;
+      color: rgba(255, 255, 255, 0.9);
     }
   }
 
@@ -710,7 +786,7 @@ html, body {
   }
 
   %right-col + %left-col {
-    margin-top: $main-padding;
+    margin-top: 0px;
   }
 }
 
@@ -725,53 +801,58 @@ html, body {
 
 //scrolls
 
-.toc-wrapper::-webkit-scrollbar-thumb:hover {
-  background: rgba(0,0,0,.16);
-}
-
-.toc-wrapper::-webkit-scrollbar-thumb {
-  border-radius: 2px;
-  background: #3B454E;
-  background: rgba(0,0,0,.16);
-}
-
-.toc-wrapper::-webkit-scrollbar {
-  width: 4px;
-  border-radius: 2px;
-}
-
+//.toc-wrapper::-webkit-scrollbar-thumb:hover {
+//  width: 6px;
+//  background: rgba(0,0,0,.16);
+//}
+//
+//.toc-wrapper::-webkit-scrollbar-thumb {
+//  width: 6px;
+//  border-radius: 2px;
+//  background: rgba(0,0,0,.16);
+//}
+//
+//.toc-wrapper::-webkit-scrollbar {
+//  width: 6px;
+//  border-radius: 2px;
+//}
+//
 pre::-webkit-scrollbar-thumb:hover {
-  background: rgba(0,0,0,.16);
+  width: 20px;
+  background: $active-toc-h1;
 }
 
 pre::-webkit-scrollbar-thumb {
+  width: 20px;
   border-radius: 2px;
-  background: #3B454E;
-  background: rgba(0,0,0,.16);
+  background: $active-toc-h1;
 }
 
 pre::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+  width: 20px;
+  height: 8px;
   border-radius: 2px;
 }
-
-pre::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  background: rgba(0,0,0,.10);
-}
-
-.search-results::-webkit-scrollbar-thumb:hover {
-  background: rgba(0,0,0,.16);
-}
-
-.search-results::-webkit-scrollbar-thumb {
-  border-radius: 2px;
-  background: #3B454E;
-  background: rgba(0,0,0,.16);
-}
-
-.search-results::-webkit-scrollbar {
-  width: 4px;
-  border-radius: 2px;
-}
+//
+//pre::-webkit-scrollbar-track {
+//  width: 20px;
+//  background: $active-toc-h1;
+//  background: rgba(0,0,0,.10);
+//}
+//
+//.search-results::-webkit-scrollbar-thumb:hover {
+//  width: 6px;
+//  background: rgba(0,0,0,.16);
+//}
+//
+//.search-results::-webkit-scrollbar-thumb {
+//  width: 6px;
+//  border-radius: 2px;
+//  background: $active-toc-h1;
+//  background: rgba(0,0,0,.16);
+//}
+//
+//.search-results::-webkit-scrollbar {
+//  width: 6px;
+//  border-radius: 2px;
+//}
