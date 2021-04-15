@@ -1,6 +1,6 @@
 ## Заказ покупателя
 ### Заказы покупателей 
-Средствами JSON API можно создавать и обновлять сведения о Заказах покупателя, запрашивать списки Заказов и сведения по отдельным Заказам покупателей. Позициями Заказов можно управлять как в составе отдельного Заказа покупателя, так и отдельно - с помощью специальных ресурсов для управления позициями Заказа. Кодом сущности для Заказа покупателя в составе JSON API является ключевое слово **customerOrder**. Больше о Заказах покупателей и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203248133-%D0%97%D0%B0%D0%BA%D0%B0%D0%B7%D1%8B-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9).
+Средствами JSON API можно создавать и обновлять сведения о Заказах покупателя, запрашивать списки Заказов и сведения по отдельным Заказам покупателей. Позициями Заказов можно управлять как в составе отдельного Заказа покупателя, так и отдельно - с помощью специальных ресурсов для управления позициями Заказа. Кодом сущности для Заказа покупателя в составе JSON API является ключевое слово **customerorder**. Больше о Заказах покупателей и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203248133-%D0%97%D0%B0%D0%BA%D0%B0%D0%B7%D1%8B-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9).
 #### Атрибуты сущности
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
@@ -19,7 +19,7 @@
 |**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да
 |**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет
 |**sum**                |Int|Сумма Заказа в установленной валюте|Только для чтения|да
-|**rate**               |Object|Валюта|&mdash;|да
+|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
 |**shared**             |Boolean|Общий доступ|&mdash;|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
@@ -30,13 +30,13 @@
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса заказа|&mdash;|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
+|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
 |**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**vatSum**             |Float|Сумма НДС |Только для чтения|да
-|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Заказа покупателя|&mdash;|да
+|**positions**          |MetaArray|Метаданные позиций Заказа покупателя|&mdash;|да
 |**deliveryPlannedMoment**          |DateTime|Планируемая дата отгрузки|&mdash;|нет
 |**payedSum**            |Float|Сумма входящих платежей по Заказу |Только для чтения|да
 |**shippedSum**             |Float|Сумма отгруженного |Только для чтения|да

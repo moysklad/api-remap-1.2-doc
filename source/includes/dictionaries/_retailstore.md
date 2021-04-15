@@ -58,10 +58,11 @@
 |**orderTaxSystem**      |Enum| Код системы налогообложения для заказов. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-kod-sistemy-nalogooblozheniq-dlq-zakazow)|&mdash;|да|
 |**demandPrefix**        |String(255)|Префикс номера продаж|&mdash;| нет
 |**allowSellTobaccoWithoutMRC** |Boolean|Разрешить продавать табачную продукцию не по МРЦ|&mdash;|да
+|**tobaccoMrcControlType** |Enum| Контроль МРЦ для табачной продукции. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-kontrolq-mrc-dlq-tabachnoj-produkcii) |&mdash;|да|
 |**allowCreateProducts** |Boolean|Контроль остатков. Не может быть `true`, если `controlShippingStock` имеет значение `true`|&mdash;|да
-|**productFolders**      |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция Метаданных групп товаров, из которых можно выгружать товары|&mdash;| нет
-|**createAgentsTags**    |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция групп покупателей, представленных в формате строк. Определяет группы, в которые добавляются новые покупатели. Значения `null` игнорируются|&mdash;| нет
-|**filterAgentsTags**    |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция групп покупателей, представленных в формате строк. Определяет группы, из которых выгружаются покупатели. Значения `null` игнорируются|&mdash;| нет
+|**productFolders**      |Array(Object)|Коллекция Метаданных групп товаров, из которых можно выгружать товары|&mdash;| нет
+|**createAgentsTags**    |Array(Object)|Коллекция групп покупателей, представленных в формате строк. Определяет группы, в которые добавляются новые покупатели. Значения `null` игнорируются|&mdash;| нет
+|**filterAgentsTags**    |Array(Object)|Коллекция групп покупателей, представленных в формате строк. Определяет группы, из которых выгружаются покупатели. Значения `null` игнорируются|&mdash;| нет
 |**printAlways**         |Boolean|Всегда печатать кассовые чеки|&mdash;| да
 |**receiptTemplate**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные шаблона печати кассовых чеков|&mdash;| нет
 |**createPaymentInOnRetailShiftClosing**|Boolean| Создавать входящий платеж при закрытии смены|&mdash;| да
@@ -72,7 +73,7 @@
 |**reservePrepaidGoods**|Boolean|Резервировать товары, за которые внесена предоплата|&mdash;| да
 |**fiscalType**     |Enum| Тип формирования чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-formirowaniq-chekow)|&mdash;|да
 |**minionToMasterType**|Enum|Стратегия выбора кассы для фискализации облачных чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-strategiq-wybora-kassy-dlq-fiskalizacii-oblachnyh-chekow)|&mdash;|да
-|**masterRetailStores**|Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Ссылка на точки продаж, которые могут фискализировать операции с текущей точки продаж, если `minionToMaster` = `CHOSEN`|&mdash;|нет
+|**masterRetailStores**|Array(Object)|Ссылка на точки продаж, которые могут фискализировать операции с текущей точки продаж, если `minionToMaster` = `CHOSEN`|&mdash;|нет
 |**qrAcquire**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Банка-эквайера по операциям по QR-коду|&mdash;|нет
 |**qrBankPercent**     |Double|Комиссия банка-эквайера по операция по QR-коду (в процентах)|&mdash;| нет
 |**qrPayEnabled**      |Boolean|Возможность оплаты по QR-коду на точке продаж|&mdash;| да |
@@ -117,6 +118,14 @@
 | **ANY** | Любая мастер касса
 | **SAME_GROUP** | Только кассы из того же отдела
 | **CHOSEN** | Выбранные кассы из списка в поле `masterRetailStores` 
+
+##### Тип контроля МРЦ для табачной продукции
+
+| Название          | Описание                                                  |
+| ----------------- |:----------------------------------------------------------|
+| **USER_PRICE**    | Не контролировать МРЦ
+| **MRC_PRICE**     | Продавать по МРЦ указанной на пачке
+| **SAME_PRICE**    | Запрещать продажу, если цена продажи не совпадает с МРЦ
 
 ##### Приоритет отправки электронного чека
 
@@ -213,7 +222,7 @@
 |**region**      |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные региона|&mdash;|нет
 |**city**      |String(255)|Город|&mdash;|нет
 |**street**      |String(255)|Улица|&mdash;|нет
-|**house**      |String(30)|Дом|&mdash;|да
+|**house**      |String(30)|Дом|&mdash;|нет
 |**apartment**      |String(30)|Квартира|&mdash;|нет
 |**addInfo**      |String(255)|Другое|&mdash;|нет
 |**comment**      |String(255)|Комментарий|&mdash;|нет
@@ -464,6 +473,7 @@ curl -X GET
       "priorityOfdSend" : "email",
       "allowCustomPrice" : true,
       "allowSellTobaccoWithoutMRC" : true,
+      "tobaccoMrcControlType" : "USER_PRICE",
       "allowCreateProducts" : false,
       "productFolders" : {
         "meta" : {
@@ -678,6 +688,7 @@ curl -X GET
       "priorityOfdSend" : "email",
       "allowCustomPrice" : true,
       "allowSellTobaccoWithoutMRC" : true,
+      "tobaccoMrcControlType" : "USER_PRICE", 
       "allowCreateProducts" : false,
       "productFolders" : {
         "meta" : {
@@ -814,6 +825,7 @@ curl -X GET
               "sellReserves" : true,
               "allowCustomPrice" : true,
               "allowSellTobaccoWithoutMRC" : true,
+              "tobaccoMrcControlType" : "USER_PRICE",
               "allowCreateProducts" : false,
               "productFolders" : [{
                 "meta": {
@@ -997,6 +1009,7 @@ curl -X GET
   "priorityOfdSend" : "email",
   "allowCustomPrice" : true,
   "allowSellTobaccoWithoutMRC" : true,
+  "tobaccoMrcControlType" : "USER_PRICE",
   "allowCreateProducts" : false,
   "productFolders" : {
     "meta" : {
@@ -1188,6 +1201,7 @@ curl -X GET
   "ofdEnabled" : true,
   "allowCustomPrice" : false,
   "allowSellTobaccoWithoutMRC" : false,
+  "tobaccoMrcControlType" : "SAME_PRICE",
   "allowCreateProducts" : true,
   "productFolders" : {
     "meta" : {
@@ -1361,6 +1375,7 @@ curl -X GET
     "ofdEnabled" : true,
     "allowCustomPrice" : false,
     "allowSellTobaccoWithoutMRC" : false,
+    "tobaccoMrcControlType" : "SAME_PRICE",
     "allowCreateProducts" : true,
     "productFolders" : {
       "meta" : {
@@ -1484,6 +1499,7 @@ curl -X GET
     "ofdEnabled" : true,
     "allowCustomPrice" : true,
     "allowSellTobaccoWithoutMRC" : true,
+    "tobaccoMrcControlType" : "USER_PRICE",
     "allowCreateProducts" : true,
     "productFolders" : {
       "meta" : {
@@ -1893,6 +1909,7 @@ curl -X PUT
   "ofdEnabled" : true,
   "allowCustomPrice" : false,
   "allowSellTobaccoWithoutMRC" : false,
+  "tobaccoMrcControlType" : "SAME_PRICE",
   "allowCreateProducts" : true,
   "productFolders" : {
     "meta" : {

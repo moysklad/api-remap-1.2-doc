@@ -18,7 +18,7 @@
 |**moment**             |DateTime|Дата Оприходования|&mdash;|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да
 |**sum**                |Int|Сумма Оприходования в копейках|Только для чтения|да
-|**rate**               |Object|Валюта|&mdash;|да
+|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
 |**shared**             |Boolean|Общий доступ|&mdash;|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
@@ -27,12 +27,12 @@
 |**contract**           |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса оприходования|&mdash;|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
+|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
 |**published**          |Boolean|Опубликован ли документ|Только для чтения|да
-|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Оприходования|&mdash;|да
+|**positions**          |MetaArray|Метаданные позиций Оприходования|&mdash;|да
 |**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-oprihodowanie-oprihodowaniq-nakladnye-rashody).  Если Позиции Оприходования не заданы, то накладные расходы нельзя задать|&mdash;|нет
 
 #### Накладные расходы

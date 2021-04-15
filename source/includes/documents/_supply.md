@@ -20,7 +20,7 @@
 |**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет
 |**sum**                |Int|Сумма Приемки в копейках|Только для чтения|да
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
-|**rate**               |Object|Валюта|&mdash;|да
+|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
 |**shared**             |Boolean|Общий доступ|&mdash;|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
@@ -31,13 +31,13 @@
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Приемки|&mdash;|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
+|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**vatSum**             |Float|Сумма включая НДС|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
 |**published**          |Boolean|Опубликован ли документ|Только для чтения|да
-|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Приемки|&mdash;|да
+|**positions**          |MetaArray|Метаданные позиций Приемки|&mdash;|да
 |**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-priemka-priemki-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|&mdash;|нет
 |**payedSum**           |Float|Сумма входящих платежей по Приемке |Только для чтения|да
 |**incomingNumber**     |Float|Входящий номер |&mdash;|нет
@@ -76,7 +76,7 @@
 |**assortment**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да
 |**pack**               |String(255)|Упаковка товара|&mdash;|нет
 |**things**             |Array(String)|Серийные номера. Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете. В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.|&mdash;|нет
-|**trackingCodes**      |Array(Object)|Коды маркировки товаров и транспортных упаковок. Поддержаны в виде иерархической структуры JSON. Значение кода указывается в атрибуте **cis**. Для каждого кода указывается тип **type: trackingcode** (код маркировки товара), **consumerpack** (код маркировки потребительской упаковки) или **transportpack** (код транспортной упаковки). Допустима вложенность кодов маркировки товаров в транспортные упаковки. Транспортные упаковки не могут иметь вложенных упаковок. Коды упаковок могут отсутствовать - в этом случае структура не будет вложенной. Если продукция не является маркированной, то коды маркировки для позиции не будут сохранены. Количество кодов маркировки может отличаться от фактического количества единиц продукции.|&mdash;|нет
+|**trackingCodes**      |Array(Object)|Коды маркировки товаров и транспортных упаковок. [Подробнее тут](../documents/#dokumenty-priemka-priemki-kody-markirowki-towarow-i-transportnyh-upakowok)|&mdash;|нет
 |**gtd**                |Object|ГТД|&mdash;|нет
 |**country**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные страны|&mdash;|нет
 
@@ -92,7 +92,23 @@
 
 О работе с доп. полями Приемок можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
-#### Коды маркировки и серийные номера для позиции документа
+#### Коды маркировки товаров и транспортных упаковок
+Поддержаны в виде иерархической структуры JSON. 
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**cis**           |String|Значение кода маркировки|Необходимое при создании|да
+|**type**          |Enum|Тип кода маркировки. Возможные значения: `trackingcode`, `consumerpack`, `transportpack`|Необходимое при создании|да
+|**trackingCodes** |Array(Object)|Массив вложенных кодов маркировки. Может присутствовать, только если **type** имеет значения `consumerpack` или `transportpack`|&mdash;|нет
+
+Значение кода указывается в атрибуте **cis**. 
+Для каждого кода указывается тип **type**: `trackingcode` (код маркировки товара), `consumerpack` (код маркировки потребительской упаковки) или `transportpack` (код транспортной упаковки). 
+Допустима вложенность кодов маркировки товаров в транспортные упаковки. Транспортные упаковки не могут иметь вложенных упаковок. 
+Коды упаковок могут отсутствовать - в этом случае структура не будет вложенной. 
+Если продукция не является маркированной, то коды маркировки для позиции не будут сохранены. 
+Количество кодов маркировки может отличаться от фактического количества единиц продукции.
+
+#### Особенности работы с кодами маркировки и серийными номерами для позиции документа
 
 При работе с позицией Приемки следует учитывать следующие особенности.
 
