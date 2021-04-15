@@ -20,6 +20,7 @@
 |**agent**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контрагента или юрлица, связанного с задачей. Задача может быть привязана либо к конрагенту, либо к юрлицу, либо к документу|&mdash;|нет
 |**operation**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Документа, связанного с задачей. Задача может быть привязана либо к конрагенту, либо к юрлицу, либо к документу|&mdash;|нет
 |**notes**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные комментария к задаче|&mdash;|нет
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|
 
 #### Комментарии задачи
 Объект комментария к задаче содержит следующие поля:

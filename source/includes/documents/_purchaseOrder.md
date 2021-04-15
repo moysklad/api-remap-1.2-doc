@@ -32,8 +32,7 @@
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет
 |**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
-|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|
-|**created**            |DateTime|Дата создания|Только для чтения|да
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да||**created**            |DateTime|Дата создания|Только для чтения|да
 |**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
 |**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**vatSum**             |Float|Сумма НДС |Только для чтения|да
