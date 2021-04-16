@@ -126,8 +126,8 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
-## 14-04-2021
-### Изменено
+### 14-04-2021
+#### Изменено
 - Для атрибутов
   AttributeMetadata.required ,
   AgentAccount.isDefault, WebHook.enabled, Product.weighed
