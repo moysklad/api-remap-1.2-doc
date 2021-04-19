@@ -203,8 +203,11 @@ curl -X GET
       "externalCode": "LsAGeHdbgyQ3oSlTzZUvH0",
       "archived": false,
       "pathName": "",
+      "useParentVat:" false,
       "vat": 18,
+      "vatEnabled": true,
       "effectiveVat": 18,
+      "effectiveVatEnabled": true,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
@@ -350,8 +353,11 @@ curl -X GET
       "externalCode": "DDBfxV4djLuOlbr80-I1A0",
       "archived": false,
       "pathName": "",
+      "useParentVat": false,
       "vat": 18,
+      "vatEnabled": true,
       "effectiveVat": 18,
+      "effectiveVatEnabled": true,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
@@ -443,8 +449,11 @@ curl -X GET
       "externalCode": "ndWrlXCZjm9uSyLk57KOD0",
       "archived": false,
       "pathName": "",
+      "useParentVat": false,
       "vat": 18,
+      "vatEnabled": true,
       "effectiveVat": 18,
+      "effectiveVatEnabled": true,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",

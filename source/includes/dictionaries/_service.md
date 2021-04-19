@@ -29,9 +29,10 @@
 |**archived**        |Boolean|Добавлена ли Услуга в архив|&mdash;|да
 |**pathName**         |String|Наименование группы, в которую входит Услуга|Только для чтения|да
 |**vat**         |Int|НДС %|&mdash;|нет
-|**vatEnabled**     |Boolean|Включен ли НДС для услуги. С помощью этого флага для услуги можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.|&mdash;|да
+|**vatEnabled**     |Boolean|Включен ли НДС для услуги. С помощью этого флага для услуги можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.|&mdash;|нет
 |**useParentVat**   |Boolean|Использует ли услуга НДС с родительской группы|&mdash;|да
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
+|**effectiveVatEnabled**  |Boolean|Дополнительный признак для определения разграничения реального НДС = 0 или "без НДС". (effectiveVat = 0, effectiveVatEnabled = false) -> "без НДС", (effectiveVat = 0, effectiveVatEnabled = true) -> 0%.|Только для чтения|нет
 |**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|&mdash;|нет
 |**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет
 |**minPrice**         |Object|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-minimal-naq-cena)|&mdash;|нет
@@ -220,6 +221,7 @@ curl -X GET
       "vatEnabled": true,
       "useParentVat": false,
       "effectiveVat": 6,
+      "effectiveVatEnabled": true,
       "discountProhibited": false,
       "minPrice": {
         "value": 500,
@@ -361,6 +363,7 @@ curl -X GET
       "vatEnabled": true,
       "useParentVat": false,
       "effectiveVat": 10,
+      "effectiveVatEnabled": true,
       "minPrice": {
         "value": 500,
         "currency": {
@@ -584,6 +587,7 @@ curl -X GET
   "vatEnabled": true,
   "useParentVat": false,
   "effectiveVat": 10,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "minPrice": {
     "value": 500,
@@ -912,6 +916,7 @@ curl -X GET
   "vatEnabled": true,
   "useParentVat": false,
   "effectiveVat": 6,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "minPrice": {
     "value": 500,
@@ -1241,6 +1246,7 @@ curl -X GET
     "vatEnabled": true,
     "useParentVat": false,
     "effectiveVat": 11,
+    "effectiveVatEnabled": true,
     "discountProhibited": false,
     "minPrice": {
       "value": 500,
@@ -1538,6 +1544,7 @@ curl -X GET
   "vatEnabled": true,
   "useParentVat": false,
   "effectiveVat": 6,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "minPrice": {
     "value": 500,
@@ -1790,6 +1797,7 @@ curl -X GET
    "vatEnabled": true,
    "useParentVat": false,
    "effectiveVat": 11,
+   "effectiveVatEnabled": true,
    "discountProhibited": false,
    "minPrice": {
      "value": 500,
@@ -2028,6 +2036,7 @@ curl -X GET
   "vatEnabled": true,
   "useParentVat": false,
   "effectiveVat": 6,
+  "effectiveVatEnabled": true,
   "productFolder": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/238e806f-2c89-11e6-8a84-bae5000000a8",
