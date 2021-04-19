@@ -11,6 +11,7 @@
 + [Отчет Показатели продаж и заказов](reports/#otchety-pokazateli-prodazh-i-zakazow)
 + [Отчет Показатели контрагентов](reports/#otchety-otchet-pokazateli-kontragentow) (кроме [выборочных показателей](reports/#otchety-otchet-pokazateli-kontragentow-vyborochnye-pokazateli-kontragentow))
 + [Отчет Показатели](reports/#otchety-pokazateli)
++ [Получение списка Контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-poluchit-spisok-kontragentow)
 
 После выполнения запроса в асинхронном режиме результат доступен в течение 1 часа. 
 
