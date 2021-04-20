@@ -1,9 +1,9 @@
 ## Бонусная программа
-##### Бонусные программы
+### Бонусные программы
 
 Кодом сущности для Бонусных программ в составе JSON API является ключевое слово **bonusprogram**. Операции создания и изменения не поддерживаются. Перед работой со скидками настоятельно рекомендуем вам прочитать [вот эту статью](https://support.moysklad.ru/hc/ru/articles/203392253-%D0%A1%D0%BA%D0%B8%D0%B4%D0%BA%D0%B8) на портале поддержки МоегоСклада.
 
-##### Атрибуты сущности
+#### Атрибуты сущности
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
@@ -18,6 +18,18 @@
 |**earnRateRoublesToPoint**              |Int| Курс начисления|&mdash;|нет
 |**spendRatePointsToRouble**              |Int|Курс списания|&mdash;|нет
 |**maxPaidRatePercents**             |Int|Максимальный процент оплаты баллами|&mdash;|нет
+|**welcomeBonusesEnabled**           |Boolean|Возможность начисления приветственных баллов|&mdash;|да
+|**welcomeBonusesValue**             |Int|Количество приветственных баллов, начисляемых участникам бонусной программы. Не может быть отрицательным. Не может быть пустым, если `welcomeBonusesEnabled` = true|&mdash;|нет
+|**welcomeBonusesEnabled**           |Enum|Условие начисления приветственных баллов. Не может быть пустым, если `welcomeBonusesEnabled` = true. [Подробнее тут](../dictionaries/#suschnosti-bonusnaq-programma-bonusnye-programmy-atributy-suschnosti-uslowiq-bonusnyh-ballow)|&mdash;|нет
+
+##### Условия бонусных баллов
+
+| Название               | Описание  |
+| ------------------------------ |:---------------------------|
+| **REGISTRATION**   | Приветственные баллы начисляются участиникам после регистрации в бонусной программе.
+| **FIRST_PURCHASE** | Приветственные баллы начисляются участиникам бонусной программы после совершения первой покупки.
+
+
 
 ### Получить все Бонусные программы
 
@@ -88,7 +100,8 @@ curl -X GET
       ],
       "earnRateRoublesToPoint": 1,
       "spendRatePointsToRouble": 1,
-      "maxPaidRatePercents": 100
+      "maxPaidRatePercents": 100,
+      "welcomeBonusesEnabled": false
     },
     {
       "meta": {
@@ -108,7 +121,10 @@ curl -X GET
       ],
       "earnRateRoublesToPoint": 7,
       "spendRatePointsToRouble": 4,
-      "maxPaidRatePercents": 50
+      "maxPaidRatePercents": 50,
+      "welcomeBonusesEnabled": true,
+      "welcomeBonusesValue": 100,
+      "welcomeBonusesEnabled": "REGISTRATION"
     }
   ]
 }
@@ -157,7 +173,8 @@ curl -X GET
   "agentTags": ["tag1", "tag2"],
   "earnRateRoublesToPoint": 7,
   "spendRatePointsToRouble": 4,
-  "maxPaidRatePercents": 50
+  "maxPaidRatePercents": 50,
+  "welcomeBonusesEnabled": false
 }
 ```
 
@@ -204,7 +221,8 @@ curl -X GET
   "agentTags": ["tag2"],
   "earnRateRoublesToPoint": 7,
   "spendRatePointsToRouble": 4,
-  "maxPaidRatePercents": 50
+  "maxPaidRatePercents": 50,
+  "welcomeBonusesEnabled": false
 }
 ```
 
@@ -246,7 +264,8 @@ curl -X GET
   ],
   "earnRateRoublesToPoint": 7,
   "spendRatePointsToRouble": 4,
-  "maxPaidRatePercents": 50
+  "maxPaidRatePercents": 50,
+  "welcomeBonusesEnabled": false
 }
 ```
 
