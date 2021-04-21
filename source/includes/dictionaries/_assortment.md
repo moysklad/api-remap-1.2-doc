@@ -203,7 +203,7 @@ curl -X GET
       "externalCode": "LsAGeHdbgyQ3oSlTzZUvH0",
       "archived": false,
       "pathName": "",
-      "useParentVat:" false,
+      "useParentVat": false,
       "vat": 18,
       "vatEnabled": true,
       "effectiveVat": 18,
