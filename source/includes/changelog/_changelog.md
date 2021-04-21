@@ -17,6 +17,7 @@
 
 ## Отличия API Remap 1.2 от API Remap 1.1
 ### Добавлено
+- Добавлена возможность редактировать поле discounts у контрагента
 - Аутентификация с использованием [токена](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-autentifikaciq)
 - Работа с Изображениями
   - Изображения [Модификаций](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-modifikaciq) 
@@ -132,6 +133,10 @@
 ## Список последних изменений
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
+
+### 21-04-2021
+#### Добавлено
+- Добавлена возможность редактировать поле discounts у контрагента
 
 ### 09-04-2021
 #### Документация
