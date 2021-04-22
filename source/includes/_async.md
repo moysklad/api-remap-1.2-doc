@@ -14,7 +14,7 @@
 
 После выполнения запроса в асинхронном режиме результат доступен в течение 1 часа. 
 
-На число одновременно выполняющихся асинхронных задач установлены [ограничения](#mojsklad-json-api-obschie-swedeniq-ogranicheniq).
+На количество задач в очереди и число одновременно выполняющихся асинхронных задач установлены [ограничения](#mojsklad-json-api-obschie-swedeniq-ogranicheniq).
 
 На данный момент в процессе асинхронного выполнения запроса могут возникать дубли позиций коллекции, 
 если параллельно с подготовкой результата добавляются новые элементы. 
@@ -48,7 +48,7 @@ Content-Location: https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-1
 | ------------------------------ |:---------------------------|
 |**async** | `boolean`<br>`true` - будет создана Асинхронная задача.<br>`false` (по умолчанию) - запрос будет выполнен в синхронном режиме
 
-Результатом выполнения запроса будет создание Асинхронной задачи. В ответе будут содержаться заголовки, содержащие URL статуса и результата задачи.
+Результатом выполнения запроса будет создание Асинхронной задачи, которая будет помещена в очередь. В ответе будут содержаться заголовки, содержащие URL статуса и результата задачи.
 
 |Параметр   |Описание   | 
 |:----|:----|
@@ -63,6 +63,7 @@ Content-Location: https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-1
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Асинхронной задачи|&mdash;|да
 |**id**           |UUID|ID Асинхронной задачи|Только для чтения|да
 |**accountId**    |UUID|ID учетной записи|Только для чтения|да
 |**owner**        |[Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)|Пользователь или приложение, которые создали Асинхронную задачу|Только для чтения|да
@@ -75,10 +76,95 @@ Content-Location: https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-1
 
 | Значение                | Описание  |
 | ------------------------------ |:---------------------------|
+| **PENDING**      |Задача находится в очереди|
 | **PROCESSING**   |Задача находится в обработке, результат еще не готов|
 | **DONE**         |Задача выполнена успешно|
 | **ERROR**        |Задача не была выполнена в результате внутренней ошибки. В этом случае нужно попробовать запустить задачу заново|
 | **CANCEL**       |Задача была отменена|
+
+### Статусы Асинхронных задач
+
+> Пример запроса на получение списка статусов Асинхронных задач
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/async/"
+  -H "Authorization: Bearer <Access-Token>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка статусов Асинхронных задач.
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/async",
+    "type": "async",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/async/1f26ca08-a293-11eb-ac12-000a00000000",
+        "type": "async",
+        "mediaType": "application/json"
+      },
+      "id": "1f26ca08-a293-11eb-ac12-000a00000000",
+      "accountId": "4f811ce5-983a-11eb-0a80-1d0d00000002",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/application/e715fb95-983a-11eb-0a80-321a00000004",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/application/metadata",
+          "type": "application",
+          "mediaType": "application/json"
+        }
+      },
+      "state": "PROCESSING",
+      "request": "https://online.moysklad.ru/api/remap/1.2/report/stock/bystore?async=true"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/async/b3ff426e-a291-11eb-ac12-000a00000000",
+        "type": "async",
+        "mediaType": "application/json"
+      },
+      "id": "b3ff426e-a291-11eb-ac12-000a00000000",
+      "accountId": "4f811ce5-983a-11eb-0a80-1d0d00000002",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/acc59092-a291-11eb-ac12-000d00000014",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=acc59092-a291-11eb-ac12-000d00000014"
+        }
+      },
+      "state": "DONE",
+      "request": "https://online.moysklad.ru/api/remap/1.2/report/stock/bystore?async=true",
+      "resultUrl": "https://online.moysklad.ru/api/remap/1.2/async/b3ff426e-a291-11eb-ac12-000a00000000/result",
+      "deletionDate": "2021-04-21 15:07:05.996"
+    }
+  ]
+}
+```
+
+Запрос на получение списка статусов выполнения Асинхронной задачи. 
+Результат содержит статусы Асинхронных задач за последнюю неделю. 
+
+Доступна фильтрация по полям **state**, **request**, **deletionDate**. 
 
 ### Получение статуса Асинхронной задачи
 
@@ -95,6 +181,11 @@ curl -X GET
 
 ```json
 {
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089",
+    "type": "async",
+    "mediaType": "application/json"
+  },
   "id": "498b8673-0308-11e6-9464-e4de00000089",
   "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
   "owner": {
