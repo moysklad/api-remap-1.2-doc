@@ -133,6 +133,11 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 22-04-2021
+#### Добавлено
+- Добавлена новая схема работы с ошибками и новый статус `API_EXCEPTION` в 
+[асинхронныом обмене]((https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen) )
+
 ### 09-04-2021
 #### Документация
 - Переработан раздел [Работа с доп. полями](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)

@@ -70,6 +70,7 @@ Content-Location: https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-1
 |**request**      |String|URL запроса, по которому создана Асинхронная задача|Только для чтения|да
 |**resultUrl**    |String|Ссылка на результат выполнения задачи. Содержится в ответе, если поле **state** имеет значение `DONE`|Только для чтения|нет
 |**deletionDate** |DateTime|Дата, после которой результат выполнения задачи станет недоступен. Содержится в ответе, если поле **state** имеет значение `DONE`|Только для чтения|нет
+|**errors**       |Object|Выводится json ошибки апи, если поле **state** имеет значение `API_EXCEPTION`|Только для чтения|нет
 
 ##### Статус выполнения Асинхронной задачи
 
@@ -79,6 +80,7 @@ Content-Location: https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-1
 | **DONE**         |Задача выполнена успешно|
 | **ERROR**        |Задача не была выполнена в результате внутренней ошибки. В этом случае нужно попробовать запустить задачу заново|
 | **CANCEL**       |Задача была отменена|
+| **API_EXCEPTION**|Задача была завершена с ошибкой апи|
 
 ### Получение статуса Асинхронной задачи
 
@@ -110,6 +112,33 @@ curl -X GET
   "request": "https://online.moysklad.ru/api/remap/1.2/report/stock/bystore?async=true",
   "resultUrl": "https://online.moysklad.ru/api/remap/1.2/async/f97aa1fb-2e58-11e6-8a84-bae500000002/result",
   "deletionDate": "2021-02-16 16:21:09" 
+}
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление статуса выполнения Асинхронной задачи со статусом API_EXCEPTION.
+
+```json
+{
+  "id": "498b8673-0308-11e6-9464-e4de00000089",
+  "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+  "owner": {
+      "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/98fa7086-8aa1-11e8-7210-075e0000002c",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=98fa7086-8aa1-11e8-7210-075e0000002c"
+      }
+  },
+  "state" : "API_EXCEPTION",
+  "request": "https://online.moysklad.ru/api/remap/1.2/report/sales/plotseries?momentFrom=2018-09-06&interval=hour&async=true",
+  "errors": [
+      {
+          "error": "Ошибка: не указан обязательный параметр для запроса показателей: momentTo.",
+          "code": 39000
+      }
+  ]
 }
 ```
 
@@ -236,9 +265,22 @@ curl -X GET
 С момента получения ссылка действительна 5 минут. 
 Большинство HTTP-клиентов осуществляют перенаправление автоматически, но если ваш клиент этого не делает, 
 то результат выполнения запроса будет иметь статус `302 FOUND` с заголовком **Location**, в котором и содержится ссылка на результат. 
+После наступления даты, указанной в поле **deletionDate**, результат становится недоступен. 
 
-> Response 200 
-Пример результата задачи, который содержит описание ошибки 
+Если статус задачи имеет значение `API_EXCEPTION`, то в json ответе на запрос получения задачи будет указана [ошибка](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki), 
+аналогичная той, которую вернул синхронный эндпоинт.
+
+> Пример запроса на получение результата Асинхронной задачи со статусом API_EXCEPTION
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089/result"
+  -H "Authorization: Bearer <Access-Token>"
+```
+
+> Пример результата задачи, который содержит описание ошибки 
+Response 403 Forbidden 
+ 
 
 ```json
 {
@@ -251,6 +293,3 @@ curl -X GET
 }
 ```
 
-Если первоначальный запрос на создание задачи содержал ошибку, то в теле ответа результата выполнения будет текст с описанием этой ошибки. 
-
-После наступления даты, указанной в поле **deletionDate**, результат становится недоступен. 
