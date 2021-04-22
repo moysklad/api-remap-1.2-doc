@@ -14,7 +14,8 @@
 |**deleted**            |DateTime|Момент последнего удаления Тех. операции |Только для чтения|нет
 |**name**               |String(255)|Наименование Тех. операции |Необходимое при создании|да
 |**description**        |String(4096)|Комментарий Тех. операции |&mdash;|нет
-|**externalCode**       |String(255)|Внешний код Тех. операции |Только для чтения| да
+|**code**               |String(255)|Код Тех. операции |&mdash;| нет
+|**externalCode**       |String(255)|Внешний код Тех. операции |&mdash;| да
 |**moment**             |DateTime|Дата смены|Только для чтения|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет

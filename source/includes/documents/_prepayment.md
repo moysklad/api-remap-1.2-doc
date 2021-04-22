@@ -20,6 +20,7 @@
 |**deleted**            |DateTime|Момент последнего удаления Предоплаты |Только для чтения|нет
 |**name**               |String(255)|Наименование Предоплаты |&mdash;|да
 |**description**        |String(4096)|Комментарий Предоплаты |&mdash;|нет
+|**code**               |String(255)|Код Предоплаты |&mdash;| нет
 |**externalCode**       |String(255)|Внешний код Предоплаты |&mdash;| да
 |**moment**             |DateTime|Дата Счета|&mdash;|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да

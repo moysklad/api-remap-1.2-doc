@@ -13,6 +13,7 @@
 |**deleted**            |DateTime|Момент последнего удаления Приемки|Только для чтения|нет
 |**name**               |String(255)|Наименование Приемки|&mdash;|да
 |**description**        |String(4096)|Комментарий Приемки|&mdash;|нет
+|**code**               |String(255)|Код Приемки|&mdash;| нет
 |**externalCode**       |String(255)|Внешний код Приемки|&mdash;| да
 |**moment**             |DateTime|Дата Приемки|&mdash;|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да
