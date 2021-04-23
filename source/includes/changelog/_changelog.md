@@ -133,6 +133,10 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 23-04-2021
+#### Добавлено
+- Добавлены поля authorApplication в [Задачи](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha) и [События Контрагента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-sobytiq-kontragenta)
+
 ### 09-04-2021
 #### Документация
 - Переработан раздел [Работа с доп. полями](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
