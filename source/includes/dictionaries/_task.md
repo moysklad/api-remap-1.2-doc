@@ -8,8 +8,8 @@
 |**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Задачи|&mdash;|да
 |**id**                 |UUID|ID Задачи|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи Кассира|Только для чтения|да
-|**author**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные сотрудника, создавшего задачу (администратор аккаунта, если автор - приложение)|Только для чтения|да
-|**authorApplication**  |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные приложения, создавшего задачу|Только для чтения|нет
+|**author**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Сотрудника, создавшего задачу (администратор аккаунта, если автор - Приложение)|Только для чтения|да
+|**authorApplication**  |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Приложения, создавшего задачу|Только для чтения|нет
 |**created**            |DateTime|Момент создания|Только для чтения| да
 |**updated**            |DateTime|Момент последнего обновления Задачи|Только для чтения|да
 |**description**        |String(4096)|Текст задачи|Необходимое при создании|да
@@ -28,7 +28,7 @@
 | Название             | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | -------------------- |:----|:----------------------------|:----------------|:------------------------|
 |**author**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Сотрудника, создавшего комментарий (администратор аккаунта, если автор - приложение)|Только для чтения|да
-|**authorApplication** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные приложения, создавшего комментарий|Только для чтения|нет
+|**authorApplication** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Приложения, создавшего комментарий|Только для чтения|нет
 |**moment**            |DateTime|Момент создания комментария|Только для чтения| да
 |**description**       |String(4096)|Текст комментария|Необходимое при создании|да
 

@@ -142,8 +142,8 @@
 |**created**           |DateTime|Момент создания события Контрагента|Только для чтения|да
 |**description**       |String(4096)|Текст события Контрагента|Необходимое при создании|да
 |**agent**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контрагента|Только для чтения|да
-|**author**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные сотрудника - создателя события (администратор аккаунта, если автор - приложение)|Только для чтения|да
-|**authorApplication** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные приложения - создателя события|Только для чтения|нет
+|**author**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Сотрудника - создателя события (администратор аккаунта, если автор - приложение)|Только для чтения|да
+|**authorApplication** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Приложения - создателя события|Только для чтения|нет
 
 #### Тип Контрагента
 В зависимости от типа контрагента **companyType** в составе его объекта будут выводиться разные наборы реквизитов.
