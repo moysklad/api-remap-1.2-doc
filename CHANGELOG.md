@@ -2,6 +2,10 @@
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
 ### 26-04-2021
+#### Изменено
+- Исправлен некорректный url в примерах json [Управления настройками справочника ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment-poluchit-nastrojki-sprawochnika-towarow)
+
+### 26-04-2021
 #### Добавлены
 - Новые поля `directorPosition`, `directorSign`, `chiefAccountSign`, `stamp` в [Юрлице](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico)
 
