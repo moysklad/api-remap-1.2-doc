@@ -46,12 +46,11 @@ under the License.
   <body class="<%= page_classes %>" data-languages="<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>">
     <a href="#" id="nav-button">
           <span>
-            NAV
-            <%= image_tag('navbar.png') %>
+            <%= image_tag('navbar.svg') %>
           </span>
     </a>
     <div class="toc-wrapper">
-      <%= image_tag "logo.png", class: 'logo' %>
+      <%= image_tag "logo.svg", class: 'logo' %>
       <% if language_tabs.any? %>
         <div class="lang-selector">
           <% language_tabs.each do |lang| %>
@@ -65,7 +64,8 @@ under the License.
       <% end %>
       <% if current_page.data.search %>
         <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
+          <%= image_tag "search.svg", class: 'loupe' %>
+          <input type="text" class="search" id="input-search" placeholder="По ключевому слову">
         </div>
         <ul class="search-results"></ul>
       <% end %>
@@ -88,26 +88,36 @@ under the License.
             <% if h1[:children].any? %>
               <% h1[:children].each do |h2| %>
               <li>
-                <a href="#<%= h2[:id] %>" class="toc-h2 toc-link" data-title="<%=h h2[:title] %>"><%=h h2[:content] %></a>
-                <% if h2[:children].any? %>
-                  <ul class="toc-list-h3">
-                    <% h2[:children].each do |h3| %>
-                      <li>
-                        <a href="#<%= h3[:id] %>" class="toc-h3 toc-link" data-title="<%=h h3[:title] %>"><%=h h3[:content] %></a>
-                      </li>
-                    <% end %>
-                  </ul>
-                <% end %>
+                <div class="second-boarder">
+                  <a href="#<%= h2[:id] %>" class="toc-h2 toc-link" data-title="<%=h h2[:title] %>"><%=h h2[:content] %></a>
+                  <% if h2[:children].any? %>
+                    <ul class="toc-list-h3">
+                      <% h2[:children].each do |h3| %>
+                        <li>
+                          <a href="#<%= h3[:id] %>" class="toc-h3 toc-link" data-title="<%=h h3[:title] %>"><%=h h3[:content] %></a>
+                        </li>
+                      <% end %>
+                    </ul>
+                  <% end %>
+                </div>
               </li>
             <% end %>
           <% end %>
           </li>
         <% end %>
+        <li class="toc-other-page">
+          <a href="../workbook/" class="toc-h1 toc-link">Workbook</a>
+        </li>
+        <li class="toc-other-page">
+          <a href="../changelog/" class="toc-h1 toc-link">Список изменений</a>
+        </li>
       </ul>
       <% if current_page.data.toc_footers %>
         <ul class="toc-footer">
           <% current_page.data.toc_footers.each do |footer| %>
-            <li><%= footer %></li>
+            <li><%= footer %>
+              <%= image_tag "arrow-footer.svg", class: 'arrow-footer' %>
+            </li>
           <% end %>
         </ul>
       <% end %>

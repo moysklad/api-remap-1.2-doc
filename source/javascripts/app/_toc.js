@@ -24,6 +24,10 @@
     $("#nav-button").removeClass('open');
   };
 
+  $( ".arrow-icon" ).click(function() {
+    $(this).toggleClass("open");
+  });
+
   function loadToc($toc, tocLinkSelector, tocListSelector, scrollOffset) {
     var headerHeights = {};
     var pageHeight = 0;
@@ -45,6 +49,10 @@
     };
 
     var refreshToc = function() {
+      if (pageHeight !== $(document).height()) {
+        recacheHeights(); //recalculate when content changed (blocks opened / closed)
+      }
+
       var currentTop = $(document).scrollTop() + scrollOffset;
 
       if (currentTop + windowHeight >= pageHeight) {
