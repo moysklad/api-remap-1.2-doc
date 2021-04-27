@@ -14,6 +14,7 @@
 |**deleted**            |DateTime|Момент последнего удаления Оприходования|Только для чтения|нет
 |**name**               |String(255)|Номер Оприходования|&mdash;|да
 |**description**        |String(4096)|Комментарий Оприходования|&mdash;|нет
+|**code**               |String(255)|Код Оприходования|&mdash;| нет
 |**externalCode**       |String(255)|Внешний код Оприходования|&mdash;| да
 |**moment**             |DateTime|Дата Оприходования|&mdash;|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да
