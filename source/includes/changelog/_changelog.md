@@ -134,7 +134,6 @@
 <a name="lastchanges"></a><
 Список последних изменений в API Remap 1.2
 
-
 ### 27-04-2021
 #### Добавлено
 - Очередь для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)
