@@ -15,6 +15,7 @@
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**updated**            |DateTime|Момент последнего обновления Бонусной операции|&mdash;|да
 |**created**           |DateTime|Момент создания Бонусной операции|&mdash;|да
+|**code**               |String(255)|Код Бонусной операции|&mdash;| нет
 |**externalCode**       |String(255)|Внешний код Бонусной операции|&mdash;| да
 |**name**               |String(255)|Наименование Бонусной операции|&mdash;|нет
 |**applicable**             |Boolean|Отметка о проведении|&mdash;|да

@@ -26,7 +26,7 @@
 |**name**               |String(255)|Наименование Юрлица|Необходимое при создании|да
 |**description**        |String(4096)|Комментарий к Юрлицу |&mdash;|нет
 |**code**               |String(255)|Код Юрлица |&mdash;| нет
-|**externalCode**       |String(255)|Внешний код Юрлица |Только для чтения| да
+|**externalCode**       |String(255)|Внешний код Юрлица |&mdash;| да
 |**archived**           |Boolean|Добавлено ли Юрлицо в архив|&mdash;| да
 |**created**            |DateTime|Дата создания|&mdash;| да
 |**actualAddress**      |String(255)|Фактический адрес Юрлица  |&mdash;| нет
@@ -52,19 +52,23 @@
 |**ogrn**             |String(255)|ОГРН|&mdash;|нет
 |**ogrnip**           |String(255)|ОГРНИП|&mdash;|нет
 |**okpo**             |String(255)|ОКПО|&mdash;|нет
-|**certificateNumber**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Номер свидетельства|&mdash;|нет
+|**certificateNumber**|String(255)|Номер свидетельства|&mdash;|нет
 |**certificateDate**  |DateTime|Дата свидетельства|&mdash;|нет
 |**email**            |String(255)|Адрес электронной почты |&mdash;| нет
 |**phone**            |String(255)|Номер городского телефона |&mdash;| нет
 |**fax**              |String(255)|Номер факса |&mdash;| нет
-|**accounts**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные счетов юрлица|&mdash;| да
-|**attributes**       |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных дополнительных полей юрлица|&mdash;|нет
+|**accounts**         |Array(Object)|Метаданные счетов юрлица|&mdash;| да
+|**attributes**       |Array(Object)|Массив метаданных дополнительных полей юрлица|&mdash;|нет
 |**isEgaisEnable**    |Boolean|Включен ли ЕГАИС для данного юрлица|&mdash;| нет
 |**fsrarId**          |String(255)|Идентификатор в ФСРАР|&mdash;|нет
 |**payerVat**         |Boolean|Является ли данное юрлицо плательщиком НДС|&mdash;| нет
 |**utmUrl**           |String(255)|IP-адрес УТМ|&mdash;|нет
 |**director**         |String(255)|Руководитель|&mdash;|нет
+|**directorPosition** |String(255)|Должность руководителя|&mdash;|нет
+|**directorSign**     |Object|Подпись руководителя. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres-podpisi-i-pechat)|&mdash;|нет
 |**chiefAccountant**  |String(255)|Главный бухгалтер|&mdash;|нет
+|**chiefAccountSign** |Object|Подпись главного бухгалтера. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres-podpisi-i-pechat) |&mdash;|нет
+|**stamp**            |Object|Печать. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres-podpisi-i-pechat) |&mdash;|нет
 
 #### Атрибуты вложенных сущностей
 #### Аттрибуты сущности Адрес
@@ -76,7 +80,7 @@
 |**region**      |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные региона|&mdash;|нет
 |**city**      |String(255)|Город|&mdash;|нет
 |**street**      |String(255)|Улица|&mdash;|нет
-|**house**      |String(30)|Дом|&mdash;|да
+|**house**      |String(30)|Дом|&mdash;|нет
 |**apartment**      |String(30)|Квартира|&mdash;|нет
 |**addInfo**      |String(255)|Другое|&mdash;|нет
 |**comment**      |String(255)|Комментарий|&mdash;|нет
@@ -85,6 +89,17 @@
 При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
 При передаче обоих адресов строковый будет игнорирован.
 При передаче только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
+
+##### Подписи и печать
+
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**title**               |String(255)|Название Изображения|&mdash;|да
+|**filename**               |String(255)|Имя файла|&mdash;|да
+|**size**               |Int|Размер файла в байтах|&mdash;|да
+|**updated**               |DateTime|Время загрузки файла на сервер|&mdash;|да
+|**miniature**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные миниатюры изображения|&mdash;|да
 
 ##### Счета юрлица
 
@@ -414,7 +429,20 @@ curl -X GET
   "payerVat":true,
   "utmUrl":"10.250.110.81",
   "director":"Кипелова Александра",
-  "chiefAccountant":"Подкупников Иван"
+  "directorPosition":"Руководитель отдела",
+  "directorSign" : {
+      "filename": "directorSignTest.png",
+      "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
+  },
+  "chiefAccountant":"Подкупников Иван",
+  "chiefAccountSign" : {
+      "filename": "chiefAccountSignTest.png",
+      "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg=="
+  },
+ "stamp" : {
+    "filename": "stampTest.png",
+    "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+ }
 }'  
 ```
 
@@ -530,7 +558,52 @@ curl -X GET
   "isEgaisEnable": true,
   "fsrarId": "1963703",
   "payerVat": true,
-  "utmUrl": "10.250.110.81"
+  "utmUrl": "10.250.110.81",
+  "director":"Кипелова Александра",
+   "directorPosition":"Руководитель отдела",
+   "directorSign" : {
+       "meta" : {
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/7da0feb5-e110-4021-a49f-35db4ae75f13",
+         "mediaType" : "application/octet-stream"~~~~
+       },
+       "title" : "directorSignTest",
+       "filename" : "directorSignTest.png",
+       "size" : 70,
+       "updated" : "2020-09-23 07:37:26.417",
+       "miniature" : {
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/7da0feb5-e110-4021-a49f-35db4ae75f13?miniature=true",
+         "mediaType" : "image/png"
+       }
+   },
+   "chiefAccountant":"Подкупников Иван",
+   "chiefAccountSign" : {
+       "meta" : {
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/cdd282d7-7e65-40b7-83a1-c0ef07365769",
+         "mediaType" : "application/octet-stream"
+       },
+       "title" : "chiefAccountSignTest",
+       "filename" : "chiefAccountSignTest.png",
+       "size" : 70,
+       "updated" : "2020-09-23 07:37:26.434",
+       "miniature" : {
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/cdd282d7-7e65-40b7-83a1-c0ef07365769?miniature=true",
+         "mediaType" : "image/png"
+       }
+   },
+   "stamp" : {
+       "meta" : {
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383",
+         "mediaType" : "application/octet-stream"
+       },
+       "title" : "stampTest",
+       "filename" : "stampTest.png",
+       "size" : 70,
+       "updated" : "2020-09-23 07:37:26.443",
+       "miniature" : {
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383?miniature=true",
+         "mediaType" : "image/png"
+       }
+   }
 }
 ```
 
@@ -1054,7 +1127,7 @@ curl -X POST
 | Название  | Тип | Описание                    |
 | --------- |:----|:----------------------------|
 |**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Ссылка на метаданные юрлиц
-|**attributes** |Array(Meta)| Массив объектов доп. полей юрлиц в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+|**attributes** |Array(Object)| Массив объектов доп. полей юрлиц в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 |**createShared** |Boolean| Создавать новые юрлица с меткой "Общий"
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
