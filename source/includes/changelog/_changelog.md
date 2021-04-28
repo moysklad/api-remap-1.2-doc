@@ -126,8 +126,8 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
-## 15-04-2021
-### Добавлено
+### 15-04-2021
+#### Добавлено
 - Возможность работы с файлами, прикрепленными к [Задаче](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha)
 
 ### 09-04-2021
