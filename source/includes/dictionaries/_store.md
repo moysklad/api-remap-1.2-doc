@@ -21,14 +21,14 @@
 |**updated**            |DateTime|Момент последнего обновления Склада|Только для чтения|да
 |**name**               |String(255)|Наименование Склада|Необходимое при создании|да
 |**description**        |String(4096)|Комментарий к Складу|&mdash;|нет
-|**code**               |String(255)|Код Склада&mdash;| нет
-|**externalCode**       |String(255)|Внешний код Склада|Только для чтения| да
+|**code**               |String(255)|Код Склада|&mdash;| нет
+|**externalCode**       |String(255)|Внешний код Склада|&mdash;| да
 |**archived**           |Boolean|Добавлен ли Склад в архив|&mdash;| да
 |**address**            |String(255)| Адрес склада|&mdash;|нет
 |**addressFull**        |Object|Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|&mdash;|нет
 |**parent**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Метаданные родительского склада (Группы)|&mdash;|нет
 |**pathName**            |String| Группа Склада|&mdash;|да
-|**attributes**            |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных дополнительных полей склада|&mdash;|нет
+|**attributes**            |Array(Object)|Массив метаданных дополнительных полей склада|&mdash;|нет
 
 #### Аттрибуты сущности Адрес
 
@@ -39,7 +39,7 @@
 |**region**      |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные региона|&mdash;|нет
 |**city**      |String(255)|Город|&mdash;|нет
 |**street**      |String(255)|Улица|&mdash;|нет
-|**house**      |String(30)|Дом|&mdash;|да
+|**house**      |String(30)|Дом|&mdash;|нет
 |**apartment**      |String(30)|Квартира|&mdash;|нет
 |**addInfo**      |String(255)|Другое|&mdash;|нет
 |**comment**      |String(255)|Комментарий|&mdash;|нет
@@ -784,7 +784,7 @@ curl -X POST
 | Название  | Тип | Описание                    |
 | --------- |:----|:----------------------------|
 |**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Ссылка на метаданные Складов
-|**attributes** |Array(Meta)| Массив объектов доп. полей Складов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+|**attributes** |Array(Object)| Массив объектов доп. полей Складов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 |**createShared** |Boolean|создавать новые Склады с меткой "Общий"
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).

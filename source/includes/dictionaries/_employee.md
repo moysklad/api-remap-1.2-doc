@@ -22,7 +22,8 @@
 |**updated**            |DateTime|Момент последнего обновления Сотрудника|Только для чтения|да
 |**name**               |String(255)|Наименование Сотрудника|Только для чтения|да
 |**description**        |String(4096)|Комментарий к Сотруднику|&mdash;|нет
-|**externalCode**       |String(255)|Внешний код Сотрудника|Только для чтения| да
+|**code**               |String(255)|Код Сотрудника|&mdash;| нет
+|**externalCode**       |String(255)|Внешний код Сотрудника|&mdash;| да
 |**archived**           |Boolean|Добавлен ли Сотрудник в архив|&mdash;| да
 |**created**            |DateTime|Момент создания Сотрудника|Только для чтения| да
 |**uid**                |String(255)|Логин Сотрудника|Только для чтения| нет
@@ -33,8 +34,8 @@
 |**lastName**           |String(255)|Фамилия|Необходимое|да
 |**fullName**           |String(255)|Имя Отчество Фамилия|Только для чтения| нет
 |**shortFio**           |String(255)|Краткое ФИО|Только для чтения| нет
-|**cashiers**           |Array(Object)|Массив кассиров.  [Подробнее тут](../dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-kassir)|Только для чтения| нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Дополнительные поля Сотрудника|&mdash;| нет
+|**cashiers**           |MetaArray|Массив кассиров.  [Подробнее тут](../dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-kassir)|Только для чтения| нет
+|**attributes**         |Array(Object)|Дополнительные поля Сотрудника|&mdash;| нет
 |**image**              |Object|Фотография сотрудника.  [Подробнее тут](../dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-fotografiq-sotrudnika-struktura-i-zagruzka)|&mdash;| нет
 |**inn**                |String(255)|ИНН сотрудника (в формате ИНН физического лица)|&mdash;| нет
 |**position**           |String(255)|Должность сотрудника |&mdash;| нет
@@ -408,7 +409,7 @@ curl -X POST
 | Название  | Тип | Описание                    |
 | --------- |:----|:----------------------------|
 |**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Ссылка на метаданные Сотрудников
-|**attributes** |Array(Meta)| Массив объектов доп. полей Сотрудников в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+|**attributes** |Array(Object)| Массив объектов доп. полей Сотрудников в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 |**createShared** |Boolean| Создавать новых Сотрудников с меткой "Общий"
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).

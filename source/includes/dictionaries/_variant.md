@@ -23,7 +23,7 @@
 |**archived**          |Boolean|Добавлен ли товар в архив|&mdash;|да
 |**characteristics**   |Array(Object)|Характеристики Модификации. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-metadannye-modifikacij-harakteristiki-modifikacii)|Необходимое при создании|да
 |**images**            |Array(Object)|Изображения Модификации. Изображений у Модификации может быть не более 10. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-izobrazhenie-struktura-i-zagruzka)|&mdash;|да
-|**minPrice**          |Double|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-minimal-naq-cena)|&mdash;|нет
+|**minPrice**          |Object|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-minimal-naq-cena)|&mdash;|нет
 |**buyPrice**          |Object|Закупочная цена|&mdash;|нет
 |**salePrices**        |Array(Object)|Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-ceny-prodazhi)|&mdash;|нет
 |**barcodes**          |Array(Object)|Массив штрихкодов модификации. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-shtrih-kody)|&mdash;|нет
@@ -1039,6 +1039,7 @@ curl -X POST
             "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
             "type": "variant",
             "mediaType": "application/json"
+          }
         },
         {
           "meta": {
@@ -1046,6 +1047,7 @@ curl -X POST
             "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
             "type": "variant",
             "mediaType": "application/json"
+          }
         }
       ]'
 ```        
@@ -1071,7 +1073,7 @@ curl -X POST
 | Название  | Тип | Описание                    | Обязательное при ответе|
 | --------- |:----|:----------------------------|:------------------------|
 |**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные|да
-|**characteristics**         |Array(Meta)|Коллекция всех созданных характеристик Модификаций|да
+|**characteristics**         |Array(Object)|Коллекция всех созданных характеристик Модификаций|да
 
 > Получить метаданные модификаций
 

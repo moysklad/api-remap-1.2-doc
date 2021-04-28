@@ -32,15 +32,15 @@
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
 |**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|&mdash;|нет
 |**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет
-|**minPrice**         |Double|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-minimal-naq-cena)|&mdash;|нет
+|**minPrice**         |Object|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-minimal-naq-cena)|&mdash;|нет
 |**salePrices**         |Array(Object)|Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-ceny-prodazhi)|&mdash;|нет
-|**buyPrice**         |Array(Object)|Закупочная продажи. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-zakupochnaq-cena)|&mdash;|нет
-|**attributes**         |Array(Meta)|Коллекция доп. полей|&mdash;|нет
+|**buyPrice**         |Object|Закупочная продажи. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-zakupochnaq-cena)|&mdash;|нет
+|**attributes**         |Array(Object)|Коллекция доп. полей|&mdash;|нет
 |**barcodes**         |Array(Object)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-shtrih-kody)|&mdash;|нет
 |**discountProhibited**        |Boolean|Признак запрета скидок|&mdash;|да
 |**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-atributy-suschnosti-priznak-predmeta-rascheta)|&mdash;|нет
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|нет|
+|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|нет|
 
 Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить
 с помощью обновления атрибута **productFolder**.
@@ -81,7 +81,7 @@
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные |&mdash;|да
-|**attributes**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция всех существующих доп. полей Услуг|&mdash;|да
+|**attributes**        |Array(Object)|Коллекция всех существующих доп. полей Услуг|&mdash;|да
 
 Структуры объектов отдельных коллекций:
 
@@ -1375,7 +1375,7 @@ curl -X POST
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные |&mdash;|да
-|**attributes**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция всех существующих доп. полей Услуг|&mdash;|нет
+|**attributes**        |Array(Object)|Коллекция всех существующих доп. полей Услуг|&mdash;|нет
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 

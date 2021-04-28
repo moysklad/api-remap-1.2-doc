@@ -14,30 +14,31 @@
 |**deleted**            |DateTime|Момент последнего удаления Внутреннего заказа|Только для чтения|да
 |**name**               |String(255)|Наименование Внутреннего заказа|Необходимое при создании|да
 |**description**        |String(4096)|Комментарий Внутреннего заказа|&mdash;|нет
-|**externalCode**       |String(255)|Внешний код Внутреннего заказа|Только для чтения| да
+|**code**               |String(255)|Код Внутреннего заказа|&mdash;| нет
+|**externalCode**       |String(255)|Внешний код Внутреннего заказа|&mdash;| да
 |**moment**             |DateTime|Дата смены|Только для чтения|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да
 |**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да
 |**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
 |**sum**                |Int|Сумма Внутреннего заказа в копейках|Только для чтения|да
-|**rate**               |Object|Валюта|&mdash;|да
+|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
 |**shared**             |Boolean|Общий доступ|Только для чтения|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
 |**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|&mdash;|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Внутреннего заказа|&mdash;|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |Только для чтения|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |Только для чтения|нет
+|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
 |**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**vatSum**                |Float|Сумма включая НДС|Только для чтения|да
-|**positions**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Внутреннего заказа|Только для чтения|да
+|**positions**        |MetaArray|Метаданные позиций Внутреннего заказа|Только для чтения|да
 |**deliveryPlannedMoment**            |DateTime|Планируемая дата приемки|&mdash;|нет
-|**purchaseOrders**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))| Коллекция метаданных на связанные заказы поставщику|&mdash;|да
-|**moves**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных на связанные заказы перемещения|&mdash;|да
+|**purchaseOrders**         |Array(Object)| Коллекция метаданных на связанные заказы поставщику|&mdash;|да
+|**moves**          |Array(Object)|Коллекция метаданных на связанные заказы перемещения|&mdash;|да
 
 #### Позиции Внутреннего заказа
 Позиции Внутреннего заказа - это список товаров/услуг/модификаций/серий.

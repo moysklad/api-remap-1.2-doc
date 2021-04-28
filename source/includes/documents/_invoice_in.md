@@ -14,13 +14,14 @@
 |**deleted**            |DateTime|Момент последнего удаления Счета поставщика|Только для чтения|нет
 |**name**               |String(255)|Наименование Счета поставщика|&mdash;|да
 |**description**        |String(4096)|Комментарий Счета поставщика|&mdash;|нет
+|**code**               |String(255)|Код Счета поставщика|&mdash;| нет
 |**externalCode**       |String(255)|Внешний код Счета поставщика|&mdash;| да
 |**moment**             |DateTime|Дата Счета|&mdash;|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да
 |**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да
 |**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет
 |**sum**                |Int|Сумма Счета в установленной валюте|Только для чтения|да
-|**rate**               |Object|Валюта|&mdash;|да
+|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
 |**shared**             |Boolean|Общий доступ|&mdash;|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
@@ -31,13 +32,13 @@
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса счета|&mdash;|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
+|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
 |**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**vatSum**             |Float|Сумма НДС |Только для чтения|да
-|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Счета поставщика|&mdash;|да
+|**positions**          |MetaArray|Метаданные позиций Счета поставщика|&mdash;|да
 |**paymentPlannedMoment**          |DateTime|Планируемая дата оплаты|&mdash;|нет
 |**payedSum**            |Float|Сумма входящих платежей по Счету поставщика |Только для чтения|да
 |**shippedSum**             |Float|Сумма отгруженного |Только для чтения|да
