@@ -13,6 +13,7 @@
 |**deleted**            |DateTime|Момент последнего удаления Списания|Только для чтения|нет
 |**name**               |String(255)|Наименование Списания|&mdash;|да
 |**description**        |String(4096)|Комментарий Списания|&mdash;|нет
+|**code**               |String(255)|Код Списания|&mdash;| нет
 |**externalCode**       |String(255)|Внешний код Списания|&mdash;| да
 |**moment**             |DateTime|Дата Списания|&mdash;|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да

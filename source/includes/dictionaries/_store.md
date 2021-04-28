@@ -21,8 +21,8 @@
 |**updated**            |DateTime|Момент последнего обновления Склада|Только для чтения|да
 |**name**               |String(255)|Наименование Склада|Необходимое при создании|да
 |**description**        |String(4096)|Комментарий к Складу|&mdash;|нет
-|**code**               |String(255)|Код Склада&mdash;| нет
-|**externalCode**       |String(255)|Внешний код Склада|Только для чтения| да
+|**code**               |String(255)|Код Склада|&mdash;| нет
+|**externalCode**       |String(255)|Внешний код Склада|&mdash;| да
 |**archived**           |Boolean|Добавлен ли Склад в архив|&mdash;| да
 |**address**            |String(255)| Адрес склада|&mdash;|нет
 |**addressFull**        |Object|Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres)|&mdash;|нет

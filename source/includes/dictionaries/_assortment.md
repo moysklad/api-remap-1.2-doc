@@ -813,7 +813,7 @@ curl -X POST
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/settings"
+  "https://online.moysklad.ru/api/remap/1.2/entity/assortment/settings"
   -H "Authorization: Basic <Credentials>"
 ```
 
@@ -850,7 +850,7 @@ curl -X GET
 
 ```shell
 curl -X PUT
-  "https://online.moysklad.ru/api/remap/1.2/entity/settings"
+  "https://online.moysklad.ru/api/remap/1.2/entity/assortment/settings"
   -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
   -d '{
