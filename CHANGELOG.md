@@ -1,10 +1,48 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-## 19-04-2021
+## 29-04-2021
 ### Добавлено
 - Возможность выполнять запрос [получения списка Контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-poluchit-spisok-kontragentow)
  [асинхронно](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)
+
+## 28-04-2021
+### Документация
+- Добавлен новый раздел [Подписка компании](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-podpiska-kompanii)
+
+## 28-04-2021
+### Изменено
+- Для атрибутов
+  AttributeMetadata.required ,
+  AgentAccount.isDefault, WebHook.enabled, Product.weighed
+  при передаче null значения выводится ошибка 2016
+
+## 28-04-2021
+### Изменено
+- Исправлена работа с документом [Возврат поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-postawschiku): 
+ добавлена проверка совпадения значения поля `vatEnabled` при создании и обновлении документа на основании [Приемки](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka)
+
+## 28-04-2021
+### Изменено
+- Для документа [`Оприходования`](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-oprihodowanie)
+теперь учитывается пермиссия `Видеть себестоимость, цену закупки и прибыль товаров`. При отсутствии пермиссии в json представлении 
+документа будет отсутствовать поле `sum`, а в позициях не будет поля `price`.
+
+### 26-04-2021
+#### Изменено
+- Исправлен некорректный url в примерах json [Управления настройками справочника ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment-poluchit-nastrojki-sprawochnika-towarow)
+
+### 26-04-2021
+#### Добавлены
+- Новые поля `directorPosition`, `directorSign`, `chiefAccountSign`, `stamp` в [Юрлице](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico)
+
+## 26-04-2021
+### Изменено
+- Исправлено неточное описание привязок документов в общих сведениях
+
+## 22-04-2021
+### Документация
+- Добавлено описание поля **code** для ряда сущностей. Где оно было, убран атрибут `Только для чтения`
 
 ## 13-04-2021
 ### Добавлено
@@ -50,6 +88,11 @@
 ### Добавлено
 - Флаг `partialDisposal` для сущностей `Товар` и `Комплект`
 - Ошибка `16112` с описанием
+
+## 23-03-2021
+### Добавлено
+- Поле `postponedBonusesDelayDays` в [Бонусную программу](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-bonusnaq-programma)
+- Поля `transactionStatus`, `executionDate` и `categoryType` в [Бонусные операции](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-bonusnaq-operaciq)
 
 ## 01-03-2021
 ### Документация
@@ -98,7 +141,7 @@
 ## 22-12-2020
 ### Изменено
 - Исправлен http метод в запросе на удаление группы товаров с GET на DELETE в [Группа товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-gruppa-towarow-udalit-gruppu-towarow)
-  и тип полей `minPrice`, `buyPrice` c Double на Object в [Товаре](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
+  и тип полей `minPrice`, `buyPrice` c Double на Object в [Товаре](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar)
 
 ## 22-12-2020
 ### Документация

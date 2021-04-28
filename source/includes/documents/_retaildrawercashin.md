@@ -13,6 +13,7 @@
 |**deleted**            |DateTime|Момент последнего удаления Внесения денег |Только для чтения|нет
 |**name**               |String(255)|Наименование Внесения денег  |&mdash;|да
 |**description**        |String(4096)|Комментарий Внесения денег |&mdash;|нет
+|**code**               |String(255)|Код Внесения денег  |&mdash;| нет
 |**externalCode**       |String(255)|Внешний код Внесения денег  |&mdash;| да
 |**moment**             |DateTime|Дата Счета|&mdash;|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да
