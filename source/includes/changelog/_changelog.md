@@ -135,6 +135,10 @@
 <a name="lastchanges"></a><
 Список последних изменений в API Remap 1.2
 
+### 24-04-2021
+#### Документация
+- Добавлен новый раздел [Подписка компании](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-podpiska-kompanii)
+
 ### 28-04-2021
 #### Изменено
 - Для атрибутов
