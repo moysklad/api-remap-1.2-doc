@@ -18,6 +18,7 @@
 |**earnRateRoublesToPoint**              |Int| Курс начисления|&mdash;|нет
 |**spendRatePointsToRouble**              |Int|Курс списания|&mdash;|нет
 |**maxPaidRatePercents**             |Int|Максимальный процент оплаты баллами|&mdash;|нет
+|**postponedBonusesDelayDays**    |Int |Баллы начисляются через [N] дней |Только при наличии тарифной опции "Расширенная бонусная программа" |нет
 
 ### Получить все Бонусные программы
 
@@ -88,7 +89,8 @@ curl -X GET
       ],
       "earnRateRoublesToPoint": 1,
       "spendRatePointsToRouble": 1,
-      "maxPaidRatePercents": 100
+      "maxPaidRatePercents": 100,
+      "postponedBonusesDelayDays": 14
     },
     {
       "meta": {
@@ -108,7 +110,8 @@ curl -X GET
       ],
       "earnRateRoublesToPoint": 7,
       "spendRatePointsToRouble": 4,
-      "maxPaidRatePercents": 50
+      "maxPaidRatePercents": 50,
+      "postponedBonusesDelayDays": 7
     }
   ]
 }
@@ -134,7 +137,8 @@ curl -X GET
 	  "agentTags": ["tag1", "tag2"],
 	  "earnRateRoublesToPoint": 7,
     "spendRatePointsToRouble": 4,
-    "maxPaidRatePercents": 50
+    "maxPaidRatePercents": 50,
+    "postponedBonusesDelayDays": 7
 	}'
 ```
 
@@ -157,7 +161,8 @@ curl -X GET
   "agentTags": ["tag1", "tag2"],
   "earnRateRoublesToPoint": 7,
   "spendRatePointsToRouble": 4,
-  "maxPaidRatePercents": 50
+  "maxPaidRatePercents": 50,
+  "postponedBonusesDelayDays": 7
 }
 ```
 
@@ -246,7 +251,8 @@ curl -X GET
   ],
   "earnRateRoublesToPoint": 7,
   "spendRatePointsToRouble": 4,
-  "maxPaidRatePercents": 50
+  "maxPaidRatePercents": 50,
+  "postponedBonusesDelayDays": 7
 }
 ```
 

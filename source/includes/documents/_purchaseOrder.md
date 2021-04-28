@@ -1,6 +1,6 @@
 ## Заказ поставщику
 ### Заказы Поставщикам 
-Средствами JSON API можно создавать и обновлять сведения о Заказах поставщику, запрашивать списки Заказов и сведения по отдельным Заказам Поставщикам. Позициями Заказов можно управлять как в составе отдельного Заказа поставщику, так и отдельно - с помощью специальных ресурсов для управления позициями Заказа. Кодом сущности для Заказа поставщику в составе JSON API является ключевое слово **purchaseOrder**. Больше о Заказах Поставщикам и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/202984676-%D0%97%D0%B0%D0%BA%D0%B0%D0%B7%D1%8B-%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%B0%D0%BC).
+Средствами JSON API можно создавать и обновлять сведения о Заказах поставщику, запрашивать списки Заказов и сведения по отдельным Заказам Поставщикам. Позициями Заказов можно управлять как в составе отдельного Заказа поставщику, так и отдельно - с помощью специальных ресурсов для управления позициями Заказа. Кодом сущности для Заказа поставщику в составе JSON API является ключевое слово **purchaseorder**. Больше о Заказах Поставщикам и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/202984676-%D0%97%D0%B0%D0%BA%D0%B0%D0%B7%D1%8B-%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%B0%D0%BC).
 
 #### Атрибуты сущности
 
@@ -14,13 +14,14 @@
 |**deleted**            |DateTime|Момент последнего удаления Заказа поставщику|Только для чтения|нет
 |**name**               |String(255)|Наименование Заказа поставщику|&mdash;|да
 |**description**        |String(4096)|Комментарий Заказа поставщику|&mdash;|нет
+|**code**               |String(255)|Код Заказа поставщику|&mdash;| нет
 |**externalCode**       |String(255)|Внешний код Заказа поставщику|&mdash;| да
 |**moment**             |DateTime|Дата Заказа|&mdash;|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да
 |**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да
 |**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет
 |**sum**                |Int|Сумма Заказа поставщику в установленной валюте|Только для чтения|да
-|**rate**               |Object|Валюта|&mdash;|да
+|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
 |**shared**             |Boolean|Общий доступ|&mdash;|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
@@ -31,13 +32,13 @@
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса заказа|&mdash;|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|
+|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
+|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
 |**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**vatSum**             |Float|Сумма НДС |Только для чтения|да
-|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Заказа поставщику|&mdash;|да
+|**positions**          |MetaArray|Метаданные позиций Заказа поставщику|&mdash;|да
 |**deliveryPlannedMoment**          |DateTime|Планируемая дата отгрузки|&mdash;|нет
 |**payedSum**            |Float|Сумма входящих платежей по Заказу |Только для чтения|да
 |**shippedSum**             |Float|Сумма отгруженного |Только для чтения|да

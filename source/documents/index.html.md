@@ -11,6 +11,7 @@ toc_footers:
 
 includes:
   - documents/common_info
+  - documents/rate
   - documents/retailshift
   - documents/enter
   - documents/customerOrder
