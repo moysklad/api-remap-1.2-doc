@@ -35,7 +35,7 @@
 |**organizationAccount**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета вашего юрлица|&mdash;|нет
 |**agentAccount**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|да
 |**rate**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные валюты|&mdash;|да
-|**attributes**         |Array(Meta)|Коллекция доп. полей|&mdash;|нет
+|**attributes**         |Array(Object)|Коллекция доп. полей|&mdash;|нет
 
 Таблица полей, их значений и их значений в JSON представлении:
 
@@ -1116,8 +1116,8 @@ curl -X POST
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Заказа покупателя|&mdash;|да
-|**attributes**         |Array(Meta)|Коллекция доп. полей|&mdash;|нет
-|**states**              |Array(Meta)|Массив статусов договоров|&mdash;|нет
+|**attributes**         |Array(Object)|Коллекция доп. полей|&mdash;|нет
+|**states**              |Array(Object)|Массив статусов договоров|&mdash;|нет
 |**createShared**        |Boolean|Создавать новые договора с меткой "Общий"|&mdash;|да
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).

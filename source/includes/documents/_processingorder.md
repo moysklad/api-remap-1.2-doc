@@ -13,7 +13,8 @@
 |**deleted**            |DateTime|Момент последнего удаления Заказа на производство|Только для чтения|нет
 |**name**               |String(255)|Наименование Заказа на производство|Необходимое при создании|да
 |**description**        |String(4096)|Комментарий Заказа на производство|&mdash;|нет
-|**externalCode**       |String(255)|Внешний код Заказа на производство|Только для чтения| да
+|**code**               |String(255)|Код Заказа на производство|&mdash;| нет
+|**externalCode**       |String(255)|Внешний код Заказа на производство|&mdash;| да
 |**moment**             |DateTime|Дата смены|Только для чтения|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
@@ -24,13 +25,13 @@
 |**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Заказа на производство|&mdash;|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |Только для чтения|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |Только для чтения|нет
+|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
 |**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**processingPlan**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Тех. плана|Необходимое при создании|да
-|**positions**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Заказа на производство|Необходимое при создании|да
+|**positions**        |MetaArray|Метаданные позиций Заказа на производство|Необходимое при создании|да
 |**deliveryPlannedMoment**            |DateTime|Планируемая дата производства|&mdash;|нет
 |**quantity**            |Int|Объем производства|&mdash;|да
 
