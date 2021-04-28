@@ -135,6 +135,13 @@
 <a name="lastchanges"></a><
 Список последних изменений в API Remap 1.2
 
+### 28-04-2021
+#### Изменено
+- Для атрибутов
+  AttributeMetadata.required ,
+  AgentAccount.isDefault, WebHook.enabled, Product.weighed
+  при передаче null значения выводится ошибка 2016
+
 ## 24-04-2021
 ### Изменено
 - Исправлена работа с документом [Возврат поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-postawschiku): 
