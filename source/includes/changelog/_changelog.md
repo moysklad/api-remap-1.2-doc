@@ -135,6 +135,10 @@
 <a name="lastchanges"></a><
 Список последних изменений в API Remap 1.2
 
+### 30-04-2021
+#### Исправлено
+- Исправлена ошибка: при изменении пермиссий у роли сотрудника, был невозможен вход в систему
+
 ### 29-04-2021
 #### Добавлено
 - Поле `earnWhileRedeeming` в [Бонусную программу](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-bonusnaq-programma)
