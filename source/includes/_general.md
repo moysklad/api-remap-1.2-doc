@@ -341,7 +341,7 @@ JSON API позволяет создавать, обновлять и удаля
 
 С коллекцией доп. полей можно работать только в контексте отдельной сущности. Доп. поля и их значения
 можно передать в коллекции **attributes** в теле запроса как на создание, так и на обновление сущности.
-В качестве указания доп. поля можно использовать любое из полей **id**, **meta** и **name**.
+В качестве указания доп. поля нужно использовать поле **meta**.
 В переданном массиве объектов можно указать не все доп. поля - проинициализируются/обновятся только указанные.
 
 #### Дополнительные поля типа файл
@@ -801,20 +801,12 @@ curl -X PUT
             }
           },
           {
-            "id": "7bc555d8-6501-11e8-2134-433200000000",
-            "value": 234.5
-          },
-          {
             "meta": {
               "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/986314b4-6500-11e8-9464-e4de00000048",
               "type": "attributemetadata",
               "mediaType": "application/json"
             },
             "value": "new string"
-          },
-          {
-            "name": "сброшенное поле",
-            "value": null
           }
         ]
       }'
@@ -845,17 +837,6 @@ curl -X PUT
           "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=4266864a-96c9-11eb-c0a8-100c00000034"
         }
       }
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc555d8-6501-11e8-2134-433200000000",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
-      },
-      "id": "7bc555d8-6501-11e8-2134-433200000000",
-      "name": "Вещественное число",
-      "type": "double",
-      "value": "234.5"
     },
     {
       "meta": {
