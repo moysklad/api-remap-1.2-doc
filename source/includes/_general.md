@@ -789,18 +789,6 @@ curl -X PUT
   -d '{
         "attributes": [
           {
-            "name": "обновленное доп. поле типа Сотрудник",
-            "value": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/4266864a-96c9-11eb-c0a8-100c00000034",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-                "type": "employee",
-                "mediaType": "application/json",
-                "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=4266864a-96c9-11eb-c0a8-100c00000034"
-              }                    
-            }
-          },
-          {
             "meta": {
               "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/986314b4-6500-11e8-9464-e4de00000048",
               "type": "attributemetadata",
@@ -819,25 +807,6 @@ curl -X PUT
 {
 ...
   "attributes": [
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/569a237e-96c9-11eb-c0a8-100c000000be",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
-      },
-      "id": "569a237e-96c9-11eb-c0a8-100c000000be",
-      "name": "обновленное доп. поле типа Сотрудник",
-      "type": "employee",
-      "value": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/4266864a-96c9-11eb-c0a8-100c00000034",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json",
-          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=4266864a-96c9-11eb-c0a8-100c00000034"
-        }
-      }
-    },
     {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/986314b4-6500-11e8-9464-e4de00000048",
