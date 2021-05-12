@@ -171,7 +171,7 @@ curl -X GET
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/3413f2dd-484e-11e8-6a80-332a00000091",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "service",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3412d794-484e-11e8-6a80-332a0000008f"
@@ -373,7 +373,7 @@ curl -X GET
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/3413f2dd-484e-11e8-6a80-332a00000091",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "service",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3412d794-484e-11e8-6a80-332a0000008f"

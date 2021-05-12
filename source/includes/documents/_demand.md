@@ -2950,7 +2950,7 @@ curl -X GET
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/60fc3826-00d7-11e6-9464-e4de00000097",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "service",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#service/edit?id=e64d0a86-2a99-11e9-ac12-000c00000041"
@@ -3335,7 +3335,7 @@ curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/d
     "assortment": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/c02e3a5c-007e-11e6-9464-e4de00000006",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "service",
         "mediaType": "application/json",
         "uuidHref": "https://online.moysklad.ru/app/#service/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002f"
