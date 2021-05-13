@@ -139,12 +139,6 @@
 
 Посмотреть все созданные в основном интерфейсе доп. поля Комплектов,
 а также все типы цен можно с помощью запроса на получение метаданных [Товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-metadannye-towarow).
-Ответ - объект, со следующей структурой:
-
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные |&mdash;|да
-|**attributes**        |Array(Object)|коллекция всех существующих доп. полей Комплектов|&mdash;|да
 
 
 Структуры объектов отдельных коллекций:
@@ -1258,85 +1252,6 @@ curl -X GET
     }
   ]
   ```
-  
-### Метаданные Комплектов
-#### Метаданные Комплектов
-Запрос на получение метаданных Комплектов. Результат - объект JSON, включающий в себя:
-
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные |&mdash;|да
-|**attributes**        |Array(Object)|Коллекция всех существующих доп. полей Комплектов|&mdash;|да
-
-Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
-
-> Получить метаданные комплектов
-
-```shell
-curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata"
-  -H "Authorization: Basic <Credentials>"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление доп. полей Комплектов.
-
-```json
-{
-  "meta": {
-    "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle",
-    "mediaType": "application/json"
-  },
-  "attributes": [
-    {
-      "meta": {
-        "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/5a374c72-ee21-11e6-8af5-581e00000003",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
-      },
-      "id": "5a374c72-ee21-11e6-8af5-581e00000003",
-      "name": "доп строка",
-      "type": "string",
-      "required": false
-    }
-  ]
-}
-```
-
-### Отдельное доп. поле
-
-**Параметры**
-
-|Параметр   |Описание   | 
-|:----|:----|
-|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
-
-#### Отдельное доп. поле
-
-> Запрос на получение информации по отдельному дополнительному полю.
-
-```shell
-curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельного доп. поля.
-
-```json
-{
-  "meta": {
-    "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/5a374c72-ee21-11e6-8af5-581e00000003",
-    "type": "attributemetadata",
-    "mediaType": "application/json"
-  },
-  "id": "5a374c72-ee21-11e6-8af5-581e00000003",
-  "name": "доп строка",
-  "type": "string",
-  "required": false
-}
-```
 
 ### Комплект
 
