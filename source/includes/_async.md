@@ -346,3 +346,68 @@ curl -X GET
 Если первоначальный запрос на создание задачи содержал ошибку, то в теле ответа результата выполнения будет текст с описанием этой ошибки. 
 
 После наступления даты, указанной в поле **deletionDate**, результат становится недоступен. 
+
+### Вебхуки Асинхронной задачи
+
+Настроить [вебхуки](dictionaries/#suschnosti-veb-huki) для асинхронной задачи можно аналогично остальным сущностям, но есть ряд исключений:
+
+* для асинхронных задач нельзя настроить вебхук на событие удаления, так как удаление асинхронных задач происходит автоматически
+* для асинхронных задач в вебхуках появляется новое событие `PROCESSED`. Оно означает, что задача завершилась и можно узнать ее статус
+* вебхук на обновление приходит, когда меняется статус асинхронной задачи
+
+При формировании запроса на создание вебхука в поле `entityType` нужно указать тип `async` - асинхронная задача.
+
+ > Пример запроса на создание вебхука на событие PROCESSED для Асинхронной задачи
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/webhook"
+  -H "Authorization: Bearer <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '{
+          "url": "http://some_url.ru",
+          "action": "PROCESSED",
+          "entityType": "async"
+      }'
+```
+
+> Response 200 
+> Пример полученного ответа
+
+```json
+{
+    "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/c6010bf9-a683-11eb-ac12-000900000001",
+        "metadataHref": "https://online.moysklad.ru//api/remap/1.2/entity/webhook/metadata",
+        "type": "webhook",
+        "mediaType": "application/json"
+    },
+    "id": "c6010bf9-a683-11eb-ac12-000900000001",
+    "accountId": "6c240ac7-a683-11eb-ac12-000c00000000",
+    "entityType": "async",
+    "url": "http://some_url.ru",
+    "method": "POST",
+    "enabled": true,
+    "action": "PROCESSED"
+}
+```
+
+На указанный в поле `url` адрес при срабатывании вебхука будет приходить сообщение, у которого в `meta` в поле `href` указан url 
+на получение статуса асинхронной задачи.
+
+> Пример результата срабатывания вебхука
+
+```json
+{
+  "events": [
+    {
+      "meta": {
+        "type": "async",
+        "href": "https://online.moysklad.ru/api/remap/1.2/async/91adc76b-a71c-11eb-ac12-000e00000000"
+      },
+      "action": "PROCESSED",
+      "accountId": "6c240ac7-a683-11eb-ac12-000c00000000"
+    }
+  ]
+}
+``` 

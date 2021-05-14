@@ -1,6 +1,8 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 26-04-2021
+#### Изменено
 
 ## 12-05-2021
 ### Добавлено
@@ -44,6 +46,10 @@
 - Для документа [`Оприходования`](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-oprihodowanie)
 теперь учитывается пермиссия `Видеть себестоимость, цену закупки и прибыль товаров`. При отсутствии пермиссии в json представлении 
 документа будет отсутствовать поле `sum`, а в позициях не будет поля `price`.
+
+## 27-04-2021
+### Добавлена
+- Возможность создавать [вебхуки](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki) для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen-vebhuki-asinhronnoj-zadachi)
 
 ## 26-04-2021
 ### Изменено
