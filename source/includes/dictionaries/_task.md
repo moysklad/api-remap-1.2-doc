@@ -877,7 +877,7 @@ curl -X GET
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
-            "text": "текст комментрания 3"
+            "text": "текст комментария 3"
           }'  
 ```
 
@@ -901,7 +901,7 @@ curl -X GET
         "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=98fa7086-8aa1-11e8-7210-075e0000002c"
       }
     },
-    "text": "текст комментрания 3",
+    "text": "текст комментария 3",
     "moment": "2018-07-19 22:31:28"
   }
 ]
