@@ -33,7 +33,7 @@
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
 |**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Товара|&mdash;|нет
 |**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет
-|**images**       |Array(Object)|Изображения Комплекта. Изображений у Модификации может быть не более 10. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-izobrazhenie-struktura-i-zagruzka)|&mdash;|нет
+|**images**       |MetaArray|Массив метаданных [Изображений](../dictionaries/#suschnosti-izobrazhenie) (Максимальное количество изображений - 10)|&mdash;|нет
 |**minPrice**         |Object|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-minimal-naq-cena)|&mdash;|нет
 |**salePrices**         |Array(Object)|Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-ceny-prodazhi)|&mdash;|нет
 |**buyPrice**         |Object|Закупочная цена. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-zakupochnaq-cena)|&mdash;|нет
