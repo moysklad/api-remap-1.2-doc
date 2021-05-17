@@ -37,7 +37,7 @@
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
 |**published**          |Boolean|Опубликован ли документ|Только для чтения|да
-|**vatSum**                |Float|Сумма включая НДС|&mdash;|да
+|**vatSum**                |Float|Сумма включая НДС|&mdash;|нет
 |**positions**          |MetaArray|Метаданные позиций Отгрузки|&mdash;|да
 |**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-otgruzka-otgruzki-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|&mdash;|нет
 |**payedSum**            |Float|Сумма входящих платежей по Отгрузке |Только для чтения|да

@@ -34,7 +34,7 @@
 |**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контрагента|&mdash;|да
 |**id**                 |UUID|ID Контрагента|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|нет
 |**shared**             |Boolean|Общий доступ|&mdash;|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**syncId**             |UUID|ID синхронизации |После заполнения недоступен для изменения|нет
@@ -53,8 +53,8 @@
 |**accounts**           |MetaArray|Массив счетов Контрагентов. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-scheta-kontragentow)|&mdash;| да
 |**companyType**        |Enum|Тип Контрагента. В зависимости от значения данного поля набор выводимых реквизитов контрагента может меняться. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta) |&mdash;| да |
 |**discountCardNumber** |String(255)|Номер дисконтной карты Контрагента |&mdash;| нет 
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Статуса Контрагента|&mdash;| да
-|**salesAmount**        |Int|Сумма продаж|Только для чтения| да
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Статуса Контрагента|&mdash;| нет
+|**salesAmount**        |Int|Сумма продаж|Только для чтения| нет
 |**bonusProgram**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные активной Бонусной программы|&mdash;| нет
 |**bonusPoints**        |Int|Бонусные баллы по активной бонусной программе|Только для чтения| нет            
 |**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|
