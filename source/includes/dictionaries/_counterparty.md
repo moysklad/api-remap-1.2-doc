@@ -54,7 +54,7 @@
 |**companyType**        |Enum|Тип Контрагента. В зависимости от значения данного поля набор выводимых реквизитов контрагента может меняться. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta) |&mdash;| да |
 |**discountCardNumber** |String(255)|Номер дисконтной карты Контрагента |&mdash;| нет 
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Статуса Контрагента|&mdash;| нет
-|**salesAmount**        |Int|Сумма продаж|Только для чтения| нет
+|**salesAmount**        |Int|Сумма продаж|Только для чтения| да
 |**bonusProgram**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные активной Бонусной программы|&mdash;| нет
 |**bonusPoints**        |Int|Бонусные баллы по активной бонусной программе|Только для чтения| нет            
 |**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|

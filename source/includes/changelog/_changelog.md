@@ -140,7 +140,7 @@
 - В Позиции Отгрузки добавлен список комплектов
 - Исправлено описание `product.packs.barcodes`, `consignment.barcodes`, `bundle.components`, `consignment.image`
 - Исправлено описание атрибута `images` в товарах, комплектах и модификациях
-- Исправлено указание на обязательность в ответе полей `uom.accountId`, `uom.group`, `product.minimumBalance`, `country.accountId`, `demand.vatSum`, `counterparty.salesAmount`, `counterparty.state`
+- Исправлено указание на обязательность в ответе полей `uom.accountId`, `uom.group`, `product.minimumBalance`, `country.accountId`, `demand.vatSum`, `counterparty.state`
 - Исправлено указание на обязательность в ответе поля `owner` в сущностях
 
 ### 12-05-2021
