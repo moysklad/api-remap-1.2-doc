@@ -79,7 +79,7 @@
 |**tags**             |Array(String)|Группы контрагента|&mdash;|нет
 |**contactpersons**   |MetaArray|Массив контактных лиц фирмы Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-kontaktnye-lica-kontragentow)|&mdash;|нет
 |**attributes**       |Array(Object)|Массив метаданных доп. полей|&mdash;|нет
-|**discounts**        |Array(Object)|Массив метаданных скидок. Массив может содержать персональные и накопительные скидки. Персональная скидка выводится, если хотя бы раз изменялся **процент скидки** для контрагента, значение будет указано в поле **personalDiscount**|Только для чтения|нет
+|**discounts**        |Array(Object)|Массив метаданных скидок. Массив может содержать персональные и накопительные скидки. Персональная скидка выводится, если хотя бы раз изменялся **процент скидки** для контрагента, значение будет указано в поле **personalDiscount**|&mdash;|нет
 |**notes**            |MetaArray|Массив событий Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-sobytiq-kontragenta)|&mdash;|нет
 |**priceType**        |Object|Тип цены Контрагента. [Подробнее тут](../dictionaries/#suschnosti-tipy-cen-tipy-cen)|&mdash;|нет
 
