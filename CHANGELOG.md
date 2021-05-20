@@ -5,6 +5,8 @@
 ### Добавлено
 - Добавлена возможность редактировать поле discounts у контрагента
 - Раскомплектовывание комплектов на составляющие компоненты при создании [шаблона заказа поставщику на основе](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-postawschiku-shablon-zakaza-postawschiku-na-osnowe)
+- Добавлена новая схема работы с ошибками и новый статус `API_ERROR` в
+  [асинхронныом обмене](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)
 
 ## 17-05-2021
 ### Документация
