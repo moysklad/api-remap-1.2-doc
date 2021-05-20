@@ -135,9 +135,18 @@
 <a name="lastchanges"></a><
 Список последних изменений в API Remap 1.2
 
-### 13-05-2021
+### 20-05-2021
 #### Добавлено
+- Добавлена возможность редактировать поле discounts у контрагента
 - Раскомплектовывание комплектов на составляющие компоненты при создании [шаблона заказа поставщику на основе](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-postawschiku-shablon-zakaza-postawschiku-na-osnowe)
+
+### 17-05-2021
+#### Документация
+- В Позиции Отгрузки добавлен список комплектов
+- Исправлено описание `product.packs.barcodes`, `consignment.barcodes`, `bundle.components`, `consignment.image`
+- Исправлено описание атрибута `images` в товарах, комплектах и модификациях
+- Исправлено указание на обязательность в ответе полей `uom.accountId`, `uom.group`, `product.minimumBalance`, `country.accountId`, `demand.vatSum`, `counterparty.state`
+- Исправлено указание на обязательность в ответе поля `owner` в сущностях
 
 ### 12-05-2021
 #### Добавлено
@@ -155,6 +164,10 @@
 #### Добавлено
 - Возможность выполнять запрос [получения списка Контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-poluchit-spisok-kontragentow)
  [асинхронно](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)
+
+### 27-04-2021
+#### Добавлена
+- Возможность создавать [вебхуки](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki) для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)
 
 ### 24-04-2021
 #### Документация
