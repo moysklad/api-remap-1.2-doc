@@ -1,6 +1,11 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 21-05-2021
+### Исправлено
+- В примерах исправлен url получения метаданных [Комплектов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt)
+  и [Услуг](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-usluga)
+
 ## 20-05-2021
 ### Добавлено
 - Добавлена возможность редактировать поле discounts у контрагента

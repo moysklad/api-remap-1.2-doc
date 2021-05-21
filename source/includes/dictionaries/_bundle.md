@@ -139,14 +139,7 @@
 Метаданные Комплектов содержат информацию о дополнительных полях.
 
 Посмотреть все созданные в основном интерфейсе доп. поля Комплектов,
-а также все типы цен можно с помощью запроса на получение метаданных Комплектов.
-Ответ - объект, со следующей структурой:
-
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные |&mdash;|да
-|**attributes**        |Array(Object)|коллекция всех существующих доп. полей Комплектов|&mdash;|да
-
+а также все типы цен можно с помощью запроса на получение метаданных [Товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-metadannye-towarow).
 
 Структуры объектов отдельных коллекций:
 
@@ -245,7 +238,7 @@ curl -X GET
   },
   "meta": {
     "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/",
-    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "bundle",
     "mediaType": "application/json",
     "size": 1,
@@ -256,7 +249,7 @@ curl -X GET
     {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023",
-        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "bundle",
         "mediaType": "application/json"
       },
@@ -481,7 +474,7 @@ curl -X GET
 {
   "meta": {
     "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023",
-    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "bundle",
     "mediaType": "application/json"
   },
@@ -669,7 +662,7 @@ curl -X GET
 {
   "meta": {
     "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023",
-    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "bundle",
     "mediaType": "application/json"
   },
@@ -928,7 +921,7 @@ curl -X GET
               {
                 "meta": {
                   "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023",
-                  "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+                  "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
                   "type": "bundle",
                   "mediaType": "application/json"
                 },
@@ -958,7 +951,7 @@ curl -X GET
     {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023",
-        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "bundle",
         "mediaType": "application/json"
       },
@@ -1109,7 +1102,7 @@ curl -X GET
     {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023",
-        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "bundle",
         "mediaType": "application/json"
       },
@@ -1261,83 +1254,9 @@ curl -X GET
   ```
   
 ### Метаданные Комплектов
-#### Метаданные Комплектов
-Запрос на получение метаданных Комплектов. Результат - объект JSON, включающий в себя:
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные |&mdash;|да
-|**attributes**        |Array(Object)|Коллекция всех существующих доп. полей Комплектов|&mdash;|да
-
-Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
-
-> Получить метаданные комплектов
-
-```shell
-curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata"
-  -H "Authorization: Basic <Credentials>"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление доп. полей Комплектов.
-
-```json
-{
-  "meta": {
-    "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle",
-    "mediaType": "application/json"
-  },
-  "attributes": [
-    {
-      "meta": {
-        "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata/attributes/5a374c72-ee21-11e6-8af5-581e00000003",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
-      },
-      "id": "5a374c72-ee21-11e6-8af5-581e00000003",
-      "name": "доп строка",
-      "type": "string",
-      "required": false
-    }
-  ]
-}
-```
-
-### Отдельное доп. поле
-
-**Параметры**
-
-|Параметр   |Описание   | 
-|:----|:----|
-|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
-
-#### Отдельное доп. поле
-
-> Запрос на получение информации по отдельному дополнительному полю.
-
-```shell
-curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельного доп. поля.
-
-```json
-{
-  "meta": {
-    "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata/attributes/5a374c72-ee21-11e6-8af5-581e00000003",
-    "type": "attributemetadata",
-    "mediaType": "application/json"
-  },
-  "id": "5a374c72-ee21-11e6-8af5-581e00000003",
-  "name": "доп строка",
-  "type": "string",
-  "required": false
-}
-```
+Посмотреть все созданные в основном интерфейсе доп. поля Комплектов,
+а также все типы цен можно с помощью запроса на получение метаданных [Товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-metadannye-towarow).
 
 ### Комплект
 
@@ -1364,7 +1283,7 @@ curl -X GET
 {
   "meta": {
     "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023",
-    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "bundle",
     "mediaType": "application/json"
   },
@@ -1517,7 +1436,7 @@ curl -X GET
 {
   "meta": {
     "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023",
-    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "bundle",
     "mediaType": "application/json"
   },
@@ -1702,14 +1621,14 @@ curl -X POST
         {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/bundle/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
             "type": "bundle",
             "mediaType": "application/json"
         },
         {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/bundle/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
             "type": "bundle",
             "mediaType": "application/json"
         }
@@ -1793,7 +1712,7 @@ curl -X GET
       "assortment": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/service/b3d8d132-ee08-11e6-8af5-581e00000013",
-          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "service",
           "mediaType": "application/json"
         }
