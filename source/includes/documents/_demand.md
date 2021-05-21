@@ -3550,40 +3550,40 @@ curl --location --request POST 'https://online.moysklad.ru/api/remap/1.2/entity/
          }
       ],
       "trackingCodes_1162":[
-        {
-           "cis_1162":"444D043603BEF0F97548704949662D6E5849483E31",
-           "type":"trackingcode"
-        },
-        {
-           "cis_1162":"0000",
-           "type":"transportpack"
-        },
-        {
-           "cis_1162":"0000",
-           "type":"transportpack",
-           "trackingCodes_1162":[
-              {
-                 "cis_1162":"444D043603BEF0F97548704949662D6E5849483E30",
-                 "type":"trackingcode"
-              },
-              {
-                 "cis_1162":"444D043603BEF0F97548704949662D6E5849483E34",
-                 "type":"trackingcode"
-              },
-              {
-                 "cis_1162":"444D043603BEF0F97548704949662D313131313134",
-                 "type":"trackingcode"
-              }
-           ]
-        },
-        {
-           "cis_1162":"444D043603BEF0F97548704949662D313131313232",
-           "type":"trackingcode"
-        },
-        {
-           "cis_1162":"444D043603BEF0F97548704949662D6E5849483E32",
-           "type":"trackingcode"
-        }
+         {
+            "cis_1162":"444D043603BEF0F97548704949662D313131313232",
+            "type":"trackingcode"
+         },
+         {
+            "cis_1162":"0000",
+            "type":"transportpack"
+         },
+         {
+            "cis_1162":"444D043603BEF0F97548704949662D6E5849483E31",
+            "type":"trackingcode"
+         },
+         {
+            "cis_1162":"0000",
+            "type":"transportpack",
+            "trackingCodes_1162":[
+               {
+                  "cis_1162":"444D043603BEF0F97548704949662D313131313134",
+                  "type":"trackingcode"
+               },
+               {
+                  "cis_1162":"444D043603BEF0F97548704949662D6E5849483E34",
+                  "type":"trackingcode"
+               },
+               {
+                  "cis_1162":"444D043603BEF0F97548704949662D6E5849483E30",
+                  "type":"trackingcode"
+               }
+            ]
+         },
+         {
+            "cis_1162":"444D043603BEF0F97548704949662D6E5849483E32",
+            "type":"trackingcode"
+         }
       ],
       "overhead":0.0
    }
