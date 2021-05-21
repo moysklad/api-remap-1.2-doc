@@ -691,7 +691,7 @@ curl -X GET
                 "assortment": {
                   "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/6767bc73-3d19-11e6-8a84-bae500000002",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
                     "type": "service",
                     "mediaType": "application/json"
                   }
@@ -970,7 +970,7 @@ curl -X GET
                 "assortment": {
                   "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/6767bc73-3d19-11e6-8a84-bae500000002",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
                     "type": "service",
                     "mediaType": "application/json"
                   }
@@ -1239,7 +1239,7 @@ curl -X GET
                   "assortment": {
                     "meta": {
                       "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/6767bc73-3d19-11e6-8a84-bae500000002",
-                      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+                      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
                       "type": "service",
                       "mediaType": "application/json"
                     }
@@ -1353,7 +1353,7 @@ curl -X GET
                   "assortment": {
                     "meta": {
                       "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/6767bc73-3d19-11e6-8a84-bae500000002",
-                      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+                      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
                       "type": "service",
                       "mediaType": "application/json"
                     }
@@ -2269,7 +2269,7 @@ curl -X GET
                 "assortment": {
                   "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/6767bc73-3d19-11e6-8a84-bae500000002",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
                     "type": "service",
                     "mediaType": "application/json"
                   }
