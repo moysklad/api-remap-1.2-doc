@@ -18,7 +18,7 @@
 |**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Товара|&mdash;|да
 |**id**                |UUID|ID Товара|Только для чтения|да
 |**accountId**         |UUID|ID учетной записи|Только для чтения|да
-|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|да
+|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|нет
 |**shared**         |Boolean|Общий доступ|&mdash;|да
 |**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|&mdash;|да
 |**syncId**                |UUID|ID синхронизации|После заполнения недоступно для изменения|нет
@@ -33,7 +33,7 @@
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
 |**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Товара|&mdash;|нет
 |**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет
-|**images**       |Array(Object)|Изображения Комплекта. Изображений у Модификации может быть не более 10. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-izobrazhenie-struktura-i-zagruzka)|&mdash;|нет
+|**images**       |MetaArray|Массив метаданных [Изображений](../dictionaries/#suschnosti-izobrazhenie) (Максимальное количество изображений - 10)|&mdash;|нет
 |**minPrice**         |Object|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-minimal-naq-cena)|&mdash;|нет
 |**salePrices**         |Array(Object)|Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-ceny-prodazhi)|&mdash;|нет
 |**buyPrice**         |Object|Закупочная цена. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-zakupochnaq-cena)|&mdash;|нет
@@ -46,7 +46,7 @@
 |**packs**         |Array(Object)|Упаковки Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)|&mdash;|нет
 |**alcoholic**         |Object|Объект, содержащий поля алкогольной продукции. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-ob-ekt-soderzhaschij-polq-alkogol-noj-produkcii)|&mdash;|нет
 |**variantsCount**         |Int|Количество модификаций у данного товара|Только для чтения|да
-|**minimumBalance**         |Int|Неснижаемый остаток|&mdash;|да
+|**minimumBalance**         |Int|Неснижаемый остаток|&mdash;|нет
 |**isSerialTrackable**         |Boolean|Учет по серийным номерам. Не может быть указан вместе с **alcoholic** и **weighed**|&mdash;|нет
 |**things**       |Array(String)|Серийные номера|&mdash;|нет
 |**barcodes**         |Array(Object)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-shtrihkody)|&mdash;|нет
@@ -75,6 +75,7 @@
 | **PERFUMERY**         |Духи и туалетная вода|
 | **ELECTRONICS**       |Фотокамеры и лампы-вспышки|
 | **TIRES**       |Шины и покрышки|
+| **MILK**       |Молочная продукция|
 | **OTP**       |Альтернативная табачная продукция|
 
 ##### Признак предмета расчета
@@ -161,7 +162,7 @@
 |**id**             |UUID|ID упаковки товара|Только для чтения|да
 |**uom**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные единиц измерения|&mdash;|да
 |**quantity**            |Float|Количество Товаров в упаковке данного вида|Необходимое при создании|да
-|**barcodes**         |Array(String)|Массив штрихкодов упаковок товаров. Данный массив может содержать не более одного штрихкода. Если штрихкод в массиве отсутствует, то данное поле не выводится|&mdash;|нет
+|**barcodes**         |Array(Object)|Массив штрихкодов упаковок товаров. Данный массив может содержать не более одного штрихкода. Если штрихкод в массиве отсутствует, то данное поле не выводится|&mdash;|нет
 
 В версии API 1.2 был удален отдельный ресурс для работы с упаковками товаров. Теперь упаковки - вложенная коллекция.
 Для того, чтобы создать новую упаковку для данного товара, нужно в запросе на обновление товара указать ее как элемент

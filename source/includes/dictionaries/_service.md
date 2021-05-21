@@ -17,7 +17,7 @@
 |**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Услуги|&mdash;|да
 |**id**                |UUID|ID Услуги|Только для чтения|да
 |**accountId**         |UUID|ID учетной записи|Только для чтения|да
-|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|да
+|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|нет
 |**shared**         |Boolean|Общий доступ|&mdash;|да
 |**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|&mdash;|да
 |**syncId**                |UUID|ID синхронизации|После заполнения недоступно для изменения|нет

@@ -38,7 +38,7 @@ Content-Location: https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-1
 
 Делаем запрос остатков с параметром `async=true`. Параметры строки запроса **limit** и **offset** указывать не нужно, так как отчет будет построен полностью. 
 В заголовке ответа **Location** будет ссылка на получение результата асинхронной задачи, а в заголовке **Сontent-Location** хранится ссылка на получение статуса выполнения асинхронной задачи.
-Пока задача находится в процессе выполнения, создание новых асинхронных задач будет ограничено текущими лимитами на выполнение 
+Пока задачи находятся в процессе выполнения, создание новых асинхронных задач будет [ограничено текущими лимитами](../#mojsklad-json-api-obschie-swedeniq-ogranicheniq) на очередь 
 асинхронных задач и при повторении запроса будет ошибка 61002: 
 `Ошибка при создании асинхронной задачи: превышено ограничение на количество одновременно выполняемых асинхронных операций.`
 
@@ -76,6 +76,11 @@ curl -X GET
 
 ```json
 {
+  "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089",
+      "type": "async",
+      "mediaType": "application/json"
+  },
   "id": "498b8673-0308-11e6-9464-e4de00000089",
   "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
   "owner": {
@@ -98,6 +103,88 @@ curl -X GET
 Это можно сделать, отправляя запросы на URL из заголовка **Content-Location** ответа на запрос создания задачи.
 Если статус задачи (поле **state**) имеет значение `PROCESSING`, значит результат задачи еще не готов, и запрос на получение результата нужно повторить через некоторое время.
 Как только статус задачи примет значение `DONE` - результат задачи готов, и можно переходить к получению результата.
+
+> Запрос на получение Асинхронных задач с результатом
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/async?filter=state=done&deletionDate<2021-02-16 16:21:09"
+  -H "Authorization: Bearer <Access-Token>"
+```
+
+> Ответ
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/async?filter=state=done;deletionDate%3C2021-02-16%2016:21:09",
+    "type": "async",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/async/baade4ee-a1d0-11eb-ac12-000b00000000",
+        "type": "async",
+        "mediaType": "application/json"
+      },
+      "id": "baade4ee-a1d0-11eb-ac12-000b00000000",
+      "accountId": "4f811ce5-983a-11eb-0a80-1d0d00000002",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/4fe188f9-983a-11eb-0a80-39d600000034",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=4fe188f9-983a-11eb-0a80-39d600000034"
+        }
+      },
+      "state": "DONE",
+      "request": "https://online.moysklad.ru/api/remap/1.2/report/stock/all?async=true",
+      "resultUrl": "https://online.moysklad.ru/api/remap/1.2/async/baade4ee-a1d0-11eb-ac12-000b00000000/result",
+      "deletionDate": "2021-04-16 16:07:13.027"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/async/d2bfbf9f-a1e0-11eb-ac12-000b00000000",
+        "type": "async",
+        "mediaType": "application/json"
+      },
+      "id": "d2bfbf9f-a1e0-11eb-ac12-000b00000000",
+      "accountId": "4f811ce5-983a-11eb-0a80-1d0d00000002",
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/4fe188f9-983a-11eb-0a80-39d600000034",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=4fe188f9-983a-11eb-0a80-39d600000034"
+        }
+      },
+      "state": "DONE",
+      "request": "https://online.moysklad.ru/api/remap/1.2/report/stock/bystore?async=true",
+      "resultUrl": "https://online.moysklad.ru/api/remap/1.2/async/d2bfbf9f-a1e0-11eb-ac12-000b00000000/result",
+      "deletionDate": "2021-04-16 16:07:19.301"
+    }
+  ]
+}
+```
+
+Также можно следить за статусами выполнения нескольких задач. Для этого можно отправлять запросы на ресурс получения статусов асинхронных задач.
+Допустим, мы хотим получить все асинхронные задачи, для которых доступен результат. Для этого укажем фильтр на статус задачи со значением `DONE` и на время удаления меньше текущего времени.
 
 ### 3. Получение результата задачи
 
@@ -223,8 +310,20 @@ Location: https://123.selcdn.ru/batch-prod/batch/002b9772-8583-11eb-ac12-000c000
 
 Полученный отчет имеет незначительные отличия от синхронного варианта: **meta** не содержит полей **limit** и **offset**, а массив **rows** не ограничивается 1000 элементов.
 
-> Response 200 
-Пример результата задачи, который содержит описание ошибки 
+Если статус задачи имеет значение `API_ERROR`, то в json ответе на запрос получения результата задачи будет указана [ошибка](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki), 
+аналогичная той, которую вернул синхронный вызов ресурса.
+
+> Пример запроса на получение результата Асинхронной задачи со статусом API_ERROR
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089/result"
+  -H "Authorization: Bearer <Access-Token>"
+```
+
+> Пример результата задачи, который содержит описание ошибки 
+Response 403 Forbidden 
+ 
 
 ```json
 {
@@ -235,7 +334,55 @@ Location: https://123.selcdn.ru/batch-prod/batch/002b9772-8583-11eb-ac12-000c000
         }
     ]
 }
-```  
+```
 
 Если в процессе выполнения задачи что-то пошло не так, например, у пользователя нет доступа к отчету или не указаны обязательные заголовки,
 то задача будет помечена как успешно выполненная, а результат будет содержать текст с описанием ошибки.
+
+### 4. Настройка вебхука на завершение выполнения Асинхронной задачи
+
+Для того, чтобы не опрашивать эндпоинт статуса выполняемой асинхронной задачи можно настроить [вебхук](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki) на оповещение, когда задача будет завершена.
+Как и для обычных вебхуков, необходимо задать:
+ 
+ * тип сущности `entityType`, в нашем случае это будет `async`
+ * действие `action`, на которое должен сработать вебхук, в данном случае это будет `PROCESSED`
+ * и адрес `url` куда будет отправлено сообщение при срабатывание вебхука
+ 
+> Пример запроса на создание вебхука на событие выполненияАсинхронной задачи
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/webhook"
+  -H "Authorization: Bearer <Access-Token>"
+  -H "Content-Type: application/json"
+  -d '{
+          "url": "http://some_url.ru",
+          "action": "PROCESSED",
+          "entityType": "async"
+      }'
+```   
+
+> Response 200 
+> Пример полученного отчета
+
+```json
+{
+    "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/c6010bf9-a683-11eb-ac12-000900000001",
+        "metadataHref": "https://online.moysklad.ru//api/remap/1.2/entity/webhook/metadata",
+        "type": "webhook",
+        "mediaType": "application/json"
+    },
+    "id": "c6010bf9-a683-11eb-ac12-000900000001",
+    "accountId": "6c240ac7-a683-11eb-ac12-000c00000000",
+    "entityType": "async",
+    "url": "http://some_url.ru",
+    "method": "POST",
+    "enabled": true,
+    "action": "PROCESSED"
+}
+```
+
+На этом настройка оповещения о завершении выполнения асинхронной закончена закончена. Тепрерь вам будут приходить вебхуки, 
+на указанный адрес, каждый раз, когда завершается выполнение асинхронной задачи. Таким образом вам не понадобится запрашивать 
+состояние асинхронной задачи, до тех пор, пока не придет вебхук.
