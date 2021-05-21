@@ -3,6 +3,10 @@
 
 ## 20-05-2021
 ### Добавлено
+ - Возможность получать коды маркировки товаров и транспортных упаковок в формате тега 1162 (поле `trackingCodes_1162`) для документа типа [Отгрузка](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka-otgruzki-kody-markirowki-towarow-i-transportnyh-upakowok-w-formate-tega-1162).
+
+## 20-05-2021
+### Добавлено
 - Добавлена возможность редактировать поле discounts у контрагента
 - Раскомплектовывание комплектов на составляющие компоненты при создании [шаблона заказа поставщику на основе](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-postawschiku-shablon-zakaza-postawschiku-na-osnowe)
 - Добавлена новая схема работы с ошибками и новый статус `API_ERROR` в
