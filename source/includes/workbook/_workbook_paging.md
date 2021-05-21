@@ -411,7 +411,7 @@ curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://onlin
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/bundle/e5da18eb-b152-11ea-ac12-000c00000002",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "bundle",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=e5d864ae-b152-11ea-ac12-000c00000000"

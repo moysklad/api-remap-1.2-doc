@@ -49,7 +49,7 @@ curl -X POST
   + Не более 5 параллельных запросов от одного пользователя
   + Не более 20 параллельных запросов от аккаунта
   + Не более 20 Мб данных в одном запросе, отправляемом на сервер
-  + Не более 1 [асинхронной задачи](#mojsklad-json-api-asinhronnyj-obmen) на аккаунт
+  + Не более 4 [асинхронных задач](#mojsklad-json-api-asinhronnyj-obmen) в очереди на аккаунт
 
 Также накладывается ограничение на максимальное число объектов (позиций, материалов, продуктов), передаваемых в одном массиве в запросе - не более 1000 элементов.
 В случае, если количество элементов коллекции превышает максимально допустимое, произойдет ошибка со статусом 413.
@@ -124,7 +124,7 @@ curl -X GET
 {
   "service": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
       "mediaType": "application/json"
     }
   },
@@ -341,7 +341,7 @@ JSON API позволяет создавать, обновлять и удаля
 
 С коллекцией доп. полей можно работать только в контексте отдельной сущности. Доп. поля и их значения
 можно передать в коллекции **attributes** в теле запроса как на создание, так и на обновление сущности.
-В качестве указания доп. поля можно использовать любое из полей **id**, **meta** и **name**.
+В качестве указания доп. поля нужно использовать поле **meta**.
 В переданном массиве объектов можно указать не все доп. поля - проинициализируются/обновятся только указанные.
 
 #### Дополнительные поля типа файл
@@ -789,32 +789,12 @@ curl -X PUT
   -d '{
         "attributes": [
           {
-            "name": "обновленное доп. поле типа Сотрудник",
-            "value": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/4266864a-96c9-11eb-c0a8-100c00000034",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-                "type": "employee",
-                "mediaType": "application/json",
-                "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=4266864a-96c9-11eb-c0a8-100c00000034"
-              }                    
-            }
-          },
-          {
-            "id": "7bc555d8-6501-11e8-2134-433200000000",
-            "value": 234.5
-          },
-          {
             "meta": {
               "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/986314b4-6500-11e8-9464-e4de00000048",
               "type": "attributemetadata",
               "mediaType": "application/json"
             },
             "value": "new string"
-          },
-          {
-            "name": "сброшенное поле",
-            "value": null
           }
         ]
       }'
@@ -827,36 +807,6 @@ curl -X PUT
 {
 ...
   "attributes": [
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/569a237e-96c9-11eb-c0a8-100c000000be",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
-      },
-      "id": "569a237e-96c9-11eb-c0a8-100c000000be",
-      "name": "обновленное доп. поле типа Сотрудник",
-      "type": "employee",
-      "value": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/4266864a-96c9-11eb-c0a8-100c00000034",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json",
-          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=4266864a-96c9-11eb-c0a8-100c00000034"
-        }
-      }
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc555d8-6501-11e8-2134-433200000000",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
-      },
-      "id": "7bc555d8-6501-11e8-2134-433200000000",
-      "name": "Вещественное число",
-      "type": "double",
-      "value": "234.5"
-    },
     {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/986314b4-6500-11e8-9464-e4de00000048",
