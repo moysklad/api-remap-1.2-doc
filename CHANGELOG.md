@@ -2,6 +2,10 @@
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
 ## 21-05-2021
+### Изменено
+- Исправлена отметка об обязательности складов для части документов
+
+## 21-05-2021
 ### Исправлено
 - В примерах исправлен url получения метаданных [Комплектов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt)
   и [Услуг](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-usluga)
