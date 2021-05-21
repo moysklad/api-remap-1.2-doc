@@ -4,6 +4,10 @@
 ## 21-05-2021
 ### Изменено
 - Исправлена отметка об обязательности складов для части документов
+- Добавлен новый эндпоинт для системных ролей
+- Добавлен новый эндпоинт (crud) для пользовательских ролей
+- Новый ресурс [отмены асинхронной задачи](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen-otmena-asinhronnoj-zadachi)
+- Ошибка [61007](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-asinhronnogo-obmena)
 
 ## 21-05-2021
 ### Исправлено
@@ -25,7 +29,7 @@
 - Исправлено указание на обязательность в ответе полей `uom.accountId`, `uom.group`, `product.minimumBalance`, `country.accountId`, `demand.vatSum`, `counterparty.state`
 - Исправлено указание на обязательность в ответе поля `owner` в сущностях
 
-## 12-05-2021
+## 27-04-2021
 ### Добавлено
 - Очередь для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)
 - Обновлен список [ограничений](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-ogranicheniq) (добавлена информация про размер очереди асинхронных задач)
@@ -45,11 +49,6 @@
 ## 28-04-2021
 ### Добавлено
 - Поле `earnWhileRedeeming` в [Бонусную программу](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-bonusnaq-programma)
-
-## 28-04-2021
-### Добавлено
-- Добавлен новый эндпоинт для системных ролей 
-- Добавлен новый эндпоинт (crud) для пользовательских ролей
 
 ## 28-04-2021
 ### Документация
