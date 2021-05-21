@@ -47,6 +47,11 @@
 - Поле `earnWhileRedeeming` в [Бонусную программу](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-bonusnaq-programma)
 
 ## 28-04-2021
+### Добавлено
+- Добавлен новый эндпоинт для системных ролей 
+- Добавлен новый эндпоинт (crud) для пользовательских ролей
+
+## 28-04-2021
 ### Документация
 - Добавлен новый раздел [Подписка компании](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-podpiska-kompanii)
 
