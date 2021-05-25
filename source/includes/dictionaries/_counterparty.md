@@ -34,7 +34,7 @@
 |**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контрагента|&mdash;|да
 |**id**                 |UUID|ID Контрагента|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|нет
 |**shared**             |Boolean|Общий доступ|&mdash;|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**syncId**             |UUID|ID синхронизации |После заполнения недоступен для изменения|нет
@@ -42,7 +42,7 @@
 |**name**               |String(255)|Наименование Контрагента|Необходимое при создании|да
 |**description**        |String(4096)|Комментарий к Контрагенту |&mdash;|нет
 |**code**               |String(255)|Код Контрагента |&mdash;| нет
-|**externalCode**       |String(255)|Внешний код Контрагента |Только для чтения| да
+|**externalCode**       |String(255)|Внешний код Контрагента |&mdash;| да
 |**archived**           |Boolean|Добавлен ли Контрагент в архив|&mdash;| да
 |**created**            |DateTime|Момент создания|&mdash;| да
 |**email**              |String(255)|Адрес электронной почты |&mdash;| нет
@@ -53,7 +53,7 @@
 |**accounts**           |MetaArray|Массив счетов Контрагентов. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-scheta-kontragentow)|&mdash;| да
 |**companyType**        |Enum|Тип Контрагента. В зависимости от значения данного поля набор выводимых реквизитов контрагента может меняться. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta) |&mdash;| да |
 |**discountCardNumber** |String(255)|Номер дисконтной карты Контрагента |&mdash;| нет 
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Статуса Контрагента|&mdash;| да
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Статуса Контрагента|&mdash;| нет
 |**salesAmount**        |Int|Сумма продаж|Только для чтения| да
 |**bonusProgram**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные активной Бонусной программы|&mdash;| нет
 |**bonusPoints**        |Int|Бонусные баллы по активной бонусной программе|Только для чтения| нет            
@@ -78,7 +78,7 @@
 |**tags**             |Array(String)|Группы контрагента|&mdash;|нет
 |**contactpersons**   |MetaArray|Массив контактных лиц фирмы Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-kontaktnye-lica-kontragentow)|&mdash;|нет
 |**attributes**       |Array(Object)|Массив метаданных доп. полей|&mdash;|нет
-|**discounts**        |Array(Object)|Массив метаданных скидок. Массив может содержать персональные и накопительные скидки. Персональная скидка выводится, если хотя бы раз изменялся **процент скидки** для контрагента, значение будет указано в поле **personalDiscount**|Только для чтения|нет
+|**discounts**        |Array(Object)|Массив метаданных скидок. Массив может содержать персональные и накопительные скидки. Персональная скидка выводится, если хотя бы раз изменялся **процент скидки** для контрагента, значение будет указано в поле **personalDiscount**|&mdash;|нет
 |**notes**            |MetaArray|Массив событий Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-sobytiq-kontragenta)|&mdash;|нет
 |**priceType**        |Object|Тип цены Контрагента. [Подробнее тут](../dictionaries/#suschnosti-tipy-cen-tipy-cen)|&mdash;|нет
 

@@ -13,6 +13,7 @@
 |**deleted**            |DateTime|Момент последнего удаления Выплаты денег |Только для чтения|нет
 |**name**               |String(255)|Наименование Выплаты денег |&mdash;|да
 |**description**        |String(4096)|Комментарий Выплаты денег |&mdash;|нет
+|**code**               |String(255)|Код Выплаты денег  |&mdash;| нет
 |**externalCode**       |String(255)|Внешний код Выплаты денег  |&mdash;| да
 |**moment**             |DateTime|Дата Счета|&mdash;|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да

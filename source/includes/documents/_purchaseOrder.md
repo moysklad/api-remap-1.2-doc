@@ -14,6 +14,7 @@
 |**deleted**            |DateTime|Момент последнего удаления Заказа поставщику|Только для чтения|нет
 |**name**               |String(255)|Наименование Заказа поставщику|&mdash;|да
 |**description**        |String(4096)|Комментарий Заказа поставщику|&mdash;|нет
+|**code**               |String(255)|Код Заказа поставщику|&mdash;| нет
 |**externalCode**       |String(255)|Внешний код Заказа поставщику|&mdash;| да
 |**moment**             |DateTime|Дата Заказа|&mdash;|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да
@@ -26,7 +27,7 @@
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
 |**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
-|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|&mdash;|да
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|&mdash;|нет
 |**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса заказа|&mdash;|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
@@ -1686,6 +1687,12 @@ curl -X GET
 Запрос на получение предзаполненного шаблона заказа поставщику на основе внутреннего заказа или заказа покупателя.
 В ответ на запрос вернется предзаполненный шаблон заказа поставщику, который
 затем можно будет использовать для создания нового заказа с помощью POST запроса.
+
+При создании документа на основании заказа покупателя, содержащего комплекты в позициях,
+комплекты будут автоматически разбиты на составляющие компоненты в отдельные позиции.
+
+Если у указанного в качестве основания документа уже есть связанный с ним заказ поставщику, то позиции, указанные в нем,
+в созданном шаблоне указаны не будут.
 
 > Пример запроса на получение шаблона заказа поставщику на основе внутреннего заказа.
 

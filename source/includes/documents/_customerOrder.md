@@ -13,6 +13,7 @@
 |**deleted**            |DateTime|Момент последнего удаления Заказа покупателя|Только для чтения|нет
 |**name**               |String(255)|Наименование Заказа покупателя|&mdash;|да
 |**description**        |String(4096)|Комментарий Заказа покупателя|&mdash;|нет
+|**code**               |String(255)|Код Заказа покупателя|&mdash;| нет
 |**externalCode**       |String(255)|Внешний код Заказа покупателя|&mdash;| да
 |**moment**             |DateTime|Дата Заказа|&mdash;|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да
@@ -25,7 +26,7 @@
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
 |**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
-|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|&mdash;|да
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|&mdash;|нет
 |**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса заказа|&mdash;|нет
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет

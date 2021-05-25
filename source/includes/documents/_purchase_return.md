@@ -13,6 +13,7 @@
 |**deleted**            |DateTime|Момент последнего удаления Возврата поставщику|Только для чтения|нет
 |**name**               |String(255)|Наименование Возврата поставщику|&mdash;|да
 |**description**        |String(4096)|Комментарий Возврата поставщику |&mdash;|нет
+|**code**               |String(255)|Код Возврата поставщику |&mdash;| нет
 |**externalCode**       |String(255)|Внешний код Возврата поставщику |&mdash;| да
 |**moment**             |DateTime|Дата Счета|&mdash;|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да
@@ -690,7 +691,7 @@ curl -X GET
                 "assortment": {
                   "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/6767bc73-3d19-11e6-8a84-bae500000002",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
                     "type": "service",
                     "mediaType": "application/json"
                   }
@@ -969,7 +970,7 @@ curl -X GET
                 "assortment": {
                   "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/6767bc73-3d19-11e6-8a84-bae500000002",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
                     "type": "service",
                     "mediaType": "application/json"
                   }
@@ -1238,7 +1239,7 @@ curl -X GET
                   "assortment": {
                     "meta": {
                       "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/6767bc73-3d19-11e6-8a84-bae500000002",
-                      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+                      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
                       "type": "service",
                       "mediaType": "application/json"
                     }
@@ -1352,7 +1353,7 @@ curl -X GET
                   "assortment": {
                     "meta": {
                       "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/6767bc73-3d19-11e6-8a84-bae500000002",
-                      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+                      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
                       "type": "service",
                       "mediaType": "application/json"
                     }
@@ -2268,7 +2269,7 @@ curl -X GET
                 "assortment": {
                   "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/6767bc73-3d19-11e6-8a84-bae500000002",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
                     "type": "service",
                     "mediaType": "application/json"
                   }
