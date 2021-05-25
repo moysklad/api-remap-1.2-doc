@@ -5,30 +5,30 @@
 
 ##### Атрибуты сущности
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Бонусной операции|&mdash;|да
-|**id**                 |UUID|ID Бонусной операции|Только для чтения|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|нет
-|**shared**             |Boolean|Общий доступ|&mdash;|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
-|**updated**            |DateTime|Момент последнего обновления Бонусной операции|&mdash;|да
-|**created**           |DateTime|Момент создания Бонусной операции|&mdash;|да
-|**code**               |String(255)|Код Бонусной операции|&mdash;| нет
-|**externalCode**       |String(255)|Внешний код Бонусной операции|&mdash;| да
-|**name**               |String(255)|Наименование Бонусной операции|&mdash;|нет
-|**applicable**             |Boolean|Отметка о проведении|&mdash;|да
-|**moment**            |DateTime|Время проведения бонусной операции|&mdash;|нет
-|**agent**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контрагента, связанного с бонусной операцией|Необходимое при создании|да
-|**parentDocument**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные связанного документа бонусной операции|&mdash;|нет
-|**bonusProgram**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные бонусной программы|&mdash;|нет
-|**bonusValue**             |Int|Количество бонусных баллов|&mdash;|нет
-|**organization**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|&mdash;|нет
-|**transactionType**              |Enum|Тип бонусной операции. Возможные значения: `EARNING`, `SPENDING`|Необходимое при создании|да
-|**transactionStatus**  |Enum |Статус бонусной операции. Возможные значения: `WAIT_PROCESSING`, `COMPLETED`, `CANCELED` |Только для чтения |нет
-|**executionDate**      |DateTime |Дата начисления бонусной операции. |&mdash; |нет
-|**categoryType**       |Enum |Категория бонусной операции. Возможные значения: `REGULAR`, `WELCOME` |Только для чтения |нет
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Бонусной операции|&mdash;|да|нет
+|**id**                 |UUID|ID Бонусной операции|Только для чтения|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|нет|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да|нет
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да|да
+|**updated**            |DateTime|Момент последнего обновления Бонусной операции|&mdash;|да|нет
+|**created**           |DateTime|Момент создания Бонусной операции|&mdash;|да|нет
+|**code**               |String(255)|Код Бонусной операции|&mdash;| нет|нет
+|**externalCode**       |String(255)|Внешний код Бонусной операции|&mdash;| да|нет
+|**name**               |String(255)|Наименование Бонусной операции|&mdash;|нет|нет
+|**applicable**             |Boolean|Отметка о проведении|&mdash;|да|нет
+|**moment**            |DateTime|Время проведения бонусной операции|&mdash;|нет|нет
+|**agent**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контрагента, связанного с бонусной операцией|Необходимое при создании|да|да
+|**parentDocument**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные связанного документа бонусной операции|&mdash;|нет|да
+|**bonusProgram**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные бонусной программы|&mdash;|нет|да
+|**bonusValue**             |Int|Количество бонусных баллов|&mdash;|нет|нет
+|**organization**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|&mdash;|нет|да
+|**transactionType**              |Enum|Тип бонусной операции. Возможные значения: `EARNING`, `SPENDING`|Необходимое при создании|да|нет
+|**transactionStatus**  |Enum |Статус бонусной операции. Возможные значения: `WAIT_PROCESSING`, `COMPLETED`, `CANCELED` |Только для чтения |нет|нет
+|**executionDate**      |DateTime |Дата начисления бонусной операции. |&mdash; |нет|нет
+|**categoryType**       |Enum |Категория бонусной операции. Возможные значения: `REGULAR`, `WELCOME` |Только для чтения |нет|нет
 
 ##### Атрибут "executionDate".
 При создании или редактировании бонусной операции начисления данный атрибут позволяет указать дату обработки операции.
@@ -283,11 +283,11 @@ curl -X GET
 Запрос на создание новой бонусной операции на данной учетной записи.
 Обязательные для создания поля:
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**agent** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контрагента, связанного с бонусной операцией| Необходимое при создании|да
-|**bonusProgram** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Бонусной программы| Необходимое при создании|да
-|**transactionType** |Enum|Тип бонусной операции| Необходимое при создании|да
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**agent** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контрагента, связанного с бонусной операцией| Необходимое при создании|да|нет
+|**bonusProgram** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Бонусной программы| Необходимое при создании|да|нет
+|**transactionType** |Enum|Тип бонусной операции| Необходимое при создании|да|нет
 
 > Пример запроса на создание новой бонусной операции.
 

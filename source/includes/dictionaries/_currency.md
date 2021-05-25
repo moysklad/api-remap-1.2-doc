@@ -10,23 +10,23 @@
 
 ##### Атрибуты Сущности
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Валюты|&mdash;|да
-|**id**                |UUID|ID Валюты|Только для чтения|да
-|**name**         |String(255)|Краткое аименование Валюты|Необходимое при создании|да
-|**fullName**         |String(255)|Полное наименование Валюты|&mdash;|нет
-|**code** |String(255)| Цифровой код Валюты|Необходимое при создании|да
-|**isoCode** |String(255)| Буквенный код Валюты|Необходимое при создании|да
-|**rate** |Double| Курс Валюты|&mdash;|да
-|**multiplicity** |Int| Кратность курса Валюты|&mdash;|да
-|**indirect** |Boolean| Признак обратного курса Валюты|&mdash;|да
-|**rateUpdateType** |Boolean| Способ обновления курса Валюты|Только для чтения|да
-|**majorUnit** |Object| Формы единиц целой части Валюты.  [Подробнее тут](../dictionaries/#suschnosti-valuta-obnowit-nastrojki-sprawochnika-towarow-atributy-wlozhennyh-suschnostej-formy-edinic)|&mdash;|да
-|**minorUnit** |Object| Формы единиц дробной части Валюты.  [Подробнее тут](../dictionaries/#suschnosti-valuta-obnowit-nastrojki-sprawochnika-towarow-atributy-wlozhennyh-suschnostej-formy-edinic)|&mdash;|да
-|**archived** |Boolean| Добавлена ли Валюта в архив|&mdash;|да
-|**system** |Boolean| Основана ли валюта на валюте из системного справочника|Только для чтения|нет
-|**default** |Boolean| Является ли валюта валютой учета|Только для чтения|да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Валюты|&mdash;|да|нет
+|**id**                |UUID|ID Валюты|Только для чтения|да|нет
+|**name**         |String(255)|Краткое аименование Валюты|Необходимое при создании|да|нет
+|**fullName**         |String(255)|Полное наименование Валюты|&mdash;|нет|нет
+|**code** |String(255)| Цифровой код Валюты|Необходимое при создании|да|нет
+|**isoCode** |String(255)| Буквенный код Валюты|Необходимое при создании|да|нет
+|**rate** |Double| Курс Валюты|&mdash;|да|нет
+|**multiplicity** |Int| Кратность курса Валюты|&mdash;|да|нет
+|**indirect** |Boolean| Признак обратного курса Валюты|&mdash;|да|нет
+|**rateUpdateType** |Boolean| Способ обновления курса Валюты|Только для чтения|да|нет
+|**majorUnit** |Object| Формы единиц целой части Валюты.  [Подробнее тут](../dictionaries/#suschnosti-valuta-obnowit-nastrojki-sprawochnika-towarow-atributy-wlozhennyh-suschnostej-formy-edinic)|&mdash;|да|нет
+|**minorUnit** |Object| Формы единиц дробной части Валюты.  [Подробнее тут](../dictionaries/#suschnosti-valuta-obnowit-nastrojki-sprawochnika-towarow-atributy-wlozhennyh-suschnostej-formy-edinic)|&mdash;|да|нет
+|**archived** |Boolean| Добавлена ли Валюта в архив|&mdash;|да|нет
+|**system** |Boolean| Основана ли валюта на валюте из системного справочника|Только для чтения|нет|нет
+|**default** |Boolean| Является ли валюта валютой учета|Только для чтения|да|нет
 
 ##### Формы единиц
 
