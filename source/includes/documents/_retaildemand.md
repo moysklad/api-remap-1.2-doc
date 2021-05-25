@@ -56,7 +56,7 @@
 |**prepaymentNoCashSum**                |Float|Предоплата картой|&mdash;|да
 |**prepaymentQrSum**                |Float|Предоплата по QR-коду|&mdash;|да
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|да
-|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 
 ##### Код системы налогообложения
 Значения поля taxSystem.

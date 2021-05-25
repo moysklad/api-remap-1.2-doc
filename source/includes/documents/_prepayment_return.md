@@ -47,7 +47,7 @@
 |**qrSum**                  |Float|Оплачено по QR-коду|&mdash;|да
 |**positions**          |MetaArray|Метаданные позиций Возврата предоплаты|&mdash;|да
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-vozwrat-predoplaty-atributy-suschnosti-poluchit-poziciu-predoplaty-kod-sistemy-nalogooblozheniq)|&mdash;|нет
-|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 
 ##### Код системы налогообложения
 Значения поля taxSystem.
