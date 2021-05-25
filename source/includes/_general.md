@@ -124,7 +124,7 @@ curl -X GET
 {
   "service": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
       "mediaType": "application/json"
     }
   },
