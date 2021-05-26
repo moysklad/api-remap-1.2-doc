@@ -22,7 +22,7 @@
 |**externalCode**      |String(255)|Внешний код Модификации|&mdash;|да
 |**archived**          |Boolean|Добавлен ли товар в архив|&mdash;|да
 |**characteristics**   |Array(Object)|Характеристики Модификации. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-metadannye-modifikacij-harakteristiki-modifikacii)|Необходимое при создании|да
-|**images**            |Array(Object)|Изображения Модификации. Изображений у Модификации может быть не более 10. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-izobrazhenie-struktura-i-zagruzka)|&mdash;|да
+|**images**            |MetaArray|Массив метаданных [Изображений](../dictionaries/#suschnosti-izobrazhenie) (Максимальное количество изображений - 10)|&mdash;|да
 |**minPrice**          |Object|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-minimal-naq-cena)|&mdash;|нет
 |**buyPrice**          |Object|Закупочная цена|&mdash;|нет
 |**salePrices**        |Array(Object)|Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-ceny-prodazhi)|&mdash;|нет

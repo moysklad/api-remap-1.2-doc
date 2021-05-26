@@ -33,11 +33,11 @@
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет
 |**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
-|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
 |**published**          |Boolean|Опубликован ли документ|Только для чтения|да
-|**vatSum**                |Float|Сумма включая НДС|&mdash;|да
+|**vatSum**                |Float|Сумма включая НДС|&mdash;|нет
 |**positions**          |MetaArray|Метаданные позиций Отгрузки|&mdash;|да
 |**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-otgruzka-otgruzki-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|&mdash;|нет
 |**payedSum**            |Float|Сумма входящих платежей по Отгрузке |Только для чтения|да
@@ -72,7 +72,7 @@
 |**stateContractId**              |String(255)|Идентификатор государственного контракта, договора (соглашения)|&mdash;|нет
 
 #### Позиции Отгрузки
-Позиции Отгрузки - это список товаров/услуг/модификаций/серий.
+Позиции Отгрузки - это список товаров/услуг/модификаций/серий/комплектов.
 Объект позиции Отгрузки содержит следующие поля:
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
@@ -83,7 +83,7 @@
 |**price**          |Float|Цена товара/услуги в копейках|&mdash;|да
 |**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|&mdash;|да
 |**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации/комплекта, которую представляет собой позиция|&mdash;|да
 |**pack**            |String(255)|Упаковка товара|&mdash;|нет
 |**things**            |Array(String)|Серийные номера. Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете. В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.|&mdash;|нет
 |**trackingCodes**          |Array(Object)|Коды маркировки товаров и транспортных упаковок. [Подробнее тут](../documents/#dokumenty-otgruzka-otgruzki-kody-markirowki-towarow-i-transportnyh-upakowok)|&mdash;|нет
@@ -2950,7 +2950,7 @@ curl -X GET
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/60fc3826-00d7-11e6-9464-e4de00000097",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "service",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#service/edit?id=e64d0a86-2a99-11e9-ac12-000c00000041"
@@ -3148,7 +3148,7 @@ curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/d
 Запрос на создание новой позиции в Отгрузке.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
-+ **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция.
++ **assortment** - Ссылка на товар/услугу/серию/модификацию/комплект, которую представляет собой позиция.
 Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
 чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Отгрузки](../documents/#dokumenty-otgruzka-otgruzki-pozicii-otgruzki)
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
@@ -3335,7 +3335,7 @@ curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/d
     "assortment": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/c02e3a5c-007e-11e6-9464-e4de00000006",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "service",
         "mediaType": "application/json",
         "uuidHref": "https://online.moysklad.ru/app/#service/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002f"
