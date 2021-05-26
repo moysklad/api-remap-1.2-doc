@@ -35,7 +35,7 @@
 |**filename**               |String(255)|Имя Файла|&mdash;|да|нет
 |**size**               |Int|Размер Файла в байтах|&mdash;|да|нет
 |**created**               |DateTime|Время загрузки Файла на сервер|&mdash;|да|нет
-|**createdBy**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные сотрудника, загрузившего Файл|&mdash;|да|нет
+|**createdBy**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные сотрудника, загрузившего Файл|&mdash;|да|да
 |**miniature**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные миниатюры изображения (поле передается только для Файлов изображений)|&mdash;|нет|нет
 |**tiny**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные уменьшенного изображения (поле передается только для Файлов изображений)|&mdash;|нет|нет
 

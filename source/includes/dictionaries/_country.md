@@ -16,8 +16,8 @@
 |**accountId**        |UUID|ID учетной записи|Только для чтения|нет|нет
 |**updated**          |DateTime|Момент последнего обновления сущности|Только для чтения|да|нет
 |**shared**           |Boolean|Флаг Общий доступ|Только для пользовательских стран|нет|нет
-|**owner**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Сотрудник-владелец|Только для пользовательских стран|нет|нет
-|**group**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел-владелец|Только для пользовательских стран|нет|нет
+|**owner**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Сотрудник-владелец|Только для пользовательских стран|нет|да
+|**group**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел-владелец|Только для пользовательских стран|нет|да
 |**name**             |String(255)|Наименование Страны|Необходимое при создании|да|нет
 |**description**      |String(4096)|Описание Страны|&mdash;|нет|нет
 |**code**             |String(255)|Код Страны|&mdash;|нет|нет

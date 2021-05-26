@@ -158,7 +158,7 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
 | **vendor**        |String(255)|Производитель|&mdash;|нет|нет
 | **name**          |String(255)|Наименование ПО|Необходимое при создании|да|нет
-| **serial**         |String(255)|Серийный номер|нет|нет
+| **serial**         |String(255)|Серийный номер|&mdash;|нет|нет
 |**fiscalDataVersion**       |String(255)|Формат фискальных данных|&mdash;|нет|нет
 |**driver**  |Object|Информация об используемом драйвере. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-drajwer)|&mdash;|нет|нет
 |**fiscalMemory**  |Object|Информация о фискальном накопителе. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-fiskal-nyj-nakopitel)|&mdash;|нет|нет

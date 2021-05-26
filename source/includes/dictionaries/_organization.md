@@ -20,7 +20,7 @@
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|нет|да
 |**shared**             |Boolean|Общий доступ|&mdash;|да|нет
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да|нет
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да|да
 |**syncId**             |UUID|ID синхронизации |После заполнения недоступен для изменения|нет|нет
 |**updated**            |DateTime|Момент последнего обновления Юрлица|Только для чтения|да|нет
 |**name**               |String(255)|Наименование Юрлица|Необходимое при создании|да|нет
@@ -31,10 +31,10 @@
 |**created**            |DateTime|Дата создания|&mdash;| да|нет
 |**actualAddress**      |String(255)|Фактический адрес Юрлица  |&mdash;| нет|нет
 |**actualAddressFull**  |Object|Фактический адрес Юрлица с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres) |&mdash;|нет|нет
-|**companyType**        |Enum|Тип Юрлица . В зависимости от значения данного поля набор выводимых реквизитов контрагента может меняться. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-tip-urlica) |&mdash;| да ||нет
+|**companyType**        |Enum|Тип Юрлица . В зависимости от значения данного поля набор выводимых реквизитов контрагента может меняться. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-tip-urlica) |&mdash;| да |нет
 |**trackingContractNumber**|String(255)|Номер договора с ЦРПТ|&mdash;| нет|нет
 |**trackingContractDate**  |DateTime|Дата договора с ЦРПТ|&mdash;| нет|нет
-|**bonusProgram**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные активной бонусной программы|&mdash;|нет|нет
+|**bonusProgram**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные активной бонусной программы|&mdash;|нет|да
 |**bonusPoints**           |Int|Бонусные баллы по активной бонусной программе|Только для чтения| нет|нет
 
 #### Поля реквизитов

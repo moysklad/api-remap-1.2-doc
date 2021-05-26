@@ -22,7 +22,7 @@
 |**organization** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Юрлица|&mdash;|да|нет
 |**count**        |Int|Количество ценников/термоэтикеток. Максимальное количество - `1000`|&mdash;|да|нет
 |**salePrice**    |Object|Цена продажи. [Подробнее тут](../dictionaries/#suschnosti-pechat-atiketok-i-cennikow-zapros-na-pechat-atiketok-i-cennikow-atributy-zaprosa-cena-prodazhi)|&mdash;|да|нет
-|**template**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Шаблона печати|&mdash;|да|нет
+|**template**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Шаблона печати|&mdash;|да|да
 
 ##### Цена продажи
 Атрибуты вложенной сущности
