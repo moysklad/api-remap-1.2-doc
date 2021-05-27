@@ -779,6 +779,9 @@ curl -X GET
 |**login**               |String(255)|Логин сотрудника для входа в МойСклад|&mdash;|нет
 |**email**               |String(255)|Почта сотрудника|&mdash;|нет
 |**group**               |Object|Метаданные Группы, а также ее идентификатор и имя|&mdash;|да
+|**authorizedHosts**     |Array(String)|Список ip адресов, с которых разрешен доступ на аккаунт|&mdash;|да
+|**authorizedIpNetwork** |String(255)|Ip адрес, идентифицирующий соответствующую подсеть, с правом доступа на аккаунт|&mdash;|да
+|**authorizedIpNetmask** |String(255)|Маска подсети идентифицирующая сеть, с правом доступа на аккаунт|&mdash;|да
 |**role**               |Object|Информация о роли Сотрудника|&mdash;|нет
 
 #### Атрибуты вложенных сущностей
@@ -984,6 +987,11 @@ curl -X GET
         "id": "f4b74c5e-443a-11eb-ac12-001000000002",
         "name": "Основной"
     },
+    "authorizedHosts": [
+        "1.15.15.5"
+    ],
+    "authorizedIpNetworkNumber": "80.8.8.8",
+    "authorizedIpNetmaskNumber": "1.8.8.8",
     "role": {
         "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/individual",
@@ -1421,6 +1429,9 @@ curl -X GET
                     "mediaType": "application/json"
                 }
             },
+            "authorizedHosts": [
+                "20.20.15.5"
+            ],
             "role": {
                 "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/admin",
@@ -1449,6 +1460,11 @@ curl -X GET
         "id": "f4b74c5e-443a-11eb-ac12-001000000003",
         "name": "Новая группа"
     },
+    "authorizedHosts": [
+        "20.20.15.5"
+    ],
+    "authorizedIpNetworkNumber": "80.8.8.8",
+    "authorizedIpNetmaskNumber": "1.8.8.8",
     "role": {
         "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/admin",
