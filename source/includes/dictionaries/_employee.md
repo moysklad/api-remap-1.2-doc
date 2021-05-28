@@ -878,7 +878,7 @@ curl -X GET
 |**employee**    |BASE|Все ALL|Сотрудники
 |**currency**    |BASE|Все ALL|Валюты
 |**warehouse**    |BASE|Все ALL|Склады
-|**customEntity**    |BASE|Все ALL|Дополнительные справочники
+|**customEntity**    |BASE|Все ALL|Элементы пользовательских справочников
 |**retailStore**    |BASE|Все ALL|Точка продаж
 |**country**    |BASE|Все ALL|Страны
 |**uom**    |BASE|Все ALL|Единицы измерения

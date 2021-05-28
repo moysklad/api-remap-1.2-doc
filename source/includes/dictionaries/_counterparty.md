@@ -57,7 +57,7 @@
 |**salesAmount**        |Int|Сумма продаж|Только для чтения| да|нет
 |**bonusProgram**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные активной Бонусной программы|&mdash;| нет|да
 |**bonusPoints**        |Int|Бонусные баллы по активной бонусной программе|Только для чтения| нет  |нет          
-|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да| да
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да| да
 
 ##### Поля реквизитов
 

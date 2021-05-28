@@ -24,7 +24,7 @@
 |**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|да|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Инвентаризации|&mdash;|нет|да
 |**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет|нет
-|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|да
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|да
 |**created**            |DateTime|Дата создания|Только для чтения|да|нет
 |**printed**            |Boolean|Напечатан ли документ|Только для чтения|да|нет
 |**published**          |Boolean|Опубликован ли документ|Только для чтения|да|нет

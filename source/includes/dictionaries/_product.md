@@ -57,7 +57,7 @@
 |**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-priznak-predmeta-rascheta)|&mdash;|нет|нет
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет|нет
 |**ppeType**        |Enum|Код вида номенклатурной классификации медицинских средств индивидуальной защиты (EAN-13). [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-wida-nomenklaturnoj-klassifikacii-medicinskih-sredstw-indiwidual-noj-zaschity)|&mdash;|нет|нет
-|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|нет|да
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|нет|да
 
 Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить
 с помощью обновления атрибута **productFolder**.

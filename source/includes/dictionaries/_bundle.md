@@ -42,7 +42,7 @@
 |**partialDisposal**         |Boolean|Управление состоянием частичного выбытия маркированного товара. «true» - возможность включена.|&mdash;|нет|нет
 |**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-priznak-predmeta-rascheta)|&mdash;|нет|нет
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет|нет
-|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|нет|да
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|нет|да
 
 ##### Тип маркируемой продукции
 Значения поля trackingType.
