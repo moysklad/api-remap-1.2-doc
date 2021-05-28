@@ -23,7 +23,7 @@
 |**label**         |String(255)| Метка Серии|Необходимое при создании|да|нет
 |**barcodes**         |Array(Object)|Штрихкоды серии|&mdash;|нет|нет
 |**image**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Изображение товара, к которому относится данная серия|&mdash;|нет|нет
-|**attributes**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные ссылки или модификации|Необходимое при создании|да|да
+|**attributes**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные ссылки или модификации|Необходимое при создании|да|нет
 
 #### Атрибуты вложенных сущностей
 ##### Метаданные Серий
