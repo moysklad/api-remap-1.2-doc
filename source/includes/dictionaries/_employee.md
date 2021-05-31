@@ -878,7 +878,7 @@ curl -X GET
 |**employee**    |BASE|Все ALL|Сотрудники
 |**currency**    |BASE|Все ALL|Валюты
 |**warehouse**    |BASE|Все ALL|Склады
-|**customEntity**    |BASE|Все ALL|Дополнительные справочники
+|**customEntity**    |BASE|Все ALL|Элементы пользовательских справочников
 |**retailStore**    |BASE|Все ALL|Точка продаж
 |**country**    |BASE|Все ALL|Страны
 |**uom**    |BASE|Все ALL|Единицы измерения
@@ -1552,3 +1552,73 @@ true. Это означает, что на указанную у сотрудн�
 ```
 
 > Response 204
+
+
+### Запрос на получение роли админа
+
+> Пример запроса на получение роли админа.
+
+```shell
+  curl -X GET
+    "https://online.moysklad.ru/api/remap/1.2/entity/role/admin"
+    -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление информации о роли админа.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/admin",
+    "type": "systemrole",
+    "mediaType": "application/json"
+  }
+}
+```
+
+### Запрос на получение индивидуальной роли
+
+> Пример запроса на получение индивидуальной роли.
+
+```shell
+  curl -X GET
+    "https://online.moysklad.ru/api/remap/1.2/entity/role/individual"
+    -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление информации индивидуальной роли.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/individual",
+    "type": "individualrole",
+    "mediaType": "application/json"
+  }
+}
+```
+
+### Запрос на получение роли кассира
+
+> Пример запроса на получение роли кассира.
+
+```shell
+  curl -X GET
+    "https://online.moysklad.ru/api/remap/1.2/entity/role/cashier"
+    -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление информации о роли кассира
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/cashier",
+    "type": "systemrole",
+    "mediaType": "application/json"
+  }
+}
+```

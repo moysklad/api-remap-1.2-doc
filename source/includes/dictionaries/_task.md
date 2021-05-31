@@ -19,7 +19,8 @@
 |**implementer**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Сотрудника, выполнившего задачу|Только для чтения|нет
 |**agent**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Контрагента или юрлица, связанного с задачей. Задача может быть привязана либо к конрагенту, либо к юрлицу, либо к документу|&mdash;|нет
 |**operation**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Документа, связанного с задачей. Задача может быть привязана либо к конрагенту, либо к юрлицу, либо к документу|&mdash;|нет
-|**notes**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные комментария к задаче|&mdash;|нет
+|**notes**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные комментария к задаче|&mdash;|да
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|
 
 #### Комментарии задачи
 Объект комментария к задаче содержит следующие поля:
@@ -877,7 +878,7 @@ curl -X GET
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
-            "text": "текст комментрания 3"
+            "text": "текст комментария 3"
           }'  
 ```
 
@@ -901,7 +902,7 @@ curl -X GET
         "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=98fa7086-8aa1-11e8-7210-075e0000002c"
       }
     },
-    "text": "текст комментрания 3",
+    "text": "текст комментария 3",
     "moment": "2018-07-19 22:31:28"
   }
 ]
