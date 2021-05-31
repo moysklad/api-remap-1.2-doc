@@ -12,6 +12,7 @@
 |**updated**            |DateTime|Момент последнего обновления Тех. карты|Только для чтения|да
 |**deleted**            |DateTime|Момент последнего удаления Тех. карты|Только для чтения|нет
 |**name**               |String(255)|Наименование Тех. карты|Необходимое при создании|да
+|**code**               |String(255)|Код Тех. карты|&mdash;| нет
 |**externalCode**       |String(255)|Внешний код Тех. карты|&mdash;| да
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
 |**shared**             |Boolean|Общий доступ|&mdash;|да
