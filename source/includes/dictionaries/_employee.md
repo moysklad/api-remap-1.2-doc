@@ -990,8 +990,8 @@ curl -X GET
     "authorizedHosts": [
         "1.15.15.5"
     ],
-    "authorizedIpNetworkNumber": "80.8.8.8",
-    "authorizedIpNetmaskNumber": "1.8.8.8",
+    "authorizedIpNetwork": "80.8.8.8",
+    "authorizedIpNetmask": "1.8.8.8",
     "role": {
         "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/individual",
@@ -1463,8 +1463,8 @@ curl -X GET
     "authorizedHosts": [
         "20.20.15.5"
     ],
-    "authorizedIpNetworkNumber": "80.8.8.8",
-    "authorizedIpNetmaskNumber": "1.8.8.8",
+    "authorizedIpNetwork": "80.8.8.8",
+    "authorizedIpNetmask": "1.8.8.8",
     "role": {
         "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/admin",
