@@ -103,6 +103,10 @@
 ### Изменено
 - Исправлено неточное описание привязок документов в общих сведениях
 
+## 23-04-2021
+### Добавлено
+- Добавлены поля authorApplication в [Задачи](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha) и [События Контрагента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-sobytiq-kontragenta)
+
 ## 22-04-2021
 ### Документация
 - Добавлено описание поля **code** для ряда сущностей. Где оно было, убран атрибут `Только для чтения`
