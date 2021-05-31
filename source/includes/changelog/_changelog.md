@@ -135,6 +135,10 @@
 <a name="lastchanges"></a><
 Список последних изменений в API Remap 1.2
 
+### 31-05-2021
+#### Добавлено
+- Добавлены поля `welcomeBonusesEnabled`, `welcomeBonusesValue`, `welcomeBonusesEnabled` в [Бонусную программу](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-bonusnaq-programma)
+
 ### 15-04-2021
 #### Добавлено
 - Возможность работы с файлами, прикрепленными к [Задаче](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha)
