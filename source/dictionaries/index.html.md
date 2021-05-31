@@ -25,6 +25,7 @@ includes:
   - dictionaries/contract
   - dictionaries/project
   - dictionaries/companysettings
+  - dictionaries/companysubscription
   - dictionaries/usersettings
   - dictionaries/expenseitem
   - dictionaries/country
@@ -35,6 +36,7 @@ includes:
   - dictionaries/bonus_program
   - dictionaries/uom  
   - dictionaries/employee
+  - dictionaries/custom_role
   - dictionaries/customentity
   - dictionaries/store
   - dictionaries/organization

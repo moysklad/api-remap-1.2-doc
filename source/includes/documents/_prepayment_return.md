@@ -20,6 +20,7 @@
 |**deleted**            |DateTime|Момент последнего удаления Возврата предоплаты |Только для чтения|нет
 |**name**               |String(255)|Наименование Возврата предоплаты |&mdash;|да
 |**description**        |String(4096)|Комментарий Возврата предоплаты |&mdash;|нет
+|**code**               |String(255)|Код Возврата предоплаты |&mdash;| нет
 |**externalCode**       |String(255)|Внешний код Возврата предоплаты |&mdash;| да
 |**moment**             |DateTime|Дата Счета|&mdash;|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да
@@ -46,7 +47,7 @@
 |**qrSum**                  |Float|Оплачено по QR-коду|&mdash;|да
 |**positions**          |MetaArray|Метаданные позиций Возврата предоплаты|&mdash;|да
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-vozwrat-predoplaty-atributy-suschnosti-poluchit-poziciu-predoplaty-kod-sistemy-nalogooblozheniq)|&mdash;|нет
-|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 
 ##### Код системы налогообложения
 Значения поля taxSystem.

@@ -14,7 +14,8 @@
 |**deleted**            |DateTime|Момент последнего удаления Выданного  отчета комиссионера|Только для чтения|нет
 |**name**               |String(255)|Наименование Выданного отчета комиссионера|Необходимое при создании|да
 |**description**        |String(4096)|Комментарий Выданного отчета комиссионера|&mdash;|нет
-|**externalCode**       |String(255)|Внешний код Выданного отчета комиссионера|Только для чтения| да
+|**code**               |String(255)|Код Выданного отчета комиссионера|&mdash;| нет
+|**externalCode**       |String(255)|Внешний код Выданного отчета комиссионера|&mdash;| да
 |**moment**             |DateTime|Дата смены|Только для чтения|да
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да
 |**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да
@@ -32,7 +33,7 @@
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет
 |**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |Только для чтения|нет
-|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
 |**published**          |Boolean|Опубликован ли документ|Только для чтения|да
