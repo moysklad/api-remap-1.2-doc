@@ -36,6 +36,7 @@ includes:
   - dictionaries/bonus_program
   - dictionaries/uom  
   - dictionaries/employee
+  - dictionaries/custom_role
   - dictionaries/customentity
   - dictionaries/store
   - dictionaries/organization
