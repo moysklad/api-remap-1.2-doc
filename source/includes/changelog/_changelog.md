@@ -135,6 +135,10 @@
 <a name="lastchanges"></a><
 Список последних изменений в API Remap 1.2
 
+### 01-06-2021
+#### Добавлено
+- Возможность получать и изменять пользовательские роли от лица приложения
+
 ### 31-05-2021
 #### Добавлено
 - Добавлены поля `welcomeBonusesEnabled`, `welcomeBonusesValue`, `welcomeBonusesEnabled` в [Бонусную программу](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-bonusnaq-programma)
