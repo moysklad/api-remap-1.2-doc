@@ -1,9 +1,69 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-## 30-04-2021
-### Исправлено
+## 01-06-2021
+### Добавлено
+- Возможность получать и изменять пользовательские роли от лица приложения
 - Исправлена ошибка: при изменении пермиссий у роли сотрудника, был невозможен вход в систему
+
+## 31-05-2021
+### Добавлено
+- Добавлены поля `welcomeBonusesEnabled`, `welcomeBonusesValue`, `welcomeBonusesEnabled` в [Бонусную программу](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-bonusnaq-programma)
+
+## 15-04-2021
+### Добавлено
+- Возможность работы с файлами, прикрепленными к [Задаче](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha)
+
+## 21-05-2021
+### Документация
+- Исправлено описание пермиссий при работе с пользовательскими справочниками
+
+
+## 21-05-2021
+### Изменено
+- Исправлена отметка об обязательности складов для части документов
+- Добавлен новый эндпоинт для системных ролей
+- Добавлен новый эндпоинт (crud) для пользовательских ролей
+- Новый ресурс [отмены асинхронной задачи](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen-otmena-asinhronnoj-zadachi)
+- Ошибка [61007](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-asinhronnogo-obmena)
+
+## 21-05-2021
+### Исправлено
+- В примерах исправлен url получения метаданных [Комплектов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt)
+  и [Услуг](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-usluga)
+
+## 20-05-2021
+### Добавлено
+- Добавлена возможность редактировать поле discounts у контрагента
+- Раскомплектовывание комплектов на составляющие компоненты при создании [шаблона заказа поставщику на основе](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-postawschiku-shablon-zakaza-postawschiku-na-osnowe)
+- Добавлена новая схема работы с ошибками и новый статус `API_ERROR` в
+  [асинхронныом обмене](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)
+
+## 17-05-2021
+### Документация
+- В Позиции Отгрузки добавлен список комплектов
+- Исправлено описание `product.packs.barcodes`, `consignment.barcodes`, `bundle.components`, `consignment.image`
+- Исправлено описание атрибута `images` в товарах, комплектах и модификациях
+- Исправлено указание на обязательность в ответе полей `uom.accountId`, `uom.group`, `product.minimumBalance`, `country.accountId`, `demand.vatSum`, `counterparty.state`
+- Исправлено указание на обязательность в ответе поля `owner` в сущностях
+
+## 11-05-2021
+### Добавлено
+- Возможность выполнять запрос [получения Ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment)
+ [асинхронно](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)
+
+
+## 27-04-2021
+### Добавлено
+- Очередь для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)
+- Обновлен список [ограничений](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-ogranicheniq) (добавлена информация про размер очереди асинхронных задач)
+- Новый статус `PENDING` для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)
+- Эндпоинт получения [списка статусов асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen-statusy-asinhronnyh-zadach)
+- Поле **meta** для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)
+
+## 05-05-2021
+### Добавлено
+- Информация о новом типе маркированной продукции (Молочная продукция) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar)
 
 ## 29-04-2021
 ### Добавлено
@@ -36,17 +96,25 @@
 теперь учитывается пермиссия `Видеть себестоимость, цену закупки и прибыль товаров`. При отсутствии пермиссии в json представлении 
 документа будет отсутствовать поле `sum`, а в позициях не будет поля `price`.
 
-### 26-04-2021
-#### Изменено
+## 27-04-2021
+### Добавлена
+- Возможность создавать [вебхуки](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki) для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen-vebhuki-asinhronnoj-zadachi)
+
+## 26-04-2021
+### Изменено
 - Исправлен некорректный url в примерах json [Управления настройками справочника ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment-poluchit-nastrojki-sprawochnika-towarow)
 
-### 26-04-2021
-#### Добавлены
+## 26-04-2021
+### Добавлены
 - Новые поля `directorPosition`, `directorSign`, `chiefAccountSign`, `stamp` в [Юрлице](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico)
 
 ## 26-04-2021
 ### Изменено
 - Исправлено неточное описание привязок документов в общих сведениях
+
+## 23-04-2021
+### Добавлено
+- Добавлены поля authorApplication в [Задачи](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha) и [События Контрагента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-sobytiq-kontragenta)
 
 ## 22-04-2021
 ### Документация

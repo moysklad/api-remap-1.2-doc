@@ -15,7 +15,7 @@
 |**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Договора|&mdash;|да
 |**id**                |UUID|ID Договора|Только для чтения|да
 |**accountId**         |UUID|ID учетной записи|Только для чтения|да
-|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|да
+|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|нет
 |**shared**         |Boolean|Общий доступ|&mdash;|да
 |**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|&mdash;|да
 |**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да

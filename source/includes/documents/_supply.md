@@ -33,7 +33,7 @@
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет
 |**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
-|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**vatSum**             |Float|Сумма включая НДС|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
@@ -50,7 +50,7 @@
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**sum**                |Int|Сумма Оприходования в копейках|&mdash;|да
-|**distribution**       |Enum|Распределение накладных расходов по весу, по объему, по цене|&mdash;|да
+|**distribution**       |Enum|Распределение накладных расходов `[weight, volume, price]` -> `[по весу, по объему, по цене]`|&mdash;|да
 
 #### Связи с другими документами
 
