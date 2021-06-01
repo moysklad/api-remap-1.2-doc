@@ -12,6 +12,7 @@
 + [Отчет Показатели контрагентов](reports/#otchety-otchet-pokazateli-kontragentow) (кроме [выборочных показателей](reports/#otchety-otchet-pokazateli-kontragentow-vyborochnye-pokazateli-kontragentow))
 + [Отчет Показатели](reports/#otchety-pokazateli)
 + [Получение списка Контрагентов](dictionaries/#suschnosti-kontragent-poluchit-spisok-kontragentow)
++ [Получение Ассортимента](dictionaries/#suschnosti-assortiment)
 
 После выполнения запроса в асинхронном режиме результат доступен в течение 1 часа. 
 
