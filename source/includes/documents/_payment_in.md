@@ -4,40 +4,40 @@
 
 #### Атрибуты сущности
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Входящего платежа|&mdash;|да
-|**id**                 |UUID|ID Входящего платежа|Только для чтения|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет
-|**updated**            |DateTime|Момент последнего обновления Входящего платежа|Только для чтения|да
-|**deleted**            |DateTime|Момент последнего удаления Входящего платежаа|Только для чтения|нет
-|**name**               |String(255)|Наименование Входящего платежа|&mdash;|да
-|**description**        |String(4096)|Комментарий Входящего платежа|&mdash;|нет
-|**code**               |String(255)|Код Входящего платежа|&mdash;| нет
-|**externalCode**       |String(255)|Внешний код Входящего платежа|&mdash;| да
-|**moment**             |DateTime|Дата Счета|&mdash;|да
-|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
-|**sum**                |Int|Сумма Входящего платежа в установленной валюте|Только для чтения|да
-|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
-|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
-|**shared**             |Boolean|Общий доступ|&mdash;|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
-|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
-|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Входящего платежа|&mdash;|нет
-|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
-|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет
-|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
-|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
-|**created**            |DateTime|Дата создания|Только для чтения|да
-|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
-|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
-|**paymentPurpose**     |String(255)|Назначение платежа|&mdash;|да
-|**incomingNumber**             |Int|Входящий номер |&mdash;|нет
-|**incomingDate**         |DateTime| Входящая дата|&mdash;|нет
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Входящего платежа|&mdash;|да|нет
+|**id**                 |UUID|ID Входящего платежа|Только для чтения|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет|нет
+|**updated**            |DateTime|Момент последнего обновления Входящего платежа|Только для чтения|да|нет
+|**deleted**            |DateTime|Момент последнего удаления Входящего платежаа|Только для чтения|нет|нет
+|**name**               |String(255)|Наименование Входящего платежа|&mdash;|да|нет
+|**description**        |String(4096)|Комментарий Входящего платежа|&mdash;|нет|нет
+|**code**               |String(255)|Код Входящего платежа|&mdash;| нет|нет
+|**externalCode**       |String(255)|Внешний код Входящего платежа|&mdash;| да|нет
+|**moment**             |DateTime|Дата Счета|&mdash;|да|нет
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да|нет
+|**sum**                |Int|Сумма Входящего платежа в установленной валюте|Только для чтения|да|нет
+|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет|да
+|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да|нет
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да|нет
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да|да
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да|да
+|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет|да
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Входящего платежа|&mdash;|нет|да
+|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет|да
+|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет|да
+|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет|нет
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|да
+|**created**            |DateTime|Дата создания|Только для чтения|да|нет
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да|нет
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да|нет
+|**paymentPurpose**     |String(255)|Назначение платежа|&mdash;|да|нет
+|**incomingNumber**             |Int|Входящий номер |&mdash;|нет|нет
+|**incomingDate**         |DateTime| Входящая дата|&mdash;|нет|нет
 
 #### Связи с другими документами
 
