@@ -48,7 +48,7 @@
 |**id**                 |UUID|ID позиции|Только для чтения|да|нет
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
 |**assortment**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|нет|да
-|**pack**               |String(255)|Упаковка товара|&mdash;|нет|нет
+|**pack**               |Object|Упаковки Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)|&mdash;|нет|нет
 |**cells**               |Array(Object)|Массив значений столбцов в позиции Прайс-листа|&mdash;|да|нет
 
 С позициями можно работать с помощью [специальных ресурсов для управления позициями Прайс-листа](../documents/#dokumenty-prajs-list-pozicii-prajs-lista),

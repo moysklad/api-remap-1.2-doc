@@ -52,7 +52,7 @@
 |**price**          |Float|Цена товара/услуги в копейках|&mdash;|да|нет
 |**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да|нет
 |**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да|да
-|**pack**            |String(255)|Упаковка товара|&mdash;|нет|нет
+|**pack**            |Object|Упаковка Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)|&mdash;|нет|нет
 
 С позициями можно работать с помощью [специальных ресурсов для управления позициями Внутреннего заказа](../documents/#dokumenty-vnutrennij-zakaz-pozicii-wnutrennego-zakaza),
 а также в составе отдельного Внутреннего заказа. При работе в составе отдельного Внутреннего заказа,

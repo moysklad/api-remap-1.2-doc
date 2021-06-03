@@ -57,7 +57,7 @@
 |**gtd**            |String(255)|ГТД|&mdash;|нет|нет
 |**country**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные страны|&mdash;|нет|да
 |**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да|да
-|**pack**            |String(255)|Упаковка товара|&mdash;|нет|нет
+|**pack**            |Object|Упаковка Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)|&mdash;|нет|нет
 |**things**            |Object(String)|Серийные номера. Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете. В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.|&mdash;|нет|нет
 |**reason**            |String(255)|Причина оприходования данной позиции|&mdash;|нет|нет
 |**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-oprihodowanie-oprihodowaniq-nakladnye-rashody).  Если Позиции Оприходования не заданы, то накладные расходы нельзя задать|&mdash;|да|нет

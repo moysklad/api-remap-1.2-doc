@@ -64,7 +64,7 @@
 |**price**          |Float|Цена товара/услуги в копейках|&mdash;|да|нет
 |**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да|нет
 |**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да|да
-|**pack**            |String(255)|Упаковка товара|&mdash;|нет|нет
+|**pack**            |Object|Упаковка Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)|&mdash;|нет|нет
 |**reward**      |String(255)|Вознаграждение|&mdash;|нет|нет
 
 С позициями можно работать с помощью [специальных ресурсов для управления позициями Выданного отчета комиссионера](../documents/#dokumenty-vydannyj-otchet-komissionera-pozicii-wydannogo-otcheta-komissionera),

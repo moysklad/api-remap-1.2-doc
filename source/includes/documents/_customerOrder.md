@@ -80,7 +80,7 @@
 |**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|&mdash;|да|да|нет
 |**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да|да|нет
 |**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да|да|да
-|**pack**            |String(255)|Упаковка товара|&mdash;|нет|да|нет
+|**pack**            |Object|Упаковка Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)|&mdash;|нет|да|нет
 |**shipped**        |Int|Доставлено|&mdash;|да|да|нет
 |**reserve**          |Int|Резерв данной позиции|&mdash;|нет|да|нет
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет|нет|нет
