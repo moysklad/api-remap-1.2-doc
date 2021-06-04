@@ -12,35 +12,36 @@
 ### Услуги 
 #### Атрибуты сущности
 
-| Название  | Тип | Описание                    | Поле в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Услуги|&mdash;|да
-|**id**                |UUID|ID Услуги|Только для чтения|да
-|**accountId**         |UUID|ID учетной записи|Только для чтения|да
-|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|нет
-|**shared**         |Boolean|Общий доступ|&mdash;|да
-|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|&mdash;|да
-|**syncId**                |UUID|ID синхронизации|После заполнения недоступно для изменения|нет
-|**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да
-|**name**         |String(255)|Наименование Услуги|Необходимое при создании|да
-|**description**        |String(4096)|Описание Услуги|&mdash;|нет
-|**code**         |String(255)|Код Услуги|&mdash;|нет
-|**externalCode**         |String(255)|Внешний код Услуги|&mdash;|да
-|**archived**        |Boolean|Добавлена ли Услуга в архив|&mdash;|да
-|**pathName**         |String|Наименование группы, в которую входит Услуга|Только для чтения|да
-|**vat**         |Int|НДС %|&mdash;|нет
-|**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
-|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|&mdash;|нет
-|**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет
-|**minPrice**         |Object|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-minimal-naq-cena)|&mdash;|нет
-|**salePrices**         |Array(Object)|Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-ceny-prodazhi)|&mdash;|нет
-|**buyPrice**         |Object|Закупочная продажи. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-zakupochnaq-cena)|&mdash;|нет
-|**attributes**         |Array(Object)|Коллекция доп. полей|&mdash;|нет
-|**barcodes**         |Array(Object)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-shtrih-kody)|&mdash;|нет
-|**discountProhibited**        |Boolean|Признак запрета скидок|&mdash;|да
-|**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-atributy-suschnosti-priznak-predmeta-rascheta)|&mdash;|нет
-|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет
-|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|нет|
+| Название  | Тип | Описание                    | Поле в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Услуги|&mdash;|да|нет
+|**id**                |UUID|ID Услуги|Только для чтения|да|нет
+|**accountId**         |UUID|ID учетной записи|Только для чтения|да|нет
+|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|нет|да
+|**shared**         |Boolean|Общий доступ|&mdash;|да|нет
+|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|&mdash;|да|да
+|**syncId**                |UUID|ID синхронизации|После заполнения недоступно для изменения|нет|нет
+|**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да|нет
+|**name**         |String(255)|Наименование Услуги|Необходимое при создании|да|нет
+|**description**        |String(4096)|Описание Услуги|&mdash;|нет|нет
+|**code**         |String(255)|Код Услуги|&mdash;|нет|нет
+|**externalCode**         |String(255)|Внешний код Услуги|&mdash;|да|нет
+|**archived**        |Boolean|Добавлена ли Услуга в архив|&mdash;|да|нет
+|**pathName**         |String|Наименование группы, в которую входит Услуга|Только для чтения|да|нет
+|**vat**         |Int|НДС %|&mdash;|нет|нет
+|**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет|нет
+|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|&mdash;|нет|да
+|**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет|да
+|**minPrice**         |Object|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-minimal-naq-cena)|&mdash;|нет|нет
+|**salePrices**         |Array(Object)|Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-ceny-prodazhi)|&mdash;|нет|нет
+|**buyPrice**         |Object|Закупочная продажи. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-zakupochnaq-cena)|&mdash;|нет|нет
+|**attributes**         |Array(Object)|Коллекция доп. полей|&mdash;|нет|нет
+|**barcodes**         |Array(Object)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-shtrih-kody)|&mdash;|нет|нет
+|**discountProhibited**        |Boolean|Признак запрета скидок|&mdash;|да|нет
+|**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-atributy-suschnosti-priznak-predmeta-rascheta)|&mdash;|нет|нет
+|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет|нет
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|нет|да
+
 Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить
 с помощью обновления атрибута **productFolder**.
 
@@ -91,32 +92,32 @@
 
 ##### Цены продажи
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:---------------|:-----------------------|
-|**value**   |Float|Значение цены| &mdash; | да
-|**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
-|**priceType**   |Object|Тип цены| &mdash; | да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+|**value**   |Float|Значение цены| &mdash; | да|нет
+|**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да|да
+|**priceType**   |Object|Тип цены| &mdash; | да|нет
 
 
 ##### Закупочная цена
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:---------------|:-----------------------|
-**value**   |Float|Значение цены| &mdash; | да
-**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+**value**   |Float|Значение цены| &mdash; | да|нет
+**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да|да
 
 ##### Минимальная цена
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:---------------|:-----------------------|
-**value**   |Float|Значение цены| &mdash; | да
-**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+**value**   |Float|Значение цены| &mdash; | да|нет
+**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да|да
 
 ##### Группа Услуги
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:---------------|:-----------------------|
-| **meta**  |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Метаданные, содержащие ссылку на группу Услуги.|&mdash;| да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+| **meta**  |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Метаданные, содержащие ссылку на группу Услуги.|&mdash;| да|нет
 Описание сущности Группа вы можете посмотреть [здесь](../dictionaries/#suschnosti-gruppa-towarow).
 Обновление этого атрибута также обновит атрибут **pathName**.
 

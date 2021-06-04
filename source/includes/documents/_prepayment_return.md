@@ -10,44 +10,44 @@
 
 ### Атрибуты сущности
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Возврата предоплаты|&mdash;|да
-|**id**                 |UUID|ID Возврата предоплаты|Только для чтения|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет
-|**updated**            |DateTime|Момент последнего обновления Возврата предоплаты |Только для чтения|да
-|**deleted**            |DateTime|Момент последнего удаления Возврата предоплаты |Только для чтения|нет
-|**name**               |String(255)|Наименование Возврата предоплаты |&mdash;|да
-|**description**        |String(4096)|Комментарий Возврата предоплаты |&mdash;|нет
-|**code**               |String(255)|Код Возврата предоплаты |&mdash;| нет
-|**externalCode**       |String(255)|Внешний код Возврата предоплаты |&mdash;| да
-|**moment**             |DateTime|Дата Счета|&mdash;|да
-|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
-|**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да
-|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет
-|**sum**                |Int|Сумма Возврата предоплаты в копейках|Только для чтения|да
-|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
-|**shared**             |Boolean|Общий доступ|&mdash;|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|&mdash;|нет
-|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Возврата предоплаты |&mdash;|нет
-|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
-|**created**            |DateTime|Дата создания|Только для чтения|да
-|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
-|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
-|**vatSum**                |Float|Сумма включая НДС|&mdash;|да
-|**retailStore**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Точки продаж|&mdash;|да
-|**retailShift**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной смены|Необходимое при создании|да
-|**prepayment**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Предоплаты|&mdash;|да
-|**cashSum**                |Float|Оплачено наличными|&mdash;|да
-|**noCashSum**                |Float|Оплачено картой|&mdash;|да
-|**qrSum**                  |Float|Оплачено по QR-коду|&mdash;|да
-|**positions**          |MetaArray|Метаданные позиций Возврата предоплаты|&mdash;|да
-|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-vozwrat-predoplaty-atributy-suschnosti-poluchit-poziciu-predoplaty-kod-sistemy-nalogooblozheniq)|&mdash;|нет
-|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Возврата предоплаты|&mdash;|да|нет
+|**id**                 |UUID|ID Возврата предоплаты|Только для чтения|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет|нет
+|**updated**            |DateTime|Момент последнего обновления Возврата предоплаты |Только для чтения|да|нет
+|**deleted**            |DateTime|Момент последнего удаления Возврата предоплаты |Только для чтения|нет|нет
+|**name**               |String(255)|Наименование Возврата предоплаты |&mdash;|да|нет
+|**description**        |String(4096)|Комментарий Возврата предоплаты |&mdash;|нет|нет
+|**code**               |String(255)|Код Возврата предоплаты |&mdash;| нет|нет
+|**externalCode**       |String(255)|Внешний код Возврата предоплаты |&mdash;| да|нет
+|**moment**             |DateTime|Дата Счета|&mdash;|да|нет
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да|нет
+|**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да|нет
+|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет|нет
+|**sum**                |Int|Сумма Возврата предоплаты в копейках|Только для чтения|да|нет
+|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да|нет
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да|нет
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да|да
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|&mdash;|нет|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да|да
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Возврата предоплаты |&mdash;|нет|да
+|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет|нет
+|**created**            |DateTime|Дата создания|Только для чтения|да|нет
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да|нет
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да|нет
+|**vatSum**                |Float|Сумма включая НДС|&mdash;|да|нет
+|**retailStore**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Точки продаж|&mdash;|да|да
+|**retailShift**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной смены|Необходимое при создании|да|да
+|**prepayment**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Предоплаты|&mdash;|да|да
+|**cashSum**                |Float|Оплачено наличными|&mdash;|да|нет
+|**noCashSum**                |Float|Оплачено картой|&mdash;|да|нет
+|**qrSum**                  |Float|Оплачено по QR-коду|&mdash;|да|нет
+|**positions**          |MetaArray|Метаданные позиций Возврата предоплаты|&mdash;|да|да
+|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-vozwrat-predoplaty-atributy-suschnosti-poluchit-poziciu-predoplaty-kod-sistemy-nalogooblozheniq)|&mdash;|нет|нет
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|да
 
 ##### Код системы налогообложения
 Значения поля taxSystem.
@@ -65,16 +65,16 @@
 Позиции Возврата предоплаты - это список товаров/услуг/модификаций/серий.
 Объект позиции Возврата предоплаты содержит следующие поля:
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**id**                 |UUID|ID позиции|Только для чтения|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|&mdash;|да
-|**price**          |Float|Цена товара/услуги в копейках|&mdash;|да
-|**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|&mdash;|да
-|**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да
-|**pack**            |String(255)|Упаковка товара|&mdash;|нет
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**id**                 |UUID|ID позиции|Только для чтения|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
+|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|&mdash;|да|нет
+|**price**          |Float|Цена товара/услуги в копейках|&mdash;|да|нет
+|**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|&mdash;|да|нет
+|**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да|нет
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да|да
+|**pack**            |String(255)|Упаковка товара|&mdash;|нет|нет
 
 ### Атрибуты доступные для фильтрации
 

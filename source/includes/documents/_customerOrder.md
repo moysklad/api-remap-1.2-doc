@@ -3,48 +3,48 @@
 Средствами JSON API можно создавать и обновлять сведения о Заказах покупателя, запрашивать списки Заказов и сведения по отдельным Заказам покупателей. Позициями Заказов можно управлять как в составе отдельного Заказа покупателя, так и отдельно - с помощью специальных ресурсов для управления позициями Заказа. Кодом сущности для Заказа покупателя в составе JSON API является ключевое слово **customerorder**. Больше о Заказах покупателей и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203248133-%D0%97%D0%B0%D0%BA%D0%B0%D0%B7%D1%8B-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9). Также в Заказе покупателя поддерживается протокол оповещения об изменениях виджетов вендоров - **change-handler**. Подробнее см. в документации для вендоров о [виджетах](https://dev.moysklad.ru/doc/api/vendor/1.0/#kak-rabotaut-widzhety).
 #### Атрибуты сущности
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе| Поддержка в протоколе change-handler |
-| --------- |:----|:----------------------------|:----------------|:------------------------|:------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Заказа покупателя|&mdash;|да|да
-|**id**                 |UUID|ID Заказа покупателя|Только для чтения|да|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да|да
-|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет|нет
-|**updated**            |DateTime|Момент последнего обновления Заказа покупателя|Только для чтения|да|да
-|**deleted**            |DateTime|Момент последнего удаления Заказа покупателя|Только для чтения|нет|нет
-|**name**               |String(255)|Наименование Заказа покупателя|&mdash;|да|да
-|**description**        |String(4096)|Комментарий Заказа покупателя|&mdash;|нет|да
-|**code**               |String(255)|Код Заказа покупателя|&mdash;| нет|нет
-|**externalCode**       |String(255)|Внешний код Заказа покупателя|&mdash;| да|да
-|**moment**             |DateTime|Дата Заказа|&mdash;|да|да
-|**applicable**         |Boolean|Отметка о проведении|&mdash;|да|да
-|**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да|да
-|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет|да
-|**sum**                |Int|Сумма Заказа в установленной валюте|Только для чтения|да|да
-|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да|нет
-|**shared**             |Boolean|Общий доступ|&mdash;|да|нет
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да|нет
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да|да
-|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да|да
-|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|&mdash;|нет|да
-|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет|да
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса заказа|&mdash;|нет|да
-|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет|да
-|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет|да
-|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет|да
-|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|нет
-|**created**            |DateTime|Дата создания|Только для чтения|да|да
-|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да|нет
-|**published**          |Boolean|Опубликован ли документ|Только для чтения|да|нет
-|**vatSum**             |Float|Сумма НДС |Только для чтения|да|да
-|**positions**          |MetaArray|Метаданные позиций Заказа покупателя|&mdash;|да|да
-|**deliveryPlannedMoment**          |DateTime|Планируемая дата отгрузки|&mdash;|нет|да
-|**payedSum**            |Float|Сумма входящих платежей по Заказу |Только для чтения|да|да
-|**shippedSum**             |Float|Сумма отгруженного |Только для чтения|да|да
-|**invoicedSum**            |Float|Сумма счетов покупателю |Только для чтения|да|да
-|**reservedSum**            |Float|Сумма товаров в резерве |Только для чтения|да|да
-|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет|да
-|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет|да
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе| Поддержка в протоколе change-handler |Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Заказа покупателя|&mdash;|да|да|нет
+|**id**                 |UUID|ID Заказа покупателя|Только для чтения|да|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|да|нет
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет|нет|нет
+|**updated**            |DateTime|Момент последнего обновления Заказа покупателя|Только для чтения|да|да|нет
+|**deleted**            |DateTime|Момент последнего удаления Заказа покупателя|Только для чтения|нет|нет|нет
+|**name**               |String(255)|Наименование Заказа покупателя|&mdash;|да|да|нет
+|**description**        |String(4096)|Комментарий Заказа покупателя|&mdash;|нет|да|нет
+|**code**               |String(255)|Код Заказа покупателя|&mdash;| нет|нет|нет
+|**externalCode**       |String(255)|Внешний код Заказа покупателя|&mdash;| да|да|нет
+|**moment**             |DateTime|Дата Заказа|&mdash;|да|да|нет
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да|да|нет
+|**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да|да|нет
+|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет|да|нет
+|**sum**                |Int|Сумма Заказа в установленной валюте|Только для чтения|да|да|нет
+|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да|да|нет
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да|нет|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да|нет|нет
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да|нет|да
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да|да|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да|да|да
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|&mdash;|нет|да|да
+|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет|да|да
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса заказа|&mdash;|нет|да|да
+|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет|да|да
+|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет|да|да
+|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет|да|нет
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|нет|да
+|**created**            |DateTime|Дата создания|Только для чтения|да|да|нет
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да|нет|нет
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да|нет|нет
+|**vatSum**             |Float|Сумма НДС |Только для чтения|да|да|нет
+|**positions**          |MetaArray|Метаданные позиций Заказа покупателя|&mdash;|да|да|да
+|**deliveryPlannedMoment**          |DateTime|Планируемая дата отгрузки|&mdash;|нет|да|нет
+|**payedSum**            |Float|Сумма входящих платежей по Заказу |Только для чтения|да|да|нет
+|**shippedSum**             |Float|Сумма отгруженного |Только для чтения|да|да|нет
+|**invoicedSum**            |Float|Сумма счетов покупателю |Только для чтения|да|да|нет
+|**reservedSum**            |Float|Сумма товаров в резерве |Только для чтения|да|да|нет
+|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет|да|да
+|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет|да|нет
 
 ##### Код системы налогообложения
 Значения поля taxSystem.
@@ -71,19 +71,19 @@
 Позиции Заказа - это список товаров/услуг/модификаций/серий.
 Объект позиции Заказа содержит следующие поля:
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе| Поддержка в протоколе change-handler |
-| --------- |:----|:----------------------------|:----------------|:------------------------|:---------|
-|**id**                 |UUID|ID позиции|Только для чтения|да|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да|да
-|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|&mdash;|да|да
-|**price**          |Float|Цена товара/услуги в копейках|&mdash;|да|да
-|**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|&mdash;|да|да
-|**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да|да
-|**pack**            |String(255)|Упаковка товара|&mdash;|нет|да
-|**shipped**        |Int|Доставлено|&mdash;|да|да
-|**reserve**          |Int|Резерв данной позиции|&mdash;|нет|да
-|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет|нет
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе| Поддержка в протоколе change-handler |Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:---------|:------------------------|
+|**id**                 |UUID|ID позиции|Только для чтения|да|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|да|нет
+|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|&mdash;|да|да|нет
+|**price**          |Float|Цена товара/услуги в копейках|&mdash;|да|да|нет
+|**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|&mdash;|да|да|нет
+|**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да|да|нет
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да|да|да
+|**pack**            |String(255)|Упаковка товара|&mdash;|нет|да|нет
+|**shipped**        |Int|Доставлено|&mdash;|да|да|нет
+|**reserve**          |Int|Резерв данной позиции|&mdash;|нет|да|нет
+|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет|нет|нет
 
 С позициями можно работать с помощью специальных ресурсов для управления позициями Заказа,
 а также в составе отдельного Заказа покупателя. При работе в составе отдельного Заказа покупателя,
@@ -2611,10 +2611,10 @@ curl -X GET
 
 ### Изменить позицию Заказа 
 Запрос на обновление отдельной позиции Заказа. Для обновления позиции нет каких-либо
- обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
- 
- **Параметры**
- 
+обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
+
+**Параметры**
+
 |Параметр   |Описание   | 
 |:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа покупателя.|
