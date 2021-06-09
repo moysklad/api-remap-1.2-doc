@@ -3,39 +3,39 @@
 ### Списания 
 #### Атрибуты сущности
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Списания|&mdash;|да
-|**id**                 |UUID|ID Списания|Только для чтения|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет
-|**updated**            |DateTime|Момент последнего обновления Списания|Только для чтения|да
-|**deleted**            |DateTime|Момент последнего удаления Списания|Только для чтения|нет
-|**name**               |String(255)|Наименование Списания|&mdash;|да
-|**description**        |String(4096)|Комментарий Списания|&mdash;|нет
-|**code**               |String(255)|Код Списания|&mdash;| нет
-|**externalCode**       |String(255)|Внешний код Списания|&mdash;| да
-|**moment**             |DateTime|Дата Списания|&mdash;|да
-|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
-|**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да
-|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет
-|**sum**                |Int|Сумма Списания в копейках|Только для чтения|да
-|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
-|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
-|**shared**             |Boolean|Общий доступ|&mdash;|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
-|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
-|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|да
-|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Списания|&mdash;|нет
-|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
-|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
-|**created**            |DateTime|Дата создания|Только для чтения|да
-|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
-|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
-|**positions**          |MetaArray|Метаданные позиций Списания|&mdash;|да
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Списания|&mdash;|да|нет
+|**id**                 |UUID|ID Списания|Только для чтения|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет|нет
+|**updated**            |DateTime|Момент последнего обновления Списания|Только для чтения|да|нет
+|**deleted**            |DateTime|Момент последнего удаления Списания|Только для чтения|нет|нет
+|**name**               |String(255)|Наименование Списания|&mdash;|да|нет
+|**description**        |String(4096)|Комментарий Списания|&mdash;|нет|нет
+|**code**               |String(255)|Код Списания|&mdash;| нет|нет
+|**externalCode**       |String(255)|Внешний код Списания|&mdash;| да|нет
+|**moment**             |DateTime|Дата Списания|&mdash;|да|нет
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да|нет
+|**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да|нет
+|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет|нет
+|**sum**                |Int|Сумма Списания в копейках|Только для чтения|да|нет
+|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет|да
+|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да|нет
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да|нет
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да|да
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да|да
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|да|да
+|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет|да
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Списания|&mdash;|нет|да
+|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет|нет
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|да
+|**created**            |DateTime|Дата создания|Только для чтения|да|нет
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да|нет
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да|нет
+|**positions**          |MetaArray|Метаданные позиций Списания|&mdash;|да|да
 
 #### Связи с другими документами
 
@@ -47,16 +47,16 @@
 Позиции Списания - это список товаров/услуг/модификаций/серий.
 Объект позиции Списания содержит следующие поля:
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**id**                 |UUID|ID позиции|Только для чтения|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|&mdash;|да
-|**price**          |Float|Цена товара/услуги в копейках|&mdash;|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да
-|**pack**            |String(255)|Упаковка товара|&mdash;|нет
-|**things**            |Array(String)|Серийные номера. Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете. В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.|&mdash;|нет
-|**reason**            |String(255)|Причина списания данной позиции|&mdash;|нет
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**id**                 |UUID|ID позиции|Только для чтения|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
+|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|&mdash;|да|нет
+|**price**          |Float|Цена товара/услуги в копейках|&mdash;|да|нет
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да|да
+|**pack**            |Object|Упаковка Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)|&mdash;|нет|нет
+|**things**            |Array(String)|Серийные номера. Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете. В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.|&mdash;|нет|нет
+|**reason**            |String(255)|Причина списания данной позиции|&mdash;|нет|нет
 
 С позициями можно работать с помощью [специальных ресурсов для управления позициями Списания](../documents/#dokumenty-spisanie-pozicii-spisaniq),
 а также в составе отдельного Списания. При работе в составе отдельного Списания,

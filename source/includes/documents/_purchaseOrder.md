@@ -4,46 +4,47 @@
 
 #### Атрибуты сущности
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Заказа поставщику|&mdash;|да
-|**id**                 |UUID|ID Заказа поставщику|Только для чтения|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет
-|**updated**            |DateTime|Момент последнего обновления Заказа поставщику|Только для чтения|да
-|**deleted**            |DateTime|Момент последнего удаления Заказа поставщику|Только для чтения|нет
-|**name**               |String(255)|Наименование Заказа поставщику|&mdash;|да
-|**description**        |String(4096)|Комментарий Заказа поставщику|&mdash;|нет
-|**code**               |String(255)|Код Заказа поставщику|&mdash;| нет
-|**externalCode**       |String(255)|Внешний код Заказа поставщику|&mdash;| да
-|**moment**             |DateTime|Дата Заказа|&mdash;|да
-|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
-|**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да
-|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет
-|**sum**                |Int|Сумма Заказа поставщику в установленной валюте|Только для чтения|да
-|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
-|**shared**             |Boolean|Общий доступ|&mdash;|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
-|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
-|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|&mdash;|нет
-|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса заказа|&mdash;|нет
-|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
-|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет
-|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
-|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да||**created**            |DateTime|Дата создания|Только для чтения|да
-|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
-|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
-|**vatSum**             |Float|Сумма НДС |Только для чтения|да
-|**positions**          |MetaArray|Метаданные позиций Заказа поставщику|&mdash;|да
-|**deliveryPlannedMoment**          |DateTime|Планируемая дата отгрузки|&mdash;|нет
-|**payedSum**            |Float|Сумма входящих платежей по Заказу |Только для чтения|да
-|**shippedSum**             |Float|Сумма отгруженного |Только для чтения|да
-|**invoicedSum**            |Float|Сумма счетов поставщику |Только для чтения|да
-|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
-|**waitSum**            |Float|Сумма товаров в пути|&mdash;|да
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Заказа поставщику|&mdash;|да|нет
+|**id**                 |UUID|ID Заказа поставщику|Только для чтения|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет|нет
+|**updated**            |DateTime|Момент последнего обновления Заказа поставщику|Только для чтения|да|нет
+|**deleted**            |DateTime|Момент последнего удаления Заказа поставщику|Только для чтения|нет|нет
+|**name**               |String(255)|Наименование Заказа поставщику|&mdash;|да|нет
+|**description**        |String(4096)|Комментарий Заказа поставщику|&mdash;|нет|нет
+|**code**               |String(255)|Код Заказа поставщику|&mdash;| нет|нет
+|**externalCode**       |String(255)|Внешний код Заказа поставщику|&mdash;| да|нет
+|**moment**             |DateTime|Дата Заказа|&mdash;|да|нет
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да|нет
+|**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да|нет
+|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет|нет
+|**sum**                |Int|Сумма Заказа поставщику в установленной валюте|Только для чтения|да|нет
+|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да|нет
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да|нет
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да|да
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да|да
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|&mdash;|нет|да
+|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет|да
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса заказа|&mdash;|нет|да
+|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет|да
+|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет|да
+|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет|нет
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|да
+|**created**            |DateTime|Дата создания|Только для чтения|да|нет
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да|нет
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да|нет
+|**vatSum**             |Float|Сумма НДС |Только для чтения|да|нет
+|**positions**          |MetaArray|Метаданные позиций Заказа поставщику|&mdash;|да|да
+|**deliveryPlannedMoment**          |DateTime|Планируемая дата отгрузки|&mdash;|нет|нет
+|**payedSum**            |Float|Сумма входящих платежей по Заказу |Только для чтения|да|нет
+|**shippedSum**             |Float|Сумма отгруженного |Только для чтения|да|нет
+|**invoicedSum**            |Float|Сумма счетов поставщику |Только для чтения|да|нет
+|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет|да
+|**waitSum**            |Float|Сумма товаров в пути|&mdash;|да|нет
 
 #### Связи с другими документами
 
@@ -59,18 +60,18 @@
 Позиции Заказа - это список товаров/услуг/модификаций/серий.
 Объект позиции Заказа содержит следующие поля:
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**id**                 |UUID|ID позиции|Только для чтения|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|&mdash;|да
-|**price**          |Float|Цена товара/услуги в копейках|&mdash;|да
-|**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|&mdash;|да
-|**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да
-|**pack**            |String(255)|Упаковка товара|&mdash;|нет
-|**shipped**        |Int|Принято|&mdash;|да
-|**wait**        |Boolean|Ожидается данной позиции|&mdash;|нет
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**id**                 |UUID|ID позиции|Только для чтения|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
+|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|&mdash;|да|нет
+|**price**          |Float|Цена товара/услуги в копейках|&mdash;|да|нет
+|**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|&mdash;|да|нет
+|**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да|нет
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да|да
+|**pack**            |Object|Упаковка Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)|&mdash;|нет|нет
+|**shipped**        |Int|Принято|&mdash;|да|нет
+|**wait**        |Boolean|Ожидается данной позиции|&mdash;|нет|нет
 
 С позициями можно работать с помощью специальных ресурсов для управления позициями Заказа,
 а также в составе отдельного Заказа поставщику. При работе в составе отдельного Заказа поставщику,
@@ -2809,10 +2810,10 @@ curl -X GET
 
 ### Изменить позицию Заказа 
 Запрос на обновление отдельной позиции Заказа. Для обновления позиции нет каких-либо
- обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
- 
- **Параметры**
- 
+обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
+
+**Параметры**
+
 |Параметр   |Описание   | 
 |:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа поставщику.|
