@@ -14,7 +14,6 @@
 сущностей пользователя.
 Для каждого типа сущности будет свой набор параметров фильтрации.
 
-Запрос на печать этикеток и ценников по шаблону печатной формы.
 #### Атрибуты сущности
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
@@ -22,7 +21,7 @@
 |**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные фильтра|&mdash;|да|нет
 |**id**        |UUID|ID фильтра|Только для чтения|да|нет
 |**accountId**    |UUID|ID учетной записи|Только для чтения|да|нет
-|**owner**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|Только для чтения|да|нет
+|**owner**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|Только для чтения|да|да
 |**name**    |String(255)|Название фильтра|Необходимое при создании|да|нет
 
 Примеры запросов:
@@ -33,7 +32,7 @@
 
 ### Получить список фильтров
 
-> Пример запроса на получение списка фильтров
+> Пример запроса на получение списка фильтров для товаров
 ```shell
   curl -X GET
     "https://online.moysklad.ru/api/remap/1.2/entity/product/namedFilter"
@@ -56,7 +55,7 @@
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/namedFilter/",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedFilter",
     "type": "namedFilter",
     "mediaType": "application/json",
     "size": 1,
@@ -67,7 +66,7 @@
     {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/namedFilter/b5863410-ca86-11eb-ac12-000d00000019",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/namedFilter/metadata",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedFilter/metadata",
         "type": "namedFilter",
         "mediaType": "application/json"
       },
@@ -97,7 +96,7 @@
 |**id** |  `string` (required) *Example: 736da682-ad8b-11eb-0a80-17ef000000d4* id Фильтра.|
 
 
-> Пример запроса на получение фильтра по id
+> Пример запроса на получение фильтра для товара по id
 ```shell
   curl -X GET
     "https://online.moysklad.ru/api/remap/1.2/entity/product/namedFilter/b5863410-ca86-11eb-ac12-000d00000019"
@@ -110,8 +109,8 @@
 ```json
   {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/namedFilter/b5863410-ca86-11eb-ac12-000d00000019",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/namedFilter/metadata",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedFilter/b5863410-ca86-11eb-ac12-000d00000019",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedFilter/metadata",
     "type": "namedFilter",
     "mediaType": "application/json"
   },
