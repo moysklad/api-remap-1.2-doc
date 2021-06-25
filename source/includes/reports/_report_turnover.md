@@ -9,11 +9,11 @@
 
 | Название  | Тип | Описание                    | Обязательное при ответе|
 | --------- |:----|:----------------------------|:------------------------|
-|**assortment**        |Object|Краткое представление Товара или Модификации в отчете. [Подробнее тут](/#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-assortment)|да
-|**onPeriodStart**     |Object|Показатели на начало периода. [Подробнее тут](/#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)|да
-|**onPeriodEnd**       |Object|Показатели на конец периода. [Подробнее тут](/#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)|да
-|**income**            |Object|Показатели прихода в течение периода отчета. [Подробнее тут](/#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)|да
-|**outcome**           |Object|Показатели расхода в течение периода отчета. [Подробнее тут](/#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)|да
+|**assortment**        |Object|Краткое представление Товара или Модификации в отчете. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-assortment)|да
+|**onPeriodStart**     |Object|Показатели на начало периода. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)|да
+|**onPeriodEnd**       |Object|Показатели на конец периода. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)|да
+|**income**            |Object|Показатели прихода в течение периода отчета. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)|да
+|**outcome**           |Object|Показатели расхода в течение периода отчета. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)|да
 
 #### Структура объекта assortment
 
@@ -231,8 +231,8 @@ curl -X GET
 
 | Название  | Тип | Описание                    | Обязательное при ответе|
 | --------- |:----|:----------------------------|:------------------------|
-|**assortment**        |Object|Краткое представление Товара или Модификации в отчете. [Подробнее тут](/#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-assortment)|да
-|**stockByStore**      |Object|Детализация оборотов по складам. [Подробнее тут](/#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-detalizaciq-oborotow-po-skladam)|да
+|**assortment**        |Object|Краткое представление Товара или Модификации в отчете. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-assortment)|да
+|**stockByStore**      |Object|Детализация оборотов по складам. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-detalizaciq-oborotow-po-skladam)|да
 
 #### Структура объекта assortment
 
@@ -251,10 +251,10 @@ curl -X GET
 | Название  | Тип | Описание                    | Обязательное при ответе|
 | --------- |:----|:----------------------------|:------------------------|
 |**store**             |Object|Склад.|да
-|**onPeriodStart**     |Object|Показатели на начало периода. [Подробнее тут](/#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)|да
-|**onPeriodEnd**       |Object|Показатели на конец периода. [Подробнее тут](/#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)|да
-|**income**            |Object|Показатели прихода в течение периода отчета. [Подробнее тут](/#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)|да
-|**outcome**           |Object|Показатели расхода в течение периода отчета. [Подробнее тут](/#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)|да
+|**onPeriodStart**     |Object|Показатели на начало периода. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)|да
+|**onPeriodEnd**       |Object|Показатели на конец периода. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)|да
+|**income**            |Object|Показатели прихода в течение периода отчета. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)|да
+|**outcome**           |Object|Показатели расхода в течение периода отчета. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)|да
 
 #### Структура объекта показатели (onPeriodStart, onPeriodEnd, income, outcome)
 
