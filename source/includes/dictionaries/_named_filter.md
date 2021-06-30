@@ -14,7 +14,6 @@
 сущностей пользователя.
 Для каждого типа сущности будет свой набор параметров фильтрации.
 
-Запрос на печать этикеток и ценников по шаблону печатной формы.
 #### Атрибуты сущности
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
@@ -22,21 +21,22 @@
 |**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные фильтра|&mdash;|да|нет
 |**id**        |UUID|ID фильтра|Только для чтения|да|нет
 |**accountId**    |UUID|ID учетной записи|Только для чтения|да|нет
-|**owner**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|Только для чтения|да|нет
-|**name**    |String(255)|Название фильтра|Необходимое при создании|да|нет
+|**owner**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|Только для чтения|да|да
+|**name**    |String|Название фильтра|Необходимое при создании|да|нет
 
 Примеры запросов:
-Сущности и документы - ```/entity/[entityType]/namedFilter```
+Сущности и документы - ```/entity/[entityType]/namedfilter```
 
-Аудит - ```/audit/namedFilter```
+Аудит - ```/audit/namedfilter```
 
 
 ### Получить список фильтров
 
-> Пример запроса на получение списка фильтров
+> Пример запроса на получение списка фильтров для товаров
+
 ```shell
   curl -X GET
-    "https://online.moysklad.ru/api/remap/1.2/entity/product/namedFilter"
+    "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter"
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"  
 ```
@@ -56,8 +56,8 @@
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/namedFilter/",
-    "type": "namedFilter",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter",
+    "type": "namedfilter",
     "mediaType": "application/json",
     "size": 1,
     "limit": 1000,
@@ -66,9 +66,9 @@
   "rows": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/namedFilter/b5863410-ca86-11eb-ac12-000d00000019",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/namedFilter/metadata",
-        "type": "namedFilter",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter/metadata",
+        "type": "namedfilter",
         "mediaType": "application/json"
       },
       "owner": {
@@ -97,10 +97,11 @@
 |**id** |  `string` (required) *Example: 736da682-ad8b-11eb-0a80-17ef000000d4* id Фильтра.|
 
 
-> Пример запроса на получение фильтра по id
+> Пример запроса на получение фильтра для товара по id
+
 ```shell
   curl -X GET
-    "https://online.moysklad.ru/api/remap/1.2/entity/product/namedFilter/b5863410-ca86-11eb-ac12-000d00000019"
+    "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019"
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"  
 ```
@@ -110,9 +111,9 @@
 ```json
   {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/namedFilter/b5863410-ca86-11eb-ac12-000d00000019",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/namedFilter/metadata",
-    "type": "namedFilter",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter/metadata",
+    "type": "namedfilter",
     "mediaType": "application/json"
   },
   "owner": {
