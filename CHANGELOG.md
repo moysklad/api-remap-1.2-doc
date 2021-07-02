@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 01-07-2021
+### Исправлено
+- Исправлено описание обязательности полей отчета обороты при ответе
+
 ## 28-06-2021
 ### Добавлено
 - Пермиссии на документы маркировки в [правах сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sotrudnik-rabota-s-prawami-sotrudnika)
