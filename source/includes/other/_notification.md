@@ -326,7 +326,7 @@ curl -X PUT
 | **NotificationRetailShiftOpened**       | Розничная торговля    | Открыта смена |
 | **NotificationRetailShiftClosed**       | Розничная торговля    | Закрыта смена |
 | **NotificationScript**       | Сценарии    | Уведомление из сценария |
-| **FacebookTokenExpirationNotification** | Интернер-магазины     | О скором окончании действия доступа к аккаунту Facebook |
+| **FacebookTokenExpirationNotification** | Интернет-магазины     | О скором окончании действия доступа к аккаунту Facebook |
 
 ## Подробное описание типов уведомлений
 
