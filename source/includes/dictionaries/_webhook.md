@@ -14,14 +14,14 @@
     {
       "meta": {
         "type": "product",
-        "href": "http://localhost/api/remap/1.2/entity/product/75c896d0-db16-11eb-c0a8-800d00000002"
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/75c896d0-db16-11eb-c0a8-800d00000002"
       },
       "action": "CREATE",
       "accountId": "9171a53c-b719-11eb-c0a8-800d00000001",
       "auditContext": {
         "meta": {
           "type": "audit",
-          "href": "http://localhost/api/remap/1.2/audit/75fe3b73-db16-11eb-c0a8-800d00000004"
+          "href": "https://online.moysklad.ru/api/remap/1.2/audit/75fe3b73-db16-11eb-c0a8-800d00000004"
         }
       }
     }
