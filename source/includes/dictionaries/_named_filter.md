@@ -27,9 +27,6 @@
 Примеры запросов:
 Сущности и документы - ```/entity/[entityType]/namedfilter```
 
-Аудит - ```/audit/namedfilter```
-
-
 ### Получить список фильтров
 
 > Пример запроса на получение списка фильтров для товаров
@@ -67,7 +64,6 @@
     {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter/metadata",
         "type": "namedfilter",
         "mediaType": "application/json"
       },
@@ -112,7 +108,6 @@
   {
   "meta": {
     "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter/metadata",
     "type": "namedfilter",
     "mediaType": "application/json"
   },
