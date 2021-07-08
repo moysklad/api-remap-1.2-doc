@@ -136,7 +136,7 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
-### 02-07-2021
+### 09-07-2021
 #### Добавлено
 - Новый ресурс [Обороты по товару с детализацией по документам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-dokumentam)
 
