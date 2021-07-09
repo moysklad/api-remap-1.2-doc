@@ -1959,7 +1959,7 @@ FacebookTokenExpirationNotification - предупреждение о скоро
 |**title**       |String(255)|Краткий текст уведомления|Необходимое при создании| да
 |**description**       |String(4096)|Описание уведомления|Необходимое при создании| да
 |**connectorName**       |String(4096)|Название коннектора "Instagram and Facebook"|&mdash;| да
-|**connectorName**       |String(4096)|Количество дней, оставшихся до окончания действия доступа к аккаунту Facebook|&mdash;| да
+|**daysLeftToExpiration**       |String(4096)|Количество дней, оставшихся до окончания действия доступа к аккаунту Facebook|&mdash;| да
 
 **Параметры**
 
