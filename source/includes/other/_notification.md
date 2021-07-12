@@ -1981,7 +1981,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "http://localhost/api/remap/1.2/notification/9596251d-da73-11eb-ac12-000c00000015",
+    "href": "https://online.moysklad.ru/api/remap/1.2/notification/9596251d-da73-11eb-ac12-000c00000015",
     "type": "FacebookTokenExpirationNotification",
     "mediaType": "application/json"
   },
@@ -2058,6 +2058,10 @@ curl -X GET
     "scripts" : {
       "enabled" : true,
       "channels" : [ "email", "push" ]
+    },
+    "online_stores" : {
+      "enabled" : true,
+      "channels" : [ "email", "push" ]
     }
   }
 }
@@ -2102,6 +2106,10 @@ curl -X GET
                 "channels" : [ "email", "push" ]
               },
               "scripts" : {
+                "enabled" : true,
+                "channels" : [ "email", "push" ]
+              },
+              "online_stores" : {
                 "enabled" : true,
                 "channels" : [ "email", "push" ]
               }
