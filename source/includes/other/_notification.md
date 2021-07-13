@@ -1989,6 +1989,7 @@ curl -X GET
   "accountId": "54148a9e-d8fa-11eb-ac12-000b00000001",
   "created": "2021-07-01 16:52:33",
   "read": true,
+  "title": "Обновите привязку к Facebook",
   "description": "Для правильной работы магазина Instagram shop доступ к аккаунту нужно обновлять каждые 60 дней — просто нажмите на кнопку в настройках. Дней до остановки синхронизации: 5",
   "connectorName": "Instagram shop",
   "daysLeftToExpiration": 5
