@@ -50,7 +50,7 @@
 |**retailStore** | ссылка на точку продаж, по которой нужно произвести фильтрацию.
 |**agentTag** | строка с названием группы контрагентов, по которой нужно произвести фильтрацию.
 |**withoutturnover** | параметр для фильтрации "Показывать товары без движения". Возможные значения: true, false.
-|**type** | строка с названием типа документа, по который нужно произвести фильтрацию. Возможные значения supply, purchasereturn, demand, salesreturn, loss, enter, move, processing, retaildemand, retailsalesreturn.
+|**type** | параметр для фильтрации "тип документа", по которому можно произвести фильтрацию. Возможные значения `supply`, `purchasereturn`, `demand`, `salesreturn`, `loss`, `enter`, `move`, `processing`, `retaildemand`, `retailsalesreturn`.
 
 
 Примеры фильтрации:
