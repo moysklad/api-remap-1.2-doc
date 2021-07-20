@@ -11,59 +11,59 @@
 
 #### Атрибуты сущности
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Сотрудника|&mdash;|да
-|**id**                 |UUID|ID Сотрудника|Только для чтения|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
-|**shared**             |Boolean|Общий доступ|&mdash;|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
-|**updated**            |DateTime|Момент последнего обновления Сотрудника|Только для чтения|да
-|**name**               |String(255)|Наименование Сотрудника|Только для чтения|да
-|**description**        |String(4096)|Комментарий к Сотруднику|&mdash;|нет
-|**code**               |String(255)|Код Сотрудника|&mdash;| нет
-|**externalCode**       |String(255)|Внешний код Сотрудника|&mdash;| да
-|**archived**           |Boolean|Добавлен ли Сотрудник в архив|&mdash;| да
-|**created**            |DateTime|Момент создания Сотрудника|Только для чтения| да
-|**uid**                |String(255)|Логин Сотрудника|Только для чтения| нет
-|**email**              |String(255)|Электронная почта сотрудника|&mdash;| нет
-|**phone**              |String(255)|Телефон сотрудника|&mdash;| нет
-|**firstName**          |String(255)|Имя|&mdash;| нет
-|**middleName**         |String(255)|Отчество|&mdash;|нет
-|**lastName**           |String(255)|Фамилия|Необходимое|да
-|**fullName**           |String(255)|Имя Отчество Фамилия|Только для чтения| нет
-|**shortFio**           |String(255)|Краткое ФИО|Только для чтения| нет
-|**cashiers**           |MetaArray|Массив кассиров.  [Подробнее тут](../dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-kassir)|Только для чтения| нет
-|**attributes**         |Array(Object)|Дополнительные поля Сотрудника|&mdash;| нет
-|**image**              |Object|Фотография сотрудника.  [Подробнее тут](../dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-fotografiq-sotrudnika-struktura-i-zagruzka)|&mdash;| нет
-|**inn**                |String(255)|ИНН сотрудника (в формате ИНН физического лица)|&mdash;| нет
-|**position**           |String(255)|Должность сотрудника |&mdash;| нет
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Сотрудника|&mdash;|да|нет
+|**id**                 |UUID|ID Сотрудника|Только для чтения|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да|нет
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да|да
+|**updated**            |DateTime|Момент последнего обновления Сотрудника|Только для чтения|да|нет
+|**name**               |String(255)|Наименование Сотрудника|Только для чтения|да|нет
+|**description**        |String(4096)|Комментарий к Сотруднику|&mdash;|нет|нет
+|**code**               |String(255)|Код Сотрудника|&mdash;| нет|нет
+|**externalCode**       |String(255)|Внешний код Сотрудника|&mdash;| да|нет
+|**archived**           |Boolean|Добавлен ли Сотрудник в архив|&mdash;| да|нет
+|**created**            |DateTime|Момент создания Сотрудника|Только для чтения| да|нет
+|**uid**                |String(255)|Логин Сотрудника|Только для чтения| нет|нет
+|**email**              |String(255)|Электронная почта сотрудника|&mdash;|нет|нет
+|**phone**              |String(255)|Телефон сотрудника|&mdash;| нет|нет
+|**firstName**          |String(255)|Имя|&mdash;| нет|нет
+|**middleName**         |String(255)|Отчество|&mdash;|нет|нет
+|**lastName**           |String(255)|Фамилия|Необходимое|да|нет
+|**fullName**           |String(255)|Имя Отчество Фамилия|Только для чтения| нет|нет
+|**shortFio**           |String(255)|Краткое ФИО|Только для чтения| нет|нет
+|**cashiers**           |MetaArray|Массив кассиров.  [Подробнее тут](../dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-kassir)|Только для чтения| нет|да
+|**attributes**         |Array(Object)|Дополнительные поля Сотрудника|&mdash;| нет|нет
+|**image**              |Object|Фотография сотрудника.  [Подробнее тут](../dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-fotografiq-sotrudnika-struktura-i-zagruzka)|&mdash;| нет|нет
+|**inn**                |String(255)|ИНН сотрудника (в формате ИНН физического лица)|&mdash;| нет|нет
+|**position**           |String(255)|Должность сотрудника |&mdash;| нет|нет
 
 Поля **owner**, **group** и **archived** может изменять только администратор. Поле **email** может изменять администратор и сам сотрудник.
 
 #### Атрибуты вложенных сущностей
 ##### Кассир
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**id**                 |UUID|ID Кассира|Только для чтения|да
-|**accountId**          |UUID| ID учетной записи Кассира|Только для чтения|да
-|**employee**           |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные сотрудника, которого представляет собой кассир|Только для чтения|да
-|**retailStore**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные точки продаж, к которой прикреплен кассир|Только для чтения|да
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**id**                 |UUID|ID Кассира|Только для чтения|да|нет
+|**accountId**          |UUID| ID учетной записи Кассира|Только для чтения|да|нет
+|**employee**           |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные сотрудника, которого представляет собой кассир|Только для чтения|да|да
+|**retailStore**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные точки продаж, к которой прикреплен кассир|Только для чтения|да|да
 
 ##### Фотография сотрудника: структура и загрузка.
 Структура поля **image**, которое вы получите при запросе сотрудника с фотографией:
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
-|**title**               |String(255)|Название Изображения|&mdash;|да
-|**filename**               |String(255)|Имя файла|&mdash;|да
-|**size**               |Int|Размер файла в байтах|&mdash;|да
-|**updated**               |DateTime|Время последнего изменения|&mdash;|да
-|**miniature**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные миниатюры изображения|&mdash;|да
-|**tiny**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные уменьшенного изображения|&mdash;|да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да|нет
+|**title**               |String(255)|Название Изображения|&mdash;|да|нет
+|**filename**               |String(255)|Имя файла|&mdash;|да|нет
+|**size**               |Int|Размер файла в байтах|&mdash;|да|нет
+|**updated**               |DateTime|Время последнего изменения|&mdash;|да|нет
+|**miniature**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные миниатюры изображения|&mdash;|да|нет
+|**tiny**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные уменьшенного изображения|&mdash;|да|нет
 
 #### Загрузка
 Для загрузки фотографии сотрудника необходимо сформировать запрос на [обновление](../dictionaries/#suschnosti-sotrudnik-izmenit-sotrudnika) сотрудника (PUT) и в теле запроса
@@ -603,7 +603,7 @@ curl -X GET
     "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/bc962452-cd64-11e8-ac12-000800000000",
     "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
     "type": "employee",
-    "mediaType": "application/json",
+    "mediaType": "application/json"
   },
   "id": "bc962452-cd64-11e8-ac12-000800000000",
   "accountId": "ffb8f6b1-cd3a-11e8-ac12-000700000001",
@@ -612,7 +612,7 @@ curl -X GET
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/00f76fbb-cd3b-11e8-ac12-00080000002d",
       "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
-      "mediaType": "application/json",
+      "mediaType": "application/json"
     }
   },
   "shared": true,
@@ -773,13 +773,16 @@ curl -X GET
 
 #### Атрибуты сущности
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**isActive**               |Boolean|Доступ к сервису МойСклад|&mdash;|да
-|**login**               |String(255)|Логин сотрудника для входа в МойСклад|&mdash;|нет
-|**email**               |String(255)|Почта сотрудника|&mdash;|нет
-|**group**               |Object|Метаданные Группы, а также ее идентификатор и имя|&mdash;|да
-|**role**               |Object|Информация о роли Сотрудника|&mdash;|нет
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**isActive**               |Boolean|Доступ к сервису МойСклад|&mdash;|да|нет
+|**login**               |String(255)|Логин сотрудника для входа в МойСклад|&mdash;|нет|нет
+|**email**               |String(255)|Почта сотрудника|&mdash;|нет|нет
+|**group**               |Object|Метаданные Группы, а также ее идентификатор и имя|&mdash;|да|нет
+|**authorizedHosts**     |Array(String)|Список ipv4 адресов, с которых разрешен доступ на аккаунт|&mdash;|нет|нет
+|**authorizedIpNetwork** |String(255)|Ipv4 адрес, идентифицирующий соответствующую подсеть, с правом доступа на аккаунт|&mdash;|нет|нет
+|**authorizedIpNetmask** |String(255)|Маска подсети с правом доступа на аккаунт|&mdash;|нет|нет
+|**role**               |Object|Информация о роли Сотрудника|&mdash;|нет|нет
 
 #### Атрибуты вложенных сущностей
 ##### Роль
@@ -791,10 +794,10 @@ curl -X GET
 Значения по умолчанию выставляются, если пользователь, не указывая индивидуальные пермиссии, задает индивидуальную роль сотруднику, 
 у которого ранее не было задано индивидуальных пермиссий.
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**                 |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные роли|&mdash;|да
-|**permissions**          |Array(Object)| Список пермиссий|&mdash;|нет
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**                 |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные роли|&mdash;|да|нет
+|**permissions**          |Array(Object)| Список пермиссий|&mdash;|нет|нет
 
 ###### Список пользовательских пермиссий 
 
@@ -918,9 +921,22 @@ curl -X GET
 |**cashboxAdjustment**    |DICTIONARY|Все ALL|Корректировка остатков в кассе
 |**accountAdjustment**    |DICTIONARY|Все ALL|Корректировка остатков на счете
 |**counterpartyAdjustment**    |DICTIONARY|Все ALL|Корректировка баланса контрагента
+|**emissionOrder**    |DICTIONARY|Все NO|Заказ кодов маркировки
+|**enrollOrder**    |DICTIONARY|Все NO|Ввод в оборот кодов маркировки
+|**retireOrder**    |DICTIONARY|Все NO|Возврат в оборот
+|**remarkingOrder**    |DICTIONARY|Все NO|Перемаркировка
+|**remainsOrder**    |DICTIONARY|Все NO|Описание остатков
+|**crptCancellation**    |DICTIONARY|Все NO|Списание кодов маркировки
+|**crptPackageCreation**    |DICTIONARY|Все NO|Формирование упаковки
+|**crptPackageItemRemoval**    |DICTIONARY|Все NO|Изъятие из упаковки
+|**crptPackageDisaggregation**    |DICTIONARY|Все NO|Расформирование упаковки
+|**GTINList**    |view, create, delete|Все NO|Список GTIN
+|**trackingCodeList**    |view, print|Все NO|Коды маркировки
 
 Для пермиссий `currency`, `country` и `uom` значение `view` не изменяемое и равно `ALL`. При попытке изменить значение `view`
  для данных пермиссий, будет возвращена ошибка.
+ 
+Для пермиссий `GTINList`, `trackingCodeList` возможные значения полей - `ALL` или `NO`.
 
 ###### Пермиссии для задач
 
@@ -984,6 +1000,11 @@ curl -X GET
         "id": "f4b74c5e-443a-11eb-ac12-001000000002",
         "name": "Основной"
     },
+    "authorizedHosts": [
+        "1.15.15.5"
+    ],
+    "authorizedIpNetwork": "80.8.8.8",
+    "authorizedIpNetmask": "1.8.8.8",
     "role": {
         "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/individual",
@@ -1019,144 +1040,12 @@ curl -X GET
             "subscriptionControl": false,
             "purchaseControl": true,
             "listenCalls": true,
-            "company": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL"
-            },
-            "myCompany": {
-                "view": "ALL",
+            "remarkingOrder": {
+                "view": "NO",
                 "print": "NO",
                 "create": "NO",
                 "update": "NO",
                 "delete": "NO"
-            },
-            "good": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL"
-            },
-            "project": {
-                "view": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL"
-            },
-            "contract": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL"
-            },
-            "employee": {
-                "view": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL"
-            },
-            "currency": {
-                "view": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL"
-            },
-            "warehouse": {
-                "view": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL"
-            },
-            "customEntity": {
-                "view": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL"
-            },
-            "retailStore": {
-                "view": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL"
-            },
-            "country": {
-                "view": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL"
-            },
-            "uom": {
-                "view": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL"
-            },
-            "purchaseReturn": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "demand": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "salesReturn": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "loss": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "enter": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "move": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "inventory": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL"
-            },
-            "processing": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
             },
             "invoiceIn": {
                 "view": "ALL",
@@ -1166,178 +1055,12 @@ curl -X GET
                 "delete": "ALL",
                 "approve": "ALL"
             },
-            "invoiceOut": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "purchaseOrder": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "customerOrder": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "internalOrder": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "processingOrder": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "factureIn": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "factureOut": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "paymentIn": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "paymentOut": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "cashIn": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "cashOut": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "priceList": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "retailDemand": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "retailSalesReturn": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "supply": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "processingPlan": {
-                "view": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL"
-            },
-            "commissionReportIn": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "commissionReportOut": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "retailShift": {
+            "contract": {
                 "view": "ALL",
                 "print": "ALL",
                 "create": "ALL",
                 "update": "ALL",
                 "delete": "ALL"
-            },
-            "retailDrawerCashIn": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "retailDrawerCashOut": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
-            },
-            "bonusTransaction": {
-                "view": "ALL",
-                "print": "ALL",
-                "create": "ALL",
-                "update": "ALL",
-                "delete": "ALL",
-                "approve": "ALL"
             },
             "prepayment": {
                 "view": "ALL",
@@ -1346,6 +1069,13 @@ curl -X GET
                 "update": "ALL",
                 "delete": "ALL",
                 "approve": "ALL"
+            },
+            "good": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
             },
             "prepaymentReturn": {
                 "view": "ALL",
@@ -1362,12 +1092,88 @@ curl -X GET
                 "update": "ALL",
                 "delete": "ALL"
             },
-            "accountAdjustment": {
+            "enter": {
                 "view": "ALL",
                 "print": "ALL",
                 "create": "ALL",
                 "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "bonusTransaction": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "emissionOrder": {
+                "view": "NO",
+                "print": "NO",
+                "create": "NO",
+                "update": "NO",
+                "delete": "NO"
+            },
+            "commissionReportOut": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "myCompany": {
+                "view": "ALL",
+                "create": "NO",
+                "update": "NO",
+                "delete": "NO"
+            },
+            "customerOrder": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "commissionReportIn": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "warehouse": {
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
                 "delete": "ALL"
+            },
+            "purchaseOrder": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "factureIn": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "retailDrawerCashIn": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "counterpartyAdjustment": {
                 "view": "ALL",
@@ -1375,6 +1181,299 @@ curl -X GET
                 "create": "ALL",
                 "update": "ALL",
                 "delete": "ALL"
+            },
+            "cashOut": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "salesReturn": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "cashIn": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "enrollOrder": {
+                "view": "NO",
+                "print": "NO",
+                "create": "NO",
+                "update": "NO",
+                "delete": "NO"
+            },
+            "priceList": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "crptPackageItemRemoval": {
+                "view": "NO",
+                "print": "NO",
+                "create": "NO",
+                "update": "NO",
+                "delete": "NO"
+            },
+            "employee": {
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
+            },
+            "supply": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "processing": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "retailSalesReturn": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "demand": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "retailDemand": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "retailDrawerCashOut": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "internalOrder": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "remainsOrder": {
+                "view": "NO",
+                "print": "NO",
+                "create": "NO",
+                "update": "NO",
+                "delete": "NO"
+            },
+            "customEntity": {
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
+            },
+            "purchaseReturn": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "project": {
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
+            },
+            "uom": {
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
+            },
+            "inventory": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
+            },
+            "trackingCodeList": {
+                "view": "NO",
+                "print": "NO"
+            },
+            "crptPackageCreation": {
+                "view": "NO",
+                "print": "NO",
+                "create": "NO",
+                "update": "NO",
+                "delete": "NO"
+            },
+            "retireOrder": {
+                "view": "NO",
+                "print": "NO",
+                "create": "NO",
+                "update": "NO",
+                "delete": "NO"
+            },
+            "GTINList": {
+                "view": "NO",
+                "create": "NO",
+                "delete": "NO"
+            },
+            "move": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "currency": {
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
+            },
+            "enrollReturn": {
+                "view": "NO",
+                "print": "NO",
+                "create": "NO",
+                "update": "NO",
+                "delete": "NO"
+            },
+            "processingOrder": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "country": {
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
+            },
+            "invoiceOut": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "company": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
+            },
+            "crptCancellation": {
+                "view": "NO",
+                "print": "NO",
+                "create": "NO",
+                "update": "NO",
+                "delete": "NO"
+            },
+            "retailStore": {
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
+            },
+            "factureOut": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "retailShift": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
+            },
+            "accountAdjustment": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
+            },
+            "loss": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "crptPackageDisaggregation": {
+                "view": "NO",
+                "print": "NO",
+                "create": "NO",
+                "update": "NO",
+                "delete": "NO"
+            },
+            "processingPlan": {
+                "view": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL"
+            },
+            "paymentIn": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "paymentOut": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
             },
             "script": {
                 "view": "AUTHOR_OR_ASSIGNEE",
@@ -1421,6 +1520,9 @@ curl -X GET
                     "mediaType": "application/json"
                 }
             },
+            "authorizedHosts": [
+                "20.20.15.5"
+            ],
             "role": {
                 "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/admin",
@@ -1449,6 +1551,11 @@ curl -X GET
         "id": "f4b74c5e-443a-11eb-ac12-001000000003",
         "name": "Новая группа"
     },
+    "authorizedHosts": [
+        "20.20.15.5"
+    ],
+    "authorizedIpNetwork": "80.8.8.8",
+    "authorizedIpNetmask": "1.8.8.8",
     "role": {
         "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/admin",

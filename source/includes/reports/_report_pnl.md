@@ -27,10 +27,10 @@
 | --------- |:----|:----------------------------|:------------------------|
 |**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Товара или Услуги|да
 |**name**               |String(255)|Наименование Товара или Услуги|да
-|**code**       |String(255)| Код товара или услуги|да
-|**uom**       |Object|Единица измерения|да
-|**article**      |String(255)|Артикул товара|да
-|**image**      |Object|Изображение товара|да
+|**code**       |String(255)| Код товара или услуги|нет
+|**uom**       |Object|Единица измерения|нет
+|**article**      |String(255)|Артикул товара|нет
+|**image**      |Object|Изображение товара|нет
 
 #### Атрибуты доступные для фильтрации
 
@@ -67,7 +67,10 @@
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 |**momentFrom** |  `date` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
 |**momentTo** |  `date` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
- 
+При отсутствии параметров **momentFrom** и **momentTo** отображаются отчеты за последний месяц.  
+При отсутствии параметра **momentFrom** и указании параметра **momentTo** отображаются отчеты с начала текущего года по **momentTo**.  
+При отсутствии параметра **momentTo** и указании параметра **momentFrom** отображаются отчеты с **momentFrom** по текущий день.  
+
 > Запрос на получение отчета "Прибыльность по товарам".
 
 ```shell
@@ -269,7 +272,10 @@ curl -X GET
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 |**momentFrom** |  `date` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
 |**momentTo** |  `date` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
- 
+При отсутствии параметров **momentFrom** и **momentTo** отображаются отчеты за последний месяц.  
+При отсутствии параметра **momentFrom** и указании параметра **momentTo** отображаются отчеты с начала текущего года по **momentTo**.  
+При отсутствии параметра **momentTo** и указании параметра **momentFrom** отображаются отчеты с **momentFrom** по текущий день.  
+
 > Запрос на получение отчета "Прибыльность по модификациям".
 
 ```shell
@@ -464,7 +470,10 @@ curl -X GET
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 |**momentFrom** |  `date` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
 |**momentTo** |  `date` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
- 
+При отсутствии параметров **momentFrom** и **momentTo** отображаются отчеты за последний месяц.  
+При отсутствии параметра **momentFrom** и указании параметра **momentTo** отображаются отчеты с начала текущего года по **momentTo**.  
+При отсутствии параметра **momentTo** и указании параметра **momentFrom** отображаются отчеты с **momentFrom** по текущий день.  
+
 > Запрос на получение отчета "Прибыльность по сотрудникам".
 
 ```shell
@@ -579,7 +588,10 @@ curl -X GET
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 |**momentFrom** |  `date` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
 |**momentTo** |  `date` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter). |
- 
+При отсутствии параметров **momentFrom** и **momentTo** отображаются отчеты за последний месяц.  
+При отсутствии параметра **momentFrom** и указании параметра **momentTo** отображаются отчеты с начала текущего года по **momentTo**.  
+При отсутствии параметра **momentTo** и указании параметра **momentFrom** отображаются отчеты с **momentFrom** по текущий день.  
+
 > Запрос на получение отчета "Прибыльность по покупателям".
 
 ```shell

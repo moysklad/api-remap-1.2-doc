@@ -5,24 +5,24 @@
 
 #### Атрибуты сущности
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Бонусной программы|&mdash;|да
-|**id**                 |UUID|ID Бонусной программы|Только для чтения|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**name**               |String(255)|Наименование Бонусной программы|&mdash;|нет
-|**active**               |Boolean|Индикатор, является ли бонусная программа активной на данный момент|&mdash;|да
-|**allProducts**               |Boolean|Индикатор, действует ли бонусная программа на все товары (всегда `true`, см. [Скидки](../dictionaries/#suschnosti-skidki))|&mdash;|да
-|**allAgents**              |Boolean|Индикатор, действует ли скидка на всех контрагентов (см. [Скидки](../dictionaries/#suschnosti-skidki))|&mdash;|да
-|**agentTags**             |Array(String)|Тэги контрагентов, к которым применяется бонусная программа. В случае пустого значения контрагентов в результате выводится пустой массив.|&mdash;|да
-|**earnRateRoublesToPoint**              |Int| Курс начисления|&mdash;|нет
-|**spendRatePointsToRouble**              |Int|Курс списания|&mdash;|нет
-|**maxPaidRatePercents**             |Int|Максимальный процент оплаты баллами|&mdash;|нет
-|**postponedBonusesDelayDays**    |Int |Баллы начисляются через [N] дней |Только при наличии тарифной опции "Расширенная бонусная программа" |нет
-|**earnWhileRedeeming**              |Boolean|Разрешить одновременное начисление и списание бонусов. Если `true` - бонусы будут начислены на денежную часть покупки, даже при частичной оплате покупки баллами.|&mdash;|да
-|**welcomeBonusesEnabled**           |Boolean|Возможность начисления приветственных баллов|&mdash;|да
-|**welcomeBonusesValue**             |Int|Количество приветственных баллов, начисляемых участникам бонусной программы. Не может быть отрицательным. Не может быть пустым, если `welcomeBonusesEnabled` = true|&mdash;|нет
-|**welcomeBonusesEnabled**           |Enum|Условие начисления приветственных баллов. Не может быть пустым, если `welcomeBonusesEnabled` = true. [Подробнее тут](../dictionaries/#suschnosti-bonusnaq-programma-bonusnye-programmy-atributy-suschnosti-uslowiq-bonusnyh-ballow)|&mdash;|нет
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Бонусной программы|&mdash;|да|нет
+|**id**                 |UUID|ID Бонусной программы|Только для чтения|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
+|**name**               |String(255)|Наименование Бонусной программы|&mdash;|нет|нет
+|**active**               |Boolean|Индикатор, является ли бонусная программа активной на данный момент|&mdash;|да|нет
+|**allProducts**               |Boolean|Индикатор, действует ли бонусная программа на все товары (всегда `true`, см. [Скидки](../dictionaries/#suschnosti-skidki))|&mdash;|да|нет
+|**allAgents**              |Boolean|Индикатор, действует ли скидка на всех контрагентов (см. [Скидки](../dictionaries/#suschnosti-skidki))|&mdash;|да|нет
+|**agentTags**             |Array(String)|Тэги контрагентов, к которым применяется бонусная программа. В случае пустого значения контрагентов в результате выводится пустой массив.|&mdash;|да|нет
+|**earnRateRoublesToPoint**              |Int| Курс начисления|&mdash;|нет|нет
+|**spendRatePointsToRouble**              |Int|Курс списания|&mdash;|нет|нет
+|**maxPaidRatePercents**             |Int|Максимальный процент оплаты баллами|&mdash;|нет|нет
+|**postponedBonusesDelayDays**    |Int |Баллы начисляются через [N] дней |Только при наличии тарифной опции "Расширенная бонусная программа" |нет|нет
+|**earnWhileRedeeming**              |Boolean|Разрешить одновременное начисление и списание бонусов. Если `true` - бонусы будут начислены на денежную часть покупки, даже при частичной оплате покупки баллами.|&mdash;|да|нет
+|**welcomeBonusesEnabled**           |Boolean|Возможность начисления приветственных баллов|&mdash;|да|нет
+|**welcomeBonusesValue**             |Int|Количество приветственных баллов, начисляемых участникам бонусной программы. Не может быть отрицательным. Не может быть пустым, если `welcomeBonusesEnabled` = true|&mdash;|нет|нет
+|**welcomeBonusesEnabled**           |Enum|Условие начисления приветственных баллов. Не может быть пустым, если `welcomeBonusesEnabled` = true. [Подробнее тут](../dictionaries/#suschnosti-bonusnaq-programma-bonusnye-programmy-atributy-suschnosti-uslowiq-bonusnyh-ballow)|&mdash;|нет|нет
 
 ##### Условия бонусных баллов
 

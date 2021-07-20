@@ -1,6 +1,6 @@
 ## Предоплата
 ### Предоплаты 
-Средствами JSON API можно запрашивать списки Предоплат и сведения по отдельным Предоплатам. Кодом сущности для Предоплаты в составе JSON API является ключевое слово **prepayment**. Больше о Предоплатах и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/360014644074-%D0%9F%D1%80%D0%B5%D0%B4%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B0-%D0%B2-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%BC-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B8).
+Средствами JSON API можно запрашивать списки Предоплат и сведения по отдельным Предоплатам. Кодом сущности для Предоплаты в составе JSON API является ключевое слово **prepayment**. Больше о Предоплатах и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/360015823873-%D0%9F%D1%80%D0%B5%D0%B4%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B0-%D0%B2-%D0%BA%D0%B0%D1%81%D1%81%D0%B5).
 
 По данной сущности можно осуществлять контекстный поиск с помощью специального параметра `search`. Подробнее можно узнать по [ссылке](../#mojsklad-json-api-obschie-swedeniq-kontextnyj-poisk). Поиск с параметром search отличается от других тем, что поиск не префиксный, без токенизации и идет только по одному полю одновременно. Ищет такие строки, в которые входит значение строки поиска.
 
@@ -10,44 +10,44 @@
 
 #### Атрибуты сущности
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Предоплаты |&mdash;|да
-|**id**                 |UUID|ID Предоплаты |Только для чтения|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет
-|**updated**            |DateTime|Момент последнего обновления Предоплаты |Только для чтения|да
-|**deleted**            |DateTime|Момент последнего удаления Предоплаты |Только для чтения|нет
-|**name**               |String(255)|Наименование Предоплаты |&mdash;|да
-|**description**        |String(4096)|Комментарий Предоплаты |&mdash;|нет
-|**code**               |String(255)|Код Предоплаты |&mdash;| нет
-|**externalCode**       |String(255)|Внешний код Предоплаты |&mdash;| да
-|**moment**             |DateTime|Дата Счета|&mdash;|да
-|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
-|**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да
-|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет
-|**sum**                |Int|Сумма Предоплаты в копейках|Только для чтения|да
-|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
-|**shared**             |Boolean|Общий доступ|&mdash;|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Предоплаты |&mdash;|нет
-|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет
-|**created**            |DateTime|Дата создания|Только для чтения|да
-|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
-|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
-|**vatSum**                |Float|Сумма включая НДС|&mdash;|да
-|**retailStore**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Точки продаж|&mdash;|да
-|**customerOrder**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Заказа Покупателя|&mdash;|да
-|**retailShift**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной смены|Необходимое при создании|да
-|**returns**       |Array(Object)|Коллекция метаданных на связанные возвраты|&mdash;|нет
-|**cashSum**                |Float|Оплачено наличными|&mdash;|да
-|**noCashSum**                |Float|Оплачено картой|&mdash;|да
-|**qrSum**                  |Float|Оплачено по QR-коду|&mdash;|да
-|**positions**          |MetaArray|Метаданные позиций Предоплаты|&mdash;|да
-|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-predoplata-predoplaty-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет
-|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Предоплаты |&mdash;|да|нет
+|**id**                 |UUID|ID Предоплаты |Только для чтения|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет|нет
+|**updated**            |DateTime|Момент последнего обновления Предоплаты |Только для чтения|да|нет
+|**deleted**            |DateTime|Момент последнего удаления Предоплаты |Только для чтения|нет|нет
+|**name**               |String(255)|Наименование Предоплаты |&mdash;|да|нет
+|**description**        |String(4096)|Комментарий Предоплаты |&mdash;|нет|нет
+|**code**               |String(255)|Код Предоплаты |&mdash;| нет|нет
+|**externalCode**       |String(255)|Внешний код Предоплаты |&mdash;| да|нет
+|**moment**             |DateTime|Дата Счета|&mdash;|да|нет
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да|нет
+|**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да|нет
+|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет|нет
+|**sum**                |Int|Сумма Предоплаты в копейках|Только для чтения|да|нет
+|**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да|нет
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да|нет
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да|да
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да|да
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Предоплаты |&mdash;|нет|да
+|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет|нет
+|**created**            |DateTime|Дата создания|Только для чтения|да|нет
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да|нет
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да|нет
+|**vatSum**                |Float|Сумма включая НДС|&mdash;|да|нет
+|**retailStore**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Точки продаж|&mdash;|да|да
+|**customerOrder**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Заказа Покупателя|&mdash;|да|да
+|**retailShift**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной смены|Необходимое при создании|да|да
+|**returns**       |Array(Object)|Коллекция метаданных на связанные возвраты|&mdash;|нет|да
+|**cashSum**                |Float|Оплачено наличными|&mdash;|да|нет
+|**noCashSum**                |Float|Оплачено картой|&mdash;|да|нет
+|**qrSum**                  |Float|Оплачено по QR-коду|&mdash;|да|нет
+|**positions**          |MetaArray|Метаданные позиций Предоплаты|&mdash;|да|да
+|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-predoplata-predoplaty-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет|нет
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|да
 
 ##### Код системы налогообложения
 Значения поля taxSystem.
@@ -65,16 +65,16 @@
 Позиции Предоплаты - это список товаров/услуг/модификаций/серий.
 Объект позиции Предоплаты содержит следующие поля:
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**id**                 |UUID|ID позиции|Только для чтения|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|&mdash;|да
-|**price**          |Float|Цена товара/услуги в копейках|&mdash;|да
-|**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|&mdash;|да
-|**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да
-|**pack**            |String(255)|Упаковка товара|&mdash;|нет
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**id**                 |UUID|ID позиции|Только для чтения|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
+|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|&mdash;|да|нет
+|**price**          |Float|Цена товара/услуги в копейках|&mdash;|да|нет
+|**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|&mdash;|да|нет
+|**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да|нет
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да|да
+|**pack**            |Object|Упаковка Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)|&mdash;|нет|нет
 
 ### Атрибуты доступные для фильтрации
 

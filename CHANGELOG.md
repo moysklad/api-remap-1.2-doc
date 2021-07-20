@@ -1,6 +1,38 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 09-07-2021
+### Добавлено
+- Новый ресурс [Обороты по товару с детализацией по документам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-dokumentam)
+
+## 01-07-2021
+### Исправлено
+- Исправлено описание обязательности полей отчета обороты при ответе
+
+## 28-06-2021
+### Добавлено
+- Пермиссии на документы маркировки в [правах сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sotrudnik-rabota-s-prawami-sotrudnika)
+
+## 25-06-2021
+### Добавлено
+- Новый ресурс [Отчет обороты](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty)
+
+## 10-06-2021
+### Документация
+- Добавлено описание параметров фильтрации выборки `momentFrom` и `momentTo` в отчетах прибыльности
+
+## 08-06-2021
+### Изменено
+- Изменены лимиты по [вебхукам](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki): выделены отдельные лимиты для приложений
+
+## 03-06-2021
+### Добавлено
+- Возможность перехода к соответствующему разделу с описанием ошибки по ссылке в `errors.moreInfo`
+
+## 03-06-2021
+### Документация
+- Исправлено описание атрибута `pack` у позиций документов
+
 ## 02-06-2021
 ### Добавлено
 - По остаткам комплектов в позициях документа, добавлена возможность получения cost, quantity и available.
@@ -14,6 +46,14 @@
 ### Добавлено
 - Добавлены поля `welcomeBonusesEnabled`, `welcomeBonusesValue`, `welcomeBonusesEnabled` в [Бонусную программу](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-bonusnaq-programma)
 - Возможность получать коды маркировки товаров и транспортных упаковок в формате тега 1162 (поле `trackingCodes_1162`) для документа типа [Отгрузка](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka-otgruzki-kody-markirowki-towarow-i-transportnyh-upakowok-w-formate-tega-1162).
+
+## 28-05-2021
+### Документация
+- Добавлена колонка `Expand` в таблицы описания атрибутов сущностей в разделах: "Сущности" и "Документы"
+
+## 27-05-2021
+### Добавлено
+- Добавлены новые поля `authorizedHosts`, `authorizedIpNetwork`, `authorizedIpNetmask` для ограничения доступа по ip в [эндпоинте управления правами сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sotrudnik-rabota-s-prawami-sotrudnika)
 
 ## 15-04-2021
 ### Добавлено
