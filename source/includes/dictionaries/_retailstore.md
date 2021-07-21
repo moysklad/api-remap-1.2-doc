@@ -130,11 +130,11 @@
 
 ##### Продажа маркированных товаров:
 
-| Название                    | Описание                                        |
-| --------------------------- |:------------------------------------------------|
-| **ONLY_PAST_CHECK**         | только прошедших проверку.
-| **ALL_BUT_MARKING_MISTAKE** | все, кроме ошибок в маркировке.
-| **ALL_GOODS_WITH_ERROR**    | продавать товары с ошибками.
+| Название                    | Описание                                                  |
+| --------------------------- |:----------------------------------------------------------|
+| **CORRECT_MARKS_ONLY**      | Только с правильными кодами маркировки
+| **WITHOUT_ERRORS**          | С правильными кодами и те, которые не удалось проверить
+| **ALL**                     | Все – независимо от результатов проверки кодов маркировки
 
 ##### Приоритет отправки электронного чека
 
@@ -483,7 +483,7 @@ curl -X GET
       "allowCustomPrice" : true,
       "allowSellTobaccoWithoutMRC" : true,
       "tobaccoMrcControlType" : "USER_PRICE",
-      "markingSellingMode" : "ONLY_PAST_CHECK",
+      "markingSellingMode" : "CORRECT_MARKS_ONLY",
       "allowCreateProducts" : false,
       "productFolders" : {
         "meta" : {
@@ -699,7 +699,7 @@ curl -X GET
       "allowCustomPrice" : true,
       "allowSellTobaccoWithoutMRC" : true,
       "tobaccoMrcControlType" : "USER_PRICE",
-      "markingSellingMode" : "ONLY_PAST_CHECK",
+      "markingSellingMode" : "CORRECT_MARKS_ONLY",
       "allowCreateProducts" : false,
       "productFolders" : {
         "meta" : {
@@ -837,7 +837,7 @@ curl -X GET
               "allowCustomPrice" : true,
               "allowSellTobaccoWithoutMRC" : true,
               "tobaccoMrcControlType" : "USER_PRICE",
-               "markingSellingMode" : "ONLY_PAST_CHECK",
+               "markingSellingMode" : "CORRECT_MARKS_ONLY",
               "allowCreateProducts" : false,
               "productFolders" : [{
                 "meta": {
@@ -1022,7 +1022,7 @@ curl -X GET
   "allowCustomPrice" : true,
   "allowSellTobaccoWithoutMRC" : true,
   "tobaccoMrcControlType" : "USER_PRICE",
-  "markingSellingMode" : "ONLY_PAST_CHECK",
+  "markingSellingMode" : "CORRECT_MARKS_ONLY",
   "allowCreateProducts" : false,
   "productFolders" : {
     "meta" : {
@@ -1215,7 +1215,7 @@ curl -X GET
   "allowCustomPrice" : false,
   "allowSellTobaccoWithoutMRC" : false,
   "tobaccoMrcControlType" : "SAME_PRICE",
-  "markingSellingMode" : "ONLY_PAST_CHECK",
+  "markingSellingMode" : "CORRECT_MARKS_ONLY",
   "allowCreateProducts" : true,
   "productFolders" : {
     "meta" : {
@@ -1390,7 +1390,7 @@ curl -X GET
     "allowCustomPrice" : false,
     "allowSellTobaccoWithoutMRC" : false,
     "tobaccoMrcControlType" : "SAME_PRICE",
-    "markingSellingMode" : "ONLY_PAST_CHECK",
+    "markingSellingMode" : "CORRECT_MARKS_ONLY",
     "allowCreateProducts" : true,
     "productFolders" : {
       "meta" : {
@@ -1515,7 +1515,7 @@ curl -X GET
     "allowCustomPrice" : true,
     "allowSellTobaccoWithoutMRC" : true,
     "tobaccoMrcControlType" : "USER_PRICE",
-    "markingSellingMode" : "ONLY_PAST_CHECK",
+    "markingSellingMode" : "CORRECT_MARKS_ONLY",
     "allowCreateProducts" : true,
     "productFolders" : {
       "meta" : {
@@ -1926,7 +1926,7 @@ curl -X PUT
   "allowCustomPrice" : false,
   "allowSellTobaccoWithoutMRC" : false,
   "tobaccoMrcControlType" : "SAME_PRICE",
-  "markingSellingMode" : "ALL_GOODS_WITH_ERROR",
+  "markingSellingMode" : "ALL",
   "allowCreateProducts" : true,
   "productFolders" : {
     "meta" : {
