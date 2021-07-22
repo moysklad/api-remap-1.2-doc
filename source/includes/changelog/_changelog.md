@@ -136,7 +136,7 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
-### 19-20-2021
+### 26-07-2021
 #### Добавлено
 - Новый заголовок управления временем жизни конечных ссылок на скачивание файлов [В общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-ssylki-na-fajly)
 
