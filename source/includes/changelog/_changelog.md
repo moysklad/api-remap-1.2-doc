@@ -140,7 +140,7 @@
 #### Добавлено
 - Новый ресурс [Обороты по товару с детализацией по документам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-dokumentam)
 
-### 10-07-2021
+### 01-07-2021
 #### Исправлено
 - Исправлено описание обязательности полей отчета обороты при ответе
 
