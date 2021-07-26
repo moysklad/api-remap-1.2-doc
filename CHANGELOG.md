@@ -1,9 +1,9 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-## 26-07-2021
+## 28-07-2021
 ### Добавлено
-- Новый заголовок управления временем жизни конечных ссылок на скачивание файлов [В общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-ssylki-na-fajly)
+- Новый заголовок управления временем жизни ссылок на скачивание изображений и файловв. Описание в [общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-ssylki-na-fajly)
 
 ## 09-07-2021
 ### Добавлено
