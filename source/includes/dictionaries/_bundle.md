@@ -5,47 +5,47 @@
 
 #### Атрибуты сущности
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Комплекта|&mdash;|да
-|**id**                |UUID|ID Комплекта|Только для чтения|да
-|**accountId**         |UUID|ID учетной записи|Только для чтения|да
-|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|да
-|**shared**         |Boolean|Общий доступ|&mdash;|да
-|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|&mdash;|да
-|**syncId**                |UUID|ID синхронизации|После заполнения недоступно для изменения|нет
-|**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да
-|**name**         |String(255)|Наименование Комплекта|Необходимое при создании|да
-|**description**        |String(4096)|Описание Комплекта|&mdash;|нет
-|**code**         |String(255)|Код Комплекта|&mdash;|нет
-|**externalCode**         |String(255)|Внешний код Комплекта|&mdash;|да
-|**archived**        |Boolean|Добавлен ли Комплект в архив|&mdash;|да
-|**pathName**         |String|Наименование группы, в которую входит Комплект|Только для чтения|да
-|**vat**         |Int|НДС %|&mdash;|нет
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Комплекта|&mdash;|да|нет
+|**id**                |UUID|ID Комплекта|Только для чтения|да|нет
+|**accountId**         |UUID|ID учетной записи|Только для чтения|да|нет
+|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|нет|да
+|**shared**         |Boolean|Общий доступ|&mdash;|да|нет
+|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|&mdash;|да|да
+|**syncId**                |UUID|ID синхронизации|После заполнения недоступно для изменения|нет|нет
+|**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да|нет
+|**name**         |String(255)|Наименование Комплекта|Необходимое при создании|да|нет
+|**description**        |String(4096)|Описание Комплекта|&mdash;|нет|нет
+|**code**         |String(255)|Код Комплекта|&mdash;|нет|нет
+|**externalCode**         |String(255)|Внешний код Комплекта|&mdash;|да|нет
+|**archived**        |Boolean|Добавлен ли Комплект в архив|&mdash;|да|нет
+|**pathName**         |String|Наименование группы, в которую входит Комплект|Только для чтения|да|нет
+|**vat**         |Int|НДС %|&mdash;|нет|нет
 |**vatEnabled**     |Boolean|Включен ли НДС для товара. С помощью этого флага для товара можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.|&mdash;|нет
 |**useParentVat**   |Boolean|Используется ли ставка НДС родительской группы. Если true для единицы ассортимента будет применена ставка, установленная для родительской группы.|&mdash;|да
-|**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
+|**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет|нет
 |**effectiveVatEnabled**  |Boolean|Дополнительный признак для определения разграничения реального НДС = 0 или "без НДС". (effectiveVat = 0, effectiveVatEnabled = false) -> "без НДС", (effectiveVat = 0, effectiveVatEnabled = true) -> 0%.|Только для чтения|нет
-|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|&mdash;|нет
-|**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет
-|**images**       |Array(Object)|Изображения Комплекта. Изображений у Модификации может быть не более 10. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta-izobrazhenie-struktura-i-zagruzka)|&mdash;|нет
-|**minPrice**         |Object|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-wlozhennyh-suschnostej-minimal-naq-cena)|&mdash;|нет
-|**salePrices**         |Array(Object)|Цены продажи|&mdash;|нет
-|**attributes**         |Array(Object)|Коллекция доп. полей|&mdash;|нет
-|**country**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Страны|&mdash;|нет
-|**article**         |String(255)|Артикул|&mdash;|нет
-|**weight**         |Int|Вес|&mdash;|нет
-|**volume**         |Int|Объем|&mdash;|нет
-|**barcodes**         |Array(Object)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta-shtrih-kody)|&mdash;|нет
-|**discountProhibited**        |Boolean|Признак запрета скидок|&mdash;|да
-|**overhead**         |Object|Дополнительные расходы. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-wlozhennyh-suschnostej-dopolnitel-nye-rashody)|&mdash;|нет
-|**components**         |Array(Object)|Компоненты Комплекта. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta)|&mdash;|нет
-|**trackingType**         |Enum|Тип маркируемой продукции. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-tip-markiruemoj-produkcii)|&mdash;|нет
-|**tnved**         |String(255)|Код ТН ВЭД|&mdash;|нет
-|**partialDisposal**         |Boolean|Управление состоянием частичного выбытия маркированного товара. «true» - возможность включена.|&mdash;|нет
-|**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-priznak-predmeta-rascheta)|&mdash;|нет
-|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет
-|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|нет|
+|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|&mdash;|нет|да
+|**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет|да
+|**images**       |MetaArray|Массив метаданных [Изображений](../dictionaries/#suschnosti-izobrazhenie) (Максимальное количество изображений - 10)|&mdash;|нет|да
+|**minPrice**         |Object|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-wlozhennyh-suschnostej-minimal-naq-cena)|&mdash;|нет|нет
+|**salePrices**         |Array(Object)|Цены продажи|&mdash;|нет|нет
+|**attributes**         |Array(Object)|Коллекция доп. полей|&mdash;|нет|нет
+|**country**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Страны|&mdash;|нет|да
+|**article**         |String(255)|Артикул|&mdash;|нет|нет
+|**weight**         |Int|Вес|&mdash;|нет|нет
+|**volume**         |Int|Объем|&mdash;|нет|нет
+|**barcodes**         |Array(Object)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta-shtrih-kody)|&mdash;|нет|нет
+|**discountProhibited**        |Boolean|Признак запрета скидок|&mdash;|да|нет
+|**overhead**         |Object|Дополнительные расходы. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-wlozhennyh-suschnostej-dopolnitel-nye-rashody)|&mdash;|нет|нет
+|**components**         |MetaArray|Массив компонентов Комплекта|&mdash;|нет|да
+|**trackingType**         |Enum|Тип маркируемой продукции. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-tip-markiruemoj-produkcii)|&mdash;|нет|нет
+|**tnved**         |String(255)|Код ТН ВЭД|&mdash;|нет|нет
+|**partialDisposal**         |Boolean|Управление состоянием частичного выбытия маркированного товара. «true» - возможность включена.|&mdash;|нет|нет
+|**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-priznak-predmeta-rascheta)|&mdash;|нет|нет
+|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет|нет
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|нет|да
 
 ##### Тип маркируемой продукции
 Значения поля trackingType.
@@ -60,6 +60,7 @@
 | **PERFUMERY**         |Духи и туалетная вода|
 | **ELECTRONICS**       |Фотокамеры и лампы-вспышки|
 | **TIRES**       |Шины и покрышки|
+| **MILK**       |Молочная продукция|
 | **OTP**       |Альтернативная табачная продукция|
 
 ##### Признак предмета расчета
@@ -113,42 +114,35 @@
 ##### Дополнительные расходы
 Структура объекта overhead.
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:---------------|:-----------------------|
-**value**   |Float|Значение цены| &mdash; | да
-**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+**value**   |Float|Значение цены| &mdash; | да|нет
+**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да|да
 
 ##### Минимальная цена
 Структура объекта minPrice.
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:---------------|:-----------------------|
-**value**   |Float|Значение цены| &mdash; | да
-**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+**value**   |Float|Значение цены| &mdash; | да|нет
+**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да|да
 
 #### Компоненты Комплекта
 Компоненты Комплекта - это список товаров/услуг/модификаций, который входят в состав комплекта. Компонентов у комплекта может быть от 1 до 50.
 Объект компонента Комплекта содержит следующие поля:
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**id**                |UUID|ID компонента|Только для чтения|да
-|**accountId**         |UUID|ID учетной записи|Только для чтения|да
-|**quantity**         |Int|Количество товаров/услуг данного вида в компоненте|Только для чтения|да
-|**assortment**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии, которую представляет собой компонент|&mdash;|да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**id**                |UUID|ID компонента|Только для чтения|да|нет
+|**accountId**         |UUID|ID учетной записи|Только для чтения|да|нет
+|**quantity**         |Int|Количество товаров/услуг данного вида в компоненте|Только для чтения|да|нет
+|**assortment**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии, которую представляет собой компонент|&mdash;|да|да
 
 ##### Метаданные Комплектов
 Метаданные Комплектов содержат информацию о дополнительных полях.
 
 Посмотреть все созданные в основном интерфейсе доп. поля Комплектов,
-а также все типы цен можно с помощью запроса на получение метаданных Комплектов.
-Ответ - объект, со следующей структурой:
-
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные |&mdash;|да
-|**attributes**        |Array(Object)|коллекция всех существующих доп. полей Комплектов|&mdash;|да
-
+а также все типы цен можно с помощью запроса на получение метаданных [Товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-metadannye-towarow).
 
 Структуры объектов отдельных коллекций:
 
@@ -179,15 +173,15 @@
 При запросе Комплекта с изображениями будет выведено json представление этого Комплекта, содержащее поле **images**. Данное поле является 
 массивом элементов. Элементы поля **images** имеют поля:
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
-|**title**               |String(255)|Название Изображения|&mdash;|да
-|**filename**               |String(255)|Имя файла|&mdash;|да
-|**size**               |Int|Размер файла в байтах|&mdash;|да
-|**updated**               |DateTime|Время загрузки файла на сервер|&mdash;|да
-|**miniature**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные миниатюры изображения|&mdash;|да
-|**tiny**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные уменьшенного изображения|&mdash;|да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да|нет
+|**title**               |String(255)|Название Изображения|&mdash;|да|нет
+|**filename**               |String(255)|Имя файла|&mdash;|да|нет
+|**size**               |Int|Размер файла в байтах|&mdash;|да|нет
+|**updated**               |DateTime|Время загрузки файла на сервер|&mdash;|да|нет
+|**miniature**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные миниатюры изображения|&mdash;|да|нет
+|**tiny**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные уменьшенного изображения|&mdash;|да|нет
 
 <h4>Загрузка</h4>
 Для загрузки изображения нужно в теле запроса на [создание](../dictionaries/#suschnosti-komplekt-sozdat-komplekt) или [обновление](../dictionaries/#suschnosti-komplekt-izmenit-komplekt) Комплекта
@@ -247,7 +241,7 @@ curl -X GET
   },
   "meta": {
     "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/",
-    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "bundle",
     "mediaType": "application/json",
     "size": 1,
@@ -258,7 +252,7 @@ curl -X GET
     {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023",
-        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "bundle",
         "mediaType": "application/json"
       },
@@ -487,7 +481,7 @@ curl -X GET
 {
   "meta": {
     "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023",
-    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "bundle",
     "mediaType": "application/json"
   },
@@ -678,7 +672,7 @@ curl -X GET
 {
   "meta": {
     "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023",
-    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "bundle",
     "mediaType": "application/json"
   },
@@ -939,7 +933,7 @@ curl -X GET
               {
                 "meta": {
                   "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023",
-                  "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+                  "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
                   "type": "bundle",
                   "mediaType": "application/json"
                 },
@@ -969,7 +963,7 @@ curl -X GET
     {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023",
-        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "bundle",
         "mediaType": "application/json"
       },
@@ -1122,7 +1116,7 @@ curl -X GET
     {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023",
-        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "bundle",
         "mediaType": "application/json"
       },
@@ -1276,83 +1270,9 @@ curl -X GET
   ```
   
 ### Метаданные Комплектов
-#### Метаданные Комплектов
-Запрос на получение метаданных Комплектов. Результат - объект JSON, включающий в себя:
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные |&mdash;|да
-|**attributes**        |Array(Object)|Коллекция всех существующих доп. полей Комплектов|&mdash;|да
-
-Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
-
-> Получить метаданные комплектов
-
-```shell
-curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata"
-  -H "Authorization: Basic <Credentials>"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление доп. полей Комплектов.
-
-```json
-{
-  "meta": {
-    "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle",
-    "mediaType": "application/json"
-  },
-  "attributes": [
-    {
-      "meta": {
-        "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata/attributes/5a374c72-ee21-11e6-8af5-581e00000003",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
-      },
-      "id": "5a374c72-ee21-11e6-8af5-581e00000003",
-      "name": "доп строка",
-      "type": "string",
-      "required": false
-    }
-  ]
-}
-```
-
-### Отдельное доп. поле
-
-**Параметры**
-
-|Параметр   |Описание   | 
-|:----|:----|
-|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
-
-#### Отдельное доп. поле
-
-> Запрос на получение информации по отдельному дополнительному полю.
-
-```shell
-curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельного доп. поля.
-
-```json
-{
-  "meta": {
-    "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata/attributes/5a374c72-ee21-11e6-8af5-581e00000003",
-    "type": "attributemetadata",
-    "mediaType": "application/json"
-  },
-  "id": "5a374c72-ee21-11e6-8af5-581e00000003",
-  "name": "доп строка",
-  "type": "string",
-  "required": false
-}
-```
+Посмотреть все созданные в основном интерфейсе доп. поля Комплектов,
+а также все типы цен можно с помощью запроса на получение метаданных [Товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-metadannye-towarow).
 
 ### Комплект
 
@@ -1379,7 +1299,7 @@ curl -X GET
 {
   "meta": {
     "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023",
-    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "bundle",
     "mediaType": "application/json"
   },
@@ -1534,7 +1454,7 @@ curl -X GET
 {
   "meta": {
     "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023",
-    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "bundle",
     "mediaType": "application/json"
   },
@@ -1721,14 +1641,14 @@ curl -X POST
         {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/bundle/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
             "type": "bundle",
             "mediaType": "application/json"
         },
         {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/bundle/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
             "type": "bundle",
             "mediaType": "application/json"
         }
@@ -1812,7 +1732,7 @@ curl -X GET
       "assortment": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/service/b3d8d132-ee08-11e6-8af5-581e00000013",
-          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "service",
           "mediaType": "application/json"
         }

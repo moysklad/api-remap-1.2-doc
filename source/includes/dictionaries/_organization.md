@@ -13,93 +13,108 @@
 
 ### Юрлица
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Юрлица|&mdash;|да
-|**id**                 |UUID|ID Юрлица|Только для чтения|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
-|**shared**             |Boolean|Общий доступ|&mdash;|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
-|**syncId**             |UUID|ID синхронизации |После заполнения недоступен для изменения|нет
-|**updated**            |DateTime|Момент последнего обновления Юрлица|Только для чтения|да
-|**name**               |String(255)|Наименование Юрлица|Необходимое при создании|да
-|**description**        |String(4096)|Комментарий к Юрлицу |&mdash;|нет
-|**code**               |String(255)|Код Юрлица |&mdash;| нет
-|**externalCode**       |String(255)|Внешний код Юрлица |Только для чтения| да
-|**archived**           |Boolean|Добавлено ли Юрлицо в архив|&mdash;| да
-|**created**            |DateTime|Дата создания|&mdash;| да
-|**actualAddress**      |String(255)|Фактический адрес Юрлица  |&mdash;| нет
-|**actualAddressFull**  |Object|Фактический адрес Юрлица с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres) |&mdash;|нет
-|**companyType**        |Enum|Тип Юрлица . В зависимости от значения данного поля набор выводимых реквизитов контрагента может меняться. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-tip-urlica) |&mdash;| да |
-|**trackingContractNumber**|String(255)|Номер договора с ЦРПТ|&mdash;| нет
-|**trackingContractDate**  |DateTime|Дата договора с ЦРПТ|&mdash;| нет
-|**bonusProgram**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные активной бонусной программы|&mdash;|нет
-|**bonusPoints**           |Int|Бонусные баллы по активной бонусной программе|Только для чтения| нет
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Юрлица|&mdash;|да|нет
+|**id**                 |UUID|ID Юрлица|Только для чтения|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|нет|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да|нет
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да|да
+|**syncId**             |UUID|ID синхронизации |После заполнения недоступен для изменения|нет|нет
+|**updated**            |DateTime|Момент последнего обновления Юрлица|Только для чтения|да|нет
+|**name**               |String(255)|Наименование Юрлица|Необходимое при создании|да|нет
+|**description**        |String(4096)|Комментарий к Юрлицу |&mdash;|нет|нет
+|**code**               |String(255)|Код Юрлица |&mdash;| нет|нет
+|**externalCode**       |String(255)|Внешний код Юрлица |&mdash;| да|нет
+|**archived**           |Boolean|Добавлено ли Юрлицо в архив|&mdash;| да|нет
+|**created**            |DateTime|Дата создания|&mdash;| да|нет
+|**actualAddress**      |String(255)|Фактический адрес Юрлица  |&mdash;| нет|нет
+|**actualAddressFull**  |Object|Фактический адрес Юрлица с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres) |&mdash;|нет|нет
+|**companyType**        |Enum|Тип Юрлица . В зависимости от значения данного поля набор выводимых реквизитов контрагента может меняться. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-tip-urlica) |&mdash;| да |нет
+|**trackingContractNumber**|String(255)|Номер договора с ЦРПТ|&mdash;| нет|нет
+|**trackingContractDate**  |DateTime|Дата договора с ЦРПТ|&mdash;| нет|нет
+|**bonusProgram**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные активной бонусной программы|&mdash;|нет|да
+|**bonusPoints**           |Int|Бонусные баллы по активной бонусной программе|Только для чтения| нет|нет
 
 #### Поля реквизитов
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:---------------|:-----------------------|
-|**legalTitle**       |String(4096)|Полное наименование. Игнорируется, если передано одно из значений для ФИО. Формируется автоматически на основе получаемых ФИО Юрлица|&mdash;|нет
-|**legalLastName**     |String(255)|Фамилия для Юрлица типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Юрлиц типа `[Юридическое лицо]`|&mdash;|нет
-|**legalFirstName**     |String(255)|Имя для Юрлица типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Юрлиц типа `[Юридическое лицо]`|&mdash;|нет
-|**legalMiddleName**     |String(255)|Отчество для Юрлица типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Юрлиц типа `[Юридическое лицо]`|&mdash;|нет
-|**legalAddress**     |String(255)|Юридический адреса Юрлица|&mdash;|нет
-|**legalAddressFull** |Object|Юридический адрес Юрлица с детализацией по отдельным полям|&mdash;|нет
-|**inn**              |String(255)|ИНН|&mdash;|нет
-|**kpp**              |String(255)|КПП|&mdash;|нет
-|**ogrn**             |String(255)|ОГРН|&mdash;|нет
-|**ogrnip**           |String(255)|ОГРНИП|&mdash;|нет
-|**okpo**             |String(255)|ОКПО|&mdash;|нет
-|**certificateNumber**|String(255)|Номер свидетельства|&mdash;|нет
-|**certificateDate**  |DateTime|Дата свидетельства|&mdash;|нет
-|**email**            |String(255)|Адрес электронной почты |&mdash;| нет
-|**phone**            |String(255)|Номер городского телефона |&mdash;| нет
-|**fax**              |String(255)|Номер факса |&mdash;| нет
-|**accounts**         |Array(Object)|Метаданные счетов юрлица|&mdash;| да
-|**attributes**       |Array(Object)|Массив метаданных дополнительных полей юрлица|&mdash;|нет
-|**isEgaisEnable**    |Boolean|Включен ли ЕГАИС для данного юрлица|&mdash;| нет
-|**fsrarId**          |String(255)|Идентификатор в ФСРАР|&mdash;|нет
-|**payerVat**         |Boolean|Является ли данное юрлицо плательщиком НДС|&mdash;| нет
-|**utmUrl**           |String(255)|IP-адрес УТМ|&mdash;|нет
-|**director**         |String(255)|Руководитель|&mdash;|нет
-|**chiefAccountant**  |String(255)|Главный бухгалтер|&mdash;|нет
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+|**legalTitle**       |String(4096)|Полное наименование. Игнорируется, если передано одно из значений для ФИО. Формируется автоматически на основе получаемых ФИО Юрлица|&mdash;|нет|нет
+|**legalLastName**     |String(255)|Фамилия для Юрлица типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Юрлиц типа `[Юридическое лицо]`|&mdash;|нет|нет
+|**legalFirstName**     |String(255)|Имя для Юрлица типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Юрлиц типа `[Юридическое лицо]`|&mdash;|нет|нет
+|**legalMiddleName**     |String(255)|Отчество для Юрлица типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Юрлиц типа `[Юридическое лицо]`|&mdash;|нет|нет
+|**legalAddress**     |String(255)|Юридический адреса Юрлица|&mdash;|нет|нет
+|**legalAddressFull** |Object|Юридический адрес Юрлица с детализацией по отдельным полям|&mdash;|нет|нет
+|**inn**              |String(255)|ИНН|&mdash;|нет|нет
+|**kpp**              |String(255)|КПП|&mdash;|нет|нет
+|**ogrn**             |String(255)|ОГРН|&mdash;|нет|нет
+|**ogrnip**           |String(255)|ОГРНИП|&mdash;|нет|нет
+|**okpo**             |String(255)|ОКПО|&mdash;|нет|нет
+|**certificateNumber**|String(255)|Номер свидетельства|&mdash;|нет|нет
+|**certificateDate**  |DateTime|Дата свидетельства|&mdash;|нет|нет
+|**email**            |String(255)|Адрес электронной почты |&mdash;| нет|нет
+|**phone**            |String(255)|Номер городского телефона |&mdash;| нет|нет
+|**fax**              |String(255)|Номер факса |&mdash;| нет|нет
+|**accounts**         |Array(Object)|Метаданные счетов юрлица|&mdash;| да|да
+|**attributes**       |Array(Object)|Массив метаданных дополнительных полей юрлица|&mdash;|нет|нет
+|**isEgaisEnable**    |Boolean|Включен ли ЕГАИС для данного юрлица|&mdash;| нет|нет
+|**fsrarId**          |String(255)|Идентификатор в ФСРАР|&mdash;|нет|нет
+|**payerVat**         |Boolean|Является ли данное юрлицо плательщиком НДС|&mdash;| нет|нет
+|**utmUrl**           |String(255)|IP-адрес УТМ|&mdash;|нет|нет
+|**director**         |String(255)|Руководитель|&mdash;|нет|нет
+|**directorPosition** |String(255)|Должность руководителя|&mdash;|нет|нет
+|**directorSign**     |Object|Подпись руководителя. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres-podpisi-i-pechat)|&mdash;|нет|нет
+|**chiefAccountant**  |String(255)|Главный бухгалтер|&mdash;|нет|нет
+|**chiefAccountSign** |Object|Подпись главного бухгалтера. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres-podpisi-i-pechat) |&mdash;|нет|нет
+|**stamp**            |Object|Печать. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres-podpisi-i-pechat) |&mdash;|нет|нет
 
 #### Атрибуты вложенных сущностей
 #### Аттрибуты сущности Адрес
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:---------------|:-----------------------|
-|**postalCode**      |String(6)|Почтовый индекс|&mdash;|нет
-|**country**      |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные страны|&mdash;|нет
-|**region**      |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные региона|&mdash;|нет
-|**city**      |String(255)|Город|&mdash;|нет
-|**street**      |String(255)|Улица|&mdash;|нет
-|**house**      |String(30)|Дом|&mdash;|нет
-|**apartment**      |String(30)|Квартира|&mdash;|нет
-|**addInfo**      |String(255)|Другое|&mdash;|нет
-|**comment**      |String(255)|Комментарий|&mdash;|нет
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+|**postalCode**      |String(6)|Почтовый индекс|&mdash;|нет|нет
+|**country**      |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные страны|&mdash;|нет|нет
+|**region**      |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные региона|&mdash;|нет|нет
+|**city**      |String(255)|Город|&mdash;|нет|нет
+|**street**      |String(255)|Улица|&mdash;|нет|нет
+|**house**      |String(30)|Дом|&mdash;|нет|нет
+|**apartment**      |String(30)|Квартира|&mdash;|нет|нет
+|**addInfo**      |String(255)|Другое|&mdash;|нет|нет
+|**comment**      |String(255)|Комментарий|&mdash;|нет|нет
 
 Строка адреса является конкатенацией полей структурированного адреса в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
 При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
 При передаче обоих адресов строковый будет игнорирован.
 При передаче только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
 
+##### Подписи и печать
+
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да|нет
+|**title**               |String(255)|Название Изображения|&mdash;|да|нет
+|**filename**               |String(255)|Имя файла|&mdash;|да|нет
+|**size**               |Int|Размер файла в байтах|&mdash;|да|нет
+|**updated**               |DateTime|Время загрузки файла на сервер|&mdash;|да|нет
+|**miniature**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные миниатюры изображения|&mdash;|да|нет
+
 ##### Счета юрлица
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:---------------|:-----------------------|
-|**id**      |UUID|ID Счета|Только для чтения|да
-|**accountId**      |UUID|ID учетной записи|Только для чтения|да
-|**updated**      |DateTime|Момент последнего обновления юрлица|Только для чтения|да
-|**isDefault**      |Boolean|Является ли счет основным счетом юрлица|&mdash;|да
-|**accountNumber**      |String(255)|Номер счета|Необходимое при создании|да
-|**bankName**      |String(255)|Наименование банка|&mdash;|нет
-|**bankLocation**      |String(255)|Адрес банка|&mdash;|нет
-|**correspondentAccount**      |String(255)|Корр счет|&mdash;|нет
-|**bic**      |String(255)|БИК|&mdash;|нет
-|**agent**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|&mdash;|да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+|**id**      |UUID|ID Счета|Только для чтения|да|нет
+|**accountId**      |UUID|ID учетной записи|Только для чтения|да|нет
+|**updated**      |DateTime|Момент последнего обновления юрлица|Только для чтения|да|нет
+|**isDefault**      |Boolean|Является ли счет основным счетом юрлица|&mdash;|да|нет
+|**accountNumber**      |String(255)|Номер счета|Необходимое при создании|да|нет
+|**bankName**      |String(255)|Наименование банка|&mdash;|нет|нет
+|**bankLocation**      |String(255)|Адрес банка|&mdash;|нет|нет
+|**correspondentAccount**      |String(255)|Корр счет|&mdash;|нет|нет
+|**bic**      |String(255)|БИК|&mdash;|нет|нет
+|**agent**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|&mdash;|да|нет
 
 #### Тип юрлица
 В зависимости от типа юрлица **companyType** в составе его объекта будут выводиться разные наборы реквизитов.
@@ -414,7 +429,20 @@ curl -X GET
   "payerVat":true,
   "utmUrl":"10.250.110.81",
   "director":"Кипелова Александра",
-  "chiefAccountant":"Подкупников Иван"
+  "directorPosition":"Руководитель отдела",
+  "directorSign" : {
+      "filename": "directorSignTest.png",
+      "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
+  },
+  "chiefAccountant":"Подкупников Иван",
+  "chiefAccountSign" : {
+      "filename": "chiefAccountSignTest.png",
+      "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg=="
+  },
+ "stamp" : {
+    "filename": "stampTest.png",
+    "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+ }
 }'  
 ```
 
@@ -530,7 +558,52 @@ curl -X GET
   "isEgaisEnable": true,
   "fsrarId": "1963703",
   "payerVat": true,
-  "utmUrl": "10.250.110.81"
+  "utmUrl": "10.250.110.81",
+  "director":"Кипелова Александра",
+   "directorPosition":"Руководитель отдела",
+   "directorSign" : {
+       "meta" : {
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/7da0feb5-e110-4021-a49f-35db4ae75f13",
+         "mediaType" : "application/octet-stream"~~~~
+       },
+       "title" : "directorSignTest",
+       "filename" : "directorSignTest.png",
+       "size" : 70,
+       "updated" : "2020-09-23 07:37:26.417",
+       "miniature" : {
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/7da0feb5-e110-4021-a49f-35db4ae75f13?miniature=true",
+         "mediaType" : "image/png"
+       }
+   },
+   "chiefAccountant":"Подкупников Иван",
+   "chiefAccountSign" : {
+       "meta" : {
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/cdd282d7-7e65-40b7-83a1-c0ef07365769",
+         "mediaType" : "application/octet-stream"
+       },
+       "title" : "chiefAccountSignTest",
+       "filename" : "chiefAccountSignTest.png",
+       "size" : 70,
+       "updated" : "2020-09-23 07:37:26.434",
+       "miniature" : {
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/cdd282d7-7e65-40b7-83a1-c0ef07365769?miniature=true",
+         "mediaType" : "image/png"
+       }
+   },
+   "stamp" : {
+       "meta" : {
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383",
+         "mediaType" : "application/octet-stream"
+       },
+       "title" : "stampTest",
+       "filename" : "stampTest.png",
+       "size" : 70,
+       "updated" : "2020-09-23 07:37:26.443",
+       "miniature" : {
+         "href" : "https://online.moysklad.ru/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383?miniature=true",
+         "mediaType" : "image/png"
+       }
+   }
 }
 ```
 

@@ -10,42 +10,42 @@
 
 #### Атрибуты смены
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной смены|Только для чтения|да
-|**id**                 |UUID|ID Розничной смены|Только для чтения|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|Только для чтения|нет
-|**updated**            |DateTime|Момент последнего обновления Розничной смены|Только для чтения|да
-|**deleted**            |DateTime|Момент последнего удаления Розничной смены|Только для чтения|нет
-|**name**               |String(255)|Наименование Розничной смены|Только для чтения|да
-|**description**        |String(4096)|Комментарий Розничной смены|Только для чтения|нет
-|**externalCode**       |String(255)|Внешний код Розничной смены|Только для чтения| да
-|**moment**             |DateTime|Дата смены|Только для чтения|да
-|**vatEnabled**         |Boolean|Учитывается ли НДС|Только для чтения|да
-|**vatIncluded**        |Boolean| Включен ли НДС в цену|Только для чтения|нет
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|Только для чтения|да
-|**shared**             |Boolean|Общий доступ|Только для чтения|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|Только для чтения|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Только для чтения|да
-|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Только для чтения|нет
-|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Только для чтения|да
-|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|Только для чтения|нет
-|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|Только для чтения|нет
-|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|Только для чтения|нет
-|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |Только для чтения|нет
-|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|
-|**created**            |DateTime|Дата создания|Только для чтения|да
-|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
-|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
-|**closeDate**          |DateTime|Дата закрытия смены|Только для чтения|нет
-|**proceedsNoCash**     |Float|Выручка безнал|Только для чтения|да
-|**proceedsCash**       |Float|Выручка наличными|Только для чтения|да
-|**receivedNoCash**     |Float|Получено безнал|Только для чтения|да
-|**receivedCash**       |Float|Получено наличными|Только для чтения|да
-|**retailStore**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные точки продаж|Только для чтения|да
-|**operations**         |Array(Object)|Коллекция метаданных связанных операций|Только для чтения|да
-|**paymentOperations**  |Array(Object)|Коллекция метаданных платежных операций|Только для чтения|нет
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной смены|Только для чтения|да|нет
+|**id**                 |UUID|ID Розничной смены|Только для чтения|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|Только для чтения|нет|нет
+|**updated**            |DateTime|Момент последнего обновления Розничной смены|Только для чтения|да|нет
+|**deleted**            |DateTime|Момент последнего удаления Розничной смены|Только для чтения|нет|нет
+|**name**               |String(255)|Наименование Розничной смены|Только для чтения|да|нет
+|**description**        |String(4096)|Комментарий Розничной смены|Только для чтения|нет|нет
+|**externalCode**       |String(255)|Внешний код Розничной смены|Только для чтения| да|нет
+|**moment**             |DateTime|Дата смены|Только для чтения|да|нет
+|**vatEnabled**         |Boolean|Учитывается ли НДС|Только для чтения|да|нет
+|**vatIncluded**        |Boolean| Включен ли НДС в цену|Только для чтения|нет|нет
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|Только для чтения|да|да
+|**shared**             |Boolean|Общий доступ|Только для чтения|да|нет
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|Только для чтения|да|да
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Только для чтения|да|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Только для чтения|нет|да
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Только для чтения|да|да
+|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|Только для чтения|нет|да
+|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|Только для чтения|нет|да
+|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|Только для чтения|нет|да
+|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |Только для чтения|нет|нет
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|да
+|**created**            |DateTime|Дата создания|Только для чтения|да|нет
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да|нет
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да|нет
+|**closeDate**          |DateTime|Дата закрытия смены|Только для чтения|нет|нет
+|**proceedsNoCash**     |Float|Выручка безнал|Только для чтения|да|нет
+|**proceedsCash**       |Float|Выручка наличными|Только для чтения|да|нет
+|**receivedNoCash**     |Float|Получено безнал|Только для чтения|да|нет
+|**receivedCash**       |Float|Получено наличными|Только для чтения|да|нет
+|**retailStore**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные точки продаж|Только для чтения|да|да
+|**operations**         |Array(Object)|Коллекция метаданных связанных операций|Только для чтения|да|да
+|**paymentOperations**  |Array(Object)|Коллекция метаданных платежных операций|Только для чтения|нет|да
 
 О работе с доп. полями Розничных смен можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 

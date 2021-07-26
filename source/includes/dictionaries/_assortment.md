@@ -114,28 +114,28 @@
 
 #### Атрибуты сущности
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:---------------|:-----------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Настроек справочника|&mdash;|да
-|**uniqueCodeRules**  |Object|Настройки уникальности кода для сущностей справочника. [Подробнее тут](../dictionaries/#suschnosti-assortiment-udalit-sobytie-atributy-wlozhennyh-suschnostej-nastrojki-unikal-nosti-koda-dlq-suschnostej-sprawochnika) |&mdash;|да
-|**barcodeRules**  |Object|Настройки правил штрихкодов для сущностей справочника. [Подробнее тут](../dictionaries/#suschnosti-assortiment-udalit-sobytie-atributy-wlozhennyh-suschnostej-nastrojki-prawil-shtrihkodow-dlq-suschnostej-sprawochnika) |&mdash;|да
-|**createdShared**           |Boolean|Создавать новые документы с меткой «Общий»|&mdash;| да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Настроек справочника|&mdash;|да|нет
+|**uniqueCodeRules**  |Object|Настройки уникальности кода для сущностей справочника. [Подробнее тут](../dictionaries/#suschnosti-assortiment-udalit-sobytie-atributy-wlozhennyh-suschnostej-nastrojki-unikal-nosti-koda-dlq-suschnostej-sprawochnika) |&mdash;|да|нет
+|**barcodeRules**  |Object|Настройки правил штрихкодов для сущностей справочника. [Подробнее тут](../dictionaries/#suschnosti-assortiment-udalit-sobytie-atributy-wlozhennyh-suschnostej-nastrojki-prawil-shtrihkodow-dlq-suschnostej-sprawochnika) |&mdash;|да|нет
+|**createdShared**           |Boolean|Создавать новые документы с меткой «Общий»|&mdash;| да|нет
 
 #### Атрибуты вложенных сущностей
 ##### Настройки уникальности кода для сущностей справочника
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:---------------|:-----------------------|
-|**checkUniqueCode**          |Boolean|Проверка уникальности кода сущностей справочника товаров|&mdash;| да
-|**fillUniqueCode**         |Boolean|Устанавливать уникальный код при создании создании сущностей справочника товаров|&mdash;| да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+|**checkUniqueCode**          |Boolean|Проверка уникальности кода сущностей справочника товаров|&mdash;| да|нет
+|**fillUniqueCode**         |Boolean|Устанавливать уникальный код при создании создании сущностей справочника товаров|&mdash;| да|нет
 
 ##### Настройки правил штрихкодов для сущностей справочника
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:---------------|:-----------------------|
-|**fillEAN13Barcode**          |Boolean|Автоматически создавать штрихкод EAN13 для новых товаров, комплектов, модификаций и услуг|&mdash;| да
-|**weightBarcode**         |Boolean| Использовать префиксы штрихкодов для весовых товаров|&mdash;| да
-|**weightBarcodePrefix**         |Int|Префикс штрихкодов для весовых товаров. Возможные значения: число формата X или XX|&mdash;| да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+|**fillEAN13Barcode**          |Boolean|Автоматически создавать штрихкод EAN13 для новых товаров, комплектов, модификаций и услуг|&mdash;| да|нет
+|**weightBarcode**         |Boolean| Использовать префиксы штрихкодов для весовых товаров|&mdash;| да|нет
+|**weightBarcodePrefix**         |Int|Префикс штрихкодов для весовых товаров. Возможные значения: число формата X или XX|&mdash;| да|нет
 
 ### Получить Ассортимент
 
@@ -324,7 +324,7 @@ curl -X GET
     {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/437f2d67-36e7-11e7-8a7f-40d0000000df",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "service",
         "mediaType": "application/json"
       },
@@ -420,7 +420,7 @@ curl -X GET
     {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/bundle/4f75d130-36e7-11e7-8a7f-40d0000000ef",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/bundle/metadata",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "bundle",
         "mediaType": "application/json"
       },
@@ -789,14 +789,14 @@ curl -X POST
         {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
             "type": "product",
             "mediaType": "application/json"
         },
         {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
             "type": "service",
             "mediaType": "application/json"
         }
@@ -822,7 +822,7 @@ curl -X POST
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/settings"
+  "https://online.moysklad.ru/api/remap/1.2/entity/assortment/settings"
   -H "Authorization: Basic <Credentials>"
 ```
 
@@ -859,7 +859,7 @@ curl -X GET
 
 ```shell
 curl -X PUT
-  "https://online.moysklad.ru/api/remap/1.2/entity/settings"
+  "https://online.moysklad.ru/api/remap/1.2/entity/assortment/settings"
   -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
   -d '{

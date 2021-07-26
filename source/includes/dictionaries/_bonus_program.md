@@ -1,23 +1,35 @@
 ## Бонусная программа
-##### Бонусные программы
+### Бонусные программы
 
 Кодом сущности для Бонусных программ в составе JSON API является ключевое слово **bonusprogram**. Операции создания и изменения не поддерживаются. Перед работой со скидками настоятельно рекомендуем вам прочитать [вот эту статью](https://support.moysklad.ru/hc/ru/articles/203392253-%D0%A1%D0%BA%D0%B8%D0%B4%D0%BA%D0%B8) на портале поддержки МоегоСклада.
 
-##### Атрибуты сущности
+#### Атрибуты сущности
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Бонусной программы|&mdash;|да
-|**id**                 |UUID|ID Бонусной программы|Только для чтения|да
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**name**               |String(255)|Наименование Бонусной программы|&mdash;|нет
-|**active**               |Boolean|Индикатор, является ли бонусная программа активной на данный момент|&mdash;|да
-|**allProducts**               |Boolean|Индикатор, действует ли бонусная программа на все товары (всегда `true`, см. [Скидки](../dictionaries/#suschnosti-skidki))|&mdash;|да
-|**allAgents**              |Boolean|Индикатор, действует ли скидка на всех контрагентов (см. [Скидки](../dictionaries/#suschnosti-skidki))|&mdash;|да
-|**agentTags**             |Array(String)|Тэги контрагентов, к которым применяется бонусная программа. В случае пустого значения контрагентов в результате выводится пустой массив.|&mdash;|да
-|**earnRateRoublesToPoint**              |Int| Курс начисления|&mdash;|нет
-|**spendRatePointsToRouble**              |Int|Курс списания|&mdash;|нет
-|**maxPaidRatePercents**             |Int|Максимальный процент оплаты баллами|&mdash;|нет
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Бонусной программы|&mdash;|да|нет
+|**id**                 |UUID|ID Бонусной программы|Только для чтения|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
+|**name**               |String(255)|Наименование Бонусной программы|&mdash;|нет|нет
+|**active**               |Boolean|Индикатор, является ли бонусная программа активной на данный момент|&mdash;|да|нет
+|**allProducts**               |Boolean|Индикатор, действует ли бонусная программа на все товары (всегда `true`, см. [Скидки](../dictionaries/#suschnosti-skidki))|&mdash;|да|нет
+|**allAgents**              |Boolean|Индикатор, действует ли скидка на всех контрагентов (см. [Скидки](../dictionaries/#suschnosti-skidki))|&mdash;|да|нет
+|**agentTags**             |Array(String)|Тэги контрагентов, к которым применяется бонусная программа. В случае пустого значения контрагентов в результате выводится пустой массив.|&mdash;|да|нет
+|**earnRateRoublesToPoint**              |Int| Курс начисления|&mdash;|нет|нет
+|**spendRatePointsToRouble**              |Int|Курс списания|&mdash;|нет|нет
+|**maxPaidRatePercents**             |Int|Максимальный процент оплаты баллами|&mdash;|нет|нет
+|**postponedBonusesDelayDays**    |Int |Баллы начисляются через [N] дней |Только при наличии тарифной опции "Расширенная бонусная программа" |нет|нет
+|**earnWhileRedeeming**              |Boolean|Разрешить одновременное начисление и списание бонусов. Если `true` - бонусы будут начислены на денежную часть покупки, даже при частичной оплате покупки баллами.|&mdash;|да|нет
+|**welcomeBonusesEnabled**           |Boolean|Возможность начисления приветственных баллов|&mdash;|да|нет
+|**welcomeBonusesValue**             |Int|Количество приветственных баллов, начисляемых участникам бонусной программы. Не может быть отрицательным. Не может быть пустым, если `welcomeBonusesEnabled` = true|&mdash;|нет|нет
+|**welcomeBonusesEnabled**           |Enum|Условие начисления приветственных баллов. Не может быть пустым, если `welcomeBonusesEnabled` = true. [Подробнее тут](../dictionaries/#suschnosti-bonusnaq-programma-bonusnye-programmy-atributy-suschnosti-uslowiq-bonusnyh-ballow)|&mdash;|нет|нет
+
+##### Условия бонусных баллов
+
+| Название               | Описание  |
+| ------------------------------ |:---------------------------|
+| **REGISTRATION**   | Приветственные баллы начисляются участиникам после регистрации в бонусной программе.
+| **FIRST_PURCHASE** | Приветственные баллы начисляются участиникам бонусной программы после совершения первой покупки.
 
 ### Получить все Бонусные программы
 
@@ -88,7 +100,10 @@ curl -X GET
       ],
       "earnRateRoublesToPoint": 1,
       "spendRatePointsToRouble": 1,
-      "maxPaidRatePercents": 100
+      "maxPaidRatePercents": 100,
+      "welcomeBonusesEnabled": false,
+      "postponedBonusesDelayDays": 14,
+      "earnWhileRedeeming": true
     },
     {
       "meta": {
@@ -108,7 +123,12 @@ curl -X GET
       ],
       "earnRateRoublesToPoint": 7,
       "spendRatePointsToRouble": 4,
-      "maxPaidRatePercents": 50
+      "maxPaidRatePercents": 50,
+      "welcomeBonusesEnabled": true,
+      "welcomeBonusesValue": 100,
+      "welcomeBonusesEnabled": "REGISTRATION",
+      "postponedBonusesDelayDays": 7,
+      "earnWhileRedeeming": true
     }
   ]
 }
@@ -134,7 +154,9 @@ curl -X GET
 	  "agentTags": ["tag1", "tag2"],
 	  "earnRateRoublesToPoint": 7,
     "spendRatePointsToRouble": 4,
-    "maxPaidRatePercents": 50
+    "maxPaidRatePercents": 50,
+    "postponedBonusesDelayDays": 7,
+    "earnWhileRedeeming": false
 	}'
 ```
 
@@ -157,7 +179,10 @@ curl -X GET
   "agentTags": ["tag1", "tag2"],
   "earnRateRoublesToPoint": 7,
   "spendRatePointsToRouble": 4,
-  "maxPaidRatePercents": 50
+  "maxPaidRatePercents": 50,
+  "welcomeBonusesEnabled": false,
+  "postponedBonusesDelayDays": 7,
+  "earnWhileRedeeming": false
 }
 ```
 
@@ -204,7 +229,9 @@ curl -X GET
   "agentTags": ["tag2"],
   "earnRateRoublesToPoint": 7,
   "spendRatePointsToRouble": 4,
-  "maxPaidRatePercents": 50
+  "maxPaidRatePercents": 50,
+  "welcomeBonusesEnabled": false,
+  "earnWhileRedeeming": true
 }
 ```
 
@@ -246,7 +273,10 @@ curl -X GET
   ],
   "earnRateRoublesToPoint": 7,
   "spendRatePointsToRouble": 4,
-  "maxPaidRatePercents": 50
+  "maxPaidRatePercents": 50,
+  "welcomeBonusesEnabled": false,
+  "postponedBonusesDelayDays": 7,
+  "earnWhileRedeeming": true
 }
 ```
 

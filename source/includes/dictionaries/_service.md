@@ -12,38 +12,38 @@
 ### Услуги 
 #### Атрибуты сущности
 
-| Название  | Тип | Описание                    | Поле в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Услуги|&mdash;|да
-|**id**                |UUID|ID Услуги|Только для чтения|да
-|**accountId**         |UUID|ID учетной записи|Только для чтения|да
-|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|да
-|**shared**         |Boolean|Общий доступ|&mdash;|да
-|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|&mdash;|да
-|**syncId**                |UUID|ID синхронизации|После заполнения недоступно для изменения|нет
-|**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да
-|**name**         |String(255)|Наименование Услуги|Необходимое при создании|да
-|**description**        |String(4096)|Описание Услуги|&mdash;|нет
-|**code**         |String(255)|Код Услуги|&mdash;|нет
-|**externalCode**         |String(255)|Внешний код Услуги|&mdash;|да
-|**archived**        |Boolean|Добавлена ли Услуга в архив|&mdash;|да
-|**pathName**         |String|Наименование группы, в которую входит Услуга|Только для чтения|да
-|**vat**         |Int|НДС %|&mdash;|нет
+| Название  | Тип | Описание                    | Поле в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Услуги|&mdash;|да|нет
+|**id**                |UUID|ID Услуги|Только для чтения|да|нет
+|**accountId**         |UUID|ID учетной записи|Только для чтения|да|нет
+|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|нет|да
+|**shared**         |Boolean|Общий доступ|&mdash;|да|нет
+|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|&mdash;|да|да
+|**syncId**                |UUID|ID синхронизации|После заполнения недоступно для изменения|нет|нет
+|**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да|нет
+|**name**         |String(255)|Наименование Услуги|Необходимое при создании|да|нет
+|**description**        |String(4096)|Описание Услуги|&mdash;|нет|нет
+|**code**         |String(255)|Код Услуги|&mdash;|нет|нет
+|**externalCode**         |String(255)|Внешний код Услуги|&mdash;|да|нет
+|**archived**        |Boolean|Добавлена ли Услуга в архив|&mdash;|да|нет
+|**pathName**         |String|Наименование группы, в которую входит Услуга|Только для чтения|да|нет
+|**vat**         |Int|НДС %|&mdash;|нет|нет
 |**vatEnabled**     |Boolean|Включен ли НДС для услуги. С помощью этого флага для услуги можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.|&mdash;|нет
 |**useParentVat**   |Boolean|Используется ли ставка НДС родительской группы. Если true для единицы ассортимента будет применена ставка, установленная для родительской группы.|&mdash;|да
-|**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
+|**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет|нет
 |**effectiveVatEnabled**  |Boolean|Дополнительный признак для определения разграничения реального НДС = 0 или "без НДС". (effectiveVat = 0, effectiveVatEnabled = false) -> "без НДС", (effectiveVat = 0, effectiveVatEnabled = true) -> 0%.|Только для чтения|нет
-|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|&mdash;|нет
-|**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет
-|**minPrice**         |Object|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-minimal-naq-cena)|&mdash;|нет
-|**salePrices**         |Array(Object)|Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-ceny-prodazhi)|&mdash;|нет
-|**buyPrice**         |Object|Закупочная продажи. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-zakupochnaq-cena)|&mdash;|нет
-|**attributes**         |Array(Object)|Коллекция доп. полей|&mdash;|нет
-|**barcodes**         |Array(Object)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-shtrih-kody)|&mdash;|нет
-|**discountProhibited**        |Boolean|Признак запрета скидок|&mdash;|да
-|**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-atributy-suschnosti-priznak-predmeta-rascheta)|&mdash;|нет
-|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет
-|**files**              |MetaArray|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|нет|
+|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|&mdash;|нет|да
+|**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет|да
+|**minPrice**         |Object|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-minimal-naq-cena)|&mdash;|нет|нет
+|**salePrices**         |Array(Object)|Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-ceny-prodazhi)|&mdash;|нет|нет
+|**buyPrice**         |Object|Закупочная продажи. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-zakupochnaq-cena)|&mdash;|нет|нет
+|**attributes**         |Array(Object)|Коллекция доп. полей|&mdash;|нет|нет
+|**barcodes**         |Array(Object)|Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-shtrih-kody)|&mdash;|нет|нет
+|**discountProhibited**        |Boolean|Признак запрета скидок|&mdash;|да|нет
+|**paymentItemType**         |Enum|Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-atributy-suschnosti-priznak-predmeta-rascheta)|&mdash;|нет|нет
+|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет|нет
+|**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|нет|да
 
 Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить
 с помощью обновления атрибута **productFolder**.
@@ -78,13 +78,7 @@
 Метаданные Услуг содержат информацию о дополнительных полях.
 
 Посмотреть все созданные в основном интерфейсе доп. поля Услуг,
-а также все типы цен можно с помощью запроса на получение метаданных Услуг.
-Ответ - объект, со следующей структурой:
-
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные |&mdash;|да
-|**attributes**        |Array(Object)|Коллекция всех существующих доп. полей Услуг|&mdash;|да
+а также все типы цен можно с помощью запроса на получение метаданных [Товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-metadannye-towarow).
 
 Структуры объектов отдельных коллекций:
 
@@ -101,32 +95,32 @@
 
 ##### Цены продажи
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:---------------|:-----------------------|
-|**value**   |Float|Значение цены| &mdash; | да
-|**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
-|**priceType**   |Object|Тип цены| &mdash; | да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+|**value**   |Float|Значение цены| &mdash; | да|нет
+|**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да|да
+|**priceType**   |Object|Тип цены| &mdash; | да|нет
 
 
 ##### Закупочная цена
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:---------------|:-----------------------|
-**value**   |Float|Значение цены| &mdash; | да
-**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+**value**   |Float|Значение цены| &mdash; | да|нет
+**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да|да
 
 ##### Минимальная цена
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:---------------|:-----------------------|
-**value**   |Float|Значение цены| &mdash; | да
-**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+**value**   |Float|Значение цены| &mdash; | да|нет
+**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да|да
 
 ##### Группа Услуги
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:---------------|:-----------------------|
-| **meta**  |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Метаданные, содержащие ссылку на группу Услуги.|&mdash;| да
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+| **meta**  |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Метаданные, содержащие ссылку на группу Услуги.|&mdash;| да|нет
 Описание сущности Группа вы можете посмотреть [здесь](../dictionaries/#suschnosti-gruppa-towarow).
 Обновление этого атрибута также обновит атрибут **pathName**.
 
@@ -176,7 +170,7 @@ curl -X GET
   },
   "meta": {
     "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "service",
     "mediaType": "application/json",
     "size": 2,
@@ -187,7 +181,7 @@ curl -X GET
     {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/63e4fa87-2c87-11e6-8a84-bae500000030",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "service",
         "mediaType": "application/json"
       },
@@ -303,7 +297,7 @@ curl -X GET
       "attributes": [
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
             "type": "attributemetadata",
             "mediaType": "application/json"
           },
@@ -314,7 +308,7 @@ curl -X GET
         },
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
             "type": "attributemetadata",
             "mediaType": "application/json"
           },
@@ -329,7 +323,7 @@ curl -X GET
     {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/f6ecdc65-2c86-11e6-8a84-bae500000027",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "service",
         "mediaType": "application/json"
       },
@@ -553,7 +547,7 @@ curl -X GET
 {
   "meta": {
     "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/f6ecdc65-2c86-11e6-8a84-bae500000027",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "service",
     "mediaType": "application/json"
   },
@@ -687,7 +681,7 @@ curl -X GET
 {
   "meta": {
     "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/cce4dae4-2c87-11e6-8a84-bae500000037",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "service",
     "mediaType": "application/json"
   },
@@ -854,7 +848,7 @@ curl -X GET
             "attributes": [
               {
                 "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
@@ -863,7 +857,7 @@ curl -X GET
               },
               {
                 "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
@@ -882,7 +876,7 @@ curl -X GET
 {
   "meta": {
     "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/63e4fa87-2c87-11e6-8a84-bae500000030",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "service",
     "mediaType": "application/json"
   },
@@ -998,7 +992,7 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
@@ -1009,7 +1003,7 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
@@ -1041,7 +1035,7 @@ curl -X GET
             {
               "meta": {
                 "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/f6ecdc65-2c86-11e6-8a84-bae500000027",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
                 "type": "service",
                 "mediaType": "application/json"
               },
@@ -1133,7 +1127,7 @@ curl -X GET
   {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/cce4dae4-2c87-11e6-8a84-bae500000037",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
       "type": "service",
       "mediaType": "application/json"
     },
@@ -1212,7 +1206,7 @@ curl -X GET
   {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/f6ecdc65-2c86-11e6-8a84-bae500000027",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
       "type": "service",
       "mediaType": "application/json"
     },
@@ -1363,14 +1357,14 @@ curl -X POST
         {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
             "type": "service",
             "mediaType": "application/json"
         },
         {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
             "type": "service",
             "mediaType": "application/json"
         }
@@ -1391,97 +1385,9 @@ curl -X POST
 ```  
 
 ### Метаданные Услуг 
-#### Метаданные Услуг 
-Запрос на получение метаданных Услуг. Результат - объект JSON, включающий в себя:
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные |&mdash;|да
-|**attributes**        |Array(Object)|Коллекция всех существующих доп. полей Услуг|&mdash;|нет
-
-Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
-
-> Метаданные Услуг 
-
-```shell
-curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata"
-  -H "Authorization: Basic <Credentials>"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление доп. полей Услуг.
-
-```json
-{
-  "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/service",
-    "mediaType": "application/json"
-  },
-  "attributes": [
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
-      },
-      "id": "0c2e54cd-2c80-11e6-8a84-bae50000009c",
-      "name": "Экспорт",
-      "type": "boolean",
-      "required": false
-    },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
-      },
-      "id": "0c2e5dc5-2c80-11e6-8a84-bae50000009d",
-      "name": "Изготовитель",
-      "type": "string",
-      "required": false
-    }
-  ]
-}
-```
-
-### Отдельное доп. поле
-
-|Параметр   |Описание   | 
-|:----|:----|
-|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
- 
-#### Отдельное доп. поле
- 
-> Запрос на получение информации по отдельному дополнительному полю.
-
-```shell
-curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельного доп. поля.
-
-```json
-{
-  "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/3cd83619-5585-11e6-8a84-bae500000069",
-    "type": "attributemetadata",
-    "mediaType": "application/json"
-  },
-  "customEntityMeta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/a27aa372-5311-11e6-8a84-bae500000001",
-    "type": "customentitymetadata",
-    "mediaType": "application/json"
-  },
-  "id": "3cd83619-5585-11e6-8a84-bae500000069",
-  "name": "Связанная сущность",
-  "type": "customentity",
-  "required": false
-}
-```
+Посмотреть все созданные в основном интерфейсе доп. поля Услуг,
+а также все типы цен можно с помощью запроса на получение метаданных [Товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-metadannye-towarow).
 
 ### Услуга
  
@@ -1510,7 +1416,7 @@ curl -X GET
 {
   "meta": {
     "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/63e4fa87-2c87-11e6-8a84-bae500000030",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "service",
     "mediaType": "application/json"
   },
@@ -1626,7 +1532,7 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
@@ -1637,7 +1543,7 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
@@ -1763,7 +1669,7 @@ curl -X GET
  {
    "meta": {
      "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/f6ecdc65-2c86-11e6-8a84-bae500000027",
-     "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+     "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
      "type": "service",
      "mediaType": "application/json"
    },
@@ -1975,7 +1881,7 @@ curl -X GET
              "attributes": [
                {
                  "meta": {
-                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
+                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
                    "type": "attributemetadata",
                    "mediaType": "application/json"
                  },
@@ -1984,7 +1890,7 @@ curl -X GET
                },
                {
                  "meta": {
-                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
+                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
                    "type": "attributemetadata",
                    "mediaType": "application/json"
                  },
@@ -2002,7 +1908,7 @@ curl -X GET
 {
   "meta": {
     "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/63e4fa87-2c87-11e6-8a84-bae500000030",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "service",
     "mediaType": "application/json"
   },
@@ -2126,7 +2032,7 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
@@ -2137,7 +2043,7 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
