@@ -136,6 +136,12 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 26-07-2021
+#### Изменено
+- Добавлены поля `vatEnabled`, `effectiveVatEnabled` и `useParentVat` в [Группы товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-gruppa-towarow), [Товары](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar), [Комплекты](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt), [Услуги](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-usluga)
+- Добавлено поле `vatEnabled` в позиции [Документов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/)
+- Добавлены ошибки `16010` и `17021`
+
 ### 09-07-2021
 #### Добавлено
 - Новый ресурс [Обороты по товару с детализацией по документам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-dokumentam)
@@ -261,15 +267,6 @@
 #### Добавлена
 - Возможность создавать [вебхуки](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki) для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)
 
-### 24-04-2021
-#### Документация
-- Добавлен новый раздел [Подписка компании](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-podpiska-kompanii)
-
-### 24-04-2021
-#### Изменено
-- Исправлена работа с документом [Возврат поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-postawschiku): 
- добавлена проверка совпадения значения поля `vatEnabled` при создании и обновлении документа на основании [Приемки](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka)
-
 ### 26-04-2021
 #### Изменено
 - Исправлен некорректный url в примерах json [Управления настройками справочника ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment-poluchit-nastrojki-sprawochnika-towarow)
@@ -281,6 +278,15 @@
 ### 26-04-2021
 #### Изменено
 - Исправлено неточное описание привязок документов в общих сведениях
+
+### 24-04-2021
+#### Документация
+- Добавлен новый раздел [Подписка компании](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-podpiska-kompanii)
+
+### 24-04-2021
+#### Изменено
+- Исправлена работа с документом [Возврат поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-postawschiku):
+  добавлена проверка совпадения значения поля `vatEnabled` при создании и обновлении документа на основании [Приемки](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka)
 
 ### 23-04-2021
 #### Добавлено
@@ -446,7 +452,7 @@
 #### Добавлено
 - Эндпоинт [Автозаполнения цен, скидок, ндс позиций](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie)
 
-### 8-10-2020
+### 08-10-2020
 #### Изменено
 - Исправлены опечатки
 
