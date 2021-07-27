@@ -70,6 +70,7 @@
 |**price**          |Float|Цена товара/услуги в копейках|&mdash;|да|нет
 |**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|&mdash;|да|нет
 |**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да|нет
+|**vatEnabled**     |Boolean|Включен ли НДС для позиции. С помощью этого флага для позиции можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.|&mdash;|да|нет
 |**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да|да
 |**pack**            |Object|Упаковка Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)|&mdash;|нет|нет
 |**things**            |Array(String)|Серийные номера. Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете. В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.|&mdash;|нет|нет
@@ -1984,6 +1985,7 @@ curl -X GET
         "price": 16000,
         "discount": 10,
         "vat": 0,
+        "vatEnabled": false,
         "assortment": {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/03216395-3663-11e8-56c0-000800000004",
@@ -2457,6 +2459,7 @@ curl -X GET
       "price": 30000,
       "discount": 0,
       "vat": 0,
+      "vatEnabled": false,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/07f8fb39-137b-11e6-9464-e4de000000f3",
@@ -2480,6 +2483,7 @@ curl -X GET
       "price": 20000,
       "discount": 0,
       "vat": 0,
+      "vatEnabled": false,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/27a803bd-137b-11e6-9464-e4de0000013a",
@@ -2503,6 +2507,7 @@ curl -X GET
       "price": 40000,
       "discount": 0,
       "vat": 0,
+      "vatEnabled": false,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
@@ -2526,6 +2531,7 @@ curl -X GET
       "price": 40000,
       "discount": 0,
       "vat": 0,
+      "vatEnabled": false,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609c2418-137b-11e6-9464-e4de00000174",
@@ -2634,6 +2640,7 @@ curl -X GET
     "price": 999,
     "discount": 0,
     "vat": 0,
+    "vatEnabled": false,
     "variant": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
@@ -2657,6 +2664,7 @@ curl -X GET
     "price": 100,
     "discount": 0,
     "vat": 0,
+    "vatEnabled": false,
     "variant": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/07f8fb39-137b-11e6-9464-e4de000000f3",
@@ -2680,6 +2688,7 @@ curl -X GET
     "price": 35300,
     "discount": 0,
     "vat": 0,
+    "vatEnabled": false,
     "variant": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
@@ -2729,6 +2738,7 @@ curl -X GET
   "price": 999,
   "discount": 0,
   "vat": 0,
+  "vatEnabled": false,
   "assortment": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
