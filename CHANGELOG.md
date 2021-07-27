@@ -1,10 +1,6 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-## 27-07-2021
-### Исправлено
-- Исправлено описание поля `markingSellingMode`
-
 ## 19-07-2021
 ### Добавлено
 - Поле `markingSellingMode` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh)
