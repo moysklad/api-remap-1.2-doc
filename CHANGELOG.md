@@ -7,7 +7,6 @@
 - Добавлено поле `vatEnabled` в позиции [Документов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/)
 - Добавлены ошибки `16010` и `17021`
 
-## 15-12-2020
 ## 09-07-2021
 ### Добавлено
 - Новый ресурс [Обороты по товару с детализацией по документам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-dokumentam)
