@@ -10,20 +10,23 @@
 
 ```json
 {
+  "auditContext": {
+    "meta": {
+      "type": "audit",
+      "href": "https://online.moysklad.ru/api/remap/1.2/audit/75fe3b73-db16-11eb-c0a8-800d00000004"
+    },
+    "moment": "2021-07-21 15:51:16",
+    "uid": "test@test"
+  },
   "events": [
     {
       "meta": {
         "type": "product",
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/75c896d0-db16-11eb-c0a8-800d00000002"
       },
-      "action": "CREATE",
-      "accountId": "9171a53c-b719-11eb-c0a8-800d00000001",
-      "auditContext": {
-        "meta": {
-          "type": "audit",
-          "href": "https://online.moysklad.ru/api/remap/1.2/audit/75fe3b73-db16-11eb-c0a8-800d00000004"
-        }
-      }
+      "updatedFields": ["name", "description"],
+      "action": "UPDATE",
+      "accountId": "9171a53c-b719-11eb-c0a8-800d00000001"
     }
   ]
 }
@@ -34,6 +37,7 @@
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**events**       |Object|Данные о событии, вызвавшем срабатывание веб-хука|&mdash;|да
+|**auditContext** |Object|Контекст аудита, соответствующий событию веб-хука|&mdash;|нет
 
 #### Атрибуты сущности событие
 
@@ -42,7 +46,16 @@
 |**meta**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные измененной сущности|&mdash;|да
 |**action**       |Enum|Действие, которое вызвало срабатывание веб-хука. Возможные значения: `[CREATE, UPDATE, DELETE, PROCESSED]`|&mdash;|да
 |**accountId**    |UUID|ID учетной записи Кассира|&mdash;|да
-|**auditContext** |Object|Контекст аудита, соответствующий событию веб-хука|&mdash;|нет
+|**updatedFields**|Array(String)|Поля сущности, измененные пользователем|&mdash;|нет
+
+Для отображения атрибута сущности событие **updatedFields** нужно, чтобы веб-хук имел **diffType=FIELDS** и **action=UPDATE** 
+
+#### Атрибуты сущности контекст аудита
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контекста аудита|&mdash;|да
+|**uid**        |String(255)|Логин Сотрудника|Только для чтения|да
+|**moment**     |DateTime|Дата изменения|Только для чтения|да
 
 В массиве **events** может быть несколько объектов. Параметр запроса **requestId** - идентификатор уведомления.
 В ответ на наш запрос мы ожидаем получить ответ с HTTP статусом 200 или 204 в течение 5 секунд.
@@ -72,6 +85,7 @@
 |**method**         |Enum|HTTP метод, с которым будет происходить запрос. Возможные значения: `POST`|&mdash;|да|нет
 |**enabled**              |Boolean|Флажок состояние веб-хука (включен / отключен)|&mdash;|да|нет
 |**action**        |Enum| Действие, которое отслеживается веб-хуком. Возможные значения: `[CREATE, UPDATE, DELETE, PROCESSED]`. Задать значение `PROCESSED` возможно только для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)|Необходимое при создании|да|нет
+|**diffType**      |Enum|Режим отображения изменения сущности. Возможные значения: `[NO, FIELDS]` (по умолчанию `NO`)|да|да|нет
 
 #### Доступные типы сущностей
 Создание вебхуков доступно для всех типов сущностей и документов, кроме следующих:
@@ -126,7 +140,8 @@ curl -X GET
       "url": "http://www.example.com",
       "method": "POST",
       "enabled": true,
-      "action": "CREATE"
+      "action": "CREATE",
+      "diffType": "NO"
     },
     {
       "meta": {
@@ -141,7 +156,8 @@ curl -X GET
       "url": "http://www.example.com",
       "method": "POST",
       "enabled": true,
-      "action": "CREATE"
+      "action": "CREATE",
+      "diffType": "NO"
     },
     {
       "meta": {
@@ -156,7 +172,8 @@ curl -X GET
       "url": "http://www.example.com",
       "method": "POST",
       "enabled": true,
-      "action": "UPDATE"
+      "action": "UPDATE",
+      "diffType": "NO"
     }
   ]
 }
@@ -197,7 +214,45 @@ curl -X GET
   "url": "http://www.example.com",
   "method": "POST",
   "enabled": true,
-  "action": "CREATE"
+  "action": "CREATE",
+  "diffType": "NO"
+}
+```
+
+> Пример запроса на создание нового веб-хука с отображением измененных полей.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/webhook"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+            "url": "http://www.example.com",
+            "action": "CREATE",
+            "entityType": "supply",
+            "diffType": "FIELDS"
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного веб-хука.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/d08f9217-bbd2-11e6-8a84-bae500000004",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+    "type": "webhook",
+    "mediaType": "application/json"
+  },
+  "id": "d08f9217-bbd2-11e6-8a84-bae500000004",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "entityType": "supply",
+  "url": "http://www.example.com",
+  "method": "POST",
+  "enabled": true,
+  "action": "CREATE",
+  "diffType": "FIELDS"
 }
 ```
 
@@ -258,7 +313,8 @@ curl -X GET
     "url": "http://www.example.com",
     "method": "POST",
     "enabled": true,
-    "action": "CREATE"
+    "action": "CREATE",
+    "diffType": "NO"
   },
   {
     "meta": {
@@ -273,7 +329,8 @@ curl -X GET
     "url": "http://www.example.com",
     "method": "POST",
     "enabled": true,
-    "action": "DELETE"
+    "action": "DELETE",
+    "diffType": "NO"
   }
 ]
 
@@ -312,7 +369,8 @@ curl -X GET
   "url": "http://www.example.com",
   "method": "POST",
   "enabled": true,
-  "action": "CREATE"
+  "action": "CREATE",
+  "diffType": "NO"
 }
 ```
 
@@ -355,7 +413,8 @@ curl -X GET
   "url": "http://www.example.com",
   "method": "POST",
   "enabled": true,
-  "action": "DELETE"
+  "action": "DELETE",
+  "diffType": "NO"
 }
 ```
 
@@ -397,7 +456,8 @@ curl -X GET
   "url": "http://www.example.com",
   "method": "POST",
   "enabled": false,
-  "action": "DELETE"
+  "action": "DELETE",
+  "diffType": "NO"
 }
 ```
 

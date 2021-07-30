@@ -138,7 +138,7 @@
 
 ### XX-XX-2021
 #### Добавлено
-- Описание полей посылаемых [веб-хуков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki) и добавлено поле `auditContext`
+- Описание полей посылаемых [веб-хуков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki) и добавлены поля `auditContext`, `updatedFields`, `moment`, `uid`
 
 ### 28-06-2021
 #### Добавлено
