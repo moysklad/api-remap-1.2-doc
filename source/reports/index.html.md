@@ -15,6 +15,7 @@ includes:
   - reports/report_money
   - reports/report_sales_orders
   - reports/report_counterparty
+  - reports/report_turnover
   - reports/dashboard
   
 search: true
