@@ -136,10 +136,11 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
-### 04-08-2021
+### 10-08-2021
 #### Добавлено
 - Возможность работы с модификациями для материалов и продуктов [Тех. карт](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-teh-karta).
 Для этого введено новое поле **assortment**.
+- Новая ошибка [3028](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
 
 ### 30-07-2021
 #### Добавлено
