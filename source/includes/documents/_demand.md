@@ -44,7 +44,6 @@
 |**shipmentAddress**      |String(255)|Адрес доставки Отгрузки |&mdash;| нет|нет
 |**shipmentAddressFull**  |Object|Адрес доставки Отгрузки с детализацией по отдельным полям. [Подробнее тут](../documents/#dokumenty-otgruzka-otgruzki-attributy-suschnosti-adres-dostawki) |&mdash;|нет|нет
 
-
 #### Накладные расходы
 Описание полей overhead
 
