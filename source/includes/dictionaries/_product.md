@@ -30,7 +30,10 @@
 |**archived**        |Boolean|Добавлен ли Товар в архив|&mdash;|да|нет
 |**pathName**         |String|Наименование группы, в которую входит Товар|Только для чтения|да|нет
 |**vat**         |Int|НДС %|&mdash;|нет|нет
+|**vatEnabled**     |Boolean|Включен ли НДС для товара. С помощью этого флага для товара можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.|&mdash;|нет|нет
+|**useParentVat**   |Boolean|Используется ли ставка НДС родительской группы. Если true для единицы ассортимента будет применена ставка, установленная для родительской группы.|&mdash;|да|нет
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет|нет
+|**effectiveVatEnabled**  |Boolean|Дополнительный признак для определения разграничения реального НДС = 0 или "без НДС". (effectiveVat = 0, effectiveVatEnabled = false) -> "без НДС", (effectiveVat = 0, effectiveVatEnabled = true) -> 0%.|Только для чтения|нет|нет
 |**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Товара|&mdash;|нет|да
 |**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет|да
 |**images**       |MetaArray|Массив метаданных [Изображений](../dictionaries/#suschnosti-izobrazhenie) (Максимальное количество изображений - 10)|&mdash;|нет|да
@@ -384,7 +387,10 @@ curl -X GET
       "archived": false,
       "pathName": "",
       "vat": 18,
+      "vatEnabled": true,
+      "useParentVat": false,
       "effectiveVat": 18,
+      "effectiveVatEnabled": true,
       "discountProhibited": false,
       "uom": {
         "meta": {
@@ -555,7 +561,10 @@ curl -X GET
       "archived": false,
       "pathName": "",
       "vat": 18,
+      "vatEnabled": true,
+      "useParentVat": false,
       "effectiveVat": 18,
+      "effectiveVatEnabled": true,
       "discountProhibited": false,
       "uom": {
         "meta": {
@@ -748,7 +757,10 @@ curl -X GET
       "archived": false,
       "pathName": "",
       "vat": 20,
+      "vatEnabled": true,
+      "useParentVat": false,
       "effectiveVat": 20,
+      "effectiveVatEnabled": true,
       "discountProhibited": false,
       "uom": {
         "meta": {
@@ -995,7 +1007,10 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 18,
+  "vatEnabled": true,
+  "useParentVat": false,
   "effectiveVat": 18,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "uom": {
     "meta": {
@@ -1216,7 +1231,9 @@ curl -X GET
   "weight": 0,
   "volume": 0,
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED"
+  "trackingType": "NOT_TRACKED",
+  "vatEnabled": false,
+  "useParentVat": true
 }
 ```
 
@@ -1387,7 +1404,10 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 18,
+  "vatEnabled": true,
+  "useParentVat": false,
   "effectiveVat": 18,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "uom": {
     "meta": {
@@ -1630,7 +1650,9 @@ curl -X GET
   ],
   "variantsCount": 0,
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED"
+  "trackingType": "NOT_TRACKED",
+  "vatEnabled": false,
+  "useParentVat": true,
 }
 ```
 
@@ -1759,7 +1781,9 @@ curl -X GET
     "weight": 0,
     "volume": 0,
     "isSerialTrackable": false,
-    "trackingType": "NOT_TRACKED"
+    "trackingType": "NOT_TRACKED",
+    "vatEnabled": false,
+    "useParentVat": true,
   },
   {
     "meta": {
@@ -1795,7 +1819,10 @@ curl -X GET
     "archived": false,
     "pathName": "",
     "vat": 3,
+    "vatEnabled": true,
+    "useParentVat": false,
     "effectiveVat": 3,
+    "effectiveVatEnabled": true,
     "discountProhibited": false,
     "uom": {
       "meta": {
@@ -2185,7 +2212,10 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 18,
+  "vatEnabled": true,
+  "useParentVat": false,
   "effectiveVat": 18,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "uom": {
     "meta": {
@@ -2559,7 +2589,10 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 3,
+  "vatEnabled": true,
+  "useParentVat": false,
   "effectiveVat": 3,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "uom": {
     "meta": {
@@ -2884,7 +2917,10 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 3,
+  "vatEnabled": true,
+  "useParentVat": false,
   "effectiveVat": 3,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "uom": {
     "meta": {
@@ -3162,7 +3198,10 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 3,
+  "vatEnabled": true,
+  "useParentVat": false,
   "effectiveVat": 3,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "uom": {
     "meta": {
