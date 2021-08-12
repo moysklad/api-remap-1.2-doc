@@ -85,7 +85,7 @@
 |**method**         |Enum|HTTP метод, с которым будет происходить запрос. Возможные значения: `POST`|&mdash;|да|нет
 |**enabled**              |Boolean|Флажок состояние веб-хука (включен / отключен)|&mdash;|да|нет
 |**action**        |Enum| Действие, которое отслеживается веб-хуком. Возможные значения: `[CREATE, UPDATE, DELETE, PROCESSED]`. Задать значение `PROCESSED` возможно только для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)|Необходимое при создании|да|нет
-|**diffType**      |Enum|Режим отображения изменения сущности. Возможные значения: `[NO, FIELDS]` (по умолчанию `NO`)|да|да|нет
+|**diffType**      |Enum|Режим отображения изменения сущности. Возможные значения: `[NONE, FIELDS]` (по умолчанию `NONE`)|да|да|нет
 
 #### Доступные типы сущностей
 Создание вебхуков доступно для всех типов сущностей и документов, кроме следующих:
@@ -141,7 +141,7 @@ curl -X GET
       "method": "POST",
       "enabled": true,
       "action": "CREATE",
-      "diffType": "NO"
+      "diffType": "NONE"
     },
     {
       "meta": {
@@ -157,7 +157,7 @@ curl -X GET
       "method": "POST",
       "enabled": true,
       "action": "CREATE",
-      "diffType": "NO"
+      "diffType": "NONE"
     },
     {
       "meta": {
@@ -173,7 +173,7 @@ curl -X GET
       "method": "POST",
       "enabled": true,
       "action": "UPDATE",
-      "diffType": "NO"
+      "diffType": "NONE"
     }
   ]
 }
@@ -216,7 +216,7 @@ curl -X GET
   "method": "POST",
   "enabled": true,
   "action": "CREATE",
-  "diffType": "NO"
+  "diffType": "NONE"
 }
 ```
 
@@ -315,7 +315,7 @@ curl -X GET
     "method": "POST",
     "enabled": true,
     "action": "CREATE",
-    "diffType": "NO"
+    "diffType": "NONE"
   },
   {
     "meta": {
@@ -331,7 +331,7 @@ curl -X GET
     "method": "POST",
     "enabled": true,
     "action": "DELETE",
-    "diffType": "NO"
+    "diffType": "NONE"
   }
 ]
 
@@ -371,7 +371,7 @@ curl -X GET
   "method": "POST",
   "enabled": true,
   "action": "CREATE",
-  "diffType": "NO"
+  "diffType": "NONE"
 }
 ```
 
@@ -415,7 +415,7 @@ curl -X GET
   "method": "POST",
   "enabled": true,
   "action": "DELETE",
-  "diffType": "NO"
+  "diffType": "NONE"
 }
 ```
 
@@ -458,7 +458,7 @@ curl -X GET
   "method": "POST",
   "enabled": false,
   "action": "DELETE",
-  "diffType": "NO"
+  "diffType": "NONE"
 }
 ```
 
