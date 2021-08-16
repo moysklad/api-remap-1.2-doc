@@ -85,7 +85,7 @@
 |**method**         |Enum|HTTP метод, с которым будет происходить запрос. Возможные значения: `POST`|&mdash;|да|нет
 |**enabled**              |Boolean|Флажок состояние веб-хука (включен / отключен)|&mdash;|да|нет
 |**action**        |Enum| Действие, которое отслеживается веб-хуком. Возможные значения: `[CREATE, UPDATE, DELETE, PROCESSED]`. Задать значение `PROCESSED` возможно только для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)|Необходимое при создании|да|нет
-|**diffType**      |Enum|Режим отображения изменения сущности. Возможные значения: `[NONE, FIELDS]` (по умолчанию `NONE`)|да|да|нет
+|**diffType**      |Enum|Режим отображения изменения сущности. Указывается только для действия `UPDATE`. Возможные значения: `[NONE, FIELDS]` (по умолчанию `NONE`)|&mdash;|нет|нет
 
 #### Доступные типы сущностей
 Создание вебхуков доступно для всех типов сущностей и документов, кроме следующих:
@@ -140,8 +140,7 @@ curl -X GET
       "url": "http://www.example.com",
       "method": "POST",
       "enabled": true,
-      "action": "CREATE",
-      "diffType": "NONE"
+      "action": "CREATE"
     },
     {
       "meta": {
@@ -156,8 +155,7 @@ curl -X GET
       "url": "http://www.example.com",
       "method": "POST",
       "enabled": true,
-      "action": "CREATE",
-      "diffType": "NONE"
+      "action": "CREATE"
     },
     {
       "meta": {
@@ -215,8 +213,7 @@ curl -X GET
   "url": "http://www.example.com",
   "method": "POST",
   "enabled": true,
-  "action": "CREATE",
-  "diffType": "NONE"
+  "action": "CREATE"
 }
 ```
 
@@ -229,7 +226,7 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '{
             "url": "http://www.example.com",
-            "action": "CREATE",
+            "action": "UPDATE",
             "entityType": "supply",
             "diffType": "FIELDS"
           }'  
@@ -252,7 +249,7 @@ curl -X GET
   "url": "http://www.example.com",
   "method": "POST",
   "enabled": true,
-  "action": "CREATE",
+  "action": "UPDATE",
   "diffType": "FIELDS"
 }
 ```
@@ -314,8 +311,7 @@ curl -X GET
     "url": "http://www.example.com",
     "method": "POST",
     "enabled": true,
-    "action": "CREATE",
-    "diffType": "NONE"
+    "action": "CREATE"
   },
   {
     "meta": {
@@ -330,8 +326,7 @@ curl -X GET
     "url": "http://www.example.com",
     "method": "POST",
     "enabled": true,
-    "action": "DELETE",
-    "diffType": "NONE"
+    "action": "DELETE"
   }
 ]
 
@@ -370,8 +365,7 @@ curl -X GET
   "url": "http://www.example.com",
   "method": "POST",
   "enabled": true,
-  "action": "CREATE",
-  "diffType": "NONE"
+  "action": "CREATE"
 }
 ```
 
@@ -414,8 +408,7 @@ curl -X GET
   "url": "http://www.example.com",
   "method": "POST",
   "enabled": true,
-  "action": "DELETE",
-  "diffType": "NONE"
+  "action": "DELETE"
 }
 ```
 
@@ -457,8 +450,7 @@ curl -X GET
   "url": "http://www.example.com",
   "method": "POST",
   "enabled": false,
-  "action": "DELETE",
-  "diffType": "NONE"
+  "action": "DELETE"
 }
 ```
 
