@@ -30,9 +30,10 @@
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
 | --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
 |**id**                 |UUID|ID Материала|Только для чтения|да|нет
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
-|**products**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара позиции|&mdash;|нет|да
-|**quantity**               |Int|Количество товаров данного вида в позиции|&mdash;|да|нет
+|**accountId**          |UUID|ID учетной записи|Только для чтения|да|нет
+|**product**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара позиции. В случае, если в поле **assortment** указана модификация, то это поле содержит товар, к которому относится эта модификация|&mdash;|да|да
+|**assortment**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара или модификации позиции|&mdash;|да|да
+|**quantity**           |Int|Количество товаров данного вида в позиции|&mdash;|да|нет
 
 #### Продукты Тех. карты
 Продукты Тех. карты - это список товаров, получаемых при производстве.
@@ -41,9 +42,10 @@
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
 | --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
 |**id**                 |UUID|ID Продукта|Только для чтения|да|нет
-|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
-|**products**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара позиции|&mdash;|нет|да
-|**quantity**               |Int|Количество товаров данного вида в позиции|&mdash;|да|нет
+|**accountId**          |UUID|ID учетной записи|Только для чтения|да|нет
+|**product**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара позиции. В случае, если в поле **assortment** указана модификация, то это поле содержит товар, к которому относится эта модификация|&mdash;|да|да
+|**assortment**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара или модификации позиции|&mdash;|да|да
+|**quantity**           |Int|Количество товаров данного вида в позиции|&mdash;|да|нет
 
 С материалами и продуктами можно работать с помощью [специальных ресурсов для управления позициями Тех. карты](../documents/#dokumenty-teh-karta-materialy-teh-karty),
 а также в составе отдельной Тех. карты. При работе в составе отдельной Тех. карты,
@@ -304,7 +306,7 @@ curl -X GET
             "materials": [
               {
                 "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
-                "product": {
+                "assortment": {
                   "meta": {
                     "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
                     "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
@@ -317,7 +319,7 @@ curl -X GET
             ],
             "products": [
               {
-                "product": {
+                "assortment": {
                   "meta": {
                     "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0da78cd1-91f2-11e6-5bed-427b0000009a",
                     "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
@@ -328,11 +330,11 @@ curl -X GET
                 "quantity": 1
               },
               {
-                "product": {
+                "assortment": {
                   "meta": {
-                    "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0da78cd1-91f2-11e6-5bed-427b0000009a",
-                    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-                    "type": "product",
+                    "href": "http://online.moysklad.ru/api/remap/1.2/entity/variant/0da78cd1-91f2-11e6-5bed-427b0000009a",
+                    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                    "type": "variant",
                     "mediaType": "application/json"
                   }
                 },
@@ -419,7 +421,7 @@ curl -X GET
               "materials": [
                 {
                   "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
-                  "product": {
+                  "assortment": {
                     "meta": {
                       "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
                       "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
@@ -432,7 +434,7 @@ curl -X GET
               ],
               "products": [
                 {
-                  "product": {
+                  "assortment": {
                     "meta": {
                       "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0da78cd1-91f2-11e6-5bed-427b0000009a",
                       "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
@@ -443,11 +445,11 @@ curl -X GET
                   "quantity": 1
                 },
                 {
-                  "product": {
+                  "assortment": {
                     "meta": {
-                      "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0da78cd1-91f2-11e6-5bed-427b0000009a",
-                      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-                      "type": "product",
+                      "href": "http://online.moysklad.ru/api/remap/1.2/entity/variant/0da78cd1-91f2-11e6-5bed-427b0000009a",
+                      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                      "type": "variant",
                       "mediaType": "application/json"
                     }
                   },
@@ -869,6 +871,14 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
+      "assortment": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
+          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      },
       "quantity": 1
     }
   ]
@@ -897,7 +907,7 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '[
             {
-              "product": {
+              "assortment": {
                 "meta": {
                   "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
                   "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
@@ -931,6 +941,14 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
+    "assortment": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json"
+      }
+    },
     "quantity": 1
   }
 ]
@@ -945,7 +963,7 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '[
             {
-              "product": {
+              "assortment": {
                 "meta": {
                   "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
                   "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
@@ -956,11 +974,11 @@ curl -X GET
               "quantity": 1
             },
             {
-              "product": {
+              "assortment": {
                 "meta": {
-                  "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000081",
-                  "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-                  "type": "product",
+                  "href": "http://online.moysklad.ru/api/remap/1.2/entity/variant/0de151c1-acdc-11e6-5bed-427b00000079",
+                  "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                  "type": "variant",
                   "mediaType": "application/json"
                 }
               },
@@ -990,6 +1008,14 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
+    "assortment": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json"
+      }
+    },
     "quantity": 1
   },
   {
@@ -1005,6 +1031,14 @@ curl -X GET
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000081",
         "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "product",
+        "mediaType": "application/json"
+      }
+    },
+    "assortment": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/variant/0de151c1-acdc-11e6-5bed-427b00000079",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+        "type": "variant",
         "mediaType": "application/json"
       }
     },
@@ -1045,6 +1079,14 @@ curl -X GET
   "id": "120b4591-b0bd-11e6-5bed-427b00000001",
   "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
   "product": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json"
+    }
+  },
+  "assortment": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
       "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
@@ -1093,6 +1135,14 @@ curl -X GET
     "id": "120b4591-b0bd-11e6-5bed-427b00000001",
     "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
     "product": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json"
+      }
+    },
+    "assortment": {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
         "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
@@ -1193,6 +1243,14 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
+      "assortment": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
+          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      },
       "quantity": 1
     }
   ]
@@ -1221,7 +1279,7 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '[
             {
-              "product": {
+              "assortment": {
                 "meta": {
                   "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
                   "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
@@ -1255,6 +1313,14 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
+    "assortment": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json"
+      }
+    },
     "quantity": 1
   }
 ]
@@ -1269,7 +1335,7 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '[
             {
-              "product": {
+              "assortment": {
                 "meta": {
                   "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
                   "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
@@ -1280,11 +1346,11 @@ curl -X GET
               "quantity": 1
             },
             {
-              "product": {
+              "assortment": {
                 "meta": {
-                  "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000081",
-                  "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-                  "type": "product",
+                  "href": "http://online.moysklad.ru/api/remap/1.2/entity/variant/0de151c1-acdc-11e6-5bed-427b00000081",
+                  "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                  "type": "variant",
                   "mediaType": "application/json"
                 }
               },
@@ -1314,6 +1380,14 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
+    "assortment": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json"
+      }
+    },
     "quantity": 1
   },
   {
@@ -1324,9 +1398,17 @@ curl -X GET
     },
     "id": "120b4591-b0bd-11e6-5bed-427b00000002",
     "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
+    "assortment": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/variant/0de151c1-acdc-11e6-5bed-427b00000081",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+        "type": "variant",
+        "mediaType": "application/json"
+      }
+    },
     "product": {
       "meta": {
-        "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000081",
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000079",
         "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "product",
         "mediaType": "application/json"
@@ -1377,6 +1459,14 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
+    "assortment": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json"
+      }
+    },
     "quantity": 1
   }
 ]
@@ -1419,6 +1509,14 @@ curl -X GET
     "id": "120b4591-b0bd-11e6-5bed-427b00000001",
     "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
     "product": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json"
+      }
+    },
+    "assortment": {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
         "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
