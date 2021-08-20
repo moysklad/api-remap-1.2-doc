@@ -43,9 +43,11 @@
 |**paymentOperations**  |Array(Object)|Коллекция метаданных платежных операций|Только для чтения|нет|да
 |**cheque**             |Object| информация о розничной смене  [Поля объекта](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-informaciq-o-roznichnoj-smene) |&mdash;|да|нет
 |**acquire**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Банка-эквайера по операциям по карте|&mdash;| да|да
-|**bankPercent**        |Int|Комиссия банка-эквайера по операциям по карте (в процентах)|&mdash;| нет|нет
-|**qrAcquire**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Банка-эквайера по операциям по QR-коду|&mdash;|нет|да
-|**qrBankPercent**      |Double|Комиссия банка-эквайера по операция по QR-коду (в процентах)|&mdash;| нет|нет
+|**bankPercent**        |Double|Комиссия банка-эквайера по операциям по карте (в процентах)|&mdash;| да|нет
+|**bankComission**      |Double|Сумма комиссии эквайера за проведение безналичных платежей по банковской карте. Не может превышать общую сумму безналичных платежей по карте.|&mdash;| да|нет
+|**qrBankComission**    |Double|Сумма комиссии эквайера за проведение безналичных платежей по QR-коду. Не может превышать общую сумму безналичных платежей по QR-коду.|&mdash;| да|нет
+|**qrAcquire**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Банка-эквайера по операциям по QR-коду|&mdash;|да|да
+|**qrBankPercent**      |Double|Комиссия банка-эквайера по операция по QR-коду (в процентах)|&mdash;| да|нет
 
 О работе с доп. полями Розничных смен можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
@@ -110,303 +112,990 @@ curl -X GET
 {
   "context": {
     "employee": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-      "type": "employee",
-      "mediaType": "application/json"
+      "meta": {
+        "href": "http://localhost/api/remap/1.2/context/employee",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift",
+    "href": "http://localhost/api/remap/1.2/entity/retailshift",
     "type": "retailshift",
     "mediaType": "application/json",
-    "size": 5,
+    "size": 10,
     "limit": 1000,
     "offset": 0
   },
   "rows": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/0b2b2caf-055e-11e6-9464-e4de0000007c",
+        "href": "http://localhost/api/remap/1.2/entity/retailshift/12b9f791-0029-11ec-ac12-000a0000000a",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/retailshift/metadata",
         "type": "retailshift",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#retailshift/edit?id=12b9f791-0029-11ec-ac12-000a0000000a"
       },
-      "id": "0b2b2caf-055e-11e6-9464-e4de0000007c",
-      "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
-      "syncId": "734a9e26-45a2-4ead-849c-e144daeb854d",
-      "updated": "2016-04-18 15:07:12",
-      "name": "00001",
-      "externalCode": "iR5ZTLzfhK98uzqIFbC871",
+      "id": "12b9f791-0029-11ec-ac12-000a0000000a",
+      "accountId": "73215387-0016-11ec-ac12-000c00000001",
       "owner": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "href": "http://localhost/api/remap/1.2/entity/employee/73d6e937-0016-11ec-ac12-000b00000042",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
-          "mediaType": "application/json"
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#employee/edit?id=73d6e937-0016-11ec-ac12-000b00000042"
         }
       },
       "shared": false,
       "group": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "href": "http://localhost/api/remap/1.2/entity/group/73230224-0016-11ec-ac12-000c00000002",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/group/metadata",
           "type": "group",
           "mediaType": "application/json"
         }
       },
-      "moment": "2016-04-18 15:06:51",
-      "created": "2016-08-25 19:55:00",
-      "printed": true,
-      "published": true,
-      "vatEnabled": true,
-      "vatIncluded": true,
-      "organization": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e",
-          "type": "organization",
-          "mediaType": "application/json"
-        }
-      },
+      "updated": "2021-08-18 16:34:53.887",
+      "name": "00007",
+      "externalCode": "XbQeDdgOgJEvrHWk8ZPPC1",
+      "moment": "2021-08-18 16:34:00.000",
       "store": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/850ee995-f504-11e5-8a84-bae500000160",
+          "href": "http://localhost/api/remap/1.2/entity/store/7421cf1a-0016-11ec-ac12-000b00000080",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/store/metadata",
           "type": "store",
-          "mediaType": "application/json"
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#warehouse/edit?id=7421cf1a-0016-11ec-ac12-000b00000080"
         }
       },
-      "organizationAccount": {
+      "organization": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/account/3a30e844-016f-11e6-9464-e4de00000068",
-          "type": "account",
-          "mediaType": "application/json"
+          "href": "http://localhost/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#mycompany/edit?id=b4343660-0016-11ec-ac12-000b000000d7"
         }
       },
-      "attributes": [
-        {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
-            "type": "attributemetadata",
-            "mediaType": "application/json"
-          },
-          "id": "bb08dccf-0bd2-11e6-9464-e4de000000ae",
-          "name": "AttributeName1",
-          "type": "string",
-          "value": "Да"
+      "created": "2021-08-18 16:34:54.771",
+      "printed": false,
+      "published": false,
+      "files": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailshift/12b9f791-0029-11ec-ac12-000a0000000a/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
         }
-      ],
-      "closeDate": "2016-04-18 15:07:12",
-      "proceedsNoCash": 0,
-      "proceedsCash": 5100,
-      "receivedNoCash": 0,
-      "receivedCash": 5136,
+      },
+      "proceedsNoCash": 0.0,
+      "proceedsCash": 0.0,
+      "receivedNoCash": 0.0,
+      "receivedCash": 0.0,
+      "cheque": {},
       "retailStore": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
+          "href": "http://localhost/api/remap/1.2/entity/retailstore/74940da1-0016-11ec-ac12-000b00000096",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/retailstore/metadata",
           "type": "retailstore",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#retailstore/edit?id=74940da1-0016-11ec-ac12-000b00000096"
+        }
+      },
+      "acquire": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/counterparty/74221ae8-0016-11ec-ac12-000b00000081",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#company/edit?id=74221ae8-0016-11ec-ac12-000b00000081"
+        }
+      },
+      "bankPercent": 22.0,
+      "bankComission": 0.0,
+      "qrBankPercent": 0.0,
+      "qrBankComission": 0.0
+    },
+    {
+      "meta": {
+        "href": "http://localhost/api/remap/1.2/entity/retailshift/49819758-0017-11ec-ac12-000a00000000",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/retailshift/metadata",
+        "type": "retailshift",
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#retailshift/edit?id=49819758-0017-11ec-ac12-000a00000000"
+      },
+      "id": "49819758-0017-11ec-ac12-000a00000000",
+      "accountId": "73215387-0016-11ec-ac12-000c00000001",
+      "owner": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/employee/73d6e937-0016-11ec-ac12-000b00000042",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#employee/edit?id=73d6e937-0016-11ec-ac12-000b00000042"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/group/73230224-0016-11ec-ac12-000c00000002",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/group/metadata",
+          "type": "group",
           "mediaType": "application/json"
         }
       },
+      "updated": "2021-08-18 18:43:40.740",
+      "name": "0001",
+      "externalCode": "srR4xJ90hAOHZPHrsSCS51",
+      "moment": "2021-08-17 16:56:00.000",
+      "store": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/store/7421cf1a-0016-11ec-ac12-000b00000080",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/store/metadata",
+          "type": "store",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#warehouse/edit?id=7421cf1a-0016-11ec-ac12-000b00000080"
+        }
+      },
+      "organization": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#mycompany/edit?id=b4343660-0016-11ec-ac12-000b000000d7"
+        }
+      },
+      "created": "2021-08-18 14:27:35.862",
+      "printed": false,
+      "published": false,
+      "files": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailshift/49819758-0017-11ec-ac12-000a00000000/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "closeDate": "2021-08-21 16:56:00.000",
+      "proceedsNoCash": 0.0,
+      "proceedsCash": 0.0,
+      "receivedNoCash": 0.0,
+      "receivedCash": 0.0,
+      "cheque": {
+        "start": {
+          "shiftNumber": "3456",
+          "fnNumber": "1234",
+          "fiscalDocNumber": "7890",
+          "fiscalDocSign": "9012",
+          "time": "2021-08-17 16:56:00.000"
+        },
+        "end": {
+          "shiftNumber": "2109",
+          "fnNumber": "4321",
+          "fiscalDocNumber": "8765",
+          "fiscalDocSign": "6543",
+          "time": "2021-08-21 16:56:00.000",
+          "chequesTotal": 15,
+          "fiscalDocsTotal": 17
+        }
+      },
+      "retailStore": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailstore/74940da1-0016-11ec-ac12-000b00000096",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/retailstore/metadata",
+          "type": "retailstore",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#retailstore/edit?id=74940da1-0016-11ec-ac12-000b00000096"
+        }
+      },
+      "acquire": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/counterparty/74221ae8-0016-11ec-ac12-000b00000081",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#company/edit?id=74221ae8-0016-11ec-ac12-000b00000081"
+        }
+      },
+      "bankPercent": 0.0,
+      "bankComission": 0.0,
+      "qrBankPercent": 0.0,
+      "qrBankComission": 0.0
+    },
+    {
+      "meta": {
+        "href": "http://localhost/api/remap/1.2/entity/retailshift/892f1775-0017-11ec-ac12-000a00000005",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/retailshift/metadata",
+        "type": "retailshift",
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#retailshift/edit?id=892f1775-0017-11ec-ac12-000a00000005"
+      },
+      "id": "892f1775-0017-11ec-ac12-000a00000005",
+      "accountId": "73215387-0016-11ec-ac12-000c00000001",
+      "owner": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/employee/73d6e937-0016-11ec-ac12-000b00000042",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#employee/edit?id=73d6e937-0016-11ec-ac12-000b00000042"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/group/73230224-0016-11ec-ac12-000c00000002",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2021-08-18 14:29:22.695",
+      "name": "00002",
+      "externalCode": "xT013CA3hAvQEDYa7av3O3",
+      "moment": "2021-08-18 14:29:00.000",
+      "store": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/store/7421cf1a-0016-11ec-ac12-000b00000080",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/store/metadata",
+          "type": "store",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#warehouse/edit?id=7421cf1a-0016-11ec-ac12-000b00000080"
+        }
+      },
+      "organization": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#mycompany/edit?id=b4343660-0016-11ec-ac12-000b000000d7"
+        }
+      },
+      "created": "2021-08-18 14:29:22.738",
+      "printed": false,
+      "published": false,
+      "files": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailshift/892f1775-0017-11ec-ac12-000a00000005/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "proceedsNoCash": 0.0,
+      "proceedsCash": 0.0,
+      "receivedNoCash": 0.0,
+      "receivedCash": 0.0,
+      "retailStore": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailstore/74940da1-0016-11ec-ac12-000b00000096",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/retailstore/metadata",
+          "type": "retailstore",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#retailstore/edit?id=74940da1-0016-11ec-ac12-000b00000096"
+        }
+      },
+      "acquire": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/counterparty/74221ae8-0016-11ec-ac12-000b00000081",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#company/edit?id=74221ae8-0016-11ec-ac12-000b00000081"
+        }
+      },
+      "bankPercent": 20.0,
+      "bankComission": 0.0,
+      "qrBankPercent": 0.0,
+      "qrBankComission": 0.0
+    },
+    {
+      "meta": {
+        "href": "http://localhost/api/remap/1.2/entity/retailshift/93439980-0113-11ec-ac12-000a00000000",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/retailshift/metadata",
+        "type": "retailshift",
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#retailshift/edit?id=93439980-0113-11ec-ac12-000a00000000"
+      },
+      "id": "93439980-0113-11ec-ac12-000a00000000",
+      "accountId": "73215387-0016-11ec-ac12-000c00000001",
+      "owner": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/employee/73d6e937-0016-11ec-ac12-000b00000042",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#employee/edit?id=73d6e937-0016-11ec-ac12-000b00000042"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/group/73230224-0016-11ec-ac12-000c00000002",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2021-08-19 21:10:24.827",
+      "name": "00009",
+      "externalCode": "VRxKV4WqiQLCSs6EJrAzP1",
+      "moment": "2021-08-17 16:56:00.000",
+      "store": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/store/7421cf1a-0016-11ec-ac12-000b00000080",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/store/metadata",
+          "type": "store",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#warehouse/edit?id=7421cf1a-0016-11ec-ac12-000b00000080"
+        }
+      },
+      "organization": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#mycompany/edit?id=b4343660-0016-11ec-ac12-000b000000d7"
+        }
+      },
+      "created": "2021-08-19 20:33:32.638",
+      "printed": false,
+      "published": false,
+      "files": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailshift/93439980-0113-11ec-ac12-000a00000000/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "closeDate": "2021-08-21 16:56:00.000",
+      "proceedsNoCash": 234000.0,
+      "proceedsCash": 0.0,
+      "receivedNoCash": 0.0,
+      "receivedCash": 0.0,
+      "cheque": {
+        "start": {
+          "shiftNumber": "3456",
+          "fnNumber": "1234",
+          "fiscalDocNumber": "7890",
+          "fiscalDocSign": "9012",
+          "time": "2021-08-17 16:56:00.000"
+        },
+        "end": {
+          "shiftNumber": "2109",
+          "fnNumber": "4321",
+          "fiscalDocNumber": "8765",
+          "fiscalDocSign": "6543",
+          "time": "2021-08-21 16:56:00.000",
+          "chequesTotal": 15,
+          "fiscalDocsTotal": 17
+        }
+      },
+      "retailStore": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailstore/74940da1-0016-11ec-ac12-000b00000096",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/retailstore/metadata",
+          "type": "retailstore",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#retailstore/edit?id=74940da1-0016-11ec-ac12-000b00000096"
+        }
+      },
+      "acquire": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/counterparty/74221ae8-0016-11ec-ac12-000b00000081",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#company/edit?id=74221ae8-0016-11ec-ac12-000b00000081"
+        }
+      },
+      "bankPercent": 22.0,
+      "bankComission": 12.0,
+      "qrBankPercent": 0.0,
+      "qrBankComission": 14.0,
       "operations": [
         {
           "meta": {
-            "href": "http://online.moysklad.ru/api/remap/1.2/entity/retaildemand/29547f06-ec69-11e7-0532-9eed0000001b",
-            "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+            "href": "http://localhost/api/remap/1.2/entity/retaildemand/7c27f5b8-0116-11ec-ac12-000c00000009",
+            "metadataHref": "http://localhost/api/remap/1.2/entity/retaildemand/metadata",
             "type": "retaildemand",
             "mediaType": "application/json",
-            "uuidHref": "http://online.moysklad.ru/app/#retaildemand/edit?id=29547f06-ec69-11e7-0532-9eed0000001b"
+            "uuidHref": "http://localhost/app/#retaildemand/edit?id=7c27f5b8-0116-11ec-ac12-000c00000009"
           }
-        },
-        {
-          "meta": {
-            "href": "http://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/3395a278-ec69-11e7-0532-9eed00000022",
-            "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata",
-            "type": "retailsalesreturn",
-            "mediaType": "application/json",
-            "uuidHref": "http://online.moysklad.ru/app/#retailsalesreturn/edit?id=3395a278-ec69-11e7-0532-9eed00000022"
-          }
-        },
-        {
-          "meta": {
-            "href": "http://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/2eb3c0ad-f9d9-11e7-0532-9eed0000005a",
-            "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/metadata",
-            "type": "retaildrawercashin",
-            "mediaType": "application/json",
-            "uuidHref": "http://online.moysklad.ru/app/#retaildrawercashin/edit?id=2eb3c0ad-f9d9-11e7-0532-9eed0000005a"
-          }
-        },
-        {
-          "meta": {
-            "href": "http://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/3d8258c5-f9d9-11e7-0532-9eed0000005e",
-            "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata",
-            "type": "retaildrawercashout",
-            "mediaType": "application/json",
-            "uuidHref": "http://online.moysklad.ru/app/#retaildrawercashout/edit?id=3d8258c5-f9d9-11e7-0532-9eed0000005e"
-          }
-        }
-      ],
-      "paymentOperations": [
-        {
-          "meta": {
-            "href": "http://online.moysklad.ru/api/remap/1.2/entity/cashin/6c3237ff-f9d9-11e7-0532-9eed00000086",
-            "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/cashin/metadata",
-            "type": "cashin",
-            "mediaType": "application/json",
-            "uuidHref": "http://online.moysklad.ru/app/#cashin/edit?id=6c3237ff-f9d9-11e7-0532-9eed00000086"
-          },
-          "linkedSum": 0
-        },
-        {
-          "meta": {
-            "href": "http://online.moysklad.ru/api/remap/1.2/entity/paymentin/5952a2fb-f9d8-11e7-0532-9eed00000036",
-            "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/paymentin/metadata",
-            "type": "paymentin",
-            "mediaType": "application/json",
-            "uuidHref": "http://online.moysklad.ru/app/#paymentin/edit?id=5952a2fb-f9d8-11e7-0532-9eed00000036"
-          },
-          "linkedSum": 0
         }
       ]
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/cd86df19-0563-11e6-9464-e4de0000008e",
+        "href": "http://localhost/api/remap/1.2/entity/retailshift/96316ed2-002b-11ec-ac12-000a0000000f",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/retailshift/metadata",
         "type": "retailshift",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#retailshift/edit?id=96316ed2-002b-11ec-ac12-000a0000000f"
       },
-      "id": "cd86df19-0563-11e6-9464-e4de0000008e",
-      "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
-      "syncId": "734a9e26-45a2-4ead-849c-e144daeb854d",
-      "updated": "2016-04-18 15:48:19",
-      "name": "00002",
-      "externalCode": "uhM2bdwAg7661Qhx3f7102",
+      "id": "96316ed2-002b-11ec-ac12-000a0000000f",
+      "accountId": "73215387-0016-11ec-ac12-000c00000001",
       "owner": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "href": "http://localhost/api/remap/1.2/entity/employee/73d6e937-0016-11ec-ac12-000b00000042",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
-          "mediaType": "application/json"
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#employee/edit?id=73d6e937-0016-11ec-ac12-000b00000042"
         }
       },
       "shared": false,
       "group": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "href": "http://localhost/api/remap/1.2/entity/group/73230224-0016-11ec-ac12-000c00000002",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/group/metadata",
           "type": "group",
           "mediaType": "application/json"
         }
       },
-      "moment": "2016-04-18 15:48:04",
-      "created": "2016-08-25 19:55:00",
-      "printed": true,
-      "published": true,
-      "vatEnabled": true,
-      "vatIncluded": true,
-      "organization": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e",
-          "type": "organization",
-          "mediaType": "application/json"
-        }
-      },
+      "updated": "2021-08-19 21:08:07.720",
+      "name": "00008",
+      "externalCode": "q32fSC7MgSFh2-pV3vEMZ0",
+      "moment": "2021-08-18 16:52:00.000",
       "store": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/850ee995-f504-11e5-8a84-bae500000160",
+          "href": "http://localhost/api/remap/1.2/entity/store/7421cf1a-0016-11ec-ac12-000b00000080",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/store/metadata",
           "type": "store",
-          "mediaType": "application/json"
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#warehouse/edit?id=7421cf1a-0016-11ec-ac12-000b00000080"
         }
       },
-      "organizationAccount": {
+      "organization": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/account/3a30e844-016f-11e6-9464-e4de00000068",
-          "type": "account",
-          "mediaType": "application/json"
+          "href": "http://localhost/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#mycompany/edit?id=b4343660-0016-11ec-ac12-000b000000d7"
         }
       },
-      "attributes": [
-        {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
-            "type": "attributemetadata",
-            "mediaType": "application/json"
-          },
-          "id": "bb08dccf-0bd2-11e6-9464-e4de000000ae",
-          "name": "AttributeName1",
-          "type": "string",
-          "value": "Да"
+      "created": "2021-08-18 16:52:38.413",
+      "printed": false,
+      "published": false,
+      "files": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailshift/96316ed2-002b-11ec-ac12-000a0000000f/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
         }
-      ],
-      "closeDate": "2016-04-18 15:48:19",
-      "proceedsNoCash": 1800,
-      "proceedsCash": 0,
-      "receivedNoCash": 0,
-      "receivedCash": 0,
+      },
+      "proceedsNoCash": 1232000.0,
+      "proceedsCash": 0.0,
+      "receivedNoCash": 0.0,
+      "receivedCash": 0.0,
+      "cheque": {
+        "start": {
+          "shiftNumber": "3456",
+          "kktRegNum": "5678",
+          "fnNumber": "1234",
+          "fiscalDocNumber": "7890",
+          "fiscalDocSign": "9012",
+          "time": "2016-09-06 20:41:00.000"
+        },
+        "end": {
+          "shiftNumber": "2109",
+          "kktRegNum": "0987",
+          "fnNumber": "4321",
+          "fiscalDocNumber": "8765",
+          "fiscalDocSign": "6543",
+          "time": "2017-09-06 21:41:00.000",
+          "chequesTotal": 15,
+          "fiscalDocsTotal": 17
+        }
+      },
       "retailStore": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
+          "href": "http://localhost/api/remap/1.2/entity/retailstore/74940da1-0016-11ec-ac12-000b00000096",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/retailstore/metadata",
           "type": "retailstore",
-          "mediaType": "application/json"
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#retailstore/edit?id=74940da1-0016-11ec-ac12-000b00000096"
         }
       },
+      "acquire": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/counterparty/74221ae8-0016-11ec-ac12-000b00000081",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#company/edit?id=74221ae8-0016-11ec-ac12-000b00000081"
+        }
+      },
+      "bankPercent": 22.0,
+      "bankComission": 0.0,
+      "qrBankPercent": 0.0,
+      "qrBankComission": 0.0,
       "operations": [
         {
           "meta": {
-            "href": "http://online.moysklad.ru/api/remap/1.2/entity/retaildemand/29547f06-ec69-11e7-0532-9eed0000002c",
-            "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+            "href": "http://localhost/api/remap/1.2/entity/retaildemand/67f09ba9-0118-11ec-ac12-000c00000028",
+            "metadataHref": "http://localhost/api/remap/1.2/entity/retaildemand/metadata",
             "type": "retaildemand",
             "mediaType": "application/json",
-            "uuidHref": "http://online.moysklad.ru/app/#retaildemand/edit?id=29547f06-ec69-11e7-0532-9eed0000002c"
+            "uuidHref": "http://localhost/app/#retaildemand/edit?id=67f09ba9-0118-11ec-ac12-000c00000028"
           }
-        },
-        {
-          "meta": {
-            "href": "http://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/3395a278-ec69-11e7-0532-9eed00000033",
-            "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/metadata",
-            "type": "retailsalesreturn",
-            "mediaType": "application/json",
-            "uuidHref": "http://online.moysklad.ru/app/#retailsalesreturn/edit?id=3395a278-ec69-11e7-0532-9eed00000033"
-          }
-        },
-        {
-          "meta": {
-            "href": "http://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/2eb3c0ad-f9d9-11e7-0532-9eed0000006b",
-            "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/metadata",
-            "type": "retaildrawercashin",
-            "mediaType": "application/json",
-            "uuidHref": "http://online.moysklad.ru/app/#retaildrawercashin/edit?id=2eb3c0ad-f9d9-11e7-0532-9eed0000006b"
-          }
-        },
-        {
-          "meta": {
-            "href": "http://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/3d8258c5-f9d9-11e7-0532-9eed0000006a",
-            "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/retaildrawercashout/metadata",
-            "type": "retaildrawercashout",
-            "mediaType": "application/json",
-            "uuidHref": "http://online.moysklad.ru/app/#retaildrawercashout/edit?id=3d8258c5-f9d9-11e7-0532-9eed0000006a"
-          }
-        }
-      ],
-      "paymentOperations": [
-        {
-          "meta": {
-            "href": "http://online.moysklad.ru/api/remap/1.2/entity/cashin/6c3237ff-f9d9-11e7-0532-9eed00000099",
-            "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/cashin/metadata",
-            "type": "cashin",
-            "mediaType": "application/json",
-            "uuidHref": "http://online.moysklad.ru/app/#cashin/edit?id=6c3237ff-f9d9-11e7-0532-9eed00000099"
-          },
-          "linkedSum": 0
-        },
-        {
-          "meta": {
-            "href": "http://online.moysklad.ru/api/remap/1.2/entity/paymentin/5952a2fb-f9d8-11e7-0532-9eed00000048",
-            "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/paymentin/metadata",
-            "type": "paymentin",
-            "mediaType": "application/json",
-            "uuidHref": "http://online.moysklad.ru/app/#paymentin/edit?id=5952a2fb-f9d8-11e7-0532-9eed00000048"
-          },
-          "linkedSum": 0
         }
       ]
+    },
+    {
+      "meta": {
+        "href": "http://localhost/api/remap/1.2/entity/retailshift/c095dba6-0021-11ec-ac12-000a00000000",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/retailshift/metadata",
+        "type": "retailshift",
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#retailshift/edit?id=c095dba6-0021-11ec-ac12-000a00000000"
+      },
+      "id": "c095dba6-0021-11ec-ac12-000a00000000",
+      "accountId": "73215387-0016-11ec-ac12-000c00000001",
+      "owner": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/employee/73d6e937-0016-11ec-ac12-000b00000042",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#employee/edit?id=73d6e937-0016-11ec-ac12-000b00000042"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/group/73230224-0016-11ec-ac12-000c00000002",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2021-08-18 15:42:29.192",
+      "name": "00003",
+      "externalCode": "rVBpebDWhdjnYvWf3UYUH3",
+      "moment": "2021-08-18 15:42:00.000",
+      "store": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/store/7421cf1a-0016-11ec-ac12-000b00000080",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/store/metadata",
+          "type": "store",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#warehouse/edit?id=7421cf1a-0016-11ec-ac12-000b00000080"
+        }
+      },
+      "organization": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#mycompany/edit?id=b4343660-0016-11ec-ac12-000b000000d7"
+        }
+      },
+      "created": "2021-08-18 15:42:30.535",
+      "printed": false,
+      "published": false,
+      "files": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailshift/c095dba6-0021-11ec-ac12-000a00000000/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "proceedsNoCash": 0.0,
+      "proceedsCash": 0.0,
+      "receivedNoCash": 0.0,
+      "receivedCash": 0.0,
+      "cheque": {},
+      "retailStore": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailstore/74940da1-0016-11ec-ac12-000b00000096",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/retailstore/metadata",
+          "type": "retailstore",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#retailstore/edit?id=74940da1-0016-11ec-ac12-000b00000096"
+        }
+      },
+      "bankPercent": 22.0,
+      "bankComission": 0.0,
+      "qrBankPercent": 0.0,
+      "qrBankComission": 0.0
+    },
+    {
+      "meta": {
+        "href": "http://localhost/api/remap/1.2/entity/retailshift/ceabf406-0028-11ec-ac12-000a00000000",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/retailshift/metadata",
+        "type": "retailshift",
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#retailshift/edit?id=ceabf406-0028-11ec-ac12-000a00000000"
+      },
+      "id": "ceabf406-0028-11ec-ac12-000a00000000",
+      "accountId": "73215387-0016-11ec-ac12-000c00000001",
+      "owner": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/employee/73d6e937-0016-11ec-ac12-000b00000042",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#employee/edit?id=73d6e937-0016-11ec-ac12-000b00000042"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/group/73230224-0016-11ec-ac12-000c00000002",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2021-08-18 16:32:02.504",
+      "name": "00006",
+      "externalCode": "xhgpmekOiHqvWSImw4p5Q2",
+      "moment": "2021-08-18 16:32:00.000",
+      "store": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/store/7421cf1a-0016-11ec-ac12-000b00000080",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/store/metadata",
+          "type": "store",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#warehouse/edit?id=7421cf1a-0016-11ec-ac12-000b00000080"
+        }
+      },
+      "organization": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#mycompany/edit?id=b4343660-0016-11ec-ac12-000b000000d7"
+        }
+      },
+      "created": "2021-08-18 16:32:55.237",
+      "printed": false,
+      "published": false,
+      "files": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailshift/ceabf406-0028-11ec-ac12-000a00000000/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "proceedsNoCash": 0.0,
+      "proceedsCash": 0.0,
+      "receivedNoCash": 0.0,
+      "receivedCash": 0.0,
+      "cheque": {},
+      "retailStore": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailstore/74940da1-0016-11ec-ac12-000b00000096",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/retailstore/metadata",
+          "type": "retailstore",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#retailstore/edit?id=74940da1-0016-11ec-ac12-000b00000096"
+        }
+      },
+      "acquire": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/counterparty/74221ae8-0016-11ec-ac12-000b00000081",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#company/edit?id=74221ae8-0016-11ec-ac12-000b00000081"
+        }
+      },
+      "bankPercent": 22.0,
+      "bankComission": 0.0,
+      "qrBankPercent": 0.0,
+      "qrBankComission": 0.0
+    },
+    {
+      "meta": {
+        "href": "http://localhost/api/remap/1.2/entity/retailshift/ceae1faa-0028-11ec-ac12-000a00000001",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/retailshift/metadata",
+        "type": "retailshift",
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#retailshift/edit?id=ceae1faa-0028-11ec-ac12-000a00000001"
+      },
+      "id": "ceae1faa-0028-11ec-ac12-000a00000001",
+      "accountId": "73215387-0016-11ec-ac12-000c00000001",
+      "owner": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/employee/73d6e937-0016-11ec-ac12-000b00000042",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#employee/edit?id=73d6e937-0016-11ec-ac12-000b00000042"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/group/73230224-0016-11ec-ac12-000c00000002",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2021-08-18 16:32:02.501",
+      "name": "00006",
+      "externalCode": "yq6BuFWSjfFVomhjTLSRv0",
+      "moment": "2021-08-18 16:32:00.000",
+      "store": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/store/7421cf1a-0016-11ec-ac12-000b00000080",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/store/metadata",
+          "type": "store",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#warehouse/edit?id=7421cf1a-0016-11ec-ac12-000b00000080"
+        }
+      },
+      "organization": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#mycompany/edit?id=b4343660-0016-11ec-ac12-000b000000d7"
+        }
+      },
+      "created": "2021-08-18 16:32:55.240",
+      "printed": false,
+      "published": false,
+      "files": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailshift/ceae1faa-0028-11ec-ac12-000a00000001/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "proceedsNoCash": 0.0,
+      "proceedsCash": 0.0,
+      "receivedNoCash": 0.0,
+      "receivedCash": 0.0,
+      "cheque": {},
+      "retailStore": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailstore/74940da1-0016-11ec-ac12-000b00000096",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/retailstore/metadata",
+          "type": "retailstore",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#retailstore/edit?id=74940da1-0016-11ec-ac12-000b00000096"
+        }
+      },
+      "acquire": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/counterparty/74221ae8-0016-11ec-ac12-000b00000081",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#company/edit?id=74221ae8-0016-11ec-ac12-000b00000081"
+        }
+      },
+      "bankPercent": 22.0,
+      "bankComission": 0.0,
+      "qrBankPercent": 0.0,
+      "qrBankComission": 0.0
+    },
+    {
+      "meta": {
+        "href": "http://localhost/api/remap/1.2/entity/retailshift/d0fe09a4-0022-11ec-ac12-000a00000005",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/retailshift/metadata",
+        "type": "retailshift",
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#retailshift/edit?id=d0fe09a4-0022-11ec-ac12-000a00000005"
+      },
+      "id": "d0fe09a4-0022-11ec-ac12-000a00000005",
+      "accountId": "73215387-0016-11ec-ac12-000c00000001",
+      "owner": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/employee/73d6e937-0016-11ec-ac12-000b00000042",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#employee/edit?id=73d6e937-0016-11ec-ac12-000b00000042"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/group/73230224-0016-11ec-ac12-000c00000002",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2021-08-18 15:50:07.560",
+      "name": "00004",
+      "externalCode": "JWP4fGFGitTlTNcs-M9HS2",
+      "moment": "2021-08-18 15:50:00.000",
+      "store": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/store/7421cf1a-0016-11ec-ac12-000b00000080",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/store/metadata",
+          "type": "store",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#warehouse/edit?id=7421cf1a-0016-11ec-ac12-000b00000080"
+        }
+      },
+      "organization": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#mycompany/edit?id=b4343660-0016-11ec-ac12-000b000000d7"
+        }
+      },
+      "created": "2021-08-18 15:50:07.666",
+      "printed": false,
+      "published": false,
+      "files": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailshift/d0fe09a4-0022-11ec-ac12-000a00000005/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "proceedsNoCash": 0.0,
+      "proceedsCash": 0.0,
+      "receivedNoCash": 0.0,
+      "receivedCash": 0.0,
+      "cheque": {},
+      "retailStore": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailstore/74940da1-0016-11ec-ac12-000b00000096",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/retailstore/metadata",
+          "type": "retailstore",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#retailstore/edit?id=74940da1-0016-11ec-ac12-000b00000096"
+        }
+      },
+      "bankPercent": 22.0,
+      "bankComission": 0.0,
+      "qrBankPercent": 0.0,
+      "qrBankComission": 0.0
+    },
+    {
+      "meta": {
+        "href": "http://localhost/api/remap/1.2/entity/retailshift/ffe01ed9-0022-11ec-ac12-000a0000000a",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/retailshift/metadata",
+        "type": "retailshift",
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#retailshift/edit?id=ffe01ed9-0022-11ec-ac12-000a0000000a"
+      },
+      "id": "ffe01ed9-0022-11ec-ac12-000a0000000a",
+      "accountId": "73215387-0016-11ec-ac12-000c00000001",
+      "owner": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/employee/73d6e937-0016-11ec-ac12-000b00000042",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#employee/edit?id=73d6e937-0016-11ec-ac12-000b00000042"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/group/73230224-0016-11ec-ac12-000c00000002",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2021-08-19 12:27:31.654",
+      "name": "00005",
+      "externalCode": "OCIPBNX4gO18a2-azKFxY2",
+      "moment": "2021-08-18 15:51:00.000",
+      "store": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/store/7421cf1a-0016-11ec-ac12-000b00000080",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/store/metadata",
+          "type": "store",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#warehouse/edit?id=7421cf1a-0016-11ec-ac12-000b00000080"
+        }
+      },
+      "organization": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#mycompany/edit?id=b4343660-0016-11ec-ac12-000b000000d7"
+        }
+      },
+      "created": "2021-08-18 15:51:25.561",
+      "printed": false,
+      "published": false,
+      "files": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailshift/ffe01ed9-0022-11ec-ac12-000a0000000a/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "proceedsNoCash": 0.0,
+      "proceedsCash": 0.0,
+      "receivedNoCash": 0.0,
+      "receivedCash": 0.0,
+      "cheque": {},
+      "retailStore": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/retailstore/74940da1-0016-11ec-ac12-000b00000096",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/retailstore/metadata",
+          "type": "retailstore",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#retailstore/edit?id=74940da1-0016-11ec-ac12-000b00000096"
+        }
+      },
+      "bankPercent": 22.0,
+      "bankComission": 0.0,
+      "qrAcquire": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/counterparty/74221ae8-0016-11ec-ac12-000b00000081",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#company/edit?id=74221ae8-0016-11ec-ac12-000b00000081"
+        }
+      },
+      "qrBankPercent": 0.0,
+      "qrBankComission": 0.0
     }
   ]
 }
@@ -432,28 +1121,29 @@ curl -X GET
       -d '{
             "organization": {
                 "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/011d87bc-fade-11eb-ac1b-000f00000087",
-                    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                  "href": "http://localhost/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+                    "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
                    "type": "organization",
                     "mediaType": "application/json"
                   }
             },
             "store": {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/012493aa-fade-11eb-ac1b-000f00000089",
-                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "href": "http://localhost/api/remap/1.2/entity/store/7421cf1a-0016-11ec-ac12-000b00000080",
+                "metadataHref": "http://localhost/api/remap/1.2/entity/store/metadata",
                 "type": "store",
                 "mediaType": "application/json"
                 }
             },
             "retailStore": {
                  "meta": {
-                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/01610ea7-fade-11eb-ac1b-000f0000009f",
-                     "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+                     "href": "http://localhost/api/remap/1.2/entity/retailstore/74940da1-0016-11ec-ac12-000b00000096",
+                     "metadataHref": "http://localhost/api/remap/1.2/entity/retailstore/metadata",
                      "type": "retailstore",
                      "mediaType": "application/json"
                   }
-            }'  
+            }
+   '  
 ```
 
 > Response 200 (application/json)
@@ -462,69 +1152,60 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/85f03d49-fff0-11eb-ac1b-000a00000000",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+    "href": "http://localhost/api/remap/1.2/entity/retailshift/6706043c-018c-11ec-ac12-000a00000005",
+    "metadataHref": "http://localhost/api/remap/1.2/entity/retailshift/metadata",
     "type": "retailshift",
     "mediaType": "application/json",
-    "uuidHref": "https://online.moysklad.ru/app/#retailshift/edit?id=85f03d49-fff0-11eb-ac1b-000a00000000"
+    "uuidHref": "http://localhost/app/#retailshift/edit?id=6706043c-018c-11ec-ac12-000a00000005"
   },
-  "id": "85f03d49-fff0-11eb-ac1b-000a00000000",
-  "accountId": "46683bcd-fb43-11eb-ac1b-001000000001",
+  "id": "6706043c-018c-11ec-ac12-000a00000005",
+  "accountId": "73215387-0016-11ec-ac12-000c00000001",
   "owner": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/00d60a2a-fade-11eb-ac1b-000f0000004b",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "http://localhost/api/remap/1.2/entity/employee/73d6e937-0016-11ec-ac12-000b00000042",
+      "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=00d60a2a-fade-11eb-ac1b-000f0000004b"
+      "uuidHref": "http://localhost/app/#employee/edit?id=73d6e937-0016-11ec-ac12-000b00000042"
     }
   },
   "shared": false,
   "group": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/466c89ae-fb43-11eb-ac1b-001000000002",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "href": "http://localhost/api/remap/1.2/entity/group/73230224-0016-11ec-ac12-000c00000002",
+      "metadataHref": "http://localhost/api/remap/1.2/entity/group/metadata",
       "type": "group",
       "mediaType": "application/json"
     }
   },
-  "updated": "2021-08-18 09:50:05.517",
-  "name": "00005",
-  "externalCode": "-co-jXf3gIbPPIcO006uZ3",
-  "moment": "2021-08-18 09:50:00.000",
+  "updated": "2021-08-20 10:58:27.611",
+  "name": "00011",
+  "externalCode": "D2XRGmC5gLVJCq1ocBXd82",
+  "moment": "2021-08-20 10:58:00.000",
   "store": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/012493aa-fade-11eb-ac1b-000f00000089",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "href": "http://localhost/api/remap/1.2/entity/store/7421cf1a-0016-11ec-ac12-000b00000080",
+      "metadataHref": "http://localhost/api/remap/1.2/entity/store/metadata",
       "type": "store",
       "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=012493aa-fade-11eb-ac1b-000f00000089"
-    }
-  },
-  "agent": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/01560dcb-fade-11eb-ac1b-000f0000009d",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-      "type": "counterparty",
-      "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=01560dcb-fade-11eb-ac1b-000f0000009d"
+      "uuidHref": "http://localhost/app/#warehouse/edit?id=7421cf1a-0016-11ec-ac12-000b00000080"
     }
   },
   "organization": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/011d87bc-fade-11eb-ac1b-000f00000087",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "href": "http://localhost/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+      "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
       "type": "organization",
       "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=011d87bc-fade-11eb-ac1b-000f00000087"
+      "uuidHref": "http://localhost/app/#mycompany/edit?id=b4343660-0016-11ec-ac12-000b000000d7"
     }
   },
-  "created": "2021-08-18 09:50:06.852",
+  "created": "2021-08-20 10:58:27.699",
   "printed": false,
   "published": false,
   "files": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/85f03d49-fff0-11eb-ac1b-000a00000000/files",
+      "href": "http://localhost/api/remap/1.2/entity/retailshift/6706043c-018c-11ec-ac12-000a00000005/files",
       "type": "files",
       "mediaType": "application/json",
       "size": 0,
@@ -532,28 +1213,24 @@ curl -X GET
       "offset": 0
     }
   },
-  "agent": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/01560dcb-fade-11eb-ac1b-000f0000009d",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-      "type": "counterparty",
-      "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=01560dcb-fade-11eb-ac1b-000f0000009d"
-    }
-  },
   "proceedsNoCash": 0.0,
   "proceedsCash": 0.0,
   "receivedNoCash": 0.0,
   "receivedCash": 0.0,
+  "cheque": {},
   "retailStore": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/01610ea7-fade-11eb-ac1b-000f0000009f",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+      "href": "http://localhost/api/remap/1.2/entity/retailstore/74940da1-0016-11ec-ac12-000b00000096",
+      "metadataHref": "http://localhost/api/remap/1.2/entity/retailstore/metadata",
       "type": "retailstore",
       "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#retailstore/edit?id=01610ea7-fade-11eb-ac1b-000f0000009f"
+      "uuidHref": "http://localhost/app/#retailstore/edit?id=74940da1-0016-11ec-ac12-000b00000096"
     }
-  }
+  },
+  "bankPercent": 0.0,
+  "bankComission": 0.0,
+  "qrBankPercent": 0.0,
+  "qrBankComission": 0.0
 }
 ```
 
@@ -744,7 +1421,9 @@ curl -X GET
     }
   },
   "bankPercent": 0.0,
-  "qrBankPercent": 0.0
+  "qrBankPercent": 0.0,
+  "bankComission": 0.0,
+  "qrBankComission": 0.0
 }
 ```
 
@@ -1005,6 +1684,10 @@ curl -X GET
       },
       "linkedSum": 0
     }
-  ]
+  ],
+  "bankPercent": 0.0,
+  "bankComission": 0.0,
+  "qrBankPercent": 0.0,
+  "qrBankComission": 0.0
 }
 ```

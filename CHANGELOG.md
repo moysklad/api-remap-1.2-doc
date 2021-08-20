@@ -5,7 +5,8 @@
 ### Добавлено
 - Создание розничной смены в позиции документов [Документов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena-sozdat-roznichnuu-smenu)
 - Редактирование розничной смены в позиции документов [Документов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena-izmenit-roznichnuu-smenu)
-- Добавлены поля `acquire`, `qrAcquire`, `bankPercent`, `qrBankPercent`  в розничную смену [Атрибуты розничной смены](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny)
+- Добавлены поля `acquire`, `qrAcquire`, `bankPercent`, `qrBankPercent`
+  `bankComission`, `qrBankComission` в розничную смену [Атрибуты розничной смены](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny)
 - Добавлен объект `cheque` с полями **start**, **end**
 - Добавлен объект `start` с полями **fnNumber**, **kktRegNumber**, **fiscalDocSign**,
   **shiftNumber**, **fiscalDocNumber**, **time** в розничную смену [Поля объекта](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-informaciq-ob-otkrytii-roznichnoj-smeny)
