@@ -1247,7 +1247,7 @@ curl -X GET
 
 ```shell
   curl -X PUT
-    "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/83f34607-ff35-11eb-ac1b-000c00000000"
+    "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/49819758-0017-11ec-ac12-000a00000000"
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
@@ -1536,7 +1536,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/7944ef04-f831-11e5-7a69-971500188b19"
+  "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/91a42d66-0ad2-11e6-9464-e4de00000017"
   -H "Authorization: Basic <Credentials>"
 ```
 
