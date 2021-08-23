@@ -11,7 +11,8 @@
 - Добавлен объект `start` с полями **fnNumber**, **kktRegNumber**, **fiscalDocSign**,
   **shiftNumber**, **fiscalDocNumber**, **time** в розничную смену [Поля объекта](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-informaciq-ob-otkrytii-roznichnoj-smeny)
 - Добавлен объект `end` с полями **fnNumber**, **kktRegNumber**, **fiscalDocSign**,
-  **shiftNumber**,  **chequesTotal**, **fiscalDocNumber**, **time** в розничную смену [Поля объекта](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-informaciq-o-zakrytii-roznichnoj-smeny)  |&mdash;                 |нет                     |нет
+  **shiftNumber**,  **chequesTotal**, **fiscalDocNumber**, **time** в розничную смену [Поля объекта](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-informaciq-o-zakrytii-roznichnoj-smeny) 
+- Добавлен тип ошибок с кодом 12011, 12026 [ошибки](https://dev.moysklad.ru/mojsklad-json-api-oshibki-kody-oshibok-dlq-roznichnyh-smen-pos)  
 
 ### Изменено
 - Удалено поле `agent` в розничной смене [Атрибуты розничной смены](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny)
