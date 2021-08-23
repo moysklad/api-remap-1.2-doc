@@ -16,13 +16,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Test user changelog
+    - name: Test dates in CHANGELOG.md
       run:
-        echo -e "Dates order validation in Changelog.md"
         cat CHANGELOG.md | egrep '^#+ +[0-9-]+' | sed -r 's/([0-9]+)-([0-9]+)-([0-9]+)/\3-\2-\1/g' | sort --check -nr;
 
-    - name: Test internal changelog
-      run:
+    - name: Test dates in source/includes/changelog/_changelog.md"
+      run: |
         echo -e "Dates order validation in source/includes/changelog/_changelog.md"
         cat source/includes/changelog/_changelog.md | egrep '^#+ +[0-9-]+' | sed -r 's/([0-9]+)-([0-9]+)-([0-9]+)/\3-\2-\1/g' | sort --check -nr;
 
