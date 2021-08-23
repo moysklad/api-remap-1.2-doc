@@ -21,8 +21,7 @@ jobs:
         cat CHANGELOG.md | egrep '^#+ +[0-9-]+' | sed -r 's/([0-9]+)-([0-9]+)-([0-9]+)/\3-\2-\1/g' | sort --check -nr;
 
     - name: Test dates in source/includes/changelog/_changelog.md"
-      run: |
-        echo -e "Dates order validation in source/includes/changelog/_changelog.md"
+      run:
         cat source/includes/changelog/_changelog.md | egrep '^#+ +[0-9-]+' | sed -r 's/([0-9]+)-([0-9]+)-([0-9]+)/\3-\2-\1/g' | sort --check -nr;
 
   build:
@@ -47,7 +46,7 @@ jobs:
     steps:
     - name: Deploy
       if: github.ref == 'refs/heads/master'
-      run:
+      run: |
         openssl aes-256-cbc -K $encrypted_fd0bb6467860_key -iv $encrypted_fd0bb6467860_iv
         in deploy_key.enc -out deploy_key -d
         eval "$(ssh-agent -s)"
