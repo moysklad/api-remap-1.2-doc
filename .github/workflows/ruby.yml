@@ -24,16 +24,14 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        ruby-version: ['2.3.3']
+    needs: date-check
 
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: ${{ matrix.ruby-version }}
+        ruby-version: '2.3.3'
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Build
       run:
@@ -41,6 +39,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    needs: build
 
     steps:
     - name: Deploy
