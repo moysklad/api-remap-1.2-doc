@@ -38,7 +38,7 @@ jobs:
       - name: Deploy
         env:
           SERVER_IP_ADDRESS: dev.moysklad.ru
-          APP_PREFIX: api-remap-1.3
+          APP_PREFIX: api-remap-1.2
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         run: |
           eval "$(ssh-agent -s)"
