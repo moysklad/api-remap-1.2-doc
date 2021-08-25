@@ -209,11 +209,11 @@ curl -X GET
       },
       "acquire": {
         "meta": {
-          "href": "http://localhost/api/remap/1.2/entity/organization/741b9bbb-0016-11ec-ac12-000b0000007e",
-          "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/741b9bbb-0016-11ec-ac12-000b0000007e",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
           "type": "organization",
           "mediaType": "application/json",
-          "uuidHref": "http://localhost/app/#mycompany/edit?id=741b9bbb-0016-11ec-ac12-000b0000007e"
+          "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=741b9bbb-0016-11ec-ac12-000b0000007e"
         }
       },
       "bankPercent": 21.2231,
@@ -382,11 +382,11 @@ curl -X GET
       },
       "acquire": {
         "meta": {
-          "href": "http://localhost/api/remap/1.2/entity/organization/741b9bbb-0016-11ec-ac12-000b0000007e",
-          "metadataHref": "http://localhost/api/remap/1.2/entity/organization/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/741b9bbb-0016-11ec-ac12-000b0000007e",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
           "type": "organization",
           "mediaType": "application/json",
-          "uuidHref": "http://localhost/app/#mycompany/edit?id=741b9bbb-0016-11ec-ac12-000b0000007e"
+          "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=741b9bbb-0016-11ec-ac12-000b0000007e"
         }
       },
       "bankPercent": 21.2231,
