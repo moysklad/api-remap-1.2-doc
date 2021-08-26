@@ -45,8 +45,8 @@
 |**reservedSum**            |Float|Сумма товаров в резерве |Только для чтения|да|да|нет
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет|да|да
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет|да|нет
-|**shipmentAddress**      |String(255)|Адрес доставки Заказа покупателя |&mdash;| нет|нет|нет
-|**shipmentAddressFull**  |Object|Адрес доставки Заказа покупателя с детализацией по отдельным полям. [Подробнее тут](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-attributy-suschnosti-adres-dostawki) |&mdash;|нет|нет|нет
+|**shipmentAddress**      |String(255)|Адрес доставки Заказа покупателя |&mdash;| нет|да|нет
+|**shipmentAddressFull**  |Object|Адрес доставки Заказа покупателя с детализацией по отдельным полям. [Подробнее тут](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-attributy-suschnosti-adres-dostawki) |&mdash;|нет|да|нет
 
 ##### Код системы налогообложения
 Значения поля taxSystem.
