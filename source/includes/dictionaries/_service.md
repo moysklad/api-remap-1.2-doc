@@ -1,6 +1,6 @@
 ## Услуга
 Средствами JSON API можно создавать и обновлять сведения об Услугах, запрашивать списки Услуг и сведения по отдельным Услугам. Кодом сущности для Услуги в составе JSON API является ключевое слово **service**. Услуга - специальная разновидность товара, без закупочной цены и упаковок. Больше о Товарах и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки в разделе
- [Товары и склад](https://support.moysklad.ru/hc/ru/sections/200564973-%D0%A2%D0%BE%D0%B2%D0%B0%D1%80%D1%8B-%D0%B8-%D1%81%D0%BA%D0%BB%D0%B0%D0%B4).
+ [Товары и склад](https://support.moysklad.ru/hc/ru/articles/115006310327).
 
 По данной сущности можно осуществлять контекстный поиск с помощью специального параметра `search`. Подробнее можно узнать по [ссылке](../#mojsklad-json-api-obschie-swedeniq-kontextnyj-poisk).
 
@@ -29,7 +29,10 @@
 |**archived**        |Boolean|Добавлена ли Услуга в архив|&mdash;|да|нет
 |**pathName**         |String|Наименование группы, в которую входит Услуга|Только для чтения|да|нет
 |**vat**         |Int|НДС %|&mdash;|нет|нет
+|**vatEnabled**     |Boolean|Включен ли НДС для услуги. С помощью этого флага для услуги можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.|&mdash;|нет|нет
+|**useParentVat**   |Boolean|Используется ли ставка НДС родительской группы. Если true для единицы ассортимента будет применена ставка, установленная для родительской группы.|&mdash;|да|нет
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет|нет
+|**effectiveVatEnabled**  |Boolean|Дополнительный признак для определения разграничения реального НДС = 0 или "без НДС". (effectiveVat = 0, effectiveVatEnabled = false) -> "без НДС", (effectiveVat = 0, effectiveVatEnabled = true) -> 0%.|Только для чтения|нет|нет
 |**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|&mdash;|нет|да
 |**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет|да
 |**minPrice**         |Object|Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-minimal-naq-cena)|&mdash;|нет|нет
@@ -209,7 +212,10 @@ curl -X GET
       "archived": false,
       "pathName": "",
       "vat": 6,
+      "vatEnabled": true,
+      "useParentVat": false,
       "effectiveVat": 6,
+      "effectiveVatEnabled": true,
       "discountProhibited": false,
       "minPrice": {
         "value": 500,
@@ -348,7 +354,10 @@ curl -X GET
       "archived": false,
       "pathName": "",
       "vat": 10,
+      "vatEnabled": true,
+      "useParentVat": false,
       "effectiveVat": 10,
+      "effectiveVatEnabled": true,
       "minPrice": {
         "value": 500,
         "currency": {
@@ -569,7 +578,10 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 10,
+  "vatEnabled": true,
+  "useParentVat": false,
   "effectiveVat": 10,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "minPrice": {
     "value": 500,
@@ -741,7 +753,9 @@ curl -X GET
   "code": "pumpkin2",
   "externalCode": "5fZe-Qyji8mSwoHYs7kSA2",
   "archived": false,
-  "pathName": ""
+  "pathName": "",
+  "vatEnabled": false,
+  "useParentVat": true,
 }
 ```
 
@@ -893,7 +907,10 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 6,
+  "vatEnabled": true,
+  "useParentVat": false,
   "effectiveVat": 6,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "minPrice": {
     "value": 500,
@@ -1182,7 +1199,9 @@ curl -X GET
     "code": "pumpkin2",
     "externalCode": "5fZe-Qyji8mSwoHYs7kSA2",
     "archived": false,
-    "pathName": ""
+    "pathName": "",
+    "vatEnabled": false,
+    "useParentVat": true
   },
   {
     "meta": {
@@ -1218,7 +1237,10 @@ curl -X GET
     "archived": false,
     "pathName": "",
     "vat": 11,
+    "vatEnabled": true,
+    "useParentVat": false,
     "effectiveVat": 11,
+    "effectiveVatEnabled": true,
     "discountProhibited": false,
     "minPrice": {
       "value": 500,
@@ -1425,7 +1447,10 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 6,
+  "vatEnabled": true,
+  "useParentVat": false,
   "effectiveVat": 6,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "minPrice": {
     "value": 500,
@@ -1675,7 +1700,10 @@ curl -X GET
    "archived": false,
    "pathName": "",
    "vat": 11,
+   "vatEnabled": true,
+   "useParentVat": false,
    "effectiveVat": 11,
+   "effectiveVatEnabled": true,
    "discountProhibited": false,
    "minPrice": {
      "value": 500,
@@ -1911,7 +1939,10 @@ curl -X GET
   "archived": false,
   "pathName": "Услуги компании",
   "vat": 6,
+  "vatEnabled": true,
+  "useParentVat": false,
   "effectiveVat": 6,
+  "effectiveVatEnabled": true,
   "productFolder": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/238e806f-2c89-11e6-8a84-bae5000000a8",

@@ -2,7 +2,7 @@
 ### Товары 
 Средствами JSON API можно создавать и обновлять сведения о Товарах, запрашивать списки Товаров и сведения по отдельным Товарам.
  Кодом сущности для Товара в составе JSON API является ключевое слово **product**. Больше о Товарах и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки в разделе
- [Товары и склад](https://support.moysklad.ru/hc/ru/sections/200564973-%D0%A2%D0%BE%D0%B2%D0%B0%D1%80%D1%8B-%D0%B8-%D1%81%D0%BA%D0%BB%D0%B0%D0%B4).
+ [Товары и склад](https://support.moysklad.ru/hc/ru/articles/115006310327).
 По данной сущности можно осуществлять контекстный поиск с помощью специального параметра `search`. Подробнее можно узнать по [ссылке](../#mojsklad-json-api-obschie-swedeniq-kontextnyj-poisk).
 
 Поиск среди объектов товаров на соответствие поисковой строке будет осуществлен по следующим полям:
@@ -30,7 +30,10 @@
 |**archived**        |Boolean|Добавлен ли Товар в архив|&mdash;|да|нет
 |**pathName**         |String|Наименование группы, в которую входит Товар|Только для чтения|да|нет
 |**vat**         |Int|НДС %|&mdash;|нет|нет
+|**vatEnabled**     |Boolean|Включен ли НДС для товара. С помощью этого флага для товара можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.|&mdash;|нет|нет
+|**useParentVat**   |Boolean|Используется ли ставка НДС родительской группы. Если true для единицы ассортимента будет применена ставка, установленная для родительской группы.|&mdash;|да|нет
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет|нет
+|**effectiveVatEnabled**  |Boolean|Дополнительный признак для определения разграничения реального НДС = 0 или "без НДС". (effectiveVat = 0, effectiveVatEnabled = false) -> "без НДС", (effectiveVat = 0, effectiveVatEnabled = true) -> 0%.|Только для чтения|нет|нет
 |**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Товара|&mdash;|нет|да
 |**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет|да
 |**images**       |MetaArray|Массив метаданных [Изображений](../dictionaries/#suschnosti-izobrazhenie) (Максимальное количество изображений - 10)|&mdash;|нет|да
@@ -384,7 +387,10 @@ curl -X GET
       "archived": false,
       "pathName": "",
       "vat": 18,
+      "vatEnabled": true,
+      "useParentVat": false,
       "effectiveVat": 18,
+      "effectiveVatEnabled": true,
       "discountProhibited": false,
       "uom": {
         "meta": {
@@ -555,7 +561,10 @@ curl -X GET
       "archived": false,
       "pathName": "",
       "vat": 18,
+      "vatEnabled": true,
+      "useParentVat": false,
       "effectiveVat": 18,
+      "effectiveVatEnabled": true,
       "discountProhibited": false,
       "uom": {
         "meta": {
@@ -748,7 +757,10 @@ curl -X GET
       "archived": false,
       "pathName": "",
       "vat": 20,
+      "vatEnabled": true,
+      "useParentVat": false,
       "effectiveVat": 20,
+      "effectiveVatEnabled": true,
       "discountProhibited": false,
       "uom": {
         "meta": {
@@ -815,8 +827,7 @@ curl -X GET
 Результат - JSON представление созданного Товара. Для создания нового Товара,
 необходимо и достаточно указать в переданном объекте не пустое поле `name`.
 Если вы хотите создать алкогольный товар, то в теле запроса, нужно передать
-объект **alcoholic**, у которого как минимум одна из нижеперечисленных характеристик будет передана с значением. 
-Иначе, при передаче пустого объекта **alcoholic**, он будет проигнорирован,и товар создастся без пометки "Алкогольная продукция".
+объект **alcoholic**, у которого как минимум одна из характеристик:
 
 | Название                | Описание  |
 | ------------------------------ |:---------------------------|
@@ -825,7 +836,8 @@ curl -X GET
 | **strength** | Крепость
 | **volume** | Объем тары
 
-Будет передана с значением. Иначе, при передаче пустого объекта **alcoholic**,
+
+Будет передана со значением. Иначе, при передаче пустого объекта **alcoholic**,
 он будет проигнорирован, и товар создастся без пометки "Алкогольная продукция".
 
 При создании Товара с указанным массивом штрихкодов для каждого штрихкода требуется указать к какому типу относится штрихкод. 
@@ -995,7 +1007,10 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 18,
+  "vatEnabled": true,
+  "useParentVat": false,
   "effectiveVat": 18,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "uom": {
     "meta": {
@@ -1216,7 +1231,9 @@ curl -X GET
   "weight": 0,
   "volume": 0,
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED"
+  "trackingType": "NOT_TRACKED",
+  "vatEnabled": false,
+  "useParentVat": true
 }
 ```
 
@@ -1387,7 +1404,10 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 18,
+  "vatEnabled": true,
+  "useParentVat": false,
   "effectiveVat": 18,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "uom": {
     "meta": {
@@ -1630,7 +1650,9 @@ curl -X GET
   ],
   "variantsCount": 0,
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED"
+  "trackingType": "NOT_TRACKED",
+  "vatEnabled": false,
+  "useParentVat": true,
 }
 ```
 
@@ -1759,7 +1781,9 @@ curl -X GET
     "weight": 0,
     "volume": 0,
     "isSerialTrackable": false,
-    "trackingType": "NOT_TRACKED"
+    "trackingType": "NOT_TRACKED",
+    "vatEnabled": false,
+    "useParentVat": true,
   },
   {
     "meta": {
@@ -1795,7 +1819,10 @@ curl -X GET
     "archived": false,
     "pathName": "",
     "vat": 3,
+    "vatEnabled": true,
+    "useParentVat": false,
     "effectiveVat": 3,
+    "effectiveVatEnabled": true,
     "discountProhibited": false,
     "uom": {
       "meta": {
@@ -2034,7 +2061,7 @@ curl -X POST
 
 ### Метаданные Товаров 
 #### Метаданные Товаров 
-Запрос на получение метаданных Товаров, Комплевтов и Услуг. Результат - объект JSON, включающий в себя:
+Запрос на получение метаданных Товаров, Комплектов и Услуг. Результат - объект JSON, включающий в себя:
 
 |Название|Описание| 
 |:----|:----|
@@ -2185,7 +2212,10 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 18,
+  "vatEnabled": true,
+  "useParentVat": false,
   "effectiveVat": 18,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "uom": {
     "meta": {
@@ -2559,7 +2589,10 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 3,
+  "vatEnabled": true,
+  "useParentVat": false,
   "effectiveVat": 3,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "uom": {
     "meta": {
@@ -2884,7 +2917,10 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 3,
+  "vatEnabled": true,
+  "useParentVat": false,
   "effectiveVat": 3,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "uom": {
     "meta": {
@@ -3162,7 +3198,10 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 3,
+  "vatEnabled": true,
+  "useParentVat": false,
   "effectiveVat": 3,
+  "effectiveVatEnabled": true,
   "discountProhibited": false,
   "uom": {
     "meta": {
