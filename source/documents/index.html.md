@@ -44,6 +44,7 @@ includes:
   - documents/processingorder
   - documents/processing
   - documents/internalOrder  
+  - documents/counterpartyadjustment
   - documents/autofill
   - documents/recalc_calculated_quantity
   
