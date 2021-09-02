@@ -594,7 +594,6 @@ curl -X POST
 | Параметр                | Описание  |
 | ------------------------------ |:---------------------------|
 | **meta**         | Ссылка на метаданные Корректировок баланса контрагента|
-| **attributes**   | Массив объектов доп. полей Корректировок баланса контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)|
 | **createShared** | создавать новые Корректировки баланса контрагента с меткой "Общий"|
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
@@ -615,16 +614,6 @@ curl -X GET
   "meta": {
     "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterpartyadjustment/metadata",
     "mediaType": "application/json"
-  },
-  "attributes": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterpartyadjustment/metadata/attributes",
-      "type": "attributemetadata",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
-    }
   },
   "createShared": false
 }
