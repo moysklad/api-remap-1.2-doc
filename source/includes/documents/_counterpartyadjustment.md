@@ -23,6 +23,7 @@
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да|да
 |**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да|да
+|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет|нет
 |**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|да
 |**created**            |DateTime|Дата создания|Только для чтения|да|нет
 |**printed**            |Boolean|Напечатан ли документ|Только для чтения|да|нет
@@ -133,6 +134,19 @@ curl -X GET
       "created": "2021-09-01 14:24:01.873",
       "printed": false,
       "published": false,
+      "attributes": [
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterpartyadjustment/metadata/attributes/f478774c-0bfb-11ec-ac12-000d000000d1",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          },
+          "id": "f478774c-0bfb-11ec-ac12-000d000000d1",
+          "name": "Адрес проживания",
+          "type": "string",
+          "value": "Гороховая улица д. 666"
+        }
+      ],
       "files": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterpartyadjustment/1bb899bc-0b17-11ec-ac16-000a00000006/files",
