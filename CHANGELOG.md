@@ -9,9 +9,9 @@
   `bankComission`, `qrBankComission` в розничную смену [Атрибуты розничной смены](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny)
 - Добавлен объект `cheque` с полями **start**, **end**
 - Добавлен объект `start` с полями **fnNumber**, **kktRegNumber**, **fiscalDocSign**,
-  **shiftNumber**, **fiscalDocNumber**, **time** в розничную смену [Поля объекта](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-informaciq-ob-otkrytii-roznichnoj-smeny)
+  **shiftNumber**, **fiscalDocNumber**, **time** в розничную смену [Поля объекта](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-informaciq-ob-otkrytii-smeny-kkt)
 - Добавлен объект `end` с полями **fnNumber**, **kktRegNumber**, **fiscalDocSign**,
-  **shiftNumber**,  **chequesTotal**, **fiscalDocNumber**, **time** в розничную смену [Поля объекта](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-informaciq-o-zakrytii-roznichnoj-smeny)
+  **shiftNumber**,  **chequesTotal**, **fiscalDocNumber**, **fiscalDocsTotal**, **time** в розничную смену [Поля объекта](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-informaciq-o-zakrytii-smeny-kkt)
 - Добавлен тип ошибок с кодом 12011, 12026 [ошибки](https://dev.moysklad.ru/mojsklad-json-api-oshibki-kody-oshibok-dlq-roznichnyh-smen-pos)
 
 ### Изменено
