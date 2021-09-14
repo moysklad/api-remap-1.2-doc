@@ -136,9 +136,16 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
-### 01-09-2021
+### 15-09-2021
 #### Добавлено
+- Добавлена фильтрация по Доп. полям. и атрибут фильтрации supplier для [Отчет обороты](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty)
 - Документ [Корректировка баланса контрагента](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-korrektirowka-balansa-kontragenta)
+
+### 31-08-2021
+#### Добавлено
+- Добавлен эндпоинт получения списка [сохраненных фильтров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sohranennye-fil-try)
+  для сущностей, документов
+- Добавлено применение [сохраненного фильтра](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sohranennye-fil-try) для сущностей и документов  
 
 ### 17-08-2021
 #### Добавлено
