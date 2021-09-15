@@ -136,6 +136,44 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 15-09-2021
+#### Добавлено
+- Возможность работы с упаковками [Модификаций](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-modifikaciq), [фильтрация ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment-izmenit-nastrojki-sprawochnika-kontragentow-atributy-dostupnye-dlq-fil-tracii) по штрихкоду упаковок модификаций.
+
+### 15-09-2021
+#### Добавлено
+- Добавлена фильтрация по Доп. полям. и атрибут фильтрации supplier для [Отчет обороты](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty)
+- Документ [Корректировка баланса контрагента](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-korrektirowka-balansa-kontragenta)
+
+### 31-08-2021
+#### Добавлено
+- Добавлен эндпоинт получения списка [сохраненных фильтров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sohranennye-fil-try)
+  для сущностей, документов
+- Добавлено применение [сохраненного фильтра](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sohranennye-fil-try) для сущностей и документов  
+
+### 17-08-2021
+#### Добавлено
+- Возможность работы с модификациями для материалов и продуктов [Тех. карт](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-teh-karta).
+Для этого введено новое поле **assortment**.
+- Новая ошибка [3028](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
+### 30-07-2021
+#### Добавлено
+- Добавлены атрибуты фильтрации type и withoutturnover для [Отчет обороты](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty)
+- Новый заголовок управления временем жизни ссылок на скачивание изображений и файлов. Описание в [общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-ssylki-na-fajly)
+
+### 29-07-2021
+#### Добавлено
+- [Фильтрация ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment-izmenit-nastrojki-sprawochnika-kontragentow-atributy-dostupnye-dlq-fil-tracii) по штрихкоду, наименованию группы товаров, типу и использованию серийных номеров
+
+### 28-07-2021
+#### Добавлено
+- Возможность работать с файлами в комментариях к [задачам](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha)
+
+### 28-07-2021
+#### Добавлена
+- Возможность expand поля **masterRetailStores** у [точек продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh)
+
 ### 26-07-2021
 #### Изменено
 - Добавлены поля `vatEnabled`, `effectiveVatEnabled` и `useParentVat` в [Группы товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-gruppa-towarow), [Товары](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar), [Комплекты](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt), [Услуги](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-usluga)
