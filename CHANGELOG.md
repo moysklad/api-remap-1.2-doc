@@ -2,6 +2,10 @@
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
 ## 16-09-2021
+### Добавлено
+- Ошибка [2028](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-oshibki-formata)
+
+## 16-09-2021
 ### Изменено
 - Дополнено описание раздела webhook.
 
