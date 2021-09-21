@@ -136,9 +136,17 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
-### 16-09-2021
+### 20-09-2021
 #### Добавлено
 - Добавлены поля `shipmentAddress` и `shipmentAddressFull` в [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq) и [Отгрузку](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka)
+
+### 20-09-2021
+#### Исправлено
+- Исправлен список возможных атрибутов у документа [Списание](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-spisanie)
+
+### 16-09-2021
+#### Изменено
+- Дополнено описание раздела webhook.
 
 ### 15-09-2021
 #### Добавлено
