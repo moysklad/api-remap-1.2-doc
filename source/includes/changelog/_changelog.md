@@ -136,6 +136,10 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 27-09-2021
+#### Добавлено
+- Добавлен [эндпоинт](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kody-markirowki) для работы с Кодами маркировки в позиции документа
+
 ### 23-09-2021
 #### Добавлено
 - Описание полей посылаемых [веб-хуков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki) и добавлены поля `auditContext`, `updatedFields`, `moment`, `uid`
