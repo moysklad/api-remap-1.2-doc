@@ -107,7 +107,7 @@
 > Пример создания и обновления нескольких кодов маркировки
 
 ```shell
-  curl -X GET
+  curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/supply/161d0246-1477-11ec-ac18-000b00000001/positions/161d25a8-1477-11ec-ac18-000b00000002/trackingCodes"
     -H "Authorization: Basic <Credentials>
     -H "Content-Type: application/json"
@@ -150,7 +150,7 @@
 > Запрос на массовое удаление Кодов маркировки
 
 ```shell
-  curl -X GET
+  curl -X POST
     "https://online.moysklad.ru/api/remap/1.2/entity/supply/161d0246-1477-11ec-ac18-000b00000001/positions/161d25a8-1477-11ec-ac18-000b00000002/trackingCodes"
     -H "Authorization: Basic <Credentials>
     -H "Content-Type: application/json"
