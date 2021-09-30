@@ -136,7 +136,7 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
-### 17-09-2021
+### 30-09-2021
 #### Изменено
 - Информация о новом типе маркированной продукции (Упакованная вода) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar)
 
