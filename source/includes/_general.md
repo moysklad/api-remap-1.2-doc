@@ -1870,32 +1870,32 @@ curl -X PUT
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
 | --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
-|**meta**               |[Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Сотрудника|&mdash;|да|нет
+|**meta**               |[Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Сотрудника|Только для чтения|да|нет
 |**id**                 |UUID|ID Сотрудника|Только для чтения|да|нет
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
-|**owner**              |[Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да|да
-|**shared**             |Boolean|Общий доступ|&mdash;|да|нет
-|**group**              |[Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да|да
+|**owner**              |[Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|Только для чтения|да|нет
+|**shared**             |Boolean|Общий доступ|Только для чтения|да|нет
+|**group**              |[Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|Только для чтения|да|нет
 |**updated**            |DateTime|Момент последнего обновления Сотрудника|Только для чтения|да|нет
 |**name**               |String(255)|Наименование Сотрудника|Только для чтения|да|нет
-|**description**        |String(4096)|Комментарий к Сотруднику|&mdash;|нет|нет
-|**code**               |String(255)|Код Сотрудника|&mdash;| нет|нет
-|**externalCode**       |String(255)|Внешний код Сотрудника|&mdash;| да|нет
-|**archived**           |Boolean|Добавлен ли Сотрудник в архив|&mdash;| да|нет
+|**description**        |String(4096)|Комментарий к Сотруднику|Только для чтения|нет|нет
+|**code**               |String(255)|Код Сотрудника|Только для чтения| нет|нет
+|**externalCode**       |String(255)|Внешний код Сотрудника|Только для чтения| да|нет
+|**archived**           |Boolean|Добавлен ли Сотрудник в архив|Только для чтения| да|нет
 |**created**            |DateTime|Момент создания Сотрудника|Только для чтения| да|нет
 |**uid**                |String(255)|Логин Сотрудника|Только для чтения| нет|нет
-|**email**              |String(255)|Электронная почта сотрудника|&mdash;|нет|нет
-|**phone**              |String(255)|Телефон сотрудника|&mdash;| нет|нет
-|**firstName**          |String(255)|Имя|&mdash;| нет|нет
-|**middleName**         |String(255)|Отчество|&mdash;|нет|нет
-|**lastName**           |String(255)|Фамилия|Необходимое|да|нет
+|**email**              |String(255)|Электронная почта сотрудника|Только для чтения|нет|нет
+|**phone**              |String(255)|Телефон сотрудника|Только для чтения| нет|нет
+|**firstName**          |String(255)|Имя|Только для чтения| нет|нет
+|**middleName**         |String(255)|Отчество|Только для чтения|нет|нет
+|**lastName**           |String(255)|Фамилия|Только для чтения|да|нет
 |**fullName**           |String(255)|Имя Отчество Фамилия|Только для чтения| нет|нет
 |**shortFio**           |String(255)|Краткое ФИО|Только для чтения| нет|нет
 |**cashiers**           |MetaArray|Массив кассиров.  [Подробнее тут](dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-kassir)|Только для чтения| нет|да
-|**attributes**         |Array(Object)|Дополнительные поля Сотрудника|&mdash;| нет|нет
-|**image**              |Object|Фотография сотрудника.  [Подробнее тут](dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-fotografiq-sotrudnika-struktura-i-zagruzka)|&mdash;| нет|нет
-|**inn**                |String(255)|ИНН сотрудника (в формате ИНН физического лица)|&mdash;| нет|нет
-|**position**           |String(255)|Должность сотрудника |&mdash;| нет|нет
+|**attributes**         |Array(Object)|Дополнительные поля Сотрудника|Только для чтения| нет|нет
+|**image**              |Object|Фотография сотрудника.  [Подробнее тут](dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-fotografiq-sotrudnika-struktura-i-zagruzka)|Только для чтения| нет|нет
+|**inn**                |String(255)|ИНН сотрудника (в формате ИНН физического лица)|Только для чтения| нет|нет
+|**position**           |String(255)|Должность сотрудника |Только для чтения| нет|нет
 |**permissions**        |Object|Перечисление пермиссий сотрудника. [Подробнее тут](#mojsklad-json-api-obschie-swedeniq-kontext-sotrudnika-atributy-wlozhennyh-suschnostej-permissii-sotrudnika)|Только для чтения|да|нет
 
 #### Атрибуты вложенных сущностей
