@@ -1862,6 +1862,701 @@ curl -X PUT
 }
 ```
 
+### Контекст запроса сотрудника
+
+Возвращает данные о сотруднике, от лица которого происходит запрос. Доступ к сущности осуществляется по эндпоинту `/context/employee`
+
+#### Атрибуты сущности
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**               |[Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Сотрудника|Только для чтения|да|нет
+|**id**                 |UUID|ID Сотрудника|Только для чтения|да|нет
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
+|**owner**              |[Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|Только для чтения|да|нет
+|**shared**             |Boolean|Общий доступ|Только для чтения|да|нет
+|**group**              |[Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|Только для чтения|да|нет
+|**updated**            |DateTime|Момент последнего обновления Сотрудника|Только для чтения|да|нет
+|**name**               |String(255)|Наименование Сотрудника|Только для чтения|да|нет
+|**description**        |String(4096)|Комментарий к Сотруднику|Только для чтения|нет|нет
+|**code**               |String(255)|Код Сотрудника|Только для чтения| нет|нет
+|**externalCode**       |String(255)|Внешний код Сотрудника|Только для чтения| да|нет
+|**archived**           |Boolean|Добавлен ли Сотрудник в архив|Только для чтения| да|нет
+|**created**            |DateTime|Момент создания Сотрудника|Только для чтения| да|нет
+|**uid**                |String(255)|Логин Сотрудника|Только для чтения| нет|нет
+|**email**              |String(255)|Электронная почта сотрудника|Только для чтения|нет|нет
+|**phone**              |String(255)|Телефон сотрудника|Только для чтения| нет|нет
+|**firstName**          |String(255)|Имя|Только для чтения| нет|нет
+|**middleName**         |String(255)|Отчество|Только для чтения|нет|нет
+|**lastName**           |String(255)|Фамилия|Только для чтения|да|нет
+|**fullName**           |String(255)|Имя Отчество Фамилия|Только для чтения| нет|нет
+|**shortFio**           |String(255)|Краткое ФИО|Только для чтения| нет|нет
+|**cashiers**           |MetaArray|Массив кассиров.  [Подробнее тут](dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-kassir)|Только для чтения| нет|да
+|**attributes**         |Array(Object)|Дополнительные поля Сотрудника|Только для чтения| нет|нет
+|**image**              |Object|Фотография сотрудника.  [Подробнее тут](dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-fotografiq-sotrudnika-struktura-i-zagruzka)|Только для чтения| нет|нет
+|**inn**                |String(255)|ИНН сотрудника (в формате ИНН физического лица)|Только для чтения| нет|нет
+|**position**           |String(255)|Должность сотрудника |Только для чтения| нет|нет
+|**permissions**        |Object|Перечисление пермиссий сотрудника. [Подробнее тут](#mojsklad-json-api-obschie-swedeniq-kontext-sotrudnika-atributy-wlozhennyh-suschnostej-permissii-sotrudnika)|Только для чтения|да|нет
+
+#### Атрибуты вложенных сущностей
+
+Многие атрибуты, представленные в этом запросе, за исключением поля `permissions`, повторяют атрибуты запроса [Сотрудника](dictionaries/#suschnosti-sotrudnik-sotrudniki), подробное описание которых можно посмотреть в соответствующем разделе.
+
+##### Пермиссии сотрудника
+
+Объект пермиссий сотрудника включает в себя пермиссии сущностей, часть тарифных и пользовательских пермиссий.
+Поля объекта представляют собой отдельную пермиссию, где имя указывает на тип пермиссии, а значение представляет собой объект со значениями пермиссий в формате <тип пермиссии>: <значение>.
+
+###### Пользовательские и тарифные пермиссии
+
+| Название            | Описание |                      
+| ------------------- |:---------|
+|**dashboard**        | Просматривать показатели
+|**stock**            | Просматривать остатки по товарам
+|**customAttributes** | Работа с доп. полями
+|**pnl**              | Просматривать прибыльность
+|**company_crm**      | Просматривать показатели
+|**tariff_crm**       | Присутствует ли опция CRM на аккаунте
+|**audit_dashboard**  | Просматривать аудит
+|**admin**            | Является ли сотрудник админом
+|**dashboardMoney**   | Видеть остатки денег
+
+При наличии соответствующей пермиссии объект содержит поле **VIEW** со значением `ALL`
+
+###### Список пермиссий сущностей
+
+Имеется три возможных типа значений пермиссий сущности: `OPERATION`, `DICTIONARY`, `BASE`.
+Данные типы имеют следующие поля:
+
+| типы значений пермиссий сущности         | view | create | update | delete | print | approve |
+| ----------- |:---------|:----------| :------------| :----------| :----------| :----------|
+|OPERATION    | + | + | + | + | + | +
+|DICTIONARY    | + | + | + | + | + | -
+|BASE    | + | + | + | + | - | -
+
+###### Описание пермиссий сущностей
+
+| Название         | Описание |
+| ---------------- |:-------------------|
+|**view**    |Смотреть
+|**create**    |Создавать
+|**update**    |Редактировать
+|**delete**    |Удалять
+|**print**    |Печатать
+|**approve**    |Проводить
+
+###### Возможные значения полей `view`, `create`, `update`, `delete`, `approve`, `print`
+
+| Название         | На кого распространяется |
+| ---------------- |:-------------------|
+|**OWN**    |Только свои
+|**OWN_SHARED**    |Свои и общие
+|**OWN_GROUP**    |Свои и отдела
+|**OWN_GROUP_SHARED**    |Свои, отдела и общие
+|**ALL**    |Все
+|Отсутствует |Ни на кого
+
+###### Пермиссии сущностей и документов, которые присутствуют в запросе
+
+| Название         | Возможные значения | Описание| 
+| ---------------- |:-------------------|:---------------------|
+|**company**    |DICTIONARY|Контрагенты
+|**myCompany**    |BASE|Юр. Лица
+|**good**    |DICTIONARY|Товары и Услуги
+|**project**    |BASE|Проекты
+|**contract**    |DICTIONARY|Договоры
+|**employee**    |BASE|Сотрудники
+|**currency**    |BASE|Валюты
+|**warehouse**    |BASE|Склады
+|**customEntity**    |BASE|Элементы пользовательских справочников
+|**retailStore**    |BASE|Точка продаж
+|**country**    |BASE|Страны
+|**uom**    |BASE|Единицы измерения
+|**purchaseReturn**    |OPERATION|Возврат поставщику
+|**demand**    |OPERATION|Отгрузка
+|**salesReturn**    |OPERATION|Возврат покупателя
+|**loss**    |OPERATION|Списание
+|**enter**    |OPERATION|Оприходование
+|**move**    |OPERATION|Перемещение
+|**inventory**    |DICTIONARY|Инвентаризация
+|**processing**    |BASE|Тех. операции
+|**invoiceIn**    |OPERATION|Счет поставщику
+|**invoiceOut**    |OPERATION|Счет покупателям
+|**purchaseOrder**    |OPERATION|Заказ поставщикам
+|**customerOrder**    |OPERATION|Заказ покупателям
+|**internalOrder**    |OPERATION|Внутренние заказы
+|**processingOrder**    |OPERATION|Заказ на производство
+|**factureIn**    |OPERATION|Счета-фактуры полученные
+|**factureOut**    |OPERATION|Счета-фактуры выданные
+|**paymentIn**    |OPERATION|Входящий платеж
+|**paymentOut**    |OPERATION|Исходящий платеж
+|**cashIn**    |OPERATION|Приходной ордер
+|**cashOut**    |OPERATION|Расходной ордер
+|**priceList**    |OPERATION|Прайс-лист
+|**retailDemand**    |OPERATION|Продажи
+|**retailSalesReturn**    |OPERATION|Возвраты
+|**supply**    |OPERATION|Приемки
+|**processingPlan**    |BASE|Тех. Карты
+|**commissionReportIn**    |OPERATION|Полученный отчет комиссионера
+|**commissionReportOut**    |OPERATION|Выданный отчет комиссионер
+|**retailShift**    |DICTIONARY|Смены
+|**retailDrawerCashIn**    |OPERATION|Внесения
+|**retailDrawerCashOut**    |OPERATION|Выплаты
+|**bonusTransaction**    |OPERATION|Бонусные баллы
+|**prepayment**    |OPERATION|Предоплаты
+|**prepaymentReturn**    |OPERATION|Возврат предоплаты
+|**cashboxAdjustment**    |DICTIONARY|Корректировка остатков в кассе
+|**accountAdjustment**    |DICTIONARY|Корректировка остатков на счете
+|**counterpartyAdjustment**    |DICTIONARY|Корректировка баланса контрагента
+|**webhook**|DICTIONARY|Вебхуки
+|**task**|[Особый](#mojsklad-json-api-obschie-swedeniq-kontext-sotrudnika-atributy-wlozhennyh-suschnostej-permissii-sotrudnika-permissii-dlq-zadach)|Задачи
+
+###### Пермиссии для задач
+
+Пермиссии `script` для задач имеют следующие поля:
+
+| Название         | Описание | Возможные значения |
+| ---------------- |:-------------------|:-------------------|
+|**view**    |Смотреть |Отсутствует, AUTHOR_OR_ASSIGNEE, ALL
+|**create**    |Создавать |Отсутствует, ALL
+|**update**    |Редактировать |Отсутствует, AUTHOR, AUTHOR_OR_ASSIGNEE, ALL
+|**delete**    |Удалять |Отсутствует, AUTHOR, AUTHOR_OR_ASSIGNEE, ALL
+|**done**    |Выполнять |Отсутствует, ASSIGNEE, AUTHOR_OR_ASSIGNEE, ALL
+
+###### Возможные значения полей `view`, `create`, `update`, `delete`, `done` для задач
+
+| Название         | На какие задачи распространяется |
+| ---------------- |:-------------------|
+|**AUTHOR_OR_ASSIGNEE**    |Созданные пользователем и назначенные ему
+|**ASSIGNEE**    |Назначенные
+|**AUTHOR**    |Созданные пользователем
+|**ALL**    |Возможность совершать действие над любыми задачами
+|Отсутствует   |Нет прав ни на какие задачи
+
+#### Получить контекст сотрудника
+
+Запрос на получение контекста запроса Cотрудника.
+
+> Пример запроса на получения контекста запроса Cотрудника.
+
+```shell
+  curl -X GET
+    "https://online.moysklad.ru/api/remap/1.2/context/employee/"
+    -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление информации о контексте запроса Cотрудника.
+
+```json
+{
+    "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/5bf6430e-204c-11ec-c0a8-300d00000042?expand=cashier.retailStore",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=5bf6430e-204c-11ec-c0a8-300d00000042"
+    },
+    "id": "5bf6430e-204c-11ec-c0a8-300d00000042",
+    "accountId": "59de7a4b-204c-11ec-c0a8-300e00000002",
+    "owner": {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/5bf6430e-204c-11ec-c0a8-300d00000042",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+            "type": "employee",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=5bf6430e-204c-11ec-c0a8-300d00000042"
+        }
+    },
+    "shared": true,
+    "group": {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/59e4a97a-204c-11ec-c0a8-300e00000003",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+            "type": "group",
+            "mediaType": "application/json"
+        }
+    },
+    "updated": "2021-09-28 14:08:07.359",
+    "name": "Администратор",
+    "externalCode": "YuqqVXgviyQsimcElBCDl0",
+    "archived": false,
+    "created": "2021-09-28 14:08:07.359",
+    "uid": "admin@f1",
+    "email": "f@f.ru",
+    "lastName": "Администратор",
+    "fullName": "Администратор",
+    "shortFio": "Администратор",
+    "cashiers": [
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/5d9c8f7a-204c-11ec-c0a8-300d00000096/cashiers/5d9ce2d8-204c-11ec-c0a8-300d00000097",
+                "type": "cashier",
+                "mediaType": "application/json"
+            }
+        }
+    ],
+    "permissions": {
+        "currency": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL"
+        },
+        "uom": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL"
+        },
+        "productfolder": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "print": "ALL"
+        },
+        "product": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "print": "ALL"
+        },
+        "bundle": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "print": "ALL"
+        },
+        "service": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "print": "ALL"
+        },
+        "consignment": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "print": "ALL"
+        },
+        "variant": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "print": "ALL"
+        },
+        "store": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL"
+        },
+        "counterparty": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "print": "ALL"
+        },
+        "organization": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL"
+        },
+        "employee": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL"
+        },
+        "settings": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "print": "ALL"
+        },
+        "contract": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "print": "ALL"
+        },
+        "project": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL"
+        },
+        "country": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL"
+        },
+        "customentity": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL"
+        },
+        "demand": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "customerorder": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "internalorder": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "invoiceout": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "invoicein": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "paymentin": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "paymentout": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "cashin": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "cashout": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "supply": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "salesreturn": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "purchasereturn": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "retailstore": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL"
+        },
+        "receipttemplate": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL"
+        },
+        "retailstorestatus": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL"
+        },
+        "retailshift": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "print": "ALL"
+        },
+        "retaildemand": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "retailsalesreturn": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "retaildrawercashin": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "retaildrawercashout": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "prepayment": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "prepaymentreturn": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "purchaseorder": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "move": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "enter": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "loss": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "facturein": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "factureout": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "commissionreportin": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "commissionreportout": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "pricelist": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "processingplanfolder": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL"
+        },
+        "processingplan": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL"
+        },
+        "processing": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "processingorder": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "counterpartyadjustment": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "print": "ALL"
+        },
+        "assortment": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "print": "ALL"
+        },
+        "inventory": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "print": "ALL"
+        },
+        "bonustransaction": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "approve": "ALL",
+            "print": "ALL"
+        },
+        "crptorder": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "print": "ALL"
+        },
+        "webhook": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL"
+        },
+        "task": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL",
+            "done": "ALL"
+        },
+        "dashboard": {
+            "view": "ALL"
+        },
+        "stock": {
+            "view": "ALL"
+        },
+        "customAttributes": {
+            "view": "ALL"
+        },
+        "pnl": {
+            "view": "ALL"
+        },
+        "company_crm": {
+            "view": "ALL"
+        },
+        "tariff_crm": {
+            "view": "ALL"
+        },
+        "audit_dashboard": {
+            "view": "ALL"
+        },
+        "admin": {
+            "view": "ALL"
+        },
+        "dashboardMoney": {
+            "view": "ALL"
+        }
+    }
+}
+```
+
 ### Серверные приложения
 Для доступа к API может быть использован токен выданный Вендору при установке Серверного приложения пользователем МоегоСклада.
 
