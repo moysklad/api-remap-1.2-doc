@@ -136,6 +136,10 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 08-10-2021
+#### Добавлено
+- Ошибка [2028](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-oshibki-formata)
+
 ### 07-10-2021
 #### Документация
 - Добавлено описание [Контекста запроса сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-kontext-sotrudnika)
