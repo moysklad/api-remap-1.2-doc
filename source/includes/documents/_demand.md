@@ -69,7 +69,7 @@
 |**shippingInstructions**               |String(255)|Указания грузоотправителя|&mdash;|нет|нет
 |**cargoName**              |String(255)|Наименование груза|&mdash;|нет|нет
 |**transportFacility**               |String(255)|Транспортное средство|&mdash;|нет|нет
-|**goodPackQuantity**               |String(255)|Всего мест|&mdash;|нет|нет
+|**goodPackQuantity**               |Int|Всего мест|&mdash;|нет|нет
 |**carrier**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные перевозчика (контрагент или юрлицо)|&mdash;|нет|да
 |**stateContractId**              |String(255)|Идентификатор государственного контракта, договора (соглашения)|&mdash;|нет|нет
 
