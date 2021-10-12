@@ -136,7 +136,7 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
-### 12-10-2020
+### 12-10-2021
 #### Добавлено
 - Возможность изменения полей [Элементов пользовательского справочника](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik-jelementy-pol-zowatel-skogo-sprawochnika): `group`, `owner`, `shared`
 
