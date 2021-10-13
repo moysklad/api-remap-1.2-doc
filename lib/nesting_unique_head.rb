@@ -34,8 +34,8 @@ class NestingUniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
 
   def postprocess(document)
     document.gsub(
-      /<blockquote>\s*<p>(([^\/]|\/[^p])+)<\/p>\s*<\/blockquote>(\s*<pre)/m,
-      '<button class="collapse-button"><span>\1</span><span class="open">Показать</span><span class="close">Свернуть</span><img class="normal" src="/images/expand.svg"><img class="hover" src="/images/expand_hover.svg"></button>\3 style=\'display: none;\''
+      /<blockquote>\s*(<p>([^\/]|\/[^p])+<\/p>\s*)<\/blockquote>(\s*<pre)/m,
+      '<button class="collapse-button">\1<span><span class="open">Показать</span><span class="close">Свернуть</span><img class="normal" src="/images/expand.svg"><img class="hover" src="/images/expand_hover.svg"></span></button>\3 style=\'display: none;\''
     )
   end
 end
