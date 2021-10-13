@@ -59,6 +59,7 @@
 |**demandPrefix**        |String(255)|Префикс номера продаж|&mdash;| нет|нет
 |**allowSellTobaccoWithoutMRC** |Boolean|Разрешить продавать табачную продукцию не по МРЦ|&mdash;|да|нет
 |**tobaccoMrcControlType** |Enum| Контроль МРЦ для табачной продукции. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-kontrolq-mrc-dlq-tabachnoj-produkcii) |&mdash;|да|нет
+|**markingSellingMode** |Enum| Режим продажи маркированной продукции, если используется формат фискальных документов версии 1.2. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-prodazha-markirowannyh-towarow) |&mdash;|да|нет 
 |**allowCreateProducts** |Boolean|Контроль остатков. Не может быть `true`, если `controlShippingStock` имеет значение `true`|&mdash;|да|нет
 |**productFolders**      |Array(Object)|Коллекция Метаданных групп товаров, из которых можно выгружать товары|&mdash;| нет|да
 |**createAgentsTags**    |Array(Object)|Коллекция групп покупателей, представленных в формате строк. Определяет группы, в которые добавляются новые покупатели. Значения `null` игнорируются|&mdash;| нет|нет
@@ -73,7 +74,7 @@
 |**reservePrepaidGoods**|Boolean|Резервировать товары, за которые внесена предоплата|&mdash;| да|нет
 |**fiscalType**     |Enum| Тип формирования чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-formirowaniq-chekow)|&mdash;|да|нет
 |**minionToMasterType**|Enum|Стратегия выбора кассы для фискализации облачных чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-strategiq-wybora-kassy-dlq-fiskalizacii-oblachnyh-chekow)|&mdash;|да|нет
-|**masterRetailStores**|Array(Object)|Ссылка на точки продаж, которые могут фискализировать операции с текущей точки продаж, если `minionToMaster` = `CHOSEN`|&mdash;|нет|нет
+|**masterRetailStores**|Array(Object)|Ссылка на точки продаж, которые могут фискализировать операции с текущей точки продаж, если `minionToMaster` = `CHOSEN`|&mdash;|нет|да
 |**qrAcquire**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Банка-эквайера по операциям по QR-коду|&mdash;|нет|да
 |**qrBankPercent**     |Double|Комиссия банка-эквайера по операция по QR-коду (в процентах)|&mdash;| нет|нет
 |**qrPayEnabled**      |Boolean|Возможность оплаты по QR-коду на точке продаж|&mdash;| да |нет
@@ -126,6 +127,14 @@
 | **USER_PRICE**    | Не контролировать МРЦ
 | **MRC_PRICE**     | Продавать по МРЦ указанной на пачке
 | **SAME_PRICE**    | Запрещать продажу, если цена продажи не совпадает с МРЦ
+
+##### Продажа маркированных товаров:
+
+| Название                    | Описание                                                  |
+| --------------------------- |:----------------------------------------------------------|
+| **CORRECT_MARKS_ONLY**      | Только с правильными кодами маркировки
+| **WITHOUT_ERRORS**          | С правильными кодами и те, которые не удалось проверить
+| **ALL**                     | Все – независимо от результатов проверки кодов маркировки
 
 ##### Приоритет отправки электронного чека
 
@@ -474,6 +483,7 @@ curl -X GET
       "allowCustomPrice" : true,
       "allowSellTobaccoWithoutMRC" : true,
       "tobaccoMrcControlType" : "USER_PRICE",
+      "markingSellingMode" : "CORRECT_MARKS_ONLY",
       "allowCreateProducts" : false,
       "productFolders" : {
         "meta" : {
@@ -688,7 +698,8 @@ curl -X GET
       "priorityOfdSend" : "email",
       "allowCustomPrice" : true,
       "allowSellTobaccoWithoutMRC" : true,
-      "tobaccoMrcControlType" : "USER_PRICE", 
+      "tobaccoMrcControlType" : "USER_PRICE",
+      "markingSellingMode" : "CORRECT_MARKS_ONLY",
       "allowCreateProducts" : false,
       "productFolders" : {
         "meta" : {
@@ -826,6 +837,7 @@ curl -X GET
               "allowCustomPrice" : true,
               "allowSellTobaccoWithoutMRC" : true,
               "tobaccoMrcControlType" : "USER_PRICE",
+               "markingSellingMode" : "CORRECT_MARKS_ONLY",
               "allowCreateProducts" : false,
               "productFolders" : [{
                 "meta": {
@@ -1010,6 +1022,7 @@ curl -X GET
   "allowCustomPrice" : true,
   "allowSellTobaccoWithoutMRC" : true,
   "tobaccoMrcControlType" : "USER_PRICE",
+  "markingSellingMode" : "CORRECT_MARKS_ONLY",
   "allowCreateProducts" : false,
   "productFolders" : {
     "meta" : {
@@ -1202,6 +1215,7 @@ curl -X GET
   "allowCustomPrice" : false,
   "allowSellTobaccoWithoutMRC" : false,
   "tobaccoMrcControlType" : "SAME_PRICE",
+  "markingSellingMode" : "CORRECT_MARKS_ONLY",
   "allowCreateProducts" : true,
   "productFolders" : {
     "meta" : {
@@ -1376,6 +1390,7 @@ curl -X GET
     "allowCustomPrice" : false,
     "allowSellTobaccoWithoutMRC" : false,
     "tobaccoMrcControlType" : "SAME_PRICE",
+    "markingSellingMode" : "CORRECT_MARKS_ONLY",
     "allowCreateProducts" : true,
     "productFolders" : {
       "meta" : {
@@ -1500,6 +1515,7 @@ curl -X GET
     "allowCustomPrice" : true,
     "allowSellTobaccoWithoutMRC" : true,
     "tobaccoMrcControlType" : "USER_PRICE",
+    "markingSellingMode" : "CORRECT_MARKS_ONLY",
     "allowCreateProducts" : true,
     "productFolders" : {
       "meta" : {
@@ -1910,6 +1926,7 @@ curl -X PUT
   "allowCustomPrice" : false,
   "allowSellTobaccoWithoutMRC" : false,
   "tobaccoMrcControlType" : "SAME_PRICE",
+  "markingSellingMode" : "ALL",
   "allowCreateProducts" : true,
   "productFolders" : {
     "meta" : {

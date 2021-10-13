@@ -22,7 +22,10 @@
 |**archived**        |Boolean|Добавлен ли Комплект в архив|&mdash;|да|нет
 |**pathName**         |String|Наименование группы, в которую входит Комплект|Только для чтения|да|нет
 |**vat**         |Int|НДС %|&mdash;|нет|нет
+|**vatEnabled**     |Boolean|Включен ли НДС для товара. С помощью этого флага для товара можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.|&mdash;|нет|нет
+|**useParentVat**   |Boolean|Используется ли ставка НДС родительской группы. Если true для единицы ассортимента будет применена ставка, установленная для родительской группы.|&mdash;|да|нет
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет|нет
+|**effectiveVatEnabled**  |Boolean|Дополнительный признак для определения разграничения реального НДС = 0 или "без НДС". (effectiveVat = 0, effectiveVatEnabled = false) -> "без НДС", (effectiveVat = 0, effectiveVatEnabled = true) -> 0%.|Только для чтения|нет|нет
 |**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|&mdash;|нет|да
 |**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет|да
 |**images**       |MetaArray|Массив метаданных [Изображений](../dictionaries/#suschnosti-izobrazhenie) (Максимальное количество изображений - 10)|&mdash;|нет|да
@@ -58,6 +61,7 @@
 | **ELECTRONICS**       |Фотокамеры и лампы-вспышки|
 | **TIRES**       |Шины и покрышки|
 | **MILK**       |Молочная продукция|
+| **WATER**       |Упакованная вода|
 | **OTP**       |Альтернативная табачная продукция|
 
 ##### Признак предмета расчета
@@ -339,6 +343,8 @@ curl -X GET
           "ean13": "2000000000039"
         }
       ],
+      "vatEnabled": false,
+      "useParentVat": true,
       "components": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023/components",
@@ -440,6 +446,8 @@ curl -X GET
                 "gtin": "00000000000130"
               }
             ],
+            "vat": 20,
+            "useParentVat": false,
             "components": [
               {
                 "assortment": {
@@ -573,6 +581,9 @@ curl -X GET
       "gtin": "00000000000130"
     }
   ],
+  "vat": 20,
+  "useParentVat": false,
+  "vatEnabled": true,
   "components": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023/components",
@@ -764,6 +775,8 @@ curl -X GET
       "ean13": "2000000000039"
     }
   ],
+  "useParentVat": true,
+  "vatEnabled": false,
   "components": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023/components",
@@ -1050,6 +1063,8 @@ curl -X GET
           "gtin": "00000000000130"
         }
       ],
+      "useParentVat": true,
+      "vatEnabled": false,
       "components": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023/components",
@@ -1201,6 +1216,8 @@ curl -X GET
           "gtin": "00000000000130"
         }
       ],
+      "useParentVat": true,
+      "vatEnabled": false,
       "components": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023/components",
@@ -1373,6 +1390,8 @@ curl -X GET
       "ean13": "2000000000039"
     }
   ],
+  "useParentVat": true,
+  "vatEnabled": false,
   "components": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023/components",
@@ -1535,6 +1554,8 @@ curl -X GET
       "gtin": "00000000000130"
     }
   ],
+  "useParentVat": true,
+  "vatEnabled": false,
   "components": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/bundle/c21646cf-ee08-11e6-8af5-581e00000023/components",

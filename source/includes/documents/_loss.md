@@ -17,8 +17,6 @@
 |**externalCode**       |String(255)|Внешний код Списания|&mdash;| да|нет
 |**moment**             |DateTime|Дата Списания|&mdash;|да|нет
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да|нет
-|**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да|нет
-|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет|нет
 |**sum**                |Int|Сумма Списания в копейках|Только для чтения|да|нет
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет|да
 |**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да|нет
@@ -26,9 +24,7 @@
 |**shared**             |Boolean|Общий доступ|&mdash;|да|нет
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да|да
-|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да|да
 |**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|да|да
-|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет|да
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Списания|&mdash;|нет|да
 |**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет|нет
 |**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|да

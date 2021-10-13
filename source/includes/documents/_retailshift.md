@@ -3,10 +3,6 @@
 ### Розничные смены 
 Средствами JSON API можно запрашивать списки Розничных смен и сведения по отдельным Розничным сменам. Кодом сущности для Розничной смены в составе JSON API является ключевое слово **retailshift**.
 
-#### Операции
-С помощью данного ресурса вы **не можете создавать или обновлять** Розничные смены. Создание новой розничной смены происходит
-при выполнении [запроса на Открытие смены](https://online.moysklad.ru/api/posap/1.0/doc/index.html#pos_general-сценарий-работы-открытие-смены) через отдельный API подключения торговой точки к онлайн-сервису МойСклад **POS API 1.0**. Для совершения операции Открытие розничной смены необходимо
-аутентифицироваться с правами Кассира.
 
 #### Атрибуты смены
 
@@ -15,39 +11,75 @@
 |**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Розничной смены|Только для чтения|да|нет
 |**id**                 |UUID|ID Розничной смены|Только для чтения|да|нет
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
-|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|Только для чтения|нет|нет
-|**updated**            |DateTime|Момент последнего обновления Розничной смены|Только для чтения|да|нет
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет|нет
+|**updated**            |DateTime|Момент последнего обновления Розничной смены|&mdash;|да|нет
 |**deleted**            |DateTime|Момент последнего удаления Розничной смены|Только для чтения|нет|нет
-|**name**               |String(255)|Наименование Розничной смены|Только для чтения|да|нет
-|**description**        |String(4096)|Комментарий Розничной смены|Только для чтения|нет|нет
-|**externalCode**       |String(255)|Внешний код Розничной смены|Только для чтения| да|нет
-|**moment**             |DateTime|Дата смены|Только для чтения|да|нет
+|**name**               |String(255)|Наименование Розничной смены|&mdash;|да|нет
+|**description**        |String(4096)|Комментарий Розничной смены|&mdash;|нет|нет
+|**externalCode**       |String(255)|Внешний код Розничной смены|&mdash;| да|нет
+|**moment**             |DateTime|Дата смены|&mdash;|да|нет
 |**vatEnabled**         |Boolean|Учитывается ли НДС|Только для чтения|да|нет
-|**vatIncluded**        |Boolean| Включен ли НДС в цену|Только для чтения|нет|нет
+|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет|нет
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|Только для чтения|да|да
 |**shared**             |Boolean|Общий доступ|Только для чтения|да|нет
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|Только для чтения|да|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Только для чтения|да|да
-|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Только для чтения|нет|да
-|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Только для чтения|да|да
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|необходимо при создании|да|да
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимо при создании|да|да
 |**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|Только для чтения|нет|да
-|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|Только для чтения|нет|да
+|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет|да
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|Только для чтения|нет|да
-|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |Только для чтения|нет|нет
+|**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет|нет
 |**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|да
 |**created**            |DateTime|Дата создания|Только для чтения|да|нет
 |**printed**            |Boolean|Напечатан ли документ|Только для чтения|да|нет
-|**published**          |Boolean|Опубликован ли документ|Только для чтения|да|нет
-|**closeDate**          |DateTime|Дата закрытия смены|Только для чтения|нет|нет
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|нет
+|**closeDate**          |DateTime|Дата закрытия смены|&mdash;|нет|нет
 |**proceedsNoCash**     |Float|Выручка безнал|Только для чтения|да|нет
 |**proceedsCash**       |Float|Выручка наличными|Только для чтения|да|нет
 |**receivedNoCash**     |Float|Получено безнал|Только для чтения|да|нет
 |**receivedCash**       |Float|Получено наличными|Только для чтения|да|нет
-|**retailStore**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные точки продаж|Только для чтения|да|да
+|**retailStore**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные точки продаж|Необходимо при создании|да|да
 |**operations**         |Array(Object)|Коллекция метаданных связанных операций|Только для чтения|да|да
 |**paymentOperations**  |Array(Object)|Коллекция метаданных платежных операций|Только для чтения|нет|да
+|**cheque**             |Object| Информация о смене ККТ. [Подробнее тут](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-informaciq-o-smene-kkt) |&mdash;|нет|нет
+|**acquire**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Банка-эквайера по операциям по карте|&mdash;| да|да
+|**bankPercent**        |Double|Комиссия банка-эквайера по операциям по карте (в процентах)|&mdash;| да|нет
+|**bankComission**      |Double|Сумма комиссии эквайера за проведение безналичных платежей по банковской карте. Не может превышать общую сумму безналичных платежей по карте. Если не указано, заполняется 0 автоматически.|&mdash;| да|нет
+|**qrBankComission**    |Double|Сумма комиссии эквайера за проведение безналичных платежей по QR-коду. Не может превышать общую сумму безналичных платежей по QR-коду. Если не указано, заполняется 0 автоматически.|&mdash;| да|нет
+|**qrAcquire**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Банка-эквайера по операциям по QR-коду|&mdash;|да|да
+|**qrBankPercent**      |Double|Комиссия банка-эквайера по операция по QR-коду (в процентах)|&mdash;| да|нет
 
 О работе с доп. полями Розничных смен можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
+
+#### Информация о смене ККТ
+Название      | Тип  | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| ----------- |:-----|:----------------------------|:-----------------------|:-----------------------|:-----|
+| **start**   |Object| Информация об открытии смены. [Подробнее тут](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-informaciq-ob-otkrytii-smeny-kkt) |&mdash;              |нет                     |нет
+| **end**     |Object| Информация о закрытии смены [Подробнее тут](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-informaciq-o-zakrytii-smeny-kkt)  |&mdash;                 |нет                     |нет
+
+#### Информация об открытии смены ККТ
+Название             | Тип  | Описание                           | Свойство поля в запросе| Обязательное при ответе|Expand|
+| ------------------ |:-----|:-----------------------------------|:-----------------------|:------------------------|:----|
+| **fnNumber**       |String| Номер фискального накопителя       |&mdash;                |нет                      |нет
+| **kktRegNumber**   |String| Регистрационный номер ККТ          |&mdash;                |нет                      |нет
+| **fiscalDocSign**  |String| Фискальный признак документа       |&mdash;                |нет                      |нет
+| **shiftNumber**    |String| Номер смены ККТ                    |&mdash;                |нет                      |нет
+| **fiscalDocNumber**|String| Номер фискального документа        |&mdash;                |нет                      |нет
+| **time**           |DateTime   | Дата и время открытия смены.  |&mdash;                |нет                      |нет
+
+
+#### Информация о закрытии смены ККТ
+Название             | Тип | Описание                          | Свойство поля в запросе| Обязательное при ответе|Expand|
+| ------------------ |:----|:----------------------------------|:-----------------------|:------------------------|:----|
+| **fnNumber**       |String| Номер фискального накопителя     |&mdash;                 |нет                      |нет
+| **kktRegNumber**   |String| Регистрационный номер ККТ        |&mdash;                 |нет                      |нет
+| **fiscalDocSign**  |String| Фискальный признак документа     |&mdash;                 |нет                      |нет
+| **shiftNumber**    |String| Номер смены ККТ                  |&mdash;                 |нет                      |нет
+| **chequesTotal**   |String| Количество чеков за смену        |&mdash;                 |нет                      |нет
+| **fiscalDocNumber**|String| Номер фискального документа      |&mdash;                 |нет                      |нет
+| **fiscalDocsTotal**|String| Количество фискальных документов за смену|&mdash;         |нет                      |нет
+| **time**           |DateTime   | Дата и время закрытия смены |&mdash;                 |нет                      |нет
+
 
 ### Получить Розничные смены 
 Запрос на получение списка всех Розничных смен на данной учетной записи.
@@ -174,6 +206,37 @@ curl -X GET
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
           "type": "retailstore",
           "mediaType": "application/json"
+        }
+      },
+      "acquire": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/741b9bbb-0016-11ec-ac12-000b0000007e",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=741b9bbb-0016-11ec-ac12-000b0000007e"
+        }
+      },
+      "bankPercent": 21.2231,
+      "bankComission": 0.0,
+      "qrBankPercent": 0.0,
+      "qrBankComission": 0.0,
+      "cheque": {
+        "start": {
+          "shiftNumber": "3456",
+          "fnNumber": "1234",
+          "fiscalDocNumber": "7890",
+          "fiscalDocSign": "9012",
+          "time": "2021-08-17 16:56:00.000"
+        },
+        "end": {
+          "shiftNumber": "2109",
+          "fnNumber": "4321",
+          "fiscalDocNumber": "8765",
+          "fiscalDocSign": "6543",
+          "time": "2021-08-21 16:56:00.000",
+          "chequesTotal": 15,
+          "fiscalDocsTotal": 17
         }
       },
       "operations": [
@@ -318,6 +381,37 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
+      "acquire": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/741b9bbb-0016-11ec-ac12-000b0000007e",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=741b9bbb-0016-11ec-ac12-000b0000007e"
+        }
+      },
+      "bankPercent": 21.2231,
+      "bankComission": 0.0,
+      "qrBankPercent": 0.0,
+      "qrBankComission": 0.0,
+      "cheque": {
+        "start": {
+          "shiftNumber": "3456",
+          "fnNumber": "1234",
+          "fiscalDocNumber": "7890",
+          "fiscalDocSign": "9012",
+          "time": "2021-08-17 16:56:00.000"
+        },
+        "end": {
+          "shiftNumber": "2109",
+          "fnNumber": "4321",
+          "fiscalDocNumber": "8765",
+          "fiscalDocSign": "6543",
+          "time": "2021-08-21 16:56:00.000",
+          "chequesTotal": 15,
+          "fiscalDocsTotal": 17
+        }
+      },
       "operations": [
         {
           "meta": {
@@ -380,6 +474,332 @@ curl -X GET
       ]
     }
   ]
+}
+```
+### Создать розничную смену
+Запрос на создание новой розничной смены.
+Обязательные для создания поля:
+
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада
+|**retailStore**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные точки продаж
+
+
+> Пример создания новой розничной смены с телом запроса, содержащим только необходимые поля.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/retailshift"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+            "organization": {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                   "type": "organization",
+                    "mediaType": "application/json"
+                  }
+            },
+            "store": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7421cf1a-0016-11ec-ac12-000b00000080",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "type": "store",
+                "mediaType": "application/json"
+                }
+            },
+            "retailStore": {
+                 "meta": {
+                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/74940da1-0016-11ec-ac12-000b00000096",
+                     "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+                     "type": "retailstore",
+                     "mediaType": "application/json"
+                  }
+            }
+   '  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной розничной смены.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/6706043c-018c-11ec-ac12-000a00000005",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+    "type": "retailshift",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#retailshift/edit?id=6706043c-018c-11ec-ac12-000a00000005"
+  },
+  "id": "6706043c-018c-11ec-ac12-000a00000005",
+  "accountId": "73215387-0016-11ec-ac12-000c00000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/73d6e937-0016-11ec-ac12-000b00000042",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=73d6e937-0016-11ec-ac12-000b00000042"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/73230224-0016-11ec-ac12-000c00000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2021-08-20 10:58:27.611",
+  "name": "00011",
+  "externalCode": "D2XRGmC5gLVJCq1ocBXd82",
+  "moment": "2021-08-20 10:58:00.000",
+  "store": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7421cf1a-0016-11ec-ac12-000b00000080",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=7421cf1a-0016-11ec-ac12-000b00000080"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=b4343660-0016-11ec-ac12-000b000000d7"
+    }
+  },
+  "created": "2021-08-20 10:58:27.699",
+  "printed": false,
+  "published": false,
+  "files": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/6706043c-018c-11ec-ac12-000a00000005/files",
+      "type": "files",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "proceedsNoCash": 0.0,
+  "proceedsCash": 0.0,
+  "receivedNoCash": 0.0,
+  "receivedCash": 0.0,
+  "cheque": {},
+  "retailStore": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/74940da1-0016-11ec-ac12-000b00000096",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+      "type": "retailstore",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#retailstore/edit?id=74940da1-0016-11ec-ac12-000b00000096"
+    }
+  },
+  "bankPercent": 0.0,
+  "bankComission": 0.0,
+  "qrBankPercent": 0.0,
+  "qrBankComission": 0.0
+}
+```
+
+### Изменить розничную смену
+Запрос на обновление розничной смены с указанным id.
+
+**Параметры**
+
+|Параметр   |Описание   | 
+|:----|:----|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной смены.|
+
+> Пример запроса на обновление розничной смены.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/49819758-0017-11ec-ac12-000a00000000"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+    "name": "0001",
+    "moment": "2021-08-17 16:56:52",
+    "closeDate": "2021-08-21 16:56:52",
+    "organization": {
+         "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+            "type": "organization",
+            "mediaType": "application/json"
+         }
+    },
+    "store": {
+      "meta": {
+       "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7421cf1a-0016-11ec-ac12-000b00000080",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "type": "store",
+                "mediaType": "application/json"
+                }
+            },
+            "acquire": {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/74221ae8-0016-11ec-ac12-000b00000081",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+            "type": "counterparty",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=74221ae8-0016-11ec-ac12-000b00000081"
+        }
+    },
+            "bankPercent": 22.0,
+            "qrBankPercent": 0.0,
+            "retailstore": {
+                 "meta": {
+                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/01610ea7-fade-11eb-ac1b-000f0000009f",
+                     "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+                     "type": "retailstore",
+                     "mediaType": "application/json"
+                  }
+            },
+             "cheque": {
+        "start": {
+            "shiftNumber": "3456",
+            "kktRegNum": "5678",
+            "fnNumber": "1234",
+            "fiscalDocNumber": "7890",
+            "fiscalDocSign": "9012",
+            "time": "2021-08-17 16:56:52"
+        },
+        "end": {
+            "shiftNumber": "2109",
+            "kktRegNum": "0987",
+            "fnNumber": "4321",
+            "fiscalDocNumber": "8765",
+            "fiscalDocSign": "6543",
+            "time": "2021-08-21 16:56:52",
+            "chequesTotal": 15,
+            "fiscalDocsTotal": 17
+           }       
+       }
+   } '  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленной розничной смены.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/49819758-0017-11ec-ac12-000a00000000",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+    "type": "retailshift",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#retailshift/edit?id=49819758-0017-11ec-ac12-000a00000000"
+  },
+  "id": "49819758-0017-11ec-ac12-000a00000000",
+  "accountId": "73215387-0016-11ec-ac12-000c00000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/73d6e937-0016-11ec-ac12-000b00000042",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=73d6e937-0016-11ec-ac12-000b00000042"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/73230224-0016-11ec-ac12-000c00000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2021-08-18 18:43:40.740",
+  "name": "0001",
+  "externalCode": "srR4xJ90hAOHZPHrsSCS51",
+  "moment": "2021-08-17 16:56:00.000",
+  "store": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7421cf1a-0016-11ec-ac12-000b00000080",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=7421cf1a-0016-11ec-ac12-000b00000080"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=b4343660-0016-11ec-ac12-000b000000d7"
+    }
+  },
+  "created": "2021-08-18 14:27:35.862",
+  "printed": false,
+  "published": false,
+  "files": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/49819758-0017-11ec-ac12-000a00000000/files",
+      "type": "files",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "closeDate": "2021-08-21 16:56:00.000",
+  "proceedsNoCash": 0.0,
+  "proceedsCash": 0.0,
+  "receivedNoCash": 0.0,
+  "receivedCash": 0.0,
+  "cheque": {
+    "start": {
+      "shiftNumber": "3456",
+      "fnNumber": "1234",
+      "fiscalDocNumber": "7890",
+      "fiscalDocSign": "9012",
+      "time": "2021-08-17 16:56:00.000"
+    },
+    "end": {
+      "shiftNumber": "2109",
+      "fnNumber": "4321",
+      "fiscalDocNumber": "8765",
+      "fiscalDocSign": "6543",
+      "time": "2021-08-21 16:56:00.000",
+      "chequesTotal": 15,
+      "fiscalDocsTotal": 17
+    }
+  },
+  "retailStore": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/74940da1-0016-11ec-ac12-000b00000096",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+      "type": "retailstore",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#retailstore/edit?id=74940da1-0016-11ec-ac12-000b00000096"
+    }
+  },
+  "acquire": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/74221ae8-0016-11ec-ac12-000b00000081",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=74221ae8-0016-11ec-ac12-000b00000081"
+    }
+  },
+  "bankPercent": 0.0,
+  "qrBankPercent": 0.0,
+  "bankComission": 0.0,
+  "qrBankComission": 0.0
 }
 ```
 
@@ -492,7 +912,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/7944ef04-f831-11e5-7a69-971500188b19"
+  "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/91a42d66-0ad2-11e6-9464-e4de00000017"
   -H "Authorization: Basic <Credentials>"
 ```
 
@@ -640,6 +1060,10 @@ curl -X GET
       },
       "linkedSum": 0
     }
-  ]
+  ],
+  "bankPercent": 0.0,
+  "bankComission": 0.0,
+  "qrBankPercent": 0.0,
+  "qrBankComission": 0.0
 }
 ```

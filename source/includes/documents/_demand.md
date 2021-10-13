@@ -41,6 +41,8 @@
 |**positions**          |MetaArray|Метаданные позиций Отгрузки|&mdash;|да|да
 |**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-otgruzka-otgruzki-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|&mdash;|нет|нет
 |**payedSum**            |Float|Сумма входящих платежей по Отгрузке |Только для чтения|да|нет
+|**shipmentAddress**      |String(255)|Адрес доставки Отгрузки |&mdash;| нет|нет
+|**shipmentAddressFull**  |Object|Адрес доставки Отгрузки с детализацией по отдельным полям. [Подробнее тут](../documents/#dokumenty-otgruzka-otgruzki-attributy-suschnosti-adres-dostawki) |&mdash;|нет|нет
 
 #### Накладные расходы
 Описание полей overhead
@@ -67,7 +69,7 @@
 |**shippingInstructions**               |String(255)|Указания грузоотправителя|&mdash;|нет|нет
 |**cargoName**              |String(255)|Наименование груза|&mdash;|нет|нет
 |**transportFacility**               |String(255)|Транспортное средство|&mdash;|нет|нет
-|**goodPackQuantity**               |String(255)|Всего мест|&mdash;|нет|нет
+|**goodPackQuantity**               |Int|Всего мест|&mdash;|нет|нет
 |**carrier**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные перевозчика (контрагент или юрлицо)|&mdash;|нет|да
 |**stateContractId**              |String(255)|Идентификатор государственного контракта, договора (соглашения)|&mdash;|нет|нет
 
@@ -83,6 +85,7 @@
 |**price**          |Float|Цена товара/услуги в копейках|&mdash;|да|нет
 |**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|&mdash;|да|нет
 |**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да|нет
+|**vatEnabled**     |Boolean|Включен ли НДС для позиции. С помощью этого флага для позиции можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.|&mdash;|да|нет
 |**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации/комплекта, которую представляет собой позиция|&mdash;|да|да
 |**pack**            |Object|Упаковка Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)|&mdash;|нет|нет
 |**things**            |Array(String)|Серийные номера. Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете. В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.|&mdash;|нет|нет
@@ -145,6 +148,25 @@
   необходимо передавать их полный список, включающий как старые, так и новые значения. Отсутствующие значения при обновлении будут удалены.
   
 Недопустимо сохранение дублирующихся кодов маркировки и серийных номеров внутри документа Отгрузки. 
+
+#### Аттрибуты сущности Адрес доставки
+
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+|**postalCode**      |String(6)|Почтовый индекс|&mdash;|нет|нет
+|**country**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные страны|&mdash;|нет|нет
+|**region**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные региона|&mdash;|нет|нет
+|**city**            |String(255)|Город|&mdash;|нет|нет
+|**street**          |String(255)|Улица|&mdash;|нет|нет
+|**house**           |String(30)|Дом|&mdash;|нет|нет
+|**apartment**       |String(30)|Квартира|&mdash;|нет|нет
+|**addInfo**         |String(255)|Другое|&mdash;|нет|нет
+|**comment**         |String(255)|Комментарий|&mdash;|нет|нет
+
+Строка адреса является конкатенацией полей структурированного адреса в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
+При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
+При передаче обоих адресов строковый будет игнорирован.
+При передаче только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
 
 
 ### Получить список Отгрузок 
@@ -317,6 +339,32 @@ curl -X GET
       "overhead": {
         "sum": 200,
         "distribution": "price"
+      },
+      "shipmentAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+      "shipmentAddressFull":{
+        "postalCode":"125009",
+        "country":{
+          "meta":{
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type":"country",
+            "mediaType":"application/json"
+          }
+        },
+        "region":{
+          "meta":{
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type":"region",
+            "mediaType":"application/json"
+          }
+        },
+        "city":"Москва",
+        "street":"ул Тверская",
+        "house":"1",
+        "apartment":"123",
+        "addInfo":"addinfo",
+        "comment":"some words about address"
       }
     },
     {
@@ -635,7 +683,32 @@ curl -X GET
                 "mediaType": "application/json"
               }
             },
-            "stateContractId": "s11233dsasd233"
+            "stateContractId": "s11233dsasd233",
+            "shipmentAddressFull":{  
+              "postalCode":"125009",
+              "country":{  
+                "meta":{  
+                  "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                  "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+                  "type":"country",
+                  "mediaType":"application/json"
+                }
+              },
+              "region":{  
+                "meta":{  
+                  "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                  "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+                  "type":"region",
+                  "mediaType":"application/json"
+                }
+              },
+              "city":"Москва",
+              "street":"ул Тверская",
+              "house":"1",
+              "apartment":"123",
+              "addInfo":"addinfo",
+              "comment":"some words about address"
+            }
           }
 '  
 ```
@@ -742,7 +815,33 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "stateContractId": "s11233dsasd233"
+  "stateContractId": "s11233dsasd233",
+  "shipmentAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+  "shipmentAddressFull":{
+    "postalCode":"125009",
+    "country":{
+      "meta":{
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
+      }
+    },
+    "region":{
+      "meta":{
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
+      }
+    },
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"123",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
+  }
 }
 ```
 
@@ -1869,6 +1968,7 @@ curl -X GET
         "price": 0,
         "discount": 0,
         "vat": 0,
+        "vatEnabled": false,
         "assortment": {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/c55b5e7c-9128-11e6-8a84-bae500000087",
@@ -1993,6 +2093,7 @@ curl -X GET
         "price": 100000,
         "discount": 0,
         "vat": 0,
+        "vatEnabled": false,
         "assortment": {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/b5d94dd1-cab0-11e7-6a80-332a00000011",
@@ -2193,6 +2294,32 @@ curl -X GET
   "overhead": {
     "sum": 200,
     "distribution": "price"
+  },
+  "shipmentAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+  "shipmentAddressFull":{
+    "postalCode":"125009",
+    "country":{
+      "meta":{
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
+      }
+    },
+    "region":{
+      "meta":{
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
+      }
+    },
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"123",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
   }
 }
 ```
@@ -2252,7 +2379,32 @@ curl -X GET
                 "mediaType": "application/json"
               }
             },
-            "stateContractId": "s11233dsasd233"
+            "stateContractId": "s11233dsasd233",
+            "shipmentAddressFull":{  
+              "postalCode":"125009",
+              "country":{  
+                "meta":{  
+                  "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                  "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+                  "type":"country",
+                  "mediaType":"application/json"
+                }
+              },
+              "region":{  
+                "meta":{  
+                  "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                  "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+                  "type":"region",
+                  "mediaType":"application/json"
+                }
+              },
+              "city":"Москва",
+              "street":"ул Тверская",
+              "house":"1",
+              "apartment":"111",
+              "addInfo":"addinfo",
+              "comment":"some words about address"
+            }
           }'  
 ```
 
@@ -2387,7 +2539,33 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "stateContractId": "s11233dsasd233"
+  "stateContractId": "s11233dsasd233",
+  "shipmentAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+  "shipmentAddressFull":{
+    "postalCode":"125009",
+    "country":{
+      "meta":{
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
+      }
+    },
+    "region":{
+      "meta":{
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
+      }
+    },
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"111",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
+  }
 }
 ```
 
@@ -2941,6 +3119,7 @@ curl -X GET
       "sum": 123050,
       "discount": 0,
       "vat": 18,
+      "vatEnabled": true,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/66ccbc9f-f7d2-11e5-8a84-bae500000076",
@@ -2964,6 +3143,7 @@ curl -X GET
       "sum": 214,
       "discount": 0,
       "vat": 18,
+      "vatEnabled": true,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/60fc3826-00d7-11e6-9464-e4de00000097",
@@ -2988,6 +3168,7 @@ curl -X GET
       "sum": 346347237062,
       "discount": 0,
       "vat": 18,
+      "vatEnabled": true,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/56c73633-ffe4-11e5-9464-e4de000000c6",
@@ -3014,6 +3195,7 @@ curl -X GET
       "sum": 42141094,
       "discount": 0,
       "vat": 18,
+      "vatEnabled": true,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/66cc36dc-f7d2-11e5-8a84-bae500000074",
@@ -3071,6 +3253,7 @@ curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/d
          "price":200.0,
          "discount":0.0,
          "vat":21,
+         "vatEnabled": true,
          "assortment":{
             "meta":{
                "href":"https://online.moysklad.ru/api/remap/1.2/entity/product/aa1b1814-8493-11ea-0a80-037a00000307",
@@ -3126,6 +3309,7 @@ curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/d
          "price":0.0,
          "discount":0.0,
          "vat":0,
+         "vatEnabled": false,
          "assortment":{
             "meta":{
                "href":"https://online.moysklad.ru/api/remap/1.2/entity/product/b20184da-8493-11ea-0a80-037a00000314",
@@ -3270,6 +3454,7 @@ curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/d
     "price": 12345,
     "discount": 0,
     "vat": 0,
+    "vatEnabled": false,
     "assortment": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/66ccbc9f-f7d2-11e5-8a84-bae500000076",
@@ -3355,6 +3540,7 @@ curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/d
     "price": 100,
     "discount": 0,
     "vat": 0,
+    "vatEnabled": false,
     "assortment": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/8b382799-f7d2-11e5-8a84-bae5000003a5",
@@ -3378,6 +3564,7 @@ curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/d
     "price": 200,
     "discount": 0,
     "vat": 21,
+    "vatEnabled": true,
     "assortment": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/be903062-f504-11e5-8a84-bae50000019a",
@@ -3401,6 +3588,7 @@ curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/d
     "price": 300,
     "discount": 0,
     "vat": 7,
+    "vatEnabled": true,
     "assortment": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/service/c02e3a5c-007e-11e6-9464-e4de00000006",
@@ -3504,6 +3692,7 @@ curl --location --request POST 'https://online.moysklad.ru/api/remap/1.2/entity/
       "price":100.0,
       "discount":0.0,
       "vat":0,
+      "vatEnabled": false,
       "assortment":{
          "meta":{
             "href":"https://online.moysklad.ru/api/remap/1.2/entity/product/b20184da-8493-11ea-0a80-037a00000314",
@@ -3626,6 +3815,7 @@ curl -X GET
   "sum": 200,
   "discount": 0,
   "vat": 21,
+  "vatEnabled": true,
   "assortment": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/be903062-f504-11e5-8a84-bae50000019a",
@@ -3691,6 +3881,7 @@ curl -X GET
   "price": 26332700,
   "discount": 0,
   "vat": 18,
+  "vatEnabled": true,
   "assortment": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/eeef177f-f648-11e5-8a84-bae50000007a",

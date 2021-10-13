@@ -136,6 +136,83 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 08-10-2021
+#### Добавлено
+- Ошибка [2028](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-oshibki-formata)
+
+### 07-10-2021
+#### Документация
+- Добавлено описание [Контекста запроса сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-kontext-sotrudnika)
+
+### 30-09-2021
+#### Изменено
+- Информация о новом типе маркированной продукции (Упакованная вода) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar)
+
+### 23-09-2021
+#### Добавлено
+- Описание полей посылаемых [веб-хуков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki) и добавлены поля `auditContext`, `updatedFields`, `moment`, `uid`
+- Новая ошибка [30009](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-veb-hukow)
+
+### 20-09-2021
+#### Добавлено
+- Добавлены поля `shipmentAddress` и `shipmentAddressFull` в [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq) и [Отгрузку](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka)
+
+### 20-09-2021
+#### Исправлено
+- Исправлен список возможных атрибутов у документа [Списание](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-spisanie)
+
+### 16-09-2021
+#### Изменено
+- Дополнено описание раздела webhook.
+
+### 15-09-2021
+#### Добавлено
+- Возможность работы с упаковками [Модификаций](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-modifikaciq), [фильтрация ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment-izmenit-nastrojki-sprawochnika-kontragentow-atributy-dostupnye-dlq-fil-tracii) по штрихкоду упаковок модификаций.
+
+### 15-09-2021
+#### Добавлено
+- Добавлена фильтрация по Доп. полям. и атрибут фильтрации supplier для [Отчет обороты](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty)
+- Документ [Корректировка баланса контрагента](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-korrektirowka-balansa-kontragenta)
+
+### 31-08-2021
+#### Добавлено
+- Добавлен эндпоинт получения списка [сохраненных фильтров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sohranennye-fil-try)
+  для сущностей, документов
+- Добавлено применение [сохраненного фильтра](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sohranennye-fil-try) для сущностей и документов  
+
+### 17-08-2021
+#### Добавлено
+- Возможность работы с модификациями для материалов и продуктов [Тех. карт](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-teh-karta).
+Для этого введено новое поле **assortment**.
+- Новая ошибка [3028](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
+### 30-07-2021
+#### Добавлено
+- Добавлены атрибуты фильтрации type и withoutturnover для [Отчет обороты](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty)
+- Новый заголовок управления временем жизни ссылок на скачивание изображений и файлов. Описание в [общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-ssylki-na-fajly)
+
+### 29-07-2021
+#### Добавлено
+- [Фильтрация ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment-izmenit-nastrojki-sprawochnika-kontragentow-atributy-dostupnye-dlq-fil-tracii) по штрихкоду, наименованию группы товаров, типу и использованию серийных номеров
+
+### 28-07-2021
+#### Добавлено
+- Возможность работать с файлами в комментариях к [задачам](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha)
+
+### 28-07-2021
+#### Добавлена
+- Возможность expand поля **masterRetailStores** у [точек продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh)
+
+### 26-07-2021
+#### Изменено
+- Добавлены поля `vatEnabled`, `effectiveVatEnabled` и `useParentVat` в [Группы товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-gruppa-towarow), [Товары](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar), [Комплекты](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt), [Услуги](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-usluga)
+- Добавлено поле `vatEnabled` в позиции [Документов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/)
+- Добавлены ошибки `16010` и `17021`
+
+### 09-07-2021
+#### Добавлено
+- Новый ресурс [Обороты по товару с детализацией по документам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-dokumentam)
+
 ### 05-07-2021
 #### Добавлено
 - Новый тип уведомлений о скором окончании действия доступа к аккаунту Facebook
@@ -156,6 +233,10 @@
 #### Документация
 - Добавлено описание параметров фильтрации выборки `momentFrom` и `momentTo` в отчетах прибыльности
 
+### 08-06-2021
+#### Изменено
+- Изменены лимиты по [вебхукам](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki): выделены отдельные лимиты для приложений  
+
 ### 03-06-2021
 #### Добавлено
 - Возможность перехода к соответствующему разделу с описанием ошибки по ссылке в `errors.moreInfo`
@@ -163,6 +244,10 @@
 ### 03-06-2021
 #### Документация
 - Исправлено описание атрибута `pack` у позиций документов
+
+### 02-06-2021
+#### Добавлено
+- По остаткам комплектов в позициях документа, добавлена возможность получения cost, quantity и available.
 
 ### 01-06-2021
 #### Добавлено
@@ -253,15 +338,6 @@
 #### Добавлена
 - Возможность создавать [вебхуки](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki) для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)
 
-### 24-04-2021
-#### Документация
-- Добавлен новый раздел [Подписка компании](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-podpiska-kompanii)
-
-### 24-04-2021
-#### Изменено
-- Исправлена работа с документом [Возврат поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-postawschiku): 
- добавлена проверка совпадения значения поля `vatEnabled` при создании и обновлении документа на основании [Приемки](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka)
-
 ### 26-04-2021
 #### Изменено
 - Исправлен некорректный url в примерах json [Управления настройками справочника ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment-poluchit-nastrojki-sprawochnika-towarow)
@@ -273,6 +349,15 @@
 ### 26-04-2021
 #### Изменено
 - Исправлено неточное описание привязок документов в общих сведениях
+
+### 24-04-2021
+#### Документация
+- Добавлен новый раздел [Подписка компании](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-podpiska-kompanii)
+
+### 24-04-2021
+#### Изменено
+- Исправлена работа с документом [Возврат поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-postawschiku):
+  добавлена проверка совпадения значения поля `vatEnabled` при создании и обновлении документа на основании [Приемки](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka)
 
 ### 23-04-2021
 #### Добавлено
@@ -438,7 +523,7 @@
 #### Добавлено
 - Эндпоинт [Автозаполнения цен, скидок, ндс позиций](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie)
 
-### 8-10-2020
+### 08-10-2020
 #### Изменено
 - Исправлены опечатки
 
