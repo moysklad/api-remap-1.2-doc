@@ -649,29 +649,6 @@ html, body {
     border: 1px solid #F7E633;
     background: linear-gradient(to top left, #F7E633 0%, #F1D32F 100%);
   }
-
-  .collapse-button {
-    float: right;
-
-    .close {
-      display: none;
-      cursor: pointer;
-    }
-
-    .open {
-      cursor: pointer;
-    }
-
-    &.show {
-      .close {
-        display: inline;
-      }
-
-      .open {
-        display: none;
-      }
-    }
-  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -709,20 +686,90 @@ html, body {
   }
 
   blockquote {
-    &>p {
-      background-color: $code-annotation-bg;
-      padding: $code-annotation-padding 2em;
-      color: rgba(255, 255, 255, 0.9);
-    }
-    &>span {
-      background-color: $code-annotation-bg;
-      padding: 0 2em $code-annotation-padding;
-      color: rgba(255, 255, 255, 0.9);
+    background-color: $code-annotation-bg;
+    color: rgba(255, 255, 255, 0.9);
+    padding: $code-annotation-padding 24px;
+
+    p {
+      padding: 0;
     }
   }
 
-  pre + blockquote {
-    border-top: 4px solid #19252f;
+  .collapse-button {
+    background-color: $code-annotation-bg;
+    color: rgba(255, 255, 255, 0.9);
+    padding: $code-annotation-padding 24px;
+    width: 100%;
+
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    span {
+      padding-right: 5px;
+    }
+
+    :first-child {
+      text-align: left;
+      flex-grow: 1;
+    }
+
+    .close {
+      display: none;
+    }
+
+    .open {
+      display: inline;
+    }
+
+    &.show {
+      .close {
+        display: inline;
+      }
+
+      .open {
+        display: none;
+      }
+    }
+
+    img {
+      //padding-left: 5px;
+      transform: scaleY(-1);
+    }
+
+    .normal {
+      display: inline;
+    }
+
+    .hover {
+      display: none;
+    }
+  }
+
+  .collapse-button:hover {
+    color: $collapse-button-active;
+
+    .normal {
+      display: none;
+    }
+
+    .hover {
+      display: inline;
+    }
+  }
+
+  .collapse-button.show {
+    img {
+      transform: none;
+    }
+  }
+
+  pre + blockquote, pre + button {
+    margin-top: 2px;
   }
 }
 

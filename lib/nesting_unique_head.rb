@@ -5,9 +5,6 @@ require 'digest'
 
 class NestingUniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
 
-  BLOCKQUOTE_BUTTON = "<blockquote><span class=\"collapse-button\"><a class=\"close\">Свернуть</a><a class=\"open\">Показать</a></span></blockquote>"
-  DISPLAY_NONE = "style=\"display: none;\""
-
   def initialize
     super
     @@headers_history = {} if !defined?(@@headers_history)
@@ -26,12 +23,6 @@ class NestingUniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
     return "<h#{header_level} id='#{friendly_text}'>#{text}</h#{header_level}>"
   end
 
-  def block_code(code, language)
-    block = super
-    index = block.index('>')
-    BLOCKQUOTE_BUTTON + block.insert(index, DISPLAY_NONE)
-  end
-
   def codespan(code)
     tag = code.match /^\+(.+)$/
     if tag
@@ -41,4 +32,10 @@ class NestingUniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
     end
   end
 
+  def postprocess(document)
+    document.gsub(
+      /<blockquote>\s*<p>(([^\/]|\/[^p])+)<\/p>\s*<\/blockquote>(\s*<pre)/m,
+      '<button class="collapse-button"><span>\1</span><span class="open">Показать</span><span class="close">Свернуть</span><img class="normal" src="/images/expand.svg"><img class="hover" src="/images/expand_hover.svg"></button>\3 style=\'display: none;\''
+    )
+  end
 end
