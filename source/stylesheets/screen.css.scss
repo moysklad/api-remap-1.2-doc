@@ -517,12 +517,17 @@ html, body {
     margin-bottom: 1em;
     overflow: auto;
     width: 100%;
-    th,td {
+
+    th, td {
       text-align: left;
       line-height: 1.6;
       code {
         white-space: nowrap;
       }
+    }
+
+    th:last-child, td:last-child {
+      width: 100%;
     }
 
     th {
@@ -534,6 +539,10 @@ html, body {
     td {
       padding: 10px;
       vertical-align: top;
+    }
+
+    th + th, td + td {
+      padding-left: 38px;
     }
 
     tr {
