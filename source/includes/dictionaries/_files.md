@@ -66,6 +66,9 @@ curl -X GET
   -H "Authorization: Basic <Credentials>"
 ```
 
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка файлов.
+
 ```json
 {
     "context": {

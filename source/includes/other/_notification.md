@@ -5,7 +5,7 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта. Содержит тип конкретного уведомления|&mdash;да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта. Содержит тип конкретного уведомления|&mdash;|да
 |**id**                 |UUID|ID Уведомления|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**created**            |DateTime|Дата и время формирования Уведомления|Только для чтения|да
@@ -252,8 +252,10 @@ curl -X PUT
 #### Формат измененного поля
 Формат измененного поля содержит в себе старое и новое значение:
 
-|**oldValue**       |String(255)|Значение атрибута до удаления|Только для чтения|да
-|**newValue**       |String(255)|Значение атрибута после обновления|Только для чтения|да
+| Название          | Тип       | Описание                         | Свойство поля в запросе| Обязательное при ответе |
+| ----------------- | :-------- | :------------------------------- | :--------------------- | :--- |
+|**oldValue**       |String(255)|Значение атрибута до удаления     | Только для чтения      | да   |
+|**newValue**       |String(255)|Значение атрибута после обновления| Только для чтения      | да   |
 
 Формат oldValue и newValue совпадает с форматом поля, изменение которого отображается. Одно из полей может быть не заполнено.
 
@@ -811,8 +813,8 @@ NotificationTaskAssigned - задача назначена
 |**read**        |Boolean|Признак того, было ли Уведомление прочитано|Необходимое при создании|да
 |**title**       |String(255)|Краткий текст уведомления|Необходимое при создании| да
 |**description**       |String(4096)|Описание уведомления|Необходимое при создании| да
-|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|Необходимое при создании|да
-|**task**                 |Object|Задача|Необходимое при создании. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|да
+|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zadacha-naznachena-atributy-wlozhennyh-suschnostej-sotrudnik-wypolniwshij-izmenenie)|Необходимое при создании|да
+|**task**                 |Object|Задача [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zadacha-naznachena-atributy-wlozhennyh-suschnostej-zadacha)|Необходимое при создании.|да
 
 #### Атрибуты вложенных сущностей
 ##### Сотрудник, выполнивший изменение
@@ -900,8 +902,8 @@ NotificationTaskUnassigned - задача снята
 |**read**        |Boolean|Признак того, было ли Уведомление прочитано|Необходимое при создании|да
 |**title**       |String(255)|Краткий текст уведомления|Необходимое при создании| да
 |**description**       |String(4096)|Описание уведомления|Необходимое при создании| да
-|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|Необходимое при создании|да
-|**task**                 |Object|Задача|Необходимое при создании. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|да
+|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zadacha-snqta-atributy-wlozhennyh-suschnostej-sotrudnik-wypolniwshij-izmenenie)|Необходимое при создании|да
+|**task**                 |Object|Задача [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zadacha-snqta-atributy-wlozhennyh-suschnostej-zadacha)|Необходимое при создании.|да
 
 #### Атрибуты вложенных сущностей
 ##### Сотрудник, выполнивший изменение
@@ -989,9 +991,9 @@ NotificationTaskChanged - задача изменена
 |**read**        |Boolean|Признак того, было ли Уведомление прочитано|Необходимое при создании|да
 |**title**       |String(255)|Краткий текст уведомления|Необходимое при создании| да
 |**description**       |String(4096)|Описание уведомления|Необходимое при создании| да
-|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|Необходимое при создании|да
-|**diff**                 |Object|Задача|Измененные поля. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|да
-|**task**                 |Object|Задача|Необходимое при создании. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|да
+|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zadacha-izmenena-atributy-wlozhennyh-suschnostej-sotrudnik-wypolniwshij-izmenenie)|Необходимое при создании|да
+|**diff**                 |Object|Измененные поля [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zadacha-izmenena-atributy-wlozhennyh-suschnostej-izmenennye-polq)|Необходимое при создании. |да
+|**task**                 |Object|Задача [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zadacha-izmenena-atributy-wlozhennyh-suschnostej-zadacha)|Необходимое при создании.|да
 
 #### Атрибуты вложенных сущностей
 ##### Сотрудник, выполнивший изменение
@@ -1095,8 +1097,8 @@ NotificationTaskCompleted - задача выполнена
 |**read**        |Boolean|Признак того, было ли Уведомление прочитано|Необходимое при создании|да
 |**title**       |String(255)|Краткий текст уведомления|Необходимое при создании| да
 |**description**       |String(4096)|Описание уведомления|Необходимое при создании| да
-|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|Необходимое при создании|да
-|**task**                 |Object|Задача|Необходимое при создании. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|да
+|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zadacha-wypolnena-atributy-wlozhennyh-suschnostej-sotrudnik-wypolniwshij-izmenenie)|Необходимое при создании|да
+|**task**                 |Object|Задача [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zadacha-wypolnena-atributy-wlozhennyh-suschnostej-zadacha)|Необходимое при создании.|да
 
 #### Атрибуты вложенных сущностей
 ##### Сотрудник, выполнивший изменение
@@ -1184,8 +1186,8 @@ NotificationTaskDeleted - задача удалена
 |**read**        |Boolean|Признак того, было ли Уведомление прочитано|Необходимое при создании|да
 |**title**       |String(255)|Краткий текст уведомления|Необходимое при создании| да
 |**description**       |String(4096)|Описание уведомления|Необходимое при создании| да
-|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|Необходимое при создании|да
-|**task**                 |Object|Задача|Необходимое при создании. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|да
+|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zadacha-udalena-atributy-wlozhennyh-suschnostej-sotrudnik-wypolniwshij-izmenenie)|Необходимое при создании|да
+|**task**                 |Object|Задача [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zadacha-udalena-atributy-wlozhennyh-suschnostej-zadacha)|Необходимое при создании.|да
 
 #### Атрибуты вложенных сущностей
 ##### Сотрудник, выполнивший изменение
@@ -1262,7 +1264,7 @@ NotificationTaskOverdue - задача просрочена
 |**read**        |Boolean|Признак того, было ли Уведомление прочитано|Необходимое при создании|да
 |**title**       |String(255)|Краткий текст уведомления|Необходимое при создании| да
 |**description**       |String(4096)|Описание уведомления|Необходимое при создании| да
-|**task**                 |Object|Задача|Необходимое при создании. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|да
+|**task**                 |Object|Задача [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zadacha-prosrochena-atributy-wlozhennyh-suschnostej-sotrudnik-wypolniwshij-izmenenie)|Необходимое при создании.|да
 
 #### Атрибуты вложенных сущностей
 ##### Сотрудник, выполнивший изменение
@@ -1331,8 +1333,8 @@ NotificationTaskReopened - задача переоткрыта
 |**read**        |Boolean|Признак того, было ли Уведомление прочитано|Необходимое при создании|да
 |**title**       |String(255)|Краткий текст уведомления|Необходимое при создании| да
 |**description**       |String(4096)|Описание уведомления|Необходимое при создании| да
-|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|Необходимое при создании|да
-|**task**                 |Object|Задача|Необходимое при создании. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|да
+|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zadacha-pereotkryta-atributy-wlozhennyh-suschnostej-sotrudnik-wypolniwshij-izmenenie)|Необходимое при создании|да
+|**task**                 |Object|Задача [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zadacha-pereotkryta-atributy-wlozhennyh-suschnostej-zadacha)|Необходимое при создании.|да
 
 #### Атрибуты вложенных сущностей
 ##### Сотрудник, выполнивший изменение
@@ -1420,8 +1422,8 @@ NotificationTaskNewComment - новый комментарий к задаче
 |**read**        |Boolean|Признак того, было ли Уведомление прочитано|Необходимое при создании|да
 |**title**       |String(255)|Краткий текст уведомления|Необходимое при создании| да
 |**description**       |String(4096)|Описание уведомления|Необходимое при создании| да
-|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|Необходимое при создании|да
-|**task**                 |Object|Задача|Необходимое при создании. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|да
+|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowyj-kommentarij-k-zadache-atributy-wlozhennyh-suschnostej-sotrudnik-wypolniwshij-izmenenie)|Необходимое при создании|да
+|**task**                 |Object|Задача [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowyj-kommentarij-k-zadache-atributy-wlozhennyh-suschnostej-zadacha)|Необходимое при создании.|да
 |**noteContent**      |String(4096)|Содержимое комментария|Необходимое при создании| да
 
 #### Атрибуты вложенных сущностей
@@ -1512,8 +1514,8 @@ NotificationTaskCommentChanged - изменен комментарий к зад
 |**read**        |Boolean|Признак того, было ли Уведомление прочитано|Необходимое при создании|да
 |**title**       |String(255)|Краткий текст уведомления|Необходимое при создании| да
 |**description**       |String(4096)|Описание уведомления|Необходимое при создании| да
-|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|Необходимое при создании|да
-|**task**                 |Object|Задача|Необходимое при создании. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|да
+|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-izmenen-kommentarij-k-zadache-atributy-wlozhennyh-suschnostej-sotrudnik-wypolniwshij-izmenenie)|Необходимое при создании|да
+|**task**                 |Object|Задача [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-izmenen-kommentarij-k-zadache-atributy-wlozhennyh-suschnostej-zadacha)|Необходимое при создании.|да
 |**noteContent**      |String(4096)|Содержимое комментария|Необходимое при создании| да
 |**diff**      |String(255)|Изменения комментария в [формате изменения поля](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)|Необходимое при создании| да
 
@@ -1609,8 +1611,8 @@ NotificationTaskCommentDeleted - удален комментарий к зада
 |**read**        |Boolean|Признак того, было ли Уведомление прочитано|Необходимое при создании|да
 |**title**       |String(255)|Краткий текст уведомления|Необходимое при создании| да
 |**description**       |String(4096)|Описание уведомления|Необходимое при создании| да
-|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|Необходимое при создании|да
-|**task**                 |Object|Задача|Необходимое при создании. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres)|да
+|**performedBy**                 |Object|Сотрудник, выполнивший изменение. [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-udalen-kommentarij-k-zadache-atributy-wlozhennyh-suschnostej-sotrudnik-wypolniwshij-izmenenie)|Необходимое при создании|да
+|**task**                 |Object|Задача [Подробнее тут](#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-udalen-kommentarij-k-zadache-atributy-wlozhennyh-suschnostej-sotrudnik-wypolniwshij-izmenenie)|Необходимое при создании.|да
 |**noteContent**      |String(4096)|Содержимое комментария|Необходимое при создании| да
 
 #### Атрибуты вложенных сущностей
