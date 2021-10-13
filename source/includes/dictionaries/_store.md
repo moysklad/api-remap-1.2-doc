@@ -12,37 +12,37 @@
 
 | Название         | Тип                                                       | Описание                                                                                                                      |
 | ---------------- | :-------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------- |
-| **meta**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Склада<br>`+Обязательное при ответе`                                                                               |
-| **id**           | UUID                                                      | ID Склада<br>`+Обязательное при ответе` `+Только для чтения`                                                                  |
 | **accountId**    | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                          |
-| **owner**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Владелец (Сотрудник)<br>`+Expand`                                                                                             |
-| **shared**       | Boolean                                                   | Общий доступ<br>`+Обязательное при ответе`                                                                                    |
-| **group**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                      |
-| **updated**      | DateTime                                                  | Момент последнего обновления Склада<br>`+Обязательное при ответе` `+Только для чтения`                                        |
-| **name**         | String(255)                                               | Наименование Склада<br>`+Обязательное при ответе` `+Необходимо при создании`                                                  |
-| **description**  | String(4096)                                              | Комментарий к Складу                                                                                                          |
-| **code**         | String(255)                                               | Код Склада                                                                                                                    |
-| **externalCode** | String(255)                                               | Внешний код Склада<br>`+Обязательное при ответе`                                                                              |
-| **archived**     | Boolean                                                   | Добавлен ли Склад в архив<br>`+Обязательное при ответе`                                                                       |
 | **address**      | String(255)                                               | Адрес склада                                                                                                                  |
 | **addressFull**  | Object                                                    | Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres) |
+| **archived**     | Boolean                                                   | Добавлен ли Склад в архив<br>`+Обязательное при ответе`                                                                       |
+| **attributes**   | Array(Object)                                             | Массив метаданных дополнительных полей склада                                                                                 |
+| **code**         | String(255)                                               | Код Склада                                                                                                                    |
+| **description**  | String(4096)                                              | Комментарий к Складу                                                                                                          |
+| **externalCode** | String(255)                                               | Внешний код Склада<br>`+Обязательное при ответе`                                                                              |
+| **group**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                      |
+| **id**           | UUID                                                      | ID Склада<br>`+Обязательное при ответе` `+Только для чтения`                                                                  |
+| **meta**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Склада<br>`+Обязательное при ответе`                                                                               |
+| **name**         | String(255)                                               | Наименование Склада<br>`+Обязательное при ответе` `+Необходимо при создании`                                                  |
+| **owner**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Владелец (Сотрудник)<br>`+Expand`                                                                                             |
 | **parent**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные родительского склада (Группы)<br>`+Expand`                                                                         |
 | **pathName**     | String                                                    | Группа Склада<br>`+Обязательное при ответе`                                                                                   |
-| **attributes**   | Array(Object)                                             | Массив метаданных дополнительных полей склада                                                                                 |
+| **shared**       | Boolean                                                   | Общий доступ<br>`+Обязательное при ответе`                                                                                    |
+| **updated**      | DateTime                                                  | Момент последнего обновления Склада<br>`+Обязательное при ответе` `+Только для чтения`                                        |
 
 #### Аттрибуты сущности Адрес
 
 | Название       | Тип                                                       | Описание           |
 | -------------- | :-------------------------------------------------------- | :----------------- |
-| **postalCode** | String(6)                                                 | Почтовый индекс    |
-| **country**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные страны  |
-| **region**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные региона |
-| **city**       | String(255)                                               | Город              |
-| **street**     | String(255)                                               | Улица              |
-| **house**      | String(30)                                                | Дом                |
-| **apartment**  | String(30)                                                | Квартира           |
 | **addInfo**    | String(255)                                               | Другое             |
+| **apartment**  | String(30)                                                | Квартира           |
+| **city**       | String(255)                                               | Город              |
 | **comment**    | String(255)                                               | Комментарий        |
+| **country**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные страны  |
+| **house**      | String(30)                                                | Дом                |
+| **postalCode** | String(6)                                                 | Почтовый индекс    |
+| **region**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные региона |
+| **street**     | String(255)                                               | Улица              |
 
 Строка адреса является конкатенацией полей структурированного адреса в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
 При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.

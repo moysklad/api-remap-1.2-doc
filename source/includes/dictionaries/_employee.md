@@ -13,32 +13,32 @@
 
 | Название         | Тип                                                       | Описание                                                                                                                                                            |
 | ---------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **meta**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Сотрудника<br>`+Обязательное при ответе`                                                                                                                 |
-| **id**           | UUID                                                      | ID Сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                    |
 | **accountId**    | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                |
-| **owner**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                                                                        |
-| **shared**       | Boolean                                                   | Общий доступ<br>`+Обязательное при ответе`                                                                                                                          |
-| **group**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                            |
-| **updated**      | DateTime                                                  | Момент последнего обновления Сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                          |
-| **name**         | String(255)                                               | Наименование Сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                                          |
-| **description**  | String(4096)                                              | Комментарий к Сотруднику                                                                                                                                            |
-| **code**         | String(255)                                               | Код Сотрудника                                                                                                                                                      |
-| **externalCode** | String(255)                                               | Внешний код Сотрудника<br>`+Обязательное при ответе`                                                                                                                |
 | **archived**     | Boolean                                                   | Добавлен ли Сотрудник в архив<br>`+Обязательное при ответе`                                                                                                         |
-| **created**      | DateTime                                                  | Момент создания Сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                                       |
-| **uid**          | String(255)                                               | Логин Сотрудника<br>`+Только для чтения`                                                                                                                            |
-| **email**        | String(255)                                               | Электронная почта сотрудника                                                                                                                                        |
-| **phone**        | String(255)                                               | Телефон сотрудника                                                                                                                                                  |
-| **firstName**    | String(255)                                               | Имя                                                                                                                                                                 |
-| **middleName**   | String(255)                                               | Отчество                                                                                                                                                            |
-| **lastName**     | String(255)                                               | Фамилия<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                    |
-| **fullName**     | String(255)                                               | Имя Отчество Фамилия<br>`+Только для чтения`                                                                                                                        |
-| **shortFio**     | String(255)                                               | Краткое ФИО<br>`+Только для чтения`                                                                                                                                 |
-| **cashiers**     | MetaArray                                                 | Массив кассиров. [Подробнее тут](../dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-kassir)<br>`+Только для чтения` `+Expand`         |
 | **attributes**   | Array(Object)                                             | Дополнительные поля Сотрудника                                                                                                                                      |
+| **cashiers**     | MetaArray                                                 | Массив кассиров. [Подробнее тут](../dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-kassir)<br>`+Только для чтения` `+Expand`         |
+| **code**         | String(255)                                               | Код Сотрудника                                                                                                                                                      |
+| **created**      | DateTime                                                  | Момент создания Сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                                       |
+| **description**  | String(4096)                                              | Комментарий к Сотруднику                                                                                                                                            |
+| **email**        | String(255)                                               | Электронная почта сотрудника                                                                                                                                        |
+| **externalCode** | String(255)                                               | Внешний код Сотрудника<br>`+Обязательное при ответе`                                                                                                                |
+| **firstName**    | String(255)                                               | Имя                                                                                                                                                                 |
+| **fullName**     | String(255)                                               | Имя Отчество Фамилия<br>`+Только для чтения`                                                                                                                        |
+| **group**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                            |
+| **id**           | UUID                                                      | ID Сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                    |
 | **image**        | Object                                                    | Фотография сотрудника. [Подробнее тут](../dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-fotografiq-sotrudnika-struktura-i-zagruzka) |
 | **inn**          | String(255)                                               | ИНН сотрудника (в формате ИНН физического лица)                                                                                                                     |
+| **lastName**     | String(255)                                               | Фамилия<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                    |
+| **meta**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Сотрудника<br>`+Обязательное при ответе`                                                                                                                 |
+| **middleName**   | String(255)                                               | Отчество                                                                                                                                                            |
+| **name**         | String(255)                                               | Наименование Сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                                          |
+| **owner**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                                                                        |
+| **phone**        | String(255)                                               | Телефон сотрудника                                                                                                                                                  |
 | **position**     | String(255)                                               | Должность сотрудника                                                                                                                                                |
+| **shared**       | Boolean                                                   | Общий доступ<br>`+Обязательное при ответе`                                                                                                                          |
+| **shortFio**     | String(255)                                               | Краткое ФИО<br>`+Только для чтения`                                                                                                                                 |
+| **uid**          | String(255)                                               | Логин Сотрудника<br>`+Только для чтения`                                                                                                                            |
+| **updated**      | DateTime                                                  | Момент последнего обновления Сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                          |
 
 Поля **owner**, **group** и **archived** может изменять только администратор. Поле **email** может изменять администратор и сам сотрудник.
 
@@ -47,9 +47,9 @@
 
 | Название        | Тип                                                       | Описание                                                                                                               |
 | --------------- | :-------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------- |
-| **id**          | UUID                                                      | ID Кассира<br>`+Обязательное при ответе` `+Только для чтения`                                                          |
 | **accountId**   | UUID                                                      | ID учетной записи Кассира<br>`+Обязательное при ответе` `+Только для чтения`                                           |
 | **employee**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные сотрудника, которого представляет собой кассир<br>`+Обязательное при ответе` `+Только для чтения` `+Expand` |
+| **id**          | UUID                                                      | ID Кассира<br>`+Обязательное при ответе` `+Только для чтения`                                                          |
 | **retailStore** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные точки продаж, к которой прикреплен кассир<br>`+Обязательное при ответе` `+Только для чтения` `+Expand`      |
 
 ##### Фотография сотрудника: структура и загрузка.
@@ -57,13 +57,13 @@
 
 | Название      | Тип                                                       | Описание                                                          |
 | ------------- | :-------------------------------------------------------- | :---------------------------------------------------------------- |
-| **meta**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные объекта<br>`+Обязательное при ответе`                  |
-| **title**     | String(255)                                               | Название Изображения<br>`+Обязательное при ответе`                |
 | **filename**  | String(255)                                               | Имя файла<br>`+Обязательное при ответе`                           |
-| **size**      | Int                                                       | Размер файла в байтах<br>`+Обязательное при ответе`               |
-| **updated**   | DateTime                                                  | Время последнего изменения<br>`+Обязательное при ответе`          |
+| **meta**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные объекта<br>`+Обязательное при ответе`                  |
 | **miniature** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные миниатюры изображения<br>`+Обязательное при ответе`    |
+| **size**      | Int                                                       | Размер файла в байтах<br>`+Обязательное при ответе`               |
 | **tiny**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные уменьшенного изображения<br>`+Обязательное при ответе` |
+| **title**     | String(255)                                               | Название Изображения<br>`+Обязательное при ответе`                |
+| **updated**   | DateTime                                                  | Время последнего изменения<br>`+Обязательное при ответе`          |
 
 #### Загрузка
 Для загрузки фотографии сотрудника необходимо сформировать запрос на [обновление](../dictionaries/#suschnosti-sotrudnik-izmenit-sotrudnika) сотрудника (PUT) и в теле запроса
@@ -775,13 +775,13 @@ curl -X GET
 
 | Название                | Тип           | Описание                                                                          |
 | ----------------------- | :------------ | :-------------------------------------------------------------------------------- |
-| **isActive**            | Boolean       | Доступ к сервису МойСклад<br>`+Обязательное при ответе`                           |
-| **login**               | String(255)   | Логин сотрудника для входа в МойСклад                                             |
+| **authorizedHosts**     | Array(String) | Список ipv4 адресов, с которых разрешен доступ на аккаунт                         |
+| **authorizedIpNetmask** | String(255)   | Маска подсети с правом доступа на аккаунт                                         |
+| **authorizedIpNetwork** | String(255)   | Ipv4 адрес, идентифицирующий соответствующую подсеть, с правом доступа на аккаунт |
 | **email**               | String(255)   | Почта сотрудника                                                                  |
 | **group**               | Object        | Метаданные Группы, а также ее идентификатор и имя<br>`+Обязательное при ответе`   |
-| **authorizedHosts**     | Array(String) | Список ipv4 адресов, с которых разрешен доступ на аккаунт                         |
-| **authorizedIpNetwork** | String(255)   | Ipv4 адрес, идентифицирующий соответствующую подсеть, с правом доступа на аккаунт |
-| **authorizedIpNetmask** | String(255)   | Маска подсети с правом доступа на аккаунт                                         |
+| **isActive**            | Boolean       | Доступ к сервису МойСклад<br>`+Обязательное при ответе`                           |
+| **login**               | String(255)   | Логин сотрудника для входа в МойСклад                                             |
 | **role**                | Object        | Информация о роли Сотрудника                                                      |
 
 #### Атрибуты вложенных сущностей
@@ -803,34 +803,34 @@ curl -X GET
 
 | Название                            | Возможные значения   | Значение по умолчанию  | Описание                                             |
 | ----------------------------------- | :------------------- | :--------------------- | :--------------------------------------------------- |
-| **importData**                      | Boolean              | true                   | Импортировать данные                                 |
-| **exportData**                      | Boolean              | true                   | Экспортировать данные                                |
-| **onlineShops**                     | Boolean              | true                   | Интернет магазины                                    |
 | **apiRequest**                      | Boolean              | true                   | Доступ по АПИ                                        |
+| **deleteFromRecycleBin**            | Boolean              | true                   | Очищать корзину                                      |
+| **editCurrencyRateOfDocument**      | Boolean              | true                   | Редактировать курс валюты документа                  |
+| **editDocumentTemplates**           | Boolean              | true                   | Редактировать шаблоны документов и отчетов           |
+| **editDocumentsOfRestrictedPeriod** | Boolean              | false                  | Редактировать документы закрытого периода            |
+| **exportData**                      | Boolean              | true                   | Экспортировать данные                                |
+| **importData**                      | Boolean              | true                   | Импортировать данные                                 |
+| **listenCalls**                     | Boolean              | true                   | Прослушивание звонков                                |
+| **onlineShops**                     | Boolean              | true                   | Интернет магазины                                    |
+| **purchaseControl**                 | Boolean              | true                   | Управление закупками                                 |
+| **restoreFromRecycleBin**           | Boolean              | true                   | Восстанавливать документы                            |
 | **sendEmail**                       | Boolean              | true                   | Отправлять почту                                     |
-| **viewProductCostAndProfit**        | Boolean              | true                   | Видеть себестоимость, цену закупки и прибыль товаров |
-| **viewDashboard**                   | Boolean              | true                   | Просматривать показатели                             |
-| **viewRecycleBin**                  | Boolean              | true                   | Просматривать корзину                                |
+| **subscriptionControl**             | Boolean              | false                  | Управление подпиской                                 |
 | **viewAudit**                       | Boolean              | false                  | Просматривать аудит                                  |
-| **viewSaleProfit**                  | Boolean              | true                   | Просматривать прибыльность                           |
+| **viewCashFlow**                    | Boolean              | true                   | Просматривать движение денежных средств              |
 | **viewCommissionGoods**             | Boolean              | true                   | Просматривать товары на реализации                   |
+| **viewCompanyCRM**                  | Boolean              | true                   | Просматривать показатели                             |
+| **viewCustomerBalanceList**         | Boolean              | true                   | Просматривать взаиморасчеты                          |
+| **viewDashboard**                   | Boolean              | true                   | Просматривать показатели                             |
+| **viewMoneyDashboard**              | Boolean              | false                  | Видеть остатки денег                                 |
+| **viewProductCostAndProfit**        | Boolean              | true                   | Видеть себестоимость, цену закупки и прибыль товаров |
+| **viewProfitAndLoss**               | Boolean              | true                   | Просматривать прибыль и убытки                       |
 | **viewPurchaseFunnel**              | Boolean              | true                   | Просматривать воронку продаж                         |
+| **viewRecycleBin**                  | Boolean              | true                   | Просматривать корзину                                |
+| **viewSaleProfit**                  | Boolean              | true                   | Просматривать прибыльность                           |
+| **viewSerialNumbers**               | Boolean              | true                   | Просматривать серийные номера                        |
 | **viewStockReport**                 | Boolean              | true                   | Просматривать остатки по товарам                     |
 | **viewTurnover**                    | Boolean              | true                   | Просматривать обороты                                |
-| **viewSerialNumbers**               | Boolean              | true                   | Просматривать серийные номера                        |
-| **viewCashFlow**                    | Boolean              | true                   | Просматривать движение денежных средств              |
-| **viewCustomerBalanceList**         | Boolean              | true                   | Просматривать взаиморасчеты                          |
-| **viewProfitAndLoss**               | Boolean              | true                   | Просматривать прибыль и убытки                       |
-| **viewCompanyCRM**                  | Boolean              | true                   | Просматривать показатели                             |
-| **viewMoneyDashboard**              | Boolean              | false                  | Видеть остатки денег                                 |
-| **restoreFromRecycleBin**           | Boolean              | true                   | Восстанавливать документы                            |
-| **deleteFromRecycleBin**            | Boolean              | true                   | Очищать корзину                                      |
-| **editDocumentsOfRestrictedPeriod** | Boolean              | false                  | Редактировать документы закрытого периода            |
-| **editDocumentTemplates**           | Boolean              | true                   | Редактировать шаблоны документов и отчетов           |
-| **editCurrencyRateOfDocument**      | Boolean              | true                   | Редактировать курс валюты документа                  |
-| **subscriptionControl**             | Boolean              | false                  | Управление подпиской                                 |
-| **purchaseControl**                 | Boolean              | true                   | Управление закупками                                 |
-| **listenCalls**                     | Boolean              | true                   | Прослушивание звонков                                |
 
 ###### Список пермиссий сущностей
 
@@ -873,65 +873,65 @@ curl -X GET
 
 | Название                      | Возможные значения   | Значение по умолчанию                       | Описание                               |
 | ----------------------------- | :------------------- | :------------------------------------------ | :------------------------------------- |
-| **company**                   | DICTIONARY           | Все ALL                                     | Контрагенты                            |
-| **myCompany**                 | BASE                 | view: ALL, create: NO, edit: NO, delete: NO | Юр. Лица                               |
-| **good**                      | DICTIONARY           | Все ALL                                     | Товары и Услуги                        |
-| **project**                   | BASE                 | Все ALL                                     | Проекты                                |
-| **contract**                  | DICTIONARY           | Все ALL                                     | Договоры                               |
-| **employee**                  | BASE                 | Все ALL                                     | Сотрудники                             |
-| **currency**                  | BASE                 | Все ALL                                     | Валюты                                 |
-| **warehouse**                 | BASE                 | Все ALL                                     | Склады                                 |
-| **customEntity**              | BASE                 | Все ALL                                     | Элементы пользовательских справочников |
-| **retailStore**               | BASE                 | Все ALL                                     | Точка продаж                           |
-| **country**                   | BASE                 | Все ALL                                     | Страны                                 |
-| **uom**                       | BASE                 | Все ALL                                     | Единицы измерения                      |
-| **purchaseReturn**            | OPERATION            | Все ALL                                     | Возврат поставщику                     |
-| **demand**                    | OPERATION            | Все ALL                                     | Отгрузка                               |
-| **salesReturn**               | OPERATION            | Все ALL                                     | Возврат покупателя                     |
-| **loss**                      | OPERATION            | Все ALL                                     | Списание                               |
-| **enter**                     | OPERATION            | Все ALL                                     | Оприходование                          |
-| **move**                      | OPERATION            | Все ALL                                     | Перемещение                            |
-| **inventory**                 | DICTIONARY           | Все ALL                                     | Инвентаризация                         |
-| **processing**                | BASE                 | Все ALL                                     | Тех. операции                          |
-| **invoiceIn**                 | OPERATION            | Все ALL                                     | Счет поставщику                        |
-| **invoiceOut**                | OPERATION            | Все ALL                                     | Счет покупателям                       |
-| **purchaseOrder**             | OPERATION            | Все ALL                                     | Заказ поставщикам                      |
-| **customerOrder**             | OPERATION            | Все ALL                                     | Заказ покупателям                      |
-| **internalOrder**             | OPERATION            | Все ALL                                     | Внутренние заказы                      |
-| **processingOrder**           | OPERATION            | Все ALL                                     | Заказ на производство                  |
-| **factureIn**                 | OPERATION            | Все ALL                                     | Счета-фактуры полученные               |
-| **factureOut**                | OPERATION            | Все ALL                                     | Счета-фактуры выданные                 |
-| **paymentIn**                 | OPERATION            | Все ALL                                     | Входящий платеж                        |
-| **paymentOut**                | OPERATION            | Все ALL                                     | Исходящий платеж                       |
+| **GTINList**                  | view, create, delete | Все NO                                      | Список GTIN                            |
+| **accountAdjustment**         | DICTIONARY           | Все ALL                                     | Корректировка остатков на счете        |
+| **bonusTransaction**          | OPERATION            | Все ALL                                     | Бонусные баллы                         |
 | **cashIn**                    | OPERATION            | Все ALL                                     | Приходной ордер                        |
 | **cashOut**                   | OPERATION            | Все ALL                                     | Расходной ордер                        |
-| **priceList**                 | OPERATION            | Все ALL                                     | Прайс-лист                             |
-| **retailDemand**              | OPERATION            | Все ALL                                     | Продажи                                |
-| **retailSalesReturn**         | OPERATION            | Все ALL                                     | Возвраты                               |
-| **supply**                    | OPERATION            | Все ALL                                     | Приемки                                |
-| **processingPlan**            | BASE                 | Все ALL                                     | Тех. Карты                             |
+| **cashboxAdjustment**         | DICTIONARY           | Все ALL                                     | Корректировка остатков в кассе         |
 | **commissionReportIn**        | OPERATION            | Все ALL                                     | Полученный отчет комиссионера          |
 | **commissionReportOut**       | OPERATION            | Все ALL                                     | Выданный отчет комиссионер             |
-| **retailShift**               | DICTIONARY           | Все ALL                                     | Смены                                  |
-| **retailDrawerCashIn**        | OPERATION            | Все ALL                                     | Внесения                               |
-| **retailDrawerCashOut**       | OPERATION            | Все ALL                                     | Выплаты                                |
-| **bonusTransaction**          | OPERATION            | Все ALL                                     | Бонусные баллы                         |
-| **prepayment**                | OPERATION            | Все ALL                                     | Предоплаты                             |
-| **prepaymentReturn**          | OPERATION            | Все ALL                                     | Возврат предоплаты                     |
-| **cashboxAdjustment**         | DICTIONARY           | Все ALL                                     | Корректировка остатков в кассе         |
-| **accountAdjustment**         | DICTIONARY           | Все ALL                                     | Корректировка остатков на счете        |
+| **company**                   | DICTIONARY           | Все ALL                                     | Контрагенты                            |
+| **contract**                  | DICTIONARY           | Все ALL                                     | Договоры                               |
 | **counterpartyAdjustment**    | DICTIONARY           | Все ALL                                     | Корректировка баланса контрагента      |
-| **emissionOrder**             | DICTIONARY           | Все NO                                      | Заказ кодов маркировки                 |
-| **enrollOrder**               | DICTIONARY           | Все NO                                      | Ввод в оборот кодов маркировки         |
-| **retireOrder**               | DICTIONARY           | Все NO                                      | Возврат в оборот                       |
-| **remarkingOrder**            | DICTIONARY           | Все NO                                      | Перемаркировка                         |
-| **remainsOrder**              | DICTIONARY           | Все NO                                      | Описание остатков                      |
+| **country**                   | BASE                 | Все ALL                                     | Страны                                 |
 | **crptCancellation**          | DICTIONARY           | Все NO                                      | Списание кодов маркировки              |
 | **crptPackageCreation**       | DICTIONARY           | Все NO                                      | Формирование упаковки                  |
-| **crptPackageItemRemoval**    | DICTIONARY           | Все NO                                      | Изъятие из упаковки                    |
 | **crptPackageDisaggregation** | DICTIONARY           | Все NO                                      | Расформирование упаковки               |
-| **GTINList**                  | view, create, delete | Все NO                                      | Список GTIN                            |
+| **crptPackageItemRemoval**    | DICTIONARY           | Все NO                                      | Изъятие из упаковки                    |
+| **currency**                  | BASE                 | Все ALL                                     | Валюты                                 |
+| **customEntity**              | BASE                 | Все ALL                                     | Элементы пользовательских справочников |
+| **customerOrder**             | OPERATION            | Все ALL                                     | Заказ покупателям                      |
+| **demand**                    | OPERATION            | Все ALL                                     | Отгрузка                               |
+| **emissionOrder**             | DICTIONARY           | Все NO                                      | Заказ кодов маркировки                 |
+| **employee**                  | BASE                 | Все ALL                                     | Сотрудники                             |
+| **enrollOrder**               | DICTIONARY           | Все NO                                      | Ввод в оборот кодов маркировки         |
+| **enter**                     | OPERATION            | Все ALL                                     | Оприходование                          |
+| **factureIn**                 | OPERATION            | Все ALL                                     | Счета-фактуры полученные               |
+| **factureOut**                | OPERATION            | Все ALL                                     | Счета-фактуры выданные                 |
+| **good**                      | DICTIONARY           | Все ALL                                     | Товары и Услуги                        |
+| **internalOrder**             | OPERATION            | Все ALL                                     | Внутренние заказы                      |
+| **inventory**                 | DICTIONARY           | Все ALL                                     | Инвентаризация                         |
+| **invoiceIn**                 | OPERATION            | Все ALL                                     | Счет поставщику                        |
+| **invoiceOut**                | OPERATION            | Все ALL                                     | Счет покупателям                       |
+| **loss**                      | OPERATION            | Все ALL                                     | Списание                               |
+| **move**                      | OPERATION            | Все ALL                                     | Перемещение                            |
+| **myCompany**                 | BASE                 | view: ALL, create: NO, edit: NO, delete: NO | Юр. Лица                               |
+| **paymentIn**                 | OPERATION            | Все ALL                                     | Входящий платеж                        |
+| **paymentOut**                | OPERATION            | Все ALL                                     | Исходящий платеж                       |
+| **prepayment**                | OPERATION            | Все ALL                                     | Предоплаты                             |
+| **prepaymentReturn**          | OPERATION            | Все ALL                                     | Возврат предоплаты                     |
+| **priceList**                 | OPERATION            | Все ALL                                     | Прайс-лист                             |
+| **processing**                | BASE                 | Все ALL                                     | Тех. операции                          |
+| **processingOrder**           | OPERATION            | Все ALL                                     | Заказ на производство                  |
+| **processingPlan**            | BASE                 | Все ALL                                     | Тех. Карты                             |
+| **project**                   | BASE                 | Все ALL                                     | Проекты                                |
+| **purchaseOrder**             | OPERATION            | Все ALL                                     | Заказ поставщикам                      |
+| **purchaseReturn**            | OPERATION            | Все ALL                                     | Возврат поставщику                     |
+| **remainsOrder**              | DICTIONARY           | Все NO                                      | Описание остатков                      |
+| **remarkingOrder**            | DICTIONARY           | Все NO                                      | Перемаркировка                         |
+| **retailDemand**              | OPERATION            | Все ALL                                     | Продажи                                |
+| **retailDrawerCashIn**        | OPERATION            | Все ALL                                     | Внесения                               |
+| **retailDrawerCashOut**       | OPERATION            | Все ALL                                     | Выплаты                                |
+| **retailSalesReturn**         | OPERATION            | Все ALL                                     | Возвраты                               |
+| **retailShift**               | DICTIONARY           | Все ALL                                     | Смены                                  |
+| **retailStore**               | BASE                 | Все ALL                                     | Точка продаж                           |
+| **retireOrder**               | DICTIONARY           | Все NO                                      | Возврат в оборот                       |
+| **salesReturn**               | OPERATION            | Все ALL                                     | Возврат покупателя                     |
+| **supply**                    | OPERATION            | Все ALL                                     | Приемки                                |
 | **trackingCodeList**          | view, print          | Все NO                                      | Коды маркировки                        |
+| **uom**                       | BASE                 | Все ALL                                     | Единицы измерения                      |
+| **warehouse**                 | BASE                 | Все ALL                                     | Склады                                 |
 
 Для пермиссий `currency`, `country` и `uom` значение `view` не изменяемое и равно `ALL`. При попытке изменить значение `view`
  для данных пермиссий, будет возвращена ошибка.

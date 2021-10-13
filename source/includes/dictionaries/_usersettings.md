@@ -6,18 +6,18 @@
 
 | Название                        | Тип                                                       | Описание                                                                                                                                                                            |
 | ------------------------------- | :-------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **meta**                        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные настроек<br>`+Обязательное при ответе`                                                                                                                                   |
+| **autoShowReports**             | Boolean                                                   | Строить ли отчеты автоматически при переходе на вкладку с отчетом<br>`+Обязательное при ответе`                                                                                     |
 | **defaultCompany**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Организации, которая будет использоваться по умолчанию в документах<br>`+Обязательное при ответе`                                                                        |
 | **defaultCustomerCounterparty** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Покупателя, который будет использоваться по умолчанию в документах раздела "Продажи"<br>`+Обязательное при ответе`                                                       |
-| **defaultPurchaseCounterparty** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Поставщика, который будет использоваться по умолчанию в документах раздела "Закупки"<br>`+Обязательное при ответе`                                                       |
-| **defaultProject**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Проекта, который будет использоваться по умолчанию в документах<br>`+Обязательное при ответе`                                                                            |
 | **defaultPlace**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Склада, который будет использоваться по умолчанию в документах<br>`+Обязательное при ответе`                                                                             |
-| **locale**                      | Enum                                                      | Язык системы. Допустимые значения "ru_RU" и "en_US"<br>`+Обязательное при ответе`                                                                                                   |
-| **printFormat**                 | Enum                                                      | [Правила печати документов](./#suschnosti-nastrojki-pol-zowatelq-poluchit-metadannye-nastroek-kompanii-prawila-pechati-dokumentow)<br>`+Обязательное при ответе`                    |
-| **fieldsPerRow**                | Int                                                       | Количество столбцов, в которых будут располагаться дополнительные поля в документах<br>`+Обязательное при ответе`                                                                   |
+| **defaultProject**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Проекта, который будет использоваться по умолчанию в документах<br>`+Обязательное при ответе`                                                                            |
+| **defaultPurchaseCounterparty** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Поставщика, который будет использоваться по умолчанию в документах раздела "Закупки"<br>`+Обязательное при ответе`                                                       |
 | **defaultScreen**               | Enum                                                      | [Страница, которая открывается у пользователя при логине](./#suschnosti-nastrojki-pol-zowatelq-poluchit-metadannye-nastroek-kompanii-startowyj-akran)<br>`+Обязательное при ответе` |
-| **autoShowReports**             | Boolean                                                   | Строить ли отчеты автоматически при переходе на вкладку с отчетом<br>`+Обязательное при ответе`                                                                                     |
+| **fieldsPerRow**                | Int                                                       | Количество столбцов, в которых будут располагаться дополнительные поля в документах<br>`+Обязательное при ответе`                                                                   |
+| **locale**                      | Enum                                                      | Язык системы. Допустимые значения "ru_RU" и "en_US"<br>`+Обязательное при ответе`                                                                                                   |
 | **mailFooter**                  | Boolean                                                   | Подставляется в подпись в письмах, отправляемых из МС<br>`+Обязательное при ответе`                                                                                                 |
+| **meta**                        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные настроек<br>`+Обязательное при ответе`                                                                                                                                   |
+| **printFormat**                 | Enum                                                      | [Правила печати документов](./#suschnosti-nastrojki-pol-zowatelq-poluchit-metadannye-nastroek-kompanii-prawila-pechati-dokumentow)<br>`+Обязательное при ответе`                    |
 
 #### Правила печати документов
 Допустимые правила печати:
@@ -35,103 +35,103 @@
 
 | Стартовый экран                        | Значение поля defaultScreen   |
 | -------------------------------------- | :---------------------------- |
-| Операции с баллами                     | bonustransaction              |
-| Полученные отчеты комиссионера         | commissionreportin            |
-| Выданные отчеты комиссионера           | commissionreportout           |
-| Ввод в оборот кодов маркировки         | enrollorder                   |
-| Вывод из оборота                       | retireorder                   |
-| Перемаркировка                         | remarkingorder                |
-| Заказ кодов маркировки                 | crptdemand                    |
-| Списание кодов маркировки              | crptcancellation              |
-| Формирование упаковки                  | crptpackagecreation           |
-| Изъятие из упаковки                    | crptpackageitemremoval        |
-| Расформирование упаковки               | crptpackagedisaggregation     |
-| Описание остатков                      | remainsorder                  |
-| Возврат в оборот                       | enrollreturn                  |
-| Задачи                                 | purpose                       |
-| Очередь облачных чеков                 | fiscalevent                   |
-| Учетная запись                         | account                       |
-| Импорт из Excel                        | importgoods                   |
-| Проверка комплектации                  | checkequipment                |
-| Массовое редактирование                | bulkEdit                      |
-| Характеристика                         | feature                       |
-| Импорт приемки                         | importedo                     |
-| Просмотр информации о КМ или ТУ        | trackingidentify              |
-| Сбор заказа                            | orderassembly                 |
-| Импорт справочника                     | importcustom                  |
-| Приложения                             | apps                          |
-| События обмена с Эвотор                | evotorevent                   |
-| Запросы                                | evotorrequest                 |
-| Настройка обмена с Эвотор              | evotormapping                 |
-| Новости                                | feed                          |
-| Уведомления                            | notifications                 |
-| Импорт                                 | import                        |
-| Экспорт                                | export                        |
-| Показатели                             | dashboard                     |
-| Документы                              | operation                     |
-| Корзина                                | recyclebin                    |
 | Аудит                                  | audit                         |
-| Заказы поставщикам                     | purchaseorder                 |
-| Счета поставщиков                      | invoicein                     |
-| Приемки                                | supply                        |
+| Валюты                                 | currency                      |
+| Ввод в оборот кодов маркировки         | enrollorder                   |
+| Взаиморасчеты                          | customersbalancelist          |
+| Внесения                               | retaildrawercashin            |
+| Внутренние заказы                      | internalorder                 |
+| Возврат в оборот                       | enrollreturn                  |
+| Возвраты                               | retailsalesreturn             |
+| Возвраты покупателей                   | salesreturn                   |
 | Возвраты поставщикам                   | purchasereturn                |
-| Счета-фактуры полученные               | facturein                     |
-| Управление закупками                   | purchasecontrol               |
+| Возвраты предоплат                     | prepaymentreturn              |
+| Воронка продаж                         | purchasefunnel                |
+| Вывод из оборота                       | retireorder                   |
+| Выданные отчеты комиссионера           | commissionreportout           |
+| Выплаты                                | retaildrawercashout           |
+| Движение денежных средств              | cashflow                      |
+| Договоры                               | contract                      |
+| Документы                              | operation                     |
+| Единицы измерения                      | uom                           |
+| Журнал запросов в ИС МП                | crptlog                       |
+| Журнал запросов в систему лояльности   | loyaltylog                    |
+| Задачи                                 | purpose                       |
+| Заказ кодов маркировки                 | crptdemand                    |
+| Заказы на производство                 | processingorder               |
 | Заказы покупателей                     | customerorder                 |
-| Счета покупателям                      | invoiceout                    |
+| Заказы поставщикам                     | purchaseorder                 |
+| Запросы                                | evotorrequest                 |
+| Звонки                                 | phonecall                     |
+| Изъятие из упаковки                    | crptpackageitemremoval        |
+| Импорт                                 | import                        |
+| Импорт из Excel                        | importgoods                   |
+| Импорт приемки                         | importedo                     |
+| Импорт справочника                     | importcustom                  |
+| Инвентаризации                         | inventory                     |
+| Контрагенты                            | company                       |
+| Корзина                                | recyclebin                    |
+| Корректировки                          | adjustment                    |
+| Массовое редактирование                | bulkEdit                      |
+| Настройка обмена с Эвотор              | evotormapping                 |
+| Настройки                              | companysettings               |
+| Новости                                | feed                          |
+| Обороты                                | turnover                      |
+| Операции с баллами                     | bonustransaction              |
+| Описание остатков                      | remainsorder                  |
+| Оприходования                          | enter                         |
+| Остатки                                | stockreport                   |
 | Отгрузки                               | demand                        |
 | Отчеты комиссионера                    | commissionreport              |
-| Возвраты покупателей                   | salesreturn                   |
-| Счета-фактуры выданные                 | factureout                    |
-| Прибыльность                           | pnl                           |
-| Товары на реализации                   | commissiongoods               |
-| Воронка продаж                         | purchasefunnel                |
-| Товары и услуги                        | good                          |
-| Оприходования                          | enter                         |
-| Списания                               | loss                          |
-| Инвентаризации                         | inventory                     |
-| Внутренние заказы                      | internalorder                 |
-| Перемещения                            | move                          |
-| Прайс-листы                            | pricelist                     |
-| Остатки                                | stockreport                   |
-| Обороты                                | turnover                      |
-| Сер. номера                            | serialnumbers                 |
-| Контрагенты                            | company                       |
-| Договоры                               | contract                      |
-| Звонки                                 | phonecall                     |
-| Платежи                                | finance                       |
-| Движение денежных средств              | cashflow                      |
-| Прибыли и убытки                       | pnl3                          |
-| Взаиморасчеты                          | customersbalancelist          |
-| Корректировки                          | adjustment                    |
-| Точки продаж                           | retailstore                   |
-| Смены                                  | retailshift                   |
-| Продажи                                | retaildemand                  |
-| Возвраты                               | retailsalesreturn             |
-| Внесения                               | retaildrawercashin            |
-| Выплаты                                | retaildrawercashout           |
-| Предоплаты                             | prepayment                    |
-| Возвраты предоплат                     | prepaymentreturn              |
+| Очередь облачных чеков                 | fiscalevent                   |
 | Очередь облачных чеков                 | fiscalqueue                   |
-| Тех. карты                             | processingplan                |
-| Заказы на производство                 | processingorder               |
-| Тех. операции                          | processing                    |
-| Приложения                             | embed-apps                    |
-| Спецпредложения                        | specialoffers                 |
-| Настройки                              | companysettings               |
-| Скидки                                 | discount                      |
-| Сценарии                               | scripttemplate                |
-| Синхронизация                          | connectorsettings             |
-| Юр. лица                               | mycompany                     |
-| Сотрудники                             | employee                      |
-| Склады                                 | warehouse                     |
-| Валюты                                 | currency                      |
-| Проекты                                | project                       |
-| Страны                                 | country                       |
-| Единицы измерения                      | uom                           |
+| Перемаркировка                         | remarkingorder                |
+| Перемещения                            | move                          |
+| Платежи                                | finance                       |
 | Подписка                               | payments                      |
-| Журнал запросов в систему лояльности   | loyaltylog                    |
-| Журнал запросов в ИС МП                | crptlog                       |
+| Показатели                             | dashboard                     |
+| Полученные отчеты комиссионера         | commissionreportin            |
+| Прайс-листы                            | pricelist                     |
+| Предоплаты                             | prepayment                    |
+| Прибыли и убытки                       | pnl3                          |
+| Прибыльность                           | pnl                           |
+| Приемки                                | supply                        |
+| Приложения                             | apps                          |
+| Приложения                             | embed-apps                    |
+| Проверка комплектации                  | checkequipment                |
+| Продажи                                | retaildemand                  |
+| Проекты                                | project                       |
+| Просмотр информации о КМ или ТУ        | trackingidentify              |
+| Расформирование упаковки               | crptpackagedisaggregation     |
+| Сбор заказа                            | orderassembly                 |
+| Сер. номера                            | serialnumbers                 |
+| Синхронизация                          | connectorsettings             |
+| Скидки                                 | discount                      |
+| Склады                                 | warehouse                     |
+| Смены                                  | retailshift                   |
+| События обмена с Эвотор                | evotorevent                   |
+| Сотрудники                             | employee                      |
+| Спецпредложения                        | specialoffers                 |
+| Списание кодов маркировки              | crptcancellation              |
+| Списания                               | loss                          |
+| Страны                                 | country                       |
+| Сценарии                               | scripttemplate                |
+| Счета покупателям                      | invoiceout                    |
+| Счета поставщиков                      | invoicein                     |
+| Счета-фактуры выданные                 | factureout                    |
+| Счета-фактуры полученные               | facturein                     |
+| Тех. карты                             | processingplan                |
+| Тех. операции                          | processing                    |
+| Товары и услуги                        | good                          |
+| Товары на реализации                   | commissiongoods               |
+| Точки продаж                           | retailstore                   |
+| Уведомления                            | notifications                 |
+| Управление закупками                   | purchasecontrol               |
+| Учетная запись                         | account                       |
+| Формирование упаковки                  | crptpackagecreation           |
+| Характеристика                         | feature                       |
+| Экспорт                                | export                        |
+| Юр. лица                               | mycompany                     |
 
 ### Получить Настройки пользователя 
 > Запрос на получение Настроек пользователя:
@@ -192,17 +192,17 @@ curl -X GET
 
 | Название                        | Тип                                                       | Описание                                                                                                                                              |
 | ------------------------------- | :-------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **autoShowReports**             | Boolean                                                   | Строить ли отчеты автоматически при переходе на вкладку с отчетом                                                                                     |
 | **defaultCompany**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Организации, которая будет использоваться по умолчанию в документах                                                                        |
 | **defaultCustomerCounterparty** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Покупателя, который будет использоваться по умолчанию в документах раздела "Продажи"                                                       |
-| **defaultPurchaseCounterparty** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Поставщика, который будет использоваться по умолчанию в документах раздела "Закупки"                                                       |
-| **defaultProject**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Проекта, который будет использоваться по умолчанию в документах                                                                            |
 | **defaultPlace**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Склада, который будет использоваться по умолчанию в документах                                                                             |
+| **defaultProject**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Проекта, который будет использоваться по умолчанию в документах                                                                            |
+| **defaultPurchaseCounterparty** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Поставщика, который будет использоваться по умолчанию в документах раздела "Закупки"                                                       |
+| **defaultScreen**               | Enum                                                      | [Страница, которая открывается у пользователя при логине](./#suschnosti-nastrojki-pol-zowatelq-poluchit-metadannye-nastroek-kompanii-startowyj-akran) |
+| **fieldsPerRow**                | Int                                                       | Количество столбцов, в которых будут располагаться дополнительные поля в документах                                                                   |
 | **locale**                      | Enum                                                      | Язык системы. Допустимые значения "ru_RU" и "en_US"                                                                                                   |
 | **mailFooter**                  | Boolean                                                   | Подставляется в подпись в письмах, отправляемых из МС                                                                                                 |
-| **fieldsPerRow**                | Int                                                       | Количество столбцов, в которых будут располагаться дополнительные поля в документах                                                                   |
 | **printFormat**                 | Enum                                                      | [Правила печати документов](./#suschnosti-nastrojki-pol-zowatelq-poluchit-metadannye-nastroek-kompanii-prawila-pechati-dokumentow)                    |
-| **defaultScreen**               | Enum                                                      | [Страница, которая открывается у пользователя при логине](./#suschnosti-nastrojki-pol-zowatelq-poluchit-metadannye-nastroek-kompanii-startowyj-akran) |
-| **autoShowReports**             | Boolean                                                   | Строить ли отчеты автоматически при переходе на вкладку с отчетом                                                                                     |
 
 Допускается частичное редактирование - отредактированы будут только присутствующие в запросе поля.
 > Запрос на изменение настроек пользователя:

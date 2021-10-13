@@ -7,28 +7,28 @@
 
 | Название              | Тип                                                       | Описание                                                                                                                   |
 | --------------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
-| **meta**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Бонусной операции<br>`+Обязательное при ответе`                                                                 |
-| **id**                | UUID                                                      | ID Бонусной операции<br>`+Обязательное при ответе` `+Только для чтения`                                                    |
 | **accountId**         | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                       |
-| **owner**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Владелец (Сотрудник)<br>`+Expand`                                                                                          |
-| **shared**            | Boolean                                                   | Общий доступ<br>`+Обязательное при ответе`                                                                                 |
-| **group**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                   |
-| **updated**           | DateTime                                                  | Момент последнего обновления Бонусной операции<br>`+Обязательное при ответе`                                               |
-| **created**           | DateTime                                                  | Момент создания Бонусной операции<br>`+Обязательное при ответе`                                                            |
-| **code**              | String(255)                                               | Код Бонусной операции                                                                                                      |
-| **externalCode**      | String(255)                                               | Внешний код Бонусной операции<br>`+Обязательное при ответе`                                                                |
-| **name**              | String(255)                                               | Наименование Бонусной операции                                                                                             |
-| **applicable**        | Boolean                                                   | Отметка о проведении<br>`+Обязательное при ответе`                                                                         |
-| **moment**            | DateTime                                                  | Время проведения бонусной операции                                                                                         |
 | **agent**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Контрагента, связанного с бонусной операцией<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` |
-| **parentDocument**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные связанного документа бонусной операции<br>`+Expand`                                                             |
+| **applicable**        | Boolean                                                   | Отметка о проведении<br>`+Обязательное при ответе`                                                                         |
 | **bonusProgram**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные бонусной программы<br>`+Expand`                                                                                 |
 | **bonusValue**        | Int                                                       | Количество бонусных баллов                                                                                                 |
-| **organization**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные юрлица<br>`+Expand`                                                                                             |
-| **transactionType**   | Enum                                                      | Тип бонусной операции. Возможные значения: `EARNING`, `SPENDING`<br>`+Обязательное при ответе` `+Необходимо при создании`  |
-| **transactionStatus** | Enum                                                      | Статус бонусной операции. Возможные значения: `WAIT_PROCESSING`, `COMPLETED`, `CANCELED`<br>`+Только для чтения`           |
-| **executionDate**     | DateTime                                                  | Дата начисления бонусной операции.                                                                                         |
 | **categoryType**      | Enum                                                      | Категория бонусной операции. Возможные значения: `REGULAR`, `WELCOME`<br>`+Только для чтения`                              |
+| **code**              | String(255)                                               | Код Бонусной операции                                                                                                      |
+| **created**           | DateTime                                                  | Момент создания Бонусной операции<br>`+Обязательное при ответе`                                                            |
+| **executionDate**     | DateTime                                                  | Дата начисления бонусной операции.                                                                                         |
+| **externalCode**      | String(255)                                               | Внешний код Бонусной операции<br>`+Обязательное при ответе`                                                                |
+| **group**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                   |
+| **id**                | UUID                                                      | ID Бонусной операции<br>`+Обязательное при ответе` `+Только для чтения`                                                    |
+| **meta**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Бонусной операции<br>`+Обязательное при ответе`                                                                 |
+| **moment**            | DateTime                                                  | Время проведения бонусной операции                                                                                         |
+| **name**              | String(255)                                               | Наименование Бонусной операции                                                                                             |
+| **organization**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные юрлица<br>`+Expand`                                                                                             |
+| **owner**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Владелец (Сотрудник)<br>`+Expand`                                                                                          |
+| **parentDocument**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные связанного документа бонусной операции<br>`+Expand`                                                             |
+| **shared**            | Boolean                                                   | Общий доступ<br>`+Обязательное при ответе`                                                                                 |
+| **transactionStatus** | Enum                                                      | Статус бонусной операции. Возможные значения: `WAIT_PROCESSING`, `COMPLETED`, `CANCELED`<br>`+Только для чтения`           |
+| **transactionType**   | Enum                                                      | Тип бонусной операции. Возможные значения: `EARNING`, `SPENDING`<br>`+Обязательное при ответе` `+Необходимо при создании`  |
+| **updated**           | DateTime                                                  | Момент последнего обновления Бонусной операции<br>`+Обязательное при ответе`                                               |
 
 ##### Атрибут "executionDate".
 При создании или редактировании бонусной операции начисления данный атрибут позволяет указать дату обработки операции.
@@ -41,13 +41,13 @@
 
 | Название                       | Описание                                                                                               |
 | ------------------------------ | :----------------------------------------------------------------------------------------------------- |
+| **agent**                      | Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)        |
+| **bonusProgram**               | Ссылка на бонусную программу в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
+| **bonusValue**                 | Бонусные баллы                                                                                         |
 | **id**                         | ID в формате UUID                                                                                      |
 | **moment**                     | Момент создания бонусной операции                                                                      |
 | **updated**                    | Момент последнего обновления бонусной операции                                                         |
 | **updatedBy**                  | Автор последнего обновления бонусной операции в формате `uid` (`admin@admin`)                          |
-| **agent**                      | Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)        |
-| **bonusProgram**               | Ссылка на бонусную программу в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
-| **bonusValue**                 | Бонусные баллы                                                                                         |
 
 ### Получить Бонусные операции
 

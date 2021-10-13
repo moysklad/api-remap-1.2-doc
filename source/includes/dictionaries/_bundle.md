@@ -7,62 +7,62 @@
 
 | Название                | Тип                                                       | Описание                                                                                                                                                                                                                          |
 | ----------------------- | :-------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Комплекта<br>`+Обязательное при ответе`                                                                                                                                                                                |
-| **id**                  | UUID                                                      | ID Комплекта<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                   |
 | **accountId**           | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                              |
-| **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные владельца (Сотрудника)<br>`+Expand`                                                                                                                                                                                    |
-| **shared**              | Boolean                                                   | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                                                        |
-| **group**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные отдела сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                              |
-| **syncId**              | UUID                                                      | ID синхронизации<br>`+Только для чтения` `+Заполнение при создании`                                                                                                                                                               |
-| **updated**             | DateTime                                                  | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                          |
-| **name**                | String(255)                                               | Наименование Комплекта<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                                   |
-| **description**         | String(4096)                                              | Описание Комплекта                                                                                                                                                                                                                |
-| **code**                | String(255)                                               | Код Комплекта                                                                                                                                                                                                                     |
-| **externalCode**        | String(255)                                               | Внешний код Комплекта<br>`+Обязательное при ответе`                                                                                                                                                                               |
 | **archived**            | Boolean                                                   | Добавлен ли Комплект в архив<br>`+Обязательное при ответе`                                                                                                                                                                        |
-| **pathName**            | String                                                    | Наименование группы, в которую входит Комплект<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                 |
-| **vat**                 | Int                                                       | НДС %                                                                                                                                                                                                                             |
-| **vatEnabled**          | Boolean                                                   | Включен ли НДС для товара. С помощью этого флага для товара можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.                             |
-| **useParentVat**        | Boolean                                                   | Используется ли ставка НДС родительской группы. Если true для единицы ассортимента будет применена ставка, установленная для родительской группы.<br>`+Обязательное при ответе`                                                   |
+| **article**             | String(255)                                               | Артикул                                                                                                                                                                                                                           |
+| **attributes**          | Array(Object)                                             | Коллекция доп. полей                                                                                                                                                                                                              |
+| **barcodes**            | Array(Object)                                             | Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta-shtrih-kody)                                                                                                             |
+| **code**                | String(255)                                               | Код Комплекта                                                                                                                                                                                                                     |
+| **components**          | MetaArray                                                 | Массив компонентов Комплекта<br>`+Expand`                                                                                                                                                                                         |
+| **country**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Страны<br>`+Expand`                                                                                                                                                                                                    |
+| **description**         | String(4096)                                              | Описание Комплекта                                                                                                                                                                                                                |
+| **discountProhibited**  | Boolean                                                   | Признак запрета скидок<br>`+Обязательное при ответе`                                                                                                                                                                              |
 | **effectiveVat**        | Int                                                       | Реальный НДС %<br>`+Только для чтения`                                                                                                                                                                                            |
 | **effectiveVatEnabled** | Boolean                                                   | Дополнительный признак для определения разграничения реального НДС = 0 или "без НДС". (effectiveVat = 0, effectiveVatEnabled = false) -> "без НДС", (effectiveVat = 0, effectiveVatEnabled = true) -> 0%.<br>`+Только для чтения` |
-| **productFolder**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные группы Комплекта<br>`+Expand`                                                                                                                                                                                          |
-| **uom**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Единицы измерения<br>`+Expand`                                                                                                                                                                                                    |
-| **images**              | MetaArray                                                 | Массив метаданных [Изображений](../dictionaries/#suschnosti-izobrazhenie) (Максимальное количество изображений - 10)<br>`+Expand`                                                                                                 |
-| **minPrice**            | Object                                                    | Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-wlozhennyh-suschnostej-minimal-naq-cena)                                                                                                |
-| **salePrices**          | Array(Object)                                             | Цены продажи                                                                                                                                                                                                                      |
-| **attributes**          | Array(Object)                                             | Коллекция доп. полей                                                                                                                                                                                                              |
-| **country**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Страны<br>`+Expand`                                                                                                                                                                                                    |
-| **article**             | String(255)                                               | Артикул                                                                                                                                                                                                                           |
-| **weight**              | Int                                                       | Вес                                                                                                                                                                                                                               |
-| **volume**              | Int                                                       | Объем                                                                                                                                                                                                                             |
-| **barcodes**            | Array(Object)                                             | Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta-shtrih-kody)                                                                                                             |
-| **discountProhibited**  | Boolean                                                   | Признак запрета скидок<br>`+Обязательное при ответе`                                                                                                                                                                              |
-| **overhead**            | Object                                                    | Дополнительные расходы. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-wlozhennyh-suschnostej-dopolnitel-nye-rashody)                                                                                    |
-| **components**          | MetaArray                                                 | Массив компонентов Комплекта<br>`+Expand`                                                                                                                                                                                         |
-| **trackingType**        | Enum                                                      | Тип маркируемой продукции. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-tip-markiruemoj-produkcii)                                                                                          |
-| **tnved**               | String(255)                                               | Код ТН ВЭД                                                                                                                                                                                                                        |
-| **partialDisposal**     | Boolean                                                   | Управление состоянием частичного выбытия маркированного товара. «true» - возможность включена.                                                                                                                                    |
-| **paymentItemType**     | Enum                                                      | Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-priznak-predmeta-rascheta)                                                                                           |
-| **taxSystem**           | Enum                                                      | Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-kod-sistemy-nalogooblozheniq)                                                                                     |
+| **externalCode**        | String(255)                                               | Внешний код Комплекта<br>`+Обязательное при ответе`                                                                                                                                                                               |
 | **files**               | MetaArray                                                 | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Expand`                                                                                                                |
+| **group**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные отдела сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                              |
+| **id**                  | UUID                                                      | ID Комплекта<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                   |
+| **images**              | MetaArray                                                 | Массив метаданных [Изображений](../dictionaries/#suschnosti-izobrazhenie) (Максимальное количество изображений - 10)<br>`+Expand`                                                                                                 |
+| **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Комплекта<br>`+Обязательное при ответе`                                                                                                                                                                                |
+| **minPrice**            | Object                                                    | Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-wlozhennyh-suschnostej-minimal-naq-cena)                                                                                                |
+| **name**                | String(255)                                               | Наименование Комплекта<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                                   |
+| **overhead**            | Object                                                    | Дополнительные расходы. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-wlozhennyh-suschnostej-dopolnitel-nye-rashody)                                                                                    |
+| **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные владельца (Сотрудника)<br>`+Expand`                                                                                                                                                                                    |
+| **partialDisposal**     | Boolean                                                   | Управление состоянием частичного выбытия маркированного товара. «true» - возможность включена.                                                                                                                                    |
+| **pathName**            | String                                                    | Наименование группы, в которую входит Комплект<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                 |
+| **paymentItemType**     | Enum                                                      | Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-priznak-predmeta-rascheta)                                                                                           |
+| **productFolder**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные группы Комплекта<br>`+Expand`                                                                                                                                                                                          |
+| **salePrices**          | Array(Object)                                             | Цены продажи                                                                                                                                                                                                                      |
+| **shared**              | Boolean                                                   | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                                                        |
+| **syncId**              | UUID                                                      | ID синхронизации<br>`+Только для чтения` `+Заполнение при создании`                                                                                                                                                               |
+| **taxSystem**           | Enum                                                      | Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-kod-sistemy-nalogooblozheniq)                                                                                     |
+| **tnved**               | String(255)                                               | Код ТН ВЭД                                                                                                                                                                                                                        |
+| **trackingType**        | Enum                                                      | Тип маркируемой продукции. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-tip-markiruemoj-produkcii)                                                                                          |
+| **uom**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Единицы измерения<br>`+Expand`                                                                                                                                                                                                    |
+| **updated**             | DateTime                                                  | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                          |
+| **useParentVat**        | Boolean                                                   | Используется ли ставка НДС родительской группы. Если true для единицы ассортимента будет применена ставка, установленная для родительской группы.<br>`+Обязательное при ответе`                                                   |
+| **vat**                 | Int                                                       | НДС %                                                                                                                                                                                                                             |
+| **vatEnabled**          | Boolean                                                   | Включен ли НДС для товара. С помощью этого флага для товара можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.                             |
+| **volume**              | Int                                                       | Объем                                                                                                                                                                                                                             |
+| **weight**              | Int                                                       | Вес                                                                                                                                                                                                                               |
 
 ##### Тип маркируемой продукции
 Значения поля trackingType.
 
 | Значение                       | Описание                          |
 | ------------------------------ | :-------------------------------- |
-| **NOT_TRACKED**                | Без маркировки                    |
-| **TOBACCO**                    | Тип маркировки "Табак"            |
-| **SHOES**                      | Тип маркировки "Обувь"            |
+| **ELECTRONICS**                | Фотокамеры и лампы-вспышки        |
 | **LP_CLOTHES**                 | Тип маркировки "Одежда"           |
 | **LP_LINENS**                  | Тип маркировки "Постельное белье" |
-| **PERFUMERY**                  | Духи и туалетная вода             |
-| **ELECTRONICS**                | Фотокамеры и лампы-вспышки        |
-| **TIRES**                      | Шины и покрышки                   |
 | **MILK**                       | Молочная продукция                |
-| **WATER**                      | Упакованная вода                  |
+| **NOT_TRACKED**                | Без маркировки                    |
 | **OTP**                        | Альтернативная табачная продукция |
+| **PERFUMERY**                  | Духи и туалетная вода             |
+| **SHOES**                      | Тип маркировки "Обувь"            |
+| **TIRES**                      | Шины и покрышки                   |
+| **TOBACCO**                    | Тип маркировки "Табак"            |
+| **WATER**                      | Упакованная вода                  |
 
 ##### Признак предмета расчета
 Значения поля paymentItemType.
@@ -79,13 +79,13 @@
 
 | Значение                                 | Описание                     |
 | ---------------------------------------- | :--------------------------- |
-| **TAX_SYSTEM_SAME_AS_GROUP**             | Совпадает с группой          |
 | **GENERAL_TAX_SYSTEM**                   | ОСН                          |
+| **PATENT_BASED**                         | Патент                       |
+| **PRESUMPTIVE_TAX_SYSTEM**               | ЕНВД                         |
 | **SIMPLIFIED_TAX_SYSTEM_INCOME**         | УСН. Доход                   |
 | **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** | УСН. Доход-Расход            |
+| **TAX_SYSTEM_SAME_AS_GROUP**             | Совпадает с группой          |
 | **UNIFIED_AGRICULTURAL_TAX**             | ЕСХН                         |
-| **PRESUMPTIVE_TAX_SYSTEM**               | ЕНВД                         |
-| **PATENT_BASED**                         | Патент                       |
 
 #### Комплект как позиция документа
 Комплект может выступать в роли позиции документа. Он также как и товары, услуги и модификации может быть передан в составе позиции в формате метаданных.<br>
@@ -134,10 +134,10 @@
 
 | Название       | Тип                                                       | Описание                                                                                                     |
 | -------------- | :-------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------- |
-| **id**         | UUID                                                      | ID компонента<br>`+Обязательное при ответе` `+Только для чтения`                                             |
 | **accountId**  | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                         |
-| **quantity**   | Int                                                       | Количество товаров/услуг данного вида в компоненте<br>`+Обязательное при ответе` `+Только для чтения`        |
 | **assortment** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные товара/услуги/серии, которую представляет собой компонент<br>`+Обязательное при ответе` `+Expand` |
+| **id**         | UUID                                                      | ID компонента<br>`+Обязательное при ответе` `+Только для чтения`                                             |
+| **quantity**   | Int                                                       | Количество товаров/услуг данного вида в компоненте<br>`+Обязательное при ответе` `+Только для чтения`        |
 
 ##### Метаданные Комплектов
 Метаданные Комплектов содержат информацию о дополнительных полях.
@@ -176,13 +176,13 @@
 
 | Название      | Тип                                                       | Описание                                                          |
 | ------------- | :-------------------------------------------------------- | :---------------------------------------------------------------- |
-| **meta**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные объекта<br>`+Обязательное при ответе`                  |
-| **title**     | String(255)                                               | Название Изображения<br>`+Обязательное при ответе`                |
 | **filename**  | String(255)                                               | Имя файла<br>`+Обязательное при ответе`                           |
-| **size**      | Int                                                       | Размер файла в байтах<br>`+Обязательное при ответе`               |
-| **updated**   | DateTime                                                  | Время загрузки файла на сервер<br>`+Обязательное при ответе`      |
+| **meta**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные объекта<br>`+Обязательное при ответе`                  |
 | **miniature** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные миниатюры изображения<br>`+Обязательное при ответе`    |
+| **size**      | Int                                                       | Размер файла в байтах<br>`+Обязательное при ответе`               |
 | **tiny**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные уменьшенного изображения<br>`+Обязательное при ответе` |
+| **title**     | String(255)                                               | Название Изображения<br>`+Обязательное при ответе`                |
+| **updated**   | DateTime                                                  | Время загрузки файла на сервер<br>`+Обязательное при ответе`      |
 
 <h4>Загрузка</h4>
 Для загрузки изображения нужно в теле запроса на [создание](../dictionaries/#suschnosti-komplekt-sozdat-komplekt) или [обновление](../dictionaries/#suschnosti-komplekt-izmenit-komplekt) Комплекта
@@ -1821,8 +1821,8 @@ curl -X GET
 
 | Параметр | Описание                                                                                     |
 | :------- | :------------------------------------------------------------------------------------------- |
-| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Комплекта.            |
 | **id**   | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id компонента Комплекта. |
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Комплекта.            |
 
 ### Получить компонент
 
@@ -1864,8 +1864,8 @@ curl -X GET
 
 | Параметр | Описание                                                                                     |
 | :------- | :------------------------------------------------------------------------------------------- |
-| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Комплекта.            |
 | **id**   | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id компонента Комплекта. |
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Комплекта.            |
 
 Запрос на изменение отдельного компонента Комплекта с указанным id.
 
@@ -1912,8 +1912,8 @@ curl -X GET
 
 | Параметр | Описание                                                                                     |
 | :------- | :------------------------------------------------------------------------------------------- |
-| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Комплекта.            |
 | **id**   | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id компонента Комплекта. |
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Комплекта.            |
 
 > Запрос на удаление отдельного компонента Комплекта с указанным id.
 

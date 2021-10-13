@@ -12,30 +12,30 @@
 
 | Название                | Тип                                                       | Описание                                                                                                    |
 | ----------------------- | :-------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- |
-| **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Договора<br>`+Обязательное при ответе`                                                           |
-| **id**                  | UUID                                                      | ID Договора<br>`+Обязательное при ответе` `+Только для чтения`                                              |
 | **accountId**           | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                        |
-| **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные владельца (Сотрудника)<br>`+Expand`                                                              |
-| **shared**              | Boolean                                                   | Общий доступ<br>`+Обязательное при ответе`                                                                  |
-| **group**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные отдела сотрудника<br>`+Обязательное при ответе` `+Expand`                                        |
-| **updated**             | DateTime                                                  | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Только для чтения`                    |
-| **name**                | String(255)                                               | Номер договора<br>`+Обязательное при ответе` `+Необходимо при создании`                                     |
-| **description**         | String(4096)                                              | Описание Договора                                                                                           |
-| **code**                | String(255)                                               | Код Договора                                                                                                |
-| **externalCode**        | String(255)                                               | Внешний код Договора<br>`+Обязательное при ответе`                                                          |
-| **archived**            | Boolean                                                   | Добавлен ли Договор в архив<br>`+Обязательное при ответе`                                                   |
-| **moment**              | DateTime                                                  | Дата Договора<br>`+Обязательное при ответе`                                                                 |
-| **sum**                 | Int                                                       | Сумма Договора<br>`+Обязательное при ответе`                                                                |
-| **contractType**        | Enum                                                      | Тип Договора. Возможные значения: `Договор комиссии`, `Договор купли-продажи`<br>`+Обязательное при ответе` |
-| **rewardType**          | Enum                                                      | Тип Вознаграждения. Возможные значения: `Процент от суммы продажи`, `Не рассчитывать`                       |
-| **rewardPercent**       | Int                                                       | Вознаграждение в процентах (от 0 до 100)                                                                    |
-| **ownAgent**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные вашего юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                 |
 | **agent**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Контрагента<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                   |
-| **state**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные статуса договора<br>`+Expand`                                                                    |
-| **organizationAccount** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные счета вашего юрлица<br>`+Expand`                                                                 |
 | **agentAccount**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные счета контрагента<br>`+Обязательное при ответе` `+Expand`                                        |
-| **rate**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные валюты<br>`+Обязательное при ответе` `+Expand`                                                   |
+| **archived**            | Boolean                                                   | Добавлен ли Договор в архив<br>`+Обязательное при ответе`                                                   |
 | **attributes**          | Array(Object)                                             | Коллекция доп. полей                                                                                        |
+| **code**                | String(255)                                               | Код Договора                                                                                                |
+| **contractType**        | Enum                                                      | Тип Договора. Возможные значения: `Договор комиссии`, `Договор купли-продажи`<br>`+Обязательное при ответе` |
+| **description**         | String(4096)                                              | Описание Договора                                                                                           |
+| **externalCode**        | String(255)                                               | Внешний код Договора<br>`+Обязательное при ответе`                                                          |
+| **group**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные отдела сотрудника<br>`+Обязательное при ответе` `+Expand`                                        |
+| **id**                  | UUID                                                      | ID Договора<br>`+Обязательное при ответе` `+Только для чтения`                                              |
+| **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Договора<br>`+Обязательное при ответе`                                                           |
+| **moment**              | DateTime                                                  | Дата Договора<br>`+Обязательное при ответе`                                                                 |
+| **name**                | String(255)                                               | Номер договора<br>`+Обязательное при ответе` `+Необходимо при создании`                                     |
+| **organizationAccount** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные счета вашего юрлица<br>`+Expand`                                                                 |
+| **ownAgent**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные вашего юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                 |
+| **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные владельца (Сотрудника)<br>`+Expand`                                                              |
+| **rate**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные валюты<br>`+Обязательное при ответе` `+Expand`                                                   |
+| **rewardPercent**       | Int                                                       | Вознаграждение в процентах (от 0 до 100)                                                                    |
+| **rewardType**          | Enum                                                      | Тип Вознаграждения. Возможные значения: `Процент от суммы продажи`, `Не рассчитывать`                       |
+| **shared**              | Boolean                                                   | Общий доступ<br>`+Обязательное при ответе`                                                                  |
+| **state**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные статуса договора<br>`+Expand`                                                                    |
+| **sum**                 | Int                                                       | Сумма Договора<br>`+Обязательное при ответе`                                                                |
+| **updated**             | DateTime                                                  | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Только для чтения`                    |
 
 Таблица полей, их значений и их значений в JSON представлении:
 
