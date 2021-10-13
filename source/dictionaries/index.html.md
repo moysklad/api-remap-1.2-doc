@@ -10,7 +10,6 @@ toc_footers:
   - <a href='https://github.com/moysklad/java-remap-1.2-doc/issues'>Сообщите об ошибке</a>
 
 includes:
-  - dictionaries/counterparty
   - dictionaries/assortment
   - dictionaries/bonus_operation
   - dictionaries/bonus_program
@@ -23,6 +22,7 @@ includes:
   - dictionaries/images
   - dictionaries/cashier
   - dictionaries/bundle
+  - dictionaries/counterparty
   - dictionaries/variant
   - dictionaries/companysettings
   - dictionaries/usersettings
