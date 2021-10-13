@@ -244,7 +244,7 @@ html, body {
     color: $active-toc-text;
   }
 
-  .second-boarder {
+  .second-border {
     border-left: 1px solid $list-divider;
     margin-left: $nav-padding;
   }
@@ -366,7 +366,6 @@ html, body {
   // I know, it's hackish, but it's the simplist way to make the left
   // half of the content always this background color.
   .dark-box {
-    width: $examples-width;
     background-color: $examples-bg;
     position: absolute;
     right: 0;
@@ -424,6 +423,9 @@ html, body {
   position: relative;
   z-index: 30;
 
+  padding: 0 $main-padding;
+  max-width: $content-max-width;
+
   &:after {
     content: '';
     display: block;
@@ -431,11 +433,7 @@ html, body {
   }
 
   &>h1, &>h2, &>h3, &>h4, &>h5, &>h6, &>p, &>table, &>ul, &>ol, &>aside, &>dl {
-    margin-right: $examples-width;
-    padding: 0 $main-padding;
     box-sizing: border-box;
-    display: block;
-
     @extend %left-col;
   }
 
@@ -445,7 +443,7 @@ html, body {
   }
 
   &>ul, &>ol {
-    padding-left: $main-padding + 15px;
+    padding-left: 15px;
   }
 
   // the div is the tocify hidden div for placeholding stuff
@@ -460,7 +458,7 @@ html, body {
     padding-top: 40px;
     padding-bottom: 48px;
     margin-top: 0;
-    margin-buttom: 0;
+    margin-bottom: 0;
     clear:both;
   }
 
@@ -512,8 +510,7 @@ html, body {
   table {
     margin-bottom: 1em;
     overflow: auto;
-    table-layout: fixed;
-    width: 100% - $examples-width;
+    width: 100%;
     th,td {
       text-align: left;
       vertical-align: top;
@@ -593,7 +590,7 @@ html, body {
   code {
     background: $code-tag-text;
     border: 1px solid $code-tag-border;
-    color: $table-header-text;
+    color: $code-text;
     border-radius: 3px;
     padding-top: 3px;
     padding-bottom: 1px;
@@ -693,14 +690,8 @@ html, body {
     color: rgba(230, 219, 116, 0.9);
 
     margin: 0;
-    width: $examples-width;
-
-    float:right;
-    clear:right;
 
     box-sizing: border-box;
-
-    @extend %right-col;
 
     &>p { margin: 0; }
 
