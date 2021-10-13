@@ -1,6 +1,7 @@
 # Nested unique header generation
 require 'middleman-core/renderers/redcarpet'
 require 'translit'
+require 'digest'
 
 class NestingUniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
 
@@ -29,6 +30,15 @@ class NestingUniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
     block = super
     index = block.index('>')
     BLOCKQUOTE_BUTTON + block.insert(index, DISPLAY_NONE)
+  end
+
+  def codespan(code)
+    tag = code.match /^\+(.+)$/
+    if tag
+      "<code class=tag-#{Digest::MD5.hexdigest(tag[1])[0..5]}>#{tag[1]}</code>"
+    else
+      "<code>#{code}</code>"
+    end
   end
 
 end
