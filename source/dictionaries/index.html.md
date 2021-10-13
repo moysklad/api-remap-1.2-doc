@@ -12,45 +12,45 @@ toc_footers:
 includes:
   - dictionaries/counterparty
   - dictionaries/assortment
-  - dictionaries/currency
-  - dictionaries/images
-  - dictionaries/files
-  - dictionaries/pricetypes
-  - dictionaries/product
-  - dictionaries/service
-  - dictionaries/bundle
-  - dictionaries/productFolder
-  - dictionaries/variant
-  - dictionaries/consignment
-  - dictionaries/contract
-  - dictionaries/project
-  - dictionaries/companysettings
-  - dictionaries/companysubscription
-  - dictionaries/usersettings
-  - dictionaries/expenseitem
-  - dictionaries/country
-  - dictionaries/region
-  - dictionaries/group
-  - dictionaries/discount
   - dictionaries/bonus_operation
   - dictionaries/bonus_program
-  - dictionaries/uom  
-  - dictionaries/employee
-  - dictionaries/custom_role
-  - dictionaries/customentity
-  - dictionaries/store
-  - dictionaries/organization
-  - dictionaries/retailstore
-  - dictionaries/cashier
+  - dictionaries/currency
   - dictionaries/webhook
-  - dictionaries/template
+  - dictionaries/productFolder
+  - dictionaries/contract
+  - dictionaries/uom  
+  - dictionaries/task
+  - dictionaries/images
+  - dictionaries/cashier
+  - dictionaries/bundle
+  - dictionaries/variant
+  - dictionaries/companysettings
+  - dictionaries/usersettings
+  - dictionaries/group
   - dictionaries/print
   - dictionaries/labels
+  - dictionaries/companysubscription
+  - dictionaries/custom_role
+  - dictionaries/customentity
+  - dictionaries/project
   - dictionaries/publication
-  - dictionaries/task
-  - dictionaries/states  
-  - dictionaries/characteristic
+  - dictionaries/region
+  - dictionaries/consignment
+  - dictionaries/discount
+  - dictionaries/store
+  - dictionaries/employee
   - dictionaries/named_filter
+  - dictionaries/states  
+  - dictionaries/expenseitem
+  - dictionaries/country
+  - dictionaries/pricetypes
+  - dictionaries/product
+  - dictionaries/retailstore
+  - dictionaries/service
+  - dictionaries/files
+  - dictionaries/characteristic
+  - dictionaries/template
+  - dictionaries/organization
   
 search: true
 ---  
