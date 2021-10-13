@@ -7,32 +7,32 @@
 
 #### Атрибуты объекта отчета
 
-| Название          | Тип    | Описание                                                                                                                                                                       | Обязательное при ответе   |
-| ----------------- | :----- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------ |
-| **assortment**    | Object | Краткое представление Товара или Модификации в отчете. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-assortment)                                | да                        |
-| **onPeriodStart** | Object | Показатели на начало периода. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)                | да                        |
-| **onPeriodEnd**   | Object | Показатели на конец периода. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)                 | да                        |
-| **income**        | Object | Показатели прихода в течение периода отчета. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome) | да                        |
-| **outcome**       | Object | Показатели расхода в течение периода отчета. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome) | да                        |
+| Название          | Тип    | Описание                                                                                                                                                                                                     |
+| ----------------- | :----- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **assortment**    | Object | Краткое представление Товара или Модификации в отчете. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-assortment)<br>`+Обязательное при ответе`                                |
+| **onPeriodStart** | Object | Показатели на начало периода. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе`                |
+| **onPeriodEnd**   | Object | Показатели на конец периода. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе`                 |
+| **income**        | Object | Показатели прихода в течение периода отчета. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе` |
+| **outcome**       | Object | Показатели расхода в течение периода отчета. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе` |
 
 #### Структура объекта assortment
 
-| Название          | Тип                                                       | Описание                                  | Обязательное при ответе   |
-| ----------------- | :-------------------------------------------------------- | :---------------------------------------- | :------------------------ |
-| **meta**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Товара или Модификации         | да                        |
-| **name**          | String(255)                                               | Наименование Товара или Модификации       | да                        |
-| **code**          | String(255)                                               | Код Товара                                | нет                       |
-| **article**       | String(255)                                               | Артикул Товара                            | нет                       |
-| **productFolder** | Object                                                    | Группа Товара или Модификации             | нет                       |
-| **uom**           | Object                                                    | Единица измерения                         | нет                       |
-| **image**         | Object                                                    | Первое изображение Товара или Модификации | нет                       |
+| Название          | Тип                                                       | Описание                                                          |
+| ----------------- | :-------------------------------------------------------- | :---------------------------------------------------------------- |
+| **meta**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Товара или Модификации<br>`+Обязательное при ответе`   |
+| **name**          | String(255)                                               | Наименование Товара или Модификации<br>`+Обязательное при ответе` |
+| **code**          | String(255)                                               | Код Товара                                                        |
+| **article**       | String(255)                                               | Артикул Товара                                                    |
+| **productFolder** | Object                                                    | Группа Товара или Модификации                                     |
+| **uom**           | Object                                                    | Единица измерения                                                 |
+| **image**         | Object                                                    | Первое изображение Товара или Модификации                         |
 
 #### Структура объекта показатели (onPeriodStart, onPeriodEnd, income, outcome)
 
-| Название     | Тип   | Описание                      | Обязательное при ответе   |
-| ------------ | :---- | :---------------------------- | :------------------------ |
-| **sum**      | Float | Сумма себестоимости           | да                        |
-| **quantity** | Float | Количество единиц товара      | да                        |
+| Название     | Тип   | Описание                                               |
+| ------------ | :---- | :----------------------------------------------------- |
+| **sum**      | Float | Сумма себестоимости<br>`+Обязательное при ответе`      |
+| **quantity** | Float | Количество единиц товара<br>`+Обязательное при ответе` |
 
 #### Атрибуты доступные для фильтрации
 
@@ -259,39 +259,39 @@ curl -X GET
 
 #### Атрибуты объекта отчета
 
-| Название         | Тип    | Описание                                                                                                                                                                 | Обязательное при ответе   |
-| ---------------- | :----- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------ |
-| **assortment**   | Object | Краткое представление Товара или Модификации в отчете. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-assortment) | да                        |
-| **stockByStore** | Object | Детализация оборотов по складам. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-detalizaciq-oborotow-po-skladam)  | да                        |
+| Название         | Тип    | Описание                                                                                                                                                                                               |
+| ---------------- | :----- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **assortment**   | Object | Краткое представление Товара или Модификации в отчете. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-assortment)<br>`+Обязательное при ответе` |
+| **stockByStore** | Object | Детализация оборотов по складам. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-detalizaciq-oborotow-po-skladam)<br>`+Обязательное при ответе`  |
 
 #### Структура объекта assortment
 
-| Название          | Тип                                                       | Описание                                  | Обязательное при ответе   |
-| ----------------- | :-------------------------------------------------------- | :---------------------------------------- | :------------------------ |
-| **meta**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Товара или Модификации         | да                        |
-| **name**          | String(255)                                               | Наименование Товара или Модификации       | да                        |
-| **code**          | String(255)                                               | Код Товара                                | нет                       |
-| **article**       | String(255)                                               | Артикул Товара                            | нет                       |
-| **productFolder** | Object                                                    | Группа Товара или Модификации             | нет                       |
-| **uom**           | Object                                                    | Единица измерения                         | нет                       |
-| **image**         | Object                                                    | Первое изображение Товара или Модификации | нет                       |
+| Название          | Тип                                                       | Описание                                                          |
+| ----------------- | :-------------------------------------------------------- | :---------------------------------------------------------------- |
+| **meta**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Товара или Модификации<br>`+Обязательное при ответе`   |
+| **name**          | String(255)                                               | Наименование Товара или Модификации<br>`+Обязательное при ответе` |
+| **code**          | String(255)                                               | Код Товара                                                        |
+| **article**       | String(255)                                               | Артикул Товара                                                    |
+| **productFolder** | Object                                                    | Группа Товара или Модификации                                     |
+| **uom**           | Object                                                    | Единица измерения                                                 |
+| **image**         | Object                                                    | Первое изображение Товара или Модификации                         |
 
 #### Структура объекта детализация оборотов по складам
 
-| Название          | Тип    | Описание                                                                                                                                                                                                | Обязательное при ответе   |
-| ----------------- | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :------------------------ |
-| **store**         | Object | Склад.                                                                                                                                                                                                  | да                        |
-| **onPeriodStart** | Object | Показатели на начало периода. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)                | да                        |
-| **onPeriodEnd**   | Object | Показатели на конец периода. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)                 | да                        |
-| **income**        | Object | Показатели прихода в течение периода отчета. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome) | да                        |
-| **outcome**       | Object | Показатели расхода в течение периода отчета. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome) | да                        |
+| Название          | Тип    | Описание                                                                                                                                                                                                                              |
+| ----------------- | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **store**         | Object | Склад.<br>`+Обязательное при ответе`                                                                                                                                                                                                  |
+| **onPeriodStart** | Object | Показатели на начало периода. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе`                |
+| **onPeriodEnd**   | Object | Показатели на конец периода. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе`                 |
+| **income**        | Object | Показатели прихода в течение периода отчета. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе` |
+| **outcome**       | Object | Показатели расхода в течение периода отчета. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе` |
 
 #### Структура объекта показатели (onPeriodStart, onPeriodEnd, income, outcome)
 
-| Название     | Тип   | Описание                      | Обязательное при ответе   |
-| ------------ | :---- | :---------------------------- | :------------------------ |
-| **sum**      | Float | Сумма себестоимости           | да                        |
-| **quantity** | Float | Количество единиц товара      | да                        |
+| Название     | Тип   | Описание                                               |
+| ------------ | :---- | :----------------------------------------------------- |
+| **sum**      | Float | Сумма себестоимости<br>`+Обязательное при ответе`      |
+| **quantity** | Float | Количество единиц товара<br>`+Обязательное при ответе` |
 
 #### Атрибуты доступные для фильтрации
 
@@ -514,35 +514,35 @@ curl -X GET
 
 #### Атрибуты объекта отчета
 
-| Название       | Тип    | Описание                                                                                                                                                                    | Обязательное при ответе   |
-| -------------- | :----- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------ |
-| **assortment** | Object | Краткое представление Товара или Модификации в отчете. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-dokumentam-struktura-ob-ekta-assortment) | да                        |
-| **store**      | Object | Склад.                                                                                                                                                                      | да                        |
-| **operation**  | Object | Документ, связанный с Товаром. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-dokumentam-struktura-ob-ekta-operation)                          | да                        |
-| **quantity**   | Float  | Количество товара в документе.                                                                                                                                              | да                        |
-| **cost**       | Float  | Себестоимость товара в документе.                                                                                                                                           | да                        |
-| **sum**        | Float  | Сумма себестоимостей.                                                                                                                                                       | да                        |
+| Название       | Тип    | Описание                                                                                                                                                                                                  |
+| -------------- | :----- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **assortment** | Object | Краткое представление Товара или Модификации в отчете. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-dokumentam-struktura-ob-ekta-assortment)<br>`+Обязательное при ответе` |
+| **store**      | Object | Склад.<br>`+Обязательное при ответе`                                                                                                                                                                      |
+| **operation**  | Object | Документ, связанный с Товаром. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-dokumentam-struktura-ob-ekta-operation)<br>`+Обязательное при ответе`                          |
+| **quantity**   | Float  | Количество товара в документе.<br>`+Обязательное при ответе`                                                                                                                                              |
+| **cost**       | Float  | Себестоимость товара в документе.<br>`+Обязательное при ответе`                                                                                                                                           |
+| **sum**        | Float  | Сумма себестоимостей.<br>`+Обязательное при ответе`                                                                                                                                                       |
 
 #### Структура объекта assortment
 
-| Название          | Тип                                                       | Описание                            | Обязательное при ответе   |
-| ----------------- | :-------------------------------------------------------- | :---------------------------------- | :------------------------ |
-| **meta**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Товара или Модификации   | да                        |
-| **name**          | String(255)                                               | Наименование Товара или Модификации | да                        |
-| **code**          | String(255)                                               | Код Товара                          | нет                       |
-| **article**       | String(255)                                               | Артикул Товара                      | нет                       |
-| **productFolder** | Object                                                    | Группа Товара или Модификации       | нет                       |
-| **uom**           | Object                                                    | Единица измерения                   | нет                       |
+| Название          | Тип                                                       | Описание                                                          |
+| ----------------- | :-------------------------------------------------------- | :---------------------------------------------------------------- |
+| **meta**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Товара или Модификации<br>`+Обязательное при ответе`   |
+| **name**          | String(255)                                               | Наименование Товара или Модификации<br>`+Обязательное при ответе` |
+| **code**          | String(255)                                               | Код Товара                                                        |
+| **article**       | String(255)                                               | Артикул Товара                                                    |
+| **productFolder** | Object                                                    | Группа Товара или Модификации                                     |
+| **uom**           | Object                                                    | Единица измерения                                                 |
 
 #### Структура объекта operation
 
-| Название        | Тип                                                       | Описание                      | Обязательное при ответе   |
-| --------------- | :-------------------------------------------------------- | :---------------------------- | :------------------------ |
-| **meta**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные документа          | да                        |
-| **name**        | String(255)                                               | Номер документа               | да                        |
-| **description** | String(255)                                               | Комментарий к документу       | нет                       |
-| **moment**      | Object                                                    | Дата проведения документа     | да                        |
-| **agent**       | Object                                                    | Контрагент документа          | нет                       |
+| Название        | Тип                                                       | Описание                                                |
+| --------------- | :-------------------------------------------------------- | :------------------------------------------------------ |
+| **meta**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные документа<br>`+Обязательное при ответе`      |
+| **name**        | String(255)                                               | Номер документа<br>`+Обязательное при ответе`           |
+| **description** | String(255)                                               | Комментарий к документу                                 |
+| **moment**      | Object                                                    | Дата проведения документа<br>`+Обязательное при ответе` |
+| **agent**       | Object                                                    | Контрагент документа                                    |
 
 #### Атрибуты доступные для фильтрации
 
