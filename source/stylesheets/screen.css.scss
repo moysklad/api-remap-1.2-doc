@@ -502,6 +502,10 @@ html, body {
     clear: both;
   }
 
+  p {
+    padding-bottom: 16px;
+  }
+
   hr {
     margin: 2em 0;
     border-top: 2px solid $examples-bg;
@@ -514,7 +518,6 @@ html, body {
     width: 100%;
     th,td {
       text-align: left;
-      vertical-align: top;
       line-height: 1.6;
       code {
         white-space: nowrap;
@@ -523,13 +526,13 @@ html, body {
 
     th {
       padding: 5px 10px;
-      vertical-align: top;
       background: $general-table-bg;
       color: $table-header-text;
     }
 
     td {
       padding: 10px;
+      vertical-align: top;
     }
 
     tr {
@@ -537,26 +540,6 @@ html, body {
       &:hover {
         background-color: $general-table-bg;
       }
-    }
-
-    //td:nth-child(1){
-    //  min-width: 10%;
-    //}
-    //
-    //td:nth-child(2){
-    //  min-width: 10%;
-    //}
-
-    //td:nth-child(3){
-    //  min-width: 10%;
-    //}
-
-    td:nth-child(4){
-      width: 128px;
-    }
-
-    td:nth-child(5){
-      width: 96px;
     }
   }
 
@@ -672,12 +655,6 @@ html, body {
     box-sizing: border-box;
 
     &>p { margin: 0; }
-
-    a {
-      color: #fff;
-      text-decoration: none;
-      border-bottom: dashed 1px #ccc;
-    }
   }
 
   pre {
