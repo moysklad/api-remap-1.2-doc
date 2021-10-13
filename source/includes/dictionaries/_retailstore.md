@@ -16,225 +16,225 @@
 
 #### Атрибуты сущности
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
-| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
-|**meta**                |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Точки продаж|&mdash;|да|нет
-|**id**                  |UUID|ID Точки продаж|Только для чтения|да|нет
-|**accountId**           |UUID| ID учетной записи|Только для чтения|да|нет
-|**owner**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|нет|да
-|**shared**              |Boolean|Общий доступ|&mdash;|да|нет
-|**group**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да|да
-|**updated**             |DateTime|Момент последнего обновления Точки продаж|Только для чтения|да|нет
-|**name**                |String(255)|Наименование Точки продаж|Необходимое при создании|да|нет
-|**description**         |String(4096)|Комментарий к Точке продаж|&mdash;|нет|нет
-|**externalCode**        |String(255)|Внешний код Точки продаж|Только для чтения| да|нет
-|**archived**            |Boolean|Добавлена ли Точка продаж в архив|&mdash;| да|нет
-|**address**             |String(255)| Адрес Точки продаж|&mdash;|нет|нет
-|**addressFull**         |Object|Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-adres)|&mdash;|нет|нет
-|**controlShippingStock**|Boolean|Контроль остатков. Не может быть `true`, если `AllowCreateProducts` имеет значение `true`|&mdash;|да|нет
-|**onlyInStock**         |Boolean|Выгружать только товары в наличии. Доступно только при активном контроле остатков. Влияет только на выгрузку остатков в POS API|&mdash;|да|нет
-|**active**              |Boolean|Состояние точки продаж (Включена/Отключена)|&mdash;| да|нет
-|**controlCashierChoice**|Boolean|Выбор продавца|&mdash;| да|нет
-|**discountEnable**      |Boolean|Разрешить скидки|&mdash;| да|нет
-|**discountMaxPercent**  |Int|Максимальная скидка (в процентах)|&mdash;| нет|нет
-|**priceType**           |Object|Тип цен, с которыми будут продаваться товары в рознице|Необходимое при создании| да|нет
-|**cashiers**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Кассиров|&mdash;| да|да
-|**organization**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Юрлица|Необходимое при создании| да|да
-|**store**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Склада|Необходимое при создании| да|да
-|**acquire**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Банка-эквайера по операциям по карте|&mdash;| да|да
-|**bankPercent**         |Int|Комиссия банка-эквайера по операциям по карте (в процентах)|&mdash;| нет|нет
-|**issueOrders**         |Boolean|Выдача заказов|&mdash;| да|нет
-|**sellReserves**        |Boolean|Учет резервов|&mdash;| да|нет
-|**lastOperationNames**  |Array(Object)| Последние операции. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-poslednie-operacii) |Только для чтения|да|нет
-| **ofdEnabled**         |Boolean| Отправлять электронный чек через ОФД |Только для чтения|да|нет
-|**priorityOfdSend**     |Enum| Приоритет отправки электронного чека. Активен только, когда отправка электронных чеков через ОФД включена. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-prioritet-otprawki-alektronnogo-cheka)|&mdash;|да|нет
-| **allowCustomPrice**   |Boolean|Разрешить продажу по свободной цене|Только для чтения|да|нет
-| **authTokenAttached**  |Boolean|Создан ли токен для точки продаж|Только для чтения|да|нет
-|**orderToState**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса, который проставится заказу после проведения продажи на его основании (если указано)|&mdash;| нет|да
-|**customerOrderStates** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статусов, в которых выгружаются заказы в точку продаж (если указано)|&mdash;| нет|да
-|**environment**         |Object|Информация об окружении. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie)|Только для чтения| да|нет
-|**state**               |Object|Информация статусе точки продаж. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status)|Только для чтения| нет|нет
-|**defaultTaxSystem**    |Enum| Код системы налогообложения по умолчанию. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-kod-sistemy-nalogooblozheniq-po-umolchaniu)|&mdash;|да|нет
-|**orderTaxSystem**      |Enum| Код системы налогообложения для заказов. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-kod-sistemy-nalogooblozheniq-dlq-zakazow)|&mdash;|да|нет
-|**demandPrefix**        |String(255)|Префикс номера продаж|&mdash;| нет|нет
-|**allowSellTobaccoWithoutMRC** |Boolean|Разрешить продавать табачную продукцию не по МРЦ|&mdash;|да|нет
-|**tobaccoMrcControlType** |Enum| Контроль МРЦ для табачной продукции. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-kontrolq-mrc-dlq-tabachnoj-produkcii) |&mdash;|да|нет
-|**markingSellingMode** |Enum| Режим продажи маркированной продукции, если используется формат фискальных документов версии 1.2. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-prodazha-markirowannyh-towarow) |&mdash;|да|нет 
-|**allowCreateProducts** |Boolean|Контроль остатков. Не может быть `true`, если `controlShippingStock` имеет значение `true`|&mdash;|да|нет
-|**productFolders**      |Array(Object)|Коллекция Метаданных групп товаров, из которых можно выгружать товары|&mdash;| нет|да
-|**createAgentsTags**    |Array(Object)|Коллекция групп покупателей, представленных в формате строк. Определяет группы, в которые добавляются новые покупатели. Значения `null` игнорируются|&mdash;| нет|нет
-|**filterAgentsTags**    |Array(Object)|Коллекция групп покупателей, представленных в формате строк. Определяет группы, из которых выгружаются покупатели. Значения `null` игнорируются|&mdash;| нет|нет
-|**printAlways**         |Boolean|Всегда печатать кассовые чеки|&mdash;| да|нет
-|**receiptTemplate**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные шаблона печати кассовых чеков|&mdash;| нет|да
-|**createPaymentInOnRetailShiftClosing**|Boolean| Создавать входящий платеж при закрытии смены|&mdash;| да|нет
-|**createCashInOnRetailShiftClosing**|Boolean| Создавать ПКО при закрытии смены|&mdash;| да|нет
-|**returnFromClosedShiftEnabled**|Boolean|Разрешить возвраты в закрытых сменах|&mdash;| да|нет
-|**enableReturnsWithNoReason**|Boolean|Разрешить возвраты без основания|&mdash;| да|нет
-|**createOrderWithState**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса, который будет указан при создании заказа|&mdash;| нет|да
-|**reservePrepaidGoods**|Boolean|Резервировать товары, за которые внесена предоплата|&mdash;| да|нет
-|**fiscalType**     |Enum| Тип формирования чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-formirowaniq-chekow)|&mdash;|да|нет
-|**minionToMasterType**|Enum|Стратегия выбора кассы для фискализации облачных чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-strategiq-wybora-kassy-dlq-fiskalizacii-oblachnyh-chekow)|&mdash;|да|нет
-|**masterRetailStores**|Array(Object)|Ссылка на точки продаж, которые могут фискализировать операции с текущей точки продаж, если `minionToMaster` = `CHOSEN`|&mdash;|нет|да
-|**qrAcquire**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Банка-эквайера по операциям по QR-коду|&mdash;|нет|да
-|**qrBankPercent**     |Double|Комиссия банка-эквайера по операция по QR-коду (в процентах)|&mdash;| нет|нет
-|**qrPayEnabled**      |Boolean|Возможность оплаты по QR-коду на точке продаж|&mdash;| да |нет
-|**idQR**              |String(255)|Идентификатор устройства QR (IdQR) для приложения оплаты по QR|&mdash;| нет |нет
-|**qrTerminalId**      |String(255)|Идентификатор терминала (TerminalID) для приложения оплаты по QR|&mdash;| нет |нет
+| Название                                | Тип                                                       | Описание                                                                                                                                                                                                                                        | Свойство поля в запросе  | Обязательное при ответе   | Expand                    |
+| --------------------------------------- | :-------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------- | :------------------------ | :------------------------ |
+| **meta**                                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Точки продаж                                                                                                                                                                                                                         | &mdash;                  | да                        | нет                       |
+| **id**                                  | UUID                                                      | ID Точки продаж                                                                                                                                                                                                                                 | Только для чтения        | да                        | нет                       |
+| **accountId**                           | UUID                                                      | ID учетной записи                                                                                                                                                                                                                               | Только для чтения        | да                        | нет                       |
+| **owner**                               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Владелец (Сотрудник)                                                                                                                                                                                                                            | &mdash;                  | нет                       | да                        |
+| **shared**                              | Boolean                                                   | Общий доступ                                                                                                                                                                                                                                    | &mdash;                  | да                        | нет                       |
+| **group**                               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Отдел сотрудника                                                                                                                                                                                                                                | &mdash;                  | да                        | да                        |
+| **updated**                             | DateTime                                                  | Момент последнего обновления Точки продаж                                                                                                                                                                                                       | Только для чтения        | да                        | нет                       |
+| **name**                                | String(255)                                               | Наименование Точки продаж                                                                                                                                                                                                                       | Необходимое при создании | да                        | нет                       |
+| **description**                         | String(4096)                                              | Комментарий к Точке продаж                                                                                                                                                                                                                      | &mdash;                  | нет                       | нет                       |
+| **externalCode**                        | String(255)                                               | Внешний код Точки продаж                                                                                                                                                                                                                        | Только для чтения        | да                        | нет                       |
+| **archived**                            | Boolean                                                   | Добавлена ли Точка продаж в архив                                                                                                                                                                                                               | &mdash;                  | да                        | нет                       |
+| **address**                             | String(255)                                               | Адрес Точки продаж                                                                                                                                                                                                                              | &mdash;                  | нет                       | нет                       |
+| **addressFull**                         | Object                                                    | Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-adres)                                                  | &mdash;                  | нет                       | нет                       |
+| **controlShippingStock**                | Boolean                                                   | Контроль остатков. Не может быть `true`, если `AllowCreateProducts` имеет значение `true`                                                                                                                                                       | &mdash;                  | да                        | нет                       |
+| **onlyInStock**                         | Boolean                                                   | Выгружать только товары в наличии. Доступно только при активном контроле остатков. Влияет только на выгрузку остатков в POS API                                                                                                                 | &mdash;                  | да                        | нет                       |
+| **active**                              | Boolean                                                   | Состояние точки продаж (Включена/Отключена)                                                                                                                                                                                                     | &mdash;                  | да                        | нет                       |
+| **controlCashierChoice**                | Boolean                                                   | Выбор продавца                                                                                                                                                                                                                                  | &mdash;                  | да                        | нет                       |
+| **discountEnable**                      | Boolean                                                   | Разрешить скидки                                                                                                                                                                                                                                | &mdash;                  | да                        | нет                       |
+| **discountMaxPercent**                  | Int                                                       | Максимальная скидка (в процентах)                                                                                                                                                                                                               | &mdash;                  | нет                       | нет                       |
+| **priceType**                           | Object                                                    | Тип цен, с которыми будут продаваться товары в рознице                                                                                                                                                                                          | Необходимое при создании | да                        | нет                       |
+| **cashiers**                            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Кассиров                                                                                                                                                                                                                             | &mdash;                  | да                        | да                        |
+| **organization**                        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Юрлица                                                                                                                                                                                                                               | Необходимое при создании | да                        | да                        |
+| **store**                               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Склада                                                                                                                                                                                                                               | Необходимое при создании | да                        | да                        |
+| **acquire**                             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Банка-эквайера по операциям по карте                                                                                                                                                                                                 | &mdash;                  | да                        | да                        |
+| **bankPercent**                         | Int                                                       | Комиссия банка-эквайера по операциям по карте (в процентах)                                                                                                                                                                                     | &mdash;                  | нет                       | нет                       |
+| **issueOrders**                         | Boolean                                                   | Выдача заказов                                                                                                                                                                                                                                  | &mdash;                  | да                        | нет                       |
+| **sellReserves**                        | Boolean                                                   | Учет резервов                                                                                                                                                                                                                                   | &mdash;                  | да                        | нет                       |
+| **lastOperationNames**                  | Array(Object)                                             | Последние операции. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-poslednie-operacii)                                                                                                           | Только для чтения        | да                        | нет                       |
+| **ofdEnabled**                          | Boolean                                                   | Отправлять электронный чек через ОФД                                                                                                                                                                                                            | Только для чтения        | да                        | нет                       |
+| **priorityOfdSend**                     | Enum                                                      | Приоритет отправки электронного чека. Активен только, когда отправка электронных чеков через ОФД включена. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-prioritet-otprawki-alektronnogo-cheka) | &mdash;                  | да                        | нет                       |
+| **allowCustomPrice**                    | Boolean                                                   | Разрешить продажу по свободной цене                                                                                                                                                                                                             | Только для чтения        | да                        | нет                       |
+| **authTokenAttached**                   | Boolean                                                   | Создан ли токен для точки продаж                                                                                                                                                                                                                | Только для чтения        | да                        | нет                       |
+| **orderToState**                        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные статуса, который проставится заказу после проведения продажи на его основании (если указано)                                                                                                                                         | &mdash;                  | нет                       | да                        |
+| **customerOrderStates**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные статусов, в которых выгружаются заказы в точку продаж (если указано)                                                                                                                                                                 | &mdash;                  | нет                       | да                        |
+| **environment**                         | Object                                                    | Информация об окружении. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie)                                                                                                              | Только для чтения        | да                        | нет                       |
+| **state**                               | Object                                                    | Информация статусе точки продаж. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status)                                                                                     | Только для чтения        | нет                       | нет                       |
+| **defaultTaxSystem**                    | Enum                                                      | Код системы налогообложения по умолчанию. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-kod-sistemy-nalogooblozheniq-po-umolchaniu)                                                             | &mdash;                  | да                        | нет                       |
+| **orderTaxSystem**                      | Enum                                                      | Код системы налогообложения для заказов. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-kod-sistemy-nalogooblozheniq-dlq-zakazow)                                                                | &mdash;                  | да                        | нет                       |
+| **demandPrefix**                        | String(255)                                               | Префикс номера продаж                                                                                                                                                                                                                           | &mdash;                  | нет                       | нет                       |
+| **allowSellTobaccoWithoutMRC**          | Boolean                                                   | Разрешить продавать табачную продукцию не по МРЦ                                                                                                                                                                                                | &mdash;                  | да                        | нет                       |
+| **tobaccoMrcControlType**               | Enum                                                      | Контроль МРЦ для табачной продукции. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-kontrolq-mrc-dlq-tabachnoj-produkcii)                                                                    | &mdash;                  | да                        | нет                       |
+| **markingSellingMode**                  | Enum                                                      | Режим продажи маркированной продукции, если используется формат фискальных документов версии 1.2. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-prodazha-markirowannyh-towarow)                 | &mdash;                  | да                        | нет                       |
+| **allowCreateProducts**                 | Boolean                                                   | Контроль остатков. Не может быть `true`, если `controlShippingStock` имеет значение `true`                                                                                                                                                      | &mdash;                  | да                        | нет                       |
+| **productFolders**                      | Array(Object)                                             | Коллекция Метаданных групп товаров, из которых можно выгружать товары                                                                                                                                                                           | &mdash;                  | нет                       | да                        |
+| **createAgentsTags**                    | Array(Object)                                             | Коллекция групп покупателей, представленных в формате строк. Определяет группы, в которые добавляются новые покупатели. Значения `null` игнорируются                                                                                            | &mdash;                  | нет                       | нет                       |
+| **filterAgentsTags**                    | Array(Object)                                             | Коллекция групп покупателей, представленных в формате строк. Определяет группы, из которых выгружаются покупатели. Значения `null` игнорируются                                                                                                 | &mdash;                  | нет                       | нет                       |
+| **printAlways**                         | Boolean                                                   | Всегда печатать кассовые чеки                                                                                                                                                                                                                   | &mdash;                  | да                        | нет                       |
+| **receiptTemplate**                     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные шаблона печати кассовых чеков                                                                                                                                                                                                        | &mdash;                  | нет                       | да                        |
+| **createPaymentInOnRetailShiftClosing** | Boolean                                                   | Создавать входящий платеж при закрытии смены                                                                                                                                                                                                    | &mdash;                  | да                        | нет                       |
+| **createCashInOnRetailShiftClosing**    | Boolean                                                   | Создавать ПКО при закрытии смены                                                                                                                                                                                                                | &mdash;                  | да                        | нет                       |
+| **returnFromClosedShiftEnabled**        | Boolean                                                   | Разрешить возвраты в закрытых сменах                                                                                                                                                                                                            | &mdash;                  | да                        | нет                       |
+| **enableReturnsWithNoReason**           | Boolean                                                   | Разрешить возвраты без основания                                                                                                                                                                                                                | &mdash;                  | да                        | нет                       |
+| **createOrderWithState**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные статуса, который будет указан при создании заказа                                                                                                                                                                                    | &mdash;                  | нет                       | да                        |
+| **reservePrepaidGoods**                 | Boolean                                                   | Резервировать товары, за которые внесена предоплата                                                                                                                                                                                             | &mdash;                  | да                        | нет                       |
+| **fiscalType**                          | Enum                                                      | Тип формирования чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-formirowaniq-chekow)                                                                                                  | &mdash;                  | да                        | нет                       |
+| **minionToMasterType**                  | Enum                                                      | Стратегия выбора кассы для фискализации облачных чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-strategiq-wybora-kassy-dlq-fiskalizacii-oblachnyh-chekow)                                 | &mdash;                  | да                        | нет                       |
+| **masterRetailStores**                  | Array(Object)                                             | Ссылка на точки продаж, которые могут фискализировать операции с текущей точки продаж, если `minionToMaster` = `CHOSEN`                                                                                                                         | &mdash;                  | нет                       | да                        |
+| **qrAcquire**                           | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Банка-эквайера по операциям по QR-коду                                                                                                                                                                                               | &mdash;                  | нет                       | да                        |
+| **qrBankPercent**                       | Double                                                    | Комиссия банка-эквайера по операция по QR-коду (в процентах)                                                                                                                                                                                    | &mdash;                  | нет                       | нет                       |
+| **qrPayEnabled**                        | Boolean                                                   | Возможность оплаты по QR-коду на точке продаж                                                                                                                                                                                                   | &mdash;                  | да                        | нет                       |
+| **idQR**                                | String(255)                                               | Идентификатор устройства QR (IdQR) для приложения оплаты по QR                                                                                                                                                                                  | &mdash;                  | нет                       | нет                       |
+| **qrTerminalId**                        | String(255)                                               | Идентификатор терминала (TerminalID) для приложения оплаты по QR                                                                                                                                                                                | &mdash;                  | нет                       | нет                       |
  
 ##### Код системы налогообложения по умолчанию
 
-| Название               | Описание  |
-| ------------------------------ |:---------------------------|
-|**GENERAL_TAX_SYSTEM** | ОСН
-|**SIMPLIFIED_TAX_SYSTEM_INCOME** | УСН. Доход
-|**SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** | УСН. Доход-Расход
-|**UNIFIED_AGRICULTURAL_TAX** | ЕСХН
-|**PRESUMPTIVE_TAX_SYSTEM** | ЕНВД
-|**PATENT_BASED** | Патент
+| Название                                 | Описание                     |
+| ---------------------------------------- | :--------------------------- |
+| **GENERAL_TAX_SYSTEM**                   | ОСН                          |
+| **SIMPLIFIED_TAX_SYSTEM_INCOME**         | УСН. Доход                   |
+| **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** | УСН. Доход-Расход            |
+| **UNIFIED_AGRICULTURAL_TAX**             | ЕСХН                         |
+| **PRESUMPTIVE_TAX_SYSTEM**               | ЕНВД                         |
+| **PATENT_BASED**                         | Патент                       |
    
 ##### Код системы налогообложения для заказов
  
-| Название               | Описание  |
-| ------------------------------ |:---------------------------|
-|**GENERAL_TAX_SYSTEM** | ОСН
-|**SIMPLIFIED_TAX_SYSTEM_INCOME** | УСН. Доход
-|**SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** | УСН. Доход-Расход
-|**UNIFIED_AGRICULTURAL_TAX** | ЕСХН
-|**PRESUMPTIVE_TAX_SYSTEM** | ЕНВД
-|**PATENT_BASED** | Патент
+| Название                                 | Описание                     |
+| ---------------------------------------- | :--------------------------- |
+| **GENERAL_TAX_SYSTEM**                   | ОСН                          |
+| **SIMPLIFIED_TAX_SYSTEM_INCOME**         | УСН. Доход                   |
+| **SIMPLIFIED_TAX_SYSTEM_INCOME_OUTCOME** | УСН. Доход-Расход            |
+| **UNIFIED_AGRICULTURAL_TAX**             | ЕСХН                         |
+| **PRESUMPTIVE_TAX_SYSTEM**               | ЕНВД                         |
+| **PATENT_BASED**                         | Патент                       |
    
   
 ##### Тип формирования чеков  
   
-| Название               | Описание  |
-| ------------------------------ |:---------------------------|
-| **STANDARD** | Стандартное
-| **MASTER** | Стандартное с обработкой облачных операций
-| **CLOUD** | Облачное  
+| Название                       | Описание                                   |
+| ------------------------------ | :----------------------------------------- |
+| **STANDARD**                   | Стандартное                                |
+| **MASTER**                     | Стандартное с обработкой облачных операций |
+| **CLOUD**                      | Облачное                                   |
  
 ##### Стратегия выбора кассы для фискализации облачных чеков
 
-| Название               | Описание  |
-| ------------------------------ |:---------------------------|
-| **ANY** | Любая мастер касса
-| **SAME_GROUP** | Только кассы из того же отдела
-| **CHOSEN** | Выбранные кассы из списка в поле `masterRetailStores` 
+| Название                       | Описание                                              |
+| ------------------------------ | :---------------------------------------------------- |
+| **ANY**                        | Любая мастер касса                                    |
+| **SAME_GROUP**                 | Только кассы из того же отдела                        |
+| **CHOSEN**                     | Выбранные кассы из списка в поле `masterRetailStores` |
 
 ##### Тип контроля МРЦ для табачной продукции
 
-| Название          | Описание                                                  |
-| ----------------- |:----------------------------------------------------------|
-| **USER_PRICE**    | Не контролировать МРЦ
-| **MRC_PRICE**     | Продавать по МРЦ указанной на пачке
-| **SAME_PRICE**    | Запрещать продажу, если цена продажи не совпадает с МРЦ
+| Название          | Описание                                                    |
+| ----------------- | :---------------------------------------------------------- |
+| **USER_PRICE**    | Не контролировать МРЦ                                       |
+| **MRC_PRICE**     | Продавать по МРЦ указанной на пачке                         |
+| **SAME_PRICE**    | Запрещать продажу, если цена продажи не совпадает с МРЦ     |
 
 ##### Продажа маркированных товаров:
 
-| Название                    | Описание                                                  |
-| --------------------------- |:----------------------------------------------------------|
-| **CORRECT_MARKS_ONLY**      | Только с правильными кодами маркировки
-| **WITHOUT_ERRORS**          | С правильными кодами и те, которые не удалось проверить
-| **ALL**                     | Все – независимо от результатов проверки кодов маркировки
+| Название                    | Описание                                                    |
+| --------------------------- | :---------------------------------------------------------- |
+| **CORRECT_MARKS_ONLY**      | Только с правильными кодами маркировки                      |
+| **WITHOUT_ERRORS**          | С правильными кодами и те, которые не удалось проверить     |
+| **ALL**                     | Все – независимо от результатов проверки кодов маркировки   |
 
 ##### Приоритет отправки электронного чека
 
-| Название               | Описание  |
-| ------------------------------ |:---------------------------|
-|**phone** | Приоритет отправки на телефон
-|**email** | Приоритет отправки на e-mail
-| **none** | Отсутствие отправки чека
+| Название                       | Описание                      |
+| ------------------------------ | :---------------------------- |
+| **phone**                      | Приоритет отправки на телефон |
+| **email**                      | Приоритет отправки на e-mail  |
+| **none**                       | Отсутствие отправки чека      |
 
 ##### Окружение
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
-| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
-|**device**          |String(255)|Информация об устройстве|&mdash;|нет|нет
-|**os**              |String(255)|Информация об операционной системе|&mdash;|нет|нет
-|**software**        |Object|Информация о ПО. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-po)|&mdash;|нет|нет
-|**chequePrinter**   |Object|Данные о ККТ. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-kkt)|&mdash;|нет|нет
-|**paymentTerminal** |String(255)|Информация о платежном терминале|&mdash;|нет|нет
+| Название            | Тип         | Описание                                                                                                                                           | Свойство поля в запросе | Обязательное при ответе   | Expand                    |
+| ------------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------- | :------------------------ | :------------------------ |
+| **device**          | String(255) | Информация об устройстве                                                                                                                           | &mdash;                 | нет                       | нет                       |
+| **os**              | String(255) | Информация об операционной системе                                                                                                                 | &mdash;                 | нет                       | нет                       |
+| **software**        | Object      | Информация о ПО. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-po) | &mdash;                 | нет                       | нет                       |
+| **chequePrinter**   | Object      | Данные о ККТ. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-kkt)   | &mdash;                 | нет                       | нет                       |
+| **paymentTerminal** | String(255) | Информация о платежном терминале                                                                                                                   | &mdash;                 | нет                       | нет                       |
 
 ###### Аттрибуты сущности ПО
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
-| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
-| **name**          |String(255)|Наименование ПО|Необходимое при создании|да|нет
-| **vendor**        |String(255)|Производитель|&mdash;|нет|нет
-| **version**       |String(255)|Версия ПО|&mdash;|нет|нет
+| Название    | Тип         | Описание                      | Свойство поля в запросе  | Обязательное при ответе   | Expand                    |
+| ----------- | :---------- | :---------------------------- | :----------------------- | :------------------------ | :------------------------ |
+| **name**    | String(255) | Наименование ПО               | Необходимое при создании | да                        | нет                       |
+| **vendor**  | String(255) | Производитель                 | &mdash;                  | нет                       | нет                       |
+| **version** | String(255) | Версия ПО                     | &mdash;                  | нет                       | нет                       |
 
 ###### Аттрибуты сущности ККТ
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
-| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
-| **vendor**        |String(255)|Производитель|&mdash;|нет|нет
-| **name**          |String(255)|Наименование ПО|Необходимое при создании|да|нет
-| **serial**         |String(255)|Серийный номер|&mdash;|нет|нет
-|**fiscalDataVersion**       |String(255)|Формат фискальных данных|&mdash;|нет|нет
-|**driver**  |Object|Информация об используемом драйвере. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-drajwer)|&mdash;|нет|нет
-|**fiscalMemory**  |Object|Информация о фискальном накопителе. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-fiskal-nyj-nakopitel)|&mdash;|нет|нет
-|**firmwareVersion**       |String(255)|Версия прошивки ККТ|&mdash;|нет|нет
+| Название              | Тип         | Описание                                                                                                                                                                                | Свойство поля в запросе  | Обязательное при ответе   | Expand                    |
+| --------------------- | :---------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------- | :------------------------ | :------------------------ |
+| **vendor**            | String(255) | Производитель                                                                                                                                                                           | &mdash;                  | нет                       | нет                       |
+| **name**              | String(255) | Наименование ПО                                                                                                                                                                         | Необходимое при создании | да                        | нет                       |
+| **serial**            | String(255) | Серийный номер                                                                                                                                                                          | &mdash;                  | нет                       | нет                       |
+| **fiscalDataVersion** | String(255) | Формат фискальных данных                                                                                                                                                                | &mdash;                  | нет                       | нет                       |
+| **driver**            | Object      | Информация об используемом драйвере. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-drajwer)             | &mdash;                  | нет                       | нет                       |
+| **fiscalMemory**      | Object      | Информация о фискальном накопителе. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-fiskal-nyj-nakopitel) | &mdash;                  | нет                       | нет                       |
+| **firmwareVersion**   | String(255) | Версия прошивки ККТ                                                                                                                                                                     | &mdash;                  | нет                       | нет                       |
 
 ###### Аттрибуты сущности Драйвер
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
-| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
-| **name**          |String(255)|Наименование драйвера|&mdash;|нет|нет
-| **version**       |String(255)|Версия драйвера|&mdash;|нет|нет
+| Название    | Тип         | Описание                      | Свойство поля в запросе | Обязательное при ответе   | Expand                    |
+| ----------- | :---------- | :---------------------------- | :---------------------- | :------------------------ | :------------------------ |
+| **name**    | String(255) | Наименование драйвера         | &mdash;                 | нет                       | нет                       |
+| **version** | String(255) | Версия драйвера               | &mdash;                 | нет                       | нет                       |
 
 ###### Аттрибуты сущности Фискальный накопитель
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
-| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
-|**fiscalDataVersion**|String(255)| Версия фискальной памяти|&mdash;|нет|нет
-|**fiscalValidityDate**|DateTime| Версия фискальной памяти|&mdash;|нет|нет
+| Название               | Тип         | Описание                      | Свойство поля в запросе | Обязательное при ответе   | Expand                    |
+| ---------------------- | :---------- | :---------------------------- | :---------------------- | :------------------------ | :------------------------ |
+| **fiscalDataVersion**  | String(255) | Версия фискальной памяти      | &mdash;                 | нет                       | нет                       |
+| **fiscalValidityDate** | DateTime    | Версия фискальной памяти      | &mdash;                 | нет                       | нет                       |
 
 ##### Аттрибуты сущности Статус
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
-| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
-|**sync** |Object| Состояние синхронизации. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-sinhronizaciq)|&mdash;|нет|нет
-|**lastCheckMoment** |DateTime| Дата и время последней синхронизации|&mdash;|нет|нет
-|**fiscalMemory**  |Object|Информация о фискальном накопителе. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-fiskal-naq-pamqt)|&mdash;|нет|нет
-|**paymentTerminal** |Object| Информация о платежном терминале. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-platezhnyj-terminal)| `Устаревшее`|нет|нет
+| Название            | Тип      | Описание                                                                                                                                                                                              | Свойство поля в запросе | Обязательное при ответе   | Expand                    |
+| ------------------- | :------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------- | :------------------------ | :------------------------ |
+| **sync**            | Object   | Состояние синхронизации. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-sinhronizaciq)                | &mdash;                 | нет                       | нет                       |
+| **lastCheckMoment** | DateTime | Дата и время последней синхронизации                                                                                                                                                                  | &mdash;                 | нет                       | нет                       |
+| **fiscalMemory**    | Object   | Информация о фискальном накопителе. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-fiskal-naq-pamqt)  | &mdash;                 | нет                       | нет                       |
+| **paymentTerminal** | Object   | Информация о платежном терминале. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-platezhnyj-terminal) | `Устаревшее`            | нет                       | нет                       |
 
 ###### Аттрибуты сущности Синхронизация
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
-| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
-|**message** |String(255)| Состояние синхронизации|&mdash;|нет|нет
-|**lastAttempMoment**|DateTime| Дата последней сихронизации (не обязательно успешной)|Необходимое при создании|нет|нет
+| Название             | Тип         | Описание                                              | Свойство поля в запросе  | Обязательное при ответе   | Expand                    |
+| -------------------- | :---------- | :---------------------------------------------------- | :----------------------- | :------------------------ | :------------------------ |
+| **message**          | String(255) | Состояние синхронизации                               | &mdash;                  | нет                       | нет                       |
+| **lastAttempMoment** | DateTime    | Дата последней сихронизации (не обязательно успешной) | Необходимое при создании | нет                       | нет                       |
 
 ###### Аттрибуты сущности Фискальная Память
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
-| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
-|**error** |Object| Информация об ошибке ФН. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-oshibka)|&mdash;|нет|нет
-|**notSendDocCount**|Int| Количество неотправленных документов в ОФД|&mdash;|нет|нет
+| Название            | Тип    | Описание                                                                                                                                                                         | Свойство поля в запросе | Обязательное при ответе   | Expand                    |
+| ------------------- | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------- | :------------------------ | :------------------------ |
+| **error**           | Object | Информация об ошибке ФН. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-oshibka) | &mdash;                 | нет                       | нет                       |
+| **notSendDocCount** | Int    | Количество неотправленных документов в ОФД                                                                                                                                       | &mdash;                 | нет                       | нет                       |
 
 ###### Аттрибуты сущности Ошибка
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
-| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
-|**сode** |Int| Код ошибки ФН|&mdash;|да|нет
-|**message** |String(255)| Описание ошибки|&mdash;|да|нет
+| Название    | Тип         | Описание                      | Свойство поля в запросе | Обязательное при ответе   | Expand                    |
+| ----------- | :---------- | :---------------------------- | :---------------------- | :------------------------ | :------------------------ |
+| **сode**    | Int         | Код ошибки ФН                 | &mdash;                 | да                        | нет                       |
+| **message** | String(255) | Описание ошибки               | &mdash;                 | да                        | нет                       |
 
 ###### Аттрибуты сущности Платежный Терминал
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
-| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
-|**acquiringType**|String(255)| Информация о типе эквайера (например: inpas/payme)|&mdash;|нет|нет
+| Название          | Тип         | Описание                                           | Свойство поля в запросе | Обязательное при ответе   | Expand                    |
+| ----------------- | :---------- | :------------------------------------------------- | :---------------------- | :------------------------ | :------------------------ |
+| **acquiringType** | String(255) | Информация о типе эквайера (например: inpas/payme) | &mdash;                 | нет                       | нет                       |
 
 ###### Аттрибуты сущности Адрес
 
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
-| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
-|**postalCode**      |String(6)|Почтовый индекс|&mdash;|нет|нет
-|**country**      |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные страны|&mdash;|нет|нет
-|**region**      |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные региона|&mdash;|нет|нет
-|**city**      |String(255)|Город|&mdash;|нет|нет
-|**street**      |String(255)|Улица|&mdash;|нет|нет
-|**house**      |String(30)|Дом|&mdash;|нет|нет
-|**apartment**      |String(30)|Квартира|&mdash;|нет|нет
-|**addInfo**      |String(255)|Другое|&mdash;|нет|нет
-|**comment**      |String(255)|Комментарий|&mdash;|нет|нет
+| Название       | Тип                                                       | Описание                      | Свойство поля в запросе | Обязательное при ответе  | Expand                   |
+| -------------- | :-------------------------------------------------------- | :---------------------------- | :---------------------- | :----------------------- | :----------------------- |
+| **postalCode** | String(6)                                                 | Почтовый индекс               | &mdash;                 | нет                      | нет                      |
+| **country**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные страны             | &mdash;                 | нет                      | нет                      |
+| **region**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные региона            | &mdash;                 | нет                      | нет                      |
+| **city**       | String(255)                                               | Город                         | &mdash;                 | нет                      | нет                      |
+| **street**     | String(255)                                               | Улица                         | &mdash;                 | нет                      | нет                      |
+| **house**      | String(30)                                                | Дом                           | &mdash;                 | нет                      | нет                      |
+| **apartment**  | String(30)                                                | Квартира                      | &mdash;                 | нет                      | нет                      |
+| **addInfo**    | String(255)                                               | Другое                        | &mdash;                 | нет                      | нет                      |
+| **comment**    | String(255)                                               | Комментарий                   | &mdash;                 | нет                      | нет                      |
 
 Строка адреса является конкатенацией полей структурированного адреса в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
 При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
@@ -245,10 +245,10 @@
 ##### Последние операции
 Поле **lastOperationNames** представляет собой массив объектов со следующей структурой:
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
-| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
-|**entity** |String(255) |Ключевое слово, обозначающее тип последней операции|Только для чтения|нет|нет
-|**name** |String(255)| Наименование (номер) последней операции|Только для чтения|нет|нет
+| Название   | Тип         | Описание                                            | Свойство поля в запросе | Обязательное при ответе   | Expand                    |
+| ---------- | :---------- | :-------------------------------------------------- | :---------------------- | :------------------------ | :------------------------ |
+| **entity** | String(255) | Ключевое слово, обозначающее тип последней операции | Только для чтения       | нет                       | нет                       |
+| **name**   | String(255) | Наименование (номер) последней операции             | Только для чтения       | нет                       | нет                       |
 
 Представляет собой краткий список последних операций на данной точке продаж. Если на данной точке не созданы документы Продажа/Внесение/Выплата/Возврат/Смена, то в ответе данные документы будут с номерами по умолчанию – 00001.
 
@@ -259,31 +259,31 @@
 
 ###### Кассир
 
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
-| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
-|**meta**                |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Кассира|&mdash;|да|нет
-|**id**                 |UUID|ID Кассира|Только для чтения|да|нет
-|**accountId**          |UUID| ID учетной записи Кассира|Только для чтения|да|нет
-|**employee**           |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные сотрудника, которого представляет собой кассир|Только для чтения|да|да
-|**retailStore**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные точки продаж, к которой прикреплен кассир|Только для чтения|да|да
+| Название        | Тип                                                       | Описание                                                  | Свойство поля в запросе | Обязательное при ответе   | Expand                    |
+| --------------- | :-------------------------------------------------------- | :-------------------------------------------------------- | :---------------------- | :------------------------ | :------------------------ |
+| **meta**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Кассира                                        | &mdash;                 | да                        | нет                       |
+| **id**          | UUID                                                      | ID Кассира                                                | Только для чтения       | да                        | нет                       |
+| **accountId**   | UUID                                                      | ID учетной записи Кассира                                 | Только для чтения       | да                        | нет                       |
+| **employee**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные сотрудника, которого представляет собой кассир | Только для чтения       | да                        | да                        |
+| **retailStore** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные точки продаж, к которой прикреплен кассир      | Только для чтения       | да                        | да                        |
 
 
 ### Получить точки продаж 
 Запрос всех Розничных точек продаж данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-| Название  | Тип | Описание                    |
-| --------- |:----|:----------------------------|
-|**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
-|**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
-|**rows** |Array(Object)|Массив JSON объектов, представляющих Точки продаж.
+| Название    | Тип                                                       | Описание                                           |
+| ----------- | :-------------------------------------------------------- | :------------------------------------------------- |
+| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче,                               |
+| **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.       |
+| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих Точки продаж. |
 
 **Параметры**
 
-| Параметр                | Описание  |
-| ------------------------------ |:---------------------------|
-|**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
-|**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+| Параметр                       | Описание                                                                                                                               |
+| ------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------- |
+| **limit**                      | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
+| **offset**                     | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
 
 > Получить точки продаж
 
@@ -1541,9 +1541,9 @@ curl -X GET
 
 **Параметры**
 
-|Параметр   |Описание   | 
-|:----|:----|
-|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Точки продаж.|
+| Параметр | Описание                                                                             |
+| :------- | :----------------------------------------------------------------------------------- |
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Точки продаж. |
 
 > Запрос на удаление Розничной точки продаж с указанным id.
 
@@ -1605,9 +1605,9 @@ curl -X POST
 
 **Параметры**
 
-|Параметр   |Описание   | 
-|:----|:----|
-|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Точки продаж.|
+| Параметр | Описание                                                                             |
+| :------- | :----------------------------------------------------------------------------------- |
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Точки продаж. |
  
 > Запрос на получение отдельной Розничной точки продаж с указанным id.
 
