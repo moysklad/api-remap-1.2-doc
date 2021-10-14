@@ -524,6 +524,16 @@ html, body {
       code {
         white-space: nowrap;
       }
+
+      code[class*='tag'] {
+        display: inline-block;
+        margin-top: 8px;
+        line-height: normal;
+      }
+
+      code[class*='tag'] + code[class*='tag'] {
+        margin-left: 8px;
+      }
     }
 
     th:last-child, td:last-child {
@@ -586,10 +596,7 @@ html, body {
     border: 1px solid $code-tag-border;
     color: $code-text;
     border-radius: 3px;
-    padding-top: 3px;
-    padding-bottom: 1px;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding: 2px 8px;
     word-break: break-word;
     @extend %break-words;
     @extend %code-font;
@@ -695,6 +702,10 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    p {
+      text-align: left;
+    }
 
     &>span {
       align-self: end;
