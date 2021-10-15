@@ -166,10 +166,10 @@ under the License.
     });
   });
 
-  // Функция показа/скрытия блоков кода
+  // Показ / скрытие блоков кода
   $(function() {
     $(".collapse-button").on("click", function() {
-      $( this ).parent().next().toggle();
+      $( this ).next().toggle();
       $( this ).toggleClass("show");
       return false;
     });
