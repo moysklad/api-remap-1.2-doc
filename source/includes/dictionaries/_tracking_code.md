@@ -16,7 +16,7 @@
 |**trackingCodes**    |Array(Object)|Массив вложенных кодов маркировки|-|нет|нет
 
 Пример запроса:
-Сущности и документы - ```/entity/[entityType]/[entityId]/positions[positionId]/trackingCodes```
+Сущности и документы - ```/entity/[entityType]/[entityId]/positions/[positionId]/trackingCodes```
 
 ### Получить Коды маркировки позиции документа
 
