@@ -20,6 +20,7 @@ includes:
   - dictionaries/uom  
   - dictionaries/task
   - dictionaries/images
+  - dictionaries/saleschannel
   - dictionaries/cashier
   - dictionaries/bundle
   - dictionaries/counterparty
