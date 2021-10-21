@@ -2,6 +2,7 @@
 @import 'normalize';
 @import 'variables';
 @import 'icon-font';
+@import 'tags.css.scss';
 // @import 'rtl'; // uncomment to switch to RTL format
 
 /*
@@ -244,7 +245,7 @@ html, body {
     color: $active-toc-text;
   }
 
-  .second-boarder {
+  .second-border {
     border-left: 1px solid $list-divider;
     margin-left: $nav-padding;
   }
@@ -366,7 +367,6 @@ html, body {
   // I know, it's hackish, but it's the simplist way to make the left
   // half of the content always this background color.
   .dark-box {
-    width: $examples-width;
     background-color: $examples-bg;
     position: absolute;
     right: 0;
@@ -424,6 +424,9 @@ html, body {
   position: relative;
   z-index: 30;
 
+  padding: 0 $main-padding;
+  max-width: $content-max-width;
+
   &:after {
     content: '';
     display: block;
@@ -431,11 +434,7 @@ html, body {
   }
 
   &>h1, &>h2, &>h3, &>h4, &>h5, &>h6, &>p, &>table, &>ul, &>ol, &>aside, &>dl {
-    margin-right: $examples-width;
-    padding: 0 $main-padding;
     box-sizing: border-box;
-    display: block;
-
     @extend %left-col;
   }
 
@@ -445,7 +444,7 @@ html, body {
   }
 
   &>ul, &>ol {
-    padding-left: $main-padding + 15px;
+    padding-left: 15px;
   }
 
   // the div is the tocify hidden div for placeholding stuff
@@ -460,7 +459,7 @@ html, body {
     padding-top: 40px;
     padding-bottom: 48px;
     margin-top: 0;
-    margin-buttom: 0;
+    margin-bottom: 0;
     clear:both;
   }
 
@@ -470,10 +469,10 @@ html, body {
 
   h2 {
     @extend %header-font;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 24px;
     padding-bottom: 32px;
-    padding-top: 48px;
+    padding-top: 64px;
     clear:both;
   }
 
@@ -490,8 +489,9 @@ html, body {
 
   h3, h4, h5, h6 {
     @extend %header-font;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 24px;
+    padding-top: 58px;
     padding-bottom: 16px;
     clear:both;
   }
@@ -503,6 +503,10 @@ html, body {
     clear: both;
   }
 
+  p {
+    padding-bottom: 16px;
+  }
+
   hr {
     margin: 2em 0;
     border-top: 2px solid $examples-bg;
@@ -512,26 +516,43 @@ html, body {
   table {
     margin-bottom: 1em;
     overflow: auto;
-    table-layout: fixed;
-    width: 100% - $examples-width;
-    th,td {
+    width: 100%;
+
+    th, td {
       text-align: left;
-      vertical-align: top;
       line-height: 1.6;
       code {
         white-space: nowrap;
       }
+
+      code[class*='tag'] {
+        display: inline-block;
+        margin-top: 8px;
+        line-height: normal;
+      }
+
+      code[class*='tag'] + code[class*='tag'] {
+        margin-left: 8px;
+      }
+    }
+
+    th:last-child, td:last-child {
+      width: 100%;
     }
 
     th {
       padding: 5px 10px;
-      vertical-align: top;
       background: $general-table-bg;
       color: $table-header-text;
     }
 
     td {
       padding: 10px;
+      vertical-align: top;
+    }
+
+    th + th, td + td {
+      padding-left: 38px;
     }
 
     tr {
@@ -539,26 +560,6 @@ html, body {
       &:hover {
         background-color: $general-table-bg;
       }
-    }
-
-    //td:nth-child(1){
-    //  min-width: 10%;
-    //}
-    //
-    //td:nth-child(2){
-    //  min-width: 10%;
-    //}
-
-    //td:nth-child(3){
-    //  min-width: 10%;
-    //}
-
-    td:nth-child(4){
-      width: 128px;
-    }
-
-    td:nth-child(5){
-      width: 96px;
     }
   }
 
@@ -593,12 +594,9 @@ html, body {
   code {
     background: $code-tag-text;
     border: 1px solid $code-tag-border;
-    color: $table-header-text;
+    color: $code-text;
     border-radius: 3px;
-    padding-top: 3px;
-    padding-bottom: 1px;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding: 2px 8px;
     word-break: break-word;
     @extend %break-words;
     @extend %code-font;
@@ -651,29 +649,6 @@ html, body {
     border: 1px solid #F7E633;
     background: linear-gradient(to top left, #F7E633 0%, #F1D32F 100%);
   }
-
-  .collapse-button {
-    float: right;
-
-    .close {
-      display: none;
-      cursor: pointer;
-    }
-
-    .open {
-      cursor: pointer;
-    }
-
-    &.show {
-      .close {
-        display: inline;
-      }
-
-      .open {
-        display: none;
-      }
-    }
-  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -693,22 +668,10 @@ html, body {
     color: rgba(230, 219, 116, 0.9);
 
     margin: 0;
-    width: $examples-width;
-
-    float:right;
-    clear:right;
 
     box-sizing: border-box;
 
-    @extend %right-col;
-
     &>p { margin: 0; }
-
-    a {
-      color: #fff;
-      text-decoration: none;
-      border-bottom: dashed 1px #ccc;
-    }
   }
 
   pre {
@@ -717,20 +680,92 @@ html, body {
   }
 
   blockquote {
-    &>p {
-      background-color: $code-annotation-bg;
-      padding: $code-annotation-padding 2em;
-      color: rgba(255, 255, 255, 0.9);
-    }
-    &>span {
-      background-color: $code-annotation-bg;
-      padding: 0 2em $code-annotation-padding;
-      color: rgba(255, 255, 255, 0.9);
+    background-color: $code-annotation-bg;
+    color: rgba(255, 255, 255, 0.9);
+    padding: $code-annotation-padding 24px;
+
+    p {
+      padding: 0;
     }
   }
 
-  pre + blockquote {
-    border-top: 4px solid #19252f;
+  .collapse-button {
+    background-color: $code-annotation-bg;
+    color: rgba(255, 255, 255, 0.9);
+    padding: $code-annotation-padding 24px;
+    width: 100%;
+
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    p {
+      text-align: left;
+    }
+
+    &>span {
+      align-self: end;
+    }
+
+    span span {
+      padding-right: 5px;
+    }
+
+    .close {
+      display: none;
+    }
+
+    .open {
+      display: inline;
+    }
+
+    &.show {
+      .close {
+        display: inline;
+      }
+
+      .open {
+        display: none;
+      }
+    }
+
+    img {
+      transform: scaleY(-1);
+    }
+
+    .normal {
+      display: inline;
+    }
+
+    .hover {
+      display: none;
+    }
+  }
+
+  .collapse-button:hover {
+    color: $collapse-button-active;
+
+    .normal {
+      display: none;
+    }
+
+    .hover {
+      display: inline;
+    }
+  }
+
+  .collapse-button.show {
+    img {
+      transform: none;
+    }
+  }
+
+  pre + blockquote, pre + button {
+    margin-top: 2px;
   }
 }
 
