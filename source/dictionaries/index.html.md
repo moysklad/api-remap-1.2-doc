@@ -21,6 +21,7 @@ includes:
   - dictionaries/task
   - dictionaries/images
   - dictionaries/cashier
+  - dictionaries/tracking_code
   - dictionaries/bundle
   - dictionaries/counterparty
   - dictionaries/variant
