@@ -894,6 +894,7 @@ curl -X GET
 | **customerOrder**             | OPERATION            | Все ALL                                     | Заказ покупателям                      |
 | **demand**                    | OPERATION            | Все ALL                                     | Отгрузка                               |
 | **emissionOrder**             | DICTIONARY           | Все NO                                      | Заказ кодов маркировки                 |
+| **atkAggregation**            | DICTIONARY           | Все NO                                      | Формирование АТК                       |
 | **employee**                  | BASE                 | Все ALL                                     | Сотрудники                             |
 | **enrollOrder**               | DICTIONARY           | Все NO                                      | Ввод в оборот кодов маркировки         |
 | **enter**                     | OPERATION            | Все ALL                                     | Оприходование                          |
@@ -1109,6 +1110,13 @@ curl -X GET
                 "approve": "ALL"
             },
             "emissionOrder": {
+                "view": "NO",
+                "print": "NO",
+                "create": "NO",
+                "update": "NO",
+                "delete": "NO"
+            },
+            "atkAggregation": {
                 "view": "NO",
                 "print": "NO",
                 "create": "NO",
