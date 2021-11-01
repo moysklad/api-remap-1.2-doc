@@ -22,6 +22,7 @@ includes:
   - dictionaries/images
   - dictionaries/saleschannel
   - dictionaries/cashier
+  - dictionaries/tracking_code
   - dictionaries/bundle
   - dictionaries/counterparty
   - dictionaries/variant

@@ -136,9 +136,13 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
-### 20-10-2021
+### 01-11-2021
 #### Добавлено
 - Эндпоинт для [Каналов продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kanal-prodazh)
+
+### 21-10-2021
+#### Добавлено
+- Добавлен [эндпоинт](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kody-markirowki) для работы с Кодами маркировки в позиции документа
 
 ### 15-10-2021
 #### Добавлено
