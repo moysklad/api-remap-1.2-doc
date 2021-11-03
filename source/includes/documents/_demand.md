@@ -156,15 +156,15 @@
 
 | Название       | Тип                                                       | Описание           |
 | -------------- | :-------------------------------------------------------- | :----------------- |
-| **addInfo**    | String(255)                                               | Другое  <br/> `+Поддержка в change-handler`           |
-| **apartment**  | String(30)                                                | Квартира  <br/> `+Поддержка в change-handler`         |
-| **city**       | String(255)                                               | Город  <br/> `+Поддержка в change-handler`            |
-| **comment**    | String(255)                                               | Комментарий  <br/> `+Поддержка в change-handler`      |
-| **country**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные страны <br/> `+Поддержка в change-handler`  |
-| **house**      | String(30)                                                | Дом  <br/> `+Поддержка в change-handler`              |
-| **postalCode** | String(6)                                                 | Почтовый индекс <br/> `+Поддержка в change-handler`   |
-| **region**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные региона <br/> `+Поддержка в change-handler` |
-| **street**     | String(255)                                               | Улица  <br/> `+Поддержка в change-handler`            |
+| **addInfo**    | String(255)                                               | Другое             |
+| **apartment**  | String(30)                                                | Квартира           |
+| **city**       | String(255)                                               | Город              |
+| **comment**    | String(255)                                               | Комментарий        |
+| **country**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные страны  |
+| **house**      | String(30)                                                | Дом                |
+| **postalCode** | String(6)                                                 | Почтовый индекс    |
+| **region**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные региона |
+| **street**     | String(255)                                               | Улица              |
 
 Строка адреса является конкатенацией полей структурированного адреса в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
 При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
