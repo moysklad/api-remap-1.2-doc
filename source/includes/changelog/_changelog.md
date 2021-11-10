@@ -140,8 +140,8 @@
 #### Добавлено
 - Эндпоинт для [Каналов продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kanal-prodazh)
 
-## 01-11-2021
-### Добавлено
+### 01-11-2021
+#### Добавлено
 - Поддержка протокола change-handler в [Отгрузке](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka).
 
 ### 21-10-2021
