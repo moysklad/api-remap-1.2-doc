@@ -136,10 +136,14 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
-### 02-11-2021
+### 16-11-2021
 #### Добавлено
 - Возможность получения и применения [сохраненных фильтров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sohranennye-fil-try) других сотрудников для администраторов
 - Описание ошибок [63004 и 63005](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-sohranennogo-fil-tra)
+
+### 08-11-2021
+#### Добавлено
+- Эндпоинт для [Каналов продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kanal-prodazh)
 
 ### 21-10-2021
 #### Добавлено
