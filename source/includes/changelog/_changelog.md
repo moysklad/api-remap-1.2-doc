@@ -137,6 +137,10 @@
 Список последних изменений в API Remap 1.2
 
 ### 16-11-2021
+#### Изменено
+- Изменено максимальное ограничение на получение записей [аудита](https://dev.moysklad.ru/doc/api/remap/1.2/other/#audit) с 25 на 100 записей
+
+### 16-11-2021
 #### Добавлено
 - Поддержка протокола update-provider в [Заказе покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq).
 
