@@ -6,9 +6,25 @@
 - Возможность получения и применения [сохраненных фильтров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sohranennye-fil-try) других сотрудников для администраторов
 - Описание ошибок [63004 и 63005](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-sohranennogo-fil-tra)
 
+## 16-11-2021
+### Изменено
+- Изменено максимальное ограничение на получение записей [аудита](https://dev.moysklad.ru/doc/api/remap/1.2/other/#audit) с 25 на 100 записей
+
+## 16-11-2021
+### Добавлено
+- Поддержка протокола update-provider в [Заказе покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq).
+
+## 15-11-2021
+### Добавлено
+- Добавлено поле `salesChannel` в [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq), [Отгрузку](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka) и [Возврат покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-pokupatelq)
+
 ## 08-11-2021
 ### Добавлено
 - Эндпоинт для [Каналов продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kanal-prodazh)
+
+## 01-11-2021
+### Добавлено
+- Поддержка протокола change-handler в [Отгрузке](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka).
 
 ## 21-10-2021
 ### Добавлено
