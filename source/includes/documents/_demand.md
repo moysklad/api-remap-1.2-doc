@@ -35,6 +35,7 @@
 | **project**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные проекта<br>`+Expand` `+Change-handler`                                                                                                                                         |
 | **published**           | Boolean                                                   | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                              |
 | **rate**                | Object                                                    | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе` `+Change-handler`                                                     |
+| **salesChannel**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные канала продаж<br>`+Expand`                                                                                                                                   |
 | **shared**              | Boolean                                                   | Общий доступ<br>`+Обязательное при ответе`                                                                                                                               |
 | **shipmentAddress**     | String(255)                                               | Адрес доставки Отгрузки  <br/> `+Change-handler`                                                                                                                                               |
 | **shipmentAddressFull** | Object                                                    | Адрес доставки Отгрузки с детализацией по отдельным полям. [Подробнее тут](../documents/#dokumenty-otgruzka-otgruzki-attributy-suschnosti-adres-dostawki) `+Change-handler`              |
@@ -304,6 +305,13 @@ curl -X GET
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/850efc5f-f504-11e5-8a84-bae500000161/accounts/850f0617-f504-11e5-8a84-bae500000162",
           "type": "account",
+          "mediaType": "application/json"
+        }
+      },
+      "salesChannel": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+          "type": "saleschannel",
           "mediaType": "application/json"
         }
       },
@@ -1525,6 +1533,13 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
+    "salesChannel": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+        "type": "saleschannel",
+        "mediaType": "application/json"
+      }
+    },
     "created": "2016-08-25 19:55:00",
     "printed": true,
     "published": true,
@@ -2253,6 +2268,13 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
+  "salesChannel": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+      "type": "saleschannel",
+      "mediaType": "application/json"
+    }
+  },
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/demand/405f69c0-019e-11e6-9464-e4de00000085/positions",
@@ -2519,6 +2541,13 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
+  "salesChannel": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+      "type": "saleschannel",
+      "mediaType": "application/json"
+    }
+  },
   "created": "2016-08-25 19:55:00",
   "printed": true,
   "published": true,
@@ -2758,6 +2787,13 @@ curl -X GET
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/9794d400-f689-11e5-8a84-bae500000078/accounts/9794f7a0-f689-11e5-8a84-bae500000079",
       "type": "account",
+      "mediaType": "application/json"
+    }
+  },
+  "salesChannel": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+      "type": "saleschannel",
       "mediaType": "application/json"
     }
   },
@@ -3026,6 +3062,13 @@ curl -X GET
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/9794d400-f689-11e5-8a84-bae500000078/accounts/9794f7a0-f689-11e5-8a84-bae500000079",
       "type": "account",
+      "mediaType": "application/json"
+    }
+  },
+  "salesChannel": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+      "type": "saleschannel",
       "mediaType": "application/json"
     }
   },

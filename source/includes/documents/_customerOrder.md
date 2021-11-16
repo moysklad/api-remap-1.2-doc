@@ -34,6 +34,7 @@
 | **published**             | Boolean                                                   | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                            |
 | **rate**                  | Object                                                    | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе` `+Change-handler`                                                                     |
 | **reservedSum**           | Float                                                     | Сумма товаров в резерве<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                              |
+| **salesChannel**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные канала продаж<br>`+Expand`                                                                                                                                                                                 |
 | **shared**                | Boolean                                                   | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                                            |
 | **shipmentAddress**       | String(255)                                               | Адрес доставки Заказа покупателя<br>`+Change-handler`                                                                                                                                                     |
 | **shipmentAddressFull**   | Object                                                    | Адрес доставки Заказа покупателя с детализацией по отдельным полям. [Подробнее тут](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-attributy-suschnosti-adres-dostawki)<br>`+Change-handler` |
@@ -263,6 +264,13 @@ curl -X GET
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/9794d400-f689-11e5-8a84-bae500000078/accounts/9794f7a0-f689-11e5-8a84-bae500000079",
           "type": "account",
+          "mediaType": "application/json"
+        }
+      },
+      "salesChannel": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+          "type": "saleschannel",
           "mediaType": "application/json"
         }
       },
@@ -1691,6 +1699,13 @@ curl -X GET
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/9794d400-f689-11e5-8a84-bae500000078/accounts/9794f7a0-f689-11e5-8a84-bae500000079",
       "type": "account",
+      "mediaType": "application/json"
+    }
+  },
+  "salesChannel": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+      "type": "saleschannel",
       "mediaType": "application/json"
     }
   },
