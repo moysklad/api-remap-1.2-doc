@@ -136,7 +136,7 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
-### 10-11-2021
+### 16-11-2021
 #### Добавлено
 - Поддержка протокола update-provider в [Заказе покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq).
 
