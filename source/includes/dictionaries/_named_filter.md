@@ -84,6 +84,66 @@
 }
 ```
 
+### Получить список фильтров другого пользователя
+
+Пользователь с правами администратора или приложение имеют возможность запрашивать сохраненные фильтры других сотрудников на аккаунте. 
+Для этого нужно в параметрах запроса указать параметр `owner={href сотрудника}`.
+
+> Пример запроса на получение списка фильтров другого пользователя
+
+```shell
+  curl -X GET
+    "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter?owner=https://online.moysklad.ru/api/remap/1.2/entity/employee/25863410-ca86-11eb-ac12-000d00000234"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"  
+```
+
+> Response 200
+
+```json
+ {
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter",
+    "type": "namedfilter",
+    "mediaType": "application/json",
+    "size": 1,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019",
+        "type": "namedfilter",
+        "mediaType": "application/json"
+      },
+      "owner": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/25863410-ca86-11eb-ac12-000d00000234",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=25863410-ca86-11eb-ac12-000d00000234"
+        }
+      },
+      "accountId": "22ef0c54-c513-11eb-ac12-000700000002",
+      "id": "b5863410-ca86-11eb-ac12-000d00000019",
+      "name": "filterName"
+    }
+  ]
+}
+```
+
 ### Получить фильтр по id
 
 **Параметры**
@@ -140,7 +200,7 @@
 
 Ограничения:
 
-- Только создатель фильтра может его применять.
+- Фильтры, созданные другими пользователями может применять только пользователь с правами администратора или приложение.
 - В одном запросе можно применять только один сохраненный фильтр
 - Сохраненный фильтр несовместим с параметрами запроса `filter`, `search`, `order`
 - На эндпоинте можно применять только тот сохраненный фильтр, который можно получить через `/entity/[entityType]/namedfilter`

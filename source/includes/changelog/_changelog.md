@@ -137,6 +137,11 @@
 Список последних изменений в API Remap 1.2
 
 ### 16-11-2021
+#### Добавлено
+- Возможность получения и применения [сохраненных фильтров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sohranennye-fil-try) других сотрудников для администраторов
+- Описание ошибок [63004 и 63005](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-sohranennogo-fil-tra)
+
+### 16-11-2021
 #### Изменено
 - Изменено максимальное ограничение на получение записей [аудита](https://dev.moysklad.ru/doc/api/remap/1.2/other/#audit) с 25 на 100 записей
 
