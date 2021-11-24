@@ -218,7 +218,7 @@ curl -X POST
 
 ### Создать системную валюту
 
-Системной является валюта, для которой в Моем Складе уже есть все параметры и возможность автоматического обновления курса. 
+Системной является валюта, для которой в МоемСкладе уже есть все параметры и возможность автоматического обновления курса. 
 Для добавления системной валюты необходимо указать **system**=**true** и один из параметров **code** или **isoCode**.
 Дополнительно можно указать **rateUpdateType** и **margin**
 
@@ -230,7 +230,7 @@ curl -X POST
   -H "Authorization: Basic <Credentials>"
   -H 'Content-Type: application/json' 
   -d '{
-  "system": "true",
+  "system": true,
   "isoCode": "EUR"
 }
 '
@@ -283,7 +283,7 @@ curl -X POST
   -H "Authorization: Basic <Credentials>"
   -H 'Content-Type: application/json' 
   -d '{
-  "system": "true",
+  "system": true,
   "code": "978",
   "rateUpdateType": "manual"
 }
