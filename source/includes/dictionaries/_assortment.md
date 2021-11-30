@@ -36,9 +36,9 @@
 | **updated**           | параметр для фильтрации по времени последнего обновления сущностей. Можно использовать операторы `=`, `<`, `<=`, `>`, `>=`. Действие строгих операторов синонимично нестрогим. Передается в виде строки в [формате дата-время](../#mojsklad-json-api-obschie-swedeniq-format-daty-i-wremeni).                                                              |
 | **updatedBy**         | параметр для фильтрации по автору последнего обновления. Можно использовать операторы `=` и `!=`. Значение параметра - `uid` (`admin@admin`). Можно передать несколько значений.                                                                                                                                                                           |
 | **weighed**           | параметр для фильтрации по признаку весового товара. Возможные значения: true, false.                                                                                                                                                                                                                                                                      |
-| **доп. поле(url)**    | параметр фильтрации по дополнительным полям товаров, модификаций, услуг, комплектов. Операторы фильтрации зависят от типа доп. поля. [Подробнее ниже](./#).                                                                                                                                                                                            |
+| **доп. поле(url)**    | параметром фильтрации служит url дополнительного поля. Оператор фильтрации зависят от типа доп. поля. [Подробнее ниже](#suschnosti-assortiment-atributy-dostupnye-dlq-fil-tracii-dostupnye-operatory-dlq-fil-tracii-dop-polej).                                                                                                                                                                                            |
 
-##### Доступные значения для stockMode
+##### Достуsuschnosti-assortiment-atributy-dostupnye-dlq-fil-tracii-dostupnye-operatory-dlq-fil-tracii-dop-polejпные значения для stockMode
 Значение по умолчанию all.
 
 | Значение         | Описание                            |
@@ -82,15 +82,18 @@
 
 | Название         | Тип поля value в JSON  | Значение поля type в JSON  |Описание                             |
 | ---------------- | ---------------------- | -------------------------- | ----------------------------------- |
-| **Дата**         | string                 | time                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `>`, `<`, `>=`, `<=`|
+| **Дата**         | string                 | time                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `>val`, `<val`, `>=val`, `<=val`|
 | **Справочник**   | object                 | {entityType}               | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`|
-| **Ссылка**       | string                 | link                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~`, `!~`, `~=`, `=~`|
-| **Строка**       | string                 | string                     | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~`, `!~`, `~=`, `=~`|
-| **Текст**        | string                 | text                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~`, `!~`, `~=`, `=~`|
+| **Ссылка**       | string                 | link                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val`|
+| **Строка**       | string                 | string                     | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val`|
+| **Текст**        | string                 | text                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val`|
 | **Флажок**       | boolean                | boolean                    | `=val` true или false               |
-| **Число дробное**| number                 | duble                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `>`, `<`, `>=`, `<=`|
-| **Число целое**  | number                 | long                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `>`, `<`, `>=`, `<=`|
+| **Число дробное**| number                 | duble                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `>val`, `<val`, `>=val`, `<=val`|
+| **Число целое**  | number                 | long                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `>val`, `<val`, `>=val`, `<=val`|
 | **Файл**         | string                 | file                       | Фильтрация не поддерживается        |
+
+`=val` - фильтрация по значению
+`=` - фильтрация по пустому значению
 
 Примеры фильтрации: 
 
@@ -117,8 +120,8 @@
 - `filter=archived=false;archived=true`
 - `filter=supplier=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/656c4032-8667-11e6-8a84-bae5000033aa`
 - `filter=search=див`
-- `filter=https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/b83c12e7-42bf-11ec-0a80-08bb00000161=color
-- `filter=https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/83386e05-51c0-11ec-0a83-0640000001bb>=2021-11-30 12:39:00
+- `filter=https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/b83c12e7-42bf-11ec-0a80-08bb00000161=color`
+- `filter=https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/83386e05-51c0-11ec-0a83-0640000001bb>=2021-11-30 12:39:00`
 
 
 **Параметры**
