@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 30-11-2021
+### Добавлено
+- Возможность фильтрации [ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment) по доп. полям. 
+
 ## 25-11-2021
 ### Добавлено
 - Добавление [системных валют](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-valuta-sozdat-sistemnuu-walutu)
