@@ -2067,7 +2067,7 @@ curl -X POST
 | Название         | Описание                                                                                                                 |
 | :--------------- | :----------------------------------------------------------------------------------------------------------------------- |
 | **meta**         | Метаданные                                                                                                               |
-| **attributes**   | коллекция всех существующих доп. полей Товаров в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
+| **attributes**   | Метаданные массива доп. полей Товаров                                                                                            |
 | **createShared** | создавать новые комплекты с меткой "Общий"                                                                               |
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
@@ -2089,30 +2089,16 @@ curl -X GET
     "href": "https://online.moysklad.ru/api/remap/1.2/entity/product",
     "mediaType": "application/json"
   },
-  "attributes": [
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e54cd-2c80-11e6-8a84-bae50000009c",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
-      },
-      "id": "0c2e54cd-2c80-11e6-8a84-bae50000009c",
-      "name": "Экспорт",
-      "type": "boolean",
-      "required": false
+  "attributes": {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes",
+            "type": "attributemetadata",
+            "mediaType": "application/json",
+            "size": 2,
+            "limit": 1000,
+            "offset": 0
+        }
     },
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0c2e5dc5-2c80-11e6-8a84-bae50000009d",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
-      },
-      "id": "0c2e5dc5-2c80-11e6-8a84-bae50000009d",
-      "name": "Изготовитель",
-      "type": "string",
-      "required": false
-    }
-  ],
   "createShared": true
 }
 ```
