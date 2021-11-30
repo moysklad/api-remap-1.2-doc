@@ -38,7 +38,7 @@
 | **weighed**           | параметр для фильтрации по признаку весового товара. Возможные значения: true, false.                                                                                                                                                                                                                                                                      |
 | **доп. поле(url)**    | параметром фильтрации служит url дополнительного поля. Оператор фильтрации зависят от типа доп. поля. [Подробнее ниже](#suschnosti-assortiment-atributy-dostupnye-dlq-fil-tracii-dostupnye-operatory-dlq-fil-tracii-dop-polej).                                                                                                                                                                                            |
 
-##### Достуsuschnosti-assortiment-atributy-dostupnye-dlq-fil-tracii-dostupnye-operatory-dlq-fil-tracii-dop-polejпные значения для stockMode
+##### Доступные значения для stockMode
 Значение по умолчанию all.
 
 | Значение         | Описание                            |
