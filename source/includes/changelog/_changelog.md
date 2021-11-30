@@ -136,6 +136,10 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 26-11-2021
+#### Добавлено
+- Пермиссии для документа отчет об использовании в [правах сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sotrudnik-rabota-s-prawami-sotrudnika)
+
 ### 25-11-2021
 #### Добавлено
 - Добавление [системных валют](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-valuta-sozdat-sistemnuu-walutu)
@@ -172,11 +176,6 @@
 ### 01-11-2021
 #### Добавлено
 - Поддержка протокола change-handler в [Отгрузке](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka).
-
-### 21-10-2021
-#### Добавлено
-- Пермиссии для документа отчет об использовании в [правах сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sotrudnik-rabota-s-prawami-sotrudnika)
-
 
 ### 21-10-2021
 #### Добавлено
