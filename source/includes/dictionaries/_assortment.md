@@ -82,21 +82,38 @@
 
 | Название         | Тип поля value в JSON  | Значение поля type в JSON  |Описание                             |
 | ---------------- | ---------------------- | -------------------------- | ----------------------------------- |
-| **Дата**         | string                 | time                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `>val`, `<val`, `>=val`, `<=val`|
-| **Справочник**   | object                 | {entityType}               | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`|
-| **Ссылка**       | string                 | link                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val`|
-| **Строка**       | string                 | string                     | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val`|
-| **Текст**        | string                 | text                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val`|
-| **Флажок**       | boolean                | boolean                    | `=val` true или false               |
-| **Число дробное**| number                 | duble                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `>val`, `<val`, `>=val`, `<=val`|
-| **Число целое**  | number                 | long                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `>val`, `<val`, `>=val`, `<=val`|
+| **Дата**         | string                 | time                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `>val`, `<val`,  `>=val`, `<=val`, `>=val;<=val2` |
+| **Справочник**   | object                 | {entityType}               | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=` |
+| **Ссылка**       | string                 | link                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val` |
+| **Строка**       | string                 | string                     | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val` |
+| **Текст**        | string                 | text                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val` |
 | **Файл**         | string                 | file                       | Фильтрация не поддерживается        |
+| **Флажок**       | boolean                | boolean                    | `=val` true или false               |
+| **Число дробное**| number                 | duble                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `>val`, `<val`,  `>=val`, `<=val`, `>=val;<=val2` |
+| **Число целое**  | number                 | long                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `>val`, `<val`,  `>=val`, `<=val`, `>=val;<=val2` |
 
 `=val` - фильтрация по значению
+
 `=` - фильтрация по пустому значению
 
-Примеры фильтрации: 
+`~` - частичное совпадение
 
+`!~` - частично не совпадает
+
+`~=` - полное совпадение в конце значения
+
+`=~` - полное совпадение в начале значения
+
+`>` - больше
+
+`<` - меньше
+
+`>=` - больше или равно
+
+`<=` - меньше или равно
+
+
+Примеры фильтрации: 
 - `filter=stockStore=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321`
 - `filter=id=677c4032-8667-11e6-8a84-bae500003344`
 - `filter=name~див`
