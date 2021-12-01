@@ -82,15 +82,15 @@
 
 | Название         | Тип поля value в JSON  | Значение поля type в JSON  |Описание                             |
 | ---------------- | ---------------------- | -------------------------- | ----------------------------------- |
-| **Дата**         | string                 | time                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `<val`, `>val`,  `>=val`, `<=val`, `>=val;<=val2` |
+| **Дата**         | string                 | time                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `&lt;val`, `>val`,  `>=val`, `<=val`, `>=val;<=val2` |
 | **Справочник**   | object                 | {entityType}               | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=` |
 | **Ссылка**       | string                 | link                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val` |
 | **Строка**       | string                 | string                     | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val` |
 | **Текст**        | string                 | text                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val` |
 | **Файл**         | string                 | file                       | Фильтрация не поддерживается        |
 | **Флажок**       | boolean                | boolean                    | `=val` true или false               |
-| **Число дробное**| number                 | duble                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `<val`, `>val`, `>=val`, `<=val`, `>=val;<=val2` |
-| **Число целое**  | number                 | long                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `<val`, `>val`, `>=val`, `<=val`, `>=val;<=val2` |
+| **Число дробное**| number                 | duble                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `&lt;val`, `>val`, `>=val`, `<=val`, `>=val;<=val2` |
+| **Число целое**  | number                 | long                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `&lt;val`, `>val`, `>=val`, `<=val`, `>=val;<=val2` |
 
 `=val` - фильтрация по значению <br>
 `=` - фильтрация по пустому значению <br>
