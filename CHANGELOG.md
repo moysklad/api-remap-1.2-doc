@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 30-11-2021
+### Добавлено
+- Возможность фильтрации [ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment) по доп. полям. 
+
 ## 26-11-2021
 ### Добавлено
 - Пермиссии для документа отчет об использовании в [правах сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sotrudnik-rabota-s-prawami-sotrudnika)
