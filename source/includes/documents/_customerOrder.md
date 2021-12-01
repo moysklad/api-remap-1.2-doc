@@ -2641,7 +2641,7 @@ curl -X GET
                   "mediaType": "application/json"
                 }
               },
-              "inTransit": 11
+              "reserve": 11
             },
             {
               "quantity": 3,
@@ -2656,7 +2656,7 @@ curl -X GET
                   "mediaType": "application/json"
                 }
               },
-              "inTransit": 1
+              "reserve": 1
             },
             {
               "quantity": 404,
@@ -2671,7 +2671,7 @@ curl -X GET
                   "mediaType": "application/json"
                 }
               },
-              "inTransit": 216
+              "reserve": 216
             }
           ]'  
 ```
@@ -2704,7 +2704,7 @@ curl -X GET
       }
     },
     "shipped": 0,
-    "inTransit": 11
+    "reserve": 11
   },
   {
     "meta": {
@@ -2729,7 +2729,7 @@ curl -X GET
       }
     },
     "shipped": 0,
-    "inTransit": 1
+    "reserve": 1
   },
   {
     "meta": {
@@ -2754,7 +2754,7 @@ curl -X GET
       }
     },
     "shipped": 0,
-    "inTransit": 216
+    "reserve": 216
   }
 ]
 ```
