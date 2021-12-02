@@ -1,8 +1,8 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 02-12-2021
-#### Добавлено
+## 02-12-2021
+### Добавлено
 - Поддержка протокола change-handler в [Перемещении](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-peremeschenie).
 
 ## 30-11-2021
