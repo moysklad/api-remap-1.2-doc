@@ -74,7 +74,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/report/dasboard/week"
+  "https://online.moysklad.ru/api/remap/1.2/report/dashboard/week"
   -H "Authorization: Basic <Credentials>"
 ```
 
