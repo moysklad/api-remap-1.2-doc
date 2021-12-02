@@ -1,6 +1,5 @@
 ## Показатели
-В рамках JSON API можно запросить показатели за день, месяц и неделю. Подробнее о разделе "Показатели"
-вы можете прочитать на портале поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/217235207-%D0%A0%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB-%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8).
+В рамках JSON API можно запросить показатели за день, месяц и неделю.
 
 ### Структура объекта показателей
 
@@ -75,7 +74,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/report/dasboard/week"
+  "https://online.moysklad.ru/api/remap/1.2/report/dashboard/week"
   -H "Authorization: Basic <Credentials>"
 ```
 
