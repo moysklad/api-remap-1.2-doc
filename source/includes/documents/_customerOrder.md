@@ -2531,7 +2531,7 @@ curl -X GET
       -d '{
             "quantity": 49,
             "price": 12345,
-            "discount": 0,
+            "discount": 0.0,
             "vat": 18,
             "assortment": {
               "meta": {
@@ -2559,6 +2559,7 @@ curl -X GET
     "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
     "quantity": 49,
     "price": 12345,
+    "discount": 0.0,
     "vat": 18,
     "vatEnabled": true,
     "assortment": {
@@ -2570,53 +2571,7 @@ curl -X GET
         "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3c6dc9b8-2842-11e9-ac12-000c00000071"
       }
     },
-    "reward": 2925
-  },
-  {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/7944ef04-f831-11e5-7a69-971500188b19/positions/a7a6c749-acdd-11e6-8a84-bae500000001",
-      "type": "customerorderposition",
-      "mediaType": "application/json"
-    },
-    "id": "a7a6c749-acdd-11e6-8a84-bae500000001",
-    "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
-    "quantity": 15,
-    "price": 1020,
-    "vat": 0,
-    "vatEnabled": false,
-    "assortment": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
-        "type": "variant",
-        "mediaType": "application/json",
-        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=/e64d0a86-2a99-11e9-ac12-000c00000041"
-      }
-    },
-    "reward": 2295
-  },
-  {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/7944ef04-f831-11e5-7a69-971500188b19/positions/a7a6d9cc-acdd-11e6-8a84-bae500000002",
-      "type": "customerorderposition",
-      "mediaType": "application/json"
-    },
-    "id": "a7a6d9cc-acdd-11e6-8a84-bae500000002",
-    "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
-    "quantity": 15,
-    "price": 101,
-    "vat": 0,
-    "vatEnabled": false,
-    "assortment": {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/36edadbe-912b-11e6-8a84-bae500000128",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
-        "type": "variant",
-        "mediaType": "application/json",
-        "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002f"
-      }
-    },
-    "reward": 227
+    "reserve": 19
   }
 ]
 ```
