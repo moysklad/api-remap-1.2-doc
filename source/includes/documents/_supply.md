@@ -41,7 +41,7 @@
 | **syncId**              | UUID                                                      | ID синхронизации. После заполнения недоступен для изменения                                                                                                           |
 | **updated**             | DateTime                                                  | Момент последнего обновления Приемки<br>`+Обязательное при ответе` `+Только для чтения``+Change-handler`                                                              |
 | **vatEnabled**          | Boolean                                                   | Учитывается ли НДС<br>`+Обязательное при ответе``+Change-handler`                                                                                                     |
-| **vatIncluded**         | Boolean                                                   | Включен ли НДС в цену`+Change-handler`                                                                                                                                |
+| **vatIncluded**         | Boolean                                                   | Включен ли НДС в цену<br>`+Change-handler`                                                                                                                            |
 | **vatSum**              | Float                                                     | Сумма включая НДС<br>`+Обязательное при ответе``+Change-handler`                                                                                                      |
 
 #### Накладные расходы
