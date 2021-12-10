@@ -136,6 +136,10 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
+### 02-12-2021
+#### Добавлено
+- Поддержка протокола change-handler в [Перемещении](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-peremeschenie).
+
 ### 30-11-2021
 #### Добавлено
 - Возможность фильтрации [ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment) по доп. полям. 
