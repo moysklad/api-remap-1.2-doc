@@ -12,6 +12,8 @@ toc_footers:
 includes:
   - documents/common_info
   - documents/recalc_calculated_quantity
+  - documents/print
+  - documents/publication
   - documents/autofill
   - documents/retaildrawercashin
   - documents/internalOrder  
