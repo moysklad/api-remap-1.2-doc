@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 13-12-2021
+### Изменено
+- Подразделы [Печать документов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-pechat-dokumentow) и [Публикация документов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-publikaciq-dokumentow) перенесены в раздел Документы.
+
 ## 10-12-2021
 ### Добавлено
 - Поддержка протокола change-handler в [Оприходовании](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-oprihodowanie).
