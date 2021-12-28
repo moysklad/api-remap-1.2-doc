@@ -95,27 +95,25 @@ under the License.
         </li>
         <% toc_data(page_content).each do |h1| %>
           <li class="toc-list-h1-title">
-             <a href="#<%= h1[:id] %>" class="toc-h1 toc-link" data-title="<%=h h1[:title] %>"><%=h h1[:content] %></a>
-             <% if h1[:children].any? %>
-               <% h1[:children].each do |h2| %>
-               <li>
-                 <div class="second-border">
-                   <a href="#<%= h2[:id] %>" class="toc-h2 toc-link" data-title="<%=h h2[:title] %>"><%=h h2[:content] %></a>
-                   <% if h2[:children].any? %>
-                     <ul class="toc-list-h3">
-                       <% h2[:children].each do |h3| %>
-                         <li>
-                           <a href="#<%= h3[:id] %>" class="toc-h3 toc-link" data-title="<%=h h3[:title] %>"><%=h h3[:content] %></a>
-                         </li>
-                       <% end %>
-                     </ul>
-                   <% end %>
-                 </div>
-               </li>
-             <% end %>
-           <% end %>
-           </li>
-         <% end %>
+            <a href="#<%= h1[:id] %>" class="toc-h1 toc-link" data-title="<%=h h1[:title] %>"><%=h h1[:content] %></a>
+            <% if h1[:children].any? %>
+              <% h1[:children].each do |h2| %>
+              <li>
+                <a href="#<%= h2[:id] %>" class="toc-h2 toc-link" data-title="<%=h h2[:title] %>"><%=h h2[:content] %></a>
+                <% if h2[:children].any? %>
+                  <ul class="toc-list-h3">
+                    <% h2[:children].each do |h3| %>
+                      <li>
+                        <a href="#<%= h3[:id] %>" class="toc-h3 toc-link" data-title="<%=h h3[:title] %>"><%=h h3[:content] %></a>
+                      </li>
+                    <% end %>
+                  </ul>
+                <% end %>
+              </li>
+            <% end %>
+          <% end %>
+          </li>
+        <% end %>
       </ul>
       <% if current_page.data.toc_footers %>
         <ul class="toc-footer">
