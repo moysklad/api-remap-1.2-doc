@@ -10,7 +10,9 @@ toc_footers:
   - <a href='https://github.com/moysklad/java-remap-1.2-doc/issues'>Сообщите об ошибке</a>
 
 includes:
-  - changelog/changelog
+  - changelog/notification
+  - changelog/about_version_remap
+  - changelog/last_changes
   
 search: true
 ---  
