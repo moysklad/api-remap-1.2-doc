@@ -136,7 +136,9 @@
 <a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
-
+### 28-12-2021
+#### Изменено
+- Добавлена пермиссия viewCashFlow в список пермиссий [контекста запроса сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-kontext-zaprosa-sotrudnika)
 
 ### 13-12-2021
 #### Изменено
