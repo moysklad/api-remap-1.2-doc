@@ -133,7 +133,6 @@
 - В [Розничной смене](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena) удалено поле `applicable` в перечислении полей
 
 ## Список последних изменений
-<a name="lastchanges"></a>
 Список последних изменений в API Remap 1.2
 
 ### 13-12-2021
