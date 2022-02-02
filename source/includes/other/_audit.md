@@ -73,7 +73,7 @@
 | **remap-1.2**                  | JSON API 1.2                     |
 | **restapi**                    | REST API                         |
 | **retail**                     | Точка продаж                     |
-| `**app**                       | Все действия                     |
+| **app**                        | Все действия                     |
 
 Возможные значение параметров `eventType` и `entityType` приведены в разделе [Фильтры](../other/#audit-audit-poluchit-fil-try)
 
