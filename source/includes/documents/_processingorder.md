@@ -1658,7 +1658,6 @@ curl -X GET
             "processingPlan": {
               "meta": {
                 "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingplan/c38e50b0-acdc-11e6-5bed-427b0000009e",
-                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
                 "type": "processingplan",
                 "mediaType": "application/json"
               }
@@ -1759,6 +1758,13 @@ curl -X GET
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
+            "processingPlan": {
+              "meta": {
+                "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingplan/c38e50b0-acdc-11e6-5bed-427b0000009e",
+                "type": "processingplan",
+                "mediaType": "application/json"
+              }
+            }
             "attributes": [
               {
                 "meta": {
@@ -1878,6 +1884,13 @@ curl -X GET
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
+            "processingPlan": {
+              "meta": {
+                "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingplan/c38e50b0-acdc-11e6-5bed-427b0000009e",
+                "type": "processingplan",
+                "mediaType": "application/json"
+              }
+            }
             "positions": [
               {
                 "meta": {
