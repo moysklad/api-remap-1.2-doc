@@ -894,7 +894,7 @@ curl -X GET
 | **customerOrder**             | OPERATION            | Все ALL                                     | Заказ покупателям                      |
 | **demand**                    | OPERATION            | Все ALL                                     | Отгрузка                               |
 | **emissionOrder**             | DICTIONARY           | Все NO                                      | Заказ кодов маркировки                 |
-| **utilizationReport**         | DICTIONARY           | Все NO                                      | Отчет об использовании111              |
+| **utilizationReport**         | DICTIONARY           | Все NO                                      | Отчет об использовании                 |
 | **atkAggregation**            | DICTIONARY           | Все NO                                      | Формирование АТК                       |
 | **employee**                  | BASE                 | Все ALL                                     | Сотрудники                             |
 | **enrollOrder**               | DICTIONARY           | Все NO                                      | Ввод в оборот кодов маркировки         |
