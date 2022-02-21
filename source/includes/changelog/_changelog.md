@@ -135,6 +135,15 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 21-02-2022
+### Добавлено
+- Поле `onTap` в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar)
+- Ошибки [16011, 16012, 16013, 16014, 16015, 16113](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-towarow)
+### Изменено
+- Описание ошибки [16105](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-towarow)
+- Описание полей `isSerialTrackable`, `ppeType`, `alcoholic`, `weighed` в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar)
+
+
 ### 13-12-2021
 #### Изменено
 - Подразделы [Печать документов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-pechat-dokumentow) и [Публикация документов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-publikaciq-dokumentow) перенесены в раздел Документы.
