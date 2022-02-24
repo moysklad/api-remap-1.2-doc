@@ -56,7 +56,7 @@
   - Отчет [Обороты товаров](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty)
   - Создание [характеристик Модификаций](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-harakteristiki-modifikacij)  
   - Эндпоинты [управления скидками](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-skidki)
-  - Эндпоинт [Автозаполнения цен, скидок, ндс позиций](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie)
+  - Эндпоинт [Автозаполнения цен, скидок, ндс позиций](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-awtozapolnenie)
   - Эндпоинты для [управления правами сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sotrudnik-rabota-s-prawami-sotrudnika) 
   - Эндпоинты для [доступа сотрудника к основному сервису МойСклад](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sotrudnik-aktiwaciq-sotrudnika)
 - Добавлена возможность выполнять запросы [асинхронно](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen) 
@@ -70,7 +70,7 @@
     [Показатели продаж](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-pokazateli-prodazh-i-zakazow-pokazateli-prodazh) 
     и [Показатели заказов](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-pokazateli-prodazh-i-zakazow-pokazateli-zakazow)  
   - Фильтрация и сортировки в [Отчетах Остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki)  
-  - Фильтрация по `state.name` и `assortment` для [Документов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-poluchenie-nowogo-tokena-dopolnitel-nye-fil-try)
+  - Фильтрация по `state.name` и `assortment` для [Документов](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-udalit-dopolnitel-noe-pole-scheta-urlica-dopolnitel-nye-fil-try)
   - Операторы фильтрации [Ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment) по полю updated `<`, `>`  
   - Фильтрация по uid в запросе [Аудита](https://dev.moysklad.ru/doc/api/remap/1.2/other/#audit-audit-kontexty)
 - Маркетплейс
@@ -212,7 +212,7 @@
 
 ### 07-10-2021
 #### Документация
-- Добавлено описание [Контекста запроса сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-kontext-sotrudnika)
+- Добавлено описание [Контекста запроса сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-kontext-zaprosa-sotrudnika)
 
 ### 30-09-2021
 #### Изменено
@@ -237,7 +237,7 @@
 
 ### 15-09-2021
 #### Добавлено
-- Возможность работы с упаковками [Модификаций](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-modifikaciq), [фильтрация ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment-izmenit-nastrojki-sprawochnika-kontragentow-atributy-dostupnye-dlq-fil-tracii) по штрихкоду упаковок модификаций.
+- Возможность работы с упаковками [Модификаций](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-modifikaciq), [фильтрация ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment-4-nastrojka-webhuka-na-zawershenie-wypolneniq-asinhronnoj-zadachi-atributy-wlozhennyh-suschnostej-nastrojki-prawil-shtrihkodow-dlq-suschnostej-sprawochnika) по штрихкоду упаковок модификаций.
 
 ### 15-09-2021
 #### Добавлено
@@ -246,7 +246,7 @@
 
 ### 08-09-2021
 #### Изменено
-- Исправлена валидация дат в фильтрах запросов. При передаче даты до начала 1970 года — возвращается ошибка о неправильном значении даты. [Подробнее](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obshhie-svedeniya-format-daty-i-vremeni)
+- Исправлена валидация дат в фильтрах запросов. При передаче даты до начала 1970 года — возвращается ошибка о неправильном значении даты. [Подробнее](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-format-daty-i-wremeni)
 
 ### 31-08-2021
 #### Добавлено
@@ -267,7 +267,7 @@
 
 ### 29-07-2021
 #### Добавлено
-- [Фильтрация ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment-izmenit-nastrojki-sprawochnika-kontragentow-atributy-dostupnye-dlq-fil-tracii) по штрихкоду, наименованию группы товаров, типу и использованию серийных номеров
+- [Фильтрация ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment-4-nastrojka-webhuka-na-zawershenie-wypolneniq-asinhronnoj-zadachi-nastrojki-sprawochnika) по штрихкоду, наименованию группы товаров, типу и использованию серийных номеров
 
 ### 28-07-2021
 #### Добавлено
@@ -460,7 +460,7 @@
 - Добавлен тип MetaArray - объект с полями **meta** и **rows**
 - Упоминание Array(Meta) изменено на Array(Object) или на MetaArray
 - Изменен формат описания поля **trackingCodes** в Отгрузках и Приёмках
-- Добавлен раздел [Валюта в документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah) с описанием поля **rate**
+- Добавлен раздел [Валюта в документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-teh-operaciq-valuta-w-dokumentah) с описанием поля **rate**
 - В описание добавлены отсутствовавшие поля **meta** в Счета и Контактные лица Контрагента
 - Убрано возможное разночтение в описании поля **tags** Контрагента
 - Для полей **consignee** и **carrier** в Отгрузках и Счетах-фактурах выданных добавлена пометка про тип сущностей
@@ -548,11 +548,11 @@
 
 ### 30-11-2020
 #### Документация
-- Исправлено форматирование таблицы описания полей результата запроса на [получение дополнительных полей](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-dop-polq-suschnostej-poluchit-wse-dop-polq-dlq-ukazannogo-tipa)
+- Исправлено форматирование таблицы описания полей результата запроса на [получение дополнительных полей](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-dopolnitel-nye-polq-suschnostej)
 
 ### 26-11-2020
 #### Добавлено
-- Фильтрация по `assortment` для [Документов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-poluchenie-nowogo-tokena-dopolnitel-nye-fil-try)
+- Фильтрация по `assortment` для [Документов](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-udalit-dopolnitel-noe-pole-scheta-urlica-dopolnitel-nye-fil-try)
 
 ### 21-11-2020
 #### Изменено
@@ -584,7 +584,7 @@
 
 ### 21-10-2020
 #### Добавлено
-- Добавлено заполнение себестоимости в эндпоинт [Автозаполнения](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie)
+- Добавлено заполнение себестоимости в эндпоинт [Автозаполнения](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-awtozapolnenie-zapros-awtozapoleniq-sebestoimosti)
 
 ### 20-10-2020
 #### Добавлено
@@ -599,7 +599,7 @@
 
 ### 16-10-2020
 #### Добавлено
-- Эндпоинт [Автозаполнения цен, скидок, ндс позиций](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie)
+- Эндпоинт [Автозаполнения цен, скидок, ндс позиций](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-awtozapolnenie)
 
 ### 08-10-2020
 #### Изменено
@@ -623,7 +623,7 @@
 
 ### 28-07-2020
 #### Добавлено
-- Добавлена возможность изменять настройки применения скидок в [настройках компании]((https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-kompanii))
+- Добавлена возможность изменять настройки применения скидок в [настройках компании](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-kompanii)
 
 ### 27-07-2020
 #### Добавлено
