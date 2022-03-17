@@ -75,6 +75,7 @@
 | **reservePrepaidGoods**                 | Boolean                                                   | Резервировать товары, за которые внесена предоплата<br>`+Обязательное при ответе`                                                                                                                                                                                             |
 | **returnFromClosedShiftEnabled**        | Boolean                                                   | Разрешить возвраты в закрытых сменах<br>`+Обязательное при ответе`                                                                                                                                                                                                            |
 | **sellReserves**                        | Boolean                                                   | Учет резервов<br>`+Обязательное при ответе`                                                                                                                                                                                                                                   |
+| **sendMarksForCheck**                   | Boolean                                                   | Для облачных точек — до продажи отправлять коды маркировки на проверку на точку с ККТ`+Обязательное при ответе`                                                                                                                                                               |
 | **shared**                              | Boolean                                                   | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                                                                                                    |
 | **state**                               | Object                                                    | Информация статусе точки продаж. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status)<br>`+Только для чтения`                                                                                           |
 | **store**                               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                                                                                                          |
@@ -484,6 +485,7 @@ curl -X GET
       "allowSellTobaccoWithoutMRC" : true,
       "tobaccoMrcControlType" : "USER_PRICE",
       "markingSellingMode" : "CORRECT_MARKS_ONLY",
+      "sendMarksForCheck" : false,
       "allowCreateProducts" : false,
       "productFolders" : {
         "meta" : {
@@ -700,6 +702,7 @@ curl -X GET
       "allowSellTobaccoWithoutMRC" : true,
       "tobaccoMrcControlType" : "USER_PRICE",
       "markingSellingMode" : "CORRECT_MARKS_ONLY",
+      "sendMarksForCheck" : false,
       "allowCreateProducts" : false,
       "productFolders" : {
         "meta" : {
@@ -837,7 +840,8 @@ curl -X GET
               "allowCustomPrice" : true,
               "allowSellTobaccoWithoutMRC" : true,
               "tobaccoMrcControlType" : "USER_PRICE",
-               "markingSellingMode" : "CORRECT_MARKS_ONLY",
+              "markingSellingMode" : "CORRECT_MARKS_ONLY",
+              "sendMarksForCheck" : false,
               "allowCreateProducts" : false,
               "productFolders" : [{
                 "meta": {
@@ -1023,6 +1027,7 @@ curl -X GET
   "allowSellTobaccoWithoutMRC" : true,
   "tobaccoMrcControlType" : "USER_PRICE",
   "markingSellingMode" : "CORRECT_MARKS_ONLY",
+  "sendMarksForCheck" : false,
   "allowCreateProducts" : false,
   "productFolders" : {
     "meta" : {
@@ -1216,6 +1221,7 @@ curl -X GET
   "allowSellTobaccoWithoutMRC" : false,
   "tobaccoMrcControlType" : "SAME_PRICE",
   "markingSellingMode" : "CORRECT_MARKS_ONLY",
+  "sendMarksForCheck" : false,
   "allowCreateProducts" : true,
   "productFolders" : {
     "meta" : {
@@ -1237,7 +1243,7 @@ curl -X GET
 ```
 
 ### Массовое создание и обновление Точек продаж
-[Массовое создание и обновление](#sozdanie-i-obnowlenie-neskol-kih-ob-ektow) точек продаж.
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) точек продаж.
 В теле запроса нужно передать массив, содержащий JSON представления точек продаж, которые вы хотите создать или обновить.
 Обновляемые точки продаж должны содержать идентификатор в виде метаданных.
 
@@ -1391,6 +1397,7 @@ curl -X GET
     "allowSellTobaccoWithoutMRC" : false,
     "tobaccoMrcControlType" : "SAME_PRICE",
     "markingSellingMode" : "CORRECT_MARKS_ONLY",
+    "sendMarksForCheck" : false,
     "allowCreateProducts" : true,
     "productFolders" : {
       "meta" : {
@@ -1516,6 +1523,7 @@ curl -X GET
     "allowSellTobaccoWithoutMRC" : true,
     "tobaccoMrcControlType" : "USER_PRICE",
     "markingSellingMode" : "CORRECT_MARKS_ONLY",
+    "sendMarksForCheck" : false,
     "allowCreateProducts" : true,
     "productFolders" : {
       "meta" : {
@@ -1927,6 +1935,7 @@ curl -X PUT
   "allowSellTobaccoWithoutMRC" : false,
   "tobaccoMrcControlType" : "SAME_PRICE",
   "markingSellingMode" : "ALL",
+  "sendMarksForCheck" : false,
   "allowCreateProducts" : true,
   "productFolders" : {
     "meta" : {

@@ -894,6 +894,7 @@ curl -X GET
 | **customerOrder**             | OPERATION            | Все ALL                                     | Заказ покупателям                      |
 | **demand**                    | OPERATION            | Все ALL                                     | Отгрузка                               |
 | **emissionOrder**             | DICTIONARY           | Все NO                                      | Заказ кодов маркировки                 |
+| **utilizationReport**         | DICTIONARY           | Все NO                                      | Отчет об использовании                 |
 | **employee**                  | BASE                 | Все ALL                                     | Сотрудники                             |
 | **enrollOrder**               | DICTIONARY           | Все NO                                      | Ввод в оборот кодов маркировки         |
 | **enter**                     | OPERATION            | Все ALL                                     | Оприходование                          |
@@ -1114,6 +1115,13 @@ curl -X GET
                 "create": "NO",
                 "update": "NO",
                 "delete": "NO"
+            },
+            "utilizationReport": {
+              "view": "NO",
+              "print": "NO",
+              "create": "NO",
+              "update": "NO",
+              "delete": "NO"
             },
             "commissionReportOut": {
                 "view": "ALL",
