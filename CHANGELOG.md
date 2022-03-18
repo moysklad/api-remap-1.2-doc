@@ -1,9 +1,30 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-## 28-12-2021
+## 18-03-2022
 ### Изменено
 - Добавлена пермиссия viewCashFlow в список пермиссий [контекста запроса сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-kontext-zaprosa-sotrudnika)
+
+## 18-03-2022
+### Добавлено
+- Фильтрация по доп полям в [Ассортименте](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment)
+
+## 17-03-2022
+### Добавлено
+- Добавлен отчёт [Текущих Остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-tekuschie-ostatki).
+
+## 15-03-2022
+### Изменено
+- Изменено время ожидания ответа на отправку [Веб-хука](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki) с 5 секунд до 1.5 секунд.
+- Отключены переотправки по истечении времени ожидания ответа
+
+## 15-03-2022
+### Добавлено
+- Поля `stock`, `reserve`, `inTransit`, `quantity` могут быть дробными в [Отчёте Остатки](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki).
+
+## 10-03-2022
+### Добавлено
+- Информация о новом типе маркированной продукции (Никотиносодержащая продукция) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar)
 
 ## 13-12-2021
 ### Изменено
@@ -75,6 +96,10 @@
 - Фильтрация по полю `paymentPlannedMoment` у [Счета покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-pokupatelu)
 - Фильтрация по полю `supplier` в [Отчетах прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
 - Фильтрация по номеру счета [Контрагента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent) `filter=accounts.accountnumber`. [Описание](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter)
+
+## 12-10-2021
+### Добавлено
+- Возможность изменения и отображения полей [Элементов пользовательского справочника](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik-jelementy-pol-zowatel-skogo-sprawochnika): `group`, `owner`, `shared`
 
 ## 08-10-2021
 ### Добавлено
@@ -369,7 +394,7 @@
 - Добавлен тип MetaArray - объект с полями **meta** и **rows**
 - Упоминание Array(Meta) изменено на Array(Object) или на MetaArray
 - Изменен формат описания поля **trackingCodes** в Отгрузках и Приёмках
-- Добавлен раздел [Валюта в документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah) с описанием поля **rate**
+- Добавлен раздел [Валюта в документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-teh-operaciq-valuta-w-dokumentah) с описанием поля **rate**
 - В описание добавлены отсутствовавшие поля **meta** в Счета и Контактные лица Контрагента
 - Убрано возможное разночтение в описании поля **tags** Контрагента
 - Для полей **consignee** и **carrier** в Отгрузках и Счетах-фактурах выданных добавлена пометка про тип сущностей
@@ -519,7 +544,7 @@
 
 ## 21-10-2020
 ### Добавлено
-- Добавлено заполнение себестоимости в эндпоинт [Автозаполнения](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie)
+- Добавлено заполнение себестоимости в эндпоинт [Автозаполнения](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-awtozapolnenie-zapros-awtozapoleniq-sebestoimosti)
 
 ## 20-10-2020
 ### Добавлено
@@ -538,7 +563,7 @@
 
 ## 16-10-2020
 ### Добавлено
- - Эндпоинт [Автозаполнения цен, скидок, ндс позиций](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie)
+ - Эндпоинт [Автозаполнения цен, скидок, ндс позиций](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-awtozapolnenie)
  - Описание ошибок [1084 и 56000](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki)
 
 ## 08-10-2020
