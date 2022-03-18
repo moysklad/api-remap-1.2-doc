@@ -38,6 +38,8 @@
 | **weighed**           | параметр для фильтрации по признаку весового товара. Возможные значения: true, false.                                                                                                                                                                                                                                                                           |
 | **доп. поле(url)**    | параметром фильтрации служит url дополнительного поля. Оператор фильтрации зависит от типа доп. поля. [Подробнее ниже](#suschnosti-assortiment-atributy-dostupnye-dlq-fil-tracii-dostupnye-operatory-dlq-fil-tracii-dop-polej).                                                                                                                                 |
 
+Также доступна фильтрация по доп. полям. Подробнее про фильтрацию по доп. полям можно посмотреть в соответствующем [разделе](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter).
+
 ##### Доступные значения для stockMode
 Значение по умолчанию all.
 

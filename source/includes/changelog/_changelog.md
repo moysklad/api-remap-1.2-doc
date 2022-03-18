@@ -135,6 +135,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 18-03-2022
+#### Добавлено
+- Фильтрация по доп полям в [Ассортименте](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment)
+
 ### 17-03-2022
 #### Добавлено
 - Добавлен отчёт [Текущих Остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-tekuschie-ostatki).
