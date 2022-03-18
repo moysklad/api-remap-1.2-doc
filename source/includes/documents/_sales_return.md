@@ -20,7 +20,7 @@
 | **group**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                      |
 | **id**                  | UUID                                                      | ID Возврата Покупателя<br>`+Обязательное при ответе` `+Только для чтения`                                                                     |
 | **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Возврата Покупателя<br>`+Обязательное при ответе`                                                                                  |
-| **moment**              | DateTime                                                  | Дата Счета<br>`+Обязательное при ответе`                                                                                                      |
+| **moment**              | DateTime                                                  | Дата документа<br>`+Обязательное при ответе`                                                                                                      |
 | **name**                | String(255)                                               | Наименование Возврата Покупателя<br>`+Обязательное при ответе`                                                                                |
 | **organization**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                          |
 | **organizationAccount** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные счета юрлица<br>`+Expand`                                                                                                          |
@@ -29,7 +29,8 @@
 | **printed**             | Boolean                                                   | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                      |
 | **project**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные проекта<br>`+Expand`                                                                                                               |
 | **published**           | Boolean                                                   | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                    |
-| **rate**                | Object                                                    | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе`                           |
+| **rate**                | Object                                                    | Валюта. [Подробнее тут](../documents/#dokumenty-teh-operaciq-valuta-w-dokumentah)<br>`+Обязательное при ответе`                           |
+| **salesChannel**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные канала продаж<br>`+Expand`                                                                                                         |
 | **shared**              | Boolean                                                   | Общий доступ<br>`+Обязательное при ответе`                                                                                                    |
 | **state**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные статуса Возврата Покупателя<br>`+Expand`                                                                                           |
 | **store**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                          |
@@ -55,10 +56,10 @@
 Объект позиции Возврата покупателей содержит следующие поля:
 
 | Название       | Тип                                                       | Описание                                                                                                                                                                                                                                                 |
-| -------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| -------------- | :-------------------------------------------------------- |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**  | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                     |
 | **assortment** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные товара/услуги/серии/модификации, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand`                                                                                                                                   |
-| **cost**       | Int                                                       | Себестоимость (только для услуг)                                                                                                                                                                                                                         |
+| **cost**       | Int                                                       | Себестоимость (выводится, если документ был создан без основания)                                                                                                                                                                                        |
 | **country**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Страны<br>`+Expand`                                                                                                                                                                                                                           |
 | **discount**   | Int                                                       | Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%<br>`+Обязательное при ответе`                                                                                                                       |
 | **gtd**        | String(255)                                               | ГТД                                                                                                                                                                                                                                                      |
@@ -312,6 +313,13 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
+      "salesChannel": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+          "type": "saleschannel",
+          "mediaType": "application/json"
+        }
+      },
       "vatEnabled": true,
       "vatIncluded": true,
       "positions": {
@@ -354,9 +362,7 @@ curl -X GET
 + При создании возврата без основания поле **demand** указывать не нужно
 + Контрагент в возврате и в документе, по которому он создается, должны совпадать
 + Валюта и юрлицо в возврате и в документе так же должны совпадать
-+ При передаче коллекции **positions** в теле запроса на создание возврата, передаваемые позиции
-должны соответствовать позициям в документе. Различие может быть только в количестве товара в позиции
-(меньшее либо равное количеству в документе). Нельзя передать позиции, которых нет в документе.
++ При создании возврата на основании другого документа, позиции передаваемые в коллекции **positions**, должны соответствовать позициям документа-основания. Можно задать количество товара в позиции, но не больше, чем в документе-основании. Нельзя передавать позиции, которых нет в документе-основании и менять значение поля **price**.
 
 > Пример создания нового Возврата покупателя.
 
@@ -925,6 +931,13 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
+    "salesChannel": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+        "type": "saleschannel",
+        "mediaType": "application/json"
+      }
+    },
     "attributes": [
       {
         "meta": {
@@ -1451,6 +1464,13 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
+  "salesChannel": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+      "type": "saleschannel",
+      "mediaType": "application/json"
+    }
+  },
   "vatEnabled": true,
   "vatIncluded": true,
   "positions": {
@@ -1629,6 +1649,13 @@ curl -X GET
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/147c1f1b-32ca-11e6-8a84-bae500000004/accounts/147c3231-32ca-11e6-8a84-bae500000005",
       "type": "account",
+      "mediaType": "application/json"
+    }
+  },
+  "salesChannel": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+      "type": "saleschannel",
       "mediaType": "application/json"
     }
   },
