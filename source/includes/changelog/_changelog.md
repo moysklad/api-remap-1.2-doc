@@ -135,7 +135,7 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 21-03-2022
+### 22-03-2022
 #### Добавлено
 - Добавлено поле `show` в атрибуты описания доп. поля. См. [Работа с дополнительными полями](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
