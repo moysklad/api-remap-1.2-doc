@@ -136,7 +136,7 @@
 Список последних изменений в API Remap 1.2
 
 ### 23-03-2022
-### Изменено
+#### Изменено
 - Дополнительные поля типов Файл и Флажок не могут быть обязательными [Работа с дополнительными полями](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
 ### 22-03-2022
