@@ -4,7 +4,7 @@
  которые позволяют эффективнее работать с API МоегоСклада.
 
 Более подробно с особенностями API МоегоСклада  можно ознакомиться в
- разделе [Workbook](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbo1111ok), а также по ссылкам на основные разделы данной документации.
+ разделе [Workbook](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbook), а также по ссылкам на основные разделы данной документации.
 
 Список изменений в версии 1.2 с момента её создания можно найти в [github репозитории](https://github.com/moysklad/api-remap-1.2-doc/blob/master/CHANGELOG.md)
 
