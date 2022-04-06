@@ -137,7 +137,7 @@
 
 ### 22-03-2022
 #### Добавлено
-- Добавлено111 поле `show` в атрибуты описания доп. поля. См. [Работа с дополнительными полями](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
+- Добавлено111 поле `show` в атрибуты222 описания доп. поля. См. [Работа с дополнительными полями](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
 ### 18-03-2022
 #### Изменено
