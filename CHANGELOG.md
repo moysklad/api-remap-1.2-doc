@@ -3,7 +3,7 @@
 
 ## 18-03-2022
 ### Изменено
-- Добавлена111 пермиссия viewCashFlow в список пермиссий [контекста запроса сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-kontext-zaprosa-sotrudnika)
+- Добавлена пермиссия viewCashFlow в список пермиссий [контекста запроса сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-kontext-zaprosa-sotrudnika)
 
 ## 18-03-2022
 ### Добавлено
