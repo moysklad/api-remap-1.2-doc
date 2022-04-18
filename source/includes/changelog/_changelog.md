@@ -136,6 +136,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 18-04-2022
+#### Документация
+- Добавлено описание [Группа тех. карт](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-gruppa-teh-kart)
+
 ### 01-04-2022
 ### Добавлено
 - Поле `onTap` в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar)
