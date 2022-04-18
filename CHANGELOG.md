@@ -8,6 +8,14 @@
 ### Изменено
 - Описание полей `isSerialTrackable`, `ppeType`, `alcoholic`, `weighed` в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar)
 
+## 23-03-2022
+### Добавлено
+- Добавлено поле `accumulationDiscount` в скидки Контрагента, См. [Поля реквизитов контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/#suschnosti-kontragent-kontragenty-atributy-suschnosti-polq-rekwizitow)
+
+## 22-03-2022
+### Добавлено
+- Добавлено поле `show` в атрибуты описания доп. поля. См. [Работа с дополнительными полями](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
+
 ## 18-03-2022
 ### Изменено
 - Добавлена пермиссия viewCashFlow в список пермиссий [контекста запроса сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-kontext-zaprosa-sotrudnika)
