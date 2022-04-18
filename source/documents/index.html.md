@@ -47,6 +47,7 @@ includes:
   - documents/factureout
   - documents/facturein
   - documents/processingplan
+  - documents/processingplanfolder
   - documents/processing
   - documents/rate
   
