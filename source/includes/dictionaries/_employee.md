@@ -895,6 +895,7 @@ curl -X GET
 | **demand**                    | OPERATION            | Все ALL                                     | Отгрузка                               |
 | **emissionOrder**             | DICTIONARY           | Все NO                                      | Заказ кодов маркировки                 |
 | **utilizationReport**         | DICTIONARY           | Все NO                                      | Отчет об использовании                 |
+| **atkAggregation**            | DICTIONARY           | Все NO                                      | Формирование АТК                       |
 | **employee**                  | BASE                 | Все ALL                                     | Сотрудники                             |
 | **enrollOrder**               | DICTIONARY           | Все NO                                      | Ввод в оборот кодов маркировки         |
 | **enter**                     | OPERATION            | Все ALL                                     | Оприходование                          |
@@ -1117,6 +1118,13 @@ curl -X GET
                 "delete": "NO"
             },
             "utilizationReport": {
+              "view": "NO",
+              "print": "NO",
+              "create": "NO",
+              "update": "NO",
+              "delete": "NO"
+            },
+            "atkAggregation": {
               "view": "NO",
               "print": "NO",
               "create": "NO",
