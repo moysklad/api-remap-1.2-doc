@@ -146,6 +146,8 @@
 ### 23-03-2022
 #### Добавлено
 - Добавлено поле `accumulationDiscount` в скидки Контрагента, См. [Поля реквизитов контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/#suschnosti-kontragent-kontragenty-atributy-suschnosti-polq-rekwizitow)
+#### Изменено
+- Дополнительные поля типов Файл и Флажок не могут быть обязательными [Работа с дополнительными полями](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
 ### 22-03-2022
 #### Добавлено
