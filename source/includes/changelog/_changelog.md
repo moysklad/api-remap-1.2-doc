@@ -136,11 +136,15 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 18-04-2022
+#### Добавлено
+- Параметр фильтрации withSubFolders в [Отчете остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki), позволяющий фильтровать по заданной группе товаров без учета ее подгрупп.
+
 ### 01-04-2022
-### Добавлено
+#### Добавлено
 - Поле `onTap` в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar)
 - Ошибки [16011, 16012, 16013, 16014, 16015, 16113](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-towarow)
-### Изменено
+#### Изменено
 - Описание полей `isSerialTrackable`, `ppeType`, `alcoholic`, `weighed` в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar)
 
 ### 23-03-2022
