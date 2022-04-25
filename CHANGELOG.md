@@ -2,7 +2,9 @@
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
 ## 18-04-2022
-#### Документация
+### Добавлено
+- Параметр фильтрации withSubFolders в [Отчете остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki), позволяющий фильтровать по заданной группе товаров без учета ее подгрупп.
+### Документация
 - Добавлено описание [Группа тех. карт](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-gruppa-teh-kart)
 
 ## 01-04-2022
