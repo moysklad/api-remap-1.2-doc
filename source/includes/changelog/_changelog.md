@@ -139,6 +139,8 @@
 ### 18-04-2022
 #### Добавлено
 - Параметр фильтрации withSubFolders в [Отчете остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki), позволяющий фильтровать по заданной группе товаров без учета ее подгрупп.
+#### Документация
+- Добавлено описание [Группа тех. карт](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-gruppa-teh-kart)
 
 ### 01-04-2022
 #### Добавлено
@@ -150,6 +152,8 @@
 ### 23-03-2022
 #### Добавлено
 - Добавлено поле `accumulationDiscount` в скидки Контрагента, См. [Поля реквизитов контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/#suschnosti-kontragent-kontragenty-atributy-suschnosti-polq-rekwizitow)
+#### Изменено
+- Дополнительные поля типов Файл и Флажок не могут быть обязательными [Работа с дополнительными полями](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
 ### 22-03-2022
 #### Добавлено
