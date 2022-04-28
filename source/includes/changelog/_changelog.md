@@ -138,7 +138,7 @@
 
 ### 27-04-2022
 #### Добавлено
-- Описание необходимых пермиссий в отчетах [Показатели], [Показатели продаж и заказов], [Показатели контрагентов], [Деньги] (https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety)
+- Описание необходимых пермиссий в отчетах [Показатели](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-pokazateli), [Показатели продаж и заказов](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-pokazateli-prodazh-i-zakazow), [Показатели контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pokazateli-kontragentow), [Деньги](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-den-gi)
 
 ### 18-04-2022
 #### Добавлено
