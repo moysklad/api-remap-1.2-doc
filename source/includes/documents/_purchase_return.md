@@ -565,7 +565,6 @@ curl -X GET
 ### Создать Возврат поставщику 
 Обязательные поля при создании нового Возврата поставщику:
 
-+ **name** - Номер возврата
 + **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **store** - Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **supply** - Ссылка на приемку, по которой произошел возврат в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye), обязательное поле только для возврата по основанию
