@@ -490,7 +490,6 @@ curl -X GET
 
 | Параметр                       | Описание                                                                                        |
 | ------------------------------ | :---------------------------------------------------------------------------------------------- |
-| **name**                       | номер Отгрузки                                                                                  |
 | **organization**               | Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
 | **agent**                      | Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
 | **store**                      | Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)       |
