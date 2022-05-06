@@ -446,7 +446,6 @@ curl -X GET
 
 | Параметр                       | Описание                                                                                        |
 | ------------------------------ | :---------------------------------------------------------------------------------------------- |
-| **name**                       | номер Расходного ордера                                                                         |
 | **organization**               | Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
 | **agent**                      | Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
 | **expenseItem**                | Статья расходов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)       |
