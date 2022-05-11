@@ -349,7 +349,6 @@ curl -X GET
 ### Создать Возврат покупателя 
 Обязательные поля при создании нового Возврата покупателей:
 
-+ **name** - Номер возврата
 + **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **store** - Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **demand** - Ссылка на отгрузку, по которой произошел возврат в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye), обязательное поле только для возврата по основанию

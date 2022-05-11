@@ -300,7 +300,6 @@ curl -X GET
 Запрос на создание нового Перемещения. 
 Обязательные для создания поля:
 
-+ **name** - номер Перемещения
 + **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **sourceStore** - Ссылка на склад, с которого совершается перемещение, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **targetStore** - Ссылка на склад, на который совершается перемещение, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)

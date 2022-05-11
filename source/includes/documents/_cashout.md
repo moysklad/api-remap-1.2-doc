@@ -446,7 +446,6 @@ curl -X GET
 
 | Параметр                       | Описание                                                                                        |
 | ------------------------------ | :---------------------------------------------------------------------------------------------- |
-| **name**                       | номер Расходного ордера                                                                         |
 | **organization**               | Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
 | **agent**                      | Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
 | **expenseItem**                | Статья расходов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)       |
@@ -459,7 +458,6 @@ curl -X GET
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
-            "name": "0721",
             "organization": {
               "meta": {
                 "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",

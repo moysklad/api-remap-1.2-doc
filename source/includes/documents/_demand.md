@@ -490,7 +490,6 @@ curl -X GET
 
 | Параметр                       | Описание                                                                                        |
 | ------------------------------ | :---------------------------------------------------------------------------------------------- |
-| **name**                       | номер Отгрузки                                                                                  |
 | **organization**               | Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
 | **agent**                      | Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
 | **store**                      | Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)       |
@@ -503,7 +502,6 @@ curl -X GET
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
-            "name": "888",
             "organization": {
               "meta": {
                 "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e",
