@@ -136,6 +136,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 20-05-2022
+#### Добавлено
+- Поддержка полей `incomingDate` и `incomingNumber` для протокола change-handler в [Приемке](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka).
+
 ### 13-05-2022
 #### Добавлено
 - Описание [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki) `1048`
