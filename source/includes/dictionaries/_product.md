@@ -1369,7 +1369,7 @@ curl -X GET
                   "type": "attributemetadata",
                   "mediaType": "application/json"
                 },
-                "name": "not strange attribute name",
+                "name": "not strange attribute name.jar",
                 "type": "file",
                 "file": {
                   "filename": "filename",
@@ -1537,6 +1537,7 @@ curl -X GET
       "name": "not strange attribute name",
       "type": "file",
       "value": "filename",
+      "extension": "jar",
       "download": {
         "href": "https://online.moysklad.ru/api/remap/1.2/download/00664f3a-e3da-11e7-9464-e4de00000000",
         "mediaType": "application/octet-stream"

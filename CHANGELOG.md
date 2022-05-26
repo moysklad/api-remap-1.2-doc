@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 26-05-2022
+### Добавлено
+- Добавлено поле `extension` при ответе у [файлов в доп. полях](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi-dopolnitel-nye-polq-tipa-fajl)
+
 ## 13-05-2022
 ### Добавлено
 - Описание [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki) `1048`
