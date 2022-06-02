@@ -180,7 +180,9 @@ curl -X GET
             "mediaType": "application/json"
           }
         }
-      }
+      },
+      "printed": false,
+      "published": false
     },
     {
       "meta": {
@@ -327,7 +329,9 @@ curl -X GET
             "mediaType": "application/json"
           }
         }
-      }
+      },
+      "printed": false,
+      "published": false
     }
   ]
 }
@@ -458,7 +462,9 @@ curl -X GET
         "mediaType": "application/json"
       }
     }
-  }
+  },
+  "printed": false,
+  "published": false
 }
 ```
 
@@ -581,7 +587,9 @@ curl -X GET
         "mediaType": "application/json"
       }
     }
-  }
+  },
+  "printed": false,
+  "published": false
 }
 ```
 
@@ -734,7 +742,9 @@ curl -X GET
           "mediaType": "application/json"
         }
       }
-    }
+    },
+    "printed": false,
+    "published": false
   },
   {
     "meta": {
@@ -810,7 +820,9 @@ curl -X GET
           "mediaType": "application/json"
         }
       }
-    }
+    },
+    "printed": false,
+    "published": false
   }
 ]
 ```
@@ -969,7 +981,9 @@ curl -X GET
           "mediaType": "application/json"
         }
       }
-    }
+    },
+    "printed": false,
+    "published": false
   },
   {
     "meta": {
@@ -1045,7 +1059,9 @@ curl -X GET
           "mediaType": "application/json"
         }
       }
-    }
+    },
+    "printed": false,
+    "published": false
   }
 ]
 ```
@@ -1320,6 +1336,8 @@ curl -X GET
       }
     }
   },
+  "printed": false,
+  "published": false,
   "attributes": [
     {
       "meta": {
@@ -1461,7 +1479,10 @@ curl -X GET
         "mediaType": "application/json"
       }
     }
-  }
+  },
+  "printed": false,
+  "published": false
+}
 ```
 
 > Пример запроса на обновление отдельного Договора с телом запроса, содержащим доп. поля.
@@ -1590,7 +1611,9 @@ curl -X GET
         "mediaType": "application/json"
       }
     }
-  }
+  },
+  "printed": false,
+  "published": false
 }
 ```
 
