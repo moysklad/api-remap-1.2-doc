@@ -82,7 +82,7 @@
 
 ##### Доступные операторы для фильтрации доп. полей
 
-Подробнее почитать про фильтрацию по доп полям можно тут.
+Подробнее почитать про фильтрацию по доп. полям можно [тут](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm).
 
 
 Примеры фильтрации: 
