@@ -80,9 +80,9 @@
 
 При использовании фильтров **alcoholic.type**, **weighed** и фильтров **stockMode**, **quantityMode** со значениями, отличными от all, в выдачу не попадают услуги и комлекты.
 
-##### Доступные операторы для фильтрации доп. полей
+##### Фильтрация доп. полей
 
-Подробнее почитать про фильтрацию по доп. полям можно [тут](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm).
+Подробнее функциональность описана в разделе [Фильтрация по дополнительным полям](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm).
 
 
 Примеры фильтрации: 
