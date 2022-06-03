@@ -136,6 +136,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 03-06-2022
+#### Добавлено
+- Добавлено поле `authorApplication` в [Вебхуках](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki-veb-huki)
+
 ### 26-05-2022
 #### Добавлено
 - Добавлено поле `salesChannel` в [Счет покупателю](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-pokupatelu)
