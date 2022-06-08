@@ -136,6 +136,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 08-06-2022
+#### Добавлено
+- В описании [Сущностей](https://dev.moysklad.ru/doc/api/remap/1.2/#suschnosti) добавлен список операторов, с помощью которых выполняется фильтрация по атрибутам.
+
 ### 02-06-2022
 #### Изменено
 - Перенесено описание фильтрации по дополнительным полям в [Общие Сведения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm)
