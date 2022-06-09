@@ -1156,37 +1156,40 @@ curl -X POST
 
 #### Фильтрация по дополнительным полям
 
-С помощью filter можно фильтровать по дополнительным полям. Список дополнительных полей сущности указан в ее метаданных
+С помощью параметра filter можно фильтровать по дополнительным полям, добавив ссылку на доп. поле и значение фильтрации. Значение фильтрации может быть строкой, числом, датой или url, в зависимости от типа доп. поля. 
+Пример: `filter=<ссылка на доп.поле>=<значение>`
 
-`https://online.moysklad.ru/api/remap/1.2/entity/product/metadata`
+##### Доступные операторы для фильтрации доп. полей
 
-Можно использовать следующую конструкцию для того чтобы отфильтровать по дополнительному полю выборку:
+| Название         | Тип поля value в JSON  | Значение поля type в JSON  |Описание                             |
+| ---------------- | ---------------------- | -------------------------- | ----------------------------------- |
+| **Дата**         | string                 | time                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `&lt;val`, `>val`,  `>=val`, `<=val`, `>=val;<=val2` |
+| **Справочник**   | object                 | {entityType}               | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=` |
+| **Ссылка**       | string                 | link                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val` |
+| **Строка**       | string                 | string                     | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val` |
+| **Текст**        | string                 | text                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val` |
+| **Файл**         | string                 | file                       | Фильтрация не поддерживается        |
+| **Флажок**       | boolean                | boolean                    | `=true`, `=false`                   |
+| **Число дробное**| number                 | duble                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `&lt;val`, `>val`, `>=val`, `<=val`, `>=val;<=val2` |
+| **Число целое**  | number                 | long                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `&lt;val`, `>val`, `>=val`, `<=val`, `>=val;<=val2` |
 
-+ `filter=<ссылка на доп.поле>=<значение>`
+`=val` - фильтрация по значению <br>
+`=` - фильтрация по пустому значению <br>
+`~` - частичное совпадение <br>
+`!~` - частичное совпадение не выводится <br>
+`~=` - полное совпадение в начале значения <br>
+`=~` - полное совпадение в конце значения <br>
+`>` - больше <br>
+`<` - меньше <br>
+`>=` - больше или равно <br>
+`<=` - меньше или равно <br>
 
-для доп.полей типа справочник:
+Примеры фильтрации:
 
-+ `filter=<ссылка на доп.поле>=<ссылка на сущность>`
+- `filter=https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/b83c12e7-42bf-11ec-0a80-08bb00000161=color`
+- `filter=https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/83386e05-51c0-11ec-0a83-0640000001bb>=2021-11-30 12:39:00`
+- `filter=https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/c06ac4a0-e27a-11ec-0a80-0ad600000393=https://online.moysklad.ru/api/remap/1.2/entity/employee/13268984-e24d-11ec-0a80-0ad600000367`
 
-Пример ссылки на доп.поле
-
-+ `http://online.moysklad.ru/api/remap/1.2/entity/<type>/metadata/attributes/<id>`
-
-Пример ссылки на сущность:
-
-+ `http://online.moysklad.ru/api/remap/1.2/entity/<type>/<id>`
-
-для доп.полей типа пользовательский справочник
-
-+ `http://online.moysklad.ru/api/remap/1.2/entity/customentity/<customentity_id>/<id>`
-
-Примеры фильтра:
-
-+ `filter=https://online.moysklad.ru/api/remap/1.2/entity/<type>/metadata/attributes/<id>
-=42`
-
-+ `filter=https://online.moysklad.ru/api/remap/1.2/entity/<type>/metadata/attributes/<id>
-=http://online.moysklad.ru/api/remap/1.2/entity/<type>/<id>`
 
 #### Дополнительные фильтры
 

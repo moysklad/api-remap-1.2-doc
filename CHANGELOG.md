@@ -5,6 +5,10 @@
 ### Добавлено
 - Добавлено поле `authorApplication` в [Вебхуках](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki-veb-huki)
 
+## 02-06-2022
+### Изменено
+- Перенесено описание фильтрации по дополнительным полям в [Общие Сведения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm)
+
 ## 26-05-2022
 ### Добавлено
 - Добавлено поле `salesChannel` в [Счет покупателю](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-pokupatelu)
