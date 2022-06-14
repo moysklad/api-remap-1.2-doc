@@ -10,6 +10,7 @@
 
 #### Атрибуты сущности
 
+
 | Название                | Тип                                                       | Фильтрация                                                                                                                                          | Описание                                                                                                    |
 | ----------------------- | :-------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- |
 | **accountId**           | UUID                                                      | `=` `!=`                                                                                                                                            | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                        |
@@ -35,12 +36,15 @@
 | **shared**              | Boolean                                                   | `=` `!=`                                                                                                                                            | Общий доступ<br>`+Обязательное при ответе`                                                                  |
 | **state**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                            | Метаданные статуса договора<br>`+Expand`                                                                    |
 | **sum**                 | Int                                                       |                                                                                                                                                     | Сумма Договора<br>`+Обязательное при ответе`                                                                |
+| **printed**             | Boolean                                                   |                                                                                                                                                     | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                    |
+| **published**           | Boolean                                                   |                                                                                                                                                     | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                  |
 | **updated**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                          | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Только для чтения`                    |
+
 
 Таблица полей, их значений и их значений в JSON представлении:
 
 | Имя поля              | Возможные Значения        | Соответствующее значение в JSON  | Значение по умолчанию   |
-| :-----------:-------- | :-----------------------: | :------------------------------: | :---------------------: |
+| :-------------------: | :-----------------------: | :------------------------------: | :---------------------: |
 | **contractType**      | Договор комиссии          | Commission                       | Договор купли-продажи   |
 | Договор купли-продажи | Sales                                                                                  |
 | **rewardType**        | Процент от суммы продажи  | PercentOfSales                   | Не рассчитывать         |
@@ -178,7 +182,9 @@ curl -X GET
             "mediaType": "application/json"
           }
         }
-      }
+      },
+      "printed": false,
+      "published": false
     },
     {
       "meta": {
@@ -325,7 +331,9 @@ curl -X GET
             "mediaType": "application/json"
           }
         }
-      }
+      },
+      "printed": false,
+      "published": false
     }
   ]
 }
@@ -456,7 +464,9 @@ curl -X GET
         "mediaType": "application/json"
       }
     }
-  }
+  },
+  "printed": false,
+  "published": false
 }
 ```
 
@@ -579,7 +589,9 @@ curl -X GET
         "mediaType": "application/json"
       }
     }
-  }
+  },
+  "printed": false,
+  "published": false
 }
 ```
 
@@ -732,7 +744,9 @@ curl -X GET
           "mediaType": "application/json"
         }
       }
-    }
+    },
+    "printed": false,
+    "published": false
   },
   {
     "meta": {
@@ -808,7 +822,9 @@ curl -X GET
           "mediaType": "application/json"
         }
       }
-    }
+    },
+    "printed": false,
+    "published": false
   }
 ]
 ```
@@ -967,7 +983,9 @@ curl -X GET
           "mediaType": "application/json"
         }
       }
-    }
+    },
+    "printed": false,
+    "published": false
   },
   {
     "meta": {
@@ -1043,7 +1061,9 @@ curl -X GET
           "mediaType": "application/json"
         }
       }
-    }
+    },
+    "printed": false,
+    "published": false
   }
 ]
 ```
@@ -1318,6 +1338,8 @@ curl -X GET
       }
     }
   },
+  "printed": false,
+  "published": false,
   "attributes": [
     {
       "meta": {
@@ -1459,7 +1481,10 @@ curl -X GET
         "mediaType": "application/json"
       }
     }
-  }
+  },
+  "printed": false,
+  "published": false
+}
 ```
 
 > Пример запроса на обновление отдельного Договора с телом запроса, содержащим доп. поля.
@@ -1588,7 +1613,9 @@ curl -X GET
         "mediaType": "application/json"
       }
     }
-  }
+  },
+  "printed": false,
+  "published": false
 }
 ```
 

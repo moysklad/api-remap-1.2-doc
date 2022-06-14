@@ -136,9 +136,19 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 08-06-2022
+
+### 14-06-2022
 #### Добавлено
 - В описании [Сущностей](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti) добавлен список операторов, с помощью которых выполняется фильтрация по атрибутам.
+
+### 09-06-2022
+#### Изменено
+- Добавлены поля `printed` и `published` в [Договор](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-dogowor)
+
+### 03-06-2022
+#### Добавлено
+- Добавлено поле `authorApplication` в [Вебхуках](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki-veb-huki)
+
 
 ### 02-06-2022
 #### Изменено
