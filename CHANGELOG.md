@@ -1,6 +1,9 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 15-06-2022
+### Добавлено
+- В описании [Документов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty) добавлен список операторов, с помощью которых выполняется фильтрация по атрибутам.
 
 ## 14-06-2022
 ### Добавлено
@@ -13,7 +16,6 @@
 ## 03-06-2022
 ### Добавлено
 - Добавлено поле `authorApplication` в [Вебхуках](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki-veb-huki)
-
 
 ## 02-06-2022
 ### Изменено
