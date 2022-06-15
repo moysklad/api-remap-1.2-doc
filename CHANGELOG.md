@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 15-06-2022
+### Добавлено
+- В описании [Отчетов](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety) добавлен список операторов, с помощью которых выполняется фильтрация по атрибутам.
+
 ## 09-06-2022
 ### Изменено
 - Добавлены поля `printed` и `published` в [Договор](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-dogowor)
