@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 28-06-2022
+### Добавлено
+- Поддержка протокола change-handler в [Счете покупателю](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-pokupatelu).
+
 ## 16-06-2022
 ### Добавлено
 - В описании [Отчетов](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety) добавлен список операторов, с помощью которых выполняется фильтрация по атрибутам.
