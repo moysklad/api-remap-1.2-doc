@@ -7,27 +7,42 @@
 $(function () {
   'use strict';
 
-  var content, searchResults;
-  var highlightOpts = { element: 'span', className: 'search-highlight' };
-  var searchDelay = 0;
-  var timeoutHandle = 0;
+  let content, searchResults;
+  let highlightOpts = { element: 'span', className: 'search-highlight' };
+  let searchDelay = 0;
+  let timeoutHandle = 0;
 
-  var links = [];
-  $('h1, h2').each(function(link) {
-      var title = $(this);
-      var body = title.nextUntil('h1, h2');
+  let headerSelector = 'h1, h2, h3';
+  let links = $(headerSelector).map(function() {
+    let title = $(this);
+    let body = title.nextUntil(headerSelector, ':not(.highlight):not(button)');
+    let bodyTexts = body.toArray().flatMap(function (node) {
+      let result = [];
+      let currentTextNode;
+      let itr = document.createNodeIterator(node, NodeFilter.SHOW_TEXT)
+      while ((currentTextNode = itr.nextNode())) {
+        let cleanedText = currentTextNode.nodeValue
+          .replaceAll('https://online.moysklad.ru/api/remap/1.2/', ' ')
+          .replaceAll(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/ig, ' ')
+          .replaceAll(/\s+/ig, ' ')
+          .trim();
+        if(cleanedText !== "")
+          result.push(cleanedText);
+      }
+      return result;
+    }).join(" ");
 
-      let doc = {
-        "id": title.prop('id'),
-        "title": title.text(),
-        "body": body.text()
-      };
-      links.push(doc);
-  });
+    return {
+      "id": title.prop('id'),
+      "title": title.text(),
+      "body": bodyTexts
+    };
+  }).toArray();
 
   var index = lunr(function () {
     this.use(lunr.multiLanguage('ru', 'en'));
     this.ref('id');
+    this.tokenizer.separator = /\W/;
     this.field('title', { boost: 10 });
     this.field('body');
 
@@ -35,6 +50,7 @@ $(function () {
       this.add(link);
     }, this);
   });
+  console.log(Object.keys(index.invertedIndex));
 
   $(determineSearchDelay);
   $(bind);
