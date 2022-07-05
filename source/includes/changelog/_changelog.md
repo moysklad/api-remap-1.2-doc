@@ -136,7 +136,7 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 22-06-2022
+### 04-07-2022
 #### Добавлено
 - Поддержка протокола update-provider в [Приемке](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka).
 
