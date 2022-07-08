@@ -136,6 +136,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 07-07-2022
+#### Добавлено
+- Поддержка протокола change-handler в [Счете покупателю](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-pokupatelu).
+
 ### 06-07-2022
 #### Изменено
 - Разделы в [Отчетах остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki)
