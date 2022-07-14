@@ -1,4 +1,4 @@
-let buildDocumentsForSearch = function () {
+let buildIndexForSearch = function () {
   let headerSelector = 'h1, h2, h3';
   let links = $(headerSelector).map(function () {
     let title = $(this);
@@ -37,7 +37,7 @@ let buildDocumentsForSearch = function () {
   return lunr(function () {
     this.use(lunr.multiLanguage('ru', 'en'));
     this.ref('id');
-    this.tokenizer.separator = /\W/;
+    this.tokenizer.separator = /\s/;
     this.field('title', {boost: 10});
     this.field('body');
 
