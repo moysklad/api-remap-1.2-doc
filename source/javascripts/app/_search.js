@@ -13,19 +13,7 @@ $(function () {
   let searchDelay = 0;
   let timeoutHandle = 0;
 
-  let links = buildDocumentsForSearch();
-
-  let index = lunr(function () {
-    this.use(lunr.multiLanguage('ru', 'en'));
-    this.ref('id');
-    this.tokenizer.separator = /\W/;
-    this.field('title', { boost: 10 });
-    this.field('body');
-
-    links.forEach(function(link) {
-      this.add(link);
-    }, this);
-  });
+  let index = buildIndexForSearch();
 
   $(determineSearchDelay);
   $(bind);

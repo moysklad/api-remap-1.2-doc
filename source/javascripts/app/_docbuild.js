@@ -1,6 +1,6 @@
 let buildDocumentsForSearch = function () {
   let headerSelector = 'h1, h2, h3';
-  return $(headerSelector).map(function () {
+  let links = $(headerSelector).map(function () {
     let title = $(this);
     let body = title.nextUntil(headerSelector, ':not(.highlight):not(button)');
     let bodyTexts = body.toArray().flatMap(function (node) {
@@ -25,8 +25,24 @@ let buildDocumentsForSearch = function () {
       "body": bodyTexts
     };
   }).toArray();
-}
 
-if (typeof module !== 'undefined') {
-  module.exports.buildDocumentsForSearch = buildDocumentsForSearch;
+  window.dispatchEvent(new CustomEvent('searchDocsGenerated',
+    {
+      detail: {
+        documents: links
+      }
+    }
+  ));
+
+  return lunr(function () {
+    this.use(lunr.multiLanguage('ru', 'en'));
+    this.ref('id');
+    this.tokenizer.separator = /\W/;
+    this.field('title', {boost: 10});
+    this.field('body');
+
+    links.forEach(function (link) {
+      this.add(link);
+    }, this);
+  });
 }
