@@ -61,7 +61,9 @@ $(function () {
     });
   }
 
-  let index = globalSearchIndex === undefined ? buildLocalIndexForSearch() : globalSearchIndex;
+  let index = document.globalSearchIndex === undefined ?
+    buildLocalIndexForSearch() :
+    lunr.Index.load(document.globalSearchIndex);
 
   $(determineSearchDelay);
   $(bind);
@@ -105,9 +107,9 @@ $(function () {
       if (results.length) {
         searchResults.empty();
         $.each(results, function (index, result) {
-          let pair = result.ref.split("|");
-          if (pair.length === 2) {
-            searchResults.append("<li><a href='" + pair[0] + "'>" + pair[1] + "</a></li>");
+          let urlAndText = result.ref.split("|");
+          if (urlAndText.length === 3) {
+            searchResults.append("<li><a href='" + urlAndText[1] + "#" + urlAndText[2] + "'>" + urlAndText[0] + "</a></li>");
           } else {
             let elem = document.getElementById(result.ref);
             let elemText = (elem !== undefined) ? $(elem).text() : "другой раздел"
