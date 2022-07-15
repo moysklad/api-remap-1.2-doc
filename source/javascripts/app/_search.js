@@ -105,9 +105,14 @@ $(function () {
       if (results.length) {
         searchResults.empty();
         $.each(results, function (index, result) {
-          let elem = document.getElementById(result.ref);
-          let elemText = (elem !== undefined) ? $(elem).text() : "другой раздел"
-          searchResults.append("<li><a href='#" + result.ref + "'>" + elemText + "</a></li>");
+          let pair = result.ref.split("|");
+          if (pair.length === 2) {
+            searchResults.append("<li><a href='" + pair[0] + "'>" + pair[1] + "</a></li>");
+          } else {
+            let elem = document.getElementById(result.ref);
+            let elemText = (elem !== undefined) ? $(elem).text() : "другой раздел"
+            searchResults.append("<li><a href='#" + result.ref + "'>" + elemText + "</a></li>");
+          }
         });
         highlight.call(searchInput);
       } else {
