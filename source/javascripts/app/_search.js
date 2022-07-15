@@ -109,11 +109,13 @@ $(function () {
         $.each(results, function (index, result) {
           let urlAndText = result.ref.split("|");
           if (urlAndText.length === 3) {
+            if (document.pathToRoot !== undefined) {
+              urlAndText[1] = document.pathToRoot + "/" + urlAndText[1];
+            }
             searchResults.append("<li><a href='" + urlAndText[1] + "#" + urlAndText[2] + "'>" + urlAndText[0] + "</a></li>");
           } else {
             let elem = document.getElementById(result.ref);
-            let elemText = (elem !== undefined) ? $(elem).text() : "другой раздел"
-            searchResults.append("<li><a href='#" + result.ref + "'>" + elemText + "</a></li>");
+            searchResults.append("<li><a href='#" + result.ref + "'>" + $(elem).text() + "</a></li>");
           }
         });
         highlight.call(searchInput);
