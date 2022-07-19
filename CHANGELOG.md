@@ -1,7 +1,7 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-## 05-07-2022
+## 19-07-2022
 ### Добавлено
 - Дополнено описаниение раздела Адрес у
   [Контрагента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres),
@@ -11,6 +11,18 @@
   [Заказа покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-attributy-suschnosti-adres-dostawki),
   [Отгрузки](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka-otgruzki-attributy-suschnosti-adres-dostawki),
   об отсутствии поддержки `null`.
+
+## 07-07-2022
+### Добавлено
+- Поддержка протокола change-handler в [Счете покупателю](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-pokupatelu).
+
+## 06-07-2022
+### Изменено
+- Разделы в [Отчетах остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki)
+
+## 04-07-2022
+### Добавлено
+- Поддержка протокола update-provider в [Приемке](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka).
 
 ## 16-06-2022
 ### Добавлено
