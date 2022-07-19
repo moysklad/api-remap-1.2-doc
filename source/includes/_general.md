@@ -994,6 +994,17 @@ curl -X POST
 Удаление валюты из документов (`{rate: null}`) равносильно изменению валюты документа на валюту по умолчанию. В результате все
 цены и суммы будут пересчитаны. Накладные расходы также будут пересчитаны, если они не были указаны явно.
 
+Исключения:
+
++ Структурированный адрес у
+  [Контрагента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres),
+  [Юрлица](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres),
+  [Точки продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-adres),
+  [Склада](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres),
+  [Заказа покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-attributy-suschnosti-adres-dostawki),
+  [Отгрузки](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka-otgruzki-attributy-suschnosti-adres-dostawki) не поддерживает удаления передачей `null`.
+Для удаления адреса необходимо в строковое поле передать пустую строку `""`. Конкретные строковые поля приведены в соответствующих разделах, переход в которые осуществляется по ссылкам выше.
+
 ### Пустые поля
 
 Если какое-то из полей сущности не было заполнено и, при этом оно не является обязательным, оно не будет выдано в JSON представлении этой сущности.
