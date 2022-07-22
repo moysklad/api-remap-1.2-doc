@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 22-07-2022
+### Добавлено
+- Поддержка протокола update-provider в [Отгрузке](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka).
+
 ## 19-07-2022
 ### Добавлено
 - Дополнено описаниение раздела Адрес у
