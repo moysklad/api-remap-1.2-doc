@@ -136,6 +136,14 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 22-07-2022
+#### Добавлено
+Добавлено описание операторов фильтрации штрихкодов для [товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar),
+[комплектов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt),
+[модификаций](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-modifikaciq),
+[серий](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-seriq) и
+[услуг](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-usluga)
+
 ### 19-07-2022
 #### Добавлено
 - Дополнено описаниение раздела Адрес у
