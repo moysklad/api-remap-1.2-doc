@@ -613,7 +613,7 @@
 
 ### 07-04-2021
 #### Добавлено
-- Добавлен [пример](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-poluchit-ostatki) в отчет остатки по параметру includeRelated 
+- Добавлен [пример](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-poluchit-wse-ostatki) в отчет остатки по параметру includeRelated 
 
 ### 06-04-2021
 #### Добавлено
