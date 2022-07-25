@@ -61,9 +61,18 @@ $(function () {
     });
   }
 
-  let index = document.globalSearchIndex === undefined ?
-    buildLocalIndexForSearch() :
-    lunr.Index.load(document.globalSearchIndex);
+  let index, hasIndexLoadingError = false;
+  if (document.globalSearchIndex !== undefined) {
+    try {
+      index = lunr.Index.load(document.globalSearchIndex);
+    } catch (err) {
+      console.error(err); // will use index for page
+      hasIndexLoadingError = true;
+    }
+  }
+  if (index === undefined) {
+    index = buildLocalIndexForSearch();
+  }
 
   $(determineSearchDelay);
   $(bind);
@@ -77,7 +86,7 @@ $(function () {
     searchResults = $('.search-results');
 
     $('#input-search').on('keyup',function(e) {
-      var wait = function() {
+      let wait = function() {
         return function(executingFunction, waitTime){
           clearTimeout(timeoutHandle);
           timeoutHandle = setTimeout(executingFunction, waitTime);
@@ -91,7 +100,7 @@ $(function () {
 
   function search(event) {
 
-    var searchInput = $('#input-search')[0];
+    let searchInput = $('#input-search')[0];
 
     unhighlight();
     searchResults.addClass('visible');
@@ -100,12 +109,15 @@ $(function () {
     if (event.keyCode === 27) searchInput.value = '';
 
     if (searchInput.value) {
-      var results = index.search(searchInput.value).filter(function(r) {
+      let results = index.search(searchInput.value).filter(function(r) {
         return r.score > 0.0001;
       });
 
+      searchResults.empty();
+      if (hasIndexLoadingError) {
+        searchResults.append("<li class='warning'>Обновите страницу для поиска по всем разделам</li>");
+      }
       if (results.length) {
-        searchResults.empty();
         $.each(results, function (index, result) {
           let urlAndText = result.ref.split("|");
           if (urlAndText.length === 3) {
@@ -120,8 +132,7 @@ $(function () {
         });
         highlight.call(searchInput);
       } else {
-        searchResults.html('<li></li>');
-        $('.search-results li').text('No Results Found for "' + searchInput.value + '"');
+        searchResults.append('<li>Ничего не найдено по запросу "' + searchInput.value + '"</li>');
       }
     } else {
       unhighlight();
