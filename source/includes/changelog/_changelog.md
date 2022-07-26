@@ -136,6 +136,86 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 25-07-2022
+#### Добавлено
+- Поддержка протокола update-provider в [Отгрузке](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka).
+- Новый тип уведомлений [На счет зачислены бонусные деньги](https://dev.moysklad.ru/doc/api/remap/1.2/other/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-na-schet-zachisleny-bonusnye-den-gi).
+
+### 22-07-2022
+#### Добавлено
+Добавлено описание операторов фильтрации штрихкодов для [товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar),
+[комплектов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt),
+[модификаций](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-modifikaciq),
+[серий](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-seriq) и
+[услуг](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-usluga)
+
+### 19-07-2022
+#### Добавлено
+- Дополнено описаниение раздела Адрес у
+[Контрагента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres),
+[Юрлица](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres),
+[Точки продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-adres),
+[Склада](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres),
+[Заказа покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-attributy-suschnosti-adres-dostawki),
+[Отгрузки](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka-otgruzki-attributy-suschnosti-adres-dostawki), 
+об отсутствии поддержки `null`.
+
+### 07-07-2022
+#### Добавлено
+- Поддержка протокола change-handler в [Счете покупателю](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-pokupatelu).
+
+### 06-07-2022
+#### Изменено
+- Разделы в [Отчетах остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki)
+
+### 04-07-2022
+#### Добавлено
+- Поддержка протокола update-provider в [Приемке](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka).
+
+### 16-06-2022
+#### Добавлено
+- В описании [Отчетов](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety) добавлен список операторов, с помощью которых выполняется фильтрация по атрибутам.
+
+### 15-06-2022
+#### Добавлено
+- В описании [Документов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty) добавлен список операторов, с помощью которых выполняется фильтрация по атрибутам.
+
+### 14-06-2022
+#### Добавлено
+- В описании [Сущностей](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti) добавлен список операторов, с помощью которых выполняется фильтрация по атрибутам.
+
+### 09-06-2022
+#### Изменено
+- Добавлены поля `printed` и `published` в [Договор](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-dogowor)
+
+### 03-06-2022
+#### Добавлено
+- Добавлено поле `authorApplication` в [Вебхуках](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki-veb-huki)
+
+### 02-06-2022
+#### Изменено
+- Перенесено описание фильтрации по дополнительным полям в [Общие Сведения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm)
+
+### 26-05-2022
+#### Добавлено
+- Добавлено поле `salesChannel` в [Счет покупателю](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-pokupatelu)
+
+### 20-05-2022
+#### Добавлено
+- Поддержка полей `incomingDate` и `incomingNumber` для протокола change-handler в [Приемке](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka).
+
+### 13-05-2022
+#### Добавлено
+- Описание [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki) `1048`
+
+### 28-04-2022
+#### Добавлено
+- Параметр фильтрации `salesChannel` в [Отчетах Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost), позволяющий фильтровать по каналам продаж
+
+### 27-04-2022
+#### Добавлено
+- Описание необходимых пермиссий в отчетах [Показатели](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-pokazateli), [Показатели продаж и заказов](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-pokazateli-prodazh-i-zakazow), [Показатели контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pokazateli-kontragentow), [Деньги](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-den-gi)
+
 ### 18-04-2022
 #### Добавлено
 - Параметр фильтрации withSubFolders в [Отчете остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki), позволяющий фильтровать по заданной группе товаров без учета ее подгрупп.
@@ -538,7 +618,7 @@
 
 ### 07-04-2021
 #### Добавлено
-- Добавлен [пример](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-poluchit-ostatki) в отчет остатки по параметру includeRelated 
+- Добавлен [пример](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-poluchit-wse-ostatki) в отчет остатки по параметру includeRelated 
 
 ### 06-04-2021
 #### Добавлено

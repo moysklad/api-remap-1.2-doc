@@ -35,17 +35,20 @@
 
 #### Атрибуты доступные для фильтрации
 
-Результаты отчета можно отфильтровать, используя параметр filter. Для каждого параметра можно указать только одно значение. Нельзя указывать пустые значения. Поддерживается фильтрация только на равенство.
+Результаты отчета можно отфильтровать, используя параметр filter.
+Для каждого параметра, кроме канала продаж, можно указать только одно значение.
+Нельзя указывать пустые значения.
 
-| Название                       | Описание                                                                                          |
-| ------------------------------ | :------------------------------------------------------------------------------------------------ |
-| **product**                    | ссылка на товар, услугу, комплект, модификацию или серию, по которой нужно произвести фильтрацию. |
-| **counterparty**               | ссылка на контрагента, по которому нужно произвести фильтрацию.                                   |
-| **organization**               | ссылка на юрлицо, по которому нужно произвести фильтрацию.                                        |
-| **store**                      | ссылка на склад, по которому нужно произвести фильтрацию.                                         |
-| **project**                    | ссылка на проект, по которому нужно произвести фильтрацию.                                        |
-| **retailStore**                | ссылка на точку продаж, по которой нужно произвести фильтрацию.                                   |
-| **supplier**                   | параметр для фильтрации по поставщику. Значение параметра - ссылка на контрагента или организацию. В выборку будут включены товары с указанным поставщиком.                                                                |
+| Название         | Тип    | Фильтрация | Описание                                                                                                                                                           |
+|------------------| :----- | :--------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **product**      | Object | `=`        | ссылка на товар, услугу, комплект, модификацию или серию, по которой нужно произвести фильтрацию.                                                                  |
+| **counterparty** | Object | `=`        | ссылка на контрагента, по которому нужно произвести фильтрацию.                                                                                                    |
+| **organization** | Object | `=`        | ссылка на юрлицо, по которому нужно произвести фильтрацию.                                                                                                         |
+| **store**        | Object | `=`        | ссылка на склад, по которому нужно произвести фильтрацию.                                                                                                          |
+| **project**      | Object | `=`        | ссылка на проект, по которому нужно произвести фильтрацию.                                                                                                         |
+| **retailStore**  | Object | `=`        | ссылка на точку продаж, по которой нужно произвести фильтрацию.                                                                                                    |
+| **supplier**     | Object | `=`        | параметр для фильтрации по поставщику. Значение параметра - ссылка на контрагента или организацию. В выборку будут включены товары с указанным поставщиком.        |
+| **salesChannel** | Object | `=`        | ссылка на канал продаж, по которому нужно провести фильтрацию. Допустимо повторное использование фильтра, когда требуется фильтрация по нескольким каналам продаж. |
 
 Примеры фильтрации:
 
@@ -56,7 +59,9 @@
 - `filter=project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
 - `filter=retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
 - `filter=supplier=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
-- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
+- `filter=salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
+- `filter=salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9;salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/ea012b09-4df3-439b-acf7-7d0464fbf603`
+- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030;salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
 
 ### Получить Прибыльность по товарам
 
@@ -242,17 +247,20 @@ curl -X GET
 
 #### Атрибуты доступные для фильтрации
 
-Результаты отчета можно отфильтровать, используя параметр filter. Для каждого параметра можно указать только одно значение. Нельзя указывать пустые значения. Поддерживается фильтрация только на равенство.
+Результаты отчета можно отфильтровать, используя параметр filter.
+Для каждого параметра, кроме канала продаж, можно указать только одно значение.
+Нельзя указывать пустые значения.
 
-| Название                       | Описание                                                                                          |
-| ------------------------------ | :------------------------------------------------------------------------------------------------ |
-| **product**                    | ссылка на товар, услугу, комплект, модификацию или серию, по которой нужно произвести фильтрацию. |
-| **counterparty**               | ссылка на контрагента, по которому нужно произвести фильтрацию.                                   |
-| **organization**               | ссылка на юрлицо, по которому нужно произвести фильтрацию.                                        |
-| **store**                      | ссылка на склад, по которому нужно произвести фильтрацию.                                         |
-| **project**                    | ссылка на проект, по которому нужно произвести фильтрацию.                                        |
-| **retailStore**                | ссылка на точку продаж, по которой нужно произвести фильтрацию.                                   |
-| **supplier**                   | параметр для фильтрации по поставщику. Значение параметра - ссылка на контрагента или организацию. В выборку будут включены товары с указанным поставщиком.                                                                |
+| Название         | Тип    | Фильтрация | Описание                                                                                                                                                           |
+|------------------| :----- | :--------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **product**      | Object | `=`        | ссылка на товар, услугу, комплект, модификацию или серию, по которой нужно произвести фильтрацию.                                                                  |
+| **counterparty** | Object | `=`        | ссылка на контрагента, по которому нужно произвести фильтрацию.                                                                                                    |
+| **organization** | Object | `=`        | ссылка на юрлицо, по которому нужно произвести фильтрацию.                                                                                                         |
+| **store**        | Object | `=`        | ссылка на склад, по которому нужно произвести фильтрацию.                                                                                                          |
+| **project**      | Object | `=`        | ссылка на проект, по которому нужно произвести фильтрацию.                                                                                                         |
+| **retailStore**  | Object | `=`        | ссылка на точку продаж, по которой нужно произвести фильтрацию.                                                                                                    |
+| **supplier**     | Object | `=`        | параметр для фильтрации по поставщику. Значение параметра - ссылка на контрагента или организацию. В выборку будут включены товары с указанным поставщиком.        |
+| **salesChannel** | Object | `=`        | ссылка на канал продаж, по которому нужно провести фильтрацию. Допустимо повторное использование фильтра, когда требуется фильтрация по нескольким каналам продаж. |
 
 Примеры фильтрации:
 
@@ -263,7 +271,9 @@ curl -X GET
 - `filter=project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
 - `filter=retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
 - `filter=supplier=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
-- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
+- `filter=salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
+- `filter=salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9;salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/ea012b09-4df3-439b-acf7-7d0464fbf603`
+- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030;salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
 
 ### Получить Прибыльность по модификациям
 
@@ -444,17 +454,20 @@ curl -X GET
 
 #### Атрибуты доступные для фильтрации
 
-Результаты отчета можно отфильтровать, используя параметр filter. Для каждого параметра можно указать только одно значение. Нельзя указывать пустые значения. Поддерживается фильтрация только на равенство.
+Результаты отчета можно отфильтровать, используя параметр filter.
+Для каждого параметра, кроме канала продаж, можно указать только одно значение.
+Нельзя указывать пустые значения.
 
-| Название                       | Описание                                                                                          |
-| ------------------------------ | :------------------------------------------------------------------------------------------------ |
-| **product**                    | ссылка на товар, услугу, комплект, модификацию или серию, по которой нужно произвести фильтрацию. |
-| **counterparty**               | ссылка на контрагента, по которому нужно произвести фильтрацию.                                   |
-| **organization**               | ссылка на юрлицо, по которому нужно произвести фильтрацию.                                        |
-| **store**                      | ссылка на склад, по которому нужно произвести фильтрацию.                                         |
-| **project**                    | ссылка на проект, по которому нужно произвести фильтрацию.                                        |
-| **retailStore**                | ссылка на точку продаж, по которой нужно произвести фильтрацию.                                   |
-| **supplier**                   | параметр для фильтрации по поставщику. Значение параметра - ссылка на контрагента или организацию. В выборку будут включены товары с указанным поставщиком.                                                                |
+| Название         | Тип    | Фильтрация | Описание                                                                                                                                                           |
+|------------------| :----- | :--------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **product**      | Object | `=`        | ссылка на товар, услугу, комплект, модификацию или серию, по которой нужно произвести фильтрацию.                                                                  |
+| **counterparty** | Object | `=`        | ссылка на контрагента, по которому нужно произвести фильтрацию.                                                                                                    |
+| **organization** | Object | `=`        | ссылка на юрлицо, по которому нужно произвести фильтрацию.                                                                                                         |
+| **store**        | Object | `=`        | ссылка на склад, по которому нужно произвести фильтрацию.                                                                                                          |
+| **project**      | Object | `=`        | ссылка на проект, по которому нужно произвести фильтрацию.                                                                                                         |
+| **retailStore**  | Object | `=`        | ссылка на точку продаж, по которой нужно произвести фильтрацию.                                                                                                    |
+| **supplier**     | Object | `=`        | параметр для фильтрации по поставщику. Значение параметра - ссылка на контрагента или организацию. В выборку будут включены товары с указанным поставщиком.        |
+| **salesChannel** | Object | `=`        | ссылка на канал продаж, по которому нужно провести фильтрацию. Допустимо повторное использование фильтра, когда требуется фильтрация по нескольким каналам продаж. |
 
 Примеры фильтрации:
 
@@ -465,7 +478,9 @@ curl -X GET
 - `filter=project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
 - `filter=retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
 - `filter=supplier=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
-- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
+- `filter=salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
+- `filter=salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9;salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/ea012b09-4df3-439b-acf7-7d0464fbf603`
+- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030;salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
 
 ### Получить Прибыльность по сотрудникам
 
@@ -564,17 +579,20 @@ curl -X GET
 
 #### Атрибуты доступные для фильтрации
 
-Результаты отчета можно отфильтровать, используя параметр filter. Для каждого параметра можно указать только одно значение. Нельзя указывать пустые значения. Поддерживается фильтрация только на равенство.
+Результаты отчета можно отфильтровать, используя параметр filter.
+Для каждого параметра, кроме канала продаж, можно указать только одно значение.
+Нельзя указывать пустые значения.
 
-| Название                       | Описание                                                                                          |
-| ------------------------------ | :------------------------------------------------------------------------------------------------ |
-| **product**                    | ссылка на товар, услугу, комплект, модификацию или серию, по которой нужно произвести фильтрацию. |
-| **counterparty**               | ссылка на контрагента, по которому нужно произвести фильтрацию.                                   |
-| **organization**               | ссылка на юрлицо, по которому нужно произвести фильтрацию.                                        |
-| **store**                      | ссылка на склад, по которому нужно произвести фильтрацию.                                         |
-| **project**                    | ссылка на проект, по которому нужно произвести фильтрацию.                                        |
-| **retailStore**                | ссылка на точку продаж, по которой нужно произвести фильтрацию.                                   |
-| **supplier**                   | параметр для фильтрации по поставщику. Значение параметра - ссылка на контрагента или организацию. В выборку будут включены товары с указанным поставщиком.                                                                |
+| Название         | Тип    | Фильтрация | Описание                                                                                                                                                           |
+|------------------| :----- | :--------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **product**      | Object | `=`        | ссылка на товар, услугу, комплект, модификацию или серию, по которой нужно произвести фильтрацию.                                                                  |
+| **counterparty** | Object | `=`        | ссылка на контрагента, по которому нужно произвести фильтрацию.                                                                                                    |
+| **organization** | Object | `=`        | ссылка на юрлицо, по которому нужно произвести фильтрацию.                                                                                                         |
+| **store**        | Object | `=`        | ссылка на склад, по которому нужно произвести фильтрацию.                                                                                                          |
+| **project**      | Object | `=`        | ссылка на проект, по которому нужно произвести фильтрацию.                                                                                                         |
+| **retailStore**  | Object | `=`        | ссылка на точку продаж, по которой нужно произвести фильтрацию.                                                                                                    |
+| **supplier**     | Object | `=`        | параметр для фильтрации по поставщику. Значение параметра - ссылка на контрагента или организацию. В выборку будут включены товары с указанным поставщиком.        |
+| **salesChannel** | Object | `=`        | ссылка на канал продаж, по которому нужно провести фильтрацию. Допустимо повторное использование фильтра, когда требуется фильтрация по нескольким каналам продаж. |
 
 Примеры фильтрации:
 
@@ -585,7 +603,9 @@ curl -X GET
 - `filter=project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
 - `filter=retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
 - `filter=supplier=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
-- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
+- `filter=salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
+- `filter=salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9;salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/ea012b09-4df3-439b-acf7-7d0464fbf603`
+- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://online.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030;salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
 
 ### Получить Прибыльность по покупателям
 
@@ -686,19 +706,19 @@ curl -X GET
 
 #### Атрибуты доступные для фильтрации
 
-Результаты отчета можно отфильтровать, используя параметр filter. 
-Для каждого параметра можно указать только одно значение. 
-Нельзя указывать пустые значения. 
-Поддерживается фильтрация только на равенство.
+Результаты отчета можно отфильтровать, используя параметр filter.
+Для каждого параметра, кроме канала продаж, можно указать только одно значение.
+Нельзя указывать пустые значения.
 
-| Название         | Описание                                                                                                                                                    |
-|------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **product**      | ссылка на товар, услугу, комплект, модификацию или серию, по которой нужно произвести фильтрацию.                                                           |
-| **counterparty** | ссылка на контрагента, по которому нужно произвести фильтрацию.                                                                                             |
-| **organization** | ссылка на юрлицо, по которому нужно произвести фильтрацию.                                                                                                  |
-| **store**        | ссылка на склад, по которому нужно произвести фильтрацию.                                                                                                   |
-| **project**      | ссылка на проект, по которому нужно произвести фильтрацию.                                                                                                  |
-| **supplier**     | параметр для фильтрации по поставщику. Значение параметра - ссылка на контрагента или организацию. В выборку будут включены товары с указанным поставщиком. |
+| Название         | Тип    | Фильтрация | Описание                                                                                                                                                           |
+|------------------| :----- | :--------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **product**      | Object | `=`        | ссылка на товар, услугу, комплект, модификацию или серию, по которой нужно произвести фильтрацию.                                                                  |
+| **counterparty** | Object | `=`        | ссылка на контрагента, по которому нужно произвести фильтрацию.                                                                                                    |
+| **organization** | Object | `=`        | ссылка на юрлицо, по которому нужно произвести фильтрацию.                                                                                                         |
+| **store**        | Object | `=`        | ссылка на склад, по которому нужно произвести фильтрацию.                                                                                                          |
+| **project**      | Object | `=`        | ссылка на проект, по которому нужно произвести фильтрацию.                                                                                                         |
+| **supplier**     | Object | `=`        | параметр для фильтрации по поставщику. Значение параметра - ссылка на контрагента или организацию. В выборку будут включены товары с указанным поставщиком.        |
+| **salesChannel** | Object | `=`        | ссылка на канал продаж, по которому нужно провести фильтрацию. Допустимо повторное использование фильтра, когда требуется фильтрация по нескольким каналам продаж. |
 
 Примеры фильтрации:
 
@@ -708,7 +728,9 @@ curl -X GET
 - `filter=store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321`
 - `filter=project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
 - `filter=supplier=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
-- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
+- `filter=salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
+- `filter=salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9;salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/ea012b09-4df3-439b-acf7-7d0464fbf603`
+- `filter=product=https://online.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;salesChannel=https://online.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
 
 ### Получить Прибыльность по каналам продаж
 
