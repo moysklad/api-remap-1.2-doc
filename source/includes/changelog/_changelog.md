@@ -136,6 +136,12 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 29-07-2022
+#### Описано
+- Ранее неявное ограничение в 255 символов на длину url адресов для [Веб-хуков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki-veb-huki)
+#### Добавлено
+- Ошибка [30010](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-oshibki-formata)
+
 ### 26-07-2022
 #### Добавлено
 - Поддержка накладных расходов (поле `overhead`) в протоколе update-provider в [Приемке](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka).
