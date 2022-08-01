@@ -15,9 +15,9 @@
 
 Примеры:
 
-+ `filter=productid=<id>`
-+ `filter=productid!=<id>`
-+ `filter=productid=<id>;productid=<id>`
++ `filter=productid=677c4032-8667-11e6-8a84-bae500003344`
++ `filter=productid!=677c4032-8667-11e6-8a84-bae500003344`
++ `filter=productid=677c4032-8667-11e6-8a84-bae500003344;productid=421c4032-4709-31e4-1d2r-awe5000025me`
 
 #### Атрибуты Сущности
 | Название               | Тип                                                       | Фильтрация                  | Описание                                                                                                                                                                                                                                    |
