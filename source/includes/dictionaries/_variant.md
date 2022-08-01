@@ -12,6 +12,7 @@
 
 Возможна фильтрация списка Модификаций по **id** товара - параметр фильтрации **productid**. Доступные операторы фиьтрации `=` `!=` .
 Подробнее про фильтрацию можно прочитать в разделе [Фильтрация выборки с помощью параметра filter](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter)
+
 Примеры:
 
 + `filter=productid=<id>`
