@@ -1,6 +1,14 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 29-07-2022
+### Добавлено
+- Поддержка протокола update-provider в [Перемещении](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-peremeschenie).
+
+## 28-07-2022
+### Добавлено
+- Поддержка протокола update-provider в [Оприходовании](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-oprihodowanie).
+
 ## 26-07-2022
 ### Добавлено
 - Поддержка накладных расходов (поле `overhead`) в протоколе update-provider в [Приемке](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka).
