@@ -30,9 +30,19 @@ jobs:
           ruby-version: '2.5.1'
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
       - name: Build
         run:
           bundle exec middleman build --build-dir=site
+
+      - name: Build index
+        run: |
+          npm install jsdom@20.0.0
+          node ./search/globalindex.js "./site/"
 
       - name: Deploy
         env:
