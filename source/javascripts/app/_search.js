@@ -13,7 +13,7 @@ $(function () {
   let timeoutHandle = 0;
 
   let buildLocalIndexForSearch = function () {
-    let headerSelector = 'h1, h2, h3';
+    let headerSelector = 'h1, h2';
     let links = $(headerSelector).map(function () {
       let title = $(this);
       let body = title.nextUntil(headerSelector, ':not(.highlight):not(button)');
