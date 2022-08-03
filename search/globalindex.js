@@ -12,7 +12,7 @@ const filePrefix = process.argv[2];
 console.log("Prebuild index for " + filePrefix);
 
 async function getDoc(filename) {
-  const innerFilename = filename.substring(filePrefix.length).replace(/\/index.html$/, "/");
+  const innerFilename = path.relative(filePrefix, filename).replace(/\/index.html$/, "/");
   let options = { runScripts: "dangerously", resources: "usable" };
   return JSDOM.fromFile(filename, options).then(dom => {
     return new Promise((resolve, reject) => { // (*)
