@@ -136,6 +136,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 04-08-2022
+#### Добавлено
+- Описание [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-shablonow) `36001`
+
 ### 01-08-2022
 #### Добавлено
 - Поддержка накладных расходов (поле `overhead`) в протоколе update-provider в

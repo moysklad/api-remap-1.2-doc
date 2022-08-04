@@ -1740,7 +1740,7 @@ curl -X GET
 > Запрос на создание счета покупателю на основе отгрузки.
 
 ```shell
-  curl -X POST
+  curl -X PUT
     "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/new"
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"

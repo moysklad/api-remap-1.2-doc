@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 04-08-2022
+### Добавлено
+- Описание [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-shablonow) `36001`
+
 ## 01-08-2022
 ### Добавлено
 - Поддержка накладных расходов (поле `overhead`) в протоколе update-provider в
