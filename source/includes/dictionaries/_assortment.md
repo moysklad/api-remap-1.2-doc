@@ -194,7 +194,7 @@ curl -X GET
         "type": "product",
         "mediaType": "application/json"
       },
-      "id": "35427052-36e7-11e7-8a7f-40d0000000d1",
+      "id": "35427052-36e7-11e7-8a7f-40d0000000d7",
       "accountId": "103bff1b-36e7-11e7-8a7f-40d000000004",
       "owner": {
         "meta": {
