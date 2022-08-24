@@ -872,7 +872,7 @@ curl -X GET
  
 
 | Название                      | Возможные значения   | Значение по умолчанию                       | Описание                               |
-| ----------------------------- | :------------------- | :------------------------------------------ | :------------------------------------- |
+| ----------------------------- | :------------------- | :------------------------------------------ |:---------------------------------------|
 | **GTINList**                  | view, create, delete | Все NO                                      | Список GTIN                            |
 | **accountAdjustment**         | DICTIONARY           | Все ALL                                     | Корректировка остатков на счете        |
 | **bonusTransaction**          | OPERATION            | Все ALL                                     | Бонусные баллы                         |
@@ -928,7 +928,8 @@ curl -X GET
 | **retailSalesReturn**         | OPERATION            | Все ALL                                     | Возвраты                               |
 | **retailShift**               | DICTIONARY           | Все ALL                                     | Смены                                  |
 | **retailStore**               | BASE                 | Все ALL                                     | Точка продаж                           |
-| **retireOrder**               | DICTIONARY           | Все NO                                      | Возврат в оборот                       |
+| **retireOrder**               | DICTIONARY           | Все NO                                      | Вывод из оборота                       |
+| **retireOrderOSU**            | DICTIONARY           | Все NO                                      | Вывод из оборота (ОСУ)                 |
 | **salesReturn**               | OPERATION            | Все ALL                                     | Возврат покупателя                     |
 | **supply**                    | OPERATION            | Все ALL                                     | Приемки                                |
 | **trackingCodeList**          | view, print          | Все NO                                      | Коды маркировки                        |
@@ -1363,6 +1364,13 @@ curl -X GET
                 "create": "NO",
                 "update": "NO",
                 "delete": "NO"
+            },
+            "retireOrderOSU": {
+              "view": "NO",
+              "print": "NO",
+              "create": "NO",
+              "update": "NO",
+              "delete": "NO"
             },
             "GTINList": {
                 "view": "NO",
