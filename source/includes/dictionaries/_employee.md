@@ -896,6 +896,7 @@ curl -X GET
 | **emissionOrder**             | DICTIONARY           | Все NO                                      | Заказ кодов маркировки                 |
 | **utilizationReport**         | DICTIONARY           | Все NO                                      | Отчет об использовании                 |
 | **atkAggregation**            | DICTIONARY           | Все NO                                      | Формирование АТК                       |
+| **retireOrderOSU**            | DICTIONARY           | Все NO                                      | Вывод из оборота ОСУ                   |
 | **employee**                  | BASE                 | Все ALL                                     | Сотрудники                             |
 | **enrollOrder**               | DICTIONARY           | Все NO                                      | Ввод в оборот кодов маркировки         |
 | **enter**                     | OPERATION            | Все ALL                                     | Оприходование                          |
@@ -928,7 +929,7 @@ curl -X GET
 | **retailSalesReturn**         | OPERATION            | Все ALL                                     | Возвраты                               |
 | **retailShift**               | DICTIONARY           | Все ALL                                     | Смены                                  |
 | **retailStore**               | BASE                 | Все ALL                                     | Точка продаж                           |
-| **retireOrder**               | DICTIONARY           | Все NO                                      | Возврат в оборот                       |
+| **retireOrder**               | DICTIONARY           | Все NO                                      | Вывод из оборота                       |
 | **salesReturn**               | OPERATION            | Все ALL                                     | Возврат покупателя                     |
 | **supply**                    | OPERATION            | Все ALL                                     | Приемки                                |
 | **trackingCodeList**          | view, print          | Все NO                                      | Коды маркировки                        |
@@ -1125,6 +1126,13 @@ curl -X GET
               "delete": "NO"
             },
             "atkAggregation": {
+              "view": "NO",
+              "print": "NO",
+              "create": "NO",
+              "update": "NO",
+              "delete": "NO"
+            },
+            "retireOrderOSU": {
               "view": "NO",
               "print": "NO",
               "create": "NO",
