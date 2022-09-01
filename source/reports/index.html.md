@@ -11,6 +11,7 @@ toc_footers:
 
 includes:
   - reports/report_stock
+  - reports/report_stock_by_operation
   - reports/report_stock_current
   - reports/report_pnl
   - reports/report_money
