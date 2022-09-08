@@ -136,6 +136,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 08-09-2022
+- добавлен тип контекста `registration` в [Аудите](https://dev.moysklad.ru/doc/api/remap/1.2/other/#audit)
+- добавлен тип события `registration` в [Аудите](https://dev.moysklad.ru/doc/api/remap/1.2/other/#audit)
+
 ### 29-08-2022
 #### Добавлено
 - Пермиссии для документа "Вывод из оборота (ОСУ)" в [правах сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sotrudnik-rabota-s-prawami-sotrudnika)
