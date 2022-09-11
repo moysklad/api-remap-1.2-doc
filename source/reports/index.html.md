@@ -10,14 +10,14 @@ toc_footers:
   - <a href='https://github.com/moysklad/java-remap-1.2-doc/issues'>Сообщите об ошибке</a>
 
 includes:
-  - reports/report_stock
-  - reports/report_stock_by_operation
-  - reports/report_stock_current
+  - reports/report_stock  
+  - reports/report_stock_current  
   - reports/report_pnl
   - reports/report_money
   - reports/report_sales_orders
   - reports/report_counterparty
   - reports/report_turnover
+  - reports/report_stock_by_operation
   - reports/dashboard
   
 search: true
