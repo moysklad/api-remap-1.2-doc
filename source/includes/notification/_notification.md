@@ -21,7 +21,7 @@
 | ----------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------- |
 | **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче,                                                                               |
 | **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.                                                       |
-| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой [Уведомления](../other/#uwedomleniq-lenta-uwedomlenij). |
+| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой [Уведомления](/#uwedomleniq-lenta-uwedomlenij). |
 
 **Параметры**
 
@@ -329,6 +329,7 @@ curl -X PUT
 | **NotificationTaskOverdue**             | Задача                 | Задача просрочена                                                      |
 | **NotificationTaskReopened**            | Задача                 | Задача переоткрыта                                                     |
 | **NotificationTaskUnassigned**          | Задача                 | Задача снята                                                           |
+| **NotificationBonusMoney**              | Баланс                 | На счет зачислены бонусные деньги                                      |
 
 ## Подробное описание типов уведомлений
 
@@ -349,7 +350,7 @@ NotificationExportCompleted - завершение экспорта
 | **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные объекта<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                               |
 | **read**                | Boolean                                                   | Признак того, было ли Уведомление прочитано<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                      |
 | **taskState**           | Object                                                    | Статус завершения. Может принимать значения `completed`, `interrupted`, `interrupted_by_user`, `interrupted_by_timeout`, `interrupted_by_system`<br>`+Обязательное при ответе` `+Необходимо при создании` |
-| **taskType**            | Object                                                    | [Тип экспорта](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-vozmozhnye-znacheniq-tipa-axporta)<br>`+Обязательное при ответе` `+Необходимо при создании`                                           |
+| **taskType**            | Object                                                    | [Тип экспорта](/#uwedomleniq-tipy-uwedomlenij-formaty-polej-vozmozhnye-znacheniq-tipa-axporta)<br>`+Обязательное при ответе` `+Необходимо при создании`                                           |
 | **title**               | String(255)                                               | Краткий текст уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                        |
 
 **Параметры**
@@ -405,7 +406,7 @@ NotificationImportCompleted - завершение импорта
 | **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные объекта<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                               |
 | **read**                | Boolean                                                   | Признак того, было ли Уведомление прочитано<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                      |
 | **taskState**           | Object                                                    | Статус завершения. Может принимать значения `completed`, `interrupted`, `interrupted_by_user`, `interrupted_by_timeout`, `interrupted_by_system`<br>`+Обязательное при ответе` `+Необходимо при создании` |
-| **taskType**            | Object                                                    | [Тип экспорта](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-vozmozhnye-znacheniq-tipa-axporta)<br>`+Обязательное при ответе` `+Необходимо при создании`                                           |
+| **taskType**            | Object                                                    | [Тип экспорта](/#uwedomleniq-tipy-uwedomlenij-formaty-polej-vozmozhnye-znacheniq-tipa-axporta)<br>`+Обязательное при ответе` `+Необходимо при создании`                                           |
 | **title**               | String(255)                                               | Краткий текст уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                        |
 
 **Параметры**
@@ -1008,11 +1009,11 @@ NotificationTaskChanged - задача изменена
 
 | Название         | Тип         | Описание                                                                                                                                                                            |
 | ---------------- | :---------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **description**  | String(255) | Изменение описания задачи в [формате изменения поля](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)<br>`+Обязательное при ответе`                    |
-| **deadline**     | String(255) | Изменение планируемой даты завершения задачи в [формате изменения поля](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)<br>`+Обязательное при ответе` |
-| **agentLink**    | String(255) | Изменение контрагента в [формате изменения поля](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)<br>`+Обязательное при ответе`                        |
-| **documentLink** | String(255) | Изменение связанного документа в [формате изменения поля](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)<br>`+Обязательное при ответе`               |
-| **assignee**     | String(255) | Изменение исполнителя в [формате изменения поля](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)<br>`+Обязательное при ответе`                        |
+| **description**  | String(255) | Изменение описания задачи в [формате изменения поля](/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)<br>`+Обязательное при ответе`                    |
+| **deadline**     | String(255) | Изменение планируемой даты завершения задачи в [формате изменения поля](/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)<br>`+Обязательное при ответе` |
+| **agentLink**    | String(255) | Изменение контрагента в [формате изменения поля](/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)<br>`+Обязательное при ответе`                        |
+| **documentLink** | String(255) | Изменение связанного документа в [формате изменения поля](/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)<br>`+Обязательное при ответе`               |
+| **assignee**     | String(255) | Изменение исполнителя в [формате изменения поля](/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)<br>`+Обязательное при ответе`                        |
 
 ##### Задача
 
@@ -1510,7 +1511,7 @@ NotificationTaskCommentChanged - изменен комментарий к зад
 | **accountId**   | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                                                                   |
 | **created**     | DateTime                                                  | Дата и время формирования Уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                                               |
 | **description** | String(4096)                                              | Описание уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                                                                |
-| **diff**        | String(255)                                               | Изменения комментария в [формате изменения поля](../other/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                      |
+| **diff**        | String(255)                                               | Изменения комментария в [формате изменения поля](/#uwedomleniq-tipy-uwedomlenij-formaty-polej-format-izmenennogo-polq)<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                      |
 | **id**          | UUID                                                      | ID Уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                                                                      |
 | **meta**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные объекта<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                                                                  |
 | **noteContent** | String(4096)                                              | Содержимое комментария<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                                                              |
@@ -1995,6 +1996,54 @@ curl -X GET
   "description": "Для правильной работы магазина Instagram shop доступ к аккаунту нужно обновлять каждые 60 дней — просто нажмите на кнопку в настройках. Дней до остановки синхронизации: 5",
   "connectorName": "Instagram shop",
   "daysLeftToExpiration": 5
+}
+```
+
+### На счет зачислены бонусные деньги
+#### Тип уведомления
+NotificationBonusMoney - На счет зачислены бонусные деньги
+#### Атрибуты уведомления
+
+| Название        | Тип                                                       | Описание                                                                                             |
+| --------------- | :-------------------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
+| **accountId**   | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Необходимо при создании`                           |
+| **created**     | DateTime                                                  | Дата и время формирования Уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`       |
+| **description** | String(4096)                                              | Описание уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                        |
+| **id**          | UUID                                                      | ID Уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                              |
+| **meta**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные объекта<br>`+Обязательное при ответе` `+Необходимо при создании`                          |
+| **read**        | Boolean                                                   | Признак того, было ли Уведомление прочитано<br>`+Обязательное при ответе` `+Необходимо при создании` |
+| **title**       | String(255)                                               | Краткий текст уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                   |
+
+**Параметры**
+
+| Параметр | Описание                                                                            |
+| :------- | :---------------------------------------------------------------------------------- |
+| **id**   | `string` (required) *Example: c2582a9e-56e1-11e9-c0a8-100b00000123* id Уведомления. |
+
+> Запрос на получение Уведомления с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000123"
+  -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Уведомления.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000123",
+    "type": "NotificationBonusMoney",
+    "mediaType": "application/json"
+  },
+  "id": "c2582a9e-56e1-11e9-c0a8-100b00000123",
+  "accountId": "c45c23d5-5640-11e9-c0a8-100a00000001",
+  "created": "2019-04-04 16:58:50.000",
+  "read": false,
+  "title": "Счет пополнен",
+  "description": "На ваш счет начислено 500 бонусных рублей"
 }
 ```
 

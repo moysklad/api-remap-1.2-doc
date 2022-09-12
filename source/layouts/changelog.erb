@@ -54,6 +54,8 @@ under the License.
     <% else %>
       <%= javascript_include_tag  "all_nosearch" %>
     <% end %>
+    <%= javascript_include_tag  "global_index" %>
+    <script>document.pathToRoot = '..'</script>
   </head>
 
   <body class="<%= page_classes %>" data-languages="<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>">
@@ -85,10 +87,10 @@ under the License.
           <a href="../reports/" class="toc-h1 toc-link">Отчеты</a>
         </li>
         <li class="toc-other-page">
-          <a href="../other/#audit" class="toc-h1 toc-link">Аудит</a>
+          <a href="../audit/" class="toc-h1 toc-link">Аудит</a>
         </li>
         <li class="toc-other-page">
-          <a href="../other/#uwedomleniq" class="toc-h1 toc-link">Уведомления</a>
+          <a href="../notification/" class="toc-h1 toc-link">Уведомления</a>
         </li>
         <li class="toc-other-page">
           <a href="../workbook/" class="toc-h1 toc-link">Workbook</a>

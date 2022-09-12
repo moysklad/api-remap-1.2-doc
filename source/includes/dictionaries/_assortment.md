@@ -36,9 +36,9 @@
 | **updated**           | параметр для фильтрации по времени последнего обновления сущностей. Можно использовать операторы `=`, `<`, `<=`, `>`, `>=`. Действие строгих операторов синонимично нестрогим. Передается в виде строки в [формате дата-время](../#mojsklad-json-api-obschie-swedeniq-format-daty-i-wremeni).                                                                   |
 | **updatedBy**         | параметр для фильтрации по автору последнего обновления. Можно использовать операторы `=` и `!=`. Значение параметра - `uid` (`admin@admin`). Можно передать несколько значений.                                                                                                                                                                                |
 | **weighed**           | параметр для фильтрации по признаку весового товара. Возможные значения: true, false.                                                                                                                                                                                                                                                                           |
-| **доп. поле(url)**    | параметром фильтрации служит url дополнительного поля. Оператор фильтрации зависит от типа доп. поля. [Подробнее ниже](#suschnosti-assortiment-atributy-dostupnye-dlq-fil-tracii-dostupnye-operatory-dlq-fil-tracii-dop-polej).                                                                                                                                 |
+| **доп. поле(url)**    | параметром фильтрации служит url дополнительного поля. Оператор фильтрации зависит от типа доп. поля. [Подробнее тут](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm-dostupnye-operatory-dlq-fil-tracii-dop-polej).                                                                                                                                 |
 
-Также доступна фильтрация по доп. полям. Подробнее про фильтрацию по доп. полям можно посмотреть в соответствующем [разделе](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter).
+Также доступна фильтрация по доп. полям. Подробнее про фильтрацию по доп. полям можно посмотреть в соответствующем [разделе](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm).
 
 ##### Доступные значения для stockMode
 Значение по умолчанию all.
@@ -80,30 +80,10 @@
 
 При использовании фильтров **alcoholic.type**, **weighed** и фильтров **stockMode**, **quantityMode** со значениями, отличными от all, в выдачу не попадают услуги и комлекты.
 
-##### Доступные операторы для фильтрации доп. полей
+##### Фильтрация доп. полей
 
-| Название         | Тип поля value в JSON  | Значение поля type в JSON  |Описание                             |
-| ---------------- | ---------------------- | -------------------------- | ----------------------------------- |
-| **Дата**         | string                 | time                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `&lt;val`, `>val`,  `>=val`, `<=val`, `>=val;<=val2` |
-| **Справочник**   | object                 | {entityType}               | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=` |
-| **Ссылка**       | string                 | link                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val` |
-| **Строка**       | string                 | string                     | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val` |
-| **Текст**        | string                 | text                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `!~val`, `~=val`, `=~val` |
-| **Файл**         | string                 | file                       | Фильтрация не поддерживается        |
-| **Флажок**       | boolean                | boolean                    | `=true`, `=false`                   |
-| **Число дробное**| number                 | duble                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `&lt;val`, `>val`, `>=val`, `<=val`, `>=val;<=val2` |
-| **Число целое**  | number                 | long                       | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `&lt;val`, `>val`, `>=val`, `<=val`, `>=val;<=val2` |
+Подробнее функциональность описана в разделе [Фильтрация по дополнительным полям](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm).
 
-`=val` - фильтрация по значению <br>
-`=` - фильтрация по пустому значению <br>
-`~` - частичное совпадение <br>
-`!~` - частичное совпадение не выводится <br>
-`~=` - полное совпадение в начале значения <br>
-`=~` - полное совпадение в конце значения <br>
-`>` - больше <br>
-`<` - меньше <br>
-`>=` - больше или равно <br>
-`<=` - меньше или равно <br>
 
 Примеры фильтрации: 
 
@@ -214,7 +194,7 @@ curl -X GET
         "type": "product",
         "mediaType": "application/json"
       },
-      "id": "35427052-36e7-11e7-8a7f-40d0000000d1",
+      "id": "35427052-36e7-11e7-8a7f-40d0000000d7",
       "accountId": "103bff1b-36e7-11e7-8a7f-40d000000004",
       "owner": {
         "meta": {

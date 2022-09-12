@@ -15,6 +15,7 @@ includes:
   - dictionaries/bonus_program
   - dictionaries/currency
   - dictionaries/webhook
+  - dictionaries/gtd
   - dictionaries/productFolder
   - dictionaries/contract
   - dictionaries/uom  
