@@ -33,6 +33,7 @@
 Для **Заказа покупателя** остатки рассчитываются на текущий момент времени.
 
 Данный запрос работает со следующими типами документов:
+
 + [Отгрузка](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka)
 + [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq)
 + [Розничная продажа](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha)

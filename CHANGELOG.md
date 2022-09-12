@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 13-09-2022
+### Добавлено
+- Добавлен новый эндпоинт [Остатков по складам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-ostatki-po-dokumentam).
+
 ## 06-09-2022
 ### Добавлено
 - Поддержка протокола change-handler в [Счете поставщика](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-postawschika).
