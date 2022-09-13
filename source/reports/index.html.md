@@ -11,12 +11,13 @@ toc_footers:
 
 includes:
   - reports/report_stock
-  - reports/report_stock_current
+  - reports/report_stock_by_operation
+  - reports/report_stock_current  
   - reports/report_pnl
   - reports/report_money
   - reports/report_sales_orders
   - reports/report_counterparty
-  - reports/report_turnover
+  - reports/report_turnover  
   - reports/dashboard
   
 search: true

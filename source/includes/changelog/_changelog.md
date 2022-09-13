@@ -136,6 +136,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 13-09-2022
+#### Добавлено
+- Добавлен новый эндпоинт [Остатков по документам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-ostatki-po-dokumentam).
+
 ### 06-09-2022
 #### Добавлено
 - Поддержка протокола change-handler в [Счете поставщика](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-postawschika).
