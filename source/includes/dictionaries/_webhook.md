@@ -541,16 +541,18 @@ Url веб-хука имеет следующий вид:
 
 ```json
 {
-  "meta": {
-    "type": "stock",
-    "href": "https://online.moysklad.ru/api/remap/1.2/report/stock/all/current?fromDate=2022-09-24 19:14:32"
-  },
-  "accountId": "1232d928-3bf7-11ed-ac15-000f00000001"
+  "accountId": "f71cb8b6-f7b5-11ec-ac12-000f000000eb",
+  "stockType": "stock",
+  "reportType": "all",
+  "reportUrl": "https://online.moysklad.ru/api/remap/1.2/report/stock/all/current?fromDate=2022-09-24 19:14:32"
 }
 ```
 
-Поле **type** - тип веб-хука на остатки. **Stock** - изменения остатков без учета резервов и ожидания.
-Поле **href** - содержит url на получения данных по [изменившейся номенклатуре за указанный период](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-tekuschie-ostatki). 
+Поле **stockType** - тип веб-хука на остатки. **Stock** - изменения остатков без учета резервов и ожидания.
+Поле **reportType** - тип эндпоинта на получения данных по изменившейся номенклатуры за указанный период. 
+Поддерживается два типа эндпоинтов: `all` для `https://online.moysklad.ru/api/remap/1.2/report/stock/all/current` 
+и `bystore` для `https://online.moysklad.ru/api/remap/1.2/report/stock/bystore/current`.
+Поле **reportUrl** - содержит url на получения данных по [изменившейся номенклатуре за указанный период](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-tekuschie-ostatki). 
 
 #### Включение веб-хука на изменение остатков
 
