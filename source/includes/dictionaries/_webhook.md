@@ -548,10 +548,10 @@ Url веб-хука имеет следующий вид:
 }
 ```
 
-Поле **stockType** - тип веб-хука на остатки. **Stock** - изменения остатков без учета резервов и ожидания.
-Поле **reportType** - тип эндпоинта на получения данных по изменившейся номенклатуры за указанный период. 
-Поддерживается два типа эндпоинтов: `all` для `https://online.moysklad.ru/api/remap/1.2/report/stock/all/current` 
-и `bystore` для `https://online.moysklad.ru/api/remap/1.2/report/stock/bystore/current`.
+Поле **stockType** - тип веб-хука на остатки, возможное значения: **stock** - изменение остатков без учета резервов и ожидания.
+Поле **reportType** - тип отчета остатков на получения данных по изменившейся номенклатуры за указанный период. 
+Поддерживается два значения: `all` - остатки товаров по всем складам (`https://online.moysklad.ru/api/remap/1.2/report/stock/all/current`) 
+и `bystore` - остатки товаров по складам (`https://online.moysklad.ru/api/remap/1.2/report/stock/bystore/current`).
 Поле **reportUrl** - содержит url на получения данных по [изменившейся номенклатуре за указанный период](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-tekuschie-ostatki). 
 
 #### Включение веб-хука на изменение остатков
