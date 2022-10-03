@@ -1,6 +1,14 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 13-09-2022
+### Добавлено
+- Добавлен новый эндпоинт [Остатков по документам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-ostatki-po-dokumentam).
+
+## 06-09-2022
+### Добавлено
+- Поддержка протокола change-handler в [Счете поставщика](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-postawschika).
+
 ## 29-08-2022
 ### Добавлено
 - Пермиссии для документа "Вывод из оборота (ОСУ)" в [правах сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sotrudnik-rabota-s-prawami-sotrudnika)
@@ -37,7 +45,7 @@
 ## 25-07-2022
 ### Добавлено
 - Поддержка протокола update-provider в [Отгрузке](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka).
-- Новый тип уведомлений [На счет зачислены бонусные деньги](https://dev.moysklad.ru/doc/api/remap/1.2/other/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-na-schet-zachisleny-bonusnye-den-gi).
+- Новый тип уведомлений [На счет зачислены бонусные деньги](https://dev.moysklad.ru/doc/api/remap/1.2/notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-na-schet-zachisleny-bonusnye-den-gi).
 
 ## 22-07-2022
 ### Добавлено
@@ -217,7 +225,7 @@
 
 ## 16-11-2021
 ### Изменено
-- Изменено максимальное ограничение на получение записей [аудита](https://dev.moysklad.ru/doc/api/remap/1.2/other/#audit) с 25 на 100 записей
+- Изменено максимальное ограничение на получение записей [аудита](https://dev.moysklad.ru/doc/api/remap/1.2/audit/#audit) с 25 на 100 записей
 
 ## 16-11-2021
 ### Добавлено
@@ -596,8 +604,8 @@
 
 ## 04-02-2021
 ### Изменено
-- Добавлен новый тип уведомлений [Уведомление из сценария](https://dev.moysklad.ru/doc/api/remap/1.2/other/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-uwedomlenie-iz-scenariq)
-- Добавлена новая группа уведомлений [Сценарии](https://dev.moysklad.ru/doc/api/remap/1.2/other/#uwedomleniq-nastrojki-uwedomlenij-atributy-suschnosti)
+- Добавлен новый тип уведомлений [Уведомление из сценария](https://dev.moysklad.ru/doc/api/remap/1.2/notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-uwedomlenie-iz-scenariq)
+- Добавлена новая группа уведомлений [Сценарии](https://dev.moysklad.ru/doc/api/remap/1.2/notification/#uwedomleniq-nastrojki-uwedomlenij-atributy-suschnosti)
 
 ## 02-02-2021
 ### Добавлено
@@ -854,7 +862,7 @@
 
 ## 14-04-2020
 ### Добавлено
- - Описание новых типов для [фильтров аудита](https://dev.moysklad.ru/doc/api/remap/1.2/other/#audit-audit-kontexty)
+ - Описание новых типов для [фильтров аудита](https://dev.moysklad.ru/doc/api/remap/1.2/audit/#audit-audit-kontexty)
 
 ## 26-03-2020
 ### Изменено
@@ -900,7 +908,7 @@
 
 ## 21-11-2019
 ### Изменено
-- Дополнена документация по [аудиту](https://dev.moysklad.ru/doc/api/remap/1.2/other/#audit)
+- Дополнена документация по [аудиту](https://dev.moysklad.ru/doc/api/remap/1.2/audit/#audit)
 
 ## 13-11-2019
 ### Изменено

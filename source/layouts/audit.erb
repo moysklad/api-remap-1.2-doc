@@ -55,14 +55,14 @@ under the License.
       <%= javascript_include_tag  "all_nosearch" %>
     <% end %>
     <%= javascript_include_tag  "global_index" %>
-    <script>document.pathToRoot = '.'</script>
+    <script>document.pathToRoot = '..'</script>
   </head>
 
   <body class="<%= page_classes %>" data-languages="<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>">
     <a href="#" id="nav-button">
-      <span>
-        <%= image_tag('navbar.svg') %>
-      </span>
+          <span>
+            <%= image_tag('navbar.svg') %>
+          </span>
     </a>
     <div class="toc-wrapper">
       <%= image_tag "logo.svg", class: 'logo' %>
@@ -74,13 +74,25 @@ under the License.
         <ul class="search-results"></ul>
       <% end %>
       <ul id="toc" class="toc-list-h1">
+        <li class="toc-other-page">
+          <a href="../" class="toc-h1 toc-link">МойСклад JSON API</a>
+        </li>
+        <li class="toc-other-page">
+          <a href="../dictionaries/" class="toc-h1 toc-link">Сущности</a>
+        </li>
+        <li class="toc-other-page">
+          <a href="../documents/" class="toc-h1 toc-link">Документы</a>
+        </li>
+        <li class="toc-other-page">
+          <a href="../reports/" class="toc-h1 toc-link">Отчеты</a>
+        </li>
         <% toc_data(page_content).each do |h1| %>
           <li class="toc-list-h1-title">
             <a href="#<%= h1[:id] %>" class="toc-h1 toc-link" data-title="<%=h h1[:title] %>"><%=h h1[:content] %></a>
             <% if h1[:children].any? %>
-            <% h1[:children].each do |h2| %>
+              <% h1[:children].each do |h2| %>
               <li>
-                <div class="error-table second-border">
+                <div class="second-border">
                   <a href="#<%= h2[:id] %>" class="toc-h2 toc-link" data-title="<%=h h2[:title] %>"><%=h h2[:content] %></a>
                   <% if h2[:children].any? %>
                     <ul class="toc-list-h3">
@@ -94,29 +106,17 @@ under the License.
                 </div>
               </li>
             <% end %>
-            <% end %>
+          <% end %>
           </li>
         <% end %>
         <li class="toc-other-page">
-          <a href="dictionaries/" class="toc-h1 toc-link">Сущности</a>
+          <a href="../notification/" class="toc-h1 toc-link">Уведомления</a>
         </li>
         <li class="toc-other-page">
-          <a href="documents/" class="toc-h1 toc-link">Документы</a>
+          <a href="../workbook/" class="toc-h1 toc-link">Workbook</a>
         </li>
         <li class="toc-other-page">
-          <a href="reports/" class="toc-h1 toc-link">Отчеты</a>
-        </li>
-        <li class="toc-other-page">
-          <a href="audit/" class="toc-h1 toc-link">Аудит</a>
-        </li>
-        <li class="toc-other-page">
-          <a href="notification/" class="toc-h1 toc-link">Уведомления</a>
-        </li>
-        <li class="toc-other-page">
-          <a href="workbook/" class="toc-h1 toc-link">Workbook</a>
-        </li>
-        <li class="toc-other-page">
-          <a href="changelog/" class="toc-h1 toc-link">Список изменений</a>
+          <a href="../changelog/" class="toc-h1 toc-link">Список изменений</a>
         </li>
       </ul>
       <% if current_page.data.toc_footers %>
