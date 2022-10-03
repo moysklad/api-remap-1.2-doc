@@ -136,6 +136,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 03-10-2022
+#### Добавлено
+- тип контекста `registration` в [Аудите](https://dev.moysklad.ru/doc/api/remap/1.2/other/#audit)
+- тип события `registration` в [Аудите](https://dev.moysklad.ru/doc/api/remap/1.2/other/#audit)
+
 ### 13-09-2022
 #### Добавлено
 - Добавлен новый эндпоинт [Остатков по документам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-ostatki-po-dokumentam).
