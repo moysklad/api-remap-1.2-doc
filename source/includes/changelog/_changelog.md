@@ -136,6 +136,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 05-10-2022
+#### Добавлено
+- Добавлен параметр `changedSince` в [эндпоинт текущих остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-tekuschie-ostatki).
+
 ### 03-10-2022
 #### Добавлено
 - тип контекста `registration` в [Аудите](https://dev.moysklad.ru/doc/api/remap/1.2/other/#audit)
