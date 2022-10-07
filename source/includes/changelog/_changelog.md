@@ -138,7 +138,7 @@
 
 ### 30-09-2022
 #### Добавлено
-- Добавлен [Веб-хук на изменение остатков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki-veb-huk-na-izmenenie-ostatkow).
+- Добавлен [Веб-хук на изменение остатков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki-na-izmenenie-ostatkow).
 
 ### 13-09-2022
 #### Добавлено
