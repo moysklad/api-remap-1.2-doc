@@ -136,6 +136,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 12-10-2022
+#### Добавлено
+- Поддержка протокола update-provider в [Списании](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-spisanie)
+и [Счете покупателю](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-pokupatelu).
+
 ### 03-10-2022
 #### Добавлено
 - тип контекста `registration` в [Аудите](https://dev.moysklad.ru/doc/api/remap/1.2/other/#audit)
