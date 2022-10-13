@@ -136,6 +136,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 14-10-2022
+#### Добавлено
+- Добавлен `3030` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii).
+
 ### 03-10-2022
 #### Добавлено
 - тип контекста `registration` в [Аудите](https://dev.moysklad.ru/doc/api/remap/1.2/other/#audit)
