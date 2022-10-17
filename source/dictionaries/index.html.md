@@ -41,6 +41,7 @@ includes:
   - dictionaries/store
   - dictionaries/employee
   - dictionaries/named_filter
+  - dictionaries/taxrate
   - dictionaries/states  
   - dictionaries/expenseitem
   - dictionaries/country
