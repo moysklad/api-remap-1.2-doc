@@ -34,10 +34,10 @@
 > Пример запроса на получение ставки НДС по ID
 
 ```shell
-  curl -X GET
-    "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter/6031a4ab-fec1-11ec-0a80-059200000007"
-    -H "Authorization: Basic <Credentials>"
-    -H "Content-Type: application/json"  
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"  
 ```
 
 > Response 200 (application/json) Успешный запрос. Результат - JSON представление ставки НДС
@@ -100,7 +100,7 @@
 
 ```shell
 curl -X GET 
-  https://online.moysklad.ru/api/remap/1.2/entity/taxrate/'
+  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/"
   -H 'Authorization: Basic <Credentials>'
   -H 'Content-Type: application/json'
 ```
@@ -292,13 +292,13 @@ curl -X GET
 
 ```shell
 curl -X POST 
-  https://online.moysklad.ru/api/remap/1.2/entity/taxrate/
+  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate"
   -H 'Authorization: Basic <Credentials>'
   -H 'Content-Type: application/json'
   -d '{
-            "rate": 33,
-            "comment": "Ставка на продукты с ГМО",
-            "archive": false
+    "rate": 33,
+    "comment": "Ставка на продукты с ГМО",
+    "archive": false
   }'
 ```
 
@@ -306,37 +306,37 @@ curl -X POST
 
 ```json
 {
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/34330ecb-feab-11ec-0a80-059200000001",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+    "type": "taxrate",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=34330ecb-feab-11ec-0a80-059200000001"
+  },
+  "id": "34330ecb-feab-11ec-0a80-059200000001",
+  "accountId": "c6bc8eaa-fe92-11ec-0a82-062000000018",
+  "owner": {
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/34330ecb-feab-11ec-0a80-059200000001",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
-        "type": "taxrate",
-        "mediaType": "application/json",
-        "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=34330ecb-feab-11ec-0a80-059200000001"
-    },
-    "id": "34330ecb-feab-11ec-0a80-059200000001",
-    "accountId": "c6bc8eaa-fe92-11ec-0a82-062000000018",
-    "owner": {
-        "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c6f50a9a-fe92-11ec-0a82-09860000027a",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-            "type": "employee",
-            "mediaType": "application/json",
-            "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=c6f50a9a-fe92-11ec-0a82-09860000027a"
-        }
-    },
-    "shared": true,
-    "group": {
-        "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/c6bcfbf3-fe92-11ec-0a82-062000000019",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-            "type": "group",
-            "mediaType": "application/json"
-        }
-    },
-    "updated": "2022-07-08 13:46:20.857",
-    "rate": 33.0,
-    "archived": false,
-    "comment": "Ставка на продукты с ГМО"
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c6f50a9a-fe92-11ec-0a82-09860000027a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=c6f50a9a-fe92-11ec-0a82-09860000027a"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/c6bcfbf3-fe92-11ec-0a82-062000000019",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2022-07-08 13:46:20.857",
+  "rate": 33.0,
+  "archived": false,
+  "comment": "Ставка на продукты с ГМО"
 }
 ```
 
@@ -349,13 +349,13 @@ curl -X POST
 
 ```shell
 curl -X PUT 
-  https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007'
+  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007"
   -H 'Authorization: Basic <Credentials>'
   -H 'Content-Type: application/json'
   -d '{
-            "rate": 28,
-            "comment": "Ставка на жвачку Turbo",
-            "archive": false
+    "rate": 28,
+    "comment": "Ставка на жвачку Turbo",
+    "archive": false
   }'
 ```
 
@@ -363,37 +363,37 @@ curl -X PUT
 
 ```json
 {
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/c6ff8164-01c0-11ed-0a80-07e3000001ff",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+    "type": "taxrate",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=c6ff8164-01c0-11ed-0a80-07e3000001ff"
+  },
+  "id": "c6ff8164-01c0-11ed-0a80-07e3000001ff",
+  "accountId": "9caae711-01c0-11ed-0a82-0a1c0000000c",
+  "owner": {
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/c6ff8164-01c0-11ed-0a80-07e3000001ff",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
-        "type": "taxrate",
-        "mediaType": "application/json",
-        "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=c6ff8164-01c0-11ed-0a80-07e3000001ff"
-    },
-    "id": "c6ff8164-01c0-11ed-0a80-07e3000001ff",
-    "accountId": "9caae711-01c0-11ed-0a82-0a1c0000000c",
-    "owner": {
-        "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/9cdc3afb-01c0-11ed-0a80-07e300000172",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-            "type": "employee",
-            "mediaType": "application/json",
-            "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=9cdc3afb-01c0-11ed-0a80-07e300000172"
-        }
-    },
-    "shared": true,
-    "group": {
-        "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/9cab5482-01c0-11ed-0a82-0a1c0000000d",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-            "type": "group",
-            "mediaType": "application/json"
-        }
-    },
-    "updated": "2022-07-13 12:25:51.198",
-    "rate": 28.0,
-    "archived": false,
-    "comment": "Ставка на жвачку Turbo"
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/9cdc3afb-01c0-11ed-0a80-07e300000172",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=9cdc3afb-01c0-11ed-0a80-07e300000172"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/9cab5482-01c0-11ed-0a82-0a1c0000000d",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2022-07-13 12:25:51.198",
+  "rate": 28.0,
+  "archived": false,
+  "comment": "Ставка на жвачку Turbo"
 }
 ```
 
@@ -406,27 +406,27 @@ curl -X PUT
 
 ```shell
 curl -X POST 
-  https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007'
+  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate"
   -H 'Authorization: Basic <Credentials>'
   -H 'Content-Type: application/json'
   -d '[
-            {
-            "rate": 33,
-            "comment": "Ставка на продукты с ГМО",
-            "archive": false
-            },
-            {
-              "meta": {
+    {
+      "rate": 33,
+      "comment": "Ставка на продукты с ГМО",
+      "archive": false
+    },
+    {
+      "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/c6ff8164-01c0-11ed-0a80-07e3000001ff",
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
         "type": "taxrate",
         "mediaType": "application/json",
         "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=c6ff8164-01c0-11ed-0a80-07e3000001ff"
-        },
-            "rate": 34,
-            "comment": "Ставка на бижутерию",
-            "archive": false
-            }
+      },
+      "rate": 34,
+      "comment": "Ставка на бижутерию",
+      "archive": false
+    }
   ]'
 ```
 
@@ -434,72 +434,72 @@ curl -X POST
 
 ```json
 [
-    {
-        "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/2eab0501-028f-11ed-0a80-03330000007a",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
-            "type": "taxrate",
-            "mediaType": "application/json",
-            "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=2eab0501-028f-11ed-0a80-03330000007a"
-        },
-        "id": "2eab0501-028f-11ed-0a80-03330000007a",
-        "accountId": "9caae711-01c0-11ed-0a82-0a1c0000000c",
-        "owner": {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/9cdc3afb-01c0-11ed-0a80-07e300000172",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-                "type": "employee",
-                "mediaType": "application/json",
-                "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=9cdc3afb-01c0-11ed-0a80-07e300000172"
-            }
-        },
-        "shared": true,
-        "group": {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/9cab5482-01c0-11ed-0a82-0a1c0000000d",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-                "type": "group",
-                "mediaType": "application/json"
-            }
-        },
-        "updated": "2022-07-13 12:35:50.458",
-        "rate": 33.0,
-        "archived": false,
-        "comment": "Ставка на продукты с ГМО"
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/2eab0501-028f-11ed-0a80-03330000007a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+      "type": "taxrate",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=2eab0501-028f-11ed-0a80-03330000007a"
     },
-    {
-        "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/c6ff8164-01c0-11ed-0a80-07e3000001ff",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
-            "type": "taxrate",
-            "mediaType": "application/json",
-            "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=c6ff8164-01c0-11ed-0a80-07e3000001ff"
-        },
-        "id": "c6ff8164-01c0-11ed-0a80-07e3000001ff",
-        "accountId": "9caae711-01c0-11ed-0a82-0a1c0000000c",
-        "owner": {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/9cdc3afb-01c0-11ed-0a80-07e300000172",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-                "type": "employee",
-                "mediaType": "application/json",
-                "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=9cdc3afb-01c0-11ed-0a80-07e300000172"
-            }
-        },
-        "shared": true,
-        "group": {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/9cab5482-01c0-11ed-0a82-0a1c0000000d",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-                "type": "group",
-                "mediaType": "application/json"
-            }
-        },
-        "updated": "2022-07-13 12:35:50.534",
-        "rate": 34.0,
-        "archived": false,
-        "comment": "Ставка на бижутерию"
-    }
+    "id": "2eab0501-028f-11ed-0a80-03330000007a",
+    "accountId": "9caae711-01c0-11ed-0a82-0a1c0000000c",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/9cdc3afb-01c0-11ed-0a80-07e300000172",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=9cdc3afb-01c0-11ed-0a80-07e300000172"
+      }
+    },
+    "shared": true,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/9cab5482-01c0-11ed-0a82-0a1c0000000d",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2022-07-13 12:35:50.458",
+    "rate": 33.0,
+    "archived": false,
+    "comment": "Ставка на продукты с ГМО"
+  },
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/c6ff8164-01c0-11ed-0a80-07e3000001ff",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+      "type": "taxrate",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=c6ff8164-01c0-11ed-0a80-07e3000001ff"
+    },
+    "id": "c6ff8164-01c0-11ed-0a80-07e3000001ff",
+    "accountId": "9caae711-01c0-11ed-0a82-0a1c0000000c",
+    "owner": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/9cdc3afb-01c0-11ed-0a80-07e300000172",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=9cdc3afb-01c0-11ed-0a80-07e300000172"
+      }
+    },
+    "shared": true,
+    "group": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/9cab5482-01c0-11ed-0a82-0a1c0000000d",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2022-07-13 12:35:50.534",
+    "rate": 34.0,
+    "archived": false,
+    "comment": "Ставка на бижутерию"
+  }
 ]
 ```
 
@@ -518,7 +518,7 @@ curl -X POST
 
 ```shell
 curl -X DELETE 
-  https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007'
+  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007"
   -H 'Authorization: Basic <Credentials>'
   -H 'Content-Type: application/json'
 ```
@@ -536,27 +536,27 @@ curl -X DELETE
 
 ```shell
 curl -X POST 
-  https://online.moysklad.ru/api/remap/1.2/entity/taxrate/delete'
+  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/delete"
   -H 'Authorization: Basic <Credentials>'
   -H 'Content-Type: application/json'
   -d '[
     {
-        "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
-                "type": "taxrate",
-                "mediaType": "application/json",
-                "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=6031a4ab-fec1-11ec-0a80-059200000007"
-        }
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+        "type": "taxrate",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=6031a4ab-fec1-11ec-0a80-059200000007"
+      }
     },
     {
-        "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6038efa6-fec1-11ec-0a80-05920000000b",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
-                "type": "taxrate",
-                "mediaType": "application/json",
-                "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=6038efa6-fec1-11ec-0a80-05920000000b"
-            }
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6038efa6-fec1-11ec-0a80-05920000000b",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+        "type": "taxrate",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=6038efa6-fec1-11ec-0a80-05920000000b"
+      }
     }
   ]'
 ```
@@ -565,11 +565,11 @@ curl -X POST
 
 ```json
 [
-    {
-        "info": "Сущность 'taxrate' с UUID: 6031a4ab-fec1-11ec-0a80-059200000007 успешно удалена"
-    },
-    {
-        "info": "Сущность 'taxrate' с UUID: 6038efa6-fec1-11ec-0a80-05920000000b успешно удалена"
-    }
+  {
+    "info": "Сущность 'taxrate' с UUID: 6031a4ab-fec1-11ec-0a80-059200000007 успешно удалена"
+  },
+  {
+    "info": "Сущность 'taxrate' с UUID: 6038efa6-fec1-11ec-0a80-05920000000b успешно удалена"
+  }
 ]
 ```
