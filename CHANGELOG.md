@@ -1,10 +1,20 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 14-10-2022
+### Добавлено
+- Добавлен `3030` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii).
+
 ## 12-10-2022
 ### Добавлено
 - Поддержка протокола update-provider в [Списании](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-spisanie)
   и [Счете покупателю](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-pokupatelu).
+
+## 12-10-2022
+### Добавлено
+- Поле moves в [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej).
+- Поле prepayments в [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej).
+- Поле customerOrder в [Перемещение](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-peremeschenie-peremescheniq).
 
 ## 13-09-2022
 ### Добавлено
