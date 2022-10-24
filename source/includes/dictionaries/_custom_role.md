@@ -444,6 +444,12 @@ curl -X GET
       "done": "AUTHOR_OR_ASSIGNEE",
       "update": "AUTHOR",
       "delete": "AUTHOR"
+    },
+    "taxrate": {
+      "view": "ALL",
+      "create": "ALL",
+      "update": "ALL",
+      "delete": "ALL"
     }
   }
 }
@@ -893,6 +899,12 @@ curl -X GET
           "done": "AUTHOR_OR_ASSIGNEE",
           "update": "AUTHOR",
           "delete": "AUTHOR"
+        },
+        "taxrate": {
+          "view": "ALL",
+          "create": "ALL",
+          "update": "ALL",
+          "delete": "ALL"
         }
       }
     }
@@ -1359,6 +1371,12 @@ curl -X POST
       "done": "NO",
       "update": "NO",
       "delete": "NO"
+    },
+    "taxrate": {
+      "view": "ALL",
+      "create": "ALL",
+      "update": "ALL",
+      "delete": "ALL"
     }
   }
 }
@@ -1829,6 +1847,12 @@ curl -X PUT
       "done": "NO",
       "update": "NO",
       "delete": "NO"
+    },
+    "taxrate": {
+      "view": "ALL",
+      "create": "ALL",
+      "update": "ALL",
+      "delete": "ALL"
     }
   }
 }
