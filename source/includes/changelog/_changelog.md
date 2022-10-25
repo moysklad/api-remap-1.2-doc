@@ -136,6 +136,13 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 25-10-2022
+#### Добавлено
+- Параметр фильтрации `productFolder` с поддержкой фильтрации по нескольким группам товаров в [Отчетах прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
+- Параметр фильтрации `withSubFolders` в [Отчете остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost), позволяющий фильтровать по заданной группе товаров без учета ее подгрупп.
+#### Изменено
+- Параметр `product` получил поддержку фильтрации по нескольким товарам в [Отчетах прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
+
 ### 14-10-2022
 #### Добавлено
 - Добавлен `3030` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii).
