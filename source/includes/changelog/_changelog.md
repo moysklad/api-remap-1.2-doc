@@ -142,6 +142,7 @@
 - Параметр фильтрации `withSubFolders` в [Отчете остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost), позволяющий фильтровать по заданной группе товаров без учета ее подгрупп.
 #### Изменено
 - Параметр `product` получил поддержку фильтрации по нескольким товарам в [Отчетах прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
+- Параметр `product` получил поддержку исключающей фильтрации по товарам в [Отчетах прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
 
 ### 14-10-2022
 #### Добавлено
