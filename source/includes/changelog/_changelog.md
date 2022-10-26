@@ -136,9 +136,19 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 05-10-2022
+### 27-10-2022
 #### Добавлено
 - Добавлен параметр `changedSince` в [эндпоинт текущих остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-tekuschie-ostatki).
+
+### 14-10-2022
+#### Добавлено
+- Добавлен `3030` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii).
+
+### 12-10-2022
+#### Добавлено
+- Поле moves в [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej).
+- Поле prepayments в [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej).
+- Поле customerOrder в [Перемещение](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-peremeschenie-peremescheniq).
 
 ### 03-10-2022
 #### Добавлено
