@@ -21,62 +21,7 @@
 | **owner**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`   | Сотрудник-владелец<br>`+Expand` `+Для пользовательских ставок`                                 |
 | **shared**    | Boolean                                                   |            | Флаг общего доступа<br>`+Для пользовательских ставок`                                          |
 | **updated**   | DateTime                                                  |            | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Необходимо при создании` |
-| **archive**   | Boolean                                                   | `=` `!=`   | Флаг принадлежности ставки к архивным ставкам<br>                                              |
-
-### Получить ставку НДС
-
-**Параметры**
-
-| Параметр | Описание                                                                                |
-| :------- |:----------------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: 736da682-ad8b-11eb-0a80-17ef000000d4* id налоговой ставки |
-
-> Пример запроса на получение ставки НДС по ID
-
-```shell
-curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007"
-  -H "Authorization: Basic <Credentials>"
-  -H "Content-Type: application/json"  
-```
-
-> Response 200 (application/json) Успешный запрос. Результат - JSON представление ставки НДС
-
-```json
-{
-  "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
-    "type": "taxrate",
-    "mediaType": "application/json",
-    "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=6031a4ab-fec1-11ec-0a80-059200000007"
-  },
-  "id": "6031a4ab-fec1-11ec-0a80-059200000007",
-  "accountId": "c6bc8eaa-fe92-11ec-0a82-062000000018",
-  "owner": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c6f50a9a-fe92-11ec-0a82-09860000027a",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-      "type": "employee",
-      "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=c6f50a9a-fe92-11ec-0a82-09860000027a"
-    }
-  },
-  "shared": true,
-  "group": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/c6bcfbf3-fe92-11ec-0a82-062000000019",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-      "type": "group",
-      "mediaType": "application/json"
-    }
-  },
-  "updated": "2022-07-08 16:25:03.726",
-  "rate": 33.0,
-  "archived": false,
-  "comment": "Ставка на продукты с ГМО"
-}
-```
+| **archived**  | Boolean                                                   | `=` `!=`   | Флаг принадлежности ставки к архивным ставкам<br>                                              |
 
 ### Получить ставки НДС
 
@@ -298,7 +243,7 @@ curl -X POST
   -d '{
     "rate": 33,
     "comment": "Ставка на продукты с ГМО",
-    "archive": false
+    "archived": false
   }'
 ```
 
@@ -340,69 +285,6 @@ curl -X POST
 }
 ```
 
-### Изменить ставку НДС
-
-Запрос на изменение одной из существующих налоговых ставок.
-Для предустановленных (системных) ставок невозможно изменить значение параметра **rate**.
-
-**Параметры**
-
-| Параметр | Описание                                                                                |
-| :------- |:----------------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: 736da682-ad8b-11eb-0a80-17ef000000d4* id налоговой ставки |
-
-> Запрос на изменение ставки НДС
-
-```shell
-curl -X PUT 
-  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007"
-  -H 'Authorization: Basic <Credentials>'
-  -H 'Content-Type: application/json'
-  -d '{
-    "rate": 28,
-    "comment": "Ставка на жвачку Turbo",
-    "archive": false
-  }'
-```
-
-> Response 200 (application/json) Успешный запрос. Результат - JSON представление измененной ставки НДС
-
-```json
-{
-  "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/c6ff8164-01c0-11ed-0a80-07e3000001ff",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
-    "type": "taxrate",
-    "mediaType": "application/json",
-    "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=c6ff8164-01c0-11ed-0a80-07e3000001ff"
-  },
-  "id": "c6ff8164-01c0-11ed-0a80-07e3000001ff",
-  "accountId": "9caae711-01c0-11ed-0a82-0a1c0000000c",
-  "owner": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/9cdc3afb-01c0-11ed-0a80-07e300000172",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-      "type": "employee",
-      "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=9cdc3afb-01c0-11ed-0a80-07e300000172"
-    }
-  },
-  "shared": true,
-  "group": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/9cab5482-01c0-11ed-0a82-0a1c0000000d",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-      "type": "group",
-      "mediaType": "application/json"
-    }
-  },
-  "updated": "2022-07-13 12:25:51.198",
-  "rate": 28.0,
-  "archived": false,
-  "comment": "Ставка на жвачку Turbo"
-}
-```
-
 ### Массовое создание и обновление ставок НДС
 
 [Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) ставок НДС. В теле запроса нужно передать массив, содержащий JSON представления ставок, которые вы хотите создать или обновить.
@@ -419,7 +301,7 @@ curl -X POST
     {
       "rate": 33,
       "comment": "Ставка на продукты с ГМО",
-      "archive": false
+      "archived": false
     },
     {
       "meta": {
@@ -431,7 +313,7 @@ curl -X POST
       },
       "rate": 34,
       "comment": "Ставка на бижутерию",
-      "archive": false
+      "archived": false
     }
   ]'
 ```
@@ -578,4 +460,124 @@ curl -X POST
     "info": "Сущность 'taxrate' с UUID: 6038efa6-fec1-11ec-0a80-05920000000b успешно удалена"
   }
 ]
+```
+
+### Ставка НДС
+
+### Получить ставку НДС
+
+**Параметры**
+
+| Параметр | Описание                                                                                |
+| :------- |:----------------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: 736da682-ad8b-11eb-0a80-17ef000000d4* id налоговой ставки |
+
+> Пример запроса на получение ставки НДС по ID
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"  
+```
+
+> Response 200 (application/json) Успешный запрос. Результат - JSON представление ставки НДС
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+    "type": "taxrate",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=6031a4ab-fec1-11ec-0a80-059200000007"
+  },
+  "id": "6031a4ab-fec1-11ec-0a80-059200000007",
+  "accountId": "c6bc8eaa-fe92-11ec-0a82-062000000018",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c6f50a9a-fe92-11ec-0a82-09860000027a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=c6f50a9a-fe92-11ec-0a82-09860000027a"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/c6bcfbf3-fe92-11ec-0a82-062000000019",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2022-07-08 16:25:03.726",
+  "rate": 33.0,
+  "archived": false,
+  "comment": "Ставка на продукты с ГМО"
+}
+```
+
+### Изменить ставку НДС
+
+Запрос на изменение одной из существующих налоговых ставок.
+Для предустановленных (системных) ставок невозможно изменить значение параметра **rate**.
+
+**Параметры**
+
+| Параметр | Описание                                                                                |
+| :------- |:----------------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: 736da682-ad8b-11eb-0a80-17ef000000d4* id налоговой ставки |
+
+> Запрос на изменение ставки НДС
+
+```shell
+curl -X PUT 
+  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007"
+  -H 'Authorization: Basic <Credentials>'
+  -H 'Content-Type: application/json'
+  -d '{
+    "rate": 28,
+    "comment": "Ставка на жвачку Turbo",
+    "archived": false
+  }'
+```
+
+> Response 200 (application/json) Успешный запрос. Результат - JSON представление измененной ставки НДС
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/c6ff8164-01c0-11ed-0a80-07e3000001ff",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+    "type": "taxrate",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=c6ff8164-01c0-11ed-0a80-07e3000001ff"
+  },
+  "id": "c6ff8164-01c0-11ed-0a80-07e3000001ff",
+  "accountId": "9caae711-01c0-11ed-0a82-0a1c0000000c",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/9cdc3afb-01c0-11ed-0a80-07e300000172",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=9cdc3afb-01c0-11ed-0a80-07e300000172"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/9cab5482-01c0-11ed-0a82-0a1c0000000d",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2022-07-13 12:25:51.198",
+  "rate": 28.0,
+  "archived": false,
+  "comment": "Ставка на жвачку Turbo"
+}
 ```
