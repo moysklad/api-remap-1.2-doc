@@ -136,6 +136,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 11-11-2022
+#### Добавлено
+- Добавлена информация по работе с [зонами](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-zony-sklada) и [ячейками](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-yachejki-sklada) в [складах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-sklady)
+
 ### 01-11-2022
 #### Добавлено
 - сущность [Ставка НДС](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-stawka-nds) в раздел Сущности
