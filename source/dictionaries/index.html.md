@@ -15,6 +15,7 @@ includes:
   - dictionaries/bonus_program
   - dictionaries/currency
   - dictionaries/webhook
+  - dictionaries/webhookstock
   - dictionaries/gtd
   - dictionaries/productFolder
   - dictionaries/contract
@@ -41,6 +42,7 @@ includes:
   - dictionaries/store
   - dictionaries/employee
   - dictionaries/named_filter
+  - dictionaries/taxrate
   - dictionaries/states  
   - dictionaries/expenseitem
   - dictionaries/country

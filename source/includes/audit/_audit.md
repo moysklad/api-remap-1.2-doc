@@ -700,6 +700,7 @@ curl -X GET
     "crptpackageitemremoval",
     "crptpackagedisaggregation",
     "evotorsetting",
+    "taxrate",
     "https://online.moysklad.ru/api/remap/1.2/entity/customentity/eaacabaf-2655-11e6-8a84-bae500000045"
   ],
   "eventtype": [
