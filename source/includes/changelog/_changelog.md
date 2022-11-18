@@ -55,6 +55,7 @@
   - Отчет [Показатели продаж](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-pokazateli-prodazh-i-zakazow-pokazateli-prodazh)
   - Отчет [Показатели заказов](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-pokazateli-prodazh-i-zakazow-pokazateli-zakazow)
   - Отчет [Обороты товаров](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty)
+  - Отчет [Текущих остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-tekuschie-ostatki)
   - Создание [характеристик Модификаций](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-harakteristiki-modifikacij)  
   - Эндпоинты [управления скидками](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-skidki)
   - Эндпоинт [Автозаполнения цен, скидок, ндс позиций](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-awtozapolnenie)
@@ -135,6 +136,17 @@
 
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
+
+### 22-11-2022
+#### Добавлено
+- Ячейки в позиции [Приемки](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka)
+- Ячейки в позиции [Оприходования](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-oprihodowanie)
+- Ячейки в позиции [Перемещения](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-peremeschenie)
+- Ячейки в позиции [Списания](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-spisanie)
+- Ячейки в позиции [Отгрузки](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka)
+- Ячейки в позиции [Розничной продажи](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha)
+- Ячейки в позиции [Возврата покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-pokupatelq)
+- Ячейки в позиции [Возврата поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-postawschiku)
 
 ### 11-11-2022
 #### Добавлено

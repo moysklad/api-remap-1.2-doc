@@ -1,6 +1,17 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 22-11-2022
+### Добавлено
+- Ячейки в позиции [Приемки](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka)
+- Ячейки в позиции [Оприходования](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-oprihodowanie)
+- Ячейки в позиции [Перемещения](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-peremeschenie)
+- Ячейки в позиции [Списания](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-spisanie)
+- Ячейки в позиции [Отгрузки](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka)
+- Ячейки в позиции [Розничной продажи](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha)
+- Ячейки в позиции [Возврата покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-pokupatelq)
+- Ячейки в позиции [Возврата поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-postawschiku)
+
 ## 11-11-2022
 ### Добавлено
 - Добавлена информация по работе с [зонами](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-zony-sklada) и [ячейками](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-yachejki-sklada) в [складах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-sklady) 
