@@ -1,9 +1,21 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-## 11-11-2022
+## 21-11-2022
 ### Добавлено
 - Добавлена информация по работе с [зонами](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-zony-sklada) и [ячейками](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-yachejki-sklada) в [складах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-sklady) 
+
+## 16-11-2022
+### Добавлено
+- Параметр фильтрации `productFolder` с поддержкой (в том числе и исключающей) фильтрации по нескольким группам товаров в [Отчетах Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
+- Параметр фильтрации `withSubFolders` в [Отчетах Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost), позволяющий фильтровать по заданной группе товаров без учета ее подгрупп.
+### Изменено
+- Параметр `product` получил поддержку фильтрации по нескольким товарам в [Отчетах Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
+- Параметр `product` получил поддержку исключающей фильтрации по товарам в [Отчетах Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
+
+## 09-11-2022
+### Добавлено
+- Поддержка протокола change-handler в [Возврате покупателю](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-pokupatelq-vozwraty-pokupatelej).
 
 ## 01-11-2022
 ### Добавлено
