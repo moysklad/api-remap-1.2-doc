@@ -27,7 +27,7 @@
     [Модификациях](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-modifikaciq-massowoe-sozdanie-i-obnowlenie-modifikacij)
   - [Новый эндпоинт](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-izobrazhenie) для массового 
     создания, редактирования и удаления изображений у Товаров, Комплектов и Модификаций
-- Изменения в [Вебхуках](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki)
+- Изменения в [Вебхуках](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-vebhuki)
   - добавлена версия АПИ в теле
   - добавлено поле `accoundId`
 - Существующие эндпоинты
@@ -79,7 +79,7 @@
   - [Получение сущности установленного приложения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-serwernye-prilozheniq). Возвращает параметры установленного приложения по id установленного на аккаунте приложения  
   - [Фильтрация выборки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter) с помощью параметра `filter` по изменившему сущность приложению
 - Документация
-  - Информация о таймаутах и новом параметре в [Вебхуках](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki)
+  - Информация о таймаутах и новом параметре в [Вебхуках](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-vebhuki)
   - Новый раздел [Workbook](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbook)
   - Формулировка об ограничении выборки в блоке [Остатки в позициях документов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty)
   - Описание новых типов для [фильтров Аудита](https://dev.moysklad.ru/doc/api/remap/1.2/audit/#audit-audit-fil-try)    
@@ -136,9 +136,21 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 21-11-2022
+#### Добавлено
+- Добавлена информация по работе с [зонами](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-zony-sklada) и [ячейками](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-yachejki-sklada) в [складах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-sklady)
+
 ### 18-11-2022
 #### Добавлено
 - Поддержка протокола change-handler в [Розничной продаже](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha).
+
+### 16-11-2022
+#### Добавлено
+- Параметр фильтрации `productFolder` с поддержкой (в том числе и исключающей) фильтрации по нескольким группам товаров в [Отчетах Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
+- Параметр фильтрации `withSubFolders` в [Отчетах Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost), позволяющий фильтровать по заданной группе товаров без учета ее подгрупп.
+#### Изменено
+- Параметр `product` получил поддержку фильтрации по нескольким товарам в [Отчетах Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
+- Параметр `product` получил поддержку исключающей фильтрации по товарам в [Отчетах Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
 
 ### 09-11-2022
 #### Добавлено
@@ -152,11 +164,11 @@
 
 ### 26-10-2022
 #### Добавлено
-- Добавлен [Веб-хук на изменение остатков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki-na-izmenenie-ostatkow).
+- Добавлен [Веб-хук на изменение остатков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-vebhuk-na-izmenenie-ostatkow).
 
 ### 26-10-2022
 #### Добавлено
-- Добавлен параметр `changedSince` в [эндпоинт текущих остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-tekuschie-ostatki).
+- Добавлен параметр `changedSince` в [эндпоинт текущих остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-kratkij-otchet-ob-ostatkah).
 
 ### 14-10-2022
 #### Добавлено
@@ -198,7 +210,7 @@
 
 ### 29-07-2022
 #### Описано
-- Ранее неявное ограничение в 255 символов на длину url адресов для [Веб-хуков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki-veb-huki)
+- Ранее неявное ограничение в 255 символов на длину url адресов для [Веб-хуков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-vebhuki)
 
 #### Добавлено
 - Ошибка [30010](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-oshibki-formata)
@@ -269,7 +281,7 @@
 
 ### 03-06-2022
 #### Добавлено
-- Добавлено поле `authorApplication` в [Вебхуках](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki-veb-huki)
+- Добавлено поле `authorApplication` в [Вебхуках](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-vebhuki)
 
 ### 02-06-2022
 #### Изменено
@@ -328,7 +340,7 @@
 
 ### 17-03-2022
 #### Добавлено
-- Добавлен отчёт [Текущих Остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-tekuschie-ostatki).
+- Добавлен отчёт [Текущих Остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-kratkij-otchet-ob-ostatkah).
 
 ### 17-03-2022
 #### Добавлено
@@ -341,7 +353,7 @@
 
 ### 15-03-2022
 #### Изменено
-- Изменено время ожидания ответа на отправку [Веб-хука](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki) с 5 секунд до 1.5 секунд.
+- Изменено время ожидания ответа на отправку [Веб-хука](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-vebhuki) с 5 секунд до 1.5 секунд.
 - Отключены переотправки по истечении времени ожидания ответа
 
 ### 15-03-2022
@@ -445,7 +457,7 @@
 
 ### 23-09-2021
 #### Добавлено
-- Описание полей посылаемых [веб-хуков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki) и добавлены поля `auditContext`, `updatedFields`, `moment`, `uid`
+- Описание полей посылаемых [веб-хуков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-vebhuki) и добавлены поля `auditContext`, `updatedFields`, `moment`, `uid`
 - Новая ошибка [30009](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-veb-hukow)
 
 ### 20-09-2021
@@ -534,7 +546,7 @@
 
 ### 08-06-2021
 #### Изменено
-- Изменены лимиты по [вебхукам](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki): выделены отдельные лимиты для приложений  
+- Изменены лимиты по [вебхукам](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-vebhuki): выделены отдельные лимиты для приложений  
 
 ### 03-06-2021
 #### Добавлено
@@ -639,7 +651,7 @@
 
 ### 27-04-2021
 #### Добавлена
-- Возможность создавать [вебхуки](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki) для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)
+- Возможность создавать [вебхуки](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-vebhuki) для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-asinhronnyj-obmen)
 
 ### 26-04-2021
 #### Изменено
@@ -697,7 +709,7 @@
 
 ### 07-04-2021
 #### Добавлено
-- Добавлен [пример](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-poluchit-wse-ostatki) в отчет остатки по параметру includeRelated 
+- Добавлен [пример](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-rasshirennyj-otchet-ob-ostatkah) в отчет остатки по параметру includeRelated 
 
 ### 06-04-2021
 #### Добавлено
@@ -893,7 +905,7 @@
 
 ### 28-05-2020
 #### Документация
-- Добавлена информация об [ограничениях](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbook-chto-nuzhno-znat-dlq-nachala-raboty-s-json-api-ogranicheniq) и новом [параметре в Вебхуках](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-veb-huki)
+- Добавлена информация об [ограничениях](https://dev.moysklad.ru/doc/api/remap/1.2/workbook/#workbook-chto-nuzhno-znat-dlq-nachala-raboty-s-json-api-ogranicheniq) и новом [параметре в Вебхуках](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-vebhuki)
 
 ### 28-05-2020
 #### Добавлено в API Remap 1.1 и 1.2
@@ -940,7 +952,7 @@
 
 ### 04-03-2020
 #### Добавлено
-- Поле `stockDays` - количество дней на складе в [Отчет Остатки -> Все Остатки](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-dostup-k-otchetu-ostatki)
+- Поле `stockDays` - количество дней на складе в [Отчет Остатки -> Все Остатки](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-rasshirennyj-otchet-ob-ostatkah-atributy-ob-ekta-otcheta)
 
 ### 04-03-2020
 #### Документация

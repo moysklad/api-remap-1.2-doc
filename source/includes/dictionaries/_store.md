@@ -8,6 +8,8 @@
 + По наименованию Склада **name**
 + По коду Склада **code**
 
+Для отображения зон и ячеек при запросе склада осуществляется только на платных и триальных аккаунтах.
+
 #### Атрибуты сущности
 
 | Название         | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                      |
@@ -29,6 +31,8 @@
 | **pathName**     | String                                                    | `=` `!=` `~` `~=` `=~`                                                                                                                            | Группа Склада<br>`+Обязательное при ответе`                                                                                   |
 | **shared**       | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                    |
 | **updated**      | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Склада<br>`+Обязательное при ответе` `+Только для чтения`                                        |
+| **zones**        | MetaArray                                                 |                                                                                                                                                   | Зоны склада. [Подробнее тут](../dictionaries/#suschnosti-sklad-zony-sklada)<br>`+Только для чтения` `+Expand`                                       |
+| **slots**        | MetaArray                                                 |                                                                                                                                                   | Ячейки склада. [Подробнее тут](../dictionaries/#suschnosti-sklad-yachejki-sklada)<br>`+Только для чтения` `+Expand`                                       |
 
 #### Аттрибуты сущности Адрес
 
@@ -160,7 +164,27 @@ curl -X GET
         "addInfo": "addinfo",
         "comment": "some words about address"
       },
-      "pathName": ""
+      "pathName": "",
+      "zones": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/caf46ce5-0569-11e6-9464-e4de00000000/zones",
+          "type": "storezone",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "slots": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/caf46ce5-0569-11e6-9464-e4de00000000/slots",
+          "type": "slot",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
     },
     {
       "meta": {
@@ -218,6 +242,26 @@ curl -X GET
         "apartment": "123",
         "addInfo": "addinfo",
         "comment": "some words about address"
+      },
+      "zones": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/850ee995-f504-11e5-8a84-bae500000160/zones",
+          "type": "storezone",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "slots": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/850ee995-f504-11e5-8a84-bae500000160/slots",
+          "type": "slot",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
       },
       "attributes": [
         {
@@ -290,7 +334,27 @@ curl -X GET
         "addInfo": "addinfo",
         "comment": "some words about address"
       },
-      "pathName": "002"
+      "pathName": "002",
+      "zones": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/6ebb9094-056a-11e6-9464-e4de000000b4/zones",
+          "type": "storezone",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "slots": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/6ebb9094-056a-11e6-9464-e4de000000b4/slots",
+          "type": "slot",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
     },
     {
       "meta": {
@@ -350,7 +414,27 @@ curl -X GET
         "addInfo": "addinfo",
         "comment": "some words about address"
       },
-      "pathName": "Основной склад"
+      "pathName": "Основной склад",
+      "zones": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/95dcda62-056b-11e6-9464-e4de000000b7/zones",
+          "type": "storezone",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "slots": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/95dcda62-056b-11e6-9464-e4de000000b7/slots",
+          "type": "slot",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
     }
   ]
 }
@@ -464,6 +548,26 @@ curl -X GET
       }
     },
     "street": "Leninskie goru2"
+  },
+  "zones": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/zones",
+      "type": "storezone",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "slots": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/slots",
+      "type": "slot",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
   }
 }
 ```
@@ -580,6 +684,26 @@ curl -X GET
     },
     "street": "Leninskie goru2"
   },
+  "zones": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones",
+      "type": "storezone",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "slots": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots",
+      "type": "slot",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
   "attributes": [
     {
       "meta": {
@@ -677,7 +801,27 @@ curl -X GET
     "externalCode": "sfksjafwuiw1sf32141",
     "archived": false,
     "pathName": "",
-    "address": "г Москва ул Вавилова 19 к 116"
+    "address": "г Москва ул Вавилова 19 к 116",
+    "zones": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/zones",
+        "type": "storezone",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
+    "slots": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/slots",
+        "type": "slot",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    }
   },
   {
     "meta": {
@@ -711,7 +855,27 @@ curl -X GET
     "externalCode": "EXTCODE",
     "archived": false,
     "pathName": "",
-    "address": "г Москва ул БаБилова 20 к 116"
+    "address": "г Москва ул БаБилова 20 к 116",
+    "zones": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/zones",
+        "type": "storezone",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
+    "slots": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/slots",
+        "type": "slot",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    }
   }
 ]
 
@@ -945,6 +1109,26 @@ curl -X GET
     "addInfo": "addinfo",
     "comment": "some words about address"
   },
+  "zones": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/95dcda62-056b-11e6-9464-e4de000000b7/zones",
+      "type": "storezone",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "slots": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/95dcda62-056b-11e6-9464-e4de000000b7/slots",
+      "type": "slot",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
   "attributes": [
     {
       "meta": {
@@ -1082,7 +1266,27 @@ curl -X GET
               "mediaType": "application/json"
           }
       },
-      "street": "Leninskie goru2"
+    "street": "Leninskie goru2",
+    "zones": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/zones",
+        "type": "storezone",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
+    "slots": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/slots",
+        "type": "slot",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    }
   }
 }
 ```
@@ -1199,6 +1403,26 @@ curl -X GET
     },
     "street": "Leninskie goru2"
   },
+  "zones": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones",
+      "type": "storezone",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "slots": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots",
+      "type": "slot",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
   "attributes": [
     {
       "meta": {
@@ -1212,5 +1436,261 @@ curl -X GET
       "value": 4400
     }
   ]
+}
+```
+
+### Зоны склада
+Доступ к зонам склада осуществляется только на платных аккаунтах и при наличии права видеть соответствующий склад.
+
+#### Атрибуты сущности
+
+| Название         | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                      |
+| ---------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------- |
+| **accountId**    | UUID                                                      |                                                                                                                                           | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                          |
+| **externalCode** | String(255)                                               |                                                                                                                             | Внешний код Зоны<br>`+Обязательное при ответе`                                                                              |
+| **id**           | UUID                                                      |                                                                                                                                           | ID Зоны<br>`+Обязательное при ответе` `+Только для чтения`                                                                  |
+| **meta**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Зоны<br>`+Обязательное при ответе`                                                                               |
+| **name**         | String(255)                                               |                                                                                                                            | Наименование Зоны<br>`+Обязательное при ответе` `+Необходимо при создании`                                                  |
+| **updated**      | DateTime                                                  |                                                                                                                         | Момент последнего обновления Зоны<br>`+Обязательное при ответе` `+Только для чтения`                                        |
+
+### Получить зоны склада
+Получить список всех Зон.
+Результат: Объект JSON, включающий в себя поля:
+
+| Название    | Тип                                                       | Описание                                     |
+| ----------- | :-------------------------------------------------------- | :------------------------------------------- |
+| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче,                         |
+| **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос. |
+| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих Зоны. |
+
+**Параметры**
+
+| Параметр                       | Описание                                                                                                                               |
+| ------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------- |
+| **limit**                      | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
+| **offset**                     | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
+
+> Получить Зоны
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones"
+  -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка Зон Склада.
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones",
+    "type": "storezone",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7a6a11b6-12c5-11e6-9464-e4de00000007",
+        "type": "storezone",
+        "mediaType": "application/json"
+      },
+      "id": "7a6a11b6-12c5-11e6-9464-e4de00000007",
+      "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+      "updated": "2016-05-05 16:32:02",
+      "name": "zone1",
+      "externalCode": "223ddxzv223"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7a6a11b6-12c5-11e6-9464-e4de00000008",
+        "type": "storezone",
+        "mediaType": "application/json"
+      },
+      "id": "7a6a11b6-12c5-11e6-9464-e4de00000008",
+      "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+      "updated": "2016-05-05 16:32:02",
+      "name": "zone2",
+      "externalCode": "223ddxzv224"
+    }
+  ]
+}
+```
+
+### Получить зону склада
+
+**Параметры**
+
+| Параметр | Описание                                                                       |
+| :------- | :----------------------------------------------------------------------------- |
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b18* id Зоны. |
+
+> Запрос на получение отдельной Зоны Склада с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19/zones/7944ef04-f831-11e5-7a69-971500188b18"
+  -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Зоны Склада с указанным id.
+
+```json
+{
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19/zones/7944ef04-f831-11e5-7a69-971500188b18",
+        "type": "storezone",
+        "mediaType": "application/json"
+      },
+      "id": "7944ef04-f831-11e5-7a69-971500188b18",
+      "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+      "updated": "2016-05-05 16:32:02",
+      "name": "zone1",
+      "externalCode": "223ddxzv223"
+}
+```
+
+### Ячейки склада
+Доступ к ячейкам склада осуществляется только на платных аккаунтах и при наличии права видеть соответствующий склад.
+
+#### Атрибуты сущности
+
+| Название         | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                      |
+| ---------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------- |
+| **accountId**    | UUID                                                      |                                                                                                                                        | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                          |
+| **externalCode** | String(255)                                               |                                                                                                                            | Внешний код Ячейки<br>`+Обязательное при ответе`                                                                              |
+| **id**           | UUID                                                      |                                                                                                                                         | ID Ячейки<br>`+Обязательное при ответе` `+Только для чтения`                                                                  |
+| **meta**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Ячейки<br>`+Обязательное при ответе`                                                                               |
+| **name**         | String(255)                                               |                                                                                                                            | Наименование Ячейки<br>`+Обязательное при ответе` `+Необходимо при создании`                                                  |
+| **updated**      | DateTime                                                  |                                                                                                                         | Момент последнего обновления Ячейки<br>`+Обязательное при ответе` `+Только для чтения`                                        |
+| **zone**         | Meta                                                      |                                                                                                                                                   | Зона ячейки. [Подробнее тут](../dictionaries/#suschnosti-sklad-zony-sklada)<br>`+Только для чтения` `+Expand`                                       |
+
+### Получить ячейки склада
+Получить список всех Ячеек Склада.
+Результат: Объект JSON, включающий в себя поля:
+
+| Название    | Тип                                                       | Описание                                     |
+| ----------- | :-------------------------------------------------------- | :------------------------------------------- |
+| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче,                         |
+| **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос. |
+| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих Ячейки Склада. |
+
+**Параметры**
+
+| Параметр                       | Описание                                                                                                                               |
+| ------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------- |
+| **limit**                      | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
+| **offset**                     | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
+
+> Получить Ячейки Склада
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots"
+  -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка Ячеек Склада.
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots",
+    "type": "slot",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7a6a11b6-12c5-11e6-9464-e4de00000007",
+        "type": "slot",
+        "mediaType": "application/json"
+      },
+      "id": "7a6a11b6-12c5-11e6-9464-e4de00000007",
+      "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+      "updated": "2016-05-05 16:32:02",
+      "name": "slot1",
+      "externalCode": "223ddxzv223"
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7a6a11b6-12c5-11e6-9464-e4de00000008",
+        "type": "slot",
+        "mediaType": "application/json"
+      },
+      "id": "7a6a11b6-12c5-11e6-9464-e4de00000008",
+      "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+      "updated": "2016-05-05 16:32:02",
+      "name": "slot2",
+      "externalCode": "223ddxzv224",
+      "zone": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7944ef04-f831-11e5-7a69-971500188b18",
+          "type": "storezone",
+          "mediaType": "application/json"
+        }
+      }
+    }
+  ]
+}
+```
+### Получить ячейку склада
+**Параметры**
+
+| Параметр | Описание                                                                       |
+| :------- | :----------------------------------------------------------------------------- |
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b18* id Ячейки Склада. |
+
+> Запрос на получение отдельной Ячейки Склада с указанным id.
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19/slots/7944ef04-f831-11e5-7a69-971500188b18"
+  -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Ячейки Склада с указанным id.
+
+```json
+{
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19/slots/7944ef04-f831-11e5-7a69-971500188b18",
+        "type": "slot",
+        "mediaType": "application/json"
+      },
+      "id": "7944ef04-f831-11e5-7a69-971500188b18",
+      "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+      "updated": "2016-05-05 16:32:02",
+      "name": "slot1",
+      "externalCode": "223ddxzv223"
 }
 ```
