@@ -144,6 +144,10 @@
 #### Добавлено
 - Добавлена информация по работе с [зонами](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-zony-sklada) и [ячейками](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-yachejki-sklada) в [складах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-sklady)
 
+### 18-11-2022
+#### Добавлено
+- Поддержка протокола change-handler в [Розничной продаже](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha).
+
 ### 16-11-2022
 #### Добавлено
 - Параметр фильтрации `productFolder` с поддержкой (в том числе и исключающей) фильтрации по нескольким группам товаров в [Отчетах Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
