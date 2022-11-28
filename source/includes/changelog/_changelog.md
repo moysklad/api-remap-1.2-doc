@@ -136,8 +136,8 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-## 28-11-2022
-### Добавлено
+### 28-11-2022
+#### Добавлено
 - Дополнено описание структуры объекта [error](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-obrabotka-oshibok-struktura-ob-ekta-error).
 
 ### 21-11-2022
