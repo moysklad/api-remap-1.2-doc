@@ -15,6 +15,7 @@ includes:
   - workbook/workbook_meta
   - workbook/workbook_paging
   - workbook/workbook_sorting
+  - workbook/workbook_stock
   - workbook/workbook_publication
   - workbook/workbook_attributes_crud
   - workbook/workbook_attributes
