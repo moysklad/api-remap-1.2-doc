@@ -1002,12 +1002,12 @@ curl -X POST
 Исключения:
 
 + Структурированный адрес у
-  [Контрагента](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres),
-  [Юрлица](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres),
-  [Точки продаж](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-adres),
-  [Склада](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres),
-  [Заказа покупателя](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-attributy-suschnosti-adres-dostawki),
-  [Отгрузки](../documents/#dokumenty-otgruzka-otgruzki-attributy-suschnosti-adres-dostawki) не поддерживает удаления передачей `null`.
+  [Контрагента](dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres),
+  [Юрлица](dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres),
+  [Точки продаж](dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-adres),
+  [Склада](dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres),
+  [Заказа покупателя](documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-attributy-suschnosti-adres-dostawki),
+  [Отгрузки](documents/#dokumenty-otgruzka-otgruzki-attributy-suschnosti-adres-dostawki) не поддерживает удаления передачей `null`.
 Для удаления адреса необходимо в строковое поле передать пустую строку `""`. Конкретные строковые поля приведены в соответствующих разделах, переход в которые осуществляется по ссылкам выше.
 
 ### Пустые поля
