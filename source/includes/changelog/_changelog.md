@@ -55,7 +55,7 @@
   - Отчет [Показатели продаж](../reports/#otchety-pokazateli-prodazh-i-zakazow-pokazateli-prodazh)
   - Отчет [Показатели заказов](../reports/#otchety-pokazateli-prodazh-i-zakazow-pokazateli-zakazow)
   - Отчет [Обороты товаров](../reports/#otchety-otchet-oboroty)
-  - Отчет [Текущих остатков](../reports/#otchety-otchet-ostatki-tekuschie-ostatki)
+  - Отчет [Текущих остатков](../reports/#otchety-otchet-ostatki-kratkij-otchet-ob-ostatkah)
   - Создание [характеристик Модификаций](../dictionaries/#suschnosti-harakteristiki-modifikacij)  
   - Эндпоинты [управления скидками](../dictionaries/#suschnosti-skidki)
   - Эндпоинт [Автозаполнения цен, скидок, ндс позиций](../documents/#dokumenty-awtozapolnenie)
