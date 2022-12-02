@@ -344,4 +344,4 @@ curl -X GET
 ```
 
 Подробнее про работу с изображениями можно прочитать 
-[тут](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-izobrazhenie).
+[тут](../dictionaries/#suschnosti-izobrazhenie).
