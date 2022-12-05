@@ -34,16 +34,16 @@
 
 Данный запрос работает со следующими типами документов:
 
-+ [Отгрузка](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka)
-+ [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq)
-+ [Розничная продажа](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha)
-+ [Счет поставщика](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-postawschika)
-+ [Розничная продажа](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha)
-+ [Заказ поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-postawschiku)
-+ [Приемка](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka)
-+ [Розничный возврат](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnyj-wozwrat)
-+ [Возврат поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-postawschiku)
-+ [Возврат покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-pokupatelq)
++ [Отгрузка](../documents/#dokumenty-otgruzka)
++ [Заказ покупателя](../documents/#dokumenty-zakaz-pokupatelq)
++ [Розничная продажа](../documents/#dokumenty-roznichnaq-prodazha)
++ [Счет поставщика](../documents/#dokumenty-schet-postawschika)
++ [Розничная продажа](../documents/#dokumenty-roznichnaq-prodazha)
++ [Заказ поставщику](../documents/#dokumenty-zakaz-postawschiku)
++ [Приемка](../documents/#dokumenty-priemka)
++ [Розничный возврат](../documents/#dokumenty-roznichnyj-wozwrat)
++ [Возврат поставщику](../documents/#dokumenty-vozwrat-postawschiku)
++ [Возврат покупателя](../documents/#dokumenty-vozwrat-pokupatelq)
 
 Результат запроса - остатки по позициям документа, на дату документа, со склада, указанного в документе,
 а также себестоимость позиций документа по FIFO с учётом количества.

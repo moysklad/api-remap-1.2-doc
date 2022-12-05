@@ -2,37 +2,37 @@
 
 Средствами JSON API можно рассчитать значение скидок, цен и ндс для позиций следующих документов:
 
-- [Оприходование](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-oprihodowanie)
-- [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq)
-- [Заказ поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-postawschiku)
-- [Счет покупателю](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-pokupatelu)
-- [Счет поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-postawschika)
-- [Отгрузка](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka)
-- [Приемка](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka)
-- [Списание](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-spisanie)
-- [Перемещение](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-peremeschenie)
-- [Розничная продажа](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha)
-- [Розничный возврат](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnyj-wozwrat)
-- [Возврат покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-pokupatelq)
-- [Возврат поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-postawschiku)
-- [Инвентаризация](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-inwentarizaciq)
-- [Полученный отчет комиссионера](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-poluchennyj-otchet-komissionera)
-- [Выданный отчет комиссионера](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vydannyj-otchet-komissionera)
-- [Внутренний заказ](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vnutrennij-zakaz)
+- [Оприходование](../documents/#dokumenty-oprihodowanie)
+- [Заказ покупателя](../documents/#dokumenty-zakaz-pokupatelq)
+- [Заказ поставщику](../documents/#dokumenty-zakaz-postawschiku)
+- [Счет покупателю](../documents/#dokumenty-schet-pokupatelu)
+- [Счет поставщику](../documents/#dokumenty-schet-postawschika)
+- [Отгрузка](../documents/#dokumenty-otgruzka)
+- [Приемка](../documents/#dokumenty-priemka)
+- [Списание](../documents/#dokumenty-spisanie)
+- [Перемещение](../documents/#dokumenty-peremeschenie)
+- [Розничная продажа](../documents/#dokumenty-roznichnaq-prodazha)
+- [Розничный возврат](../documents/#dokumenty-roznichnyj-wozwrat)
+- [Возврат покупателя](../documents/#dokumenty-vozwrat-pokupatelq)
+- [Возврат поставщику](../documents/#dokumenty-vozwrat-postawschiku)
+- [Инвентаризация](../documents/#dokumenty-inwentarizaciq)
+- [Полученный отчет комиссионера](../documents/#dokumenty-poluchennyj-otchet-komissionera)
+- [Выданный отчет комиссионера](../documents/#dokumenty-vydannyj-otchet-komissionera)
+- [Внутренний заказ](../documents/#dokumenty-vnutrennij-zakaz)
 
 Заполнение скидок не поддерживает следующие типы:
 
-- [Инвентаризация](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-inwentarizaciq)
-- [Перемещение](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-peremeschenie)
-- [Внутренний заказ](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vnutrennij-zakaz)
-- [Оприходование](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-oprihodowanie)
-- [Списание](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-spisanie)
+- [Инвентаризация](../documents/#dokumenty-inwentarizaciq)
+- [Перемещение](../documents/#dokumenty-peremeschenie)
+- [Внутренний заказ](../documents/#dokumenty-vnutrennij-zakaz)
+- [Оприходование](../documents/#dokumenty-oprihodowanie)
+- [Списание](../documents/#dokumenty-spisanie)
 
-Заполнение цен не поддерживает [Инвентаризация](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-inwentarizaciq)
+Заполнение цен не поддерживает [Инвентаризация](../documents/#dokumenty-inwentarizaciq)
 
 Заполнение себестоимости поддерживается только для возвратов без основания следующих типов:
-- [Возврат покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-pokupatelq)
-- [Розничный возврат](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnyj-wozwrat)
+- [Возврат покупателя](../documents/#dokumenty-vozwrat-pokupatelq)
+- [Розничный возврат](../documents/#dokumenty-roznichnyj-wozwrat)
 
 
 ### Шаблон автозаполнения
