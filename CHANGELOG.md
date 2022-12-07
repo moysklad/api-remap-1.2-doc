@@ -908,7 +908,7 @@
  
 ## 06-05-2020
 ### Добавлено
- - [Уточнение](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-ostatki-w-poziciqh-dokumentow) о том, что позиции документов возвращаются при лимите 100 и менее
+ - [Уточнение](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-ostatki-i-sebestoimost-w-poziciqh-dokumentow) о том, что позиции документов возвращаются при лимите 100 и менее
 
 ## 27-04-2020
 ### Удалено
