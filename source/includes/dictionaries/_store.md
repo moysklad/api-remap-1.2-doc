@@ -1633,11 +1633,13 @@ curl -X POST
 
 ### Удалить зону склада
 
+Нельзя удалить зону, если к ней привязаны ячейки.
+
 **Параметры**
 
-| Параметр | Описание                                                                       |
-| :------- | :----------------------------------------------------------------------------- |
-| **store_id**  | `string` (required) *Example: 7a6a11b6-12c5-11e6-9464-e4de00000006* id Склада. |
+| Параметр | Описание                                                                            |
+| :------- |:------------------------------------------------------------------------------------|
+| **store_id**  | `string` (required) *Example: 7a6a11b6-12c5-11e6-9464-e4de00000006* id Склада.      |
 | **zone_id**   | `string` (required) *Example: 7d479c5f-75f9-11ed-ac1a-000d00000003* id Зоны склада. |
 
 > Запрос на удаление Зоны склада с указанным id.
@@ -2151,6 +2153,52 @@ curl -X PUT
         "updated": "2022-12-07 09:29:56.547",
         "name": "slot 3",
         "externalCode": "wYIaWipYjrZkJZZlw1Amy1"
+    }
+]
+```
+
+> Запрос на обновление Ячейки склада с зоной
+
+```shell
+curl -X PUT
+  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '{
+        "name": "slot 3",
+        "zone": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/8277a566-75f8-11ed-ac1a-000d00000000",
+            "type": "storezone",
+            "mediaType": "application/json"
+          }
+        }
+      }'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленной Ячейки Склада.
+
+```json
+[
+    {
+      "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003",
+          "type": "slot",
+          "mediaType": "application/json"
+      },
+      "id": "7d479c5f-75f9-11ed-ac1a-000d00000003",
+      "accountId": "5f69193a-75f8-11ed-ac1a-000f00000001",
+      "updated": "2022-12-07 09:29:56.547",
+      "name": "slot 3",
+      "externalCode": "wYIaWipYjrZkJZZlw1Amy1",
+      "zone": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/8277a566-75f8-11ed-ac1a-000d00000000",
+          "type": "storezone",
+          "mediaType": "application/json"
+        }
+      }
     }
 ]
 ```
