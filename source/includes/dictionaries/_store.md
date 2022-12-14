@@ -63,8 +63,8 @@
 Результат: Объект JSON, включающий в себя поля:
 
 | Название    | Тип                                                       | Описание                                     |
-| ----------- | :-------------------------------------------------------- | :------------------------------------------- |
-| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче,                         |
+| ----------- | :-------------------------------------------------------- |:---------------------------------------------|
+| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче.                         |
 | **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос. |
 | **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих Склады. |
 
@@ -1440,7 +1440,7 @@ curl -X GET
 ```
 
 ### Зоны склада
-Доступ к зонам склада осуществляется только на платных аккаунтах и при наличии права видеть соответствующий склад.
+Доступ к зонам склада осуществляется только на платных аккаунтах (кроме тарифа Старт) и при наличии права видеть соответствующий склад.
 
 #### Атрибуты сущности
 
@@ -1458,10 +1458,10 @@ curl -X GET
 Результат: Объект JSON, включающий в себя поля:
 
 | Название    | Тип                                                       | Описание                                     |
-| ----------- | :-------------------------------------------------------- | :------------------------------------------- |
-| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче,                         |
+| ----------- | :-------------------------------------------------------- |:---------------------------------------------|
+| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче.                         |
 | **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос. |
-| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих Зоны. |
+| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих Зоны.   |
 
 **Параметры**
 
@@ -1530,6 +1530,172 @@ curl -X GET
 }
 ```
 
+### Создать зону склада
+#### Описание
+
+Зона склада создается на основе переданного объекта JSON,
+который содержит представление новой Зоны склада.
+Результат - JSON представление созданной Зоны склада. Для создания новой Зоны склада,
+необходимо и достаточно указать в переданном объекте не пустое поле `name`. В рамках одного склада имена Зон должны быть уникальны.
+
+> Запрос на создание Зоны склада
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '{
+        "name": "zone 1"
+      }'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной Зоны Склада.
+
+```json
+[
+    {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/9177a566-75f8-11ed-ac1a-000d00000000",
+            "type": "storezone",
+            "mediaType": "application/json"
+        },
+        "id": "9177a566-75f8-11ed-ac1a-000d00000000",
+        "accountId": "5f69193a-75f8-11ed-ac1a-000f00000001",
+        "updated": "2022-12-07 09:29:56.547",
+        "name": "zone 1",
+        "externalCode": "wYIaWipYjrZkJZZlw1Amy1"
+    }
+]
+```
+
+### Массовое создание и обновление зон склада
+
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Зон склада.
+В теле запроса нужно передать массив, содержащий JSON представления Зон склада, которые вы хотите создать или обновить.
+Обновляемые Зоны склада должны содержать идентификатор в виде метаданных.
+
+> Запрос создания и обновления нескольких Зон склада
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones
+"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "name": "Zona 2"
+            },
+            {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/9177a566-75f8-11ed-ac1a-000d00000000",
+                "type": "storezone",
+                "mediaType": "application/json"
+              },
+              "name": "Zone new"
+            }
+          ]'  
+  ```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - массив JSON представлений созданных и обновленных Зон склада.
+
+```json
+[
+    {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/9177a566-75f8-11ed-ac1a-000d00000000",
+            "type": "storezone",
+            "mediaType": "application/json"
+        },
+        "id": "9177a566-75f8-11ed-ac1a-000d00000000",
+        "accountId": "5f69193a-75f8-11ed-ac1a-000f00000001",
+        "updated": "2022-12-07 09:29:56.547",
+        "name": "Zone new",
+        "externalCode": "wYIaWipYjrZkJZZlw1Amy1"
+    },
+    {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7d479c5f-75f9-11ed-ac1a-000d00000003",
+            "type": "storezone",
+            "mediaType": "application/json"
+        },
+        "id": "7d479c5f-75f9-11ed-ac1a-000d00000003",
+        "accountId": "5f69193a-75f8-11ed-ac1a-000f00000001",
+        "updated": "2022-12-07 09:36:32.702",
+        "name": "Zona 2",
+        "externalCode": "geYPAnDwhwrTMeo09TjW21"
+    }
+]
+```
+
+### Удалить зону склада
+
+При удалении зоны к которой привязаны ячейки, ячейки отвязываются от данной зоны.
+
+**Параметры**
+
+| Параметр | Описание                                                                            |
+| :------- |:------------------------------------------------------------------------------------|
+| **store_id**  | `string` (required) *Example: 7a6a11b6-12c5-11e6-9464-e4de00000006* id Склада.      |
+| **zone_id**   | `string` (required) *Example: 7d479c5f-75f9-11ed-ac1a-000d00000003* id Зоны склада. |
+
+> Запрос на удаление Зоны склада с указанным id.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7d479c5f-75f9-11ed-ac1a-000d00000003"
+  -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешное удаление Зоны склада.
+
+### Массовое удаление зон склада
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Зон склада, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Зон склада.
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity//store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/9177a566-75f8-11ed-ac1a-000d00000000",
+            "type": "storezone",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7d479c5f-75f9-11ed-ac1a-000d00000003",
+            "type": "storezone",
+            "mediaType": "application/json"
+          }
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Зон склада.
+
+```json
+[
+  {
+    "info":"Сущность 'storezone' с UUID: 9177a566-75f8-11ed-ac1a-000d00000000 успешно удалена"
+  },
+  {
+    "info":"Сущность 'storezone' с UUID: 7d479c5f-75f9-11ed-ac1a-000d00000003 успешно удалена"
+  }
+]
+```
+
 ### Получить зону склада
 
 **Параметры**
@@ -1564,8 +1730,51 @@ curl -X GET
 }
 ```
 
+### Изменить зону склада
+
+В теле запроса нужно передать JSON представление Зоны склада, которую вы хотите обновить.
+
+**Параметры**
+
+| Параметр | Описание                                                                       |
+| :------- | :----------------------------------------------------------------------------- |
+| **store_id**  | `string` (required) *Example: 7a6a11b6-12c5-11e6-9464-e4de00000006* id Склада. |
+| **zone_id**   | `string` (required) *Example: 7d479c5f-75f9-11ed-ac1a-000d00000003* id Зоны склада. |
+
+> Запрос на обновление Зоны склада
+
+```shell
+curl -X PUT
+  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7d479c5f-75f9-11ed-ac1a-000d00000003"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '{
+        "name": "zone 3"
+      }'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленной Зоны Склада.
+
+```json
+[
+    {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7d479c5f-75f9-11ed-ac1a-000d00000003",
+            "type": "storezone",
+            "mediaType": "application/json"
+        },
+        "id": "7d479c5f-75f9-11ed-ac1a-000d00000003",
+        "accountId": "5f69193a-75f8-11ed-ac1a-000f00000001",
+        "updated": "2022-12-07 09:29:56.547",
+        "name": "zone 3",
+        "externalCode": "wYIaWipYjrZkJZZlw1Amy1"
+    }
+]
+```
+
 ### Ячейки склада
-Доступ к ячейкам склада осуществляется только на платных аккаунтах и при наличии права видеть соответствующий склад.
+Доступ к ячейкам склада осуществляется только на платных аккаунтах (кроме тарифа Старт) и при наличии права видеть соответствующий склад.
 
 #### Атрибуты сущности
 
@@ -1583,10 +1792,10 @@ curl -X GET
 Получить список всех Ячеек Склада.
 Результат: Объект JSON, включающий в себя поля:
 
-| Название    | Тип                                                       | Описание                                     |
-| ----------- | :-------------------------------------------------------- | :------------------------------------------- |
-| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче,                         |
-| **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос. |
+| Название    | Тип                                                       | Описание                                            |
+| ----------- | :-------------------------------------------------------- |:----------------------------------------------------|
+| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче.                                |
+| **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.        |
 | **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих Ячейки Склада. |
 
 **Параметры**
@@ -1662,6 +1871,216 @@ curl -X GET
   ]
 }
 ```
+
+### Создать ячейку склада
+#### Описание
+
+Ячейка склада создается на основе переданного объекта JSON,
+который содержит представление новой Ячейки склада.
+Результат - JSON представление созданной Ячейки склада. Для создания новой Ячейки склада,
+необходимо и достаточно указать в переданном объекте не пустое поле `name`. В рамках одного склада имена Ячеек должны быть уникальны.
+
+> Запрос на создание Ячейки склада
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '{
+        "name": "slot 1"
+      }'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной Ячейки Склада.
+
+```json
+[
+    {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/9177a566-75f8-11ed-ac1a-000d00000000",
+            "type": "slot",
+            "mediaType": "application/json"
+        },
+        "id": "9177a566-75f8-11ed-ac1a-000d00000000",
+        "accountId": "5f69193a-75f8-11ed-ac1a-000f00000001",
+        "updated": "2022-12-07 09:29:56.547",
+        "name": "slot 1",
+        "externalCode": "wYIaWipYjrZkJZZlw1Amy1"
+    }
+]
+```
+
+> Запрос на создание Ячейки склада с зоной
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '{
+        "name": "slot 1",
+        "zone": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/8277a566-75f8-11ed-ac1a-000d00000000",
+            "type": "storezone",
+            "mediaType": "application/json"
+          }
+        }
+      }'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной Ячейки Склада.
+
+```json
+[
+    {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/9177a566-75f8-11ed-ac1a-000d00000000",
+            "type": "slot",
+            "mediaType": "application/json"
+        },
+        "id": "9177a566-75f8-11ed-ac1a-000d00000000",
+        "accountId": "5f69193a-75f8-11ed-ac1a-000f00000001",
+        "updated": "2022-12-07 09:29:56.547",
+        "name": "slot 1",
+        "externalCode": "wYIaWipYjrZkJZZlw1Amy1",
+        "zone": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/8277a566-75f8-11ed-ac1a-000d00000000",
+            "type": "storezone",
+            "mediaType": "application/json"
+          }
+        }
+    }
+]
+```
+
+### Массовое создание и обновление ячеек склада
+
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Ячеек склада.
+В теле запроса нужно передать массив, содержащий JSON представления Ячеек склада, которые вы хотите создать или обновить.
+Обновляемые Ячейки склада должны содержать идентификатор в виде метаданных.
+
+> Запрос создания и обновления нескольких Ячеек склада
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots
+"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "name": "Slot 2"
+            },
+            {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/9177a566-75f8-11ed-ac1a-000d00000000",
+                "type": "slot",
+                "mediaType": "application/json"
+              },
+              "name": "Slot new"
+            }
+          ]'  
+  ```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - массив JSON представлений созданных и обновленных Ячеек склада.
+
+```json
+[
+    {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/9177a566-75f8-11ed-ac1a-000d00000000",
+            "type": "slot",
+            "mediaType": "application/json"
+        },
+        "id": "9177a566-75f8-11ed-ac1a-000d00000000",
+        "accountId": "5f69193a-75f8-11ed-ac1a-000f00000001",
+        "updated": "2022-12-07 09:29:56.547",
+        "name": "Slot new",
+        "externalCode": "wYIaWipYjrZkJZZlw1Amy1"
+    },
+    {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003",
+            "type": "slot",
+            "mediaType": "application/json"
+        },
+        "id": "7d479c5f-75f9-11ed-ac1a-000d00000003",
+        "accountId": "5f69193a-75f8-11ed-ac1a-000f00000001",
+        "updated": "2022-12-07 09:36:32.702",
+        "name": "Slot 2",
+        "externalCode": "geYPAnDwhwrTMeo09TjW21"
+    }
+]
+```
+
+### Удалить ячейку склада
+
+**Параметры**
+
+| Параметр | Описание                                                                       |
+| :------- | :----------------------------------------------------------------------------- |
+| **store_id**  | `string` (required) *Example: 7a6a11b6-12c5-11e6-9464-e4de00000006* id Склада. |
+| **slot_id**   | `string` (required) *Example: 7d479c5f-75f9-11ed-ac1a-000d00000003* id Ячейки склада. |
+
+> Запрос на удаление Ячейки склада с указанным id.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003"
+  -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешное удаление Ячейки склада.
+
+### Массовое удаление ячеек склада
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Ячеек склада, которые вы хотите удалить.
+
+> Запрос на массовое удаление Ячеек склада.
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/9177a566-75f8-11ed-ac1a-000d00000000",
+            "type": "slot",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003",
+            "type": "slot",
+            "mediaType": "application/json"
+          }
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Ячеек склада.
+
+```json
+[
+  {
+    "info":"Сущность 'slot' с UUID: 9177a566-75f8-11ed-ac1a-000d00000000 успешно удалена"
+  },
+  {
+    "info":"Сущность 'slot' с UUID: 7d479c5f-75f9-11ed-ac1a-000d00000003 успешно удалена"
+  }
+]
+```
+
 ### Получить ячейку склада
 **Параметры**
 
@@ -1693,4 +2112,93 @@ curl -X GET
       "name": "slot1",
       "externalCode": "223ddxzv223"
 }
+```
+
+### Изменить ячейку склада
+
+В теле запроса нужно передать JSON представление Ячейки склада, которую вы хотите обновить.
+
+**Параметры**
+
+| Параметр | Описание                                                                       |
+| :------- | :----------------------------------------------------------------------------- |
+| **store_id**  | `string` (required) *Example: 7a6a11b6-12c5-11e6-9464-e4de00000006* id Склада. |
+| **slot_id**   | `string` (required) *Example: 7d479c5f-75f9-11ed-ac1a-000d00000003* id Ячейки склада. |
+
+> Запрос на обновление Ячейки склада
+
+```shell
+curl -X PUT
+  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '{
+        "name": "slot 3"
+      }'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленной Ячейки Склада.
+
+```json
+[
+    {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003",
+            "type": "slot",
+            "mediaType": "application/json"
+        },
+        "id": "7d479c5f-75f9-11ed-ac1a-000d00000003",
+        "accountId": "5f69193a-75f8-11ed-ac1a-000f00000001",
+        "updated": "2022-12-07 09:29:56.547",
+        "name": "slot 3",
+        "externalCode": "wYIaWipYjrZkJZZlw1Amy1"
+    }
+]
+```
+
+> Запрос на обновление Ячейки склада с зоной
+
+```shell
+curl -X PUT
+  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '{
+        "name": "slot 3",
+        "zone": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/8277a566-75f8-11ed-ac1a-000d00000000",
+            "type": "storezone",
+            "mediaType": "application/json"
+          }
+        }
+      }'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленной Ячейки Склада.
+
+```json
+[
+    {
+      "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003",
+          "type": "slot",
+          "mediaType": "application/json"
+      },
+      "id": "7d479c5f-75f9-11ed-ac1a-000d00000003",
+      "accountId": "5f69193a-75f8-11ed-ac1a-000f00000001",
+      "updated": "2022-12-07 09:29:56.547",
+      "name": "slot 3",
+      "externalCode": "wYIaWipYjrZkJZZlw1Amy1",
+      "zone": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/8277a566-75f8-11ed-ac1a-000d00000000",
+          "type": "storezone",
+          "mediaType": "application/json"
+        }
+      }
+    }
+]
 ```

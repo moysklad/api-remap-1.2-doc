@@ -137,6 +137,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 14-12-2022
+#### Добавлено
+- Дополнено описание [ошибок](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-yacheek-i-zon-sklada) при работе с ячейками и зонами. Добавлены ошибки 67002, 67003, 67004, 67005, 67006.
+- Добавлена информация по созданию, обновлению и удалению [зон](../dictionaries/#suschnosti-sklad-zony-sklada) и [ячеек](../dictionaries/#suschnosti-sklad-yachejki-sklada) в [складах](../dictionaries/#suschnosti-sklad-sklady)
+
 ### 12-12-2022
 #### Добавлено
 - Добавлен `15004` код [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-modifikacij).
