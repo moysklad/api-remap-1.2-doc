@@ -727,7 +727,8 @@ curl -X GET
     "size": 14052,
     "miniature": {
       "href": "https://online.moysklad.ru/api/remap/1.2/download/bd159783-95ee-11e6-8a84-bae500000001?miniature=true",
-      "mediaType": "image/png"
+      "mediaType": "image/png",
+      "downloadHref": "https://miniature-prod.moysklad.ru/miniature/79b17fec-2f08-11eb-0a80-052200009a8a/documentminiature/7129822c-2409-417c-977f-31a1e889039a"
     },
     "tiny": {
       "href": "https://online.moysklad.ru/app/download/bd14f0b6-95ee-11e6-8a84-bae500000000.png",
