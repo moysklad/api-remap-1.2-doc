@@ -5,7 +5,8 @@
 В рамках JSON API можно создавать дополнительные поля и редактировать существующие. Подробно это описано в статье [Работа с дополнительными полями через API.](../workbook/#workbook-rabota-s-dopolnitel-nymi-polqmi-cherez-json-api)
 
 ### Получение дополнительных полей
-Запросить список доступных полей можно, воспользовавшись запросом метаданных необходимой вам сущности. Ниже приведен пример запроса метаданных товаров, в поле **attributes** выводится массив дополнительных полей:
+Доп. поля располагаются в метаданных необходимой сущности.
+Пример получения дополнительных полей товара:
 
 > Запрос
 
@@ -14,7 +15,7 @@ curl
     -X GET 
     -u login:password 
     -H "Lognex-Pretty-Print-JSON: true" 
-    "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata"
+    "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes"
 ```
 
 > Результат:
@@ -22,30 +23,45 @@ curl
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-    "mediaType": "application/json"
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes",
+    "type": "attributemetadata",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
   },
-  "attributes": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes",
-      "type": "attributemetadata",
-      "mediaType": "application/json",
-      "size": 1,
-      "limit": 1000,
-      "offset": 0
+  "rows": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a2",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "839ca663-75f7-11e8-9107-5048001126a2",
+      "name": "Время работы от аккумулятора",
+      "type": "double",
+      "required": false
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/7385ab6e-ad06-11e8-9ff4-34e80004fb35",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "7385ab6e-ad06-11e8-9ff4-34e80004fb35",
+      "name": "Ссылка на интернет-магазин",
+      "type": "link",
+      "required": false
     }
-  },
-  "createShared": true
+  ]
 }
 ```
 
 ### Задание значений дополнительных полей через JSON API
 Задать значение дополнительному полю можно как при создании объекта, так и при его обновлении.
 
-После того, как выше мы получили идентификаторы дополнительных полей товаров, 
-мы можем использовать их при создании новых товаров. 
-Так как все доп. поля товара из нашего примера имеют флаг **required=false**, 
-т.е. не являются обязательными, то не обязательно задавать значения всем дополнительным полям:
+Полученные в предыдущем примере идентификаторы дополнительных полей товаров можно использовать при создании новых товаров. 
+Все доп. поля товара из нашего примера имеют флаг **required=false**, поэтому необязательно задавать значения всем дополнительным полям.
 
 > Запрос
 
@@ -61,51 +77,49 @@ curl
         "vat": 18,
         "effectiveVat": 18,
         "uom": {
-        "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/uom/metadata",
-          "type": "uom",
-          "mediaType": "application/json"
-        }
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+            "type": "uom"
+          }
         },
         "minPrice": 50000,
         "buyPrice": {
-        "value": 50000,
-        "currency": {
-          "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-            "type": "currency",
-            "mediaType": "application/json"
-          }
-        }
-        },
-        "salePrices": [
-        {
-          "value": 100000,
+          "value": 50000,
           "currency": {
             "meta": {
               "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
-              "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-              "type": "currency",
-              "mediaType": "application/json"
+              "type": "currency"
             }
-          },
-          "priceType": "Цена продажи"
-        }
+          }
+        },
+        "salePrices": [
+          {
+            "value": 100000,
+            "currency": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
+                "type": "currency"
+              }
+            },
+            "priceType": "Цена продажи"
+          }
         ],
         "attributes": [
             {
-              "id": "839ca663-75f7-11e8-9107-5048001126a2",
-              "name": "Время работы от аккумулятора",
-              "type": "double",
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a2",
+                "type": "attributemetadata"
+              },
               "value": 9.6
             },
             {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/7385ab6e-ad06-11e8-9ff4-34e80004fb35",
+                "type": "attributemetadata"
+              },
               "id": "7385ab6e-ad06-11e8-9ff4-34e80004fb35",
               "name": "Ссылка на интернет-магазин",
-              "type": "link",
-              "value": "https://exmaple.com"
+              "value": "https://example.com"
             }
         ]
     }'
