@@ -26,7 +26,7 @@ curl
     "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes",
     "type": "attributemetadata",
     "mediaType": "application/json",
-    "size": 2,
+    "size": 3,
     "limit": 1000,
     "offset": 0
   },
@@ -52,6 +52,17 @@ curl
       "name": "Ссылка на интернет-магазин",
       "type": "link",
       "required": false
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/52ae09f9-8fe7-11ed-0a80-07ae000000ef",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "52ae09f9-8fe7-11ed-0a80-07ae000000ef",
+      "name": "Подсветка клавиатуры",
+      "type": "boolean",
+      "required": false
     }
   ]
 }
@@ -60,8 +71,8 @@ curl
 ### Задание значений дополнительных полей через JSON API
 Задать значение дополнительному полю можно как при создании объекта, так и при его обновлении.
 
-Полученные в предыдущем примере идентификаторы дополнительных полей товаров можно использовать при создании новых товаров. 
-Все доп. поля товара из нашего примера имеют флаг **required=false**, поэтому необязательно задавать значения всем дополнительным полям.
+Полученные в предыдущем примере идентификаторы дополнительных полей товаров можно использовать при создании новых товаров.
+Дополнительное поле "Подсветка клавиатуры" не является обязательным (**required=false**) и не передается в примере ниже.
 
 > Запрос
 
@@ -143,15 +154,17 @@ curl
   "name": "Ноутбук обновленный",
   "attributes": [
     {
-      "id": "839ca663-75f7-11e8-9107-5048001126a2",
-      "name": "Время работы от аккумулятора",
-      "type": "double",
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a2",
+        "type": "attributemetadata"
+      },
       "value": 10.6
     },
     {
-      "id": "839ca663-75f7-11e8-9107-5048001126a2",
-      "name": "Подсветка клавиатуры",
-      "type": "boolean",
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/52ae09f9-8fe7-11ed-0a80-07ae000000ef",
+        "type": "attributemetadata"
+      },
       "value": "true"
     }
   ]
