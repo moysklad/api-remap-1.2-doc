@@ -574,7 +574,8 @@ curl -X GET
        "updated" : "2020-09-23 07:37:26.417",
        "miniature" : {
          "href" : "https://online.moysklad.ru/api/remap/1.2/download/7da0feb5-e110-4021-a49f-35db4ae75f13?miniature=true",
-         "mediaType" : "image/png"
+         "mediaType" : "image/png",
+         "downloadHref": "https://miniature-prod.moysklad.ru/miniature/79b17fec-2f08-11eb-0a80-052200009a8a/documentminiature/7129822c-2409-417c-977f-31a1e889039a"
        }
    },
    "chiefAccountant":"Подкупников Иван",
@@ -589,7 +590,8 @@ curl -X GET
        "updated" : "2020-09-23 07:37:26.434",
        "miniature" : {
          "href" : "https://online.moysklad.ru/api/remap/1.2/download/cdd282d7-7e65-40b7-83a1-c0ef07365769?miniature=true",
-         "mediaType" : "image/png"
+         "mediaType" : "image/png",
+         "downloadHref": "https://miniature-prod.moysklad.ru/miniature/79b17fec-2f08-11eb-0a80-052200009a8a/documentminiature/7129822c-2409-417c-977f-31a1e889039a"
        }
    },
    "stamp" : {
@@ -603,7 +605,8 @@ curl -X GET
        "updated" : "2020-09-23 07:37:26.443",
        "miniature" : {
          "href" : "https://online.moysklad.ru/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383?miniature=true",
-         "mediaType" : "image/png"
+         "mediaType" : "image/png",
+         "downloadHref": "https://miniature-prod.moysklad.ru/miniature/79b17fec-2f08-11eb-0a80-052200009a8a/documentminiature/7129822c-2409-417c-977f-31a1e889039a"
        }
    }
 }
