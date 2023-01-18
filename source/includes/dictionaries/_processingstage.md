@@ -159,33 +159,3 @@ curl -X GET
   "archived": false
 }
 ```
-
-### Метаданные этапа
-
-Запрос на получение метаданных этапа. Результат - объект JSON, включающий в себя:
-
-| Название       | Тип                                                       | Описание                                       |
-| -------------- | :-------------------------------------------------------- |:-----------------------------------------------|
-| **meta**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные этапа<br>`+Обязательное при ответе` |
-
-Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
-
-> Метаданные этапа
-
-```shell
-curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/processingstage/metadata"
-  -H "Authorization: Basic <Credentials>"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление доп. полей этапов.
-
-```json
-{
-  "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingstage/metadata",
-    "mediaType": "application/json"
-  }
-}
-```
