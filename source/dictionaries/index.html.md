@@ -55,6 +55,7 @@ includes:
   - dictionaries/template
   - dictionaries/organization
   - dictionaries/processingstage
+  - dictionaries/processingprocess
   
 search: true
 ---  

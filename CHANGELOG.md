@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 20-01-2023
+### Добавлена
+- Сущность [Техпроцесс](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehprocess)
+
 ## 17-01-2023
 ### Добавлена
 - Сущность [Этапы](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jetap)
