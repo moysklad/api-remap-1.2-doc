@@ -2050,6 +2050,7 @@ curl -X PUT
 | **processing**             | BASE                                                                                                                                               | Тех. операции                          |
 | **processingOrder**        | OPERATION                                                                                                                                          | Заказ на производство                  |
 | **processingPlan**         | BASE                                                                                                                                               | Тех. Карты                             |
+| **processingstage**        | BASE                                                                                                                                               | Тех. Карты                             |
 | **project**                | BASE                                                                                                                                               | Проекты                                |
 | **purchaseOrder**          | OPERATION                                                                                                                                          | Заказ поставщикам                      |
 | **purchaseReturn**         | OPERATION                                                                                                                                          | Возврат поставщику                     |
@@ -2511,6 +2512,12 @@ curl -X PUT
             "delete": "ALL"
         },
         "processingplan": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL"
+        },
+        "processingstage": {
             "view": "ALL",
             "create": "ALL",
             "update": "ALL",
