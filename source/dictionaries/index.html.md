@@ -54,6 +54,7 @@ includes:
   - dictionaries/characteristic
   - dictionaries/template
   - dictionaries/organization
+  - dictionaries/processingstage
   
 search: true
 ---  
