@@ -139,7 +139,7 @@
 
 ### 20-01-2023
 #### Добавлена
-- Сущность [Техпроцесс](../dictionaries/#suschnosti-tehprocess)
+- Сущность [Тех. Процесс](../dictionaries/#suschnosti-tehprocess)
 
 ### 17-01-2023
 #### Добавлена

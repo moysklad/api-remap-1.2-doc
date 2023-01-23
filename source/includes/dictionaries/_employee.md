@@ -918,6 +918,7 @@ curl -X GET
 | **processing**                | BASE                 | Все ALL                                     | Тех. операции                          |
 | **processingOrder**           | OPERATION            | Все ALL                                     | Заказ на производство                  |
 | **processingPlan**            | BASE                 | Все ALL                                     | Тех. Карты                             |
+| **processingProcess**         | BASE                 | Все ALL                                     | Тех. Процессы                          |
 | **project**                   | BASE                 | Все ALL                                     | Проекты                                |
 | **purchaseOrder**             | OPERATION            | Все ALL                                     | Заказ поставщикам                      |
 | **purchaseReturn**            | OPERATION            | Все ALL                                     | Возврат поставщику                     |
@@ -1400,6 +1401,14 @@ curl -X GET
                 "delete": "NO"
             },
             "processingOrder": {
+                "view": "ALL",
+                "print": "ALL",
+                "create": "ALL",
+                "update": "ALL",
+                "delete": "ALL",
+                "approve": "ALL"
+            },
+            "processingprocess": {
                 "view": "ALL",
                 "print": "ALL",
                 "create": "ALL",
