@@ -7,7 +7,7 @@
 
 ## 17-01-2023
 ### Добавлена
-- Сущность [Этапы](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jetap)
+- Сущность [Этап производства](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jetap-proizwodstwa)
 
 ## 10-01-2023
 ### Добавлено

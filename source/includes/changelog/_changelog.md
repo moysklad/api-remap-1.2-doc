@@ -143,7 +143,7 @@
 
 ### 17-01-2023
 #### Добавлена
-- Сущность [Этапы](../dictionaries/#suschnosti-jetap)
+- Сущность [Этап производства](../dictionaries/#suschnosti-jetap-proizwodstwa)
 
 ### 10-01-2023
 #### Добавлено

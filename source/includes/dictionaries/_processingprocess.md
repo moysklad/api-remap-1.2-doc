@@ -30,7 +30,7 @@
 | **accountId**       | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                         |
 | **id**              | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения`                                |
 | **meta**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные позиции Тех. процесса<br>`+Обязательное при ответе` `+Только для чтения`          |
-| **processingstage** | [Meta](../dictionaries/#suschnosti-jetap)                 | Метаданные этапа, который представляет собой позиция<br>`+Обязательное при ответе` `+Expand` |
+| **processingstage** | [Meta](../dictionaries/#suschnosti-jetap-proizwodstwa)    | Метаданные этапа, который представляет собой позиция<br>`+Обязательное при ответе` `+Expand` |
 
 ### Получить список Тех. процессов
 
