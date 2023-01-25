@@ -78,7 +78,7 @@ curl -X GET
     "type": "processingprocess",
     "mediaType": "application/json",
     "size": 3,
-    "limit": 100,
+    "limit": 1000,
     "offset": 0
   },
   "rows": [
