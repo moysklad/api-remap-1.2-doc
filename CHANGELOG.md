@@ -3,7 +3,7 @@
 
 ## 20-01-2023
 ### Добавлена
-- Сущность [Тех. Процесс](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehprocess)
+- Сущность [Тех. процесс](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehprocess)
 
 ## 17-01-2023
 ### Добавлена
