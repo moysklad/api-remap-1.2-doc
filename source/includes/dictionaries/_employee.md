@@ -918,7 +918,7 @@ curl -X GET
 | **processing**                | BASE                 | Все ALL                                     | Тех. операции                          |
 | **processingOrder**           | OPERATION            | Все ALL                                     | Заказ на производство                  |
 | **processingPlan**            | BASE                 | Все ALL                                     | Тех. Карты                             |
-| **processingstage**           | BASE                 | Все ALL                                     | Этапы                                  |
+| **processingStage**           | BASE                 | Все ALL                                     | Этапы производства                     |
 | **processingProcess**         | BASE                 | Все ALL                                     | Тех. процессы                          |
 | **project**                   | BASE                 | Все ALL                                     | Проекты                                |
 | **purchaseOrder**             | OPERATION            | Все ALL                                     | Заказ поставщикам                      |
