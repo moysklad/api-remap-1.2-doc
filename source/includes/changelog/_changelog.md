@@ -137,13 +137,9 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 20-01-2023
-#### Добавлена
-- Сущность [Тех. процесс](../dictionaries/#suschnosti-teh-process)
-
 ### 17-01-2023
 #### Добавлена
-- Сущность [Этап производства](../dictionaries/#suschnosti-jetap-proizwodstwa)
+- Сущность [Этапы](../dictionaries/#suschnosti-jetap)
 
 ### 16-01-2023
 #### Изменено
