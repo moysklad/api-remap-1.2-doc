@@ -139,6 +139,11 @@
 
 ### 20-01-2023
 #### Добавлена
+- Возможность привязывать/отвязывать перемещения к/от [Заказа покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej).
+- Описание [Пример привязывания перемещений к заказу покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-primer-priwqzki-3)
+
+### 20-01-2023
+#### Добавлена
 - Сущность [Тех. процесс](../dictionaries/#suschnosti-teh-process)
 
 ### 17-01-2023

@@ -232,7 +232,7 @@
 
 | Параметр    | Описание                                                                          |
 | :---------- | :-------------------------------------------------------------------------------- |
-| **docname** | `string` (required) *Example: move* ключевое слово для документа со связями.      |
+| **docname** | `string` (required) *Example: demand* ключевое слово для документа со связями.    |
 | **id**      | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id документа. |
 
 > Пример запроса на привязку счета покупателю к отгрузке.
@@ -352,6 +352,134 @@
         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata",
         "type": "invoiceout",
         "mediaType": "application/json"
+      }
+    }
+  ]
+}
+```
+
+### Пример привязки 3
+
+Третий пример запроса на привязку одного документа к другому.
+
+**Параметры**
+
+| Параметр    | Описание                                                                                   |
+| :---------- | :----------------------------------------------------------------------------------------- |
+| **docname** | `string` (required) *Example: customerorder* ключевое слово для документа со связями.      |
+| **id**      | `string` (required) *Example: c60e87dc-97b2-11ed-c0a8-a00d00000001* id документа.          |
+
+> Пример запроса на привязку перемещения к заказу покупателя.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/c60e87dc-97b2-11ed-c0a8-a00d00000001"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+            "moves": [
+                    {
+                        "meta": {
+                            "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/bc8aa8d7-95fa-11ed-c0a8-a00c0000001a",
+                            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/move/metadata",
+                            "type": "move",
+                            "mediaType": "application/json",
+                            "uuidHref": "https://online.moysklad.ru/app/#move/edit?id=bc8aa8d7-95fa-11ed-c0a8-a00c0000001a"
+                        }
+                    },
+                    {
+                        "meta": {
+                            "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/06406b97-9138-11e6-8a84-bae500000000",
+                            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/move/metadata",
+                            "type": "move",
+                            "mediaType": "application/json",
+                            "uuidHref": "https://online.moysklad.ru/app/#move/edit?id=06406b97-9138-11e6-8a84-bae500000000"
+                        }
+                    }
+                ]
+        }'  
+```
+
+> Response 200 (application/json)
+Результат - заказ покупателя с новыми элементами в коллекции moves.
+
+```json
+{
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "name": "CustomerOrder 1",
+  "moment": "2016-11-25 17:33:33",
+  "applicable": true,
+  "sum": 0,
+  "store": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/b942743c-9128-11e6-8a84-bae500000053",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "state": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/states/8c33b721-8782-11ed-c0a8-a00c000000b6",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
+      "type": "state",
+      "mediaType": "application/json"
+    }
+  },
+  "printed": false,
+  "published": false,
+  "files": {
+    "rows": []
+  },
+  "positions": {
+    "rows": []
+  },
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "payedSum": 0.0,
+  "shippedSum": 0.0,
+  "invoicedSum": 0.0,
+  "moves": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/bc8aa8d7-95fa-11ed-c0a8-a00c0000001a",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/move/metadata",
+        "type": "move",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#move/edit?id=bc8aa8d7-95fa-11ed-c0a8-a00c0000001a"
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/06406b97-9138-11e6-8a84-bae500000000",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/move/metadata",
+        "type": "move",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#move/edit?id=06406b97-9138-11e6-8a84-bae500000000"
       }
     }
   ]
