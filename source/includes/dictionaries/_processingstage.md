@@ -105,6 +105,236 @@ curl -X GET
 }
 ```
 
+### Создать Этап
+Создать новый Эпат.
+#### Описание
+Этап создается на основе переданного объекта JSON, который содержит представление нового Этапа. 
+Результат - JSON представление созданного Этапа.
+Для создания нового Этапа необходимо и достаточно указать в переданном объекте не пустое поле `name`.
+
+> Пример наиболее полного по количеству полей запроса.
+
+  ```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/processingstage"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "Этап 1",
+            "externalCode": "456",
+            "description": "Подготовка"
+          }'  
+  ```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного Этапа.
+
+```json
+{
+  "meta": {
+    "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/d2308bcc-8fd9-11ed-ac12-000b000000c1",
+    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/metadata",
+    "type": "processingstage",
+    "mediaType": "application/json",
+    "uuidHref": "http://online.moysklad.ru/app/#processingstage/edit?id=d2308bcc-8fd9-11ed-ac12-000b000000c1"
+  },
+  "id": "d2308bcc-8fd9-11ed-ac12-000b000000c1",
+  "accountId": "d063f3f3-8fd9-11ed-ac12-000e00000000",
+  "owner": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/employee/d105a6bf-8fd9-11ed-ac12-000b0000004f",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "http://online.moysklad.ru/app/#employee/edit?id=d105a6bf-8fd9-11ed-ac12-000b0000004f"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/group/d0668856-8fd9-11ed-ac12-000e00000001",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2023-01-11 09:01:18.363",
+  "name": "Этап 1",
+  "description": "Подготовка",
+  "externalCode": "456",
+  "archived": false
+}
+```
+
+### Массовое создание и обновление этапов
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) этапов.
+В теле запроса нужно передать массив, содержащий JSON представления этапов, которые вы хотите создать или обновить.
+Обновляемые этапы должны содержать идентификатор в виде метаданных.
+
+> Пример создания и обновления нескольких этапов
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/processingstage"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "name": "Эпат 2"
+            },
+            {
+                "meta": {
+                  "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/d2308bcc-8fd9-11ed-ac12-000b000000c1",
+                  "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/metadata",
+                  "type": "processingstage",
+                  "mediaType": "application/json",
+                  "uuidHref": "http://online.moysklad.ru/app/#processingstage/edit?id=d2308bcc-8fd9-11ed-ac12-000b000000c1"
+                },
+              "name": "Эпат 1",
+              "description": "Подготовка"
+            }
+          ]'  
+  ```
+> Response 200 (application/json)
+Успешный запрос. Результат - массив JSON представлений созданных и обновленных этапов.
+
+```json
+[
+  {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/d2308bcc-8fd9-11ed-ac12-000b000000c2",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/metadata",
+      "type": "processingstage",
+      "mediaType": "application/json",
+      "uuidHref": "http://online.moysklad.ru/app/#processingstage/edit?id=d2308bcc-8fd9-11ed-ac12-000b000000c2"
+    },
+    "id": "d2308bcc-8fd9-11ed-ac12-000b000000c2",
+    "accountId": "d063f3f3-8fd9-11ed-ac12-000e00000000",
+    "owner": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/employee/d105a6bf-8fd9-11ed-ac12-000b0000004f",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "http://online.moysklad.ru/app/#employee/edit?id=d105a6bf-8fd9-11ed-ac12-000b0000004f"
+      }
+    },
+    "shared": true,
+    "group": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/group/d0668856-8fd9-11ed-ac12-000e00000001",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2023-01-31 11:47:09.193",
+    "name": "Эпат 2",
+    "externalCode": "hsthsrehs",
+    "archived": false
+  },
+  {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/d2308bcc-8fd9-11ed-ac12-000b000000c1",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/metadata",
+      "type": "processingstage",
+      "mediaType": "application/json",
+      "uuidHref": "http://online.moysklad.ru/app/#processingstage/edit?id=d2308bcc-8fd9-11ed-ac12-000b000000c1"
+    },
+    "id": "d2308bcc-8fd9-11ed-ac12-000b000000c1",
+    "accountId": "d063f3f3-8fd9-11ed-ac12-000e00000000",
+    "owner": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/employee/d105a6bf-8fd9-11ed-ac12-000b0000004f",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "http://online.moysklad.ru/app/#employee/edit?id=d105a6bf-8fd9-11ed-ac12-000b0000004f"
+      }
+    },
+    "shared": true,
+    "group": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/group/d0668856-8fd9-11ed-ac12-000e00000001",
+        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2023-01-31 11:47:09.559",
+    "name": "Эпат 1",
+    "description": "Подготовка",
+    "externalCode": "sTV9PL-HjZkNgDMUqvKKe3",
+    "archived": false
+  }
+]
+```
+
+
+### Удалить Эпат
+
+**Параметры**
+
+| Параметр | Описание                                                                      |
+| :------- |:------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: d2308bcc-8fd9-11ed-ac12-000b000000c2* id Этапа. |
+
+> Запрос на удаление Этапа с указанным id.
+
+```shell
+curl -X DELETE
+  "https://online.moysklad.ru/api/remap/1.2/entity/processingstage/d2308bcc-8fd9-11ed-ac12-000b000000c2"
+  -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешное удаление Этапа.
+
+### Массовое удаление Этапов
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Этапов, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Этапов.
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/processingstage/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/d2308bcc-8fd9-11ed-ac12-000b000000c2",
+            "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/metadata",
+            "type": "processingstage",
+            "mediaType": "application/json",
+          }
+        },
+        {
+          "meta": {
+            "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/d2308bcc-8fd9-11ed-ac12-000b000000c1",
+            "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/metadata",
+            "type": "processingstage",
+            "mediaType": "application/json",
+          }
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Этапов.
+
+```json
+[
+  {
+    "info":"Сущность 'processingstage' с UUID: d2308bcc-8fd9-11ed-ac12-000b000000c2 успешно удалена"
+  },
+  {
+    "info":"Сущность 'processingstage' с UUID: d2308bcc-8fd9-11ed-ac12-000b000000c1 успешно удалена"
+  }
+]
+```  
+
 ### Этап
 
 ### Получить Этап
@@ -113,7 +343,7 @@ curl -X GET
 
 | Параметр | Описание                                                                      |
 | :------- |:------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Этапа. |
+| **id**   | `string` (required) *Example: d2308bcc-8fd9-11ed-ac12-000b000000c1* id Этапа. |
  
 > Запрос на получение отдельного Этапа с указанным id.
 
@@ -157,6 +387,65 @@ curl -X GET
   },
   "updated": "2023-01-11 09:01:18.363",
   "name": "Основной этап",
+  "externalCode": "sTV9PL-HjZkNgDMUqvKKe3",
+  "archived": false
+}
+```
+
+### Изменить Этап
+Запрос на обновление существующего Этапа.
+
+**Параметры**
+
+| Параметр | Описание                                                                     |
+| :------- |:-----------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: d2308bcc-8fd9-11ed-ac12-000b000000c1* id Этапа.|
+
+> Пример запроса на обновление Этапа
+
+ ```shell
+   curl -X PUT
+     "https://online.moysklad.ru/api/remap/1.2/entity/processingstage/d2308bcc-8fd9-11ed-ac12-000b000000c1"
+     -H "Authorization: Basic <Credentials>"
+     -H "Content-Type: application/json"
+       -d '{
+             "name": "Этап 1.1"
+           }'  
+ ```
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Этапа.
+
+```json
+{
+  "meta": {
+    "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/d2308bcc-8fd9-11ed-ac12-000b000000c1",
+    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/metadata",
+    "type": "processingstage",
+    "mediaType": "application/json",
+    "uuidHref": "http://online.moysklad.ru/app/#processingstage/edit?id=d2308bcc-8fd9-11ed-ac12-000b000000c1"
+  },
+  "id": "d2308bcc-8fd9-11ed-ac12-000b000000c1",
+  "accountId": "d063f3f3-8fd9-11ed-ac12-000e00000000",
+  "owner": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/employee/d105a6bf-8fd9-11ed-ac12-000b0000004f",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "http://online.moysklad.ru/app/#employee/edit?id=d105a6bf-8fd9-11ed-ac12-000b0000004f"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/group/d0668856-8fd9-11ed-ac12-000e00000001",
+      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2023-01-11 09:01:18.363",
+  "name": "Этап 1.1",
   "externalCode": "sTV9PL-HjZkNgDMUqvKKe3",
   "archived": false
 }
