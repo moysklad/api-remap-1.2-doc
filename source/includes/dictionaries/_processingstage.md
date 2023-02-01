@@ -106,7 +106,7 @@ curl -X GET
 ```
 
 ### Создать Этап
-Создать новый Эпат.
+Создать новый Этап.
 #### Описание
 Этап создается на основе переданного объекта JSON, который содержит представление нового Этапа. 
 Результат - JSON представление созданного Этапа.
@@ -180,21 +180,21 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '[
             {
-              "name": "Эпат 2"
+              "name": "Этап 2"
             },
             {
-                "meta": {
-                  "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/d2308bcc-8fd9-11ed-ac12-000b000000c1",
-                  "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/metadata",
-                  "type": "processingstage",
-                  "mediaType": "application/json",
-                  "uuidHref": "http://online.moysklad.ru/app/#processingstage/edit?id=d2308bcc-8fd9-11ed-ac12-000b000000c1"
-                },
-              "name": "Эпат 1",
+              "meta": {
+                "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/d2308bcc-8fd9-11ed-ac12-000b000000c1",
+                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/metadata",
+                "type": "processingstage",
+                "mediaType": "application/json",
+                "uuidHref": "http://online.moysklad.ru/app/#processingstage/edit?id=d2308bcc-8fd9-11ed-ac12-000b000000c1"
+              },
+              "name": "Этап 1",
               "description": "Подготовка"
             }
           ]'  
-  ```
+```
 > Response 200 (application/json)
 Успешный запрос. Результат - массив JSON представлений созданных и обновленных этапов.
 
@@ -229,7 +229,7 @@ curl -X GET
       }
     },
     "updated": "2023-01-31 11:47:09.193",
-    "name": "Эпат 2",
+    "name": "Этап 2",
     "externalCode": "hsthsrehs",
     "archived": false
   },
@@ -262,7 +262,7 @@ curl -X GET
       }
     },
     "updated": "2023-01-31 11:47:09.559",
-    "name": "Эпат 1",
+    "name": "Этап 1",
     "description": "Подготовка",
     "externalCode": "sTV9PL-HjZkNgDMUqvKKe3",
     "archived": false
@@ -271,7 +271,7 @@ curl -X GET
 ```
 
 
-### Удалить Эпат
+### Удалить Этап
 
 **Параметры**
 
