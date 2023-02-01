@@ -2014,7 +2014,7 @@ curl -X PUT
 ###### Пермиссии сущностей и документов, которые присутствуют в запросе
 
 | Название                   | Возможные значения                                                                                                                                 | Описание                               |
-| -------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------- |
+|----------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------- |:---------------------------------------|
 | **accountAdjustment**      | DICTIONARY                                                                                                                                         | Корректировка остатков на счете        |
 | **bonusTransaction**       | OPERATION                                                                                                                                          | Бонусные баллы                         |
 | **cashIn**                 | OPERATION                                                                                                                                          | Приходной ордер                        |
@@ -2050,6 +2050,8 @@ curl -X PUT
 | **processing**             | BASE                                                                                                                                               | Тех. операции                          |
 | **processingOrder**        | OPERATION                                                                                                                                          | Заказ на производство                  |
 | **processingPlan**         | BASE                                                                                                                                               | Тех. Карты                             |
+| **processingStage**        | BASE                                                                                                                                               | Этапы производства                             |
+| **processingProcess**      | BASE                                                                                                                                               | Тех. процессы                          |
 | **project**                | BASE                                                                                                                                               | Проекты                                |
 | **purchaseOrder**          | OPERATION                                                                                                                                          | Заказ поставщикам                      |
 | **purchaseReturn**         | OPERATION                                                                                                                                          | Возврат поставщику                     |
@@ -2516,6 +2518,12 @@ curl -X PUT
             "update": "ALL",
             "delete": "ALL"
         },
+        "processingstage": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL"
+        },
         "processing": {
             "view": "ALL",
             "create": "ALL",
@@ -2531,6 +2539,12 @@ curl -X PUT
             "delete": "ALL",
             "approve": "ALL",
             "print": "ALL"
+        },
+        "processingprocess": {
+          "view": "ALL",
+          "create": "ALL",
+          "update": "ALL",
+          "delete": "ALL"
         },
         "counterpartyadjustment": {
             "view": "ALL",

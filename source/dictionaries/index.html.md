@@ -46,6 +46,7 @@ includes:
   - dictionaries/states  
   - dictionaries/expenseitem
   - dictionaries/country
+  - dictionaries/processingprocess
   - dictionaries/pricetypes
   - dictionaries/product
   - dictionaries/retailstore
@@ -54,6 +55,7 @@ includes:
   - dictionaries/characteristic
   - dictionaries/template
   - dictionaries/organization
+  - dictionaries/processingstage
   
 search: true
 ---  
