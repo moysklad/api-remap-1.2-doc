@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 29-01-2023
+### Добавлено
+- Добавлена дополнительная информация по *downloadHref* в *miniature* в общих сведениях.
+
 ## 20-01-2023
 ### Добавлена
 - Сущность [Тех. процесс](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-teh-process)
