@@ -488,8 +488,8 @@ curl -X GET
 
 | Параметр | Описание                                                                                     |
 | :------- |:---------------------------------------------------------------------------------------------|
-| **positionID**   | `string` (required) *Example: d5069da5-988e-11ed-ac19-00040000002a* id позиция Тех. процесса.|
 | **id**   | `string` (required) *Example: d5069703-988e-11ed-ac19-000400000029* id Тех. процесса.        |
+| **positionID**   | `string` (required) *Example: d5069da5-988e-11ed-ac19-00040000002a* id позиция Тех. процесса.|
 
 > Запрос на получение отдельной позиции Тех. процесса с указанным id.
 
@@ -531,14 +531,15 @@ curl -X GET
 | :------- |:---------------------------------------------------------------------------------------------|
 | **id**   | `string` (required) *Example: d5069703-988e-11ed-ac19-000400000029* id Тех. процесса.        |
 
-> Создать позиции у Тех. процесс
+> Создать позиции для Тех. процесса
 
 ```shell
 curl -X POST
 "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/1d4adde5-a6bb-11ed-ac12-00090000003f/positions"
 -H "Authorization: Basic <Credentials>"
 -H "Content-Type: application/json"
--d '[
+-d '
+[
 	{
 		"processingstage": {
 			"meta": {
@@ -586,8 +587,8 @@ curl -X POST
 
 | Параметр | Описание                                                                                      |
 | :------- |:----------------------------------------------------------------------------------------------|
-| **positionID**   | `string` (required) *Example: d5069da5-988e-11ed-ac19-00040000002a* id позиции Тех. процесса.|
 | **id**   | `string` (required) *Example: d5069703-988e-11ed-ac19-000400000029* id Тех. процесса.         |
+| **positionID**   | `string` (required) *Example: d5069da5-988e-11ed-ac19-00040000002a* id позиции Тех. процесса.|
 
 > Обновить позицию Тех. процесса
 
@@ -596,7 +597,8 @@ curl -X PUT
 "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/1d4adde5-a6bb-11ed-ac12-00090000003f/positions/23a62e19-a6bb-11ed-ac12-000900000043"
 -H "Authorization: Basic <Credentials>"
 -H "Content-Type: application/json"
--d '{
+-d '
+{
 	"processingstage": {
 		"meta": {
 			"href": "https://online.moysklad.ru/api/remap/1.2/entity/processingstage/4b5662f4-9bd3-11ed-ac12-000c00000070",
@@ -638,8 +640,8 @@ curl -X PUT
 
 | Параметр | Описание                                                                                      |
 | :------- |:----------------------------------------------------------------------------------------------|
-| **positionID**   | `string` (required) *Example: d5069da5-988e-11ed-ac19-00040000002a* id позиции Тех. процесса.|
 | **id**   | `string` (required) *Example: d5069703-988e-11ed-ac19-000400000029* id Тех. процесса.         |
+| **positionID**   | `string` (required) *Example: d5069da5-988e-11ed-ac19-00040000002a* id позиции Тех. процесса.|
 
 > Запрос на удаление Тех. процесса с указанным id.
 
@@ -664,34 +666,35 @@ curl -X DELETE
     "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess"
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
-      -d '[
-	{
-		"meta": {
-			"href": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/1d4adde5-a6bb-11ed-ac12-00090000003f",
-			"metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
-			"type": "processingprocess",
-			"mediaType": "application/json",
-			"uuidHref": "https://online.moysklad.ru/app/#processingprocess/edit?id=1d4adde5-a6bb-11ed-ac12-00090000003f"
-		},
-		"name": "Штамповка"
-	},
-	{
-		"name": "Оцинковка",
-		"positions": [
-			{
-				"processingstage": {
-					"meta": {
-						"href": "https://online.moysklad.ru/api/remap/1.2/entity/processingstage/364b1107-9bd3-11ed-ac12-000c0000006a",
-						"metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingstage/metadata",
-						"type": "processingstage",
-						"mediaType": "application/json",
-						"uuidHref": "https://online.moysklad.ru/app/#processingstage/edit?id=364b1107-9bd3-11ed-ac12-000c0000006a"
-					}
-				}
-			}
-		]
-	}
-]'  
+    -d '
+    [
+      {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/1d4adde5-a6bb-11ed-ac12-00090000003f",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
+          "type": "processingprocess",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#processingprocess/edit?id=1d4adde5-a6bb-11ed-ac12-00090000003f"
+        },
+        "name": "Штамповка"
+      },
+      {
+        "name": "Оцинковка",
+        "positions": [
+          {
+            "processingstage": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingstage/364b1107-9bd3-11ed-ac12-000c0000006a",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingstage/metadata",
+                "type": "processingstage",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#processingstage/edit?id=364b1107-9bd3-11ed-ac12-000c0000006a"
+              }
+            }
+          }
+        ]
+      }
+    ]'  
 ```
 
 > Response 200 (application/json)
@@ -799,26 +802,27 @@ curl -X POST
   "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/delete"
   -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
-  -d '[
-	{
-		"meta": {
-			"href": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/1d4adde5-a6bb-11ed-ac12-00090000003f",
-			"metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
-			"type": "processingprocess",
-			"mediaType": "application/json",
-			"uuidHref": "https://online.moysklad.ru/app/#processingprocess/edit?id=1d4adde5-a6bb-11ed-ac12-00090000003f"
-		}
-	},
-	{
-		"meta": {
-			"href": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/33d6ee5c-a6d1-11ed-ac12-000900000046",
-			"metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
-			"type": "processingprocess",
-			"mediaType": "application/json",
-			"uuidHref": "https://online.moysklad.ru/app/#processingprocess/edit?id=33d6ee5c-a6d1-11ed-ac12-000900000046"
-		}
-	}
-]'
+  -d '
+  [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/1d4adde5-a6bb-11ed-ac12-00090000003f",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
+        "type": "processingprocess",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#processingprocess/edit?id=1d4adde5-a6bb-11ed-ac12-00090000003f"
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/33d6ee5c-a6d1-11ed-ac12-000900000046",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
+        "type": "processingprocess",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#processingprocess/edit?id=33d6ee5c-a6d1-11ed-ac12-000900000046"
+      }
+    }
+  ]'
 ```        
 
 > Успешный запрос. Результат - JSON информация об удалении Тех. процессов.
