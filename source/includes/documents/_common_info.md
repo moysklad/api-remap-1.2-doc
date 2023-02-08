@@ -75,12 +75,6 @@
 
 ### Пример удаления Приемки в корзину 
 
-**Параметры**
-
-| Параметр | Описание                                                                        |
-| :------- | :------------------------------------------------------------------------------ |
-| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приемки. |
-
 > Запрос на удаление Приемки с указанным id в корзину.
 
 ```shell
@@ -107,13 +101,6 @@
 ### Пример привязки 1 
 
 Привязка внутреннего заказа к перемещению.
-
-**Параметры**
-
-| Параметр    | Описание                                                                          |
-| :---------- | :-------------------------------------------------------------------------------- |
-| **docname** | `string` (required) *Example: move* ключевое слово для документа со связями.      |
-| **id**      | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id документа. |
 
 > Пример запроса на привязку внутреннего заказа к перемещению.
 
@@ -226,14 +213,7 @@
 
 ### Пример привязки 2 
 
-Второй пример запроса на привязку одного документа к другому.
-
-**Параметры**
-
-| Параметр    | Описание                                                                          |
-| :---------- | :-------------------------------------------------------------------------------- |
-| **docname** | `string` (required) *Example: move* ключевое слово для документа со связями.      |
-| **id**      | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id документа. |
+Привязка счета покупателю к отгрузке.
 
 > Пример запроса на привязку счета покупателю к отгрузке.
 
@@ -358,6 +338,127 @@
 }
 ```
 
+### Пример привязки 3
+
+Привязка перемещений к заказу покупателя.
+
+> Пример запроса на привязку перемещений к заказу покупателя.
+
+```shell
+  curl -X PUT
+    "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/c60e87dc-97b2-11ed-c0a8-a00d00000001"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+            "moves": [
+                    {
+                        "meta": {
+                            "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/bc8aa8d7-95fa-11ed-c0a8-a00c0000001a",
+                            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/move/metadata",
+                            "type": "move",
+                            "mediaType": "application/json",
+                            "uuidHref": "https://online.moysklad.ru/app/#move/edit?id=bc8aa8d7-95fa-11ed-c0a8-a00c0000001a"
+                        }
+                    },
+                    {
+                        "meta": {
+                            "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/06406b97-9138-11e6-8a84-bae500000000",
+                            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/move/metadata",
+                            "type": "move",
+                            "mediaType": "application/json",
+                            "uuidHref": "https://online.moysklad.ru/app/#move/edit?id=06406b97-9138-11e6-8a84-bae500000000"
+                        }
+                    }
+                ]
+        }'  
+```
+
+> Response 200 (application/json)
+Результат - заказ покупателя с новыми элементами в коллекции moves.
+
+```json
+{
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "name": "CustomerOrder 1",
+  "moment": "2016-11-25 17:33:33",
+  "applicable": true,
+  "sum": 0,
+  "store": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/b942743c-9128-11e6-8a84-bae500000053",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "state": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/states/8c33b721-8782-11ed-c0a8-a00c000000b6",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
+      "type": "state",
+      "mediaType": "application/json"
+    }
+  },
+  "printed": false,
+  "published": false,
+  "files": {
+    "rows": []
+  },
+  "positions": {
+    "rows": []
+  },
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "payedSum": 0.0,
+  "shippedSum": 0.0,
+  "invoicedSum": 0.0,
+  "moves": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/bc8aa8d7-95fa-11ed-c0a8-a00c0000001a",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/move/metadata",
+        "type": "move",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#move/edit?id=bc8aa8d7-95fa-11ed-c0a8-a00c0000001a"
+      }
+    },
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/move/06406b97-9138-11e6-8a84-bae500000000",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/move/metadata",
+        "type": "move",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#move/edit?id=06406b97-9138-11e6-8a84-bae500000000"
+      }
+    }
+  ]
+}
+```
+
 ### Привязка платежей к документам 
 
 К некоторым документам в JSON API могут быть привязаны платежи. Платежи бывают 4-х типов: [Входящий платеж](../documents/#dokumenty-vhodqschij-platezh), [Приходный ордер](../documents/#dokumenty-prihodnyj-order), [Исходящий платеж](../documents/#dokumenty-ishodqschij-platezh), [Расходный ордер](../documents/#dokumenty-rashodnyj-order).
@@ -369,13 +470,6 @@
 ### Пример привязки платежа 1 
 
 Привязка входящего платежа к полученному отчету комиссионера.
-
-**Параметры**
-
-| Параметр     | Описание                                                                                                           |
-| :----------- | :----------------------------------------------------------------------------------------------------------------- |
-| **docname2** | `string` (required) *Example: commissionreportin* ключевое слово для документа, к которому можно привязать платеж. |
-| **id**       | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id документа.                                  |
 
 > Пример запроса на привязку платежа к полученному отчету комиссионера.
 
@@ -469,13 +563,6 @@
 ### Пример привязки платежа 2 
 
 Привязка приходного ордера к заказу покупателя.
-
-**Параметры**
-
-| Параметр     | Описание                                                                                                           |
-| :----------- | :----------------------------------------------------------------------------------------------------------------- |
-| **docname2** | `string` (required) *Example: commissionreportin* ключевое слово для документа, к которому можно привязать платеж. |
-| **id**       | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id документа.                                  |
 
 > Пример запроса на привязку приходного ордера к заказу покупателя.
 
