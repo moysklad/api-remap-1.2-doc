@@ -26,12 +26,12 @@
 Позиции Тех. процесса - это список этапов, который входят в Тех. процесс. У Тех. процесса может быть от 1 до 100 позиций.
 Объект позиции Тех. процесса содержит следующие поля:
 
-| Название            | Тип                                                       | Описание                                                                                     |
-|---------------------|:----------------------------------------------------------|:---------------------------------------------------------------------------------------------|
-| **accountId**       | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                         |
-| **id**              | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения`                                |
-| **meta**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные позиции Тех. процесса<br>`+Обязательное при ответе` `+Только для чтения`          |
-| **processingstage** | [Meta](../dictionaries/#suschnosti-jetap-proizwodstwa)    | Метаданные этапа, который представляет собой позиция<br>`+Обязательное при ответе` `+Expand` |
+| Название            | Тип                                                       | Описание                                                                                      |
+|---------------------|:----------------------------------------------------------|:----------------------------------------------------------------------------------------------|
+| **accountId**       | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                          |
+| **id**              | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения`                                 |
+| **meta**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные позиции Тех. процесса<br>`+Обязательное при ответе` `+Только для чтения`           |
+| **processingstage** | [Meta](../dictionaries/#suschnosti-jetap-proizwodstwa)    | Метаданные этапа, который представляет собой позиция<br>`+Обязательное при ответе` `+Необходимо при создании` `+Expand` |
 
 ### Получить список Тех. процессов
 
@@ -51,7 +51,7 @@
 | **limit**                      | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
 | **offset**                     | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
 
-> Получить список Тех. процессов
+> Запрос на получение списка Тех. процессов
 
 ```shell
 curl -X GET
@@ -67,15 +67,15 @@ curl -X GET
   "context": {
     "employee": {
       "meta": {
-        "href": "http://online.moysklad.ru/api/remap/1.2/context/employee",
-        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess",
     "type": "processingprocess",
     "mediaType": "application/json",
     "size": 1,
@@ -85,28 +85,28 @@ curl -X GET
   "rows": [
     {
       "meta": {
-        "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d5174779-862b-11eb-ac14-000900000007",
-        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d5174779-862b-11eb-ac14-000900000007",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
         "type": "processingprocess",
         "mediaType": "application/json",
-        "uuidHref": "http://online.moysklad.ru/app/#processingprocess/edit?id=d5174779-862b-11eb-ac14-000900000007"
+        "uuidHref": "https://online.moysklad.ru/app/#processingprocess/edit?id=d5174779-862b-11eb-ac14-000900000007"
       },
       "id": "d5174779-862b-11eb-ac14-000900000007",
       "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
       "owner": {
         "meta": {
-          "href": "http://online.moysklad.ru/api/remap/1.2/entity/employee/872559f1-cbf3-11e1-9eb9-889ffa6f49fd",
-          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/872559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
-          "uuidHref": "http://online.moysklad.ru/app/#employee/edit?id=872559f1-cbf3-11e1-9eb9-889ffa6f49fd"
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=872559f1-cbf3-11e1-9eb9-889ffa6f49fd"
         }
       },
       "shared": true,
       "group": {
         "meta": {
-          "href": "http://online.moysklad.ru/api/remap/1.2/entity/group/f7eb1e3b-fd2a-42f7-b799-b3d1e6b3bf43",
-          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f7eb1e3b-fd2a-42f7-b799-b3d1e6b3bf43",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
           "type": "group",
           "mediaType": "application/json"
         }
@@ -117,7 +117,7 @@ curl -X GET
       "archived": false,
       "positions": {
         "meta": {
-          "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d5174779-862b-11eb-ac14-000900000007/positions",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d5174779-862b-11eb-ac14-000900000007/positions",
           "type": "processingprocessposition",
           "mediaType": "application/json",
           "size": 1,
@@ -136,7 +136,7 @@ curl -X GET
 
 | Параметр | Описание                                                                              |
 | :------- |:--------------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: d5174779-862b-11eb-ac14-000900000007* id Тех. процесса. |
+| **id**   | `string` (required) *Example: d2308bcc-8fd9-11ed-ac12-000b000000c1* id Тех. процесса. |
 
 > Запрос на получение отдельного Тех. процесса с указанным id.
 
@@ -152,28 +152,28 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d5174779-862b-11eb-ac14-000900000007",
-    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d5174779-862b-11eb-ac14-000900000007",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
     "type": "processingprocess",
     "mediaType": "application/json",
-    "uuidHref": "http://online.moysklad.ru/app/#processingprocess/edit?id=d5174779-862b-11eb-ac14-000900000007"
+    "uuidHref": "https://online.moysklad.ru/app/#processingprocess/edit?id=d5174779-862b-11eb-ac14-000900000007"
   },
   "id": "d5174779-862b-11eb-ac14-000900000007",
   "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
   "owner": {
     "meta": {
-      "href": "http://online.moysklad.ru/api/remap/1.2/entity/employee/872559f1-cbf3-11e1-9eb9-889ffa6f49fd",
-      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/872559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json",
-      "uuidHref": "http://online.moysklad.ru/app/#employee/edit?id=872559f1-cbf3-11e1-9eb9-889ffa6f49fd"
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=872559f1-cbf3-11e1-9eb9-889ffa6f49fd"
     }
   },
   "shared": true,
   "group": {
     "meta": {
-      "href": "http://online.moysklad.ru/api/remap/1.2/entity/group/f7eb1e3b-fd2a-42f7-b799-b3d1e6b3bf43",
-      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f7eb1e3b-fd2a-42f7-b799-b3d1e6b3bf43",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
       "type": "group",
       "mediaType": "application/json"
     }
@@ -184,7 +184,7 @@ curl -X GET
   "archived": false,
   "positions": {
     "meta": {
-      "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d5174779-862b-11eb-ac14-000900000007/positions",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d5174779-862b-11eb-ac14-000900000007/positions",
       "type": "processingprocessposition",
       "mediaType": "application/json",
       "size": 1,
@@ -202,7 +202,7 @@ curl -X GET
 + **name** - Название Тех. процесса
 + **positions** - Ссылки на позиции Тех. процесса в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
-> Пример создания нового Тех.процесса с телом запроса, содержащим только необходимые поля.
+> Запрос на создание нового Тех. процесса с телом запроса, содержащим только необходимые поля.
 
 ```shell
 curl -X POST
@@ -277,19 +277,19 @@ curl -X POST
 ```
 
 ### Изменить Тех. процесс
-Запрос на обновление Тех. процесса с указанным id. В теле запроса необходимо указать те поля, которые необходимо изменить у Тех. процесса, кроме тех, что помечены Только для чтения в описании атрибутов Тех. процесса.
+В теле запроса указать те поля, которые необходимо изменить у Тех. процесса.
 
 **Параметры**
 
 | Параметр | Описание                                                                              |
 | :------- |:--------------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: d5174779-862b-11eb-ac14-000900000007* id Тех. процесса. |
+| **id**   | `string` (required) *Example: 117cae13-a612-11ed-ac12-000900000022* id Тех. процесса. |
 
-> Пример обновления Тех. процесса с одной позицией на обновление и одной позицией на создание.
+> Запрос на обновление Тех. процесса с заменой этапа у существующей позиции и создание новой позиции.
 
 ```shell
 curl -X PUT
-"https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d5174779-862b-11eb-ac14-000900000007"
+"https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/117cae13-a612-11ed-ac12-000900000022"
 -H "Authorization: Basic <Credentials>"
 -H "Content-Type: application/json"
 -d '
@@ -304,8 +304,6 @@ curl -X PUT
 				"type": "processingprocessposition",
 				"mediaType": "application/json"
 			},
-			"id": "117cb64b-a612-11ed-ac12-000900000024",
-			"accountId": "c0b1ef18-9aea-11ed-ac12-000b00000011",
 			"processingstage": {
 				"meta": {
 					"href": "https://online.moysklad.ru/api/remap/1.2/entity/processingstage/c18373c0-9aea-11ed-ac12-000e000000c2",
@@ -330,7 +328,7 @@ curl -X PUT
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление созданного Тех. процесса.
+Успешный запрос. Результат - JSON представление обновленного Тех. процесса.
 
 ```json
 {
@@ -384,7 +382,7 @@ curl -X PUT
 
 | Параметр | Описание                                                                              |
 | :------- |:--------------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: d5174779-862b-11eb-ac14-000900000007* id Тех. процесса. |
+| **id**   | `string` (required) *Example: d2308bcc-8fd9-11ed-ac12-000b000000c1* id Тех. процесса. |
 
 > Запрос на удаление Тех. процесса с указанным id.
 
@@ -399,7 +397,7 @@ curl -X DELETE
 
 ### Позиции Тех. процесса
 
-Отдельный ресурс для управления позициями Тех. процесса. С его помощью вы можете управлять позициями документа. 
+Позиция Тех. процесса содержит информацию об этапе производства. 
 В документе установлен лимит на позиции в размере 100 элементов. Более подробно о лимитах на количество строк документа и работе с 
 большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
 
@@ -428,7 +426,7 @@ curl -X DELETE
 | **limit**  | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 | **offset** | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                |
 
-> Получить позиции Тех. процесса
+> Запрос на получение списка позиций Тех. процесса
 
 ```shell
 curl -X GET
@@ -444,15 +442,15 @@ curl -X GET
   "context": {
     "employee": {
       "meta": {
-        "href": "http://online.moysklad.ru/api/remap/1.2/context/employee",
-        "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d5069703-988e-11ed-ac19-000400000029/positions",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d5069703-988e-11ed-ac19-000400000029/positions",
     "type": "processingprocessposition",
     "mediaType": "application/json",
     "size": 1,
@@ -462,7 +460,7 @@ curl -X GET
   "rows": [
     {
       "meta": {
-        "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d5069703-988e-11ed-ac19-000400000029/positions/d5069da5-988e-11ed-ac19-00040000002a",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d5069703-988e-11ed-ac19-000400000029/positions/d5069da5-988e-11ed-ac19-00040000002a",
         "type": "processingprocessposition",
         "mediaType": "application/json"
       },
@@ -470,11 +468,11 @@ curl -X GET
       "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
       "processingstage": {
         "meta": {
-          "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/d4fed5b7-988e-11ed-ac19-000400000023",
-          "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingstage/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingstage/d4fed5b7-988e-11ed-ac19-000400000023",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingstage/metadata",
           "type": "processingstage",
           "mediaType": "application/json",
-          "uuidHref": "http://online.moysklad.ru/app/#processingstage/edit?id=d4fed5b7-988e-11ed-ac19-000400000023"
+          "uuidHref": "https://online.moysklad.ru/app/#processingstage/edit?id=d4fed5b7-988e-11ed-ac19-000400000023"
         }
       }
     }
@@ -482,14 +480,14 @@ curl -X GET
 }
 ```
 
-### Получить отдельную позицию Тех.процесса
+### Получить отдельную позицию Тех. процесса
 
 **Параметры**
 
 | Параметр | Описание                                                                                     |
 | :------- |:---------------------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: d5069703-988e-11ed-ac19-000400000029* id Тех. процесса.        |
-| **positionID**   | `string` (required) *Example: d5069da5-988e-11ed-ac19-00040000002a* id позиция Тех. процесса.|
+| **id**   | `string` (required) *Example: 1d4adde5-a6bb-11ed-ac12-00090000003f* id Тех. процесса.        |
+| **positionID**   | `string` (required) *Example: 23a62e19-a6bb-11ed-ac12-000900000043* id позиция Тех. процесса.|
 
 > Запрос на получение отдельной позиции Тех. процесса с указанным id.
 
@@ -529,9 +527,9 @@ curl -X GET
 
 | Параметр | Описание                                                                                     |
 | :------- |:---------------------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: d5069703-988e-11ed-ac19-000400000029* id Тех. процесса.        |
+| **id**   | `string` (required) *Example: 1d4adde5-a6bb-11ed-ac12-00090000003f* id Тех. процесса.        |
 
-> Создать позиции для Тех. процесса
+> Запрос на создание позиций Тех. процесса
 
 ```shell
 curl -X POST
@@ -581,16 +579,14 @@ curl -X POST
 
 ### Изменить позицию Тех. процесса
 
-Запрос на обновление отдельной позиции Тех. процесса. Для обновления позиции нет каких-либо обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
-
 **Параметры**
 
 | Параметр | Описание                                                                                      |
 | :------- |:----------------------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: d5069703-988e-11ed-ac19-000400000029* id Тех. процесса.         |
-| **positionID**   | `string` (required) *Example: d5069da5-988e-11ed-ac19-00040000002a* id позиции Тех. процесса.|
+| **id**   | `string` (required) *Example: 1d4adde5-a6bb-11ed-ac12-00090000003f* id Тех. процесса.         |
+| **positionID**   | `string` (required) *Example: 23a62e19-a6bb-11ed-ac12-000900000043* id позиции Тех. процесса.|
 
-> Обновить позицию Тех. процесса
+> Запрос на обновление позиции Тех. процесса
 
 ```shell
 curl -X PUT
@@ -611,7 +607,7 @@ curl -X PUT
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление обновленной позиций Тех. процесса.
+Успешный запрос. Результат - JSON представление обновленной позиции Тех. процесса.
 
 ```json
 {
@@ -643,7 +639,7 @@ curl -X PUT
 | **id**   | `string` (required) *Example: d5069703-988e-11ed-ac19-000400000029* id Тех. процесса.         |
 | **positionID**   | `string` (required) *Example: d5069da5-988e-11ed-ac19-00040000002a* id позиции Тех. процесса.|
 
-> Запрос на удаление Тех. процесса с указанным id.
+> Запрос на удаление позиции Тех. процесса с указанным id.
 
 ```shell
 curl -X DELETE
@@ -655,11 +651,10 @@ curl -X DELETE
 Успешное удаление отдельной позиции Тех. процесса
 
 ### Массовое создание и обновление Тех. процессов
-[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Тех.процессов.
-В теле запроса нужно передать массив, содержащий JSON представления Тех.процессов, которые вы хотите создать или обновить.
-Обновляемые Тех.процессы должны содержать идентификатор в виде метаданных.
+При [массовом создании и обновлении](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Тех. процессов в теле запроса нужно передать массив, 
+содержащий JSON представления Тех. процессов, которые вы хотите создать или обновить. Идентификатором у обновляемых Тех. процессов является [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye).
 
-> Пример создания и обновления нескольких Тех.процессов
+> Запрос на создание и обновление нескольких Тех. процессов
 
 ```shell
   curl -X POST
