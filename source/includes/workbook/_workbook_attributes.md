@@ -93,9 +93,9 @@ curl
             "type": "uom"
           }
         },
-        "minPrice": 50000,
+        "minPrice": 50000.0,
         "buyPrice": {
-          "value": 50000,
+          "value": 50000.0,
           "currency": {
             "meta": {
               "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
@@ -105,7 +105,7 @@ curl
         },
         "salePrices": [
           {
-            "value": 100000,
+            "value": 100000.0,
             "currency": {
               "meta": {
                 "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",

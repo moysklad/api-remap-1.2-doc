@@ -184,7 +184,7 @@
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=bb96904c-bf9e-11ea-c0a8-f0100000000c"
         }
-      }
+      },
       "price": 3300.0,
       "discountedPrice": 2640.0,
       "discount": 20.0

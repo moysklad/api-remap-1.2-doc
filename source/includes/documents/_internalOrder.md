@@ -381,7 +381,7 @@ curl -X GET
             "positions": [
               {
                 "quantity": 1,
-                "price": 0,
+                "price": 0.0,
                 "discount": 0,
                 "vat": 0,
                 "assortment": {
@@ -395,7 +395,7 @@ curl -X GET
               },
               {
                 "quantity": 1,
-                "price": 0,
+                "price": 0.0,
                 "discount": 0,
                 "vat": 0,
                 "assortment": {
@@ -678,7 +678,7 @@ curl -X GET
               "positions": [
                 {
                   "quantity": 1,
-                  "price": 0,
+                  "price": 0.0,
                   "discount": 0,
                   "vat": 0,
                   "assortment": {
@@ -692,7 +692,7 @@ curl -X GET
                 },
                 {
                   "quantity": 1,
-                  "price": 0,
+                  "price": 0.0,
                   "discount": 0,
                   "vat": 0,
                   "assortment": {
@@ -784,7 +784,7 @@ curl -X GET
               "positions": [
                 {
                   "quantity": 1,
-                  "price": 2230,
+                  "price": 2230.0,
                   "discount": 0,
                   "vat": 0,
                   "assortment": {
@@ -1405,7 +1405,7 @@ curl -X GET
             "positions": [
               {
                 "quantity": 1,
-                "price": 2230,
+                "price": 2230.0,
                 "discount": 0,
                 "vat": 0,
                 "assortment": {
@@ -1596,7 +1596,7 @@ curl -X GET
       "id": "05379d42-b305-11e6-8a84-bae500000008",
       "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
       "quantity": 1,
-      "price": 2230,
+      "price": 2230.0,
       "vat": 0,
       "vatEnabled": false,
       "assortment": {
@@ -1640,7 +1640,7 @@ curl -X GET
       -d '[
             {
               "quantity": 1,
-              "price": 100,
+              "price": 100.0,
               "vat": 10,
               "assortment": {
                 "meta": {
@@ -1653,7 +1653,7 @@ curl -X GET
             },
             {
               "quantity": 12,
-              "price": 200,
+              "price": 200.0,
               "vat": 18,
               "assortment": {
                 "meta": {
@@ -1666,7 +1666,7 @@ curl -X GET
             },
             {
               "quantity": 3,
-              "price": 2230,
+              "price": 2230.0,
               "vat": 0,
               "assortment": {
                 "meta": {
@@ -1694,7 +1694,7 @@ curl -X GET
     "id": "705ff11b-b305-11e6-8a84-bae50000000c",
     "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
     "quantity": 1,
-    "price": 100,
+    "price": 100.0,
     "vat": 10,
     "vatEnabled": true,
     "assortment": {
@@ -1716,7 +1716,7 @@ curl -X GET
     "id": "705ffca0-b305-11e6-8a84-bae50000000d",
     "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
     "quantity": 12,
-    "price": 200,
+    "price": 200.0,
     "vat": 18,
     "vatEnabled": true,
     "assortment": {
@@ -1738,7 +1738,7 @@ curl -X GET
     "id": "706006cd-b305-11e6-8a84-bae50000000e",
     "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
     "quantity": 3,
-    "price": 2230,
+    "price": 2230.0,
     "vat": 0,
     "vatEnabled": false,
     "assortment": {
@@ -1806,7 +1806,7 @@ curl -X GET
   "id": "7944ef04-f831-11e5-7a69-971500188b20",
   "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
   "quantity": 12,
-  "price": 200,
+  "price": 200.0,
   "vat": 18,
   "vatEnabled": true,
   "assortment": {
@@ -1840,7 +1840,7 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '{
             "quantity": 2,
-            "price": 500,
+            "price": 500.0,
             "vat": 18,
             "assortment": {
               "meta": {
@@ -1866,7 +1866,7 @@ curl -X GET
   "id": "7944ef04-f831-11e5-7a69-971500188b20",
   "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
   "quantity": 2,
-  "price": 500,
+  "price": 500.0,
   "vat": 18,
   "vatEnabled": true,
   "assortment": {

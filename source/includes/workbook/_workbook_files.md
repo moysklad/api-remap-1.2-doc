@@ -100,8 +100,8 @@
             "offset": 0
         }
     },
-    "minPrice": {
-        "value": 500,
+    "minprice": {
+       "value": 500.0,
         "currency": {
             "meta": {
                 "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -113,7 +113,7 @@
     },
     "salePrices": [
         {
-            "value": 0,
+            "value": 0.0,
             "priceType": {
                 "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
@@ -127,7 +127,7 @@
         }
     ],
     "buyPrice": {
-        "value": 0
+        "value": 0.0
     },
     "weight": 0,
     "volume": 0,

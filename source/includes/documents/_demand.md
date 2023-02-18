@@ -1069,7 +1069,7 @@ curl -X GET
             "positions": [
               {
                 "quantity": 10,
-                "price": 100,
+                "price": 100.0,
                 "discount": 0,
                 "vat": 0,
                 "assortment": {
@@ -1100,7 +1100,7 @@ curl -X GET
               },
               {
                 "quantity": 20,
-                "price": 200,
+                "price": 200.0,
                 "discount": 0,
                 "vat": 21,
                 "assortment": {
@@ -1115,7 +1115,7 @@ curl -X GET
               },
               {
                 "quantity": 30,
-                "price": 300,
+                "price": 300.0,
                 "discount": 0,
                 "vat": 7,
                 "assortment": {
@@ -1985,7 +1985,7 @@ curl -X GET
     "rows": [
       {
         "quantity": 1,
-        "price": 0,
+        "price": 0.0,
         "discount": 0,
         "vat": 0,
         "vatEnabled": false,
@@ -2110,7 +2110,7 @@ curl -X GET
     "rows": [
       {
         "quantity": 1,
-        "price": 100000,
+        "price": 100000.0,
         "discount": 0,
         "vat": 0,
         "vatEnabled": false,
@@ -2908,7 +2908,7 @@ curl -X GET
               {
                 "id": "34f6344f-015e-11e6-9464-e4de0000006c",
                 "quantity": 10,
-                "price": 100,
+                "price": 100.0,
                 "discount": 0,
                 "vat": 0,
                 "assortment": {
@@ -2923,7 +2923,7 @@ curl -X GET
               {
                 "id": "34f6344f-015e-11e6-9464-e4de0000006d",
                 "quantity": 20,
-                "price": 200,
+                "price": 200.0,
                 "discount": 0,
                 "vat": 21,
                 "assortment": {
@@ -2938,7 +2938,7 @@ curl -X GET
               {
                 "id": "34f6344f-015e-11e6-9464-e4de0000006e",
                 "quantity": 30,
-                "price": 300,
+                "price": 300.0,
                 "discount": 0,
                 "vat": 7,
                 "assortment": {
@@ -3471,7 +3471,7 @@ curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/d
     -H "Content-Type: application/json"
       -d '{
             "quantity": 4,
-            "price": 12345,
+            "price": 12345.0,
             "discount": 0,
             "vat": 0,
             "assortment": {
@@ -3499,7 +3499,7 @@ curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/d
     "id": "3bf025cc-0310-11e6-9464-e4de0000000e",
     "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
     "quantity": 4,
-    "price": 12345,
+    "price": 12345.0,
     "discount": 0,
     "vat": 0,
     "vatEnabled": false,
@@ -3526,7 +3526,7 @@ curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/d
       -d '[
             {
               "quantity": 103,
-              "price": 1002,
+              "price": 1002.0,
               "discount": 0,
               "vat": 0,
               "assortment": {
@@ -3539,7 +3539,7 @@ curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/d
             },
             {
               "quantity": 21,
-              "price": 2300,
+              "price": 2300.0,
               "discount": 0,
               "vat": 21,
               "assortment": {
@@ -3552,7 +3552,7 @@ curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/d
             },
             {
               "quantity": 3,
-              "price": 3500,
+              "price": 3500.0,
               "discount": 0,
               "vat": 7,
               "assortment": {
@@ -3585,7 +3585,7 @@ curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/d
     "id": "727cf336-0310-11e6-9464-e4de00000013",
     "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
     "quantity": 10,
-    "price": 100,
+    "price": 100.0,
     "discount": 0,
     "vat": 0,
     "vatEnabled": false,
@@ -3609,7 +3609,7 @@ curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/d
     "id": "727cfce0-0310-11e6-9464-e4de00000014",
     "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
     "quantity": 20,
-    "price": 200,
+    "price": 200.0,
     "discount": 0,
     "vat": 21,
     "vatEnabled": true,
@@ -3633,7 +3633,7 @@ curl --location --request GET 'https://online.moysklad.ru/api/remap/1.2/entity/d
     "id": "727d057f-0310-11e6-9464-e4de00000015",
     "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
     "quantity": 30,
-    "price": 300,
+    "price": 300.0,
     "discount": 0,
     "vat": 7,
     "vatEnabled": true,
@@ -3899,7 +3899,7 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '{
             "quantity": 111,
-            "price": 26332700,
+            "price": 26332700.0,
             "discount": 0,
             "vat": 18,
             "assortment": {
@@ -3926,7 +3926,7 @@ curl -X GET
   "id": "34f6344f-015e-11e6-9464-e4de0000006c",
   "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
   "quantity": 111,
-  "price": 26332700,
+  "price": 26332700.0,
   "discount": 0,
   "vat": 18,
   "vatEnabled": true,
