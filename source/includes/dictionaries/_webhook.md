@@ -512,14 +512,16 @@ curl -X POST
             "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
             "type": "webhook",
             "mediaType": "application/json"
-        },
+          }
+        },  
         {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/7944ef04-f831-11e5-7a69-971500188b2",
             "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
             "type": "webhook",
             "mediaType": "application/json"
-        }
+          }
+        }  
       ]'
 ```        
 

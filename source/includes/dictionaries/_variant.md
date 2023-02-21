@@ -263,11 +263,11 @@ curl -X GET
         }
       },
       "buyPrice": {
-        "value": 0
+        "value": 0.0
       },
       "salePrices": [
         {
-          "value": 0,
+          "value": 0.0,
           "priceType": {
             "meta": {
               "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
@@ -367,7 +367,7 @@ curl -X GET
               }
             ],
             "minPrice": {
-              "value": 500,
+              "value": 500.0,
               "currency": {
                 "meta": {
                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -378,11 +378,11 @@ curl -X GET
               }
             },
             "buyPrice": {
-              "value": 20
+              "value": 20.0
             },
             "salePrices": [
               {
-                "value": 900,
+                "value": 900.0,
                 "priceType": {
                   "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
@@ -489,7 +489,7 @@ curl -X GET
     }                                
   },
   "minPrice": {
-    "value": 500,
+    "value": 500.0,
     "currency": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -500,11 +500,11 @@ curl -X GET
     }
   },
   "buyPrice": {
-    "value": 20
+    "value": 20.0
   },
   "salePrices": [
     {
-      "value": 900,
+      "value": 900.0,
       "priceType": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
@@ -594,7 +594,7 @@ curl -X GET
                 }
               ],
               "minPrice": {
-                "value": 500,
+                "value": 500.0,
                 "currency": {
                   "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -605,11 +605,11 @@ curl -X GET
                 }
               },
               "buyPrice": {
-                "value": 20
+                "value": 20.0
               },
               "salePrices": [
                 {
-                  "value": 900,
+                  "value": 900.0,
                   "priceType": {
                     "meta": {
                       "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
@@ -686,11 +686,11 @@ curl -X GET
               "code": "orangeCode",
               "externalCode": "orange303",
               "buyPrice": {
-                "value": 700
+                "value": 700.0
               },
               "salePrices": [
                 {
-                  "value": 1100,
+                  "value": 1100.0,
                   "priceType": {
                     "meta": {
                       "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
@@ -735,7 +735,7 @@ curl -X GET
                 }
               ],
               "minPrice": {
-                "value": 500,
+                "value": 500.0,
                 "currency": {
                   "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -801,8 +801,8 @@ curl -X GET
         "offset": 0
       }                                
     },    
-    "minPrice": {
-      "value": 500,
+    "minprice": {
+    "value": 500.0,
       "currency": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -813,11 +813,11 @@ curl -X GET
       }
     },
     "buyPrice": {
-      "value": 20
+      "value": 20.0
     },
     "salePrices": [
       {
-        "value": 900,
+        "value": 900.0,
         "priceType": {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
@@ -936,8 +936,8 @@ curl -X GET
         "offset": 0
       }                                
     },    
-    "minPrice": {
-      "value": 500,
+    "minprice": {
+    "value": 500.0,
       "currency": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -948,11 +948,11 @@ curl -X GET
       }
     },
     "buyPrice": {
-      "value": 700
+      "value": 700.0
     },
     "salePrices": [
       {
-        "value": 1100,
+        "value": 1100.0,
         "priceType": {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
@@ -1218,7 +1218,7 @@ curl -X GET
   },
   "salePrices": [
     {
-      "value": 0,
+      "value": 0.0,
       "priceType": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
@@ -1339,11 +1339,11 @@ curl -X GET
             "code": "orangeCode",
             "externalCode": "orange303",
             "buyPrice": {
-              "value": 700
+              "value": 700.0
             },
             "salePrices": [
               {
-                "value": 1100,
+                "value": 1100.0,
                 "priceType": {
                   "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
@@ -1393,8 +1393,8 @@ curl -X GET
                 "content":"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAAEHRFWHRTb2Z0d2FyZQBTaHV0dGVyY4LQCQAAAAxJREFUCNdj+PePAQAE+gH90KA5ZAAAAABJRU5ErkJggg=="
               }
              ],
-            "minPrice": {
-              "value": 500,
+            "minprice": {
+             "value": 500.0,
               "currency": {
                 "meta": {
                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -1468,8 +1468,8 @@ curl -X GET
       "offset": 0
     }                                
   },  
-  "minPrice": {
-    "value": 500,
+  "minprice": {
+    "value": 500.0,
     "currency": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -1480,11 +1480,11 @@ curl -X GET
     }
   },
   "buyPrice": {
-    "value": 700
+    "value": 700.0
   },
   "salePrices": [
     {
-      "value": 1100,
+      "value": 1100.0,
       "priceType": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",

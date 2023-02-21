@@ -951,7 +951,7 @@ curl -X POST
     "rows": [
       {
         "quantity": 1,
-        "price": 2230,
+        "price": 2230.0,
         "assortment": {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/f4ac4460-acf7-11e6-8a84-bae500000068",
@@ -965,7 +965,7 @@ curl -X POST
       },
       {
         "quantity": 1,
-        "price": 100,
+        "price": 100.0,
         "assortment": {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/f4ac4460-acf7-11e6-8a84-bae500000068",
@@ -979,7 +979,7 @@ curl -X POST
       },
       {
         "quantity": 2,
-        "price": 500,
+        "price": 500.0,
         "assortment": {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/f4ac4460-acf7-11e6-8a84-bae500000068",
@@ -993,7 +993,7 @@ curl -X POST
       },
       {
         "quantity": 3,
-        "price": 2230,
+        "price": 2230.0,
         "assortment": {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/f4ac4460-acf7-11e6-8a84-bae500000068",
@@ -1503,7 +1503,7 @@ curl -X GET
       "id": "5ac5407b-4f67-11e6-8a84-bae500000085",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
       "quantity": 2,
-      "price": 0,
+      "price": 0.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/e6447ee7-3303-11e6-8a84-bae5000149c2",
@@ -1524,7 +1524,7 @@ curl -X GET
       "id": "5ac54d7a-4f67-11e6-8a84-bae500000086",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
       "quantity": 3,
-      "price": 0,
+      "price": 0.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/e6475862-3303-11e6-8a84-bae5000149cc",
@@ -1545,7 +1545,7 @@ curl -X GET
       "id": "5ac55815-4f67-11e6-8a84-bae500000087",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
       "quantity": 4,
-      "price": 0,
+      "price": 0.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/e84aed23-3303-11e6-8a84-bae500014dcd",
@@ -1566,7 +1566,7 @@ curl -X GET
       "id": "5ac56175-4f67-11e6-8a84-bae500000088",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
       "quantity": 5,
-      "price": 0,
+      "price": 0.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/e84e52e5-3303-11e6-8a84-bae500014dd7",
@@ -1587,7 +1587,7 @@ curl -X GET
       "id": "5ac56a34-4f67-11e6-8a84-bae500000089",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
       "quantity": 2,
-      "price": 0,
+      "price": 0.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/e8530f64-3303-11e6-8a84-bae500014de6",
@@ -1608,7 +1608,7 @@ curl -X GET
       "id": "5ac572cd-4f67-11e6-8a84-bae50000008a",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
       "quantity": 1,
-      "price": 0,
+      "price": 0.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/328b0454-2e62-11e6-8a84-bae500000118",
@@ -1629,7 +1629,7 @@ curl -X GET
       "id": "5ac57b59-4f67-11e6-8a84-bae50000008b",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
       "quantity": 32,
-      "price": 0,
+      "price": 0.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/0744d71b-2e59-11e6-8a84-bae50000007f",
@@ -1650,7 +1650,7 @@ curl -X GET
       "id": "5ac5843a-4f67-11e6-8a84-bae50000008c",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
       "quantity": 14,
-      "price": 0,
+      "price": 0.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/7a7daa6b-3c64-11e6-8a84-bae50000000a",
@@ -1671,7 +1671,7 @@ curl -X GET
       "id": "5ac58ea6-4f67-11e6-8a84-bae50000008d",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
       "quantity": 5,
-      "price": 0,
+      "price": 0.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/7a81082f-3c64-11e6-8a84-bae50000000e",
@@ -1692,7 +1692,7 @@ curl -X GET
       "id": "5ac596ca-4f67-11e6-8a84-bae50000008e",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
       "quantity": 6,
-      "price": 0,
+      "price": 0.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/7a83c422-3c64-11e6-8a84-bae500000012",
@@ -1713,7 +1713,7 @@ curl -X GET
       "id": "5ac59eb7-4f67-11e6-8a84-bae50000008f",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
       "quantity": 34,
-      "price": 0,
+      "price": 0.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/4f05a1f2-3304-11e6-8a84-bae50001c687",
@@ -1734,7 +1734,7 @@ curl -X GET
       "id": "5ac5a711-4f67-11e6-8a84-bae500000090",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
       "quantity": 32,
-      "price": 0,
+      "price": 0.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/4f785efd-3304-11e6-8a84-bae50001c6c4",
@@ -1755,7 +1755,7 @@ curl -X GET
       "id": "5ac5af07-4f67-11e6-8a84-bae500000091",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
       "quantity": 12,
-      "price": 0,
+      "price": 0.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/4f918196-3304-11e6-8a84-bae50001c6d2",
@@ -1776,7 +1776,7 @@ curl -X GET
       "id": "5ac5c872-4f67-11e6-8a84-bae500000092",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
       "quantity": 43,
-      "price": 0,
+      "price": 0.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/4f2a0659-3304-11e6-8a84-bae50001c6a1",
@@ -1797,7 +1797,7 @@ curl -X GET
       "id": "5ac5d0e5-4f67-11e6-8a84-bae500000093",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
       "quantity": 32,
-      "price": 0,
+      "price": 0.0,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/27eba7b5-3303-11e6-8a84-bae500002b72",
@@ -1840,7 +1840,7 @@ curl -X GET
       -d '[
             {
               "quantity": 43,
-              "price": 670,
+              "price": 670.0,
               "assortment": {
                 "meta": {
                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/4f2a0659-3304-11e6-8a84-bae50001c6a1",
@@ -1853,7 +1853,7 @@ curl -X GET
             },
             {
               "quantity": 32,
-              "price": 640,
+              "price": 640.0,
               "assortment": {
                 "meta": {
                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/27eba7b5-3303-11e6-8a84-bae500002b72",
@@ -1881,7 +1881,7 @@ curl -X GET
     "id": "476d9c48-4f6b-11e6-8a84-bae500000013",
     "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
     "quantity": 43,
-    "price": 670,
+    "price": 670.0,
     "assortment": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/4f2a0659-3304-11e6-8a84-bae50001c6a1",
@@ -1902,7 +1902,7 @@ curl -X GET
     "id": "476da9ce-4f6b-11e6-8a84-bae500000014",
     "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
     "quantity": 32,
-    "price": 640,
+    "price": 640.0,
     "assortment": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/27eba7b5-3303-11e6-8a84-bae500002b72",
@@ -1949,7 +1949,7 @@ curl -X GET
   "id": "7944ef04-f831-11e5-7a69-971500188b20",
   "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
   "quantity": 4,
-  "price": 0,
+  "price": 0.0,
   "assortment": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/e84aed23-3303-11e6-8a84-bae500014dcd",
@@ -1983,7 +1983,7 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '{
             "quantity": 44,
-            "price": 222222
+            "price": 222222.0
           }'  
 ```
 
@@ -2000,7 +2000,7 @@ curl -X GET
   "id": "7944ef04-f831-11e5-7a69-971500188b20",
   "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
   "quantity": 44,
-  "price": 222222,
+  "price": 222222.0,
   "assortment": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/4f2a0659-3304-11e6-8a84-bae50001c6a1",

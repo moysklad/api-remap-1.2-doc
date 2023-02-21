@@ -197,7 +197,7 @@ curl -X GET
         }
       ],
       "specialPrice": {
-        "value": 15,
+        "value": 15.0,
         "priceType": {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
@@ -923,7 +923,7 @@ curl -X POST
     }
   ],
   "specialPrice": {
-    "value": 0,
+    "value": 0.0,
     "priceType": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/39c62b64-a722-11ea-ac12-000d00000015",
@@ -999,7 +999,7 @@ curl -X GET
     }
   ],
   "specialPrice": {
-    "value": 0,
+    "value": 0.0,
     "priceType": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/39c62b64-a722-11ea-ac12-000d00000015",
@@ -1082,7 +1082,7 @@ curl -X PUT
     }
   ],
   "specialPrice": {
-    "value": 0,
+    "value": 0.0,
     "priceType": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/39c62b64-a722-11ea-ac12-000d00000015",

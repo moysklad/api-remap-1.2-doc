@@ -1034,7 +1034,7 @@ curl -X GET
             "positions": [
               {
                 "quantity": 10,
-                "price": 100,
+                "price": 100.0,
                 "discount": 0,
                 "vat": 0,
                 "assortment": {
@@ -1047,7 +1047,7 @@ curl -X GET
               },
               {
                 "quantity": 20,
-                "price": 200,
+                "price": 200.0,
                 "discount": 0,
                 "vat": 21,
                 "assortment": {
@@ -1831,7 +1831,7 @@ curl -X GET
     "rows": [
       {
         "quantity": 1,
-        "price": 90000,
+        "price": 90000.0,
         "discount": 0,
         "vat": 0,
         "vatEnabled": false,
@@ -2338,7 +2338,7 @@ curl -X GET
             "positions": [
               {
                 "quantity": 20,
-                "price": 200,
+                "price": 200.0,
                 "discount": 0,
                 "vat": 21,
                 "assortment": {
@@ -2532,7 +2532,7 @@ curl -X GET
       "id": "90572e91-0889-11e6-9464-e4de00000043",
       "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
       "quantity": 20,
-      "price": 200,
+      "price": 200.0,
       "discount": 0,
       "vat": 0,
       "vatEnabled": false,
@@ -2575,7 +2575,7 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '{
             "quantity": 12,
-            "price": 999,
+            "price": 999.0,
             "discount": 1,
             "assortment": {
               "meta": {
@@ -2603,7 +2603,7 @@ curl -X GET
     "id": "8a43c5a3-088a-11e6-9464-e4de00000046",
     "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
     "quantity": 12,
-    "price": 999,
+    "price": 999.0,
     "discount": 1,
     "vat": 0,
     "vatEnabled": false,
@@ -2654,7 +2654,7 @@ curl -X GET
   "id": "34f6344f-015e-11e6-9464-e4de0000006c",
   "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
   "quantity": 12,
-  "price": 999,
+  "price": 999.0,
   "discount": 1,
   "vat": 0,
   "vatEnabled": false,
@@ -2690,7 +2690,7 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '{
             "quantity": 22,
-            "price": 1000,
+            "price": 1000.0,
             "discount": 0,
             "vat": 12
           }'  
@@ -2710,7 +2710,7 @@ curl -X GET
   "id": "34f6344f-015e-11e6-9464-e4de0000006c",
   "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
   "quantity": 22,
-  "price": 1000,
+  "price": 1000.0,
   "discount": 0,
   "vat": 0,
   "vatEnabled": false,

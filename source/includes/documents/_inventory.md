@@ -377,7 +377,7 @@ curl -X GET
                 "rows": [
                   {
                     "quantity": 140,
-                    "price": 5000,
+                    "price": 5000.0,
                     "assortment": {
                       "meta": {
                         "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
@@ -392,7 +392,7 @@ curl -X GET
                   },
                   {
                     "quantity": 80,
-                    "price": 4000,
+                    "price": 4000.0,
                     "assortment": {
                       "meta": {
                         "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/58948866-ad65-11e6-8a84-bc52000000cf",
@@ -862,7 +862,7 @@ curl -X GET
               "rows": [
                 {
                   "quantity": 140,
-                  "price": 5000,
+                  "price": 5000.0,
                   "assortment": {
                     "meta": {
                       "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
@@ -877,7 +877,7 @@ curl -X GET
                 },
                 {
                   "quantity": 80,
-                  "price": 4000,
+                  "price": 4000.0,
                   "assortment": {
                     "meta": {
                       "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/58948866-ad65-11e6-8a84-bc52000000cf",
@@ -1163,7 +1163,7 @@ curl -X GET
       "id": "201452a2-ad6f-11e6-8a84-bc5200000010",
       "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
       "quantity": 140,
-      "price": 5000,
+      "price": 5000.0,
       "assortment": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
@@ -1186,7 +1186,7 @@ curl -X GET
       "id": "20145d98-ad6f-11e6-8a84-bc5200000011",
       "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
       "quantity": 80,
-      "price": 4000,
+      "price": 4000.0,
       "assortment": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/58948866-ad65-11e6-8a84-bc52000000cf",
@@ -1237,7 +1237,7 @@ curl -X GET
             "id": "201452a2-ad6f-11e6-8a84-bc5200000010",
             "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
             "quantity": 140,
-            "price": 2000,
+            "price": 2000.0,
             "assortment": {
               "meta": {
                 "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
@@ -1263,7 +1263,7 @@ curl -X GET
     "id": "201452a2-ad6f-11e6-8a84-bc5200000010",
     "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
     "quantity": 140,
-    "price": 2000,
+    "price": 2000.0,
     "assortment": {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
@@ -1312,7 +1312,7 @@ curl -X GET
   "id": "7944ef04-f831-11e5-7a69-971500188b20",
   "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
   "quantity": 140,
-  "price": 5000,
+  "price": 5000.0,
   "assortment": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
@@ -1355,7 +1355,7 @@ curl -X GET
             "id": "201452a2-ad6f-11e6-8a84-bc5200000010",
             "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
             "quantity": 45,
-            "price": 1000,
+            "price": 1000.0,
             "assortment": {
               "meta": {
                 "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
@@ -1380,7 +1380,7 @@ curl -X GET
   "id": "7944ef04-f831-11e5-7a69-971500188b20",
   "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
   "quantity": 45,
-  "price": 1000,
+  "price": 1000.0,
   "assortment": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",

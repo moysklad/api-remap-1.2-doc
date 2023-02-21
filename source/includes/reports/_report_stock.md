@@ -232,8 +232,8 @@ curl -X GET
       "name": "Товар",
       "code": "one1",
       "article": "Ar23",
-      "price": 0,
-      "salePrice": 346347237000,
+      "price": 0.0,
+      "salePrice": 346347237000.0,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/c6bc9273-2c83-11e6-8a84-bae5000000a3",
@@ -258,8 +258,8 @@ curl -X GET
       "quantity": 4,
       "name": "ТоварБезШК",
       "code": "00006",
-      "price": 0,
-      "salePrice": 0,
+      "price": 0.0,
+      "salePrice": 0.0,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/c6bc9273-2c83-11e6-8a84-bae5000000a3",
@@ -284,8 +284,8 @@ curl -X GET
       "quantity": 1,
       "name": "Товар с модой без ШК",
       "code": "00008",
-      "price": 0,
-      "salePrice": 0,
+      "price": 0.0,
+      "salePrice": 0.0,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/c6bc9273-2c83-11e6-8a84-bae5000000a3",
@@ -310,8 +310,8 @@ curl -X GET
       "quantity": 1,
       "name": "Товар с модой без ШК (1)",
       "code": "00208",
-      "price": 0,
-      "salePrice": 0,
+      "price": 0.0,
+      "salePrice": 0.0,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/c6bc9273-2c83-11e6-8a84-bae5000000a3",
@@ -336,8 +336,8 @@ curl -X GET
       "quantity": 1,
       "name": "Товар с модой без ШК (2)",
       "code": "00209",
-      "price": 0,
-      "salePrice": 0,
+      "price": 0.0,
+      "salePrice": 0.0,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/c6bc9273-2c83-11e6-8a84-bae5000000a3",
@@ -362,8 +362,8 @@ curl -X GET
       "quantity": 1,
       "name": "Товар с модой без ШК (3)",
       "code": "00210",
-      "price": 0,
-      "salePrice": 0,
+      "price": 0.0,
+      "salePrice": 0.0,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/c6bc9273-2c83-11e6-8a84-bae5000000a3",
@@ -388,8 +388,8 @@ curl -X GET
       "quantity": 1,
       "name": "ТоварСМодой_и_ШК",
       "code": "00007",
-      "price": 0,
-      "salePrice": 0,
+      "price": 0.0,
+      "salePrice": 0.0,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/c6bc9273-2c83-11e6-8a84-bae5000000a3",
@@ -414,8 +414,8 @@ curl -X GET
       "quantity": 1,
       "name": "ТоварСМодой_и_ШК (1)",
       "code": "00205",
-      "price": 0,
-      "salePrice": 0,
+      "price": 0.0,
+      "salePrice": 0.0,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/c6bc9273-2c83-11e6-8a84-bae5000000a3",
@@ -440,8 +440,8 @@ curl -X GET
       "quantity": 1,
       "name": "ТоварСМодой_и_ШК (2)",
       "code": "00206",
-      "price": 0,
-      "salePrice": 0,
+      "price": 0.0,
+      "salePrice": 0.0,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/c6bc9273-2c83-11e6-8a84-bae5000000a3",
@@ -466,8 +466,8 @@ curl -X GET
       "quantity": 1,
       "name": "ТоварСМодой_и_ШК (3)",
       "code": "00207",
-      "price": 0,
-      "salePrice": 0,
+      "price": 0.0,
+      "salePrice": 0.0,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/c6bc9273-2c83-11e6-8a84-bae5000000a3",
@@ -492,8 +492,8 @@ curl -X GET
       "quantity": -6438,
       "name": "ТоварСоСтраной",
       "code": "00002",
-      "price": 0,
-      "salePrice": 0,
+      "price": 0.0,
+      "salePrice": 0.0,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/c6bc9273-2c83-11e6-8a84-bae5000000a3",
@@ -518,8 +518,8 @@ curl -X GET
       "quantity": -113,
       "name": "Мяч",
       "code": "00003",
-      "price": 0,
-      "salePrice": 0,
+      "price": 0.0,
+      "salePrice": 0.0,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/c6bc9273-2c83-11e6-8a84-bae5000000a3",
@@ -544,8 +544,8 @@ curl -X GET
       "quantity": -21,
       "name": "Мяч (Футбольный)",
       "code": "00002",
-      "price": 0,
-      "salePrice": 0,
+      "price": 0.0,
+      "salePrice": 0.0,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/c6bc9273-2c83-11e6-8a84-bae5000000a3",
@@ -570,8 +570,8 @@ curl -X GET
       "quantity": -1,
       "name": "Мяч (Волейбольный)",
       "code": "00004",
-      "price": 0,
-      "salePrice": 0,
+      "price": 0.0,
+      "salePrice": 0.0,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/c6bc9273-2c83-11e6-8a84-bae5000000a3",
@@ -597,7 +597,7 @@ curl -X GET
       "name": "Трололоша",
       "code": "00001",
       "price": 50260.86956521739,
-      "salePrice": 123000,
+      "salePrice": 123000.0,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/c6bc9273-2c83-11e6-8a84-bae5000000a3",
@@ -623,8 +623,8 @@ curl -X GET
       "name": "ТОварИщ (10)",
       "code": "00214",
       "article": "Артикулс",
-      "price": 0,
-      "salePrice": 346347237000,
+      "price": 0.0,
+      "salePrice": 346347237000.0,
       "uom": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/c6bc9273-2c83-11e6-8a84-bae5000000a3",

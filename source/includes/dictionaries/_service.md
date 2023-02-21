@@ -217,8 +217,8 @@ curl -X GET
       "effectiveVat": 6,
       "effectiveVatEnabled": true,
       "discountProhibited": false,
-      "minPrice": {
-        "value": 500,
+      "minprice": {
+       "value": 500.0,
         "currency": {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -230,7 +230,7 @@ curl -X GET
       },
       "salePrices": [
         {
-          "value": 1052,
+          "value": 1052.0,
           "currency": {
             "meta": {
               "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
@@ -273,7 +273,7 @@ curl -X GET
         }
       ],
       "buyPrice": {
-        "value": 700,
+        "value": 700.0,
         "currency": {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -358,8 +358,8 @@ curl -X GET
       "useParentVat": false,
       "effectiveVat": 10,
       "effectiveVatEnabled": true,
-      "minPrice": {
-        "value": 500,
+      "minprice": {
+       "value": 500.0,
         "currency": {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -371,7 +371,7 @@ curl -X GET
       },
       "salePrices": [
         {
-          "value": 10532,
+          "value": 10532.0,
           "currency": {
             "meta": {
               "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
@@ -414,7 +414,7 @@ curl -X GET
         }
       ],
       "buyPrice": {
-        "value": 700,
+        "value": 700.0,
         "currency": {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -466,8 +466,8 @@ curl -X GET
             "vat": 10,
             "effectiveVat": 10,
             "discountProhibited": false,
-            "minPrice": {
-              "value": 500,
+            "minprice": {
+             "value": 500.0,
               "currency": {
                 "meta": {
                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -479,7 +479,7 @@ curl -X GET
             },
             "salePrices": [
               {
-                "value": 10532,
+                "value": 10532.0,
                 "currency": {
                   "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
@@ -516,7 +516,7 @@ curl -X GET
               }
             ],
             "buyPrice": {
-              "value": 1047,
+              "value": 1047.0,
               "currency": {
                 "meta": {
                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
@@ -583,8 +583,8 @@ curl -X GET
   "effectiveVat": 10,
   "effectiveVatEnabled": true,
   "discountProhibited": false,
-  "minPrice": {
-    "value": 500,
+  "minprice": {
+    "value": 500.0,
     "currency": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -596,7 +596,7 @@ curl -X GET
   },
   "salePrices": [
     {
-      "value": 10532,
+      "value": 10532.0,
       "currency": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
@@ -639,7 +639,7 @@ curl -X GET
     }
   ],
   "buyPrice": {
-    "value": 1047,
+    "value": 1047.0,
     "currency": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
@@ -706,7 +706,7 @@ curl -X GET
   },
   "salePrices": [
     {
-      "value": 346347237000,
+      "value": 346347237000.0,
       "currency": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/2b50da23-296b-11e6-8a84-bae500000055",
@@ -774,8 +774,8 @@ curl -X GET
             "description": "Облицовка доставляемого товара",
             "vat": 6,
             "effectiveVat": 5,
-            "minPrice": {
-              "value": 500,
+            "minprice": {
+             "value": 500.0,
               "currency": {
                 "meta": {
                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -787,7 +787,7 @@ curl -X GET
             },
             "salePrices": [
               {
-                "value": 1052,
+                "value": 1052.0,
                 "currency": {
                   "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
@@ -824,7 +824,7 @@ curl -X GET
               }
             ],
             "buyPrice": {
-              "value": 700,
+              "value": 700.0,
               "currency": {
                 "meta": {
                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -912,8 +912,8 @@ curl -X GET
   "effectiveVat": 6,
   "effectiveVatEnabled": true,
   "discountProhibited": false,
-  "minPrice": {
-    "value": 500,
+  "minprice": {
+    "value": 500.0,
     "currency": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -925,7 +925,7 @@ curl -X GET
   },
   "salePrices": [
     {
-      "value": 1052,
+      "value": 1052.0,
       "currency": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
@@ -968,7 +968,7 @@ curl -X GET
     }
   ],
   "buyPrice": {
-    "value": 700,
+    "value": 700.0,
     "currency": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -1044,8 +1044,8 @@ curl -X GET
               "externalCode": "deliveryCode",
               "vat": 11,
               "effectiveVat": 11,
-              "minPrice": {
-                "value": 500,
+              "minprice": {
+               "value": 500.0,
                 "currency": {
                   "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -1057,7 +1057,7 @@ curl -X GET
               },
               "salePrices": [
                 {
-                  "value": 700,
+                  "value": 700.0,
                   "currency": {
                     "meta": {
                       "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
@@ -1094,7 +1094,7 @@ curl -X GET
                 }
               ],
               "buyPrice": {
-                "value": 700,
+                "value": 700.0,
                 "currency": {
                   "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -1152,7 +1152,7 @@ curl -X GET
     },
     "salePrices": [
       {
-        "value": 346347237000,
+        "value": 346347237000.0,
         "currency": {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/2b50da23-296b-11e6-8a84-bae500000055",
@@ -1242,8 +1242,8 @@ curl -X GET
     "effectiveVat": 11,
     "effectiveVatEnabled": true,
     "discountProhibited": false,
-    "minPrice": {
-      "value": 500,
+    "minprice": {
+    "value": 500.0,
       "currency": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -1255,7 +1255,7 @@ curl -X GET
     },
     "salePrices": [
       {
-        "value": 700,
+        "value": 700.0,
         "currency": {
           "meta": {
             "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
@@ -1298,7 +1298,7 @@ curl -X GET
       }
     ],
     "buyPrice": {
-      "value": 700,
+      "value": 700.0,
       "currency": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -1452,8 +1452,8 @@ curl -X GET
   "effectiveVat": 6,
   "effectiveVatEnabled": true,
   "discountProhibited": false,
-  "minPrice": {
-    "value": 500,
+  "minprice": {
+    "value": 500.0,
     "currency": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -1465,7 +1465,7 @@ curl -X GET
   },
   "salePrices": [
     {
-      "value": 1052,
+      "value": 1052.0,
       "currency": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
@@ -1508,7 +1508,7 @@ curl -X GET
     }
   ],
   "buyPrice": {
-    "value": 700,
+    "value": 700.0,
     "currency": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -1588,8 +1588,8 @@ curl -X GET
               "externalCode": "deliveryCode",
               "vat": 11,
               "effectiveVat": 11,
-              "minPrice": {
-                "value": 500,
+              "minprice": {
+               "value": 500.0,
                 "currency": {
                   "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -1601,7 +1601,7 @@ curl -X GET
               },
               "salePrices": [
                 {
-                  "value": 700,
+                  "value": 700.0,
                   "currency": {
                     "meta": {
                       "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
@@ -1638,7 +1638,7 @@ curl -X GET
                 }
               ],
               "buyPrice": {
-                "value": 700,
+                "value": 700.0,
                 "currency": {
                   "meta": {
                     "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -1705,8 +1705,8 @@ curl -X GET
    "effectiveVat": 11,
    "effectiveVatEnabled": true,
    "discountProhibited": false,
-   "minPrice": {
-     "value": 500,
+   "minprice": {
+     "value": 500.0,
      "currency": {
        "meta": {
          "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -1718,7 +1718,7 @@ curl -X GET
    },
    "salePrices": [
      {
-       "value": 700,
+       "value": 700.0,
        "currency": {
          "meta": {
            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
@@ -1761,7 +1761,7 @@ curl -X GET
      }
    ],
    "buyPrice": {
-     "value": 700,
+     "value": 700.0,
      "currency": {
        "meta": {
          "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -1807,8 +1807,8 @@ curl -X GET
              },
              "vat": 6,
              "effectiveVat": 6,
-             "minPrice": {
-               "value": 500,
+             "minprice": {
+              "value": 500.0,
                "currency": {
                  "meta": {
                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -1820,7 +1820,7 @@ curl -X GET
              },
              "salePrices": [
                {
-                 "value": 778,
+                 "value": 778.0,
                  "currency": {
                    "meta": {
                      "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
@@ -1857,7 +1857,7 @@ curl -X GET
                }
              ],
              "buyPrice": {
-               "value": 700,
+               "value": 700.0,
                "currency": {
                  "meta": {
                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -1952,8 +1952,8 @@ curl -X GET
     }
   },
   "discountProhibited": false,
-  "minPrice": {
-    "value": 500,
+  "minprice": {
+    "value": 500.0,
     "currency": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
@@ -1965,7 +1965,7 @@ curl -X GET
   },
   "salePrices": [
     {
-      "value": 778,
+      "value": 778.0,
       "currency": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
@@ -2008,7 +2008,7 @@ curl -X GET
     }
   ],
   "buyPrice": {
-    "value": 700,
+    "value": 700.0,
     "currency": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/10772c12-36e7-11e7-8a7f-40d000000097",
