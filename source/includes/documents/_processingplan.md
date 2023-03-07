@@ -5,7 +5,7 @@
 #### Атрибуты сущности
 
 | Название         | Тип                                                       | Фильтрация                 | Описание                                                                                                             |
-| ---------------- | :-------------------------------------------------------- | :------------------------- | :------------------------------------------------------------------------------------------------------------------- |
+| ---------------- | :-------------------------------------------------------- | :------------------------- |:---------------------------------------------------------------------------------------------------------------------|
 | **accountId**    | UUID                                                      | `=` `!=`                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                 |
 | **code**         | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Код Тех. карты                                                                                                       |
 | **cost**         | Int                                                       |                            | Стоимость производства                                                                                               |
@@ -13,7 +13,7 @@
 | **externalCode** | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Внешний код Тех. карты<br>`+Обязательное при ответе`                                                                 |
 | **group**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                             |
 | **id**           | UUID                                                      | `=` `!=`                   | ID Тех. карты<br>`+Обязательное при ответе` `+Только для чтения`                                                     |
-| **materials**    | MetaArray                                                 |                            | Коллекция метаданных материалов Тех. карты<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`        |
+| **materials**    | MetaArray                                                 |                            | Коллекция метаданных материалов Тех. карты<br>`+Обязательное при ответе` `+Expand`                                   |
 | **meta**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Метаданные Тех. карты<br>`+Обязательное при ответе`                                                                  |
 | **name**         | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Наименование Тех. карты<br>`+Обязательное при ответе` `+Необходимо при создании`                                     |
 | **owner**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                         |
@@ -27,13 +27,16 @@
 Материалы Тех. карты - это список товаров/модификаций, используемых для производства готовых продуктов.
 Объект материала Тех. карты содержит следующие поля:
 
-| Название       | Тип                                                       | Описание                                                                                                                                                                                      |
-| -------------- | :-------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **accountId**  | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                          |
-| **assortment** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные товара или модификации позиции<br>`+Обязательное при ответе` `+Expand`                                                                                                             |
-| **id**         | UUID                                                      | ID Материала<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                               |
-| **product**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные товара позиции. В случае, если в поле **assortment** указана модификация, то это поле содержит товар, к которому относится эта модификация<br>`+Обязательное при ответе` `+Expand` |
-| **quantity**   | Int                                                       | Количество товаров данного вида в позиции<br>`+Обязательное при ответе`                                                                                                                       |
+| Название                       | Тип                                                       | Описание                                                                                                                                                                                      |
+|--------------------------------| :-------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**                  | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                          |
+| **assortment**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные товара или модификации позиции<br>`+Обязательное при ответе` `+Expand`                                                                                                             |
+| **id**                         | UUID                                                      | ID Материала<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                               |
+| **product**                    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные товара позиции. В случае, если в поле **assortment** указана модификация, то это поле содержит товар, к которому относится эта модификация<br>`+Обязательное при ответе` `+Expand` |
+| **quantity**                   | Int                                                       | Количество товаров данного вида в позиции<br>`+Обязательное при ответе`                                                                                                                       |
+| **processingProcessPosititon** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные позиции техпроцесса<br>`+Обязательное при ответе`                                                                                                                                  |
+
+Особенности: если при добавлении материала не указывать связь с позицией техпроцесса, то по умолчанию материал будет привязан к первой позиции техпроцесса.
 
 #### Продукты Тех. карты
 Продукты Тех. карты - это список товаров/модификаций, получаемых при производстве.
@@ -290,7 +293,6 @@ curl -X GET
 Обязательные для создания поля:
 
 + **name** - Наименование Тех. карты
-+ **materials** - Список материалов Тех. карты в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **products** - Список готовых продуктов Тех. карты в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 > Пример создания новой Тех.карты с телом запроса, содержащим только необходимые поля.
@@ -303,20 +305,6 @@ curl -X GET
       -d '{
             "name": "Example",
             "cost": 1000,
-            "materials": [
-              {
-                "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
-                "assortment": {
-                  "meta": {
-                    "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
-                    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-                    "type": "product",
-                    "mediaType": "application/json"
-                  }
-                },
-                "quantity": 1
-              }
-            ],
             "products": [
               {
                 "assortment": {
@@ -384,7 +372,7 @@ curl -X GET
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingplan/120a488b-b0bd-11e6-5bed-427b00000000/materials",
       "type": "processingplanmaterial",
       "mediaType": "application/json",
-      "size": 1,
+      "size": 0,
       "limit": 1000,
       "offset": 0
     }
@@ -427,6 +415,13 @@ curl -X GET
                       "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
                       "type": "product",
                       "mediaType": "application/json"
+                    }
+                  },
+                  "processingProcessPosition": {
+                    "meta": {
+                      "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf/positions/d8da461d-bbf9-11ed-ac12-0010000000c0",
+						          "type": "processingprocessposition",
+						          "mediaType": "application/json"
                     }
                   },
                   "quantity": 1
@@ -879,14 +874,22 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
-      "quantity": 1
+      "quantity": 1,
+      "processingProcessPosition": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf/positions/d8da461d-bbf9-11ed-ac12-0010000000c0",
+          "type": "processingprocessposition",
+          "mediaType": "application/json"
+        }
+      }
     }
   ]
 }
 ```
 
 ### Создать материал Тех. карты 
-Запрос на создание нового материала в Тех. карте.
+Запрос на создание нового материала в Тех. карте. 
+Если при добавлении материала не указывать связь с позицией техпроцесса, то по умолчанию материал будет привязан к первой позиции техпроцесса.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
 + **product** - Ссылка на товар, которую представляет собой позиция.
@@ -949,12 +952,19 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
-    "quantity": 1
+    "quantity": 1,
+    "processingProcessPosition": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf/positions/d8da461d-bbf9-11ed-ac12-0010000000c0",
+        "type": "processingprocessposition",
+        "mediaType": "application/json"
+      }
+    }
   }
 ]
 ```
 
-> Пример создания сразу нескольких материалов в Тех. карте.
+> Пример создания сразу нескольких материалов в Тех. карте с привязкой и без привязки к позициям техпроцесса
 
 ```shell
   curl -X POST
@@ -971,7 +981,14 @@ curl -X GET
                   "mediaType": "application/json"
                 }
               },
-              "quantity": 1
+              "quantity": 1,
+              "processingProcessPosition": {
+                "meta": {
+                  "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf/positions/934b5505-ac45-11ed-ac12-000f0000002c",
+                  "type": "processingprocessposition",
+                  "mediaType": "application/json"
+                }
+              }
             },
             {
               "assortment": {
@@ -1016,7 +1033,14 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
-    "quantity": 1
+    "quantity": 1,
+    "processingProcessPosition": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf/positions/934b5505-ac45-11ed-ac12-000f0000002c",
+        "type": "processingprocessposition",
+        "mediaType": "application/json"
+      }
+    }
   },
   {
     "meta": {
@@ -1042,7 +1066,14 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
-    "quantity": 2
+    "quantity": 2,
+    "processingProcessPosition": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf/positions/d8da461d-bbf9-11ed-ac12-0010000000c0",
+        "type": "processingprocessposition",
+        "mediaType": "application/json"
+      }
+    }
   }
 ]
 ```
@@ -1094,7 +1125,14 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "quantity": 1
+  "quantity": 1,
+  "processingProcessPosition": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf/positions/d8da461d-bbf9-11ed-ac12-0010000000c0",
+      "type": "processingprocessposition",
+      "mediaType": "application/json"
+    }
+  }
 }
 ```
 
@@ -1150,7 +1188,14 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
-    "quantity": 5
+    "quantity": 5,
+    "processingProcessPosition": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf/positions/d8da461d-bbf9-11ed-ac12-0010000000c0",
+        "type": "processingprocessposition",
+        "mediaType": "application/json"
+      }
+    }
   }
 ]
 ```
