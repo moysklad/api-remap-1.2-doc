@@ -4,24 +4,25 @@
 ### Тех. карты 
 #### Атрибуты сущности
 
-| Название         | Тип                                                       | Фильтрация                 | Описание                                                                                                             |
-| ---------------- | :-------------------------------------------------------- | :------------------------- |:---------------------------------------------------------------------------------------------------------------------|
-| **accountId**    | UUID                                                      | `=` `!=`                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                 |
-| **code**         | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Код Тех. карты                                                                                                       |
-| **cost**         | Int                                                       |                            | Стоимость производства                                                                                               |
-| **deleted**      | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=` | Момент последнего удаления Тех. карты<br>`+Только для чтения`                                                        |
-| **externalCode** | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Внешний код Тех. карты<br>`+Обязательное при ответе`                                                                 |
-| **group**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                             |
-| **id**           | UUID                                                      | `=` `!=`                   | ID Тех. карты<br>`+Обязательное при ответе` `+Только для чтения`                                                     |
-| **materials**    | MetaArray                                                 |                            | Коллекция метаданных материалов Тех. карты<br>`+Обязательное при ответе` `+Expand`                                   |
-| **meta**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Метаданные Тех. карты<br>`+Обязательное при ответе`                                                                  |
-| **name**         | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Наименование Тех. карты<br>`+Обязательное при ответе` `+Необходимо при создании`                                     |
-| **owner**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                         |
-| **parent**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Метаданные группы Тех. карты<br>`+Обязательное при ответе` `+Expand`                                                 |
-| **pathName**     | String                                                    |                            | Наименование группы, в которую входит Тех. карта<br>`+Обязательное при ответе` `+Только для чтения`                  |
-| **products**     | MetaArray                                                 |                            | Коллекция метаданных готовых продуктов Тех. карты<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` |
-| **shared**       | Boolean                                                   | `=` `!=`                   | Общий доступ<br>`+Обязательное при ответе`                                                                           |
-| **updated**      | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления Тех. карты<br>`+Обязательное при ответе` `+Только для чтения`                           |
+| Название              | Тип                                                      | Фильтрация                 | Описание                                                                                                             |
+|-----------------------|:---------------------------------------------------------| :------------------------- |:---------------------------------------------------------------------------------------------------------------------|
+| **accountId**         | UUID                                                     | `=` `!=`                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                 |
+| **code**              | String(255)                                              | `=` `!=` `~` `~=` `=~`     | Код Тех. карты                                                                                                       |
+| **cost**              | Int                                                      |                            | Стоимость производства                                                                                               |
+| **deleted**           | DateTime                                                 | `=` `!=` `<` `>` `<=` `>=` | Момент последнего удаления Тех. карты<br>`+Только для чтения`                                                        |
+| **externalCode**      | String(255)                                              | `=` `!=` `~` `~=` `=~`     | Внешний код Тех. карты<br>`+Обязательное при ответе`                                                                 |
+| **group**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                             |
+| **id**                | UUID                                                     | `=` `!=`                   | ID Тех. карты<br>`+Обязательное при ответе` `+Только для чтения`                                                     |
+| **materials**         | MetaArray                                                |                            | Коллекция метаданных материалов Тех. карты<br>`+Обязательное при ответе` `+Expand`                                   |
+| **meta**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Метаданные Тех. карты<br>`+Обязательное при ответе`                                                                  |
+| **name**              | String(255)                                              | `=` `!=` `~` `~=` `=~`     | Наименование Тех. карты<br>`+Обязательное при ответе` `+Необходимо при создании`                                     |
+| **owner**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                         |
+| **parent**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Метаданные группы Тех. карты<br>`+Обязательное при ответе` `+Expand`                                                 |
+| **pathName**          | String                                                   |                            | Наименование группы, в которую входит Тех. карта<br>`+Обязательное при ответе` `+Только для чтения`                  |
+| **processingProcess** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|                            | Метаданные Тех. процесса<br>`+Обязательное при ответе` `+Expand`                                                     |
+| **products**          | MetaArray                                                |                            | Коллекция метаданных готовых продуктов Тех. карты<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` |
+| **shared**            | Boolean                                                  | `=` `!=`                   | Общий доступ<br>`+Обязательное при ответе`                                                                           |
+| **updated**           | DateTime                                                 | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления Тех. карты<br>`+Обязательное при ответе` `+Только для чтения`                           |
 
 #### Материалы Тех. карты
 Материалы Тех. карты - это список товаров/модификаций, используемых для производства готовых продуктов.
@@ -142,6 +143,14 @@ curl -X GET
       "name": "Тех. карточка",
       "externalCode": "4geOQkq5h7d5w1-tUATmt3",
       "pathName": "",
+      "processingProcess": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+          "type": "processingprocess",
+          "mediaType": "application/json"
+        }
+      },
       "cost": 1000,
       "materials": {
         "meta": {
@@ -202,6 +211,14 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
+      "processingProcess": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+          "type": "processingprocess",
+          "mediaType": "application/json"
+        }
+      },
       "cost": 2000,
       "materials": {
         "meta": {
@@ -259,6 +276,14 @@ curl -X GET
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingplanfolder/bfb6c5dc-acbb-11e6-5bed-427b00000001",
           "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingplanfolder/metadata",
           "type": "processingplanfolder",
+          "mediaType": "application/json"
+        }
+      },
+      "processingProcess": {
+        "meta": {
+          "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+          "type": "processingprocess",
           "mediaType": "application/json"
         }
       },
@@ -366,6 +391,14 @@ curl -X GET
   "name": "123sdf",
   "externalCode": "llZWq551h90XDJuYADvry0",
   "pathName": "",
+  "processingProcess": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf",
+      "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+      "type": "processingprocess",
+      "mediaType": "application/json"
+    }
+  },
   "cost": 1000,
   "materials": {
     "meta": {
@@ -395,6 +428,8 @@ curl -X GET
 В теле запроса нужно передать массив, содержащий JSON представления Тех. карт, которые вы хотите создать или обновить.
 Обновляемые Тех. карты должны содержать идентификатор в виде метаданных.
 
+Особенности: привязка другого техпроцесса приведет к удалению метериалов, привязанных к старому техпроцессу
+
 > Пример создания и обновления нескольких Тех. карт
 
 ```shell
@@ -406,6 +441,14 @@ curl -X GET
             {
               "name": "Example",
               "cost": 1000,
+              "processingProcess": {
+                "meta": {
+                  "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/25980515-923e-11ed-c0a8-30040000002d",
+                  "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+                  "type": "processingprocess",
+                  "mediaType": "application/json"
+                }
+              },
               "materials": [
                 {
                   "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
@@ -419,7 +462,7 @@ curl -X GET
                   },
                   "processingProcessPosition": {
                     "meta": {
-                      "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf/positions/d8da461d-bbf9-11ed-ac12-0010000000c0",
+                      "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/25980515-923e-11ed-c0a8-30040000002d/positions/d8da461d-bbf9-11ed-ac12-0010000000c1",
 						          "type": "processingprocessposition",
 						          "mediaType": "application/json"
                     }
@@ -497,9 +540,17 @@ curl -X GET
       }
     },
     "updated": "2016-11-22 17:07:57",
-    "name": "123sdf",
+    "name": "Example",
     "externalCode": "llZWq551h90XDJuYADvry0",
     "pathName": "",
+    "processingProcess": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/25980515-923e-11ed-c0a8-30040000002d",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+        "type": "processingprocess",
+        "mediaType": "application/json"
+      }
+    },
     "cost": 1000,
     "materials": {
       "meta": {
@@ -552,6 +603,14 @@ curl -X GET
     "name": "Тех. карта",
     "externalCode": "4geOQkq5h7d5w1-tUATmt3",
     "pathName": "",
+    "processingProcess": {
+      "meta": {
+        "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+        "type": "processingprocess",
+        "mediaType": "application/json"
+      }
+    },
     "cost": 100000,
     "materials": {
       "meta": {
@@ -691,6 +750,14 @@ curl -X GET
   "name": "Тех. карточка",
   "externalCode": "4geOQkq5h7d5w1-tUATmt3",
   "pathName": "",
+  "processingProcess": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf",
+      "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+      "type": "processingprocess",
+      "mediaType": "application/json"
+    }
+  },
   "cost": 1000,
   "materials": {
     "meta": {
@@ -720,6 +787,8 @@ curl -X GET
 Запрос на обновление Тех. карты с указанным id.
 В теле запроса можно указать только те поля, которые необходимо изменить у Тех. карты, кроме тех, что
 помечены `Только для чтения` в описании [атрибутов Тех. карты](../documents/#dokumenty-teh-karta).
+
+Особенности: привязка другого техпроцесса приведет к удалению метериалов, привязанных к старому техпроцессу
 
 **Параметры**
 
@@ -774,6 +843,14 @@ curl -X GET
   "name": "Тех. карта",
   "externalCode": "4geOQkq5h7d5w1-tUATmt3",
   "pathName": "",
+  "processingProcess": {
+    "meta": {
+      "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf",
+      "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+      "type": "processingprocess",
+      "mediaType": "application/json"
+    }
+  },
   "cost": 100000,
   "materials": {
     "meta": {
