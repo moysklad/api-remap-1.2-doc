@@ -459,7 +459,7 @@
 
 ## 17-08-2021
 ### Добавлено
-- Возможность работы с модификациями для материалов и продуктов [Тех. карт](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-teh-karta). 
+- Возможность работы с модификациями для материалов и продуктов [Тех. карт](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-teh-karta). 
 Для этого введено новое поле **assortment**.
 - Новая ошибка [3028](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
 
