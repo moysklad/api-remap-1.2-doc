@@ -569,7 +569,7 @@
 
 ### 17-08-2021
 #### Добавлено
-- Возможность работы с модификациями для материалов и продуктов [Тех. карт](../documents/#dokumenty-teh-karta).
+- Возможность работы с модификациями для материалов и продуктов [Тех. карт](../dictionaries/#suschnosti-teh-karta).
 Для этого введено новое поле **assortment**.
 - Новая ошибка [3028](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
 
