@@ -138,8 +138,8 @@
 Список последних изменений в API Remap 1.2
 
 ### 30-03-2023
-#### Добавлена
-- Добавлен `29009` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-komplektow).
+#### Добавлено
+- Добавлен `29009` код [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-komplektow).
 
 ### 19-02-2023
 #### Изменено
