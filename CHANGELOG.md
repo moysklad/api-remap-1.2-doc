@@ -1,7 +1,7 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-## 24-03-2023
+## 04-04-2023
 ### Изменено
 - При создании Тех. карты поле *materials* стало необязательным.
 - Тех. карту можно привязывать к определенному Тех. процессу
@@ -9,6 +9,10 @@
 - Дополнены примеры в документации с материалами Тех. карты.
 - Добавлен `25060` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
 - Документация по Тех. картам перенесана из вкладки документов в [сущности](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-teh-karta)
+
+## 30-03-2023
+### Добавлено
+- Добавлен `29009` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-komplektow).
 
 ## 19-02-2023
 ### Изменено
