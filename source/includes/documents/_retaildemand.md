@@ -399,7 +399,6 @@ curl -X GET
 произойдет ошибка.
 Обязательные поля при создании новой Розничной продажи:
 
-+ **name** - Номер продажи
 + **retailShift** - Сссылка на Розничную смену, в рамках которой происходит продажа
 
 > Пример создания новой Розничной продажи с телом запроса, содержащим только необходимые поля.
@@ -416,8 +415,7 @@ curl -X GET
                 "type": "retailshift",
                 "mediaType": "application/json"
               }
-            },
-            "name": "666dem"
+            }
           }'  
 ```
 
@@ -434,7 +432,7 @@ curl -X GET
   "id": "fb5cbcba-0c4e-11e6-9464-e4de00000000",
   "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
   "updated": "2016-04-27 11:06:44",
-  "name": "666dem",
+  "name": "00001",
   "externalCode": "zyOXI-sjg98Ns7iwAA2Pe2",
   "owner": {
     "meta": {
@@ -489,19 +487,6 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "attributes": [
-    {
-      "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
-        "type": "attributemetadata",
-        "mediaType": "application/json"
-      },
-      "id": "bb08dccf-0bd2-11e6-9464-e4de000000ae",
-      "name": "AttributeName1",
-      "type": "string",
-      "value": "AttributeValue1"
-    }
-  ],
   "created": "2016-08-25 19:55:00",
   "printed": true,
   "published": true,
