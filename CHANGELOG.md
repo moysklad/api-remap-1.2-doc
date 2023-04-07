@@ -5,6 +5,7 @@
 ### Добавлена
 - Возможность работы с затратами для Тех. карт [Тех. карт](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-teh-karta).
 - Дополнены примеры в документации с затратами Тех. карты.
+- Добавлен `25061` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
 
 ## 04-04-2023
 ### Изменено

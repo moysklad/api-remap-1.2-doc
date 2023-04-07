@@ -13,7 +13,7 @@
 | **externalCode**      | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Внешний код Тех. карты<br>`+Обязательное при ответе`                                                                 |
 | **group**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                             |
 | **id**                | UUID                                                      | `=` `!=`                   | ID Тех. карты<br>`+Обязательное при ответе` `+Только для чтения`                                                     |
-| **stages**            | MetaArray                                                 |                            | Коллекция метаданных затрат Тех. карты<br>`+Обязательное при ответе` `+Expand`                                       |
+| **stages**            | MetaArray                                                 |                            | Коллекция метаданных этапов Тех. карты<br>`+Обязательное при ответе` `+Expand`                               |
 | **materials**         | MetaArray                                                 |                            | Коллекция метаданных материалов Тех. карты<br>`+Обязательное при ответе` `+Expand`                                   |
 | **meta**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Метаданные Тех. карты<br>`+Обязательное при ответе`                                                                  |
 | **name**              | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Наименование Тех. карты<br>`+Обязательное при ответе` `+Необходимо при создании`                                     |
@@ -25,9 +25,8 @@
 | **shared**            | Boolean                                                   | `=` `!=`                   | Общий доступ<br>`+Обязательное при ответе`                                                                           |
 | **updated**           | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления Тех. карты<br>`+Обязательное при ответе` `+Только для чтения`                           |
 
-#### Затраты Тех. карты
-Затраты Тех. карты - это список затрат на этапах производства.
-Объект затрат Тех. карты содержит следующие поля:
+#### Этапы Тех. карты
+Объект этап Тех. карты содержит следующие поля:
 
 | Название                       | Тип                                                       | Описание                                                                                                                                                                                      |
 |--------------------------------| :-------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -36,7 +35,9 @@
 | **cost**                       | Int                                                       | Стоимость производства, на определенном этапе `+Обязательное при ответе`                                                                                                                      |
 | **processingProcessPosititon** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные позиции техпроцесса<br>`+Обязательное при ответе`                                                                                                                                  |
 
-Особенности: Количество затрат Тех. карты строго соответствует количеству этапов привязанного техпроцесса.
+Особенности: 
+Этапов Тех. карты строго соответствует этапам в позициях привязанного техпроцесса.
+Нельзя передавать одновременно стоимость производства для техкарты целиком с отдельным указанием стоимости производства для этапа. 
 
 #### Материалы Тех. карты
 Материалы Тех. карты - это список товаров/модификаций, используемых для производства готовых продуктов.
@@ -161,7 +162,7 @@ curl -X GET
       "processingProcess": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf",
-          "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
           "type": "processingprocess",
           "mediaType": "application/json"
         }
@@ -169,7 +170,7 @@ curl -X GET
       "cost": 1000,
       "stages": {
         "meta": {
-          "href": "http://localhost/api/remap/1.2/entity/processingplan/1a18770e-ad9a-11e6-5bed-427b00000064/stages",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/1a18770e-ad9a-11e6-5bed-427b00000064/stages",
           "type": "processingplanstages",
           "mediaType": "application/json",
           "size": 1,
@@ -240,7 +241,7 @@ curl -X GET
       "processingProcess": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf",
-          "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
           "type": "processingprocess",
           "mediaType": "application/json"
         }
@@ -248,7 +249,7 @@ curl -X GET
       "cost": 2000,
       "stages": {
         "meta": {
-          "href": "http://localhost/api/remap/1.2/entity/processingplan/6b4ffbf7-ac12-11e6-5bed-427b00000091/stages",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/6b4ffbf7-ac12-11e6-5bed-427b00000091/stages",
           "type": "processingplanstages",
           "mediaType": "application/json",
           "size": 1,
@@ -319,7 +320,7 @@ curl -X GET
       "processingProcess": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf",
-          "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
           "type": "processingprocess",
           "mediaType": "application/json"
         }
@@ -327,7 +328,7 @@ curl -X GET
       "cost": 10000,
       "stages": {
         "meta": {
-          "href": "http://localhost/api/remap/1.2/entity/processingplan/c38e50b0-acdc-11e6-5bed-427b0000009e/stages",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/c38e50b0-acdc-11e6-5bed-427b0000009e/stages",
           "type": "processingplanstages",
           "mediaType": "application/json",
           "size": 2,
@@ -442,7 +443,7 @@ curl -X GET
   "processingProcess": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf",
-      "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
       "type": "processingprocess",
       "mediaType": "application/json"
     }
@@ -450,7 +451,7 @@ curl -X GET
   "cost": 1000,
   "stages": {
     "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/processingplan/120a488b-b0bd-11e6-5bed-427b00000000/stages",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/120a488b-b0bd-11e6-5bed-427b00000000/stages",
       "type": "processingplanstages",
       "mediaType": "application/json",
       "size": 2,
@@ -502,7 +503,7 @@ curl -X GET
               "processingProcess": {
                 "meta": {
                   "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/25980515-923e-11ed-c0a8-30040000002d",
-                  "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
                   "type": "processingprocess",
                   "mediaType": "application/json"
                 }
@@ -605,7 +606,7 @@ curl -X GET
     "processingProcess": {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/25980515-923e-11ed-c0a8-30040000002d",
-        "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
         "type": "processingprocess",
         "mediaType": "application/json"
       }
@@ -613,7 +614,7 @@ curl -X GET
     "cost": 1000,
     "stages": {
       "meta": {
-        "href": "http://localhost/api/remap/1.2/entity/processingplan/120a488b-b0bd-11e6-5bed-427b00000000/stages",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/120a488b-b0bd-11e6-5bed-427b00000000/stages",
         "type": "processingplanstages",
         "mediaType": "application/json",
         "size": 1,
@@ -676,7 +677,7 @@ curl -X GET
     "processingProcess": {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf",
-        "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
         "type": "processingprocess",
         "mediaType": "application/json"
       }
@@ -684,7 +685,7 @@ curl -X GET
     "cost": 100000,
     "stages": {
       "meta": {
-        "href": "http://localhost/api/remap/1.2/entity/processingplan/1a18770e-ad9a-11e6-5bed-427b00000064/stages",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/1a18770e-ad9a-11e6-5bed-427b00000064/stages",
         "type": "processingplanstages",
         "mediaType": "application/json",
         "size": 1,
@@ -834,7 +835,7 @@ curl -X GET
   "processingProcess": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf",
-      "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
       "type": "processingprocess",
       "mediaType": "application/json"
     }
@@ -842,7 +843,7 @@ curl -X GET
   "cost": 1000,
   "stages": {
     "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/processingplan/1a18770e-ad9a-11e6-5bed-427b00000064/stages",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/1a18770e-ad9a-11e6-5bed-427b00000064/stages",
       "type": "processingplanstages",
       "mediaType": "application/json",
       "size": 1,
@@ -938,7 +939,7 @@ curl -X GET
   "processingProcess": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf",
-      "metadataHref": "http://localhost/api/remap/1.2/entity/processingprocess/metadata",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
       "type": "processingprocess",
       "mediaType": "application/json"
     }
@@ -946,7 +947,7 @@ curl -X GET
   "cost": 100000,
   "stages": {
     "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/processingplan/1a18770e-ad9a-11e6-5bed-427b00000064/stages",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/1a18770e-ad9a-11e6-5bed-427b00000064/stages",
       "type": "processingplanstages",
       "mediaType": "application/json",
       "size": 1,
@@ -977,18 +978,19 @@ curl -X GET
 }
 ```
 
-### Затраты Тех. карты
-Отдельный ресурс для управления затратами Тех. карты. С его помощью вы можете управлять затратами большого документа, количество затрат в котором превышает лимит на количество затрат, 
+### Этапы Тех. карты
+Отдельный ресурс для управления этапами Тех. карты. С его помощью вы можете управлять этапами большого документа, количество этапов в котором превышает лимит на количество позиций, 
 сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
+Произвольное создание и удаление этапов Тех. карт не поддерживается, этапы Тех. карт строго соответствует этапам в позициях связанного Тех. процесса.
 
-### Получить затраты Тех. карты
-Запрос на получение списка всех затрат данной Тех. карты.
+### Получить этапы Тех. карты
+Запрос на получение списка всех этапов данной Тех. карты.
 
-| Название    | Тип                                                       | Описание                                                         |
-| ----------- | :-------------------------------------------------------- | :--------------------------------------------------------------- |
-| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче,                                             |
-| **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.                     |
-| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой затраты Тех. карты. |
+| Название    | Тип                                                       | Описание                                                     |
+| ----------- | :-------------------------------------------------------- |:-------------------------------------------------------------|
+| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче,                                         |
+| **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.                 |
+| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой этапы Тех. карты. |
 
 **Параметры**
 
@@ -998,7 +1000,7 @@ curl -X GET
 | **limit**  | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
 | **offset** | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
 
-> Получить затраты Тех. карты
+> Получить этапы Тех. карты
 
 ```shell
 curl -X GET
@@ -1007,12 +1009,12 @@ curl -X GET
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление списка затрат отдельной Тех. карты.
+Успешный запрос. Результат - JSON представление списка этапов отдельной Тех. карты.
 
 ```json
 {
   "meta": {
-    "href": "http://localhost/api/remap/1.2/entity/processingplan/908f9690-bcac-11ed-ac1c-000b0000001e/stages",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/908f9690-bcac-11ed-ac1c-000b0000001e/stages",
     "type": "processingplanstages",
     "mediaType": "application/json",
     "size": 1,
@@ -1022,7 +1024,7 @@ curl -X GET
   "rows": [
     {
       "meta": {
-        "href": "http://localhost/api/remap/1.2/entity/processingplan/908f9690-bcac-11ed-ac1c-000b0000001e/stages/4ca1e0fe-c161-11ed-ac1c-000b00000006",
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/908f9690-bcac-11ed-ac1c-000b0000001e/stages/4ca1e0fe-c161-11ed-ac1c-000b00000006",
         "type": "processingplanstages",
         "mediaType": "application/json"
       },
@@ -1030,7 +1032,7 @@ curl -X GET
       "accountId": "2f09c84d-bbd0-11ed-ac1c-000f00000001",
       "processingProcessPosition": {
         "meta": {
-          "href": "http://localhost/api/remap/1.2/entity/processingprocess/32dd4604-bbd0-11ed-ac1c-000b000000bf/positions/32dd4bac-bbd0-11ed-ac1c-000b000000c0",
+          "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/32dd4604-bbd0-11ed-ac1c-000b000000bf/positions/32dd4bac-bbd0-11ed-ac1c-000b000000c0",
           "type": "processingprocessposition",
           "mediaType": "application/json"
         }
@@ -1041,151 +1043,16 @@ curl -X GET
 }
 ```
 
-### Создать затраты Тех. карты
-Запрос на создание новой затраты в Тех. карте.
-При создании необходимо указывать позицию Тех. процесса, к которой будет привязана создаваемая затрата. Тех. процесс указанной позиции, должен быть привязан к Тех. карте в которой создается затрата, или будет получена ошибка.
-
-Обязательные для создания поля:
-
-+ **processingProcessPosition** - Ссылка на позицию в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+### Получить отдельный этап Тех. карты
 
 **Параметры**
 
-| Параметр | Описание                                                                           |
-| :------- | :--------------------------------------------------------------------------------- |
-| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Тех. карты. |
+| Параметр       | Описание                                                                                 |
+| :------------- |:-----------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Тех. карты.       |
+| **stagesID**   | `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id этапа Тех. карты. |
 
-> Пример создания одной затраты в Тех. карте.
-
-```shell
-  curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/stages"
-    -H "Authorization: Basic <Credentials>"
-    -H "Content-Type: application/json"
-      -d '[
-            {
-              "processingProcessPosition": {
-                "meta": {
-                  "href": "http://localhost/api/remap/1.2/entity/processingprocess/32dd4604-bbd0-11ed-ac1c-000b000000bf/positions/32dd4bac-bbd0-11ed-ac1c-000b000000c0",
-                  "type": "processingprocessposition",
-                  "mediaType": "application/json"
-                }
-              },
-              "cost": 1100.0
-            }
-          ]'  
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление созданной затраты отдельной Тех. карты.
-
-```json
-[
-  {
-    "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/processingplan/908f9690-bcac-11ed-ac1c-000b0000001e/stages/4ca1e0fe-c161-11ed-ac1c-000b00000006",
-      "type": "processingplanstages",
-      "mediaType": "application/json"
-    },
-    "id": "4ca1e0fe-c161-11ed-ac1c-000b00000006",
-    "accountId": "2f09c84d-bbd0-11ed-ac1c-000f00000001",
-    "processingProcessPosition": {
-      "meta": {
-        "href": "http://localhost/api/remap/1.2/entity/processingprocess/32dd4604-bbd0-11ed-ac1c-000b000000bf/positions/32dd4bac-bbd0-11ed-ac1c-000b000000c0",
-        "type": "processingprocessposition",
-        "mediaType": "application/json"
-      }
-    },
-    "cost": 1100.0
-  }
-]
-```
-
-> Пример создания сразу нескольких затрат в Тех. карте с привязкой к позициям Тех. процесса
-
-```shell
-  curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/stages"
-    -H "Authorization: Basic <Credentials>"
-    -H "Content-Type: application/json"
-      -d '[
-            {
-              "processingProcessPosition": {
-                "meta": {
-                  "href": "http://localhost/api/remap/1.2/entity/processingprocess/32dd4604-bbd0-11ed-ac1c-000b000000bf/positions/32dd4bac-bbd0-11ed-ac1c-000b000000c0",
-                  "type": "processingprocessposition",
-                  "mediaType": "application/json"
-                }
-              },
-              "cost": 1100.0
-            },
-            {
-              "processingProcessPosition": {
-                "meta": {
-                  "href": "http://localhost/api/remap/1.2/entity/processingprocess/32dd4604-bbd0-11ed-ac1c-000b000000bf/positions/4ca1e0fe-c161-11ed-ac1c-000b00000006",
-                  "type": "processingprocessposition",
-                  "mediaType": "application/json"
-                }
-              },
-              "cost": 900.0
-            }
-          ]'  
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление списка созданных затрат отдельной Тех. карты.
-
-```json
-[
-  {
-    "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/processingplan/908f9690-bcac-11ed-ac1c-000b0000001e/stages/4ca1e0fe-c161-11ed-ac1c-000b00000006",
-      "type": "processingplanstages",
-      "mediaType": "application/json"
-    },
-    "id": "4ca1e0fe-c161-11ed-ac1c-000b00000006",
-    "accountId": "2f09c84d-bbd0-11ed-ac1c-000f00000001",
-    "processingProcessPosition": {
-      "meta": {
-        "href": "http://localhost/api/remap/1.2/entity/processingprocess/32dd4604-bbd0-11ed-ac1c-000b000000bf/positions/32dd4bac-bbd0-11ed-ac1c-000b000000c0",
-        "type": "processingprocessposition",
-        "mediaType": "application/json"
-      }
-    },
-    "cost": 1100.0
-  },
-  {
-    "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/processingplan/908f9690-bcac-11ed-ac1c-000b0000001e/stages/4ca1e0fe-c161-11ed-ac1c-000b00000009",
-      "type": "processingplanstages",
-      "mediaType": "application/json"
-    },
-    "id": "4ca1e0fe-c161-11ed-ac1c-000b00000009",
-    "accountId": "2f09c84d-bbd0-11ed-ac1c-000f00000001",
-    "processingProcessPosition": {
-      "meta": {
-        "href": "http://localhost/api/remap/1.2/entity/processingprocess/32dd4604-bbd0-11ed-ac1c-000b000000bf/positions/4ca1e0fe-c161-11ed-ac1c-000b00000006",
-        "type": "processingprocessposition",
-        "mediaType": "application/json"
-      }
-    },
-    "cost": 900.0
-  }
-]
-```
-
-### Затрата Тех. карты
-
-### Получить затрату
-
-**Параметры**
-
-| Параметр       | Описание                                                                                   |
-| :------------- | :----------------------------------------------------------------------------------------- |
-| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Тех. карты.         |
-| **stagesID**   | `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id затрат Тех. карты.  |
-
-> Запрос на получение отдельных затрат Тех. карты с указанным id.
+> Запрос на получение отдельного этапа Тех. карты с указанным id.
 
 ```shell
 curl -X GET
@@ -1194,12 +1061,12 @@ curl -X GET
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельных затрат Тех. карты.
+Успешный запрос. Результат - JSON представление отдельного этапа Тех. карты.
 
 ```json
 {
   "meta": {
-    "href": "http://localhost/api/remap/1.2/entity/processingplan/908f9690-bcac-11ed-ac1c-000b0000001e/stages/9560e3e3-9609-11e6-8af5-581e00000008",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/908f9690-bcac-11ed-ac1c-000b0000001e/stages/9560e3e3-9609-11e6-8af5-581e00000008",
     "type": "processingplanstages",
     "mediaType": "application/json"
   },
@@ -1207,7 +1074,7 @@ curl -X GET
   "accountId": "2f09c84d-bbd0-11ed-ac1c-000f00000001",
   "processingProcessPosition": {
     "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/processingprocess/32dd4604-bbd0-11ed-ac1c-000b000000bf/positions/32dd4bac-bbd0-11ed-ac1c-000b000000c0",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/32dd4604-bbd0-11ed-ac1c-000b000000bf/positions/32dd4bac-bbd0-11ed-ac1c-000b000000c0",
       "type": "processingprocessposition",
       "mediaType": "application/json"
     }
@@ -1216,18 +1083,17 @@ curl -X GET
 }
 ```
 
-### Изменить затрату
-Запрос на обновление отдельных затрат Тех. карты. Для обновления затраты нет каких-либо
-обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
+### Изменить отдельный этап Тех. карты
+Для обновления этапа техкарты нет каких-либо обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
 
 **Параметры**
 
-| Параметр       | Описание                                                                                   |
-| :------------- | :----------------------------------------------------------------------------------------- |
-| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Тех. карты.         |
-| **stagesID**   | `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id затрат Тех. карты.  |
+| Параметр       | Описание                                                                                 |
+| :------------- |:-----------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Тех. карты.       |
+| **stagesID**   | `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id этапа Тех. карты. |
 
-> Пример запроса на обновление отдельных затрат в Тех. карте.
+> Пример запроса на обновление отдельного этапа в Тех. карте.
 
 ```shell
   curl -X PUT
@@ -1235,38 +1101,32 @@ curl -X GET
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
-            "cost": 5
+            "cost": 5.5
           }'  
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление обновленных затрат Тех. карты.
+Успешный запрос. Результат - JSON представление обновленного этапа Тех. карты.
 
 ```json
-[
-  {
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/908f9690-bcac-11ed-ac1c-000b0000001e/stages/9560e3e3-9609-11e6-8af5-581e00000008",
+    "type": "processingplanstages",
+    "mediaType": "application/json"
+  },
+  "id": "9560e3e3-9609-11e6-8af5-581e00000008",
+  "accountId": "2f09c84d-bbd0-11ed-ac1c-000f00000001",
+  "processingProcessPosition": {
     "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/processingplan/908f9690-bcac-11ed-ac1c-000b0000001e/stages/9560e3e3-9609-11e6-8af5-581e00000008",
-      "type": "processingplanstages",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingprocess/32dd4604-bbd0-11ed-ac1c-000b000000bf/positions/32dd4bac-bbd0-11ed-ac1c-000b000000c0",
+      "type": "processingprocessposition",
       "mediaType": "application/json"
-    },
-    "id": "9560e3e3-9609-11e6-8af5-581e00000008",
-    "accountId": "2f09c84d-bbd0-11ed-ac1c-000f00000001",
-    "processingProcessPosition": {
-      "meta": {
-        "href": "http://localhost/api/remap/1.2/entity/processingprocess/32dd4604-bbd0-11ed-ac1c-000b000000bf/positions/32dd4bac-bbd0-11ed-ac1c-000b000000c0",
-        "type": "processingprocessposition",
-        "mediaType": "application/json"
-      }
-    },
-    "cost": 5.0
-  }
-]
+    }
+  },
+  "cost": 5.5
+}
 ```
-
-### Удалить затрату Тех. карты.
-
-Удаление затрат Тех. карт не поддерживается. Количество затрат Тех. карт строго соответствует количеству позиций связанного Тех. процесса.
 
 ### Материалы Тех. карты 
 Отдельный ресурс для управления материалами Тех. карты. С его помощью вы можете управлять материалами большого документа, количество материалов в котором превышает лимит на количество материалов, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
