@@ -8,6 +8,6 @@ gem 'middleman-autoprefixer', '~> 2.10.0'
 gem 'middleman-sprockets', '~> 4.1.0'
 gem 'rouge', '~> 2.0.5'
 gem 'redcarpet', '~> 3.4.0'
-gem 'nokogiri', '~> 1.10.10'
+gem 'nokogiri', '~> 1.14.3'
 gem 'mini_racer', :platforms => :ruby
 gem 'translit'
