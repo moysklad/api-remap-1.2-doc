@@ -139,7 +139,7 @@
 
 ### 10-04-2023
 #### Добавлена
-- Возможность работы с затратами для Тех. карт [Тех. карт](../documents/#dokumenty-teh-karta).
+- Возможность работы с затратами для Тех. карт [Тех. карт](../dictionaries/#suschnosti-teh-karta).
 - Дополнены примеры в документации с затратами Тех. карты.
 - Добавлен `25061` код [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
 
