@@ -1,6 +1,13 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 27-04-2023
+### Добавлена
+- Возможность создания и удаления продуктов и материалов в [Тех. операции](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-teh-operaciq-sozdat-teh-operaciu).
+- Новый `25003` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
+### Удалены
+- Ставшие неактуальными `25001` и `25002` коды [ошибок](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
+
 ## 10-04-2023
 ### Добавлена
 - Возможность работы с затратами для Тех. карт [Тех. карт](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-teh-karta).

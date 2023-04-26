@@ -5,7 +5,7 @@
 #### Атрибуты сущности
 
 | Название                | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                      |
-| ----------------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------- |
+| ----------------------- |:----------------------------------------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------ |:----------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**           | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                          |
 | **applicable**          | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе`                                                                                            |
 | **attributes**          | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)                       |
@@ -17,7 +17,7 @@
 | **files**               | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand` |
 | **group**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                      |
 | **id**                  | UUID                                                      | `=` `!=`                                                                                                                                          | ID Тех. операции<br>`+Обязательное при ответе` `+Только для чтения`                                                                           |
-| **materials**           | Array(Object)                                             |                                                                                                                                                   | Список Метаданных материалов Тех. операции<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                 |
+| **materials**           | Array(Object)                                             |                                                                                                                                                   | Список Метаданных материалов Тех. операции<br>`+Обязательное при ответе` `+Expand`                                                            |
 | **materialsStore**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные склада для материалов<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                           |
 | **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Тех. операции<br>`+Обязательное при ответе` `+Только для чтения`                                                                   |
 | **moment**              | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе`                                                                                                  |
@@ -26,14 +26,14 @@
 | **organizationAccount** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand`                                                                                                          |
 | **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                                                  |
 | **printed**             | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                      |
-| **processingPlan**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Тех. операции<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                   |
-| **processingSum**       | Int                                                       |                                                                                                                                                   | Затраты на производство<br>`+Обязательное при ответе` `+Необходимо при создании`                                                              |
-| **products**            | Array(Object)                                             |                                                                                                                                                   | Список Метаданных готовых продуктов Тех. операции<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                          |
+| **processingPlan**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Тех. операции<br>`+Обязательное при ответе` `+Expand`                                                                              |
+| **processingSum**       | Int                                                       |                                                                                                                                                   | Затраты на производство<br>`+Обязательное при ответе`                                                                                         |
+| **products**            | Array(Object)                                             |                                                                                                                                                   | Список Метаданных готовых продуктов Тех. операции<br>`+Обязательное при ответе` `+Expand`                                                     |
 | **productsStore**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные склада для продукции<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                            |
 | **project**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand`                                                                                                               |
 | **published**           | Boolean                                                   | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                    |
-| **quantity**            | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Объем производства<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                   |
-| **shared**              | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе` `+Только для чтения`                                                                               |
+| **quantity**            | Double                                                    | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Объем производства<br>`+Обязательное при ответе`                                                                                              |
+| **shared**              | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                    |
 | **state**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса Тех. операции<br>`+Expand`                                                                                                 |
 | **syncId**              | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения<br>`+Только для чтения`                                                           |
 | **updated**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Тех. операции<br>`+Обязательное при ответе` `+Только для чтения`                                                 |
@@ -45,7 +45,7 @@
 | **processingOrder**            | Ссылка на заказ на производство в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
 
 #### Материалы Тех. операции
-Материалы Тех. операции - это список товаров/модификаций, используемых для производства готовых продуктов согласно тех. карте.
+Материалы Тех. операции - это список товаров/модификаций, используемых для производства готовых продуктов.
 Объект материала Тех. операции содержит следующие поля:
 
 | Название       | Тип                                                       | Описание                                                                                                        |
@@ -56,7 +56,7 @@
 | **quantity**   | Int                                                       | Количество товаров данного вида в позиции<br>`+Обязательное при ответе`                                         |
 
 #### Продукты Тех. операции
-Продукты Тех. операции - это список товаров/модификаций, получаемых при производстве согласно тех. карте.
+Продукты Тех. операции - это список товаров/модификаций, получаемых при производстве.
 Объект продукта Тех. операции содержит следующие поля:
 
 | Название       | Тип                                                       | Описание                                                                                                        |
@@ -71,8 +71,12 @@
 вы можете отправлять запросы на создание отдельной Тех. операции с включенными в тело запроса
 массивами материалов и продуктов Тех. операции.
 Также, при работе в составе отдельной Тех. операции, можно отправлять запросы на обновление списка материалов и продуктов
-с включенными в тело запроса массивами материалов и продуктов Тех. операции. Состав материалов и продуктов Тех. операции не может быть изменен.
-Состав материалов и продуктов должен соответствовать тех. карте.
+с включенными в тело запроса массивами материалов и продуктов Тех. операции. 
+
+#### Особенности поведения Тех. операции
+Поля **quantity**, **processingSum**, **products**, **materials** тесно связаны с тех. картой. 
+Тех. операция должна состоять как минимум из одной позиции в готовой продукции. Для этого необходимо привязать техкарту и готовая продукция будет проставлена автоматически с тех.карты, 
+либо самостоятельно передать готовую продукцию в поле **products**.
 
 
 ### Получить список Тех. операций 
@@ -732,19 +736,34 @@ curl -X GET
 ```
 
 ### Создать Тех. операцию
-Запрос на создание новой Тех. операции.
-Обязательные для создания поля:
+
+#### Особенности поведения при создании тех. операции с привязкой тех. карты
+Если не передаются в теле запроса поля **products**, **materials**, **processingSum**, то они будут созданы на основании тех. карты.
+Если не передается поле **quantity**, то будет выставлено дефолтное значение равное 1. При ином значении количество готовой продукции и материалов тех. операции,
+а также затраты на производство будут пересчитаны кратно передаваемому значению.
+Иногда бывает необходимо создать тех.операцию с привязкой тех. карты, но отличной продукцией или материалами.
+Для этого нужно передать заполненные поля **products**, **materials**. Если необходимо указать пустые материалы, но они присутствуют в тех. карте,
+то следует явно передать пустое значение для поля **materials**. В противном случае при не указанном поле оно будет взято с привязываемой тех. карты.
+
+Обязательные для создания поля с привязкой тех. карты:
 
 + **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **processingSum** - Затраты на производство
-+ **quantity** - Объем производства
-+ **processingPlan** - Ссылка на Тех. операцию в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **productsStore** - Ссылка на склад для продукции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **materialsStore** - Ссылка на склад для материалов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **materials** - Список материалов Тех. операции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **products** - Список готовых продуктов Тех. операции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **processingPlan** - Ссылка на Тех. операцию в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
-> Пример создания новой Тех.операции с телом запроса, содержащим только необходимые поля.
+#### Особенности поведения при создании тех. операции без тех. карты
+В этом случае в теле запроса обязательно необходимо передать поля **products** и **processingSum**. Если не передается поле **quantity**, то будет выставлено дефолтное значение равное 1.
+
+Обязательные для создания поля без привязки тех. карты:
+
++ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **productsStore** - Ссылка на склад для продукции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **materialsStore** - Ссылка на склад для материалов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **products** - Список готовых продуктов Тех. операции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **processingSum** - Затраты на производство
+
+> Пример создания новой Тех.операции с привязкой тех. карты с телом запроса, содержащим только необходимые поля.
 
 ```shell
   curl -X POST
@@ -760,8 +779,6 @@ curl -X GET
                 "mediaType": "application/json"
               }
             },
-            "processingSum": 10000,
-            "quantity": 1,
             "processingPlan": {
               "meta": {
                 "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingplan/c38e50b0-acdc-11e6-5bed-427b0000009e",
@@ -785,73 +802,6 @@ curl -X GET
                 "type": "store",
                 "mediaType": "application/json"
               }
-            },
-            "products": {
-              "meta": {
-                "type": "processingpositionresult",
-                "mediaType": "application/json",
-                "size": 2,
-                "limit": 1000,
-                "offset": 0
-              },
-              "rows": [
-                {
-                  "quantity": 3,
-                  "assortment": {
-                    "meta": {
-                      "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/160ff7bb-acdc-11e6-5bed-427b0000008c",
-                      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-                      "type": "product",
-                      "mediaType": "application/json"
-                    }
-                  }
-                },
-                {
-                  "quantity": 2,
-                  "assortment": {
-                    "meta": {
-                      "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/18fce7bf-acdc-11e6-5bed-427b00000092",
-                      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-                      "type": "product",
-                      "mediaType": "application/json"
-                    }
-                  }
-                }
-              ]
-            },
-            "materials": {
-              "meta": {
-                "type": "processingpositionmaterial",
-                "mediaType": "application/json",
-                "size": 2,
-                "limit": 1000,
-                "offset": 0
-              },
-              "rows": [
-                {
-                  "quantity": 4,
-                  "assortment": {
-                    "meta": {
-                      "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
-                      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-                      "type": "product",
-                      "mediaType": "application/json"
-                    }
-                  }
-                },
-                {
-                  "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
-                  "quantity": 1,
-                  "assortment": {
-                    "meta": {
-                      "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/1267a23f-acdc-11e6-5bed-427b00000086",
-                      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-                      "type": "product",
-                      "mediaType": "application/json"
-                    }
-                  }
-                }
-              ]
             }
           }'  
 ```
@@ -966,7 +916,7 @@ curl -X GET
 }
 ```
 
-> Пример создания новой Тех.операции.
+> Пример создания новой Тех.операции без привязки тех. карты с телом запроса, содержащим только необходимые поля.
 
 ```shell
   curl -X POST
@@ -974,144 +924,217 @@ curl -X GET
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
-            "owner": {
-              "meta": {
-                "href": "http://online.moysklad.ru/api/remap/1.2/entity/employee/d5ad957e-91f1-11e6-5bed-427b0000002a",
-                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-                "type": "employee",
-                "mediaType": "application/json"
-              }
-            },
-            "shared": false,
-            "group": {
-              "meta": {
-                "href": "http://online.moysklad.ru/api/remap/1.2/entity/group/d55da707-91f1-11e6-5bed-427b00000001",
-                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
-                "type": "group",
-                "mediaType": "application/json"
-              }
-            },
-            "updated": "2016-11-21 17:46:29",
-            "name": "Это технологическая операция",
-            "externalCode": "JhQJY8u1isyuqHyn7B6Wx3",
-            "moment": "2016-11-21 17:46:00",
-            "applicable": true,
-            "project": {
-              "meta": {
-                "href": "http://online.moysklad.ru/api/remap/1.2/entity/project/7f3a7d7a-97a1-11e6-5bed-427b0000009c",
-                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
-                "type": "project",
-                "mediaType": "application/json"
-              }
-            },
             "organization": {
               "meta": {
-                "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/a1331985-a1c8-11e6-5bed-427b00000084",
-                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/1337760f-df4e-11ed-ac12-000c000000c4",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
                 "type": "organization",
-                "mediaType": "application/json"
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=1337760f-df4e-11ed-ac12-000c000000c4"
               }
             },
-            "processingSum": 10000,
-            "quantity": 1,
-            "processingPlan": {
-              "meta": {
-                "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingplan/c38e50b0-acdc-11e6-5bed-427b0000009e",
-                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
-                "type": "processingplan",
-                "mediaType": "application/json"
-              }
-            },
+            "processingSum": 50.0,
             "productsStore": {
               "meta": {
-                "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c61ce912-a747-11e6-5bed-427b000000a8",
-                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/133ac518-df4e-11ed-ac12-000c000000c6",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
                 "type": "store",
-                "mediaType": "application/json"
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=133ac518-df4e-11ed-ac12-000c000000c6"
               }
             },
             "materialsStore": {
               "meta": {
-                "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/d5e311c0-91f1-11e6-5bed-427b00000053",
-                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/133ac518-df4e-11ed-ac12-000c000000c6",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
                 "type": "store",
-                "mediaType": "application/json"
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=133ac518-df4e-11ed-ac12-000c000000c6"
               }
             },
-            "processingOrder": {
+            "products": [
+              {
+                "quantity": 10.0,
+                "assortment": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7a707724-df4e-11ed-ac12-000c00000146",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                    "type": "product",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=7a6fd2ab-df4e-11ed-ac12-000c00000144"
+                  }
+                }
+              }
+            ]
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной Тех. операции.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/processing/2a82cb9c-e3ea-11ed-ac12-000b00000009",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processing/metadata",
+    "type": "processing",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#processing/edit?id=2a82cb9c-e3ea-11ed-ac12-000b00000009"
+  },
+  "id": "2a82cb9c-e3ea-11ed-ac12-000b00000009",
+  "accountId": "12ddf6da-df4e-11ed-ac12-000e0000000a",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/2b009031-df4e-11ed-ac12-000c0000012a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=2b009031-df4e-11ed-ac12-000c0000012a"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/12ded31d-df4e-11ed-ac12-000e0000000b",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2023-04-26 07:23:59.238",
+  "name": "00001",
+  "externalCode": "HnOI29bIhLywTHKzatMJX1",
+  "moment": "2023-04-26 07:23:00.000",
+  "applicable": true,
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/1337760f-df4e-11ed-ac12-000c000000c4",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=1337760f-df4e-11ed-ac12-000c000000c4"
+    }
+  },
+  "created": "2023-04-26 07:23:59.302",
+  "printed": false,
+  "published": false,
+  "files": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processing/2a82cb9c-e3ea-11ed-ac12-000b00000009/files",
+      "type": "files",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "processingSum": 50.0,
+  "quantity": 1.0,
+  "productsStore": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/133ac518-df4e-11ed-ac12-000c000000c6",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=133ac518-df4e-11ed-ac12-000c000000c6"
+    }
+  },
+  "materialsStore": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/133ac518-df4e-11ed-ac12-000c000000c6",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=133ac518-df4e-11ed-ac12-000c000000c6"
+    }
+  },
+  "products": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processing/2a82cb9c-e3ea-11ed-ac12-000b00000009/products",
+      "type": "processingpositionresult",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
+
+
+> Пример создания новой Тех.операции с привязкой тех. карты с отличными от тех. карты материалами и продуктами.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/processing"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+            "processingPlan": {
               "meta": {
-                "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingorder/c7201428-afcc-11e6-5bed-427b00000068",
-                "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingorder/metadata",
-                "type": "processingorder",
-                "mediaType": "application/json"
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/033b3bee-e35e-11ed-ac12-000b0000000f",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
+                  "type": "processingplan",
+                  "mediaType": "application/json",
+                  "uuidHref": "https://online.moysklad.ru/app/#processingplan/edit?id=033b3bee-e35e-11ed-ac12-000b0000000f"
+                }
+            },
+            "processingSum": 150.0,
+            "products": [
+              {
+                "quantity": 10.0,
+                "assortment": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7a707724-df4e-11ed-ac12-000c00000146",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                    "type": "product",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=7a6fd2ab-df4e-11ed-ac12-000c00000144"
+                  }
+                }
+              }
+            ],
+            "materials": [
+              {
+                "quantity": 20.0,
+                "assortment": {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7a707724-df4e-11ed-ac12-000c00000146",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                    "type": "product",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=7a6fd2ab-df4e-11ed-ac12-000c00000144"
+                  }
+                }
+              }
+            ],
+            "quantity": 3.0,
+            "organization": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/1337760f-df4e-11ed-ac12-000c000000c4",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "type": "organization",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=1337760f-df4e-11ed-ac12-000c000000c4"
               }
             },
-            "products": {
+            "productsStore": {
               "meta": {
-                "type": "processingpositionresult",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/133ac518-df4e-11ed-ac12-000c000000c6",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "type": "store",
                 "mediaType": "application/json",
-                "size": 2,
-                "limit": 1000,
-                "offset": 0
-              },
-              "rows": [
-                {
-                  "quantity": 3,
-                  "assortment": {
-                    "meta": {
-                      "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/160ff7bb-acdc-11e6-5bed-427b0000008c",
-                      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-                      "type": "product",
-                      "mediaType": "application/json"
-                    }
-                  }
-                },
-                {
-                  "quantity": 2,
-                  "assortment": {
-                    "meta": {
-                      "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/18fce7bf-acdc-11e6-5bed-427b00000092",
-                      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-                      "type": "product",
-                      "mediaType": "application/json"
-                    }
-                  }
-                }
-              ]
+                "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=133ac518-df4e-11ed-ac12-000c000000c6"
+              }
             },
-            "materials": {
+            "materialsStore": {
               "meta": {
-                "type": "processingpositionmaterial",
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/133ac518-df4e-11ed-ac12-000c000000c6",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "type": "store",
                 "mediaType": "application/json",
-                "size": 2,
-                "limit": 1000,
-                "offset": 0
-              },
-              "rows": [
-                {
-                  "quantity": 4,
-                  "assortment": {
-                    "meta": {
-                      "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
-                      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-                      "type": "product",
-                      "mediaType": "application/json"
-                    }
-                  }
-                },
-                {
-                  "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
-                  "quantity": 1,
-                  "assortment": {
-                    "meta": {
-                      "href": "http://online.moysklad.ru/api/remap/1.2/entity/product/1267a23f-acdc-11e6-5bed-427b00000086",
-                      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
-                      "type": "product",
-                      "mediaType": "application/json"
-                    }
-                  }
-                }
-              ]
+                "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=133ac518-df4e-11ed-ac12-000c000000c6"
+              }
             }
           }'  
 ```
@@ -1122,103 +1145,104 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "http://online.moysklad.ru/api/remap/1.2/entity/processing/493ddf6b-aff9-11e6-5bed-427b00000076",
-    "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processing/metadata",
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/processing/633dee04-e3eb-11ed-ac12-000b00000012",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processing/metadata",
     "type": "processing",
-    "mediaType": "application/json"
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#processing/edit?id=633dee04-e3eb-11ed-ac12-000b00000012"
   },
-  "id": "493ddf6b-aff9-11e6-5bed-427b00000076",
-  "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
+  "id": "633dee04-e3eb-11ed-ac12-000b00000012",
+  "accountId": "12ddf6da-df4e-11ed-ac12-000e0000000a",
   "owner": {
     "meta": {
-      "href": "http://online.moysklad.ru/api/remap/1.2/entity/employee/d5ad957e-91f1-11e6-5bed-427b0000002a",
-      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/2b009031-df4e-11ed-ac12-000c0000012a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=2b009031-df4e-11ed-ac12-000c0000012a"
     }
   },
   "shared": false,
   "group": {
     "meta": {
-      "href": "http://online.moysklad.ru/api/remap/1.2/entity/group/d55da707-91f1-11e6-5bed-427b00000001",
-      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/12ded31d-df4e-11ed-ac12-000e0000000b",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
       "type": "group",
       "mediaType": "application/json"
     }
   },
-  "updated": "2016-11-21 17:46:29",
-  "name": "Это технологическая операция",
-  "externalCode": "JhQJY8u1isyuqHyn7B6Wx3",
-  "moment": "2016-11-21 17:46:00",
+  "updated": "2023-04-26 07:32:43.875",
+  "name": "00002",
+  "externalCode": "l11G2XzQgqd99vv25dxsc2",
+  "moment": "2023-04-26 07:32:00.000",
   "applicable": true,
-  "printed": true,
-  "published": true,
-  "project": {
-    "meta": {
-      "href": "http://online.moysklad.ru/api/remap/1.2/entity/project/7f3a7d7a-97a1-11e6-5bed-427b0000009c",
-      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/project/metadata",
-      "type": "project",
-      "mediaType": "application/json"
-    }
-  },
   "organization": {
     "meta": {
-      "href": "http://online.moysklad.ru/api/remap/1.2/entity/organization/a1331985-a1c8-11e6-5bed-427b00000084",
-      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/1337760f-df4e-11ed-ac12-000c000000c4",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
       "type": "organization",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=1337760f-df4e-11ed-ac12-000c000000c4"
     }
   },
-  "processingSum": 10000,
-  "quantity": 1,
+  "created": "2023-04-26 07:32:43.972",
+  "printed": false,
+  "published": false,
+  "files": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processing/633dee04-e3eb-11ed-ac12-000b00000012/files",
+      "type": "files",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "processingSum": 150.0,
+  "quantity": 3.0,
   "processingPlan": {
     "meta": {
-      "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingplan/c38e50b0-acdc-11e6-5bed-427b0000009e",
-      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/033b3bee-e35e-11ed-ac12-000b0000000f",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
       "type": "processingplan",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#processingplan/edit?id=033b3bee-e35e-11ed-ac12-000b0000000f"
     }
   },
   "productsStore": {
     "meta": {
-      "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/c61ce912-a747-11e6-5bed-427b000000a8",
-      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/133ac518-df4e-11ed-ac12-000c000000c6",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
       "type": "store",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=133ac518-df4e-11ed-ac12-000c000000c6"
     }
   },
   "materialsStore": {
     "meta": {
-      "href": "http://online.moysklad.ru/api/remap/1.2/entity/store/d5e311c0-91f1-11e6-5bed-427b00000053",
-      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/133ac518-df4e-11ed-ac12-000c000000c6",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
       "type": "store",
-      "mediaType": "application/json"
-    }
-  },
-  "processingOrder": {
-    "meta": {
-      "href": "http://online.moysklad.ru/api/remap/1.2/entity/processingorder/c7201428-afcc-11e6-5bed-427b00000068",
-      "metadataHref": "http://online.moysklad.ru/api/remap/1.2/entity/processingorder/metadata",
-      "type": "processingorder",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=133ac518-df4e-11ed-ac12-000c000000c6"
     }
   },
   "products": {
     "meta": {
-      "href": "http://online.moysklad.ru/api/remap/1.2/entity/processing/493ddf6b-aff9-11e6-5bed-427b00000076/products",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processing/633dee04-e3eb-11ed-ac12-000b00000012/products",
       "type": "processingpositionresult",
       "mediaType": "application/json",
-      "size": 2,
+      "size": 1,
       "limit": 1000,
       "offset": 0
     }
   },
   "materials": {
     "meta": {
-      "href": "http://online.moysklad.ru/api/remap/1.2/entity/processing/493ddf6b-aff9-11e6-5bed-427b00000076/materials",
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processing/633dee04-e3eb-11ed-ac12-000b00000012/materials",
       "type": "processingpositionmaterial",
       "mediaType": "application/json",
-      "size": 2,
+      "size": 1,
       "limit": 1000,
       "offset": 0
     }
@@ -1775,8 +1799,6 @@ curl -X GET
 
 ### Отдельное доп. поле
 
-
-
 **Параметры**
 
 | Параметр | Описание                                                                          |
@@ -2201,6 +2223,13 @@ curl -X GET
 В теле запроса можно указать только те поля, которые необходимо изменить у Тех. операции, кроме тех, что
 помечены `Только для чтения` в описании [атрибутов Тех. операции](../documents/#dokumenty-teh-operaciq).
 
+#### Особенности поведения при изменении Тех. операции
+При привязке новой тех. карты старые значения готовой продукции, материалы и затраты на производство будут заменены, согласно новой привязываемой тех. карты, иначе 
+необходимо передать в теле запроса заполненные поля **products**, **materials**, **processingSum**.
+Если необходимо указать пустые материалы, но они присутствуют в тех. карте, то следует явно передать пустое значение для поля **materials**.
+Если не передается поле **quantity**, то оно останется без изменений и будет равно предыдущему значению в тех. операции.
+Количество готовой продукции и материалов тех. операции, а также затраты на производство будут пересчитаны кратно объему производства.
+
 **Параметры**
 
 | Параметр | Описание                                                                              |
@@ -2331,6 +2360,154 @@ curl -X GET
 }
 ```
 
+> Пример запроса на обновление отдельной Тех. операции с заменой тех. карты и сохранением старых позиций.
+
+```shell
+  curl -X PUt
+    "https://online.moysklad.ru/api/remap/1.2/entity/processing/f64737f7-df69-11ed-ac12-000c00000004"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+              "processingPlan": {
+                "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/dc221c1c-e356-11ed-ac12-000b00000004",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
+                    "type": "processingplan",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://online.moysklad.ru/app/#processingplan/edit?id=dc221c1c-e356-11ed-ac12-000b00000004"
+                  }
+              },
+              "products": [
+                {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/processing/f64737f7-df69-11ed-ac12-000c00000004/products/73745ac2-e32d-11ed-ac12-000c00000009",
+                    "type": "processingpositionresult",
+                    "mediaType": "application/json"
+                  },
+                  "quantity": 400.0
+                },
+                {
+                  "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/processing/f64737f7-df69-11ed-ac12-000c00000004/products/a8240ec9-e330-11ed-ac12-000c0000000d",
+                    "type": "processingpositionresult",
+                    "mediaType": "application/json"
+                  }
+                }
+              ]
+            }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленной Тех. операции.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/processing/f64737f7-df69-11ed-ac12-000c00000004",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processing/metadata",
+    "type": "processing",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#processing/edit?id=f64737f7-df69-11ed-ac12-000c00000004"
+  },
+  "id": "f64737f7-df69-11ed-ac12-000c00000004",
+  "accountId": "12ddf6da-df4e-11ed-ac12-000e0000000a",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/1317fe34-df4e-11ed-ac12-000c00000081",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=1317fe34-df4e-11ed-ac12-000c00000081"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/12ded31d-df4e-11ed-ac12-000e0000000b",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2023-04-25 13:51:54.168",
+  "name": "00001",
+  "externalCode": "erJSo3G6jEWMXtenosN1h1",
+  "moment": "2023-04-20 13:56:00.000",
+  "applicable": true,
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/1337760f-df4e-11ed-ac12-000c000000c4",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=1337760f-df4e-11ed-ac12-000c000000c4"
+    }
+  },
+  "created": "2023-04-20 13:56:11.476",
+  "printed": false,
+  "published": false,
+  "files": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processing/f64737f7-df69-11ed-ac12-000c00000004/files",
+      "type": "files",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "processingSum": 1000.0,
+  "quantity": 10.0,
+  "processingPlan": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/dc221c1c-e356-11ed-ac12-000b00000004",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
+      "type": "processingplan",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#processingplan/edit?id=dc221c1c-e356-11ed-ac12-000b00000004"
+    }
+  },
+  "productsStore": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/133ac518-df4e-11ed-ac12-000c000000c6",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=133ac518-df4e-11ed-ac12-000c000000c6"
+    }
+  },
+  "materialsStore": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/133ac518-df4e-11ed-ac12-000c000000c6",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=133ac518-df4e-11ed-ac12-000c000000c6"
+    }
+  },
+  "products": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processing/f64737f7-df69-11ed-ac12-000c00000004/products",
+      "type": "processingpositionresult",
+      "mediaType": "application/json",
+      "size": 2,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "materials": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processing/f64737f7-df69-11ed-ac12-000c00000004/materials",
+      "type": "processingpositionmaterial",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
+
 #### Материалы Тех. операции 
 Отдельный ресурс для управления материалами Тех. операции. С его помощью вы можете управлять материалами большого документа, количество материалов в котором превышает лимит на количество материалов, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
 
@@ -2425,7 +2602,7 @@ curl -X GET
 
 ### Материал Тех. операции
 
-### Получить материал
+### Получить материал Тех. операции
 
 **Параметры**
 
@@ -2466,9 +2643,67 @@ curl -X GET
 }
 ```
 
+### Добавить материал
+Обязательные для создания поля:
++ **assortment** - Ссылка на товар/серию/модификацию в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **quantity** - Количество товаров данного вида в позиции
+
+**Параметры**
+
+| Параметр       | Описание                                                                                      |
+| :------------- | :-------------------------------------------------------------------------------------------- |
+| **id**         | `string` (required) *Example: f64737f7-df69-11ed-ac12-000c00000004* id Тех. операции.         |
+
+> Пример запроса на добавление материала в Тех. операции.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/processing/f64737f7-df69-11ed-ac12-000c00000004/materials"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+            "quantity": 10.0,
+            "assortment": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7a707724-df4e-11ed-ac12-000c00000146",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                "type": "product",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=7a6fd2ab-df4e-11ed-ac12-000c00000144"
+              }
+            }
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление добавленного материала.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processing/f64737f7-df69-11ed-ac12-000c00000004/materials/d6c0d81b-e3f0-11ed-ac12-000b0000001f",
+      "type": "processingpositionmaterial",
+      "mediaType": "application/json"
+    },
+    "id": "d6c0d81b-e3f0-11ed-ac12-000b0000001f",
+    "accountId": "12ddf6da-df4e-11ed-ac12-000e0000000a",
+    "quantity": 10.0,
+    "assortment": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7a707724-df4e-11ed-ac12-000c00000146",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=7a6fd2ab-df4e-11ed-ac12-000c00000144"
+      }
+    }
+  }
+]
+```
+
 ### Изменить материал 
-Запрос на обновление отдельного материала Тех. операции. Для обновления материала нет каких-либо
-обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
+Для обновления материала нет каких-либо обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
 
 **Параметры**
 
@@ -2527,6 +2762,26 @@ curl -X GET
   }
 }
 ```
+
+### Удалить материал
+
+**Параметры**
+
+| Параметр       | Описание                                                                                      |
+| :------------- | :-------------------------------------------------------------------------------------------- |
+| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Тех. операции.         |
+| **positionID** | `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Тех. операции. |
+
+> Пример запроса на удаление отдельного материала в Тех. операции.
+
+```shell
+  curl -X DELETE
+    "https://online.moysklad.ru/api/remap/1.2/entity/processing/d72b4281-b000-11e6-8af5-581e00000074/materials/9560e3e3-9609-11e6-8af5-581e00000008"
+    -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешное удаление материала Тех. операции.
 
 #### Продукты Тех. операции 
 Отдельный ресурс для управления продуктами Тех. операции. С его помощью вы можете управлять продуктами большого документа, количество продуктов в котором превышает лимит на количество продуктов, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
@@ -2663,6 +2918,65 @@ curl -X GET
 }
 ```
 
+### Добавить продукт
+Обязательные для создания поля:
++ **assortment** - Ссылка на товар/серию/модификацию в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **quantity** - Количество товаров данного вида в позиции
+
+**Параметры**
+
+| Параметр       | Описание                                                                                      |
+| :------------- | :-------------------------------------------------------------------------------------------- |
+| **id**         | `string` (required) *Example: f64737f7-df69-11ed-ac12-000c00000004* id Тех. операции.         |
+
+> Пример запроса на добавление продукта в Тех. операции.
+
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/processing/f64737f7-df69-11ed-ac12-000c00000004/products"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+            "quantity": 10.0,
+            "assortment": {
+              "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7a707724-df4e-11ed-ac12-000c00000146",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                "type": "product",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=7a6fd2ab-df4e-11ed-ac12-000c00000144"
+              }
+            }
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление добавленного материала.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/processing/f64737f7-df69-11ed-ac12-000c00000004/products/a8240ec9-e330-11ed-ac12-000c0000000d",
+      "type": "processingpositionresult",
+      "mediaType": "application/json"
+    },
+    "id": "a8240ec9-e330-11ed-ac12-000c0000000d",
+    "accountId": "12ddf6da-df4e-11ed-ac12-000e0000000a",
+    "quantity": 10.0,
+    "assortment": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7a707724-df4e-11ed-ac12-000c00000146",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=7a6fd2ab-df4e-11ed-ac12-000c00000144"
+      }
+    }
+  }
+]
+```
+
 ### Изменить продукт 
 Запрос на обновление отдельного продукта Тех. операции. Для обновления продукта нет каких-либо
 обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
@@ -2724,3 +3038,23 @@ curl -X GET
   }
 }
 ```
+
+### Удалить продукт
+При удалении продукта стоит учитывать, что тех. операция должна состоять как минимум из одной позиции продукта.
+**Параметры**
+
+| Параметр       | Описание                                                                                      |
+| :------------- | :-------------------------------------------------------------------------------------------- |
+| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Тех. операции.         |
+| **positionID** | `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Тех. операции. |
+
+> Пример запроса на удаление отдельного продукта в Тех. операции.
+
+```shell
+  curl -X DELETE
+    "https://online.moysklad.ru/api/remap/1.2/entity/processing/d72b4281-b000-11e6-8af5-581e00000074/products/9560e3e3-9609-11e6-8af5-581e00000008"
+    -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешное удаление продукта Тех. операции.

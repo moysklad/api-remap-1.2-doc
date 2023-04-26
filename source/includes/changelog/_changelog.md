@@ -137,6 +137,13 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 27-04-2023
+#### Добавлена
+- Возможность создания и удаления продуктов и материалов в [Тех. операции](../documents/#dokumenty-teh-operaciq-sozdat-teh-operaciu).
+- Новый `25003` код [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
+#### Удалены
+- Ставшие неактуальными `25001` и `25002` коды [ошибок](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
+
 ### 10-04-2023
 #### Добавлена
 - Возможность работы с затратами для Тех. карт [Тех. карт](../dictionaries/#suschnosti-teh-karta).
