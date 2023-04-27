@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 27-04-2023
+### Добавлен
+- Параметр фильтрации `withSubFolders` в [Ассортименте](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment), позволяющий фильтровать по заданной группе товаров без учета ее подгрупп.
+
 ## 10-04-2023
 ### Добавлена
 - Возможность работы с затратами для Тех. карт [Тех. карт](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-teh-karta).
