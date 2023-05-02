@@ -139,7 +139,7 @@
 
 ### 01-05-2023
 #### Добавлена
-- Добавлен `1088` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki).
+- Добавлен `1088` код [ошибки](../#mojsklad-json-api-oshibki).
 
 ### 10-04-2023
 #### Добавлена
