@@ -137,6 +137,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 10-05-2023
+#### Добавлена
+- Возможность работы с каналами продаж для [полученного](../documents/#dokumenty-poluchennyj-otchet-komissionera) и [выданного отчетов комиссионера](../documents/#dokumenty-vydannyj-otchet-komissionera).
+- Поле "Прочие расходы" для [полученного отчета комиссионера](../documents/#dokumenty-poluchennyj-otchet-komissionera).
+
 ### 10-04-2023
 #### Добавлена
 - Возможность работы с затратами для Тех. карт [Тех. карт](../dictionaries/#suschnosti-teh-karta).
