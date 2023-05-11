@@ -110,6 +110,8 @@
   - Фильтры в запросе [Ассортимента](../dictionaries/#suschnosti-assortiment)
     - все фильтры по полям, по доступно и остаток, по search и сортировки теперь могут работать вместе
   - [Дополнительные поля](../workbook/#workbook-rabota-s-dopolnitel-nymi-polqmi-cherez-json-api) у Товаров, Услуг, Модификаций и Комплектов общие и располагаются в метаданных Товаров.  
+  - Тех. карта необязательна при создании [Тех. операции](../documents/#dokumenty-teh-operaciq). 
+  - В Тех. операции в поле `processingSum` записывается полная стоимость затрат на производство, а не за единицу объема
 - Путь эндпоинта
   - Изменен путь к эндпоинтам [Показателям по деньгам](../reports/#otchety-pokazateli) (`report`)      
 - Документация
@@ -140,6 +142,7 @@
 ### 27-04-2023
 #### Добавлена
 - Возможность создания и удаления продуктов и материалов в [Тех. операции](../documents/#dokumenty-teh-operaciq-sozdat-teh-operaciu).
+- Возможность создания [Тех. операции](../documents/#dokumenty-teh-operaciq-sozdat-teh-operaciu) без привязки Тех. карты.
 - Новый `25003` код [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
 #### Удалены
 - Ставшие неактуальными `25001` и `25002` коды [ошибок](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
