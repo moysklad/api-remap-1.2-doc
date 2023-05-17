@@ -110,6 +110,7 @@
   - Фильтры в запросе [Ассортимента](../dictionaries/#suschnosti-assortiment)
     - все фильтры по полям, по доступно и остаток, по search и сортировки теперь могут работать вместе
   - [Дополнительные поля](../workbook/#workbook-rabota-s-dopolnitel-nymi-polqmi-cherez-json-api) у Товаров, Услуг, Модификаций и Комплектов общие и располагаются в метаданных Товаров.  
+  - Тех. карта необязательна при создании [Тех. операции](../documents/#dokumenty-teh-operaciq).
 - Путь эндпоинта
   - Изменен путь к эндпоинтам [Показателям по деньгам](../reports/#otchety-pokazateli) (`report`)      
 - Документация
@@ -137,10 +138,15 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 15-05-2023
+### 17-05-2023
 #### Добавлена
 - Возможность работы с каналами продаж для [полученного](../documents/#dokumenty-poluchennyj-otchet-komissionera) и [выданного отчетов комиссионера](../documents/#dokumenty-vydannyj-otchet-komissionera).
 - Поле "Прочие расходы" для [полученного отчета комиссионера](../documents/#dokumenty-poluchennyj-otchet-komissionera).
+- Возможность создания и удаления продуктов и материалов в [Тех. операции](../documents/#dokumenty-teh-operaciq-sozdat-teh-operaciu).
+- Возможность создания [Тех. операции](../documents/#dokumenty-teh-operaciq-sozdat-teh-operaciu) без привязки Тех. карты.
+- Новый `25003` код [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
+#### Удалены
+- Ставшие неактуальными `25001` и `25002` коды [ошибок](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
 
 ### 12-05-2023
 #### Добавлен
