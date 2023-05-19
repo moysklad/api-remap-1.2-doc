@@ -138,6 +138,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 19-05-2023
+#### Добавлен
+- Новый `2029` код [ошибки](../#mojsklad-json-api-oshibki).
+
 ### 17-05-2023
 #### Добавлена
 - Возможность работы с каналами продаж для [полученного](../documents/#dokumenty-poluchennyj-otchet-komissionera) и [выданного отчетов комиссионера](../documents/#dokumenty-vydannyj-otchet-komissionera).
