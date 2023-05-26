@@ -287,8 +287,8 @@
 
 ### 03-10-2022
 #### Добавлено
-- тип контекста `registration` в [Аудите](../other/#audit)
-- тип события `registration` в [Аудите](../other/#audit)
+- тип контекста `registration` в [Аудите](../audit/#audit)
+- тип события `registration` в [Аудите](../audit/#audit)
 
 ### 13-09-2022
 #### Добавлено
