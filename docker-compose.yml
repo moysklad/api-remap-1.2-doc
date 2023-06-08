@@ -1,6 +1,10 @@
-app:
-  build: .
-  ports:
-    - 4567:4567
-  volumes:
-    - .:/usr/src/app
+version: "2.4"
+
+services:
+
+  app:
+    build: .
+    ports:
+      - 4567:4567
+    volumes:
+      - .:/usr/src/app

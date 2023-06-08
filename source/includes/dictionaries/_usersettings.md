@@ -120,8 +120,8 @@
 | Счета поставщиков                      | invoicein                     |
 | Счета-фактуры выданные                 | factureout                    |
 | Счета-фактуры полученные               | facturein                     |
-| Тех. карты                             | processingplan                |
-| Тех. операции                          | processing                    |
+| Техкарты                             | processingplan                |
+| Техоперации                          | processing                    |
 | Товары и услуги                        | good                          |
 | Товары на реализации                   | commissiongoods               |
 | Точки продаж                           | retailstore                   |

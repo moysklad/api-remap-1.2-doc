@@ -255,7 +255,7 @@ JSON API позволяет создавать, обновлять и удаля
   - [Прайс-лист](documents/#dokumenty-prajs-list)
   - [Внутренний заказ](documents/#dokumenty-vnutrennij-zakaz)
   - [Заказ на производство](documents/#dokumenty-zakaz-na-proizwodstwo)
-  - [Тех. операция](documents/#dokumenty-teh-operaciq)
+  - [Техоперация](documents/#dokumenty-tehoperaciq)
   - [Полученный отчет комиссионера](documents/#dokumenty-poluchennyj-otchet-komissionera)
   - [Выданный отчет комиссионера](documents/#dokumenty-vydannyj-otchet-komissionera)
 
@@ -2047,11 +2047,11 @@ curl -X PUT
 | **prepayment**             | OPERATION                                                                                                                                          | Предоплаты                             |
 | **prepaymentReturn**       | OPERATION                                                                                                                                          | Возврат предоплаты                     |
 | **priceList**              | OPERATION                                                                                                                                          | Прайс-лист                             |
-| **processing**             | BASE                                                                                                                                               | Тех. операции                          |
+| **processing**             | BASE                                                                                                                                               | Техоперации                          |
 | **processingOrder**        | OPERATION                                                                                                                                          | Заказ на производство                  |
-| **processingPlan**         | BASE                                                                                                                                               | Тех. Карты                             |
+| **processingPlan**         | BASE                                                                                                                                               | Техкарты                             |
 | **processingStage**        | BASE                                                                                                                                               | Этапы производства                             |
-| **processingProcess**      | BASE                                                                                                                                               | Тех. процессы                          |
+| **processingProcess**      | BASE                                                                                                                                               | Техпроцессы                          |
 | **project**                | BASE                                                                                                                                               | Проекты                                |
 | **purchaseOrder**          | OPERATION                                                                                                                                          | Заказ поставщикам                      |
 | **purchaseReturn**         | OPERATION                                                                                                                                          | Возврат поставщику                     |

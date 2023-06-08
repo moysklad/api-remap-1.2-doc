@@ -38,7 +38,7 @@
   - Работа с публикациями для [Розничной смены](../documents/#dokumenty-roznichnaq-smena), 
     [Заказа на производство](../documents/#dokumenty-zakaz-na-proizwodstwo), 
     [Отчетов комиссионеров](../documents/#dokumenty-poluchennyj-otchet-komissionera), 
-    [Тех. Операции](../documents/#dokumenty-teh-operaciq), 
+    [Техоперации](../documents/#dokumenty-tehoperaciq), 
     [Инвентаризации](../documents/#dokumenty-inwentarizaciq)
   - Обработка `null` для поля [Алкогольной продукции](../dictionaries/#suschnosti-towar). Теперь через JSON API можно менять тип продукции с алкогольной на неалкогольную, передав `null` в поле `alcoholic`
   - Новые поля `directorPosition`, `directorSign`, `chiefAccountSign`, `stamp` в [Юрлице](../dictionaries/#suschnosti-jurlico)
@@ -110,7 +110,7 @@
   - Фильтры в запросе [Ассортимента](../dictionaries/#suschnosti-assortiment)
     - все фильтры по полям, по доступно и остаток, по search и сортировки теперь могут работать вместе
   - [Дополнительные поля](../workbook/#workbook-rabota-s-dopolnitel-nymi-polqmi-cherez-json-api) у Товаров, Услуг, Модификаций и Комплектов общие и располагаются в метаданных Товаров.  
-  - Тех. карта необязательна при создании [Тех. операции](../documents/#dokumenty-teh-operaciq).
+  - Техкарта необязательна при создании [Техоперации](../documents/#dokumenty-tehoperaciq).
 - Путь эндпоинта
   - Изменен путь к эндпоинтам [Показателям по деньгам](../reports/#otchety-pokazateli) (`report`)      
 - Документация
@@ -146,8 +146,8 @@
 #### Добавлена
 - Возможность работы с каналами продаж для [полученного](../documents/#dokumenty-poluchennyj-otchet-komissionera) и [выданного отчетов комиссионера](../documents/#dokumenty-vydannyj-otchet-komissionera).
 - Поле "Прочие расходы" для [полученного отчета комиссионера](../documents/#dokumenty-poluchennyj-otchet-komissionera).
-- Возможность создания и удаления продуктов и материалов в [Тех. операции](../documents/#dokumenty-teh-operaciq-sozdat-teh-operaciu).
-- Возможность создания [Тех. операции](../documents/#dokumenty-teh-operaciq-sozdat-teh-operaciu) без привязки Тех. карты.
+- Возможность создания и удаления продуктов и материалов в [Техоперации](../documents/#dokumenty-tehoperaciq-sozdat-tehoperaciu).
+- Возможность создания [Техоперации](../documents/#dokumenty-tehoperaciq-sozdat-tehoperaciu) без привязки Техкарты.
 - Новый `25003` код [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
 #### Удалены
 - Ставшие неактуальными `25001` и `25002` коды [ошибок](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
@@ -162,18 +162,18 @@
 
 ### 10-04-2023
 #### Добавлена
-- Возможность работы с затратами для Тех. карт [Тех. карт](../dictionaries/#suschnosti-teh-karta).
-- Дополнены примеры в документации с затратами Тех. карты.
+- Возможность работы с затратами для Техкарт [Техкарт](../dictionaries/#suschnosti-tehkarta).
+- Дополнены примеры в документации с затратами Техкарты.
 - Добавлен `25061` код [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
 
 ### 04-04-2023
 #### Изменено
-- При создании Тех. карты поле *materials* стало необязательным.
-- Тех. карту можно привязывать к определенному техпроцессу
-- Материалы Тех. карты можно привязывать к определенному этапу техпроцесса.
-- Дополнены примеры в документации с материалами Тех. карты.
+- При создании Техкарты поле *materials* стало необязательным.
+- Техкарту можно привязывать к определенному техпроцессу
+- Материалы Техкарты можно привязывать к определенному этапу техпроцесса.
+- Дополнены примеры в документации с материалами Техкарты.
 - Добавлен `25060` код [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
-- Документация по Тех. картам перенесана из вкладки документов в [сущности](../dictionaries/#suschnosti-teh-karta)
+- Документация по Техкартам перенесана из вкладки документов в [сущности](../dictionaries/#suschnosti-tehkarta)
 
 ### 30-03-2023
 #### Добавлено
@@ -185,7 +185,7 @@
 
 ### 13-02-2023
 #### Добавлена
-- Для сущности [Тех. процесс](../dictionaries/#suschnosti-teh-process) возможность создания, редактирования, удаления через АПИ.
+- Для сущности [Техпроцесс](../dictionaries/#suschnosti-tehprocess) возможность создания, редактирования, удаления через АПИ.
 
 ### 07-02-2023
 #### Добавлена
@@ -203,7 +203,7 @@
 
 ### 20-01-2023
 #### Добавлена
-- Сущность [Тех. процесс](../dictionaries/#suschnosti-teh-process)
+- Сущность [Техпроцесс](../dictionaries/#suschnosti-tehprocess)
 
 ### 17-01-2023
 #### Добавлена
@@ -420,7 +420,7 @@
 #### Добавлено
 - Параметр фильтрации withSubFolders в [Отчете остатков](../reports/#otchety-otchet-ostatki), позволяющий фильтровать по заданной группе товаров без учета ее подгрупп.
 #### Документация
-- Добавлено описание [Группа тех. карт](../documents/#dokumenty-gruppa-teh-kart)
+- Добавлено описание [Группа техкарт](../documents/#dokumenty-gruppa-tehkart)
 
 ### 01-04-2022
 #### Добавлено
@@ -602,7 +602,7 @@
 
 ### 17-08-2021
 #### Добавлено
-- Возможность работы с модификациями для материалов и продуктов [Тех. карт](../dictionaries/#suschnosti-teh-karta).
+- Возможность работы с модификациями для материалов и продуктов [Техкарт](../dictionaries/#suschnosti-tehkarta).
 Для этого введено новое поле **assortment**.
 - Новая ошибка [3028](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
 
@@ -806,7 +806,7 @@
 - Добавлен тип MetaArray - объект с полями **meta** и **rows**
 - Упоминание Array(Meta) изменено на Array(Object) или на MetaArray
 - Изменен формат описания поля **trackingCodes** в Отгрузках и Приёмках
-- Добавлен раздел [Валюта в документах](../documents/#dokumenty-teh-operaciq-valuta-w-dokumentah) с описанием поля **rate**
+- Добавлен раздел [Валюта в документах](../documents/#dokumenty-tehoperaciq-valuta-w-dokumentah) с описанием поля **rate**
 - В описание добавлены отсутствовавшие поля **meta** в Счета и Контактные лица Контрагента
 - Убрано возможное разночтение в описании поля **tags** Контрагента
 - Для полей **consignee** и **carrier** в Отгрузках и Счетах-фактурах выданных добавлена пометка про тип сущностей
