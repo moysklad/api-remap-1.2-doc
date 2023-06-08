@@ -915,11 +915,11 @@ curl -X GET
 | **prepayment**                | OPERATION            | Все ALL                                     | Предоплаты                             |
 | **prepaymentReturn**          | OPERATION            | Все ALL                                     | Возврат предоплаты                     |
 | **priceList**                 | OPERATION            | Все ALL                                     | Прайс-лист                             |
-| **processing**                | BASE                 | Все ALL                                     | Техоперации                          |
+| **processing**                | BASE                 | Все ALL                                     | Техоперации                            |
 | **processingOrder**           | OPERATION            | Все ALL                                     | Заказ на производство                  |
-| **processingPlan**            | BASE                 | Все ALL                                     | Техкарты                             |
+| **processingPlan**            | BASE                 | Все ALL                                     | Техкарты                               |
 | **processingStage**           | BASE                 | Все ALL                                     | Этапы производства                     |
-| **processingProcess**         | BASE                 | Все ALL                                     | Техпроцессы                          |
+| **processingProcess**         | BASE                 | Все ALL                                     | Техпроцессы                            |
 | **project**                   | BASE                 | Все ALL                                     | Проекты                                |
 | **purchaseOrder**             | OPERATION            | Все ALL                                     | Заказ поставщикам                      |
 | **purchaseReturn**            | OPERATION            | Все ALL                                     | Возврат поставщику                     |
