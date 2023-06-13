@@ -554,7 +554,7 @@ curl -X GET
 | **ecwidconnectorsettings**     | Настройка синхронизации (Ecwid)         |
 | **entitysettings**             | Настройки сущностей                     |
 | **evotorsetting**              | Настройка обмена с Эвотор               |
-| **processingplanfolder**       | Группа тех.карт                         |
+| **processingplanfolder**       | Группа техкарт                         |
 | **scripttemplate**             | Сценарий                                |
 | **smartwebconnectorsettings**  | Настройка синхронизации (SmartWeb)      |
 | **statesettings**              | Настройки статусов                      |

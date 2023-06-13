@@ -33,7 +33,7 @@
 | <a href="../dictionaries/#suschnosti-sotrudnik">Сотрудник</a>|`id`, `version`, `updated`, `updatedBy`, `name`, `description`, `externalCode`,`archived`,`email`,`phone`,`lastname`, `firstname`, `middlename`, `uid` |
 | <a href="../dictionaries/#suschnosti-sklad">Склад</a>|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`, `externalCode`, `address`, `archived`, `pathName` |
 | <a href="../dictionaries/#suschnosti-jurlico">Юрлицо</a>|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`, `archived`, `created`, `inn`, `actualAddress`, `legalTitle`, `legalAddress`, `kpp`, `phone`, `email`, `fax` |
-| <a href="../dictionaries/#suschnosti-teh-karta">Тех. карта</a>|`id`, `syncId`, `version`, `updated`, `updatedBy`, `name`, `description`, `externalCode`|
+| <a href="../dictionaries/#suschnosti-tehkarta">Техкарта</a>|`id`, `syncId`, `version`, `updated`, `updatedBy`, `name`, `description`, `externalCode`|
 | <a href="../dictionaries/#suschnosti-tochka-prodazh">Точка продаж</a>|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `externalCode`, `address`, `active` |
 | <a href="../dictionaries/#suschnosti-zadacha">Задача</a>|`id`, `created`, `version`, `updated`, `description`, `dueToDate`, `done` |
 
@@ -66,7 +66,7 @@
 | <a href="../documents/#dokumenty-vydannyj-otchet-komissionera">Выданный отчет комиссионера</a>|`id`, `syncId`,`version`, `updated`,`updatedBy`, `name`, `description`, `externalCode`,`moment`, `applicable`, `sum`, `created` |
 | <a href="../documents/#dokumenty-prajs-list">Прайс-лист</a>|`id`, `syncId`,`version`, `updated`,`updatedBy`, `name`, `description`, `externalCode`,`moment`, `applicable`, `sum`, `created` |
 | <a href="../documents/#dokumenty-zakaz-na-proizwodstwo">Заказ на производство</a>|`id`, `syncId`,`version`, `updated`,`updatedBy`, `name`, `description`, `externalCode`,`moment`, `applicable`, `sum`, `created`, `deliveryPlannedMoment`, `quantity`|
-| <a href="../documents/#dokumenty-teh-operaciq">Тех. операция</a>|`id`, `syncId`,`version`, `updated`,`updatedBy`, `name`, `description`, `externalCode`,`moment`, `applicable`, `sum`, `created`, `quantity` |
+| <a href="../documents/#dokumenty-tehoperaciq">Техоперация</a>|`id`, `syncId`,`version`, `updated`,`updatedBy`, `name`, `description`, `externalCode`,`moment`, `applicable`, `sum`, `created`, `quantity` |
 | <a href="../documents/#dokumenty-vnutrennij-zakaz">Внутренний заказ</a>|`id`, `syncId`,`version`, `updated`,`updatedBy`, `name`, `description`, `externalCode`,`moment`, `applicable`, `sum`, `created`, `quantity` |
 
 ### Как использовать сортировку через JSON API

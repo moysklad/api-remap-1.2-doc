@@ -9,8 +9,8 @@
 ### Добавлена
 - Возможность работы с каналами продаж для [полученного](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-poluchennyj-otchet-komissionera) и [выданного отчетов комиссионера](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vydannyj-otchet-komissionera).
 - Поле "Прочие расходы" для [полученного отчета комиссионера](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-poluchennyj-otchet-komissionera).
-- Возможность создания и удаления продуктов и материалов в [Тех. операции](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-teh-operaciq-sozdat-teh-operaciu).
-- Возможность создания [Тех. операции](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-teh-operaciq-sozdat-teh-operaciu) без привязки Тех. карты.
+- Возможность создания и удаления продуктов и материалов в [Техоперации](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-tehoperaciq-sozdat-tehoperaciu).
+- Возможность создания [Техоперации](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-tehoperaciq-sozdat-tehoperaciu) без привязки Техкарты.
 - Новый `25003` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
 ### Удалены
 - Ставшие неактуальными `25001` и `25002` коды [ошибок](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
@@ -25,18 +25,18 @@
 
 ## 10-04-2023
 ### Добавлена
-- Возможность работы с затратами для Тех. карт [Тех. карт](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-teh-karta).
-- Дополнены примеры в документации с затратами Тех. карты.
+- Возможность работы с затратами для Техкарт [Техкарт](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-tehkarta).
+- Дополнены примеры в документации с затратами Техкарты.
 - Добавлен `25061` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
 
 ## 04-04-2023
 ### Изменено
-- При создании Тех. карты поле *materials* стало необязательным.
-- Тех. карту можно привязывать к определенному техпроцессу
-- Материалы Тех. карты можно привязывать к определенному этапу техпроцесса.
-- Дополнены примеры в документации с материалами Тех. карты.
+- При создании Техкарты поле *materials* стало необязательным.
+- Техкарту можно привязывать к определенному техпроцессу
+- Материалы Техкарты можно привязывать к определенному этапу техпроцесса.
+- Дополнены примеры в документации с материалами Техкарты.
 - Добавлен `25060` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart).
-- Документация по Тех. картам перенесана из вкладки документов в [сущности](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-teh-karta)
+- Документация по Техкартам перенесана из вкладки документов в [сущности](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta)
 
 ## 30-03-2023
 ### Добавлено
@@ -48,7 +48,7 @@
 
 ## 13-02-2023
 ### Добавлена
-- Для сущности [Тех. процесс](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-teh-process) возможность создания, редактирования, удаления через АПИ.
+- Для сущности [Техпроцесс](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehprocess) возможность создания, редактирования, удаления через АПИ.
 
 ## 07-02-2023
 ### Добавлена
@@ -66,7 +66,7 @@
 
 ## 20-01-2023
 ### Добавлена
-- Сущность [Тех. процесс](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-teh-process)
+- Сущность [Техпроцесс](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehprocess)
 
 ## 17-01-2023
 ### Добавлена
@@ -281,7 +281,7 @@
 ### Добавлено
 - Параметр фильтрации withSubFolders в [Отчете остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki), позволяющий фильтровать по заданной группе товаров без учета ее подгрупп.
 ### Документация
-- Добавлено описание [Группа тех. карт](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-gruppa-teh-kart)
+- Добавлено описание [Группа техкарт](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-gruppa-tehkart)
 
 ## 01-04-2022
 ### Добавлено
@@ -488,7 +488,7 @@
 
 ## 17-08-2021
 ### Добавлено
-- Возможность работы с модификациями для материалов и продуктов [Тех. карт](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-teh-karta). 
+- Возможность работы с модификациями для материалов и продуктов [Техкарт](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta). 
 Для этого введено новое поле **assortment**.
 - Новая ошибка [3028](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
 
@@ -705,7 +705,7 @@
 - Добавлен тип MetaArray - объект с полями **meta** и **rows**
 - Упоминание Array(Meta) изменено на Array(Object) или на MetaArray
 - Изменен формат описания поля **trackingCodes** в Отгрузках и Приёмках
-- Добавлен раздел [Валюта в документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-teh-operaciq-valuta-w-dokumentah) с описанием поля **rate**
+- Добавлен раздел [Валюта в документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-tehoperaciq-valuta-w-dokumentah) с описанием поля **rate**
 - В описание добавлены отсутствовавшие поля **meta** в Счета и Контактные лица Контрагента
 - Убрано возможное разночтение в описании поля **tags** Контрагента
 - Для полей **consignee** и **carrier** в Отгрузках и Счетах-фактурах выданных добавлена пометка про тип сущностей
