@@ -138,6 +138,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 19-06-2023
+#### Добавлено
+- Поле "оплата труда" (labourCost) в [Техкарту](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta)
+
 ### 24-05-2023
 #### Добавлен
 - Новый `2029` код [ошибки](../#mojsklad-json-api-oshibki).
