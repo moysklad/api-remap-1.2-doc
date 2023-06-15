@@ -3,7 +3,7 @@
 
 ## 19-06-2023
 ### Добавлено
-- Поле "оплата труда" (labourCost) в [Техкарту](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta) 
+- Поле "оплата труда" (labourCost) в [Этапы Техкарты](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta) 
 
 ## 24-05-2023
 ### Добавлен
