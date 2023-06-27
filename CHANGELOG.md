@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 26-06-2023
+### Добавлено
+- Описание перемещения документа в [корзину](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-udalenie-w-korzinu)
+
 ## 19-06-2023
 ### Добавлено
 - Поле "оплата труда" (labourCost) в [Этапы Техкарты](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta) 

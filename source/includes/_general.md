@@ -1257,7 +1257,20 @@ accounts.accountnumber Параметр строкового типа. В отф
     - `https://online.moysklad.ru/api/remap/1.2/entity/move?search=ул.Вавилова`
     - `https://online.moysklad.ru/api/remap/1.2/entity/counterparty?search=петров`
 
+### Удаление в корзину
 
+Корзина позволяет избежать риска случайного удаления важных документов. Удаление в корзину доступно только при наличии у сотрудника соответствующих прав, а также
+настроек компании на использовании корзины.
+
+> Пример удаления Приёмки в корзину
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/move/b8fe9f6b-f48f-11ed-ac1a-000d0000003a/trash"
+  -H "Authorization: Basic <Credentials>"
+``` 
+
+> Response 200 (application/json) Успешный запрос удаления Приёмки в корзину
 
 ### Оператор фильтрации "подобие"
 
