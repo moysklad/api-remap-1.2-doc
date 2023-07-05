@@ -6,6 +6,14 @@
 - Возможность чтения, создания, изменения и удаления позиций возврата на склад комиссионера для [полученного отчета комиссионера](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-poluchennyj-otchet-komissionera).
 - Новый `5004` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki).
 
+## 26-06-2023
+### Добавлено
+- Описание перемещения документа в [корзину](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-udalenie-w-korzinu)
+
+## 19-06-2023
+### Добавлено
+- Поле "оплата труда" (labourCost) в [Этапы Техкарты](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta) 
+
 ## 24-05-2023
 ### Добавлен
 - Новый `2029` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki).
