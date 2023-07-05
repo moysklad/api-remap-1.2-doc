@@ -11,6 +11,7 @@ toc_footers:
 
 includes:
   - documents/common_info
+  - documents/rate
   - documents/recalc_calculated_quantity
   - documents/print
   - documents/publication
@@ -48,7 +49,6 @@ includes:
   - documents/facturein
   - documents/processingplanfolder
   - documents/processing
-  - documents/rate
-  
+
 search: true
 ---  
