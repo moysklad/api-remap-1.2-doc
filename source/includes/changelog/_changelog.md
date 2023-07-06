@@ -138,6 +138,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 06-07-2023
+#### Добавлена
+- Возможность чтения, создания, изменения и удаления позиций возврата на склад комиссионера для [полученного отчета комиссионера](../documents/#dokumenty-poluchennyj-otchet-komissionera).
+- Новый `5004` код [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-komissionera).
+
 ### 26-06-2023
 #### Добавлено
 - Описание перемещения документа в [корзину](../#mojsklad-json-api-obschie-swedeniq-udalenie-w-korzinu)
