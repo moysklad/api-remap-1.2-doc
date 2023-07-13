@@ -146,16 +146,16 @@ curl -X GET
       },
       "sellQuantity": 8643.0,
       "sellPrice": 216174.97396737244,
-      "sellCost": 0,
-      "sellSum": 1868400300,
-      "sellCostSum": 0,
-      "returnQuantity": 0,
+      "sellCost": 0.0,
+      "sellSum": 1868400300.0,
+      "sellCostSum": 0.0,
+      "returnQuantity": 0.0,
       "returnPrice": 0.0,
-      "returnCost": 0,
-      "returnSum": 0,
-      "returnCostSum": 0,
-      "profit": 1868400300,
-      "margin": 0
+      "returnCost": 0.0,
+      "returnSum": 0.0,
+      "returnCostSum": 0.0,
+      "profit": 1868400300.0,
+      "margin": 0.0
     },
     {
       "assortment": {
@@ -179,16 +179,16 @@ curl -X GET
       },
       "sellQuantity": 4765.0,
       "sellPrice": 100000000.0,
-      "sellCost": 0,
-      "sellSum": 476500000000,
-      "sellCostSum": 0,
-      "returnQuantity": 0,
+      "sellCost": 0.0,
+      "sellSum": 476500000000.0,
+      "sellCostSum": 0.0,
+      "returnQuantity": 0.0,
       "returnPrice": 0.0,
-      "returnCost": 0,
-      "returnSum": 0,
-      "returnCostSum": 0,
-      "profit": 476500000000,
-      "margin": 0
+      "returnCost": 0.0,
+      "returnSum": 0.0,
+      "returnCostSum": 0.0,
+      "profit": 476500000000.0,
+      "margin": 0.0
     },
     {
       "assortment": {
@@ -213,15 +213,15 @@ curl -X GET
       },
       "sellQuantity": 10.0,
       "sellPrice": 500000.0,
-      "sellCost": 300000,
-      "sellSum": 5000000,
-      "sellCostSum": 3000000,
-      "returnQuantity": 3,
+      "sellCost": 300000.0,
+      "sellSum": 5000000.0,
+      "sellCostSum": 3000000.0,
+      "returnQuantity": 3.0,
       "returnPrice": 500000.0,
-      "returnCost": 300000,
-      "returnSum": 1500000,
-      "returnCostSum": 900000,
-      "profit": 1400000,
+      "returnCost": 300000.0,
+      "returnSum": 1500000.0,
+      "returnCostSum": 900000.0,
+      "profit": 1400000.0,
       "margin": 0.6666666666666666
     }
   ]
@@ -370,16 +370,16 @@ curl -X GET
       },
       "sellQuantity": 8643.0,
       "sellPrice": 216174.97396737244,
-      "sellCost": 0,
-      "sellSum": 1868400300,
-      "sellCostSum": 0,
-      "returnQuantity": 0,
+      "sellCost": 0.0,
+      "sellSum": 1868400300.0,
+      "sellCostSum": 0.0,
+      "returnQuantity": 0.0,
       "returnPrice": 0.0,
-      "returnCost": 0,
-      "returnSum": 0,
-      "returnCostSum": 0,
-      "profit": 1868400300,
-      "margin": 0
+      "returnCost": 0.0,
+      "returnSum": 0.0,
+      "returnCostSum": 0.0,
+      "profit": 1868400300.0,
+      "margin": 0.0
     },
     {
       "assortment": {
@@ -403,16 +403,16 @@ curl -X GET
       },
       "sellQuantity": 4765.0,
       "sellPrice": 100000000.0,
-      "sellCost": 0,
-      "sellSum": 476500000000,
-      "sellCostSum": 0,
-      "returnQuantity": 0,
+      "sellCost": 0.0,
+      "sellSum": 476500000000.0,
+      "sellCostSum": 0.0,
+      "returnQuantity": 0.0,
       "returnPrice": 0.0,
-      "returnCost": 0,
-      "returnSum": 0,
-      "returnCostSum": 0,
-      "profit": 476500000000,
-      "margin": 0
+      "returnCost": 0.0,
+      "returnSum": 0.0,
+      "returnCostSum": 0.0,
+      "profit": 476500000000.0,
+      "margin": 0.0
     },
     {
       "assortment": {
@@ -437,15 +437,15 @@ curl -X GET
       },
       "sellQuantity": 10.0,
       "sellPrice": 500000.0,
-      "sellCost": 300000,
-      "sellSum": 5000000,
-      "sellCostSum": 3000000,
-      "returnQuantity": 3,
+      "sellCost": 300000.0,
+      "sellSum": 5000000.0,
+      "sellCostSum": 3000000.0,
+      "returnQuantity": 3.0,
       "returnPrice": 500000.0,
-      "returnCost": 300000,
-      "returnSum": 1500000,
-      "returnCostSum": 900000,
-      "profit": 1400000,
+      "returnCost": 300000.0,
+      "returnSum": 1500000.0,
+      "returnCostSum": 900000.0,
+      "profit": 1400000.0,
       "margin": 0.6666666666666666
     }
   ]
@@ -575,15 +575,15 @@ curl -X GET
         "name": "Администратор"
       },
       "salesCount": 3,
-      "salesAvgCheck": 104498369718788910,
-      "sellSum": 313495109156366700,
-      "sellCostSum": 0,
-      "returnCount": 0,
-      "returnAvgCheck": 0,
-      "returnSum": 0,
-      "returnCostSum": 0,
-      "profit": 313495109156366700,
-      "margin": 0
+      "salesAvgCheck": 104498369718788910.0,
+      "sellSum": 313495109156366700.0,
+      "sellCostSum": 0.0,
+      "returnCount": 0.0,
+      "returnAvgCheck": 0.0,
+      "returnSum": 0.0,
+      "returnCostSum": 0.0,
+      "profit": 313495109156366700.0,
+      "margin": 0.0
     }
   ]
 }
@@ -712,16 +712,16 @@ curl -X GET
         },
         "name": "ООО \"Покупатель\""
       },
-      "salesCount": 1,
-      "salesAvgCheck": 310390615323104640,
-      "sellSum": 310390615323104640,
-      "sellCostSum": 0,
-      "returnCount": 0,
-      "returnAvgCheck": 0,
-      "returnSum": 0,
-      "returnCostSum": 0,
-      "profit": 310390615323104640,
-      "margin": 0
+      "salesCount": 1.0,
+      "salesAvgCheck": 310390615323104640.0,
+      "sellSum": 310390615323104640.0,
+      "sellCostSum": 0.0,
+      "returnCount": 0.0,
+      "returnAvgCheck": 0.0,
+      "returnSum": 0.0,
+      "returnCostSum": 0.0,
+      "profit": 310390615323104640.0,
+      "margin": 0.0
     }
   ]
 }
