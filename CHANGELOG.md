@@ -1,9 +1,18 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-## 06-07-2023
+## 17-07-2023
 ### Изменено
-- Права для доступа к [Отчету Прибыльность](../reports/#otchety-otchet-pribyl-nost) исправлены с `Прибыль и убытки` на `Прибыльность`
+- Права для доступа к [Отчету Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost) исправлены с `Прибыль и убытки` на `Прибыльность`
+
+## 07-07-2023
+### Изменено
+- Исправлена ссылка на раздел [Валюта в документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)
+
+## 06-07-2023
+### Добавлена
+- Возможность чтения, создания, изменения и удаления позиций возврата на склад комиссионера для [полученного отчета комиссионера](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-poluchennyj-otchet-komissionera).
+- Новый `5004` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-komissionera).
 
 ## 26-06-2023
 ### Добавлено
@@ -717,7 +726,7 @@
 - Добавлен тип MetaArray - объект с полями **meta** и **rows**
 - Упоминание Array(Meta) изменено на Array(Object) или на MetaArray
 - Изменен формат описания поля **trackingCodes** в Отгрузках и Приёмках
-- Добавлен раздел [Валюта в документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-tehoperaciq-valuta-w-dokumentah) с описанием поля **rate**
+- Добавлен раздел [Валюта в документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah) с описанием поля **rate**
 - В описание добавлены отсутствовавшие поля **meta** в Счета и Контактные лица Контрагента
 - Убрано возможное разночтение в описании поля **tags** Контрагента
 - Для полей **consignee** и **carrier** в Отгрузках и Счетах-фактурах выданных добавлена пометка про тип сущностей
