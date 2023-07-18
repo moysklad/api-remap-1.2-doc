@@ -140,11 +140,11 @@
 
 ### 17-07-2023
 #### Изменено
-- Права для доступа к [Отчету Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost) исправлены с `Прибыль и убытки` на `Прибыльность`
+- Права для доступа к [Отчету Прибыльность](../reports/#otchety-otchet-pribyl-nost) исправлены с `Прибыль и убытки` на `Прибыльность`
 
 ### 07-07-2023
 #### Изменено
-- Исправлена ссылка на раздел [Валюта в документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)
+- Исправлена ссылка на раздел [Валюта в документах](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)
 
 ### 06-07-2023
 #### Добавлена
