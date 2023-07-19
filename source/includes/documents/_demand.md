@@ -1608,6 +1608,7 @@ curl -X POST
             "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata",
             "type": "demand",
             "mediaType": "application/json"
+          }
         },
         {
           "meta": {
@@ -1615,6 +1616,7 @@ curl -X POST
             "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/demand/metadata",
             "type": "demand",
             "mediaType": "application/json"
+          }
         }
       ]'
 ```        
