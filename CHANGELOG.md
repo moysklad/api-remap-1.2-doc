@@ -3,7 +3,7 @@
 
 ## 19-07-2023
 ### Исправлено
--  Добавлены закрывающие скобки в массовом удаление отгрузкок в [запросе](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka-massowoe-udalenie-otgruzok)
+-  Добавлены закрывающие скобки в примере [запроса](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka-massowoe-udalenie-otgruzok) в разаделе массвое удаление отгрузкок
 
 ## 17-07-2023
 ### Изменено
