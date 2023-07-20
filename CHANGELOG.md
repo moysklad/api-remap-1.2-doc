@@ -2,6 +2,8 @@
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
 ## 19-07-2023
+### Исправлено
+-  Добавлены закрывающие скобки в примере запроса в разделе [массовое удаление отгрузок](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka-massowoe-udalenie-otgruzok)
 ### Добавлено
 - Значение "Начало работы" в допустимые значения [Стартового экрана](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-pol-zowatelq-startowyj-akran)
 

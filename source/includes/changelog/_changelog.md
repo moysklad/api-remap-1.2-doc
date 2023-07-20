@@ -139,6 +139,8 @@
 Список последних изменений в API Remap 1.2
 
 ### 19-07-2023
+#### Исправлено
+-  Добавлены закрывающие скобки в примере запроса в разделе [массовое удаление отгрузок](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka-massowoe-udalenie-otgruzok)
 #### Добавлено
 - Значение "Начало работы" в допустимые значения [Стартового экрана](../dictionaries/#suschnosti-nastrojki-pol-zowatelq-startowyj-akran)
 
