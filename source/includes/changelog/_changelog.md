@@ -138,6 +138,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 24-07-2023
+#### Добавлен
+- Краткий [Отчет на остатки по ячейкам](../reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah-po-qchejkam)
+
 ### 07-07-2023
 #### Изменено
 - Исправлена ссылка на раздел [Валюта в документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)
