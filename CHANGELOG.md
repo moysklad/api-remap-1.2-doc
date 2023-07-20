@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 19-07-2023
+#### Добавлено
+-  Закывающие скобки в массовом удаление отгрузкок в [запросе](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka-massowoe-udalenie-otgruzok)
+
 ## 17-07-2023
 ### Изменено
 - Права для доступа к [Отчету Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost) исправлены с `Прибыль и убытки` на `Прибыльность`
