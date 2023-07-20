@@ -139,8 +139,8 @@
 Список последних изменений в API Remap 1.2
 
 ### 19-07-2023
-#### Добавлено
--  Закывающие скобки в массовом удаление отгрузкок в [запросе](../documents/#dokumenty-otgruzka-massowoe-udalenie-otgruzok)
+#### Исправлено
+-  Добавлены закрывающие скобки в массовом удаление отгрузкок в [запросе](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka-massowoe-udalenie-otgruzok)
 
 ### 17-07-2023
 #### Изменено
