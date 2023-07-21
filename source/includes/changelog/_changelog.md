@@ -138,10 +138,6 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 20-07-2023
-#### Изменено
-- Исправлено описание [бонусной программы](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-bonusnaq-programma)
-
 ### 19-07-2023
 #### Добавлено
 - Значение "Начало работы" в допустимые значения [Стартового экрана](../dictionaries/#suschnosti-nastrojki-pol-zowatelq-startowyj-akran)
