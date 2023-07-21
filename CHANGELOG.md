@@ -2,8 +2,8 @@
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
 ## 20-07-2023
-### Удалено
-- Удалено предложение об отсутствии опции создания и изменения [бонусной программы](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-bonusnaq-programma)
+### Изменено
+- Исправлено описание [бонусной программы](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-bonusnaq-programma)
 
 ## 19-07-2023
 ### Добавлено
