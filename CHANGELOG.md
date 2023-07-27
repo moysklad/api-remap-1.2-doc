@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 27-07-2023
+### Добавлено
+-  Добавлены ограничения в [DateTime](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-ogranicheniq)
+
 ## 19-07-2023
 ### Исправлено
 -  Добавлены закрывающие скобки в примере запроса в разделе [массовое удаление отгрузок](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka-massowoe-udalenie-otgruzok)
