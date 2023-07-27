@@ -3,7 +3,7 @@
 
 ## 27-07-2023
 ### Добавлено
--  Добавлены ограничения в тип данных [DateTime](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-ogranicheniq)
+-  Добавлено ограничение в тип данных [DateTime](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-ogranicheniq)
 
 ## 19-07-2023
 ### Исправлено
