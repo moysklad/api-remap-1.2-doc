@@ -140,7 +140,7 @@
 
 ### 28-07-2023
 #### Исправлено
--  Заменено "Заказ покупателя (salesreturn)" на "Заказ покупателя (customerorder)" в [шаблонах документов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-shablony-dokumentow)
+-  Заменено "Заказ покупателя (salesreturn)" на "Заказ  покупателя (customerorder)" в [шаблонах документов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-shablony-dokumentow)
 
 ### 19-07-2023
 #### Исправлено
