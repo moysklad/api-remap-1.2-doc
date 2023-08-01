@@ -770,6 +770,30 @@ html, body {
   pre + blockquote, pre + button {
     margin-top: 2px;
   }
+
+// TODO: remove in MC-64261
+  .banner {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #FFE6E6;
+    border-radius: 8px;
+    border: 1px solid #FF555A;
+    ui {
+      padding: 0;
+      line-height: 2;
+      li {
+        padding-left: 32px;
+        line-height: 2;
+      }
+    }
+    h2 {
+      padding: 10px 0;
+    }
+    p {
+      margin: 10px 0 0 0;
+      padding: 0;
+    }
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////

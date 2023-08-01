@@ -60,3 +60,13 @@ includes:
   
 search: true
 ---  
+
+[//]: # (TODO: remove in MC-64261)
+<div class="banner">
+  <h2>Внимание!</h2>
+  <ui><b>До 1 октября 2023 года необходимо:</b>
+    <li>Перенастроить интеграции на новый домен api.moysklad.ru (вместо online.moysklad.ru)</li>
+    <li>Включить использование <a href='https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-zaprosow'>сжатия содержимого запросов</a> через передачу заголовка Accept-Encoding</li>
+  </ui>
+  <p>После 1 октября 2023 года домен online.moysklad.ru будет отключен и интеграции через этот домен перестанут работать.</p>
+</div>

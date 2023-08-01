@@ -138,6 +138,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 02-08-2023
+#### Добавлено
+- Использование обязательного [сжатия содержимого запросов](../#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-zaprosow)
+- Исправлен домен в примерах документации
+
 ### 07-07-2023
 #### Изменено
 - Исправлена ссылка на раздел [Валюта в документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)
