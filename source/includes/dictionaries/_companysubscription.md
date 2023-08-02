@@ -31,7 +31,7 @@
 
 ```shell
 curl -X GET 
-  "https://online.moysklad.ru/api/remap/1.2/accountSettings/subscription"
+  "https://api.moysklad.ru/api/remap/1.2/accountSettings/subscription"
   -H Authorization: Basic <Credentials>
 ```
 

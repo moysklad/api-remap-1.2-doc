@@ -65,7 +65,7 @@
 
 ```shell
 curl -X POST 
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook 
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook 
   -H 'Authorization: Bearer <Access-Token>' 
   -H 'Content-Type: application/json' 
   -d '{
@@ -82,8 +82,8 @@ curl -X POST
 ```json
 {
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
         "type": "webhook",
         "mediaType": "application/json"
     },
@@ -104,7 +104,7 @@ curl -X POST
 
 ```shell
 curl -X GET 
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
   -H 'Authorization: Bearer <Access-Token>' 
   -H 'Content-Type: application/json' 
 ```
@@ -116,7 +116,7 @@ curl -X GET
 
 ```shell
 curl -X PUT 
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
   -H 'Authorization: Bearer <Access-Token>' 
   -H 'Content-Type: application/json' 
   -d '{
@@ -128,7 +128,7 @@ curl -X PUT
 
 ```shell
 curl -X PUT 
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
   -H 'Authorization: Bearer <Access-Token>' 
   -H 'Content-Type: application/json' 
   -d '{
@@ -140,7 +140,7 @@ curl -X PUT
 
 ```shell
 curl -X DELETE 
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
   -H 'Authorization: Bearer <Access-Token>' 
   -H 'Content-Type: application/json' 
 ```
@@ -149,7 +149,7 @@ curl -X DELETE
 
 ```shell
 curl -X GET 
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook 
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook 
   -H 'Authorization: Bearer <Access-Token>' 
   -H 'Content-Type: application/json' 
 ```
@@ -161,15 +161,15 @@ curl -X GET
    "context":{
       "employee":{
          "meta":{
-            "href":"https://online.moysklad.ru/api/remap/1.2/context/employee",
-            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+            "href":"https://api.moysklad.ru/api/remap/1.2/context/employee",
+            "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
             "type":"employee",
             "mediaType":"application/json"
          }
       }
    },
    "meta":{
-      "href":"https://online.moysklad.ru/api/remap/1.2/entity/webhook",
+      "href":"https://api.moysklad.ru/api/remap/1.2/entity/webhook",
       "type":"webhook",
       "mediaType":"application/json",
       "size":1,
@@ -179,8 +179,8 @@ curl -X GET
    "rows":[
       {
          "meta":{
-            "href":"https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3",
-            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+            "href":"https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3",
+            "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
             "type":"webhook",
             "mediaType":"application/json"
          },
@@ -226,7 +226,7 @@ curl -X GET
  
  ```shell
  curl -X POST 
-   https://online.moysklad.ru/api/remap/1.2/entity/webhook 
+   https://api.moysklad.ru/api/remap/1.2/entity/webhook 
    -H 'Authorization: Bearer <Access-Token>' 
    -H 'Cache-Control: no-cache' 
    -H 'Content-Type: application/json' 
@@ -243,7 +243,7 @@ curl -X GET
 
 ```shell
 curl -X POST 
-  https://online.moysklad.ru/api/remap/1.2/entity/service 
+  https://api.moysklad.ru/api/remap/1.2/entity/service 
   -H 'Authorization: Bearer <Access-Token>' 
   -H 'Content-Type: application/json' 
   -d '{

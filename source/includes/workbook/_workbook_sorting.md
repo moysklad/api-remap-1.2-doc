@@ -88,7 +88,7 @@
 
 ```shell
 curl -X POST 
-https://online.moysklad.ru/api/remap/1.2/entity/product 
+https://api.moysklad.ru/api/remap/1.2/entity/product 
 -H 'Authorization: Bearer <Access-Token>' 
 -H 'Cache-Control: no-cache' 
 -H 'Content-Type: application/json' 
@@ -154,7 +154,7 @@ https://online.moysklad.ru/api/remap/1.2/entity/product
 
 ```shell
 curl -X GET 
-'https://online.moysklad.ru/api/remap/1.2/entity/product?order=name' 
+'https://api.moysklad.ru/api/remap/1.2/entity/product?order=name' 
 -H 'Authorization: Bearer <Access-Token>' 
 -H 'Cache-Control: no-cache'
 ```
@@ -179,7 +179,7 @@ curl -X GET
 
 ```shell
 curl -X GET 
-'https://online.moysklad.ru/api/remap/1.2/entity/product?order=name,desc' 
+'https://api.moysklad.ru/api/remap/1.2/entity/product?order=name,desc' 
 -H 'Authorization: Bearer <Access-Token>' 
 -H 'Cache-Control: no-cache'
 ```
@@ -203,7 +203,7 @@ curl -X GET
 
 ```shell
 curl -X GET 
-'https://online.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;name' 
+'https://api.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;name' 
 -H 'Authorization: Bearer <Access-Token>' 
 -H 'Cache-Control: no-cache' 
 -H 'Content-Type: application/json'
@@ -228,7 +228,7 @@ curl -X GET
 
 ```shell
 curl -X GET 
-'https://online.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;weight,desc;name' 
+'https://api.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;weight,desc;name' 
 -H 'Authorization: Bearer <Access-Token>' 
 -H 'Cache-Control: no-cache' 
 -H 'Content-Type: application/json'
@@ -254,7 +254,7 @@ curl -X GET
 
 ```shell
 curl -X GET 
-'https://online.moysklad.ru/api/remap/1.2/entity/product?order=syncId' 
+'https://api.moysklad.ru/api/remap/1.2/entity/product?order=syncId' 
 -H 'Authorization: Bearer <Access-Token>' 
 -H 'Cache-Control: no-cache' 
 -H 'Content-Type: application/json'

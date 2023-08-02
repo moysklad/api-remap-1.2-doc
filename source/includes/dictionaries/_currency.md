@@ -64,8 +64,9 @@
 
 ```shell
 curl -X GET 
-  "https://online.moysklad.ru/api/remap/1.2/entity/currency/"
+  "https://api.moysklad.ru/api/remap/1.2/entity/currency/"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -76,16 +77,16 @@ curl -X GET
   "context": {
     "employee": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
     "type": "currency",
     "mediaType": "application/json",
     "size": 2,
@@ -95,11 +96,11 @@ curl -X GET
   "rows": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
         "type": "currency",
         "mediaType": "application/json",
-        "uuidHref": "http://online.moysklad.ru/app/#currency/edit?id=6314188d-2c7f-11e6-8a84-bae500000055"
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=6314188d-2c7f-11e6-8a84-bae500000055"
       },
       "id": "6314188d-2c7f-11e6-8a84-bae500000055",
       "system": false,
@@ -128,11 +129,11 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/dc5f76ae-2c89-11e6-8a84-bae50000003f",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/dc5f76ae-2c89-11e6-8a84-bae50000003f",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
         "type": "currency",
         "mediaType": "application/json",
-        "uuidHref": "http://online.moysklad.ru/app/#currency/edit?id=dc5f76ae-2c89-11e6-8a84-bae50000003f"
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=dc5f76ae-2c89-11e6-8a84-bae50000003f"
       },
       "id": "dc5f76ae-2c89-11e6-8a84-bae50000003f",
       "system": true,
@@ -172,8 +173,9 @@ curl -X GET
 
 ```shell
 curl -X POST 
-  https://online.moysklad.ru/api/remap/1.2/entity/currency/
+  https://api.moysklad.ru/api/remap/1.2/entity/currency/
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H 'Content-Type: application/json' 
   -d '{
   "name": "доллар",
@@ -190,11 +192,11 @@ curl -X POST
 ```json
 {
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/dc5f76ae-2c89-11e6-8a84-bae50000003f",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/dc5f76ae-2c89-11e6-8a84-bae50000003f",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
         "type": "currency",
         "mediaType": "application/json",
-        "uuidHref": "http://online.moysklad.ru/app/#currency/edit?id=dc5f76ae-2c89-11e6-8a84-bae50000003f"
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=dc5f76ae-2c89-11e6-8a84-bae50000003f"
     },
     "id": "dc5f76ae-2c89-11e6-8a84-bae50000003f",
     "system": false,
@@ -226,8 +228,9 @@ curl -X POST
 
 ```shell
 curl -X POST 
-  https://online.moysklad.ru/api/remap/1.2/entity/currency/
+  https://api.moysklad.ru/api/remap/1.2/entity/currency/
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H 'Content-Type: application/json' 
   -d '{
   "system": true,
@@ -242,8 +245,8 @@ curl -X POST
 ```json
 {
   "meta" : {
-    "href" : "https://online.moysklad.ru/api/remap/1.2/entity/currency/03f1855b-43d7-11ec-ac13-000400000050",
-    "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+    "href" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/03f1855b-43d7-11ec-ac13-000400000050",
+    "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
     "type" : "currency",
     "mediaType" : "application/json",
     "uuidHref" : "http://localhost/app/#currency/edit?id=03f1855b-43d7-11ec-ac13-000400000050"
@@ -279,8 +282,9 @@ curl -X POST
 
 ```shell
 curl -X POST 
-  https://online.moysklad.ru/api/remap/1.2/entity/currency/
+  https://api.moysklad.ru/api/remap/1.2/entity/currency/
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H 'Content-Type: application/json' 
   -d '{
   "system": true,
@@ -296,8 +300,8 @@ curl -X POST
 ```json
 {
   "meta" : {
-    "href" : "https://online.moysklad.ru/api/remap/1.2/entity/currency/03f1855b-43d7-11ec-ac13-000400000050",
-    "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+    "href" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/03f1855b-43d7-11ec-ac13-000400000050",
+    "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
     "type" : "currency",
     "mediaType" : "application/json",
     "uuidHref" : "http://localhost/app/#currency/edit?id=03f1855b-43d7-11ec-ac13-000400000050"
@@ -338,8 +342,9 @@ curl -X POST
 
 ```shell
 curl -X POST
-  https://online.moysklad.ru/api/remap/1.2/entity/currency/
+  https://api.moysklad.ru/api/remap/1.2/entity/currency/
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H 'Content-Type: application/json'
   -d '[
   {
@@ -350,8 +355,8 @@ curl -X POST
   },
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/dc5f76ae-2c89-11e6-8a84-bae50000003f",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/dc5f76ae-2c89-11e6-8a84-bae50000003f",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
       "type": "currency",
       "mediaType": "application/json"
     },
@@ -371,11 +376,11 @@ curl -X POST
 [
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/dc5f76ae-2c89-11e6-8a84-bae50000003f",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/dc5f76ae-2c89-11e6-8a84-bae50000003f",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
       "type": "currency",
       "mediaType": "application/json",
-      "uuidHref": "http://online.moysklad.ru/app/#currency/edit?id=dc5f76ae-2c89-11e6-8a84-bae50000003f"
+      "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=dc5f76ae-2c89-11e6-8a84-bae50000003f"
     },
     "id": "dc5f76ae-2c89-11e6-8a84-bae50000003f",
     "system": false,
@@ -397,11 +402,11 @@ curl -X POST
   },
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/dc5f76ae-2c89-11e6-8a84-bae50000003f",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/dc5f76ae-2c89-11e6-8a84-bae50000003f",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
       "type": "currency",
       "mediaType": "application/json",
-      "uuidHref": "http://online.moysklad.ru/app/#currency/edit?id=dc5f76ae-2c89-11e6-8a84-bae50000003f"
+      "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=dc5f76ae-2c89-11e6-8a84-bae50000003f"
     },
     "id": "dc5f76ae-2c89-11e6-8a84-bae50000003f",
     "system": false,
@@ -437,8 +442,9 @@ curl -X POST
 
 ```shell
 curl -X DELETE
-  "https://online.moysklad.ru/api/remap/1.2/entity/currency/7944ef04-f831-11e5-7a69-971500188b19"
+  "https://api.moysklad.ru/api/remap/1.2/entity/currency/7944ef04-f831-11e5-7a69-971500188b19"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -453,21 +459,22 @@ curl -X DELETE
 
 ```shell
 curl -X POST
-  "https://online.moysklad.ru/api/remap/1.2/entity/currency/delete"
+  "https://api.moysklad.ru/api/remap/1.2/entity/currency/delete"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H "Content-Type: application/json"
   -d '[
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json"
         },
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json"
         }
@@ -500,8 +507,9 @@ curl -X POST
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/currency/7944ef04-f831-11e5-7a69-971500188b19"
+  "https://api.moysklad.ru/api/remap/1.2/entity/currency/7944ef04-f831-11e5-7a69-971500188b19"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -510,11 +518,11 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000055",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
     "type": "currency",
     "mediaType": "application/json",
-    "uuidHref": "http://online.moysklad.ru/app/#currency/edit?id=6314188d-2c7f-11e6-8a84-bae500000055"
+    "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=6314188d-2c7f-11e6-8a84-bae500000055"
   },
   "id": "6314188d-2c7f-11e6-8a84-bae500000055",
   "system": false,
@@ -560,8 +568,9 @@ curl -X GET
 
 ```shell
 curl -X PUT
-  "https://online.moysklad.ru/api/remap/1.2/entity/currency/7944ef04-f831-11e5-7a69-971500188b19"
+  "https://api.moysklad.ru/api/remap/1.2/entity/currency/7944ef04-f831-11e5-7a69-971500188b19"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -d '{
   "name": "долл",
   "rate": 66,
@@ -576,11 +585,11 @@ curl -X PUT
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/dc5f76ae-2c89-11e6-8a84-bae50000003f",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/dc5f76ae-2c89-11e6-8a84-bae50000003f",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
     "type": "currency",
     "mediaType": "application/json",
-    "uuidHref": "http://online.moysklad.ru/app/#currency/edit?id=dc5f76ae-2c89-11e6-8a84-bae50000003f"
+    "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=dc5f76ae-2c89-11e6-8a84-bae50000003f"
   },
   "id": "dc5f76ae-2c89-11e6-8a84-bae50000003f",
   "system": false,

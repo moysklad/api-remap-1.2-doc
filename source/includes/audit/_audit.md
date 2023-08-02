@@ -101,8 +101,9 @@
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/audit"
+  "https://api.moysklad.ru/api/remap/1.2/audit"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -113,15 +114,15 @@ curl -X GET
   "context": {
     "employee": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/audit/",
+    "href": "https://api.moysklad.ru/api/remap/1.2/audit/",
     "type": "audit",
     "mediaType": "application/json",
     "size": 1,
@@ -131,7 +132,7 @@ curl -X GET
   "rows": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/audit/b912e9d1-3fbe-11e7-8a7f-40d000000000",
+        "href": "https://api.moysklad.ru/api/remap/1.2/audit/b912e9d1-3fbe-11e7-8a7f-40d000000000",
         "type": "audit",
         "mediaType": "application/json"
       },
@@ -155,14 +156,15 @@ curl -X GET
 | **filter** | `string` (optional) *Example: filter=entityType=customerorder* фильтр по типу сущности |
 
 Пример запроса с фильтрацией контекстов по типу "заказ покупателя"
-https://online.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder
+https://api.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder
 
 > Получить Контексты c фильтрацией
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder"
+  "https://api.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -173,15 +175,15 @@ curl -X GET
   "context": {
     "employee": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder",
+    "href": "https://api.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder",
     "type": "audit",
     "mediaType": "application/json",
     "size": 1,
@@ -191,7 +193,7 @@ curl -X GET
   "rows": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/audit/83732f4b-792a-11e7-9464-d04800000005",
+        "href": "https://api.moysklad.ru/api/remap/1.2/audit/83732f4b-792a-11e7-9464-d04800000005",
         "type": "audit",
         "mediaType": "application/json"
       },
@@ -204,7 +206,7 @@ curl -X GET
       "entityType": "customerorder",
       "events": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/audit/83732f4b-792a-11e7-9464-d04800000005/events",
+          "href": "https://api.moysklad.ru/api/remap/1.2/audit/83732f4b-792a-11e7-9464-d04800000005/events",
           "type": "auditevent",
           "mediaType": "application/json",
           "size": 1,
@@ -322,8 +324,9 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/audit/7944ef04-f831-11e5-7a69-971500188b19/events"
+  "https://api.moysklad.ru/api/remap/1.2/audit/7944ef04-f831-11e5-7a69-971500188b19/events"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -334,15 +337,15 @@ curl -X GET
   "context": {
     "employee": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/audit/c107864f-3f88-11e7-8a7f-40d000000041/events",
+    "href": "https://api.moysklad.ru/api/remap/1.2/audit/c107864f-3f88-11e7-8a7f-40d000000041/events",
     "type": "auditevent",
     "mediaType": "application/json",
     "size": 1,
@@ -365,15 +368,15 @@ curl -X GET
       "name": "some product",
       "audit": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/audit/7944ef04-f831-11e5-7a69-971500188b19",
+          "href": "https://api.moysklad.ru/api/remap/1.2/audit/7944ef04-f831-11e5-7a69-971500188b19",
           "type": "audit",
           "mediaType": "application/json"
         }
       },
       "entity": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "product",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=7944ef04-f831-11e5-7a69-971500188b19"
@@ -404,8 +407,9 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/audit"
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/audit"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -416,15 +420,15 @@ curl -X GET
   "context": {
     "employee": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/audit",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/audit",
     "type": "auditevent",
     "mediaType": "application/json",
     "size": 1,
@@ -447,15 +451,15 @@ curl -X GET
       "name": "some product",
       "audit": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/audit/7944ef04-f831-11e5-7a69-971500188b19",
+          "href": "https://api.moysklad.ru/api/remap/1.2/audit/7944ef04-f831-11e5-7a69-971500188b19",
           "type": "audit",
           "mediaType": "application/json"
         }
       },
       "entity": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "product",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=7944ef04-f831-11e5-7a69-971500188b19"
@@ -566,7 +570,7 @@ curl -X GET
 | **ymlconnectorsettings**       | Настройка синхронизации (YML)           |
 
 Также можно отфильтровать контексты аудита по пользовательскому справочнику. Для этого в качестве параметра **entityType** необходимо передать href пользовательского справочника.
-Пример: https://online.moysklad.ru/api/remap/1.2/entity/customentity/eaacabaf-2655-11e6-8a84-bae500000045
+Пример: https://api.moysklad.ru/api/remap/1.2/entity/customentity/eaacabaf-2655-11e6-8a84-bae500000045
 
 ### Получить Фильтры 
 
@@ -583,8 +587,9 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/audit/metadata/filters"
+  "https://api.moysklad.ru/api/remap/1.2/audit/metadata/filters"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -701,7 +706,7 @@ curl -X GET
     "crptpackagedisaggregation",
     "evotorsetting",
     "taxrate",
-    "https://online.moysklad.ru/api/remap/1.2/entity/customentity/eaacabaf-2655-11e6-8a84-bae500000045"
+    "https://api.moysklad.ru/api/remap/1.2/entity/customentity/eaacabaf-2655-11e6-8a84-bae500000045"
   ],
   "eventtype": [
     "create",

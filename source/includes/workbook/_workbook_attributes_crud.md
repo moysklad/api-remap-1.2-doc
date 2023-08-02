@@ -55,7 +55,7 @@ curl -X POST
   -u login:password 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes" 
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes" 
   -d '{
     "name": "Материал корпуса",
     "type": "string"
@@ -67,7 +67,7 @@ curl -X POST
 ```json
 {
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
         "type": "attributemetadata",
         "mediaType": "application/json"
     },
@@ -99,7 +99,7 @@ curl -X POST
   -u login:password 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes" 
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes" 
   -d '{
     "name": "Чехол",
     "type": "product"
@@ -111,7 +111,7 @@ curl -X POST
 ```json
 {
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/cc8ff599-c5c0-11e9-0a80-06b000000000",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/cc8ff599-c5c0-11e9-0a80-06b000000000",
         "type": "attributemetadata",
         "mediaType": "application/json"
     },
@@ -145,11 +145,11 @@ curl -X POST
   -u login:password 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes" 
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes" 
   -d '[
         {
             "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
                 "type": "attributemetadata",
                 "mediaType": "application/json"
             },
@@ -173,7 +173,7 @@ curl -X POST
 [
     {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
             "type": "attributemetadata",
             "mediaType": "application/json"
         },
@@ -184,7 +184,7 @@ curl -X POST
     },
     {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f",
             "type": "attributemetadata",
             "mediaType": "application/json"
         },
@@ -195,7 +195,7 @@ curl -X POST
     },
     {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b30b2e-b465-11e9-7ae5-884b00015630",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b30b2e-b465-11e9-7ae5-884b00015630",
             "type": "attributemetadata",
             "mediaType": "application/json"
         },
@@ -221,7 +221,7 @@ curl
     -X GET 
     -u login:password 
     -H "Lognex-Pretty-Print-JSON: true" 
-    "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes"
+    "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes"
 ```
 
 > В ответ получим список созданных атрибутов
@@ -229,7 +229,7 @@ curl
 
 ```json
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes",
         "type": "attributemetadata",
         "mediaType": "application/json",
         "size": 3,
@@ -239,7 +239,7 @@ curl
     "rows": [
         {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
             "type": "attributemetadata",
             "mediaType": "application/json"
         },
@@ -250,7 +250,7 @@ curl
     	},
     	{
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f",
             "type": "attributemetadata",
             "mediaType": "application/json"
         },
@@ -261,7 +261,7 @@ curl
     	},
    	 	{
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b30b2e-b465-11e9-7ae5-884b00015630",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b30b2e-b465-11e9-7ae5-884b00015630",
             "type": "attributemetadata",
             "mediaType": "application/json"
         },
@@ -283,7 +283,7 @@ curl
     -X GET 
     -u login:password 
     -H "Lognex-Pretty-Print-JSON: true" 
-    "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002"
+    "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002"
 ```
 
 > Результат
@@ -291,7 +291,7 @@ curl
 ```json
       {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
             "type": "attributemetadata",
             "mediaType": "application/json"
         },
@@ -317,7 +317,7 @@ curl -X PUT
   -u login:password 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f" 
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f" 
   -d '{
         "name":"Наличие CD/DVD-Rom"
       }'
@@ -328,7 +328,7 @@ curl -X PUT
 ```json
 {
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f",
         "type": "attributemetadata",
         "mediaType": "application/json"
     },
@@ -353,7 +353,7 @@ curl -X DELETE
   -u login:password 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f" 
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f" 
 ```
 
 Получим пустой ответ со статусом 200. Атрибут с указанным id будет удален.
@@ -368,18 +368,18 @@ curl -X POST
   -u login:password 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/delete" 
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/delete" 
   -d '[
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
             "type": "attributemetadata",
             "mediaType": "application/json"
           }
         },
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b30b2e-b465-11e9-7ae5-884b00015630",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b30b2e-b465-11e9-7ae5-884b00015630",
             "type": "attributemetadata",
             "mediaType": "application/json"
           }

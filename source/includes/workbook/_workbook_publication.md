@@ -42,7 +42,7 @@ curl
     -X GET 
     -u login:password 
     -H "Lognex-Pretty-Print-JSON: true" 
-    "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/"
+    "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/"
 ```
 
 > Ответ
@@ -52,15 +52,15 @@ curl
    "context": {
      "employee": {
        "meta": {
-         "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-         "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+         "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
          "type": "employee",
          "mediaType": "application/json"
        }
      }
    },
    "meta": {
-     "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/",
+     "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/",
      "type": "embeddedtemplate",
      "mediaType": "application/json",
      "size": 1,
@@ -70,14 +70,14 @@ curl
    "rows": [
      {
        "meta": {
-         "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/6ffea5e5-1b69-4a88-be59-4856281d439c",
+         "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/6ffea5e5-1b69-4a88-be59-4856281d439c",
          "type": "embeddedtemplate",
          "mediaType": "application/json"
        },
        "id": "6ffea5e5-1b69-4a88-be59-4856281d439c",
        "name": "Заказ",
        "type": "entity",
-       "content": "https://online.moysklad.ru/api/remap/1.2/download-template/order.xls"
+       "content": "https://api.moysklad.ru/api/remap/1.2/download-template/order.xls"
      }
    ]
  }
@@ -90,7 +90,7 @@ curl
     -X GET 
     -u login:password 
     -H "Lognex-Pretty-Print-JSON: true" 
-    "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/customtemplate/"
+    "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/customtemplate/"
 ```
 
 > Ответ
@@ -100,15 +100,15 @@ curl
     "context": {
             "employee": {
                 "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                    "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
                     "type": "employee",
                     "mediaType": "application/json"
                 }
             }
         },
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/customtemplate/",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/customtemplate/",
             "type": "customtemplate",
             "mediaType": "application/json",
             "size": 1,
@@ -118,14 +118,14 @@ curl
         "rows": [
             {
                 "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/customtemplate/13b49a38-0b64-4129-9fb8-0f9f936fa575",
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/customtemplate/13b49a38-0b64-4129-9fb8-0f9f936fa575",
                     "type": "customtemplate",
                     "mediaType": "application/json"
                 },
                 "id": "13b49a38-0b64-4129-9fb8-0f9f936fa575",
                 "name": "order_upakovka.xls",
                 "type": "entity",
-                "content": "https://online.moysklad.ru/api/remap/1.2/download/13b49a38-0b64-4129-9fb8-0f9f936fa575"
+                "content": "https://api.moysklad.ru/api/remap/1.2/download/13b49a38-0b64-4129-9fb8-0f9f936fa575"
             }
     ]
 }
@@ -150,11 +150,11 @@ curl
     -u login:password 
     -H "Content-Type: application/json" 
     -H "Lognex-Pretty-Print-JSON: true" 
-    "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication" 
+    "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication" 
     -d '{
           "template": {
             "meta": {
-              "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/6ffea5e5-1b69-4a88-be59-4856281d439c",
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/6ffea5e5-1b69-4a88-be59-4856281d439c",
               "type": "embeddedtemplate",
               "mediaType": "application/json"
             }
@@ -169,13 +169,13 @@ curl
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication/aec51463-bbd2-11e6-8a84-bae500000003",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication/aec51463-bbd2-11e6-8a84-bae500000003",
     "type": "operationpublication",
     "mediaType": "application/json"
   },
   "template": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/6ffea5e5-1b69-4a88-be59-4856281d439c",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/6ffea5e5-1b69-4a88-be59-4856281d439c",
       "type": "embeddedtemplate",
       "mediaType": "application/json"
     }
@@ -195,7 +195,7 @@ curl
     -X GET 
     -u login:password 
     -H "Lognex-Pretty-Print-JSON: true" 
-    "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication" 
+    "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication" 
 ```
 
 > Ответ:
@@ -205,15 +205,15 @@ curl
     "context": {
         "employee": {
             "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
                 "type": "employee",
                 "mediaType": "application/json"
             }
         }
     },
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication",
         "type": "demand",
         "mediaType": "application/json",
         "size": 1,
@@ -223,13 +223,13 @@ curl
     "rows": [
         {
             "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication/aec51463-bbd2-11e6-8a84-bae500000003",
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication/aec51463-bbd2-11e6-8a84-bae500000003",
                 "type": "operationpublication",
                 "mediaType": "application/json"
             },
             "template": {
                 "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/6ffea5e5-1b69-4a88-be59-4856281d439c",
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/6ffea5e5-1b69-4a88-be59-4856281d439c",
                     "type": "embeddedtemplate",
                     "mediaType": "application/json"
                 }
@@ -252,7 +252,7 @@ curl
     -u login:password 
     -H "Content-Type: application/json" 
     -H "Lognex-Pretty-Print-JSON: true" 
-    ""https://online.moysklad.ru/api/remap/1.2/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication/aec51463-bbd2-11e6-8a84-bae500000003"
+    ""https://api.moysklad.ru/api/remap/1.2/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication/aec51463-bbd2-11e6-8a84-bae500000003"
 ```
 
 
