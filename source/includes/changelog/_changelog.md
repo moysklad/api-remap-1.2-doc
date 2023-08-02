@@ -140,8 +140,10 @@
 
 ### 02-08-2023
 #### Добавлено
-- Использование обязательного [сжатия содержимого запросов](../#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-zaprosow)
-- Исправлен домен в примерах документации
+- Использование обязательного [сжатия содержимого ответов](../#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow)
+
+#### Изменен
+- Домен в примерах документации на api.moysklad.ru
 
 ### 07-07-2023
 #### Изменено

@@ -22,5 +22,5 @@ search: true
     <li>Перенастроить интеграции на новый домен api.moysklad.ru (вместо online.moysklad.ru)</li>
     <li>Включить использование <a href='https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-zaprosow'>сжатия содержимого запросов</a> через передачу заголовка Accept-Encoding</li>
   </ui>
-  <p>После 1 октября 2023 года домен online.moysklad.ru будет отключен и интеграции через этот домен перестанут работать.</p>
+  <p>После 1 октября 2023 года перестанут работать интеграции, использующие апи remap-12 на домене online.moysklad.ru</p>
 </div>
