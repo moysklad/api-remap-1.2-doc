@@ -5,7 +5,11 @@
 > Запрос
 
 ```shell
-curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://api.moysklad.ru/api/remap/1.2/entity/{document type}"
+curl -X GET 
+  "https://api.moysklad.ru/api/remap/1.2/entity/{document type}"
+  -u login:password
+  -H "Accept-Encoding: gzip"
+  -H "Lognex-Pretty-Print-JSON: true"
 ```
 вы получите не полный список документов (далее коллекция), а только первую 1000 документов.
 
@@ -14,7 +18,11 @@ curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://api.m
 > Запрос получения позиций документов
 
 ```shell
-curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://api.moysklad.ru/api/remap/1.2/entity/{document type}/{id}/positions"
+curl -X GET  
+  "https://api.moysklad.ru/api/remap/1.2/entity/{document type}/{id}/positions"
+  -u login:password
+  -H "Accept-Encoding: gzip" 
+  -H "Lognex-Pretty-Print-JSON: true"
 ```
 
 ### Параметр limit
@@ -25,7 +33,11 @@ curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://api.m
 >Запрос
 
 ```shell
-curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://api.moysklad.ru/api/remap/1.2/entity/customerorder?limit=10"
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/customerorder?limit=10"
+  -u login:password
+  -H "Accept-Encoding: gzip" 
+  -H "Lognex-Pretty-Print-JSON: true"
 ```
 
 > Результат:
@@ -171,7 +183,11 @@ curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://api.m
 > Запрос
 
 ```shell
-curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/51bb185a-b0e7-11ea-ac12-000d0000012a/positions?limit=10"
+curl -X GET 
+  "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/51bb185a-b0e7-11ea-ac12-000d0000012a/positions?limit=10"
+  -u login:password
+  -H "Accept-Encoding: gzip" 
+  -H "Lognex-Pretty-Print-JSON: true" 
 ```
 
 > Результат:
@@ -234,7 +250,11 @@ curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://api.m
 > Запрос
 
 ```shell
-curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://api.moysklad.ru/api/remap/1.2/entity/customerorder?offset=1"
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/customerorder?offset=1"
+  -u login:password
+  -H "Accept-Encoding: gzip" 
+  -H "Lognex-Pretty-Print-JSON: true"
 ```
 
 > Результат:
@@ -369,7 +389,10 @@ curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://api.m
 > Запрос
 
 ```shell
-curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/51bb185a-b0e7-11ea-ac12-000d0000012a/positions?offset=1"
+curl -X GET 
+ "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/51bb185a-b0e7-11ea-ac12-000d0000012a/positions?offset=1"
+ -u login:password 
+ -H "Lognex-Pretty-Print-JSON: true"
 ```
 
 > Результат:
@@ -434,7 +457,11 @@ curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://api.m
 > Запрос
 
 ```shell
-curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://api.moysklad.ru/api/remap/1.2/entity/customerorder?offset=160&limit=40"  
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/customerorder?offset=160&limit=40"
+  -u login:password
+  -H "Accept-Encoding: gzip" 
+  -H "Lognex-Pretty-Print-JSON: true"
 ```
 В таком виде вы получите в мете ответа 2 дополнительных параметра:
 
@@ -444,7 +471,11 @@ curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://api.m
 > Запрос
 
 ```shell
-curl -X GET -u login:password -H "Lognex-Pretty-Print-JSON: true" "https://api.moysklad.ru/api/remap/1.2/entity/customerorder?offset=160&limit=3"
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/customerorder?offset=160&limit=3"
+  -u login:password
+  -H "Accept-Encoding: gzip" 
+  -H "Lognex-Pretty-Print-JSON: true"
 ```
 
 При таком запросе

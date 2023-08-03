@@ -31,6 +31,7 @@
 curl -X GET
   "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore?async=true"
   -H "Authorization: Bearer <Access-Token>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 202
@@ -94,6 +95,7 @@ Content-Location: https://api.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6
 curl -X GET
   "https://api.moysklad.ru/api/remap/1.2/async/"
   -H "Authorization: Bearer <Access-Token>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -178,6 +180,7 @@ curl -X GET
 curl -X GET
   "https://api.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089"
   -H "Authorization: Bearer <Access-Token>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -251,6 +254,7 @@ curl -X GET
 curl -X GET
   "https://api.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089/result"
   -H "Authorization: Bearer <Access-Token>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200
@@ -369,6 +373,7 @@ curl -X GET
 curl -X GET
   "https://api.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089/result"
   -H "Authorization: Bearer <Access-Token>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Пример результата задачи, который содержит описание ошибки 
@@ -404,6 +409,7 @@ curl -X POST
   "https://api.moysklad.ru/api/remap/1.2/entity/webhook"
   -H "Authorization: Bearer <Access-Token>"
   -H "Content-Type: application/json"
+  -H "Accept-Encoding: gzip"
   -d '{
           "url": "http://some_url.ru",
           "action": "PROCESSED",
@@ -418,7 +424,7 @@ curl -X POST
 {
     "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhook/c6010bf9-a683-11eb-ac12-000900000001",
-        "metadataHref": "https://online.moysklad.ru//api/remap/1.2/entity/webhook/metadata",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
         "type": "webhook",
         "mediaType": "application/json"
     },
@@ -460,6 +466,7 @@ curl -X POST
 curl -X PUT
   "https://api.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089/cancel"
   -H "Authorization: Bearer <Access-Token>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 204

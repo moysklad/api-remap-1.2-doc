@@ -32,7 +32,8 @@ json-элемент, содержащий краткое описание объ
 ```shell
 curl -X GET 
   https://api.moysklad.ru/api/remap/1.2/entity/counterparty/ab4dd5fc-d100-11e8-ac12-00080000006d 
-  -H 'Authorization: Bearer <Access-Token>' 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
   -H 'Cache-Control: no-cache'
 ```
 
@@ -132,7 +133,7 @@ curl -X GET
 
 Ссылки на сотрудника, создавшего контрагента, и отдел сотрудника указаны в полях `owner` и `group`, и содержат также поля `meta`.
 
-> Метаданные сорудника и его отдела
+> Метаданные сотрудника и его отдела
 
 ```json
   "owner": {
@@ -162,7 +163,8 @@ curl -X GET
 ```shell
 curl -X GET 
   https://api.moysklad.ru/api/remap/1.2/entity/employee/ab306d83-d100-11e8-ac12-000800000042 
-  -H 'Authorization: Bearer <Access-Token>' 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
   -H 'Cache-Control: no-cache'
 ```
 
@@ -234,14 +236,15 @@ curl -X GET
    "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=3b335997-d10a-11e8-ac12-000b0000001f"
 }
 ```
-выполним запрос на создание комплекта, указав товар в компонентах
+Выполним запрос на создание комплекта, указав товар в компонентах
 
 > Запрос
 
 ```shell
 curl -X POST 
   'https://api.moysklad.ru/api/remap/1.2/entity/bundle?expand=components' 
-  -H 'Authorization: Bearer <Access-Token>' 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
   -H 'Cache-Control: no-cache' 
   -H 'Content-Type: application/json' 
   -d '{
@@ -378,7 +381,8 @@ curl -X POST
 ```shell
 curl -X PUT 
   https://api.moysklad.ru/api/remap/1.2/entity/product/3b336cc5-d10a-11e8-ac12-000b00000021 
-  -H 'Authorization: Bearer <Access-Token>' 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
   -H 'Cache-Control: no-cache' 
   -H 'Content-Type: application/json' 
   -d '{
@@ -520,7 +524,8 @@ curl -X PUT
 ```shell
 curl -X GET 
   https://api.moysklad.ru/api/remap/1.2/entity/webhook 
-  -H 'Authorization: Bearer <Access-Token>' 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
   -H 'Cache-Control: no-cache'
 ```
 
@@ -582,7 +587,8 @@ curl -X GET
 ```shell
 curl -X GET 
   'https://api.moysklad.ru/api/remap/1.2/entity/webhook?limit=1' 
-  -H 'Authorization: Bearer <Access-Token>' 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
   -H 'Cache-Control: no-cache'
   ```
   
@@ -636,7 +642,8 @@ curl -X GET
 ```shell
 curl -X GET 
   'https://api.moysklad.ru/api/remap/1.2/entity/webhook?limit=1&offset=1' 
-  -H 'Authorization: Bearer <Access-Token>' 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
   -H 'Cache-Control: no-cache'
 ``` 
 
@@ -696,7 +703,8 @@ curl -X GET
 ```shell
 curl -X GET 
   https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata 
-  -H 'Authorization: Bearer <Access-Token>' 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
   -H 'Cache-Control: no-cache'
 ```
 

@@ -249,7 +249,7 @@ curl -X POST
     "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
     "type" : "currency",
     "mediaType" : "application/json",
-    "uuidHref" : "http://localhost/app/#currency/edit?id=03f1855b-43d7-11ec-ac13-000400000050"
+    "uuidHref" : "https://online.moysklad.ru/app/#currency/edit?id=03f1855b-43d7-11ec-ac13-000400000050"
   },
   "id" : "03f1855b-43d7-11ec-ac13-000400000050",
   "system" : true,
@@ -304,7 +304,7 @@ curl -X POST
     "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
     "type" : "currency",
     "mediaType" : "application/json",
-    "uuidHref" : "http://localhost/app/#currency/edit?id=03f1855b-43d7-11ec-ac13-000400000050"
+    "uuidHref" : "https://online.moysklad.ru/app/#currency/edit?id=03f1855b-43d7-11ec-ac13-000400000050"
   },
   "id" : "03f1855b-43d7-11ec-ac13-000400000050",
   "system" : true,

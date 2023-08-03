@@ -43,6 +43,7 @@ JSON API доступен пользователям на всех тарифа�
 ```shell
 curl -X POST 
   -u login:password 
+  -H "Accept-Encoding: gzip" 
   -H "Content-Type: application/json" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/product" 
@@ -53,7 +54,8 @@ curl -X POST
 
 ```shell
 curl -X POST 
-  -H "Authorization: Bearer <Access-Token>" 
+  -H "Authorization: Bearer <Access-Token>"
+  -H "Accept-Encoding: gzip" 
   -H "Content-Type: application/json" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/product" 
@@ -183,6 +185,7 @@ curl -X POST
 ``` shell
 curl -X GET 
   -u login:password 
+  -H "Accept-Encoding: gzip" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/product"
 ```
@@ -360,6 +363,7 @@ curl -X GET
 ``` shell
 curl -X GET 
   -u login:password 
+  -H "Accept-Encoding: gzip" 
   -H "Lognex-Pretty-Print-JSON: true"
   "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata"
 ```
@@ -394,6 +398,7 @@ curl -X GET
 ``` shell
 curl -X POST 
   -u login:password 
+  -H "Accept-Encoding: gzip" 
   -H "Content-Type: application/json" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/product" 
@@ -436,6 +441,7 @@ curl -X POST
 ``` shell
 curl -X GET 
   -u login:password 
+  -H "Accept-Encoding: gzip" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/product"
 ```
@@ -576,7 +582,8 @@ curl -X GET
 
 ``` shell
 curl -X POST 
-  -u login:password 
+  -u login:password
+  -H "Accept-Encoding: gzip" 
   -H "Content-Type: application/json" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/product" 
@@ -700,7 +707,8 @@ curl -X POST
 
 ``` shell
 curl -X GET 
-  -u login:password 
+  -u login:password
+  -H "Accept-Encoding: gzip" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002"
 ```
@@ -821,7 +829,8 @@ curl -X GET
 
 ``` shell
 curl -X PUT 
-  -u login:password 
+  -u login:password
+  -H "Accept-Encoding: gzip" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002"
   -d '{"name":"Новое наименование"}'
@@ -944,7 +953,8 @@ curl -X PUT
 
 ``` shell
 curl -X DELETE 
-  -u login:password 
+  -u login:password
+  -H "Accept-Encoding: gzip" 
   "https://api.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002"
 ```
 
@@ -1003,7 +1013,8 @@ curl -X POST
 
 ``` shell
 curl -X PUT 
-  -u login:password 
+  -u login:password
+  -H "Accept-Encoding: gzip" 
   -H "Content-Type: application/json" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002" 
@@ -1126,7 +1137,8 @@ curl -X PUT
 
 ``` shell
 curl -X PUT 
-  -u login:password 
+  -u login:password
+  -H "Accept-Encoding: gzip" 
   -H "Content-Type: application/json" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002" 
@@ -1162,7 +1174,8 @@ curl -X PUT
 
 ``` shell
 curl -X GET 
-  -u login:password 
+  -u login:password
+  -H "Accept-Encoding: gzip" 
   -H "Lognex-Pretty-Print-JSON: true" 
   -H "X-Lognex-Format-Millisecond: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002"
@@ -1299,7 +1312,8 @@ curl -X GET
 
 ``` shell
 curl -X GET 
-  -u login:password 
+  -u login:password
+  -H "Accept-Encoding: gzip" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/report/stock/all?stockMode=all"
 ```
@@ -1364,7 +1378,8 @@ curl -X GET
 
 ``` shell
 curl -X GET 
-  -u login:password 
+  -u login:password
+  -H "Accept-Encoding: gzip" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/product?filter=name=Просто замечательный товар;updated>2018-01-01 00:00:00"
 ```
@@ -1495,7 +1510,8 @@ curl -X GET
 
 ``` shell
 curl -X GET 
-  -u login:password 
+  -u login:password
+  -H "Accept-Encoding: gzip" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/country"
 ```
@@ -1530,7 +1546,8 @@ curl -X GET
 
 ``` shell
 curl -X GET 
-  -u login:password 
+  -u login:password
+  -H "Accept-Encoding: gzip" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/country/?limit=25&offset=25"
 ```
@@ -1578,7 +1595,8 @@ curl -X GET
 
 ``` shell
 curl -X GET 
-  -u login:password 
+  -u login:password
+  -H "Accept-Encoding: gzip" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/country?search=Рос"
 ```
@@ -1636,7 +1654,8 @@ curl -X GET
 
 ``` shell
 curl -X GET 
-  -u login:password 
+  -u login:password
+  -H "Accept-Encoding: gzip" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/country/?order=name,desc;updated"
 ```
@@ -1727,7 +1746,8 @@ curl -X GET
 
 ``` shell
 curl -X GET 
-  -u login:password 
+  -u login:password
+  -H "Accept-Encoding: gzip" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/product/0884d27a-b0e3-11ea-ac12-000b00000002?expand=owner,owner.group"
 ```
@@ -1890,7 +1910,8 @@ curl -X GET
 
 ``` shell
 curl -X PUT 
-  -u login:password 
+  -u login:password
+  -H "Accept-Encoding: gzip" 
   -H "Lognex-Pretty-Print-JSON: true" 
   "https://api.moysklad.ru/api/remap/1.2/entity/product/0884d27a-b0e3-11ea-ac12-000b00000002?expand=owner,owner.group" 
   -d '{"name":"Новое наименование"}'

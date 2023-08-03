@@ -124,6 +124,7 @@ JSON API позволяет получить метаданные всех су�
 curl -X GET
   "https://api.moysklad.ru/api/remap/1.2/entity/metadata?filter=type=product;type=service;type=demand"
   -H "Authorization: Bearer <Access-Token>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Пример тела запроса:
@@ -894,6 +895,7 @@ API сервиса МойСклад позволяет оперировать с
 curl -X DELETE 
   "https://api.moysklad.ru/api/remap/1.2/{код сущности документа, в составе JSON API}/{id отдельного документа}/positions/179dd832-960c-11e6-8a84-bae5000000dc
   -H "Authorization: Bearer <Access-Token>"
+  -H "Accept-Encoding: gzip"
 ```
 
 
@@ -911,6 +913,7 @@ curl -X DELETE
 curl -X POST
   "https://api.moysklad.ru/api/remap/1.2/{код сущности документа, в составе JSON API}/{id отдельного документа}/positions/delete
   -H "Authorization: Bearer <Access-Token>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Пример тела запроса:
@@ -2674,6 +2677,7 @@ curl -X PUT
 curl -X GET
   "https://api.moysklad.ru/api/remap/1.2/context/application"
   -H "Authorization: Bearer <Access-Token>"
+  -H "Accept-Encoding: gzip"
 ``` 
 
 > Response 200 (application/json) Успешный запрос. Результат JSON объект, содержащий данные приложения
@@ -2706,6 +2710,7 @@ curl -X GET
 curl -X GET
   "https://api.moysklad.ru/api/remap/1.2/entity/application/b58a6312-f958-11e9-ac12-000a00000020"
   -H "Authorization: Bearer <Access-Token>"
+  -H "Accept-Encoding: gzip"
 ``` 
 
 > Response 200 (application/json) Успешный запрос. Результат JSON объект, содержащий данные приложения

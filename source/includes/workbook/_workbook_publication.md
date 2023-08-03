@@ -40,7 +40,8 @@
 ``` shell
 curl 
     -X GET 
-    -u login:password 
+    -u login:password
+    -H "Accept-Encoding: gzip" 
     -H "Lognex-Pretty-Print-JSON: true" 
     "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/"
 ```
@@ -88,7 +89,8 @@ curl
 ``` shell
 curl 
     -X GET 
-    -u login:password 
+    -u login:password
+    -H "Accept-Encoding: gzip" 
     -H "Lognex-Pretty-Print-JSON: true" 
     "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/customtemplate/"
 ```
@@ -147,7 +149,8 @@ curl
 ``` shell
 curl 
     -X POST
-    -u login:password 
+    -u login:password
+    -H "Accept-Encoding: gzip" 
     -H "Content-Type: application/json" 
     -H "Lognex-Pretty-Print-JSON: true" 
     "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication" 
@@ -193,7 +196,8 @@ curl
 ``` shell
 curl 
     -X GET 
-    -u login:password 
+    -u login:password
+    -H "Accept-Encoding: gzip" 
     -H "Lognex-Pretty-Print-JSON: true" 
     "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication" 
 ```
@@ -249,7 +253,8 @@ curl
 ``` shell
 curl 
     -X DELETE 
-    -u login:password 
+    -u login:password
+    -H "Accept-Encoding: gzip" 
     -H "Content-Type: application/json" 
     -H "Lognex-Pretty-Print-JSON: true" 
     ""https://api.moysklad.ru/api/remap/1.2/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication/aec51463-bbd2-11e6-8a84-bae500000003"

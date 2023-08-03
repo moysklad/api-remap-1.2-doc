@@ -13,7 +13,8 @@
 ```shell
 curl 
     -X GET 
-    -u login:password 
+    -u login:password
+    -H "Accept-Encoding: gzip" 
     -H "Lognex-Pretty-Print-JSON: true" 
     "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes"
 ```
@@ -79,7 +80,8 @@ curl
 ```shell
 curl 
     -X POST 
-    -u login:password 
+    -u login:password
+    -H "Accept-Encoding: gzip" 
     -H 'Accept: application/json' 
     -H 'Content-Type: application/json' 
     "https://api.moysklad.ru/api/remap/1.2/entity/product" 
@@ -146,7 +148,8 @@ curl
 ```shell
 curl 
     -X PUT 
-    -u login:password 
+    -u login:password
+    -H "Accept-Encoding: gzip" 
     -H 'Accept: application/json' 
     -H 'Content-Type: application/json' 
     "https://api.moysklad.ru/api/remap/1.2/entity/product/630c578a-cb05-11e8-9109-f8fc0037889a" 
@@ -198,7 +201,8 @@ curl
 ```shell
 curl 
     -X POST 
-    -u login:password 
+    -u login:password
+    -H "Accept-Encoding: gzip" 
     -H 'Accept: application/json' 
     -H 'Content-Type: application/json' 
     "https://api.moysklad.ru/api/remap/1.2/entity/product" 
@@ -233,7 +237,8 @@ curl
 ```shell
 curl 
     -X GET 
-    -u login:password 
+    -u login:password
+    -H "Accept-Encoding: gzip" 
     -H "Lognex-Pretty-Print-JSON: true" 
     "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata"
 ```
@@ -361,7 +366,8 @@ curl
 ```shell
 curl 
     -X POST 
-    -u login:password 
+    -u login:password
+    -H "Accept-Encoding: gzip" 
     -H 'Accept: application/json' 
     -H 'Content-Type: application/json' 
     "https://api.moysklad.ru/api/remap/1.2/entity/counterparty" 
@@ -530,7 +536,8 @@ JSON API позволяет осуществлять фильтрацию по �
 ```shell
 curl 
     -X GET 
-    -u login:password 
+    -u login:password
+    -H "Accept-Encoding: gzip" 
     -H 'Accept: application/json' 
     -H 'Content-Type: application/json' 
     "https://api.moysklad.ru/api/remap/1.2/entity/product?filter=https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/630c578a-cb05-11e8-9109-f8fc0037889a%3E%3D5"

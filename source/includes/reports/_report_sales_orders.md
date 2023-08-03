@@ -93,7 +93,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/report/orders/plotseries?momentFrom=2018-09-06 00:00:00&momentTo=2018-09-06 01:00:01&interval=hour&filter=organization=https://api.moysklad.ru/api/remap/1.2/entity/organization/00cd5a99-6897-11e7-7a6c-d2a9000c4fc0;project=https://api.moysklad.ru/api/remap/1.2/entity/project/02e64f51-6897-11e7-7a34-5acf000c8448;store=https://api.moysklad.ru/api/remap/1.2/entity/store/32213d37-8101-11e8-9107-50480004c6c1"
+  "https://api.moysklad.ru/api/remap/1.2/report/orders/plotseries?momentFrom=2018-09-06 00:00:00&momentTo=2018-09-06 01:00:01&interval=hour&filter=organization=https://api.moysklad.ru/api/remap/1.2/entity/organization/00cd5a99-6897-11e7-7a6c-d2a9000c4fc0;project=https://api.moysklad.ru/api/remap/1.2/entity/project/02e64f51-6897-11e7-7a34-5acf000c8448;store=https://api.moysklad.ru/api/remap/1.2/entity/store/32213d37-8101-11e8-9107-50480004c6c1"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
@@ -106,15 +106,15 @@ curl -X GET
   "context": {
     "employee": {
       "meta": {
-        "href": "https://online.moysklad.ru/context/employee",
-        "metaseriesHref": "https://online.moysklad.ru/employee/metaseries",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/report/orders/plotseries?momentFrom=2018-09-06 00:00:00&momentTo=2016-09-06 01:00:01&interval=hour&filter=organization=https://api.moysklad.ru/api/remap/1.2/entity/organization/00cd5a99-6897-11e7-7a6c-d2a9000c4fc0;project=https://api.moysklad.ru/api/remap/1.2/entity/project/02e64f51-6897-11e7-7a34-5acf000c8448;store=https://api.moysklad.ru/api/remap/1.2/entity/store/32213d37-8101-11e8-9107-50480004c6c1",
+    "href": "https://api.moysklad.ru/api/remap/1.2/report/orders/plotseries?momentFrom=2018-09-06 00:00:00&momentTo=2018-09-06 01:00:01&interval=hour&filter=organization=https://api.moysklad.ru/api/remap/1.2/entity/organization/00cd5a99-6897-11e7-7a6c-d2a9000c4fc0;project=https://api.moysklad.ru/api/remap/1.2/entity/project/02e64f51-6897-11e7-7a34-5acf000c8448;store=https://api.moysklad.ru/api/remap/1.2/entity/store/32213d37-8101-11e8-9107-50480004c6c1"
     "type": "ordersplotseries",
     "mediaType": "application/json"
   },
@@ -166,7 +166,7 @@ curl -X GET
     "employee": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
-        "metaseriesHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metaseries",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }

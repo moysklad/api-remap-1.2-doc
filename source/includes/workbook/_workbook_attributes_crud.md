@@ -53,6 +53,7 @@ JSON API описана в статье [Дополнительные поля](
 ```shell
 curl -X POST 
   -u login:password 
+  -H "Accept-Encoding: gzip" 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
   "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes" 
@@ -97,6 +98,7 @@ curl -X POST
 ```shell
 curl -X POST 
   -u login:password 
+  -H "Accept-Encoding: gzip" 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
   "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes" 
@@ -143,6 +145,7 @@ curl -X POST
 ```shell
 curl -X POST 
   -u login:password 
+  -H "Accept-Encoding: gzip" 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
   "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes" 
@@ -219,7 +222,8 @@ curl -X POST
 ```shell
 curl 
     -X GET 
-    -u login:password 
+    -u login:password
+    -H "Accept-Encoding: gzip" 
     -H "Lognex-Pretty-Print-JSON: true" 
     "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes"
 ```
@@ -281,7 +285,8 @@ curl
 ```shell
 curl 
     -X GET 
-    -u login:password 
+    -u login:password
+    -H "Accept-Encoding: gzip" 
     -H "Lognex-Pretty-Print-JSON: true" 
     "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002"
 ```
@@ -315,6 +320,7 @@ curl
 ```shell
 curl -X PUT 
   -u login:password 
+  -H "Accept-Encoding: gzip" 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
   "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f" 
@@ -351,6 +357,7 @@ curl -X PUT
 ```shell
 curl -X DELETE 
   -u login:password 
+  -H "Accept-Encoding: gzip" 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
   "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f" 
@@ -366,6 +373,7 @@ curl -X DELETE
 ```shell
 curl -X POST 
   -u login:password 
+  -H "Accept-Encoding: gzip" 
   -H 'Accept: application/json' 
   -H 'Content-Type: application/json' 
   "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/delete" 
