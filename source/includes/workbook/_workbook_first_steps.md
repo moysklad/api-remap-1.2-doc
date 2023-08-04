@@ -1,4 +1,14 @@
 # Workbook
+[//]: # (TODO: remove in MC-64261)
+<div class="banner">
+  <h4>Внимание!</h4>
+  <ui><b>До 1 декабря 2023 года необходимо:</b>
+    <li>Перенастроить интеграции на новый домен api.moysklad.ru (вместо online.moysklad.ru)</li>
+    <li>Включить использование <a href='https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow'>сжатия содержимого ответов</a> через передачу заголовка Accept-Encoding</li>
+  </ui>
+  <p>После 1 декабря 2023 года перестанут работать интеграции, использующие апи remap-12 на домене online.moysklad.ru</p>
+</div>
+
 ## Инструкция по переходу с версии 1.1 на 1.2
 
 Для перехода с версии 1.1 на 1.2 необходимо:
