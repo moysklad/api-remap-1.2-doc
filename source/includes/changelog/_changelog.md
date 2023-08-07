@@ -148,16 +148,30 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 02-08-2023
+### 02-09-2023
 #### Добавлено
 - Использование обязательного [сжатия содержимого ответов](../#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow)
+
+### 28-07-2023
+#### Исправлено
+-  Заменено "Заказ покупателя (salesreturn)" на "Заказ покупателя (customerorder)" в [шаблонах документов](../documents/#dokumenty-obschie-swedeniq-shablony-dokumentow)
+
+### 19-07-2023
+#### Исправлено
+-  Добавлены закрывающие скобки в примере запроса в разделе [массовое удаление отгрузок](../documents/#dokumenty-otgruzka-massowoe-udalenie-otgruzok)
+#### Добавлено
+- Значение "Начало работы" в допустимые значения [Стартового экрана](../dictionaries/#suschnosti-nastrojki-pol-zowatelq-startowyj-akran)
+
+### 17-07-2023
+#### Изменено
+- Права для доступа к [Отчету Прибыльность](../reports/#otchety-otchet-pribyl-nost) исправлены с `Прибыль и убытки` на `Прибыльность`
 
 #### Изменен
 - Домен в примерах документации на api.moysklad.ru
 
 ### 07-07-2023
 #### Изменено
-- Исправлена ссылка на раздел [Валюта в документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)
+- Исправлена ссылка на раздел [Валюта в документах](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)
 
 ### 06-07-2023
 #### Добавлена

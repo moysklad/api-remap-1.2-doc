@@ -75,6 +75,7 @@
 | Массовое редактирование                | bulkEdit                      |
 | Настройка обмена с Эвотор              | evotormapping                 |
 | Настройки                              | companysettings               |
+| Начало работы                          | homepage                      |
 | Новости                                | feed                          |
 | Обороты                                | turnover                      |
 | Операции с баллами                     | bonustransaction              |

@@ -1,12 +1,26 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-## 02-08-2023
+## 02-09-2023
 ### Добавлено
 - Использование обязательного [сжатия содержимого ответов](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow)
 
 ### Изменен
 - Домен в примерах документации на api.moysklad.ru
+
+## 28-07-2023
+### Исправлено
+-  Заменено "Заказ покупателя (salesreturn)" на "Заказ покупателя (customerorder)" в [шаблонах документов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-shablony-dokumentow)
+
+## 19-07-2023
+### Исправлено
+-  Добавлены закрывающие скобки в примере запроса в разделе [массовое удаление отгрузок](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka-massowoe-udalenie-otgruzok)
+### Добавлено
+- Значение "Начало работы" в допустимые значения [Стартового экрана](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-pol-zowatelq-startowyj-akran)
+
+## 17-07-2023
+### Изменено
+- Права для доступа к [Отчету Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost) исправлены с `Прибыль и убытки` на `Прибыльность`
 
 ## 07-07-2023
 ### Изменено
