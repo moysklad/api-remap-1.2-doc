@@ -138,6 +138,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 08-08-2023
+#### Добавлено
+-  Добавлены поля `sex`, `birthDate` См. [Поля реквизитов контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-suschnosti-polq-rekwizitow)
+-  Информация о новом типе поля `sex` См. [Пол контрагента](../dictionaries/#suschnosti-kontragent-kontragenty-pol-kontragenta)
+
 ### 28-07-2023
 #### Исправлено
 -  Заменено "Заказ покупателя (salesreturn)" на "Заказ покупателя (customerorder)" в [шаблонах документов](../documents/#dokumenty-obschie-swedeniq-shablony-dokumentow)
