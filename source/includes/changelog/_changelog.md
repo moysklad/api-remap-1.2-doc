@@ -138,13 +138,17 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 11-08-2023
+#### Добавлено
+- Описание, с отличием поведения в [изменении позиции техпроцесса](../dictionaries/#suschnosti-tehprocess-izmenit-poziciu-tehprocessa) апи от web-интерфейса
+
 ### 28-07-2023
 #### Исправлено
--  Заменено "Заказ покупателя (salesreturn)" на "Заказ покупателя (customerorder)" в [шаблонах документов](../documents/#dokumenty-obschie-swedeniq-shablony-dokumentow)
+- Заменено "Заказ покупателя (salesreturn)" на "Заказ покупателя (customerorder)" в [шаблонах документов](../documents/#dokumenty-obschie-swedeniq-shablony-dokumentow)
 
 ### 19-07-2023
 #### Исправлено
--  Добавлены закрывающие скобки в примере запроса в разделе [массовое удаление отгрузок](../documents/#dokumenty-otgruzka-massowoe-udalenie-otgruzok)
+- Добавлены закрывающие скобки в примере запроса в разделе [массовое удаление отгрузок](../documents/#dokumenty-otgruzka-massowoe-udalenie-otgruzok)
 #### Добавлено
 - Значение "Начало работы" в допустимые значения [Стартового экрана](../dictionaries/#suschnosti-nastrojki-pol-zowatelq-startowyj-akran)
 
