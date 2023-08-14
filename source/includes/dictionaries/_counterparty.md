@@ -1035,9 +1035,7 @@ curl -X POST
         "kpp": "15312532",
         "ogrn": "12345",
         "okpo": "12345",
-        "ogrnip": "58632598y21jk",
-        "sex": "MALE",
-        "birthDate": "2023-11-01 00:00:00.000"
+        "ogrnip": "58632598y21jk"
       }'
 ```
 > Response 200. Успешный запрос. Результат - JSON представление созданного Контрагента.
@@ -1094,8 +1092,6 @@ curl -X POST
   "legalLastName": "Иванов",
   "legalFirstName": "Иван",
   "legalMiddleName": "Иванович",
-  "sex": "MALE",
-  "birthDate": "2023-11-01 00:00:00.000",
   "accounts": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/45fd2f10-b0ae-11ea-0a80-163500000000/accounts",
