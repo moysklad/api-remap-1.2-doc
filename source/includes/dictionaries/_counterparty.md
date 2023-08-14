@@ -1139,6 +1139,119 @@ curl -X POST
 }
 ```
 
+> Пример 4
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d ' {
+        "name": "Петров",
+        "companyType": "individual",
+        "legalLastName": "Петров",
+        "legalFirstName": "Петр",
+        "legalMiddleName": "Петрович",
+        "sex": "MALE",
+        "birthDate": "2023-11-01 00:00:00.000"
+        }'
+```
+> Response 200. Успешный запрос. Результат - JSON представление созданного Контрагента.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/23f049f3-3ad1-11ee-ac13-000c00000000",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type": "counterparty",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=23f049f3-3ad1-11ee-ac13-000c00000000"
+  },
+  "id": "23f049f3-3ad1-11ee-ac13-000c00000000",
+  "accountId": "00081cde-3ad1-11ee-ac13-000d00000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/00f97251-3ad1-11ee-ac13-000e0000004c",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=00f97251-3ad1-11ee-ac13-000e0000004c"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/0009beb8-3ad1-11ee-ac13-000d00000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2023-08-14 21:34:00.817",
+  "name": "Петров",
+  "externalCode": "mm62KDCZjOpCCNqvW3DtK1",
+  "archived": false,
+  "created": "2023-08-14 21:34:00.817",
+  "companyType": "individual",
+  "legalTitle": "Петров Петр Петрович",
+  "legalLastName": "Петров",
+  "legalFirstName": "Петр",
+  "legalMiddleName": "Петрович",
+  "birthDate": "2023-11-01 00:00:00.000",
+  "sex": "MALE",
+  "accounts": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/23f049f3-3ad1-11ee-ac13-000c00000000/accounts",
+      "type": "account",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "tags": [],
+  "contactpersons": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/23f049f3-3ad1-11ee-ac13-000c00000000/contactpersons",
+      "type": "contactperson",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "notes": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/23f049f3-3ad1-11ee-ac13-000c00000000/notes",
+      "type": "note",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "state": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/02b158a9-3ad1-11ee-ac13-000e000000b5",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "state",
+      "mediaType": "application/json"
+    }
+  },
+  "salesAmount": 0.0,
+  "files": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/23f049f3-3ad1-11ee-ac13-000c00000000/files",
+      "type": "files",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
+
 > Пример с дополнительными полями
 
 ```shell
