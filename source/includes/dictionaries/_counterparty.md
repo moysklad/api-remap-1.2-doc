@@ -1149,7 +1149,7 @@ curl -X POST
         "legalFirstName": "Петр",
         "legalMiddleName": "Петрович",
         "sex": "MALE",
-        "birthDate": "2023-11-01 00:00:00.000"
+        "birthDate": "1953-11-01 00:00:00.000"
         }'
 ```
 > Response 200. Успешный запрос. Результат - JSON представление созданного Контрагента.
@@ -1193,7 +1193,7 @@ curl -X POST
   "legalLastName": "Петров",
   "legalFirstName": "Петр",
   "legalMiddleName": "Петрович",
-  "birthDate": "2023-11-01 00:00:00.000",
+  "birthDate": "1953-11-01 00:00:00.000",
   "sex": "MALE",
   "accounts": {
     "meta": {
