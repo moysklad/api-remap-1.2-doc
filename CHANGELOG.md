@@ -1,6 +1,11 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 15-08-2023
+### Добавлено
+-  Добавлены поля `sex`, `birthDate` См. [Поля реквизитов контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/#suschnosti-kontragent-kontragenty-atributy-suschnosti-polq-rekwizitow)
+-  Информация о новом типе поля `sex` См. [Пол контрагента](https://dev.moysklad.ru/doc/api/remap/1.2/#suschnosti-kontragent-kontragenty-pol-kontragenta)
+
 ## 11-08-2023
 ### Добавлено
 - Описание, с отличием поведения в [изменении позиции техпроцесса](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehprocess-izmenit-poziciu-tehprocessa) апи от web-интерфейса
