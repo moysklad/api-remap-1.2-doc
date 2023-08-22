@@ -120,7 +120,7 @@ https://online.moysklad.ru/api/remap/1.2/entity/product
 "syncId":"1b7c97cf-cf77-4f7e-b200-d264125578ab"
  },
  {
-"name":"Карандаш",
+"name":"!!! Карандаш",
 "weight":0.1,
 "syncId":"2b7c97cf-cf77-4f7e-b200-d264125578ab"
  },
@@ -160,16 +160,16 @@ curl -X GET
 ```
 Ответ будет содержать следующий порядок по возрастанию:
 
-|name|
+| name             |
 |------------------|
-| 12345 |
-| Pencil |
-| Pencil 123 |
-| Pencil Blue |
-| Pencil Red |
-| Карандаш |
-| Карандаш 123 |
-| Карандаш желтый |
+| 12345            |
+| Pencil           |
+| Pencil 123       |
+| Pencil Blue      |
+| Pencil Red       |
+| !!! Карандаш     |
+| Карандаш 123     |
+| Карандаш желтый  |
 | Карандаш зеленый |
 | !!! Это карандаш |
 
@@ -184,18 +184,18 @@ curl -X GET
 -H 'Cache-Control: no-cache'
 ```
 
-|name|
+| name             |
 |------------------|
 | !!! Это карандаш |
 | Карандаш зеленый |
-| Карандаш желтый |
-| Карандаш 123 |
-| Карандаш |
-| Pencil Red |
-| Pencil Blue |
-| Pencil 123 |
-| Pencil |
-| 12345 |
+| Карандаш желтый  |
+| Карандаш 123     |
+| !!! Карандаш     |
+| Pencil Red       |
+| Pencil Blue      |
+| Pencil 123       |
+| Pencil           |
+| 12345            |
 
 Попробуем отсортировать товары одновременно по убыванию логического поля `weighed` и по возрастанию поля `name`.
 
@@ -209,16 +209,16 @@ curl -X GET
 -H 'Content-Type: application/json'
 ```
 
-|weighed|name|
+|weighed| name             |
 |------------------|------------------|
-| true | 12345 |
-| true | Pencil Blue |
-| true | Карандаш желтый |
-| false | Pencil |
-| false | Pencil 123 |
-| false | Pencil Red |
-| false | Карандаш |
-| false | Карандаш 123 |
+| true | 12345            |
+| true | Pencil Blue      |
+| true | Карандаш желтый  |
+| false | Pencil           |
+| false | Pencil 123       |
+| false | Pencil Red       |
+| false | !!! Карандаш     |
+| false | Карандаш 123     |
 | false | Карандаш зеленый |
 | false | !!! Это карандаш |
 
@@ -234,18 +234,18 @@ curl -X GET
 -H 'Content-Type: application/json'
 ```
 
-|weighed|weight|name|
+|weighed|weight| name             |
 |------------------|------------------|------------------|
-|true|0.12| Карандаш желтый |
-|true|0.11| Pencil Blue |
-|true|0.1| 12345 |
+|true|0.12| Карандаш желтый  |
+|true|0.11| Pencil Blue      |
+|true|0.1| 12345            |
 |false|0.4| Карандаш зеленый |
-|false|0.32| Карандаш 123 |
-|false|0.2| Pencil Red |
-|false|0.1| Карандаш |
+|false|0.32| Карандаш 123     |
+|false|0.2| Pencil Red       |
+|false|0.1| !!! Карандаш     |
 |false|0.1| !!! Это карандаш |
-|false|0.01| Pencil |
-|false|0.01| Pencil 123 |
+|false|0.01| Pencil           |
+|false|0.01| Pencil 123       |
 
 Кроме текстовых, числовых и логических полей доступна сортировка по полям типов uuid и дата-время.
 Например, применим сортировку по полю `syncId`.
@@ -260,18 +260,18 @@ curl -X GET
 -H 'Content-Type: application/json'
 ```
 
-|syncId|name|
+|syncId| name             |
 |------------------|------------------|
-| 1b7c97cf-cf77-4f7e-b200-d264125578ab|Pencil Red |
-| 2b7c97cf-cf77-4f7e-b200-d264125578ab|Карандаш |
-| 3b7c97cf-cf77-4f7e-b200-d264125578ab|Pencil 123 |
-| 3d7c97cf-cf77-4f7e-b200-d264125578ab|!!! Это карандаш |
-| 4b7c97cf-cf77-4f7e-b200-d264125578ab|Карандаш 123 |
-| 5b7c97cf-cf77-4f7e-b200-d264125578ab|Pencil |
-| 7b7c97cf-cf77-4f7e-b200-d264125578ab|Карандаш желтый |
-| 8b7c97cf-cf77-4f7e-b200-d264125578ab|12345 |
-| 8c7c97cf-cf77-4f7e-b200-d264125578ab|Карандаш зеленый |
-| null |Pencil Blue |
+| 1b7c97cf-cf77-4f7e-b200-d264125578ab| Pencil Red       |
+| 2b7c97cf-cf77-4f7e-b200-d264125578ab| !!! Карандаш     |
+| 3b7c97cf-cf77-4f7e-b200-d264125578ab| Pencil 123       |
+| 3d7c97cf-cf77-4f7e-b200-d264125578ab| !!! Это карандаш |
+| 4b7c97cf-cf77-4f7e-b200-d264125578ab| Карандаш 123     |
+| 5b7c97cf-cf77-4f7e-b200-d264125578ab| Pencil           |
+| 7b7c97cf-cf77-4f7e-b200-d264125578ab| Карандаш желтый  |
+| 8b7c97cf-cf77-4f7e-b200-d264125578ab| 12345            |
+| 8c7c97cf-cf77-4f7e-b200-d264125578ab| Карандаш зеленый |
+| null | Pencil Blue      |
 
 У товара `Pencil Blue` отсутствует значение поля поэтому при сортировке по возрастанию, оно выводится в конце. 
 Аналогичное поведение и для других полей со значением `null`.
