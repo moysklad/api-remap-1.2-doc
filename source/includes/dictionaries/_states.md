@@ -214,7 +214,7 @@ curl -X GET
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/metadata/states"
+    "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states"
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '[
