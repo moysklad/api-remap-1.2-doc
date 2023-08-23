@@ -566,7 +566,7 @@ curl -X GET
    "directorSign" : {
        "meta" : {
          "href" : "https://online.moysklad.ru/api/remap/1.2/download/7da0feb5-e110-4021-a49f-35db4ae75f13",
-         "mediaType" : "application/octet-stream"~~~~
+         "mediaType" : "application/octet-stream"
        },
        "title" : "directorSignTest",
        "filename" : "directorSignTest.png",
