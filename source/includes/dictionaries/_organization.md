@@ -1856,15 +1856,15 @@ curl -X GET
     "accountNumber": "1234567876543",
     "bankName": "ОАО Сбербанк",
     "bankLocation": "г Москва",
-    "correspondentAccount": "12314124jkjj2451",
+    "correspondentAccount": "123141242451",
     "bic": "21412hhhh4"
   },
   {
     "isDefault": false,
     "accountNumber": "1234567876543",
-    "bankName": "\"ОАО БАНК\"",
+    "bankName": "ОАО БАНК",
     "bankLocation": "г Москва",
-    "correspondentAccount": "12314124jkjj2451",
+    "correspondentAccount": "123141242451",
     "bic": "21412555554"
   }
 ]'  
@@ -1888,7 +1888,7 @@ curl -X GET
     "accountNumber": "1234567876543",
     "bankName": "ОАО Сбербанк",
     "bankLocation": "г Москва",
-    "correspondentAccount": "12314124jkjj2451",
+    "correspondentAccount": "123141242451",
     "bic": "21412hhhh4"
   },
   {
@@ -1902,9 +1902,9 @@ curl -X GET
     "updated": "2017-10-25 13:31:00",
     "isDefault": false,
     "accountNumber": "1234567876543",
-    "bankName": "\"ОАО БАНК\"",
+    "bankName": "ОАО БАНК",
     "bankLocation": "г Москва",
-    "correspondentAccount": "12314124jkjj2451",
+    "correspondentAccount": "123141242451",
     "bic": "21412555554"
   }
 ]
