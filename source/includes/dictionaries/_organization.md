@@ -1854,8 +1854,8 @@ curl -X GET
     "id": "d9560d0e-6703-11e7-9464-e4de00000052",
     "isDefault": false,
     "accountNumber": "1234567876543",
-    "bankName": "\"ОАО Сбербm;анк\"",
-    "bankLocation": "г Моl;;lсква",
+    "bankName": "ОАО Сбербанк",
+    "bankLocation": "г Москва",
     "correspondentAccount": "12314124jkjj2451",
     "bic": "21412hhhh4"
   },
@@ -1886,8 +1886,8 @@ curl -X GET
     "updated": "2017-07-12 16:13:08",
     "isDefault": true,
     "accountNumber": "1234567876543",
-    "bankName": "\"ОАО Сбербm;анк\"",
-    "bankLocation": "г Моl;;lсква",
+    "bankName": "ОАО Сбербанк",
+    "bankLocation": "г Москва",
     "correspondentAccount": "12314124jkjj2451",
     "bic": "21412hhhh4"
   },
