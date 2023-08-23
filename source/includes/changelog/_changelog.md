@@ -138,10 +138,6 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 21-08-2023
-#### Добавлено
--  Добавлена ссылка на подробное описание сортировки в [общих сведениях](../#mojsklad-json-api-obschie-swedeniq-sortirowka-ob-ektow)
-
 ### 15-08-2023
 #### Добавлено
 -  Добавлены поля `sex`, `birthDate` См. [Поля реквизитов контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-suschnosti-polq-rekwizitow)
