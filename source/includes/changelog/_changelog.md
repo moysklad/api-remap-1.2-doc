@@ -146,6 +146,7 @@
 ### 11-08-2023
 #### Добавлено
 - Описание, с отличием поведения в [изменении позиции техпроцесса](../dictionaries/#suschnosti-tehprocess-izmenit-poziciu-tehprocessa) апи от web-интерфейса
+- Добавлены поля `requiredFio`, `requiredPhone`, `requiredEmail`, `requiredBirthdate`, `requiredSex` и `requiredDiscountCardNumber` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), позволяющие управлять обязательностью заполнения полей при создании контрагентов.
 
 ### 28-07-2023
 #### Исправлено

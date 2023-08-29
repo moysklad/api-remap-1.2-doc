@@ -72,6 +72,12 @@
 | **qrPayEnabled**                        | Boolean                                                   |                             | Возможность оплаты по QR-коду на точке продаж<br>`+Обязательное при ответе`                                                                                                                                                                                                   |
 | **qrTerminalId**                        | String(255)                                               |                             | Идентификатор терминала (TerminalID) для приложения оплаты по QR                                                                                                                                                                                                              |
 | **receiptTemplate**                     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                             | Метаданные шаблона печати кассовых чеков<br>`+Expand`                                                                                                                                                                                                                         |
+| **requiredFio**                         | Boolean                                                   |                             | Обязательность поля ФИО при создании контрагента<br>`+Обязательное при ответе` по умолчанию `+false`                                                                                                                                                                          |
+| **requiredPhone**                       | Boolean                                                   |                             | Обязательность поля телефон при создании контрагента<br>`+Обязательное при ответе` по умолчанию `+true`                                                                                                                                                                       |
+| **requiredEmail**                       | Boolean                                                   |                             | Обязательность поля эл. почта при создании контрагента<br>`+Обязательное при ответе` по умолчанию `+false`                                                                                                                                                                    |
+| **requiredBirthdate**                   | Boolean                                                   |                             | Обязательность поля дата рождения при создании контрагента<br>`+Обязательное при ответе` по умолчанию `+false`                                                                                                                                                                |
+| **requiredSex**                         | Boolean                                                   |                             | Обязательность поля пол при создании контрагента<br>`+Обязательное при ответе` по умолчанию `+false`                                                                                                                                                                          |
+| **requiredDiscountCardNumber**          | Boolean                                                   |                             | Обязательность поля номер бонусной карты при создании контрагента<br>`+Обязательное при ответе` по умолчанию `+false`                                                                                                                                                         |
 | **reservePrepaidGoods**                 | Boolean                                                   |                             | Резервировать товары, за которые внесена предоплата<br>`+Обязательное при ответе`                                                                                                                                                                                             |
 | **returnFromClosedShiftEnabled**        | Boolean                                                   |                             | Разрешить возвраты в закрытых сменах<br>`+Обязательное при ответе`                                                                                                                                                                                                            |
 | **sellReserves**                        | Boolean                                                   |                             | Учет резервов<br>`+Обязательное при ответе`                                                                                                                                                                                                                                   |
@@ -81,7 +87,7 @@
 | **store**                               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                    | Метаданные Склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                                                                                                          |
 | **tobaccoMrcControlType**               | Enum                                                      |                             | Контроль МРЦ для табачной продукции. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-kontrolq-mrc-dlq-tabachnoj-produkcii)<br>`+Обязательное при ответе`                                                                    |
 | **updated**                             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`  | Момент последнего обновления Точки продаж<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                  |
- 
+
 ##### Код системы налогообложения по умолчанию
 
 | Название                                 | Описание                     |
@@ -609,6 +615,12 @@ curl -X GET
         "name": "Цена продажи",
         "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
       },
+      "requiredFio" : false,
+      "requiredPhone" : false,
+      "requiredEmail" : false,
+      "requiredBirthdate" : false,
+      "requiredSex" : false,
+      "requiredDiscountCardNumber" : false,
       "authTokenAttached": false,
       "cashiers": {
         "meta": {
@@ -789,6 +801,12 @@ curl -X GET
               "controlCashierChoice" : true,
               "discountEnable" : true,
               "discountMaxPercent" : 10.0,
+              "requiredFio" : false,
+              "requiredPhone" : true,
+              "requiredEmail" : false,
+              "requiredBirthdate" : false,
+              "requiredSex" : false,
+              "requiredDiscountCardNumber" : false,
               "priceType" : {
                 "meta" : {
                   "href" : "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/30fe66fd-137a-11e6-9464-e4de00000050",
@@ -941,6 +959,12 @@ curl -X GET
   "controlCashierChoice" : true,
   "discountEnable" : true,
   "discountMaxPercent" : 10.0,
+  "requiredFio" : false,
+  "requiredPhone" : true,
+  "requiredEmail" : false,
+  "requiredBirthdate" : false,
+  "requiredSex" : false,
+  "requiredDiscountCardNumber" : false,
   "priceType" : {
     "meta" : {
       "href" : "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/30fe66fd-137a-11e6-9464-e4de00000050",
@@ -1160,6 +1184,12 @@ curl -X GET
   "active" : true,
   "controlCashierChoice" : false,
   "discountEnable" : false,
+  "requiredFio" : false,
+  "requiredPhone" : true,
+  "requiredEmail" : false,
+  "requiredBirthdate" : false,
+  "requiredSex" : false,
+  "requiredDiscountCardNumber" : false,
   "priceType" : {
     "meta" : {
       "href" : "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/30fe66fd-137a-11e6-9464-e4de00000052",
@@ -1260,6 +1290,12 @@ curl -X GET
             {
               "name" : "retailstoretest",
               "active": true,
+              "requiredFio" : false,
+              "requiredPhone" : true,
+              "requiredEmail" : false,
+              "requiredBirthdate" : false,
+              "requiredSex" : false,
+              "requiredDiscountCardNumber" : false,
               "organization" : {
                   "meta" : {
                   "href" : "https://online.moysklad.ru/api/remap/1.2/entity/organization/30fe66fd-137a-11e6-9464-e4de00000050",
@@ -1336,6 +1372,12 @@ curl -X GET
     "active" : true,
     "controlCashierChoice" : false,
     "discountEnable" : false,
+    "requiredFio" : false,
+    "requiredPhone" : true,
+    "requiredEmail" : false,
+    "requiredBirthdate" : false,
+    "requiredSex" : false,
+    "requiredDiscountCardNumber" : false,
     "priceType" : {
       "meta" : {
         "href" : "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/30fe66fd-137a-11e6-9464-e4de00000052",
@@ -1454,6 +1496,12 @@ curl -X GET
     "active" : true,
     "controlCashierChoice" : true,
     "discountEnable" : false,
+    "requiredFio" : false,
+    "requiredPhone" : true,
+    "requiredEmail" : false,
+    "requiredBirthdate" : false,
+    "requiredSex" : false,
+    "requiredDiscountCardNumber" : false,
     "priceType" : {
       "meta" : {
         "href" : "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/30fe66fd-137a-11e6-9464-e4de00000042",
@@ -1692,6 +1740,12 @@ curl -X GET
     "controlCashierChoice": false,
     "discountEnable": true,
     "discountMaxPercent": 17,
+    "requiredFio" : false,
+    "requiredPhone" : true,
+    "requiredEmail" : false,
+    "requiredBirthdate" : false,
+    "requiredSex" : false,
+    "requiredDiscountCardNumber" : false,
     "priceType": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
@@ -1866,6 +1920,12 @@ curl -X PUT
   "active" : true,
   "controlCashierChoice" : false,
   "discountEnable" : false,
+  "requiredFio" : false,
+  "requiredPhone" : true,
+  "requiredEmail" : false,
+  "requiredBirthdate" : false,
+  "requiredSex" : false,
+  "requiredDiscountCardNumber" : false,
   "priceType" : {
     "meta" : {
       "href" : "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/30fe66fd-137a-11e6-9464-e4de00000052",
