@@ -566,7 +566,7 @@ curl -X GET
    "directorSign" : {
        "meta" : {
          "href" : "https://online.moysklad.ru/api/remap/1.2/download/7da0feb5-e110-4021-a49f-35db4ae75f13",
-         "mediaType" : "application/octet-stream"~~~~
+         "mediaType" : "application/octet-stream"
        },
        "title" : "directorSignTest",
        "filename" : "directorSignTest.png",
@@ -1854,17 +1854,17 @@ curl -X GET
     "id": "d9560d0e-6703-11e7-9464-e4de00000052",
     "isDefault": false,
     "accountNumber": "1234567876543",
-    "bankName": "\"ОАО Сбербm;анк\"",
-    "bankLocation": "г Моl;;lсква",
-    "correspondentAccount": "12314124jkjj2451",
+    "bankName": "ОАО Сбербанк",
+    "bankLocation": "г Москва",
+    "correspondentAccount": "123141242451",
     "bic": "21412hhhh4"
   },
   {
     "isDefault": false,
     "accountNumber": "1234567876543",
-    "bankName": "\"ОАО БАНК\"",
+    "bankName": "ОАО БАНК",
     "bankLocation": "г Москва",
-    "correspondentAccount": "12314124jkjj2451",
+    "correspondentAccount": "123141242451",
     "bic": "21412555554"
   }
 ]'  
@@ -1886,9 +1886,9 @@ curl -X GET
     "updated": "2017-07-12 16:13:08",
     "isDefault": true,
     "accountNumber": "1234567876543",
-    "bankName": "\"ОАО Сбербm;анк\"",
-    "bankLocation": "г Моl;;lсква",
-    "correspondentAccount": "12314124jkjj2451",
+    "bankName": "ОАО Сбербанк",
+    "bankLocation": "г Москва",
+    "correspondentAccount": "123141242451",
     "bic": "21412hhhh4"
   },
   {
@@ -1902,9 +1902,9 @@ curl -X GET
     "updated": "2017-10-25 13:31:00",
     "isDefault": false,
     "accountNumber": "1234567876543",
-    "bankName": "\"ОАО БАНК\"",
+    "bankName": "ОАО БАНК",
     "bankLocation": "г Москва",
-    "correspondentAccount": "12314124jkjj2451",
+    "correspondentAccount": "123141242451",
     "bic": "21412555554"
   }
 ]

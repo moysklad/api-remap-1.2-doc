@@ -138,13 +138,22 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 15-08-2023
+#### Добавлено
+-  Добавлены поля `sex`, `birthDate` См. [Поля реквизитов контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-suschnosti-polq-rekwizitow)
+-  Информация о новом типе поля `sex` См. [Пол контрагента](../dictionaries/#suschnosti-kontragent-kontragenty-pol-kontragenta)
+
+### 11-08-2023
+#### Добавлено
+- Описание, с отличием поведения в [изменении позиции техпроцесса](../dictionaries/#suschnosti-tehprocess-izmenit-poziciu-tehprocessa) апи от web-интерфейса
+
 ### 28-07-2023
 #### Исправлено
--  Заменено "Заказ покупателя (salesreturn)" на "Заказ покупателя (customerorder)" в [шаблонах документов](../documents/#dokumenty-obschie-swedeniq-shablony-dokumentow)
+- Заменено "Заказ покупателя (salesreturn)" на "Заказ покупателя (customerorder)" в [шаблонах документов](../documents/#dokumenty-obschie-swedeniq-shablony-dokumentow)
 
 ### 19-07-2023
 #### Исправлено
--  Добавлены закрывающие скобки в примере запроса в разделе [массовое удаление отгрузок](../documents/#dokumenty-otgruzka-massowoe-udalenie-otgruzok)
+- Добавлены закрывающие скобки в примере запроса в разделе [массовое удаление отгрузок](../documents/#dokumenty-otgruzka-massowoe-udalenie-otgruzok)
 #### Добавлено
 - Значение "Начало работы" в допустимые значения [Стартового экрана](../dictionaries/#suschnosti-nastrojki-pol-zowatelq-startowyj-akran)
 
@@ -707,7 +716,7 @@
 
 ### 31-05-2021
 #### Добавлено
-- Добавлены поля `welcomeBonusesEnabled`, `welcomeBonusesValue`, `welcomeBonusesEnabled` в [Бонусную программу](../dictionaries/#suschnosti-bonusnaq-programma)
+- Добавлены поля `welcomeBonusesEnabled`, `welcomeBonusesValue`, `welcomeBonusesMode` в [Бонусную программу](../dictionaries/#suschnosti-bonusnaq-programma)
 - Возможность получать коды маркировки товаров и транспортных упаковок в формате тега 1162 (поле `trackingCodes_1162`) для документа типа [Отгрузка](../documents/#dokumenty-otgruzka-otgruzki-kody-markirowki-towarow-i-transportnyh-upakowok-w-formate-tega-1162).
 
 ### 28-05-2021

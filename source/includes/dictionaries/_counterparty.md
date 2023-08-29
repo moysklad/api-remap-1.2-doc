@@ -67,7 +67,8 @@
 ##### Поля реквизитов
 
 | Название              | Тип           | Фильтрация                                                                                                                                        | Описание                                                                                                                                                                                                                                                       |
-| --------------------- | :------------ | :------------------------------------------------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-----------------------| :------------ | :------------------------------------------------------------------------------------------------------------------------------------------------ |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **birthDate**         | DateTime      |                                                                                                                                                   | Дата рождения Контрагента типа `[Физическое лицо]`. Игнорируется для Контрагентов типов `[Индивидуальный предприниматель, Юридическое лицо]`                                                                                                                   |
 | **certificateDate**   | DateTime      |                                                                                                                                                   | Дата свидетельства                                                                                                                                                                                                                                             |
 | **certificateNumber** | String(255)   |                                                                                                                                                   | Номер свидетельства                                                                                                                                                                                                                                            |
 | **inn**               | String(255)   | `=` `!=` `~` `~=` `=~`                                                                                                                            | ИНН                                                                                                                                                                                                                                                            |
@@ -81,6 +82,7 @@
 | **ogrn**              | String(255)   |                                                                                                                                                   | ОГРН                                                                                                                                                                                                                                                           |
 | **ogrnip**            | String(255)   |                                                                                                                                                   | ОГРНИП                                                                                                                                                                                                                                                         |
 | **okpo**              | String(255)   |                                                                                                                                                   | ОКПО                                                                                                                                                                                                                                                           |
+| **sex**               | String(255)   |                                                                                                                                                   | Пол Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-pol-kontragenta)                                                                                                                                                           |
 
 Накопительная скидка выводится, если для контрагента хотя бы раз устанавливалась **коррекция суммы накоплений по скидке**, значение будет указано в поле **demandSumCorrection** 
 или при выполнении условий накопительной скидки **Проценты скидок при определенной сумме продаж**, актуальное значение будет отображено в поле **accumulationDiscount**. 
@@ -189,7 +191,8 @@
 Если тип контрагента `Физическое лицо`, будут выведены следующие поля реквизитов:
 
 | Название             | Описание                                                                                                                                              |
-| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **birthDate**        | Дата рождения Контрагента типа `[Физическое лицо]`. Игнорируется для Контрагентов типа `[Индивидуальный предприниматель, Юридическое лицо]`           |
 | **inn**              | ИНН                                                                                                                                                   |
 | **legalAddress**     | Юридический адрес Контрагента                                                                                                                         |
 | **legalAddressFull** | Юридический адрес Контрагента с детализацией по отдельным полям                                                                                       |
@@ -197,9 +200,18 @@
 | **legalLastName**    | Фамилия для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`             |
 | **legalMiddleName**  | Отчество для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`            |
 | **legalTitle**       | Полное наименование Контрагента. Игнорируется, если передано одно из значений для ФИО. Формируется автоматически на основе получаемых ФИО Контрагента |
+| **sex**              | Пол Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-pol-kontragenta)                                                  |
 
 О работе с доп. полями Контрагентов можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
+
+#### Пол Контрагента
+Пол Контрагента используется только для Контрагента типа `[Физическое лицо]`. Игнорируется для Контрагентов типа `[Индивидуальный предприниматель, Юридическое лицо]`
+
+| Значение поля sex | Пол контрагента |
+|-------------------|:----------------|
+| **MALE**          | Мужской         |
+| **FEMALE**        | Женский         |
 
 ### Получить список Контрагентов
 
@@ -1120,6 +1132,119 @@ curl -X POST
     }
   },
   "salesAmount": 0.0
+}
+```
+
+> Пример 4
+
+```shell
+curl -X POST
+  "https://online.moysklad.ru/api/remap/1.2/entity/counterparty"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d ' {
+        "name": "Петров",
+        "companyType": "individual",
+        "legalLastName": "Петров",
+        "legalFirstName": "Петр",
+        "legalMiddleName": "Петрович",
+        "sex": "MALE",
+        "birthDate": "1953-11-01 00:00:00.000"
+        }'
+```
+> Response 200. Успешный запрос. Результат - JSON представление созданного Контрагента.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/23f049f3-3ad1-11ee-ac13-000c00000000",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type": "counterparty",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=23f049f3-3ad1-11ee-ac13-000c00000000"
+  },
+  "id": "23f049f3-3ad1-11ee-ac13-000c00000000",
+  "accountId": "00081cde-3ad1-11ee-ac13-000d00000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/00f97251-3ad1-11ee-ac13-000e0000004c",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=00f97251-3ad1-11ee-ac13-000e0000004c"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/0009beb8-3ad1-11ee-ac13-000d00000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2023-08-14 21:34:00.817",
+  "name": "Петров",
+  "externalCode": "mm62KDCZjOpCCNqvW3DtK1",
+  "archived": false,
+  "created": "2023-08-14 21:34:00.817",
+  "companyType": "individual",
+  "legalTitle": "Петров Петр Петрович",
+  "legalLastName": "Петров",
+  "legalFirstName": "Петр",
+  "legalMiddleName": "Петрович",
+  "birthDate": "1953-11-01 00:00:00.000",
+  "sex": "MALE",
+  "accounts": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/23f049f3-3ad1-11ee-ac13-000c00000000/accounts",
+      "type": "account",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "tags": [],
+  "contactpersons": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/23f049f3-3ad1-11ee-ac13-000c00000000/contactpersons",
+      "type": "contactperson",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "notes": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/23f049f3-3ad1-11ee-ac13-000c00000000/notes",
+      "type": "note",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "state": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/02b158a9-3ad1-11ee-ac13-000e000000b5",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "state",
+      "mediaType": "application/json"
+    }
+  },
+  "salesAmount": 0.0,
+  "files": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/23f049f3-3ad1-11ee-ac13-000c00000000/files",
+      "type": "files",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
 }
 ```
 
@@ -2064,6 +2189,8 @@ curl -X GET
   "legalLastName": "Иванов",
   "legalFirstName": "Иван",
   "legalMiddleName": "Иванович",
+  "sex": "MALE",
+  "birthDate": "2023-11-01 00:00:00.000",
   "accounts": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts",
