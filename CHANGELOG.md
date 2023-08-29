@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 31-08-2023
+#### Добавлено
+- Добавлено поле `allowDeleteReceiptPositions` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), разрешающее удалять позиции в чеке.
+
 ## 15-08-2023
 ### Добавлено
 -  Добавлены поля `sex`, `birthDate` См. [Поля реквизитов контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/#suschnosti-kontragent-kontragenty-atributy-suschnosti-polq-rekwizitow)
