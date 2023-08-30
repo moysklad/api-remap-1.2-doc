@@ -17,6 +17,7 @@ includes:
   - dictionaries/webhook
   - dictionaries/webhookstock
   - dictionaries/gtd
+  - dictionaries/processingplanfolder
   - dictionaries/productFolder
   - dictionaries/contract
   - dictionaries/uom  
@@ -47,7 +48,6 @@ includes:
   - dictionaries/expenseitem
   - dictionaries/country
   - dictionaries/processingplan
-  - dictionaries/processingplanfolder
   - dictionaries/processingprocess
   - dictionaries/pricetypes
   - dictionaries/product
