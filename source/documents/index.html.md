@@ -47,7 +47,6 @@ includes:
   - documents/invoice_in
   - documents/factureout
   - documents/facturein
-  - documents/processingplanfolder
   - documents/processing
 
 search: true

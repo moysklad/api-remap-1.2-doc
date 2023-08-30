@@ -47,6 +47,7 @@ includes:
   - dictionaries/expenseitem
   - dictionaries/country
   - dictionaries/processingplan
+  - dictionaries/processingplanfolder
   - dictionaries/processingprocess
   - dictionaries/pricetypes
   - dictionaries/product
