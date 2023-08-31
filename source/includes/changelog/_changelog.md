@@ -140,7 +140,10 @@
 
 ### 31-08-2023
 #### Добавлена
--  Фильтрация по `retailShift` в [Розничную продажу](../documents/#dokumenty-roznichnaq-prodazha)
+- Фильтрация по `retailShift` в [Розничную продажу](../documents/#dokumenty-roznichnaq-prodazha),
+  [Розничный возврат](../documents/#dokumenty-roznichnyj-wozwrat),
+  [Внесение денег](../documents/#dokumenty-vnesenie-deneg),
+  [Выплата денег](../documents/#dokumenty-vyplata-deneg)
 
 ### 15-08-2023
 #### Добавлено
