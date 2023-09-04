@@ -329,7 +329,7 @@
 ### Добавлено
 - Параметр фильтрации withSubFolders в [Отчете остатков](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki), позволяющий фильтровать по заданной группе товаров без учета ее подгрупп.
 ### Документация
-- Добавлено описание [Группа техкарт](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-gruppa-tehkart)
+- Добавлено описание [Группа техкарт](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-gruppa-tehkart)
 
 ## 01-04-2022
 ### Добавлено
