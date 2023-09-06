@@ -138,6 +138,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 06-09-2023
+#### Добавлено
+- Добавлено поле `allowDeleteReceiptPositions` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), разрешающее удалять позиции в чеке.
+
 ### 31-08-2023
 #### Добавлена
 - Фильтрация по `retailShift` в [Розничную продажу](../documents/#dokumenty-roznichnaq-prodazha),

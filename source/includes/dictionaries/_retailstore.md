@@ -25,6 +25,7 @@
 | **addressFull**                         | Object                                                    |                             | Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-adres)                                                                                |
 | **allowCreateProducts**                 | Boolean                                                   |                             | Контроль остатков. Не может быть `true`, если `controlShippingStock` имеет значение `true`<br>`+Обязательное при ответе`                                                                                                                                                      |
 | **allowCustomPrice**                    | Boolean                                                   |                             | Разрешить продажу по свободной цене<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                        |
+| **allowDeleteReceiptPositions**         | Boolean                                                   |                             | Разрешить удалять позиции в чеке<br>`+Обязательное при ответе` по умолчанию `+true`                                                                                                                                                                                           |
 | **allowSellTobaccoWithoutMRC**          | Boolean                                                   |                             | Разрешить продавать табачную продукцию не по МРЦ<br>`+Обязательное при ответе`                                                                                                                                                                                                |
 | **archived**                            | Boolean                                                   |                             | Добавлена ли Точка продаж в архив<br>`+Обязательное при ответе`                                                                                                                                                                                                               |
 | **authTokenAttached**                   | Boolean                                                   |                             | Создан ли токен для точки продаж<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                           |
@@ -495,6 +496,7 @@ curl -X GET
       "markingSellingMode" : "CORRECT_MARKS_ONLY",
       "sendMarksForCheck" : false,
       "allowCreateProducts" : false,
+      "allowDeleteReceiptPositions" : true,
       "productFolders" : {
         "meta" : {
           "href" : "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/2b5eb22f-139e-11e6-9464-e4de00000073/productfolders",
@@ -718,6 +720,7 @@ curl -X GET
       "markingSellingMode" : "CORRECT_MARKS_ONLY",
       "sendMarksForCheck" : false,
       "allowCreateProducts" : false,
+      "allowDeleteReceiptPositions" : true,
       "productFolders" : {
         "meta" : {
           "href" : "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/2b5eb22f-139e-11e6-9464-e4de00000073/productfolders",
@@ -863,6 +866,7 @@ curl -X GET
               "markingSellingMode" : "CORRECT_MARKS_ONLY",
               "sendMarksForCheck" : false,
               "allowCreateProducts" : false,
+              "allowDeleteReceiptPositions" : true,
               "productFolders" : [{
                 "meta": {
                   "href": "https://online.moysklad.ru/api/remap/1.2/entity/productfolder/30fe66fd-137a-11e6-9464-e4de00000056",
@@ -1055,6 +1059,7 @@ curl -X GET
   "markingSellingMode" : "CORRECT_MARKS_ONLY",
   "sendMarksForCheck" : false,
   "allowCreateProducts" : false,
+  "allowDeleteReceiptPositions" : true,
   "productFolders" : {
     "meta" : {
       "href" : "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/966b1795-bf2c-11e9-ee62-204c0000004c/productFolders",
@@ -1255,6 +1260,7 @@ curl -X GET
   "markingSellingMode" : "CORRECT_MARKS_ONLY",
   "sendMarksForCheck" : false,
   "allowCreateProducts" : true,
+  "allowDeleteReceiptPositions" : true,
   "productFolders" : {
     "meta" : {
       "href" : "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/425999e6-bf2f-11e9-ee62-204c00000041/productFolders",
@@ -1443,6 +1449,7 @@ curl -X GET
     "markingSellingMode" : "CORRECT_MARKS_ONLY",
     "sendMarksForCheck" : false,
     "allowCreateProducts" : true,
+    "allowDeleteReceiptPositions" : true,
     "productFolders" : {
       "meta" : {
         "href" : "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/425999e6-bf2f-11e9-ee62-204c00000041/productFolders",
@@ -1575,6 +1582,7 @@ curl -X GET
     "markingSellingMode" : "CORRECT_MARKS_ONLY",
     "sendMarksForCheck" : false,
     "allowCreateProducts" : true,
+    "allowDeleteReceiptPositions" : true,
     "productFolders" : {
       "meta" : {
         "href" : "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/425999e6-bf2f-11e9-ee62-204c00000042/productFolders",
@@ -1735,17 +1743,18 @@ curl -X GET
     "comment": "some words about address"
   },
   "controlShippingStock": true,
-    "onlyInStock": true,
-    "active": true,
-    "controlCashierChoice": false,
-    "discountEnable": true,
-    "discountMaxPercent": 17,
-    "requiredFio" : false,
-    "requiredPhone" : true,
-    "requiredEmail" : false,
-    "requiredBirthdate" : false,
-    "requiredSex" : false,
-    "requiredDiscountCardNumber" : false,
+  "onlyInStock": true,
+  "active": true,
+  "controlCashierChoice": false,
+  "discountEnable": true,
+  "discountMaxPercent": 17,
+  "requiredFio" : false,
+  "requiredPhone" : true,
+  "requiredEmail" : false,
+  "requiredBirthdate" : false,
+  "requiredSex" : false,
+  "requiredDiscountCardNumber" : false,
+  "allowDeleteReceiptPositions": true,
     "priceType": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
@@ -1999,6 +2008,7 @@ curl -X PUT
   "markingSellingMode" : "ALL",
   "sendMarksForCheck" : false,
   "allowCreateProducts" : true,
+  "allowDeleteReceiptPositions" : true,
   "productFolders" : {
     "meta" : {
       "href" : "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/425999e6-bf2f-11e9-ee62-204c00000041/productFolders",
