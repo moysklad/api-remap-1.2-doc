@@ -138,6 +138,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 13-09-2023
+#### Удалены
+- Ставший неактуальным `5004` код [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-komissionera).
+- Ограничение на товар и его количество в позиции возврата на склад комиссионера для [полученного отчета комиссионера](../documents/#dokumenty-poluchennyj-otchet-komissionera).
+
 ### 06-09-2023
 #### Добавлено
 - Добавлено поле `allowDeleteReceiptPositions` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), разрешающее удалять позиции в чеке.
