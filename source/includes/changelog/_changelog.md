@@ -142,7 +142,6 @@
 #### Добавлено
 - Добавлено поле `syncAgents` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), выгружает покупателей для работы оффлайн.
 
-
 ### 06-09-2023
 #### Добавлено
 - Добавлено поле `allowDeleteReceiptPositions` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), разрешающее удалять позиции в чеке.
