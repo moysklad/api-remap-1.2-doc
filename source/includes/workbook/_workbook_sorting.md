@@ -88,64 +88,65 @@
 
 ```shell
 curl -X POST 
-https://online.moysklad.ru/api/remap/1.2/entity/product 
--H 'Authorization: Bearer <Access-Token>' 
--H 'Cache-Control: no-cache' 
--H 'Content-Type: application/json' 
--d '[
- {
-"name":"12345",
-"weight":0.1,
-"weighed":true,
-"syncId":"8b7c97cf-cf77-4f7e-b200-d264125578ab"
- },
- {
-"name":"Pencil",
-"weight":0.01,
-"syncId":"5b7c97cf-cf77-4f7e-b200-d264125578ab"
- },
- {
-"name":"Pencil 123",
-"weight":0.01,
-"syncId":"3b7c97cf-cf77-4f7e-b200-d264125578ab"
- },
- {
-"name":"Pencil Blue",
-"weight":0.11,
-"weighed":true
- },
- {
-"name":"Pencil Red",
-"weight":0.2,
-"syncId":"1b7c97cf-cf77-4f7e-b200-d264125578ab"
- },
- {
-"name":"!!! Карандаш",
-"weight":0.1,
-"syncId":"2b7c97cf-cf77-4f7e-b200-d264125578ab"
- },
- {
-"name":"Карандаш 123",
-"weight":0.32,
-"syncId":"4b7c97cf-cf77-4f7e-b200-d264125578ab"
- },
- {
-"name":"Карандаш желтый",
-"weight":0.12,
-"weighed":true,
-"syncId":"7b7c97cf-cf77-4f7e-b200-d264125578ab"
- },
- {
-"name":"Карандаш зеленый",
-"weight":0.4,
-"syncId":"8c7c97cf-cf77-4f7e-b200-d264125578ab"
- },
- {
-"name":"!!! Это карандаш",
-"weight":0.1,
-"syncId":"3d7c97cf-cf77-4f7e-b200-d264125578ab"
- }
-]'
+  https://api.moysklad.ru/api/remap/1.2/entity/product 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
+  -H 'Cache-Control: no-cache' 
+  -H 'Content-Type: application/json' 
+  -d '[
+     {
+      "name":"12345",
+      "weight":0.1,
+      "weighed":true,
+      "syncId":"8b7c97cf-cf77-4f7e-b200-d264125578ab"
+     },
+     {
+      "name":"Pencil",
+      "weight":0.01,
+      "syncId":"5b7c97cf-cf77-4f7e-b200-d264125578ab"
+     },
+     {
+      "name":"Pencil 123",
+      "weight":0.01,
+      "syncId":"3b7c97cf-cf77-4f7e-b200-d264125578ab"
+     },
+     {
+      "name":"Pencil Blue",
+      "weight":0.11,
+      "weighed":true
+     },
+     {
+      "name":"Pencil Red",
+      "weight":0.2,
+      "syncId":"1b7c97cf-cf77-4f7e-b200-d264125578ab"
+     },
+     {
+      "name":"!!! Карандаш",
+      "weight":0.1,
+      "syncId":"2b7c97cf-cf77-4f7e-b200-d264125578ab"
+     },
+     {
+      "name":"Карандаш 123",
+      "weight":0.32,
+      "syncId":"4b7c97cf-cf77-4f7e-b200-d264125578ab"
+     },
+     {
+      "name":"Карандаш желтый",
+      "weight":0.12,
+      "weighed":true,
+      "syncId":"7b7c97cf-cf77-4f7e-b200-d264125578ab"
+     },
+     {
+      "name":"Карандаш зеленый",
+      "weight":0.4,
+      "syncId":"8c7c97cf-cf77-4f7e-b200-d264125578ab"
+     },
+     {
+      "name":"!!! Это карандаш",
+      "weight":0.1,
+      "syncId":"3d7c97cf-cf77-4f7e-b200-d264125578ab"
+     }
+  ]'
 ```
 
 Чтобы получить коллекцию товаров, отсортированных по имени, необходимо указать поле `name` и направление сортировки, как в примере ниже
@@ -154,9 +155,10 @@ https://online.moysklad.ru/api/remap/1.2/entity/product
 
 ```shell
 curl -X GET 
-'https://online.moysklad.ru/api/remap/1.2/entity/product?order=name' 
--H 'Authorization: Bearer <Access-Token>' 
--H 'Cache-Control: no-cache'
+  'https://api.moysklad.ru/api/remap/1.2/entity/product?order=name' 
+  -H 'Authorization: Bearer <Access-Token>' 
+  -H "Accept-Encoding: gzip"
+  -H 'Cache-Control: no-cache'
 ```
 Ответ будет содержать следующий порядок по возрастанию:
 
@@ -179,9 +181,10 @@ curl -X GET
 
 ```shell
 curl -X GET 
-'https://online.moysklad.ru/api/remap/1.2/entity/product?order=name,desc' 
--H 'Authorization: Bearer <Access-Token>' 
--H 'Cache-Control: no-cache'
+  'https://api.moysklad.ru/api/remap/1.2/entity/product?order=name,desc' 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
+  -H 'Cache-Control: no-cache'
 ```
 
 | name             |
@@ -203,10 +206,11 @@ curl -X GET
 
 ```shell
 curl -X GET 
-'https://online.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;name' 
--H 'Authorization: Bearer <Access-Token>' 
--H 'Cache-Control: no-cache' 
--H 'Content-Type: application/json'
+  'https://api.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;name' 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
+  -H 'Cache-Control: no-cache' 
+  -H 'Content-Type: application/json'
 ```
 
 |weighed| name             |
@@ -228,10 +232,11 @@ curl -X GET
 
 ```shell
 curl -X GET 
-'https://online.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;weight,desc;name' 
--H 'Authorization: Bearer <Access-Token>' 
--H 'Cache-Control: no-cache' 
--H 'Content-Type: application/json'
+  'https://api.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;weight,desc;name' 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
+  -H 'Cache-Control: no-cache' 
+  -H 'Content-Type: application/json'
 ```
 
 |weighed|weight| name             |
@@ -254,10 +259,11 @@ curl -X GET
 
 ```shell
 curl -X GET 
-'https://online.moysklad.ru/api/remap/1.2/entity/product?order=syncId' 
--H 'Authorization: Bearer <Access-Token>' 
--H 'Cache-Control: no-cache' 
--H 'Content-Type: application/json'
+  'https://api.moysklad.ru/api/remap/1.2/entity/product?order=syncId' 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
+  -H 'Cache-Control: no-cache' 
+  -H 'Content-Type: application/json'
 ```
 
 |syncId| name             |

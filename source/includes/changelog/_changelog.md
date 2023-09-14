@@ -1,5 +1,16 @@
 # Список изменений
 
+[//]: # (TODO: remove in MC-64261)
+<div class="banner">
+  <h4>Внимание!</h4>
+  <ui><b>До 1 декабря 2023 года необходимо:</b>
+    <li>Перенастроить интеграции на новый домен api.moysklad.ru (вместо online.moysklad.ru)</li>
+    <li>Включить использование <a href='https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow'>сжатия содержимого ответов</a> через передачу заголовка Accept-Encoding</li>
+  </ui>
+  <p>Рекомендации по переезду на новый домен можно прочитать <a href="https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rekomendacii-po-pereezdu-na-nowyj-domen">здесь</a>.</p>
+  <p>После 1 декабря 2023 года перестанут работать интеграции, использующие апи remap-12 на домене online.moysklad.ru</p>
+</div>
+
 В разделе перечислены изменения и расширения возможностей существующих эндпоинтов, а также новые эндпоинты,
  которые позволяют эффективнее работать с API МоегоСклада.
 
@@ -137,6 +148,13 @@
 
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
+
+### 14-09-2023
+#### Добавлено
+- Использование обязательного [сжатия содержимого ответов](../#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow)
+
+#### Изменен
+- Домен в примерах документации на api.moysklad.ru
 
 ### 06-09-2023
 #### Добавлено

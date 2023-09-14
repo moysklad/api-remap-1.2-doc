@@ -43,14 +43,15 @@
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/product/a86708d2-f8d3-4e67-8f04-6101158da808/export/"
+    "https://api.moysklad.ru/api/remap/1.2/entity/product/a86708d2-f8d3-4e67-8f04-6101158da808/export/"
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
             "organization": {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/107430bc-36e7-11e7-8a7f-40d000000090",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/107430bc-36e7-11e7-8a7f-40d000000090",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
                 "type": "organization",
                 "mediaType": "application/json",
                 "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=107430bc-36e7-11e7-8a7f-40d000000090"
@@ -60,7 +61,7 @@
             "salePrice": {
               "priceType": {
                 "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+                  "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
                   "type": "pricetype",
                   "mediaType": "application/json"
                 }
@@ -68,7 +69,7 @@
             },
             "template": {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/assortment/metadata/embeddedtemplate/f8e295eb-15c6-3184-b934-14fe90b3ea81",
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/assortment/metadata/embeddedtemplate/f8e295eb-15c6-3184-b934-14fe90b3ea81",
                 "type": "embeddedtemplate",
                 "mediaType": "application/json"
               }

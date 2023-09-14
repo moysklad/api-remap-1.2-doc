@@ -40,8 +40,9 @@
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/report/dashboard/day"
+  "https://api.moysklad.ru/api/remap/1.2/report/dashboard/day"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -74,8 +75,9 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/report/dashboard/week"
+  "https://api.moysklad.ru/api/remap/1.2/report/dashboard/week"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -109,8 +111,9 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/report/dashboard/month"
+  "https://api.moysklad.ru/api/remap/1.2/report/dashboard/month"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)

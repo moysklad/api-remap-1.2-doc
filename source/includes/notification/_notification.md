@@ -1,4 +1,14 @@
 # Уведомления
+[//]: # (TODO: remove in MC-64261)
+<div class="banner">
+  <h4>Внимание!</h4>
+  <ui><b>До 1 декабря 2023 года необходимо:</b>
+    <li>Перенастроить интеграции на новый домен api.moysklad.ru (вместо online.moysklad.ru)</li>
+    <li>Включить использование <a href='https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow'>сжатия содержимого ответов</a> через передачу заголовка Accept-Encoding</li>
+  </ui>
+  <p>Рекомендации по переезду на новый домен можно прочитать <a href="https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rekomendacii-po-pereezdu-na-nowyj-domen">здесь</a>.</p>
+  <p>После 1 декабря 2023 года перестанут работать интеграции, использующие апи remap-12 на домене online.moysklad.ru</p>
+</div>
 
 ## Лента уведомлений
 ### Общие атрибуты уведомлений
@@ -34,8 +44,9 @@
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification"
+  "https://api.moysklad.ru/api/remap/1.2/notification"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -44,7 +55,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification",
     "type": "notification",
     "mediaType": "application/json",
     "size": 3,
@@ -54,7 +65,7 @@ curl -X GET
   "rows": [
     {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/notification/32f118d3-5b8f-11e9-9bea-3ff700000070",
+      "href": "https://api.moysklad.ru/api/remap/1.2/notification/32f118d3-5b8f-11e9-9bea-3ff700000070",
       "type": "NotificationGoodCountTooLow",
       "mediaType": "application/json"
     },
@@ -66,8 +77,8 @@ curl -X GET
     "description": "Остаток ниже 1",
     "good": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/0daf8e9a-5b7a-11e9-727d-307300000007",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/0daf8e9a-5b7a-11e9-727d-307300000007",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "product",
         "mediaType": "application/json"
       },
@@ -79,7 +90,7 @@ curl -X GET
     },
     {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/notification/0f423542-5b7a-11e9-9bea-3ff70000000f",
+      "href": "https://api.moysklad.ru/api/remap/1.2/notification/0f423542-5b7a-11e9-9bea-3ff70000000f",
       "type": "NotificationImportCompleted",
       "mediaType": "application/json"
     },
@@ -96,7 +107,7 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/notification/a805beb5-5adf-11e9-9bea-3ff700000025",
+        "href": "https://api.moysklad.ru/api/remap/1.2/notification/a805beb5-5adf-11e9-9bea-3ff700000025",
         "type": "NotificationTaskChanged",
         "mediaType": "application/json"
       },
@@ -108,8 +119,8 @@ curl -X GET
       "description": "admin изменил задачу",
       "performedBy": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/188cb787-5aa5-11e9-727d-30730000009c",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/188cb787-5aa5-11e9-727d-30730000009c",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json"
         },
@@ -118,8 +129,8 @@ curl -X GET
       },
       "task": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/14ac66b6-5add-11e9-727d-30730000002f",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/14ac66b6-5add-11e9-727d-30730000002f",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
           "type": "task",
           "mediaType": "application/json"
         },
@@ -155,8 +166,9 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/7944ef04-f831-11e5-7a69-971500188b19"
+  "https://api.moysklad.ru/api/remap/1.2/notification/7944ef04-f831-11e5-7a69-971500188b19"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -165,7 +177,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/bcd815b9-56ca-11e9-c0a8-100b00000001",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/bcd815b9-56ca-11e9-c0a8-100b00000001",
     "type": "NotificationTaskAssigned",
     "mediaType": "application/json"
   },
@@ -181,8 +193,8 @@ curl -X GET
   },
   "task": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/8413bfc3-56ca-11e9-c0a8-100a00000000",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/8413bfc3-56ca-11e9-c0a8-100a00000000",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
       "type": "task",
       "mediaType": "application/json"
     },
@@ -205,8 +217,9 @@ curl -X GET
 
 ```shell
 curl -X DELETE
-  "https://online.moysklad.ru/api/remap/1.2/notification/7944ef04-f831-11e5-7a69-971500188b19"
+  "https://api.moysklad.ru/api/remap/1.2/notification/7944ef04-f831-11e5-7a69-971500188b19"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -226,8 +239,9 @@ curl -X DELETE
 
 ```shell
 curl -X PUT
-  "https://online.moysklad.ru/api/remap/1.2/notification/7944ef04-f831-11e5-7a69-971500188b19/markasread"
+  "https://api.moysklad.ru/api/remap/1.2/notification/7944ef04-f831-11e5-7a69-971500188b19/markasread"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -240,8 +254,9 @@ curl -X PUT
 
 ```shell
 curl -X PUT
-  "https://online.moysklad.ru/api/remap/1.2/notification/markasreadall"
+  "https://api.moysklad.ru/api/remap/1.2/notification/markasreadall"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -363,8 +378,9 @@ NotificationExportCompleted - завершение экспорта
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/02950e3c-35f2-11e9-9ff4-34e8000799c0"
+  "https://api.moysklad.ru/api/remap/1.2/notification/02950e3c-35f2-11e9-9ff4-34e8000799c0"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -373,7 +389,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/02950e3c-35f2-11e9-9ff4-34e8000799c0",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/02950e3c-35f2-11e9-9ff4-34e8000799c0",
     "type": "NotificationExportCompleted",
     "mediaType": "application/json"
   },
@@ -419,8 +435,9 @@ NotificationImportCompleted - завершение импорта
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/02950e31-35f2-11e9-9ff4-34e8000799c0"
+  "https://api.moysklad.ru/api/remap/1.2/notification/02950e31-35f2-11e9-9ff4-34e8000799c0"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -429,7 +446,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/02950e31-35f2-11e9-9ff4-34e8000799c0",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/02950e31-35f2-11e9-9ff4-34e8000799c0",
     "type": "NotificationImportCompleted",
     "mediaType": "application/json"
   },
@@ -473,8 +490,9 @@ NotificationGoodCountTooLow - снижение остатка товара ни�
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/9338c8bd-56e5-11e9-c0a8-100b00000023"
+  "https://api.moysklad.ru/api/remap/1.2/notification/9338c8bd-56e5-11e9-c0a8-100b00000023"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -483,7 +501,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/9338c8bd-56e5-11e9-c0a8-100b00000023",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/9338c8bd-56e5-11e9-c0a8-100b00000023",
     "type": "NotificationGoodCountTooLow",
     "mediaType": "application/json"
   },
@@ -495,8 +513,8 @@ curl -X GET
   "description": "Остаток ниже 200",
   "good": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/bdca925e-56e1-11e9-c0a8-100a00000016",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/bdca925e-56e1-11e9-c0a8-100a00000016",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
       "type": "product",
       "mediaType": "application/json"
     },
@@ -537,8 +555,9 @@ NotificationInvoiceOutOverdue - просрочен счет покупателя
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/572d1dd9-56fc-11e9-c0a8-100b00000006"
+  "https://api.moysklad.ru/api/remap/1.2/notification/572d1dd9-56fc-11e9-c0a8-100b00000006"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -547,7 +566,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/572d1dd9-56fc-11e9-c0a8-100b00000006",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/572d1dd9-56fc-11e9-c0a8-100b00000006",
     "type": "NotificationInvoiceOutOverdue",
     "mediaType": "application/json"
   },
@@ -559,8 +578,8 @@ curl -X GET
   "description": "Дата оплаты: 01.04.2019 20:08. Сумма: 500,00. Покупатель: Розничный покупатель.",
   "invoice": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/571b1ac4-56fc-11e9-c0a8-100e0000002b",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/invoiceout/571b1ac4-56fc-11e9-c0a8-100e0000002b",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/invoiceout/metadata",
       "type": "invoiceout",
       "mediaType": "application/json"
     },
@@ -602,8 +621,9 @@ NotificationOrderNew - новый заказ
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/c6082a9e-56e1-11e9-c0a8-100b00000011"
+  "https://api.moysklad.ru/api/remap/1.2/notification/c6082a9e-56e1-11e9-c0a8-100b00000011"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -612,7 +632,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/c6082a9e-56e1-11e9-c0a8-100b00000011",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/c6082a9e-56e1-11e9-c0a8-100b00000011",
     "type": "NotificationOrderNew",
     "mediaType": "application/json"
   },
@@ -624,8 +644,8 @@ curl -X GET
   "description": "Сумма: 499.99. Покупатель: Розничный покупатель.",
   "order": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/c5ab5d93-56e1-11e9-c0a8-100a0000001d",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/c5ab5d93-56e1-11e9-c0a8-100a0000001d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
       "type": "customerorder",
       "mediaType": "application/json"
     },
@@ -666,8 +686,9 @@ NotificationOrderOverdue - просроченный заказ
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/c6082a9e-56e1-11e9-c0a8-100b00000011"
+  "https://api.moysklad.ru/api/remap/1.2/notification/c6082a9e-56e1-11e9-c0a8-100b00000011"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -676,7 +697,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/c6082a9e-56e1-11e9-c0a8-100b00000011",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/c6082a9e-56e1-11e9-c0a8-100b00000011",
     "type": "NotificationOrderOverdue",
     "mediaType": "application/json"
   },
@@ -688,8 +709,8 @@ curl -X GET
   "description": "Просрочен заказ покупателя № 00001 Сумма: 300.00. Покупатель: Розничный покупатель.",
   "order": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/c5ab5d93-56e1-11e9-c0a8-100a0000001d",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/c5ab5d93-56e1-11e9-c0a8-100a0000001d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
       "type": "customerorder",
       "mediaType": "application/json"
     },
@@ -727,8 +748,9 @@ NotificationSubscribeExpired - окончание подписки
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000123"
+  "https://api.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000123"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -737,7 +759,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000123",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000123",
     "type": "NotificationOrderOverdue",
     "mediaType": "application/json"
   },
@@ -776,8 +798,9 @@ NotificationSubscribeTermsExpired - условия подписки истека
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000125"
+  "https://api.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000125"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -786,7 +809,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000125",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000125",
     "type": "NotificationOrderOverdue",
     "mediaType": "application/json"
   },
@@ -846,8 +869,9 @@ NotificationTaskAssigned - задача назначена
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/bcd815b9-56ca-11e9-c0a8-100b00000001"
+  "https://api.moysklad.ru/api/remap/1.2/notification/bcd815b9-56ca-11e9-c0a8-100b00000001"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -856,7 +880,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/bcd815b9-56ca-11e9-c0a8-100b00000001",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/bcd815b9-56ca-11e9-c0a8-100b00000001",
     "type": "NotificationTaskAssigned",
     "mediaType": "application/json"
   },
@@ -868,8 +892,8 @@ curl -X GET
   "description": "ntest1 назначил вам задачу Текст задачи 1",
   "performedBy": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json"
     },
@@ -878,8 +902,8 @@ curl -X GET
   },
   "task": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
       "type": "task",
       "mediaType": "application/json"
     },
@@ -934,8 +958,9 @@ NotificationTaskUnassigned - задача снята
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/80c8a58b-56cb-11e9-c0a8-100b00000009"
+  "https://api.moysklad.ru/api/remap/1.2/notification/80c8a58b-56cb-11e9-c0a8-100b00000009"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -944,7 +969,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/80c8a58b-56cb-11e9-c0a8-100b00000009",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/80c8a58b-56cb-11e9-c0a8-100b00000009",
     "type": "NotificationTaskUnassigned",
     "mediaType": "application/json"
   },
@@ -956,8 +981,8 @@ curl -X GET
   "description": "ntest1 снял с вас задачу",
   "performedBy": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json"
     },
@@ -966,8 +991,8 @@ curl -X GET
   },
   "task": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
       "type": "task",
       "mediaType": "application/json"
     },
@@ -1034,8 +1059,9 @@ NotificationTaskChanged - задача изменена
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/bd0dbccf-56ca-11e9-c0a8-100b00000003"
+  "https://api.moysklad.ru/api/remap/1.2/notification/bd0dbccf-56ca-11e9-c0a8-100b00000003"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1044,7 +1070,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/bd0dbccf-56ca-11e9-c0a8-100b00000003",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/bd0dbccf-56ca-11e9-c0a8-100b00000003",
     "type": "NotificationTaskChanged",
     "mediaType": "application/json"
   },
@@ -1056,8 +1082,8 @@ curl -X GET
   "description": "ntest1 изменил задачу",
   "performedBy": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json"
     },
@@ -1066,8 +1092,8 @@ curl -X GET
   },
   "task": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
       "type": "task",
       "mediaType": "application/json"
     },
@@ -1129,8 +1155,9 @@ NotificationTaskCompleted - задача выполнена
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/7945a089-56fd-11e9-c0a8-100b00000008"
+  "https://api.moysklad.ru/api/remap/1.2/notification/7945a089-56fd-11e9-c0a8-100b00000008"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1139,7 +1166,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/7945a089-56fd-11e9-c0a8-100b00000008",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/7945a089-56fd-11e9-c0a8-100b00000008",
     "type": "NotificationTaskCompleted",
     "mediaType": "application/json"
   },
@@ -1151,8 +1178,8 @@ curl -X GET
   "description": "ntest1 выполнил задачу Новый текст задачи 1 Срок: 29.05.2019 15:47",
   "performedBy": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json"
     },
@@ -1161,8 +1188,8 @@ curl -X GET
   },
   "task": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
       "type": "task",
       "mediaType": "application/json"
     },
@@ -1215,8 +1242,9 @@ NotificationTaskDeleted - задача удалена
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/8d07388c-56cb-11e9-c0a8-100b0000000d"
+  "https://api.moysklad.ru/api/remap/1.2/notification/8d07388c-56cb-11e9-c0a8-100b0000000d"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1225,7 +1253,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/8d07388c-56cb-11e9-c0a8-100b0000000d",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/8d07388c-56cb-11e9-c0a8-100b0000000d",
     "type": "NotificationTaskDeleted",
     "mediaType": "application/json"
   },
@@ -1240,8 +1268,8 @@ curl -X GET
   },
   "performedBy": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json"
     },
@@ -1286,8 +1314,9 @@ NotificationTaskOverdue - задача просрочена
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/51a5b0a3-56e4-11e9-c0a8-100b00000014"
+  "https://api.moysklad.ru/api/remap/1.2/notification/51a5b0a3-56e4-11e9-c0a8-100b00000014"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1296,7 +1325,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/51a5b0a3-56e4-11e9-c0a8-100b00000014",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/51a5b0a3-56e4-11e9-c0a8-100b00000014",
     "type": "NotificationTaskOverdue",
     "mediaType": "application/json"
   },
@@ -1308,8 +1337,8 @@ curl -X GET
   "description": "Задача просрочена Новый текст задачи 1 Срок: 27.05.2019 15:49",
   "task": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
       "type": "task",
       "mediaType": "application/json"
     },
@@ -1365,8 +1394,9 @@ NotificationTaskReopened - задача переоткрыта
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/df0c3e22-56fd-11e9-c0a8-100b0000000a"
+  "https://api.moysklad.ru/api/remap/1.2/notification/df0c3e22-56fd-11e9-c0a8-100b0000000a"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1375,7 +1405,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/df0c3e22-56fd-11e9-c0a8-100b0000000a",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/df0c3e22-56fd-11e9-c0a8-100b0000000a",
     "type": "NotificationTaskReopened",
     "mediaType": "application/json"
   },
@@ -1387,8 +1417,8 @@ curl -X GET
   "description": "ntest1 открыл задачу Новый текст задачи 1 Срок: 29.05.2019 15:47",
   "performedBy": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json"
     },
@@ -1397,8 +1427,8 @@ curl -X GET
   },
   "task": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
       "type": "task",
       "mediaType": "application/json"
     },
@@ -1455,8 +1485,9 @@ NotificationTaskNewComment - новый комментарий к задаче
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/240706df-5704-11e9-c0a8-100b00000003"
+  "https://api.moysklad.ru/api/remap/1.2/notification/240706df-5704-11e9-c0a8-100b00000003"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1465,7 +1496,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/240706df-5704-11e9-c0a8-100b00000003",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/240706df-5704-11e9-c0a8-100b00000003",
     "type": "NotificationTaskNewComment",
     "mediaType": "application/json"
   },
@@ -1477,8 +1508,8 @@ curl -X GET
   "description": "ntest1 добавил комментарий Комментарий 1",
   "performedBy": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json"
     },
@@ -1487,8 +1518,8 @@ curl -X GET
   },
   "task": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
       "type": "task",
       "mediaType": "application/json"
     },
@@ -1548,8 +1579,9 @@ NotificationTaskCommentChanged - изменен комментарий к зад
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/3d3423ee-5704-11e9-c0a8-100b00000007"
+  "https://api.moysklad.ru/api/remap/1.2/notification/3d3423ee-5704-11e9-c0a8-100b00000007"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1558,7 +1590,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/3d3423ee-5704-11e9-c0a8-100b00000007",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/3d3423ee-5704-11e9-c0a8-100b00000007",
     "type": "NotificationTaskCommentChanged",
     "mediaType": "application/json"
   },
@@ -1570,8 +1602,8 @@ curl -X GET
   "description": "ntest1 изменил комментарий Новый текст комментария 1, Комментарий 1",
   "performedBy": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json"
     },
@@ -1580,8 +1612,8 @@ curl -X GET
   },
   "task": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
       "type": "task",
       "mediaType": "application/json"
     },
@@ -1644,8 +1676,9 @@ NotificationTaskCommentDeleted - удален комментарий к зада
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/3d2abf0f-5704-11e9-c0a8-100b00000005"
+  "https://api.moysklad.ru/api/remap/1.2/notification/3d2abf0f-5704-11e9-c0a8-100b00000005"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1654,7 +1687,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/3d2abf0f-5704-11e9-c0a8-100b00000005",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/3d2abf0f-5704-11e9-c0a8-100b00000005",
     "type": "NotificationTaskCommentDeleted",
     "mediaType": "application/json"
   },
@@ -1666,8 +1699,8 @@ curl -X GET
   "description": "ntest1 удалил комментарий Новый текст комментария 1",
   "performedBy": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/c4e1397b-807c-11e9-9ff4-31500025d4ed",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json"
     },
@@ -1676,8 +1709,8 @@ curl -X GET
   },
   "task": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/task/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/91d6e8a5-807d-11e9-9109-f8fc0024968d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
       "type": "task",
       "mediaType": "application/json"
     },
@@ -1717,8 +1750,9 @@ NotificationRetailShiftOpened - смена открыта
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/8002409b-351d-11e9-9ff4-34e80002a126"
+  "https://api.moysklad.ru/api/remap/1.2/notification/8002409b-351d-11e9-9ff4-34e80002a126"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1727,7 +1761,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/8002409b-351d-11e9-9ff4-34e80002a126",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/8002409b-351d-11e9-9ff4-34e80002a126",
     "type": "NotificationRetailShiftOpened",
     "mediaType": "application/json"
   },
@@ -1739,8 +1773,8 @@ curl -X GET
   "description": "Кассир: Кассир Кладкин",
   "user": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/4d4ba195-0e7b-11e2-480d-3c4a92f3a0a7",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/4d4ba195-0e7b-11e2-480d-3c4a92f3a0a7",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json"
     },
@@ -1749,8 +1783,8 @@ curl -X GET
   },
   "retailStore": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/ffa5bbf4-351b-11e9-9ff4-34e800131be8",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/ffa5bbf4-351b-11e9-9ff4-34e800131be8",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
       "type": "retailstore",
       "mediaType": "application/json"
     },
@@ -1759,8 +1793,8 @@ curl -X GET
   },
   "retailShift": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/7e41bd3c-351c-11e9-9ff4-34e80012cfc1",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/7e41bd3c-351c-11e9-9ff4-34e80012cfc1",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
       "type": "retailshift",
       "mediaType": "application/json"
     },
@@ -1802,8 +1836,9 @@ NotificationRetailShiftClosed - смена закрыта
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/3929d717-351c-11e9-9ff4-34e800029ad4"
+  "https://api.moysklad.ru/api/remap/1.2/notification/3929d717-351c-11e9-9ff4-34e800029ad4"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1812,7 +1847,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/3929d717-351c-11e9-9ff4-34e800029ad4",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/3929d717-351c-11e9-9ff4-34e800029ad4",
     "type": "NotificationRetailShiftClosed",
     "mediaType": "application/json"
   },
@@ -1824,8 +1859,8 @@ curl -X GET
   "description": "Кассир: Кассир Кладкин. Длительность: 1 мин. Продаж: 2. Возвратов: 0. Выручка: 40000.00",
   "user": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/4d4ba195-0e7b-11e2-480d-3c4a92f3a0a7",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/4d4ba195-0e7b-11e2-480d-3c4a92f3a0a7",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json"
     },
@@ -1834,8 +1869,8 @@ curl -X GET
   },
   "retailStore": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/ffa5bbf4-351b-11e9-9ff4-34e800131be8",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/ffa5bbf4-351b-11e9-9ff4-34e800131be8",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
       "type": "retailstore",
       "mediaType": "application/json"
     },
@@ -1844,8 +1879,8 @@ curl -X GET
   },
   "retailShift": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/08fd47a8-351c-11e9-9109-f8fc0013f6cd",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/08fd47a8-351c-11e9-9109-f8fc0013f6cd",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
       "type": "retailshift",
       "mediaType": "application/json"
     },
@@ -1913,8 +1948,9 @@ NotificationScript - уведомление из сценария
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/b22dc861-645b-11eb-0a80-1f8500000044"
+  "https://api.moysklad.ru/api/remap/1.2/notification/b22dc861-645b-11eb-0a80-1f8500000044"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1923,7 +1959,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/b22dc861-645b-11eb-0a80-1f8500000044",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/b22dc861-645b-11eb-0a80-1f8500000044",
     "type": "NotificationScript",
     "mediaType": "application/json"
   },
@@ -1936,8 +1972,8 @@ curl -X GET
   "eventType": "MODIFY",
   "entity": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/afa8525a-645b-11eb-0a80-2b47000003b7",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/afa8525a-645b-11eb-0a80-2b47000003b7",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
       "type": "customerorder",
       "mediaType": "application/json"
     },
@@ -1974,8 +2010,9 @@ FacebookTokenExpirationNotification - предупреждение о скоро
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/9596251d-da73-11eb-ac12-000c00000015"
+  "https://api.moysklad.ru/api/remap/1.2/notification/9596251d-da73-11eb-ac12-000c00000015"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1984,7 +2021,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/9596251d-da73-11eb-ac12-000c00000015",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/9596251d-da73-11eb-ac12-000c00000015",
     "type": "FacebookTokenExpirationNotification",
     "mediaType": "application/json"
   },
@@ -2024,8 +2061,9 @@ NotificationBonusMoney - На счет зачислены бонусные де�
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000123"
+  "https://api.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000123"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -2034,7 +2072,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000123",
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000123",
     "type": "NotificationBonusMoney",
     "mediaType": "application/json"
   },
@@ -2073,8 +2111,9 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/notification/subscription"
+  "https://api.moysklad.ru/api/remap/1.2/notification/subscription"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -2128,8 +2167,9 @@ curl -X GET
 
 ```shell
   curl -X PUT
-    "https://online.moysklad.ru/api/remap/1.2/notification/subscription"
+    "https://api.moysklad.ru/api/remap/1.2/notification/subscription"
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
             "groups" : {

@@ -45,7 +45,7 @@
 
 ```shell
 curl -X GET 
-  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/"
+  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/"
   -H 'Authorization: Basic <Credentials>'
   -H 'Content-Type: application/json'
 ```
@@ -57,15 +57,15 @@ curl -X GET
   "context": {
     "employee": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate",
     "type": "taxrate",
     "mediaType": "application/json",
     "size": 7,
@@ -75,8 +75,8 @@ curl -X GET
   "rows": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
         "type": "taxrate",
         "mediaType": "application/json",
         "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=6031a4ab-fec1-11ec-0a80-059200000007"
@@ -85,8 +85,8 @@ curl -X GET
       "accountId": "c6bc8eaa-fe92-11ec-0a82-062000000018",
       "owner": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c6f50a9a-fe92-11ec-0a82-09860000027a",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/c6f50a9a-fe92-11ec-0a82-09860000027a",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=c6f50a9a-fe92-11ec-0a82-09860000027a"
@@ -95,8 +95,8 @@ curl -X GET
       "shared": true,
       "group": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/c6bcfbf3-fe92-11ec-0a82-062000000019",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/c6bcfbf3-fe92-11ec-0a82-062000000019",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
           "type": "group",
           "mediaType": "application/json"
         }
@@ -108,8 +108,8 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6038efa6-fec1-11ec-0a80-05920000000b",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/6038efa6-fec1-11ec-0a80-05920000000b",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
         "type": "taxrate",
         "mediaType": "application/json",
         "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=6038efa6-fec1-11ec-0a80-05920000000b"
@@ -118,8 +118,8 @@ curl -X GET
       "accountId": "c6bc8eaa-fe92-11ec-0a82-062000000018",
       "owner": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c6f50a9a-fe92-11ec-0a82-09860000027a",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/c6f50a9a-fe92-11ec-0a82-09860000027a",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=c6f50a9a-fe92-11ec-0a82-09860000027a"
@@ -128,8 +128,8 @@ curl -X GET
       "shared": true,
       "group": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/c6bcfbf3-fe92-11ec-0a82-062000000019",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/c6bcfbf3-fe92-11ec-0a82-062000000019",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
           "type": "group",
           "mediaType": "application/json"
         }
@@ -141,8 +141,8 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/c739f8a1-385a-4c71-96e9-1707b0ce4fa7",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/c739f8a1-385a-4c71-96e9-1707b0ce4fa7",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
         "type": "taxrate",
         "mediaType": "application/json",
         "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=c739f8a1-385a-4c71-96e9-1707b0ce4fa7"
@@ -154,8 +154,8 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/ca670a98-82bb-4a4d-9cc3-8388e466b3d8",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/ca670a98-82bb-4a4d-9cc3-8388e466b3d8",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
         "type": "taxrate",
         "mediaType": "application/json",
         "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=ca670a98-82bb-4a4d-9cc3-8388e466b3d8"
@@ -167,8 +167,8 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/da9c85c1-1990-44bf-9e82-d1d3fda0d1ce",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/da9c85c1-1990-44bf-9e82-d1d3fda0d1ce",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
         "type": "taxrate",
         "mediaType": "application/json",
         "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=da9c85c1-1990-44bf-9e82-d1d3fda0d1ce"
@@ -180,8 +180,8 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/e0d54b5d-fe92-11ec-0a82-098600000305",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/e0d54b5d-fe92-11ec-0a82-098600000305",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
         "type": "taxrate",
         "mediaType": "application/json",
         "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=e0d54b5d-fe92-11ec-0a82-098600000305"
@@ -190,8 +190,8 @@ curl -X GET
       "accountId": "c6bc8eaa-fe92-11ec-0a82-062000000018",
       "owner": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c6f50a9a-fe92-11ec-0a82-09860000027a",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/c6f50a9a-fe92-11ec-0a82-09860000027a",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=c6f50a9a-fe92-11ec-0a82-09860000027a"
@@ -200,8 +200,8 @@ curl -X GET
       "shared": true,
       "group": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/c6bcfbf3-fe92-11ec-0a82-062000000019",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/c6bcfbf3-fe92-11ec-0a82-062000000019",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
           "type": "group",
           "mediaType": "application/json"
         }
@@ -213,8 +213,8 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/e2887a21-8cb5-4d37-9151-e1978ae57159",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/e2887a21-8cb5-4d37-9151-e1978ae57159",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
         "type": "taxrate",
         "mediaType": "application/json",
         "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=e2887a21-8cb5-4d37-9151-e1978ae57159"
@@ -237,7 +237,7 @@ curl -X GET
 
 ```shell
 curl -X POST 
-  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate"
+  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate"
   -H 'Authorization: Basic <Credentials>'
   -H 'Content-Type: application/json'
   -d '{
@@ -252,8 +252,8 @@ curl -X POST
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/34330ecb-feab-11ec-0a80-059200000001",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/34330ecb-feab-11ec-0a80-059200000001",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
     "type": "taxrate",
     "mediaType": "application/json",
     "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=34330ecb-feab-11ec-0a80-059200000001"
@@ -262,8 +262,8 @@ curl -X POST
   "accountId": "c6bc8eaa-fe92-11ec-0a82-062000000018",
   "owner": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c6f50a9a-fe92-11ec-0a82-09860000027a",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/c6f50a9a-fe92-11ec-0a82-09860000027a",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json",
       "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=c6f50a9a-fe92-11ec-0a82-09860000027a"
@@ -272,8 +272,8 @@ curl -X POST
   "shared": true,
   "group": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/c6bcfbf3-fe92-11ec-0a82-062000000019",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/c6bcfbf3-fe92-11ec-0a82-062000000019",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
       "type": "group",
       "mediaType": "application/json"
     }
@@ -294,7 +294,7 @@ curl -X POST
 
 ```shell
 curl -X POST 
-  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate"
+  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate"
   -H 'Authorization: Basic <Credentials>'
   -H 'Content-Type: application/json'
   -d '[
@@ -305,8 +305,8 @@ curl -X POST
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/c6ff8164-01c0-11ed-0a80-07e3000001ff",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/c6ff8164-01c0-11ed-0a80-07e3000001ff",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
         "type": "taxrate",
         "mediaType": "application/json",
         "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=c6ff8164-01c0-11ed-0a80-07e3000001ff"
@@ -324,8 +324,8 @@ curl -X POST
 [
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/2eab0501-028f-11ed-0a80-03330000007a",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/2eab0501-028f-11ed-0a80-03330000007a",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
       "type": "taxrate",
       "mediaType": "application/json",
       "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=2eab0501-028f-11ed-0a80-03330000007a"
@@ -334,8 +334,8 @@ curl -X POST
     "accountId": "9caae711-01c0-11ed-0a82-0a1c0000000c",
     "owner": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/9cdc3afb-01c0-11ed-0a80-07e300000172",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/9cdc3afb-01c0-11ed-0a80-07e300000172",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json",
         "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=9cdc3afb-01c0-11ed-0a80-07e300000172"
@@ -344,8 +344,8 @@ curl -X POST
     "shared": true,
     "group": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/9cab5482-01c0-11ed-0a82-0a1c0000000d",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/9cab5482-01c0-11ed-0a82-0a1c0000000d",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
         "type": "group",
         "mediaType": "application/json"
       }
@@ -357,8 +357,8 @@ curl -X POST
   },
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/c6ff8164-01c0-11ed-0a80-07e3000001ff",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/c6ff8164-01c0-11ed-0a80-07e3000001ff",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
       "type": "taxrate",
       "mediaType": "application/json",
       "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=c6ff8164-01c0-11ed-0a80-07e3000001ff"
@@ -367,8 +367,8 @@ curl -X POST
     "accountId": "9caae711-01c0-11ed-0a82-0a1c0000000c",
     "owner": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/9cdc3afb-01c0-11ed-0a80-07e300000172",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/9cdc3afb-01c0-11ed-0a80-07e300000172",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json",
         "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=9cdc3afb-01c0-11ed-0a80-07e300000172"
@@ -377,8 +377,8 @@ curl -X POST
     "shared": true,
     "group": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/9cab5482-01c0-11ed-0a82-0a1c0000000d",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/9cab5482-01c0-11ed-0a82-0a1c0000000d",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
         "type": "group",
         "mediaType": "application/json"
       }
@@ -406,7 +406,7 @@ curl -X POST
 
 ```shell
 curl -X DELETE 
-  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007"
+  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007"
   -H 'Authorization: Basic <Credentials>'
   -H 'Content-Type: application/json'
 ```
@@ -424,14 +424,14 @@ curl -X DELETE
 
 ```shell
 curl -X POST 
-  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/delete"
+  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/delete"
   -H 'Authorization: Basic <Credentials>'
   -H 'Content-Type: application/json'
   -d '[
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
         "type": "taxrate",
         "mediaType": "application/json",
         "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=6031a4ab-fec1-11ec-0a80-059200000007"
@@ -439,8 +439,8 @@ curl -X POST
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6038efa6-fec1-11ec-0a80-05920000000b",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/6038efa6-fec1-11ec-0a80-05920000000b",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
         "type": "taxrate",
         "mediaType": "application/json",
         "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=6038efa6-fec1-11ec-0a80-05920000000b"
@@ -476,8 +476,9 @@ curl -X POST
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007"
+  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H "Content-Type: application/json"  
 ```
 
@@ -486,8 +487,8 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
     "type": "taxrate",
     "mediaType": "application/json",
     "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=6031a4ab-fec1-11ec-0a80-059200000007"
@@ -496,8 +497,8 @@ curl -X GET
   "accountId": "c6bc8eaa-fe92-11ec-0a82-062000000018",
   "owner": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/c6f50a9a-fe92-11ec-0a82-09860000027a",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/c6f50a9a-fe92-11ec-0a82-09860000027a",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json",
       "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=c6f50a9a-fe92-11ec-0a82-09860000027a"
@@ -506,8 +507,8 @@ curl -X GET
   "shared": true,
   "group": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/c6bcfbf3-fe92-11ec-0a82-062000000019",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/c6bcfbf3-fe92-11ec-0a82-062000000019",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
       "type": "group",
       "mediaType": "application/json"
     }
@@ -534,7 +535,7 @@ curl -X GET
 
 ```shell
 curl -X PUT 
-  "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007"
+  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007"
   -H 'Authorization: Basic <Credentials>'
   -H 'Content-Type: application/json'
   -d '{
@@ -549,8 +550,8 @@ curl -X PUT
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/c6ff8164-01c0-11ed-0a80-07e3000001ff",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/c6ff8164-01c0-11ed-0a80-07e3000001ff",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/metadata",
     "type": "taxrate",
     "mediaType": "application/json",
     "uuidHref": "https://online.moysklad.ru/app/#taxrate/edit?id=c6ff8164-01c0-11ed-0a80-07e3000001ff"
@@ -559,8 +560,8 @@ curl -X PUT
   "accountId": "9caae711-01c0-11ed-0a82-0a1c0000000c",
   "owner": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/9cdc3afb-01c0-11ed-0a80-07e300000172",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/9cdc3afb-01c0-11ed-0a80-07e300000172",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json",
       "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=9cdc3afb-01c0-11ed-0a80-07e300000172"
@@ -569,8 +570,8 @@ curl -X PUT
   "shared": true,
   "group": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/9cab5482-01c0-11ed-0a82-0a1c0000000d",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/9cab5482-01c0-11ed-0a82-0a1c0000000d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
       "type": "group",
       "mediaType": "application/json"
     }

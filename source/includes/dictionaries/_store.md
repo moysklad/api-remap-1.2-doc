@@ -77,8 +77,9 @@
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/store"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -89,16 +90,16 @@ curl -X GET
   "context": {
     "employee": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
     "type": "store",
     "mediaType": "application/json",
     "size": 5,
@@ -108,8 +109,8 @@ curl -X GET
   "rows": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/caf46ce5-0569-11e6-9464-e4de00000000",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/caf46ce5-0569-11e6-9464-e4de00000000",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
         "type": "store",
         "mediaType": "application/json"
       },
@@ -117,8 +118,8 @@ curl -X GET
       "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
       "owner": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json"
         }
@@ -126,8 +127,8 @@ curl -X GET
       "shared": false,
       "group": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
           "type": "group",
           "mediaType": "application/json"
         }
@@ -141,16 +142,16 @@ curl -X GET
         "postalCode": "125009",
         "country": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
             "type": "country",
             "mediaType": "application/json"
           }
         },
         "region": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
             "type": "region",
             "mediaType": "application/json"
           }
@@ -165,7 +166,7 @@ curl -X GET
       "pathName": "",
       "zones": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/caf46ce5-0569-11e6-9464-e4de00000000/zones",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/caf46ce5-0569-11e6-9464-e4de00000000/zones",
           "type": "storezone",
           "mediaType": "application/json",
           "size": 0,
@@ -175,7 +176,7 @@ curl -X GET
       },
       "slots": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/caf46ce5-0569-11e6-9464-e4de00000000/slots",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/caf46ce5-0569-11e6-9464-e4de00000000/slots",
           "type": "slot",
           "mediaType": "application/json",
           "size": 0,
@@ -186,8 +187,8 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/850ee995-f504-11e5-8a84-bae500000160",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/850ee995-f504-11e5-8a84-bae500000160",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
         "type": "store",
         "mediaType": "application/json"
       },
@@ -195,8 +196,8 @@ curl -X GET
       "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
       "owner": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json"
         }
@@ -204,8 +205,8 @@ curl -X GET
       "shared": false,
       "group": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
           "type": "group",
           "mediaType": "application/json"
         }
@@ -220,16 +221,16 @@ curl -X GET
         "postalCode": "125009",
         "country": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
             "type": "country",
             "mediaType": "application/json"
           }
         },
         "region": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
             "type": "region",
             "mediaType": "application/json"
           }
@@ -243,7 +244,7 @@ curl -X GET
       },
       "zones": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/850ee995-f504-11e5-8a84-bae500000160/zones",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/850ee995-f504-11e5-8a84-bae500000160/zones",
           "type": "storezone",
           "mediaType": "application/json",
           "size": 0,
@@ -253,7 +254,7 @@ curl -X GET
       },
       "slots": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/850ee995-f504-11e5-8a84-bae500000160/slots",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/850ee995-f504-11e5-8a84-bae500000160/slots",
           "type": "slot",
           "mediaType": "application/json",
           "size": 0,
@@ -264,7 +265,7 @@ curl -X GET
       "attributes": [
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
             "type": "attributemetadata",
             "mediaType": "application/json"
           },
@@ -277,8 +278,8 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/6ebb9094-056a-11e6-9464-e4de000000b4",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/6ebb9094-056a-11e6-9464-e4de000000b4",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
         "type": "store",
         "mediaType": "application/json"
       },
@@ -286,8 +287,8 @@ curl -X GET
       "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
       "owner": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json"
         }
@@ -295,8 +296,8 @@ curl -X GET
       "shared": false,
       "group": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
           "type": "group",
           "mediaType": "application/json"
         }
@@ -311,16 +312,16 @@ curl -X GET
         "postalCode": "125009",
         "country": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
             "type": "country",
             "mediaType": "application/json"
           }
         },
         "region": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
             "type": "region",
             "mediaType": "application/json"
           }
@@ -335,7 +336,7 @@ curl -X GET
       "pathName": "002",
       "zones": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/6ebb9094-056a-11e6-9464-e4de000000b4/zones",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/6ebb9094-056a-11e6-9464-e4de000000b4/zones",
           "type": "storezone",
           "mediaType": "application/json",
           "size": 0,
@@ -345,7 +346,7 @@ curl -X GET
       },
       "slots": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/6ebb9094-056a-11e6-9464-e4de000000b4/slots",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/6ebb9094-056a-11e6-9464-e4de000000b4/slots",
           "type": "slot",
           "mediaType": "application/json",
           "size": 0,
@@ -356,8 +357,8 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/95dcda62-056b-11e6-9464-e4de000000b7",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/95dcda62-056b-11e6-9464-e4de000000b7",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
         "type": "store",
         "mediaType": "application/json"
       },
@@ -365,8 +366,8 @@ curl -X GET
       "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
       "owner": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json"
         }
@@ -374,8 +375,8 @@ curl -X GET
       "shared": false,
       "group": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
           "type": "group",
           "mediaType": "application/json"
         }
@@ -391,16 +392,16 @@ curl -X GET
         "postalCode": "125009",
         "country": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
             "type": "country",
             "mediaType": "application/json"
           }
         },
         "region": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
             "type": "region",
             "mediaType": "application/json"
           }
@@ -415,7 +416,7 @@ curl -X GET
       "pathName": "Основной склад",
       "zones": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/95dcda62-056b-11e6-9464-e4de000000b7/zones",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/95dcda62-056b-11e6-9464-e4de000000b7/zones",
           "type": "storezone",
           "mediaType": "application/json",
           "size": 0,
@@ -425,7 +426,7 @@ curl -X GET
       },
       "slots": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/95dcda62-056b-11e6-9464-e4de000000b7/slots",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/95dcda62-056b-11e6-9464-e4de000000b7/slots",
           "type": "slot",
           "mediaType": "application/json",
           "size": 0,
@@ -449,8 +450,9 @@ curl -X GET
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/store"
+    "https://api.moysklad.ru/api/remap/1.2/entity/store"
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
   "addressFull": {
@@ -460,8 +462,8 @@ curl -X GET
     "comment": "some words about address2",
     "country": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
         "mediaType": "application/json"
       }
@@ -470,8 +472,8 @@ curl -X GET
     "postalCode": "11192342",
     "region": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
         "type": "region",
         "mediaType": "application/json"
       }
@@ -491,8 +493,8 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
     "type": "store",
     "mediaType": "application/json"
   },
@@ -500,8 +502,8 @@ curl -X GET
   "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
   "owner": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json"
     }
@@ -509,8 +511,8 @@ curl -X GET
   "shared": false,
   "group": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
       "type": "group",
       "mediaType": "application/json"
     }
@@ -529,8 +531,8 @@ curl -X GET
     "comment": "some words about address2",
     "country": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
         "mediaType": "application/json"
       }
@@ -539,8 +541,8 @@ curl -X GET
     "postalCode": "11192342",
     "region": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
         "type": "region",
         "mediaType": "application/json"
       }
@@ -549,7 +551,7 @@ curl -X GET
   },
   "zones": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/zones",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/zones",
       "type": "storezone",
       "mediaType": "application/json",
       "size": 0,
@@ -559,7 +561,7 @@ curl -X GET
   },
   "slots": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/slots",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/slots",
       "type": "slot",
       "mediaType": "application/json",
       "size": 0,
@@ -574,8 +576,9 @@ curl -X GET
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/store"
+    "https://api.moysklad.ru/api/remap/1.2/entity/store"
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
   "addressFull": {
@@ -585,8 +588,8 @@ curl -X GET
     "comment": "some words about address2",
     "country": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
         "mediaType": "application/json"
       }
@@ -595,8 +598,8 @@ curl -X GET
     "postalCode": "11192342",
     "region": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
         "type": "region",
         "mediaType": "application/json"
       }
@@ -610,7 +613,7 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
@@ -626,8 +629,8 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
     "type": "store",
     "mediaType": "application/json"
   },
@@ -635,8 +638,8 @@ curl -X GET
   "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
   "owner": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json"
     }
@@ -644,8 +647,8 @@ curl -X GET
   "shared": false,
   "group": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
       "type": "group",
       "mediaType": "application/json"
     }
@@ -664,8 +667,8 @@ curl -X GET
     "comment": "some words about address2",
     "country": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
         "mediaType": "application/json"
       }
@@ -674,8 +677,8 @@ curl -X GET
     "postalCode": "11192342",
     "region": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
         "type": "region",
         "mediaType": "application/json"
       }
@@ -684,7 +687,7 @@ curl -X GET
   },
   "zones": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones",
       "type": "storezone",
       "mediaType": "application/json",
       "size": 0,
@@ -694,7 +697,7 @@ curl -X GET
   },
   "slots": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots",
       "type": "slot",
       "mediaType": "application/json",
       "size": 0,
@@ -705,7 +708,7 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
@@ -727,8 +730,9 @@ curl -X GET
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/store"
+    "https://api.moysklad.ru/api/remap/1.2/entity/store"
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '[
   {
@@ -740,8 +744,8 @@ curl -X GET
   },
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
       "type": "store",
       "mediaType": "application/json"
     },
@@ -752,8 +756,8 @@ curl -X GET
     "externalCode": "EXTCODE",
     "parent": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
         "type": "store",
         "mediaType": "application/json"
       }
@@ -769,8 +773,8 @@ curl -X GET
 [
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
       "type": "store",
       "mediaType": "application/json"
     },
@@ -778,8 +782,8 @@ curl -X GET
     "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
     "owner": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
@@ -787,8 +791,8 @@ curl -X GET
     "shared": false,
     "group": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
         "type": "group",
         "mediaType": "application/json"
       }
@@ -802,7 +806,7 @@ curl -X GET
     "address": "г Москва ул Вавилова 19 к 116",
     "zones": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/zones",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/zones",
         "type": "storezone",
         "mediaType": "application/json",
         "size": 0,
@@ -812,7 +816,7 @@ curl -X GET
     },
     "slots": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/slots",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/slots",
         "type": "slot",
         "mediaType": "application/json",
         "size": 0,
@@ -823,8 +827,8 @@ curl -X GET
   },
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
       "type": "store",
       "mediaType": "application/json"
     },
@@ -832,8 +836,8 @@ curl -X GET
     "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
     "owner": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
@@ -841,8 +845,8 @@ curl -X GET
     "shared": false,
     "group": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
         "type": "group",
         "mediaType": "application/json"
       }
@@ -856,7 +860,7 @@ curl -X GET
     "address": "г Москва ул БаБилова 20 к 116",
     "zones": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/zones",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/zones",
         "type": "storezone",
         "mediaType": "application/json",
         "size": 0,
@@ -866,7 +870,7 @@ curl -X GET
     },
     "slots": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/slots",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/slots",
         "type": "slot",
         "mediaType": "application/json",
         "size": 0,
@@ -891,8 +895,9 @@ curl -X GET
 
 ```shell
 curl -X DELETE
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -907,21 +912,22 @@ curl -X DELETE
 
 ```shell
 curl -X POST
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/delete"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/delete"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H "Content-Type: application/json"
   -d '[
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
             "type": "store",
             "mediaType": "application/json"
         },
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
             "type": "store",
             "mediaType": "application/json"
         }
@@ -957,8 +963,9 @@ curl -X POST
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -967,7 +974,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
     "mediaType": "application/json"
   },
   "attributes": [
@@ -996,8 +1003,9 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1006,7 +1014,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020",
     "type": "attributemetadata",
     "mediaType": "application/json"
   },
@@ -1032,8 +1040,9 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1042,8 +1051,8 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/95dcda62-056b-11e6-9464-e4de000000b7",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/95dcda62-056b-11e6-9464-e4de000000b7",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
     "type": "store",
     "mediaType": "application/json"
   },
@@ -1051,8 +1060,8 @@ curl -X GET
   "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
   "owner": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json"
     }
@@ -1060,8 +1069,8 @@ curl -X GET
   "shared": false,
   "group": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
       "type": "group",
       "mediaType": "application/json"
     }
@@ -1074,8 +1083,8 @@ curl -X GET
   "archived": false,
   "parent": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
       "type": "store",
       "mediaType": "application/json"
     }
@@ -1086,16 +1095,16 @@ curl -X GET
     "postalCode": "125009",
     "country": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
         "mediaType": "application/json"
       }
     },
     "region": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
         "type": "region",
         "mediaType": "application/json"
       }
@@ -1109,7 +1118,7 @@ curl -X GET
   },
   "zones": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/95dcda62-056b-11e6-9464-e4de000000b7/zones",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/95dcda62-056b-11e6-9464-e4de000000b7/zones",
       "type": "storezone",
       "mediaType": "application/json",
       "size": 0,
@@ -1119,7 +1128,7 @@ curl -X GET
   },
   "slots": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/95dcda62-056b-11e6-9464-e4de000000b7/slots",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/95dcda62-056b-11e6-9464-e4de000000b7/slots",
       "type": "slot",
       "mediaType": "application/json",
       "size": 0,
@@ -1130,7 +1139,7 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
@@ -1160,8 +1169,9 @@ curl -X GET
 
 ```shell
   curl -X PUT
-    "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19"
+    "https://api.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19"
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
   "addressFull": {
@@ -1171,8 +1181,8 @@ curl -X GET
     "comment": "some words about address2",
     "country": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
         "mediaType": "application/json"
       }
@@ -1181,8 +1191,8 @@ curl -X GET
     "postalCode": "11192342",
     "region": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
         "type": "region",
         "mediaType": "application/json"
       }
@@ -1195,8 +1205,8 @@ curl -X GET
   "externalCode": "EXTCODE",
   "parent": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
       "type": "store",
       "mediaType": "application/json"
     }
@@ -1210,8 +1220,8 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
     "type": "store",
     "mediaType": "application/json"
   },
@@ -1219,8 +1229,8 @@ curl -X GET
   "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
   "owner": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json"
     }
@@ -1228,8 +1238,8 @@ curl -X GET
   "shared": false,
   "group": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
       "type": "group",
       "mediaType": "application/json"
     }
@@ -1248,8 +1258,8 @@ curl -X GET
       "comment": "some words about address2",
       "country": {
           "meta": {
-              "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
-              "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
+              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
               "type": "country",
               "mediaType": "application/json"
           }
@@ -1258,8 +1268,8 @@ curl -X GET
       "postalCode": "11192342",
       "region": {
           "meta": {
-              "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
-              "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
+              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
               "type": "region",
               "mediaType": "application/json"
           }
@@ -1267,7 +1277,7 @@ curl -X GET
     "street": "Leninskie goru2",
     "zones": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/zones",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/zones",
         "type": "storezone",
         "mediaType": "application/json",
         "size": 0,
@@ -1277,7 +1287,7 @@ curl -X GET
     },
     "slots": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/slots",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/0c8de58c-056c-11e6-9464-e4de00000003/slots",
         "type": "slot",
         "mediaType": "application/json",
         "size": 0,
@@ -1293,8 +1303,9 @@ curl -X GET
 
 ```shell
   curl -X PUT
-    "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19"
+    "https://api.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19"
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
   "addressFull": {
@@ -1304,8 +1315,8 @@ curl -X GET
     "comment": "some words about address2",
     "country": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
         "mediaType": "application/json"
       }
@@ -1314,8 +1325,8 @@ curl -X GET
     "postalCode": "11192342",
     "region": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
         "type": "region",
         "mediaType": "application/json"
       }
@@ -1329,7 +1340,7 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
@@ -1345,8 +1356,8 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
     "type": "store",
     "mediaType": "application/json"
   },
@@ -1354,8 +1365,8 @@ curl -X GET
   "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
   "owner": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json"
     }
@@ -1363,8 +1374,8 @@ curl -X GET
   "shared": false,
   "group": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
       "type": "group",
       "mediaType": "application/json"
     }
@@ -1383,8 +1394,8 @@ curl -X GET
     "comment": "some words about address2",
     "country": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/country/40e6f69a-991c-4fbc-8be9-d0d906cad180",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
         "type": "country",
         "mediaType": "application/json"
       }
@@ -1393,8 +1404,8 @@ curl -X GET
     "postalCode": "11192342",
     "region": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/region/4bd3542a-f401-11e8-8eb2-f2801f1b9fd1",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
         "type": "region",
         "mediaType": "application/json"
       }
@@ -1403,7 +1414,7 @@ curl -X GET
   },
   "zones": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones",
       "type": "storezone",
       "mediaType": "application/json",
       "size": 0,
@@ -1413,7 +1424,7 @@ curl -X GET
   },
   "slots": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots",
       "type": "slot",
       "mediaType": "application/json",
       "size": 0,
@@ -1424,7 +1435,7 @@ curl -X GET
   "attributes": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata/attributes/0cd74e1e-2e59-11e6-8a84-bae50000008a",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
@@ -1472,8 +1483,9 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1484,15 +1496,15 @@ curl -X GET
   "context": {
     "employee": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones",
     "type": "storezone",
     "mediaType": "application/json",
     "size": 2,
@@ -1502,7 +1514,7 @@ curl -X GET
   "rows": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7a6a11b6-12c5-11e6-9464-e4de00000007",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7a6a11b6-12c5-11e6-9464-e4de00000007",
         "type": "storezone",
         "mediaType": "application/json"
       },
@@ -1514,7 +1526,7 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7a6a11b6-12c5-11e6-9464-e4de00000008",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7a6a11b6-12c5-11e6-9464-e4de00000008",
         "type": "storezone",
         "mediaType": "application/json"
       },
@@ -1540,8 +1552,9 @@ curl -X GET
 
 ```shell
 curl -X POST
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H "Content-Type: application/json"
   -d '{
         "name": "zone 1"
@@ -1555,7 +1568,7 @@ curl -X POST
 [
     {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/9177a566-75f8-11ed-ac1a-000d00000000",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/9177a566-75f8-11ed-ac1a-000d00000000",
             "type": "storezone",
             "mediaType": "application/json"
         },
@@ -1578,9 +1591,10 @@ curl -X POST
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones
+    "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones
 "
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '[
             {
@@ -1588,7 +1602,7 @@ curl -X POST
             },
             {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/9177a566-75f8-11ed-ac1a-000d00000000",
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/9177a566-75f8-11ed-ac1a-000d00000000",
                 "type": "storezone",
                 "mediaType": "application/json"
               },
@@ -1604,7 +1618,7 @@ curl -X POST
 [
     {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/9177a566-75f8-11ed-ac1a-000d00000000",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/9177a566-75f8-11ed-ac1a-000d00000000",
             "type": "storezone",
             "mediaType": "application/json"
         },
@@ -1616,7 +1630,7 @@ curl -X POST
     },
     {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7d479c5f-75f9-11ed-ac1a-000d00000003",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7d479c5f-75f9-11ed-ac1a-000d00000003",
             "type": "storezone",
             "mediaType": "application/json"
         },
@@ -1644,8 +1658,9 @@ curl -X POST
 
 ```shell
 curl -X DELETE
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7d479c5f-75f9-11ed-ac1a-000d00000003"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7d479c5f-75f9-11ed-ac1a-000d00000003"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1660,20 +1675,21 @@ curl -X DELETE
 
 ```shell
 curl -X POST
-  "https://online.moysklad.ru/api/remap/1.2/entity//store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/delete"
+  "https://api.moysklad.ru/api/remap/1.2/entity//store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/delete"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H "Content-Type: application/json"
   -d '[
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/9177a566-75f8-11ed-ac1a-000d00000000",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/9177a566-75f8-11ed-ac1a-000d00000000",
             "type": "storezone",
             "mediaType": "application/json"
           }
         },
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7d479c5f-75f9-11ed-ac1a-000d00000003",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7d479c5f-75f9-11ed-ac1a-000d00000003",
             "type": "storezone",
             "mediaType": "application/json"
           }
@@ -1706,8 +1722,9 @@ curl -X POST
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19/zones/7944ef04-f831-11e5-7a69-971500188b18"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19/zones/7944ef04-f831-11e5-7a69-971500188b18"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1716,7 +1733,7 @@ curl -X GET
 ```json
 {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19/zones/7944ef04-f831-11e5-7a69-971500188b18",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19/zones/7944ef04-f831-11e5-7a69-971500188b18",
         "type": "storezone",
         "mediaType": "application/json"
       },
@@ -1743,8 +1760,9 @@ curl -X GET
 
 ```shell
 curl -X PUT
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7d479c5f-75f9-11ed-ac1a-000d00000003"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7d479c5f-75f9-11ed-ac1a-000d00000003"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H "Content-Type: application/json"
   -d '{
         "name": "zone 3"
@@ -1758,7 +1776,7 @@ curl -X PUT
 [
     {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7d479c5f-75f9-11ed-ac1a-000d00000003",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7d479c5f-75f9-11ed-ac1a-000d00000003",
             "type": "storezone",
             "mediaType": "application/json"
         },
@@ -1807,8 +1825,9 @@ curl -X PUT
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -1819,15 +1838,15 @@ curl -X GET
   "context": {
     "employee": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots",
     "type": "slot",
     "mediaType": "application/json",
     "size": 2,
@@ -1837,7 +1856,7 @@ curl -X GET
   "rows": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7a6a11b6-12c5-11e6-9464-e4de00000007",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7a6a11b6-12c5-11e6-9464-e4de00000007",
         "type": "slot",
         "mediaType": "application/json"
       },
@@ -1849,7 +1868,7 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7a6a11b6-12c5-11e6-9464-e4de00000008",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7a6a11b6-12c5-11e6-9464-e4de00000008",
         "type": "slot",
         "mediaType": "application/json"
       },
@@ -1860,7 +1879,7 @@ curl -X GET
       "externalCode": "223ddxzv224",
       "zone": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7944ef04-f831-11e5-7a69-971500188b18",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/7944ef04-f831-11e5-7a69-971500188b18",
           "type": "storezone",
           "mediaType": "application/json"
         }
@@ -1882,8 +1901,9 @@ curl -X GET
 
 ```shell
 curl -X POST
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H "Content-Type: application/json"
   -d '{
         "name": "slot 1"
@@ -1897,7 +1917,7 @@ curl -X POST
 [
     {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/9177a566-75f8-11ed-ac1a-000d00000000",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/9177a566-75f8-11ed-ac1a-000d00000000",
             "type": "slot",
             "mediaType": "application/json"
         },
@@ -1914,14 +1934,15 @@ curl -X POST
 
 ```shell
 curl -X POST
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H "Content-Type: application/json"
   -d '{
         "name": "slot 1",
         "zone": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/8277a566-75f8-11ed-ac1a-000d00000000",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/8277a566-75f8-11ed-ac1a-000d00000000",
             "type": "storezone",
             "mediaType": "application/json"
           }
@@ -1936,7 +1957,7 @@ curl -X POST
 [
     {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/9177a566-75f8-11ed-ac1a-000d00000000",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/9177a566-75f8-11ed-ac1a-000d00000000",
             "type": "slot",
             "mediaType": "application/json"
         },
@@ -1947,7 +1968,7 @@ curl -X POST
         "externalCode": "wYIaWipYjrZkJZZlw1Amy1",
         "zone": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/8277a566-75f8-11ed-ac1a-000d00000000",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/8277a566-75f8-11ed-ac1a-000d00000000",
             "type": "storezone",
             "mediaType": "application/json"
           }
@@ -1966,9 +1987,10 @@ curl -X POST
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots
+    "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots
 "
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '[
             {
@@ -1976,7 +1998,7 @@ curl -X POST
             },
             {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/9177a566-75f8-11ed-ac1a-000d00000000",
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/9177a566-75f8-11ed-ac1a-000d00000000",
                 "type": "slot",
                 "mediaType": "application/json"
               },
@@ -1992,7 +2014,7 @@ curl -X POST
 [
     {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/9177a566-75f8-11ed-ac1a-000d00000000",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/9177a566-75f8-11ed-ac1a-000d00000000",
             "type": "slot",
             "mediaType": "application/json"
         },
@@ -2004,7 +2026,7 @@ curl -X POST
     },
     {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003",
             "type": "slot",
             "mediaType": "application/json"
         },
@@ -2030,8 +2052,9 @@ curl -X POST
 
 ```shell
 curl -X DELETE
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -2045,20 +2068,21 @@ curl -X DELETE
 
 ```shell
 curl -X POST
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/delete"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/delete"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H "Content-Type: application/json"
   -d '[
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/9177a566-75f8-11ed-ac1a-000d00000000",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/9177a566-75f8-11ed-ac1a-000d00000000",
             "type": "slot",
             "mediaType": "application/json"
           }
         },
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003",
             "type": "slot",
             "mediaType": "application/json"
           }
@@ -2090,8 +2114,9 @@ curl -X POST
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19/slots/7944ef04-f831-11e5-7a69-971500188b18"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19/slots/7944ef04-f831-11e5-7a69-971500188b18"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -2100,7 +2125,7 @@ curl -X GET
 ```json
 {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19/slots/7944ef04-f831-11e5-7a69-971500188b18",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b19/slots/7944ef04-f831-11e5-7a69-971500188b18",
         "type": "slot",
         "mediaType": "application/json"
       },
@@ -2127,8 +2152,9 @@ curl -X GET
 
 ```shell
 curl -X PUT
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H "Content-Type: application/json"
   -d '{
         "name": "slot 3"
@@ -2142,7 +2168,7 @@ curl -X PUT
 [
     {
         "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003",
             "type": "slot",
             "mediaType": "application/json"
         },
@@ -2159,14 +2185,15 @@ curl -X PUT
 
 ```shell
 curl -X PUT
-  "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003"
+  "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H "Content-Type: application/json"
   -d '{
         "name": "slot 3",
         "zone": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/8277a566-75f8-11ed-ac1a-000d00000000",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/8277a566-75f8-11ed-ac1a-000d00000000",
             "type": "storezone",
             "mediaType": "application/json"
           }
@@ -2181,7 +2208,7 @@ curl -X PUT
 [
     {
       "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/7d479c5f-75f9-11ed-ac1a-000d00000003",
           "type": "slot",
           "mediaType": "application/json"
       },
@@ -2192,7 +2219,7 @@ curl -X PUT
       "externalCode": "wYIaWipYjrZkJZZlw1Amy1",
       "zone": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/8277a566-75f8-11ed-ac1a-000d00000000",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/8277a566-75f8-11ed-ac1a-000d00000000",
           "type": "storezone",
           "mediaType": "application/json"
         }

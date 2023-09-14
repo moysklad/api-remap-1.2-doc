@@ -15,7 +15,7 @@
   "accountId": "f71cb8b6-f7b5-11ec-ac12-000f000000eb",
   "stockType": "stock",
   "reportType": "all",
-  "reportUrl": "https://online.moysklad.ru/api/remap/1.2/report/stock/all/current?fromDate=2022-09-24 19:14:32"
+  "reportUrl": "https://api.moysklad.ru/api/remap/1.2/report/stock/all/current?fromDate=2022-09-24 19:14:32"
 }
 ```
 
@@ -55,8 +55,9 @@
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock"
+  "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -67,16 +68,16 @@ curl -X GET
   "context": {
     "employee": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
     "type": "webhookstock",
     "mediaType": "application/json",
     "size": 3,
@@ -86,15 +87,15 @@ curl -X GET
   "rows": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/aec51463-bbd2-11e6-8a84-bae500000003",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/aec51463-bbd2-11e6-8a84-bae500000003",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
         "type": "webhookstock",
         "mediaType": "application/json"
       },
       "authorApplication" : {
         "meta" : {
-          "href" : "https://online.moysklad.ru/api/remap/1.2/entity/application/9e1ad712-3e45-4679-8896-7159973a8ef5",
-          "metadataHref" : "https://online.moysklad.ru/api/remap/1.2/entity/application/metadata",
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/application/9e1ad712-3e45-4679-8896-7159973a8ef5",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/application/metadata",
           "type" : "application",
           "mediaType" : "application/json"
         }
@@ -108,8 +109,8 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/d08f9217-bbd2-11e6-8a84-bae500000004",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/d08f9217-bbd2-11e6-8a84-bae500000004",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
         "type": "webhookstock",
         "mediaType": "application/json"
       },
@@ -122,8 +123,8 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/d946c7ff-bbd2-11e6-8a84-bae500000005",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/d946c7ff-bbd2-11e6-8a84-bae500000005",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
         "type": "webhookstock",
         "mediaType": "application/json"
       },
@@ -147,8 +148,9 @@ curl -X GET
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock"
+    "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock"
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
             "url": "http://www.example.com",
@@ -164,8 +166,8 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/d08f9217-bbd2-11e6-8a84-bae500000004",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/d08f9217-bbd2-11e6-8a84-bae500000004",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
     "type": "webhookstock",
     "mediaType": "application/json"
   },
@@ -187,8 +189,9 @@ curl -X GET
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock"
+    "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock"
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '[
             {
@@ -198,8 +201,8 @@ curl -X GET
             },
             {
               "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/aec51463-bbd2-11e6-8a84-bae500000003",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/aec51463-bbd2-11e6-8a84-bae500000003",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
                 "type": "webhookstock",
                 "mediaType": "application/json"
               },
@@ -217,8 +220,8 @@ curl -X GET
 [
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/d08f9217-bbd2-11e6-8a84-bae500000004",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/d08f9217-bbd2-11e6-8a84-bae500000004",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
       "type": "webhookstock",
       "mediaType": "application/json"
     },
@@ -231,8 +234,8 @@ curl -X GET
   },
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/aec51463-bbd2-11e6-8a84-bae500000003",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/aec51463-bbd2-11e6-8a84-bae500000003",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
       "type": "webhookstock",
       "mediaType": "application/json"
     },
@@ -259,8 +262,9 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b19"
+  "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b19"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -269,8 +273,8 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b19",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b19",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
     "type": "webhookstock",
     "mediaType": "application/json"
   },
@@ -296,8 +300,9 @@ curl -X GET
 
 ```shell
   curl -X PUT
-    "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b19"
+    "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b19"
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
             "url": "http://www.example.com",
@@ -312,8 +317,8 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b19",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b19",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
     "type": "webhookstock",
     "mediaType": "application/json"
   },
@@ -339,8 +344,9 @@ curl -X GET
 
 ```shell
   curl -X PUT
-    "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b19"
+    "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b19"
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
             "enabled": false
@@ -353,8 +359,8 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b19",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b19",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
     "type": "webhookstock",
     "mediaType": "application/json"
   },
@@ -379,8 +385,9 @@ curl -X GET
 
 ```shell
 curl -X DELETE
-  "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b19"
+  "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b19"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -395,21 +402,22 @@ curl -X DELETE
 
 ```shell
 curl -X POST
-  "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/delete"
+  "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/delete"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H "Content-Type: application/json"
   -d '[
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b1",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
             "type": "webhookstock",
             "mediaType": "application/json"
         },
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b2",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
             "type": "webhookstock",
             "mediaType": "application/json"
         }

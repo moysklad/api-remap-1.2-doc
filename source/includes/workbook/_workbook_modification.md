@@ -15,8 +15,9 @@
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata"
+  "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -25,7 +26,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
     "mediaType": "application/json"
   },
   "characteristics": [
@@ -64,8 +65,9 @@ curl -X GET
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics"
+    "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics"
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
             "name": "Размер"
@@ -78,7 +80,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/6262b270-60c3-11e7-6adb-ede50000000d",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/6262b270-60c3-11e7-6adb-ede50000000d",
     "type": "attributemetadata",
     "mediaType": "application/json"
   },
@@ -93,8 +95,9 @@ curl -X GET
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics"
+    "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics"
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '[
             {
@@ -113,7 +116,7 @@ curl -X GET
 [
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/b55d2ddf-60c3-11e7-6adb-ede500000010",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/b55d2ddf-60c3-11e7-6adb-ede500000010",
       "type": "attributemetadata",
       "mediaType": "application/json"
     },
@@ -124,7 +127,7 @@ curl -X GET
   },
   {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/b56215dc-60c3-11e7-6adb-ede500000013",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/b56215dc-60c3-11e7-6adb-ede500000013",
       "type": "attributemetadata",
       "mediaType": "application/json"
     },

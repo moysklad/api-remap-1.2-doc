@@ -23,7 +23,7 @@ $(function () {
         let itr = document.createNodeIterator(node, NodeFilter.SHOW_TEXT)
         while ((currentTextNode = itr.nextNode())) {
           let cleanedText = currentTextNode.nodeValue
-            .replaceAll('https://online.moysklad.ru/api/remap/1.2/', ' ')
+            .replaceAll('https://api.moysklad.ru/api/remap/1.2/', ' ')
             .replaceAll(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/ig, ' ')
             .replaceAll(/\s+/ig, ' ')
             .trim();
