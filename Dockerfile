@@ -12,4 +12,3 @@ CMD ["bundle", "exec", "middleman", "server", "--watcher-force-polling"]
 
 
 
-
