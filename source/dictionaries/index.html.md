@@ -17,6 +17,7 @@ includes:
   - dictionaries/webhook
   - dictionaries/webhookstock
   - dictionaries/gtd
+  - dictionaries/processingplanfolder
   - dictionaries/productFolder
   - dictionaries/contract
   - dictionaries/uom  

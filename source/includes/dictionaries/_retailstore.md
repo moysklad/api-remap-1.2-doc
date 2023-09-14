@@ -25,6 +25,7 @@
 | **addressFull**                         | Object                                                    |                             | Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-adres)                                                                                |
 | **allowCreateProducts**                 | Boolean                                                   |                             | Контроль остатков. Не может быть `true`, если `controlShippingStock` имеет значение `true`<br>`+Обязательное при ответе`                                                                                                                                                      |
 | **allowCustomPrice**                    | Boolean                                                   |                             | Разрешить продажу по свободной цене<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                        |
+| **allowDeleteReceiptPositions**         | Boolean                                                   |                             | Разрешить удалять позиции в чеке<br>`+Обязательное при ответе` по умолчанию `+true`                                                                                                                                                                                           |
 | **allowSellTobaccoWithoutMRC**          | Boolean                                                   |                             | Разрешить продавать табачную продукцию не по МРЦ<br>`+Обязательное при ответе`                                                                                                                                                                                                |
 | **archived**                            | Boolean                                                   |                             | Добавлена ли Точка продаж в архив<br>`+Обязательное при ответе`                                                                                                                                                                                                               |
 | **authTokenAttached**                   | Boolean                                                   |                             | Создан ли токен для точки продаж<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                           |
@@ -72,6 +73,12 @@
 | **qrPayEnabled**                        | Boolean                                                   |                             | Возможность оплаты по QR-коду на точке продаж<br>`+Обязательное при ответе`                                                                                                                                                                                                   |
 | **qrTerminalId**                        | String(255)                                               |                             | Идентификатор терминала (TerminalID) для приложения оплаты по QR                                                                                                                                                                                                              |
 | **receiptTemplate**                     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                             | Метаданные шаблона печати кассовых чеков<br>`+Expand`                                                                                                                                                                                                                         |
+| **requiredFio**                         | Boolean                                                   |                             | Обязательность поля ФИО при создании контрагента<br>`+Обязательное при ответе` по умолчанию `+false`                                                                                                                                                                          |
+| **requiredPhone**                       | Boolean                                                   |                             | Обязательность поля телефон при создании контрагента<br>`+Обязательное при ответе` по умолчанию `+true`                                                                                                                                                                       |
+| **requiredEmail**                       | Boolean                                                   |                             | Обязательность поля эл. почта при создании контрагента<br>`+Обязательное при ответе` по умолчанию `+false`                                                                                                                                                                    |
+| **requiredBirthdate**                   | Boolean                                                   |                             | Обязательность поля дата рождения при создании контрагента<br>`+Обязательное при ответе` по умолчанию `+false`                                                                                                                                                                |
+| **requiredSex**                         | Boolean                                                   |                             | Обязательность поля пол при создании контрагента<br>`+Обязательное при ответе` по умолчанию `+false`                                                                                                                                                                          |
+| **requiredDiscountCardNumber**          | Boolean                                                   |                             | Обязательность поля номер бонусной карты при создании контрагента<br>`+Обязательное при ответе` по умолчанию `+false`                                                                                                                                                         |
 | **reservePrepaidGoods**                 | Boolean                                                   |                             | Резервировать товары, за которые внесена предоплата<br>`+Обязательное при ответе`                                                                                                                                                                                             |
 | **returnFromClosedShiftEnabled**        | Boolean                                                   |                             | Разрешить возвраты в закрытых сменах<br>`+Обязательное при ответе`                                                                                                                                                                                                            |
 | **sellReserves**                        | Boolean                                                   |                             | Учет резервов<br>`+Обязательное при ответе`                                                                                                                                                                                                                                   |
@@ -81,7 +88,7 @@
 | **store**                               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                    | Метаданные Склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                                                                                                          |
 | **tobaccoMrcControlType**               | Enum                                                      |                             | Контроль МРЦ для табачной продукции. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-kontrolq-mrc-dlq-tabachnoj-produkcii)<br>`+Обязательное при ответе`                                                                    |
 | **updated**                             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`  | Момент последнего обновления Точки продаж<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                  |
- 
+
 ##### Код системы налогообложения по умолчанию
 
 | Название                                 | Описание                     |
@@ -206,16 +213,17 @@
 
 ###### Аттрибуты сущности Фискальная Память
 
-| Название            | Тип    | Описание                                                                                                                                                                         |
-| ------------------- | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **error**           | Object | Информация об ошибке ФН. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-oshibka) |
-| **notSendDocCount** | Int    | Количество неотправленных документов в ОФД                                                                                                                                       |
+| Название            | Тип      | Описание                                                                                                                                                                         |
+| ------------------- |:---------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **error**           | Object   | Информация об ошибке ФН. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-oshibka) |
+| **notSendDocCount** | Int      | Количество неотправленных документов в ОФД                                                                                                                                       |
+| **notSendFirstDocMoment** | DateTime | Время начала не отправки документов                                                                                                                                              |
 
 ###### Аттрибуты сущности Ошибка
 
 | Название    | Тип         | Описание                                      |
-| ----------- | :---------- | :-------------------------------------------- |
-| **сode**    | Int         | Код ошибки ФН<br>`+Обязательное при ответе`   |
+| ----------- |:------------| :-------------------------------------------- |
+| **сode**    | String(255) | Код ошибки ФН<br>`+Обязательное при ответе`   |
 | **message** | String(255) | Описание ошибки<br>`+Обязательное при ответе` |
 
 ###### Аттрибуты сущности Платежный Терминал
@@ -490,6 +498,7 @@ curl -X GET
       "markingSellingMode" : "CORRECT_MARKS_ONLY",
       "sendMarksForCheck" : false,
       "allowCreateProducts" : false,
+      "allowDeleteReceiptPositions" : true,
       "productFolders" : {
         "meta" : {
           "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/2b5eb22f-139e-11e6-9464-e4de00000073/productfolders",
@@ -610,6 +619,12 @@ curl -X GET
         "name": "Цена продажи",
         "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
       },
+      "requiredFio" : false,
+      "requiredPhone" : false,
+      "requiredEmail" : false,
+      "requiredBirthdate" : false,
+      "requiredSex" : false,
+      "requiredDiscountCardNumber" : false,
       "authTokenAttached": false,
       "cashiers": {
         "meta": {
@@ -707,6 +722,7 @@ curl -X GET
       "markingSellingMode" : "CORRECT_MARKS_ONLY",
       "sendMarksForCheck" : false,
       "allowCreateProducts" : false,
+      "allowDeleteReceiptPositions" : true,
       "productFolders" : {
         "meta" : {
           "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/2b5eb22f-139e-11e6-9464-e4de00000073/productfolders",
@@ -791,6 +807,12 @@ curl -X GET
               "controlCashierChoice" : true,
               "discountEnable" : true,
               "discountMaxPercent" : 10.0,
+              "requiredFio" : false,
+              "requiredPhone" : true,
+              "requiredEmail" : false,
+              "requiredBirthdate" : false,
+              "requiredSex" : false,
+              "requiredDiscountCardNumber" : false,
               "priceType" : {
                 "meta" : {
                   "href" : "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/30fe66fd-137a-11e6-9464-e4de00000050",
@@ -847,6 +869,7 @@ curl -X GET
               "markingSellingMode" : "CORRECT_MARKS_ONLY",
               "sendMarksForCheck" : false,
               "allowCreateProducts" : false,
+              "allowDeleteReceiptPositions" : true,
               "productFolders" : [{
                 "meta": {
                   "href": "https://api.moysklad.ru/api/remap/1.2/entity/productfolder/30fe66fd-137a-11e6-9464-e4de00000056",
@@ -943,6 +966,12 @@ curl -X GET
   "controlCashierChoice" : true,
   "discountEnable" : true,
   "discountMaxPercent" : 10.0,
+  "requiredFio" : false,
+  "requiredPhone" : true,
+  "requiredEmail" : false,
+  "requiredBirthdate" : false,
+  "requiredSex" : false,
+  "requiredDiscountCardNumber" : false,
   "priceType" : {
     "meta" : {
       "href" : "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/30fe66fd-137a-11e6-9464-e4de00000050",
@@ -1033,6 +1062,7 @@ curl -X GET
   "markingSellingMode" : "CORRECT_MARKS_ONLY",
   "sendMarksForCheck" : false,
   "allowCreateProducts" : false,
+  "allowDeleteReceiptPositions" : true,
   "productFolders" : {
     "meta" : {
       "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/966b1795-bf2c-11e9-ee62-204c0000004c/productFolders",
@@ -1163,6 +1193,12 @@ curl -X GET
   "active" : true,
   "controlCashierChoice" : false,
   "discountEnable" : false,
+  "requiredFio" : false,
+  "requiredPhone" : true,
+  "requiredEmail" : false,
+  "requiredBirthdate" : false,
+  "requiredSex" : false,
+  "requiredDiscountCardNumber" : false,
   "priceType" : {
     "meta" : {
       "href" : "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/30fe66fd-137a-11e6-9464-e4de00000052",
@@ -1228,6 +1264,7 @@ curl -X GET
   "markingSellingMode" : "CORRECT_MARKS_ONLY",
   "sendMarksForCheck" : false,
   "allowCreateProducts" : true,
+  "allowDeleteReceiptPositions" : true,
   "productFolders" : {
     "meta" : {
       "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/425999e6-bf2f-11e9-ee62-204c00000041/productFolders",
@@ -1264,6 +1301,12 @@ curl -X GET
             {
               "name" : "retailstoretest",
               "active": true,
+              "requiredFio" : false,
+              "requiredPhone" : true,
+              "requiredEmail" : false,
+              "requiredBirthdate" : false,
+              "requiredSex" : false,
+              "requiredDiscountCardNumber" : false,
               "organization" : {
                   "meta" : {
                   "href" : "https://api.moysklad.ru/api/remap/1.2/entity/organization/30fe66fd-137a-11e6-9464-e4de00000050",
@@ -1340,6 +1383,12 @@ curl -X GET
     "active" : true,
     "controlCashierChoice" : false,
     "discountEnable" : false,
+    "requiredFio" : false,
+    "requiredPhone" : true,
+    "requiredEmail" : false,
+    "requiredBirthdate" : false,
+    "requiredSex" : false,
+    "requiredDiscountCardNumber" : false,
     "priceType" : {
       "meta" : {
         "href" : "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/30fe66fd-137a-11e6-9464-e4de00000052",
@@ -1405,6 +1454,7 @@ curl -X GET
     "markingSellingMode" : "CORRECT_MARKS_ONLY",
     "sendMarksForCheck" : false,
     "allowCreateProducts" : true,
+    "allowDeleteReceiptPositions" : true,
     "productFolders" : {
       "meta" : {
         "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/425999e6-bf2f-11e9-ee62-204c00000041/productFolders",
@@ -1458,6 +1508,12 @@ curl -X GET
     "active" : true,
     "controlCashierChoice" : true,
     "discountEnable" : false,
+    "requiredFio" : false,
+    "requiredPhone" : true,
+    "requiredEmail" : false,
+    "requiredBirthdate" : false,
+    "requiredSex" : false,
+    "requiredDiscountCardNumber" : false,
     "priceType" : {
       "meta" : {
         "href" : "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/30fe66fd-137a-11e6-9464-e4de00000042",
@@ -1531,6 +1587,7 @@ curl -X GET
     "markingSellingMode" : "CORRECT_MARKS_ONLY",
     "sendMarksForCheck" : false,
     "allowCreateProducts" : true,
+    "allowDeleteReceiptPositions" : true,
     "productFolders" : {
       "meta" : {
         "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/425999e6-bf2f-11e9-ee62-204c00000042/productFolders",
@@ -1694,11 +1751,18 @@ curl -X GET
     "comment": "some words about address"
   },
   "controlShippingStock": true,
-    "onlyInStock": true,
-    "active": true,
-    "controlCashierChoice": false,
-    "discountEnable": true,
-    "discountMaxPercent": 17,
+  "onlyInStock": true,
+  "active": true,
+  "controlCashierChoice": false,
+  "discountEnable": true,
+  "discountMaxPercent": 17,
+  "requiredFio" : false,
+  "requiredPhone" : true,
+  "requiredEmail" : false,
+  "requiredBirthdate" : false,
+  "requiredSex" : false,
+  "requiredDiscountCardNumber" : false,
+  "allowDeleteReceiptPositions": true,
     "priceType": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
@@ -1874,6 +1938,12 @@ curl -X PUT
   "active" : true,
   "controlCashierChoice" : false,
   "discountEnable" : false,
+  "requiredFio" : false,
+  "requiredPhone" : true,
+  "requiredEmail" : false,
+  "requiredBirthdate" : false,
+  "requiredSex" : false,
+  "requiredDiscountCardNumber" : false,
   "priceType" : {
     "meta" : {
       "href" : "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/30fe66fd-137a-11e6-9464-e4de00000052",
@@ -1947,6 +2017,7 @@ curl -X PUT
   "markingSellingMode" : "ALL",
   "sendMarksForCheck" : false,
   "allowCreateProducts" : true,
+  "allowDeleteReceiptPositions" : true,
   "productFolders" : {
     "meta" : {
       "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/425999e6-bf2f-11e9-ee62-204c00000041/productFolders",

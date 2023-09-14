@@ -217,7 +217,7 @@ curl -X GET
 
 ```shell
   curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/metadata/states"
+    "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states"
     -H "Authorization: Basic <Credentials>"
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
