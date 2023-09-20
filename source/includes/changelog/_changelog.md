@@ -149,6 +149,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 20-09-2023
+#### Удалены
+- Ставший неактуальным `5004` код [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-komissionera).
+- Ограничение на товар и его количество в позиции возврата на склад комиссионера для [полученного отчета комиссионера](../documents/#dokumenty-poluchennyj-otchet-komissionera).
+
 ### 14-09-2023
 #### Добавлено
 - Использование обязательного [сжатия содержимого ответов](../#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow)
