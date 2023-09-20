@@ -65,8 +65,9 @@
 
 ```shell
 curl -X POST 
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook 
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook 
   -H 'Authorization: Bearer <Access-Token>' 
+  -H "Accept-Encoding: gzip"
   -H 'Content-Type: application/json' 
   -d '{
   "url": "http://www.example.com",
@@ -82,8 +83,8 @@ curl -X POST
 ```json
 {
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
         "type": "webhook",
         "mediaType": "application/json"
     },
@@ -104,8 +105,9 @@ curl -X POST
 
 ```shell
 curl -X GET 
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
-  -H 'Authorization: Bearer <Access-Token>' 
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
   -H 'Content-Type: application/json' 
 ```
 
@@ -116,8 +118,9 @@ curl -X GET
 
 ```shell
 curl -X PUT 
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
-  -H 'Authorization: Bearer <Access-Token>' 
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
   -H 'Content-Type: application/json' 
   -d '{
   "action": "UPDATE"
@@ -128,8 +131,9 @@ curl -X PUT
 
 ```shell
 curl -X PUT 
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
-  -H 'Authorization: Bearer <Access-Token>' 
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
   -H 'Content-Type: application/json' 
   -d '{
   "enabled": false
@@ -140,8 +144,9 @@ curl -X PUT
 
 ```shell
 curl -X DELETE 
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
-  -H 'Authorization: Bearer <Access-Token>' 
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
   -H 'Content-Type: application/json' 
 ```
 
@@ -149,8 +154,9 @@ curl -X DELETE
 
 ```shell
 curl -X GET 
-  https://online.moysklad.ru/api/remap/1.2/entity/webhook 
-  -H 'Authorization: Bearer <Access-Token>' 
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
   -H 'Content-Type: application/json' 
 ```
 
@@ -161,15 +167,15 @@ curl -X GET
    "context":{
       "employee":{
          "meta":{
-            "href":"https://online.moysklad.ru/api/remap/1.2/context/employee",
-            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+            "href":"https://api.moysklad.ru/api/remap/1.2/context/employee",
+            "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
             "type":"employee",
             "mediaType":"application/json"
          }
       }
    },
    "meta":{
-      "href":"https://online.moysklad.ru/api/remap/1.2/entity/webhook",
+      "href":"https://api.moysklad.ru/api/remap/1.2/entity/webhook",
       "type":"webhook",
       "mediaType":"application/json",
       "size":1,
@@ -179,8 +185,8 @@ curl -X GET
    "rows":[
       {
          "meta":{
-            "href":"https://online.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3",
-            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
+            "href":"https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3",
+            "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/webhook/metadata",
             "type":"webhook",
             "mediaType":"application/json"
          },
@@ -226,15 +232,16 @@ curl -X GET
  
  ```shell
  curl -X POST 
-   https://online.moysklad.ru/api/remap/1.2/entity/webhook 
-   -H 'Authorization: Bearer <Access-Token>' 
+   https://api.moysklad.ru/api/remap/1.2/entity/webhook 
+   -H 'Authorization: Bearer <Access-Token>'
+   -H "Accept-Encoding: gzip"
    -H 'Cache-Control: no-cache' 
    -H 'Content-Type: application/json' 
    -d '{
-   "url": "https://webhook.site/c314f269-d524-4b1a-bf9e-5c59060b220c",
-   "action": "CREATE",
-   "entityType": "service"
- }'
+     "url": "https://webhook.site/c314f269-d524-4b1a-bf9e-5c59060b220c",
+     "action": "CREATE",
+     "entityType": "service"
+    }'
  ```
  
 <p>3. Создаем вебхук, в примере ниже вебхук на создание услуги</p>
@@ -243,8 +250,9 @@ curl -X GET
 
 ```shell
 curl -X POST 
-  https://online.moysklad.ru/api/remap/1.2/entity/service 
-  -H 'Authorization: Bearer <Access-Token>' 
+  https://api.moysklad.ru/api/remap/1.2/entity/service 
+  -H 'Authorization: Bearer <Access-Token>'
+  -H "Accept-Encoding: gzip"
   -H 'Content-Type: application/json' 
   -d '{
   "name": "Заточка коньков"
@@ -253,5 +261,5 @@ curl -X POST
 
 <p>4. Создаем услугу в МоемСкладе, в примере ниже создание услуги через JSON API</p>
 
-<p>5. На наш уникальный  адрес пришло уведомление!</p>
+<p>5. На наш уникальный адрес пришло уведомление!</p>
  ![useful image](../images/webhooks/step-5.png?raw=true)

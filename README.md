@@ -61,8 +61,9 @@ _Чтобы локально развернуть копию документа�
 > Получить Сущности
 
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/some_entity"
+  "https://api.moysklad.ru/api/remap/1.2/entity/some_entity"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 
 
 > Response 200 (application/json)
