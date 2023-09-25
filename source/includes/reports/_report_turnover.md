@@ -562,7 +562,7 @@ curl -X GET
 | **project**                    | ссылка на проект, по которому нужно произвести фильтрацию.                      |
 | **retailStore**                | ссылка на точку продаж, по которой нужно произвести фильтрацию.                 |
 | **store**                      | ссылка на склад, по которому нужно произвести фильтрацию.                       |
-| **type**                       | Enum        | `=`        | параметр для фильтрации "тип документа", по которому можно произвести фильтрацию. Возможные значения `supply`, `purchasereturn`, `demand`, `salesreturn`, `loss`, `enter`, `move`, `processing`, `retaildemand`, `retailsalesreturn`.                                                                                          |
+| **type**                       | параметр для фильтрации "тип документа", по которому можно произвести фильтрацию. Возможные значения `supply`, `purchasereturn`, `demand`, `salesreturn`, `loss`, `enter`, `move`, `processing`, `retaildemand`, `retailsalesreturn`.                                                                               |
 
 Примеры фильтрации:
 
