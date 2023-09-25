@@ -249,7 +249,7 @@ curl -X PUT
 
 ```shell
 curl -X GET
-  "ttps://online.moysklad.ru/api/remap/1.2/context/companysettings/metadata"
+  "https://online.moysklad.ru/api/remap/1.2/context/companysettings/metadata"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
