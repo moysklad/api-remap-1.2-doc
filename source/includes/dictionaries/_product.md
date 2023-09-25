@@ -2056,6 +2056,7 @@ curl -X POST
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
             "type": "product",
             "mediaType": "application/json"
+          }
         },
         {
           "meta": {
@@ -2063,6 +2064,7 @@ curl -X POST
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
             "type": "product",
             "mediaType": "application/json"
+            }
         }
       ]'
 ```        
