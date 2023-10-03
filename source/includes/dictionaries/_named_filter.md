@@ -33,8 +33,9 @@
 
 ```shell
   curl -X GET
-    "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter"
+    "https://api.moysklad.ru/api/remap/1.2/entity/product/namedfilter"
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"  
 ```
 
@@ -45,15 +46,15 @@
   "context": {
     "employee": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/namedfilter",
     "type": "namedfilter",
     "mediaType": "application/json",
     "size": 1,
@@ -63,14 +64,14 @@
   "rows": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019",
         "type": "namedfilter",
         "mediaType": "application/json"
       },
       "owner": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/234eee6f-c513-11eb-ac12-000d0000003b",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/234eee6f-c513-11eb-ac12-000d0000003b",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=234eee6f-c513-11eb-ac12-000d0000003b"
@@ -93,8 +94,9 @@
 
 ```shell
   curl -X GET
-    "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter?owner=https://online.moysklad.ru/api/remap/1.2/entity/employee/25863410-ca86-11eb-ac12-000d00000234"
+    "https://api.moysklad.ru/api/remap/1.2/entity/product/namedfilter?owner=https://api.moysklad.ru/api/remap/1.2/entity/employee/25863410-ca86-11eb-ac12-000d00000234"
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"  
 ```
 
@@ -105,15 +107,15 @@
   "context": {
     "employee": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/namedfilter",
     "type": "namedfilter",
     "mediaType": "application/json",
     "size": 1,
@@ -123,14 +125,14 @@
   "rows": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019",
         "type": "namedfilter",
         "mediaType": "application/json"
       },
       "owner": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/25863410-ca86-11eb-ac12-000d00000234",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/25863410-ca86-11eb-ac12-000d00000234",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=25863410-ca86-11eb-ac12-000d00000234"
@@ -157,8 +159,9 @@
 
 ```shell
   curl -X GET
-    "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019"
+    "https://api.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019"
     -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"  
 ```
 
@@ -167,14 +170,14 @@
 ```json
   {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019",
     "type": "namedfilter",
     "mediaType": "application/json"
   },
   "owner": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/234eee6f-c513-11eb-ac12-000d0000003b",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/234eee6f-c513-11eb-ac12-000d0000003b",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json",
       "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=234eee6f-c513-11eb-ac12-000d0000003b"
@@ -194,7 +197,7 @@
 Для применения фильтрации необходимо в специальном параметре запроса `namedfilter` передать ссылку на нужный сохраненный фильтр.
 
 Пример url с применением сохраненного фильтра:
-`https://online.moysklad.ru/api/remap/1.2/entity/product?namedfilter=https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019`
+`https://api.moysklad.ru/api/remap/1.2/entity/product?namedfilter=https://api.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019`
 
 <br>
 

@@ -1,9 +1,16 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-## 14-09-2023
+## 03-10-2023
 ### Добавлено
 - Добавлено поле `syncAgents` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), выгружает покупателей для работы оффлайн.
+
+## 14-09-2023
+### Добавлено
+- Использование обязательного [сжатия содержимого ответов](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow)
+
+### Изменен
+- Домен в примерах документации на api.moysklad.ru
 
 ## 06-09-2023
 ### Добавлено

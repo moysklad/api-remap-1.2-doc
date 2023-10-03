@@ -25,8 +25,9 @@
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/role/736da682-ad8b-11eb-0a80-17ef000000d4"
+  "https://api.moysklad.ru/api/remap/1.2/entity/role/736da682-ad8b-11eb-0a80-17ef000000d4"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -35,7 +36,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/736da682-ad8b-11eb-0a80-17ef000000d4",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/role/736da682-ad8b-11eb-0a80-17ef000000d4",
     "type": "customrole",
     "mediaType": "application/json"
   },
@@ -461,8 +462,9 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/role/"
+  "https://api.moysklad.ru/api/remap/1.2/entity/role/"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -473,15 +475,15 @@ curl -X GET
   "context": {
     "employee": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/role/",
     "mediaType": "application/json",
     "size": 1,
     "limit": 1000,
@@ -490,7 +492,7 @@ curl -X GET
   "rows": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/736da682-ad8b-11eb-0a80-17ef000000d4",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/role/736da682-ad8b-11eb-0a80-17ef000000d4",
         "type": "customrole",
         "mediaType": "application/json"
       },
@@ -918,8 +920,9 @@ curl -X GET
 
 ```shell
 curl -X POST
-  "https://online.moysklad.ru/api/remap/1.2/entity/role/"
+  "https://api.moysklad.ru/api/remap/1.2/entity/role/"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H "Content-Type: application/json"
       -d '{
   "name": "testRole",
@@ -962,7 +965,7 @@ curl -X POST
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/ae6e61ad-ad8c-11eb-0a80-380e00001e6c",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/role/ae6e61ad-ad8c-11eb-0a80-380e00001e6c",
     "type": "customrole",
     "mediaType": "application/json"
   },
@@ -1394,8 +1397,9 @@ curl -X POST
 
 ```shell
 curl -X PUT
-  "https://online.moysklad.ru/api/remap/1.2/entity/role/ae6e61ad-ad8c-11eb-0a80-380e00001e6c"
+  "https://api.moysklad.ru/api/remap/1.2/entity/role/ae6e61ad-ad8c-11eb-0a80-380e00001e6c"
   -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
   -H "Content-Type: application/json"
       -d '{
   "name": "updatedTestRole",
@@ -1438,7 +1442,7 @@ curl -X PUT
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/role/ae6e61ad-ad8c-11eb-0a80-380e00001e6c",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/role/ae6e61ad-ad8c-11eb-0a80-380e00001e6c",
     "type": "customrole",
     "mediaType": "application/json"
   },
@@ -1871,7 +1875,7 @@ curl -X PUT
 
 ```shell
 curl -X DELETE
-  "https://online.moysklad.ru/api/remap/1.2/entity/role/ae6e61ad-ad8c-11eb-0a80-380e00001e6c"
+  "https://api.moysklad.ru/api/remap/1.2/entity/role/ae6e61ad-ad8c-11eb-0a80-380e00001e6c"
   -H "Authorization: Basic <Credentials>
 ```
 
