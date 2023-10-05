@@ -826,7 +826,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?stockType=freeStock"
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?stockType=reserve"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
@@ -848,7 +848,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?stockType=freeStock"
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?stockType=inTransit"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
