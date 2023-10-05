@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 5-10-2023
+### Добавлено
+- Добавлены новые режимы reserv и inTransit, и их примеры, [в краткий отчёт по остаткам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah)
+
 ## 14-09-2023
 ### Добавлено
 - Использование обязательного [сжатия содержимого ответов](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow)

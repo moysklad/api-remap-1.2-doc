@@ -688,7 +688,7 @@ curl -X GET
 ### Получить Краткий отчет об остатках
 Чтобы получить отчет, используйте эндпоинты `/report/stock/all/current` и `/report/stock/bystore/current`.
 
-Эндпоинты предназначены для частого и быстрого обновления остатков, резервов и ожиданий для большого количества товаров.
+Эндпоинты предназначены для частого и быстрого обновления остатков для большого количества товаров.
 
 #### Параметр include
 По умолчанию выводятся только результаты с ненулевым значением остатка.
@@ -715,7 +715,6 @@ curl -X GET
 
 #### Параметр stockType
 Параметром `stockType` выбирается тип остатка, который необходимо рассчитать.
-На данный момент возможно получить только один тип остатка.
 Значение по умолчанию - `stock`
 
 | Значение      | Описание                                                    |
@@ -801,7 +800,29 @@ curl -X GET
 ]
 ```
 
-> Запрос на получение текущих остатков по складам с указанием типа остатка.
+> Запрос на получение текущих остатков по складам с указанием типа остатка "freeStock".
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?stockType=freeStock"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отчета.
+Строка со "storeId":null соответствует части резерва на данный товар для Заказа Покупателя без указания склада.
+
+```json
+[
+  {"assortmentId":"12345678-5838-aaeb-0a80-003a003ef439","storeId":"12345678-b123-aaee-0a80-012b0001bb10","freeStock":4},
+  {"assortmentId":"12345678-5838-aaeb-0a80-003a003ef439","storeId":"12345678-b123-aaee-0a80-012b0001bb12","freeStock":7},
+  {"assortmentId":"12345678-279c-aaeb-0a80-00d6001f847c","storeId":null, "freeStock":-5},
+  {"assortmentId":"12345678-279c-aaeb-0a80-00d6001f847c","storeId":"12345678-b123-aaee-0a80-012b0001bb10","freeStock":46}
+]
+```
+
+> Запрос на получение текущих остатков по складам с указанием типа остатка "reserve".
 
 ```shell
 curl -X GET
@@ -816,10 +837,32 @@ curl -X GET
 
 ```json
 [
-  {"assortmentId":"12345678-5838-aaeb-0a80-003a003ef439","storeId":"12345678-b123-aaee-0a80-012b0001bb10","freeStock":4},
-  {"assortmentId":"12345678-5838-aaeb-0a80-003a003ef439","storeId":"12345678-b123-aaee-0a80-012b0001bb12","freeStock":7},
-  {"assortmentId":"12345678-279c-aaeb-0a80-00d6001f847c","storeId":null, "freeStock":-5},
-  {"assortmentId":"12345678-279c-aaeb-0a80-00d6001f847c","storeId":"12345678-b123-aaee-0a80-012b0001bb10","freeStock":46}
+  {"assortmentId":"12345678-5838-aaeb-0a80-003a003ef439","storeId":"12345678-b123-aaee-0a80-012b0001bb10","reserve":3},
+  {"assortmentId":"12345678-5838-aaeb-0a80-003a003ef439","storeId":"12345678-b123-aaee-0a80-012b0001bb12","reserve":4},
+  {"assortmentId":"12345678-279c-aaeb-0a80-00d6001f847c","storeId":null, "reserve":5},
+  {"assortmentId":"12345678-279c-aaeb-0a80-00d6001f847c","storeId":"12345678-b123-aaee-0a80-012b0001bb10","reserve":40}
+]
+```
+
+> Запрос на получение текущих остатков по складам с указанием типа остатка "inTransit".
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?stockType=freeStock"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отчета.
+Строка со "storeId":null соответствует ожиданию для Заказа Покупателя без указания склада.
+
+```json
+[
+  {"assortmentId":"12345678-5838-aaeb-0a80-003a003ef439","storeId":"12345678-b123-aaee-0a80-012b0001bb10","inTransit":7},
+  {"assortmentId":"12345678-5838-aaeb-0a80-003a003ef439","storeId":"12345678-b123-aaee-0a80-012b0001bb12","inTransit":10},
+  {"assortmentId":"12345678-279c-aaeb-0a80-00d6001f847c","storeId":null, "inTransit":12},
+  {"assortmentId":"12345678-279c-aaeb-0a80-00d6001f847c","storeId":"12345678-b123-aaee-0a80-012b0001bb10","inTransit":25}
 ]
 ```
 
