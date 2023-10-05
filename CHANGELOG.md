@@ -3,7 +3,7 @@
 
 ## 5-10-2023
 ### Добавлено
-- Добавлены новые режимы reserve и inTransit, [в краткий отчёт по остаткам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah)
+- Добавлены новые режимы reserve и inTransit [в краткий отчёт по остаткам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah)
 
 ## 14-09-2023
 ### Добавлено
