@@ -151,7 +151,7 @@
 
 ### 5-10-2023
 #### Добавлено
-- Добавлены новые режимы reserv и inTransit, и их примеры, [в краткий отчёт по остаткам](../reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah)
+- Добавлены новые режимы reserve и inTransit, [в краткий отчёт по остаткам](../reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah)
 
 ### 14-09-2023
 #### Добавлено
