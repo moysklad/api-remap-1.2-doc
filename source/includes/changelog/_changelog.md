@@ -149,7 +149,7 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 5-10-2023
+### 05-10-2023
 #### Добавлено
 - Добавлены новые режимы reserve и inTransit [в краткий отчёт по остаткам](../reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah)
 
