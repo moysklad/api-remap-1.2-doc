@@ -149,6 +149,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 12-10-2023
+#### Добавлено
+- Добавлено поле `barcode128` в [Ячейку склада](../dictionaries/#suschnosti-sklad-yachejki-sklada)
+- Ошибка [67006](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-yacheek-i-zon-sklada)
+
 ### 14-09-2023
 #### Добавлено
 - Использование обязательного [сжатия содержимого ответов](../#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow)

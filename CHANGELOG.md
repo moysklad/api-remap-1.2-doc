@@ -1,6 +1,11 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 12-10-2023
+#### Добавлено
+- Добавлено поле `barcode128` в [Ячейку склада](https://dev.moysklad.ru/doc/api/remap/1.2/#suschnosti-sklad-yachejki-sklada)
+- Ошибка [67006](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-yacheek-i-zon-sklada)
+
 ## 14-09-2023
 ### Добавлено
 - Использование обязательного [сжатия содержимого ответов](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow)
