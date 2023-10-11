@@ -1804,7 +1804,7 @@ curl -X PUT
 | **meta**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Ячейки<br>`+Обязательное при ответе`                                                                               |
 | **name**         | String(255)                                               |                                                                                                                            | Наименование Ячейки<br>`+Обязательное при ответе` `+Необходимо при создании`                                                  |
 | **updated**      | DateTime                                                  |                                                                                                                         | Момент последнего обновления Ячейки<br>`+Обязательное при ответе` `+Только для чтения`                                        |
-| **barcode128**   | String(255)                                               |                                                                                                                                                   | Штрихкод ячейки                                                                                                               |
+| **barcode**   | String(255)                                               |                                                                                                                                                   | Штрихкод ячейки                                                                                                               |
 | **zone**         | Meta                                                      |                                                                                                                                                   | Зона ячейки. [Подробнее тут](../dictionaries/#suschnosti-sklad-zony-sklada)<br>`+Только для чтения` `+Expand`                                       |
 
 ### Получить ячейки склада
@@ -1868,7 +1868,7 @@ curl -X GET
       "updated": "2016-05-05 16:32:02",
       "name": "slot1",
       "externalCode": "223ddxzv223",
-      "barcode128": "0123456789"
+      "barcode": "0123456789"
     },
     {
       "meta": {
@@ -1911,7 +1911,7 @@ curl -X POST
   -H "Content-Type: application/json"
   -d '{
         "name": "slot 1",
-        "barcode128": "0123456789"
+        "barcode": "0123456789"
       }'
 ```
 
@@ -1931,7 +1931,7 @@ curl -X POST
         "updated": "2022-12-07 09:29:56.547",
         "name": "slot 1",
         "externalCode": "wYIaWipYjrZkJZZlw1Amy1",
-        "barcode128": "0123456789"
+        "barcode": "0123456789"
     }
 ]
 ```

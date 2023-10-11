@@ -151,7 +151,7 @@
 
 ### 12-10-2023
 #### Добавлено
-- Добавлено поле `barcode128` в [Ячейку склада](../dictionaries/#suschnosti-sklad-yachejki-sklada)
+- Добавлено поле `barcode` в [Ячейку склада](../dictionaries/#suschnosti-sklad-yachejki-sklada)
 - Ошибка [67006](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-yacheek-i-zon-sklada)
 
 ### 14-09-2023
