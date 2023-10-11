@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 06-10-2023
+### Добавлено
+- Добавлено поле `syncAgents` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), выгружает покупателей для работы оффлайн.
+
 ## 05-10-2023
 ### Добавлено
 - Добавлены новые режимы reserve и inTransit [в краткий отчёт по остаткам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah)

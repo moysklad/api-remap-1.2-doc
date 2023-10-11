@@ -149,6 +149,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 06-10-2023
+#### Добавлено
+- Добавлено поле `syncAgents` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), выгружает покупателей для работы оффлайн.
+
 ### 05-10-2023
 #### Добавлено
 - Добавлены новые режимы reserve и inTransit [в краткий отчёт по остаткам](../reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah)
