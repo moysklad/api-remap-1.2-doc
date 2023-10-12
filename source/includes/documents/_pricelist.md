@@ -1724,7 +1724,58 @@ curl -X GET
 }
 ```
 
-### Создать позицию Прайс-листа 
+### Позиция Прайс-листа
+
+### Получить позицию
+
+**Параметры**
+
+| Параметр       | Описание                                                                                    |
+| :------------- | :------------------------------------------------------------------------------------------ |
+| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Прайс-листа.         |
+| **positionID** | `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Прайс-листа. |
+ 
+> Запрос на получение отдельной позиции Прайс-листа с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/pricelist/d72b4281-b000-11e6-8af5-581e00000074/positions/9560e3e3-9609-11e6-8af5-581e00000008"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отдельной позиции Прайс-листа.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/pricelist/d72b4281-b000-11e6-8af5-581e00000074/positions/9560e3e3-9609-11e6-8af5-581e00000008",
+    "type": "pricelistrow",
+    "mediaType": "application/json"
+  },
+  "id": "9560e3e3-9609-11e6-8af5-581e00000008",
+  "accountId": "9560e3e3-9609-11e6-8af5-581e00000007",
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/987148b8-9a09-11e6-8af5-581e0000006f",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=e64d0a86-2a99-11e9-ac12-000c00000041"
+    }
+  },
+  "cells": [
+    {
+      "column": "123",
+      "sum": 100000
+    }
+  ]
+}
+
+```
+
+### Создать позицию
 Запрос на создание новой позиции в Прайс-листе.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
@@ -1895,57 +1946,6 @@ curl -X GET
 ]
 ```
 
-### Позиция Прайс-листа
-
-### Получить позицию
-
-**Параметры**
-
-| Параметр       | Описание                                                                                    |
-| :------------- | :------------------------------------------------------------------------------------------ |
-| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Прайс-листа.         |
-| **positionID** | `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Прайс-листа. |
- 
-> Запрос на получение отдельной позиции Прайс-листа с указанным id.
-
-```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/pricelist/d72b4281-b000-11e6-8af5-581e00000074/positions/9560e3e3-9609-11e6-8af5-581e00000008"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельной позиции Прайс-листа.
-
-```json
-{
-  "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/pricelist/d72b4281-b000-11e6-8af5-581e00000074/positions/9560e3e3-9609-11e6-8af5-581e00000008",
-    "type": "pricelistrow",
-    "mediaType": "application/json"
-  },
-  "id": "9560e3e3-9609-11e6-8af5-581e00000008",
-  "accountId": "9560e3e3-9609-11e6-8af5-581e00000007",
-  "assortment": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/987148b8-9a09-11e6-8af5-581e0000006f",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
-      "type": "product",
-      "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=e64d0a86-2a99-11e9-ac12-000c00000041"
-    }
-  },
-  "cells": [
-    {
-      "column": "123",
-      "sum": 100000
-    }
-  ]
-}
-
-```
-
 ### Изменить позицию 
 Запрос на обновление отдельной позиции Прайс-листа. Для обновления позиции нет каких-либо
 обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
@@ -2025,3 +2025,41 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление позиции Прайс-листа.
+
+### Массовое удаление позиций
+
+**Параметры**
+
+| Параметр       | Описание                                                                                             |
+| :------------- |:-----------------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Прайс-листа.|
+
+> Запрос на массовое удаление позиций Прайс-листа.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/pricelist/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/pricelist/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "pricelistrow",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/pricelist/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "pricelistrow",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций Прайс-листа. 
+

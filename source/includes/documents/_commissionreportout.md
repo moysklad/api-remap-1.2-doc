@@ -1752,6 +1752,53 @@ curl -X GET
 }
 ```
 
+### Получить позицию
+
+**Параметры**
+
+| Параметр       | Описание                                                                                                      |
+| :------------- | :------------------------------------------------------------------------------------------------------------ |
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Выданного отчета комиссионера.         |
+| **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Выданного отчета комиссионера. |
+
+> Запрос на получение отдельной позиции Выданного отчета комиссионера с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportout/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отдельной позиции Выданного отчета комиссионера.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportout/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
+    "type": "commissionreportoutposition",
+    "mediaType": "application/json"
+  },
+  "id": "34f6344f-015e-11e6-9464-e4de0000006c",
+  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
+  "quantity": 1,
+  "price": 0.0,
+  "vat": 0,
+  "vatEnabled": false,
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/ca976541-96d1-11e6-8a84-bae50000002e",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=392c045c-2842-11e9-ac12-000a00000002"
+    }
+  },
+  "reward": 0
+}
+```
+
 ### Создать позицию 
 Запрос на создание новой позиции в отчете комиссионера.
 Для успешного создания необходимо в теле запроса указать следующие поля:
@@ -1900,79 +1947,9 @@ curl -X GET
 ]
 ```
 
-### Удалить позицию
-
-**Параметры**
-
-| Параметр       | Описание                                                                                                      |
-| :------------- | :------------------------------------------------------------------------------------------------------------ |
-| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Выданного отчета комиссионера.         |
-| **positionID** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b20* id позиции Выданного отчета комиссионера. |
-
-> Запрос на удаление позиции Выданного отчета комиссионера с указанным id.
-
-```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportout/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json)
-Успешное удаление позиции Выданного отчета комиссионера.
-
-### Позиция Выданного отчета комиссионера
- 
-### Получить позицию
-
-**Параметры**
-
-| Параметр       | Описание                                                                                                      |
-| :------------- | :------------------------------------------------------------------------------------------------------------ |
-| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Выданного отчета комиссионера.         |
-| **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Выданного отчета комиссионера. |
- 
-> Запрос на получение отдельной позиции Выданного отчета комиссионера с указанным id.
-
-```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportout/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельной позиции Выданного отчета комиссионера.
-
-```json
-{
-  "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportout/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
-    "type": "commissionreportoutposition",
-    "mediaType": "application/json"
-  },
-  "id": "34f6344f-015e-11e6-9464-e4de0000006c",
-  "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
-  "quantity": 1,
-  "price": 0.0,
-  "vat": 0,
-  "vatEnabled": false,
-  "assortment": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/ca976541-96d1-11e6-8a84-bae50000002e",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
-      "type": "product",
-      "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=392c045c-2842-11e9-ac12-000a00000002"
-    }
-  },
-  "reward": 0
-}
-```
-
-### Изменить позицию 
+### Изменить позицию
 Запрос на обновление отдельной позиции Выданного отчета комиссионера. Для обновления позиции нет каких-либо
- обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
+обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
 
 **Параметры**
 
@@ -2033,3 +2010,62 @@ curl -X GET
   "reward": 0
 }
 ```
+
+### Удалить позицию
+
+**Параметры**
+
+| Параметр       | Описание                                                                                                      |
+| :------------- | :------------------------------------------------------------------------------------------------------------ |
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Выданного отчета комиссионера.         |
+| **positionID** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b20* id позиции Выданного отчета комиссионера. |
+
+> Запрос на удаление позиции Выданного отчета комиссионера с указанным id.
+
+```shell
+curl -X DELETE
+  "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportout/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешное удаление позиции Выданного отчета комиссионера.
+
+### Массовое удаление позиций
+
+**Параметры**
+
+| Параметр       | Описание                                                                                             |
+| :------------- |:-----------------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Выданного отчета комиссионера.|
+
+> Запрос на массовое удаление позиций Выданного отчета комиссионера.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportout/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportout/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "commissionreportoutposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportout/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "commissionreportoutposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций Выданного отчета комиссионера. 
+
