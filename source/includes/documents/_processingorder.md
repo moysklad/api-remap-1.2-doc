@@ -2149,7 +2149,7 @@ curl -X GET
 ### Позиция Заказа на производство 
 Отдельная позиция Заказа с указанным id позиции.
 
-### Получить позицию Заказа на производство
+### Получить позицию
 
 **Параметры**
 
@@ -2194,7 +2194,7 @@ curl -X GET
 
 ```
 
-### Изменить позицию Заказа на производство 
+### Изменить позицию 
 Запрос на обновление отдельной позиции Заказа. Для обновления позиции нет каких-либо
 обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
 
@@ -2279,3 +2279,40 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление позиции Заказа на производство.
+
+### Массовое удаление позиций
+
+**Параметры**
+
+| Параметр       | Описание                                                                                       |
+| :------------- |:-----------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Заказа на производство. |
+
+> Запрос на массовое удаление позиций Заказа на производство.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingorder/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingorder/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "processingorderposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingorder/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "processingorderposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций Заказа на производство.

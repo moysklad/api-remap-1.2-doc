@@ -2561,18 +2561,68 @@ curl -X GET
 }
 ```
 
-### Создать позицию 
+### Позиция Розничного возврата
+   
+### Получить позицию
+
+**Параметры**
+
+| Параметр       | Описание                                                                                            |
+| :------------- | :-------------------------------------------------------------------------------------------------- |
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничного возврата.         |
+| **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Розничного возврата. |
+ 
+> Запрос на получение отдельной позиции Розничного возврата с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отдельной позиции Розничного возврата.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
+    "type": "salesreturnposition",
+    "mediaType": "application/json"
+  },
+  "id": "34f6344f-015e-11e6-9464-e4de0000006c",
+  "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+  "quantity": 103,
+  "price": 999.0,
+  "discount": 0,
+  "vat": 0,
+  "vatEnabled": false,
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+      "type": "variant",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=3bb1af6c-2842-11e9-ac12-000c00000061"
+    }
+  },
+  "cost": 25
+}
+```
+
+### Создать позицию
 Запрос на создание новой позиции в Розничном возврате.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
 + **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция.
-Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
-чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Розничного возврата](../documents/#dokumenty-roznichnyj-wozwrat-roznichnye-wozwraty-pozicii-roznichnogo-wozwrata).
+  Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
+  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Розничного возврата](../documents/#dokumenty-roznichnyj-wozwrat-roznichnye-wozwraty-pozicii-roznichnogo-wozwrata).
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
-Одновременно можно создать как одну так и несколько позиций Розничного возврата. Все созданные данным запросом позиции
-будут добавлены к уже существующим.
-Нельзя создавать позиции, отличные от позиций в документе, по которому создается возврат. Допустимо только
-отличие в **quantity** позиций (количество в позиции в возврате м.б. меньше или равно количеству в позиции в документе).
+  Одновременно можно создать как одну так и несколько позиций Розничного возврата. Все созданные данным запросом позиции
+  будут добавлены к уже существующим.
+  Нельзя создавать позиции, отличные от позиций в документе, по которому создается возврат. Допустимо только
+  отличие в **quantity** позиций (количество в позиции в возврате м.б. меньше или равно количеству в позиции в документе).
 
 **Параметры**
 
@@ -2718,56 +2768,6 @@ curl -X GET
 ]
 ```
 
-### Позиция Розничного возврата
-   
-### Получить позицию
-
-**Параметры**
-
-| Параметр       | Описание                                                                                            |
-| :------------- | :-------------------------------------------------------------------------------------------------- |
-| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничного возврата.         |
-| **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Розничного возврата. |
- 
-> Запрос на получение отдельной позиции Розничного возврата с указанным id.
-
-```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельной позиции Розничного возврата.
-
-```json
-{
-  "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
-    "type": "salesreturnposition",
-    "mediaType": "application/json"
-  },
-  "id": "34f6344f-015e-11e6-9464-e4de0000006c",
-  "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
-  "quantity": 103,
-  "price": 999.0,
-  "discount": 0,
-  "vat": 0,
-  "vatEnabled": false,
-  "assortment": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
-      "type": "variant",
-      "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=3bb1af6c-2842-11e9-ac12-000c00000061"
-    }
-  },
-  "cost": 25
-}
-```
-        
 ### Изменить позицию 
 Запрос на обновление отдельной позиции Розничного возврата.
 При обновлении отдельной позиции в возврате можно только изменить количество данной позиции.
@@ -2847,3 +2847,41 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление позиции Розничного возврата.
+
+### Массовое удаление позиций
+
+**Параметры**
+
+| Параметр       | Описание                                                                                    |
+| :------------- |:--------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Розничного возврата. |
+
+> Запрос на массовое удаление позиций Розничного возврата.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "salesreturnposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "salesreturnposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций Розничного возврата. 
+

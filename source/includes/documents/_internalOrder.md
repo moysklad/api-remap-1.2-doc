@@ -1900,3 +1900,41 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление позиции Внутреннего заказа.
+
+
+### Массовое удаление позиций
+
+**Параметры**
+
+| Параметр       | Описание                                                                                           |
+| :------------- |:---------------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 7623cd58-684d-11ee-ac12-000c0000009e* id Внутреннего заказа.         |
+
+> Запрос на массовое удаление позиций Внутреннего заказа.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/internalorder/7623cd58-684d-11ee-ac12-000c0000009e/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/internalorder/7623cd58-684d-11ee-ac12-000c0000009e/positions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "internalorderposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/internalorder/7623cd58-684d-11ee-ac12-000c0000009e/positions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "internalorderposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций Внутреннего заказа.

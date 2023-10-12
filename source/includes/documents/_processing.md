@@ -2617,7 +2617,7 @@ curl -X GET
 
 ### Материал Техоперации
 
-### Получить материал Техоперации
+### Получить материал
 
 **Параметры**
 
@@ -2802,7 +2802,44 @@ curl -X GET
 > Response 200 (application/json)
 Успешное удаление материала Техоперации.
 
-#### Продукты Техоперации 
+### Массовое удаление материалов
+
+**Параметры**
+
+| Параметр       | Описание                                                                            |
+| :------------- |:------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Техоперации. |
+
+> Запрос на массовое удаление материалов Техоперации.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/processing/3e1c03bb-684f-11ee-ac12-000c000000b0/materials/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/processing/3e1c03bb-684f-11ee-ac12-000c000000b0/materials/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "processingpositionmaterial",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/processing/3e1c03bb-684f-11ee-ac12-000c000000b0/materials/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "processingpositionmaterial",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление материалов Техоперации.
+
+### Продукты Техоперации 
 Отдельный ресурс для управления продуктами Техоперации. С его помощью вы можете управлять продуктами большого документа, количество продуктов в котором превышает лимит на количество продуктов, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
 
 ### Получить продукты Техоперации 
@@ -3082,3 +3119,40 @@ curl -X GET
 
 > Response 200 (application/json)
 Успешное удаление продукта Техоперации.
+
+### Массовое удаление продуктов
+
+**Параметры**
+
+| Параметр       | Описание                                                                            |
+| :------------- |:------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Техоперации. |
+
+> Запрос на массовое удаление продуктов Техоперации.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/processing/3e1c03bb-684f-11ee-ac12-000c000000b0/products/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/processing/3e1c03bb-684f-11ee-ac12-000c000000b0/products/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "processingpositionresult",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/processing/3e1c03bb-684f-11ee-ac12-000c000000b0/products/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "processingpositionresult",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление продуктов Техоперации.
