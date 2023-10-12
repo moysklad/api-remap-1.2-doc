@@ -5,6 +5,14 @@
 ### Добавлено
 - Описание и примеры удаления позиций в документах через использование эндпоинта на массовое удаление позиций
 
+## 06-10-2023
+### Добавлено
+- Добавлено поле `syncAgents` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), выгружает покупателей для работы оффлайн.
+
+## 05-10-2023
+### Добавлено
+- Добавлены новые режимы reserve и inTransit [в краткий отчёт по остаткам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah)
+
 ## 14-09-2023
 ### Добавлено
 - Использование обязательного [сжатия содержимого ответов](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow)
