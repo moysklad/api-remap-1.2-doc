@@ -1455,16 +1455,64 @@ curl -X GET
 }
 ```
 
-### Создать позицию Оприходования 
+### Позиция Оприходования
+ 
+### Получить позицию
+ 
+**Параметры**
+
+| Параметр       | Описание                                                                              |
+| :------------- | :------------------------------------------------------------------------------------ |
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Оприходования. |
+| **positionID** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b20* id позиции.       |
+
+> Запрос на получение отдельной позиции Оприходования с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/enter/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отдельной позиции Оприходования.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/enter/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20",
+    "type": "enterposition",
+    "mediaType": "application/json"
+  },
+  "id": "7944ef04-f831-11e5-7a69-971500188b20",
+  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+  "quantity": 1,
+  "price": 0.0,
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/00de5b31-3303-11e6-8a84-bae500000344",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3bb1af6c-2842-11e9-ac12-000c00000061"
+    }
+  },
+  "reason": "НЕОБХОДИМО",
+  "overhead": 0
+}
+```
+
+### Создать позицию
 Запрос на создание новой позиции в Оприходовании.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
 + **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция.
-Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
-чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Оприходования](../documents/#dokumenty-oprihodowanie-oprihodowaniq-pozicii-oprihodowaniq)
+  Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
+  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Оприходования](../documents/#dokumenty-oprihodowanie-oprihodowaniq-pozicii-oprihodowaniq)
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
-Одновременно можно создать как одну так и несколько позиций Оприходования. Все созданные данным запросом позиции
-будут добавлены к уже существующим.
+  Одновременно можно создать как одну так и несколько позиций Оприходования. Все созданные данным запросом позиции
+  будут добавлены к уже существующим.
 
 **Параметры**
 
@@ -1564,54 +1612,6 @@ curl -X GET
 ]
 ```
 
-### Позиция Оприходования
- 
-### Получить позицию
- 
-**Параметры**
-
-| Параметр       | Описание                                                                              |
-| :------------- | :------------------------------------------------------------------------------------ |
-| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Оприходования. |
-| **positionID** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b20* id позиции.       |
-
-> Запрос на получение отдельной позиции Оприходования с указанным id.
-
-```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/enter/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельной позиции Оприходования.
-
-```json
-{
-  "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/enter/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20",
-    "type": "enterposition",
-    "mediaType": "application/json"
-  },
-  "id": "7944ef04-f831-11e5-7a69-971500188b20",
-  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-  "quantity": 1,
-  "price": 0.0,
-  "assortment": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/00de5b31-3303-11e6-8a84-bae500000344",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
-      "type": "product",
-      "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3bb1af6c-2842-11e9-ac12-000c00000061"
-    }
-  },
-  "reason": "НЕОБХОДИМО",
-  "overhead": 0
-}
-```
-
 ### Изменить позицию 
 Запрос на обновление отдельной позиции Оприходования. Для обновления позиции нет каких-либо
  обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
@@ -1694,3 +1694,40 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление позиции Оприходования.
+
+### Массовое удаление позиций
+
+**Параметры**
+
+| Параметр       | Описание                                                                              |
+| :------------- |:--------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Оприходования. |
+
+> Запрос на массовое удаление позиций Оприходования.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/enter/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/enter/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "enterposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/enter/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "enterposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций Оприходования. 

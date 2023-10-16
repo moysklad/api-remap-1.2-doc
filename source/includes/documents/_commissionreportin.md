@@ -50,7 +50,8 @@
 | **vatSum**                        | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                          |
 
 #### Прочие расходы
-Описание полей commissionOverhead
+Описание полей commissionOverhead:
+<br>Поле **sum** может быть отрицательным.
 
 | Название         | Тип  | Описание                                                                                                                    |
 | ---------------- | :--- | :-------------------------------------------------------------------------------------------------------------------------- |
@@ -76,6 +77,7 @@
 позиции будут удалены, новые добавлены, существующие - изменены.
 
 ##### Объект позиции реализовано комиссионером содержит следующие поля:
+Поле **reward** может быть отрицательным.
 
 | Название       | Тип                                                      | Описание                                                                                                                                                                                                                              |
 | -------------- |:---------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -2112,6 +2114,43 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление позиции реализовано комиссионером.
 
+### Массовое удаление позиций реализовано комиссионером
+
+**Параметры**
+
+| Параметр       | Описание                                                                                                |
+| :------------- |:--------------------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Полученного отчета комиссионера. |
+
+> Запрос на массовое удаление позиций реализовано комиссионером.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportin/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportin/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "commissionreportinposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportin/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "commissionreportinposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций реализовано комиссионером.
+
 ### Позиции возврата на склад комиссионера
 Отдельный ресурс для управления позициями возврата на склад комиссионера в Полученном отчете комиссионера. С его помощью вы можете управлять позициями большого документа,
 количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 1000.
@@ -2428,3 +2467,40 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление позиции возврата на склад комиссионера.
+
+### Массовое удаление позиций возврата на склад комиссионера
+
+**Параметры**
+
+| Параметр       | Описание                                                                                                |
+| :------------- |:--------------------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Полученного отчета комиссионера. |
+
+> Запрос на массовое удаление позиций возврата на склад комиссионера
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportin/3e1c03bb-684f-11ee-ac12-000c000000b0/returntocommissionerpositions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportin/3e1c03bb-684f-11ee-ac12-000c000000b0/returntocommissionerpositions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "commissionreportinreturnedposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportin/3e1c03bb-684f-11ee-ac12-000c000000b0/returntocommissionerpositions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "commissionreportinreturnedposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций возврата на склад комиссионера

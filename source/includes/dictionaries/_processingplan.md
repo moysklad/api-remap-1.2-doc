@@ -1236,8 +1236,67 @@ curl -X GET
 }
 ```
 
-### Создать материал Техкарты 
-Запрос на создание нового материала в Техкарте. 
+### Материал Техкарты
+
+### Получить материал
+
+**Параметры**
+
+| Параметр       | Описание                                                                                 |
+| :------------- |:-----------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Техкарты.         |
+| **positionID** | `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Техкарты. |
+ 
+> Запрос на получение отдельного материала Техкарты с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/materials/9560e3e3-9609-11e6-8af5-581e00000008"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отдельного материала Техкарты.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/120a488b-b0bd-11e6-5bed-427b00000000/materials/120b4591-b0bd-11e6-5bed-427b00000001",
+    "type": "processingplanmaterial",
+    "mediaType": "application/json"
+  },
+  "id": "120b4591-b0bd-11e6-5bed-427b00000001",
+  "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
+  "product": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json"
+    }
+  },
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json"
+    }
+  },
+  "quantity": 1,
+  "processingProcessPosition": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf/positions/d8da461d-bbf9-11ed-ac12-0010000000c0",
+      "type": "processingprocessposition",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
+
+### Создать материал
+Запрос на создание нового материала в Техкарте.
 Если при добавлении материала не указывать связь с позицией Техпроцесса, то по умолчанию материал будет привязан к первой позиции Техпроцесса.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
@@ -1429,65 +1488,6 @@ curl -X GET
 ]
 ```
 
-### Материал Техкарты
- 
-### Получить материал
-
-**Параметры**
-
-| Параметр       | Описание                                                                                 |
-| :------------- |:-----------------------------------------------------------------------------------------|
-| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Техкарты.         |
-| **positionID** | `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Техкарты. |
- 
-> Запрос на получение отдельного материала Техкарты с указанным id.
-
-```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/materials/9560e3e3-9609-11e6-8af5-581e00000008"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельного материала Техкарты.
-
-```json
-{
-  "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/120a488b-b0bd-11e6-5bed-427b00000000/materials/120b4591-b0bd-11e6-5bed-427b00000001",
-    "type": "processingplanmaterial",
-    "mediaType": "application/json"
-  },
-  "id": "120b4591-b0bd-11e6-5bed-427b00000001",
-  "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
-  "product": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
-      "type": "product",
-      "mediaType": "application/json"
-    }
-  },
-  "assortment": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
-      "type": "product",
-      "mediaType": "application/json"
-    }
-  },
-  "quantity": 1,
-  "processingProcessPosition": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/d8da40e9-bbf9-11ed-ac12-0010000000bf/positions/d8da461d-bbf9-11ed-ac12-0010000000c0",
-      "type": "processingprocessposition",
-      "mediaType": "application/json"
-    }
-  }
-}
-```
-
 ### Изменить материал 
 Запрос на обновление отдельного материала Техкарты. Для обновления материала нет каких-либо
  обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
@@ -1657,7 +1657,61 @@ curl -X GET
 }
 ```
 
-### Создать продукт Техкарты 
+### Продукт Техкарты
+
+### Получить продукт
+
+**Параметры**
+
+| Параметр       | Описание                                                                                 |
+| :------------- |:-----------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Техкарты.         |
+| **positionID** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id продукта Техкарты.|
+ 
+> Запрос на получение отдельного продукта Техкарты с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/products/9560e3e3-9609-11e6-8af5-581e00000008"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отдельного продукта Техкарты.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/120a488b-b0bd-11e6-5bed-427b00000000/products/120b4591-b0bd-11e6-5bed-427b00000001",
+      "type": "processingplanresult",
+      "mediaType": "application/json"
+    },
+    "id": "120b4591-b0bd-11e6-5bed-427b00000001",
+    "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
+    "product": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json"
+      }
+    },
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json"
+      }
+    },
+    "quantity": 1
+  }
+]
+```
+
+### Создать продукт
 Запрос на создание нового продукта в Техкарте.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
@@ -1821,60 +1875,6 @@ curl -X GET
 ]
 ```
 
-### Продукт Техкарты
- 
-### Получить продукт
-
-**Параметры**
-
-| Параметр       | Описание                                                                                 |
-| :------------- |:-----------------------------------------------------------------------------------------|
-| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Техкарты.         |
-| **positionID** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id продукта Техкарты.|
- 
-> Запрос на получение отдельного продукта Техкарты с указанным id.
-
-```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/products/9560e3e3-9609-11e6-8af5-581e00000008"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельного продукта Техкарты.
-
-```json
-[
-  {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/120a488b-b0bd-11e6-5bed-427b00000000/products/120b4591-b0bd-11e6-5bed-427b00000001",
-      "type": "processingplanresult",
-      "mediaType": "application/json"
-    },
-    "id": "120b4591-b0bd-11e6-5bed-427b00000001",
-    "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
-    "product": {
-      "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
-        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
-        "type": "product",
-        "mediaType": "application/json"
-      }
-    },
-    "assortment": {
-      "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
-        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
-        "type": "product",
-        "mediaType": "application/json"
-      }
-    },
-    "quantity": 1
-  }
-]
-```
-
 ### Изменить продукт 
 Запрос на обновление отдельного продукта Техкарты. Для обновления продукта нет каких-либо
  обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
@@ -1954,4 +1954,3 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление продукта Техкарты.
-
