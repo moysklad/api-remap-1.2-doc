@@ -149,6 +149,23 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 16-10-2023
+#### Добавлено
+- Добавлено поле `barcode` в [Ячейку склада](../dictionaries/#suschnosti-sklad-yachejki-sklada)
+- Ошибка [67006](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-yacheek-i-zon-sklada)
+
+### 12-10-2023
+#### Добавлено
+- Описание и примеры удаления позиций в документах через использование эндпоинта на массовое удаление позиций
+
+### 06-10-2023
+#### Добавлено
+- Добавлено поле `syncAgents` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), выгружает покупателей для работы оффлайн.
+
+### 05-10-2023
+#### Добавлено
+- Добавлены новые режимы reserve и inTransit [в краткий отчёт по остаткам](../reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah)
+
 ### 14-09-2023
 #### Добавлено
 - Использование обязательного [сжатия содержимого ответов](../#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow)

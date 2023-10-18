@@ -1125,7 +1125,7 @@ curl -X GET
 ### Позиции Инвентаризации 
 Отдельный ресурс для управления позициями Инвентаризации. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
 
-### Получить позиции Инвентаризации 
+### Получить позиции 
 Запрос на получение списка всех позиций данной Инвентаризации.
 
 | Название    | Тип                                                       | Описание                                                           |
@@ -1225,16 +1225,65 @@ curl -X GET
 }
 ```
 
-### Создать позицию Инвентаризации 
+### Позиция Инвентаризации
+
+### Получить позицию
+
+**Параметры**
+
+| Параметр       | Описание                                                                               |
+| :------------- | :------------------------------------------------------------------------------------- |
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Инвентаризации. |
+| **positionID** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b20* id позиции.        |
+ 
+> Запрос на получение отдельной позиции Инвентаризации с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/inventory/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отдельной позиции Инвентаризации.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/inventory/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20",
+    "type": "inventoryposition",
+    "mediaType": "application/json"
+  },
+  "id": "7944ef04-f831-11e5-7a69-971500188b20",
+  "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
+  "quantity": 140,
+  "price": 5000.0,
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002f"
+    }
+  },
+  "correctionAmount": -60,
+  "calculatedQuantity": 200,
+  "correctionSum": -300000
+}
+```
+
+### Создать позицию
 Запрос на создание новой позиции в Инвентаризации.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
 + **assortment** - Ссылка на товар/серию/модификацию, которую представляет собой позиция.
-Также можно указать поле с именем  **consignment**, **variant** в соответствии с тем,
-чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Инвентаризации](../documents/#dokumenty-inwentarizaciq-inwentarizaciq-pozicii-inwentarizacii)
+  Также можно указать поле с именем  **consignment**, **variant** в соответствии с тем,
+  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Инвентаризации](../documents/#dokumenty-inwentarizaciq-inwentarizaciq-pozicii-inwentarizacii)
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
-Одновременно можно создать как одну так и несколько позиций Инвентаризации. Все созданные данным запросом позиции
-будут добавлены к уже существующим.
+  Одновременно можно создать как одну так и несколько позиций Инвентаризации. Все созданные данным запросом позиции
+  будут добавлены к уже существующим.
 
 **Параметры**
 
@@ -1300,55 +1349,6 @@ curl -X GET
     "correctionSum": -120000
   }
 ]
-```
-
-### Позиция Инвентаризации
-
-### Получить позицию
-
-**Параметры**
-
-| Параметр       | Описание                                                                               |
-| :------------- | :------------------------------------------------------------------------------------- |
-| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Инвентаризации. |
-| **positionID** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b20* id позиции.        |
- 
-> Запрос на получение отдельной позиции Инвентаризации с указанным id.
-
-```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/inventory/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельной позиции Инвентаризации.
-
-```json
-{
-  "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/inventory/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20",
-    "type": "inventoryposition",
-    "mediaType": "application/json"
-  },
-  "id": "7944ef04-f831-11e5-7a69-971500188b20",
-  "accountId": "c3cc7e30-99bb-11e6-8a84-bc5200000001",
-  "quantity": 140,
-  "price": 5000.0,
-  "assortment": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/b6be720e-ad63-11e6-8a84-bc520000008f",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
-      "type": "product",
-      "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002f"
-    }
-  },
-  "correctionAmount": -60,
-  "calculatedQuantity": 200,
-  "correctionSum": -300000
-}
 ```
 
 ### Изменить позицию 
@@ -1440,3 +1440,40 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление позиции Инвентаризации.
+
+### Массовое удаление позиций
+
+**Параметры**
+
+| Параметр       | Описание                                                                               |
+| :------------- |:---------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Инвентаризации. |
+
+> Запрос на массовое удаление позиций Инвентаризации.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/inventory/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/inventory/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "inventoryposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/inventory/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "inventoryposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций Инвентаризации. 

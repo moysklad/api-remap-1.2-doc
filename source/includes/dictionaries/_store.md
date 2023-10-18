@@ -1804,6 +1804,7 @@ curl -X PUT
 | **meta**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Ячейки<br>`+Обязательное при ответе`                                                                               |
 | **name**         | String(255)                                               |                                                                                                                            | Наименование Ячейки<br>`+Обязательное при ответе` `+Необходимо при создании`                                                  |
 | **updated**      | DateTime                                                  |                                                                                                                         | Момент последнего обновления Ячейки<br>`+Обязательное при ответе` `+Только для чтения`                                        |
+| **barcode**   | String(255)                                               |                                                                                                                                                   | Штрихкод ячейки                                                                                                               |
 | **zone**         | Meta                                                      |                                                                                                                                                   | Зона ячейки. [Подробнее тут](../dictionaries/#suschnosti-sklad-zony-sklada)<br>`+Только для чтения` `+Expand`                                       |
 
 ### Получить ячейки склада
@@ -1866,7 +1867,8 @@ curl -X GET
       "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
       "updated": "2016-05-05 16:32:02",
       "name": "slot1",
-      "externalCode": "223ddxzv223"
+      "externalCode": "223ddxzv223",
+      "barcode": "0123456789"
     },
     {
       "meta": {
@@ -1908,7 +1910,8 @@ curl -X POST
   -H "Accept-Encoding: gzip"
   -H "Content-Type: application/json"
   -d '{
-        "name": "slot 1"
+        "name": "slot 1",
+        "barcode": "0123456789"
       }'
 ```
 
@@ -1927,7 +1930,8 @@ curl -X POST
         "accountId": "5f69193a-75f8-11ed-ac1a-000f00000001",
         "updated": "2022-12-07 09:29:56.547",
         "name": "slot 1",
-        "externalCode": "wYIaWipYjrZkJZZlw1Amy1"
+        "externalCode": "wYIaWipYjrZkJZZlw1Amy1",
+        "barcode": "0123456789"
     }
 ]
 ```
