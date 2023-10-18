@@ -5,8 +5,8 @@
 ### Добавлено
 - Добавлен новый тип маркированной продукции `BEER_ALCOHOL` для разливных слабоалкогольных напитков
 
-### 16-10-2023
-#### Добавлено
+## 16-10-2023
+### Добавлено
 - Добавлено поле `barcode` в [Ячейку склада](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sklad-yachejki-sklada)
 - Ошибка [67006](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-yacheek-i-zon-sklada)
 
