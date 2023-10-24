@@ -98,6 +98,34 @@ $(function () {
     });
   }
 
+  function doSearch(searchString) {
+    let indexKeys = [searchString];
+    //TODO Добавить оптимизации: прикрутить алгоритм быстрого поиска + если последовательно выбрали нужные ключи и больше нет совпадений дальше, то можно выходить из цикла
+    const invertedIndex = document.globalSearchIndex.invertedIndex;
+    for (let i = 0; i < invertedIndex.length; i++) {
+      let indexKey = invertedIndex[i][0];
+      if (indexKey.startsWith(searchString)) {
+        indexKeys.push(indexKey);
+      }
+    }
+    let headerIds = new Set();
+    let results = [];
+    for (let i = 0; i < indexKeys.length; i++) {
+      let values = index.search(indexKeys[i]).filter(function(r) {
+        return r.score > 0.0001;
+      });
+      for (let i = 0; i < values.length; i++) {
+        const value = values[i];
+        const id = value.ref;
+        if (!headerIds.has(id)) {
+          headerIds.add(id);
+          results.push(value);
+        }
+      }
+    }
+    return results.sort((a , b) => b.score - a.score);
+  }
+
   function search(event) {
 
     let searchInput = $('#input-search')[0];
@@ -109,10 +137,7 @@ $(function () {
     if (event.keyCode === 27) searchInput.value = '';
 
     if (searchInput.value) {
-      let results = index.search(searchInput.value).filter(function(r) {
-        return r.score > 0.0001;
-      });
-
+      const results = doSearch(searchInput.value.toLowerCase());
       searchResults.empty();
       if (hasIndexLoadingError) {
         searchResults.append("<li class='warning'>Обновите страницу для поиска по всем разделам</li>");
