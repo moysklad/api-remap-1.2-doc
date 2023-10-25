@@ -32,9 +32,12 @@ $(function () {
         }
         return result;
       }).join(" ");
-
+      let path = window.location.pathname;
+      if (path.startsWith("/")) {
+        path = path.slice(1);
+      }
       return {
-        "id": title.prop('id'),
+        "id": title.text() + "|" + path + "|" + title.prop('id'),
         "title": title.text(),
         "body": bodyTexts
       };
@@ -101,9 +104,8 @@ $(function () {
   function doSearch(searchString) {
     let indexKeys = [searchString];
     //TODO Добавить оптимизации: прикрутить алгоритм быстрого поиска + если последовательно выбрали нужные ключи и больше нет совпадений дальше, то можно выходить из цикла
-    const invertedIndex = document.globalSearchIndex.invertedIndex;
-    for (let i = 0; i < invertedIndex.length; i++) {
-      let indexKey = invertedIndex[i][0];
+    const invertedIndex = index.invertedIndex;
+    for (const indexKey in invertedIndex) {
       if (indexKey.startsWith(searchString)) {
         indexKeys.push(indexKey);
       }
@@ -117,7 +119,12 @@ $(function () {
       for (let i = 0; i < values.length; i++) {
         const value = values[i];
         const id = value.ref;
-        if (!headerIds.has(id)) {
+        if (headerIds.has(id)) {
+          let elementArray = results.filter(el => el.ref === id);
+          if (elementArray.length !== 0) {
+            elementArray[0].score = Math.max(elementArray[0].score, value.score);
+          }
+        } else {
           headerIds.add(id);
           results.push(value);
         }
