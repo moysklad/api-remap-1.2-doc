@@ -32,12 +32,9 @@ $(function () {
         }
         return result;
       }).join(" ");
-      let path = window.location.pathname;
-      if (path.startsWith("/")) {
-        path = path.slice(1);
-      }
+
       return {
-        "id": title.text() + "|" + path + "|" + title.prop('id'),
+        "id": title.prop('id'),
         "title": title.text(),
         "body": bodyTexts
       };
