@@ -1574,6 +1574,39 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление материала Техкарты.
 
+### Массовое удаление материалов
+
+В теле запроса нужно передать массив, содержащий JSON метаданных материалов Техкарты, которые вы хотите удалить.
+
+> Запрос на массовое удаление материалов Техкарты.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/e435045e-7274-11ee-c0a8-e00e00000030/materials/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+    -d '[
+          {
+              "meta": {
+                  "href": "http://localhost/api/remap/1.2/entity/processingplan/e435045e-7274-11ee-c0a8-e00e00000030/materials/e43514c2-7274-11ee-c0a8-e00e00000031",
+                  "type": "processingplanmaterial",
+                  "mediaType": "application/json"
+              }
+          },
+          {
+              "meta": {
+                  "href": "http://localhost/api/remap/1.2/entity/processingplan/e435045e-7274-11ee-c0a8-e00e00000030/materials/d9c4688e-7274-11ee-c0a8-e00e00000025",
+                  "type": "processingplanmaterial",
+                  "mediaType": "application/json"
+              }
+          }
+       ]' 
+```
+
+> Response 200 (application/json)
+Успешное удаление материалов Техкарты.
+
 ### Продукты Техкарты 
 Отдельный ресурс для управления продуктами Техкарты. С его помощью вы можете управлять продуктами большого документа, количество продуктов в котором превышает лимит на количество продуктов, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
 
@@ -1954,3 +1987,36 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление продукта Техкарты.
+
+### Массовое удаление продукта
+
+В теле запроса нужно передать массив, содержащий JSON метаданных продуктов Техкарты, которые вы хотите удалить.
+
+> Запрос на массовое удаление продуктов Техкарты.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d9c43e3b-7274-11ee-c0a8-e00e00000023/products/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+    -d '[
+          {
+              "meta": {
+                  "href": "http://localhost/api/remap/1.2/entity/processingplan/d9c43e3b-7274-11ee-c0a8-e00e00000023/products/270b59e1-7305-11ee-c0a8-e00d00000000",
+                  "type": "processingplanresult",
+                  "mediaType": "application/json"
+              }
+          },
+          {
+              "meta": {
+                  "href": "http://localhost/api/remap/1.2/entity/processingplan/d9c43e3b-7274-11ee-c0a8-e00e00000023/products/dd495ae2-7277-11ee-c0a8-e00e00000044",
+                  "type": "processingplanresult",
+                  "mediaType": "application/json"
+              }
+          }
+       ]' 
+```
+
+> Response 200 (application/json)
+Успешное удаление продуктов Техкарты.

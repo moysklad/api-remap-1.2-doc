@@ -983,39 +983,6 @@ curl -X GET
 ]
 ```
 
-### Массовое удаление коментариев к задаче
-
-В теле запроса нужно передать массив, содержащий JSON метаданных комментариев к Задаче, которые вы хотите удалить.
-
-> Запрос на массовое удаление комментариев к Задаче.
-
-```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/task/a1ff58c4-726a-11ee-c0a8-e00e00000000/notes/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
-    -d '[
-          {
-              "meta": {
-                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/a1ff58c4-726a-11ee-c0a8-e00e00000000/notes/a87d4d14-726a-11ee-c0a8-e00e00000011",
-                  "type": "tasknote",
-                  "mediaType": "application/json"
-              }
-          },
-          {
-              "meta": {
-                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/a1ff58c4-726a-11ee-c0a8-e00e00000000/notes/836b63c4-726b-11ee-c0a8-e00e0000001d",
-                  "type": "tasknote",
-                  "mediaType": "application/json"
-              }
-          }
-       ]' 
-```
-
-> Response 200 (application/json)
-Успешное удаление комментариев к Задаче.
-
 ### Комментарий к задаче 
 
 ### Получить комментарий к Задаче
@@ -1134,3 +1101,36 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление комментария к Задаче.
+
+### Массовое удаление коментариев к задаче
+
+В теле запроса нужно передать массив, содержащий JSON метаданных комментариев к Задаче, которые вы хотите удалить.
+
+> Запрос на массовое удаление комментариев к Задаче.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/task/a1ff58c4-726a-11ee-c0a8-e00e00000000/notes/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+    -d '[
+          {
+              "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/a1ff58c4-726a-11ee-c0a8-e00e00000000/notes/a87d4d14-726a-11ee-c0a8-e00e00000011",
+                  "type": "tasknote",
+                  "mediaType": "application/json"
+              }
+          },
+          {
+              "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/a1ff58c4-726a-11ee-c0a8-e00e00000000/notes/836b63c4-726b-11ee-c0a8-e00e0000001d",
+                  "type": "tasknote",
+                  "mediaType": "application/json"
+              }
+          }
+       ]' 
+```
+
+> Response 200 (application/json)
+Успешное удаление комментариев к Задаче.

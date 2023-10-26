@@ -663,6 +663,39 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление отдельной позиции Техпроцесса
 
+### Массовое удаление позиций Техпроцесса
+
+В теле запроса нужно передать массив, содержащий JSON метаданных позиций Техпроцессов, которые вы хотите удалить.
+
+> Запрос на массовое удаление позиций Техпроцесса.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/5fe17cd6-72fd-11ee-c0a8-e00e00000017/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+    -d '[
+          {
+              "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/5fe17cd6-72fd-11ee-c0a8-e00e00000017/positions/5fe18652-72fd-11ee-c0a8-e00e00000018",
+                  "type": "processingprocessposition",
+                  "mediaType": "application/json"
+              }
+          },
+          {
+              "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/5fe17cd6-72fd-11ee-c0a8-e00e00000017/positions/f6affb12-72fc-11ee-c0a8-e00e00000011",
+                  "type": "processingprocessposition",
+                  "mediaType": "application/json"
+              }
+          }
+       ]'
+```
+
+> Response 200 (application/json)
+Успешное массовое удаление позиций Техпроцесса
+
 ### Массовое создание и обновление Техпроцессов
 При [массовом создании и обновлении](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Техпроцессов в теле запроса нужно передать массив, 
 содержащий JSON представления Техпроцессов, которые вы хотите создать или обновить. Идентификатором у обновляемых Техпроцессов является [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye).
@@ -799,39 +832,6 @@ curl -X DELETE
   }
 ]
 ```
-
-### Массовое удаление позиций Техпроцесса
-
-В теле запроса нужно передать массив, содержащий JSON метаданных позиций Техпроцессов, которые вы хотите удалить.
-
-> Запрос на массовое удаление позиций Техпроцесса.
-
-```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/5fe17cd6-72fd-11ee-c0a8-e00e00000017/positions/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
-    -d '[
-          {
-              "meta": {
-                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/5fe17cd6-72fd-11ee-c0a8-e00e00000017/positions/5fe18652-72fd-11ee-c0a8-e00e00000018",
-                  "type": "processingprocessposition",
-                  "mediaType": "application/json"
-              }
-          },
-          {
-              "meta": {
-                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/5fe17cd6-72fd-11ee-c0a8-e00e00000017/positions/f6affb12-72fc-11ee-c0a8-e00e00000011",
-                  "type": "processingprocessposition",
-                  "mediaType": "application/json"
-              }
-          }
-       ]'
-```
-
-> Response 200 (application/json)
-Успешное массовое удаление позиций Техпроцесса
 
 ### Массовое удаление Техпроцессов
 
