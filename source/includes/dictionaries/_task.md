@@ -983,6 +983,44 @@ curl -X GET
 ]
 ```
 
+### Массовое удаление коментариев к задаче
+
+**Параметры**
+
+| Параметр       | Описание                                                                                     |
+| :------------- | :------------------------------------------------------------------------------------------- |
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id задачи.               |
+| **tasknoteID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id комментария к Задаче. |
+
+> Запрос на удаление отдельного комментария к Задаче с указанным id.
+
+```shell
+  curl -X DELETE
+    "https://api.moysklad.ru/api/remap/1.2/entity/task/a1ff58c4-726a-11ee-c0a8-e00e00000000/notes/delete"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+                "meta": {
+                    "href": "http://localhost/api/remap/1.2/entity/task/a1ff58c4-726a-11ee-c0a8-e00e00000000/notes/a87d4d14-726a-11ee-c0a8-e00e00000011",
+                    "type": "tasknote",
+                    "mediaType": "application/json"
+                }
+            },
+            {
+                "meta": {
+                    "href": "http://localhost/api/remap/1.2/entity/task/a1ff58c4-726a-11ee-c0a8-e00e00000000/notes/836b63c4-726b-11ee-c0a8-e00e0000001d",
+                    "type": "tasknote",
+                    "mediaType": "application/json"
+                }
+            }
+         ]' 
+```
+
+> Response 200 (application/json)
+Успешное удаление комментариев к Задаче.
+
 ### Комментарий к задаче 
 
 ### Получить комментарий к Задаче
