@@ -100,7 +100,7 @@ $(function () {
 
   function doSearch(searchString) {
     let indexKeys = [searchString];
-    //TODO Добавить оптимизации: прикрутить алгоритм быстрого поиска + если последовательно выбрали нужные ключи и больше нет совпадений дальше, то можно выходить из цикла
+    //TODO: Добавить оптимизации: прикрутить алгоритм быстрого поиска + если последовательно выбрали нужные ключи и больше нет совпадений дальше, то можно выходить из цикла
     const invertedIndex = index.invertedIndex;
     for (const indexKey in invertedIndex) {
       if (indexKey.startsWith(searchString)) {
