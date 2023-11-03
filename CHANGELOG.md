@@ -3,11 +3,7 @@
 
 ## 26-10-2023
 ### Добавлено
-- Описание и примеры удаления компонентов в комплектах через использование эндпоинта на массовое удаление
-- Описание и примеры удаления комментариев в задачах через использование эндпоинта на массовое удаление
-- Описание и примеры удаления материалов в техкарт через использование эндпоинта на массовое удаление
-- Описание и примеры удаления продуктов в техкарт через использование эндпоинта на массовое удаление
-- Описание и примеры удаления позиций в техпроцессах через использование эндпоинта на массовое удаление
+- Описание и примеры удаления вложенных сущностей в сущностях через использование эндпоинта на массовое удаление для [Комплектов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt-massowoe-udalenie-komponentow-komplekta), [Задач](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha-massowoe-udalenie-komentariew-k-zadache), Техкарт([материалы](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta-massowoe-udalenie-materialow), [продукты](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta-massowoe-udalenie-produkta)) и [Техпровессов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehprocess-massowoe-udalenie-pozicij-tehprocessa)
 
 ## 16-10-2023
 ### Добавлено

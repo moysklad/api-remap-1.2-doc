@@ -151,12 +151,7 @@
 
 ### 26-10-2023
 #### Добавлено
-- Описание и примеры удаления компонентов в комплектах через использование эндпоинта на массовое удаление
-- Описание и примеры удаления комментариев в задачах через использование эндпоинта на массовое удаление
-- Описание и примеры удаления материалов в техкарт через использование эндпоинта на массовое удаление
-- Описание и примеры удаления продуктов в техкарт через использование эндпоинта на массовое удаление
-- Описание и примеры удаления позиций в техпроцессах через использование эндпоинта на массовое удаление
-
+- Описание и примеры удаления вложенных сущностей в сущностях через использование эндпоинта на массовое удаление для [Комплектов](../dictionaries/#suschnosti-komplekt-massowoe-udalenie-komponentow-komplekta), [Задач](../dictionaries/#suschnosti-zadacha-massowoe-udalenie-komentariew-k-zadache), Техкарт([материалы](../dictionaries/#suschnosti-tehkarta-massowoe-udalenie-materialow), [продукты](../dictionaries/#suschnosti-tehkarta-massowoe-udalenie-produkta)) и [Техпровессов](../dictionaries/#suschnosti-tehprocess-massowoe-udalenie-pozicij-tehprocessa)
 ### 16-10-2023
 #### Добавлено
 - Добавлено поле `barcode` в [Ячейку склада](../dictionaries/#suschnosti-sklad-yachejki-sklada)
