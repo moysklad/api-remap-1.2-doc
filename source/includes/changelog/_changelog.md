@@ -153,6 +153,7 @@
 #### Добавлено
 - Добавлен новый тип маркированной продукции `BEER_ALCOHOL` для разливных слабоалкогольных напитков
 - Удален неактуальный код ошибки [16104](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-towarow)
+- Описание и примеры удаления вложенных сущностей в сущностях через использование эндпоинта на массовое удаление для [Комплектов](../dictionaries/#suschnosti-komplekt-massowoe-udalenie-komponentow-komplekta), [Задач](../dictionaries/#suschnosti-zadacha-massowoe-udalenie-komentariew-k-zadache), Техкарт([материалы](../dictionaries/#suschnosti-tehkarta-massowoe-udalenie-materialow), [продукты](../dictionaries/#suschnosti-tehkarta-massowoe-udalenie-produkta)) и [Техпроцессов](../dictionaries/#suschnosti-tehprocess-massowoe-udalenie-pozicij-tehprocessa)
 
 ### 16-10-2023
 #### Добавлено
