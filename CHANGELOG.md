@@ -3,6 +3,8 @@
 
 ## 26-10-2023
 ### Добавлено
+- Добавлен новый тип маркированной продукции `BEER_ALCOHOL` для разливных слабоалкогольных напитков
+- Удален неактуальный код ошибки [16104](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-towarow)
 - Описание и примеры удаления вложенных сущностей в сущностях через использование эндпоинта на массовое удаление для [Комплектов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt-massowoe-udalenie-komponentow-komplekta), [Задач](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha-massowoe-udalenie-komentariew-k-zadache), Техкарт([материалы](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta-massowoe-udalenie-materialow), [продукты](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta-massowoe-udalenie-produkta)) и [Техпроцессов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehprocess-massowoe-udalenie-pozicij-tehprocessa)
 
 ## 16-10-2023
