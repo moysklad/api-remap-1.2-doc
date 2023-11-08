@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 13-11-2023
+### Добавлена
+- Ошибка [11002](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-statusow)
+
 ## 26-10-2023
 ### Добавлено
 - Добавлен новый тип маркированной продукции `BEER_ALCOHOL` для разливных слабоалкогольных напитков
