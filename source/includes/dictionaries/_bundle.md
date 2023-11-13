@@ -1829,7 +1829,6 @@ curl -X GET
 }
 ```
 
-
 ### Компонент Комплекта
 
 **Параметры**
@@ -1943,3 +1942,36 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление компонента Комплекта.
+
+### Массовое удаление компонентов Комплекта
+
+В теле запроса нужно передать массив, содержащий JSON метаданных компонентов Комплекта, которые требуется удалить.
+
+> Запрос на массовое удаление компонентов Комплекта.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/bundle/31c3c2d4-7323-11ee-c0a8-e00e00000022/components/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+    -d '[
+          {
+              "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/bundle/31c3c2d4-7323-11ee-c0a8-e00e00000022/components/31c3e4a8-7323-11ee-c0a8-e00e00000027",
+                  "type": "bundlecomponent",
+                  "mediaType": "application/json"
+              }
+          },
+          {
+              "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/bundle/31c3c2d4-7323-11ee-c0a8-e00e00000022/components/23afc075-7323-11ee-c0a8-e00e0000001c",
+                  "type": "bundlecomponent",
+                  "mediaType": "application/json"
+              }
+          }
+       ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление компонентов Комплекта.
