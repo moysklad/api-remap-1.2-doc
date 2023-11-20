@@ -894,7 +894,7 @@ curl -X GET
 | **commissionReportOut**       | OPERATION            | Все ALL                                     | Выданный отчет комиссионер             |
 | **company**                   | DICTIONARY           | Все ALL                                     | Контрагенты                            |
 | **contract**                  | DICTIONARY           | Все ALL                                     | Договоры                               |
-| **counterpartyAdjustment**    | DICTIONARY           | Все ALL                                     | Корректировка баланса контрагента      |
+| **counterpartyAdjustment**    | DICTIONARY           | Все ALL                                     | Корректировка взаиморасчетов           |
 | **country**                   | BASE                 | Все ALL                                     | Страны                                 |
 | **crptCancellation**          | DICTIONARY           | Все NO                                      | Списание кодов маркировки              |
 | **crptPackageCreation**       | DICTIONARY           | Все NO                                      | Формирование упаковки                  |

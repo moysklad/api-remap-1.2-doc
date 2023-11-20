@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 17-11-2023
+#### Изменено
+- Документ `Корректировка баланса контрагента` переименован в [Корректировка взаиморасчетов](../documents/#dokumenty-korrektirowka-wzaimoraschetow). Добавлена возможность указывать сотрудника в поле `agent`. Путь к документу в АПИ не менялся для совместимости
+
 ## 15-11-2023
 ### Добавлена
 - Ошибка [1091](https://dev.moysklad.ru/doc/api/remap/1.2/#error_1091) при указании некорректного значения для перечислимого параметра
@@ -547,7 +551,7 @@
 ## 15-09-2021
 ### Добавлено
 - Добавлена фильтрация по Доп. полям. и атрибут фильтрации supplier для [Отчет обороты](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty)
-- Документ [Корректировка баланса контрагента](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-korrektirowka-balansa-kontragenta)
+- Документ [Корректировка баланса контрагента](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-korrektirowka-wzaimoraschetow)
 
 ## 09-09-2021
 ### Добавлено
