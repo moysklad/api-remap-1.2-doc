@@ -2787,5 +2787,3 @@ Href приложения должен быть указан в виде:
 Пример запроса на получение списка записей:
 `https://api.moysklad.ru/api/remap/1.2/audit?filter=application=https://api.moysklad.ru/api/remap/1.2/entity/application/46ea8005-2965-11e9-9ff4-34e80009ac49` 
 
-### Устаревшие версии JSON API 
-Версия [API REMAP 1.1](https://dev.moysklad.ru/doc/api/remap/1.1/) устарела. Поддерживается и работает, но не развивается и не дополняется новыми возможностями.

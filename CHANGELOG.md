@@ -4,6 +4,8 @@
 ## 27-11-2023
 ### Изменено
 - Приведение документации обязательности полей у [Договора](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-dogowor) в корректное состояние
+### Добавлена
+- Ошибка [11002](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-statusow)
 
 ## 15-11-2023
 ### Добавлена
