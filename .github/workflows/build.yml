@@ -37,7 +37,7 @@ jobs:
 
       - name: Build
         run:
-          bundle exec middleman build --build-dir=site
+          bundle exec middleman build --build-dir=site --no-parallel
 
       - name: Build index
         run: |
