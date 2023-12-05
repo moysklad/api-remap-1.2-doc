@@ -152,6 +152,7 @@
 ### 27-11-2023
 #### Изменено
 - Приведение документации обязательности полей у [Договора](../dictionaries/#suschnosti-dogowor) в корректное состояние
+
 #### Добавлена
 - Ошибка [11002](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-statusow)
 
