@@ -24,6 +24,7 @@ includes:
   - documents/payment_in
   - documents/commissionreportout
   - documents/retaildrawercashout
+  - documents/productionStageCompletion
   - documents/processingorder
   - documents/customerOrder
   - documents/purchaseOrder
