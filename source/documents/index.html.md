@@ -38,6 +38,7 @@ includes:
   - documents/prepayment
   - documents/supply
   - documents/cashin
+  - documents/productionStage
   - documents/cashout
   - documents/retaildemand
   - documents/retailshift
