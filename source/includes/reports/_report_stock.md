@@ -3,11 +3,11 @@
 <div class="banner">
   <h4>Внимание!</h4>
   <ui><b>До 1 декабря 2023 года необходимо:</b>
-    <li>Перенастроить интеграции на новый домен api.moysklad.ru (вместо online.moysklad.ru)</li>
+    <li>Перенастроить интеграции с домена online.moysklad.ru на домен api.moysklad.ru</li>
     <li>Включить использование <a href='https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow'>сжатия содержимого ответов</a> через передачу заголовка Accept-Encoding</li>
   </ui>
   <p>Рекомендации по переезду на новый домен можно прочитать <a href="https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rekomendacii-po-pereezdu-na-nowyj-domen">здесь</a>.</p>
-  <p>После 1 декабря 2023 года перестанут работать интеграции, использующие апи remap-12 на домене online.moysklad.ru</p>
+  <p>После 1 декабря 2023 года начнется поэтапное отключение доступа к api на старом домене online.moysklad.ru</p>
 </div>
 
 ## Отчет Остатки
