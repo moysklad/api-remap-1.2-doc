@@ -1055,6 +1055,320 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление Производственного задания.
 
+### Массовое удаление Производственного задания
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Производственного задания, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Производственных заданий.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/d1c9c512-98e5-11ee-0a83-0045000025cf",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/metadata",
+                "type": "productiontask",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#productiontask/edit?id=d1c9c512-98e5-11ee-0a83-0045000025cf"
+            }
+        },
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/f400f8a3-98e7-11ee-0a83-0045000025d9",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/metadata",
+                "type": "productiontask",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#productiontask/edit?id=f400f8a3-98e7-11ee-0a83-0045000025d9"
+            }
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Производственных заданий.
+
+```json
+[
+  {
+    "info": "Сущность 'productiontask' с UUID: d1c9c512-98e5-11ee-0a83-0045000025cf успешно удалена"
+  },
+  {
+    "info": "Сущность 'productiontask' с UUID: f400f8a3-98e7-11ee-0a83-0045000025d9 успешно удалена"
+  }
+]
+``` 
+
+### Производственное задание
+
+### Получить Производственное задание
+
+**Параметры**
+
+| Параметр | Описание                                                                                          |
+| :------- |:--------------------------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: 7f9a63c64-98ee-11ee-0a83-0045000025e7* id Производственного задания. |
+
+> Запрос на получение отдельного Производственного задания с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/f9a63c64-98ee-11ee-0a83-0045000025e7"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Производственного задания.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/f9a63c64-98ee-11ee-0a83-0045000025e7",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/metadata",
+    "type": "productiontask",
+    "mediaType": "application/json",
+    "uuidHref": "https://api.moysklad.ru/app/#productiontask/edit?id=f9a63c64-98ee-11ee-0a83-0045000025e7"
+  },
+  "id": "f9a63c64-98ee-11ee-0a83-0045000025e7",
+  "accountId": "042cf74c-9358-11ee-0a80-09e700000010",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/04a31ac9-9358-11ee-0a81-05c7000007a0",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=04a31ac9-9358-11ee-0a81-05c7000007a0"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/042ec4d3-9358-11ee-0a80-09e700000011",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2023-12-12 16:06:44.284",
+  "name": "00003",
+  "description": "тестовое производственное задание на обнавление",
+  "code": "test-code-123",
+  "externalCode": "954102345",
+  "moment": "2023-12-12 13:39:00.000",
+  "applicable": true,
+  "materialsStore": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+    }
+  },
+  "productsStore": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/04bda623-9358-11ee-0a81-05c7000007e5",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=04bda623-9358-11ee-0a81-05c7000007e5"
+    }
+  },
+  "created": "2023-12-12 16:04:25.250",
+  "printed": false,
+  "published": false,
+  "files": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/f9a63c64-98ee-11ee-0a83-0045000025e7/files",
+      "type": "files",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "deliveryPlannedMoment": "2023-12-12 13:39:00.000",
+  "productionRows": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/f9a63c64-98ee-11ee-0a83-0045000025e7/productionrows",
+      "type": "productionrow",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "products": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/f9a63c64-98ee-11ee-0a83-0045000025e7/products",
+      "type": "productiontaskresult",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "awaiting": false,
+  "reserve": false
+}
+```
+
+### Изменить Производственное задание
+Запрос на обновление Производственного задания с указанным id.
+В теле запроса можно указать только те поля, которые необходимо изменить у Производственного задания, кроме тех, что
+помечены `Только для чтения` в описании [атрибутов Производственного задания]().
+
+**Параметры**
+
+| Параметр | Описание                                                                                        |
+| :------- |:------------------------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: f9a63c64-98ee-11ee-0a83-0045000025e7* id Производственного задания|
+
+> Пример запроса на обновление отдельного Заказа покупателя.
+
+```shell
+  curl -X PUT
+    "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/f9a63c64-98ee-11ee-0a83-0045000025e7"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "description": "тестовое производственное задание на обнавление",
+            "productionRows": [
+                {
+                    "processingPlan": {
+                        "meta": {
+                            "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/5a6729bb-98d8-11ee-0a81-05c700000a34",
+                            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
+                            "type": "processingplan",
+                            "mediaType": "application/json",
+                            "uuidHref": "https://api.moysklad.ru/app/#processingplan/edit?id=5a6729bb-98d8-11ee-0a81-05c700000a34"
+                        }
+                    },
+                    "productionVolume": 15.0
+                }
+            ]
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленного Производственного задания.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/f9a63c64-98ee-11ee-0a83-0045000025e7",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/metadata",
+    "type": "productiontask",
+    "mediaType": "application/json",
+    "uuidHref": "https://api.moysklad.ru/app/#productiontask/edit?id=f9a63c64-98ee-11ee-0a83-0045000025e7"
+  },
+  "id": "f9a63c64-98ee-11ee-0a83-0045000025e7",
+  "accountId": "042cf74c-9358-11ee-0a80-09e700000010",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/04a31ac9-9358-11ee-0a81-05c7000007a0",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=04a31ac9-9358-11ee-0a81-05c7000007a0"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/042ec4d3-9358-11ee-0a80-09e700000011",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2023-12-12 16:06:44.284",
+  "name": "00003",
+  "description": "тестовое производственное задание на обнавление",
+  "code": "test-code-123",
+  "externalCode": "954102345",
+  "moment": "2023-12-12 13:39:00.000",
+  "applicable": true,
+  "materialsStore": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+    }
+  },
+  "productsStore": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/04bda623-9358-11ee-0a81-05c7000007e5",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=04bda623-9358-11ee-0a81-05c7000007e5"
+    }
+  },
+  "created": "2023-12-12 16:04:25.250",
+  "printed": false,
+  "published": false,
+  "files": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/f9a63c64-98ee-11ee-0a83-0045000025e7/files",
+      "type": "files",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "deliveryPlannedMoment": "2023-12-12 13:39:00.000",
+  "productionRows": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/f9a63c64-98ee-11ee-0a83-0045000025e7/productionrows",
+      "type": "productionrow",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "products": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/f9a63c64-98ee-11ee-0a83-0045000025e7/products",
+      "type": "productiontaskresult",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "awaiting": false,
+  "reserve": false
+}
+```
 
 
 !!! остановился здесь
