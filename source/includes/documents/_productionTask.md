@@ -11,39 +11,39 @@
 
 #### Атрибуты сущности
 
-| Название                  | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                            |
-|---------------------------|:----------------------------------------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------ |:----------------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**             | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                |
-| **applicable**            | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе`                                                                                                  |
-| **attributes**            | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)<br>`                        |
-| **code**                  | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Производственного задания                                                                                                                       |
-| **created**               | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                    |
-| **deleted**               | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Производственного задания<br>`+Только для чтения`                                                                        |
-| **deliveryPlannedMoment** | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Планируемая дата выполнения                                                                                                                         |
-| **description**           | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Производственного задания                                                                                                               |
-| **externalCode**          | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Производственного задания<br>`+Обязательное при ответе`                                                                                 |
-| **files**                 | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`       |
-| **group**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                            |
-| **id**                    | UUID                                                      | `=` `!=`                                                                                                                                          | ID Производственного задания<br>`+Обязательное при ответе` `+Только для чтения`                                                                     |
-| **materialStore**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные склада материалов<br>`+Expand`                                                                                                           |
-| **meta**                  | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Производственного задания<br>`+Обязательное при ответе`                                                                                  |
-| **moment**                | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе`                                                                                                        |
-| **name**                  | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Производственного задания<br>`+Обязательное при ответе`                                                                                |
-| **organization**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                |
-| **owner**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                                   |
-| **printed**               | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                            |
-| **productionRows**        | MetaArray                                                 |                                                                                                                                                   | Метаданные позиций Производственного задания<br>`+Обязательное при ответе`                                                                          |
-| **productionEnd**         | DateTime                                                  |                                                                                                                                                   | Дата оуончания производства<br>                                                                                                                     |
-| **productionStart**       | DateTime                                                  |                                                                                                                                                   | Дата начала производства<br>                                                                                                                        |
-| **products**              | MetaArray                                                 |                                                                                                                                                   | Метаданные производимой продукции<br>`+Обязательное при ответе`                                                                          |
-| **productStore**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные склада продукции<br>`+Expand`                                                                                                            |
-| **project**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand`                                                                                                                     |
-| **published**             | Boolean                                                   | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                          |
-| **rate**                  | Object                                                    |                                                                                                                                                   | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе`                                 |
-| **shared**                | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                          |
-| **state**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса Производственного ряда<br>`+Expand`                                                                                              |
-| **syncId**                | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                         |
-| **updated**               | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Производственного задания<br>`+Обязательное при ответе`                                                                |
+| Название                  | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                      |
+|---------------------------|:----------------------------------------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------ |:----------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**             | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                          |
+| **applicable**            | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе`                                                                                            |
+| **attributes**            | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)<br>`                  |
+| **code**                  | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Производственного задания                                                                                                                 |
+| **created**               | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                              |
+| **deleted**               | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Производственного задания<br>`+Только для чтения`                                                                  |
+| **deliveryPlannedMoment** | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Планируемая дата выполнения                                                                                                                   |
+| **description**           | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Производственного задания                                                                                                         |
+| **externalCode**          | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Производственного задания<br>`+Обязательное при ответе`                                                                           |
+| **files**                 | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand` |
+| **group**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                      |
+| **id**                    | UUID                                                      | `=` `!=`                                                                                                                                          | ID Производственного задания<br>`+Обязательное при ответе` `+Только для чтения`                                                               |
+| **materialStore**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные склада материалов<br>`+Expand`                                                                                                     |
+| **meta**                  | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Производственного задания<br>`+Обязательное при ответе`                                                                            |
+| **moment**                | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе`                                                                                                  |
+| **name**                  | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Производственного задания<br>`+Обязательное при ответе`                                                                          |
+| **organization**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                          |
+| **owner**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                             |
+| **printed**               | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                      |
+| **productionRows**        | MetaArray                                                 |                                                                                                                                                   | Метаданные позиций Производственного задания<br>`+Обязательное при ответе`                                                                    |
+| **productionEnd**         | DateTime                                                  |                                                                                                                                                   | Дата окончания производства<br>                                                                                                               |
+| **productionStart**       | DateTime                                                  |                                                                                                                                                   | Дата начала производства<br>                                                                                                                  |
+| **products**              | MetaArray                                                 |                                                                                                                                                   | Метаданные производимой продукции<br>`+Обязательное при ответе`                                                                               |
+| **productStore**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные склада продукции<br>`+Expand`                                                                                                      |
+| **project**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand`                                                                                                               |
+| **published**             | Boolean                                                   | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                    |
+| **rate**                  | Object                                                    |                                                                                                                                                   | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе`                           |
+| **shared**                | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                    |
+| **state**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса Производственного ряда<br>`+Expand`                                                                                        |
+| **syncId**                | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                   |
+| **updated**               | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Производственного задания<br>`+Обязательное при ответе`                                                          |
 
 #### Связи с другими документами
 
@@ -81,11 +81,11 @@
 Запрос всех Производственных заданий на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-| Название    | Тип                                                       | Описание                                                       |
-| ----------- | :-------------------------------------------------------- | :------------------------------------------------------------- |
-| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче,                                           |
-| **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.                   |
-| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой Заказы покупателей. |
+| Название    | Тип                                                       | Описание                                                             |
+| ----------- | :-------------------------------------------------------- |:---------------------------------------------------------------------|
+| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче,                                                 |
+| **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.                         |
+| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой Производственные задания. |
 
 **Параметры**
 
@@ -108,8 +108,935 @@ curl -X GET
 Успешный запрос. Результат - JSON представление списка Производственных заданий.
 
 ```json
-
+{
+    "context": {
+        "employee": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                "type": "employee",
+                "mediaType": "application/json"
+            }
+        }
+    },
+    "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask",
+        "type": "productiontask",
+        "mediaType": "application/json",
+        "size": 1,
+        "limit": 1000,
+        "offset": 0
+    },
+    "rows": [
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/6a97c408-98d8-11ee-0a81-05c700000a3a",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/metadata",
+                "type": "productiontask",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#productiontask/edit?id=6a97c408-98d8-11ee-0a81-05c700000a3a"
+            },
+            "id": "6a97c408-98d8-11ee-0a81-05c700000a3a",
+            "accountId": "042cf74c-9358-11ee-0a80-09e700000010",
+            "owner": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/04a31ac9-9358-11ee-0a81-05c7000007a0",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                    "type": "employee",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=04a31ac9-9358-11ee-0a81-05c7000007a0"
+                }
+            },
+            "shared": false,
+            "group": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/042ec4d3-9358-11ee-0a80-09e700000011",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                    "type": "group",
+                    "mediaType": "application/json"
+                }
+            },
+            "updated": "2023-12-12 13:22:56.309",
+            "name": "00001",
+            "externalCode": "KIlfW66-jlPlvD0apgZ6J3",
+            "moment": "2023-12-12 13:20:00.000",
+            "applicable": true,
+            "materialsStore": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                    "type": "store",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+                }
+            },
+            "productsStore": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                    "type": "store",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+                }
+            },
+            "organization": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/04bda623-9358-11ee-0a81-05c7000007e5",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                    "type": "organization",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=04bda623-9358-11ee-0a81-05c7000007e5"
+                }
+            },
+            "created": "2023-12-12 13:22:56.375",
+            "printed": false,
+            "published": false,
+            "files": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/6a97c408-98d8-11ee-0a81-05c700000a3a/files",
+                    "type": "files",
+                    "mediaType": "application/json",
+                    "size": 0,
+                    "limit": 1000,
+                    "offset": 0
+                }
+            },
+            "productionRows": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/6a97c408-98d8-11ee-0a81-05c700000a3a/productionrows",
+                    "type": "productionrow",
+                    "mediaType": "application/json",
+                    "size": 1,
+                    "limit": 1000,
+                    "offset": 0
+                }
+            },
+            "products": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/6a97c408-98d8-11ee-0a81-05c700000a3a/products",
+                    "type": "productiontaskresult",
+                    "mediaType": "application/json",
+                    "size": 1,
+                    "limit": 1000,
+                    "offset": 0
+                }
+            },
+            "awaiting": false,
+            "reserve": false
+        }
+    ]
+}
 ```
+
+### Создать Производственное задание
+Запрос на создание нового Производственного задания.
+Обязательные для создания поля:
+
+| Параметр                       | Описание                                                                                        |
+| ------------------------------ |:------------------------------------------------------------------------------------------------|
+| **organization**               | Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
+| **materialStore**              | Метаданные склада материалов                                                                    |
+| **productStore**               | Метаданные склада продукции                                                                     |
+
+> Пример создания нового Производственного задания с телом запроса, содержащим только необходимые поля.
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/productiontask"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "materialsStore": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                    "type": "store",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+                }
+            },
+            "productsStore": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                    "type": "store",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+                }
+            },
+            "organization": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/04bda623-9358-11ee-0a81-05c7000007e5",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                    "type": "organization",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=04bda623-9358-11ee-0a81-05c7000007e5"
+                }
+            }
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного Производственого задания.
+
+
+```json
+{
+    "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ccb6ea2e-98da-11ee-0a83-0045000025c3",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/metadata",
+        "type": "productiontask",
+        "mediaType": "application/json",
+        "uuidHref": "https://api.moysklad.ru/app/#productiontask/edit?id=ccb6ea2e-98da-11ee-0a83-0045000025c3"
+    },
+    "id": "ccb6ea2e-98da-11ee-0a83-0045000025c3",
+    "accountId": "042cf74c-9358-11ee-0a80-09e700000010",
+    "owner": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/04a31ac9-9358-11ee-0a81-05c7000007a0",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+            "type": "employee",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=04a31ac9-9358-11ee-0a81-05c7000007a0"
+        }
+    },
+    "shared": false,
+    "group": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/042ec4d3-9358-11ee-0a80-09e700000011",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+            "type": "group",
+            "mediaType": "application/json"
+        }
+    },
+    "updated": "2023-12-12 13:39:59.923",
+    "name": "00002",
+    "externalCode": "2REltNG4iz6mP9qvwba6x3",
+    "moment": "2023-12-12 13:39:00.000",
+    "applicable": true,
+    "materialsStore": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "type": "store",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+        }
+    },
+    "productsStore": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "type": "store",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+        }
+    },
+    "organization": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/04bda623-9358-11ee-0a81-05c7000007e5",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+            "type": "organization",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=04bda623-9358-11ee-0a81-05c7000007e5"
+        }
+    },
+    "created": "2023-12-12 13:39:59.951",
+    "printed": false,
+    "published": false,
+    "files": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ccb6ea2e-98da-11ee-0a83-0045000025c3/files",
+            "type": "files",
+            "mediaType": "application/json",
+            "size": 0,
+            "limit": 1000,
+            "offset": 0
+        }
+    },
+    "productionRows": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ccb6ea2e-98da-11ee-0a83-0045000025c3/productionrows",
+            "type": "productionrow",
+            "mediaType": "application/json",
+            "size": 0,
+            "limit": 1000,
+            "offset": 0
+        }
+    },
+    "products": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ccb6ea2e-98da-11ee-0a83-0045000025c3/products",
+            "type": "productiontaskresult",
+            "mediaType": "application/json",
+            "size": 0,
+            "limit": 1000,
+            "offset": 0
+        }
+    },
+    "awaiting": false,
+    "reserve": false
+}
+```
+
+> Пример создания нового Производственного задания с более насыщенным телом запроса.
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/productiontask"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "materialsStore": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                    "type": "store",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+                }
+            },
+            "productsStore": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                    "type": "store",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+                }
+            },
+            "organization": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/04bda623-9358-11ee-0a81-05c7000007e5",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                    "type": "organization",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=04bda623-9358-11ee-0a81-05c7000007e5"
+                }
+            },
+            "applicable": true,
+            "code": "test-code-123",
+            "deliveryPlannedMoment": "2023-12-12 13:39:59.951",
+            "description": "тестовое производственное задание",
+            "externalCode": "954102345",
+            "group": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/042ec4d3-9358-11ee-0a80-09e700000011",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                    "type": "group",
+                    "mediaType": "application/json"
+                }
+            },
+            "moment": "2023-12-12 13:39:00.000",
+            "name": "Тестовое Производственное здание",
+            "owner": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/04a31ac9-9358-11ee-0a81-05c7000007a0",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                    "type": "employee",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=04a31ac9-9358-11ee-0a81-05c7000007a0"
+                }
+            },
+            "shared": true,
+            "awaiting": false,
+            "reserve": false
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного Производственного задания.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ccfc90be-98e0-11ee-0a83-0045000025cb",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/metadata",
+    "type": "productiontask",
+    "mediaType": "application/json",
+    "uuidHref": "https://api.moysklad.ru/app/#productiontask/edit?id=ccfc90be-98e0-11ee-0a83-0045000025cb"
+  },
+  "id": "ccfc90be-98e0-11ee-0a83-0045000025cb",
+  "accountId": "042cf74c-9358-11ee-0a80-09e700000010",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/04a31ac9-9358-11ee-0a81-05c7000007a0",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=04a31ac9-9358-11ee-0a81-05c7000007a0"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/042ec4d3-9358-11ee-0a80-09e700000011",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2023-12-12 14:22:57.374",
+  "name": "Тестовое Производственное здание",
+  "description": "тестовое производственное задание",
+  "code": "test-code-123",
+  "externalCode": "954102345",
+  "moment": "2023-12-12 13:39:00.000",
+  "applicable": true,
+  "materialsStore": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+    }
+  },
+  "productsStore": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/04bda623-9358-11ee-0a81-05c7000007e5",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=04bda623-9358-11ee-0a81-05c7000007e5"
+    }
+  },
+  "created": "2023-12-12 14:22:57.403",
+  "printed": false,
+  "published": false,
+  "files": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ccfc90be-98e0-11ee-0a83-0045000025cb/files",
+      "type": "files",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "deliveryPlannedMoment": "2023-12-12 13:39:00.000",
+  "productionRows": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ccfc90be-98e0-11ee-0a83-0045000025cb/productionrows",
+      "type": "productionrow",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "products": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ccfc90be-98e0-11ee-0a83-0045000025cb/products",
+      "type": "productiontaskresult",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "awaiting": false,
+  "reserve": false
+}
+```
+
+> Пример запроса на создание Производственного задания с производственными рядами в теле запроса.
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/productiontask"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "materialsStore": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                    "type": "store",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+                }
+            },
+            "productsStore": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                    "type": "store",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+                }
+            },
+            "organization": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/04bda623-9358-11ee-0a81-05c7000007e5",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                    "type": "organization",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=04bda623-9358-11ee-0a81-05c7000007e5"
+                }
+            },
+            "applicable": true,
+            "code": "test-code-123",
+            "deliveryPlannedMoment": "2023-12-12 13:39:59.951",
+            "description": "тестовое производственное задание",
+            "externalCode": "954102345",
+            "group": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/042ec4d3-9358-11ee-0a80-09e700000011",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                    "type": "group",
+                    "mediaType": "application/json"
+                }
+            },
+            "productionRows": [
+                {
+                "processingPlan": {
+                    "meta": {
+                        "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/5a6729bb-98d8-11ee-0a81-05c700000a34",
+                        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
+                        "type": "processingplan",
+                        "mediaType": "application/json",
+                        "uuidHref": "https://api.moysklad.ru/app/#processingplan/edit?id=5a6729bb-98d8-11ee-0a81-05c700000a34"
+                    }
+                },
+                "productionVolume": 10.0
+                }
+            ],
+            "moment": "2023-12-12 13:39:00.000",
+            "owner": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/04a31ac9-9358-11ee-0a81-05c7000007a0",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                    "type": "employee",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=04a31ac9-9358-11ee-0a81-05c7000007a0"
+                }
+            },
+            "shared": true,
+            "awaiting": false,
+            "reserve": false
+          }' 
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного Производственного задания.
+
+```json
+{
+    "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/d1c9c512-98e5-11ee-0a83-0045000025cf",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/metadata",
+        "type": "productiontask",
+        "mediaType": "application/json",
+        "uuidHref": "https://api.moysklad.ru/app/#productiontask/edit?id=d1c9c512-98e5-11ee-0a83-0045000025cf"
+    },
+    "id": "d1c9c512-98e5-11ee-0a83-0045000025cf",
+    "accountId": "042cf74c-9358-11ee-0a80-09e700000010",
+    "owner": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/04a31ac9-9358-11ee-0a81-05c7000007a0",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+            "type": "employee",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=04a31ac9-9358-11ee-0a81-05c7000007a0"
+        }
+    },
+    "shared": true,
+    "group": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/042ec4d3-9358-11ee-0a80-09e700000011",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+            "type": "group",
+            "mediaType": "application/json"
+        }
+    },
+    "updated": "2023-12-12 14:58:52.817",
+    "name": "00003",
+    "description": "тестовое производственное задание",
+    "code": "test-code-123",
+    "externalCode": "954102345",
+    "moment": "2023-12-12 13:39:00.000",
+    "applicable": true,
+    "materialsStore": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "type": "store",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+        }
+    },
+    "productsStore": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "type": "store",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+        }
+    },
+    "organization": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/04bda623-9358-11ee-0a81-05c7000007e5",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+            "type": "organization",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=04bda623-9358-11ee-0a81-05c7000007e5"
+        }
+    },
+    "created": "2023-12-12 14:58:52.898",
+    "printed": false,
+    "published": false,
+    "files": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/d1c9c512-98e5-11ee-0a83-0045000025cf/files",
+            "type": "files",
+            "mediaType": "application/json",
+            "size": 0,
+            "limit": 1000,
+            "offset": 0
+        }
+    },
+    "deliveryPlannedMoment": "2023-12-12 13:39:00.000",
+    "productionRows": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/d1c9c512-98e5-11ee-0a83-0045000025cf/productionrows",
+            "type": "productionrow",
+            "mediaType": "application/json",
+            "size": 1,
+            "limit": 1000,
+            "offset": 0
+        }
+    },
+    "products": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/d1c9c512-98e5-11ee-0a83-0045000025cf/products",
+            "type": "productiontaskresult",
+            "mediaType": "application/json",
+            "size": 1,
+            "limit": 1000,
+            "offset": 0
+        }
+    },
+    "awaiting": false,
+    "reserve": false
+}
+```
+
+### Массовое создание и обновление Производственных заданий
+В теле запроса нужно передать массив, содержащий JSON представления Производственных заданий, которые вы хотите создать или обновить.
+Обновляемые Производственные задания должны содержать идентификатор в виде метаданных.
+
+> Пример создания и обновления нескольких Заказов покупателей
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/customerorder"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+                "materialsStore": {
+                    "meta": {
+                        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+                        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                        "type": "store",
+                        "mediaType": "application/json",
+                        "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+                    }
+                },
+                "productsStore": {
+                    "meta": {
+                        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+                        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                        "type": "store",
+                        "mediaType": "application/json",
+                        "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+                    }
+                },
+                "organization": {
+                    "meta": {
+                        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/04bda623-9358-11ee-0a81-05c7000007e5",
+                        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                        "type": "organization",
+                        "mediaType": "application/json",
+                        "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=04bda623-9358-11ee-0a81-05c7000007e5"
+                    }
+                },
+                "applicable": true,
+                "code": "test-code-123",
+                "deliveryPlannedMoment": "2023-12-12 13:39:59.951",
+                "description": "тестовое производственное задание",
+                "externalCode": "954102345",
+                "group": {
+                    "meta": {
+                        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/042ec4d3-9358-11ee-0a80-09e700000011",
+                        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                        "type": "group",
+                        "mediaType": "application/json"
+                    }
+                },
+                "productionRows": [
+                    {
+                        "processingPlan": {
+                            "meta": {
+                                "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/5a6729bb-98d8-11ee-0a81-05c700000a34",
+                                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
+                                "type": "processingplan",
+                                "mediaType": "application/json",
+                                "uuidHref": "https://api.moysklad.ru/app/#processingplan/edit?id=5a6729bb-98d8-11ee-0a81-05c700000a34"
+                            }
+                        },
+                        "productionVolume": 10.0
+                    }
+                ],
+                "moment": "2023-12-12 13:39:00.000",
+                "owner": {
+                    "meta": {
+                        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/04a31ac9-9358-11ee-0a81-05c7000007a0",
+                        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                        "type": "employee",
+                        "mediaType": "application/json",
+                        "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=04a31ac9-9358-11ee-0a81-05c7000007a0"
+                    }
+                },
+                "shared": true,
+                "awaiting": false,
+                "reserve": false
+            },
+            {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/d1c9c512-98e5-11ee-0a83-0045000025cf",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/metadata",
+                    "type": "productiontask",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#productiontask/edit?id=d1c9c512-98e5-11ee-0a83-0045000025cf"
+                },
+                "name": "Изменённое Производственное задание"
+            }
+          ]'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - массив JSON представлений созданных и обновленных Заказов покупателей.
+
+```json
+[
+    {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/f400f8a3-98e7-11ee-0a83-0045000025d9",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/metadata",
+            "type": "productiontask",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#productiontask/edit?id=f400f8a3-98e7-11ee-0a83-0045000025d9"
+        },
+        "id": "f400f8a3-98e7-11ee-0a83-0045000025d9",
+        "accountId": "042cf74c-9358-11ee-0a80-09e700000010",
+        "owner": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/04a31ac9-9358-11ee-0a81-05c7000007a0",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                "type": "employee",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=04a31ac9-9358-11ee-0a81-05c7000007a0"
+            }
+        },
+        "shared": true,
+        "group": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/042ec4d3-9358-11ee-0a80-09e700000011",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                "type": "group",
+                "mediaType": "application/json"
+            }
+        },
+        "updated": "2023-12-12 15:14:09.210",
+        "name": "00004",
+        "description": "тестовое производственное задание",
+        "code": "test-code-123",
+        "externalCode": "954102345",
+        "moment": "2023-12-12 13:39:00.000",
+        "applicable": true,
+        "materialsStore": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "type": "store",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+            }
+        },
+        "productsStore": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "type": "store",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+            }
+        },
+        "organization": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/04bda623-9358-11ee-0a81-05c7000007e5",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "type": "organization",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=04bda623-9358-11ee-0a81-05c7000007e5"
+            }
+        },
+        "created": "2023-12-12 15:14:09.294",
+        "printed": false,
+        "published": false,
+        "files": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/f400f8a3-98e7-11ee-0a83-0045000025d9/files",
+                "type": "files",
+                "mediaType": "application/json",
+                "size": 0,
+                "limit": 1000,
+                "offset": 0
+            }
+        },
+        "deliveryPlannedMoment": "2023-12-12 13:39:00.000",
+        "productionRows": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/f400f8a3-98e7-11ee-0a83-0045000025d9/productionrows",
+                "type": "productionrow",
+                "mediaType": "application/json",
+                "size": 1,
+                "limit": 1000,
+                "offset": 0
+            }
+        },
+        "products": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/f400f8a3-98e7-11ee-0a83-0045000025d9/products",
+                "type": "productiontaskresult",
+                "mediaType": "application/json",
+                "size": 1,
+                "limit": 1000,
+                "offset": 0
+            }
+        },
+        "awaiting": false,
+        "reserve": false
+    },
+    {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/d1c9c512-98e5-11ee-0a83-0045000025cf",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/metadata",
+            "type": "productiontask",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#productiontask/edit?id=d1c9c512-98e5-11ee-0a83-0045000025cf"
+        },
+        "id": "d1c9c512-98e5-11ee-0a83-0045000025cf",
+        "accountId": "042cf74c-9358-11ee-0a80-09e700000010",
+        "owner": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/04a31ac9-9358-11ee-0a81-05c7000007a0",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                "type": "employee",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=04a31ac9-9358-11ee-0a81-05c7000007a0"
+            }
+        },
+        "shared": true,
+        "group": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/042ec4d3-9358-11ee-0a80-09e700000011",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                "type": "group",
+                "mediaType": "application/json"
+            }
+        },
+        "updated": "2023-12-12 15:14:09.688",
+        "name": "Изменённое Производственное задание",
+        "description": "тестовое производственное задание",
+        "code": "test-code-123",
+        "externalCode": "954102345",
+        "moment": "2023-12-12 13:39:00.000",
+        "applicable": true,
+        "materialsStore": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "type": "store",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+            }
+        },
+        "productsStore": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/04c31653-9358-11ee-0a81-05c7000007e7",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "type": "store",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=04c31653-9358-11ee-0a81-05c7000007e7"
+            }
+        },
+        "organization": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/04bda623-9358-11ee-0a81-05c7000007e5",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "type": "organization",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=04bda623-9358-11ee-0a81-05c7000007e5"
+            }
+        },
+        "created": "2023-12-12 14:58:52.898",
+        "printed": false,
+        "published": false,
+        "files": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/d1c9c512-98e5-11ee-0a83-0045000025cf/files",
+                "type": "files",
+                "mediaType": "application/json",
+                "size": 0,
+                "limit": 1000,
+                "offset": 0
+            }
+        },
+        "deliveryPlannedMoment": "2023-12-12 13:39:00.000",
+        "productionRows": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/d1c9c512-98e5-11ee-0a83-0045000025cf/productionrows",
+                "type": "productionrow",
+                "mediaType": "application/json",
+                "size": 1,
+                "limit": 1000,
+                "offset": 0
+            }
+        },
+        "products": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/d1c9c512-98e5-11ee-0a83-0045000025cf/products",
+                "type": "productiontaskresult",
+                "mediaType": "application/json",
+                "size": 1,
+                "limit": 1000,
+                "offset": 0
+            }
+        },
+        "awaiting": false,
+        "reserve": false
+    }
+]
+```
+
+
 
 !!! остановился здесь
 
