@@ -931,6 +931,8 @@ curl -X GET
 | **processingPlan**            | BASE                 | Все ALL                                     | Техкарты                               |
 | **processingStage**           | BASE                 | Все ALL                                     | Этапы производства                     |
 | **processingProcess**         | BASE                 | Все ALL                                     | Техпроцессы                            |
+| **productionTask**            | OPERATION            | Все ALL                                     | Производственные задания               |
+| **productionStageCompletion** | DICTIONARY           | Все ALL                                     | Выполнение этапов                      |
 | **project**                   | BASE                 | Все ALL                                     | Проекты                                |
 | **purchaseOrder**             | OPERATION            | Все ALL                                     | Заказ поставщикам                      |
 | **purchaseReturn**            | OPERATION            | Все ALL                                     | Возврат поставщику                     |
