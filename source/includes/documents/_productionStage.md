@@ -2315,3 +2315,223 @@ curl -X POST
 
 > Response 200 (application/json)
 Успешное удаление позиций Заказа на производство.
+
+### Материалы Производственного этапа
+Материалы Производственного этапа - это товары, модификации и серии, которые планируется затратить при выполнении Производственного этапа.
+
+Объект материала Выполненного этапа содержит следующие поля:
+
+| Название             | Тип                                                      | Описание                                                                                                                                                                                                                                                      |
+| -------------------- |:---------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------|
+| **accountId**        | UUID                                                     | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                   |
+| **assortment**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Метаданные товара/услуги/серии/модификации, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand` |
+| **id**               | UUID                                                     | ID позиции<br>`+Обязательное при ответе` `+Только для чтения`                                                          |
+| **planQuantity**     | Float                                                    | Количество товаров/модификаций данного вида в позициие<br>`+Обязательное при ответе`                                   |
+
+#### Получить материалы Производственного этапа
+Запрос на получение материалов Производственного этапа. Результат - объект JSON, включающий в себя:
+
+| Название    | Тип                                                       | Описание                                                                     |
+| ----------- | :-------------------------------------------------------- | :--------------------------------------------------------------------------- |
+| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче                                                          |
+| **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос                                  |
+| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой материалы Производственного этапа |
+
+**Параметры**
+
+| Параметр   | Описание                                                                                                                              |
+| :--------- | :------------------------------------------------------------------------------------------------------------------------------------ |
+| **id**     | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Производственного этапа                                        |
+| **limit**  | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000` |
+| **offset** | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей                                                 |
+
+> Запрос на получение списка всех материалов Производственного этапа
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/7944ef04-f831-11e5-7a69-971500188b19/materials
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка продуктов Производственного этапа.
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/productionstage/7944ef04-f831-11e5-7a69-971500188b19/materials",
+    "type": "productiontaskmaterial",
+    "mediaType": "application/json",
+    "size": 1,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/productionstage/7944ef04-f831-11e5-7a69-971500188b19/materials/190703d7-99d6-11ee-0a83-0a2e00000768",
+        "type": "productiontaskmaterial",
+        "mediaType": "application/json"
+      },
+      "id": "190703d7-99d6-11ee-0a83-0a2e00000768",
+      "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
+      "planQuantity": 1.0,
+      "assortment": {
+        "meta": {
+          "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/product/db82710a-99d5-11ee-0a83-0a2e0000072d",
+          "metadataHref": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json",
+          "uuidHref": "https://online-api-2.testms-test.lognex.ru/app/#good/edit?id=db82468b-99d5-11ee-0a83-0a2e0000072b"
+        }
+      }
+    }
+  ]
+}
+```
+
+#### Добавить материал к Производственному этапу
+Запрос на добавление материала к Производственному этапу.
+
+Для успешного создания необходимо в теле запроса указать следующие поля:
++ **assortment** - Ссылка на товар/модификацию/серию, которую представляет собой материал.
++ **planQuantity** - планируемое количество затраченных товаров или модификаций.
+
+**Параметры**
+
+| Параметр | Описание                                                                                       |
+| :------- | :--------------------------------------------------------------------------------------------- |
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Производственного этапа |
+
+> Пример запроса на добавление материала Производственного этапа.
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/7944ef04-f831-11e5-7a69-971500188b19/materials"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "planQuantity": 2,
+            "assortment": {
+              "meta": {
+                "href": "http://localhost/api/remap/1.2/entity/product/9656117b-b717-11ec-0с80-0bba0006dcde",
+              }
+            }
+          }
+      '
+```
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление добавленного материала
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/productionstage/7944ef04-f831-11e5-7a69-971500188b19/materials/34f6344f-015e-11e6-9464-e4de0000006c",
+      "type": "productiontaskmaterial",
+      "mediaType": "application/json"
+    },
+    "id": "34f6344f-015e-11e6-9464-e4de0000006c",
+    "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
+    "planQuantity": 5.0,
+    "assortment": {
+      "meta": {
+        "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/product/9656117b-b717-11ec-0с80-0bba0006dcde",
+        "metadataHref": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online-api-2.testms-test.lognex.ru/app/#good/edit?id=57c98e8c-99d8-11ee-0a83-0a2e00000771"
+      }
+    }
+  }
+]
+```
+
+#### Изменить материал Производственного этапа
+Запрос на обновление отдельного материала Производственного этапа.
+
+**Параметры**
+
+| Параметр       | Описание                                                                                                 |
+| :------------- | :------------------------------------------------------------------------------------------------------- |
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Производственного этапа           |
+| **materialID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id материала Производственного этапа |
+
+> Пример запроса на обновление количества отдельного материала выполненного этапа.
+
+```shell
+  curl -X PUT
+    "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/7944ef04-f831-11e5-7a69-971500188b19/materials/34f6344f-015e-11e6-9464-e4de0000006c"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "planQuantity": 3,
+            "assortment": {
+              "meta": {
+                "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/product/57c9a841-99d8-11ee-0a83-0a2e00000773",
+                "type": "product"
+              }
+            }
+          }
+      '
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленного материала.
+
+```json
+  {
+    "meta": {
+      "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/productionstage/7944ef04-f831-11e5-7a69-971500188b19/materials/34f6344f-015e-11e6-9464-e4de0000006c",
+      "type": "productiontaskmaterial",
+      "mediaType": "application/json"
+    },
+    "id": "34f6344f-015e-11e6-9464-e4de0000006c",
+    "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
+    "planQuantity": 3.0,
+    "assortment": {
+      "meta": {
+        "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/product/57c9a841-99d8-11ee-0a83-0a2e00000773",
+        "metadataHref": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online-api-2.testms-test.lognex.ru/app/#good/edit?id=57c98e8c-99d8-11ee-0a83-0a2e00000358"
+      }
+    }
+  }
+```
+
+#### Удалить материал Производственного этапа
+Запрос на удаление отдельного материала Производственного этапа.
+
+**Параметры**
+
+| Параметр       | Описание                                                                                                 |
+| :------------- | :------------------------------------------------------------------------------------------------------- |
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Производственного этапа           |
+| **materialID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id материала Производственного этапа |
+
+> Запрос на удаление отдельного материала Производственного этапа с указанным id.
+
+```shell
+curl -X DELETE
+  "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/7944ef04-f831-11e5-7a69-971500188b19/materials/34f6344f-015e-11e6-9464-e4de0000006c"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешное удаление материала Производственного этапа.
