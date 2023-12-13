@@ -25,7 +25,7 @@
 
 
 ### Получить список Выполнений производственных этапов
-Запрос всех Заказов на производство на данной учетной записи.
+Запрос всех Выполнений производственных этапов на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
 | Название    | Тип                                                       | Описание                                                      |
@@ -411,7 +411,7 @@ curl -X GET
 + **productionStage** - Ссылка на Производственный этап в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 + **productionVolume** - Объем Выполненного этапа 
 
-> Пример создания нового Заказа с телом запроса, содержащим только необходимые поля.
+> Пример создания нового Выполнение производственного этапа с телом запроса, содержащим только необходимые поля.
 
 ```shell
   curl -X POST
@@ -504,7 +504,564 @@ curl -X GET
 }
 ```
 
-// Выполнение производственного этапа Закончил тут
+
+> Пример создания нового Выполнения производственного этапа с более насыщенным телом запроса.
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingorder"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "000034",
+            "owner": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                "type": "employee",
+                "mediaType": "application/json"
+              }
+            },
+            "shared": false,
+            "group": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                "type": "group",
+                "mediaType": "application/json"
+              }
+            },
+            "productionStage": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/3130f7df-660f-11ee-c0a8-100c00000139",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+                "type": "productionstagecompletion",
+                "mediaType": "application/json"
+              }
+            },
+            "productionVolume": 5,
+            "processingUnitCost": 10.0,
+            "labourUnitCost": 20.0
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного Выполнения производственного этапа.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000136",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+    "type": "productionstagecompletion",
+    "mediaType": "application/json",
+    "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=01ff6808-95de-11ee-0a81-072300000136"
+  },
+  "id": "01ff6808-95de-11ee-0a81-072300000136",
+  "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/a7354b1a-95dd-11ee-0a81-07230000004d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/a67ef296-95dd-11ee-0a83-071a00000003",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2023-12-08 18:25:24.325",
+  "name": "00001",
+  "externalCode": "EnuNEmG2jyUF4t9tgPQk72",
+  "moment": "2016-04-19 13:50:24",
+  "created": "2023-12-08 18:25:24.386",
+  "productionStage": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/3130f7df-660f-11ee-c0a8-100c00000139",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+      "type": "productionstage",
+      "mediaType": "application/json"
+    }
+  },
+  "materials": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000136/materials",
+      "type": "productionstagecompletionmaterial",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "products": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000136/products",
+      "type": "productionstagecompletionresult",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "productionVolume": 5,
+  "processingUnitCost": 10.0,
+  "labourUnitCost": 20.0
+}
+```
+
+### Массовое создание и обновление Выполнений производственных этапов
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Выполнений производственных этапов.
+В теле запроса нужно передать массив, содержащий JSON представления Выполнений производственных этапов, которые вы хотите создать или обновить.
+Обновляемые Выполнения производственных этапов должны содержать идентификатор в виде метаданных.
+
+> Пример создания и обновления нескольких Выполнений производственных этапов
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingorder"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+                "name": "000033",
+                "owner": {
+                  "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                    "type": "employee",
+                    "mediaType": "application/json"
+                  }
+                },
+                "shared": false,
+                "group": {
+                  "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                    "type": "group",
+                    "mediaType": "application/json"
+                  }
+                },
+                "productionStage": {
+                  "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/3130f7df-660f-11ee-c0a8-100c00000139",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+                    "type": "productionstagecompletion",
+                    "mediaType": "application/json"
+                  }
+                },
+                "productionVolume": 15,
+              ]
+            },
+            {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000136",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+                "type": "productionstagecompletion",
+                "mediaType": "application/json",
+                "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=01ff6808-95de-11ee-0a81-072300000136"
+              },
+              "name": "000034",
+              "productionVolume": 5
+            }
+          ]'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - массив JSON представлений созданных и обновленных Выполнений производственных этапов.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000136",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+      "type": "productionstagecompletion",
+      "mediaType": "application/json",
+      "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=01ff6808-95de-11ee-0a81-072300000136"
+    },
+    "id": "01ff6808-95de-11ee-0a81-072300000136",
+    "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
+    "owner": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/a7354b1a-95dd-11ee-0a81-07230000004d",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/a67ef296-95dd-11ee-0a83-071a00000003",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2023-12-08 18:25:24.325",
+    "name": "000033",
+    "externalCode": "EnuNEmG2jyUF4t9tgPQk72",
+    "moment": "2023-12-08 18:25:00.000",
+    "created": "2023-12-08 18:25:24.386",
+    "productionStage": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/3130f7df-660f-11ee-c0a8-100c00000139",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+        "type": "productionstagecompletion",
+        "mediaType": "application/json"
+      }
+    },
+    "materials": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000136/materials",
+        "type": "productionstagecompletionmaterial",
+        "mediaType": "application/json",
+        "size": 1,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
+    "products": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000136/products",
+        "type": "productionstagecompletionresult",
+        "mediaType": "application/json",
+        "size": 1,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
+    "productionVolume": 15,
+    "processingUnitCost": 0.0,
+    "labourUnitCost": 0.0
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/19b3bb62-9807-11ee-0a81-07230000030e",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+      "type": "productionstagecompletion",
+      "mediaType": "application/json",
+      "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=19b3bb62-9807-11ee-0a81-07230000030e"
+    },
+    "id": "19b3bb62-9807-11ee-0a81-07230000030e",
+    "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
+    "owner": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/a7354b1a-95dd-11ee-0a81-07230000004d",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/a67ef296-95dd-11ee-0a83-071a00000003",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2023-12-11 12:26:28.767",
+    "name": "000034",
+    "externalCode": "zjyrF00vg0Ogjpl0Uk0XP0",
+    "moment": "2023-12-11 12:24:00.000",
+    "created": "2023-12-11 12:24:35.847",
+    "productionStage": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/1812ddaf-9807-11ee-0a81-072300000306",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+        "type": "productionstage",
+        "mediaType": "application/json"
+      }
+    },
+    "materials": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/19b3bb62-9807-11ee-0a81-07230000030e/materials",
+        "type": "productionstagecompletionmaterial",
+        "mediaType": "application/json",
+        "size": 1,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
+    "products": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/19b3bb62-9807-11ee-0a81-07230000030e/products",
+        "type": "productionstagecompletionresult",
+        "mediaType": "application/json",
+        "size": 1,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
+    "productionVolume": 5,
+    "processingUnitCost": 0.0,
+    "labourUnitCost": 0.0
+  }
+]
+```
+
+### Удалить Выполнение производственного этапа
+
+**Параметры**
+
+| Параметр | Описание                                                                                                   |
+| :------- |:-----------------------------------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Выполнения производственного этапа. |
+
+> Запрос на удаление Выполнения производственного этапа с указанным id.
+
+```shell
+curl -X DELETE
+  "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешное удаление Выполнения производственного этапа.
+
+### Массовое удаление Выполнений производственных этапов
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Выполнений производственных этапов, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Выполнений производственных этапов.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000136",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+                "type": "productionstagecompletion",
+                "mediaType": "application/json",
+              }
+        },
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000136",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+                "type": "productionstagecompletion",
+                "mediaType": "application/json",
+              }
+        }
+      ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Выполнений производственных этапов.
+
+```json
+[
+  {
+    "info":"Сущность 'productionstagecompletion' с UUID: 01ff6808-95de-11ee-0a81-072300000136 успешно удалена"
+  },
+  {
+    "info":"Сущность 'productionstagecompletion' с UUID: 01ff6808-95de-11ee-0a81-072300000136 успешно удалена"
+  }
+]
+```
+
+### Получить Выполнение производственного этапа
+
+**Параметры**
+
+| Параметр | Описание                                                                                                   |
+| :------- |:-----------------------------------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Выполнения производственного этапа. |
+
+> Запрос на получение отдельного Выполнения производственного этапа с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/7944ef04-f831-11e5-7a69-971500188b19"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Выполнения производственного этапа.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/7944ef04-f831-11e5-7a69-971500188b19",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+    "type": "productionstagecompletion",
+    "mediaType": "application/json",
+    "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=7944ef04-f831-11e5-7a69-971500188b19"
+  },
+  "id": "01ff6808-95de-11ee-0a81-072300000136",
+  "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/a7354b1a-95dd-11ee-0a81-07230000004d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/a67ef296-95dd-11ee-0a83-071a00000003",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2023-12-08 18:25:24.325",
+  "name": "00001",
+  "externalCode": "EnuNEmG2jyUF4t9tgPQk72",
+  "moment": "2023-12-08 18:25:00.000",
+  "created": "2023-12-08 18:25:24.386",
+  "productionStage": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/d15ec2e9-95dd-11ee-0a81-07230000011c",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+      "type": "productionstage",
+      "mediaType": "application/json"
+    }
+  },
+  "materials": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000136/materials",
+      "type": "productionstagecompletionmaterial",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "products": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000136/products",
+      "type": "productionstagecompletionresult",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "productionVolume": 100000,
+  "processingUnitCost": 0.0,
+  "labourUnitCost": 0.0
+}
+```
+
+### Изменить Выполнение производственного этапа
+Запрос на обновление Выполнения производственного этапа с указанным id.
+В теле запроса необходимо указать те поля,
+которые необходимо изменить у Выполнения производственного этапа, кроме тех, что помечены `Только для чтения` в описании атрибутов Выполнения производственного этапа.
+
+**Параметры**
+
+| Параметр | Описание                                                                                                   |
+| :------- |:-----------------------------------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Выполнения производственного этапа. |
+
+> Пример запроса на обновление отдельного Выполнения производственного этапа.
+
+```shell
+  curl -X PUT
+    "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/7944ef04-f831-11e5-7a69-971500188b19"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "000034",
+            "productionVolume": 22,
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленного Выполнения производственного этапа.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/7944ef04-f831-11e5-7a69-971500188b19",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+    "type": "productionstagecompletion",
+    "mediaType": "application/json",
+    "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=7944ef04-f831-11e5-7a69-971500188b19"
+  },
+  "id": "01ff6808-95de-11ee-0a81-072300000136",
+  "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/a7354b1a-95dd-11ee-0a81-07230000004d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/a67ef296-95dd-11ee-0a83-071a00000003",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2023-12-08 18:25:24.325",
+  "name": "00001",
+  "externalCode": "EnuNEmG2jyUF4t9tgPQk72",
+  "moment": "2023-12-08 18:25:00.000",
+  "created": "2023-12-08 18:25:24.386",
+  "productionStage": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/d15ec2e9-95dd-11ee-0a81-07230000011c",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+      "type": "productionstage",
+      "mediaType": "application/json"
+    }
+  },
+  "materials": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000136/materials",
+      "type": "productionstagecompletionmaterial",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "products": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000136/products",
+      "type": "productionstagecompletionresult",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "productionVolume": 22,
+  "processingUnitCost": 0.0,
+  "labourUnitCost": 0.0
+}
+```
 
 #### Продукты выполненного этапа
 Продукты выполненного этапа - это товары, модификации и серии, созданные при выполнении этапа производства.
