@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 13-12-2023
+### Добавлена
+- Цена costSum для материалов и продуктов в [Техоперации](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-tehoperaciq-tehoperacii)
+
 ## 27-11-2023
 ### Изменено
 - Приведение документации обязательности полей у [Договора](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-dogowor) в корректное состояние
