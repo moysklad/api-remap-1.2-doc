@@ -1733,3 +1733,117 @@ curl -X GET
   "reserve": false
 }
 ```
+
+
+### Позиции производственного задания
+
+### Получить список позиций производственного задания
+
+> Запрос на получение отдельного Производственного задания с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/85b4c65e-99d6-11ee-ac12-000f0000011a//productionrows"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Производственного задания.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/85b4c65e-99d6-11ee-ac12-000f0000011a/productionrows",
+    "limit": 1000,
+    "mediaType": "application/json",
+    "offset": 0,
+    "size": 1,
+    "type": "productionrow"
+  },
+  "rows": [
+    {
+      "accountId": "899eb32d-99d5-11ee-ac12-000e00000001",
+      "externalCode": "3oKBsRwZigCESI13Mncqq1",
+      "id": "85b4d986-99d6-11ee-ac12-000f0000011c",
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/85b4c65e-99d6-11ee-ac12-000f0000011a/productionrows/85b4d986-99d6-11ee-ac12-000f0000011c",
+        "mediaType": "application/json",
+        "type": "productionrow",
+        "uuidHref": "https://api.moysklad.ru/app/#productionrow/edit?id=85b4d986-99d6-11ee-ac12-000f0000011c"
+      },
+      "name": "example-name",
+      "processingPlan": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/81269542-99d6-11ee-ac12-000f00000115",
+          "mediaType": "application/json",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
+          "type": "processingplan",
+          "uuidHref": "https://api.moysklad.ru/app/#processingplan/edit?id=81269542-99d6-11ee-ac12-000f00000115"
+        }
+      },
+      "productionVolume": 2.0,
+      "updated": "2023-12-13 19:41:53.990"
+    }
+  ]
+}
+```
+
+### Получить отдельную позицию производственного задания
+
+> Запрос на получение отдельного Производственного задания с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/85b4c65e-99d6-11ee-ac12-000f0000011a//productionrows"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Производственного задания.
+
+```json
+{
+  "accountId": "899eb32d-99d5-11ee-ac12-000e00000001",
+  "externalCode": "3oKBsRwZigCESI13Mncqq1",
+  "id": "85b4d986-99d6-11ee-ac12-000f0000011c",
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/85b4c65e-99d6-11ee-ac12-000f0000011a/productionrows/85b4d986-99d6-11ee-ac12-000f0000011c",
+    "mediaType": "application/json",
+    "type": "productionrow",
+    "uuidHref": "https://api.moysklad.ru/app/#productionrow/edit?id=85b4d986-99d6-11ee-ac12-000f0000011c"
+  },
+  "name": "example-name",
+  "processingPlan": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/81269542-99d6-11ee-ac12-000f00000115",
+      "mediaType": "application/json",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
+      "type": "processingplan",
+      "uuidHref": "https://api.moysklad.ru/app/#processingplan/edit?id=81269542-99d6-11ee-ac12-000f00000115"
+    }
+  },
+  "productionVolume": 2.0,
+  "updated": "2023-12-13 19:41:53.990"
+}
+```
+
+### Изменить позиции производственного задания
+TODO
+
+### Удалить отдельную позицию производственного задания
+
+Учитывайте, что удалить позицию производсвтенного задания, у которой все этапы завершенные - нельзя
+
+> Запрос на удаление позиции производственного задания с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/85b4c65e-99d6-11ee-ac12-000f0000011a//productionrows/85b4d986-99d6-11ee-ac12-000f0000011c"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешное удаление Производственного задания.
