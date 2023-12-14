@@ -1589,14 +1589,14 @@ curl -X POST
     -d '[
           {
               "meta": {
-                  "href": "http://localhost/api/remap/1.2/entity/processingplan/e435045e-7274-11ee-c0a8-e00e00000030/materials/e43514c2-7274-11ee-c0a8-e00e00000031",
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/e435045e-7274-11ee-c0a8-e00e00000030/materials/e43514c2-7274-11ee-c0a8-e00e00000031",
                   "type": "processingplanmaterial",
                   "mediaType": "application/json"
               }
           },
           {
               "meta": {
-                  "href": "http://localhost/api/remap/1.2/entity/processingplan/e435045e-7274-11ee-c0a8-e00e00000030/materials/d9c4688e-7274-11ee-c0a8-e00e00000025",
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/e435045e-7274-11ee-c0a8-e00e00000030/materials/d9c4688e-7274-11ee-c0a8-e00e00000025",
                   "type": "processingplanmaterial",
                   "mediaType": "application/json"
               }
@@ -2003,14 +2003,14 @@ curl -X POST
     -d '[
           {
               "meta": {
-                  "href": "http://localhost/api/remap/1.2/entity/processingplan/d9c43e3b-7274-11ee-c0a8-e00e00000023/products/270b59e1-7305-11ee-c0a8-e00d00000000",
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d9c43e3b-7274-11ee-c0a8-e00e00000023/products/270b59e1-7305-11ee-c0a8-e00d00000000",
                   "type": "processingplanresult",
                   "mediaType": "application/json"
               }
           },
           {
               "meta": {
-                  "href": "http://localhost/api/remap/1.2/entity/processingplan/d9c43e3b-7274-11ee-c0a8-e00e00000023/products/dd495ae2-7277-11ee-c0a8-e00e00000044",
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d9c43e3b-7274-11ee-c0a8-e00e00000023/products/dd495ae2-7277-11ee-c0a8-e00e00000044",
                   "type": "processingplanresult",
                   "mediaType": "application/json"
               }

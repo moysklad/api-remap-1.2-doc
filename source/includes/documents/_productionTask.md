@@ -1796,7 +1796,7 @@ curl -X GET
     "employee": {
       "meta": {
         "href": "http://api.moysklad.ru/api/remap/1.2/context/employee",
-        "metadataHref": "http://localhostapi.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "metadataHref": "http://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }

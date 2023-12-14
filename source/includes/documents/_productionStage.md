@@ -313,7 +313,7 @@ curl -X GET
             "planQuantity": 2,
             "assortment": {
               "meta": {
-                "href": "http://localhost/api/remap/1.2/entity/product/9656117b-b717-11ec-0с80-0bba0006dcde",
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/9656117b-b717-11ec-0с80-0bba0006dcde",
               }
             }
           }
