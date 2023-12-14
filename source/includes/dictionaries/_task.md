@@ -1181,6 +1181,7 @@ curl -X GET
       "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
       "name": "Встреча",
       "color": 15106326,
+      "stateType": "Regular",
       "entityType": "task"
     },
     {
@@ -1194,6 +1195,7 @@ curl -X GET
       "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
       "name": "Связаться",
       "color": 10667543,
+      "stateType": "Regular",
       "entityType": "task"
     }
   ]
@@ -1238,6 +1240,7 @@ curl -X GET
   "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
   "name": "Встреча",
   "color": 69446,
+  "stateType": "Regular",
   "entityType": "task"
 }
 ```
@@ -1285,6 +1288,7 @@ curl -X GET
   "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
   "name": "Встреча",
   "color": 255,
+  "stateType": "Regular",
   "entityType": "task"
 }
 ```
@@ -1336,6 +1340,7 @@ curl -X GET
     "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
     "name": "Встреча",
     "color": 8767198,
+    "stateType": "Regular",
     "entityType": "task"
   },
   {
@@ -1349,6 +1354,7 @@ curl -X GET
     "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
     "name": "Связаться",
     "color": 34617,
+    "stateType": "Regular",
     "entityType": "task"
   }
 ]
