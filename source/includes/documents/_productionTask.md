@@ -77,6 +77,30 @@
 
 О работе с доп. полями Производственного ряда можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
+#### Продукты Производственного задания
+Объект продукта Производственного задания содержит следующие поля:
+
+| Название             | Тип                                                       | Описание                                                                                                                        |
+|----------------------|:----------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**        | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                            |
+| **id**               | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения`                                                                   |
+| **assortment**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Ссылка на товар/серию/модификацию, которую представляет собой позиция.<br>`+Обязательное при ответе` `+Expand`                  |
+| **standardQuantity** | Float                                                     | Норма продукта согласно техкарте<br>`+Обязательное при ответе`                                                                  |
+| **planQuantity**     | Float                                                     | Запланированное для производства количество продукта <br>`+Обязательное при ответе`                                             |
+| **producedQuantity** | Float                                                     | Произведенное количество продукта<br>`+Обязательное при ответе`                                                                 |
+| **productionRow**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные [позиции Производтсвенного задания](../documents/#dokumenty-proizwodstwennoe-zadanie-pozicii-proizwodstwennogo-zadaniq)<br>`+Обязательное при ответе` `+Expand`    |
+| **costSum**          | Int                                                       | Себестоимость произведенного продукта с учетом стоимости материалов, затрат на производство и оплаты труда `+Только для чтения` |
+
+С продуктами можно работать с помощью специальных ресурсов для управления продуктами Производственных заданий,
+а также в составе отдельного Производственного задания. При работе в составе отдельного Производственного задания,
+вы можете отправлять запросы на создание отдельного Производственного задания с включенным в тело запроса
+массивом продуктов. Если количество продуктов превышает максимально допустимое, то для
+дальнейшего пополнения продуктов нужно будет работать со специальным ресурсом "Продукты Производственного задания".
+Также, при работе в составе отдельного Производственного задания, можно отправлять запросы на обновление списка продуктов
+с включенным в тело запроса массивом продуктов. При этом важно помнить, что коллекция позиций будет
+восприниматься как "все продукты Производственного задания" и полностью заменит уже существующую коллекцию при обновлении объекта - лишние
+продукты будут удалены, новые добавлены, существующие - изменены.
+
 ### Получить список Производственных заданий
 Запрос всех Производственных заданий на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
@@ -1734,6 +1758,379 @@ curl -X GET
 }
 ```
 
+### Продукты Производственного задания
+Отдельный ресурс для управления продуктами Производственного задания. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
+
+### Получить продукты Производственного задания
+Запрос на получение списка всех продуктов данного Производственного задания.
+
+| Название    | Тип                                                       | Описание                                                                       |
+| ----------- | :-------------------------------------------------------- |:-------------------------------------------------------------------------------|
+| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче,                                                           |
+| **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.                                   |
+| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой продукты Производственного задания. |
+
+**Параметры**
+
+| Параметр   | Описание                                                                                                                               |
+| :--------- | :------------------------------------------------------------------------------------------------------------------------------------- |
+| **id**     | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа на производство.                                         |
+| **limit**  | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
+| **offset** | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
+
+> Получить продукты Производственного задания
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/products"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка продуктов отдельного Производственного задания.
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "http://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "http://localhostapi.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "http://api.moysklad.ru/api/remap/1.2?",
+    "type": "productiontaskresult",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 100,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/products/ef45d0b2-214e-11ee-c0a8-d00400000069",
+        "type": "productiontaskresult",
+        "mediaType": "application/json"
+      },
+      "id": "ef45d0b2-214e-11ee-c0a8-d00400000069",
+      "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
+      "assortment": {
+        "meta": {
+          "href": "http://api.moysklad.ru/api/remap/1.2/entity/product/eddc7244-214e-11ee-c0a8-d00400000006",
+          "metadataHref": "http://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json",
+          "uuidHref": "http://api.moysklad.ru/app/#good/edit?id=eddb9773-214e-11ee-c0a8-d00400000004"
+        }
+      },
+      "productionRow": {
+        "meta": {
+          "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionRows/ef45d60f-214e-11ee-c0a8-d0040000006a",
+          "type": "productionrow",
+          "mediaType": "application/json",
+          "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
+        }
+      },
+      "standardQuantity": 2.0,
+      "planQuantity": 2.0,
+      "producedQuantity": 0.0
+    },
+    {
+      "meta": {
+        "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/products/ef45d0b2-214e-11ee-c0a8-d0040000006a",
+        "type": "productiontaskresult",
+        "mediaType": "application/json"
+      },
+      "id": "ef45d0b2-214e-11ee-c0a8-d0040000006a",
+      "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
+      "assortment": {
+        "meta": {
+          "href": "http://api.moysklad.ru/api/remap/1.2/entity/product/eddc7244-214e-11ee-c0a8-d00400000006",
+          "metadataHref": "http://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json",
+          "uuidHref": "http://api.moysklad.ru/app/#good/edit?id=eddb9773-214e-11ee-c0a8-d00400000004"
+        }
+      },
+      "productionRow": {
+        "meta": {
+          "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionRows/ef45d60f-214e-11ee-c0a8-d0040000006a",
+          "type": "productionrow",
+          "mediaType": "application/json",
+          "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
+        }
+      },
+      "standardQuantity": 2.0,
+      "planQuantity": 2.0,
+      "producedQuantity": 0.0
+    }
+  ]
+}
+```
+
+### Продукт Производственного задания
+Отдельный продукт Производственного задания с указанным id позиции.
+
+### Получить продукт
+
+**Параметры**
+
+| Параметр      | Описание                                                                                                   |
+|:--------------|:-----------------------------------------------------------------------------------------------------------|
+| **id**        | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Производственного задания.          |
+| **productID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id продукта Производственного задания. |
+
+> Запрос на получение отдельной позиции Заказа с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/product/ef45d0b2-214e-11ee-c0a8-d00400000069"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление продукта Производственного задания.
+
+```json
+{
+  "meta": {
+    "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/products/ef45d0b2-214e-11ee-c0a8-d00400000069",
+    "type": "productiontaskresult",
+    "mediaType": "application/json"
+  },
+  "id": "ef45d0b2-214e-11ee-c0a8-d00400000069",
+  "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
+  "assortment": {
+    "meta": {
+      "href": "http://api.moysklad.ru/api/remap/1.2/entity/product/eddc7244-214e-11ee-c0a8-d00400000006",
+      "metadataHref": "http://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json",
+      "uuidHref": "http://api.moysklad.ru/app/#good/edit?id=eddb9773-214e-11ee-c0a8-d00400000004"
+    }
+  },
+  "productionRow": {
+    "meta": {
+      "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionRows/ef45d60f-214e-11ee-c0a8-d0040000006a",
+      "type": "productionrow",
+      "mediaType": "application/json",
+      "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
+    }
+  },
+  "standardQuantity": 2.0,
+  "planQuantity": 2.0,
+  "producedQuantity": 1.0,
+  "costSum": 10
+}
+
+```
+
+### Создать продукт
+Запрос на создание продукта Производственного задания. Для успешного создания необходимо в теле запроса указать следующие поля:
+
++ **assortment** - Ссылка на товар/серию/модификацию, которую представляет собой продукт.
++ **planQuantity** - Запланированное для производства количество продукта. Должно быть положительным, иначе возникнет ошибка.
++ **productionRow** - Ссылка на [позицию Производтсвенного задания](../documents/#dokumenty-proizwodstwennoe-zadanie-pozicii-proizwodstwennogo-zadaniq).
+  
+Одновременно можно создать как один, так и несколько продуктов. Все созданные данным запросом продукты будут добавлены к уже существующим.
+
+**Параметры**
+
+| Параметр | Описание                                                                                         |
+| :------- |:-------------------------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Производственного задания.|
+
+```shell
+  curl -X PUT
+    "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/product"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "planQuantity": 22.0,
+            "assortment": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/eeef177f-f648-11e5-8a84-bae50000007a",
+                "type": "product",
+                "mediaType": "application/json"
+              }
+            },
+            "productionRow": {
+              "meta": {
+                "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionRows/ef45d60f-214e-11ee-c0a8-d0040000006a",
+                "type": "productionrow",
+                "mediaType": "application/json",
+                "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
+              }
+            }
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленного продукта Производственного задания.
+
+```json
+{
+  "meta": {
+    "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/products/ef45d0b2-214e-11ee-c0a8-d00400000069",
+    "type": "productiontaskresult",
+    "mediaType": "application/json"
+  },
+  "id": "ef45d0b2-214e-11ee-c0a8-d00400000069",
+  "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
+  "assortment": {
+    "meta": {
+      "href": "http://api.moysklad.ru/api/remap/1.2/entity/product/eddc7244-214e-11ee-c0a8-d00400000006",
+      "metadataHref": "http://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json",
+      "uuidHref": "http://api.moysklad.ru/app/#good/edit?id=eddb9773-214e-11ee-c0a8-d00400000004"
+    }
+  },
+  "productionRow": {
+    "meta": {
+      "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionRows/ef45d60f-214e-11ee-c0a8-d0040000006a",
+      "type": "productionrow",
+      "mediaType": "application/json",
+      "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
+    }
+  },
+  "standardQuantity": 2.0,
+  "planQuantity": 22.0,
+  "producedQuantity": 0.0
+}
+```
+
+### Изменить продукт
+Запрос на обновление продукта Производственного задания. Для обновления продукта нет каких-либо
+обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
+
+**Параметры**
+
+| Параметр      | Описание                                                                                                  |
+|:--------------|:----------------------------------------------------------------------------------------------------------|
+| **id**        | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Производственного задания.         |
+| **productID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id продукта Производственного задания.|
+
+> Пример запроса на обновление продукта Производственного задания.
+
+```shell
+  curl -X PUT
+    "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/product/ef45d0b2-214e-11ee-c0a8-d00400000069"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "planQuantity": 22.0,
+            "assortment": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/eeef177f-f648-11e5-8a84-bae50000007a",
+                "type": "product",
+                "mediaType": "application/json"
+              }
+            }
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленного продукта Производственного задания.
+
+```json
+{
+  "meta": {
+    "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/products/ef45d0b2-214e-11ee-c0a8-d00400000069",
+    "type": "productiontaskresult",
+    "mediaType": "application/json"
+  },
+  "id": "ef45d0b2-214e-11ee-c0a8-d00400000069",
+  "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
+  "assortment": {
+    "meta": {
+      "href": "http://api.moysklad.ru/api/remap/1.2/entity/product/eeef177f-f648-11e5-8a84-bae50000007a",
+      "metadataHref": "http://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json",
+      "uuidHref": "http://api.moysklad.ru/app/#good/edit?id=eddb9773-214e-11ee-c0a8-d00400000004"
+    }
+  },
+  "productionRow": {
+    "meta": {
+      "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionRows/ef45d60f-214e-11ee-c0a8-d0040000006a",
+      "type": "productionrow",
+      "mediaType": "application/json",
+      "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
+    }
+  },
+  "standardQuantity": 2.0,
+  "planQuantity": 22.0,
+  "producedQuantity": 0.0
+}
+```
+
+### Удалить продукт
+
+**Параметры**
+
+| Параметр      | Описание                                                                                                  |
+|:--------------|:----------------------------------------------------------------------------------------------------------|
+| **id**        | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Производственного задания.         |
+| **productID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id продукта Производственного задания.|
+
+> Запрос на удаление продукта Производственного задания с указанным id.
+
+```shell
+curl -X DELETE
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/product/ef45d0b2-214e-11ee-c0a8-d00400000069"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешное удаление продукта Производственного задания.
+
+### Массовое удаление продуктов Производственного задания
+
+**Параметры**
+
+| Параметр       | Описание                                                                                         |
+| :------------- |:-------------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Производственного задания.|
+
+> Запрос на массовое удаление продуктов Производственного задания.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingorder/ef458539-214e-11ee-c0a8-d00400000066/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/products/ef45d0b2-214e-11ee-c0a8-d00400000069",
+            "type": "productiontaskresult",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/products/ef45d0b2-214e-11ee-c0a8-d0040000006a",
+            "type": "productiontaskresult",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление продуктов Производственного задания.
+
 
 ### Позиции производственного задания
 
@@ -1743,7 +2140,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/85b4c65e-99d6-11ee-ac12-000f0000011a//productionrows"
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/85b4c65e-99d6-11ee-ac12-000f0000011a/productionrows"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
