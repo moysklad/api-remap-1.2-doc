@@ -78,15 +78,15 @@ curl -X GET
   "context": {
     "employee": {
       "meta": {
-        "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/context/employee",
-        "metadataHref": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/productionstage/?filter=productionTask%3Dhttps%3A%2F%2Fapi-api-2.testms-test.lognex.ru%2Fapi%2Fremap%2F1.2%2Fentity%2Fproductiontask%2F1906fa20-99d6-11ee-0a83-0a2e00000767",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/?filter=productionTask%3Dhttps%3A%2F%2Fapi.moysklad.ru%2Fapi%2Fremap%2F1.2%2Fentity%2Fproductiontask%2F1906fa20-99d6-11ee-0a83-0a2e00000767",
     "type": "productionstage",
     "mediaType": "application/json",
     "size": 1,
@@ -96,7 +96,7 @@ curl -X GET
   "rows": [
     {
       "meta": {
-        "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/productionstage/19070bfd-99d6-11ee-0a83-0a2e0000076b",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/19070bfd-99d6-11ee-0a83-0a2e0000076b",
         "type": "productionstage",
         "mediaType": "application/json"
       },
@@ -104,25 +104,25 @@ curl -X GET
       "accountId": "4ac40edf-99d4-11ee-0a83-0ded0000002b",
       "stage": {
         "meta": {
-          "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/processingstage/4b3ada86-99d4-11ee-0a83-0a2e0000070e",
-          "metadataHref": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/processingstage/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingstage/4b3ada86-99d4-11ee-0a83-0a2e0000070e",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processingstage/metadata",
           "type": "processingstage",
           "mediaType": "application/json",
-          "uuidHref": "https://online-api-2.testms-test.lognex.ru/app/#processingstage/edit?id=4b3ada86-99d4-11ee-0a83-0a2e0000070e"
+          "uuidHref": "https://api.moysklad.ru/app/#processingstage/edit?id=4b3ada86-99d4-11ee-0a83-0a2e0000070e"
         }
       },
       "productionRow": {
         "meta": {
-          "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/productiontask/1906fa20-99d6-11ee-0a83-0a2e00000767/productionrows/19070a2e-99d6-11ee-0a83-0a2e0000076a",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/1906fa20-99d6-11ee-0a83-0a2e00000767/productionrows/19070a2e-99d6-11ee-0a83-0a2e0000076a",
           "type": "productionrow",
           "mediaType": "application/json",
-          "uuidHref": "https://online-api-2.testms-test.lognex.ru/app/#productionrow/edit?id=19070a2e-99d6-11ee-0a83-0a2e0000076a"
+          "uuidHref": "https://api.moysklad.ru/app/#productionrow/edit?id=19070a2e-99d6-11ee-0a83-0a2e0000076a"
         }
       },
       "status": "BLOCKED",
       "materials": {
         "meta": {
-          "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/productionstage/19070bfd-99d6-11ee-0a83-0a2e0000076b/materials",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/19070bfd-99d6-11ee-0a83-0a2e0000076b/materials",
           "type": "productiontaskmaterial",
           "mediaType": "application/json",
           "size": 2,
@@ -171,7 +171,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/productionstage/19070bfd-99d6-11ee-0a83-0a2e0000076b",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/19070bfd-99d6-11ee-0a83-0a2e0000076b",
     "type": "productionstage",
     "mediaType": "application/json"
   },
@@ -179,25 +179,25 @@ curl -X GET
   "accountId": "4ac40edf-99d4-11ee-0a83-0ded0000002b",
   "stage": {
     "meta": {
-      "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/processingstage/4b3ada86-99d4-11ee-0a83-0a2e0000070e",
-      "metadataHref": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/processingstage/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingstage/4b3ada86-99d4-11ee-0a83-0a2e0000070e",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processingstage/metadata",
       "type": "processingstage",
       "mediaType": "application/json",
-      "uuidHref": "https://online-api-2.testms-test.lognex.ru/app/#processingstage/edit?id=4b3ada86-99d4-11ee-0a83-0a2e0000070e"
+      "uuidHref": "https://api.moysklad.ru/app/#processingstage/edit?id=4b3ada86-99d4-11ee-0a83-0a2e0000070e"
     }
   },
   "productionRow": {
     "meta": {
-      "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/productiontask/1906fa20-99d6-11ee-0a83-0a2e00000767/productionrows/19070a2e-99d6-11ee-0a83-0a2e0000076a",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/1906fa20-99d6-11ee-0a83-0a2e00000767/productionrows/19070a2e-99d6-11ee-0a83-0a2e0000076a",
       "type": "productionrow",
       "mediaType": "application/json",
-      "uuidHref": "https://online-api-2.testms-test.lognex.ru/app/#productionrow/edit?id=19070a2e-99d6-11ee-0a83-0a2e0000076a"
+      "uuidHref": "https://api.moysklad.ru/app/#productionrow/edit?id=19070a2e-99d6-11ee-0a83-0a2e0000076a"
     }
   },
   "status": "BLOCKED",
   "materials": {
     "meta": {
-      "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/productionstage/19070bfd-99d6-11ee-0a83-0a2e0000076b/materials",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/19070bfd-99d6-11ee-0a83-0a2e0000076b/materials",
       "type": "productiontaskmaterial",
       "mediaType": "application/json",
       "size": 2,
@@ -249,15 +249,15 @@ curl -X GET
   "context": {
     "employee": {
       "meta": {
-        "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/context/employee",
-        "metadataHref": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/employee/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json"
       }
     }
   },
   "meta": {
-    "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/productionstage/7944ef04-f831-11e5-7a69-971500188b19/materials",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/7944ef04-f831-11e5-7a69-971500188b19/materials",
     "type": "productiontaskmaterial",
     "mediaType": "application/json",
     "size": 1,
@@ -267,7 +267,7 @@ curl -X GET
   "rows": [
     {
       "meta": {
-        "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/productionstage/7944ef04-f831-11e5-7a69-971500188b19/materials/190703d7-99d6-11ee-0a83-0a2e00000768",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/7944ef04-f831-11e5-7a69-971500188b19/materials/190703d7-99d6-11ee-0a83-0a2e00000768",
         "type": "productiontaskmaterial",
         "mediaType": "application/json"
       },
@@ -276,11 +276,11 @@ curl -X GET
       "planQuantity": 1.0,
       "assortment": {
         "meta": {
-          "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/product/db82710a-99d5-11ee-0a83-0a2e0000072d",
-          "metadataHref": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/product/metadata",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/db82710a-99d5-11ee-0a83-0a2e0000072d",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "product",
           "mediaType": "application/json",
-          "uuidHref": "https://online-api-2.testms-test.lognex.ru/app/#good/edit?id=db82468b-99d5-11ee-0a83-0a2e0000072b"
+          "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=db82468b-99d5-11ee-0a83-0a2e0000072b"
         }
       }
     }
@@ -326,7 +326,7 @@ curl -X GET
 [
   {
     "meta": {
-      "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/productionstage/7944ef04-f831-11e5-7a69-971500188b19/materials/34f6344f-015e-11e6-9464-e4de0000006c",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/7944ef04-f831-11e5-7a69-971500188b19/materials/34f6344f-015e-11e6-9464-e4de0000006c",
       "type": "productiontaskmaterial",
       "mediaType": "application/json"
     },
@@ -335,11 +335,11 @@ curl -X GET
     "planQuantity": 5.0,
     "assortment": {
       "meta": {
-        "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/product/9656117b-b717-11ec-0с80-0bba0006dcde",
-        "metadataHref": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/product/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/9656117b-b717-11ec-0с80-0bba0006dcde",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "product",
         "mediaType": "application/json",
-        "uuidHref": "https://online-api-2.testms-test.lognex.ru/app/#good/edit?id=57c98e8c-99d8-11ee-0a83-0a2e00000771"
+        "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=57c98e8c-99d8-11ee-0a83-0a2e00000771"
       }
     }
   }
@@ -368,7 +368,7 @@ curl -X GET
             "planQuantity": 3,
             "assortment": {
               "meta": {
-                "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/product/57c9a841-99d8-11ee-0a83-0a2e00000773",
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/57c9a841-99d8-11ee-0a83-0a2e00000773",
                 "type": "product"
               }
             }
@@ -382,7 +382,7 @@ curl -X GET
 ```json
   {
     "meta": {
-      "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/productionstage/7944ef04-f831-11e5-7a69-971500188b19/materials/34f6344f-015e-11e6-9464-e4de0000006c",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/7944ef04-f831-11e5-7a69-971500188b19/materials/34f6344f-015e-11e6-9464-e4de0000006c",
       "type": "productiontaskmaterial",
       "mediaType": "application/json"
     },
@@ -391,11 +391,11 @@ curl -X GET
     "planQuantity": 3.0,
     "assortment": {
       "meta": {
-        "href": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/product/57c9a841-99d8-11ee-0a83-0a2e00000773",
-        "metadataHref": "https://api-api-2.testms-test.lognex.ru/api/remap/1.2/entity/product/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/57c9a841-99d8-11ee-0a83-0a2e00000773",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "product",
         "mediaType": "application/json",
-        "uuidHref": "https://online-api-2.testms-test.lognex.ru/app/#good/edit?id=57c98e8c-99d8-11ee-0a83-0a2e00000358"
+        "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=57c98e8c-99d8-11ee-0a83-0a2e00000358"
       }
     }
   }

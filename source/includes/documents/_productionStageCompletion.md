@@ -81,7 +81,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
         "type": "productionstagecompletion",
         "mediaType": "application/json",
-        "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=01ff6808-95de-11ee-0a81-072300000136"
+        "uuidHref": "https://api.moysklad.ru/app/#productionstagecompletion/edit?id=01ff6808-95de-11ee-0a81-072300000136"
       },
       "id": "01ff6808-95de-11ee-0a81-072300000136",
       "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
@@ -91,7 +91,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
-          "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+          "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
         }
       },
       "shared": false,
@@ -146,7 +146,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
         "type": "productionstagecompletion",
         "mediaType": "application/json",
-        "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=19b3bb62-9807-11ee-0a81-07230000030e"
+        "uuidHref": "https://api.moysklad.ru/app/#productionstagecompletion/edit?id=19b3bb62-9807-11ee-0a81-07230000030e"
       },
       "id": "19b3bb62-9807-11ee-0a81-07230000030e",
       "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
@@ -156,7 +156,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
-          "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+          "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
         }
       },
       "shared": false,
@@ -211,7 +211,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
         "type": "productionstagecompletion",
         "mediaType": "application/json",
-        "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=4c65602d-97f5-11ee-0a81-0723000001e1"
+        "uuidHref": "https://api.moysklad.ru/app/#productionstagecompletion/edit?id=4c65602d-97f5-11ee-0a81-0723000001e1"
       },
       "id": "4c65602d-97f5-11ee-0a81-0723000001e1",
       "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
@@ -221,7 +221,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
-          "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+          "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
         }
       },
       "shared": false,
@@ -276,7 +276,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
         "type": "productionstagecompletion",
         "mediaType": "application/json",
-        "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=68c6559a-980b-11ee-0a81-072300000358"
+        "uuidHref": "https://api.moysklad.ru/app/#productionstagecompletion/edit?id=68c6559a-980b-11ee-0a81-072300000358"
       },
       "id": "68c6559a-980b-11ee-0a81-072300000358",
       "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
@@ -286,7 +286,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
-          "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+          "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
         }
       },
       "shared": false,
@@ -341,7 +341,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
         "type": "productionstagecompletion",
         "mediaType": "application/json",
-        "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=6d87056d-9809-11ee-0a83-0717000000a2"
+        "uuidHref": "https://api.moysklad.ru/app/#productionstagecompletion/edit?id=6d87056d-9809-11ee-0a83-0717000000a2"
       },
       "id": "6d87056d-9809-11ee-0a83-0717000000a2",
       "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
@@ -351,7 +351,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
-          "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+          "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
         }
       },
       "shared": false,
@@ -443,7 +443,7 @@ curl -X GET
     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
     "type": "productionstagecompletion",
     "mediaType": "application/json",
-    "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=01ff6808-95de-11ee-0a81-072300000136"
+    "uuidHref": "https://api.moysklad.ru/app/#productionstagecompletion/edit?id=01ff6808-95de-11ee-0a81-072300000136"
   },
   "id": "01ff6808-95de-11ee-0a81-072300000136",
   "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
@@ -453,7 +453,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json",
-      "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+      "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
     }
   },
   "shared": false,
@@ -555,7 +555,7 @@ curl -X GET
     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
     "type": "productionstagecompletion",
     "mediaType": "application/json",
-    "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=01ff6808-95de-11ee-0a81-072300000136"
+    "uuidHref": "https://api.moysklad.ru/app/#productionstagecompletion/edit?id=01ff6808-95de-11ee-0a81-072300000136"
   },
   "id": "01ff6808-95de-11ee-0a81-072300000136",
   "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
@@ -565,7 +565,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json",
-      "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+      "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
     }
   },
   "shared": false,
@@ -666,7 +666,7 @@ curl -X GET
                 "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
                 "type": "productionstagecompletion",
                 "mediaType": "application/json",
-                "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=01ff6808-95de-11ee-0a81-072300000136"
+                "uuidHref": "https://api.moysklad.ru/app/#productionstagecompletion/edit?id=01ff6808-95de-11ee-0a81-072300000136"
               },
               "name": "000034",
               "productionVolume": 5
@@ -685,7 +685,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
       "type": "productionstagecompletion",
       "mediaType": "application/json",
-      "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=01ff6808-95de-11ee-0a81-072300000136"
+      "uuidHref": "https://api.moysklad.ru/app/#productionstagecompletion/edit?id=01ff6808-95de-11ee-0a81-072300000136"
     },
     "id": "01ff6808-95de-11ee-0a81-072300000136",
     "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
@@ -695,7 +695,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json",
-        "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+        "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
       }
     },
     "shared": false,
@@ -750,7 +750,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
       "type": "productionstagecompletion",
       "mediaType": "application/json",
-      "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=19b3bb62-9807-11ee-0a81-07230000030e"
+      "uuidHref": "https://api.moysklad.ru/app/#productionstagecompletion/edit?id=19b3bb62-9807-11ee-0a81-07230000030e"
     },
     "id": "19b3bb62-9807-11ee-0a81-07230000030e",
     "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
@@ -760,7 +760,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json",
-        "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+        "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
       }
     },
     "shared": false,
@@ -905,7 +905,7 @@ curl -X GET
     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
     "type": "productionstagecompletion",
     "mediaType": "application/json",
-    "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=7944ef04-f831-11e5-7a69-971500188b19"
+    "uuidHref": "https://api.moysklad.ru/app/#productionstagecompletion/edit?id=7944ef04-f831-11e5-7a69-971500188b19"
   },
   "id": "01ff6808-95de-11ee-0a81-072300000136",
   "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
@@ -915,7 +915,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json",
-      "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+      "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
     }
   },
   "shared": false,
@@ -1001,7 +1001,7 @@ curl -X GET
     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
     "type": "productionstagecompletion",
     "mediaType": "application/json",
-    "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#productionstagecompletion/edit?id=7944ef04-f831-11e5-7a69-971500188b19"
+    "uuidHref": "https://api.moysklad.ru/app/#productionstagecompletion/edit?id=7944ef04-f831-11e5-7a69-971500188b19"
   },
   "id": "01ff6808-95de-11ee-0a81-072300000136",
   "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
@@ -1011,7 +1011,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json",
-      "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+      "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
     }
   },
   "shared": false,
