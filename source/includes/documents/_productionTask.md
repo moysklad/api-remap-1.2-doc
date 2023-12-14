@@ -2192,7 +2192,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/85b4c65e-99d6-11ee-ac12-000f0000011a//productionrows"
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/85b4c65e-99d6-11ee-ac12-000f0000011a/productionrows"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
@@ -2227,7 +2227,66 @@ curl -X GET
 ```
 
 ### Изменить позиции производственного задания
-TODO
+Запрос на обновление отдельной позиции Производственного задания. Изменить можно только объём производства.
+
+**Параметры**
+
+| Параметр       | Описание                                                                                                  |
+| :------------- |:----------------------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: e66dd4ab-9a5c-11ee-0a83-0a2e0000090d* id Производственное задание.          |
+| **positionID** | `string` (required) *Example: e66de5ff-9a5c-11ee-0a83-0a2e00000910* id позиции Производственного задания. |
+
+
+> Пример запроса на обновление позиции у Производственного задания.
+
+```shell
+  curl -X PUT
+    "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/e66dd4ab-9a5c-11ee-0a83-0a2e0000090d/productionrows/e66de5ff-9a5c-11ee-0a83-0a2e00000910"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{ 
+            "processingPlan": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/e296b1de-9a5c-11ee-0a83-0a2e00000907",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
+                    "type": "processingplan",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#processingplan/edit?id=e296b1de-9a5c-11ee-0a83-0a2e00000907"
+                }
+            },
+            "productionVolume": 5.0
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленной позиции Производственного задания.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/e66dd4ab-9a5c-11ee-0a83-0a2e0000090d/productionrows/e66de5ff-9a5c-11ee-0a83-0a2e00000910",
+    "type": "productionrow",
+    "mediaType": "application/json",
+    "uuidHref": "https://api.moysklad.ru/app/#productionrow/edit?id=e66de5ff-9a5c-11ee-0a83-0a2e00000910"
+  },
+  "id": "e66de5ff-9a5c-11ee-0a83-0a2e00000910",
+  "accountId": "0b3bcfb6-9a4d-11ee-0a83-0ded00000036",
+  "updated": "2023-12-14 11:43:48.850",
+  "name": "00001-1",
+  "externalCode": "gDY0RMzyjwSTivwJTczyl0",
+  "processingPlan": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/e296b1de-9a5c-11ee-0a83-0a2e00000907",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
+      "type": "processingplan",
+      "mediaType": "application/json",
+      "uuidHref": "https://api.moysklad.ru/app/#processingplan/edit?id=e296b1de-9a5c-11ee-0a83-0a2e00000907"
+    }
+  },
+  "productionVolume": 5.0
+}
+```
 
 ### Удалить отдельную позицию производственного задания
 
