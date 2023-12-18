@@ -1321,7 +1321,7 @@ curl -X GET
 ### Изменить Производственное задание
 Запрос на обновление Производственного задания с указанным id.
 В теле запроса можно указать только те поля, которые необходимо изменить у Производственного задания, кроме тех, что
-помечены `Только для чтения` в описании [атрибутов Производственного задания]().
+помечены `Только для чтения` в описании [атрибутов Производственного задания](#dokumenty-proizwodstwennoe-zadanie).
 
 **Параметры**
 
@@ -1791,34 +1791,36 @@ curl -X GET
 | :------- |:-------------------------------------------------------------------------------------------------|
 | **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Производственного задания.|
 
+> Пример запроса на создание продукта Производственного задания.
+
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/product"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
-      -d '{
-            "planQuantity": 22.0,
-            "assortment": {
-              "meta": {
-                "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/eeef177f-f648-11e5-8a84-bae50000007a",
-                "type": "product",
-                "mediaType": "application/json"
-              }
-            },
-            "productionRow": {
-              "meta": {
-                "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionRows/ef45d60f-214e-11ee-c0a8-d0040000006a",
-                "type": "productionrow",
-                "mediaType": "application/json",
-                "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
-              }
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/product"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+    -d '{
+          "planQuantity": 22.0,
+          "assortment": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/eeef177f-f648-11e5-8a84-bae50000007a",
+              "type": "product",
+              "mediaType": "application/json"
             }
-          }'  
+          },
+          "productionRow": {
+            "meta": {
+              "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionRows/ef45d60f-214e-11ee-c0a8-d0040000006a",
+              "type": "productionrow",
+              "mediaType": "application/json",
+              "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
+            }
+          }
+        }'  
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление обновленного продукта Производственного задания.
+Успешный запрос. Результат - JSON представление созданного продукта Производственного задания.
 
 ```json
 {
@@ -1866,21 +1868,21 @@ curl -X GET
 > Пример запроса на обновление продукта Производственного задания.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/products/ef45d0b2-214e-11ee-c0a8-d00400000069"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
-      -d '{
-            "planQuantity": 22.0,
-            "assortment": {
-              "meta": {
-                "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/eeef177f-f648-11e5-8a84-bae50000007a",
-                "type": "product",
-                "mediaType": "application/json"
-              }
+curl -X PUT
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/products/ef45d0b2-214e-11ee-c0a8-d00400000069"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+    -d '{
+          "planQuantity": 22.0,
+          "assortment": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/eeef177f-f648-11e5-8a84-bae50000007a",
+              "type": "product",
+              "mediaType": "application/json"
             }
-          }'  
+          }
+        }'  
 ```
 
 > Response 200 (application/json)
@@ -2091,15 +2093,6 @@ curl -X GET
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{ 
-            "processingPlan": {
-                "meta": {
-                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/e296b1de-9a5c-11ee-0a83-0a2e00000907",
-                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
-                    "type": "processingplan",
-                    "mediaType": "application/json",
-                    "uuidHref": "https://api.moysklad.ru/app/#processingplan/edit?id=e296b1de-9a5c-11ee-0a83-0a2e00000907"
-                }
-            },
             "productionVolume": 5.0
           }'  
 ```
