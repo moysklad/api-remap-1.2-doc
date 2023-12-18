@@ -19,9 +19,9 @@
 | **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Владелец (Сотрудник)<br>`+Expand`                                                                                  |
 | **performer**           | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Исполнитель (Сотрудник)<br>`+Expand`                                                                               |
 | **processingUnitCost**  | Double                                                    |            | Затраты на единицу объема производства<br>`+Обязательное при ответе`                                               |
-| **productionStage**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Производственный этап<br>`+Expand`                                                                                 |
+| **productionStage**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | [Производственный этап](#dokumenty-proizwodstwennyj-atap)<br>`+Expand`                                             |
 | **productionVolume**    | Double                                                    |            | Объем производства.`+Обязательное при ответе`                                                                      |
-| **products**            | MetaArray                                                 |            | Метаданные продуктов Выполнения этапа<br>`+Expand`                                                          |
+| **products**            | MetaArray                                                 |            | Метаданные продуктов Выполнения этапа<br>`+Expand`                                                                 |
 | **shared**              | Boolean                                                   |            | Общий доступ<br>`+Обязательное при ответе`                                                                         |
 | **updated**             | DateTime                                                  |            | Момент последнего обновления Выполнения производственного этапа<br>`+Обязательное при ответе` `+Только для чтения` |
 
@@ -599,7 +599,7 @@ curl -X GET
     }
   },
   "updated": "2023-12-08 18:25:24.325",
-  "name": "00001",
+  "name": "000034",
   "externalCode": "EnuNEmG2jyUF4t9tgPQk72",
   "moment": "2016-04-19 13:50:24",
   "created": "2023-12-08 18:25:24.386",
@@ -888,7 +888,7 @@ curl -X POST
         },
         {
             "meta": {
-                "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000136",
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000147",
                 "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
                 "type": "productionstagecompletion",
                 "mediaType": "application/json",
@@ -905,7 +905,7 @@ curl -X POST
     "info":"Сущность 'productionstagecompletion' с UUID: 01ff6808-95de-11ee-0a81-072300000136 успешно удалена"
   },
   {
-    "info":"Сущность 'productionstagecompletion' с UUID: 01ff6808-95de-11ee-0a81-072300000136 успешно удалена"
+    "info":"Сущность 'productionstagecompletion' с UUID: 01ff6808-95de-11ee-0a81-072300000147 успешно удалена"
   }
 ]
 ```
@@ -939,7 +939,7 @@ curl -X GET
     "mediaType": "application/json",
     "uuidHref": "https://api.moysklad.ru/app/#productionstagecompletion/edit?id=7944ef04-f831-11e5-7a69-971500188b19"
   },
-  "id": "01ff6808-95de-11ee-0a81-072300000136",
+  "id": "7944ef04-f831-11e5-7a69-971500188b19",
   "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
   "owner": {
     "meta": {
