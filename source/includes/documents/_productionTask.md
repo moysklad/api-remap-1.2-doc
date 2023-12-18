@@ -80,16 +80,16 @@
 #### Продукты Производственного задания
 Объект продукта Производственного задания содержит следующие поля:
 
-| Название             | Тип                                                       | Описание                                                                                                                        |
-|----------------------|:----------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**        | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                            |
-| **id**               | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения`                                                                   |
-| **assortment**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Ссылка на товар/серию/модификацию, которую представляет собой позиция.<br>`+Обязательное при ответе` `+Expand`                  |
-| **standardQuantity** | Float                                                     | Норма продукта согласно техкарте<br>`+Обязательное при ответе`                                                                  |
-| **planQuantity**     | Float                                                     | Запланированное для производства количество продукта <br>`+Обязательное при ответе`                                             |
-| **producedQuantity** | Float                                                     | Произведенное количество продукта<br>`+Обязательное при ответе`                                                                 |
-| **productionRow**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные [позиции Производтсвенного задания](../documents/#dokumenty-proizwodstwennoe-zadanie-pozicii-proizwodstwennogo-zadaniq)<br>`+Обязательное при ответе` `+Expand`    |
-| **costSum**          | Int                                                       | Себестоимость произведенного продукта с учетом стоимости материалов, затрат на производство и оплаты труда `+Только для чтения` |
+| Название             | Тип                                                       | Описание                                                                                                                                                                   |
+|----------------------|:----------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**        | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                       |
+| **assortment**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Ссылка на товар/серию/модификацию, которую представляет собой позиция.<br>`+Обязательное при ответе` `+Expand`                                                             |
+| **costSum**          | Int                                                       | Себестоимость произведенного продукта с учетом стоимости материалов, затрат на производство и оплаты труда `+Только для чтения`                                            |
+| **id**               | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                              |
+| **standardQuantity** | Float                                                     | Норма продукта согласно техкарте<br>`+Обязательное при ответе`                                                                                                             |
+| **planQuantity**     | Float                                                     | Запланированное для производства количество продукта <br>`+Обязательное при ответе`                                                                                        |
+| **producedQuantity** | Float                                                     | Произведенное количество продукта<br>`+Обязательное при ответе`                                                                                                            |
+| **productionRow**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные [позиции Производственного задания](../documents/#dokumenty-proizwodstwennoe-zadanie-pozicii-proizwodstwennogo-zadaniq)<br>`+Обязательное при ответе` `+Expand` |
 
 С продуктами можно работать с помощью специальных ресурсов для управления продуктами Производственных заданий,
 а также в составе отдельного Производственного задания. При работе в составе отдельного Производственного задания,
@@ -1247,7 +1247,7 @@ curl -X GET
   },
   "updated": "2023-12-12 16:06:44.284",
   "name": "00003",
-  "description": "тестовое производственное задание на обнавление",
+  "description": "тестовое производственное задание на обновление",
   "code": "test-code-123",
   "externalCode": "954102345",
   "moment": "2023-12-12 13:39:00.000",
@@ -1338,7 +1338,7 @@ curl -X GET
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
-            "description": "тестовое производственное задание на обнавление",
+            "description": "тестовое производственное задание на обновление",
             "productionRows": [
                 {
                     "processingPlan": {
@@ -1390,7 +1390,7 @@ curl -X GET
   },
   "updated": "2023-12-12 16:06:44.284",
   "name": "00003",
-  "description": "тестовое производственное задание на обнавление",
+  "description": "тестовое производственное задание на обновление",
   "code": "test-code-123",
   "externalCode": "954102345",
   "moment": "2023-12-12 13:39:00.000",
@@ -1734,7 +1734,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/product/ef45d0b2-214e-11ee-c0a8-d00400000069"
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/products/ef45d0b2-214e-11ee-c0a8-d00400000069"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
@@ -1792,7 +1792,7 @@ curl -X GET
 | **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Производственного задания.|
 
 ```shell
-  curl -X PUT
+  curl -X POST
     "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/product"
     -H "Authorization: Basic <Credentials>"
     -H "Accept-Encoding: gzip"
@@ -1867,7 +1867,7 @@ curl -X GET
 
 ```shell
   curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/product/ef45d0b2-214e-11ee-c0a8-d00400000069"
+    "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/products/ef45d0b2-214e-11ee-c0a8-d00400000069"
     -H "Authorization: Basic <Credentials>"
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
@@ -1931,7 +1931,7 @@ curl -X GET
 
 ```shell
 curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/product/ef45d0b2-214e-11ee-c0a8-d00400000069"
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/products/ef45d0b2-214e-11ee-c0a8-d00400000069"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
@@ -1951,7 +1951,7 @@ curl -X DELETE
 
 ```shell
 curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingorder/ef458539-214e-11ee-c0a8-d00400000066/positions/delete"
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/products/delete"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
   -H "Content-Type: application/json"
@@ -1985,7 +1985,7 @@ curl -X POST
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/85b4c65e-99d6-11ee-ac12-000f0000011a/productionrows"
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/85b4c65e-99d6-11ee-ac12-000f0000011a/productionrows/85b4d986-99d6-11ee-ac12-000f0000011c"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
@@ -2135,13 +2135,13 @@ curl -X GET
 
 ### Удалить отдельную позицию производственного задания
 
-Учитывайте, что удалить позицию производсвтенного задания, у которой все этапы завершенные - нельзя
+Учитывайте, что удалить позицию производственного задания, у которой есть начатые этапы - нельзя
 
 > Запрос на удаление позиции производственного задания с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/85b4c65e-99d6-11ee-ac12-000f0000011a//productionrows/85b4d986-99d6-11ee-ac12-000f0000011c"
+curl -X DELETE
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/85b4c65e-99d6-11ee-ac12-000f0000011a/productionrows/85b4d986-99d6-11ee-ac12-000f0000011c"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```

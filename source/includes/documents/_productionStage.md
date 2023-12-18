@@ -14,14 +14,14 @@
 | **accountId**          | UUID                                                      |            | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                      |
 | **id**                 | UUID                                                      |            | ID Заказа на производство<br>`+Обязательное при ответе` `+Только для чтения`                              |
 | **meta**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Метаданные Производственного этапа<br>`+Обязательное при ответе` `+Только для чтения`                     |
-| **labourUnitCost**     | Double                                                    |            | Затраты на оплату труда за единицу продукции<br>                                                                               |
+| **labourUnitCost**     | Double                                                    |            | Затраты на оплату труда за единицу объема производства<br>                                                |
 | **materials**          | MetaArray                                                 |            | Метаданные материалов Производственного этапа<br>`+Обязательное при ответе`                               |
 | **orderingPosition**   | Int                                                       |            | Индекс Производственного этапа в Производственном ряде<br>`+Обязательное при ответе` `+Только для чтения` |
 | **stage**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Метаданные Этапа производства<br>`+Expand` `+Обязательное при ответе` `+Только для чтения`                |
 | **status**             | Enum                                                      | `=` `!=`   | Статус<br>`+Обязательное при ответе` `+Только для чтения`                                                 |
 | **productionRow**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Метаданные Производственного ряда<br>`+Expand` `+Обязательное при ответе` `+Только для чтения`            |
 | **productionVolume**   | Double                                                    |            | Объем Производственного этапа. Соответствует объему производственного ряда<br>`+Только для чтения`        |
-| **processingUnitCost** | Double                                                    |            | Затраты на производство единицы продукции<br>                                                                               |
+| **processingUnitCost** | Double                                                    |            | Затраты на единицу объема производства<br>                                                                |
 
 #### Возможные значения поля **status**
 
@@ -159,7 +159,6 @@ curl -X GET
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
-            "productionVolume": 2.0,
             "processingUnitCost": 70.0,
             "labourUnitCost": 30.5
           }'  
@@ -292,8 +291,9 @@ curl -X GET
 Запрос на добавление материала к Производственному этапу.
 
 Для успешного создания необходимо в теле запроса указать следующие поля:
-+ **assortment** - Ссылка на товар/модификацию/серию, которую представляет собой материал.
-+ **planQuantity** - планируемое количество затраченных товаров или модификаций.
+
++ **assortment** - ссылка на товар/модификацию/серию, которую представляет собой материал.
++ **planQuantity** - планируемое количество.
 
 **Параметры**
 
@@ -314,6 +314,10 @@ curl -X GET
             "assortment": {
               "meta": {
                 "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/9656117b-b717-11ec-0с80-0bba0006dcde",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                "type": "product",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=466222d6-c1c8-11ea-c0a8-f00c00000018"
               }
             }
           }
@@ -369,7 +373,10 @@ curl -X GET
             "assortment": {
               "meta": {
                 "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/57c9a841-99d8-11ee-0a83-0a2e00000773",
-                "type": "product"
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                "type": "product",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=466222d6-c1c8-11ea-c0a8-f00c00000018"
               }
             }
           }
