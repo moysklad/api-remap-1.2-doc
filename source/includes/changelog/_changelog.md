@@ -151,7 +151,7 @@
 
 ### 21-12-2023
 #### Добавлена
-- Ошибка [68000](../#mojsklad-json-api-oshibki-kody-oshibok-akkauntow)
+- Ошибка [3035](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
 
 ### 27-11-2023
 #### Изменено

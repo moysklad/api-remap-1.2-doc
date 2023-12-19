@@ -3,7 +3,7 @@
 
 ## 21-12-2023
 ### Добавлена
-- Ошибка [68000](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-akkauntow)
+- Ошибка [3035](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
 
 ## 27-11-2023
 ### Изменено
