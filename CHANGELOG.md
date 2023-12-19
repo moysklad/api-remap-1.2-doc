@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 21-12-2023
+### Добавлена
+- Ошибка [68000](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-akkauntow)
+
 ## 27-11-2023
 ### Изменено
 - Приведение документации обязательности полей у [Договора](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-dogowor) в корректное состояние
