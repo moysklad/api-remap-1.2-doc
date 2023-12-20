@@ -19,7 +19,7 @@
 | **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Владелец (Сотрудник)<br>`+Expand`                                                                                  |
 | **performer**           | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Исполнитель (Сотрудник)<br>`+Expand`                                                                               |
 | **processingUnitCost**  | Double                                                    |            | Затраты на единицу объема производства<br>`+Обязательное при ответе`                                               |
-| **productionStage**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | [Производственный этап](#dokumenty-proizwodstwennyj-atap)<br>`+Expand`                                             |
+| **productionStage**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | [Производственный этап](#dokumenty-proizwodstwennoe-zadanie-proizwodstwennyj-atap)<br>`+Expand`                    |
 | **productionVolume**    | Double                                                    |            | Объем производства.`+Обязательное при ответе`                                                                      |
 | **products**            | MetaArray                                                 |            | Метаданные продуктов Выполнения этапа<br>`+Expand`                                                                 |
 | **shared**              | Boolean                                                   |            | Общий доступ<br>`+Обязательное при ответе`                                                                         |
