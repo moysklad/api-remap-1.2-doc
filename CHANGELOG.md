@@ -3,7 +3,7 @@
 
 ## 19-12-2023
 ### Изменено
-- Сущность [Тип задачи](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha-tip-zadachi)
+- Добавлено поле `state` в [Задачу](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha) - сущность [Тип задачи](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha-tip-zadachi)
 
 ## 27-11-2023
 ### Изменено
