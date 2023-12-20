@@ -149,6 +149,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 20-12-2023
+#### Добавлено
+- Эндпоинт [Серийные номера](../dictionaries/#suschnosti-serijnye-nomera)
+
 ### 28-11-2023
 #### Добавлено
 - Поле `showBeerOnTap` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), настройка отображения вскрытых кегов на кассе
