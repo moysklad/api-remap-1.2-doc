@@ -151,7 +151,7 @@
 
 ### 21-12-2023
 #### Добавлено
-- Поле `materialProcessingPlan` в [Техкарту](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta), техкарта для материала
+- Поле `materialProcessingPlan` в [Техкарту](../dictionaries/#suschnosti-tehkarta), техкарта для материала
 
 ### 28-11-2023
 #### Добавлено
