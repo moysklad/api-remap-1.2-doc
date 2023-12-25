@@ -1,16 +1,16 @@
 ## Производственное задание
-### Производственное задание
 
 Средствами JSON API можно обновлять сведения о Производственных заданиях, запрашивать списки Производственных заданий
-и сведения по отдельным Производственным заданиям. 
-Позициями Производственных заданий можно управлять как в составе отдельного Производственного задания, так и отдельно 
-- с помощью специальных ресурсов для управления позициями Производственных заданий. Кодом сущности для Производственных 
-заданий в составе JSON API является ключевое слово **productiontask**. 
-Больше о Производстве и Производственном задании и работе с ними в основном интерфейсе вы можете прочитать в нашей 
-службе поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/16929256771857-%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5).
+и сведения по отдельным Производственным заданиям.
+Позициями Производственных заданий можно управлять как в составе отдельного Производственного задания, так и отдельно
+- с помощью специальных ресурсов для управления позициями Производственных заданий. Кодом сущности для Производственных
+  заданий в составе JSON API является ключевое слово **productiontask**.
+  Больше о Производстве и Производственном задании и работе с ними в основном интерфейсе вы можете прочитать в нашей
+  службе поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/16929256771857-%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5).
 
 Работа с производственными этапами описана в [отдельном разделе](#dokumenty-proizwodstwennoe-zadanie-proizwodstwennyj-atap).
 
+### Производственное задание
 #### Атрибуты сущности
 
 | Название                  | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                      |
@@ -82,16 +82,16 @@
 #### Продукты Производственного задания
 Объект продукта Производственного задания содержит следующие поля:
 
-| Название             | Тип                                                       | Описание                                                                                                                                                                   |
-|----------------------|:----------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**        | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                       |
-| **assortment**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Ссылка на товар/серию/модификацию, которую представляет собой позиция.<br>`+Обязательное при ответе` `+Expand`                                                             |
-| **costSum**          | Int                                                       | Себестоимость произведенного продукта с учетом стоимости материалов, затрат на производство и оплаты труда `+Только для чтения`                                            |
-| **id**               | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                              |
-| **standardQuantity** | Float                                                     | Норма продукта согласно техкарте<br>`+Обязательное при ответе`                                                                                                             |
-| **planQuantity**     | Float                                                     | Запланированное для производства количество продукта <br>`+Обязательное при ответе`                                                                                        |
-| **producedQuantity** | Float                                                     | Произведенное количество продукта<br>`+Обязательное при ответе`                                                                                                            |
-| **productionRow**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные [позиции Производственного задания](../documents/#dokumenty-proizwodstwennoe-zadanie-pozicii-proizwodstwennogo-zadaniq)<br>`+Обязательное при ответе` `+Expand` |
+| Название             | Тип                                                       | Описание                                                                                                                                                                                       |
+|----------------------|:----------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**        | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                           |
+| **assortment**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Ссылка на товар/серию/модификацию, которую представляет собой позиция.<br>`+Обязательное при ответе` `+Expand`                                                                                 |
+| **costSum**          | Int                                                       | Себестоимость произведенного продукта с учетом стоимости материалов, затрат на производство и оплаты труда `+Только для чтения`                                                                |
+| **id**               | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                  |
+| **standardQuantity** | Float                                                     | Норма продукта согласно техкарте<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                            |
+| **planQuantity**     | Float                                                     | Запланированное для производства количество продукта <br>`+Обязательное при ответе` `+Только для чтения`                                                                                       |
+| **producedQuantity** | Float                                                     | Произведенное количество продукта<br>`+Обязательное при ответе`                                                                                                                                |
+| **productionRow**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные [позиции Производственного задания](../documents/#dokumenty-proizwodstwennoe-zadanie-pozicii-proizwodstwennogo-zadaniq)<br>`+Обязательное при ответе` `+Expand` `+Только для чтения`|
 
 С продуктами можно работать с помощью специальных ресурсов для управления продуктами Производственных заданий,
 а также в составе отдельного Производственного задания. При работе в составе отдельного Производственного задания,
@@ -1063,6 +1063,8 @@ curl -X GET
 ```
 ### Удалить Производственное задание
 
+При удалении Производственного задания удаляются все связанные Выполненные этапы.
+
 **Параметры**
 
 | Параметр | Описание                                                                                          |
@@ -1677,7 +1679,7 @@ curl -X GET
       },
       "productionRow": {
         "meta": {
-          "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionRows/ef45d60f-214e-11ee-c0a8-d0040000006a",
+          "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionrows/ef45d60f-214e-11ee-c0a8-d0040000006a",
           "type": "productionrow",
           "mediaType": "application/json",
           "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
@@ -1706,7 +1708,7 @@ curl -X GET
       },
       "productionRow": {
         "meta": {
-          "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionRows/ef45d60f-214e-11ee-c0a8-d0040000006a",
+          "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionrows/ef45d60f-214e-11ee-c0a8-d0040000006a",
           "type": "productionrow",
           "mediaType": "application/json",
           "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
@@ -1764,7 +1766,7 @@ curl -X GET
   },
   "productionRow": {
     "meta": {
-      "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionRows/ef45d60f-214e-11ee-c0a8-d0040000006a",
+      "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionrows/ef45d60f-214e-11ee-c0a8-d0040000006a",
       "type": "productionrow",
       "mediaType": "application/json",
       "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
@@ -1812,7 +1814,7 @@ curl -X POST
           },
           "productionRow": {
             "meta": {
-              "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionRows/ef45d60f-214e-11ee-c0a8-d0040000006a",
+              "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionrows/ef45d60f-214e-11ee-c0a8-d0040000006a",
               "type": "productionrow",
               "mediaType": "application/json",
               "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
@@ -1844,7 +1846,7 @@ curl -X POST
   },
   "productionRow": {
     "meta": {
-      "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionRows/ef45d60f-214e-11ee-c0a8-d0040000006a",
+      "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionrows/ef45d60f-214e-11ee-c0a8-d0040000006a",
       "type": "productionrow",
       "mediaType": "application/json",
       "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
@@ -1910,7 +1912,7 @@ curl -X PUT
   },
   "productionRow": {
     "meta": {
-      "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionRows/ef45d60f-214e-11ee-c0a8-d0040000006a",
+      "href": "http://api.moysklad.ru/api/remap/1.2/entity/productiontask/ef458539-214e-11ee-c0a8-d00400000066/productionrows/ef45d60f-214e-11ee-c0a8-d0040000006a",
       "type": "productionrow",
       "mediaType": "application/json",
       "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
@@ -1924,8 +1926,9 @@ curl -X PUT
 
 ### Удалить продукт
 
-Нельзя удалить продукт после начала выполнения позиции Производственного задания.
 После удаления должен остаться хотя бы один продукт.
+
+Нельзя удалить продукт после начала выполнения позиции Производственного задания.
 
 **Параметры**
 
