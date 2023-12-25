@@ -149,6 +149,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 25-12-2023
+#### Изменено
+- Для документа [Исходящий платеж](../documents/#dokumenty-ishodqschij-platezh) добавлена возможность указывать сотрудника в поле `agent`
+
 ### 28-11-2023
 #### Добавлено
 - Поле `showBeerOnTap` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), настройка отображения вскрытых кегов на кассе
