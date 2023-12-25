@@ -5,6 +5,18 @@
 ### Изменено
 - Для документа `Корректировка баланса контрагента` добавлена возможность указывать сотрудника в поле `agent`
 - Документ `Корректировка баланса контрагента` переименован в [Корректировка взаиморасчетов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-korrektirowka-wzaimoraschetow). Путь к документу в АПИ не менялся для совместимости
+- Для документа [Исходящий платеж](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-ishodqschij-platezh) добавлена возможность указывать сотрудника в поле `agent`
+
+## 28-11-2023
+### Добавлено
+- Поле `showBeerOnTap` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), настройка отображения вскрытых кегов на кассе
+
+## 27-11-2023
+### Изменено
+- Приведение документации обязательности полей у [Договора](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-dogowor) в корректное состояние
+
+### Добавлена
+- Ошибка [11002](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-statusow)
 
 ## 15-11-2023
 ### Добавлена
