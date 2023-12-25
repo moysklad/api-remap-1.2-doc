@@ -12,7 +12,7 @@
 
 
 | Название                | Тип                                                       | Фильтрация                                                                                                                                          | Описание                                                                                                    |
-| ----------------------- | :-------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- |
+| ----------------------- | :-------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------------------|
 | **accountId**           | UUID                                                      | `=` `!=`                                                                                                                                            | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                        |
 | **agent**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                            | Метаданные Контрагента<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                   |
 | **agentAccount**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                     | Метаданные счета контрагента<br>`+Обязательное при ответе` `+Expand`                                        |
@@ -26,7 +26,7 @@
 | **id**                  | UUID                                                      | `=` `!=`                                                                                                                                            | ID Договора<br>`+Обязательное при ответе` `+Только для чтения`                                              |
 | **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                     | Метаданные Договора<br>`+Обязательное при ответе`                                                           |
 | **moment**              | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                          | Дата Договора<br>`+Обязательное при ответе`                                                                 |
-| **name**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                              | Номер договора<br>`+Обязательное при ответе` `+Необходимо при создании`                                     |
+| **name**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                              | Номер договора<br>`+Обязательное при ответе`                                                                |
 | **organizationAccount** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                     | Метаданные счета вашего юрлица<br>`+Expand`                                                                 |
 | **ownAgent**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                            | Метаданные вашего юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                 |
 | **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                            | Метаданные владельца (Сотрудника)<br>`+Expand`                                                              |
@@ -360,7 +360,6 @@ curl -X GET
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
-            "name": "666",
             "ownAgent": {
               "meta": {
                 "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e",
@@ -376,18 +375,8 @@ curl -X GET
                 "type": "counterparty",
                 "mediaType": "application/json"
               }
-            },
-            "rate": {
-              "currency": {
-                "meta": {
-                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/faf45b9a-2e58-11e6-8a84-bae500000055",
-                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-                  "type": "currency",
-                  "mediaType": "application/json"
-                }
-              }
             }
-          }'  
+          }
 ```
 
 > Response 200 (application/json)

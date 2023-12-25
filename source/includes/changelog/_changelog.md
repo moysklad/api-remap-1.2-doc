@@ -4,11 +4,11 @@
 <div class="banner">
   <h4>Внимание!</h4>
   <ui><b>До 1 декабря 2023 года необходимо:</b>
-    <li>Перенастроить интеграции на новый домен api.moysklad.ru (вместо online.moysklad.ru)</li>
+    <li>Перенастроить интеграции с домена online.moysklad.ru на домен api.moysklad.ru</li>
     <li>Включить использование <a href='https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow'>сжатия содержимого ответов</a> через передачу заголовка Accept-Encoding</li>
   </ui>
   <p>Рекомендации по переезду на новый домен можно прочитать <a href="https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rekomendacii-po-pereezdu-na-nowyj-domen">здесь</a>.</p>
-  <p>После 1 декабря 2023 года перестанут работать интеграции, использующие апи remap-12 на домене online.moysklad.ru</p>
+  <p>После 1 декабря 2023 года начнется поэтапное отключение доступа к api на старом домене online.moysklad.ru</p>
 </div>
 
 В разделе перечислены изменения и расширения возможностей существующих эндпоинтов, а также новые эндпоинты,
@@ -152,6 +152,17 @@
 ### 25-12-2023
 #### Изменено
 - Для документа [Исходящий платеж](../documents/#dokumenty-ishodqschij-platezh) добавлена возможность указывать сотрудника в поле `agent`
+
+### 28-11-2023
+#### Добавлено
+- Поле `showBeerOnTap` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), настройка отображения вскрытых кегов на кассе
+
+### 27-11-2023
+#### Изменено
+- Приведение документации обязательности полей у [Договора](../dictionaries/#suschnosti-dogowor) в корректное состояние
+
+#### Добавлена
+- Ошибка [11002](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-statusow)
 
 ### 15-11-2023
 #### Добавлена
