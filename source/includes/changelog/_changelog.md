@@ -149,9 +149,13 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 21-12-2023
+### 26-12-2023
 #### Добавлена
-- Ошибка [3035](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+- Ошибка [3037](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
+### 28-11-2023
+#### Добавлено
+- Поле `showBeerOnTap` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), настройка отображения вскрытых кегов на кассе
 
 ### 27-11-2023
 #### Изменено
