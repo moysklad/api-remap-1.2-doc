@@ -8,7 +8,7 @@
   Больше о Производстве и Производственном задании и работе с ними в основном интерфейсе вы можете прочитать в нашей
   службе поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/16929256771857-%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5).
 
-Работа с производственными этапами описана в [отдельном разделе](#dokumenty-proizwodstwennoe-zadanie-proizwodstwennyj-atap).
+Работа с производственными этапами описана в [отдельном разделе](#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy).
 
 ### Производственные задания
 #### Атрибуты сущности

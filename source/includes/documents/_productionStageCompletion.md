@@ -21,9 +21,9 @@
 | **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Владелец (Сотрудник)<br>`+Expand`                                                                                                 |
 | **performer**           | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Исполнитель (Сотрудник)<br>`+Expand`                                                                                              |
 | **processingUnitCost**  | Double                                                    |            | Затраты на единицу объема производства<br>`+Обязательное при ответе`                                                              |
-| **productionStage**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | [Производственный этап](#dokumenty-proizwodstwennoe-zadanie-proizwodstwennyj-atap)<br>`+Expand` `+После создания изменить нельзя` |
+| **productionStage**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | [Производственный этап](#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)<br>`+Expand` `+После создания изменить нельзя`|
 | **productionVolume**    | Double                                                    |            | Объем производства<br>`+Обязательное при ответе`                                                                                  |
-| **products**            | MetaArray                                                 |            | Метаданные продуктов Выполнения этапа. Есть только у последнего этапа<br>`+Expand`                                               |
+| **products**            | MetaArray                                                 |            | Метаданные продуктов Выполнения этапа. Есть только у последнего этапа<br>`+Expand`                                                |
 | **shared**              | Boolean                                                   |            | Общий доступ<br>`+Обязательное при ответе`                                                                                        |
 | **updated**             | DateTime                                                  |            | Момент последнего обновления Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                     |
 

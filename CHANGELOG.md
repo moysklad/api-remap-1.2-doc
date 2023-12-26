@@ -4,9 +4,9 @@
 ## 10-01-2024
 ### Добавлено
 - Эндпоинты работы с [Производственным заданием](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-proizwodstwennoe-zadanie)
-- Эндпоинты работы с [Выполнением этапа](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vypolnenie-proizwodstwennogo-atapa)
+- Эндпоинты работы с [Выполнением этапа](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
 - Ошибки [26101-26111](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq)
-- Ошибки [26200-26206](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-vypolneniq-proizwodstwennyh-atapow)
+- Ошибки [26200-26206](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-vypolnennyh-atapow-proizwodstwa)
 - Ошибки [3035, 3036](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
 
 ## 27-11-2023
