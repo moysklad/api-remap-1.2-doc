@@ -153,6 +153,12 @@
 #### Добавлена
 - Ошибка [3037](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
 
+### 25-12-2023
+#### Изменено
+- Для документа `Корректировка баланса контрагента` добавлена возможность указывать сотрудника в поле `agent`
+- Документ `Корректировка баланса контрагента` переименован в [Корректировка взаиморасчетов](../documents/#dokumenty-korrektirowka-wzaimoraschetow). Путь к документу в АПИ не менялся для совместимости
+- Для документа [Исходящий платеж](../documents/#dokumenty-ishodqschij-platezh) добавлена возможность указывать сотрудника в поле `agent`
+
 ### 28-11-2023
 #### Добавлено
 - Поле `showBeerOnTap` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), настройка отображения вскрытых кегов на кассе
@@ -705,7 +711,7 @@
 ### 15-09-2021
 #### Добавлено
 - Добавлена фильтрация по Доп. полям. и атрибут фильтрации supplier для [Отчет обороты](../reports/#otchety-otchet-oboroty)
-- Документ [Корректировка баланса контрагента](../documents/#dokumenty-korrektirowka-balansa-kontragenta)
+- Документ [Корректировка баланса контрагента](../documents/#dokumenty-korrektirowka-wzaimoraschetow)
 
 ### 08-09-2021
 #### Изменено
