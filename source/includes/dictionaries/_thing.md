@@ -64,8 +64,8 @@ curl -X GET
   "rows":[
     {
       "meta": {
-        "href": "http://localhost/api/remap/1.2/entity/thing/3840d8d8-9f2d-11ee-8c90-0242ac120002",
-        "metadataHref": "http://localhost/api/remap/1.2/entity/thing/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/thing/3840d8d8-9f2d-11ee-8c90-0242ac120002",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/thing/metadata",
         "type": "thing",
         "mediaType": "application/json"
       },
@@ -76,8 +76,8 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "http://localhost/api/remap/1.2/entity/thing/55609d5e-9f2d-11ee-8c90-0242ac120002",
-        "metadataHref": "http://localhost/api/remap/1.2/entity/thing/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/thing/55609d5e-9f2d-11ee-8c90-0242ac120002",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/thing/metadata",
         "type": "thing",
         "mediaType": "application/json"
       },
@@ -115,8 +115,8 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "http://localhost/api/remap/1.2/entity/thing/3840d8d8-9f2d-11ee-8c90-0242ac120002",
-    "metadataHref": "http://localhost/api/remap/1.2/entity/thing/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/thing/3840d8d8-9f2d-11ee-8c90-0242ac120002",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/thing/metadata",
     "type": "thing",
     "mediaType": "application/json"
   },
