@@ -5,6 +5,9 @@
 ### Добавлен
 - Добавлен новый тип маркированной продукции `SANITIZER` для антисептиков
 
+## 26-12-2023
+### Добавлена
+- Ошибка [3037](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
 
 ## 25-12-2023
 ### Изменено
