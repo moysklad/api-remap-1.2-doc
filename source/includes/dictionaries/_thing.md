@@ -17,7 +17,7 @@
 
 | Название    | Тип                                                       | Описание                                                                                                   |
 | ----------- | :-------------------------------------------------------- |:-----------------------------------------------------------------------------------------------------------|
-| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче,                                                                                       |
+| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче.                                                                                       |
 | **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.                                                               |
 | **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой [Серийные номера](../dictionaries/#suschnosti-serijnye-nomera). |
 
@@ -53,11 +53,11 @@ curl -X GET
     }
   },
   "meta":{
-    "href":"https://api.moysklad.ru/api/remap/1.2/entity/thing/?limit=2",
+    "href":"https://api.moysklad.ru/api/remap/1.2/entity/thing",
     "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/thing/metadata",
-    "type":"country",
+    "type":"thing",
     "mediaType":"application/json",
-    "size":50,
+    "size":2,
     "limit":1000,
     "offset":0
   },
@@ -91,12 +91,6 @@ curl -X GET
 ```
 
 ### Серийный номер
-
-**Параметры**
-
-| Параметр | Описание                                                                        |
-| :------- |:--------------------------------------------------------------------------------|
-| **id**   | `3840d8d8-9f2d-11ee-8c90-0242ac120002` (required, string) - id Серийного номера |
 
 ### Получить Серийный номер
 
