@@ -15,9 +15,9 @@
 | **id**                 | UUID                                                      |            | ID Заказа на производство<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                          |
 | **meta**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Метаданные Производственного этапа<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                 |
 | **labourUnitCost**     | Double                                                    |            | Затраты на оплату труда за единицу объема производства<br>                                                                                                                            |
-| **materials**          | MetaArray                                                 |            | Метаданные Материалов производственного этапа [Материал производственного этапа](#dokumenty-proizwodstwennoe-zadanie-materialy-proizwodstwennogo-atapa)<br>`+Обязательное при ответе` |
+| **materials**          | MetaArray                                                 |            | Метаданные Материалов производственного этапа [Продробнее тут](#dokumenty-proizwodstwennoe-zadanie-materialy-proizwodstwennogo-atapa)<br>`+Обязательное при ответе` |
 | **orderingPosition**   | Int                                                       |            | Индекс Производственного этапа в Производственном ряде<br>`+Обязательное при ответе` `+Только для чтения`                                                                             |
-| **stage**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Метаданные Этапа производства[Этап производства](..dictionaries/#suschnosti-jetap-proizwodstwa)<br>`+Expand` `+Обязательное при ответе` `+Только для чтения`                          |
+| **stage**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Метаданные Этапа производства [Продробнее тут](..dictionaries/#suschnosti-jetap-proizwodstwa)<br>`+Expand` `+Обязательное при ответе` `+Только для чтения`                            |
 | **status**             | Enum                                                      | `=` `!=`   | Статус<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                             |
 | **productionRow**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Метаданные Производственного ряда<br>`+Expand` `+Обязательное при ответе` `+Только для чтения`                                                                                        |
 | **productionVolume**   | Double                                                    |            | Объем Производственного этапа. Соответствует объему производственного ряда<br>`+Только для чтения`                                                                                    |
@@ -407,7 +407,7 @@ curl -X GET
   }
 ```
 
-#### Удалить Материал производственного этапа
+### Удалить Материал производственного этапа
 
 Запрос на удаление отдельного Материала производственного этапа.
 

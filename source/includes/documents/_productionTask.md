@@ -17,7 +17,7 @@
 |---------------------------|:----------------------------------------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------ |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**             | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                    |
 | **applicable**            | Boolean                                                   |                                                                                                                                                   | Отметка о проведении<br>`+Обязательное при ответе`                                                                                                                                      |
-| **attributes**            | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)                                                                 |
+| **attributes**            | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция метаданных доп. полей [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)                                                                  |
 | **awaiting**              | Boolean                                                   |                                                                                                                                                   | Флаг ожидания продукта Производственного задания                                                                                                                                        |
 | **code**                  | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Производственного задания                                                                                                                                                           |
 | **created**               | DateTime                                                  |                                                                                                                                                   | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                        |
@@ -35,10 +35,10 @@
 | **organization**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                    |
 | **owner**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                       |
 | **printed**               | Boolean                                                   |                                                                                                                                                   | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                |
-| **productionRows**        | MetaArray                                                 |                                                                                                                                                   | Метаданные Позиций производственного задани. [Позиции производственного задани](../documents/#dokumenty-proizwodstwennoe-zadanie-pozicii-proizwodstwennogo-zadaniq)                     |
+| **productionRows**        | MetaArray                                                 |                                                                                                                                                   | Метаданные Позиций производственного задани [Продробнее тут](../documents/#dokumenty-proizwodstwennoe-zadanie-pozicii-proizwodstwennogo-zadaniq)                                        |
 | **productionEnd**         | DateTime                                                  |                                                                                                                                                   | Дата окончания производства<br>`+Только для чтения`                                                                                                                                     |
 | **productionStart**       | DateTime                                                  |                                                                                                                                                   | Дата начала производства                                                                                                                                                                |
-| **products**              | MetaArray                                                 |                                                                                                                                                   | Метаданные производимой продукции[Продукты производственного задания](..documents/#dokumenty-proizwodstwennoe-zadanie-produkty-proizwodstwennogo-zadaniq)<br>`+Обязательное при ответе` |
+| **products**              | MetaArray                                                 |                                                                                                                                                   | Метаданные производимой продукции [Продробнее тут](..documents/#dokumenty-proizwodstwennoe-zadanie-produkty-proizwodstwennogo-zadaniq)<br>`+Обязательное при ответе`                    |
 | **productsStore**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные склада продукции<br>`+Expand`                                                                                                                                                |
 | **published**             | Boolean                                                   |                                                                                                                                                   | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                              |
 | **reserve**               | Boolean                                                   |                                                                                                                                                   | Флаг резервирования материала Производственного задания                                                                                                                                 |
@@ -1063,27 +1063,6 @@ curl -X GET
     }
 ]
 ```
-### Удалить Производственное задание
-
-При удалении Производственного задания удаляются все связанные Выполненные этапы производства.
-
-**Параметры**
-
-| Параметр | Описание                                                                                          |
-| :------- |:--------------------------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: f400f8a3-98e7-11ee-0a83-0045000025d9* id Производственного задания. |
-
-> Запрос на удаление Производственного задания с указанным id.
-
-```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/f400f8a3-98e7-11ee-0a83-0045000025d9"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json)
-Успешное удаление Производственного задания.
 
 ### Массовое удаление Производственных заданий
 
@@ -1620,6 +1599,27 @@ curl -X GET
   "reserve": false
 }
 ```
+### Удалить Производственное задание
+
+При удалении Производственного задания удаляются все связанные Выполненные этапы производства.
+
+**Параметры**
+
+| Параметр | Описание                                                                                          |
+| :------- |:--------------------------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: f400f8a3-98e7-11ee-0a83-0045000025d9* id Производственного задания. |
+
+> Запрос на удаление Производственного задания с указанным id.
+
+```shell
+curl -X DELETE
+  "https://api.moysklad.ru/api/remap/1.2/entity/productiontask/f400f8a3-98e7-11ee-0a83-0045000025d9"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешное удаление Производственного задания.
 
 ### Продукты производственного задания
 Отдельный ресурс для управления продуктами Производственного задания. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
