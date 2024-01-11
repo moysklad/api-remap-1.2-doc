@@ -32,7 +32,7 @@
 | **counterparty.companyType** | Enum         | `=` `!=`               | Тип контрагента           |
 | **counterparty.description** | String(4096) | `=` `!=` `~` `~=` `=~` | Комментарий к Контрагенту |
 | **counterparty.email**       | String(255)  | `=` `!=` `~` `~=` `=~` | Адрес электронной почты   |
-| **counterparty.inn**         | String(255)  | `=` `!=` `~` `~=` `=~` | Тип контрагента           |
+| **counterparty.inn**         | String(255)  | `=` `!=` `~` `~=` `=~` | ИНН контрагента           |
 | **counterparty.phone**       | String(255)  | `=` `!=` `~` `~=` `=~` | Номер телефона            |
 | **id**                       | UUID         | `=` `!=`               | id контрагента            |
 
