@@ -149,6 +149,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 11-01-2024
+#### Добавлено
+- Поле `materialProcessingPlan` в [Техкарту](../dictionaries/#suschnosti-tehkarta), техкарта для материала
+- Ошибка [25062](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart)
+
 ### 26-12-2023
 #### Добавлена
 - Ошибка [3037](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
