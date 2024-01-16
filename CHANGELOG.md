@@ -7,6 +7,10 @@
 - Ошибка [25062](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart)
 
 ## 26-12-2023
+### Добавлен
+- Добавлен новый тип маркированной продукции `SANITIZER` для антисептиков
+
+## 26-12-2023
 ### Добавлена
 - Ошибка [3037](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
 
