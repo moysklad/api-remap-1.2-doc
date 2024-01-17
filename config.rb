@@ -47,7 +47,7 @@ configure :build do
   activate :minify_css
   activate :minify_javascript
   # activate :relative_assets
-  activate :asset_hash, :ignore => %r{^javascripts/.*}
+  activate :asset_hash, :ignore => %r{^javascripts/global_index.js}
   # activate :gzip
 end
 
