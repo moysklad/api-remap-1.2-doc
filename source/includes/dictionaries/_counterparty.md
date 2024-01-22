@@ -2826,13 +2826,55 @@ curl -X GET
 }
 ```
 
+### Создать счет Контрагента
+
+Создать счет Контрагента с указанным id.
+
+**Параметры**
+
+| Параметр | Описание                                                                              |
+| :------- | :------------------------------------------------------------------------------------ |
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента. |
+
+> Пример запроса на создание счета Контрагента.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+    -d '{
+          "accountNumber": "86686868768768757656876876"
+        }'  
+```
+> Response 200 (application/json). Успешное создание.
+
+```json
+[
+  {
+    "meta": {
+      "href": "http://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b18",
+      "type": "account",
+      "mediaType": "application/json"
+    },
+    "id": "7944ef04-f831-11e5-7a69-971500188b18",
+    "accountId": "4615c8f6-0e7b-11e2-06e0-3c4a92f3a0a7",
+    "updated": "2024-01-22 17:57:54.558",
+    "isDefault": false,
+    "accountNumber": "86686868768768757656876876"
+  }
+]
+```
+
+
 #### Счет Контрагента
 
 **Параметры**
 
 | Параметр                       | Описание                                                                                                                               |
-| ------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------- |
-| **accountId**                  | `string` (required) (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Счета.                                             |
+| ------------------------------ |:---------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**                  | `string` (required) (required) *Example: 7944ef04-f831-11e5-7a69-971500188b18* - id Счета.                                             |
 | **id**                         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента .                                                 |
 | **limit**                      | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
 | **offset**                     | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
@@ -2853,11 +2895,11 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/ee15550e-2c9e-11e6-8a84-bae500000003/accounts/a6aa5466-2ca2-11e6-8a84-bae500000017",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b18",
     "type": "account",
     "mediaType": "application/json"
   },
-  "id": "a6aa5466-2ca2-11e6-8a84-bae500000017",
+  "id": "7944ef04-f831-11e5-7a69-971500188b18",
   "accountId": "da7d9bbe-2c97-11e6-8a84-bae500000001",
   "updated": "2016-06-07 14:26:17",
   "isDefault": false,
@@ -2866,6 +2908,61 @@ curl -X GET
   "bic": "7654352"
 }
 ```
+
+### Изменить счет Контрагента
+
+**Параметры**
+
+| Параметр      | Описание                                                                              |
+|---------------|:--------------------------------------------------------------------------------------|
+| **accountId** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b18* - id счёта.       |
+| **id**        | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента. |
+
+#### Описание
+Обновить счет Контрагента с указанным id.
+Обновляются все поля, указанные в JSON объекте запроса, кроме
+помеченных `Только для чтения` в описании [атрибутов счета Контрагента](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-scheta-kontragentow).
+Поля, которые не были указаны в JSON запроса, не изменяются.
+
+> Пример запроса на обновление счета Контрагента.
+
+  ```shell
+  curl -X PUT
+    "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b18"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "accountNumber": "86686868768768757656876876",
+            "isDefault": false,
+            "bankLocation": "г Москва",
+            "bankName": "ВТБ",
+            "bic": "1005002good",
+            "correspondentAccount": "good200"
+        }'  
+  ```
+
+> Response 200 (application/json). Успешное обновление.
+
+```json
+{
+  "meta": {
+    "href": "http://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b18",
+    "type": "account",
+    "mediaType": "application/json"
+  },
+  "id": "7944ef04-f831-11e5-7a69-971500188b18",
+  "accountId": "4615c8f6-0e7b-11e2-06e0-3c4a92f3a0a7",
+  "updated": "2024-01-22 17:57:54.558",
+  "isDefault": false,
+  "accountNumber": "86686868768768757656876876",
+  "bankName": "ВТБ",
+  "bankLocation": "г Москва",
+  "correspondentAccount": "good200",
+  "bic": "1005002good"
+}
+```
+
 
 ### Контактные лица Контрагента
 

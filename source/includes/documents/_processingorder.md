@@ -1779,7 +1779,7 @@ curl -X GET
                 "type": "processingplan",
                 "mediaType": "application/json"
               }
-            }
+            },
             "attributes": [
               {
                 "meta": {
@@ -1906,7 +1906,7 @@ curl -X GET
                 "type": "processingplan",
                 "mediaType": "application/json"
               }
-            }
+            },
             "positions": [
               {
                 "meta": {
