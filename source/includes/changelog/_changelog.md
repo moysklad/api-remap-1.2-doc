@@ -151,7 +151,7 @@
 
 ### 19-12-2023
 #### Изменено
-- Добавлено поле `state` в [Задачу](../dictionaries/#suschnosti-zadacha) -  - сущность [Тип задачи](../dictionaries/#suschnosti-zadacha-tip-zadachi)
+- Добавлено поле `state` в [Задачу](../dictionaries/#suschnosti-zadacha) - сущность [Тип задачи](../dictionaries/#suschnosti-zadacha-tip-zadachi)
 
 ### 27-11-2023
 #### Изменено
