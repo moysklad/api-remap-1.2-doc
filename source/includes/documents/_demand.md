@@ -1136,7 +1136,7 @@ curl -X GET
               }
             ],
             "overhead": {
-              "sum": 12000,
+              "sum":9000.0,
               "distribution": "price"
             }
           }'  
@@ -2013,7 +2013,10 @@ curl -X GET
             "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=392c045c-2842-11e9-ac12-000a00000002"
           }
         },
-        "overhead": 0
+        "overhead": {
+          "sum" : 0.0,
+          "distribution" : "price"
+        }
       }
     ]
   },
@@ -2139,7 +2142,10 @@ curl -X GET
             "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002f"
           }
         },
-        "overhead": 0
+        "overhead": {
+          "sum" : 100000.0,
+          "distribution" : "price"
+        }
       }
     ]
   },
@@ -3364,7 +3370,10 @@ curl --location --request GET 'https://api.moysklad.ru/api/remap/1.2/entity/dema
                ]
             }
          ],
-         "overhead":0.0
+         "overhead": {
+           "sum" : 4000.0,
+           "distribution" : "price"
+         }
       },
       {
          "meta":{
@@ -3460,7 +3469,10 @@ curl --location --request GET 'https://api.moysklad.ru/api/remap/1.2/entity/dema
                "type":"trackingcode"
             }
          ],
-         "overhead":0.0
+         "overhead": {
+           "sum" : 0.0,
+           "distribution" : "price"
+         }
       }
    ]
 }
@@ -3792,7 +3804,10 @@ curl --location --request POST 'https://api.moysklad.ru/api/remap/1.2/entity/dem
          "type":"trackingcode"
       }
    ],
-   "overhead":0.0
+   "overhead": {
+      "sum" : 1000.0, 
+      "distribution" : "price" 
+   }
 }'
 ```
 
@@ -3895,7 +3910,10 @@ curl --location --request POST 'https://api.moysklad.ru/api/remap/1.2/entity/dem
             "type":"trackingcode"
          }
       ],
-      "overhead":0.0
+      "overhead": {
+        "sum" : 1000.0,
+        "distribution" : "price"
+      }
    }
 ]
 ```
