@@ -149,6 +149,14 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 23-01-2024
+#### Добавлено
+- Примеры [создания](../dictionaries/#suschnosti-kontragent-sozdat-schet-kontragenta) и [изменения](../dictionaries/#suschnosti-kontragent-izmenit-schet-kontragenta) счета контрагента
+
+#### Изменено
+- Удалён атрибут 'project' у [розничной продажи](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi) и у [розничного возврата](../documents/#dokumenty-roznichnyj-wozwrat)
+
+
 ### 11-01-2024
 #### Добавлено
 - Поле `materialProcessingPlan` в [Техкарту](../dictionaries/#suschnosti-tehkarta), техкарта для материала
