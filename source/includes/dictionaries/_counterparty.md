@@ -2873,8 +2873,8 @@ curl -X POST
 
 | Параметр                       | Описание                                                                                                                               |
 | ------------------------------ |:---------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**                  | `string` (required) (required) *Example: 7944ef04-f831-11e5-7a69-971500188b18* - id Счета.                                             |
-| **id**                         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента .                                                 |
+| **accountId**                  | `string` (required) (required) *Example: 7944ef04-f831-11e5-7a69-971500188b18* - id номер Счета контрагента.                                             |
+| **id**                         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Счета контрагента .                                                 |
 | **limit**                      | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
 | **offset**                     | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
 
@@ -2884,7 +2884,7 @@ curl -X POST
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b19"
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b18"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```

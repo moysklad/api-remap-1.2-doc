@@ -3370,7 +3370,10 @@ curl --location --request GET 'https://api.moysklad.ru/api/remap/1.2/entity/dema
                ]
             }
          ],
-        "overhead":0.0
+        "overhead": {
+          "sum" : 4000.0,
+          "distribution" : "price"
+        }
       },
       {
          "meta":{
@@ -3466,7 +3469,10 @@ curl --location --request GET 'https://api.moysklad.ru/api/remap/1.2/entity/dema
                "type":"trackingcode"
             }
          ],
-        "overhead":0.0
+        "overhead": {
+          "sum" : 0.0,
+          "distribution" : "price"
+        }
       }
    ]
 }
@@ -3798,7 +3804,10 @@ curl --location --request POST 'https://api.moysklad.ru/api/remap/1.2/entity/dem
          "type":"trackingcode"
       }
    ],
-   "overhead":0.0
+   "overhead": {
+      "sum" : 1000.0, 
+      "distribution" : "price" 
+   }
 }'
 ```
 
@@ -3901,7 +3910,10 @@ curl --location --request POST 'https://api.moysklad.ru/api/remap/1.2/entity/dem
             "type":"trackingcode"
          }
       ],
-     "overhead":0.0
+     "overhead": {
+       "sum" : 1000.0,
+       "distribution" : "price"
+     }
    }
 ]
 ```
