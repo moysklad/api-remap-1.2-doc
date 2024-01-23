@@ -5,10 +5,6 @@
 ### Добавлено
 - Примеры [создания](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-sozdat-schet-kontragenta) и [изменения](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-izmenit-schet-kontragenta) счета контрагента
 
-### Изменено
-- Удалён атрибут `project` у [розничной продажи](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi) и у [розничного возврата](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnyj-wozwrat)
-- Убран тег `+Необходимо при создании` для поля **name** при [создании договора](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-dogowor-sozdat-nowyj-dogowor)
-
 ## 11-01-2024
 ### Добавлено
 - Поле `materialProcessingPlan` в [Техкарту](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta), техкарта для материала
