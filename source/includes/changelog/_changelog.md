@@ -154,7 +154,8 @@
 - Примеры [создания](../dictionaries/#suschnosti-kontragent-sozdat-schet-kontragenta) и [изменения](../dictionaries/#suschnosti-kontragent-izmenit-schet-kontragenta) счета контрагента
 
 #### Изменено
-- Удалён атрибут 'project' у [розничной продажи](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi) и у [розничного возврата](../documents/#dokumenty-roznichnyj-wozwrat)
+- Удалён атрибут `project` у [розничной продажи](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi) и у [розничного возврата](../documents/#dokumenty-roznichnyj-wozwrat)
+- Убран тег `+Необходимо при создании` для поля **name** при [создании договора](../dictionaries/#suschnosti-dogowor-sozdat-nowyj-dogowor)
 
 
 ### 11-01-2024
