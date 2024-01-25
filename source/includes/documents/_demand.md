@@ -2010,7 +2010,7 @@ curl -X GET
             "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=392c045c-2842-11e9-ac12-000a00000002"
           }
         },
-        "overhead": 0.0        
+        "overhead": 0
       }
     ]
   },
@@ -2136,7 +2136,7 @@ curl -X GET
             "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002f"
           }
         },
-        "overhead": 0.0
+        "overhead": 0
       }
     ]
   },
