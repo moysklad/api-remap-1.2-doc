@@ -1135,10 +1135,7 @@ curl -X GET
                 "cost": 47
               }
             ],
-            "overhead": {
-              "sum": 9000.0,
-              "distribution": "price"
-            }
+            "overhead": 60
           }'  
 ```
 
@@ -1244,10 +1241,7 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "overhead": {
-    "sum": 60,
-    "distribution": "price"
-  }
+  "overhead": 60.0
 }
 ```
 
@@ -2012,14 +2006,11 @@ curl -X GET
             "mediaType": "application/json",
             "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=392c045c-2842-11e9-ac12-000a00000002"
           }
-        },
-        "overhead": {
-          "sum" : 0.0,
-          "distribution" : "price"
         }
       }
     ]
   },
+  "overhead": 0.0,
   "vatEnabled": true,
   "vatIncluded": true,
   "payedSum": 0,
@@ -2142,10 +2133,7 @@ curl -X GET
             "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002f"
           }
         },
-        "overhead": {
-          "sum" : 100000.0,
-          "distribution" : "price"
-        }
+        "overhead": 100000.0
       }
     ]
   },
