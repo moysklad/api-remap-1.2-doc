@@ -1138,7 +1138,7 @@ curl -X GET
             "overhead": {
               "sum": 60,
               "distribution": "price"
-  }
+            }
           }'  
 ```
 
