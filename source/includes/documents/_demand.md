@@ -1241,7 +1241,10 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "overhead": 60.0
+  "overhead": {
+    "sum": 60,
+    "distribution": "price"
+  }
 }
 ```
 
@@ -2132,11 +2135,11 @@ curl -X GET
             "mediaType": "application/json",
             "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002f"
           }
-        },
-        "overhead": 100000.0
+        }
       }
     ]
   },
+  "overhead": 100000.0,
   "vatEnabled": true,
   "vatIncluded": true,
   "payedSum": 0,
