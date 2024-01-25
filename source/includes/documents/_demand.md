@@ -1135,7 +1135,10 @@ curl -X GET
                 "cost": 47
               }
             ],
-            "overhead": 60
+            "overhead": {
+              "sum": 60,
+              "distribution": "price"
+  }
           }'  
 ```
 
