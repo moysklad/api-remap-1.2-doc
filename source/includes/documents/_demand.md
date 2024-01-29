@@ -1100,8 +1100,7 @@ curl -X GET
                     ]
                   }
                 ],
-                "reserve": 10,
-                "overhead": 20
+                "reserve": 10
               },
               {
                 "quantity": 20,
@@ -1115,8 +1114,7 @@ curl -X GET
                     "mediaType": "application/json"
                   }
                 },
-                "reserve": 20,
-                "overhead": 20
+                "reserve": 20
               },
               {
                 "quantity": 30,
@@ -1134,10 +1132,13 @@ curl -X GET
                   "id": "1bf22e62-8b47-11e8-56c0-000800000006"
                 },
                 "reserve": 30,
-                "overhead": 20,
                 "cost": 47
               }
-            ]
+            ],
+            "overhead": {
+              "sum": 60,
+              "distribution": "price"
+            }
           }'  
 ```
 
@@ -3363,7 +3364,7 @@ curl --location --request GET 'https://api.moysklad.ru/api/remap/1.2/entity/dema
                ]
             }
          ],
-         "overhead":0.0
+         "overhead": 0.0
       },
       {
          "meta":{
@@ -3459,7 +3460,7 @@ curl --location --request GET 'https://api.moysklad.ru/api/remap/1.2/entity/dema
                "type":"trackingcode"
             }
          ],
-         "overhead":0.0
+         "overhead": 0.0
       }
    ]
 }
@@ -3791,7 +3792,7 @@ curl --location --request POST 'https://api.moysklad.ru/api/remap/1.2/entity/dem
          "type":"trackingcode"
       }
    ],
-   "overhead":0.0
+   "overhead": 0.0
 }'
 ```
 
@@ -3894,7 +3895,7 @@ curl --location --request POST 'https://api.moysklad.ru/api/remap/1.2/entity/dem
             "type":"trackingcode"
          }
       ],
-      "overhead":0.0
+      "overhead": 0.0
    }
 ]
 ```
