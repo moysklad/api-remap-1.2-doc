@@ -8,6 +8,7 @@
 - Ошибки [26101-26111](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq)
 - Ошибки [26200-26206](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-vypolnennyh-atapow-proizwodstwa)
 - Ошибки [3035, 3036](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+- Ошибки [1089, 1092](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki)
 
 ## 27-11-2023
 ### Изменено
