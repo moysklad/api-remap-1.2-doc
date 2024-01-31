@@ -4,11 +4,11 @@
 <div class="banner">
   <h4>Внимание!</h4>
   <ui><b>До 1 декабря 2023 года необходимо:</b>
-    <li>Перенастроить интеграции на новый домен api.moysklad.ru (вместо online.moysklad.ru)</li>
+    <li>Перенастроить интеграции с домена online.moysklad.ru на домен api.moysklad.ru</li>
     <li>Включить использование <a href='https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow'>сжатия содержимого ответов</a> через передачу заголовка Accept-Encoding</li>
   </ui>
   <p>Рекомендации по переезду на новый домен можно прочитать <a href="https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rekomendacii-po-pereezdu-na-nowyj-domen">здесь</a>.</p>
-  <p>После 1 декабря 2023 года перестанут работать интеграции, использующие апи remap-12 на домене online.moysklad.ru</p>
+  <p>После 1 декабря 2023 года начнется поэтапное отключение доступа к api на старом домене online.moysklad.ru</p>
 </div>
 
 В разделе перечислены изменения и расширения возможностей существующих эндпоинтов, а также новые эндпоинты,
@@ -149,9 +149,36 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 19-12-2023
+### 31-01-2024
 #### Изменено
 - Добавлено поле `state` в [Задачу](../dictionaries/#suschnosti-zadacha) - сущность [Тип задачи](../dictionaries/#suschnosti-zadacha-tip-zadachi)
+
+### 11-01-2024
+#### Добавлено
+- Поле `materialProcessingPlan` в [Техкарту](../dictionaries/#suschnosti-tehkarta), техкарта для материала
+- Ошибка [25062](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart)
+
+### 26-12-2023
+#### Добавлен
+- Добавлен новый тип маркированной продукции `SANITIZER` для антисептиков
+
+### 26-12-2023
+#### Добавлена
+- Ошибка [3037](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
+### 25-12-2023
+#### Изменено
+- Для документа `Корректировка баланса контрагента` добавлена возможность указывать сотрудника в поле `agent`
+- Документ `Корректировка баланса контрагента` переименован в [Корректировка взаиморасчетов](../documents/#dokumenty-korrektirowka-wzaimoraschetow). Путь к документу в АПИ не менялся для совместимости
+- Для документа [Исходящий платеж](../documents/#dokumenty-ishodqschij-platezh) добавлена возможность указывать сотрудника в поле `agent`
+
+### 22-12-2023
+#### Добавлен
+- Добавлен новый тип маркированной продукции `FOOD_SUPPLEMENT` для биологически активных добавок к пище
+
+### 28-11-2023
+#### Добавлено
+- Поле `showBeerOnTap` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), настройка отображения вскрытых кегов на кассе
 
 ### 27-11-2023
 #### Изменено
@@ -701,7 +728,7 @@
 ### 15-09-2021
 #### Добавлено
 - Добавлена фильтрация по Доп. полям. и атрибут фильтрации supplier для [Отчет обороты](../reports/#otchety-otchet-oboroty)
-- Документ [Корректировка баланса контрагента](../documents/#dokumenty-korrektirowka-balansa-kontragenta)
+- Документ [Корректировка баланса контрагента](../documents/#dokumenty-korrektirowka-wzaimoraschetow)
 
 ### 08-09-2021
 #### Изменено

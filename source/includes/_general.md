@@ -3,11 +3,11 @@
 <div class="banner">
   <h4>Внимание!</h4>
   <ui><b>До 1 декабря 2023 года необходимо:</b>
-    <li>Перенастроить интеграции на новый домен api.moysklad.ru (вместо online.moysklad.ru)</li>
+    <li>Перенастроить интеграции с домена online.moysklad.ru на домен api.moysklad.ru</li>
     <li>Включить использование <a href='https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow'>сжатия содержимого ответов</a> через передачу заголовка Accept-Encoding</li>
   </ui>
   <p>Рекомендации по переезду на новый домен можно прочитать <a href="https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rekomendacii-po-pereezdu-na-nowyj-domen">здесь</a>.</p>
-  <p>После 1 декабря 2023 года перестанут работать интеграции, использующие апи remap-12 на домене online.moysklad.ru</p>
+  <p>После 1 декабря 2023 года начнется поэтапное отключение доступа к api на старом домене online.moysklad.ru</p>
 </div>
 
 ## Общие Сведения
@@ -16,7 +16,7 @@
 
 С 1 декабря 2023 домен `online.moysklad.ru` перестанет обслуживать запросы к `/api/remap/1.2`. Запросы нужно будет отправлять на новый домен `api.moysklad.ru`. 
 
-До 1 декабря 2023 года обслуживать запросы будут оба вышеуказанных домена. С единственным отличием:
+До 1 декабря 2023 года обслуживать запросы будут оба вышеуказанных домена (после - гарантированное обслуживание только на новом домене). С единственным отличием:
 
   + В запросах на https://online.moysklad.ru/api/remap/1.2 наличие заголовка «Accept-Encoding»: «gzip» опционально
   + В запросах на https://api.moysklad.ru/api/remap/1.2 наличие заголовка «Accept-Encoding»: «gzip» **обязательно**
@@ -26,7 +26,7 @@
 1. Настройте передачу заголовка `Accept-Encoding: gzip` в запросах и чтение gzip-ответов на текущем домене `online.moysklad.ru`.
 2. Проверьте использование в вашей интеграции ссылок (полей `href`), передаваемых в объектах `meta` и в вебхуках. Если вы отправляете запросы, используя информацию из получаемых ссылок, то обратите внимание на то, что:
    + при отправке запросов на домен `online.moysklad.ru`, в `meta` возвращаются ссылки с доменом `online.moysklad.ru`. А при отправке запросов на домен `api.moysklad.ru`, в `meta` возвращаются ссылки с доменом `api.moysklad.ru`.
-   + до 1 декабря вебхук, созданный через запрос к домену `online.moysklad.ru` будет содержать в теле ссылки с доменом на `online.moysklad.ru`, а вебхук, созданный через запрос к домену `api.moysklad.ru` будет содержать ссылки с доменом `api.moysklad.ru`. После 1 декабря все вебхуки будут содержать ссылки с доменом `api.moysklad.ru`, независимо от домена регистрации. Чтобы проверить корректность обработки ссылок с новым доменом в теле вебхука, вы можете зарегистрировать вебхук на `api.moysklad.ru`. Чтобы определить принадлежность вебхука домену, вы можете использовать временно введенный параметр `oldDomain` в запросах [получения вебхуков](dictionaries/#suschnosti-vebhuki). `oldDomain = true` будет отображать вебхуки старого домена, `oldDomain = false` - нового.
+   + до 1 декабря вебхук, созданный через запрос к домену `online.moysklad.ru` будет содержать в теле ссылки с доменом на `online.moysklad.ru`, а вебхук, созданный через запрос к домену `api.moysklad.ru` будет содержать ссылки с доменом `api.moysklad.ru`. Чтобы определить принадлежность вебхука домену, вы можете использовать временно введенный параметр `oldDomain` в запросах [получения вебхуков](dictionaries/#suschnosti-vebhuki). `oldDomain = true` будет отображать вебхуки старого домена, `oldDomain = false` - нового.
 3. Когда ваша интеграция будет готова передавать заголовок `Accept-Encoding: gzip` и читать gzip-ответы, замените адрес https://online.moysklad.ru/api/remap/1.2 на https://api.moysklad.ru/api/remap/1.2.
 
 ### Аутентификация
@@ -2093,7 +2093,7 @@ curl -X PUT
 | **commissionReportOut**    | OPERATION                                                                                                                                          | Выданный отчет комиссионер             |
 | **company**                | DICTIONARY                                                                                                                                         | Контрагенты                            |
 | **contract**               | DICTIONARY                                                                                                                                         | Договоры                               |
-| **counterpartyAdjustment** | DICTIONARY                                                                                                                                         | Корректировка баланса контрагента      |
+| **counterpartyAdjustment** | DICTIONARY                                                                                                                                         | Корректировка взаиморасчетов           |
 | **country**                | BASE                                                                                                                                               | Страны                                 |
 | **currency**               | BASE                                                                                                                                               | Валюты                                 |
 | **customEntity**           | BASE                                                                                                                                               | Элементы пользовательских справочников |
@@ -2116,11 +2116,11 @@ curl -X PUT
 | **prepayment**             | OPERATION                                                                                                                                          | Предоплаты                             |
 | **prepaymentReturn**       | OPERATION                                                                                                                                          | Возврат предоплаты                     |
 | **priceList**              | OPERATION                                                                                                                                          | Прайс-лист                             |
-| **processing**             | BASE                                                                                                                                               | Техоперации                          |
+| **processing**             | BASE                                                                                                                                               | Техоперации                            |
 | **processingOrder**        | OPERATION                                                                                                                                          | Заказ на производство                  |
-| **processingPlan**         | BASE                                                                                                                                               | Техкарты                             |
-| **processingStage**        | BASE                                                                                                                                               | Этапы производства                             |
-| **processingProcess**      | BASE                                                                                                                                               | Техпроцессы                          |
+| **processingPlan**         | BASE                                                                                                                                               | Техкарты                               |
+| **processingStage**        | BASE                                                                                                                                               | Этапы производства                     |
+| **processingProcess**      | BASE                                                                                                                                               | Техпроцессы                            |
 | **project**                | BASE                                                                                                                                               | Проекты                                |
 | **purchaseOrder**          | OPERATION                                                                                                                                          | Заказ поставщикам                      |
 | **purchaseReturn**         | OPERATION                                                                                                                                          | Возврат поставщику                     |

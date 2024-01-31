@@ -85,6 +85,7 @@
 | **sendMarksForCheck**                   | Boolean                                                   |                             | Для облачных точек — до продажи отправлять коды маркировки на проверку на точку с ККТ`+Обязательное при ответе`                                                                                                                                                               |
 | **syncAgents**                          | Boolean                                                   |                             | Выгружать покупателей для работы оффлайн<br>`+Обязательное при ответе` по умолчанию `+true`                                                                                                                                                                                   |
 | **shared**                              | Boolean                                                   | `=` `!=`                    | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                                                                                                    |
+| **showBeerOnTap**                       | Boolean                                                   |                             | Отображать или нет вскрытые кеги на кассе`+Обязательное при ответе` по умолчанию `+false`                                                                                                                                                                                     |
 | **state**                               | Object                                                    |                             | Информация статусе точки продаж. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status)<br>`+Только для чтения`                                                                                           |
 | **store**                               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                    | Метаданные Склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                                                                                                          |
 | **tobaccoMrcControlType**               | Enum                                                      |                             | Контроль МРЦ для табачной продукции. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-kontrolq-mrc-dlq-tabachnoj-produkcii)<br>`+Обязательное при ответе`                                                                    |
@@ -501,6 +502,7 @@ curl -X GET
       "allowCreateProducts" : false,
       "allowDeleteReceiptPositions" : true,
       "syncAgents" : true,
+      "showBeerOnTap" : false,
       "productFolders" : {
         "meta" : {
           "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/2b5eb22f-139e-11e6-9464-e4de00000073/productfolders",
@@ -726,6 +728,7 @@ curl -X GET
       "allowCreateProducts" : false,
       "allowDeleteReceiptPositions" : true,
       "syncAgents" : true,
+      "showBeerOnTap" : false,
       "productFolders" : {
         "meta" : {
           "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/2b5eb22f-139e-11e6-9464-e4de00000073/productfolders",
@@ -874,6 +877,7 @@ curl -X GET
               "allowCreateProducts" : false,
               "allowDeleteReceiptPositions" : true,
                "syncAgents" : true,
+              "showBeerOnTap" : false,
               "productFolders" : [{
                 "meta": {
                   "href": "https://api.moysklad.ru/api/remap/1.2/entity/productfolder/30fe66fd-137a-11e6-9464-e4de00000056",
@@ -1068,6 +1072,7 @@ curl -X GET
   "allowCreateProducts" : false,
   "allowDeleteReceiptPositions" : true,
   "syncAgents" : true,
+  "showBeerOnTap" : false,
   "productFolders" : {
     "meta" : {
       "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/966b1795-bf2c-11e9-ee62-204c0000004c/productFolders",
@@ -1271,6 +1276,7 @@ curl -X GET
   "allowCreateProducts" : true,
   "allowDeleteReceiptPositions" : true,
   "syncAgents" : true,
+  "showBeerOnTap" : false,
   "productFolders" : {
     "meta" : {
       "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/425999e6-bf2f-11e9-ee62-204c00000041/productFolders",
@@ -1462,6 +1468,7 @@ curl -X GET
     "allowCreateProducts" : true,
     "allowDeleteReceiptPositions" : true,
     "syncAgents" : true,
+    "showBeerOnTap" : false,
     "productFolders" : {
       "meta" : {
         "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/425999e6-bf2f-11e9-ee62-204c00000041/productFolders",
@@ -1596,6 +1603,7 @@ curl -X GET
     "allowCreateProducts" : true,
     "allowDeleteReceiptPositions" : true,
     "syncAgents" : true,
+    "showBeerOnTap" : false,
     "productFolders" : {
       "meta" : {
         "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/425999e6-bf2f-11e9-ee62-204c00000042/productFolders",
@@ -1774,6 +1782,7 @@ curl -X GET
   "requiredDiscountCardNumber" : false,
   "allowDeleteReceiptPositions": true,
   "syncAgents" : true,
+  "showBeerOnTap" : false,
     "priceType": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
@@ -2030,6 +2039,7 @@ curl -X PUT
   "allowCreateProducts" : true,
   "allowDeleteReceiptPositions" : true,
   "syncAgents" : true,
+  "showBeerOnTap" : false,
   "productFolders" : {
     "meta" : {
       "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/425999e6-bf2f-11e9-ee62-204c00000041/productFolders",
