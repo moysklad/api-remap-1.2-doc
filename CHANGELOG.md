@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+## 31-01-2024
+### Изменено
+- Добавлено поле `state` в [Задачу](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha) - сущность [Тип задачи](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha-tip-zadachi)
+
 ## 11-01-2024
 ### Добавлено
 - Поле `materialProcessingPlan` в [Техкарту](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta), техкарта для материала

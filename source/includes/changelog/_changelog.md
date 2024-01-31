@@ -149,6 +149,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 31-01-2024
+#### Изменено
+- Добавлено поле `state` в [Задачу](../dictionaries/#suschnosti-zadacha) - сущность [Тип задачи](../dictionaries/#suschnosti-zadacha-tip-zadachi)
+
 ### 11-01-2024
 #### Добавлено
 - Поле `materialProcessingPlan` в [Техкарту](../dictionaries/#suschnosti-tehkarta), техкарта для материала
