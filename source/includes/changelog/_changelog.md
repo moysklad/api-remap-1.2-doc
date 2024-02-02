@@ -153,7 +153,7 @@
 #### Добавлено
 - Эндпоинты работы с [Производственным заданием](../documents/#dokumenty-proizwodstwennoe-zadanie)
 - Эндпоинты работы с [Выполнением этапа](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
-- Ошибки [26101-26111](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq)
+- Ошибки [26101-26112](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq)
 - Ошибки [26200-26208](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-vypolnennyh-atapow-proizwodstwa)
 - Ошибки [3035, 3036](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
 - Ошибки [1089, 1092](../#mojsklad-json-api-oshibki)
