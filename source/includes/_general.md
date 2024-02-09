@@ -295,6 +295,8 @@ JSON API позволяет создавать, обновлять и удаля
   - [Внутренний заказ](documents/#dokumenty-vnutrennij-zakaz)
   - [Заказ на производство](documents/#dokumenty-zakaz-na-proizwodstwo)
   - [Техоперация](documents/#dokumenty-tehoperaciq)
+  - [Производственное задание](../documents/#dokumenty-proizwodstwennoe-zadanie)
+  - [Выполнение этапа](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
   - [Полученный отчет комиссионера](documents/#dokumenty-poluchennyj-otchet-komissionera)
   - [Выданный отчет комиссионера](documents/#dokumenty-vydannyj-otchet-komissionera)
 
