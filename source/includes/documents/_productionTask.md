@@ -48,7 +48,7 @@
 
 Материалы производственного задания находятся в разделе [Материалы производственного задания](#dokumenty-proizwodstwennoe-zadanie-materialy-proizwodstwennogo-atapa)
 
-Для сущностей действует ограничения на expand: для поля **productionRows.processingPlan** недоступен expand вложенных полей.
+Для сущности действует ограничение на expand: для поля **productionRows** недоступен expand вложенных полей.
 
 #### Связи с другими документами
 
