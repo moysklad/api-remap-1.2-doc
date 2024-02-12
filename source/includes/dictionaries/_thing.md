@@ -19,7 +19,7 @@
 | ----------- | :-------------------------------------------------------- |:-----------------------------------------------------------------------------------------------------------|
 | **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче.                                                                                       |
 | **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.                                                               |
-| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой [Серийные номера](../dictionaries/#suschnosti-serijnye-nomera). |
+| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой [Серийные номера](../dictionaries/#suschnosti-serijnyj-nomer). |
 
 **Параметры**
 

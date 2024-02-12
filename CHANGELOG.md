@@ -1,9 +1,36 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-## 20-12-2023
+## 12-02-2024
 ### Добавлено
-- Эндпоинт [Серийные номера](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-serijnye-nomera)
+- Эндпоинт [Серийные номера](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-serijnyj-nomer)
+
+## 31-01-2024
+### Изменено
+- Добавлено поле `state` в [Задачу](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha) - сущность [Тип задачи](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha-tip-zadachi)
+
+## 11-01-2024
+### Добавлено
+- Поле `materialProcessingPlan` в [Техкарту](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta), техкарта для материала
+- Ошибка [25062](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart)
+
+## 26-12-2023
+### Добавлен
+- Добавлен новый тип маркированной продукции `SANITIZER` для антисептиков
+
+## 26-12-2023
+### Добавлена
+- Ошибка [3037](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
+## 25-12-2023
+### Изменено
+- Для документа `Корректировка баланса контрагента` добавлена возможность указывать сотрудника в поле `agent`
+- Документ `Корректировка баланса контрагента` переименован в [Корректировка взаиморасчетов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-korrektirowka-wzaimoraschetow). Путь к документу в АПИ не менялся для совместимости
+- Для документа [Исходящий платеж](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-ishodqschij-platezh) добавлена возможность указывать сотрудника в поле `agent`
+
+## 22-12-2023
+### Добавлен
+- Добавлен новый тип маркированной продукции `FOOD_SUPPLEMENT` для биологически активных добавок к пище
 
 ## 28-11-2023
 ### Добавлено
@@ -562,7 +589,7 @@
 ## 15-09-2021
 ### Добавлено
 - Добавлена фильтрация по Доп. полям. и атрибут фильтрации supplier для [Отчет обороты](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty)
-- Документ [Корректировка баланса контрагента](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-korrektirowka-balansa-kontragenta)
+- Документ [Корректировка баланса контрагента](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-korrektirowka-wzaimoraschetow)
 
 ## 09-09-2021
 ### Добавлено
