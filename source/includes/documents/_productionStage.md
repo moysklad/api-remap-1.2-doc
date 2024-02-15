@@ -18,20 +18,15 @@
 | **materials**          | MetaArray                                                 |            | Метаданные Материалов производственного этапа. [Подробнее тут](#dokumenty-proizwodstwennoe-zadanie-materialy-proizwodstwennogo-atapa)<br>`+Обязательное при ответе` |
 | **orderingPosition**   | Int                                                       |            | Индекс Производственного этапа в Производственном ряде<br>`+Обязательное при ответе` `+Только для чтения`                                                           |
 | **stage**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Метаданные Этапа производства. [Подробнее тут](..dictionaries/#suschnosti-jetap-proizwodstwa)<br>`+Expand` `+Обязательное при ответе` `+Только для чтения`          |
-| **status**             | Enum                                                      | `=` `!=`   | Статус<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                           |
 | **productionRow**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Метаданные Производственного ряда<br>`+Expand` `+Обязательное при ответе` `+Только для чтения`                                                                      |
-| **productionVolume**   | Double                                                    |            | Объем Производственного этапа. Соответствует объему производственного ряда<br>`+Только для чтения`                                                                  |
+| **totalQuantity**   | Double                                                    |            | Объем Производственного этапа. Соответствует объему производственного ряда<br>`+Только для чтения`                                                                  |
+| **completedQuantity**   | Double                                                    |            | Выполненое количество<br>`+Только для чтения`                                                                                                                       |
+| **availableQuantity**   | Double                                                    |            | Количество, доступное к выполнению<br>`+Только для чтения`                                                                                                          |
+| **blockedQuantity**   | Double                                                    |            | Количество, которое на данный момент выполнять нельзя. Например, ещё не выполнен предыдущий этап<br>`+Только для чтения`                                            |
+| **skippedQuantity**   | Double                                                    |            | Количество, которое не будет выполнено. Например, из-за отстановки производства<br>`+Только для чтения`                                                             |
 | **processingUnitCost** | Double                                                    |            | Затраты на единицу объема производства<br>                                                                                                                          |
 
 Для сущности действуют ограничения на expand: для поля **productionRow** недоступен expand вложенных полей.
-
-#### Возможные значения поля **status**
-
-| Название      | Описание                                           |
-|---------------|:---------------------------------------------------|
-| **BLOCKED**   | Производственный этап заблокирован для выполнения  |
-| **AVAILABLE** | Производственный этап доступен для выполнения      |
-| **COMPLETED** | Производственный этап выполнен                     |
 
 #### Материалы Производственного этапа
 Материалы Производственного этапа - это товары, модификации и серии, которые планируется затратить при выполнении Производственного этапа.
@@ -120,7 +115,6 @@ curl -X GET
           "uuidHref": "https://online.moysklad.ru/app/#productionrow/edit?id=19070a2e-99d6-11ee-0a83-0a2e0000076a"
         }
       },
-      "status": "BLOCKED",
       "materials": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/19070bfd-99d6-11ee-0a83-0a2e0000076b/materials",
@@ -132,7 +126,11 @@ curl -X GET
         }
       },
       "orderingPosition": 0,
-      "productionVolume": 1.0,
+      "totalQuantity": 1.0,
+      "completedQuantity": 0.0,
+      "availableQuantity": 1.0,
+      "blockedQuantity": 0.0,
+      "skippedQuantity": 0.0,
       "processingUnitCost": 2.0,
       "labourUnitCost": 0.0
     }
@@ -194,7 +192,6 @@ curl -X GET
       "uuidHref": "https://online.moysklad.ru/app/#productionrow/edit?id=19070a2e-99d6-11ee-0a83-0a2e0000076a"
     }
   },
-  "status": "BLOCKED",
   "materials": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/19070bfd-99d6-11ee-0a83-0a2e0000076b/materials",
@@ -206,7 +203,11 @@ curl -X GET
     }
   },
   "orderingPosition": 0,
-  "productionVolume": 1.0,
+  "totalQuantity": 1.0,
+  "completedQuantity": 0.0,
+  "availableQuantity": 1.0,
+  "blockedQuantity": 0.0,
+  "skippedQuantity": 0.0,
   "processingUnitCost": 70.0,
   "labourUnitCost": 30.5
 }

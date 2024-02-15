@@ -88,11 +88,8 @@
 |----------------------|:----------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**        | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                            |
 | **assortment**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Ссылка на товар/серию/модификацию, которую представляет собой позиция.<br>`+Обязательное при ответе` `+Expand`                                                                                  |
-| **costSum**          | Int                                                       | Себестоимость произведенного продукта с учетом стоимости материалов, затрат на производство и оплаты труда `+Только для чтения`                                                                 |
 | **id**               | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                   |
-| **standardQuantity** | Float                                                     | Норма продукта согласно техкарте<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                             |
 | **planQuantity**     | Float                                                     | Запланированное для производства количество продукта <br>`+Обязательное при ответе`                                                                                                             |
-| **producedQuantity** | Float                                                     | Произведенное количество продукта<br>`+Обязательное при ответе`  `+Только для чтения`                                                                                                           |
 | **productionRow**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные [Позиции производственного задания](../documents/#dokumenty-proizwodstwennoe-zadanie-pozicii-proizwodstwennogo-zadaniq)<br>`+Обязательное при ответе` `+Expand` `+Только для чтения` |
 
 С продуктами можно работать с помощью специальных ресурсов для управления продуктами Производственных заданий,
@@ -1702,9 +1699,7 @@ curl -X GET
           "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
         }
       },
-      "standardQuantity": 2.0,
-      "planQuantity": 2.0,
-      "producedQuantity": 0.0
+      "planQuantity": 2.0
     },
     {
       "meta": {
@@ -1731,9 +1726,7 @@ curl -X GET
           "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
         }
       },
-      "standardQuantity": 2.0,
-      "planQuantity": 2.0,
-      "producedQuantity": 0.0
+      "planQuantity": 2.0
     }
   ]
 }
@@ -1789,10 +1782,7 @@ curl -X GET
       "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
     }
   },
-  "standardQuantity": 2.0,
-  "planQuantity": 2.0,
-  "producedQuantity": 1.0,
-  "costSum": 10
+  "planQuantity": 2.0
 }
 
 ```
@@ -1869,9 +1859,7 @@ curl -X POST
       "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
     }
   },
-  "standardQuantity": 2.0,
-  "planQuantity": 22.0,
-  "producedQuantity": 0.0
+  "planQuantity": 22.0
 }
 ```
 
@@ -1935,9 +1923,7 @@ curl -X PUT
       "uuidHref": "http://api.moysklad.ru/app/#productionrow/edit?id=ef45d60f-214e-11ee-c0a8-d0040000006a"
     }
   },
-  "standardQuantity": 2.0,
-  "planQuantity": 22.0,
-  "producedQuantity": 0.0
+  "planQuantity": 22.0
 }
 ```
 
