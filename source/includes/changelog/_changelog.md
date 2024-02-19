@@ -151,7 +151,7 @@
 
 ### 07-02-2024
 #### Добавлено
-- Поле `marksCheckMode` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), настройка проверки КМ перед продажей в ГИС МТ
+- Поле `marksCheckMode` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), настройка проверки КМ перед продажей в ГИС МТ
 
 ### 31-01-2024
 #### Изменено
