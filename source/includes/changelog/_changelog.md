@@ -149,6 +149,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 07-02-2024
+#### Добавлено
+- Поле `marksCheckMode` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), настройка проверки КМ перед продажей в ГИС МТ
+
 ### 31-01-2024
 #### Изменено
 - Добавлено поле `state` в [Задачу](../dictionaries/#suschnosti-zadacha) - сущность [Тип задачи](../dictionaries/#suschnosti-zadacha-tip-zadachi)
