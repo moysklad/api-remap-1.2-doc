@@ -3,7 +3,7 @@
 
 ## 26-02-2024
 ### Добавлено
-- Поля связей документов Приемки и Отгрузки в [Перемещение](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#dokumenty-peremeschenie)
+- Поля связей документов Приемки и Отгрузки в [Перемещение](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-peremeschenie)
 
 ## 07-02-2024
 ### Добавлено
