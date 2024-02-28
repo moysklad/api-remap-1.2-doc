@@ -44,6 +44,10 @@ jobs:
           npm install jsdom@20.0.0
           node ./search/globalindex.js "./site/"
 
+      - name: Build release_date file
+        run:
+          date -I > site/release_date
+
       - name: Deploy
         env:
           SERVER_IP_ADDRESS: ${{ secrets.SERVER_IP_ADDRESS }}
