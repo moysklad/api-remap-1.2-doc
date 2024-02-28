@@ -35,7 +35,7 @@
 | **organization**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                 |
 | **owner**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                    |
 | **printed**               | Boolean                                                   |                                                                                                                                                   | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                             |
-| **productionRows**        | MetaArray                                                 |                                                                                                                                                   | Метаданные Позиций производственного задани. [Подробнее тут](../documents/#dokumenty-proizwodstwennoe-zadanie-pozicii-proizwodstwennogo-zadaniq)<br>`+Expand`                      |
+| **productionRows**        | MetaArray                                                 |                                                                                                                                                   | Метаданные Позиций производственного задания. [Подробнее тут](../documents/#dokumenty-proizwodstwennoe-zadanie-pozicii-proizwodstwennogo-zadaniq)<br>`+Expand`                      |
 | **productionEnd**         | DateTime                                                  |                                                                                                                                                   | Дата окончания производства<br>`+Только для чтения`                                                                                                                  |
 | **productionStart**       | DateTime                                                  |                                                                                                                                                   | Дата начала производства                                                                                                                                             |
 | **products**              | MetaArray                                                 |                                                                                                                                                   | Метаданные производимой продукции. [Подробнее тут](..documents/#dokumenty-proizwodstwennoe-zadanie-produkty-proizwodstwennogo-zadaniq)<br>`+Обязательное при ответе` |
@@ -578,7 +578,7 @@ curl -X GET
 }
 ```
 
-> Пример запроса на создание Производственного задания с производственными рядами в теле запроса.
+> Пример запроса на создание Производственного задания с позициями в теле запроса.
 
 ```shell
   curl -X POST
