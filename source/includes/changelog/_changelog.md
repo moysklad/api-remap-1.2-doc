@@ -149,7 +149,7 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 10-01-2024
+### 04-03-2024
 #### Добавлено
 - Эндпоинты работы с [Производственным заданием](../documents/#dokumenty-proizwodstwennoe-zadanie)
 - Эндпоинты работы с [Выполнением этапа](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
