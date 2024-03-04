@@ -69,7 +69,7 @@
 | **demands**        | Массив ссылок на связанные отгрузки в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)           |
 | **payments**       | Массив ссылок на связанные платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)            |
 | **invoicesOut**    | Массив ссылок на связанные счета покупателям в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)  |
-| **moves**          | Массив ссылок на связанные перемещния в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)         |
+| **moves**          | Массив ссылок на связанные перемещения в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)        |
 | **prepayments**    | Массив ссылок на связанные предоплаты в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)         |
 
 #### Позиции Заказа покупателя

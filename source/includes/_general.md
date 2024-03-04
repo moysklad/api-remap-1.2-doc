@@ -295,6 +295,8 @@ JSON API позволяет создавать, обновлять и удаля
   - [Внутренний заказ](documents/#dokumenty-vnutrennij-zakaz)
   - [Заказ на производство](documents/#dokumenty-zakaz-na-proizwodstwo)
   - [Техоперация](documents/#dokumenty-tehoperaciq)
+  - [Производственное задание](documents/#dokumenty-proizwodstwennoe-zadanie)
+  - [Выполнение этапа](documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
   - [Полученный отчет комиссионера](documents/#dokumenty-poluchennyj-otchet-komissionera)
   - [Выданный отчет комиссионера](documents/#dokumenty-vydannyj-otchet-komissionera)
 
@@ -1176,12 +1178,12 @@ curl -X POST
 
 Пример ссылки:
 
-+ `https://api.moysklad.ru/api/remap/1.2/entity/<type>/<id>`
++ `https://api.moysklad.ru/api/remap/1.2/entity/<type>/&lt;id>`
 
 Вот несколько примеров:
 
-+ `filter=agent=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/<id>`
-+ `filter=ownAgent=https://api.moysklad.ru/api/remap/1.2/entity/organization/<id>`
++ `filter=agent=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/&lt;id>`
++ `filter=ownAgent=https://api.moysklad.ru/api/remap/1.2/entity/organization/&lt;id>`
 
 Ссылочные поля, доступные для фильтрации:
 
@@ -1210,7 +1212,7 @@ curl -X POST
 
 С помощью filter можно фильтровать поля типа ID.
 
-+ `filter=<имя_поля>=<ID>`
++ `filter=<имя_поля>=&lt;ID>`
 
 Пример ID:
 
