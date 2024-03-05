@@ -1,27 +1,4 @@
 # Workbook
-[//]: # (TODO: remove in MC-64261)
-<div class="banner">
-  <h4>Внимание!</h4>
-  <ui><b>До 1 декабря 2023 года необходимо:</b>
-    <li>Перенастроить интеграции с домена online.moysklad.ru на домен api.moysklad.ru</li>
-    <li>Включить использование <a href='https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow'>сжатия содержимого ответов</a> через передачу заголовка Accept-Encoding</li>
-  </ui>
-  <p>Рекомендации по переезду на новый домен можно прочитать <a href="https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rekomendacii-po-pereezdu-na-nowyj-domen">здесь</a>.</p>
-  <p>После 1 декабря 2023 года начнется поэтапное отключение доступа к api на старом домене online.moysklad.ru</p>
-</div>
-
-## Инструкция по переходу с версии 1.1 на 1.2
-
-Для перехода с версии 1.1 на 1.2 необходимо:
-
-* ознакомиться со [списком изменений](../changelog/#spisok-izmenenij)
-
-* просмотреть соответствующие разделы в документации по списку изменений
-
-* изменить во всех запросах remap/1.1 на remap/1.2 и убрать ненужные заголовки
-
-* проверить совместимость интеграции
-
 ## Что нужно знать для начала работы с JSON API
 ### Ограничения
 
