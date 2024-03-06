@@ -1,34 +1,5 @@
 # МойСклад JSON API
-[//]: # (TODO: remove in MC-64261)
-<div class="banner">
-  <h4>Внимание!</h4>
-  <ui><b>До 1 декабря 2023 года необходимо:</b>
-    <li>Перенастроить интеграции с домена online.moysklad.ru на домен api.moysklad.ru</li>
-    <li>Включить использование <a href='https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow'>сжатия содержимого ответов</a> через передачу заголовка Accept-Encoding</li>
-  </ui>
-  <p>Рекомендации по переезду на новый домен можно прочитать <a href="https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rekomendacii-po-pereezdu-na-nowyj-domen">здесь</a>.</p>
-  <p>После 1 декабря 2023 года начнется поэтапное отключение доступа к api на старом домене online.moysklad.ru</p>
-</div>
-
 ## Общие Сведения
-
-### Рекомендации по переезду на новый домен
-
-С 1 декабря 2023 домен `online.moysklad.ru` перестанет обслуживать запросы к `/api/remap/1.2`. Запросы нужно будет отправлять на новый домен `api.moysklad.ru`. 
-
-До 1 декабря 2023 года обслуживать запросы будут оба вышеуказанных домена (после - гарантированное обслуживание только на новом домене). С единственным отличием:
-
-  + В запросах на https://online.moysklad.ru/api/remap/1.2 наличие заголовка «Accept-Encoding»: «gzip» опционально
-  + В запросах на https://api.moysklad.ru/api/remap/1.2 наличие заголовка «Accept-Encoding»: «gzip» **обязательно**
-
-Чтобы работа ваших приложений не прерывалась, рекомендуем начать подготовку к переезду на новый домен `api.moysklad.ru` _уже сейчас_. 
-
-1. Настройте передачу заголовка `Accept-Encoding: gzip` в запросах и чтение gzip-ответов на текущем домене `online.moysklad.ru`.
-2. Проверьте использование в вашей интеграции ссылок (полей `href`), передаваемых в объектах `meta` и в вебхуках. Если вы отправляете запросы, используя информацию из получаемых ссылок, то обратите внимание на то, что:
-   + при отправке запросов на домен `online.moysklad.ru`, в `meta` возвращаются ссылки с доменом `online.moysklad.ru`. А при отправке запросов на домен `api.moysklad.ru`, в `meta` возвращаются ссылки с доменом `api.moysklad.ru`.
-   + до 1 декабря вебхук, созданный через запрос к домену `online.moysklad.ru` будет содержать в теле ссылки с доменом на `online.moysklad.ru`, а вебхук, созданный через запрос к домену `api.moysklad.ru` будет содержать ссылки с доменом `api.moysklad.ru`. Чтобы определить принадлежность вебхука домену, вы можете использовать временно введенный параметр `oldDomain` в запросах [получения вебхуков](dictionaries/#suschnosti-vebhuki). `oldDomain = true` будет отображать вебхуки старого домена, `oldDomain = false` - нового.
-3. Когда ваша интеграция будет готова передавать заголовок `Accept-Encoding: gzip` и читать gzip-ответы, замените адрес https://online.moysklad.ru/api/remap/1.2 на https://api.moysklad.ru/api/remap/1.2.
-
 ### Аутентификация
 
 Для того чтобы успешно взаимодействовать с JSON API онлайн-сервиса МойСклад, необходимо аутентифицироваться
@@ -295,6 +266,8 @@ JSON API позволяет создавать, обновлять и удаля
   - [Внутренний заказ](documents/#dokumenty-vnutrennij-zakaz)
   - [Заказ на производство](documents/#dokumenty-zakaz-na-proizwodstwo)
   - [Техоперация](documents/#dokumenty-tehoperaciq)
+  - [Производственное задание](documents/#dokumenty-proizwodstwennoe-zadanie)
+  - [Выполнение этапа](documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
   - [Полученный отчет комиссионера](documents/#dokumenty-poluchennyj-otchet-komissionera)
   - [Выданный отчет комиссионера](documents/#dokumenty-vydannyj-otchet-komissionera)
 
@@ -1176,12 +1149,12 @@ curl -X POST
 
 Пример ссылки:
 
-+ `https://api.moysklad.ru/api/remap/1.2/entity/<type>/<id>`
++ `https://api.moysklad.ru/api/remap/1.2/entity/<type>/&lt;id>`
 
 Вот несколько примеров:
 
-+ `filter=agent=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/<id>`
-+ `filter=ownAgent=https://api.moysklad.ru/api/remap/1.2/entity/organization/<id>`
++ `filter=agent=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/&lt;id>`
++ `filter=ownAgent=https://api.moysklad.ru/api/remap/1.2/entity/organization/&lt;id>`
 
 Ссылочные поля, доступные для фильтрации:
 
@@ -1210,7 +1183,7 @@ curl -X POST
 
 С помощью filter можно фильтровать поля типа ID.
 
-+ `filter=<имя_поля>=<ID>`
++ `filter=<имя_поля>=&lt;ID>`
 
 Пример ID:
 
