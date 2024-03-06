@@ -1,7 +1,7 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-## 12-02-2024
+## 06-03-2024
 ### Добавлено
 - Эндпоинт [Серийные номера](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-serijnyj-nomer)
 
