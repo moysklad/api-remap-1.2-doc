@@ -20,6 +20,10 @@
 Список последних изменений в API Remap 1.2
 
 
+### 07-03-2024
+#### Добавлено
+- Создание [шаблона Перемещения на основании](../documents/#dokumenty-peremeschenie-shablon-peremescheniq-na-osnowe) Заказа покупателя
+
 ### 06-03-2024
 #### Добавлено
 - Эндпоинт [Серийные номера](../dictionaries/#suschnosti-serijnyj-nomer)
