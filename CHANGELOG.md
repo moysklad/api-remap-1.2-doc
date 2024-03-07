@@ -1,8 +1,8 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 07-03-2024
-#### Добавлено
+## 07-03-2024
+### Добавлено
 - Создание [шаблона Перемещения на основании](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-peremeschenie-shablon-peremescheniq-na-osnowe) Заказа покупателя
 
 ## 06-03-2024
