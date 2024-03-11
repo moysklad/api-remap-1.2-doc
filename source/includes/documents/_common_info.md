@@ -1,15 +1,4 @@
 # Документы
-[//]: # (TODO: remove in MC-64261)
-<div class="banner">
-  <h4>Внимание!</h4>
-  <ui><b>До 1 декабря 2023 года необходимо:</b>
-    <li>Перенастроить интеграции с домена online.moysklad.ru на домен api.moysklad.ru</li>
-    <li>Включить использование <a href='https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow'>сжатия содержимого ответов</a> через передачу заголовка Accept-Encoding</li>
-  </ui>
-  <p>Рекомендации по переезду на новый домен можно прочитать <a href="https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rekomendacii-po-pereezdu-na-nowyj-domen">здесь</a>.</p>
-  <p>После 1 декабря 2023 года начнется поэтапное отключение доступа к api на старом домене online.moysklad.ru</p>
-</div>
-
 ## Общие сведения
 ### Шаблоны документов
 
@@ -23,24 +12,29 @@
 Для каждого из данных ресурсов есть примеры запросов и ответов.<br>
 На данный момент можно получить шаблоны следующих документы на основании других:
 
-| Документ                                | Основание, на котором он может быть создан                                                                                                                                               |
-|:----------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Cчет покупателю (invoiceout)            | Заказ покупателя (customerorder)                                                                                                                                                         |
-| Возврат покупателя (salesreturn)        | Отгрузка (demand), <br>Розничная продажа (retaildemand)                                                                                                                                  |
-| Возврат поставщику (purchasereturn)     | Приемка (supply)                                                                                                                                                                         |
+| Документ                                | Основание, на котором он может быть создан                                                                                                                                                 |
+|:----------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Cчет покупателю (invoiceout)            | Заказ покупателя (customerorder), <br>Отгрузка (demand)                                                                                                                                    |
+| Возврат покупателя (salesreturn)        | Отгрузка (demand), <br>Розничная продажа (retaildemand)                                                                                                                                    |
+| Возврат поставщику (purchasereturn)     | Приемка (supply)                                                                                                                                                                           |
 | Входящий платеж (paymentin)             | Заказ покупателя (customerorder), <br>Возврат поставщику (purchasereturn), <br>Отгрузка (demand), <br>Счет покупателю (invoiceout), <br>Полученный отчет комиссионера (commissionreportin) |
-| Заказ на производство (processingorder) | Техкарта (processingplan)                                                                                                                                                                |
-| Заказ поставщику (purchaseorder)        | Внутренний заказ (internalorder)                                                                                                                                                         |
-| Исходящий платеж (paymentout)           | Возврат покупателя (salesreturn), <br>Приемка (supply), <br>Счет поставщика (invoicein), <br>Заказ поставщику (purchaseorder), <br>Выданный отчет комиссионера (commissionreportout)     |
-| Оприходование (enter)                   | Инвентаризация(inventory)                                                                                                                                                                |
-| Отгрузка (demand)                       | Заказ покупателя (customerorder)                                                                                                                                                         |
-| Перемещение (move)                      | Внутренний заказ (internalorder)                                                                                                                                                         |
+| Заказ на производство (processingorder) | Техкарта (processingplan)                                                                                                                                                                  |
+| Заказ поставщику (purchaseorder)        | Внутренний заказ (internalorder), <br>Заказ покупателя (customerorder)                                                                                                                     |
+| Исходящий платеж (paymentout)           | Возврат покупателя (salesreturn), <br>Приемка (supply), <br>Счет поставщика (invoicein), <br>Заказ поставщику (purchaseorder), <br>Выданный отчет комиссионера (commissionreportout)       |
+| Оприходование (enter)                   | Инвентаризация(inventory)                                                                                                                                                                  |
+| Отгрузка (demand)                       | Заказ покупателя (customerorder), <br>Счет покупателю (invoiceout)                                                                                                                         |
+| Перемещение (move)                      | Внутренний заказ (internalorder)                                                                                                                                                           |
 | Приходный ордер (cashin)                | Заказ покупателя (customerorder), <br>Возврат поставщику (purchasereturn), <br>Отгрузка (demand), <br>Счет покупателю (invoiceout), <br>Полученный отчет комиссионера (commissionreportin) |
-| Расходный ордер (cashout)               | Возврат покупателя (salesreturn), <br>Приемка (supply), <br>Счет поставщика (invoicein), <br>Заказ поставщику (purchaseorder), <br>Выданный отчет комиссионера (commissionreportout)     |
-| Розничная продажа (retaildemand)        | Розничная смена, Заказ покупателя                                                                                                                                                        |
-| Списание (loss)                         | Возврат покупателя (salesreturn),<br>инвентаризация(inventory)                                                                                                                           |
-| Счет поставщика (invoicein)             | Заказ поставщику (purchaseorder)                                                                                                                                                         |
-| Техоперация (processing)                | Заказ на производство (processingorder), Техкарта (processingplan)                                                                                                                       |
+| Расходный ордер (cashout)               | Возврат покупателя (salesreturn), <br>Приемка (supply), <br>Счет поставщика (invoicein), <br>Заказ поставщику (purchaseorder), <br>Выданный отчет комиссионера (commissionreportout)       |
+| Розничная продажа (retaildemand)        | Розничная смена (retailshift), <br>Заказ покупателя (customerorder)                                                                                                                        |
+| Розничный возврат (retailsalesreturn)   | Розничная смена (retailshift), <br>Розничная продажа (retaildemand)                                                                                                                        |
+| Выплата денег (retaildrawercashout)     | Розничная смена (retailshift)                                                                                                                                                              |
+| Внесение денег (retaildrawercashin)     | Розничная смена (retailshift)                                                                                                                                                              |
+| Списание (loss)                         | Возврат покупателя (salesreturn),<br>инвентаризация(inventory)                                                                                                                             |
+| Счет поставщика (invoicein)             | Заказ поставщику (purchaseorder), <br>Приемка (supply)                                                                                                                                     |
+| Счет-фактура полученный (facturein)     | Приемка (supply), <br>Исходящий платеж (paymentout)                                                                                                                                        |
+| Счет-фактура выданный (factureout)      | Отгрузка (demand), <br>Возврат поставщику (purchasereturn), <br>Входящий платеж (paymentin)                                                                                                |
+| Техоперация (processing)                | Заказ на производство (processingorder), <br>Техкарта (processingplan)                                                                                                                     |
 
  В результате PUT запроса по /entity/entityName/new НЕ будет создано нового документа.  
  Возвращаемый предзаполненный объект является лишь "болванкой" с некоторыми заполненными полями (поля заполняются по той же логике,

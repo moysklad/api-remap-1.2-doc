@@ -24,6 +24,7 @@ includes:
   - documents/payment_in
   - documents/commissionreportout
   - documents/retaildrawercashout
+  - documents/productionStageCompletion
   - documents/processingorder
   - documents/customerOrder
   - documents/purchaseOrder
@@ -38,6 +39,8 @@ includes:
   - documents/prepayment
   - documents/supply
   - documents/cashin
+  - documents/productionTask
+  - documents/productionStage
   - documents/cashout
   - documents/retaildemand
   - documents/retailshift

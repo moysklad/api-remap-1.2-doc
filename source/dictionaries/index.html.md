@@ -38,6 +38,7 @@ includes:
   - dictionaries/customentity
   - dictionaries/project
   - dictionaries/region
+  - dictionaries/thing
   - dictionaries/consignment
   - dictionaries/discount
   - dictionaries/store

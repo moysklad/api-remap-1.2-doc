@@ -110,7 +110,7 @@ $(function () {
     let headerIds = new Set();
     let results = [];
     for (let i = 0; i < indexKeys.length; i++) {
-      let values = index.search(indexKeys[i]).filter(function(r) {
+      let values = index.search(indexKeys[i].replace(/~/, '=')).filter(function(r) {
         return r.score > 0.0001;
       });
       for (let i = 0; i < values.length; i++) {
