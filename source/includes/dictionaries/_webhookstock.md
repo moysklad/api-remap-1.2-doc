@@ -15,7 +15,7 @@
   "accountId": "f71cb8b6-f7b5-11ec-ac12-000f000000eb",
   "stockType": "stock",
   "reportType": "all",
-  "reportUrl": "https://api.moysklad.ru/api/remap/1.2/report/stock/all/current?fromDate=2022-09-24 19:14:32"
+  "reportUrl": "https://api.moysklad.ru/api/remap/1.2/report/stock/all/current?changedSince=2022-09-24 19:14:32"
 }
 ```
 

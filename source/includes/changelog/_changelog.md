@@ -19,6 +19,9 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 11-03-2024
+#### Добавлено
+- Поле `sendMarksToChestnyZnakOnCloud` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), позволяющее управлять отправкой кассой-миньоном КМ на проверку в ЧЗ
 
 ### 07-03-2024
 #### Добавлено
@@ -74,7 +77,7 @@
 
 ### 28-11-2023
 #### Добавлено
-- Поле `showBeerOnTap` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), настройка отображения вскрытых кегов на кассе
+- Поле `showBeerOnTap` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), настройка отображения вскрытых кегов на кассе
 
 ### 27-11-2023
 #### Изменено
