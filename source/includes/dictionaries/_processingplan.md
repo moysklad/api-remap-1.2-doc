@@ -172,6 +172,7 @@ curl -X GET
         }
       },
       "cost": 1000,
+      "costDistributionType": "BY_PRICE",
       "stages": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/1a18770e-ad9a-11e6-5bed-427b00000064/stages",
@@ -251,6 +252,7 @@ curl -X GET
         }
       },
       "cost": 2000,
+      "costDistributionType": "BY_PRICE",
       "stages": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/6b4ffbf7-ac12-11e6-5bed-427b00000091/stages",
@@ -330,6 +332,7 @@ curl -X GET
         }
       },
       "cost": 10000,
+      "costDistributionType": "BY_PRICE",
       "stages": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/c38e50b0-acdc-11e6-5bed-427b0000009e/stages",
@@ -454,6 +457,7 @@ curl -X GET
     }
   },
   "cost": 1000,
+  "costDistributionType": "BY_PRICE",
   "stages": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/120a488b-b0bd-11e6-5bed-427b00000000/stages",
@@ -620,6 +624,7 @@ curl -X GET
       }
     },
     "cost": 1000,
+    "costDistributionType": "BY_PRICE",
     "stages": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/120a488b-b0bd-11e6-5bed-427b00000000/stages",
@@ -691,6 +696,7 @@ curl -X GET
       }
     },
     "cost": 100000,
+    "costDistributionType": "BY_PRICE",
     "stages": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/1a18770e-ad9a-11e6-5bed-427b00000064/stages",
@@ -854,6 +860,7 @@ curl -X GET
     }
   },
   "cost": 1000,
+  "costDistributionType": "BY_PRICE",
   "stages": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/1a18770e-ad9a-11e6-5bed-427b00000064/stages",
@@ -959,6 +966,7 @@ curl -X GET
     }
   },
   "cost": 100000,
+  "costDistributionType": "BY_PRICE",
   "stages": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/1a18770e-ad9a-11e6-5bed-427b00000064/stages",
