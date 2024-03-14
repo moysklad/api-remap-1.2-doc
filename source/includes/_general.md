@@ -544,7 +544,7 @@ curl -X POST
   "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
   -d '[
         {
           "name": "Строковое",
@@ -600,7 +600,7 @@ curl -X POST
   "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
   -d '[
         {
           "meta": {
@@ -660,7 +660,7 @@ curl -X POST
   "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
   -d '{
         "customEntityMeta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/0347beb0-a785-11e9-ac12-000800000003",
@@ -707,7 +707,7 @@ curl -X POST
   "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/delete"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
   -d '[
         {
           "meta": {
@@ -1994,14 +1994,14 @@ curl -X POST
 
 ### Редактирование отгрузки с expand 
 
-> Пример запроса на обнавление отгрузки с развернутыми объектами *agent** и **organization**.
+> Пример запроса на обнавление отгрузки с развернутыми объектами **agent** и **organization**.
 
 ```shell
 curl -X PUT
   "https://api.moysklad.ru/api/remap/1.2/entity/demand/1c3f30d2-88b9-11e7-9464-e4de00000000?expand=agent,organization"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
   -d '{
   "name": "3738"
 }`
