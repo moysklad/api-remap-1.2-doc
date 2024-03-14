@@ -2597,4 +2597,4 @@ curl -X GET
 }
 ```
 
-Больше примеров и информации можно найти в разделе [замена ссылок объектами с помощью expand](../#mojsklad-json-api-obschie-swedeniq-zamena-ssylok-ob-ektami-s-pomosch-u-expand)
+Больше примеров и информации можно найти в разделе [замена ссылок объектами с помощью expand.](../#mojsklad-json-api-obschie-swedeniq-zamena-ssylok-ob-ektami-s-pomosch-u-expand)
