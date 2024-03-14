@@ -63,8 +63,8 @@ curl -X POST
 ```json
 {
   "meta": {
-    "href": "httpss://api.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002",
-    "metadataHref": "httpss://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "product",
     "mediaType": "application/json",
     "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=6b3fd459-b0ac-11ea-ac14-000a00000000"
