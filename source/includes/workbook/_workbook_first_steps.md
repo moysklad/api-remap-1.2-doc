@@ -1747,7 +1747,8 @@ curl -X GET
   "https://api.moysklad.ru/api/remap/1.2/entity/product/0884d27a-b0e3-11ea-ac12-000b00000002?expand=owner.group"
 ```
 
-> Ответ:
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Товара с раскрытыми объектами owner и group.
 
 ```json
 {
@@ -1908,7 +1909,8 @@ curl -X PUT
   -d '{"name":"Новое наименование"}'
 ```
 
-> Ответ:
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обнавленного Товара с раскрытыми объектами owner и group.
 
 ```json
 {
@@ -2068,7 +2070,8 @@ curl -X GET
   "https://api.moysklad.ru/api/remap/1.2/entity/product?limit=100&expand=owner.group"
 ```
 
-> Ответ:
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Товаров с раскрытыми объектами owner и group.
 
 ```json
 {
