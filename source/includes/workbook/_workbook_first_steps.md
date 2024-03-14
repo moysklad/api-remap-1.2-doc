@@ -1737,7 +1737,7 @@ curl -X GET
 Например, у товара есть поле owner (ссылка на Сотрудника), а у сотрудника есть поле group (отдел сотрудника). Запросим товар, чтобы у него 
 был развернут owner, а у owner был развернут group.
 
-> Запрос
+> Запрос на получение с expand
 
 ``` shell
 curl -X GET 
@@ -1897,7 +1897,7 @@ curl -X GET
 }
 ```
 
-> Запрос
+> Запрос на обнавление с expand
 
 ``` shell
 curl -X PUT 
@@ -2056,4 +2056,545 @@ curl -X PUT
   "isSerialTrackable": false,
   "trackingType": "NOT_TRACKED"
 }
+```
+
+> Запрос на получение с expand множества товаров
+
+``` shell
+curl -X GET 
+  -u login:password
+  -H "Accept-Encoding: gzip" 
+  -H "Lognex-Pretty-Print-JSON: true" 
+  "https://api.moysklad.ru/api/remap/1.2/entity/product?limit=100&expand=owner,owner.group"
+```
+
+> Ответ:
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "http://localhost/api/remap/1.2/context/employee",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "http://localhost/api/remap/1.2/entity/product?limit=100&expand=owner,owner.group",
+    "type": "product",
+    "mediaType": "application/json",
+    "size": 156,
+    "limit": 100,
+    "offset": 0,
+    "nextHref": "http://localhost/api/remap/1.2/entity/product?expand=owner%2Cowner.group&limit=100&offset=100"
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "http://localhost/api/remap/1.2/entity/product/2d593ccc-c42e-11ee-ac1b-000e0000010c?expand=owner,owner.group",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#good/edit?id=2d5756c9-c42e-11ee-ac1b-000e0000010a"
+      },
+      "id": "2d593ccc-c42e-11ee-ac1b-000e0000010c",
+      "accountId": "081311c2-c42e-11ee-ac1b-000d00000001",
+      "owner": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/employee/09a8ad82-c42e-11ee-ac1b-000e0000004e?expand=group",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#employee/edit?id=09a8ad82-c42e-11ee-ac1b-000e0000004e"
+        },
+        "id": "09a8ad82-c42e-11ee-ac1b-000e0000004e",
+        "accountId": "081311c2-c42e-11ee-ac1b-000d00000001",
+        "owner": {
+          "meta": {
+            "href": "http://localhost/api/remap/1.2/entity/employee/09a8ad82-c42e-11ee-ac1b-000e0000004e",
+            "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+            "type": "employee",
+            "mediaType": "application/json",
+            "uuidHref": "http://localhost/app/#employee/edit?id=09a8ad82-c42e-11ee-ac1b-000e0000004e"
+          }
+        },
+        "shared": true,
+        "group": {
+          "meta": {
+            "href": "http://localhost/api/remap/1.2/entity/group/0815b439-c42e-11ee-ac1b-000d00000002",
+            "metadataHref": "http://localhost/api/remap/1.2/entity/group/metadata",
+            "type": "group",
+            "mediaType": "application/json"
+          },
+          "id": "0815b439-c42e-11ee-ac1b-000d00000002",
+          "accountId": "081311c2-c42e-11ee-ac1b-000d00000001",
+          "name": "Основной",
+          "index": 0
+        },
+        "updated": "2024-02-05 16:54:10.449",
+        "name": "Администратор",
+        "externalCode": "SUOW9s68hP6PLywyoQ0NZ1",
+        "archived": false,
+        "created": "2024-02-05 16:54:10.449",
+        "uid": "admin@megorov",
+        "email": "megorov@moysklad.ru",
+        "lastName": "Администратор",
+        "fullName": "Администратор",
+        "shortFio": "Администратор",
+        "cashiers": [
+          {
+            "meta": {
+              "href": "http://localhost/api/remap/1.2/entity/retailstore/0a95b483-c42e-11ee-ac1b-000e000000af/cashiers/0a95d547-c42e-11ee-ac1b-000e000000b0",
+              "type": "cashier",
+              "mediaType": "application/json"
+            }
+          }
+        ]
+      },
+      "shared": true,
+      "group": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/group/0815b439-c42e-11ee-ac1b-000d00000002",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2024-02-05 16:55:10.253",
+      "name": "товар",
+      "code": "00001",
+      "externalCode": "gSE0bU52hre8DeweVoba50",
+      "archived": false,
+      "pathName": "",
+      "useParentVat": true,
+      "uom": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/uom/metadata",
+          "type": "uom",
+          "mediaType": "application/json"
+        }
+      },
+      "images": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/product/2d593ccc-c42e-11ee-ac1b-000e0000010c/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "minPrice": {
+        "value": 0.0,
+        "currency": {
+          "meta": {
+            "href": "http://localhost/api/remap/1.2/entity/currency/0a1b4b87-c42e-11ee-ac1b-000e0000009d",
+            "metadataHref": "http://localhost/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "http://localhost/app/#currency/edit?id=0a1b4b87-c42e-11ee-ac1b-000e0000009d"
+          }
+        }
+      },
+      "salePrices": [
+        {
+          "value": 0.0,
+          "currency": {
+            "meta": {
+              "href": "http://localhost/api/remap/1.2/entity/currency/0a1b4b87-c42e-11ee-ac1b-000e0000009d",
+              "metadataHref": "http://localhost/api/remap/1.2/entity/currency/metadata",
+              "type": "currency",
+              "mediaType": "application/json",
+              "uuidHref": "http://localhost/app/#currency/edit?id=0a1b4b87-c42e-11ee-ac1b-000e0000009d"
+            }
+          },
+          "priceType": {
+            "meta": {
+              "href": "http://localhost/api/remap/1.2/context/companysettings/pricetype/0a618fd0-c42e-11ee-ac1b-000e0000009e",
+              "type": "pricetype",
+              "mediaType": "application/json"
+            },
+            "id": "0a618fd0-c42e-11ee-ac1b-000e0000009e",
+            "name": "Цена продажи",
+            "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+          }
+        }
+      ],
+      "buyPrice": {
+        "value": 0.0,
+        "currency": {
+          "meta": {
+            "href": "http://localhost/api/remap/1.2/entity/currency/0a1b4b87-c42e-11ee-ac1b-000e0000009d",
+            "metadataHref": "http://localhost/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "http://localhost/app/#currency/edit?id=0a1b4b87-c42e-11ee-ac1b-000e0000009d"
+          }
+        }
+      },
+      "barcodes": [
+        {
+          "ean13": "2000000000015"
+        }
+      ],
+      "paymentItemType": "GOOD",
+      "discountProhibited": false,
+      "weight": 0.0,
+      "volume": 0.0,
+      "variantsCount": 0,
+      "isSerialTrackable": false,
+      "trackingType": "NOT_TRACKED",
+      "files": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/product/2d593ccc-c42e-11ee-ac1b-000e0000010c/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "http://localhost/api/remap/1.2/entity/product/372e30d3-c42e-11ee-ac1b-000e00000113?expand=owner,owner.group",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#good/edit?id=372e1b39-c42e-11ee-ac1b-000e00000111"
+      },
+      "id": "372e30d3-c42e-11ee-ac1b-000e00000113",
+      "accountId": "081311c2-c42e-11ee-ac1b-000d00000001",
+      "owner": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/employee/09a8ad82-c42e-11ee-ac1b-000e0000004e?expand=group",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#employee/edit?id=09a8ad82-c42e-11ee-ac1b-000e0000004e"
+        },
+        "id": "09a8ad82-c42e-11ee-ac1b-000e0000004e",
+        "accountId": "081311c2-c42e-11ee-ac1b-000d00000001",
+        "owner": {
+          "meta": {
+            "href": "http://localhost/api/remap/1.2/entity/employee/09a8ad82-c42e-11ee-ac1b-000e0000004e",
+            "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+            "type": "employee",
+            "mediaType": "application/json",
+            "uuidHref": "http://localhost/app/#employee/edit?id=09a8ad82-c42e-11ee-ac1b-000e0000004e"
+          }
+        },
+        "shared": true,
+        "group": {
+          "meta": {
+            "href": "http://localhost/api/remap/1.2/entity/group/0815b439-c42e-11ee-ac1b-000d00000002",
+            "metadataHref": "http://localhost/api/remap/1.2/entity/group/metadata",
+            "type": "group",
+            "mediaType": "application/json"
+          },
+          "id": "0815b439-c42e-11ee-ac1b-000d00000002",
+          "accountId": "081311c2-c42e-11ee-ac1b-000d00000001",
+          "name": "Основной",
+          "index": 0
+        },
+        "updated": "2024-02-05 16:54:10.449",
+        "name": "Администратор",
+        "externalCode": "SUOW9s68hP6PLywyoQ0NZ1",
+        "archived": false,
+        "created": "2024-02-05 16:54:10.449",
+        "uid": "admin@megorov",
+        "email": "megorov@moysklad.ru",
+        "lastName": "Администратор",
+        "fullName": "Администратор",
+        "shortFio": "Администратор",
+        "cashiers": [
+          {
+            "meta": {
+              "href": "http://localhost/api/remap/1.2/entity/retailstore/0a95b483-c42e-11ee-ac1b-000e000000af/cashiers/0a95d547-c42e-11ee-ac1b-000e000000b0",
+              "type": "cashier",
+              "mediaType": "application/json"
+            }
+          }
+        ]
+      },
+      "shared": true,
+      "group": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/group/0815b439-c42e-11ee-ac1b-000d00000002",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2024-02-20 08:54:29.936",
+      "name": "материал",
+      "code": "00002",
+      "externalCode": "9gDTKYyXikO3IhAArG4sL0",
+      "archived": false,
+      "pathName": "",
+      "useParentVat": true,
+      "uom": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/uom/metadata",
+          "type": "uom",
+          "mediaType": "application/json"
+        }
+      },
+      "images": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/product/372e30d3-c42e-11ee-ac1b-000e00000113/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "minPrice": {
+        "value": 0.0,
+        "currency": {
+          "meta": {
+            "href": "http://localhost/api/remap/1.2/entity/currency/0a1b4b87-c42e-11ee-ac1b-000e0000009d",
+            "metadataHref": "http://localhost/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "http://localhost/app/#currency/edit?id=0a1b4b87-c42e-11ee-ac1b-000e0000009d"
+          }
+        }
+      },
+      "salePrices": [
+        {
+          "value": 0.0,
+          "currency": {
+            "meta": {
+              "href": "http://localhost/api/remap/1.2/entity/currency/0a1b4b87-c42e-11ee-ac1b-000e0000009d",
+              "metadataHref": "http://localhost/api/remap/1.2/entity/currency/metadata",
+              "type": "currency",
+              "mediaType": "application/json",
+              "uuidHref": "http://localhost/app/#currency/edit?id=0a1b4b87-c42e-11ee-ac1b-000e0000009d"
+            }
+          },
+          "priceType": {
+            "meta": {
+              "href": "http://localhost/api/remap/1.2/context/companysettings/pricetype/0a618fd0-c42e-11ee-ac1b-000e0000009e",
+              "type": "pricetype",
+              "mediaType": "application/json"
+            },
+            "id": "0a618fd0-c42e-11ee-ac1b-000e0000009e",
+            "name": "Цена продажи",
+            "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+          }
+        }
+      ],
+      "buyPrice": {
+        "value": 0.0,
+        "currency": {
+          "meta": {
+            "href": "http://localhost/api/remap/1.2/entity/currency/0a1b4b87-c42e-11ee-ac1b-000e0000009d",
+            "metadataHref": "http://localhost/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "http://localhost/app/#currency/edit?id=0a1b4b87-c42e-11ee-ac1b-000e0000009d"
+          }
+        }
+      },
+      "barcodes": [
+        {
+          "ean13": "2000000000022"
+        }
+      ],
+      "paymentItemType": "GOOD",
+      "discountProhibited": false,
+      "weight": 0.0,
+      "volume": 0.0,
+      "variantsCount": 0,
+      "isSerialTrackable": false,
+      "trackingType": "NOT_TRACKED",
+      "files": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/product/372e30d3-c42e-11ee-ac1b-000e00000113/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 2,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    
+    ...,
+    
+    {
+      "meta": {
+        "href": "http://localhost/api/remap/1.2/entity/product/6c4f3e66-e14d-11ee-ac1b-000f00000235?expand=owner,owner.group",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#good/edit?id=6c4f2dcc-e14d-11ee-ac1b-000f00000233"
+      },
+      "id": "6c4f3e66-e14d-11ee-ac1b-000f00000235",
+      "accountId": "081311c2-c42e-11ee-ac1b-000d00000001",
+      "owner": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/employee/09a8ad82-c42e-11ee-ac1b-000e0000004e?expand=group",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "http://localhost/app/#employee/edit?id=09a8ad82-c42e-11ee-ac1b-000e0000004e"
+        },
+        "id": "09a8ad82-c42e-11ee-ac1b-000e0000004e",
+        "accountId": "081311c2-c42e-11ee-ac1b-000d00000001",
+        "owner": {
+          "meta": {
+            "href": "http://localhost/api/remap/1.2/entity/employee/09a8ad82-c42e-11ee-ac1b-000e0000004e",
+            "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+            "type": "employee",
+            "mediaType": "application/json",
+            "uuidHref": "http://localhost/app/#employee/edit?id=09a8ad82-c42e-11ee-ac1b-000e0000004e"
+          }
+        },
+        "shared": true,
+        "group": {
+          "meta": {
+            "href": "http://localhost/api/remap/1.2/entity/group/0815b439-c42e-11ee-ac1b-000d00000002",
+            "metadataHref": "http://localhost/api/remap/1.2/entity/group/metadata",
+            "type": "group",
+            "mediaType": "application/json"
+          },
+          "id": "0815b439-c42e-11ee-ac1b-000d00000002",
+          "accountId": "081311c2-c42e-11ee-ac1b-000d00000001",
+          "name": "Основной",
+          "index": 0
+        },
+        "updated": "2024-02-05 16:54:10.449",
+        "name": "Администратор",
+        "externalCode": "SUOW9s68hP6PLywyoQ0NZ1",
+        "archived": false,
+        "created": "2024-02-05 16:54:10.449",
+        "uid": "admin@megorov",
+        "email": "megorov@moysklad.ru",
+        "lastName": "Администратор",
+        "fullName": "Администратор",
+        "shortFio": "Администратор",
+        "cashiers": [
+          {
+            "meta": {
+              "href": "http://localhost/api/remap/1.2/entity/retailstore/0a95b483-c42e-11ee-ac1b-000e000000af/cashiers/0a95d547-c42e-11ee-ac1b-000e000000b0",
+              "type": "cashier",
+              "mediaType": "application/json"
+            }
+          }
+        ]
+      },
+      "shared": true,
+      "group": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/group/0815b439-c42e-11ee-ac1b-000d00000002",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2024-03-13 18:21:54.071",
+      "name": "123 (2) (3) (3) (3)",
+      "code": "00105",
+      "externalCode": "YOOuUeNqjRQ0yVCsK9Yys0",
+      "archived": false,
+      "pathName": "",
+      "useParentVat": true,
+      "uom": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref": "http://localhost/api/remap/1.2/entity/uom/metadata",
+          "type": "uom",
+          "mediaType": "application/json"
+        }
+      },
+      "images": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/product/6c4f3e66-e14d-11ee-ac1b-000f00000235/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "minPrice": {
+        "value": 0.0,
+        "currency": {
+          "meta": {
+            "href": "http://localhost/api/remap/1.2/entity/currency/0a1b4b87-c42e-11ee-ac1b-000e0000009d",
+            "metadataHref": "http://localhost/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "http://localhost/app/#currency/edit?id=0a1b4b87-c42e-11ee-ac1b-000e0000009d"
+          }
+        }
+      },
+      "salePrices": [
+        {
+          "value": 0.0,
+          "currency": {
+            "meta": {
+              "href": "http://localhost/api/remap/1.2/entity/currency/0a1b4b87-c42e-11ee-ac1b-000e0000009d",
+              "metadataHref": "http://localhost/api/remap/1.2/entity/currency/metadata",
+              "type": "currency",
+              "mediaType": "application/json",
+              "uuidHref": "http://localhost/app/#currency/edit?id=0a1b4b87-c42e-11ee-ac1b-000e0000009d"
+            }
+          },
+          "priceType": {
+            "meta": {
+              "href": "http://localhost/api/remap/1.2/context/companysettings/pricetype/0a618fd0-c42e-11ee-ac1b-000e0000009e",
+              "type": "pricetype",
+              "mediaType": "application/json"
+            },
+            "id": "0a618fd0-c42e-11ee-ac1b-000e0000009e",
+            "name": "Цена продажи",
+            "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+          }
+        }
+      ],
+      "buyPrice": {
+        "value": 0.0,
+        "currency": {
+          "meta": {
+            "href": "http://localhost/api/remap/1.2/entity/currency/0a1b4b87-c42e-11ee-ac1b-000e0000009d",
+            "metadataHref": "http://localhost/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "http://localhost/app/#currency/edit?id=0a1b4b87-c42e-11ee-ac1b-000e0000009d"
+          }
+        }
+      },
+      "barcodes": [
+        {
+          "ean13": "2000000001135"
+        }
+      ],
+      "paymentItemType": "GOOD",
+      "discountProhibited": false,
+      "weight": 0.0,
+      "volume": 0.0,
+      "variantsCount": 0,
+      "isSerialTrackable": false,
+      "trackingType": "NOT_TRACKED",
+      "files": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/product/6c4f3e66-e14d-11ee-ac1b-000f00000235/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    }
+  ]
 ```
