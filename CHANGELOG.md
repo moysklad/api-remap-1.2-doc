@@ -1,6 +1,11 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 14-03-2024
+#### Добавлено
+- Поле `nextStages` в [Позиции техпроцесса](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehprocess), следующие позиции для позиции техпроцесса
+- Ошибки [25033, 25034](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
+
 ## 11-03-2024
 ### Добавлено
 - Поле `sendMarksToChestnyZnakOnCloud` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), позволяющее управлять отправкой кассой-миньоном КМ на проверку в ЧЗ
