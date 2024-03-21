@@ -20,8 +20,7 @@
 | **meta**                  | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Заказа на производство<br>`+Обязательное при ответе` `+Только для чтения`                                                            |
 | **moment**                | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе`                                                                                                    |
 | **name**                  | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Заказа на производство<br>`+Обязательное при ответе` `+Необходимо при создании`                                                    |
-| **organization**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                            |
-| **organizationAccount**   | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand`                                                                                                            |
+| **organization**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                            |                                                                      | Метаданные счета юрлица<br>`+Expand`                                                                                                            |
 | **owner**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                               |
 | **positions**             | MetaArray                                                 |                                                                                                                                                   | Метаданные позиций Заказа на производство<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                    |
 | **printed**               | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                        |
@@ -639,13 +638,6 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "organizationAccount": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e/accounts/3a30e844-016f-11e6-9464-e4de00000068",
-      "type": "account",
-      "mediaType": "application/json"
-    }
-  },
   "created": "2007-02-07 17:16:41",
   "printed": true,
   "published": true,
@@ -791,13 +783,6 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "organizationAccount": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e/accounts/3a30e844-016f-11e6-9464-e4de00000068",
-      "type": "account",
-      "mediaType": "application/json"
-    }
-  },
   "created": "2007-02-07 17:16:41",
   "printed": true,
   "published": true,
@@ -923,13 +908,6 @@ curl -X GET
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingorder/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
       "type": "state",
-      "mediaType": "application/json"
-    }
-  },
-  "organizationAccount": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e/accounts/3a30e844-016f-11e6-9464-e4de00000068",
-      "type": "account",
       "mediaType": "application/json"
     }
   },
@@ -1089,13 +1067,6 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
-    "organizationAccount": {
-      "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e/accounts/3a30e844-016f-11e6-9464-e4de00000068",
-        "type": "account",
-        "mediaType": "application/json"
-      }
-    },
     "created": "2007-02-07 17:16:41",
     "printed": true,
     "published": true,
@@ -1165,13 +1136,6 @@ curl -X GET
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingorder/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
         "type": "state",
-        "mediaType": "application/json"
-      }
-    },
-    "organizationAccount": {
-      "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e/accounts/3a30e844-016f-11e6-9464-e4de00000068",
-        "type": "account",
         "mediaType": "application/json"
       }
     },
@@ -1651,7 +1615,6 @@ curl -X GET
 В теле запроса необходимо указать поле meta **processingPlan** (даже если оно не меняется), а также указать те поля, 
 которые необходимо изменить у Заказа на производство, кроме тех, что помечены `Только для чтения` в описании 
 [атрибутов Заказа на производство](../documents/#dokumenty-zakaz-na-proizwodstwo).
-При обновлении поля **organization** нужно также обновить поле **organizationAccount**, иначе произойдет ошибка.
 
 **Параметры**
 
@@ -1728,13 +1691,6 @@ curl -X GET
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingorder/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
       "type": "state",
-      "mediaType": "application/json"
-    }
-  },
-  "organizationAccount": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e/accounts/3a30e844-016f-11e6-9464-e4de00000068",
-      "type": "account",
       "mediaType": "application/json"
     }
   },
@@ -1842,13 +1798,6 @@ curl -X GET
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingorder/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
       "type": "state",
-      "mediaType": "application/json"
-    }
-  },
-  "organizationAccount": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e/accounts/3a30e844-016f-11e6-9464-e4de00000068",
-      "type": "account",
       "mediaType": "application/json"
     }
   },
@@ -2012,13 +1961,6 @@ curl -X GET
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingorder/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
       "type": "state",
-      "mediaType": "application/json"
-    }
-  },
-  "organizationAccount": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e/accounts/3a30e844-016f-11e6-9464-e4de00000068",
-      "type": "account",
       "mediaType": "application/json"
     }
   },
