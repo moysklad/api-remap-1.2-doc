@@ -440,8 +440,7 @@ curl -X GET
             "productionStage": {
               "meta": {
                 "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/3130f7df-660f-11ee-c0a8-100c00000139",
-                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
-                "type": "productionstagecompletion",
+                "type": "productionstage",
                 "mediaType": "application/json"
               }
             },
