@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 25-03-2024
+#### Добавлено
+- Поле `costDistributionType` в [Техкарту](../dictionaries/#suschnosti-tehkarta), тип распределения себестоимости
+
 ### 11-03-2024
 #### Добавлено
 - Поле `sendMarksToChestnyZnakOnCloud` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), позволяющее управлять отправкой кассой-миньоном КМ на проверку в ЧЗ
