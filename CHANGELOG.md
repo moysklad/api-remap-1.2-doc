@@ -3,7 +3,7 @@
 
 ### 26-03-2024
 #### Добавлено
-- Обновлен список штрихкодов для [Товара](../dictionaries/#suschnosti-towar-towary), [Модификации](../dictionaries/#suschnosti-modifikaciq), [Услуги](../dictionaries/#suschnosti-usluga), [Комплекта](../dictionaries/#suschnosti-komplekt)
+- Обновлен список штрихкодов для [Товара](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-shtrihkody), [Модификации](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-shtrihkody), [Услуги](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-shtrihkody), [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta-shtrihkody)
 
 ### 11-03-2024
 #### Добавлено
