@@ -1,7 +1,7 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-## 13-03-2024
+## 25-03-2024
 ### Добавлено
 - Поле `costDistributionType` в [Техкарту](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta), тип распределения себестоимости
 
