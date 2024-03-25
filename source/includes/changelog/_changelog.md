@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 26-03-2024
+#### Добавлено
+- Обновлен список штрихкодов для [Товара](../dictionaries/#suschnosti-towar-towary), [Модификации](../dictionaries/#suschnosti-modifikaciq), [Услуги](../dictionaries/#suschnosti-usluga), [Комплекта](../dictionaries/#suschnosti-komplekt)
+
 ### 11-03-2024
 #### Добавлено
 - Поле `sendMarksToChestnyZnakOnCloud` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), позволяющее управлять отправкой кассой-миньоном КМ на проверку в ЧЗ

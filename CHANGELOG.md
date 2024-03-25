@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 26-03-2024
+#### Добавлено
+- Обновлен список штрихкодов для [Товара](../dictionaries/#suschnosti-towar-towary), [Модификации](../dictionaries/#suschnosti-modifikaciq), [Услуги](../dictionaries/#suschnosti-usluga), [Комплекта](../dictionaries/#suschnosti-komplekt)
+
 ### 11-03-2024
 #### Добавлено
 - Поле `sendMarksToChestnyZnakOnCloud` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), позволяющее управлять отправкой кассой-миньоном КМ на проверку в ЧЗ
