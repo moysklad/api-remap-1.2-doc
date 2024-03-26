@@ -603,7 +603,7 @@ curl -X GET
           "offset": 0
         }
       },
-      "minprice": {
+      "minPrice": {
        "value": 500.0,
         "currency": {
           "meta": {
@@ -894,7 +894,7 @@ curl -X GET
                 "mediaType": "application/json"
               }
             },
-            "minprice": {
+            "minPrice": {
              "value": 500.0,
               "currency": {
                 "meta": {
@@ -1050,7 +1050,7 @@ curl -X GET
       "offset": 0
     }
   },
-  "minprice": {
+  "minPrice": {
     "value": 500.0,
     "currency": {
       "meta": {
@@ -1289,7 +1289,7 @@ curl -X GET
                 "mediaType": "application/json"
               }
             },
-            "minprice": {
+            "minPrice": {
              "value": 500.0,
               "currency": {
                 "meta": {
@@ -1449,7 +1449,7 @@ curl -X GET
       "offset": 0
     }
   },  
-  "minprice": {
+  "minPrice": {
     "value": 500.0,
     "currency": {
       "meta": {
@@ -1635,7 +1635,7 @@ curl -X GET
       "offset": 0
     }
   },
-  "minprice": {
+  "minPrice": {
     "value": 500.0,
     "currency": {
       "meta": {
@@ -1866,7 +1866,7 @@ curl -X GET
         "offset": 0
       }
     },    
-    "minprice": {
+    "minPrice": {
     "value": 500.0,
       "currency": {
         "meta": {
@@ -2252,7 +2252,7 @@ curl -X GET
       "offset": 0
     }
   },  
-  "minprice": {
+  "minPrice": {
     "value": 532000.0,
     "currency": {
       "meta": {
@@ -2453,7 +2453,7 @@ curl -X GET
                 "mediaType": "application/json"
               }
             },
-            "minprice": {
+            "minPrice": {
              "value": 500.0,
               "currency": {
                 "meta": {
@@ -2630,7 +2630,7 @@ curl -X GET
       "offset": 0
     }
   },  
-  "minprice": {
+  "minPrice": {
     "value": 500.0,
     "currency": {
       "meta": {
@@ -2812,7 +2812,7 @@ curl -X GET
                 "mediaType": "application/json"
               }
             },
-            "minprice": {
+            "minPrice": {
              "value": 500.0,
               "currency": {
                 "meta": {
@@ -2959,7 +2959,7 @@ curl -X GET
       "offset": 0
     }
   },  
-  "minprice": {
+  "minPrice": {
     "value": 500.0,
     "currency": {
       "meta": {
@@ -3096,7 +3096,7 @@ curl -X GET
                 "mediaType": "application/json"
               }
             },
-            "minprice": {
+            "minPrice": {
              "value": 500.0,
               "currency": {
                 "meta": {
@@ -3241,7 +3241,7 @@ curl -X GET
       "offset": 0
     }
   },  
-  "minprice": {
+  "minPrice": {
     "value": 500.0,
     "currency": {
       "meta": {
