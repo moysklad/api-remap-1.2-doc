@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 28-03-2024
+#### Добавлено
+- Возможность привязки [Заказа поставщика](../documents/#dokumenty-zakaz-postawschiku) к [Заказу покупателя](../documents/#dokumenty-zakaz-pokupatelq)
+
 ### 26-03-2024
 #### Добавлено
 - Обновлен список штрихкодов для [Товара](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-shtrihkody), [Модификации](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-shtrihkody), [Услуги](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-shtrihkody), [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta-shtrihkody)
