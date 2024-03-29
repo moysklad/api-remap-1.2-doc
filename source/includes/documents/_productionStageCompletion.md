@@ -2,6 +2,7 @@
 
 Средствами JSON API можно создавать, обновлять и удалять сведения о Выполнениях этапов производства,
 запрашивать списки Выполнений этапов производства и сведения по отдельным Выполнениям этапов производства.
+Если производство не начато по Производственному заданию, то попытки создать Выполненный этап на это Производственное задание будут завершаться ошибкой.
 
 ### Выполнения этапов производства
 #### Атрибуты сущности
@@ -419,7 +420,8 @@ curl -X GET
 ```
 
 ### Создать Выполнение этапа производства
-Запрос на создание нового Выполнения этапа производства.
+Запрос на создание нового Выполнения этапа производства. 
+Условие создания Выполненного этапа - наличие начала производства у Производственного задания для которого создается Выполненный этап. Подробнее можно прочитать [тут](../#dokumenty-proizwodstwennoe-zadanie).
 При создании происходит автоматическое изменение даты старта производства, если дата старта производства позже даты выполнения этапа.
 Обязательные для создания поля:
 
@@ -440,8 +442,7 @@ curl -X GET
             "productionStage": {
               "meta": {
                 "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/3130f7df-660f-11ee-c0a8-100c00000139",
-                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
-                "type": "productionstagecompletion",
+                "type": "productionstage",
                 "mediaType": "application/json"
               }
             },
@@ -561,7 +562,7 @@ curl -X GET
               "meta": {
                 "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/3130f7df-660f-11ee-c0a8-100c00000139",
                 "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
-                "type": "productionstagecompletion",
+                "type": "productionstage",
                 "mediaType": "application/json"
               }
             },
@@ -688,7 +689,7 @@ curl -X GET
                   "meta": {
                     "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/3130f7df-660f-11ee-c0a8-100c00000139",
                     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
-                    "type": "productionstagecompletion",
+                    "type": "productionstage",
                     "mediaType": "application/json"
                   }
                 },
@@ -751,7 +752,7 @@ curl -X GET
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/3130f7df-660f-11ee-c0a8-100c00000139",
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
-        "type": "productionstagecompletion",
+        "type": "productionstage",
         "mediaType": "application/json"
       }
     },
