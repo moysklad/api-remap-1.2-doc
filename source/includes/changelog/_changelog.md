@@ -19,6 +19,12 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 03-04-2024
+#### Добавлено
+- Поле `allPerformers` в [этапы производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Признак доступности назначения на этап любого сотрудника
+- Поле `performers` в [этапы производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Массив метаданных возможных исполнителей
+- Ошибка [25033](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
+
 ### 28-03-2024
 #### Добавлено
 - Возможность привязки [Заказа поставщика](../documents/#dokumenty-zakaz-postawschiku) к [Заказу покупателя](../documents/#dokumenty-zakaz-pokupatelq)
