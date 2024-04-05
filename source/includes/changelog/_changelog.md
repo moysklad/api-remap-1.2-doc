@@ -24,6 +24,10 @@
 - Новая роль [Сотрудник производства](../dictionaries/#suschnosti-sotrudnik-zapros-na-poluchenie-roli-sotrudnika-proizwodstwa) для [Сотрудника](../dictionaries/#suschnosti-sotrudnik)
 - Ошибки [43030](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-sotrudnikow)
 
+### 02-04-2024
+#### Добавлено
+- Возможность получения [шаблонов](../documents/#dokumenty-obschie-swedeniq-shablony-dokumentow) документов по токену приложения
+
 ### 28-03-2024
 #### Добавлено
 - Возможность привязки [Заказа поставщика](../documents/#dokumenty-zakaz-postawschiku) к [Заказу покупателя](../documents/#dokumenty-zakaz-pokupatelq)
