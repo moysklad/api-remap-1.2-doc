@@ -19,12 +19,12 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 02-04-2024
+### 09-04-2024
 #### Добавлено
 - Новая роль [Сотрудник производства](../dictionaries/#suschnosti-sotrudnik-zapros-na-poluchenie-roli-sotrudnika-proizwodstwa) для [Сотрудника](../dictionaries/#suschnosti-sotrudnik)
 - Ошибки [43030](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-sotrudnikow)
 
-### 09-04-2024
+### 02-04-2024
 #### Добавлено
 - Возможность получения [шаблонов](../documents/#dokumenty-obschie-swedeniq-shablony-dokumentow) документов по токену приложения
 
