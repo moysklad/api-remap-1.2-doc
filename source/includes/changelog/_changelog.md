@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 17-04-2024
+#### Добавлено
+- Добавлено поле `testChestnyZnakMode` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), включает настройку тестового режима Честного знака для новых типов маркированных товаров.
+
 ### 09-04-2024
 #### Добавлено
 - Новая роль [Сотрудник производства](../dictionaries/#suschnosti-sotrudnik-zapros-na-poluchenie-roli-sotrudnika-proizwodstwa) для [Сотрудника](../dictionaries/#suschnosti-sotrudnik)
