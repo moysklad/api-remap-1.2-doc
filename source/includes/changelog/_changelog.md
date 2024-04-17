@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 17-04-2024
+#### Добавлена
+- Ошибка [3038](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
 ### 09-04-2024
 #### Добавлено
 - Новая роль [Сотрудник производства](../dictionaries/#suschnosti-sotrudnik-zapros-na-poluchenie-roli-sotrudnika-proizwodstwa) для [Сотрудника](../dictionaries/#suschnosti-sotrudnik)
