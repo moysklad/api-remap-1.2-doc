@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 28-11-2023
+#### Добавлено
+- Поле `allowNonFiscalTransactions` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), настройка включения тестовых продаж
+
 ### 09-04-2024
 #### Добавлено
 - Новая роль [Сотрудник производства](../dictionaries/#suschnosti-sotrudnik-zapros-na-poluchenie-roli-sotrudnika-proizwodstwa) для [Сотрудника](../dictionaries/#suschnosti-sotrudnik)
