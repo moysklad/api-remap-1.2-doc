@@ -3,7 +3,7 @@
 
 ### 14-04-2024
 #### Добавлено
-- Поле `nextStages` в [Техпроцесс](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehprocess), следующие позиции для позиции техпроцесса
+- Поле `nextPositions` в [Техпроцесс](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehprocess), следующие позиции для позиции техпроцесса
 - Ошибки [25033, 25034](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
 
 ### 09-04-2024
