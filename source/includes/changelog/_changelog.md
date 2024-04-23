@@ -19,6 +19,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 22-04-2024
+#### Добавлено
+- Поле `nextPositions` в [Техпроцесс](../dictionaries/#suschnosti-tehprocess), следующие позиции для позиции техпроцесса
+- Ошибки [25033-25034](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
+
 ### 17-04-2024
 #### Добавлена
 - Ошибка [3038](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
