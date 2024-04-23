@@ -24,6 +24,10 @@
 - Поле `nextPositions` в [Техпроцесс](../dictionaries/#suschnosti-tehprocess), следующие позиции для позиции техпроцесса
 - Ошибки [25033-25034](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
 
+### 17-04-2024
+#### Добавлена
+- Ошибка [3038](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
 ### 09-04-2024
 #### Добавлено
 - Новая роль [Сотрудник производства](../dictionaries/#suschnosti-sotrudnik-zapros-na-poluchenie-roli-sotrudnika-proizwodstwa) для [Сотрудника](../dictionaries/#suschnosti-sotrudnik)
