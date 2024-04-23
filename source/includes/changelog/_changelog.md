@@ -19,6 +19,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 24-04-2024
+#### Добавлено
+- Ограничение на поле типа дата, подробнее в разделе [Формат даты и времени](../#mojsklad-json-api-obschie-swedeniq-format-daty-i-wremeni)
+- Ошибка [2031](../#mojsklad-json-api-oshibki-oshibki-formata)
+
 ### 22-04-2024
 #### Добавлено
 - Поле `nextPositions` в [Техпроцесс](../dictionaries/#suschnosti-tehprocess), следующие позиции для позиции техпроцесса
