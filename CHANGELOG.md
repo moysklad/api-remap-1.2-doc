@@ -4,7 +4,6 @@
 ### 24-04-2024
 #### Добавлено
 - Ограничение на поле типа дата, подробнее в разделе [Формат даты и времени](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-format-daty-i-wremeni)
-- Ошибка [2031](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-oshibki-formata)
 
 ### 22-04-2024
 #### Добавлено
