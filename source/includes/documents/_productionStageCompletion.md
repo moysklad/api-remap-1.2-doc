@@ -126,7 +126,7 @@ curl -X GET
       "productionStage": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/d15ec2e9-95dd-11ee-0a81-07230000011c",
-          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/metadata",
           "type": "productionstage",
           "mediaType": "application/json"
         }
@@ -191,7 +191,7 @@ curl -X GET
       "productionStage": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/1812ddaf-9807-11ee-0a81-072300000306",
-          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/metadata",
           "type": "productionstage",
           "mediaType": "application/json"
         }
@@ -256,7 +256,7 @@ curl -X GET
       "productionStage": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/3dc137d1-97f5-11ee-0a81-0723000001dc",
-          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/metadata",
           "type": "productionstage",
           "mediaType": "application/json"
         }
@@ -321,7 +321,7 @@ curl -X GET
       "productionStage": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/36bcdb7a-980b-11ee-0a81-07230000034c",
-          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/metadata",
           "type": "productionstage",
           "mediaType": "application/json"
         }
@@ -386,7 +386,7 @@ curl -X GET
       "productionStage": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/e0e2370f-9808-11ee-0a81-072300000327",
-          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/metadata",
           "type": "productionstage",
           "mediaType": "application/json"
         }
@@ -491,7 +491,7 @@ curl -X GET
   "productionStage": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/3130f7df-660f-11ee-c0a8-100c00000139",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/metadata",
       "type": "productionstage",
       "mediaType": "application/json"
     }
@@ -561,7 +561,7 @@ curl -X GET
             "productionStage": {
               "meta": {
                 "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/3130f7df-660f-11ee-c0a8-100c00000139",
-                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/metadata",
                 "type": "productionstage",
                 "mediaType": "application/json"
               }
@@ -621,7 +621,7 @@ curl -X GET
   "productionStage": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/3130f7df-660f-11ee-c0a8-100c00000139",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/metadata",
       "type": "productionstage",
       "mediaType": "application/json"
     }
@@ -688,7 +688,7 @@ curl -X GET
                 "productionStage": {
                   "meta": {
                     "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/3130f7df-660f-11ee-c0a8-100c00000139",
-                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/metadata",
                     "type": "productionstage",
                     "mediaType": "application/json"
                   }
@@ -751,7 +751,7 @@ curl -X GET
     "productionStage": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/3130f7df-660f-11ee-c0a8-100c00000139",
-        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/metadata",
         "type": "productionstage",
         "mediaType": "application/json"
       }
@@ -816,7 +816,7 @@ curl -X GET
     "productionStage": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/1812ddaf-9807-11ee-0a81-072300000306",
-        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/metadata",
         "type": "productionstage",
         "mediaType": "application/json"
       }
@@ -973,7 +973,7 @@ curl -X GET
   "productionStage": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/d15ec2e9-95dd-11ee-0a81-07230000011c",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/metadata",
       "type": "productionstage",
       "mediaType": "application/json"
     }
@@ -1070,7 +1070,7 @@ curl -X GET
   "productionStage": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/d15ec2e9-95dd-11ee-0a81-07230000011c",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/metadata",
       "type": "productionstage",
       "mediaType": "application/json"
     }
