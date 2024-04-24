@@ -19,11 +19,21 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 03-04-2024
+### 24-04-2024
 #### Добавлено
 - Поле `allPerformers` в [этапы производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Признак доступности назначения на этап любого сотрудника
 - Поле `performers` в [этапы производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Массив метаданных возможных исполнителей
-- Ошибка [25033](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
+- Ошибка [25035](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
+
+### 22-04-2024
+#### Добавлено
+- Поле `nextPositions` в [Техпроцесс](../dictionaries/#suschnosti-tehprocess), следующие позиции для позиции техпроцесса
+- Ошибки [25033-25034](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
+
+### 09-04-2024
+#### Добавлено
+- Новая роль [Сотрудник производства](../dictionaries/#suschnosti-sotrudnik-zapros-na-poluchenie-roli-sotrudnika-proizwodstwa) для [Сотрудника](../dictionaries/#suschnosti-sotrudnik)
+- Ошибки [43030](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-sotrudnikow)
 
 ### 02-04-2024
 #### Добавлено
