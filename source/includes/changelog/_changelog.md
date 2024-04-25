@@ -21,6 +21,9 @@
 
 ### 24-04-2024
 #### Добавлено
+- Поле `allPerformers` в [этапы производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Признак доступности назначения на этап любого сотрудника
+- Поле `performers` в [этапы производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Массив метаданных возможных исполнителей
+- Ошибка [25035](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
 - Добавлен новый тип уведомлений [Новое упоминание в ленте событий](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowoe-upominanie-w-lente-sobytij)
 - Добавлена новая группа уведомлений [Упоминания сотрудников](../notification/#uwedomleniq-nastrojki-uwedomlenij-atributy-suschnosti)
 
@@ -28,6 +31,10 @@
 #### Добавлено
 - Поле `nextPositions` в [Техпроцесс](../dictionaries/#suschnosti-tehprocess), следующие позиции для позиции техпроцесса
 - Ошибки [25033-25034](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
+
+### 17-04-2024
+#### Добавлена
+- Ошибка [3038](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
 
 ### 09-04-2024
 #### Добавлено

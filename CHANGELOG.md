@@ -3,13 +3,20 @@
 
 ### 24-04-2024
 #### Добавлено
-- Добавлен новый тип уведомлений [Новое упоминание в ленте событий](https://dev.moysklad.ru/doc/api/remap/1.2/notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowoe-upominanie-w-lente-sobytij)
-- Добавлена новая группа уведомлений [Упоминания сотрудников](https://dev.moysklad.ru/doc/api/remap/1.2/notification/#uwedomleniq-nastrojki-uwedomlenij-atributy-suschnosti)
+- Поле `allPerformers` в [этапы производства](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jetap-proizwodstwa), Признак доступности назначения на этап любого сотрудника
+- Поле `performers` в [этапы производства](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jetap-proizwodstwa), Метаданные возможных исполнителей
+- Ошибка [25035](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
+- Добавлен новый тип уведомлений [Новое упоминание в ленте событий](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowoe-upominanie-w-lente-sobytij)
+- Добавлена новая группа уведомлений [Упоминания сотрудников](../notification/#uwedomleniq-nastrojki-uwedomlenij-atributy-suschnosti)
 
 ### 22-04-2024
 #### Добавлено
 - Поле `nextPositions` в [Техпроцесс](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehprocess), следующие позиции для позиции техпроцесса
 - Ошибки [25033, 25034](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
+
+### 17-04-2024
+#### Добавлено
+- Ошибка [3038](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
 
 ### 09-04-2024
 #### Добавлено
