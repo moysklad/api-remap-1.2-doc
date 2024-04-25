@@ -1,6 +1,12 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 24-04-2024
+#### Добавлено
+- Поле `allPerformers` в [этапы производства](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jetap-proizwodstwa), Признак доступности назначения на этап любого сотрудника
+- Поле `performers` в [этапы производства](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jetap-proizwodstwa), Метаданные возможных исполнителей
+- Ошибка [25035](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
+
 ### 22-04-2024
 #### Добавлено
 - Поле `nextPositions` в [Техпроцесс](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehprocess), следующие позиции для позиции техпроцесса
