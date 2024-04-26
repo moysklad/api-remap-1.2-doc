@@ -21,7 +21,7 @@
 
 ### 23-04-2024
 #### Добавлено
-- Поле `salary` в [Сотрудник](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-sotrudnik)
+- Поле `salary` в [Сотрудник](../dictionaries//#suschnosti-sotrudnik)
 
 ### 22-04-2024
 #### Добавлено
