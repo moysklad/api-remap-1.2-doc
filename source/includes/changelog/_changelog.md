@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 27-04-2024
+#### Добавлена
+- Возможность фильтрации по полю **store** в [счете покупателя](../documents/#dokumenty-schet-pokupatelu) и [счете поставщика](../documents/#dokumenty-schet-postawschika)
+
 ### 24-04-2024
 #### Добавлено
 - Поле `allPerformers` в [этапы производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Признак доступности назначения на этап любого сотрудника
