@@ -7,6 +7,7 @@
 | Название                | Тип                                                       | Фильтрация                 | Описание                                                                              |
 | ----------------------- | :-------------------------------------------------------- |:---------------------------|:--------------------------------------------------------------------------------------|
 | **accountId**           | UUID                                                      | `=` `!=`                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                  |
+| **allPerformers**       | Boolean                                                   |                            | Признак доступности назначения на этап любого сотрудника<br>`+Обязательное при ответе`|
 | **archived**            | Boolean                                                   | `=` `!=`                   | Добавлен ли Этап в архив<br>`+Обязательное при ответе`                                |
 | **description**         | String(4096)                                              | `=` `!=` `~` `~=` `=~`     | Комментарий Этапа                                                                     |
 | **externalCode**        | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Внешний код Этапа<br>`+Обязательное при ответе`                                       |
@@ -15,8 +16,14 @@
 | **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Метаданные Этапа<br>`+Обязательное при ответе` `+Только для чтения`                   |
 | **name**                | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Наименование Этапа<br>`+Обязательное при ответе` `+Необходимо при создании`           |
 | **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                          |
+| **performers**          | MetaArray                                                 |                            | Метаданные возможных исполнителей<br>`+Обязательное при ответе`                       |
 | **shared**              | Boolean                                                   | `=` `!=`                   | Общий доступ<br>`+Обязательное при ответе`                                            |
 | **updated**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления Этапа<br>`+Обязательное при ответе` `+Только для чтения` |
+Особенности:<br>
+Если флаг allperformers=true И список performers[] пустой, то это состояние: “Любой активный сотрудник может быть назначен исполнителем этого этапа”.<br>
+Если флаг allperformers=false И список performers[] пустой, то это состояние: “Никто не может быть назначен исполнителем этого этапа”.<br>
+Если флаг allperformers=false И список performers[] вернулся с данными, то это состояние: “Только сотрудник из выборки может быть назначен исполнителем этого этапа”.<br>
+При передаче в запросе только allperformers=true массив performers будет автоматически очищен. так же при передаче только массива performers будет автоматически изменено значение allperformers на false.
 
 ### Получить список Этапов
 
@@ -100,7 +107,19 @@ curl -X GET
       "updated": "2023-01-11 09:01:18.363",
       "name": "Основной этап",
       "externalCode": "sTV9PL-HjZkNgDMUqvKKe3",
-      "archived": false
+      "archived": false,
+      "allPerformers": false,
+      "performers": [
+        {
+          "meta": {
+            "href": "http://localhost/api/remap/1.2/entity/employee/83db6e80-761b-4e3d-aee8-641299ed0898",
+            "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+            "type": "employee",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=83db6e80-761b-4e3d-aee8-641299ed0898"
+          }
+        }
+      ]
     }
   ]
 }
@@ -124,7 +143,8 @@ curl -X GET
       -d '{
             "name": "Этап 1",
             "externalCode": "456",
-            "description": "Подготовка"
+            "description": "Подготовка",
+            "allPerformers" : true
           }'  
   ```
 
@@ -164,7 +184,9 @@ curl -X GET
   "name": "Этап 1",
   "description": "Подготовка",
   "externalCode": "456",
-  "archived": false
+  "archived": false,
+  "allPerformers": true,
+  "performers": []
 }
 ```
 
@@ -234,7 +256,9 @@ curl -X GET
     "updated": "2023-01-31 11:47:09.193",
     "name": "Этап 2",
     "externalCode": "hsthsrehs",
-    "archived": false
+    "archived": false,
+    "allPerformers": true,
+    "performers": []
   },
   {
     "meta": {
@@ -268,7 +292,9 @@ curl -X GET
     "name": "Этап 1",
     "description": "Подготовка",
     "externalCode": "sTV9PL-HjZkNgDMUqvKKe3",
-    "archived": false
+    "archived": false,
+    "allPerformers": true,
+    "performers": []
   }
 ]
 ```
@@ -394,7 +420,9 @@ curl -X GET
   "updated": "2023-01-11 09:01:18.363",
   "name": "Основной этап",
   "externalCode": "sTV9PL-HjZkNgDMUqvKKe3",
-  "archived": false
+  "archived": false,
+  "allPerformers": true,
+  "performers": []
 }
 ```
 
@@ -416,7 +444,18 @@ curl -X GET
      -H "Accept-Encoding: gzip"
      -H "Content-Type: application/json"
        -d '{
-             "name": "Этап 1.1"
+             "name": "Этап 1.1",
+             "performers": [
+               {
+                 "meta": {
+                   "href": "http://localhost/api/remap/1.2/entity/employee/83db6e80-761b-4e3d-aee8-641299ed0898",
+                   "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+                   "type": "employee",
+                   "mediaType": "application/json",
+                   "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=83db6e80-761b-4e3d-aee8-641299ed0898"
+                 }
+               }
+             ]
            }'  
  ```
 > Response 200 (application/json)
@@ -454,6 +493,18 @@ curl -X GET
   "updated": "2023-01-11 09:01:18.363",
   "name": "Этап 1.1",
   "externalCode": "sTV9PL-HjZkNgDMUqvKKe3",
-  "archived": false
+  "archived": false,
+  "allPerformers" : false,
+  "performers": [
+    {
+      "meta": {
+        "href": "http://localhost/api/remap/1.2/entity/employee/83db6e80-761b-4e3d-aee8-641299ed0898",
+        "metadataHref": "http://localhost/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=83db6e80-761b-4e3d-aee8-641299ed0898"
+      }
+    }
+  ]
 }
 ```
