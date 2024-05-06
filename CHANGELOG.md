@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 06-05-2024
+#### Добавлен
+- Заголовок `X-Lognex-WebHook-DisableByPrefix` для лучшего контроля [вебхуков](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-format-daty-i-wremeni)
+
 ### 02-05-2024
 #### Добавлено
 - Ограничение на поле типа дата, подробнее в разделе [Формат даты и времени](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-format-daty-i-wremeni)
