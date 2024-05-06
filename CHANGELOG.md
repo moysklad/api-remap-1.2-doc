@@ -3,7 +3,7 @@
 
 ### 06-05-2024
 #### Добавлен
-- Заголовок `X-Lognex-WebHook-DisableByPrefix` для лучшего контроля [вебхуков](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-format-daty-i-wremeni)
+- Заголовок `X-Lognex-WebHook-DisableByPrefix` для лучшего контроля [вебхуков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-vebhuki-primer-webhuka)
 
 ### 02-05-2024
 #### Добавлено
