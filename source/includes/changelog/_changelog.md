@@ -21,7 +21,7 @@
 
 ### 06-05-2024
 #### Добавлен
-- Заголовок `X-Lognex-WebHook-DisableByPrefix` для лучшего контроля [вебхуков](../dictionaries/#suschnosti-vebhuki-primer-webhuka)
+- Заголовок `X-Lognex-WebHook-DisableByPrefix` для выборочного отключения [вебхуков](../dictionaries/#suschnosti-vebhuki-primer-webhuka)
 
 ### 02-05-2024
 #### Добавлено

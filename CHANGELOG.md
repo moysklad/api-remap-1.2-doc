@@ -3,7 +3,7 @@
 
 ### 06-05-2024
 #### Добавлен
-- Заголовок `X-Lognex-WebHook-DisableByPrefix` для лучшего контроля [вебхуков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-vebhuki-primer-webhuka)
+- Заголовок `X-Lognex-WebHook-DisableByPrefix` для выборочного отключения [вебхуков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-vebhuki-primer-webhuka)
 
 ### 02-05-2024
 #### Добавлено
