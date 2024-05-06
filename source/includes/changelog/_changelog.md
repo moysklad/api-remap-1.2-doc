@@ -23,6 +23,10 @@
 #### Добавлена
 - Возможность фильтрации по полю **store** в [счете покупателя](../documents/#dokumenty-schet-pokupatelu) и [счете поставщика](../documents/#dokumenty-schet-postawschika)
 
+### 02-05-2024
+#### Добавлено
+- Ограничение на поле типа дата, подробнее в разделе [Формат даты и времени](../#mojsklad-json-api-obschie-swedeniq-format-daty-i-wremeni)
+
 ### 24-04-2024
 #### Добавлено
 - Поле `allPerformers` в [этапы производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Признак доступности назначения на этап любого сотрудника
