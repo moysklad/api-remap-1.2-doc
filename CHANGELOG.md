@@ -1,9 +1,13 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 06-05-2024
+### 16-05-2024
 #### Добавлен
 - Заголовок `X-Lognex-WebHook-DisableByPrefix` для выборочного отключения [вебхуков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-vebhuki-primer-webhuka)
+
+### 06-05-2024
+#### Добавлена
+- Возможность фильтрации по полю **store** в [счете покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-pokupatelu) и [счете поставщика](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-postawschika)
 
 ### 02-05-2024
 #### Добавлено

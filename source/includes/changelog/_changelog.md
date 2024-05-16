@@ -19,9 +19,13 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 06-05-2024
+### 16-05-2024
 #### Добавлен
 - Заголовок `X-Lognex-WebHook-DisableByPrefix` для выборочного отключения [вебхуков](../dictionaries/#suschnosti-vebhuki-primer-webhuka)
+
+### 06-05-2024
+#### Добавлена
+- Возможность фильтрации по полю **store** в [счете покупателя](../documents/#dokumenty-schet-pokupatelu) и [счете поставщика](../documents/#dokumenty-schet-postawschika)
 
 ### 02-05-2024
 #### Добавлено
