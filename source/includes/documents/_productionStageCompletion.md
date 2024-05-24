@@ -7,26 +7,27 @@
 ### Выполнения этапов производства
 #### Атрибуты сущности
 
-| Название                | Тип                                                       | Фильтрация | Описание                                                                                                                                                                                          |
-|-------------------------|:----------------------------------------------------------|:-----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**           | UUID                                                      |            | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                              |
-| **created**             | DateTime                                                  |            | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                  |
-| **externalCode**        | String(255)                                               |            | Внешний код Выполнения этапа производства<br>`+Обязательное при ответе`                                                                                                                           |
-| **group**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                          |
-| **id**                  | UUID                                                      |            | ID Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                               |
-| **labourUnitCost**      | Double                                                    |            | Оплата труда за единицу объема производства<br>`+Обязательное при ответе`                                                                                                                         |
-| **materials**           | MetaArray                                                 |            | Метаданные Материалов выполнения этапа производства. [Подробнее тут](#dokumenty-vypolnenie-atapa-proizwodstwa-materialy-wypolneniq-atapa-proizwodstwa)<br>`+Expand`                               |
-| **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Метаданные Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                       |
-| **moment**              | DateTime                                                  |            | Дата документа<br>`+Обязательное при ответе`                                                                                                                                                      |
-| **name**                | String(255)                                               |            | Наименование Выполнения этапа производства<br>`+Обязательное при ответе`                                                                                                                          |
-| **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                                 |
-| **performer**           | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Исполнитель (Сотрудник)<br>`+Expand`                                                                                                                                                              |
-| **processingUnitCost**  | Double                                                    |            | Затраты на единицу объема производства<br>`+Обязательное при ответе`                                                                                                                              |
-| **productionStage**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | [Производственный этап](#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)<br>`+Expand` `+После создания изменить нельзя`                                                                |
-| **productionVolume**    | Double                                                    |            | Объем производства<br>`+Обязательное при ответе`                                                                                                                                                  |
-| **products**            | MetaArray                                                 |            | Метаданные Продуктов выполнения этапа производства. Есть только у последнего этапа. [Подробнее тут](#dokumenty-vypolnenie-atapa-proizwodstwa-produkty-wypolneniq-atapa-proizwodstwa)<br>`+Expand` |
-| **shared**              | Boolean                                                   |            | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                        |
-| **updated**             | DateTime                                                  |            | Момент последнего обновления Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                     |
+| Название               | Тип                                                       | Фильтрация | Описание                                                                                                                                                                                          |
+|------------------------|:----------------------------------------------------------|:-----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**          | UUID                                                      |            | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                              |
+| **created**            | DateTime                                                  |            | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                  |
+| **externalCode**       | String(255)                                               |            | Внешний код Выполнения этапа производства<br>`+Обязательное при ответе`                                                                                                                           |
+| **group**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                          |
+| **id**                 | UUID                                                      |            | ID Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                               |
+| **labourUnitCost**     | Double                                                    |            | Оплата труда за единицу объема производства<br>`+Обязательное при ответе`                                                                                                                         |
+| **standardHour**       | Double                                                    |            | Нормо-часы единицы объема производства<br>`+Обязательное при ответе`                                                                                                                                                       |
+| **materials**          | MetaArray                                                 |            | Метаданные Материалов выполнения этапа производства. [Подробнее тут](#dokumenty-vypolnenie-atapa-proizwodstwa-materialy-wypolneniq-atapa-proizwodstwa)<br>`+Expand`                               |
+| **meta**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Метаданные Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                       |
+| **moment**             | DateTime                                                  |            | Дата документа<br>`+Обязательное при ответе`                                                                                                                                                      |
+| **name**               | String(255)                                               |            | Наименование Выполнения этапа производства<br>`+Обязательное при ответе`                                                                                                                          |
+| **owner**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                                 |
+| **performer**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Исполнитель (Сотрудник)<br>`+Expand`                                                                                                                                                              |
+| **processingUnitCost** | Double                                                    |            | Затраты на единицу объема производства<br>`+Обязательное при ответе`                                                                                                                              |
+| **productionStage**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | [Производственный этап](#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)<br>`+Expand` `+После создания изменить нельзя`                                                                |
+| **productionVolume**   | Double                                                    |            | Объем производства<br>`+Обязательное при ответе`                                                                                                                                                  |
+| **products**           | MetaArray                                                 |            | Метаданные Продуктов выполнения этапа производства. Есть только у последнего этапа. [Подробнее тут](#dokumenty-vypolnenie-atapa-proizwodstwa-produkty-wypolneniq-atapa-proizwodstwa)<br>`+Expand` |
+| **shared**             | Boolean                                                   |            | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                        |
+| **updated**            | DateTime                                                  |            | Момент последнего обновления Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                     |
 
 Для сущности действуют ограничения на expand: для поля **productionStage.productionRow** недоступен expand вложенных полей.
 
@@ -153,7 +154,8 @@ curl -X GET
       },
       "productionVolume": 100000,
       "processingUnitCost": 0.0,
-      "labourUnitCost": 0.0
+      "labourUnitCost": 0.0,
+      "standardHour": 0.0
     },
     {
       "meta": {
@@ -218,7 +220,8 @@ curl -X GET
       },
       "productionVolume": 1,
       "processingUnitCost": 0.0,
-      "labourUnitCost": 0.0
+      "labourUnitCost": 0.0,
+      "standardHour": 0.0
     },
     {
       "meta": {
@@ -283,7 +286,8 @@ curl -X GET
       },
       "productionVolume": 1,
       "processingUnitCost": 0.0,
-      "labourUnitCost": 0.0
+      "labourUnitCost": 0.0,
+      "standardHour": 0.0
     },
     {
       "meta": {
@@ -348,7 +352,8 @@ curl -X GET
       },
       "productionVolume": 1.1235,
       "processingUnitCost": 0.0,
-      "labourUnitCost": 0.0
+      "labourUnitCost": 0.0,
+      "standardHourUnit": 0.0
     },
     {
       "meta": {
@@ -413,7 +418,8 @@ curl -X GET
       },
       "productionVolume": 1.6,
       "processingUnitCost": 0.0,
-      "labourUnitCost": 0.0
+      "labourUnitCost": 0.0,
+      "standardHourUnit": 0.0
     }
   ]
 }
@@ -518,7 +524,8 @@ curl -X GET
   },
   "productionVolume": 5,
   "processingUnitCost": 10.0,
-  "labourUnitCost": 20.0
+  "labourUnitCost": 20.0,
+  "standardHourUnit": 30.0
 }
 ```
 
@@ -568,7 +575,8 @@ curl -X GET
             },
             "productionVolume": 5,
             "processingUnitCost": 10.0,
-            "labourUnitCost": 20.0
+            "labourUnitCost": 20.0,
+            "standardHourUnit": 30.0
           }'  
 ```
 
@@ -648,7 +656,8 @@ curl -X GET
   },
   "productionVolume": 5,
   "processingUnitCost": 10.0,
-  "labourUnitCost": 20.0
+  "labourUnitCost": 20.0,
+  "standardHourUnit": 30.0
 }
 ```
 
@@ -778,7 +787,8 @@ curl -X GET
     },
     "productionVolume": 15,
     "processingUnitCost": 0.0,
-    "labourUnitCost": 0.0
+    "labourUnitCost": 0.0,
+    "standardHourUnit": 0.0
   },
   {
     "meta": {
@@ -843,7 +853,8 @@ curl -X GET
     },
     "productionVolume": 5,
     "processingUnitCost": 0.0,
-    "labourUnitCost": 0.0
+    "labourUnitCost": 0.0,
+    "standardHourUnit": 0.0
   }
 ]
 ```
@@ -1000,7 +1011,8 @@ curl -X GET
   },
   "productionVolume": 100000,
   "processingUnitCost": 0.0,
-  "labourUnitCost": 0.0
+  "labourUnitCost": 0.0,
+  "standardHourUnit": 0.0
 }
 ```
 
@@ -1097,7 +1109,8 @@ curl -X GET
   },
   "productionVolume": 22,
   "processingUnitCost": 0.0,
-  "labourUnitCost": 0.0
+  "labourUnitCost": 0.0,
+  "standardHourUnit": 0.0
 }
 ```
 

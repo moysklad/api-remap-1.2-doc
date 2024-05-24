@@ -20,6 +20,10 @@
 Список последних изменений в API Remap 1.2
 
 ### 16-05-2024
+#### Добавлено
+- Поле "нормо-часы" (standardHour) в [Этапы Техкарты](../dictionaries/#suschnosti-tehkarta)
+
+### 16-05-2024
 #### Добавлен
 - Заголовок `X-Lognex-WebHook-DisableByPrefix` для выборочного отключения [вебхуков](../dictionaries/#suschnosti-vebhuki-primer-webhuka)
 
