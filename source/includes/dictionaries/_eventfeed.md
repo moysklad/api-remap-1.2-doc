@@ -76,7 +76,7 @@ curl -X GET
     "type": "eventnote",
     "mediaType": "application/json",
     "size": 2,
-    "limit": 100,
+    "limit": 1000,
     "offset": 0
   },
   "rows": [
