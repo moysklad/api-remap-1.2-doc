@@ -55,6 +55,7 @@ includes:
   - dictionaries/retailstore
   - dictionaries/service
   - dictionaries/files
+  - dictionaries/eventfeed
   - dictionaries/characteristic
   - dictionaries/template
   - dictionaries/organization

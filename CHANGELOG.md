@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 29-05-2024
+#### Добавлена
+- Информация о работе с [Лентой Событий](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-lenta-sobytij)
+
 ### 16-05-2024
 #### Добавлен
 - Заголовок `X-Lognex-WebHook-DisableByPrefix` для выборочного отключения [вебхуков](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-vebhuki-primer-webhuka)
