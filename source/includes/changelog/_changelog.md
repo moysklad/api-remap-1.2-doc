@@ -22,6 +22,8 @@
 ### 24-05-2024
 #### Добавлено
 - Поле "нормо-часы" (standardHour) в [Этапы Техкарты](../dictionaries/#suschnosti-tehkarta)
+- Поле "нормо-часы" (standardHourUnit) в [Выполнения этапов производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+- Поле "нормо-часы" (standardHourUnit) в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
 
 ### 16-05-2024
 #### Добавлен

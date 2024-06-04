@@ -4,6 +4,8 @@
 ### 24-05-2024
 #### Добавлено
 - Поле "нормо-часы" (standardHour) в [Этапы Техкарты](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta)
+- Поле "нормо-часы" (standardHourUnit) в [Выполнения этапов производства](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+- Поле "нормо-часы" (standardHourUnit) в [Производственные этапы](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
 
 ### 16-05-2024
 #### Добавлен
