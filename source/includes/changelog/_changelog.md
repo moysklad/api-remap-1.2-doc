@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 29-05-2024
+#### Добавлена
+- Информация о работе с [Лентой Событий](../dictionaries/#suschnosti-lenta-sobytij)
+
 ### 16-05-2024
 #### Добавлен
 - Заголовок `X-Lognex-WebHook-DisableByPrefix` для выборочного отключения [вебхуков](../dictionaries/#suschnosti-vebhuki-primer-webhuka)

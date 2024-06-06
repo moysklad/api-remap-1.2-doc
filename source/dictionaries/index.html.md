@@ -28,6 +28,7 @@ includes:
   - dictionaries/tracking_code
   - dictionaries/bundle
   - dictionaries/counterparty
+  - dictionaries/eventfeed
   - dictionaries/variant
   - dictionaries/companysettings
   - dictionaries/usersettings
