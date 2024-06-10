@@ -20,7 +20,8 @@
 Список последних изменений в API Remap 1.2
 
 ### 04-06-2024
-#### Добавлена
+#### Добавлено
+- Описание ошибки [69000](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-lenty-sobytij)
 - Возможность добавлять события в [Ленту Событий](../dictionaries/#suschnosti-lenta-sobytij)
 
 ### 29-05-2024
