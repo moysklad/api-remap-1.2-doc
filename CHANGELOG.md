@@ -4,6 +4,9 @@
 ### 10-06-2024
 #### Добавлено
 - Добавлен новый тип маркированной продукции `MEDICAL_DEVICES` для медизделий и кресел-колясок для [Товара](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary) и [Комплекта](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt-komplekty)
+- Поле "нормо-часы" (standardHour) в [Этапы Техкарты](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta)
+- Поле "нормо-часы" (standardHourUnit) в [Выполнения этапов производства](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+- Поле "нормо-часы" (standardHourUnit) в [Производственные этапы](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
 
 ### 29-05-2024
 #### Добавлена
