@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 10-06-2024
+#### Добавлено
+- Добавлен новый тип маркированной продукции `MEDICAL_DEVICES` для медизделий и кресел-колясок для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
+
 ### 29-05-2024
 #### Добавлена
 - Информация о работе с [Лентой Событий](../dictionaries/#suschnosti-lenta-sobytij)
