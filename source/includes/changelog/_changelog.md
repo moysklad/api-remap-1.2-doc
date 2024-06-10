@@ -19,11 +19,16 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 24-05-2024
+### 10-06-2024
 #### Добавлено
+- Добавлен новый тип маркированной продукции `MEDICAL_DEVICES` для медизделий и кресел-колясок для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
 - Поле "нормо-часы" (standardHour) в [Этапы Техкарты](../dictionaries/#suschnosti-tehkarta)
 - Поле "нормо-часы" (standardHourUnit) в [Выполнения этапов производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
 - Поле "нормо-часы" (standardHourUnit) в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+
+### 29-05-2024
+#### Добавлена
+- Информация о работе с [Лентой Событий](../dictionaries/#suschnosti-lenta-sobytij)
 
 ### 16-05-2024
 #### Добавлен
