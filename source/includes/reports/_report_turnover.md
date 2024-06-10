@@ -49,7 +49,7 @@
 | **retailStore**                | Object      | `=`        | ссылка на точку продаж, по которой нужно произвести фильтрацию.                                                                                                                                                                                                                                                                |
 | **store**                      | Object      | `=`        | ссылка на склад, по которому нужно произвести фильтрацию.                                                                                                                                                                                                                                                                      |
 | **supplier**                   | Object      | `=`        | параметр для фильтрации по поставщику. Значение параметра - ссылка на контрагента или организацию. В выборку будут включены или исключены товары с указанным поставщиком. Можно передать пустое значение, тогда в выборку попадут товары с незаполненным или заполненным поставщиком. |
-| **type**                       | Enum        | `=`        | параметр для фильтрации "тип документа", по которому можно произвести фильтрацию. Возможные значения `supply`, `purchasereturn`, `demand`, `salesreturn`, `loss`, `enter`, `move`, `processing`, `retaildemand`, `retailsalesreturn`.                                                                                          |
+| **type**                       | Enum        | `=`        | параметр для фильтрации "тип документа", по которому можно произвести фильтрацию. Возможные значения `supply`, `purchasereturn`, `demand`, `salesreturn`, `loss`, `enter`, `move`, `processing`, `retaildemand`, `retailsalesreturn`, `productionstagecompletion`.                                                                                          |
 | **variant**                    | Object      | `=`        | ссылка на модификацию, по которой нужно произвести фильтрацию.                                                                                                                                                                                                                                                                 |
 | **withoutturnover**            | Boolean     | `=`        | параметр для фильтрации "Показывать товары без движения". Возможные значения: `true`, `false`.                                                                                                                                                                                                                                 |
 
@@ -310,7 +310,7 @@ curl -X GET
 | **project**                    | Object      | `=`        | ссылка на проект, по которому нужно произвести фильтрацию.                                                 |
 | **retailStore**                | Object      | `=`        | ссылка на точку продаж, по которой нужно произвести фильтрацию.                                            |
 | **store**                      | Object      | `=`        | ссылка на склад, по которому нужно произвести фильтрацию.                                                  |
-| **type**                       | Enum        | `=`        | параметр для фильтрации "тип документа", по которому можно произвести фильтрацию. Возможные значения `supply`, `purchasereturn`, `demand`, `salesreturn`, `loss`, `enter`, `move`, `processing`, `retaildemand`, `retailsalesreturn`.                                                                                          |
+| **type**                       | Enum        | `=`        | параметр для фильтрации "тип документа", по которому можно произвести фильтрацию. Возможные значения `supply`, `purchasereturn`, `demand`, `salesreturn`, `loss`, `enter`, `move`, `processing`, `retaildemand`, `retailsalesreturn`, `productionstagecompletion`.                                                                                          |
 | **variant**                    | Object      | `=`        | ссылка на модификацию, по которой нужно произвести фильтрацию.                                             |
 
 Примеры фильтрации:
@@ -562,7 +562,7 @@ curl -X GET
 | **project**                    | ссылка на проект, по которому нужно произвести фильтрацию.                      |
 | **retailStore**                | ссылка на точку продаж, по которой нужно произвести фильтрацию.                 |
 | **store**                      | ссылка на склад, по которому нужно произвести фильтрацию.                       |
-| **type**                       | параметр для фильтрации "тип документа", по которому можно произвести фильтрацию. Возможные значения `supply`, `purchasereturn`, `demand`, `salesreturn`, `loss`, `enter`, `move`, `processing`, `retaildemand`, `retailsalesreturn`.                                                                               |
+| **type**                       | параметр для фильтрации "тип документа", по которому можно произвести фильтрацию. Возможные значения `supply`, `purchasereturn`, `demand`, `salesreturn`, `loss`, `enter`, `move`, `processing`, `retaildemand`, `retailsalesreturn`, `productionstagecompletion`.                                                                               |
 
 Примеры фильтрации:
 

@@ -19,9 +19,13 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 30-05-2024
+### 10-06-2024
 #### Добавлено
 - Добавлен новый тип маркированной продукции `MEDICAL_DEVICES` для медизделий и кресел-колясок для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
+
+### 29-05-2024
+#### Добавлена
+- Информация о работе с [Лентой Событий](../dictionaries/#suschnosti-lenta-sobytij)
 
 ### 16-05-2024
 #### Добавлен
@@ -42,6 +46,10 @@
 - Ошибка [25035](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
 - Добавлен новый тип уведомлений [Новое упоминание в ленте событий](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowoe-upominanie-w-lente-sobytij)
 - Добавлена новая группа уведомлений [Упоминания сотрудников](../notification/#uwedomleniq-nastrojki-uwedomlenij-atributy-suschnosti)
+
+### 23-04-2024
+#### Добавлено
+- Поле `salary` в [Сотрудник](../dictionaries/#suschnosti-sotrudnik)
 
 ### 22-04-2024
 #### Добавлено
