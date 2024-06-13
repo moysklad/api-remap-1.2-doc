@@ -197,6 +197,7 @@ curl
 Ниже приведены примеры обновления товара с дополнительным полем типа Файл с присваиванием и сбросом значения.
 
 > Пример присваивания значения доп. полю типа Файл
+
 ```shell
 curl -X PUT 
   "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025" 
@@ -220,6 +221,7 @@ curl -X PUT
 ```
 
 > Пример сброса значения доп. поля типа Файл
+
 ```shell
 curl -X PUT 
   "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025" 
