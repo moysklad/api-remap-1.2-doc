@@ -3156,9 +3156,9 @@
         continue
       }
   
-      if (char == ":") {
-        return lunr.QueryLexer.lexField
-      }
+      // if (char == ":") {
+      //   return lunr.QueryLexer.lexField
+      // }
   
       if (char == "~") {
         lexer.backup()
