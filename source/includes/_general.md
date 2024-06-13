@@ -313,7 +313,9 @@ JSON API позволяет создавать, обновлять и удаля
 | Число дробное       | double                             | number                |
 | Число целое         | long                               | number                |
 
-Дополнительные поля типов Файл и Флажок не могуть быть обязательными (поле **required** не может быть `true`).
+Дополнительные поля типов Файл и Флажок не могут быть обязательными (поле **required** не может быть `true`).
+
+#### Сброс значения в доп. поле
 
 При передаче значения `null` в поле **value** значение соответствующего доп. поля сбрасывается, 
 кроме доп. поля типа Файл. Для сброса значения доп. поля типа Файл нужно передать 
@@ -377,7 +379,52 @@ JSON API позволяет создавать, обновлять и удаля
 | **filename** | String(255) | Имя файла<br>`+Обязательное при ответе` `+Необходимо при создании`                            |
 | **content**  | String      | Байты файла, закодированные в base64<br>`+Обязательное при ответе` `+Необходимо при создании` |
 
-Пример указания значения для доп. поля типа файл есть в секции [создания товара](dictionaries/#suschnosti-towar-sozdat-towar)
+Для сброса значения доп. поля типа Файл нужно передать поле **file** со значением `null`.
+
+> Пример присваивания значения доп. полю типа Файл 
+
+```shell
+curl -X PUT 
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025" 
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -d '{
+    "attributes": [
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0ae972f0-2951-11ef-ac12-000e00000001",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          },
+          "file": {
+            "filename": "filename",
+            "content": "5cYwMpOmNk5kSVr4YgZGKtXJb/7KpHVLDUawyZrD5Nf0WDhB7mS1I77VcAMqYQ8DkP/1wDLhb0X6b2JO4pdpKA=="
+          }
+        }
+    ]
+}'
+```
+
+> Пример сброса значения доп. поля типа Файл
+
+```shell
+curl -X PUT 
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025" 
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -d '{
+    "attributes": [
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0ae972f0-2951-11ef-ac12-000e00000001",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          },
+          "file": null
+        }
+    ]
+}'
+```
 
 ### Дополнительные поля сущностей
 Запрос на получение дополнительных полей сущности.
