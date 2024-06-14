@@ -48,6 +48,15 @@ $(function () {
       }
     ));
 
+    window.addEventListener('load', () => {
+      let searchInputValue = sessionStorage.getItem('searchInputValue');
+      document.getElementById("input-search").value = searchInputValue;
+      let event = {
+        value: searchInputValue
+      };
+      search(event);
+    });
+
     return lunr(function () {
       this.use(lunr.multiLanguage('ru', 'en'));
       this.ref('id');
@@ -141,7 +150,9 @@ $(function () {
     if (event.keyCode === 27) searchInput.value = '';
 
     if (searchInput.value) {
-      const results = doSearch(searchInput.value.toLowerCase());
+      let searchString = searchInput.value.toLowerCase();
+      sessionStorage.setItem('searchInputValue', searchString);
+      const results = doSearch(searchString);
       searchResults.empty();
       if (hasIndexLoadingError) {
         searchResults.append("<li class='warning'>Обновите страницу для поиска по всем разделам</li>");
@@ -165,6 +176,7 @@ $(function () {
       }
     } else {
       unhighlight();
+      sessionStorage.removeItem('searchInputValue');
       searchResults.removeClass('visible');
     }
   }
