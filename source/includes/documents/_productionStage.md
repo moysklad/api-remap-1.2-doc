@@ -19,12 +19,13 @@
 | **orderingPosition**   | Int                                                       |            | Индекс Производственного этапа в Позиции производственного задания<br>`+Обязательное при ответе` `+Только для чтения`                                               |
 | **stage**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Метаданные Этапа производства. [Подробнее тут](..dictionaries/#suschnosti-jetap-proizwodstwa)<br>`+Expand` `+Обязательное при ответе` `+Только для чтения`          |
 | **productionRow**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Метаданные Позиции производственного задания<br>`+Expand` `+Обязательное при ответе` `+Только для чтения`                                                           |
-| **totalQuantity**      | Double                                                    |            | Объем Производственного этапа. Соответствует объему Позиции производственного задания<br>`+Только для чтения`                                                                  |
+| **totalQuantity**      | Double                                                    |            | Объем Производственного этапа. Соответствует объему Позиции производственного задания<br>`+Только для чтения`                                                       |
 | **completedQuantity**  | Double                                                    |            | Выполненное количество<br>`+Только для чтения`                                                                                                                      |
 | **availableQuantity**  | Double                                                    |            | Количество, доступное к выполнению<br>`+Только для чтения`                                                                                                          |
 | **blockedQuantity**    | Double                                                    |            | Количество, которое на данный момент выполнять нельзя. Например, ещё не выполнен предыдущий этап<br>`+Только для чтения`                                            |
 | **skippedQuantity**    | Double                                                    |            | Количество, которое не будет выполнено. Например, из-за остановки производства<br>`+Только для чтения`                                                              |
 | **processingUnitCost** | Double                                                    |            | Затраты на единицу объема производства<br>                                                                                                                          |
+| **standardHourUnit**   | Double                                                    |            | Нормо-часы единицы объема производства                                                                                                                              |
 
 Для сущности действуют ограничения на expand: для поля **productionRow** недоступен expand вложенных полей.
 
@@ -132,7 +133,8 @@ curl -X GET
       "blockedQuantity": 0.0,
       "skippedQuantity": 0.0,
       "processingUnitCost": 2.0,
-      "labourUnitCost": 0.0
+      "labourUnitCost": 0.0,
+      "standardHourUnit": 0.0
     }
   ]
 }
@@ -159,7 +161,8 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '{
             "processingUnitCost": 70.0,
-            "labourUnitCost": 30.5
+            "labourUnitCost": 30.5,
+            "standardHourUnit": 43.5
           }'  
 ```
 
@@ -209,7 +212,8 @@ curl -X GET
   "blockedQuantity": 0.0,
   "skippedQuantity": 0.0,
   "processingUnitCost": 70.0,
-  "labourUnitCost": 30.5
+  "labourUnitCost": 30.5,
+  "standardHourUnit": 43.5
 }
 ```
 
