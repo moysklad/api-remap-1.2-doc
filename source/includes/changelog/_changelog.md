@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 17-06-2024
+#### Добавлена
+- Ошибка [3039](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
 ### 10-06-2024
 #### Добавлено
 - Добавлен новый тип маркированной продукции `MEDICAL_DEVICES` для медизделий и кресел-колясок для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
