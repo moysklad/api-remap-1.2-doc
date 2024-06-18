@@ -30,6 +30,11 @@
 - Поле "нормо-часы" (standardHourUnit) в [Выполнения этапов производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
 - Поле "нормо-часы" (standardHourUnit) в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
 
+### 04-06-2024
+#### Добавлено
+- Описание ошибки [69000](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-lenty-sobytij)
+- Возможность добавлять события в [Ленту Событий](../dictionaries/#suschnosti-lenta-sobytij)
+
 ### 29-05-2024
 #### Добавлена
 - Информация о работе с [Лентой Событий](../dictionaries/#suschnosti-lenta-sobytij)

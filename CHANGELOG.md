@@ -12,6 +12,11 @@
 - Поле "нормо-часы" (standardHourUnit) в [Выполнения этапов производства](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
 - Поле "нормо-часы" (standardHourUnit) в [Производственные этапы](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
 
+### 04-06-2024
+#### Добавлено
+- Возможность добавлять события в [Ленту Событий](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-lenta-sobytij)
+- Ошибка [69000](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-lenty-sobytij)
+
 ### 29-05-2024
 #### Добавлена
 - Информация о работе с [Лентой Событий](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-lenta-sobytij)
