@@ -38,7 +38,7 @@
 + [Заказ покупателя](../documents/#dokumenty-zakaz-pokupatelq)
 + [Розничная продажа](../documents/#dokumenty-roznichnaq-prodazha)
 + [Счет поставщика](../documents/#dokumenty-schet-postawschika)
-+ [Счет покупателя](../documents/#dokumenty-schet-pokupatelu)
++ [Счет покупателю](../documents/#dokumenty-schet-pokupatelu)
 + [Заказ поставщику](../documents/#dokumenty-zakaz-postawschiku)
 + [Приемка](../documents/#dokumenty-priemka)
 + [Розничный возврат](../documents/#dokumenty-roznichnyj-wozwrat)
