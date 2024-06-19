@@ -22,8 +22,8 @@
 | **name**      | String(255)                                              | Наименование позиции<br>`+Обязательное при ответе`                                                            |
 | **stock**     | Float                                                    | Остаток<br>`+Обязательное при ответе`                                                                         |
 | **cost**      | Float                                                    | Себестоимость в копейках<br>`+Обязательное при ответе`                                                        |
-| **inTransit** | Float                                                    | Ожидание<br>`+Обязательное при ответе`                                                                        |
-| **reserve**   | Float                                                    | Резерв<br>`+Обязательное при ответе`                                                                          |
+| **inTransit** | Float                                                    | Ожидание. У сущности **Комплект** значение всегда `0`.<br>`+Обязательное при ответе`                          |
+| **reserve**   | Float                                                    | Резерв. У сущности **Комплект** значение всегда `0`.<br>`+Обязательное при ответе`                            |
 | **quantity**  | Float                                                    | Доступно. У сущности **Комплект** значение всегда `0`.<br>`+Обязательное при ответе`                          |
 
 ### Получить Остатки по документу 
@@ -38,7 +38,7 @@
 + [Заказ покупателя](../documents/#dokumenty-zakaz-pokupatelq)
 + [Розничная продажа](../documents/#dokumenty-roznichnaq-prodazha)
 + [Счет поставщика](../documents/#dokumenty-schet-postawschika)
-+ [Розничная продажа](../documents/#dokumenty-roznichnaq-prodazha)
++ [Счет покупателю](../documents/#dokumenty-schet-pokupatelu)
 + [Заказ поставщику](../documents/#dokumenty-zakaz-postawschiku)
 + [Приемка](../documents/#dokumenty-priemka)
 + [Розничный возврат](../documents/#dokumenty-roznichnyj-wozwrat)
