@@ -232,7 +232,7 @@
 | **strength** | Float   | Крепость                |
 | **volume**   | Float   | Объём тары              |
 
-Данный объект не сочетается с признаками **weighed**, **isSerialTrackable**, **ppeType**, **trackingType**.
+Данный объект не сочетается с признаками **weighed**, **isSerialTrackable**, **ppeType**, **trackingType**, если он не промаркирован как BEER_ALCOHOL или NOT_TRACKED.
 
 ##### Поставщик Товара:
 
