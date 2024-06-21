@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 24-06-2024
+#### Добавлено
+- Ошибка [17023](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
+
 ### 17-06-2024
 #### Добавлена
 - Ошибка [3039](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
