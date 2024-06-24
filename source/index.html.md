@@ -12,6 +12,7 @@ toc_footers:
 
 includes:
   - general
+  - restrictions
   - async
   - errors
 
