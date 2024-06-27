@@ -19,6 +19,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 26-06-2024
+#### Добавлены
+- Условие автоматического отключения JSON API пользователю в [Ограничения](../#mojsklad-json-api-ogranicheniq)
+- Условие автоматического отключения вебхука в [Ограничения](../#mojsklad-json-api-ogranicheniq)
+
 ### 17-06-2024
 #### Добавлена
 - Ошибка [3039](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
@@ -861,7 +866,7 @@
 ### 27-04-2021
 #### Добавлено
 - Очередь для [асинхронных задач](../#mojsklad-json-api-asinhronnyj-obmen)
-- Обновлен список [ограничений](../#mojsklad-json-api-obschie-swedeniq-ogranicheniq) (добавлена информация про размер очереди асинхронных задач)
+- Обновлен список [ограничений](../#mojsklad-json-api-ogranicheniq) (добавлена информация про размер очереди асинхронных задач)
 - Новый статус `PENDING` для [асинхронных задач](../#mojsklad-json-api-asinhronnyj-obmen)
 - Эндпоинт получения [списка статусов асинхронных задач](../#mojsklad-json-api-asinhronnyj-obmen-statusy-asinhronnyh-zadach)
 - Поле **meta** для [асинхронных задач](../#mojsklad-json-api-asinhronnyj-obmen)
@@ -1149,7 +1154,7 @@
 
 ### 26-04-2020
 #### Документация
-- [Изменено описание](../#mojsklad-json-api-obschie-swedeniq-ogranicheniq) ограничения по запросу на один IP
+- [Изменено описание](../#mojsklad-json-api-ogranicheniq) ограничения по запросу на один IP
 
 ### 26-04-2020
 #### Документация
