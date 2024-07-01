@@ -24,6 +24,10 @@
 - Условие автоматического отключения JSON API пользователю в [Ограничения](../#mojsklad-json-api-ogranicheniq)
 - Условие автоматического отключения вебхука в [Ограничения](../#mojsklad-json-api-ogranicheniq)
 
+### 24-06-2024
+#### Добавлено
+- Ошибка [17023](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
+
 ### 17-06-2024
 #### Добавлена
 - Ошибка [3039](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
