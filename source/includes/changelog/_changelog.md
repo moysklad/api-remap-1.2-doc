@@ -19,6 +19,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 02-07-2024
+#### Добавлен
+ - Флаг "Без закрывающих документов" для Исходящего платежа [Исходящий платеж](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-ishodqschij-platezh)
+ - Флаг "Без закрывающих документов" для Расходного ордера [Расходный ордер](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-rashodnyj-order)
+
 ### 26-06-2024
 #### Добавлены
 - Условие автоматического отключения JSON API пользователю в [Ограничения](../#mojsklad-json-api-ogranicheniq)
