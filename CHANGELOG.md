@@ -3,7 +3,7 @@
 
 ### 12-07-2024
 #### Добавлен
-- Новый отчет По документам номенклатуры 
+- Новый [отчет По документам номенклатуры](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-po-dokumentam-nomenklatury) 
 
 ### 1-07-2024
 #### Изменено
