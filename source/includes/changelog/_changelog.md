@@ -19,6 +19,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 12-07-2024
+#### Добавлены
+- Поле "склад материалов" (materialStore) в [Этапы Техкарты](../dictionaries/#suschnosti-tehkarta)
+- Поле "склад материалов" (materialStore) в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+
 ### 1-07-2024
 #### Изменено
 - Добавлена пермиссия viewProductCostAndProfit в список пермиссий [контекста запроса сотрудника](../#mojsklad-json-api-obschie-swedeniq-kontext-zaprosa-sotrudnika)
