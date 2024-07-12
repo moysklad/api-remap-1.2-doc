@@ -3,8 +3,8 @@
 
 ### 02-07-2024
 #### Добавлен
- - Флаг "Без закрывающих документов" для Исходящего платежа [Исходящий платеж](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-ishodqschij-platezh)
- - Флаг "Без закрывающих документов" для Расходного ордера [Расходный ордер](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-rashodnyj-order)
+ - Флаг "Без закрывающих документов" для [Исходящего платежа](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-ishodqschij-platezh)
+ - Флаг "Без закрывающих документов" для [Расходного ордера](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-rashodnyj-order)
 
 ### 26-06-2024
 #### Добавлены
