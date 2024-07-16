@@ -5,6 +5,10 @@
 #### Добавлено
 - Добавлено описание получения ссылки на [изображение](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-izobrazhenie-poluchit-ssylku-na-izobrazhenie-towara-ili-komplekta-ili-modifikacii)
 
+### 12-07-2024
+#### Добавлен
+- Новый [отчет По документам номенклатуры](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-po-dokumentam-nomenklatury) 
+
 ### 1-07-2024
 #### Изменено
 - Добавлена пермиссия viewProductCostAndProfit в список пермиссий [контекста запроса сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-kontext-zaprosa-sotrudnika)
