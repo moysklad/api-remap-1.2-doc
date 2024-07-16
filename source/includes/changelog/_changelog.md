@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 17-07-2024
+#### Добавлена
+- Возможность указывать несколько складов в [отчете оборотов с детализацией по складам](../reports/#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam)
+
 ### 12-07-2024
 #### Добавлен
 - Новый [отчет По документам номенклатуры](../reports/#otchety-otchet-po-dokumentam-nomenklatury)
