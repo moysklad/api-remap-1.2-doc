@@ -5,6 +5,10 @@
 #### Добавлена
 - Возможность указывать несколько складов в [отчете оборотов](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty) 
 
+### 16-07-2024
+#### Добавлено
+- Добавлено описание получения ссылки на [изображение](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-izobrazhenie-poluchit-ssylku-na-izobrazhenie-towara-ili-komplekta-ili-modifikacii)
+
 ### 12-07-2024
 #### Добавлен
 - Новый [отчет По документам номенклатуры](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-po-dokumentam-nomenklatury) 

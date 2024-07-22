@@ -23,6 +23,10 @@
 #### Добавлена
 - Возможность указывать несколько складов в [отчете оборотов](../reports/#otchety-otchet-oboroty)
 
+### 16-07-2024
+#### Добавлено
+- Добавлено описание получения ссылки на [изображение](../dictionaries/#suschnosti-izobrazhenie-poluchit-ssylku-na-izobrazhenie-towara-ili-komplekta-ili-modifikacii)
+
 ### 12-07-2024
 #### Добавлен
 - Новый [отчет По документам номенклатуры](../reports/#otchety-otchet-po-dokumentam-nomenklatury)
