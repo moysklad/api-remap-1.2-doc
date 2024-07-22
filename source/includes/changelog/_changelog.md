@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 22-07-2024
+#### Добавлена
+- Возможность указывать несколько складов в [отчете оборотов](../reports/#otchety-otchet-oboroty)
+
 ### 16-07-2024
 #### Добавлено
 - Добавлено описание получения ссылки на [изображение](../dictionaries/#suschnosti-izobrazhenie-poluchit-ssylku-na-izobrazhenie-towara-ili-komplekta-ili-modifikacii)
