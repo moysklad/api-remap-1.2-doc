@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 26-07-2024
+#### Добавлен
+- Параметр фильтрации `productionTask` в запросе списка [Выполнений этапов производства](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vypolnenie-atapa-proizwodstwa-poluchit-spisok-vypolnenij-atapow-proizwodstwa)
+
 ### 22-07-2024
 #### Добавлена
 - Возможность указывать несколько складов в [отчете оборотов](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty) 

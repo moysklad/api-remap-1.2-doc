@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 26-07-2024
+#### Добавлен
+- Параметр фильтрации `productionTask` в запросе списка [Выполнений этапов производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa-poluchit-spisok-vypolnenij-atapow-proizwodstwa)
+
 ### 22-07-2024
 #### Добавлена
 - Возможность указывать несколько складов в [отчете оборотов](../reports/#otchety-otchet-oboroty)
