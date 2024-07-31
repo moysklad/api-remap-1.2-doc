@@ -53,6 +53,7 @@
 | **type**                       | Enum        | `=`        | параметр для фильтрации "тип документа", по которому можно произвести фильтрацию. Возможные значения `supply`, `purchasereturn`, `demand`, `salesreturn`, `loss`, `enter`, `move`, `processing`, `retaildemand`, `retailsalesreturn`, `productionstagecompletion`.                    |
 | **variant**                    | Object      | `=`        | ссылка на модификацию, по которой нужно произвести фильтрацию.                                                                                                                                                                                                                        |
 | **withoutturnover**            | Boolean     | `=`        | параметр для фильтрации "Показывать товары без движения". Возможные значения: `true`, `false`.                                                                                                                                                                                        |
+| **showarchived**               | Boolean     | `=`        | параметр для фильтрации "Показывать архивные". Возможные значения: `true`, `false`.                                                                                                                                                                                                   |
 
 
 Примеры фильтрации:
@@ -66,6 +67,7 @@
 - `filter=retailStore=https://api.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
 - `filter=agentTag=favorites`
 - `filter=withoutturnover=true`
+- `filter=showarchived=true`
 - `filter=type=supply`
 - `filter=supplier=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/656c4032-8667-11e6-8a84-bae5000033aa`
 
