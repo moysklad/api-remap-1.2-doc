@@ -53,7 +53,7 @@
 | **type**                       | Enum        | `=`        | параметр для фильтрации "тип документа", по которому можно произвести фильтрацию. Возможные значения `supply`, `purchasereturn`, `demand`, `salesreturn`, `loss`, `enter`, `move`, `processing`, `retaildemand`, `retailsalesreturn`, `productionstagecompletion`.                    |
 | **variant**                    | Object      | `=`        | ссылка на модификацию, по которой нужно произвести фильтрацию.                                                                                                                                                                                                                        |
 | **withoutturnover**            | Boolean     | `=`        | параметр для фильтрации "Показывать товары без движения". Возможные значения: `true`, `false`.                                                                                                                                                                                        |
-| **showarchived**               | Boolean     | `=`        | параметр для фильтрации "Показывать архивные". Возможные значения: `true`, `false`.                                                                                                                                                                                                   |
+| **archived**                   | Boolean     | `=`        | параметр для фильтрации "Показывать архивные". Возможные значения: `true`, `false`.                                                                                                                                                                                                   |
 
 
 Примеры фильтрации:
