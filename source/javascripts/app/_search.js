@@ -118,9 +118,9 @@
     var headerIds = new Set();
     var results = [];
 
-    $.each(indexKeys, function(index) {
-      var indexKey = $(this);
-      var values = index.search($.replace(indexKey, /[:~]/g, function(match) {return '\\' + match;}))
+    $.each(indexKeys, function() {
+      var indexKey = this;
+      var values = index.search(indexKey.replace(/[:~]/g, function(match) {return '\\' + match;}))
         .filter(function(r) {return r.score > 0.0001;});
 
       $.each(values, function(headerIds, results) {
