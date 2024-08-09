@@ -101,13 +101,20 @@
   function doSearch(searchString) {
     var indexKeys = [searchString];
     //TODO: Добавить оптимизации: прикрутить алгоритм быстрого поиска + если последовательно выбрали нужные ключи и больше нет совпадений дальше, то можно выходить из цикла
-    const invertedIndex = index.invertedIndex;
-    invertedIndex.each(function() {
+    var invertedIndex = index.invertedIndex;
+    $.each(invertedIndex, function(searchString, indexKeys) {
       var indexKey = $(this);
       if (indexKey.startsWith(searchString)) {
         indexKeys.push(indexKey);
       }
     });
+
+    // invertedIndex.each(function() {
+    //   var indexKey = $(this);
+    //   if (indexKey.startsWith(searchString)) {
+    //     indexKeys.push(indexKey);
+    //   }
+    // });
     var headerIds = new Set();
     var results = [];
     indexKeys.each(function() {
@@ -142,7 +149,7 @@
     if (event.keyCode === 27) searchInput.value = '';
 
     if (searchInput.value) {
-      const results = doSearch(searchInput.value.toLowerCase());
+      var results = doSearch(searchInput.value.toLowerCase());
       searchResults.empty();
       if (hasIndexLoadingError) {
         searchResults.append("<li class='warning'>Обновите страницу для поиска по всем разделам</li>");
