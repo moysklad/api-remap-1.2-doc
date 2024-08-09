@@ -11,38 +11,74 @@
   var highlightOpts = { element: 'span', className: 'search-highlight' };
   var searchDelay = 0;
   var timeoutHandle = 0;
-  var index;
 
-  function populate() {
-    index = lunr(function(){
+  var buildLocalIndexForSearch = function () {
+    var headerSelector = 'h1, h2';
+    var links = $(headerSelector).map(function () {
+      var title = $(this);
+      var body = title.nextUntil(headerSelector, ':not(.highlight):not(button)');
+      var bodyTexts = body.toArray().flatMap(function (node) {
+        var result = [];
+        var currentTextNode;
+        var itr = document.createNodeIterator(node, NodeFilter.SHOW_TEXT)
+        while ((currentTextNode = itr.nextNode())) {
+          var cleanedText = currentTextNode.nodeValue
+            .replaceAll('https://api.moysklad.ru/api/remap/1.2/', ' ')
+            .replaceAll(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/ig, ' ')
+            .replaceAll(/\s+/ig, ' ')
+            .trim();
+          if (cleanedText !== "")
+            result.push(cleanedText);
+        }
+        return result;
+      }).join(" ");
 
+      return {
+        "id": title.prop('id'),
+        "title": title.text(),
+        "body": bodyTexts
+      };
+    }).toArray();
+
+    window.dispatchEvent(new CustomEvent('searchDocsGenerated',
+      {
+        detail: {
+          documents: links
+        }
+      }
+    ));
+
+    return lunr(function () {
+      this.use(lunr.multiLanguage('ru', 'en'));
       this.ref('id');
-      this.field('title', { boost: 10 });
+      this.tokenizer.separator = /\s/;
+      this.field('title', {boost: 10});
       this.field('body');
-      this.pipeline.add(lunr.trimmer, lunr.stopWordFilter);
-      var lunrConfig = this;
 
-      $('h1, h2').each(function() {
-        var title = $(this);
-        var body = title.nextUntil('h1, h2');
-        lunrConfig.add({
-          id: title.prop('id'),
-          title: title.text(),
-          body: body.text()
-        });
-      });
-
+      links.forEach(function (link) {
+        this.add(link);
+      }, this);
     });
-    determineSearchDelay();
   }
 
-  $(populate);
+  var index, hasIndexLoadingError = false;
+  if (document.globalSearchIndex !== undefined) {
+    try {
+      index = lunr.Index.load(document.globalSearchIndex);
+    } catch (err) {
+      console.error(err); // will use index for page
+      hasIndexLoadingError = true;
+    }
+  }
+  if (index === undefined) {
+    index = buildLocalIndexForSearch();
+  }
+
+  $(determineSearchDelay);
   $(bind);
 
   function determineSearchDelay() {
-    if (index.tokenSet.toArray().length>5000) {
-      searchDelay = 300;
-    }
+    searchDelay = 300;
   }
 
   function bind() {
@@ -58,13 +94,14 @@
       }();
       wait(function(){
         search(e);
-      }, searchDelay);
+      }, searchDelay );
     });
   }
 
   function doSearch(searchString) {
     var indexKeys = [searchString];
-    var invertedIndex = index.invertedIndex;
+    //TODO: Добавить оптимизации: прикрутить алгоритм быстрого поиска + если последовательно выбрали нужные ключи и больше нет совпадений дальше, то можно выходить из цикла
+    const invertedIndex = index.invertedIndex;
     invertedIndex.each(function() {
       var indexKey = $(this);
       if (indexKey.startsWith(searchString)) {
@@ -72,28 +109,26 @@
       }
     });
     var headerIds = new Set();
-    var resultSearch = [];
+    var results = [];
     indexKeys.each(function() {
       var indexKey = $(this);
-      var values = index.search(indexKey.replace(/[:~]/g, function(match) {return '\\' + match;} ))
-        .filter(function(r) {
-          return r.score > 0.0001;
-        });
+      var values = index.search(indexKey.replace(/[:~]/g, function(match) {return '\\' + match;}))
+        .filter(function(r) {return r.score > 0.0001;});
       values.each(function() {
         var value = $(this);
         var id = value.ref;
         if (headerIds.has(id)) {
-          var elementArray = resultSearch.filter(function(el) {return el.ref === id;});
+          var elementArray = results.filter(function(el) {return el.ref === id;});
           if (elementArray.length !== 0) {
             elementArray[0].score = Math.max(elementArray[0].score, value.score);
           }
         } else {
           headerIds.add(id);
-          resultSearch.push(value);
+          results.push(value);
         }
       });
     });
-    return resultSearch.sort(function(a , b) {return b.score - a.score});
+    return results.sort(function(a , b) {return b.score - a.score;});
   }
 
   function search(event) {
@@ -107,12 +142,11 @@
     if (event.keyCode === 27) searchInput.value = '';
 
     if (searchInput.value) {
-      var results = doSearch(searchInput.value.toLowerCase());
+      const results = doSearch(searchInput.value.toLowerCase());
       searchResults.empty();
       if (hasIndexLoadingError) {
         searchResults.append("<li class='warning'>Обновите страницу для поиска по всем разделам</li>");
       }
-
       if (results.length) {
         $.each(results, function (index, result) {
           var urlAndText = result.ref.split("|");
@@ -128,8 +162,7 @@
         });
         highlight.call(searchInput);
       } else {
-        searchResults.html('<li></li>');
-        $('.search-results li').text('Ничего не найдено по запросу "' + searchInput.value + '"');
+        searchResults.append('<li>Ничего не найдено по запросу "' + searchInput.value + '"</li>');
       }
     } else {
       unhighlight();
