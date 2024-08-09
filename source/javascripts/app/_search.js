@@ -117,11 +117,13 @@
     // });
     var headerIds = new Set();
     var results = [];
-    indexKeys.each(function() {
+
+    $.each(indexKeys, function(index) {
       var indexKey = $(this);
       var values = index.search(indexKey.replace(/[:~]/g, function(match) {return '\\' + match;}))
         .filter(function(r) {return r.score > 0.0001;});
-      values.each(function() {
+
+      $.each(values, function(headerIds, results) {
         var value = $(this);
         var id = value.ref;
         if (headerIds.has(id)) {
@@ -134,7 +136,39 @@
           results.push(value);
         }
       });
+
+      // values.each(function() {
+      //   var value = $(this);
+      //   var id = value.ref;
+      //   if (headerIds.has(id)) {
+      //     var elementArray = results.filter(function(el) {return el.ref === id;});
+      //     if (elementArray.length !== 0) {
+      //       elementArray[0].score = Math.max(elementArray[0].score, value.score);
+      //     }
+      //   } else {
+      //     headerIds.add(id);
+      //     results.push(value);
+      //   }
+      // });
     });
+    // indexKeys.each(function() {
+    //   var indexKey = $(this);
+    //   var values = index.search(indexKey.replace(/[:~]/g, function(match) {return '\\' + match;}))
+    //     .filter(function(r) {return r.score > 0.0001;});
+    //   values.each(function() {
+    //     var value = $(this);
+    //     var id = value.ref;
+    //     if (headerIds.has(id)) {
+    //       var elementArray = results.filter(function(el) {return el.ref === id;});
+    //       if (elementArray.length !== 0) {
+    //         elementArray[0].score = Math.max(elementArray[0].score, value.score);
+    //       }
+    //     } else {
+    //       headerIds.add(id);
+    //       results.push(value);
+    //     }
+    //   });
+    // });
     return results.sort(function(a , b) {return b.score - a.score;});
   }
 
