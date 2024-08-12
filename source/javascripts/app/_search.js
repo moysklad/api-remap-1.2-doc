@@ -4,7 +4,7 @@
 //= require ../lib/_lunr.multi
 //= require ../lib/_jquery
 //= require ../lib/_jquery.highlight
-;(function () {
+$(function () {
   'use strict';
 
   var content, searchResults;
@@ -102,29 +102,19 @@
     var indexKeys = [searchString];
     //TODO: Добавить оптимизации: прикрутить алгоритм быстрого поиска + если последовательно выбрали нужные ключи и больше нет совпадений дальше, то можно выходить из цикла
     var invertedIndex = index.invertedIndex;
-    $.each(invertedIndex, function(searchString, indexKeys) {
-      var indexKey = $(this);
+    $.each(invertedIndex, function(indexKey, indexValue) {
       if (indexKey.startsWith(searchString)) {
         indexKeys.push(indexKey);
       }
     });
-
-    // invertedIndex.each(function() {
-    //   var indexKey = $(this);
-    //   if (indexKey.startsWith(searchString)) {
-    //     indexKeys.push(indexKey);
-    //   }
-    // });
     var headerIds = new Set();
     var results = [];
 
-    $.each(indexKeys, function() {
-      var indexKey = this;
-      var values = index.search(indexKey.replace(/[:~]/g, function(match) {return '\\' + match;}))
+    $.each(indexKeys, function(indexKey, indexValue) {
+      var values = index.search(indexValue.replace(/[:~]/g, function(match) {return '\\' + match;}))
         .filter(function(r) {return r.score > 0.0001;});
 
-      $.each(values, function(headerIds, results) {
-        var value = $(this);
+      $.each(values, function(key, value) {
         var id = value.ref;
         if (headerIds.has(id)) {
           var elementArray = results.filter(function(el) {return el.ref === id;});
@@ -136,39 +126,7 @@
           results.push(value);
         }
       });
-
-      // values.each(function() {
-      //   var value = $(this);
-      //   var id = value.ref;
-      //   if (headerIds.has(id)) {
-      //     var elementArray = results.filter(function(el) {return el.ref === id;});
-      //     if (elementArray.length !== 0) {
-      //       elementArray[0].score = Math.max(elementArray[0].score, value.score);
-      //     }
-      //   } else {
-      //     headerIds.add(id);
-      //     results.push(value);
-      //   }
-      // });
     });
-    // indexKeys.each(function() {
-    //   var indexKey = $(this);
-    //   var values = index.search(indexKey.replace(/[:~]/g, function(match) {return '\\' + match;}))
-    //     .filter(function(r) {return r.score > 0.0001;});
-    //   values.each(function() {
-    //     var value = $(this);
-    //     var id = value.ref;
-    //     if (headerIds.has(id)) {
-    //       var elementArray = results.filter(function(el) {return el.ref === id;});
-    //       if (elementArray.length !== 0) {
-    //         elementArray[0].score = Math.max(elementArray[0].score, value.score);
-    //       }
-    //     } else {
-    //       headerIds.add(id);
-    //       results.push(value);
-    //     }
-    //   });
-    // });
     return results.sort(function(a , b) {return b.score - a.score;});
   }
 
@@ -218,4 +176,4 @@
   function unhighlight() {
     content.unhighlight(highlightOpts);
   }
-})();
+});
