@@ -19,6 +19,26 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 19-08-2024
+#### Добавлено
+- Новый тип маркированной продукции `SOFT_DRINKS` для безалкогольных напитков для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
+
+### 22-07-2024
+#### Добавлена
+- Возможность указывать несколько складов в [отчете оборотов](../reports/#otchety-otchet-oboroty)
+
+### 16-07-2024
+#### Добавлено
+- Добавлено описание получения ссылки на [изображение](../dictionaries/#suschnosti-izobrazhenie-poluchit-ssylku-na-izobrazhenie-towara-ili-komplekta-ili-modifikacii)
+
+### 12-07-2024
+#### Добавлен
+- Новый [отчет По документам номенклатуры](../reports/#otchety-otchet-po-dokumentam-nomenklatury)
+
+### 1-07-2024
+#### Изменено
+- Добавлена пермиссия viewProductCostAndProfit в список пермиссий [контекста запроса сотрудника](../#mojsklad-json-api-obschie-swedeniq-kontext-zaprosa-sotrudnika)
+
 ### 02-07-2024
 #### Добавлен
 - Флаг "Без закрывающих документов" для [Исходящего платежа](../documents/#dokumenty-ishodqschij-platezh)
@@ -29,13 +49,17 @@
 - Условие автоматического отключения JSON API пользователю в [Ограничения](../#mojsklad-json-api-ogranicheniq)
 - Условие автоматического отключения вебхука в [Ограничения](../#mojsklad-json-api-ogranicheniq)
 
+### 24-06-2024
+#### Добавлено
+- Ошибка [17023](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
+
 ### 17-06-2024
 #### Добавлена
 - Ошибка [3039](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
 
 ### 10-06-2024
 #### Добавлено
-- Добавлен новый тип маркированной продукции `MEDICAL_DEVICES` для медизделий и кресел-колясок для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
+- Новый тип маркированной продукции `MEDICAL_DEVICES` для медизделий и кресел-колясок для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
 - Поле "нормо-часы" (standardHour) в [Этапы Техкарты](../dictionaries/#suschnosti-tehkarta)
 - Поле "нормо-часы" (standardHourUnit) в [Выполнения этапов производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
 - Поле "нормо-часы" (standardHourUnit) в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)

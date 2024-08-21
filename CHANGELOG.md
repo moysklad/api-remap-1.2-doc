@@ -1,15 +1,39 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 02-07-2024
+### 21-08-2024
 #### Добавлен
  - Флаг "Без закрывающих документов" для [Исходящего платежа](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-ishodqschij-platezh)
  - Флаг "Без закрывающих документов" для [Расходного ордера](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-rashodnyj-order)
+
+### 19-08-2024
+#### Добавлено
+- Новый тип маркированной продукции `SOFT_DRINKS` для безалкогольных напитков для [Товара](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary) и [Комплекта](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt-komplekty)
+
+### 22-07-2024
+#### Добавлена
+- Возможность указывать несколько складов в [отчете оборотов](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty) 
+
+### 16-07-2024
+#### Добавлено
+- Добавлено описание получения ссылки на [изображение](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-izobrazhenie-poluchit-ssylku-na-izobrazhenie-towara-ili-komplekta-ili-modifikacii)
+
+### 12-07-2024
+#### Добавлен
+- Новый [отчет По документам номенклатуры](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-po-dokumentam-nomenklatury) 
+
+### 1-07-2024
+#### Изменено
+- Добавлена пермиссия viewProductCostAndProfit в список пермиссий [контекста запроса сотрудника](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-kontext-zaprosa-sotrudnika)
 
 ### 26-06-2024
 #### Добавлены
 - Условия автоматического отключения JSON API пользователю в [Ограничения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-ogranicheniq)
 - Условия автоматического отключения вебхука в [Ограничения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-ogranicheniq)
+
+### 24-06-2024
+#### Добавлено
+- Ошибка [17023](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
 
 ### 17-06-2024
 #### Добавлена
@@ -17,7 +41,7 @@
 
 ### 10-06-2024
 #### Добавлено
-- Добавлен новый тип маркированной продукции `MEDICAL_DEVICES` для медизделий и кресел-колясок для [Товара](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary) и [Комплекта](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt-komplekty)
+- Новый тип маркированной продукции `MEDICAL_DEVICES` для медизделий и кресел-колясок для [Товара](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary) и [Комплекта](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt-komplekty)
 - Поле "нормо-часы" (standardHour) в [Этапы Техкарты](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta)
 - Поле "нормо-часы" (standardHourUnit) в [Выполнения этапов производства](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
 - Поле "нормо-часы" (standardHourUnit) в [Производственные этапы](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)

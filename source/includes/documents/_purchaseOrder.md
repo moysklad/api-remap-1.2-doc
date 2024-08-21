@@ -2423,7 +2423,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/purchaseOrder/7944ef04-f831-11e5-7a69-971500188b19/positions"
+  "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19/positions"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
@@ -2651,7 +2651,7 @@ curl -X GET
 
 ```shell
   curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/purchaseOrder/7944ef04-f831-11e5-7a69-971500188b19/positions"
+    "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19/positions"
     -H "Authorization: Basic <Credentials>"
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
@@ -2710,7 +2710,7 @@ curl -X GET
 
 ```shell
   curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/purchaseOrder/7944ef04-f831-11e5-7a69-971500188b19/positions"
+    "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19/positions"
     -H "Authorization: Basic <Credentials>"
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
