@@ -19,6 +19,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 21-08-2024
+#### Добавлен
+- Флаг "Без закрывающих документов" для [Исходящего платежа](../documents/#dokumenty-ishodqschij-platezh)
+- Флаг "Без закрывающих документов" для [Расходного ордера](../documents/#dokumenty-rashodnyj-order)
+
 ### 19-08-2024
 #### Добавлено
 - Новый тип маркированной продукции `SOFT_DRINKS` для безалкогольных напитков для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
@@ -38,11 +43,6 @@
 ### 1-07-2024
 #### Изменено
 - Добавлена пермиссия viewProductCostAndProfit в список пермиссий [контекста запроса сотрудника](../#mojsklad-json-api-obschie-swedeniq-kontext-zaprosa-sotrudnika)
-
-### 02-07-2024
-#### Добавлен
-- Флаг "Без закрывающих документов" для [Исходящего платежа](../documents/#dokumenty-ishodqschij-platezh)
-- Флаг "Без закрывающих документов" для [Расходного ордера](../documents/#dokumenty-rashodnyj-order)
 
 ### 26-06-2024
 #### Добавлены
