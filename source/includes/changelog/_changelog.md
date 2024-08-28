@@ -19,9 +19,23 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 26-07-2024
+### 28-08-2024
 #### Добавлен
 - Параметр фильтрации `productionTask` в запросе списка [Выполнений этапов производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa-poluchit-spisok-vypolnenij-atapow-proizwodstwa)
+
+### 26-08-2024
+#### Добавлены
+- Параметр фильтрации `moment` в запросе списка [Выполнений этапов производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa-poluchit-spisok-vypolnenij-atapow-proizwodstwa)
+- Параметры фильтрации `moment`, `organization`, `deliveryPlannedMoment` в запросе списка [Производственных заданий](../documents/#dokumenty-proizwodstwennoe-zadanie)
+
+### 22-08-2024
+#### Добавлен
+- Флаг "Без закрывающих документов" для [Исходящего платежа](../documents/#dokumenty-ishodqschij-platezh)
+- Флаг "Без закрывающих документов" для [Расходного ордера](../documents/#dokumenty-rashodnyj-order)
+
+### 19-08-2024
+#### Добавлено
+- Новый тип маркированной продукции `SOFT_DRINKS` для безалкогольных напитков для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
 
 ### 22-07-2024
 #### Добавлена

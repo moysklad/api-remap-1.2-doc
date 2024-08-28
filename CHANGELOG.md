@@ -1,9 +1,23 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 26-07-2024
+### 28-08-2024
 #### Добавлен
 - Параметр фильтрации `productionTask` в запросе списка [Выполнений этапов производства](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vypolnenie-atapa-proizwodstwa-poluchit-spisok-vypolnenij-atapow-proizwodstwa)
+
+### 26-08-2024
+#### Добавлены
+- Параметр фильтрации `moment` в запросе списка [Выполнений этапов производства](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vypolnenie-atapa-proizwodstwa-poluchit-spisok-vypolnenij-atapow-proizwodstwa)
+- Параметры фильтрации `moment`, `organization`, `deliveryPlannedMoment` в запросе списка [Производственных заданий](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-proizwodstwennoe-zadanie)
+
+### 22-08-2024
+#### Добавлен
+ - Флаг "Без закрывающих документов" для [Исходящего платежа](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-ishodqschij-platezh)
+ - Флаг "Без закрывающих документов" для [Расходного ордера](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-rashodnyj-order)
+
+### 19-08-2024
+#### Добавлено
+- Новый тип маркированной продукции `SOFT_DRINKS` для безалкогольных напитков для [Товара](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary) и [Комплекта](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt-komplekty)
 
 ### 22-07-2024
 #### Добавлена
