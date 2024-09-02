@@ -19,6 +19,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 02-09-2024
+#### Добавлено
+- Описание ошибки [70000](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-lenty-sobytij)
+- Возможность добавлять события в [Ленту Событий](../dictionaries/#suschnosti-lenta-sobytij)
+
 ### 28-08-2024
 #### Добавлен
 - Параметр фильтрации `productionTask` в запросе списка [Выполнений этапов производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa-poluchit-spisok-vypolnenij-atapow-proizwodstwa)
@@ -72,11 +77,6 @@
 - Поле "нормо-часы" (standardHour) в [Этапы Техкарты](../dictionaries/#suschnosti-tehkarta)
 - Поле "нормо-часы" (standardHourUnit) в [Выполнения этапов производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
 - Поле "нормо-часы" (standardHourUnit) в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
-
-### 04-06-2024
-#### Добавлено
-- Описание ошибки [69000](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-lenty-sobytij)
-- Возможность добавлять события в [Ленту Событий](../dictionaries/#suschnosti-lenta-sobytij)
 
 ### 29-05-2024
 #### Добавлена
