@@ -84,6 +84,7 @@
 | **PERFUMERY**       | Духи и туалетная вода                |
 | **SANITIZER**       | Антисептики                          |
 | **SHOES**           | Тип маркировки "Обувь"               |
+| **SOFT_DRINKS**     | Безалкогольные напитки               |
 | **TIRES**           | Шины и покрышки                      |
 | **TOBACCO**         | Тип маркировки "Табак"               |
 | **WATER**           | Упакованная вода                     |
@@ -232,7 +233,7 @@
 | **strength** | Float   | Крепость                |
 | **volume**   | Float   | Объём тары              |
 
-Данный объект не сочетается с признаками **weighed**, **isSerialTrackable**, **ppeType**, **trackingType**.
+Данный объект не сочетается с признаками **weighed**, **isSerialTrackable**, **ppeType**, **trackingType**, если он не промаркирован как BEER_ALCOHOL или NOT_TRACKED.
 
 ##### Поставщик Товара:
 

@@ -19,9 +19,56 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 28-08-2024
+#### Добавлен
+- Параметр фильтрации `productionTask` в запросе списка [Выполнений этапов производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa-poluchit-spisok-vypolnenij-atapow-proizwodstwa)
+
+### 26-08-2024
+#### Добавлены
+- Параметр фильтрации `moment` в запросе списка [Выполнений этапов производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa-poluchit-spisok-vypolnenij-atapow-proizwodstwa)
+- Параметры фильтрации `moment`, `organization`, `deliveryPlannedMoment` в запросе списка [Производственных заданий](../documents/#dokumenty-proizwodstwennoe-zadanie)
+
+### 22-08-2024
+#### Добавлен
+- Флаг "Без закрывающих документов" для [Исходящего платежа](../documents/#dokumenty-ishodqschij-platezh)
+- Флаг "Без закрывающих документов" для [Расходного ордера](../documents/#dokumenty-rashodnyj-order)
+
+### 19-08-2024
+#### Добавлено
+- Новый тип маркированной продукции `SOFT_DRINKS` для безалкогольных напитков для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
+
+### 22-07-2024
+#### Добавлена
+- Возможность указывать несколько складов в [отчете оборотов](../reports/#otchety-otchet-oboroty)
+
+### 16-07-2024
+#### Добавлено
+- Добавлено описание получения ссылки на [изображение](../dictionaries/#suschnosti-izobrazhenie-poluchit-ssylku-na-izobrazhenie-towara-ili-komplekta-ili-modifikacii)
+
+### 12-07-2024
+#### Добавлен
+- Новый [отчет По документам номенклатуры](../reports/#otchety-otchet-po-dokumentam-nomenklatury)
+
+### 1-07-2024
+#### Изменено
+- Добавлена пермиссия viewProductCostAndProfit в список пермиссий [контекста запроса сотрудника](../#mojsklad-json-api-obschie-swedeniq-kontext-zaprosa-sotrudnika)
+
+### 26-06-2024
+#### Добавлены
+- Условие автоматического отключения JSON API пользователю в [Ограничения](../#mojsklad-json-api-ogranicheniq)
+- Условие автоматического отключения вебхука в [Ограничения](../#mojsklad-json-api-ogranicheniq)
+
+### 24-06-2024
+#### Добавлено
+- Ошибка [17023](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
+
+### 17-06-2024
+#### Добавлена
+- Ошибка [3039](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
 ### 10-06-2024
 #### Добавлено
-- Добавлен новый тип маркированной продукции `MEDICAL_DEVICES` для медизделий и кресел-колясок для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
+- Новый тип маркированной продукции `MEDICAL_DEVICES` для медизделий и кресел-колясок для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
 - Поле "нормо-часы" (standardHour) в [Этапы Техкарты](../dictionaries/#suschnosti-tehkarta)
 - Поле "нормо-часы" (standardHourUnit) в [Выполнения этапов производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
 - Поле "нормо-часы" (standardHourUnit) в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
@@ -862,7 +909,7 @@
 ### 27-04-2021
 #### Добавлено
 - Очередь для [асинхронных задач](../#mojsklad-json-api-asinhronnyj-obmen)
-- Обновлен список [ограничений](../#mojsklad-json-api-obschie-swedeniq-ogranicheniq) (добавлена информация про размер очереди асинхронных задач)
+- Обновлен список [ограничений](../#mojsklad-json-api-ogranicheniq) (добавлена информация про размер очереди асинхронных задач)
 - Новый статус `PENDING` для [асинхронных задач](../#mojsklad-json-api-asinhronnyj-obmen)
 - Эндпоинт получения [списка статусов асинхронных задач](../#mojsklad-json-api-asinhronnyj-obmen-statusy-asinhronnyh-zadach)
 - Поле **meta** для [асинхронных задач](../#mojsklad-json-api-asinhronnyj-obmen)
@@ -1150,7 +1197,7 @@
 
 ### 26-04-2020
 #### Документация
-- [Изменено описание](../#mojsklad-json-api-obschie-swedeniq-ogranicheniq) ограничения по запросу на один IP
+- [Изменено описание](../#mojsklad-json-api-ogranicheniq) ограничения по запросу на один IP
 
 ### 26-04-2020
 #### Документация
