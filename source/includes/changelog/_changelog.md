@@ -19,7 +19,7 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 05-08-2024
+### 03-09-2024
 #### Добавлены
 - Поле "склад материалов" (materialStore) в [Этапы Техкарты](../dictionaries/#suschnosti-tehkarta)
 - Поле "склад материалов" (materialStore) в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
