@@ -117,6 +117,7 @@
 | **id**                   | UUID                                                      | ID Счета<br>`+Обязательное при ответе` `+Только для чтения`                            |
 | **isDefault**            | Boolean                                                   | Является ли счет основным счетом юрлица<br>`+Обязательное при ответе`                  |
 | **updated**              | DateTime                                                  | Момент последнего обновления юрлица<br>`+Обязательное при ответе` `+Только для чтения` |
+| **currency**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные стандартной валюты<br>`+Обязательное при ответе`  
 
 #### Тип юрлица
 В зависимости от типа юрлица **companyType** в составе его объекта будут выводиться разные наборы реквизитов.
@@ -1834,6 +1835,15 @@ curl -X GET
           "type": "organization",
           "mediaType": "application/json"
         }
+      },
+      "currency": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0a1b4b87-c42e-11ee-ac1b-000e0000009d",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json",
+          "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=0a1b4b87-c42e-11ee-ac1b-000e0000009d"
+      }
       }
     }
   ]
