@@ -1,14 +1,19 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 02-09-2024
+### 16-09-2024
 #### Добавлено
 - Возможность обновлять и удалять события в [Ленте Событий](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-lenta-sobytij)
 
-### 02-09-2024
+### 16-09-2024
 #### Добавлено
 - Возможность добавлять события в [Ленту Событий](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-lenta-sobytij)
 - Ошибка [70000](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-lenty-sobytij)
+
+### 03-09-2024
+#### Добавлены
+- Поле "склад материалов" (materialStore) в [Этапы Техкарты](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta)
+- Поле "склад материалов" (materialStore) в [Производственные этапы](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
 
 ### 28-08-2024
 #### Добавлен
