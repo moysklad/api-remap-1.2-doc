@@ -19,6 +19,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 16-09-2024
+#### Добавлено
+- Описание ошибки [70000](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-lenty-sobytij)
+- Возможность добавлять события в [Ленту Событий](../dictionaries/#suschnosti-lenta-sobytij)
+
 ### 03-09-2024
 #### Добавлены
 - Поле "склад материалов" (materialStore) в [Этапы Техкарты](../dictionaries/#suschnosti-tehkarta)
