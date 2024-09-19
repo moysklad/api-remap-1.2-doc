@@ -3,7 +3,7 @@
 
 ### 11-09-2024
 #### Добавлены
-- Поле "валюта" (currency) во вложенную сущность [Юрлица](../dictionaries/#suschnosti-jurlico-jurlica) Счета юрлица
+- Поле "валюта" (currency) во вложенную сущность [Юрлица](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico-jurlica) Счета юрлица
 
 ### 03-09-2024
 #### Добавлены
