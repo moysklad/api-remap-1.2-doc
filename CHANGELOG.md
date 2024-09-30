@@ -1,7 +1,7 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 27-09-2024
+### 30-09-2024
 #### Добавлено
 - Возможность обновлять и удалять события в [Ленте Событий](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-lenta-sobytij)
 - Ошибка [2026](https://dev.moysklad.ru/doc/api/remap/1.2/#error_2026)
