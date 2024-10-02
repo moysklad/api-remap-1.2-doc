@@ -4,7 +4,7 @@
 ### 30-09-2024
 #### Добавлено
 - Возможность обновлять и удалять события в [Ленте Событий](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-lenta-sobytij)
-- Ошибка [2026](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
+- Ошибка [2026](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-oshibki-formata)
 
 ### 16-09-2024
 #### Добавлено
