@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 08-10-2024
+#### Добавлена
+- Возможность фильтровать архивные товары в [отчете оборотов](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-oboroty)
+
 ### 30-09-2024
 #### Добавлено
 - Возможность обновлять и удалять события в [Ленте Событий](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-lenta-sobytij)
