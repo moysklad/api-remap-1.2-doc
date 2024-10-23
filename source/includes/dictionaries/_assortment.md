@@ -83,7 +83,7 @@
 
 ##### Фильтрация доп. полей
 
-Подробнее функциональность описана в разделе [Фильтрация по дополнительным полям](../#mojsklad7-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm).
+Подробнее функциональность описана в разделе [Фильтрация по дополнительным полям](../#mojsklad777-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm).
 
 
 Примеры фильтрации: 
