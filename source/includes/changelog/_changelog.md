@@ -19,6 +19,13 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 18-10-2024
+#### Добавлено
+- Типы компаний региона Узбекистан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)
+- Типы компаний региона Узбекистан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-tip-urlica)
+- Реквизиты региона Узбекистан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres-rekwizity-uzbekistan)
+- Реквизиты региона Узбекистан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres-rekwizity-uzbekistan)
+
 ### 17-10-2024
 #### Изменено
 - Изменено одно из [правил бана](../index.html#mojsklad-json-api-ogranicheniq)
