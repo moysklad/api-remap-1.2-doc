@@ -31,7 +31,7 @@
 
 ### 03-09-2024
 #### Добавлены
-- Поле "склад материалов" (materialStore) в [Этапы Техкарты](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta)
+- Поле "склад материалов" (materialStore) в [Этапы Техкарты](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jetap-proizwodstwa-jetapy)
 - Поле "склад материалов" (materialStore) в [Производственные этапы](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
 
 ### 28-08-2024
