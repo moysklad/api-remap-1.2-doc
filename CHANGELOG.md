@@ -1,9 +1,13 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 17-10-2024
+### 24-10-2024
 #### Добавлено
 - Поле `advancePaymentVat` в [Юрлица](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico), Налоговая ставка для авансов для плательщиков НДС
+
+### 17-10-2024
+#### Изменено
+- Изменено одно из [правил бана](https://dev.moysklad.ru/doc/api/remap/1.2/index.html#mojsklad-json-api-ogranicheniq)
 
 ### 08-10-2024
 #### Добавлена
@@ -21,7 +25,7 @@
 
 ### 03-09-2024
 #### Добавлены
-- Поле "склад материалов" (materialStore) в [Этапы Техкарты](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta)
+- Поле "склад материалов" (materialStore) в [Этапы Техкарты](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jetap-proizwodstwa-tehkarta)
 - Поле "склад материалов" (materialStore) в [Производственные этапы](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
 
 ### 28-08-2024
