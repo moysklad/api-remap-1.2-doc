@@ -3,7 +3,7 @@
 
 ### 24-10-2024
 #### Добавлена
-- Ошибка [71000](https://dev.moysklad.ru/doc/api/remap/1.2/#error_71000) при создании серии в качестве ассортимента указана серия 
+- Ошибка [71000](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-serij) при создании серии в качестве ассортимента указана серия 
 
 ### 24-10-2024
 #### Добавлено
