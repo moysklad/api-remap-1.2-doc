@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 24-10-2024
+#### Добавлено
+- Поле `advancePaymentVat` в [Юрлица](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico), Налоговая ставка для авансов для плательщиков НДС
+
 ### 17-10-2024
 #### Изменено
 - Изменено одно из [правил бана](https://dev.moysklad.ru/doc/api/remap/1.2/index.html#mojsklad-json-api-ogranicheniq)
