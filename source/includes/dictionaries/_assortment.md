@@ -8,7 +8,7 @@
 ghjjnkjbjhbhbnn
 ggvvvgvgv
 new
-test test 1
+test test 1 2
 #### Атрибуты доступные для фильтрации
 
 Результаты запроса можно отфильтровать, используя параметр filter.
