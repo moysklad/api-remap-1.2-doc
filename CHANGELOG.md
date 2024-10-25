@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 25-10-2024
+#### Изменено
+- Переименование приложений в решения.
+
 ### 24-10-2024
 #### Добавлено
 - Поле `advancePaymentVat` в [Юрлица](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico), Налоговая ставка для авансов для плательщиков НДС
@@ -126,7 +130,7 @@
 
 ### 02-04-2024
 #### Добавлено
-- Возможность получения [шаблонов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-shablony-dokumentow) документов по токену приложения
+- Возможность получения [шаблонов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-shablony-dokumentow) документов по токену решения
 
 ### 28-03-2024
 #### Добавлено
@@ -838,7 +842,7 @@
 
 ### 08-06-2021
 #### Изменено
-- Изменены лимиты по [вебхукам](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-vebhuki): выделены отдельные лимиты для приложений
+- Изменены лимиты по [вебхукам](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-vebhuki): выделены отдельные лимиты для решений
 
 ### 03-06-2021
 #### Добавлено
@@ -854,7 +858,7 @@
 
 ### 01-06-2021
 #### Добавлено
-- Возможность получать и изменять пользовательские роли от лица приложения
+- Возможность получать и изменять пользовательские роли от лица решения
 - Исправлена ошибка: при изменении пермиссий у роли сотрудника, был невозможен вход в систему
 
 ### 31-05-2021
@@ -1368,10 +1372,10 @@
 
 ### 07-11-2019
 #### Добавлено
-- Получение [контекста приложения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-serwernye-prilozheniq)
-- [Получение сущности установленного приложения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-serwernye-prilozheniq)
-- [Фильтрация выборки с помощью параметра filter](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter) по изменившему сущность приложению
-- [Фильтрация записей аудита с помощью параметра filter](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-serwernye-prilozheniq-fil-traciq-zapisej-audita-s-pomosch-u-parametra-filter-application) по изменившему сущность приложению
+- Получение [контекста решения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-serwernye-prilozheniq)
+- [Получение сущности установленного решения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-serwernye-prilozheniq)
+- [Фильтрация выборки с помощью параметра filter](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter) по изменившему сущность решению
+- [Фильтрация записей аудита с помощью параметра filter](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-serwernye-prilozheniq-fil-traciq-zapisej-audita-s-pomosch-u-parametra-filter-application) по изменившему сущность решению
 
 ### 21-10-2019
 #### Добавлено
