@@ -1,10 +1,6 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 25-10-2024
-#### Изменено
-- Переименование приложений в решения.
-
 ### 24-10-2024
 #### Добавлено
 - Поле `advancePaymentVat` в [Юрлица](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico), Налоговая ставка для авансов для плательщиков НДС
@@ -1372,10 +1368,10 @@
 
 ### 07-11-2019
 #### Добавлено
-- Получение [контекста решения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-serwernye-prilozheniq)
-- [Получение сущности установленного решения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-serwernye-prilozheniq)
+- Получение [контекста решения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-serwernye-resheniq)
+- [Получение сущности установленного решения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-serwernye-resheniq)
 - [Фильтрация выборки с помощью параметра filter](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter) по изменившему сущность решению
-- [Фильтрация записей аудита с помощью параметра filter](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-serwernye-prilozheniq-fil-traciq-zapisej-audita-s-pomosch-u-parametra-filter-application) по изменившему сущность решению
+- [Фильтрация записей аудита с помощью параметра filter](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-serwernye-resheniq-fil-traciq-zapisej-audita-s-pomosch-u-parametra-filter-application) по изменившему сущность решению
 
 ### 21-10-2019
 #### Добавлено
@@ -1395,7 +1391,7 @@
 - Изображения модификаций
 - Несколько изображений у [товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary), [комплектов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt), [модификаций](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-modifikaciq)
 - [Массовое создание, редактирование и удаление](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) через POST
-- [Фильтрация по uid](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-serwernye-prilozheniq-fil-traciq-zapisej-audita-s-pomosch-u-parametra-filter-uid) в запросе аудита
+- [Фильтрация по uid](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-serwernye-resheniq-fil-traciq-zapisej-audita-s-pomosch-u-parametra-filter-uid) в запросе аудита
 - Версия АПИ в теле вебхука
 - Поле `accoundId` в теле вебхука
 - [Штрихкоды для услуг](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-shtrihkody)
