@@ -23,6 +23,10 @@
 #### Добавлена
 - Ошибка [71000](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tochek-prodazh) при создании\изменении точки продаж productFolders содержит родительскую и дочернюю группы товаров одновременно
 
+### 29-10-2024
+#### Добавлена
+- Ошибка [71000](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-serij) при создании серии в качестве ассортимента указана серия
+
 ### 24-10-2024
 #### Добавлено
 - Поле `advancePaymentVat` в [Юрлица](../dictionaries/#suschnosti-jurlico), Налоговая ставка для авансов для плательщиков НДС
