@@ -266,18 +266,38 @@ curl -X GET
   "customEntities": [
     {
       "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/eaacabaf-2655-11e6-8a84-bae500000045",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/eaacabaf-2655-11e6-8a84-bae500000045/metadata",
         "type": "customentitymetadata",
         "mediaType": "application/json"
+      },
+      "attributes": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/eaacabaf-2655-11e6-8a84-bae500000045/metadata/attributes",
+          "type": "attributemetadata",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
       },
       "name": "Партнеры",
       "createShared": true
     },
     {
       "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/f3aff189-2655-11e6-8a84-bae500000046",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/f3aff189-2655-11e6-8a84-bae500000046/metadata",
         "type": "customentitymetadata",
         "mediaType": "application/json"
+      },
+      "attributes": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/f3aff189-2655-11e6-8a84-bae500000046/metadata/attributes",
+          "type": "attributemetadata",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
       },
       "name": "Рекламные агенства",
       "createShared": true

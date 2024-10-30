@@ -217,6 +217,7 @@ JSON API позволяет создавать, обновлять и удаля
 + [Контрагент](dictionaries/#suschnosti-kontragent)
 + [Юрлицо](dictionaries/#suschnosti-jurlico)
 + [Проект](dictionaries/#suschnosti-proekt)
++ [Пользовательский справочник](dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik) (у каждого справочника свои)
 + [Склад](dictionaries/#suschnosti-sklad)
 + [Сотрудник](dictionaries/#suschnosti-sotrudnik)
 + [Товар](dictionaries/#suschnosti-towar)
@@ -697,7 +698,7 @@ curl -X POST
   -H 'Content-Type: application/json'
   -d '{
         "customEntityMeta": {
-          "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/0347beb0-a785-11e9-ac12-000800000003",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/0347beb0-a785-11e9-ac12-000800000003/metadata",
           "type": "customentitymetadata",
           "mediaType": "application/json"
         },
@@ -718,7 +719,7 @@ curl -X POST
     "mediaType": "application/json"
   },
   "customEntityMeta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/0347beb0-a785-11e9-ac12-000800000003",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/0347beb0-a785-11e9-ac12-000800000003/metadata",
     "type": "customentitymetadata",
     "mediaType": "application/json"
   },
