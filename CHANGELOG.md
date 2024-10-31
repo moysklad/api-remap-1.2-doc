@@ -3,7 +3,7 @@
 
 ### 28-10-2024
 #### Добавлена
-- Ошибка [4003](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tochek-prodazh) при создании\изменении точки продаж productFolders содержит родительскую и её дочерние группы товаров одновременно
+- Ошибка [4003](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tochek-prodazh) при создании\изменении точки продаж productFolders содержит родительскую группу товаров и ee дочерние группы одновременно
 
 ### 29-10-2024
 #### Добавлена
