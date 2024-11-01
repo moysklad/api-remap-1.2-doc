@@ -227,7 +227,7 @@ curl -X GET
       "returnCostSum": 900000.0,
       "profit": 1400000.0,
       "margin": 0.6666666666666666,
-      "salesMargin": 0.3111111111111111
+      "salesMargin": 0.4
     }
   ]
 }
@@ -456,7 +456,7 @@ curl -X GET
       "returnCostSum": 900000.0,
       "profit": 1400000.0,
       "margin": 0.6666666666666666,
-      "salesMargin": 0.3111111111111111
+      "salesMargin": 0.4
     }
   ]
 }
