@@ -195,19 +195,20 @@ curl -X GET
 
 #### Атрибуты элемента
 
-| Название         | Тип                                                       | Фильтрация                 | Описание                                                                                                               |
-|------------------|:----------------------------------------------------------|:---------------------------|:-----------------------------------------------------------------------------------------------------------------------|
-| **accountId**    | UUID                                                      | `=` `!=`                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                   |
-| **code**         | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Код элемента Пользовательского справочника                                                                             |
-| **description**  | String(4096)                                              | `=` `!=` `~` `~=` `=~`     | Описание элемента Пользовательского справочника                                                                        |
-| **externalCode** | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Внешний код элемента Пользовательского справочника<br>`+Обязательное при ответе`                                       |
-| **id**           | UUID                                                      | `=` `!=`                   | ID элемента Пользовательского справочника<br>`+Обязательное при ответе` `+Только для чтения`                           |
-| **meta**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Метаданные элемента Пользовательского справочника<br>`+Обязательное при ответе`                                        |
-| **name**         | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Наименование элементе Пользовательского справочника<br>`+Обязательное при ответе` `+Необходимо при создании`           |
-| **updated**      | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления элементе Пользовательского справочника<br>`+Обязательное при ответе` `+Только для чтения` |
-| **group**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                               |
-| **owner**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br>`+Expand`                                                                                      |
-| **shared**       | Boolean                                                   | `=` `!=`                   | Общий доступ<br>`+Обязательное при ответе`                                                                             |
+| Название         | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                |
+|------------------|:----------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------|
+| **meta**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные элемента Пользовательского справочника<br>`+Обязательное при ответе`                                         |
+| **id**           | UUID                                                      | `=` `!=`                                                                                                                                          | ID элемента Пользовательского справочника<br>`+Обязательное при ответе` `+Только для чтения`                            |
+| **accountId**    | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                    |
+| **updated**      | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления элементе Пользовательского справочника<br>`+Обязательное при ответе` `+Только для чтения`  |
+| **name**         | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование элементе Пользовательского справочника<br>`+Обязательное при ответе` `+Необходимо при создании`            |
+| **code**         | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код элемента Пользовательского справочника                                                                              |
+| **description**  | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Описание элемента Пользовательского справочника                                                                         |
+| **externalCode** | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код элемента Пользовательского справочника<br>`+Обязательное при ответе`                                        |
+| **attributes**   | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |
+| **owner**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                       |
+| **shared**       | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                              |
+| **group**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                |
 
 #### Получить все элементы
 
@@ -275,6 +276,19 @@ curl -X GET
       "name": "Партнер1",
       "code": "partner1",
       "externalCode": "5434665867876",
+      "attributes": [
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/metadata/attributes/54b79da2-9124-11ef-ac12-000e00000008",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          },
+          "id": "54b79da2-9124-11ef-ac12-000e00000008",
+          "name": "Дата последнего обращения",
+          "type": "time",
+          "value": "2024-10-24 19:42:00.000"
+        }
+      ],
       "owner": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/9bc5de98-79f2-11e8-1a0d-4e0d0000002b",
@@ -341,6 +355,19 @@ curl -X GET
       "code": "partner mikhalych",
       "description": "Ключевой сотрудник ООО Предприятие",
       "externalCode": "5434665867878",
+      "attributes": [
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/metadata/attributes/54b79da2-9124-11ef-ac12-000e00000008",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          },
+          "id": "54b79da2-9124-11ef-ac12-000e00000008",
+          "name": "Дата последнего обращения",
+          "type": "time",
+          "value": "2024-07-20 12:43:00.000"
+        }
+      ],
       "owner": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/9bc5de98-79f2-11e8-1a0d-4e0d0000002b",
@@ -397,10 +424,23 @@ curl -X GET
   "id": "6343f631-265d-11e6-8a84-bae500000014",
   "accountId": "45489428-24a5-11e6-8a84-bae500000001",
   "updated": "2017-08-14 10:22:51",
-  "name": "Партнер 3",
-  "code": "partner3",
-  "description": "Описание",
-  "externalCode": "5434665867876",
+  "name": "Петр михалыч из ООО Предприятие",
+  "code": "partner mikhalych",
+  "description": "Ключевой сотрудник ООО Предприятие",
+  "externalCode": "5434665867878",
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/metadata/attributes/54b79da2-9124-11ef-ac12-000e00000008",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "54b79da2-9124-11ef-ac12-000e00000008",
+      "name": "Дата последнего обращения",
+      "type": "time",
+      "value": "2024-07-20 12:43:00.000"
+    }
+  ],
   "owner": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/9bc5de98-79f2-11e8-1a0d-4e0d0000002b",
@@ -512,7 +552,17 @@ curl -X GET
             "name": "Петр михалыч из ООО Предприятие",
             "code": "partner mikhalych",
             "description": "Ключевой сотрудник ООО Предприятие",
-            "externalCode": "5434665867876"
+            "externalCode": "5434665867876",
+            "attributes": [
+              {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/metadata/attributes/54b79da2-9124-11ef-ac12-000e00000008",
+                  "type": "attributemetadata",
+                  "mediaType": "application/json"
+                },
+                "value": "2024-07-20 12:43:00.000"
+              }
+            ]
           }'  
 ```
 
@@ -535,6 +585,19 @@ curl -X GET
   "code": "partner mikhalych",
   "description": "Ключевой сотрудник ООО Предприятие",
   "externalCode": "5434665867876",
+  "attributes": [
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/7944ef04-f831-11e5-7a69-971500188b19/metadata/attributes/54b79da2-9124-11ef-ac12-000e00000008",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "54b79da2-9124-11ef-ac12-000e00000008",
+      "name": "Дата последнего обращения",
+      "type": "time",
+      "value": "2024-07-20 12:43:00.000"
+    }
+  ],
   "owner": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/9bc5de98-79f2-11e8-1a0d-4e0d0000002b",
