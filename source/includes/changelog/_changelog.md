@@ -19,6 +19,19 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 11-11-2024
+#### Добавлено
+- Ошибки [25063, 25064](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart)
+- Ошибка [26114](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq)
+- Ошибка [26209](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-vypolnenij-atapow-proizwodstwa)
+- Поле `standardHourCost` в [Этап производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Стоимость нормо-часа
+- Поле `standardHourCost` в [Этап техкарты](../dictionaries/#suschnosti-tehkarta-tehkarty), Стоимость нормо-часа
+- Поле `enableHourAccounting` в [Этап техкарты](../dictionaries/#suschnosti-tehkarta-tehkarty), Признак активности учета по нормо-часам
+- Поле `standardHourCost` в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy), Стоимость нормо-часа
+- Поле `enableHourAccounting` в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy), Признак активности учета по нормо-часам
+- Поле `standardHourCost` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa), Стоимость нормо-часа
+- Поле `enableHourAccounting` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa), Признак активности учета по нормо-часам
+
 ### 29-10-2024
 #### Добавлена
 - Ошибка [71000](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-serij) при создании серии в качестве ассортимента указана серия
