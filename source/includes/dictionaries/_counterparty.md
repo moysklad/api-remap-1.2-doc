@@ -1386,7 +1386,7 @@ curl -X POST
   "updated":"2016-09-01 18:28:22",
   "name":"ООО Радуга",
   "archived":false,
-  "companyType":"legal",
+  "companyType":"legalUZ",
   "mod__requisites__uz": {
     "inn": "125152124",
     "oked": "2013557"
@@ -1434,7 +1434,7 @@ curl -X POST
 ```
 
 
-> Пример 6
+> Пример 6 (работа с UZ контрагентом)
 
 ```shell
 curl -X POST
@@ -1559,7 +1559,7 @@ curl -X POST
 ```
 
 
-> Пример 7
+> Пример 7 (работа с UZ контрагентом)
 
 ```shell
 curl -X POST
@@ -1615,7 +1615,7 @@ curl -X POST
   "externalCode": "mm62KDCZjOpCCNqvW3DtK1",
   "archived": false,
   "created": "2023-08-14 21:34:00.817",
-  "companyType": "individual",
+  "companyType": "individualUZ",
   "legalTitle": "Петров Петр Петрович",
   "legalLastName": "Петров",
   "legalFirstName": "Петр",
