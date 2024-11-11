@@ -31,16 +31,16 @@
 | Название               | Тип                                                       | Фильтрация                  | Описание                                                                                                                                                                                                                         |
 | ---------------------- | :-------------------------------------------------------- | :-------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **accountId**          | UUID                                                      | `=` `!=`                    | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                             |
-| **accounts**           | MetaArray                                                 |                             | Массив счетов Контрагентов. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-suschnosti-adres-scheta-kontragentow)<br>`+Обязательное при ответе` `+Expand`                                           |
+| **accounts**           | MetaArray                                                 |                             | Массив счетов Контрагентов. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-scheta-kontragentow)<br>`+Обязательное при ответе` `+Expand`                                           |
 | **actualAddress**      | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Фактический адрес Контрагента                                                                                                                                                                                                    |
-| **actualAddressFull**  | Object                                                    |                             | Фактический адрес Контрагента с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-suschnosti-adres)                                                                  |
+| **actualAddressFull**  | Object                                                    |                             | Фактический адрес Контрагента с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-adres)                                                                  |
 | **archived**           | Boolean                                                   | `=` `!=`                    | Добавлен ли Контрагент в архив<br>`+Обязательное при ответе`                                                                                                                                                                     |
 | **attributes**        | Array(Object) | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Массив метаданных доп. полей                                                                                                                              |
 | **bonusPoints**        | Int                                                       |                             | Бонусные баллы по активной бонусной программе<br>`+Только для чтения`                                                                                                                                                            |
 | **bonusProgram**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                             | Метаданные активной Бонусной программы<br>`+Expand`                                                                                                                                                                              |
 | **code**               | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Код Контрагента                                                                                                                                                                                                                  |
 | **companyType**        | Enum                                                      | `=` `!=`                    | Тип Контрагента. В зависимости от значения данного поля набор выводимых реквизитов контрагента может меняться. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)<br>`+Обязательное при ответе` |
-| **contactpersons**    | MetaArray     |                                                                                                                                                   | Массив контактных лиц фирмы Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-suschnosti-adres-kontaktnye-lica-kontragentow)<br>`+Expand`|
+| **contactpersons**    | MetaArray     |                                                                                                                                                   | Массив контактных лиц фирмы Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-kontaktnye-lica-kontragentow)<br>`+Expand`|
 | **created**            | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`  | Момент создания<br>`+Обязательное при ответе`                                                                                                                                                                                    |
 | **description**        | String(4096)                                              | `=` `!=` `~` `~=` `=~`      | Комментарий к Контрагенту                                                                                                                                                                                                        |
 | **discountCardNumber** | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Номер дисконтной карты Контрагента                                                                                                                                                                                               |
@@ -53,7 +53,7 @@
 | **id**                 | UUID                                                      | `=` `!=`                    | ID Контрагента<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                |
 | **meta**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                             | Метаданные Контрагента<br>`+Обязательное при ответе`                                                                                                                                                                             |
 | **name**               | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Наименование Контрагента<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                                |
-| **notes**             | MetaArray     |                                                                                                                                                   | Массив событий Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-suschnosti-adres-sobytiq-kontragenta)<br>`+Expand`  |
+| **notes**             | MetaArray     |                                                                                                                                                   | Массив событий Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-sobytiq-kontragenta)<br>`+Expand`  |
 | **owner**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                    | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                                                                |
 | **phone**              | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Номер городского телефона                                                                                                                                                                                                        |
 | **priceType**         | Object        | `=` `!=`                                                                                                                                          | Тип цены Контрагента. [Подробнее тут](../dictionaries/#suschnosti-tipy-cen-tipy-cen)                                                                           |
@@ -89,7 +89,7 @@
 Формат вывода скидок можно посмотреть в разделе [Скидки](../dictionaries/#suschnosti-skidki).
 
 #### Атрибуты вложенных сущностей
-##### Атрибуты сущности Адрес
+##### Адрес
 | Название       | Тип                                                       | Описание           |
 | -------------- | :-------------------------------------------------------- | :----------------- |
 | **addInfo**    | String(255)                                               | Другое             |
@@ -3202,7 +3202,7 @@ curl -X GET
 #### Описание
 Обновить контактное лицо Контрагента с указанным id.
 Обновляются все поля, указанные в JSON объекте запроса, кроме
-помеченных `Только для чтения` в описании [атрибутов контактных лиц Контрагента](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-suschnosti-adres-kontaktnye-lica-kontragentow).
+помеченных `Только для чтения` в описании [атрибутов контактных лиц Контрагента](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-kontaktnye-lica-kontragentow).
 Поля, которые не были указаны в JSON запроса, не изменяются.
 
 > Пример запроса на обновление контактного лица Контрагента.
@@ -3464,7 +3464,7 @@ curl -X GET
 
 Обновить событие Контрагента с указанным id.
 Обновляются все поля, указанные в JSON объекте запроса, кроме
-помеченных `Только для чтения` в описании [атрибутов событий Контрагента](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-suschnosti-adres-sobytiq-kontragenta).
+помеченных `Только для чтения` в описании [атрибутов событий Контрагента](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-sobytiq-kontragenta).
 Поля, которые не были указаны в JSON запроса, не изменяются.
 
 **Параметры**
