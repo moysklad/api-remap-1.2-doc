@@ -97,8 +97,8 @@
 | Прибыли и убытки                       | pnl3                          |
 | Прибыльность                           | pnl                           |
 | Приемки                                | supply                        |
-| Приложения                             | apps                          |
-| Приложения                             | embed-apps                    |
+| Решения                             | apps                          |
+| Решения                             | embed-apps                    |
 | Проверка комплектации                  | checkequipment                |
 | Продажи                                | retaildemand                  |
 | Проекты                                | project                       |
