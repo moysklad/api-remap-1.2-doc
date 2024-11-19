@@ -19,13 +19,13 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 19-11-2024
+#### Добавлено
+- Поле `salesMargin` в [Отчет Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
+
 ### 01-11-2024
 #### Добавлена
 - Ошибка [4003](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tochek-prodazh) при создании\изменении точки продаж productFolders содержит родительскую группу товаров и ee дочерние группы одновременно
-
-### 29-10-2024
-#### Добавлено
-- Поле `salesMargin` в [Отчет Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
 
 ### 29-10-2024
 #### Добавлена
