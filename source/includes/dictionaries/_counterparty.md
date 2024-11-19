@@ -1351,7 +1351,8 @@ curl -X POST
     "legalAddress": "г.Москва ул Авиастроителей д 93 к 12",
     "mod__requisites__uz": {
       "inn": "125152124",
-      "oked": "2013557"
+      "oked": "2013557",
+      "vatPayerRegCode": "901283746528"
     }
   }'
 ```
@@ -1391,7 +1392,8 @@ curl -X POST
   "companyType":"legalUZ",
   "mod__requisites__uz": {
     "inn": "125152124",
-    "oked": "2013557"
+    "oked": "2013557",
+    "vatPayerRegCode": "901283746528"
   },
   "accounts":{
     "meta":{
@@ -1456,7 +1458,8 @@ curl -X POST
           "certificateNumber": "12345",
           "certificateDate": "2024-10-17 00:00:00",
           "inn": "125152124",
-          "pinfl": "20135736512389"
+          "pinfl": "20135736512389",
+          "vatPayerRegCode": "901283746528"
         }
       }'
 ```
@@ -1516,7 +1519,8 @@ curl -X POST
     "certificateNumber": "12345",
     "certificateDate": "2024-10-17 00:00:00",
     "inn": "125152124",
-    "pinfl": "20135736512389"
+    "pinfl": "20135736512389",
+    "vatPayerRegCode": "901283746528"
   },
   "accounts": {
     "meta": {
