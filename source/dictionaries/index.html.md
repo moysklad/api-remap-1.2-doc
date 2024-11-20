@@ -26,6 +26,7 @@ includes:
   - dictionaries/saleschannel
   - dictionaries/cashier
   - dictionaries/tracking_code
+  - dictionaries/emissionorder
   - dictionaries/bundle
   - dictionaries/counterparty
   - dictionaries/eventfeed
