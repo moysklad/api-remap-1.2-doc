@@ -29,12 +29,12 @@
 | **processingUnitCost**    | Double                                                    |            | Затраты на единицу объема производства<br>                                                                                                                          |
 | **standardHourCost**      | Double                                                    |            | Стоимость нормо-часа<br>`+Обязательное при ответе`                                                                                                                  |
 | **standardHourUnit**      | Double                                                    |            | Нормо-часы единицы объема производства                                                                                                                              |
-Особенности:<br>
-Для сущности действуют ограничения на expand: для поля **productionRow** недоступен expand вложенных полей.<br>
-<br>
-Для перехода на автоматический рассчет оплаты труда по нормо-часам (по формуле labourUnitCost = standardHourCost * standardHourUnit)<br>
-необходимо передать признак активации (флаг EnableHourAccounting=true). Изменение значения оплаты труда при включенном флаге недопустимо -<br>
-для передачи фиксированного значения требуется деактивировать флаг.<br>
+Особенности:
+Для сущности действуют ограничения на expand: для поля **productionRow** недоступен expand вложенных полей.
+
+Для перехода на автоматический рассчет оплаты труда по нормо-часам (по формуле labourUnitCost = standardHourCost * standardHourUnit)
+необходимо передать признак активации (флаг EnableHourAccounting=true). Изменение значения оплаты труда при включенном флаге недопустимо -
+для передачи фиксированного значения требуется деактивировать флаг.
 
 #### Материалы Производственного этапа
 Материалы Производственного этапа - это товары, модификации и серии, которые планируется затратить при выполнении Производственного этапа.
@@ -141,7 +141,9 @@ curl -X GET
       "skippedQuantity": 0.0,
       "processingUnitCost": 2.0,
       "labourUnitCost": 0.0,
-      "standardHourUnit": 0.0
+      "standardHourUnit": 0.0,
+      "standardHourCost": 0.0,
+      "enableHourAccounting": false
     }
   ]
 }
@@ -220,7 +222,9 @@ curl -X GET
   "skippedQuantity": 0.0,
   "processingUnitCost": 70.0,
   "labourUnitCost": 30.5,
-  "standardHourUnit": 43.5
+  "standardHourUnit": 43.5,
+  "standardHourCost": 0.0,
+  "enableHourAccounting": false
 }
 ```
 

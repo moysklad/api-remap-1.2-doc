@@ -25,12 +25,9 @@
 - Ошибка [26114](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq)
 - Ошибка [26209](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-vypolnenij-atapow-proizwodstwa)
 - Поле `standardHourCost` в [Этап производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Стоимость нормо-часа
-- Поле `standardHourCost` в [Этап техкарты](../dictionaries/#suschnosti-tehkarta-tehkarty), Стоимость нормо-часа
-- Поле `enableHourAccounting` в [Этап техкарты](../dictionaries/#suschnosti-tehkarta-tehkarty), Признак активности учета по нормо-часам
-- Поле `standardHourCost` в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy), Стоимость нормо-часа
-- Поле `enableHourAccounting` в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy), Признак активности учета по нормо-часам
-- Поле `standardHourCost` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa), Стоимость нормо-часа
-- Поле `enableHourAccounting` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa), Признак активности учета по нормо-часам
+- Поля `standardHourCost`, `enableHourAccounting` в [Этап техкарты](../dictionaries/#suschnosti-tehkarta-tehkarty)
+- Поля `standardHourCost`, `enableHourAccounting` в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+- Поля `standardHourCost`, `enableHourAccounting` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
 
 ### 29-10-2024
 #### Добавлена
