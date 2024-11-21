@@ -1,6 +1,11 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 21-11-2024
+#### Добавлена
+- Сущность [Заказ кодов маркировки](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zakaz-kodow-markirowki)
+
+
 ### 19-11-2024
 #### Добавлено
 - Поле `salesMargin` в [Отчет Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)

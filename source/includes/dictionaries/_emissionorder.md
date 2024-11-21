@@ -2,8 +2,6 @@
 ### Заказ кодов маркировки
 
 Средствами JSON API можно получать, создавать, редактировать Заказы кодов маркировки.
-Сущность представлена в виде идентификатора, текстового кода, типа кода и массива вложенных Кодов маркировки.
-Коды маркировки относятся к отдельной позиции конкретного документа. Порядок вывода КМ первого уровня фиксирован - вложенные КМ могут выводиться в случайном порядке. 
 
 #### Атрибуты сущности
 
@@ -13,7 +11,6 @@
 | **id**           | UUID                                                      | ID Заказа кодов маркировки<br>`+Обязательное при ответе` `+Только для чтения`                                                            |
 | **accountId**    | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                     |
 | **owner**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Владелец (Сотрудник)<br>`+Expand`                                                                                                        |
-| **agent**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Контрагента<br>`+Expand`                                                                                                      |
 | **shared**       | Boolean                                                   | Общий доступ<br>`+Обязательное при ответе`                                                                                               |
 | **group**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                 |
 | **updated**      | DateTime                                                  | Момент последнего обновления<br>`+Обязательное при ответе`                                                                               |
@@ -21,7 +18,8 @@
 | **externalCode** | String(255)                                               | Внешний код Заказа кодов маркировки<br>`+Обязательное при ответе`                                                                        |
 | **state**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные статуса Заказа кодов маркировки<br>`+Expand`                                                                                  |
 | **created**      | DateTime                                                  | Момент создания Заказа кодов маркировки<br>`+Обязательное при ответе`                                                                    |
-| **organization** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные юрлица<br>`+Expand`                                                                                                           |
+| **moment**       | DateTime                                                  | Дата документа<br>`+Обязательное при ответе`                                                                                             |
+| **organization** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand`                                                                                |
 | **emissionType** | Enum                                                      | Способ ввода в оборот. [Подробнее тут](../dictionaries/#suschnosti-zakaz-kodow-markirowki-sposob-wwoda-w-oborot)                         |
 | **trackingType** | Enum                                                      | Тип маркируемой продукции. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-tip-markiruemoj-produkcii) |
 | **positions**    | MetaArray                                                 | Метаданные позиций Заказа кодов маркировки<br>`+Обязательное при ответе` `+Expand`                                                       |
@@ -31,12 +29,15 @@
 
 ##### Объект позиции Заказа кодов маркировки содержит следующие поля:
 
-| Название     | Тип                                                       | Описание                                                                                       |
-|--------------|:----------------------------------------------------------|:-----------------------------------------------------------------------------------------------|
-| **meta**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные позиции заказа кодов маркировки<br>`+Обязательное при ответе`                       |
-| **status**   | Enum                                                      | Статус кодов. [Подробнее тут](../dictionaries/#suschnosti-zakaz-kodow-markirowki-status-kodow) |
-| **quantity** | Float                                                     | Количество товаров данного вида в позиции.<br>`+Обязательное при ответе`                       |
-| **name**     | String(255)                                               | Наименование товара                                                                            |
+| Название       | Тип                                                       | Описание                                                                                                  |
+|----------------|:----------------------------------------------------------|:----------------------------------------------------------------------------------------------------------|
+| **accountId**  | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                      |
+| **assortment** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные товара/модификации, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand` |
+| **id**         | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения`                                             |
+| **meta**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные позиции заказа кодов маркировки<br>`+Обязательное при ответе`                                  |
+| **price**      | Float                                                     | Цена товара/модификации в копейках<br>`+Обязательное при ответе`                                          |
+| **quantity**   | Float                                                     | Количество товаров данного вида в позиции.<br>`+Обязательное при ответе`                                  |
+| **status**     | Enum                                                      | Статус кодов. [Подробнее тут](../dictionaries/#suschnosti-zakaz-kodow-markirowki-status-kodow)            |
 
 ### Статус кодов
 Значения поля status.
@@ -89,65 +90,152 @@ curl -X GET
 
 ```json
 {
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
   "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/c023744f-9d9a-11ef-ac12-000d00000017?expand=positions",
-    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder",
     "type": "emissionorder",
-    "mediaType": "application/json"
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
   },
-  "id": "c023744f-9d9a-11ef-ac12-000d00000017",
-  "accountId": "8ce4ca1a-8baa-11ef-ac12-000f00000000",
-  "owner": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/90eb33b1-8baa-11ef-ac12-001000000050",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-      "type": "employee",
-      "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=90eb33b1-8baa-11ef-ac12-001000000050"
+  "rows": [
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/33c8ac0b-a670-11ef-ac12-000d00000111",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata",
+        "type": "emissionorder",
+        "mediaType": "application/json"
+      },
+      "id": "33c8ac0b-a670-11ef-ac12-000d00000111",
+      "accountId": "b9c9f2e4-a66f-11ef-ac12-000f00000001",
+      "owner": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/bc5114ab-a66f-11ef-ac12-000d00000050",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/b9cfe2fd-a66f-11ef-ac12-000f00000002",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2024-11-19 15:39:27.860",
+      "name": "00001",
+      "externalCode": "RIahRnZIjek-CeER27IjF0",
+      "state": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata/states/4f75f276-a673-11ef-ac12-000d00000002",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata",
+          "type": "state",
+          "mediaType": "application/json"
+        }
+      },
+      "created": "2024-11-19 15:17:10.711",
+      "moment": "2024-11-19 15:16:00.000",
+      "organization": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/bcbee227-a66f-11ef-ac12-000d00000099",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=bcbee227-a66f-11ef-ac12-000d00000099"
+        }
+      },
+      "emissionType": "LOCAL",
+      "trackingType": "MILK",
+      "documentState": "CREATED",
+      "positions": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/33c8ac0b-a670-11ef-ac12-000d00000111/positions",
+          "type": "emissionorderposition",
+          "mediaType": "application/json",
+          "size": 1,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/5f6deb2e-a6fd-11ef-ac12-000d00000029",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata",
+        "type": "emissionorder",
+        "mediaType": "application/json"
+      },
+      "id": "5f6deb2e-a6fd-11ef-ac12-000d00000029",
+      "accountId": "b9c9f2e4-a66f-11ef-ac12-000f00000001",
+      "owner": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/bc5114ab-a66f-11ef-ac12-000d00000050",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/b9cfe2fd-a66f-11ef-ac12-000f00000002",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2024-11-20 08:07:42.949",
+      "name": "00002",
+      "externalCode": "CJ039BLUgBH85mefSFWxC3",
+      "state": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata/states/4f75f276-a673-11ef-ac12-000d00000002",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata",
+          "type": "state",
+          "mediaType": "application/json"
+        }
+      },
+      "created": "2024-11-20 08:07:42.974",
+      "moment": "2024-11-20 08:07:00.000",
+      "organization": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/bcbee227-a66f-11ef-ac12-000d00000099",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=bcbee227-a66f-11ef-ac12-000d00000099"
+        }
+      },
+      "emissionType": "LOCAL",
+      "trackingType": "MILK",
+      "documentState": "CREATED",
+      "positions": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/5f6deb2e-a6fd-11ef-ac12-000d00000029/positions",
+          "type": "emissionorderposition",
+          "mediaType": "application/json",
+          "size": 2,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
     }
-  },
-  "shared": false,
-  "group": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/8cec9ae0-8baa-11ef-ac12-000f00000001",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
-      "type": "group",
-      "mediaType": "application/json"
-    }
-  },
-  "updated": "2024-11-15 13:43:15.922",
-  "name": "00001",
-  "externalCode": "BBzRTOA-iwW5ERKGNwxAN2",
-  "state": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata/states/74241fd9-a1bd-11ef-ac12-000e00000002",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata",
-      "type": "state",
-      "mediaType": "application/json"
-    }
-  },
-  "created": "2024-11-08 09:29:04.582",
-  "organization": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/91a51465-8baa-11ef-ac12-001000000099",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
-      "type": "organization",
-      "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=91a51465-8baa-11ef-ac12-001000000099"
-    }
-  },
-  "emissionType": "FOREIGN",
-  "trackingType": "MILK",
-  "positions": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/c023744f-9d9a-11ef-ac12-000d00000017/positions",
-      "type": "emissionorderposition",
-      "mediaType": "application/json",
-      "size": 1,
-      "limit": 1000,
-      "offset": 0
-    }
-  }
+  ]
 }
 
 ```
@@ -159,10 +247,10 @@ curl -X GET
 
 | Параметр         | Описание                                                                                                                     |
 |------------------|:-----------------------------------------------------------------------------------------------------------------------------|
-| **meta**         | Ссылка на метаданные заказа кодов маркировки                                                                                 |
 | **attributes**   | Массив объектов доп. полей заказа кодов маркировки в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
-| **states**       | Массив статусов заказов кодов маркировки                                                                                     |
 | **createShared** | создавать новые заказы кодов маркировки с меткой "Общий"                                                                     |
+| **meta**         | Ссылка на метаданные заказа кодов маркировки                                                                                 |
+| **states**       | Массив статусов заказов кодов маркировки                                                                                     |
 
 
 
@@ -221,7 +309,7 @@ curl -X GET
 **Параметры**
 
 | Параметр | Описание                                                                                        |
-| :------- |:------------------------------------------------------------------------------------------------|
+|:---------|:------------------------------------------------------------------------------------------------|
 | **id**   | `string` (required) *Example: 33c8ac0b-a670-11ef-ac12-000d00000111* id заказа кодов маркировки. |
 
 > Запрос на Получение отдельного заказа кодов маркировки с указанным id.
@@ -322,7 +410,7 @@ curl -X GET
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление списка реализованных позиций отдельного Заказа кодов маркировки.
+Успешный запрос. Результат - JSON представление списка позиций отдельного Заказа кодов маркировки.
 
 ```json
 {
@@ -364,10 +452,10 @@ curl -X GET
 
 **Параметры**
 
-| Параметр       | Описание                                                                                                                                  |
-| :------------- |:------------------------------------------------------------------------------------------------------------------------------------------|
-| **id**         | `string` (required) *Example: 33c8ac0b-a670-11ef-ac12-000d00000111* id Полученного отчета комиссионера.                                   |
-| **positionID** | `string` (required) *Example: 33c8bd7c-a670-11ef-ac12-000d00000112* id позиции реализовано комиссионером Полученного отчета комиссионера. |
+| Параметр       | Описание                                                                                                |
+|:---------------|:--------------------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 33c8ac0b-a670-11ef-ac12-000d00000111* id Заказа кодов маркировки.         |
+| **positionID** | `string` (required) *Example: 33c8bd7c-a670-11ef-ac12-000d00000112* id позиции Заказа кодов маркировки. |
 
 > Запрос на получение отдельной позиции Заказа кодов маркировки с указанным id.
 
