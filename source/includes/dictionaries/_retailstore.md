@@ -22,7 +22,7 @@
 | **acquire**                             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                             | Метаданные Банка-эквайера по операциям по карте<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                                                       |
 | **active**                              | Boolean                                                   | `=` `!=`                    | Состояние точки продаж (Включена/Отключена)<br>`+Обязательное при ответе`                                                                                                                                                                                                     |
 | **address**                             | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Адрес Точки продаж                                                                                                                                                                                                                                                            |
-| **addressFull**                         | Object                                                    |                             | Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-adres)                                                                                |
+| **addressFull**                         | Object                                                    |                             | Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status-atributy-suschnosti-adres)                                                                                |
 | **allowCreateProducts**                 | Boolean                                                   |                             | Контроль остатков. Не может быть `true`, если `controlShippingStock` имеет значение `true`<br>`+Обязательное при ответе`                                                                                                                                                      |
 | **allowCustomPrice**                    | Boolean                                                   |                             | Разрешить продажу по свободной цене<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                        |
 | **allowDeleteReceiptPositions**         | Boolean                                                   |                             | Разрешить удалять позиции в чеке<br>`+Обязательное при ответе` по умолчанию `+true`                                                                                                                                                                                           |
@@ -88,7 +88,7 @@
 | **syncAgents**                          | Boolean                                                   |                             | Выгружать покупателей для работы оффлайн<br>`+Обязательное при ответе` по умолчанию `+true`                                                                                                                                                                                   |
 | **shared**                              | Boolean                                                   | `=` `!=`                    | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                                                                                                    |
 | **showBeerOnTap**                       | Boolean                                                   |                             | Отображать или нет вскрытые кеги на кассе`+Обязательное при ответе` по умолчанию `+false`                                                                                                                                                                                     |
-| **state**                               | Object                                                    |                             | Информация статусе точки продаж. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status)<br>`+Только для чтения`                                                                                           |
+| **state**                               | Object                                                    |                             | Информация статусе точки продаж. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status)<br>`+Только для чтения`                                                                                           |
 | **store**                               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                    | Метаданные Склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                                                                                                          |
 | **tobaccoMrcControlType**               | Enum                                                      |                             | Контроль МРЦ для табачной продукции. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-kontrolq-mrc-dlq-tabachnoj-produkcii)<br>`+Обязательное при ответе`                                                                    |
 | **updated**                             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`  | Момент последнего обновления Точки продаж<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                  |
@@ -161,11 +161,11 @@
 | ------------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **device**          | String(255) | Информация об устройстве                                                                                                                           |
 | **os**              | String(255) | Информация об операционной системе                                                                                                                 |
-| **software**        | Object      | Информация о ПО. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-po) |
-| **chequePrinter**   | Object      | Данные о ККТ. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-kkt)   |
+| **software**        | Object      | Информация о ПО. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-atributy-suschnosti-po) |
+| **chequePrinter**   | Object      | Данные о ККТ. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-atributy-suschnosti-kkt)   |
 | **paymentTerminal** | String(255) | Информация о платежном терминале                                                                                                                   |
 
-###### Аттрибуты сущности ПО
+###### Атрибуты сущности ПО
 
 | Название    | Тип         | Описание                                                                 |
 | ----------- | :---------- | :----------------------------------------------------------------------- |
@@ -173,69 +173,69 @@
 | **vendor**  | String(255) | Производитель                                                            |
 | **version** | String(255) | Версия ПО                                                                |
 
-###### Аттрибуты сущности ККТ
+###### Атрибуты сущности ККТ
 
 | Название              | Тип         | Описание                                                                                                                                                                                |
 | --------------------- | :---------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **driver**            | Object      | Информация об используемом драйвере. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-drajwer)             |
+| **driver**            | Object      | Информация об используемом драйвере. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-atributy-suschnosti-drajwer)             |
 | **firmwareVersion**   | String(255) | Версия прошивки ККТ                                                                                                                                                                     |
 | **fiscalDataVersion** | String(255) | Формат фискальных данных                                                                                                                                                                |
-| **fiscalMemory**      | Object      | Информация о фискальном накопителе. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-fiskal-nyj-nakopitel) |
+| **fiscalMemory**      | Object      | Информация о фискальном накопителе. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-atributy-suschnosti-fiskal-nyj-nakopitel) |
 | **name**              | String(255) | Наименование ПО<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                |
 | **serial**            | String(255) | Серийный номер                                                                                                                                                                          |
 | **vendor**            | String(255) | Производитель                                                                                                                                                                           |
 
-###### Аттрибуты сущности Драйвер
+###### Атрибуты сущности Драйвер
 
 | Название    | Тип         | Описание              |
 | ----------- | :---------- | :-------------------- |
 | **name**    | String(255) | Наименование драйвера |
 | **version** | String(255) | Версия драйвера       |
 
-###### Аттрибуты сущности Фискальный накопитель
+###### Атрибуты сущности Фискальный накопитель
 
 | Название               | Тип         | Описание                 |
 | ---------------------- | :---------- | :----------------------- |
 | **fiscalDataVersion**  | String(255) | Версия фискальной памяти |
 | **fiscalValidityDate** | DateTime    | Версия фискальной памяти |
 
-##### Аттрибуты сущности Статус
+##### Атрибуты сущности Статус
 
 | Название            | Тип      | Описание                                                                                                                                                                                                               |
 | ------------------- | :------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **sync**            | Object   | Состояние синхронизации. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-sinhronizaciq)                                 |
+| **sync**            | Object   | Состояние синхронизации. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status-atributy-suschnosti-sinhronizaciq)                                 |
 | **lastCheckMoment** | DateTime | Дата и время последней синхронизации                                                                                                                                                                                   |
-| **fiscalMemory**    | Object   | Информация о фискальном накопителе. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-fiskal-naq-pamqt)                   |
-| **paymentTerminal** | Object   | Информация о платежном терминале. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-platezhnyj-terminal)<br>`+Устаревшее` |
+| **fiscalMemory**    | Object   | Информация о фискальном накопителе. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status-atributy-suschnosti-fiskal-naq-pamqt)                   |
+| **paymentTerminal** | Object   | Информация о платежном терминале. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status-atributy-suschnosti-platezhnyj-terminal)<br>`+Устаревшее` |
 
-###### Аттрибуты сущности Синхронизация
+###### Атрибуты сущности Синхронизация
 
 | Название             | Тип         | Описание                                                                            |
 | -------------------- | :---------- | :---------------------------------------------------------------------------------- |
 | **message**          | String(255) | Состояние синхронизации                                                             |
 | **lastAttempMoment** | DateTime    | Дата последней сихронизации (не обязательно успешной)<br>`+Необходимо при создании` |
 
-###### Аттрибуты сущности Фискальная Память
+###### Атрибуты сущности Фискальная Память
 
 | Название            | Тип      | Описание                                                                                                                                                                         |
 | ------------------- |:---------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **error**           | Object   | Информация об ошибке ФН. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-oshibka) |
+| **error**           | Object   | Информация об ошибке ФН. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status-atributy-suschnosti-oshibka) |
 | **notSendDocCount** | Int      | Количество неотправленных документов в ОФД                                                                                                                                       |
 | **notSendFirstDocMoment** | DateTime | Время начала не отправки документов                                                                                                                                              |
 
-###### Аттрибуты сущности Ошибка
+###### Атрибуты сущности Ошибка
 
 | Название    | Тип         | Описание                                      |
 | ----------- |:------------| :-------------------------------------------- |
 | **сode**    | String(255) | Код ошибки ФН<br>`+Обязательное при ответе`   |
 | **message** | String(255) | Описание ошибки<br>`+Обязательное при ответе` |
 
-###### Аттрибуты сущности Платежный Терминал
+###### Атрибуты сущности Платежный Терминал
 | Название          | Тип         | Описание                                           |
 | ----------------- | :---------- | :------------------------------------------------- |
 | **acquiringType** | String(255) | Информация о типе эквайера (например: inpas/payme) |
 
-###### Аттрибуты сущности Адрес
+###### Атрибуты сущности Адрес
 
 | Название       | Тип                                                       | Описание           |
 | -------------- | :-------------------------------------------------------- | :----------------- |
@@ -253,7 +253,7 @@
 При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
 При передаче обоих адресов строковый будет игнорирован.
 При передаче только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
-Для адреса не поддерживается [значение `null`](../#mojsklad-json-api-obschie-swedeniq-podderzhka-null). Передача `null` этому аттрибуту не приведет к его удалению.
+Для адреса не поддерживается [значение `null`](../#mojsklad-json-api-obschie-swedeniq-podderzhka-null). Передача `null` этому атрибуту не приведет к его удалению.
 Для удаления адреса необходимо в строковое поле `address` передать пустую строку `""`.
 
 
