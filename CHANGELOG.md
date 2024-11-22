@@ -1,6 +1,12 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 25-11-2024
+#### Изменено
+- Актуализирована документация по [Пользовательским справочникам](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik)
+- Добавлен вывод метаданных дополнительных полей в метаданные пользовательских справочников
+- Добавлено поле `ID` в метаданные пользовательского справочника
+
 ### 19-11-2024
 #### Добавлено
 - Поле `salesMargin` в [Отчет Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
