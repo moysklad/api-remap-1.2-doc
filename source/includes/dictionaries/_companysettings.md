@@ -266,7 +266,7 @@ curl -X GET
   "customEntities": [
     {
       "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/eaacabaf-2655-11e6-8a84-bae500000045/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/eaacabaf-2655-11e6-8a84-bae500000045",
         "type": "customentitymetadata",
         "mediaType": "application/json"
       },
@@ -280,12 +280,13 @@ curl -X GET
           "offset": 0
         }
       },
+      "id": "eaacabaf-2655-11e6-8a84-bae500000045",
       "name": "Партнеры",
       "createShared": true
     },
     {
       "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/f3aff189-2655-11e6-8a84-bae500000046/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/f3aff189-2655-11e6-8a84-bae500000046",
         "type": "customentitymetadata",
         "mediaType": "application/json"
       },
@@ -299,6 +300,7 @@ curl -X GET
           "offset": 0
         }
       },
+      "id": "f3aff189-2655-11e6-8a84-bae500000046",
       "name": "Рекламные агенства",
       "createShared": true
     }

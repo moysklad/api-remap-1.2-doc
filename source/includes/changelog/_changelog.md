@@ -19,6 +19,20 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 25-11-2024
+#### Изменено
+- Актуализирована документация по [Пользовательским справочникам](../dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik)
+- Добавлен вывод метаданных дополнительных полей в метаданные пользовательских справочников
+- Добавлено поле `ID` в метаданные пользовательского справочника
+
+### 19-11-2024
+#### Добавлено
+- Поле `salesMargin` в [Отчет Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
+
+### 01-11-2024
+#### Добавлена
+- Ошибка [4003](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tochek-prodazh) при создании\изменении точки продаж productFolders содержит родительскую группу товаров и ee дочерние группы одновременно
+
 ### 29-10-2024
 #### Добавлена
 - Ошибка [71000](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-serij) при создании серии в качестве ассортимента указана серия
@@ -148,7 +162,7 @@
 
 ### 02-04-2024
 #### Добавлено
-- Возможность получения [шаблонов](../documents/#dokumenty-obschie-swedeniq-shablony-dokumentow) документов по токену приложения
+- Возможность получения [шаблонов](../documents/#dokumenty-obschie-swedeniq-shablony-dokumentow) документов по токену решения
 
 ### 28-03-2024
 #### Добавлено
@@ -534,12 +548,12 @@
 ### 19-07-2022
 #### Добавлено
 - Дополнено описаниение раздела Адрес у
-[Контрагента](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres),
-[Юрлица](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres),
-[Точки продаж](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-adres),
-[Склада](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres),
-[Заказа покупателя](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-attributy-suschnosti-adres-dostawki),
-[Отгрузки](../documents/#dokumenty-otgruzka-otgruzki-attributy-suschnosti-adres-dostawki), 
+[Контрагента](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-adres),
+[Юрлица](../dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-adres),
+[Точки продаж](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status-atributy-suschnosti-adres),
+[Склада](../dictionaries/#suschnosti-sklad-sklady-atributy-suschnosti-adres),
+[Заказа покупателя](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-atributy-suschnosti-adres-dostawki),
+[Отгрузки](../documents/#dokumenty-otgruzka-otgruzki-atributy-suschnosti-adres-dostawki), 
 об отсутствии поддержки `null`.
 
 ### 07-07-2022
@@ -837,7 +851,7 @@
 
 ### 08-06-2021
 #### Изменено
-- Изменены лимиты по [вебхукам](../dictionaries/#suschnosti-vebhuki): выделены отдельные лимиты для приложений  
+- Изменены лимиты по [вебхукам](../dictionaries/#suschnosti-vebhuki): выделены отдельные лимиты для решений  
 
 ### 03-06-2021
 #### Добавлено
@@ -853,7 +867,7 @@
 
 ### 01-06-2021
 #### Добавлено
-- Возможность получать и изменять пользовательские роли от лица приложения
+- Возможность получать и изменять пользовательские роли от лица решения
 - Исправлена ошибка: при изменении пермиссий у роли сотрудника, был невозможен вход в систему
 
 ### 31-05-2021
