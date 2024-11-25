@@ -21,11 +21,11 @@
 
 ### 20-11-2024
 #### Добавлено
-- Поле `advancePaymentSum` в [Розничную продажу](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha)
+- Поле `advancePaymentSum` в [Розничную продажу](../documents/#dokumenty-roznichnaq-prodazha)
 - Ошибка `18007`
 
 #### Изменено
-- Описание [работы с полями оплаты розничной продажи](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-rabota-s-polqmi-oplaty-roznichnoj-prodazhi)
+- Описание [работы с полями оплаты розничной продажи](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-rabota-s-polqmi-oplaty-roznichnoj-prodazhi)
 - Текст ошибок `18000`, `18005` и `18006`
 
 ### 19-11-2024
