@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 25-11-2024
+#### Добавлено
+- Поле `archived` в [Серии](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-seriq)
+
 ### 19-11-2024
 #### Добавлено
 - Поле `salesMargin` в [Отчет Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
