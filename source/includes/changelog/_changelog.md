@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 25-11-2024
+#### Добавлено
+- Поле `archived` в [Серии](../dictionaries/#suschnosti-seriq)
+
 ### 19-11-2024
 #### Добавлено
 - Поле `salesMargin` в [Отчет Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
