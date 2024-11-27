@@ -20,8 +20,8 @@
 Список последних изменений в API Remap 1.2
 
 ### 21-11-2024
-#### Добавлена
-- Сущность [Заказ кодов маркировки](../dictionaries/#suschnosti-zakaz-kodow-markirowki)
+#### Добавлен
+- Документ [Заказ кодов маркировки](../documents/#dokumenty-zakaz-kodow-markirowki)
 
 ### 19-11-2024
 #### Добавлено
