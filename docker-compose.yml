@@ -1,9 +1,6 @@
-version: '2.4' # why not version 3? see https://github.com/docker/compose/issues/4693
-
-services:
-  app:
-    build: .
-    ports:
-      - 4567:4567
-    volumes:
-      - .:/usr/src/app
+app:
+  build: .
+  ports:
+    - 4567:4567
+  volumes:
+    - .:/usr/src/app
