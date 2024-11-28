@@ -1,0 +1,630 @@
+## Вывод кодов маркировки из оборота
+Средствами JSON API можно создавать и обновлять сведения о Вывод из оборота, запрашивать списки Выводов из оборота и сведения по отдельным Выводам из оборота. 
+Позициями Выводов из оборота можно управлять как в составе отдельного Вывода из оборота, так и отдельно - с помощью специальных ресурсов для управления позициями Вывода из оборота. 
+Кодом сущности для Вывода из оборота в составе JSON API является ключевое слово **retireorder**. 
+Больше о Выводах из оборота можно прочитать [зедь](https://support.moysklad.ru/hc/ru/articles/360025776473-%D0%92%D1%8B%D0%B2%D0%BE%D0%B4-%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2-%D0%BC%D0%B0%D1%80%D0%BA%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B8-%D0%B8%D0%B7-%D0%BE%D0%B1%D0%BE%D1%80%D0%BE%D1%82%D0%B0).
+### Вывод из оборота 
+#### Атрибуты сущности
+
+| Название                        | Тип                                                       | Фильтрация                 | Описание                                                                                                                                                                                     |
+|---------------------------------|:----------------------------------------------------------|:---------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**                   | UUID                                                      | `=` `!=`                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                       |
+| **code**                        | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Код Вывода из оборота                                                                                                                                                                        |
+| **created**                     | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=` | Дата создания<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                           |
+| **deleted**                     | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=` | Момент последнего удаления Вывода из оборота<br>`+Только для чтения`                                                                                                                         |
+| **description**                 | String(4096)                                              | `=` `!=` `~` `~=` `=~`     | Комментарий Вывода из оборота<br>`+Change-handler`                                                                                                                                           |
+| **documentState**               | Enum                                                      | `=` `!=` `~` `~=` `=~`     | Статус процесса вывода кодов маркировки из оборота <br>`+Обязательное при ответе` `+Только для чтения`                                                                                       |
+| **externalCode**                | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Внешний код Вывода из оборота<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                |
+| **group**                       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                     |
+| **id**                          | UUID                                                      | `=` `!=`                   | ID Вывода из оборота<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                    |
+| **meta**                        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Метаданные Вывода из оборота<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                 |
+| **moment**                      | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=` | Дата документа<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                               |
+| **name**                        | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Наименование Вывода из оборота<br>`+Обязательное при ответе` `+Change-handler`                                                                                                               |
+| **organization**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler`                                                                                       |
+| **owner**                       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                            |
+| **positions**                   | MetaArray                                                 |                            | Метаданные позиций Вывода из оборота<br>`+Обязательное при ответе` `+Expand` `+Change-handler`                                                                                               |
+| **printed**                     | Boolean                                                   | `=` `!=`                   | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                     |
+| **published**                   | Boolean                                                   | `=` `!=`                   | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                   |
+| **rate**                        | Object                                                    |                            | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе`  `+Change-handler` `+Update-provider`                                    |
+| **retireOrderType**             | Enum                                                      | `=` `!=`                   | Тип документа-основания <br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                            |
+| **shared**                      | Boolean                                                   | `=` `!=`                   | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                   |
+| **state**                       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Метаданные статуса Вывода из оборота<br>`+Expand` `+Change-handler`                                                                                                                          |
+| **supportingTransaction**       | Enum                                                      | `=` `!=`                   | Тип документа-основания <br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                            |
+| **supportingTransactionDate**   | DateTime                                                  | `=` `!=`                   | Дата документа-основания <br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                           |
+| **supportingTransactionNumber** | String(255)                                               | `=` `!=`                   | Номер документа-основания <br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                          |
+| **syncId**                      | UUID                                                      | `=` `!=`                   | ID синхронизации. После заполнения недоступен для изменения                                                                                                                                  |
+| **trackingType**                | Enum                                                      | `=` `!=`                   | Тип маркируемой продукции. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-tip-markiruemoj-produkcii) <br>`+Обязательное при ответе` `+Необходимо при создании` |
+| **updated**                     | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления Вывода из оборота.<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                         |
+| **vatEnabled**                  | Boolean                                                   |                            | Учитывается ли НДС<br>`+Обязательное при ответе`  `+Change-handler` `+Update-provider`                                                                                                       |
+| **vatIncluded**                 | Boolean                                                   |                            | Включен ли НДС в цену <br/>  `+Change-handler` `+Update-provider`                                                                                                                            |
+| **vatSum**                      | Float                                                     |                            | Сумма НДС <br/>  `+Change-handler` `+Только для чтения`                                                                                                                                      |
+
+#### Статусы процесса вывода кодов маркировки из оборота
+
+Значения поля documentState. Статус IN_PROGRESS, WAIT_FOR_CONTINUATION, CHECKED_OK, CHECKED_NOT_OK, PROCESSING_ERROR берутся из Честного Знака и соответствуют статусам из True API 
+
+| Значение                  | Описание                                                |
+|---------------------------|:--------------------------------------------------------|
+| **CREATED**               | Вывод из оборота создан, но не отправлен в Честный Знак |
+| **SEND**                  | Запрос на вывод из оборота отправлен в Честный Знак     |
+| **IN_PROGRESS**           | Проверяется                                             |
+| **WAIT_FOR_CONTINUATION** | Проверяется                                             |
+| **CHECKED_OK**            | Обработан Честным знаком                                |
+| **CHECKED_NOT_OK**        | Обработан Честным знаком с ошибками                     |
+| **PROCESSING_ERROR**      | Техническая ошибка на стороне Честного Знака            |
+| **UNDEFINED**             | Состояние не определяется                               |
+
+#### Тип документа-основания 
+
+Значения поля retireOrderType. 
+
+| Значение                 | Описание                                               | Аналог из True API Честного Знака |
+|--------------------------|:-------------------------------------------------------|-----------------------------------|
+| **BY_SAMPLES**           | Продажа по образцам                                    | BY_SAMPLES                        |
+| **CONFISCATE_SALE**      | Конфискация                                            | CONFISCATION                      |
+| **DAMAGE_AND_LOSS**      | Утрата                                                 | LOSS                              |
+| **DESTRUCTION**          | Уничтожение                                            | DESTRUCTION                       |
+| **DISTANCE**             | Дистанционная продажа                                  | DISTANCE                          |
+| **EXPIRATION**           | Истечение срока годности                               | EXPIRATION                        |
+| **EXPORT_INSIDE_EEU**    | Трансграничная продажа в страны ЕАЭС                   | EAS_TRADE                         |
+| **EXPORT_OUTSIDE_EEU**   | Экспорт за пределы стран ЕАЭС                          | BEYOND_EEC_EXPORT                 |
+| **MEDICAL_USE**          | Использование для медицинского применения              | MEDICAL_USE                       |
+| **OWN_USE**              | Использование для собственных нужд                     | OWN_USE                           |
+| **PACKING**              | Фасовка                                                | PACKING                           |
+| **PRODUCTION_USE**       | Использование для производственных целей               | PRODUCTION_USE                    |
+| **RETAIL_SALE**          | Розничная продажа                                      | RETAIL                            |
+| **RETURN_TO_INDIVIDUAL** | Возврат физическому лицу                               | RETURN                            |
+| **STATE_CONTRACT**       | Продажа по государственному (муниципальному) контракту | STATE_CONTRACT                    |
+| **UTILIZATION**          | Утилизация                                             | UTILIZATION                       |
+| **VENDING**              | Продажа через вендинговый аппарат                      | VENDING                           |
+
+
+#### Тип документа-основания
+
+Значения поля supportingTransaction
+
+| Значение                       | Описание                            | Аналог из True API Честного Знака |
+|--------------------------------|:------------------------------------|-----------------------------------|
+| **CERTIFICATE_OF_DESTRUCTION** | Акт уничтожения (утраты/утилизации) | DESTRUCTION_ACT                   |
+| **CONSIGNMENT_NOTE**           | Товарная накладная                  | CONSIGNMENT_NOTE                  |
+| **CUSTOMS_DECLARATION**        | Таможенная декларация на товары     | CUSTOMS_DECLARATION               |
+| **OTHER**                      | Прочее                              | OTHER                             |
+| **RECEIPT**                    | Кассовый чек                        | RECEIPT                           |
+| **SALES_RECEIPT**              | Товарный чек                        | SALES_RECEIPT                     |
+| **UTD**                        | Универсальный передаточный документ | UTD                               |
+
+#### Тип маркируемой продукции
+Значения поля trackingType.
+
+| Значение            | Описание                             |
+|---------------------|:-------------------------------------|
+| **ELECTRONICS**     | Фотокамеры и лампы-вспышки           |
+| **FOOD_SUPPLEMENT** | Биологически активные добавки к пище |
+| **LP_CLOTHES**      | Тип маркировки "Одежда"              |
+| **LP_LINENS**       | Тип маркировки "Постельное белье"    |
+| **MEDICAL_DEVICES** | Медизделия и кресла-коляски          |
+| **MILK**            | Молочная продукция                   |
+| **PERFUMERY**       | Духи и туалетная вода                |
+| **SANITIZER**       | Антисептики                          |
+| **SHOES**           | Тип маркировки "Обувь"               |
+| **TIRES**           | Шины и покрышки                      |
+
+
+#### Позиции Вывода из оборота
+Позиции Вывода из оборота - это список товаров/модификаций/серий.
+Объект позиции Вывода из оборота содержит следующие поля:
+
+| Название          | Тип                                                       | Описание                                                                                                                                                                                                                                                                   |
+|-------------------|:----------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**     | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                                                                                                     |
+| **assortment**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные товара/серию/модификацию, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand` `+Change-handler`                                                                                                                                          |
+| **id**            | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                                                                                                            |
+| **price**         | Float                                                     | Цена товара в копейках<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                                                                                                     |
+| **quantity**      | Float                                                     | Количество товаров данного вида в позиции.<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                                                                                 |
+| **trackingCodes** | Array(Object)                                             | Коды маркировки товаров [Подробнее тут](../documents/#dokumenty-otgruzka-otgruzki-kody-markirowki-towarow-i-transportnyh-upakowok)                                                                                                                                         |
+| **vat**           | Boolean                                                   | НДС, которым облагается текущая позиция<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                                                                                 |
+| **vatEnabled**    | Boolean                                                   | Включен ли НДС для позиции. С помощью этого флага для позиции можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider` |
+
+С позициями можно работать с помощью [специальных ресурсов для управления позициями Вывода из оборота](../documents/#dokumenty-spisanie-pozicii-spisaniq),
+а также в составе отдельного Вывода из оборота. При работе в составе отдельного Вывода из оборота,
+вы можете отправлять запросы на создание отдельного Вывода из оборота с включенным в тело запроса
+массивом позиций Вывода из оборота. Если количество позиций превышает максимально допустимое, то для
+дальнейшего пополнения позиций нужно будет работать со специальным ресурсом "Позиции Вывода из оборота".
+Также, при работе в составе отдельного Вывода из оборота, можно отправлять запросы на обновление списка позиций
+с включенным в тело запроса массивом позиций Вывода из оборота. При этом важно помнить, что коллекция позиций будет
+восприниматься как "все позиции Вывода из оборота" и полностью заменит уже существующую коллекцию при обновлении объекта - лишние
+позиции будут удалены, новые добавлены, существующие - изменены.
+
+О работе с доп. полями Выводов из оборота можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
+
+### Получить Выводы из оборота 
+Запрос всех Выводов из оборота на данной учетной записи.
+Результат: Объект JSON, включающий в себя поля:
+
+| Название    | Тип                                                       | Описание                                                      |
+| ----------- | :-------------------------------------------------------- |:--------------------------------------------------------------|
+| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче,                                          |
+| **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.                  |
+| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой Выводы из оборота. |
+
+**Параметры**
+
+| Параметр                       | Описание                                                                                                                               |
+| ------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------- |
+| **limit**                      | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
+| **offset**                     | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
+
+> Получить Выводы из оборота
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка Выводов из оборота.
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/metadata",
+    "type": "retireorder",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/metadata",
+        "type": "retireorder",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#retireorder/edit?id=b14bcb5e-3b17-4765-87cf-bc4569fc5f32"
+      },
+      "id": "b14bcb5e-3b17-4765-87cf-bc4569fc5f32",
+      "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
+      "owner": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/872559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=872559f1-cbf3-11e1-9eb9-889ffa6f49fd"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f7eb1e3b-fd2a-42f7-b799-b3d1e6b3bf43",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2024-11-22 13:37:51.355",
+      "name": "00001",
+      "description": "some_some",
+      "externalCode": "4fXzFRjOjDC8upZ1iEK-n3",
+      "moment": "2024-11-26 13:20:51.272",
+      "rate": {
+        "currency": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/883f0496-6af5-11e6-ba80-448a5bed452a",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=883f0496-6af5-11e6-ba80-448a5bed452a"
+          }
+        }
+      },
+      "sum": 100000.0,
+      "organization": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/972559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=972559f1-cbf3-11e1-9eb9-889ffa6f49fd"
+        }
+      },
+      "created": "2024-11-22 13:37:51.431",
+      "printed": false,
+      "published": false,
+      "documentState": "CREATED",
+      "retireOrderType": "PRODUCTION_USE",
+      "supportingTransaction": "OTHER",
+      "supportingTransactionDate": "2024-11-22 13:37:51.335",
+      "supportingTransactionNumber": "123",
+      "trackingType": "SHOES",
+      "vatEnabled": true,
+      "vatIncluded": true,
+      "vatSum": 16667.0,
+      "positions": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32/positions",
+          "type": "retireorderposition",
+          "mediaType": "application/json",
+          "size": 1,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    },
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/d303eee9-a8bd-11ef-ac15-000400000058",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/metadata",
+        "type": "retireorder",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#retireorder/edit?id=d303eee9-a8bd-11ef-ac15-000400000058"
+      },
+      "id": "d303eee9-a8bd-11ef-ac15-000400000058",
+      "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
+      "owner": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/872559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=872559f1-cbf3-11e1-9eb9-889ffa6f49fd"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f7eb1e3b-fd2a-42f7-b799-b3d1e6b3bf43",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2024-11-22 13:37:51.355",
+      "name": "00002",
+      "description": "some_some",
+      "externalCode": "aaerereraedf",
+      "moment": "2024-11-26 13:20:51.272",
+      "rate": {
+        "currency": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/883f0496-6af5-11e6-ba80-448a5bed452a",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=883f0496-6af5-11e6-ba80-448a5bed452a"
+          }
+        }
+      },
+      "sum": 100000.0,
+      "organization": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/972559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=972559f1-cbf3-11e1-9eb9-889ffa6f49fd"
+        }
+      },
+      "created": "2024-11-22 13:37:51.431",
+      "printed": false,
+      "published": false,
+      "documentState": "CREATED",
+      "retireOrderType": "PRODUCTION_USE",
+      "supportingTransaction": "OTHER",
+      "supportingTransactionDate": "2024-11-22 13:37:51.335",
+      "supportingTransactionNumber": "123",
+      "trackingType": "SHOES",
+      "vatEnabled": true,
+      "vatIncluded": true,
+      "vatSum": 16667.0,
+      "positions": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/d303eee9-a8bd-11ef-ac15-000400000058/positions",
+          "type": "retireorderposition",
+          "mediaType": "application/json",
+          "size": 1,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    }
+  ]
+}
+```
+
+### Вывод из оборота
+
+### Получить Вывод из оборота
+
+**Параметры**
+
+| Параметр | Описание                                                                                  |
+| :------- |:------------------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: b14bcb5e-3b17-4765-87cf-bc4569fc5f32* id Вывода из оборота. |
+ 
+> Запрос на получение отдельного Вывода из оборота с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Вывода из оборота.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/metadata",
+    "type": "retireorder",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#retireorder/edit?id=b14bcb5e-3b17-4765-87cf-bc4569fc5f32"
+  },
+  "id": "b14bcb5e-3b17-4765-87cf-bc4569fc5f32",
+  "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/872559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=872559f1-cbf3-11e1-9eb9-889ffa6f49fd"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f7eb1e3b-fd2a-42f7-b799-b3d1e6b3bf43",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2024-11-22 13:37:51.355",
+  "name": "00001",
+  "description": "some_some",
+  "externalCode": "4fXzFRjOjDC8upZ1iEK-n3",
+  "moment": "2024-11-26 13:20:51.272",
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/883f0496-6af5-11e6-ba80-448a5bed452a",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=883f0496-6af5-11e6-ba80-448a5bed452a"
+      }
+    }
+  },
+  "sum": 100000.0,
+  "organization": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/972559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=972559f1-cbf3-11e1-9eb9-889ffa6f49fd"
+    }
+  },
+  "created": "2024-11-22 13:37:51.431",
+  "printed": false,
+  "published": false,
+  "documentState": "CREATED",
+  "retireOrderType": "PRODUCTION_USE",
+  "supportingTransaction": "OTHER",
+  "supportingTransactionDate": "2024-11-22 13:37:51.335",
+  "supportingTransactionNumber": "123",
+  "trackingType": "SHOES",
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "vatSum": 16667.0,
+  "positions": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32/positions",
+      "type": "retireorderposition",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
+
+
+### Позиции Вывода из оборота 
+Отдельный ресурс для управления позициями Вывода из оборота. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
+
+### Получить позиции Вывода из оборота 
+Запрос на получение списка всех позиций данного Вывода из оборота.
+
+| Название    | Тип                                                       | Описание                                                                |
+| ----------- | :-------------------------------------------------------- |:------------------------------------------------------------------------|
+| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче,                                                    |
+| **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.                            |
+| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой позиции Вывода из оборота.   |
+
+**Параметры**
+
+| Параметр   | Описание                                                                                                                               |
+| :--------- |:---------------------------------------------------------------------------------------------------------------------------------------|
+| **id**     | `string` (required) *Example: b14bcb5e-3b17-4765-87cf-bc4569fc5f32* id Вывода из оборота.                                              |
+| **limit**  | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
+| **offset** | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
+
+> Получить позиции Вывода из оборота
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32/positions"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка позиций отдельного Вывода из оборота.
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32/positions",
+    "type": "retireorderposition",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32/positions/d3040339-a8bd-11ef-ac15-000400000059",
+        "type": "retireorderposition",
+        "mediaType": "application/json"
+      },
+      "id": "d3040339-a8bd-11ef-ac15-000400000059",
+      "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
+      "quantity": 2.0,
+      "price": 50000.0,
+      "vat": 20,
+      "vatEnabled": true,
+      "assortment": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/d1c96f39-a8bd-11ef-ac15-000400000006",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=d1c84ff7-a8bd-11ef-ac15-000400000004"
+        }
+      },
+      "trackingCodes": [
+        {
+          "cis": "010463003759026521uHpIIf-111122",
+          "type": "trackingcode"
+        },
+        {
+          "cis": "010465011724001921yM1QsEStTWZfG2406402",
+          "type": "trackingcode"
+        }
+      ]
+    },
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32/positions/05c97192-d4d3-4781-b2e8-85edc190347b",
+        "type": "retireorderposition",
+        "mediaType": "application/json"
+      },
+      "id": "05c97192-d4d3-4781-b2e8-85edc190347b",
+      "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
+      "quantity": 2.0,
+      "price": 30000.0,
+      "vat": 20,
+      "vatEnabled": true,
+      "assortment": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/d1c96f39-a8bd-11ef-ac15-000400000006",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=d1c84ff7-a8bd-11ef-ac15-000400000004"
+        }
+      },
+      "trackingCodes": [
+        {
+          "cis": "010463003759026521uHpIIf2111114",
+          "type": "trackingcode"
+        },
+        {
+          "cis": "010463003759026521uHpIIf-nXIH>1",
+          "type": "trackingcode"
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Позиция Вывода из оборота
+ 
+### Получить позицию
+
+**Параметры**
+
+| Параметр       | Описание                                                                                  |
+| :------------- |:------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: b14bcb5e-3b17-4765-87cf-bc4569fc5f32* id Вывода из оборота. |
+| **positionID** | `string` (required) *Example: 05c97192-d4d3-4781-b2e8-85edc190347b* id позиции.           |
+ 
+> Запрос на получение отдельной позиции Вывода из оборота с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32/positions/05c97192-d4d3-4781-b2e8-85edc190347b"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отдельной позиции Вывода из оборота.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32/positions/05c97192-d4d3-4781-b2e8-85edc190347b",
+    "type": "retireorderposition",
+    "mediaType": "application/json"
+  },
+  "id": "05c97192-d4d3-4781-b2e8-85edc190347b",
+  "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
+  "quantity": 2.0,
+  "price": 30000.0,
+  "vat": 20,
+  "vatEnabled": true,
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/d1c96f39-a8bd-11ef-ac15-000400000006",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=d1c84ff7-a8bd-11ef-ac15-000400000004"
+    }
+  },
+  "trackingCodes": [
+    {
+      "cis": "010463003759026521uHpIIf2111114",
+      "type": "trackingcode"
+    },
+    {
+      "cis": "010463003759026521uHpIIf-nXIH>1",
+      "type": "trackingcode"
+    }
+  ]
+}
+```
+
