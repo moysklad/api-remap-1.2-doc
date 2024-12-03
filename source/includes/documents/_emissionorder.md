@@ -133,7 +133,8 @@ curl -X GET
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/33c8ac0b-a670-11ef-ac12-000d00000111",
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata",
         "type": "emissionorder",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#emissionorder/edit?id=33c8ac0b-a670-11ef-ac12-000d00000111"
       },
       "id": "33c8ac0b-a670-11ef-ac12-000d00000111",
       "accountId": "b9c9f2e4-a66f-11ef-ac12-000f00000001",
@@ -166,6 +167,8 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
+      "printed": false,
+      "published": false,
       "created": "2024-11-19 15:17:10.711",
       "moment": "2024-11-19 15:16:00.000",
       "organization": {
@@ -179,7 +182,7 @@ curl -X GET
       },
       "emissionType": "LOCAL",
       "trackingType": "MILK",
-      "documentState": "CREATED",
+      "documentState": "SUZ_COMPLETED",
       "positions": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/33c8ac0b-a670-11ef-ac12-000d00000111/positions",
@@ -196,7 +199,8 @@ curl -X GET
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/5f6deb2e-a6fd-11ef-ac12-000d00000029",
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata",
         "type": "emissionorder",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#emissionorder/edit?id=5f6deb2e-a6fd-11ef-ac12-000d00000029"
       },
       "id": "5f6deb2e-a6fd-11ef-ac12-000d00000029",
       "accountId": "b9c9f2e4-a66f-11ef-ac12-000f00000001",
@@ -229,6 +233,8 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
+      "printed": false,
+      "published": false,
       "created": "2024-11-20 08:07:42.974",
       "moment": "2024-11-20 08:07:00.000",
       "organization": {
@@ -242,7 +248,7 @@ curl -X GET
       },
       "emissionType": "LOCAL",
       "trackingType": "MILK",
-      "documentState": "CREATED",
+      "documentState": "SUZ_COMPLETED",
       "positions": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/5f6deb2e-a6fd-11ef-ac12-000d00000029/positions",
@@ -266,7 +272,6 @@ curl -X GET
 
 | Параметр         | Описание                                                                                                                     |
 |------------------|:-----------------------------------------------------------------------------------------------------------------------------|
-| **attributes**   | Массив объектов доп. полей заказа кодов маркировки в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
 | **createShared** | создавать новые заказы кодов маркировки с меткой "Общий"                                                                     |
 | **meta**         | Ссылка на метаданные заказа кодов маркировки                                                                                 |
 | **states**       | Массив статусов заказов кодов маркировки                                                                                     |
@@ -290,16 +295,6 @@ curl -X GET
   "meta": {
     "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata",
     "mediaType": "application/json"
-  },
-  "attributes": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata/attributes",
-      "type": "attributemetadata",
-      "mediaType": "application/json",
-      "size": 0,
-      "limit": 1000,
-      "offset": 0
-    }
   },
   "states": [
     {
@@ -349,7 +344,8 @@ curl -X GET
     "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/33c8ac0b-a670-11ef-ac12-000d00000111",
     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata",
     "type": "emissionorder",
-    "mediaType": "application/json"
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#emissionorder/edit?id=33c8ac0b-a670-11ef-ac12-000d00000111"
   },
   "id": "33c8ac0b-a670-11ef-ac12-000d00000111",
   "accountId": "b9c9f2e4-a66f-11ef-ac12-000f00000001",
@@ -382,6 +378,8 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
+  "printed": false,
+  "published": false,
   "created": "2024-11-19 15:17:10.711",
   "organization": {
     "meta": {
@@ -394,6 +392,7 @@ curl -X GET
   },
   "emissionType": "LOCAL",
   "trackingType": "MILK",
+  "documentState": "SUZ_COMPLETED",
   "positions": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/33c8ac0b-a670-11ef-ac12-000d00000111/positions",
@@ -458,9 +457,29 @@ curl -X GET
         "type": "emissionorderposition",
         "mediaType": "application/json"
       },
-      "status": "EMISSION_NOT_SEND",
+      "id": "33c8ac0b-a670-11ef-ac12-000d00000112",
+      "accountId": "abc08e75-ad7d-11ef-ac12-000f00000001",
       "quantity": 1.0,
-      "name": "test product 1"
+      "assortment": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/2f096391-ad7f-11ef-ac12-000d00000117",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=2f088dd4-ad7f-11ef-ac12-000d00000115"
+        }
+      },
+      "trackingCodes": [
+        {
+          "cis": "010002900000106021C4NkN(fUjSFS>%91FFD%92dGVzdE/k9VQL8HW0OdiPrh0XyxPgK8CLYmeZ/Np1x6Q=",
+          "type": "trackingcode"
+        },
+        {
+          "cis": "010002900000106021jMpU&ZOh3Pqn&%91FFD0%92dGVzdJM6eQj669q35NMXowo7OSpJSxpAGhNDZuGqnNA=",
+          "type": "trackingcode"
+        }
+      ],
+      "status": "EMISSION_COMPLETED"
     }
   ]
 }
@@ -495,8 +514,28 @@ curl -X GET
         "type": "emissionorderposition",
         "mediaType": "application/json"
     },
-    "status": "EMISSION_NOT_SEND",
+    "id": "33c8ac0b-a670-11ef-ac12-000d00000112",
+    "accountId": "abc08e75-ad7d-11ef-ac12-000f00000001",
     "quantity": 1.0,
-    "name": "test product 1"
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/2f096391-ad7f-11ef-ac12-000d00000117",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=2f088dd4-ad7f-11ef-ac12-000d00000115"
+      }
+    },
+    "trackingCodes": [
+      {
+        "cis": "010002900000106021C4NkN(fUjSFS>%91FFD%92dGVzdE/k9VQL8HW0OdiPrh0XyxPgK8CLYmeZ/Np1x6Q=",
+        "type": "trackingcode"
+      },
+      {
+        "cis": "010002900000106021jMpU&ZOh3Pqn&%91FFD0%92dGVzdJM6eQj669q35NMXowo7OSpJSxpAGhNDZuGqnNA=",
+        "type": "trackingcode"
+      }
+    ],
+    "status": "EMISSION_COMPLETED"
 }
 ```
