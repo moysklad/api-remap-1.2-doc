@@ -51,6 +51,7 @@ includes:
   - documents/factureout
   - documents/facturein
   - documents/processing
+  - documents/emissionorder
 
 search: true
 ---
