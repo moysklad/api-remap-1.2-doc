@@ -217,6 +217,7 @@ JSON API позволяет создавать, обновлять и удаля
 + [Контрагент](dictionaries/#suschnosti-kontragent)
 + [Юрлицо](dictionaries/#suschnosti-jurlico)
 + [Проект](dictionaries/#suschnosti-proekt)
++ [Пользовательский справочник](dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik) (у каждого справочника свои)
 + [Склад](dictionaries/#suschnosti-sklad)
 + [Сотрудник](dictionaries/#suschnosti-sotrudnik)
 + [Товар](dictionaries/#suschnosti-towar)
@@ -697,7 +698,7 @@ curl -X POST
   -H 'Content-Type: application/json'
   -d '{
         "customEntityMeta": {
-          "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/0347beb0-a785-11e9-ac12-000800000003",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/0347beb0-a785-11e9-ac12-000800000003/metadata",
           "type": "customentitymetadata",
           "mediaType": "application/json"
         },
@@ -718,7 +719,7 @@ curl -X POST
     "mediaType": "application/json"
   },
   "customEntityMeta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/0347beb0-a785-11e9-ac12-000800000003",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/0347beb0-a785-11e9-ac12-000800000003/metadata",
     "type": "customentitymetadata",
     "mediaType": "application/json"
   },
@@ -1059,12 +1060,12 @@ curl -X POST
 Исключения:
 
 + Структурированный адрес у
-  [Контрагента](dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres),
-  [Юрлица](dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres),
-  [Точки продаж](dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-adres),
-  [Склада](dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres),
-  [Заказа покупателя](documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-attributy-suschnosti-adres-dostawki),
-  [Отгрузки](documents/#dokumenty-otgruzka-otgruzki-attributy-suschnosti-adres-dostawki) не поддерживает удаления передачей `null`.
+  [Контрагента](dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-adres),
+  [Юрлица](dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-adres),
+  [Точки продаж](dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status-atributy-suschnosti-adres),
+  [Склада](dictionaries/#suschnosti-sklad-sklady-atributy-suschnosti-adres),
+  [Заказа покупателя](documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-atributy-suschnosti-adres-dostawki),
+  [Отгрузки](documents/#dokumenty-otgruzka-otgruzki-atributy-suschnosti-adres-dostawki) не поддерживает удаления передачей `null`.
 Для удаления адреса необходимо в строковое поле передать пустую строку `""`. Конкретные строковые поля приведены в соответствующих разделах, переход в которые осуществляется по ссылкам выше.
 
 ### Пустые поля
