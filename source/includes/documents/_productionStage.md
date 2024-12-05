@@ -12,7 +12,9 @@
 | Название               | Тип                                                       | Фильтрация | Описание                                                                                                                                                            |
 |------------------------|:----------------------------------------------------------|:-----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**          | UUID                                                      |            | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                |
+| **files**              | MetaArray                                                 |            | Метаданные массива [Файлов](..dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Expand` `+Обязательное при ответе` `+Только для чтения`   |
 | **id**                 | UUID                                                      |            | ID Производственного этапа<br>`+Обязательное при ответе` `+Только для чтения`                                                                                       |
+| **instruction**        | String(4096)                                              |            | Текст инструкции<br>`+Только для чтения`                                                                                                                            |
 | **meta**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |            | Метаданные Производственного этапа<br>`+Обязательное при ответе` `+Только для чтения`                                                                               |
 | **labourUnitCost**     | Double                                                    |            | Затраты на оплату труда за единицу объема производства<br>                                                                                                          |
 | **materials**          | MetaArray                                                 |            | Метаданные Материалов производственного этапа. [Подробнее тут](#dokumenty-proizwodstwennoe-zadanie-materialy-proizwodstwennogo-atapa)<br>`+Обязательное при ответе` |
@@ -135,7 +137,18 @@ curl -X GET
       "skippedQuantity": 0.0,
       "processingUnitCost": 2.0,
       "labourUnitCost": 0.0,
-      "standardHourUnit": 0.0
+      "standardHourUnit": 0.0,
+      "instruction" : "1.Откройте верхнюю крышку и извлеките блок фотобарабана\n2.Установите в нижнее положение переключатель в правом нижнем 3.углу блока фотобарабана\n4.Вытащите тонер-картридж\n5.Поставьте на его место новый\n\nПо факту выполнения всех шагов обратитесь к руководителю",
+      "files" : {
+        "meta" : {
+          "href" : "https://api.ru/api/remap/1.2/entity/productionstage/19070bfd-99d6-11ee-0a83-0a2e0000076be/files",
+          "type" : "files",
+          "mediaType" : "application/json",
+          "size" : 2,
+          "limit" : 1000,
+          "offset" : 0
+        }
+      }
     }
   ]
 }
@@ -214,7 +227,17 @@ curl -X GET
   "skippedQuantity": 0.0,
   "processingUnitCost": 70.0,
   "labourUnitCost": 30.5,
-  "standardHourUnit": 43.5
+  "standardHourUnit": 43.5,
+  "files": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/19070bfd-99d6-11ee-0a83-0a2e0000076b/files",
+      "type": "files",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
 }
 ```
 

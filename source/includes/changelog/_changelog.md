@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 05-12-2024
+#### Добавлено
+- поля `files`, `instruction`в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+
 ### 02-12-2024
 #### Добавлено
 - Вывод дополнительных полей в элементы [Пользовательских справочников](../dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik)
