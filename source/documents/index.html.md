@@ -28,6 +28,7 @@ includes:
   - documents/processingorder
   - documents/customerOrder
   - documents/purchaseOrder
+  - documents/emissionorder
   - documents/inventory
   - documents/payment_out
   - documents/counterpartyadjustment
@@ -51,6 +52,7 @@ includes:
   - documents/factureout
   - documents/facturein
   - documents/processing
+  - documents/emissionorder
 
 search: true
 ---
