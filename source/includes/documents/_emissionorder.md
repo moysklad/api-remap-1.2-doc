@@ -490,7 +490,7 @@ curl -X GET
 }
 ```
 
-> Пример запроса на создание Отгрузки с позициями в теле запроса.
+> Пример запроса на создание Заказа кодов маркировки   с позициями в теле запроса.
 
 ```shell
   curl -X POST
@@ -616,7 +616,7 @@ curl -X GET
 }
 ```
 
-### Массовое создание и обновление Отгрузок
+### Массовое создание и обновление Заказов кодов маркировки
 [Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Заказов кодов маркировки.
 В теле запроса необходимо передать массив, содержащий JSON представления Заказов кодов маркировки, которые вы хотите создать или обновить.
 Обновляемые Заказы кодов маркировки должны содержать идентификатор в виде метаданных.
@@ -1324,5 +1324,292 @@ curl -X GET
       }
     ],
     "status": "EMISSION_COMPLETED"
+}
+```
+
+### Создать позицию
+Запрос на создание новой позиции в Заказе кодов маркировки.
+Для успешного создания необходимо в теле запроса указать следующие поля:
+
++ **assortment** - Ссылка на товар/серию/модификацию, которую представляет собой позиция.
+  Также можно указать поле с именем **consignment**, **variant** в зависимости от того, 
+  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Заказа](../documents/#dokumenty-zakaz-kodow-markirowki-zakaz-kodow-markirowki-pozicii-zakaza-kodow-markirowki)
++ **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
+
+Тип маркируемой продукции у позиций и у заказа Кодов маркировки должен быть идентичным.
+
+**Параметры**
+
+| Параметр | Описание                                                                                        |
+| :------- |:------------------------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа кодов маркировки. |
+
+> Пример создания одной позиции в Заказе кодов маркировки.
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/7944ef04-f831-11e5-7a69-971500188b19/positions"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "quantity": 49,
+            "assortment": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/7a7daa6b-3c64-11e6-8a84-bae50000000a",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                "type": "variant",
+                "mediaType": "application/json"
+              }
+            }
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной позиции отдельного Заказа кодов маркировки.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/7944ef04-f831-11e5-7a69-971500188b19/positions/574b6485-3f71-11e6-8a84-bae50000005b",
+      "type": "emissionorderposition",
+      "mediaType": "application/json"
+    },
+    "id": "574b6485-3f71-11e6-8a84-bae50000005b",
+    "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+    "quantity": 49,
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/7a7daa6b-3c64-11e6-8a84-bae50000000a",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+        "type": "variant",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=3c3c1618-2842-11e9-ac12-000c0000006f"
+      }
+    },
+    "trackingCodes": [
+      {
+        "cis": "010002900000106021C4NkN(fUjSFS>%91FFD%92dGVzdE/k9VQL8HW0OdiPrh0XyxPgK8CLYmeZ/Np1x6Q=",
+        "type": "trackingcode"
+      },
+      {
+        "cis": "010002900000106021jMpU&ZOh3Pqn&%91FFD0%92dGVzdJM6eQj669q35NMXowo7OSpJSxpAGhNDZuGqnNA=",
+        "type": "trackingcode"
+      }
+    ],
+    "status": "EMISSION_COMPLETED"
+  }
+]
+```
+
+> Пример создания сразу нескольких позиций в Заказе кодов маркировки.
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/7944ef04-f831-11e5-7a69-971500188b19/positions"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "quantity": 12,
+              "assortment": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/7a81082f-3c64-11e6-8a84-bae50000000e",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                  "type": "variant",
+                  "mediaType": "application/json"
+                }
+              }
+            },
+            {
+              "quantity": 3,
+              "assortment": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/7a6f697f-3c64-11e6-8a84-bae500000006",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                  "type": "product",
+                  "mediaType": "application/json"
+                }
+              }
+            },
+            {
+              "quantity": 404,
+              "assortment": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/7a83c422-3c64-11e6-8a84-bae500000012",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                  "type": "variant",
+                  "mediaType": "application/json"
+                }
+              }
+            }
+          ]'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка созданных позиций отдельного Заказа кодов маркировки.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/7944ef04-f831-11e5-7a69-971500188b19/positions/f389488d-3f71-11e6-8a84-bae50000005f",
+      "type": "emissionorderposition",
+      "mediaType": "application/json"
+    },
+    "id": "f389488d-3f71-11e6-8a84-bae50000005f",
+    "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+    "quantity": 12,
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/7a81082f-3c64-11e6-8a84-bae50000000e",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+        "type": "variant",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=3c3c1618-2842-11e9-ac12-000c0000006f"
+      }
+    },
+    "trackingCodes": [
+      {
+        "cis": "010002900000106021C4NkN(fUjSFS>%91FFD%92dGVzdE/k9VQL8HW0OdiPrh0XyxPgK8CLYmeZ/Np1x6Q=",
+        "type": "trackingcode"
+      },
+      {
+        "cis": "010002900000106021jMpU&ZOh3Pqn&%91FFD0%92dGVzdJM6eQj669q35NMXowo7OSpJSxpAGhNDZuGqnNA=",
+        "type": "trackingcode"
+      }
+    ],
+    "status": "EMISSION_COMPLETED"
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/7944ef04-f831-11e5-7a69-971500188b19/positions/f389521b-3f71-11e6-8a84-bae500000060",
+      "type": "emissionorderposition",
+      "mediaType": "application/json"
+    },
+    "id": "f389521b-3f71-11e6-8a84-bae500000060",
+    "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+    "quantity": 3,
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/7a6f697f-3c64-11e6-8a84-bae500000006",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=e64d0a86-2a99-11e9-ac12-000c00000041"
+      }
+    },
+    "trackingCodes": [
+      {
+        "cis": "010002900000106021C4NkN(fUjSFS>%91FFD%92dGVzdE/k9VQL8HW0OdiPrh0XyxPgK8CLYmeZ/Np1x6Q=",
+        "type": "trackingcode"
+      },
+      {
+        "cis": "010002900000106021jMpU&ZOh3Pqn&%91FFD0%92dGVzdJM6eQj669q35NMXowo7OSpJSxpAGhNDZuGqnNA=",
+        "type": "trackingcode"
+      }
+    ],
+    "status": "EMISSION_COMPLETED"
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/7944ef04-f831-11e5-7a69-971500188b19/positions/f3895aa1-3f71-11e6-8a84-bae500000061",
+      "type": "emissionorderposition",
+      "mediaType": "application/json"
+    },
+    "id": "f3895aa1-3f71-11e6-8a84-bae500000061",
+    "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+    "quantity": 404,
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/7a83c422-3c64-11e6-8a84-bae500000012",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+        "type": "variant",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002f"
+      }
+    },
+    "trackingCodes": [
+      {
+        "cis": "010002900000106021C4NkN(fUjSFS>%91FFD%92dGVzdE/k9VQL8HW0OdiPrh0XyxPgK8CLYmeZ/Np1x6Q=",
+        "type": "trackingcode"
+      },
+      {
+        "cis": "010002900000106021jMpU&ZOh3Pqn&%91FFD0%92dGVzdJM6eQj669q35NMXowo7OSpJSxpAGhNDZuGqnNA=",
+        "type": "trackingcode"
+      }
+    ],
+    "status": "EMISSION_COMPLETED"
+  }
+]
+```
+
+### Изменить позицию
+Запрос на обновление отдельной позиции Заказа. Для обновления позиции нет каких-либо
+обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
+
+**Параметры**
+
+| Параметр       | Описание                                                                                                |
+| :------------- |:--------------------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа кодов маркировки.         |
+| **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Заказа кодов маркировки. |
+
+> Пример запроса на обновление отдельной позиции в Заказе кодов маркировки.
+
+```shell
+  curl -X PUT
+    "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "quantity": 44,
+            "assortment": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/7a83c422-3c64-11e6-8a84-bae500000012",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                "type": "variant",
+                "mediaType": "application/json"
+              }
+            }
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленной позиции Заказа кодов маркировки.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
+    "type": "emissionorderposition",
+    "mediaType": "application/json"
+  },
+  "id": "34f6344f-015e-11e6-9464-e4de0000006c",
+  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+  "quantity": 44,
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/7a83c422-3c64-11e6-8a84-bae500000012",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+      "type": "variant",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002f"
+    }
+  },
+  "trackingCodes": [
+    {
+      "cis": "010002900000106021C4NkN(fUjSFS>%91FFD%92dGVzdE/k9VQL8HW0OdiPrh0XyxPgK8CLYmeZ/Np1x6Q=",
+      "type": "trackingcode"
+    },
+    {
+      "cis": "010002900000106021jMpU&ZOh3Pqn&%91FFD0%92dGVzdJM6eQj669q35NMXowo7OSpJSxpAGhNDZuGqnNA=",
+      "type": "trackingcode"
+    }
+  ],
+  "status": "EMISSION_COMPLETED"
 }
 ```
