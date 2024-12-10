@@ -2,7 +2,7 @@
 Средствами JSON API можно создавать и обновлять сведения о Вывод из оборота, запрашивать списки Выводов из оборота и сведения по отдельным Выводам из оборота. 
 Позициями Выводов из оборота можно управлять как в составе отдельного Вывода из оборота, так и отдельно - с помощью специальных ресурсов для управления позициями Вывода из оборота. 
 Кодом сущности для Вывода из оборота в составе JSON API является ключевое слово **retireorder**. 
-Больше о Выводах из оборота можно прочитать [зедь](https://support.moysklad.ru/hc/ru/articles/360025776473-%D0%92%D1%8B%D0%B2%D0%BE%D0%B4-%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2-%D0%BC%D0%B0%D1%80%D0%BA%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B8-%D0%B8%D0%B7-%D0%BE%D0%B1%D0%BE%D1%80%D0%BE%D1%82%D0%B0).
+Больше о Выводах из оборота можно прочитать [здесь](https://support.moysklad.ru/hc/ru/articles/360025776473-%D0%92%D1%8B%D0%B2%D0%BE%D0%B4-%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2-%D0%BC%D0%B0%D1%80%D0%BA%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B8-%D0%B8%D0%B7-%D0%BE%D0%B1%D0%BE%D1%80%D0%BE%D1%82%D0%B0).
 ### Вывод из оборота 
 #### Атрибуты сущности
 
@@ -449,6 +449,846 @@ curl -X GET
 }
 ```
 
+
+### Создать Вывод из оборота
+Запрос на создание нового Вывода из оборота.
+
+Обязательные для создания поля:
+
++ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **retireOrderType** - Способ вывода из оборота [Подробнее тут](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-sposob-wywoda-iz-oborota)
++ **trackingType** - Тип маркируемой продукции [Подробнее тут](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii)
+
+#### Тарифные ограничения
+Для создания вывода из оборота необходима тарифная опция Маркировка.
+
+#### Особенности поведения при создании Вывода из оборота
+Связь допустимых значений поля **supportingTransaction** в зависимости от **retireOrderType**
+
+| **retireOrderType**      | **supportingTransaction**                              |
+|--------------------------|:-------------------------------------------------------|
+| **BY_SAMPLES**           | RECEIPT, SALES_RECEIPT, OTHER, CONSIGNMENT_NOTE, UTD   |
+| **CONFISCATE_SALE**      | OTHER, CONSIGNMENT_NOTE, UTD                           |
+| **DAMAGE_AND_LOSS**      | OTHER                                                  |
+| **DESTRUCTION**          | CERTIFICATE_OF_DESTRUCTION, OTHER                      |
+| **DISTANCE**             | RECEIPT, SALES_RECEIPT, OTHER, CONSIGNMENT_NOTE, UTD   |
+| **EXPIRATION**           | OTHER                                                  |
+| **EXPORT_OUTSIDE_EEU**   | CUSTOMS_DECLARATION, OTHER                             |
+| **MEDICAL_USE**          | OTHER                                                  |
+| **OWN_USE**              | OTHER                                                  |
+| **PACKING**              | OTHER                                                  |
+| **PRODUCTION_USE**       | OTHER                                                  |
+| **RETAIL_SALE**          | RECEIPT, SALES_RECEIPT, OTHER                          |
+| **RETURN_TO_INDIVIDUAL** | OTHER                                                  |
+| **UTILIZATION**          | OTHER                                                  |
+| **VENDING**              | OTHER                                                  |
+
+Если выбран способ вывода из оборота из перечисленных выше, то поля **supportingTransaction**, **supportingTransactionDate**, **supportingTransactionNumber** являются обязательными
+
+Если выбран тип документа-основания - Прочее, то поле **primaryDocumentName** является обязательным
+
+Если выбран способ вывода из оборота - "Продажа по государственному (муниципальному) контракту", то поле **stateContractId** является обязательным
+
+Если выбран способ вывода из оборота - "Трансграничная продажа в страны ЕАЭС", то в обязательном поле **destinationCountry** допустимые значения страны (Армения, Беларусь, Казахстан, Киргизия)
+
+Если создается документ вывода из оборота с позициями, то тип маркируемой продукции каждой из позиций должен совпадать с полем **trackingType**
+
+Связь допустимых значений поля **trackingType** в зависимости от **retireOrderType**
+
+| **trackingType**                                                | **retireOrderType**                                                                                                                                                                                      |
+|-----------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **SHOES, LP_CLOTHES, LP_LINENS, PERFUMERY, ELECTRONICS, TIRES** | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, RETURN_TO_INDIVIDUAL         |
+| **MILK**                                                        | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, EXPIRATION, VENDING, PACKING |
+| **FOOD_SUPPLEMENT, SANITIZER, MEDICAL_DEVICES**                 | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT                               |
+
+> Пример создания нового Вывода из оборота - Трансграничная продажа в страны ЕАЭС.
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+              "organization": {
+                  "meta": {
+                      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
+                      "type": "organization",
+                      "mediaType": "application/json"
+                  }
+              },
+              "destinationCountry": {
+                  "meta": {
+                      "href": "https://api.moysklad.ru/api/remap/1.2/entity/country/20e1bcdc-9fb8-4192-a400-5a8ada805878",
+                      "type": "country",
+                      "mediaType": "application/json"
+                  }
+              },
+              "retireOrderType": "EXPORT_INSIDE_EEU",
+              "trackingType": "MILK"
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного Вывода из оборота.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/debcae32-b62f-11ef-ac12-000b00000000",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/metadata",
+    "type": "retireorder",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#retireorder/edit?id=debcae32-b62f-11ef-ac12-000b00000000"
+  },
+  "id": "debcae32-b62f-11ef-ac12-000b00000000",
+  "accountId": "abc08e75-ad7d-11ef-ac12-000f00000001",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/acb828ec-ad7d-11ef-ac12-000d00000051",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=acb828ec-ad7d-11ef-ac12-000d00000051"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/abc1d4f2-ad7d-11ef-ac12-000f00000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2024-12-09 16:16:56.394",
+  "name": "00005",
+  "externalCode": "G9RF0hwpgFsImLYi0Kk3l3",
+  "moment": "2024-12-09 16:16:00.000",
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/acf2a610-ad7d-11ef-ac12-000d000000a2",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=acf2a610-ad7d-11ef-ac12-000d000000a2"
+      }
+    }
+  },
+  "sum": 0.0,
+  "organization": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=ace4017a-ad7d-11ef-ac12-000d0000009a"
+    }
+  },
+  "created": "2024-12-09 16:16:58.600",
+  "printed": false,
+  "published": false,
+  "documentState": "CREATED",
+  "destinationCountry": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/country/20e1bcdc-9fb8-4192-a400-5a8ada805878",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
+      "type": "country",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#country/edit?id=20e1bcdc-9fb8-4192-a400-5a8ada805878"
+    }
+  },
+  "retireOrderType": "EXPORT_INSIDE_EEU",
+  "trackingType": "MILK",
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "vatSum": 0.0,
+  "positions": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/debcae32-b62f-11ef-ac12-000b00000000/positions",
+      "type": "retireorderposition",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
+
+> Пример создания нового Вывода из оборота - Продажа по государственному (муниципальному) контракту.
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+              "organization": {
+                  "meta": {
+                      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
+                      "type": "organization",
+                      "mediaType": "application/json"
+                  }
+              },
+              "stateContractId": "test",
+              "retireOrderType": "STATE_CONTRACT",
+              "trackingType": "MILK"
+          }'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного Вывода из оборота.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/debcae32-b62f-11ef-ac12-000b00000000",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/metadata",
+    "type": "retireorder",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#retireorder/edit?id=debcae32-b62f-11ef-ac12-000b00000000"
+  },
+  "id": "debcae32-b62f-11ef-ac12-000b00000000",
+  "accountId": "abc08e75-ad7d-11ef-ac12-000f00000001",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/acb828ec-ad7d-11ef-ac12-000d00000051",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=acb828ec-ad7d-11ef-ac12-000d00000051"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/abc1d4f2-ad7d-11ef-ac12-000f00000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2024-12-09 16:16:56.394",
+  "name": "00005",
+  "externalCode": "G9RF0hwpgFsImLYi0Kk3l3",
+  "moment": "2024-12-09 16:16:00.000",
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/acf2a610-ad7d-11ef-ac12-000d000000a2",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=acf2a610-ad7d-11ef-ac12-000d000000a2"
+      }
+    }
+  },
+  "sum": 0.0,
+  "organization": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=ace4017a-ad7d-11ef-ac12-000d0000009a"
+    }
+  },
+  "created": "2024-12-09 16:16:58.600",
+  "printed": false,
+  "published": false,
+  "documentState": "CREATED",
+  "retireOrderType": "STATE_CONTRACT",
+  "stateContractId": "test",
+  "trackingType": "MILK",
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "vatSum": 0.0,
+  "positions": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/debcae32-b62f-11ef-ac12-000b00000000/positions",
+      "type": "retireorderposition",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
+
+> Пример создания нового Вывода из оборота - Использование для собственных нужд.
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+              "organization": {
+                  "meta": {
+                      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
+                      "type": "organization",
+                      "mediaType": "application/json"
+                  }
+              },
+              "retireOrderType": "OWN_USE",
+              "supportingTransaction": "OTHER",
+              "supportingTransactionDate": "2024-12-09 12:59:23.164",
+              "supportingTransactionNumber": "123",
+              "primaryDocumentName": "doc name",
+              "trackingType": "MILK"
+          }'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного Вывода из оборота.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/debcae32-b62f-11ef-ac12-000b00000000",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/metadata",
+    "type": "retireorder",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#retireorder/edit?id=debcae32-b62f-11ef-ac12-000b00000000"
+  },
+  "id": "debcae32-b62f-11ef-ac12-000b00000000",
+  "accountId": "abc08e75-ad7d-11ef-ac12-000f00000001",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/acb828ec-ad7d-11ef-ac12-000d00000051",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=acb828ec-ad7d-11ef-ac12-000d00000051"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/abc1d4f2-ad7d-11ef-ac12-000f00000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2024-12-09 16:16:56.394",
+  "name": "00005",
+  "externalCode": "G9RF0hwpgFsImLYi0Kk3l3",
+  "moment": "2024-12-09 16:16:00.000",
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/acf2a610-ad7d-11ef-ac12-000d000000a2",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=acf2a610-ad7d-11ef-ac12-000d000000a2"
+      }
+    }
+  },
+  "sum": 0.0,
+  "organization": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=ace4017a-ad7d-11ef-ac12-000d0000009a"
+    }
+  },
+  "created": "2024-12-09 16:16:58.600",
+  "printed": false,
+  "published": false,
+  "documentState": "CREATED",
+  "primaryDocumentName": "doc name",
+  "retireOrderType": "OWN_USE",
+  "supportingTransaction": "OTHER",
+  "supportingTransactionDate": "2024-12-09 12:59:00.000",
+  "supportingTransactionNumber": "123",
+  "trackingType": "MILK",
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "vatSum": 0.0,
+  "positions": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/debcae32-b62f-11ef-ac12-000b00000000/positions",
+      "type": "retireorderposition",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
+
+> Пример создания нового Вывода из оборота с позициями.
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+              "organization": {
+                  "meta": {
+                      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
+                      "type": "organization",
+                      "mediaType": "application/json"
+                  }
+              },
+              "retireOrderType": "OWN_USE",
+              "supportingTransaction": "OTHER",
+              "supportingTransactionDate": "2024-12-09 12:59:23.164",
+              "supportingTransactionNumber": "123",
+              "primaryDocumentName": "doc name",
+              "trackingType": "MILK",
+              "positions": [
+                  {
+                      "assortment": {
+                          "meta": {
+                              "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/2f096391-ad7f-11ef-ac12-000d00000117",
+                              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                              "type": "product",
+                              "mediaType": "application/json"
+                          }
+                      },
+                      "trackingCodes": [
+                          {
+                              "cis": "0114650057073880217891234567893",
+                              "type": "trackingcode"
+                          }
+                      ]
+                  }
+              ]
+          }'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного Вывода из оборота.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/debcae32-b62f-11ef-ac12-000b00000000",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/metadata",
+    "type": "retireorder",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#retireorder/edit?id=debcae32-b62f-11ef-ac12-000b00000000"
+  },
+  "id": "debcae32-b62f-11ef-ac12-000b00000000",
+  "accountId": "abc08e75-ad7d-11ef-ac12-000f00000001",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/acb828ec-ad7d-11ef-ac12-000d00000051",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=acb828ec-ad7d-11ef-ac12-000d00000051"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/abc1d4f2-ad7d-11ef-ac12-000f00000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2024-12-09 16:16:56.394",
+  "name": "00005",
+  "externalCode": "G9RF0hwpgFsImLYi0Kk3l3",
+  "moment": "2024-12-09 16:16:00.000",
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/acf2a610-ad7d-11ef-ac12-000d000000a2",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=acf2a610-ad7d-11ef-ac12-000d000000a2"
+      }
+    }
+  },
+  "sum": 0.0,
+  "organization": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=ace4017a-ad7d-11ef-ac12-000d0000009a"
+    }
+  },
+  "created": "2024-12-09 16:16:58.600",
+  "printed": false,
+  "published": false,
+  "documentState": "CREATED",
+  "primaryDocumentName": "doc name",
+  "retireOrderType": "OWN_USE",
+  "supportingTransaction": "OTHER",
+  "supportingTransactionDate": "2024-12-09 12:59:00.000",
+  "supportingTransactionNumber": "123",
+  "trackingType": "MILK",
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "vatSum": 0.0,
+  "positions": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/debcae32-b62f-11ef-ac12-000b00000000/positions",
+      "type": "retireorderposition",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
+
+### Массовое создание и обновление Выводов из оборота
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Выводов из оборота.
+В теле запроса нужно передать массив, содержащий JSON представления Выводов из оборота, которые вы хотите создать или обновить.
+Обновляемые Выводы из оборота должны содержать идентификатор в виде метаданных.
+
+> Пример создания и обновления нескольких Выводов из оборота
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '[
+              {
+                  "meta": {
+                      "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7ac2eebe-b633-11ef-ac12-000b00000005",
+                      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/metadata",
+                      "type": "retireorder",
+                      "mediaType": "application/json"
+                  },
+                  "description": "Обновление вывода из оборота",
+                  "stateContractId": "test",
+                  "retireOrderType": "STATE_CONTRACT",
+                  "trackingType": "MILK"
+              },
+              {
+                  "organization": {
+                      "meta": {
+                          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
+                          "type": "organization",
+                          "mediaType": "application/json"
+                      }
+                  },
+                  "description": "Новый вывод из оборота",
+                  "retireOrderType": "OWN_USE",
+                  "supportingTransaction": "OTHER",
+                  "supportingTransactionDate": "2024-12-09 12:59:23.164",
+                  "supportingTransactionNumber": "123",
+                  "primaryDocumentName": "doc name",
+                  "trackingType": "LP_CLOTHES",
+                  "positions": [
+                      {
+                          "assortment": {
+                              "meta": {
+                                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/2f096391-ad7f-11ef-ac12-000d00000117",
+                                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                                  "type": "product",
+                                  "mediaType": "application/json"
+                              }
+                          },
+                          "trackingCodes": [
+                              {
+                                  "cis": "0114650057073880217891234567893",
+                                  "type": "trackingcode"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ]'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - массив JSON представлений созданных и обновленных Выводов из оборота
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7ac2eebe-b633-11ef-ac12-000b00000005",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/metadata",
+      "type": "retireorder",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#retireorder/edit?id=7ac2eebe-b633-11ef-ac12-000b00000005"
+    },
+    "id": "7ac2eebe-b633-11ef-ac12-000b00000005",
+    "accountId": "abc08e75-ad7d-11ef-ac12-000f00000001",
+    "owner": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/acb828ec-ad7d-11ef-ac12-000d00000051",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=acb828ec-ad7d-11ef-ac12-000d00000051"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/abc1d4f2-ad7d-11ef-ac12-000f00000002",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2024-12-10 09:22:38.893",
+    "name": "00006",
+    "description": "Обновление вывода из оборота",
+    "externalCode": "cFQv1EGbgWBIbYC4OIuWf0",
+    "moment": "2024-12-09 16:42:00.000",
+    "rate": {
+      "currency": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/acf2a610-ad7d-11ef-ac12-000d000000a2",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=acf2a610-ad7d-11ef-ac12-000d000000a2"
+        }
+      }
+    },
+    "sum": 0.0,
+    "organization": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=ace4017a-ad7d-11ef-ac12-000d0000009a"
+      }
+    },
+    "created": "2024-12-09 16:42:49.054",
+    "printed": false,
+    "published": false,
+    "documentState": "CREATED",
+    "retireOrderType": "STATE_CONTRACT",
+    "stateContractId": "test",
+    "trackingType": "MILK",
+    "vatEnabled": true,
+    "vatIncluded": true,
+    "vatSum": 0.0,
+    "positions": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7ac2eebe-b633-11ef-ac12-000b00000005/positions",
+        "type": "retireorderposition",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    }
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/279b20b1-b6bf-11ef-ac12-000d00000017",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/metadata",
+      "type": "retireorder",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#retireorder/edit?id=279b20b1-b6bf-11ef-ac12-000d00000017"
+    },
+    "id": "279b20b1-b6bf-11ef-ac12-000d00000017",
+    "accountId": "abc08e75-ad7d-11ef-ac12-000f00000001",
+    "owner": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/acb828ec-ad7d-11ef-ac12-000d00000051",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=acb828ec-ad7d-11ef-ac12-000d00000051"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/abc1d4f2-ad7d-11ef-ac12-000f00000002",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2024-12-10 09:22:39.013",
+    "name": "00013",
+    "description": "Новый вывод из оборота",
+    "externalCode": "03wjFjemgAnCBQvEQsBfF2",
+    "moment": "2024-12-10 09:22:00.000",
+    "rate": {
+      "currency": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/acf2a610-ad7d-11ef-ac12-000d000000a2",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=acf2a610-ad7d-11ef-ac12-000d000000a2"
+        }
+      }
+    },
+    "sum": 0.0,
+    "organization": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=ace4017a-ad7d-11ef-ac12-000d0000009a"
+      }
+    },
+    "created": "2024-12-10 09:22:39.067",
+    "printed": false,
+    "published": false,
+    "documentState": "CREATED",
+    "primaryDocumentName": "doc name",
+    "retireOrderType": "OWN_USE",
+    "supportingTransaction": "OTHER",
+    "supportingTransactionDate": "2024-12-09 12:59:00.000",
+    "supportingTransactionNumber": "123",
+    "trackingType": "LP_CLOTHES",
+    "vatEnabled": true,
+    "vatIncluded": true,
+    "vatSum": 0.0,
+    "positions": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/279b20b1-b6bf-11ef-ac12-000d00000017/positions",
+        "type": "retireorderposition",
+        "mediaType": "application/json",
+        "size": 1,
+        "limit": 1000,
+        "offset": 0
+      }
+    }
+  }
+]
+```
+
+### Изменить Вывода из оборота
+Запрос на обновление Вывода из оборота с указанным id.
+В теле запроса можно указать только те поля, которые необходимо изменить у Вывода из оборота, кроме тех, что
+помечены `Только для чтения` в описании [атрибутов Вывода из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota).
+
+#### Тарифные ограничения
+Для обновления вывода из оборота необходима тарифная опция Маркировка.
+
+#### Особенности поведения при изменении Вывода из оборота
+Изменение Вывода из оборота доступно только для документов со статусом **documentState** = **CREATED**
+
+**Параметры**
+
+| Параметр | Описание                                                                                  |
+|:---------|:------------------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: b14bcb5e-3b17-4765-87cf-bc4569fc5f32* id Вывода из оборота. |
+
+> Пример запроса на обновление отдельного Вывода из оборота
+
+```shell
+curl -X PUT
+  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+    -d '{
+    "name": "обновленный",
+    "description": "новое описание Вывода из оборота"
+}
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленного Вывода из оборота
+
+```json
+{
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/metadata",
+        "type": "retireorder",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#retireorder/edit?id=b14bcb5e-3b17-4765-87cf-bc4569fc5f32"
+      },
+      "id": "b14bcb5e-3b17-4765-87cf-bc4569fc5f32",
+      "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
+      "owner": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/872559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=872559f1-cbf3-11e1-9eb9-889ffa6f49fd"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f7eb1e3b-fd2a-42f7-b799-b3d1e6b3bf43",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2024-11-22 13:37:51.355",
+      "name": "обновленный",
+      "description": "новое описание Вывода из оборота",
+      "externalCode": "4fXzFRjOjDC8upZ1iEK-n3",
+      "moment": "2024-11-26 13:20:51.272",
+      "rate": {
+        "currency": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/883f0496-6af5-11e6-ba80-448a5bed452a",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=883f0496-6af5-11e6-ba80-448a5bed452a"
+          }
+        }
+      },
+      "sum": 100000.0,
+      "organization": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/972559f1-cbf3-11e1-9eb9-889ffa6f49fd",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=972559f1-cbf3-11e1-9eb9-889ffa6f49fd"
+        }
+      },
+      "created": "2024-11-22 13:37:51.431",
+      "printed": false,
+      "published": false,
+      "documentState": "CREATED",
+      "retireOrderType": "PRODUCTION_USE",
+      "supportingTransaction": "OTHER",
+      "supportingTransactionDate": "2024-11-22 13:37:51.335",
+      "supportingTransactionNumber": "123",
+      "trackingType": "SHOES",
+      "vatEnabled": true,
+      "vatIncluded": true,
+      "vatSum": 16667.0,
+      "positions": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32/positions",
+          "type": "retireorderposition",
+          "mediaType": "application/json",
+          "size": 1,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    }
+```
 
 ### Позиции Вывода из оборота 
 Отдельный ресурс для управления позициями Вывода из оборота. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
