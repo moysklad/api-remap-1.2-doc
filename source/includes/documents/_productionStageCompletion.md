@@ -7,29 +7,35 @@
 ### Выполнения этапов производства
 #### Атрибуты сущности
 
-| Название                | Тип                                                       | Фильтрация                 | Описание                                                                                                                                                                                          |
-|-------------------------|:----------------------------------------------------------|:---------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**           | UUID                                                      |                            | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                              |
-| **created**             | DateTime                                                  |                            | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                  |
-| **externalCode**        | String(255)                                               |                            | Внешний код Выполнения этапа производства<br>`+Обязательное при ответе`                                                                                                                           |
-| **group**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                          |
-| **id**                  | UUID                                                      |                            | ID Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                               |
-| **labourUnitCost**      | Double                                                    |                            | Оплата труда за единицу объема производства<br>`+Обязательное при ответе`                                                                                                                         |
-| **standardHourUnit**    | Double                                                    |                            | Нормо-часы единицы объема производства<br>`+Обязательное при ответе`                                                                                                                              |
-| **materials**           | MetaArray                                                 |                            | Метаданные Материалов выполнения этапа производства. [Подробнее тут](#dokumenty-vypolnenie-atapa-proizwodstwa-materialy-wypolneniq-atapa-proizwodstwa)<br>`+Expand`                               |
-| **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Метаданные Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                       |
-| **moment**              | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=` | Дата документа<br>`+Обязательное при ответе`                                                                                                                                                      |
-| **name**                | String(255)                                               |                            | Наименование Выполнения этапа производства<br>`+Обязательное при ответе`                                                                                                                          |
-| **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                                 |
-| **performer**           | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Исполнитель (Сотрудник)<br>`+Expand`                                                                                                                                                              |
-| **processingUnitCost**  | Double                                                    |                            | Затраты на единицу объема производства<br>`+Обязательное при ответе`                                                                                                                              |
-| **productionStage**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | [Производственный этап](#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)<br>`+Expand` `+После создания изменить нельзя`                                                                |
-| **productionVolume**    | Double                                                    |                            | Объем производства<br>`+Обязательное при ответе`                                                                                                                                                  |
-| **products**            | MetaArray                                                 |                            | Метаданные Продуктов выполнения этапа производства. Есть только у последнего этапа. [Подробнее тут](#dokumenty-vypolnenie-atapa-proizwodstwa-produkty-wypolneniq-atapa-proizwodstwa)<br>`+Expand` |
-| **shared**              | Boolean                                                   |                            | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                        |
-| **updated**             | DateTime                                                  |                            | Момент последнего обновления Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                     |
+| Название               | Тип                                                        | Фильтрация                 | Описание                                                                                                                                                                                          |
+|------------------------|:-----------------------------------------------------------|:---------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**          | UUID                                                       |                            | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                              |
+| **created**            | DateTime                                                   |                            | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                  |
+| **externalCode**       | String(255)                                                |                            | Внешний код Выполнения этапа производства<br>`+Обязательное при ответе`                                                                                                                           |
+| **group**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  |                            | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                          |
+| **id**                 | UUID                                                       |                            | ID Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                               |
+| **labourUnitCost**     | Double                                                     |                            | Оплата труда за единицу объема производства<br>`+Обязательное при ответе`                                                                                                                         |
+| **standardHourUnit**   | Double                                                     |                            | Нормо-часы единицы объема производства<br>`+Обязательное при ответе`                                                                                                                              |
+| **materials**          | MetaArray                                                  |                            | Метаданные Материалов выполнения этапа производства. [Подробнее тут](#dokumenty-vypolnenie-atapa-proizwodstwa-materialy-wypolneniq-atapa-proizwodstwa)<br>`+Expand`                               |
+| **meta**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  |                            | Метаданные Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                       |
+| **moment**             | DateTime                                                   | `=` `!=` `<` `>` `<=` `>=` | Дата документа<br>`+Обязательное при ответе`                                                                                                                                                      |
+| **name**               | String(255)                                                |                            | Наименование Выполнения этапа производства<br>`+Обязательное при ответе`                                                                                                                          |
+| **owner**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  |                            | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                                 |
+| **performer**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  |                            | Исполнитель  (Сотрудник или Контрагент)<br>`+Expand`                                                                                                                                              |
+| **processingUnitCost** | Double                                                     |                            | Затраты на единицу объема производства<br>`+Обязательное при ответе`                                                                                                                              |
+| **productionStage**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  |                            | [Производственный этап](#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)<br>`+Expand` `+После создания изменить нельзя`                                                                |
+| **productionVolume**   | Double                                                     |                            | Объем производства<br>`+Обязательное при ответе`                                                                                                                                                  |
+| **products**           | MetaArray                                                  |                            | Метаданные Продуктов выполнения этапа производства. Есть только у последнего этапа. [Подробнее тут](#dokumenty-vypolnenie-atapa-proizwodstwa-produkty-wypolneniq-atapa-proizwodstwa)<br>`+Expand` |
+| **service**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  |                            | Услуга, выполняемая контрагентом                                                                                                                                                                  |
+| **shared**             | Boolean                                                    |                            | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                        |
+| **updated**            | DateTime                                                   |                            | Момент последнего обновления Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                     |
 
 Для сущности действуют ограничения на expand: для поля **productionStage.productionRow** недоступен expand вложенных полей.
+
+Для создания Выполнения этапа с контрагентом в качестве исполнителя может быть передана услуга. 
+Иначе будет сохранена та услуга, которая выбрана для данного контрагента в [Этапе производства](../#suschnosti-jetap-proizwodstwa). 
+Контрагент может отсутствовать в списке возможных исполнителей Этапа производства, тогда услугу требуется передать обязательно.
+В случае отсутствия исполнителя или если исполнитель - это сотрудник, то задавать услугу нельзя.
 
 ### Получить список Выполнений этапов производства 
 Запрос Выполнений этапов производства на аккаунте.
@@ -636,6 +642,134 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/metadata",
       "type": "productionstage",
       "mediaType": "application/json"
+    }
+  },
+  "materials": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000136/materials",
+      "type": "productionstagecompletionmaterial",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "products": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000136/products",
+      "type": "productionstagecompletionresult",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "productionVolume": 5,
+  "processingUnitCost": 10.0,
+  "labourUnitCost": 20.0,
+  "standardHourUnit": 30.0
+}
+```
+> Пример создания нового Выполнения этапа, где исполнителем указан контрагент и передана услуга.
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "productionStage": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/3130f7df-660f-11ee-c0a8-100c00000139",
+                "type": "productionstage",
+                "mediaType": "application/json"
+              }
+            },
+            "productionVolume" : 5,
+            "performer": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/c8c0f0de-b6c6-11ef-ac12-00130000009e",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+                    "type": "counterparty",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#company/edit?id=c8c0f0de-b6c6-11ef-ac12-00130000009e"
+                }
+            },
+            "service": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/service/18616ba6-b6c7-11ef-ac12-001300000103",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                    "type": "service",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=18615d1c-b6c7-11ef-ac12-001300000101"
+                }
+            }
+          } 
+'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного Выполнения этапа производства.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/01ff6808-95de-11ee-0a81-072300000136",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/metadata",
+    "type": "productionstagecompletion",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#productionstagecompletion/edit?id=01ff6808-95de-11ee-0a81-072300000136"
+  },
+  "id": "01ff6808-95de-11ee-0a81-072300000136",
+  "accountId": "a67c68a3-95dd-11ee-0a83-071a00000002",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/a7354b1a-95dd-11ee-0a81-07230000004d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/a67ef296-95dd-11ee-0a83-071a00000003",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2023-12-08 18:25:24.325",
+  "name": "00001",
+  "externalCode": "EnuNEmG2jyUF4t9tgPQk72",
+  "moment": "2023-12-08 18:25:00.000",
+  "created": "2023-12-08 18:25:24.386",
+  "performer": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/c8c0f0de-b6c6-11ef-ac12-00130000009e",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json",
+      "uuidHref": "https://api.moysklad.ru/app/#company/edit?id=c8c0f0de-b6c6-11ef-ac12-00130000009e"
+    }
+  },
+  "productionStage": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/3130f7df-660f-11ee-c0a8-100c00000139",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/productionstage/metadata",
+      "type": "productionstage",
+      "mediaType": "application/json"
+    }
+  },
+  "service": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/service/18616ba6-b6c7-11ef-ac12-001300000103",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "service",
+      "mediaType": "application/json",
+      "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=18615d1c-b6c7-11ef-ac12-001300000101"
     }
   },
   "materials": {
