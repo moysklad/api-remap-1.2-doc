@@ -31,6 +31,8 @@
 ### 21-11-2024
 #### Добавлен
 - Документ [Заказ кодов маркировки](../documents/#dokumenty-zakaz-kodow-markirowki)
+- Ошибка [57000](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-markirowki)
+- Ошибки [57100-57108](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-zakaza-kodow-markirowki)
 
 ### 19-11-2024
 #### Добавлено
