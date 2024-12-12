@@ -45,6 +45,7 @@ includes:
   - documents/retaildemand
   - documents/retailshift
   - documents/retail_sales_return
+  - documents/retireorder
   - documents/loss
   - documents/invoice_out
   - documents/invoice_in
