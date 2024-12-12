@@ -29,4 +29,4 @@ jobs:
                   }
                 ]
               }' \
-          "https://mm.lognex.ru/hooks/xizmcdfyx7fn7qhn6efywhae6c"
+          "$WEBHOOK_URL"
