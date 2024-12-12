@@ -14,7 +14,7 @@
 | **documentState** | Enum                                                      | Способ ввода в оборот. [Подробнее тут](../documents/#dokumenty-zakaz-kodow-markirowki-zakaz-kodow-markirowki-sposob-wwoda-w-oborot) `+Только для чтения`                           |
 | **emissionType**  | Enum                                                      | Состояние документов маркировки. [Подробнее тут](../documents/#dokumenty-zakaz-kodow-markirowki-zakaz-kodow-markirowki-sostoqnie-dokumentow-markirowki) `+Обязательное при ответе` |
 | **externalCode**  | String(255)                                               | Внешний код Заказа кодов маркировки<br>`+Обязательное при ответе`                                                                                                                  |
-| **group**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                           |
+| **group**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                         К                                                                                                 |
 | **id**            | UUID                                                      | ID Заказа кодов маркировки<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                      |
 | **meta**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Заказа кодов маркировки<br>`+Обязательное при ответе` `+Только для чтения`                                                                                              |
 | **moment**        | DateTime                                                  | Дата документа<br>`+Обязательное при ответе`                                                                                                                                       |
@@ -69,7 +69,6 @@
 | **FOREIGN**     | Ввезен в РФ                            |
 | **REMAINS**     | Маркировка остатков                    |
 | **CROSSBORDER** | Ввезен из стран ЕАЭС                   |
-| **REMARK**      | Перемаркировка                         |
 | **COMMISSION**  | Принят на комиссию от физического лица |
 
 #### Состояние документов маркировки
@@ -329,14 +328,6 @@ curl -X GET
   "updated": "2024-11-19 15:39:27.860",
   "name": "00001",
   "externalCode": "RIahRnZIjek-CeER27IjF0",
-  "state": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata/states/4f75f276-a673-11ef-ac12-000d00000002",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata",
-      "type": "state",
-      "mediaType": "application/json"
-    }
-  },
   "printed": false,
   "published": false,
   "created": "2024-11-19 15:17:10.711",
@@ -532,8 +523,8 @@ curl -X GET
                 "quantity": 30,
                 "assortment": {
                   "meta": {
-                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/service/c02e3a5c-007e-11e6-9464-e4de00000006",
-                    "type": "service",
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/c02e3a5c-007e-11e6-9464-e4de00000006",
+                    "type": "product",
                     "mediaType": "application/json"
                   }
                 }
