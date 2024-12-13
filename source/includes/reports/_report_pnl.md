@@ -46,7 +46,7 @@
 | **productFolder**  | Object      | `=` `!=`   | параметр для фильтрации по нескольким группам товаров. Значение параметра - ссылка на группу товаров, которая должна быть включена в выборку или исключена из нее. Можно передать несколько значений.                                                                                     |
 | **withSubFolders** | Boolean     | `=`        | параметр учета вложенных подгрупп. Работает только при наличии фильтра по `productFolder`. По умолчанию `true`, выводятся товары из дочерних подгрупп фильтруемой группы / групп товаров. При передаче `false` выводятся только товары из фильтруемой группы / групп, без учета подгрупп. |
 | **agentTag**       | String(255) | `=`        | строка с названием группы контрагентов, по которой нужно произвести фильтрацию.                                                                                                                                                                                                           |
-| **entityType**     | String(255) | `=`        | параметр для фильтрации по типу документа. Значение параметра: `Demand` - отгрузка, `RetailDemand` - продажа.                                                                                                                                                                             |
+| **entityType**     | String(255) | `=`        | параметр для фильтрации по типу документа. Перечень всех допустимых значений параметра: `demand` - отгрузка, `retaildemand` - продажа.                                                                                                                                                    |
 | **counterparty**   | Object      | `=`        | ссылка на контрагента, по которому нужно произвести фильтрацию.                                                                                                                                                                                                                           |
 | **organization**   | Object      | `=`        | ссылка на юрлицо, по которому нужно произвести фильтрацию.                                                                                                                                                                                                                                |
 | **store**          | Object      | `=`        | ссылка на склад, по которому нужно произвести фильтрацию.                                                                                                                                                                                                                                 |
@@ -72,7 +72,7 @@
 - `filter=project=https://api.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
 - `filter=retailStore=https://api.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
 - `filter=agentTag=favorites`
-- `filter=entityType=Demand`
+- `filter=entityType=demand`
 - `filter=supplier=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
 - `filter=salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
 - `filter=salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9;salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/ea012b09-4df3-439b-acf7-7d0464fbf603`
@@ -277,7 +277,7 @@ curl -X GET
 | **productFolder**  | Object      | `=` `!=`   | параметр для фильтрации по нескольким группам товаров. Значение параметра - ссылка на группу товаров, которая должна быть включена в выборку или исключена из нее. Можно передать несколько значений.                                                                                     |
 | **withSubFolders** | Boolean     | `=`        | параметр учета вложенных подгрупп. Работает только при наличии фильтра по `productFolder`. По умолчанию `true`, выводятся товары из дочерних подгрупп фильтруемой группы / групп товаров. При передаче `false` выводятся только товары из фильтруемой группы / групп, без учета подгрупп. |
 | **agentTag**       | String(255) | `=`        | строка с названием группы контрагентов, по которой нужно произвести фильтрацию.                                                                                                                                                                                                           |
-| **entityType**     | String(255) | `=`        | параметр для фильтрации по типу документа. Значение параметра: `Demand` - отгрузка, `RetailDemand` - продажа.                                                                                                                                                                             |
+| **entityType**     | String(255) | `=`        | параметр для фильтрации по типу документа. Перечень всех допустимых значений параметра: `demand` - отгрузка, `retaildemand` - продажа.                                                                                                                                                    |
 | **counterparty**   | Object      | `=`        | ссылка на контрагента, по которому нужно произвести фильтрацию.                                                                                                                                                                                                                           |
 | **organization**   | Object      | `=`        | ссылка на юрлицо, по которому нужно произвести фильтрацию.                                                                                                                                                                                                                                |
 | **store**          | Object      | `=`        | ссылка на склад, по которому нужно произвести фильтрацию.                                                                                                                                                                                                                                 |
@@ -303,7 +303,7 @@ curl -X GET
 - `filter=project=https://api.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
 - `filter=retailStore=https://api.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
 - `filter=agentTag=favorites`
-- `filter=entityType=Demand`
+- `filter=entityType=demand`
 - `filter=supplier=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
 - `filter=salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
 - `filter=salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9;salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/ea012b09-4df3-439b-acf7-7d0464fbf603`
@@ -503,7 +503,7 @@ curl -X GET
 | **productFolder**  | Object      | `=` `!=`   | параметр для фильтрации по нескольким группам товаров. Значение параметра - ссылка на группу товаров, которая должна быть включена в выборку или исключена из нее. Можно передать несколько значений.                                                                                     |
 | **withSubFolders** | Boolean     | `=`        | параметр учета вложенных подгрупп. Работает только при наличии фильтра по `productFolder`. По умолчанию `true`, выводятся товары из дочерних подгрупп фильтруемой группы / групп товаров. При передаче `false` выводятся только товары из фильтруемой группы / групп, без учета подгрупп. |
 | **agentTag**       | String(255) | `=`        | строка с названием группы контрагентов, по которой нужно произвести фильтрацию.                                                                                                                                                                                                           |
-| **entityType**     | String(255) | `=`        | параметр для фильтрации по типу документа. Значение параметра: `Demand` - отгрузка, `RetailDemand` - продажа.                                                                                                                                                                             |
+| **entityType**     | String(255) | `=`        | параметр для фильтрации по типу документа. Перечень всех допустимых значений параметра: `demand` - отгрузка, `retaildemand` - продажа.                                                                                                                                                    |
 | **counterparty**   | Object      | `=`        | ссылка на контрагента, по которому нужно произвести фильтрацию.                                                                                                                                                                                                                           |
 | **organization**   | Object      | `=`        | ссылка на юрлицо, по которому нужно произвести фильтрацию.                                                                                                                                                                                                                                |
 | **store**          | Object      | `=`        | ссылка на склад, по которому нужно произвести фильтрацию.                                                                                                                                                                                                                                 |
@@ -529,7 +529,7 @@ curl -X GET
 - `filter=project=https://api.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
 - `filter=retailStore=https://api.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
 - `filter=agentTag=favorites`
-- `filter=entityType=Demand`
+- `filter=entityType=demand`
 - `filter=supplier=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
 - `filter=salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
 - `filter=salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9;salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/ea012b09-4df3-439b-acf7-7d0464fbf603`
@@ -645,7 +645,7 @@ curl -X GET
 | **productFolder**  | Object      | `=` `!=`   | параметр для фильтрации по нескольким группам товаров. Значение параметра - ссылка на группу товаров, которая должна быть включена в выборку или исключена из нее. Можно передать несколько значений.                                                                                     |
 | **withSubFolders** | Boolean     | `=`        | параметр учета вложенных подгрупп. Работает только при наличии фильтра по `productFolder`. По умолчанию `true`, выводятся товары из дочерних подгрупп фильтруемой группы / групп товаров. При передаче `false` выводятся только товары из фильтруемой группы / групп, без учета подгрупп. |
 | **agentTag**       | String(255) | `=`        | строка с названием группы контрагентов, по которой нужно произвести фильтрацию.                                                                                                                                                                                                           |
-| **entityType**     | String(255) | `=`        | параметр для фильтрации по типу документа. Значение параметра: `Demand` - отгрузка, `RetailDemand` - продажа.                                                                                                                                                                             |
+| **entityType**     | String(255) | `=`        | параметр для фильтрации по типу документа. Перечень всех допустимых значений параметра: `demand` - отгрузка, `retaildemand` - продажа.                                                                                                                                                    |
 | **counterparty**   | Object      | `=`        | ссылка на контрагента, по которому нужно произвести фильтрацию.                                                                                                                                                                                                                           |
 | **organization**   | Object      | `=`        | ссылка на юрлицо, по которому нужно произвести фильтрацию.                                                                                                                                                                                                                                |
 | **store**          | Object      | `=`        | ссылка на склад, по которому нужно произвести фильтрацию.                                                                                                                                                                                                                                 |
@@ -671,7 +671,7 @@ curl -X GET
 - `filter=project=https://api.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
 - `filter=retailStore=https://api.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
 - `filter=agentTag=favorites`
-- `filter=entityType=Demand`
+- `filter=entityType=demand`
 - `filter=supplier=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
 - `filter=salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
 - `filter=salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9;salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/ea012b09-4df3-439b-acf7-7d0464fbf603`
@@ -789,7 +789,7 @@ curl -X GET
 | **productFolder**  | Object      | `=` `!=`   | параметр для фильтрации по нескольким группам товаров. Значение параметра - ссылка на группу товаров, которая должна быть включена в выборку или исключена из нее. Можно передать несколько значений.                                                                                     |
 | **withSubFolders** | Boolean     | `=`        | параметр учета вложенных подгрупп. Работает только при наличии фильтра по `productFolder`. По умолчанию `true`, выводятся товары из дочерних подгрупп фильтруемой группы / групп товаров. При передаче `false` выводятся только товары из фильтруемой группы / групп, без учета подгрупп. |
 | **agentTag**       | String(255) | `=`        | строка с названием группы контрагентов, по которой нужно произвести фильтрацию.                                                                                                                                                                                                           |
-| **entityType**     | String(255) | `=`        | параметр для фильтрации по типу документа. Значение параметра: `Demand` - отгрузка, `RetailDemand` - продажа.                                                                                                                                                                             |
+| **entityType**     | String(255) | `=`        | параметр для фильтрации по типу документа. Перечень всех допустимых значений параметра: `demand` - отгрузка, `retaildemand` - продажа.                                                                                                                                                    |
 | **counterparty**   | Object      | `=`        | ссылка на контрагента, по которому нужно произвести фильтрацию.                                                                                                                                                                                                                           |
 | **organization**   | Object      | `=`        | ссылка на юрлицо, по которому нужно произвести фильтрацию.                                                                                                                                                                                                                                |
 | **store**          | Object      | `=`        | ссылка на склад, по которому нужно произвести фильтрацию.                                                                                                                                                                                                                                 |
@@ -813,7 +813,7 @@ curl -X GET
 - `filter=store=https://api.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321`
 - `filter=project=https://api.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
 - `filter=agentTag=favorites`
-- `filter=entityType=Demand`
+- `filter=entityType=demand`
 - `filter=supplier=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
 - `filter=salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
 - `filter=salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9;salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/ea012b09-4df3-439b-acf7-7d0464fbf603`
