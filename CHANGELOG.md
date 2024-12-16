@@ -3,7 +3,7 @@
 
 ### 12-12-2024
 #### Добавлено
-- Новые типы маркированной продукции `BICYCLE` для велосипедов, `NABEER` для безалкогольного пива, `SEAFOOD` для икры и морепродуктов, `VETPHARMA` для ветеринарных препаратов для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
+- Новые типы маркированной продукции `BICYCLE` для велосипедов, `NABEER` для безалкогольного пива, `SEAFOOD` для икры и морепродуктов, `VETPHARMA` для ветеринарных препаратов для [Товара](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary) и [Комплекта](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt-komplekty)
 
 ### 02-12-2024
 #### Добавлено
