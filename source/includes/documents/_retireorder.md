@@ -138,6 +138,9 @@
 восприниматься как "все позиции Вывода из оборота" и полностью заменит уже существующую коллекцию при обновлении объекта - лишние
 позиции будут удалены, новые добавлены, существующие - изменены.
 
+#### Тарифные ограничения
+Для создания/изменения Вывода из оборота необходима тарифная опция Маркировка для аккаунтов из RU региона и расширение Честный Знак для остальных регионов.
+
 ### Получить Выводы из оборота 
 Запрос всех Выводов из оборота на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
@@ -459,8 +462,6 @@ curl -X GET
 + **retireOrderType** - Способ вывода из оборота [Подробнее тут](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-sposob-wywoda-iz-oborota)
 + **trackingType** - Тип маркируемой продукции [Подробнее тут](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii)
 
-#### Тарифные ограничения
-Для создания вывода из оборота необходима тарифная опция Маркировка.
 
 #### Особенности поведения при создании Вывода из оборота
 Связь допустимых значений поля **supportingTransaction** в зависимости от **retireOrderType**
@@ -1181,9 +1182,6 @@ curl -X GET
 В теле запроса можно указать только те поля, которые необходимо изменить у Вывода из оборота, кроме тех, что
 помечены `Только для чтения` в описании [атрибутов Вывода из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota).
 
-#### Тарифные ограничения
-Для обновления вывода из оборота необходима тарифная опция Маркировка.
-
 #### Особенности поведения при изменении Вывода из оборота
 Изменение Вывода из оборота доступно только для документов со статусом **documentState** = **CREATED**
 
@@ -1468,4 +1466,208 @@ curl -X GET
   ]
 }
 ```
+
+### Создать позицию
+Запрос на создание новой позиции в Выводе из оборота.
+Для успешного создания необходимо в теле запроса указать следующие поля:
+
++ **assortment** - Ссылка на товар/серию/модификацию, которую представляет собой позиция.
++ **trackingCodes** - Коды маркировки товара/серии/модификации из assortment.
+
+**Параметры**
+
+| Параметр | Описание                                                                                  |
+| :------- |:------------------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Вывода из оборота. |
+
+> Пример создания позиций в Выводе из оборота.
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '   {
+                "assortment": {
+                  "meta": {
+                    "href": "http://api.moysklad.ru/api/remap/1.2/entity/product/d1c96f39-a8bd-11ef-ac15-000400000006",
+                    "metadataHref": "http://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                    "type": "product",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=d1c84ff7-a8bd-11ef-ac15-000400000004"
+                  }
+                },
+                "trackingCodes": [
+                  {
+                    "cis": "010465011724001921yM1QsEStTWZfG2406402",
+                    "type": "trackingcode"
+                  }
+                ]
+            }
+'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной позиции Вывода из оборота.
+
+```json
+{
+  "meta": {
+    "href": "http://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions/d3040339-a8bd-11ef-ac15-000400000059",
+    "type": "retireorderposition",
+    "mediaType": "application/json"
+  },
+  "id": "d3040339-a8bd-11ef-ac15-000400000059",
+  "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
+  "quantity": 1.0,
+  "price": 50000.0,
+  "vat": 20,
+  "vatEnabled": true,
+  "assortment": {
+    "meta": {
+      "href": "http://api.moysklad.ru/api/remap/1.2/entity/product/d1c96f39-a8bd-11ef-ac15-000400000006",
+      "metadataHref": "http://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=d1c84ff7-a8bd-11ef-ac15-000400000004"
+    }
+  },
+  "trackingCodes": [
+    {
+      "cis": "010465011724001921yM1QsEStTWZfG2406402",
+      "type": "trackingcode"
+    }
+  ]
+}
+```
+
+### Изменить позицию
+Запрос на обновление отдельной позиции Вывода из оборота. Для обновления позиции нет каких-либо
+обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
+
+**Параметры**
+
+| Параметр       | Описание                                                                                  |
+| :------------- |:------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Вывода из оборота. |
+| **positionID** | `string` (required) *Example: d3040339-a8bd-11ef-ac15-000400000059* id позиции.           |
+
+> Пример запроса на обновление отдельной позиции в Вывода из оборота.
+
+```shell
+  curl -X PUT
+    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions/d3040339-a8bd-11ef-ac15-000400000059"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "trackingCodes": [
+              {
+                "cis": "010465011724001921yM1QsEStTWZfG2406402",
+                "type": "trackingcode"
+              },
+              {
+                "cis": "110465011724001921yM1QsEStTWZfG2406402",
+                "type": "trackingcode"
+              }
+            ]
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленной позиции Вывода из оборота.
+
+```json
+{
+  "meta": {
+    "href": "http://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions/d3040339-a8bd-11ef-ac15-000400000059",
+    "type": "retireorderposition",
+    "mediaType": "application/json"
+  },
+  "id": "d3040339-a8bd-11ef-ac15-000400000059",
+  "accountId": "dbb8cfc1-cbfa-11e1-6dfb-889ffa6f49fd",
+  "quantity": 1.0,
+  "price": 50000.0,
+  "vat": 20,
+  "vatEnabled": true,
+  "assortment": {
+    "meta": {
+      "href": "http://api.moysklad.ru/api/remap/1.2/entity/product/d1c96f39-a8bd-11ef-ac15-000400000006",
+      "metadataHref": "http://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=d1c84ff7-a8bd-11ef-ac15-000400000004"
+    }
+  },
+  "trackingCodes": [
+    {
+      "cis": "010465011724001921yM1QsEStTWZfG2406402",
+      "type": "trackingcode"
+    },
+    {
+      "cis": "110465011724001921yM1QsEStTWZfG2406402",
+      "type": "trackingcode"
+    }
+  ]
+}
+```
+
+### Удалить позицию
+
+**Параметры**
+
+| Параметр       | Описание                                                                                  |
+| :------------- |:------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Вывода из оборота. |
+| **positionID** | `string` (required) *Example: d3040339-a8bd-11ef-ac15-000400000059* id позиции.           |
+
+> Запрос на удаление отдельной позиции Вывода из оборота с указанным id.
+
+```shell
+curl -X DELETE
+  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions/d3040339-a8bd-11ef-ac15-000400000059"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешное удаление позиции Вывода из оборота.
+
+### Массовое удаление позиций
+
+**Параметры**
+
+| Параметр       | Описание                                                                                  |
+| :------------- |:------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Вывода из оборота. |
+
+> Запрос на массовое удаление позиций Вывода из оборота.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "retireorderposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "retireorderposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций Вывода из оборота. 
 
