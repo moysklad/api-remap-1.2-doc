@@ -1491,8 +1491,8 @@ curl -X GET
       -d '   {
                 "assortment": {
                   "meta": {
-                    "href": "http://api.moysklad.ru/api/remap/1.2/entity/product/d1c96f39-a8bd-11ef-ac15-000400000006",
-                    "metadataHref": "http://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/d1c96f39-a8bd-11ef-ac15-000400000006",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
                     "type": "product",
                     "mediaType": "application/json",
                     "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=d1c84ff7-a8bd-11ef-ac15-000400000004"
@@ -1514,7 +1514,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "http://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions/d3040339-a8bd-11ef-ac15-000400000059",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions/d3040339-a8bd-11ef-ac15-000400000059",
     "type": "retireorderposition",
     "mediaType": "application/json"
   },
@@ -1526,8 +1526,8 @@ curl -X GET
   "vatEnabled": true,
   "assortment": {
     "meta": {
-      "href": "http://api.moysklad.ru/api/remap/1.2/entity/product/d1c96f39-a8bd-11ef-ac15-000400000006",
-      "metadataHref": "http://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/d1c96f39-a8bd-11ef-ac15-000400000006",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
       "type": "product",
       "mediaType": "application/json",
       "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=d1c84ff7-a8bd-11ef-ac15-000400000004"
@@ -1581,7 +1581,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "http://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions/d3040339-a8bd-11ef-ac15-000400000059",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions/d3040339-a8bd-11ef-ac15-000400000059",
     "type": "retireorderposition",
     "mediaType": "application/json"
   },
@@ -1593,8 +1593,8 @@ curl -X GET
   "vatEnabled": true,
   "assortment": {
     "meta": {
-      "href": "http://api.moysklad.ru/api/remap/1.2/entity/product/d1c96f39-a8bd-11ef-ac15-000400000006",
-      "metadataHref": "http://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/d1c96f39-a8bd-11ef-ac15-000400000006",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
       "type": "product",
       "mediaType": "application/json",
       "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=d1c84ff7-a8bd-11ef-ac15-000400000004"
