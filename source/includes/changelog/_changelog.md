@@ -19,7 +19,7 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 25-11-2024
+### 18-12-2024
 #### Добавлено
 - Ошибки [25063, 25064](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart)
 - Ошибка [26114](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq)
