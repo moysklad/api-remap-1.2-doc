@@ -14,7 +14,7 @@ jobs:
     steps:
     - name: Отправка уведомления в Mattermost
       env:
-        MM_WEBHOOK_URL: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
+        MATTERMOST_WEBHOOK_URL: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
       run: |
         MESSAGE="📢 Новое событие по задаче:
         - Событие: ${{ github.event.action }}
