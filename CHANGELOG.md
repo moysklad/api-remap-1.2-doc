@@ -1,9 +1,13 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 05-12-2024
+### 19-12-2024
 #### Добавлено
 - поля `files`, `instruction`в [Производственные этапы](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+
+### 17-12-2024
+#### Добавлен
+- Параметр фильтрации `entityType` в [Отчетах Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
 
 ### 02-12-2024
 #### Добавлено
