@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 19-12-2024
+#### Добавлено
+- поля `files`, `instruction`в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+
 ### 17-12-2024
 #### Добавлен
 - Параметр фильтрации `entityType` в [Отчетах Прибыльность](../reports/#otchety-otchet-pribyl-nost)
