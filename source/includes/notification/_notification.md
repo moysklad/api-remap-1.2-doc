@@ -2150,8 +2150,157 @@ curl -X GET
 }
 ```
 
-
 ## Настройки уведомлений
+### Атрибуты сущности
+Подписка на уведомления по группам
+  + Josn-ключ - Код группы уведомлений
+  + Json-значение - Объект типа "Настройки уведомлений для группы"
+    + **enabled**: (boolean, required) - Признак "активна" для подписки на уведомления данной группы
+    + **channelsEnabled**: (required) - Настройки доставки уведомлений через отдельные каналы доставки. 
+        + Json-ключ - Код канала доставки
+        + Json-значение (boolean, required) - Признак "активна" для доставки уведомлений данной группы по данному каналу доставки  
+
+  
+Значения кода группы уведомлений.
+
+| Код группы уведомлений | Описание               |
+|------------------------|------------------------|
+| **customerOrder**      | Заказы покупателей     |
+| **dataExchange**       | Обмен данными          |
+| **invoice**            | Счета покупателей      |
+| **retail**             | Розничная торговля     |
+| **scripts**            | Сценарии               |
+| **stock**              | Складские остатки      |
+| **task**               | Задачи                 |
+| **mentions**           | Упоминания сотрудников |
+| **onlineStores**       | Интернет-магазины      |
+
+Значения кода канала доставки.
+
+| Код группы уведомлений | Описание                              |
+|------------------------|---------------------------------------|
+| **email**              | Уведомления по элктронной почте       |
+| **push**               | Уведомления в мобильном приложении    |
+| **interface**          | Уведомления в веб-интерфейсе МойСклад |
+
+
+### Получить настройки уведомлений
+Запрос настроек Уведомлений текущего пользователя.
+
+> Запрос настроек Уведомлений текущего пользователя.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/notification/subscription"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. JSON представление настроек уведомлений.
+
+```json
+{
+  "groups" : {
+    "customer_order" : {
+      "enabled" : true,
+      "channels" : [ "email", "push" ]
+    },
+    "invoice" : {
+      "enabled" : true,
+      "channels" : [ "email", "push" ]
+    },
+    "stock" : {
+      "enabled" : true,
+      "channels" : [ "email", "push" ]
+    },
+    "retail" : {
+      "enabled" : true,
+      "channels" : [ "email", "push" ]
+    },
+    "task" : {
+      "enabled" : true,
+      "channels" : [ "email", "push" ]
+    },
+    "data_exchange" : {
+      "enabled" : true,
+      "channels" : [ "email", "push" ]
+    },
+    "scripts" : {
+      "enabled" : true,
+      "channels" : [ "email", "push" ]
+    },
+    "online_stores" : {
+      "enabled" : true,
+      "channels" : [ "email", "push" ]
+    },
+    "mentions" : {
+      "enabled" : true,
+      "channels" : [ "email", "push" ]
+    }
+  }
+}
+```
+
+### Изменить настройки уведомлений
+Изменение настроек Уведомлений текущего пользователя.
+
+Отключение уведомлений из сценариев недопустимо. Параметр **enabled** игнорируется.
+
+> Изменение настроек Уведомлений текущего пользователя.
+
+```shell
+  curl -X PUT
+    "https://api.moysklad.ru/api/remap/1.2/notification/subscription"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "groups" : {
+              "customer_order" : {
+                "enabled" : true,
+                "channels" : [ "email", "push" ]
+              },
+              "invoice" : {
+                "enabled" : true,
+                "channels" : [ "email", "push" ]
+              },
+              "stock" : {
+                "enabled" : true,
+                "channels" : [ "email", "push" ]
+              },
+              "retail" : {
+                "enabled" : true,
+                "channels" : [ "email", "push" ]
+              },
+              "task" : {
+                "enabled" : true,
+                "channels" : [ "email", "push" ]
+              },
+              "data_exchange" : {
+                "enabled" : true,
+                "channels" : [ "email", "push" ]
+              },
+              "scripts" : {
+                "enabled" : true,
+                "channels" : [ "email", "push" ]
+              },
+              "online_stores" : {
+                "enabled" : true,
+                "channels" : [ "email", "push" ]
+              },
+              "mentions" : {
+                "enabled" : true,
+                "channels" : [ "email", "push" ]
+              }
+            }
+          }'
+```
+
+> Response 200 (application/json)
+Успешное изменение настроек уведомлений.
+
+## Настройки уведомлений (устаревший интерфейс)
 ### Атрибуты сущности
 + **groups** - Подписка на уведомления по группам
   + ``groupName`` - Код группы уведомлений
