@@ -2154,9 +2154,9 @@ curl -X GET
 ### Атрибуты сущности
 Подписка на уведомления по группам
   + Josn-ключ - Код группы уведомлений
-  + Json-значение - Объект типа "Настройки уведомлений для группы"
+  + Json-значение - Объект со следующими полями:
     + **enabled**: (boolean, required) - Признак "активна" для подписки на уведомления данной группы
-    + **channelsEnabled**: (required) - Настройки доставки уведомлений через отдельные каналы доставки. 
+    + **channelsEnabled**: (required) - Настройки доставки уведомлений данной группы через отдельные каналы доставки. 
         + Json-ключ - Код канала доставки
         + Json-значение (boolean, required) - Признак "активна" для доставки уведомлений данной группы по данному каналу доставки  
 
@@ -2180,7 +2180,7 @@ curl -X GET
 | Код группы уведомлений | Описание                              |
 |------------------------|---------------------------------------|
 | **email**              | Уведомления по элктронной почте       |
-| **push**               | Уведомления в мобильном приложении    |
+| **push**               | Пуш-уведомления мобильного приложения |
 | **interface**          | Уведомления в веб-интерфейсе МойСклад |
 
 
@@ -2191,7 +2191,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/subscription"
+  "https://api.moysklad.ru/api/remap/1.2/notification/settings"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
@@ -2201,42 +2201,76 @@ curl -X GET
 
 ```json
 {
-  "groups" : {
-    "customer_order" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "invoice" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "stock" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "retail" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "task" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "data_exchange" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "scripts" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "online_stores" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "mentions" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
+  "customerOrder" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "dataExchange" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "invoice" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "retail" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "scripts" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "stock" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "task" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "mentions" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "onlineStores" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
     }
   }
 }
@@ -2245,53 +2279,90 @@ curl -X GET
 ### Изменить настройки уведомлений
 Изменение настроек Уведомлений текущего пользователя.
 
-Отключение уведомлений из сценариев недопустимо. Параметр **enabled** игнорируется.
+Отключение уведомлений групп "Сценарии" и "Интернет-магазины" недопустимо. Параметр **enabled** игнорируется.
+
+Если не переданы настройки для какой-либо группы, настройки этой группы остаются неизменными. Если не передано значение
+флага активности для какой-либо группы либо какого-либо канала доставки, настройки для этой группы или этого канала не меняются.
 
 > Изменение настроек Уведомлений текущего пользователя.
 
 ```shell
   curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/notification/subscription"
+    "https://api.moysklad.ru/api/remap/1.2/notification/settings"
     -H "Authorization: Basic <Credentials>"
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
-            "groups" : {
-              "customer_order" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "invoice" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "stock" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "retail" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "task" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "data_exchange" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "scripts" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "online_stores" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "mentions" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
+            "customerOrder" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "dataExchange" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "invoice" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "retail" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "scripts" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "stock" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "task" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "mentions" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "onlineStores" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
               }
             }
           }'
