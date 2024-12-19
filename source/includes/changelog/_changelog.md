@@ -21,7 +21,7 @@
 
 ### 18-12-2024
 #### Добавлено
-- Ошибки [25063, 25064](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart)
+- Ошибка [25063](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart)
 - Ошибка [26114](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq)
 - Ошибка [26209](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-vypolnenij-atapow-proizwodstwa)
 - Поле `standardHourCost` в [Этап производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Стоимость нормо-часа
