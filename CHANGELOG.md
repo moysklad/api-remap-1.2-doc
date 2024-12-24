@@ -1,6 +1,19 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 17-12-2024
+#### Добавлен
+- Параметр фильтрации `entityType` в [Отчетах Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
+
+### 02-12-2024
+#### Добавлено
+- Вывод дополнительных полей в элементы [Пользовательских справочников](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik)
+- Вывод метаданных дополнительных полей в метаданные пользовательских справочников
+- Поле `ID` в метаданные пользовательского справочника
+
+#### Изменено
+- Актуализирована документация по [Пользовательским справочникам](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik)
+
 ### 19-11-2024
 #### Добавлено
 - Поле `salesMargin` в [Отчет Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
