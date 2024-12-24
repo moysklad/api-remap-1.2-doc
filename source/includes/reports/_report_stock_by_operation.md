@@ -83,7 +83,7 @@ curl -X GET
     {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/34efe2ee-015e-11e6-9464-e4de0000006b",
-        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerOrder/metadata",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
         "type": "customerorder",
         "mediaType": "application/json"
       },

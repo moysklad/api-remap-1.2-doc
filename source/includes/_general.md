@@ -1182,7 +1182,7 @@ curl -X POST
 
 Пример ссылки:
 
-+ `https://api.moysklad.ru/api/remap/1.2/entity/<type>/&lt;id>`
++ `https://api.moysklad.ru/api/remap/1.2/entity/&lt;type>/&lt;id>`
 
 Вот несколько примеров:
 
@@ -1224,7 +1224,7 @@ curl -X POST
 
 Например:
 
-+ `filter=productid=94975104-3cad-11e8-1e44-bd4d00000084`
++ `filter=id=94975104-3cad-11e8-1e44-bd4d00000084`
 
 #### Фильтрация по дополнительным полям
 
@@ -1270,7 +1270,7 @@ state.name Параметр строкового типа. В отфильтро
 
 Пример запроса с использованием фильтра state.name:
 
-`https://api.moysklad.ru/api/remap/1.2/entity/customerOrder?filter=state.name=Новый;state.name=Принят`
+`https://api.moysklad.ru/api/remap/1.2/entity/customerorder?filter=state.name=Новый;state.name=Принят`
 
 Фильтр filter=assortment=<href сущности> позволяет фильтровать документы по наличию позиций с указанными сущностями ассортимента.
 assortment - параметр, принимающий href ассортимента или группы товаров. Допустимые типы сущностей: Товар, Услуга, Модификация, Комплект, Группа товаров. 
