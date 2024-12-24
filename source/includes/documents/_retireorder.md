@@ -45,17 +45,17 @@
 
 #### Статусы процесса вывода кодов маркировки из оборота
 
-Значения поля documentState. Статус IN_PROGRESS, WAIT_FOR_CONTINUATION, CHECKED_OK, CHECKED_NOT_OK, PROCESSING_ERROR берутся из Честного Знака. 
+Значения поля documentState. Статус IN_PROGRESS, WAIT_FOR_CONTINUATION, CHECKED_OK, CHECKED_NOT_OK, PROCESSING_ERROR берутся из Честного знака. 
 
 | Значение                  | Описание                                                |
 |---------------------------|:--------------------------------------------------------|
-| **CREATED**               | Вывод из оборота создан, но не отправлен в Честный Знак |
-| **SEND**                  | Запрос на вывод из оборота отправлен в Честный Знак     |
+| **CREATED**               | Вывод из оборота создан, но не отправлен в Честный знак |
+| **SEND**                  | Запрос на вывод из оборота отправлен в Честный знак     |
 | **IN_PROGRESS**           | Проверяется                                             |
 | **WAIT_FOR_CONTINUATION** | Проверяется                                             |
 | **CHECKED_OK**            | Обработан Честным знаком                                |
 | **CHECKED_NOT_OK**        | Обработан Честным знаком с ошибками                     |
-| **PROCESSING_ERROR**      | Техническая ошибка на стороне Честного Знака            |
+| **PROCESSING_ERROR**      | Техническая ошибка на стороне Честного знака            |
 | **UNDEFINED**             | Состояние не определяется                               |
 
 #### Тип маркируемой продукции
@@ -139,7 +139,7 @@
 позиции будут удалены, новые добавлены, существующие - изменены.
 
 #### Тарифные ограничения
-Для создания/изменения Вывода из оборота необходима тарифная опция Маркировка для аккаунтов из RU региона и расширение Честный Знак для остальных регионов.
+Для создания/изменения Вывода из оборота необходима тарифная опция Маркировка для аккаунтов из RU региона и расширение Честный знак для остальных регионов.
 
 ### Получить Выводы из оборота 
 Запрос всех Выводов из оборота на данной учетной записи.
@@ -467,6 +467,14 @@ curl -X GET
 
 
 #### Особенности поведения при создании Вывода из оборота
+Связь допустимых значений поля **trackingType** в зависимости от **retireOrderType**
+
+| **trackingType**                                                | **retireOrderType**                                                                                                                                                                                                      |
+|-----------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **SHOES, LP_CLOTHES, LP_LINENS, PERFUMERY, ELECTRONICS, TIRES** | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, RETURN_TO_INDIVIDUAL                         |
+| **MILK**                                                        | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, PRODUCTION_USE, EXPIRATION, VENDING, PACKING |
+| **FOOD_SUPPLEMENT, SANITIZER, MEDICAL_DEVICES**                 | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT                                               |
+
 Связь допустимых значений поля **supportingTransaction** в зависимости от **retireOrderType**
 
 | **retireOrderType**      | **supportingTransaction**                              |
@@ -488,26 +496,15 @@ curl -X GET
 | **VENDING**              | OTHER                                                  |
 
 Способ вывода из оборота **retireOrderType**:
-
-- Если выбран любой из перечисленных в таблице выше, поля **supportingTransaction**, **supportingTransactionDate** и **supportingTransactionNumber** являются обязательными.
-- Если выбран **STATE_CONTRACT**, то поле **stateContractId** является обязательным.
-- Если выбран **EXPORT_INSIDE_EEU**, то поле **destinationCountry** является обязательным и допускаются значения: Армения, Беларусь, Казахстан, Киргизия.
+- Если выбрано любое значение из перечисленных в таблице выше, поля **supportingTransaction**, **supportingTransactionDate** и **supportingTransactionNumber** являются обязательными.
+- Если выбрано значение **STATE_CONTRACT**, то поле **stateContractId** является обязательным.
+- Если выбрано значение **EXPORT_INSIDE_EEU**, то поле **destinationCountry** является обязательным и допускаются значения: Армения, Беларусь, Казахстан, Киргизия.
 
 Тип документа-основания **supportingTransaction**:
-
-- Если выбран **OTHER**, то поле **primaryDocumentName** является обязательным.
+- Если выбрано значение **OTHER**, то поле **primaryDocumentName** является обязательным.
 
 Документ вывода из оборота с позициями:
-
 - Поле **trackingType** каждой позиции должно совпадать со значением поля **trackingType** документа.
-
-Связь допустимых значений поля **trackingType** в зависимости от **retireOrderType**
-
-| **trackingType**                                                | **retireOrderType**                                                                                                                                                                                                      |
-|-----------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **SHOES, LP_CLOTHES, LP_LINENS, PERFUMERY, ELECTRONICS, TIRES** | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, RETURN_TO_INDIVIDUAL                         |
-| **MILK**                                                        | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, PRODUCTION_USE, EXPIRATION, VENDING, PACKING |
-| **FOOD_SUPPLEMENT, SANITIZER, MEDICAL_DEVICES**                 | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT                                               |
 
 > Пример создания нового Вывода из оборота - Трансграничная продажа в страны ЕАЭС.
 
