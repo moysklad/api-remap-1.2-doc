@@ -1,61 +1,79 @@
 ## Вывод кодов маркировки из оборота
-Средствами JSON API можно создавать и обновлять сведения о Вывод из оборота, запрашивать списки Выводов из оборота и сведения по отдельным Выводам из оборота. 
-Позициями Выводов из оборота можно управлять как в составе отдельного Вывода из оборота, так и отдельно - с помощью специальных ресурсов для управления позициями Вывода из оборота. 
-Кодом сущности для Вывода из оборота в составе JSON API является ключевое слово **retireorder**. 
-Больше о Выводах из оборота можно прочитать [здесь](https://support.moysklad.ru/hc/ru/articles/360025776473-%D0%92%D1%8B%D0%B2%D0%BE%D0%B4-%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2-%D0%BC%D0%B0%D1%80%D0%BA%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B8-%D0%B8%D0%B7-%D0%BE%D0%B1%D0%BE%D1%80%D0%BE%D1%82%D0%B0).
+Средствами JSON API можно создавать и обновлять сведения о Выводе кодов маркировки из оборота, а также запрашивать списки документов и информацию о конкретных Выводах.
+Позициями можно управлять как в составе документа Вывода, так и отдельно - с помощью специальных ресурсов для управления позициями.
+Кодом сущности для Вывода из оборота в составе JSON API является ключевое слово **retireorder**.
+Больше о Выводах кодов из оборота можно прочитать [здесь](https://support.moysklad.ru/hc/ru/articles/360025776473-%D0%92%D1%8B%D0%B2%D0%BE%D0%B4-%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2-%D0%BC%D0%B0%D1%80%D0%BA%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B8-%D0%B8%D0%B7-%D0%BE%D0%B1%D0%BE%D1%80%D0%BE%D1%82%D0%B0).
 ### Вывод из оборота 
 #### Атрибуты сущности
 
-| Название                        | Тип                                                       | Фильтрация                 | Описание                                                                                                                                                                                                                                                |
-|---------------------------------|:----------------------------------------------------------|:---------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**                   | UUID                                                      | `=` `!=`                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                    |
-| **code**                        | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Код Вывода из оборота                                                                                                                                                                                                                                   |
-| **created**                     | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=` | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                        |
-| **deleted**                     | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=` | Момент последнего удаления Вывода из оборота<br>`+Только для чтения`                                                                                                                                                                                    |
-| **description**                 | String(4096)                                              | `=` `!=` `~` `~=` `=~`     | Комментарий Вывода из оборота<br>                                                                                                                                                                                                                       |
-| **destinationCountry**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Страна назначения                                                                                                                                                                                                                                       |
-| **documentState**               | Enum                                                      | `=` `!=` `~` `~=` `=~`     | Статус процесса вывода кодов маркировки из оборота. [Подробнее тут](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-statusy-processa-wywoda-kodow-markirowki-iz-oborota) <br>`+Обязательное при ответе` `+Только для чтения` |
-| **externalCode**                | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Внешний код Вывода из оборота<br>`+Обязательное при ответе`                                                                                                                                                                                             |
-| **group**                       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                                                                |
-| **id**                          | UUID                                                      | `=` `!=`                   | ID Вывода из оборота<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                 |
-| **meta**                        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Метаданные Вывода из оборота<br>`+Обязательное при ответе`                                                                                                                                                                                              |
-| **moment**                      | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=` | Дата документа<br>`+Обязательное при ответе`                                                                                                                                                                                                            |
-| **name**                        | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Наименование Вывода из оборота<br>`+Обязательное при ответе`                                                                                                                                                                                            |
-| **organization**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                                                                                    |
-| **owner**                       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                                                                                       |
-| **positions**                   | MetaArray                                                 |                            | Метаданные позиций Вывода из оборота<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                                            |
-| **primaryDocumentName**         | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Наименование первичного документа                                                                                                                                                                                                                       |
-| **printed**                     | Boolean                                                   | `=` `!=`                   | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                |
-| **published**                   | Boolean                                                   | `=` `!=`                   | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                              |
-| **rate**                        | Object                                                    |                            | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе`                                                                                                                                     |
-| **retireOrderType**             | Enum                                                      | `=` `!=`                   | Способ вывода из оборота. [Подробнее тут](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-sposob-wywoda-iz-oborota) <br>`+Обязательное при ответе` `+Необходимо при создании`                                                |
-| **shared**                      | Boolean                                                   | `=` `!=`                   | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                                                                              |
-| **state**                       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Метаданные статуса Вывода из оборота<br>`+Expand`                                                                                                                                                                                                       |
-| **stateContractId**             | String(255)                                               |                            | Идентификатор государственного контракта, договора (соглашения)                                                                                                                                                                                         |
-| **supportingTransaction**       | Enum                                                      | `=` `!=`                   | Тип документа-основания. [Подробнее тут](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-dokumenta-osnowaniq) <br>`+Обязательное при ответе` `+Необходимо при создании`                                                  |
-| **supportingTransactionDate**   | DateTime                                                  | `=` `!=`                   | Дата документа-основания                                                                                                                                                                                                                                |
-| **supportingTransactionNumber** | String(255)                                               | `=` `!=`                   | Номер документа-основания                                                                                                                                                                                                                               |
-| **syncId**                      | UUID                                                      | `=` `!=`                   | ID синхронизации. После заполнения недоступен для изменения                                                                                                                                                                                             |
-| **trackingType**                | Enum                                                      | `=` `!=`                   | Тип маркируемой продукции. [Подробнее тут](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii) <br>`+Обязательное при ответе` `+Необходимо при создании`                                              |
-| **updated**                     | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления Вывода из оборота.<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                      |
-| **vatEnabled**                  | Boolean                                                   |                            | Учитывается ли НДС<br>`+Обязательное при ответе`                                                                                                                                                                                                        |
-| **vatIncluded**                 | Boolean                                                   |                            | Включен ли НДС в цену                                                                                                                                                                                                                                   |
-| **vatSum**                      | Float                                                     |                            | Сумма НДС <br/>  `+Только для чтения`                                                                                                                                                                                                                   |
+| Название                        | Тип                                                        | Описание                                                                                                                                                                                                                                                |
+|---------------------------------|:-----------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**                   | UUID                                                       | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                    |
+| **code**                        | String(255)                                                | Код Вывода из оборота                                                                                                                                                                                                                                   |
+| **created**                     | DateTime                                                   | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                        |
+| **deleted**                     | DateTime                                                   | Момент последнего удаления Вывода из оборота<br>`+Только для чтения`                                                                                                                                                                                    |
+| **description**                 | String(4096)                                               | Комментарий Вывода из оборота<br>                                                                                                                                                                                                                       |
+| **destinationCountry**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  | Страна назначения                                                                                                                                                                                                                                       |
+| **documentState**               | Enum                                                       | Статус процесса вывода кодов маркировки из оборота. [Подробнее тут](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-statusy-processa-wywoda-kodow-markirowki-iz-oborota) <br>`+Обязательное при ответе` `+Только для чтения` |
+| **externalCode**                | String(255)                                                | Внешний код Вывода из оборота<br>`+Обязательное при ответе`                                                                                                                                                                                             |
+| **group**                       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                                                                |
+| **id**                          | UUID                                                       | ID Вывода из оборота<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                 |
+| **meta**                        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  | Метаданные Вывода из оборота<br>`+Обязательное при ответе`                                                                                                                                                                                              |
+| **moment**                      | DateTime                                                   | Дата документа<br>`+Обязательное при ответе`                                                                                                                                                                                                            |
+| **name**                        | String(255)                                                | Наименование Вывода из оборота<br>`+Обязательное при ответе`                                                                                                                                                                                            |
+| **organization**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                                                                                    |
+| **owner**                       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                                                                                       |
+| **positions**                   | MetaArray                                                  | Метаданные позиций Вывода из оборота<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                                            |
+| **primaryDocumentName**         | String(255)                                                | Наименование первичного документа                                                                                                                                                                                                                       |
+| **printed**                     | Boolean                                                    | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                |
+| **published**                   | Boolean                                                    | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                              |
+| **rate**                        | Object                                                     | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе`                                                                                                                                     |
+| **retireOrderType**             | Enum                                                       | Способ вывода из оборота. [Подробнее тут](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-sposob-wywoda-iz-oborota) <br>`+Обязательное при ответе` `+Необходимо при создании`                                                |
+| **shared**                      | Boolean                                                    | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                                                                              |
+| **state**                       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  | Метаданные статуса Вывода из оборота<br>`+Expand`                                                                                                                                                                                                       |
+| **stateContractId**             | String(255)                                                | Идентификатор государственного контракта, договора (соглашения)                                                                                                                                                                                         |
+| **supportingTransaction**       | Enum                                                       | Тип документа-основания. [Подробнее тут](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-dokumenta-osnowaniq)                                                                                                            |
+| **supportingTransactionDate**   | DateTime                                                   | Дата документа-основания                                                                                                                                                                                                                                |
+| **supportingTransactionNumber** | String(255)                                                | Номер документа-основания                                                                                                                                                                                                                               |
+| **syncId**                      | UUID                                                       | ID синхронизации. После заполнения недоступен для изменения                                                                                                                                                                                             |
+| **trackingType**                | Enum                                                       | Тип маркируемой продукции. [Подробнее тут](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii) <br>`+Обязательное при ответе` `+Необходимо при создании`                                              |
+| **updated**                     | DateTime                                                   | Момент последнего обновления Вывода из оборота.<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                      |
+| **sum**                         | Int                                                        | Сумма вывода из оборота в установленной валюте<br>`+Обязательное при ответе`                                                                                                                                                                            |
+| **vatEnabled**                  | Boolean                                                    | Учитывается ли НДС<br>`+Обязательное при ответе`                                                                                                                                                                                                        |
+| **vatIncluded**                 | Boolean                                                    | Включен ли НДС в цену                                                                                                                                                                                                                                   |
+| **vatSum**                      | Float                                                      | Сумма НДС <br/>  `+Только для чтения`                                                                                                                                                                                                                   |
 
 #### Статусы процесса вывода кодов маркировки из оборота
 
-Значения поля documentState. Статус IN_PROGRESS, WAIT_FOR_CONTINUATION, CHECKED_OK, CHECKED_NOT_OK, PROCESSING_ERROR берутся из Честного Знака и соответствуют статусам из True API 
+Значения поля documentState. Статус IN_PROGRESS, WAIT_FOR_CONTINUATION, CHECKED_OK, CHECKED_NOT_OK, PROCESSING_ERROR берутся из Честного знака. 
 
 | Значение                  | Описание                                                |
 |---------------------------|:--------------------------------------------------------|
-| **CREATED**               | Вывод из оборота создан, но не отправлен в Честный Знак |
-| **SEND**                  | Запрос на вывод из оборота отправлен в Честный Знак     |
+| **CREATED**               | Вывод из оборота создан, но не отправлен в Честный знак |
+| **SEND**                  | Запрос на вывод из оборота отправлен в Честный знак     |
 | **IN_PROGRESS**           | Проверяется                                             |
 | **WAIT_FOR_CONTINUATION** | Проверяется                                             |
 | **CHECKED_OK**            | Обработан Честным знаком                                |
 | **CHECKED_NOT_OK**        | Обработан Честным знаком с ошибками                     |
-| **PROCESSING_ERROR**      | Техническая ошибка на стороне Честного Знака            |
+| **PROCESSING_ERROR**      | Техническая ошибка на стороне Честного знака            |
 | **UNDEFINED**             | Состояние не определяется                               |
+
+#### Тип маркируемой продукции
+
+Значения поля trackingType.
+
+| Значение            | Описание                             |
+|---------------------|:-------------------------------------|
+| **ELECTRONICS**     | Фотокамеры и лампы-вспышки           |
+| **FOOD_SUPPLEMENT** | Биологически активные добавки к пище |
+| **LP_CLOTHES**      | Тип маркировки "Одежда"              |
+| **LP_LINENS**       | Тип маркировки "Постельное белье"    |
+| **MEDICAL_DEVICES** | Медизделия и кресла-коляски          |
+| **MILK**            | Молочная продукция                   |
+| **PERFUMERY**       | Духи и туалетная вода                |
+| **SANITIZER**       | Антисептики                          |
+| **SHOES**           | Тип маркировки "Обувь"               |
+| **TIRES**           | Шины и покрышки                      |
 
 #### Способ вывода из оборота 
 
@@ -95,24 +113,6 @@
 | **SALES_RECEIPT**              | Товарный чек                        |
 | **UTD**                        | Универсальный передаточный документ |
 
-#### Тип маркируемой продукции
-
-Значения поля trackingType.
-
-| Значение            | Описание                             |
-|---------------------|:-------------------------------------|
-| **ELECTRONICS**     | Фотокамеры и лампы-вспышки           |
-| **FOOD_SUPPLEMENT** | Биологически активные добавки к пище |
-| **LP_CLOTHES**      | Тип маркировки "Одежда"              |
-| **LP_LINENS**       | Тип маркировки "Постельное белье"    |
-| **MEDICAL_DEVICES** | Медизделия и кресла-коляски          |
-| **MILK**            | Молочная продукция                   |
-| **PERFUMERY**       | Духи и туалетная вода                |
-| **SANITIZER**       | Антисептики                          |
-| **SHOES**           | Тип маркировки "Обувь"               |
-| **TIRES**           | Шины и покрышки                      |
-
-
 #### Позиции Вывода из оборота
 Позиции Вывода из оборота - это список товаров/модификаций/серий.
 Объект позиции Вывода из оборота содержит следующие поля:
@@ -139,7 +139,7 @@
 позиции будут удалены, новые добавлены, существующие - изменены.
 
 #### Тарифные ограничения
-Для создания/изменения Вывода из оборота необходима тарифная опция Маркировка для аккаунтов из RU региона и расширение Честный Знак для остальных регионов.
+Для создания/изменения Вывода из оборота необходима тарифная опция Маркировка для аккаунтов из RU региона и расширение Честный знак для остальных регионов.
 
 ### Получить Выводы из оборота 
 Запрос всех Выводов из оборота на данной учетной записи.
@@ -250,10 +250,11 @@ curl -X GET
       "printed": false,
       "published": false,
       "documentState": "CREATED",
-      "retireOrderType": "PRODUCTION_USE",
+      "retireOrderType": "RETAIL_SALE",
       "supportingTransaction": "OTHER",
       "supportingTransactionDate": "2024-11-22 13:37:51.335",
       "supportingTransactionNumber": "123",
+      "primaryDocumentName": "doc name",
       "trackingType": "SHOES",
       "vatEnabled": true,
       "vatIncluded": true,
@@ -327,10 +328,11 @@ curl -X GET
       "printed": false,
       "published": false,
       "documentState": "CREATED",
-      "retireOrderType": "PRODUCTION_USE",
+      "retireOrderType": "RETAIL_SALE",
       "supportingTransaction": "OTHER",
       "supportingTransactionDate": "2024-11-22 13:37:51.335",
       "supportingTransactionNumber": "123",
+      "primaryDocumentName": "doc name",
       "trackingType": "SHOES",
       "vatEnabled": true,
       "vatIncluded": true,
@@ -431,10 +433,11 @@ curl -X GET
   "printed": false,
   "published": false,
   "documentState": "CREATED",
-  "retireOrderType": "PRODUCTION_USE",
+  "retireOrderType": "RETAIL_SALE",
   "supportingTransaction": "OTHER",
   "supportingTransactionDate": "2024-11-22 13:37:51.335",
   "supportingTransactionNumber": "123",
+  "primaryDocumentName": "doc name",
   "trackingType": "SHOES",
   "vatEnabled": true,
   "vatIncluded": true,
@@ -464,6 +467,14 @@ curl -X GET
 
 
 #### Особенности поведения при создании Вывода из оборота
+Связь допустимых значений поля **retireOrderType** в зависимости от **trackingType**
+
+| **trackingType**                                                | **retireOrderType**                                                                                                                                                                                                      |
+|-----------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **SHOES, LP_CLOTHES, LP_LINENS, PERFUMERY, ELECTRONICS, TIRES** | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, RETURN_TO_INDIVIDUAL                         |
+| **MILK**                                                        | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, PRODUCTION_USE, EXPIRATION, VENDING, PACKING |
+| **FOOD_SUPPLEMENT, SANITIZER, MEDICAL_DEVICES**                 | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT                                               |
+
 Связь допустимых значений поля **supportingTransaction** в зависимости от **retireOrderType**
 
 | **retireOrderType**      | **supportingTransaction**                              |
@@ -484,23 +495,19 @@ curl -X GET
 | **UTILIZATION**          | OTHER                                                  |
 | **VENDING**              | OTHER                                                  |
 
-Если выбран способ вывода из оборота из перечисленных выше, то поля **supportingTransaction**, **supportingTransactionDate**, **supportingTransactionNumber** являются обязательными
+Способ вывода из оборота **retireOrderType**:
 
-Если выбран тип документа-основания - Прочее, то поле **primaryDocumentName** является обязательным
++ Если выбрано любое значение из перечисленных в таблице выше, поля **supportingTransaction**, **supportingTransactionDate** и **supportingTransactionNumber** являются обязательными.
++ Если выбрано значение **STATE_CONTRACT**, то поле **stateContractId** является обязательным.
++ Если выбрано значение **EXPORT_INSIDE_EEU**, то поле **destinationCountry** является обязательным и допускаются значения: Армения, Беларусь, Казахстан, Киргизия.
 
-Если выбран способ вывода из оборота - "Продажа по государственному (муниципальному) контракту", то поле **stateContractId** является обязательным
+Тип документа-основания **supportingTransaction**:
 
-Если выбран способ вывода из оборота - "Трансграничная продажа в страны ЕАЭС", то в обязательном поле **destinationCountry** допустимые значения страны (Армения, Беларусь, Казахстан, Киргизия)
++ Если выбрано значение **OTHER**, то поле **primaryDocumentName** является обязательным.
 
-Если создается документ вывода из оборота с позициями, то тип маркируемой продукции каждой из позиций должен совпадать с полем **trackingType**
+Документ вывода из оборота с позициями:
 
-Связь допустимых значений поля **trackingType** в зависимости от **retireOrderType**
-
-| **trackingType**                                                | **retireOrderType**                                                                                                                                                                                                      |
-|-----------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **SHOES, LP_CLOTHES, LP_LINENS, PERFUMERY, ELECTRONICS, TIRES** | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, RETURN_TO_INDIVIDUAL                         |
-| **MILK**                                                        | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, PRODUCTION_USE, EXPIRATION, VENDING, PACKING |
-| **FOOD_SUPPLEMENT, SANITIZER, MEDICAL_DEVICES**                 | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT                                               |
++Поле **trackingType** каждой позиции должно совпадать со значением поля **trackingType** документа.
 
 > Пример создания нового Вывода из оборота - Трансграничная продажа в страны ЕАЭС.
 
@@ -960,6 +967,7 @@ curl -X GET
 Обновляемые Выводы из оборота должны содержать идентификатор в виде метаданных.
 
 > Пример создания и обновления нескольких Выводов из оборота
+
 ```shell
   curl -X POST
     "https://api.moysklad.ru/api/remap/1.2/entity/retireorder"
@@ -1183,7 +1191,7 @@ curl -X GET
 помечены `Только для чтения` в описании [атрибутов Вывода из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota).
 
 #### Особенности поведения при изменении Вывода из оборота
-Изменение Вывода из оборота доступно только для документов со статусом **documentState** = **CREATED**
+Изменение Вывода из оборота доступно только для документов со статусом **documentState** = **CREATED**, **CHECKED_NOT_OK**, **PROCESSING_ERROR**
 
 **Параметры**
 
@@ -1267,10 +1275,11 @@ curl -X PUT
       "printed": false,
       "published": false,
       "documentState": "CREATED",
-      "retireOrderType": "PRODUCTION_USE",
+      "retireOrderType": "RETAIL_SALE",
       "supportingTransaction": "OTHER",
       "supportingTransactionDate": "2024-11-22 13:37:51.335",
       "supportingTransactionNumber": "123",
+      "primaryDocumentName": "doc name",
       "trackingType": "SHOES",
       "vatEnabled": true,
       "vatIncluded": true,
