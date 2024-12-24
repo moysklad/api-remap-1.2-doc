@@ -1182,7 +1182,7 @@ curl -X POST
 
 Пример ссылки:
 
-+ `https://api.moysklad.ru/api/remap/1.2/entity/<type>/&lt;id>`
++ `https://api.moysklad.ru/api/remap/1.2/entity/&lt;type>/&lt;id>`
 
 Вот несколько примеров:
 
