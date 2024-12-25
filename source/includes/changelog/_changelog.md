@@ -27,6 +27,10 @@
 - Поля `standardHourCost`, `enableHourAccounting` в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
 - Поля `standardHourCost`, `enableHourAccounting` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
 
+### 23-12-2024
+#### Изменены
+- Эндпоинты для работы с [Настройками уведомлений](../notification/#uwedomleniq-nastrojki-uwedomlenij) 
+
 ### 17-12-2024
 #### Добавлен
 - Параметр фильтрации `entityType` в [Отчетах Прибыльность](../reports/#otchety-otchet-pribyl-nost)
@@ -155,7 +159,7 @@
 - Поле `performers` в [этапы производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Массив метаданных возможных исполнителей
 - Ошибка [25035](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
 - Добавлен новый тип уведомлений [Новое упоминание в ленте событий](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowoe-upominanie-w-lente-sobytij)
-- Добавлена новая группа уведомлений [Упоминания сотрудников](../notification/#uwedomleniq-nastrojki-uwedomlenij-atributy-suschnosti)
+- Добавлена новая группа уведомлений [Упоминания сотрудников](../notification/#uwedomleniq-nastrojki-uwedomlenij-struktura-dannyh)
 
 ### 23-04-2024
 #### Добавлено
@@ -1063,7 +1067,7 @@
 ### 04-02-2021
 #### Изменено
 - Добавлен новый тип уведомлений [Уведомление из сценария](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-uwedomlenie-iz-scenariq)
-- Добавлена новая группа уведомлений [Сценарии](../notification/#uwedomleniq-nastrojki-uwedomlenij-atributy-suschnosti)
+- Добавлена новая группа уведомлений [Сценарии](../notification/#uwedomleniq-nastrojki-uwedomlenij-struktura-dannyh)
 
 ### 02-02-2021
 #### Добавлено
