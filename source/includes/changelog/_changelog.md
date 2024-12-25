@@ -42,7 +42,7 @@
 
 ### 19-11-2024
 #### Добавлено
-- Поле `salesMargin` в [Отчет Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
+- Поле `salesMargin` в [Отчет Прибыльность](../reports/#otchety-otchet-pribyl-nost)
 
 ### 01-11-2024
 #### Добавлена
@@ -400,9 +400,9 @@
 
 ### 07-02-2023
 #### Добавлена
-- Возможность привязывать/отвязывать перемещения к/от [Заказа покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej).
-- Описание [Пример привязывания перемещений к заказу покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-primer-priwqzki-3)
-- Добавлен `3031` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii).
+- Возможность привязывать/отвязывать перемещения к/от [Заказа покупателя](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej).
+- Описание [Пример привязывания перемещений к заказу покупателя](../documents/#dokumenty-obschie-swedeniq-primer-priwqzki-3)
+- Добавлен `3031` код [ошибки](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii).
 
 ### 31-01-2023
 #### Добавлена
