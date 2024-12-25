@@ -19,7 +19,7 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 18-12-2024
+### 25-12-2024
 #### Добавлено
 - Ошибки [25063](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart), [26114](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq), [26209, 26210](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-vypolnenij-atapow-proizwodstwa)
 - Поле `standardHourCost` в [Этап производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Стоимость нормо-часа
