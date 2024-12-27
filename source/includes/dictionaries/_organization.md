@@ -141,7 +141,7 @@
 | **vatPayerRegCode**   | String(20)  | `=` `!=` `~` `~=` `=~` | Регистрационный код плательщика НДС|
 
 Поля вложены в объект **mod\_\_requisites\_\_uz**.  Конкретный набор полей, определяется типом юридического лица.
-Подробнее о типах юридических лиц [тут](../dictionaries/#suschnosti-jurlico-jurlica-tip-jurlica).
+Подробнее о типах юридических лиц [тут](../dictionaries/#suschnosti-jurlico-jurlica-tip-urlica).
 
 
 #### Тип юрлица
