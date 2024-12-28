@@ -42,7 +42,7 @@
 | **assortment**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные товара/модификации/серии, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand`                                                       |
 | **id**            | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                         |
 | **meta**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные позиции заказа кодов маркировки<br>`+Обязательное при ответе` `+Только для чтения`                                                                         |
-| **quantity**      | Float                                                     | Количество товаров данного вида в позиции.<br>`+Обязательное при ответе`                                                                                              |
+| **quantity**      | Integer                                                   | Количество товаров данного вида в позиции.<br>`+Обязательное при ответе`                                                                                              |
 | **status**        | Enum                                                      | Статус кодов. <br>`+Обязательное при ответе` `+Только для чтения` [Подробнее тут](../documents/#dokumenty-zakaz-kodow-markirowki-zakaz-kodow-markirowki-status-kodow) |
 | **trackingCodes** | Array(Object)                                             | Коды маркировки товаров. [Подробнее тут](../dictionaries/#suschnosti-kody-markirowki) <br>`+Только для чтения`                                                        |
 
@@ -499,7 +499,7 @@ curl -X GET
             "trackingType": "MILK",
             "positions": [
               {
-                "quantity": 3.0,
+                "quantity": 3,
                 "assortment": {
                   "meta": {
                     "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/be903062-f504-11e5-8a84-bae50000019a",
@@ -1055,7 +1055,7 @@ curl -X PUT
             },
             "positions": [
               {
-                "quantity": 3.0,
+                "quantity": 3,
                 "assortment": {
                   "meta": {
                     "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/be903062-f504-11e5-8a84-bae50000019a",
@@ -1214,7 +1214,7 @@ curl -X GET
       },
       "id": "33c8ac0b-a670-11ef-ac12-000d00000112",
       "accountId": "abc08e75-ad7d-11ef-ac12-000f00000001",
-      "quantity": 1.0,
+      "quantity": 1,
       "assortment": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/2f096391-ad7f-11ef-ac12-000d00000117",
@@ -1271,7 +1271,7 @@ curl -X GET
     },
     "id": "33c8ac0b-a670-11ef-ac12-000d00000112",
     "accountId": "abc08e75-ad7d-11ef-ac12-000f00000001",
-    "quantity": 1.0,
+    "quantity": 1,
     "assortment": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/2f096391-ad7f-11ef-ac12-000d00000117",
