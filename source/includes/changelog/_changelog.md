@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 28-12-2024
+#### Добавлено
+- Добавлен параметр `isRecalc` в [эндпоинт текущих остатков](../reports/#otchety-otchet-ostatki-kratkij-otchet-ob-ostatkah).
+
 ### 25-12-2024
 #### Добавлено
 - Ошибки [25063](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart), [26114](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq), [26209, 26210](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-vypolnenij-atapow-proizwodstwa)
