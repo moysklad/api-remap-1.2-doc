@@ -716,10 +716,10 @@ curl -X GET
 | **reserve**   | Резерв                                                      |
 | **inTransit** | Ожидание                                                    |
 
-#### Параметр isRecalc
-Параметр `isRecalc` доступен только на эндпоинте `/report/stock/bystore/current`.
+#### Параметр withRecalculate
+Параметр `withRecalculate` доступен только на эндпоинте `/report/stock/bystore/current`.
 По умолчанию выводятся только результаты с пересчитанным значением остатка.
-Для вывода остатков, которые на данный момент пересчитывются, необходимо добавить параметр `isRecalc=true`.
+Для вывода остатков, которые на данный момент пересчитывются, необходимо добавить параметр `withRecalculate=true`.
 Товары, которые были созданы и не участвовали в каких-либо операциях, не выводятся.
 
 #### Доступные фильтры отчёта Текущие Остатки
@@ -882,11 +882,11 @@ curl -X GET
 ]
 ```
 
-> Запрос на получение остатков с параметром "isRecalc".
+> Запрос на получение остатков с параметром "withRecalculate".
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?isRecalc=true"
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?withRecalculate=true"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
@@ -897,7 +897,7 @@ curl -X GET
 ```json
 [
   {"assortmentId":"12345678-5838-aaeb-0a80-003a003ef439","storeId":"12345678-b123-aaee-0a80-012b0001bb10","stock":1},
-  {"assortmentId":"12345678-2346-aaeb-0a80-003a003ef439","storeId":"12345678-b123-aaee-0a80-012b0001bb10","stock":null,"isRecalc":true},
+  {"assortmentId":"12345678-2346-aaeb-0a80-003a003ef439","storeId":"12345678-b123-aaee-0a80-012b0001bb10","stock":null},
   {"assortmentId":"12345678-279c-aaeb-0a80-00d6001f847c","storeId":"12345678-b123-aaee-0a80-012b0001bb10","stock":3}
 ]
 ```
