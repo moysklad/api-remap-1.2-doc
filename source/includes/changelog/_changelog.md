@@ -21,7 +21,7 @@
 
 ### 28-12-2024
 #### Добавлено
-- Добавлен параметр `isRecalc` в [эндпоинт текущих остатков](../reports/#otchety-otchet-ostatki-kratkij-otchet-ob-ostatkah).
+- Добавлен параметр `withRecalculate` в [эндпоинт текущих остатков](../reports/#otchety-otchet-ostatki-kratkij-otchet-ob-ostatkah).
 
 ### 25-12-2024
 #### Добавлено
