@@ -19,9 +19,9 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 28-12-2024
+### 15-01-2025
 #### Добавлено
-- Добавлен параметр `withRecalculate` в [эндпоинт текущих остатков](../reports/#otchety-otchet-ostatki-kratkij-otchet-ob-ostatkah).
+- Добавлен параметр `withRecalculate` в эндпоинт [Краткий отчет об остатках](../reports/#otchety-otchet-ostatki-kratkij-otchet-ob-ostatkah).
 
 ### 25-12-2024
 #### Добавлено
