@@ -217,6 +217,7 @@ JSON API позволяет создавать, обновлять и удаля
 + [Контрагент](dictionaries/#suschnosti-kontragent)
 + [Юрлицо](dictionaries/#suschnosti-jurlico)
 + [Проект](dictionaries/#suschnosti-proekt)
++ [Пользовательский справочник](dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik) (у каждого справочника свои)
 + [Склад](dictionaries/#suschnosti-sklad)
 + [Сотрудник](dictionaries/#suschnosti-sotrudnik)
 + [Товар](dictionaries/#suschnosti-towar)
@@ -697,7 +698,7 @@ curl -X POST
   -H 'Content-Type: application/json'
   -d '{
         "customEntityMeta": {
-          "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/0347beb0-a785-11e9-ac12-000800000003",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/0347beb0-a785-11e9-ac12-000800000003/metadata",
           "type": "customentitymetadata",
           "mediaType": "application/json"
         },
@@ -718,7 +719,7 @@ curl -X POST
     "mediaType": "application/json"
   },
   "customEntityMeta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/0347beb0-a785-11e9-ac12-000800000003",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/0347beb0-a785-11e9-ac12-000800000003/metadata",
     "type": "customentitymetadata",
     "mediaType": "application/json"
   },
@@ -1059,12 +1060,12 @@ curl -X POST
 Исключения:
 
 + Структурированный адрес у
-  [Контрагента](dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres),
-  [Юрлица](dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres),
-  [Точки продаж](dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-adres),
-  [Склада](dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres),
-  [Заказа покупателя](documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-attributy-suschnosti-adres-dostawki),
-  [Отгрузки](documents/#dokumenty-otgruzka-otgruzki-attributy-suschnosti-adres-dostawki) не поддерживает удаления передачей `null`.
+  [Контрагента](dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-adres),
+  [Юрлица](dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-adres),
+  [Точки продаж](dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status-atributy-suschnosti-adres),
+  [Склада](dictionaries/#suschnosti-sklad-sklady-atributy-suschnosti-adres),
+  [Заказа покупателя](documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-atributy-suschnosti-adres-dostawki),
+  [Отгрузки](documents/#dokumenty-otgruzka-otgruzki-atributy-suschnosti-adres-dostawki) не поддерживает удаления передачей `null`.
 Для удаления адреса необходимо в строковое поле передать пустую строку `""`. Конкретные строковые поля приведены в соответствующих разделах, переход в которые осуществляется по ссылкам выше.
 
 ### Пустые поля
@@ -1181,7 +1182,7 @@ curl -X POST
 
 Пример ссылки:
 
-+ `https://api.moysklad.ru/api/remap/1.2/entity/<type>/&lt;id>`
++ `https://api.moysklad.ru/api/remap/1.2/entity/&lt;type>/&lt;id>`
 
 Вот несколько примеров:
 
@@ -1223,7 +1224,7 @@ curl -X POST
 
 Например:
 
-+ `filter=productid=94975104-3cad-11e8-1e44-bd4d00000084`
++ `filter=id=94975104-3cad-11e8-1e44-bd4d00000084`
 
 #### Фильтрация по дополнительным полям
 
@@ -1269,7 +1270,7 @@ state.name Параметр строкового типа. В отфильтро
 
 Пример запроса с использованием фильтра state.name:
 
-`https://api.moysklad.ru/api/remap/1.2/entity/customerOrder?filter=state.name=Новый;state.name=Принят`
+`https://api.moysklad.ru/api/remap/1.2/entity/customerorder?filter=state.name=Новый;state.name=Принят`
 
 Фильтр filter=assortment=<href сущности> позволяет фильтровать документы по наличию позиций с указанными сущностями ассортимента.
 assortment - параметр, принимающий href ассортимента или группы товаров. Допустимые типы сущностей: Товар, Услуга, Модификация, Комплект, Группа товаров. 
@@ -2960,13 +2961,13 @@ curl -X PUT
 }
 ```
 
-### Серверные приложения
-Для доступа к API может быть использован токен выданный Вендору при установке Серверного приложения пользователем МоегоСклада.
+### Серверные решения
+Для доступа к API может быть использован токен выданный Вендору при установке Серверного решения пользователем МоегоСклада.
 
-#### Получение контекста приложения
-Возвращает параметры приложения, в рамках которого присходит запрос (по аналогии с контекстом Сотрудника).
+#### Получение контекста решения
+Возвращает параметры решения, в рамках которого присходит запрос (по аналогии с контекстом Сотрудника).
 
-> Пример запроса на получение контекста приложения
+> Пример запроса на получение контекста решения
 
 ```shell
 curl -X GET
@@ -2975,7 +2976,7 @@ curl -X GET
   -H "Accept-Encoding: gzip"
 ``` 
 
-> Response 200 (application/json) Успешный запрос. Результат JSON объект, содержащий данные приложения
+> Response 200 (application/json) Успешный запрос. Результат JSON объект, содержащий данные решения
 
 ```json
 {
@@ -2990,16 +2991,16 @@ curl -X GET
 }
 ```
 
-#### Получение сущности установленного приложения
-Возвращает параметры установленного приложения по id установленного на аккаунте приложения. 
+#### Получение сущности установленного решения
+Возвращает параметры установленного решения по id установленного на аккаунте решения. 
 
 **Параметры**
 
 | Параметр | Описание                                                                                                     |
 | :------- | :----------------------------------------------------------------------------------------------------------- |
-| **id**   | `string` (required) *Example: b58a6312-f958-11e9-ac12-000a00000020* id установленного на аккаунте приложения |
+| **id**   | `string` (required) *Example: b58a6312-f958-11e9-ac12-000a00000020* id установленного на аккаунте решения |
 
-> Пример запроса на получение сущности установленного приложения
+> Пример запроса на получение сущности установленного решения
 
 ```shell
 curl -X GET
@@ -3008,7 +3009,7 @@ curl -X GET
   -H "Accept-Encoding: gzip"
 ``` 
 
-> Response 200 (application/json) Успешный запрос. Результат JSON объект, содержащий данные приложения
+> Response 200 (application/json) Успешный запрос. Результат JSON объект, содержащий данные решения
 
 ```json
 {
@@ -3024,29 +3025,29 @@ curl -X GET
 ```
 
 #### Фильтрация выборки с помощью параметра filter=updatedBy
-Для фильтрации выборок сущностей по приложению укажите _uid_ изменившего их приложения.
+Для фильтрации выборок сущностей по решению укажите _uid_ изменившего их решения.
 
-Uid приложения должен быть указан в виде:
+Uid решения должен быть указан в виде:
 `<Application-Alias>.<Vendor-Alias>@<Account-Name>` 
 
 Пример запроса на получение списка входящих платежей:
 `https://api.moysklad.ru/api/remap/1.2/entity/paymentin?filter=updatedBy=test.moysklad@reqwy1` 
 
 #### Фильтрация записей аудита с помощью параметра filter=uid
-Для фильтрации аудита по приложению укажите _uid_ приложения, которое изменяло сущности.
+Для фильтрации аудита по решению укажите _uid_ решения, которое изменяло сущности.
 
-Uid приложения должен быть указан в виде:
+Uid решения должен быть указан в виде:
 `<Application-Alias>.<Vendor-Alias>@<Account-Name>` 
 
 Пример запроса на получение списка записей:
 `https://api.moysklad.ru/api/remap/1.2/audit?filter=uid=test.moysklad@reqwy1` 
 
 #### Фильтрация записей аудита с помощью параметра filter=application
-Для фильтрации аудита по приложению укажите _href_ приложения, которое изменяло сущности.
+Для фильтрации аудита по решению укажите _href_ решения, которое изменяло сущности.
 
-Href приложения должен быть указан в виде:
+Href решения должен быть указан в виде:
 `https://api.moysklad.ru/api/remap/1.2/entity/application/{id}`, 
-где _id_ - UUID установленного на аккаунте приложения
+где _id_ - UUID установленного на аккаунте решения
 
 Пример запроса на получение списка записей:
 `https://api.moysklad.ru/api/remap/1.2/audit?filter=application=https://api.moysklad.ru/api/remap/1.2/entity/application/46ea8005-2965-11e9-9ff4-34e80009ac49` 

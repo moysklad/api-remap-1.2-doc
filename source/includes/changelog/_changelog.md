@@ -19,6 +19,69 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 16-01-2025
+#### Добавлено
+- поля `files`, `instruction`в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+
+### 15-01-2025
+#### Добавлено
+- Добавлен параметр `withRecalculate` в эндпоинт [Краткий отчет об остатках](../reports/#otchety-otchet-ostatki-kratkij-otchet-ob-ostatkah).
+- Новые типы маркированной продукции `BICYCLE` для велосипедов, `NABEER` для безалкогольного пива, `SEAFOOD` для икры и морепродуктов, `VETPHARMA` для ветеринарных препаратов для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
+
+### 25-12-2024
+#### Добавлено
+- Ошибки [25063](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart), [26114](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq), [26209, 26210](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-vypolnenij-atapow-proizwodstwa)
+- Поле `standardHourCost` в [Этап производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Стоимость нормо-часа
+- Поля `standardHourCost`, `enableHourAccounting` в [Этап техкарты](../dictionaries/#suschnosti-tehkarta-tehkarty)
+- Поля `standardHourCost`, `enableHourAccounting` в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+- Поля `standardHourCost`, `enableHourAccounting` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+
+### 23-12-2024
+#### Изменены
+- Эндпоинты для работы с [Настройками уведомлений](../notification/#uwedomleniq-nastrojki-uwedomlenij) 
+
+### 17-12-2024
+#### Добавлен
+- Параметр фильтрации `entityType` в [Отчетах Прибыльность](../reports/#otchety-otchet-pribyl-nost)
+
+### 02-12-2024
+#### Добавлено
+- Вывод дополнительных полей в элементы [Пользовательских справочников](../dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik)
+- Вывод метаданных дополнительных полей в метаданные пользовательских справочников
+- Поле `ID` в метаданные пользовательского справочника
+
+#### Изменено
+- Актуализирована документация по [Пользовательским справочникам](../dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik)
+
+### 19-11-2024
+#### Добавлено
+- Поле `salesMargin` в [Отчет Прибыльность](../reports/#otchety-otchet-pribyl-nost)
+
+### 01-11-2024
+#### Добавлена
+- Ошибка [4003](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tochek-prodazh) при создании\изменении точки продаж productFolders содержит родительскую группу товаров и ee дочерние группы одновременно
+
+### 29-10-2024
+#### Добавлена
+- Ошибка [71000](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-serij) при создании серии в качестве ассортимента указана серия
+
+### 24-10-2024
+#### Добавлено
+- Поле `advancePaymentVat` в [Юрлица](../dictionaries/#suschnosti-jurlico), Налоговая ставка для авансов для плательщиков НДС
+
+### 17-10-2024
+#### Изменено
+- Изменено одно из [правил бана](../index.html#mojsklad-json-api-ogranicheniq)
+
+### 08-10-2024
+#### Добавлена
+- Возможность фильтровать архивные товары в [отчете оборотов](../reports/#otchety-otchet-oboroty)
+
+### 30-09-2024
+#### Добавлено
+- Возможность обновлять и удалять события в [Ленте Событий](../dictionaries/#suschnosti-lenta-sobytij)
+- Ошибка [2026](../#mojsklad-json-api-oshibki-oshibki-formata)
+
 ### 16-09-2024
 #### Добавлено
 - Описание ошибки [70000](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-lenty-sobytij)
@@ -26,7 +89,7 @@
 
 ### 03-09-2024
 #### Добавлены
-- Поле "склад материалов" (materialStore) в [Этапы Техкарты](../dictionaries/#suschnosti-tehkarta)
+- Поле "склад материалов" (materialStore) в [Этапы Техкарты](../dictionaries/#suschnosti-jetap-proizwodstwa-jetapy)
 - Поле "склад материалов" (materialStore) в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
 
 ### 28-08-2024
@@ -105,7 +168,7 @@
 - Поле `performers` в [этапы производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Массив метаданных возможных исполнителей
 - Ошибка [25035](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
 - Добавлен новый тип уведомлений [Новое упоминание в ленте событий](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowoe-upominanie-w-lente-sobytij)
-- Добавлена новая группа уведомлений [Упоминания сотрудников](../notification/#uwedomleniq-nastrojki-uwedomlenij-atributy-suschnosti)
+- Добавлена новая группа уведомлений [Упоминания сотрудников](../notification/#uwedomleniq-nastrojki-uwedomlenij-struktura-dannyh)
 
 ### 23-04-2024
 #### Добавлено
@@ -127,7 +190,7 @@
 
 ### 02-04-2024
 #### Добавлено
-- Возможность получения [шаблонов](../documents/#dokumenty-obschie-swedeniq-shablony-dokumentow) документов по токену приложения
+- Возможность получения [шаблонов](../documents/#dokumenty-obschie-swedeniq-shablony-dokumentow) документов по токену решения
 
 ### 28-03-2024
 #### Добавлено
@@ -350,9 +413,9 @@
 
 ### 07-02-2023
 #### Добавлена
-- Возможность привязывать/отвязывать перемещения к/от [Заказа покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej).
-- Описание [Пример привязывания перемещений к заказу покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-primer-priwqzki-3)
-- Добавлен `3031` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii).
+- Возможность привязывать/отвязывать перемещения к/от [Заказа покупателя](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej).
+- Описание [Пример привязывания перемещений к заказу покупателя](../documents/#dokumenty-obschie-swedeniq-primer-priwqzki-3)
+- Добавлен `3031` код [ошибки](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii).
 
 ### 31-01-2023
 #### Добавлена
@@ -513,12 +576,12 @@
 ### 19-07-2022
 #### Добавлено
 - Дополнено описаниение раздела Адрес у
-[Контрагента](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres),
-[Юрлица](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres),
-[Точки продаж](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-adres),
-[Склада](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres),
-[Заказа покупателя](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-attributy-suschnosti-adres-dostawki),
-[Отгрузки](../documents/#dokumenty-otgruzka-otgruzki-attributy-suschnosti-adres-dostawki), 
+[Контрагента](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-adres),
+[Юрлица](../dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-adres),
+[Точки продаж](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status-atributy-suschnosti-adres),
+[Склада](../dictionaries/#suschnosti-sklad-sklady-atributy-suschnosti-adres),
+[Заказа покупателя](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-atributy-suschnosti-adres-dostawki),
+[Отгрузки](../documents/#dokumenty-otgruzka-otgruzki-atributy-suschnosti-adres-dostawki), 
 об отсутствии поддержки `null`.
 
 ### 07-07-2022
@@ -816,7 +879,7 @@
 
 ### 08-06-2021
 #### Изменено
-- Изменены лимиты по [вебхукам](../dictionaries/#suschnosti-vebhuki): выделены отдельные лимиты для приложений  
+- Изменены лимиты по [вебхукам](../dictionaries/#suschnosti-vebhuki): выделены отдельные лимиты для решений  
 
 ### 03-06-2021
 #### Добавлено
@@ -832,7 +895,7 @@
 
 ### 01-06-2021
 #### Добавлено
-- Возможность получать и изменять пользовательские роли от лица приложения
+- Возможность получать и изменять пользовательские роли от лица решения
 - Исправлена ошибка: при изменении пермиссий у роли сотрудника, был невозможен вход в систему
 
 ### 31-05-2021
@@ -1013,7 +1076,7 @@
 ### 04-02-2021
 #### Изменено
 - Добавлен новый тип уведомлений [Уведомление из сценария](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-uwedomlenie-iz-scenariq)
-- Добавлена новая группа уведомлений [Сценарии](../notification/#uwedomleniq-nastrojki-uwedomlenij-atributy-suschnosti)
+- Добавлена новая группа уведомлений [Сценарии](../notification/#uwedomleniq-nastrojki-uwedomlenij-struktura-dannyh)
 
 ### 02-02-2021
 #### Добавлено
