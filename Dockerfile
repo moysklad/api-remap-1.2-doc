@@ -1,4 +1,5 @@
 FROM ruby:2.5.1
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list
 COPY . /usr/src/app
 VOLUME /usr/src/app
 EXPOSE 4567

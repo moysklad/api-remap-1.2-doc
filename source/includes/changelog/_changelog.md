@@ -19,12 +19,21 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 27-12-2024
+### 22-01-2025
 #### Добавлено
 - Типы компаний региона Узбекистан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)
 - Типы компаний региона Узбекистан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-tip-urlica)
 - Реквизиты региона Узбекистан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-rekwizity-uzbekistana)
 - Реквизиты региона Узбекистан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-rekwizity-uzbekistana)
+
+### 16-01-2025
+#### Добавлено
+- поля `files`, `instruction`в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+
+### 15-01-2025
+#### Добавлено
+- Добавлен параметр `withRecalculate` в эндпоинт [Краткий отчет об остатках](../reports/#otchety-otchet-ostatki-kratkij-otchet-ob-ostatkah).
+- Новые типы маркированной продукции `BICYCLE` для велосипедов, `NABEER` для безалкогольного пива, `SEAFOOD` для икры и морепродуктов, `VETPHARMA` для ветеринарных препаратов для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
 
 ### 25-12-2024
 #### Добавлено
