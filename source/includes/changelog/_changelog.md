@@ -24,7 +24,6 @@
 - Добавлены [регональные заголовки](../#mojsklad-json-api-obschie-swedeniq-regional-nye-zagolowki)
 - Ошибка  [16114](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-towarow) Ошибка сохранения товара: маркированный товар не может быть разливным
 
-
 ### 16-01-2025
 #### Добавлено
 - Поле `service` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
