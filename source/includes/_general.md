@@ -3052,7 +3052,7 @@ Href решения должен быть указан в виде:
 Пример запроса на получение списка записей:
 `https://api.moysklad.ru/api/remap/1.2/audit?filter=application=https://api.moysklad.ru/api/remap/1.2/entity/application/46ea8005-2965-11e9-9ff4-34e80009ac49` 
 
-#### Региональные заголовки
+### Региональные заголовки
 Для работы в странах отличных от России обязательно требуется передавать заголовок X-Lognex-Accept-Region.
 Значения для заголовка X-Lognex-Accept-Region могут быть следующие:
 
