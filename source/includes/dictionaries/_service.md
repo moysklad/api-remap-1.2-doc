@@ -772,7 +772,7 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vatEnabled": false,
-  "useParentVat": true,
+  "useParentVat": true
 }
 ```
 

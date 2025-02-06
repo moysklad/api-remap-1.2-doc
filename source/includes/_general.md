@@ -988,12 +988,14 @@ curl -X POST
 > Представление остатков и себестоимости в составе позиции
 
 ```json
-"stock": {
+{
+  "stock": {
     "cost": 5000,
     "quantity": 999,
     "reserve": 90,
     "intransit": 9,
     "available": 918
+  }
 }
 ```
 
