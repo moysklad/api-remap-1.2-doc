@@ -1528,8 +1528,7 @@ curl -X GET
 curl -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product"
   -u login:password
   -H "Accept-Encoding: gzip" 
-  -H "Lognex-Pretty-Print-JSON: true" 
-  "https://api.moysklad.ru/api/remap/1.2/entity/country"
+  -H "Lognex-Pretty-Print-JSON: true"
 ```
 
 > Ответ:
@@ -2185,8 +2184,7 @@ curl -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product"
 curl -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product?limit=1&offset=0"
   -u login:password
   -H "Accept-Encoding: gzip" 
-  -H "Lognex-Pretty-Print-JSON: true" 
-  "https://api.moysklad.ru/api/remap/1.2/entity/country/?limit=25&offset=25"
+  -H "Lognex-Pretty-Print-JSON: true"
 ```
 
 > Ответ:
@@ -2417,8 +2415,7 @@ curl -X GET
 curl -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product?order=name,desc;updated"
   -u login:password
   -H "Accept-Encoding: gzip" 
-  -H "Lognex-Pretty-Print-JSON: true" 
-  "https://api.moysklad.ru/api/remap/1.2/entity/country/?order=name,desc;updated"
+  -H "Lognex-Pretty-Print-JSON: true"
 ```
 
 > Ответ:
@@ -3089,8 +3086,7 @@ curl -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product?order=name,des
 curl -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product/0884d27a-b0e3-11ea-ac12-000b00000002?expand=owner,owner.group"
   -u login:password
   -H "Accept-Encoding: gzip" 
-  -H "Lognex-Pretty-Print-JSON: true" 
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/0884d27a-b0e3-11ea-ac12-000b00000002?expand=owner.group"
+  -H "Lognex-Pretty-Print-JSON: true"
 ```
 
 > Response 200 (application/json)
@@ -3250,8 +3246,7 @@ curl -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product/0884d27a-b0e3-
 curl -X PUT "https://api.moysklad.ru/api/remap/1.2/entity/product/0884d27a-b0e3-11ea-ac12-000b00000002?expand=owner,owner.group"
   -u login:password
   -H "Accept-Encoding: gzip" 
-  -H "Lognex-Pretty-Print-JSON: true" 
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/0884d27a-b0e3-11ea-ac12-000b00000002?expand=owner.group" 
+  -H "Lognex-Pretty-Print-JSON: true"
   -d '{"name":"Новое наименование"}'
 ```
 
@@ -3412,8 +3407,7 @@ curl -X PUT "https://api.moysklad.ru/api/remap/1.2/entity/product/0884d27a-b0e3-
 curl -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product?limit=100&expand=owner,owner.group"
   -u login:password
   -H "Accept-Encoding: gzip" 
-  -H "Lognex-Pretty-Print-JSON: true" 
-  "https://api.moysklad.ru/api/remap/1.2/entity/product?limit=100&expand=owner.group"
+  -H "Lognex-Pretty-Print-JSON: true"
 ```
 
 > Response 200 (application/json)
