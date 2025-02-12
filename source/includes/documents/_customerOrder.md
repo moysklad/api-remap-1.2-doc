@@ -839,7 +839,7 @@ curl -X GET
       "id": "c2ecd338-015e-11e6-9464-e4de0000008f",
       "name": "AttributeName1",
       "type": "string",
-      "value": "Атрибут заказа",
+      "value": "Атрибут заказа"
     }
   ],
   "created": "2007-02-07 17:16:41",

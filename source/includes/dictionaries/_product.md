@@ -1710,7 +1710,7 @@ curl -X GET
   "isSerialTrackable": false,
   "trackingType": "NOT_TRACKED",
   "vatEnabled": false,
-  "useParentVat": true,
+  "useParentVat": true
 }
 ```
 
@@ -1842,7 +1842,7 @@ curl -X GET
     "isSerialTrackable": false,
     "trackingType": "NOT_TRACKED",
     "vatEnabled": false,
-    "useParentVat": true,
+    "useParentVat": true
   },
   {
     "meta": {
@@ -2051,7 +2051,6 @@ curl -X GET
     "trackingType": "NOT_TRACKED"
   }
 ]
-
 ```
 
 
