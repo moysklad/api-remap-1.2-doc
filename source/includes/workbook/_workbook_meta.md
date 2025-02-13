@@ -122,6 +122,7 @@ curl -X GET
 > Метаданные поставщика
 
 ```json
+{
   "meta": {
     "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/d92bcdc1-b0e2-11ea-ac12-000d00000073",
     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
@@ -129,6 +130,7 @@ curl -X GET
     "mediaType": "application/json",
     "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=d92bcdc1-b0e2-11ea-ac12-000d00000073"
   }
+}
 ```
 
 Ссылки на сотрудника, создавшего контрагента, и отдел сотрудника указаны в полях `owner` и `group`, и содержат также поля `meta`.
@@ -136,6 +138,7 @@ curl -X GET
 > Метаданные сотрудника и его отдела
 
 ```json
+{
   "owner": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/d8ed648c-b0e2-11ea-ac12-000d00000034",
@@ -153,6 +156,7 @@ curl -X GET
       "mediaType": "application/json"
     }
   }
+}
 ```
 
 Очевидно, что поля `href` и `uuidHref` содержат url для доступа к объектам и могут быть использованы для запроса.
@@ -228,12 +232,14 @@ curl -X GET
 
 Имея метаданные товара
 ```json
-"meta":{
-   "href":"https://api.moysklad.ru/api/remap/1.2/entity/product/3b336cc5-d10a-11e8-ac12-000b00000021",
-   "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
-   "type":"product",
-   "mediaType":"application/json",
-   "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=3b335997-d10a-11e8-ac12-000b0000001f"
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/3b336cc5-d10a-11e8-ac12-000b00000021",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+    "type": "product",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3b335997-d10a-11e8-ac12-000b0000001f"
+  }
 }
 ```
 Выполним запрос на создание комплекта, указав товар в компонентах
@@ -271,7 +277,7 @@ curl -X POST
 > Результат
 
 ```json
-
+{
   "meta": {
     "href": "https://api.moysklad.ru/api/remap/1.2/entity/bundle/e5da18eb-b152-11ea-ac12-000c00000002",
     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",

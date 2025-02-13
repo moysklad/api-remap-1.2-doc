@@ -142,7 +142,7 @@ curl -X GET
                   "mediaType": "application/json",
                   "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=69f5683e-a49b-11ea-ac15-000e000000cf"
                 }
-            },
+            }
         }
     ]
 }

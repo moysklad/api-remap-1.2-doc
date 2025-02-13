@@ -19,12 +19,26 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 22-01-2025
+### 13-02-2025
 #### Добавлено
 - Типы компаний региона Узбекистан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)
 - Типы компаний региона Узбекистан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-tip-urlica)
 - Реквизиты региона Узбекистан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-rekwizity-uzbekistana)
 - Реквизиты региона Узбекистан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-rekwizity-uzbekistana)
+
+### 12-02-2025
+#### Добавлено
+- Условие автоматического отключения JSON API пользователю в [Ограничения](../#mojsklad-json-api-ogranicheniq)
+
+### 27-01-2025
+#### Добавлено
+- Добавлены [регональные заголовки](../#mojsklad-json-api-obschie-swedeniq-regional-nye-zagolowki)
+- Ошибка  [16114](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-towarow) Ошибка сохранения товара: маркированный товар не может быть разливным
+
+### 16-01-2025
+#### Добавлено
+- Поле `service` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+- Возможность назначать исполнителем не только сотрудника но и контрагента в [Выполнении этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
 
 ### 16-01-2025
 #### Добавлено
