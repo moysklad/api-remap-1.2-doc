@@ -19,6 +19,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 28-02-2025
+#### Изменены
+- Уточнение формулировки по реквизитам для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)
+- Уточнение формулировки по реквизитам для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-tip-urlica)
+
 ### 13-02-2025
 #### Добавлено
 - Типы компаний региона Узбекистан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)
