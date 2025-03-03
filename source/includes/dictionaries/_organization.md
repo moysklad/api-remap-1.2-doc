@@ -88,6 +88,7 @@
 | **addInfo**    | String(255)                                               | Другое             |
 | **apartment**  | String(30)                                                | Квартира           |
 | **city**       | String(255)                                               | Город              |
+| **fiasCode**   | String(255)                                               | Код ФИАС           |
 | **comment**    | String(255)                                               | Комментарий        |
 | **country**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные страны  |
 | **house**      | String(30)                                                | Дом                |
@@ -366,7 +367,8 @@ curl -X GET
         "house": "1",
         "apartment": "123",
         "addInfo": "addinfo",
-        "comment": "some words about address"
+        "comment": "some words about address",
+        "codeFias": "53423243432"
       },
       "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
       "actualAddressFull": {
@@ -392,7 +394,8 @@ curl -X GET
         "house": "1",
         "apartment": "111",
         "addInfo": "addinfo",
-        "comment": "some words about address"
+        "comment": "some words about address",
+        "codeFias": "53423243432"
       },
       "inn": "8274424278",
       "kpp": "123456789",
@@ -478,7 +481,8 @@ curl -X GET
     "house":"1",
     "apartment":"123",
     "addInfo":"addinfo",
-    "comment":"some words about address"
+    "comment":"some words about address",
+    "codeFias": "53423243432"
   },
   "actualAddressFull":{  
     "postalCode":"125009",
@@ -503,7 +507,8 @@ curl -X GET
     "house":"1",
     "apartment":"111",
     "addInfo":"addinfo",
-    "comment":"some words about address"
+    "comment":"some words about address",
+    "codeFias": "53423243432"
   },
   "inn":"87654321",
   "kpp":"15312532",
@@ -598,7 +603,8 @@ curl -X GET
     "house": "1",
     "apartment": "123",
     "addInfo": "addinfo",
-    "comment": "some words about address"
+    "comment": "some words about address",
+    "codeFias": "53423243432"
   },
   "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
   "actualAddressFull": {
@@ -624,7 +630,8 @@ curl -X GET
     "house": "1",
     "apartment": "111",
     "addInfo": "addinfo",
-    "comment": "some words about address"
+    "comment": "some words about address",
+    "codeFias": "53423243432"
   },
   "inn": "87654321",
   "kpp": "15312532",
@@ -897,7 +904,8 @@ curl -X GET
     "house": "1",
     "apartment": "123",
     "addInfo": "addinfo",
-    "comment": "some words about address"
+    "comment": "some words about address",
+    "codeFias": "53423243432"
   },
   "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
   "actualAddressFull": {
@@ -923,7 +931,8 @@ curl -X GET
     "house": "1",
     "apartment": "111",
     "addInfo": "addinfo",
-    "comment": "some words about address"
+    "comment": "some words about address",
+    "codeFias": "53423243432"
   },
   "inn": "87654321",
   "kpp": "15312532",
@@ -1382,7 +1391,8 @@ curl -X GET
     "house": "1",
     "apartment": "123",
     "addInfo": "addinfo",
-    "comment": "some words about address"
+    "comment": "some words about address",
+    "codeFias": "53423243432"
   },
   "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
   "actualAddressFull": {
@@ -1408,7 +1418,8 @@ curl -X GET
     "house": "1",
     "apartment": "111",
     "addInfo": "addinfo",
-    "comment": "some words about address"
+    "comment": "some words about address",
+    "codeFias": "53423243432"
   },
   "inn": "87654321",
   "kpp": "15312532",
@@ -1680,7 +1691,8 @@ curl -X GET
   "house": "1",
   "apartment": "123",
   "addInfo": "addinfo",
-  "comment": "some words about address"
+  "comment": "some words about address",
+  "codeFias": "53423243432"
 },
 "actualAddressFull": {
   "postalCode": "125009",
@@ -1705,7 +1717,8 @@ curl -X GET
   "house": "1",
   "apartment": "111",
   "addInfo": "addinfo",
-  "comment": "some words about address"
+  "comment": "some words about address",
+  "codeFias": "53423243432"
 },
   "inn": "87654321",
   "kpp": "15312532",
@@ -1794,7 +1807,8 @@ curl -X GET
     "house": "1",
     "apartment": "123",
     "addInfo": "addinfo",
-    "comment": "some words about address"
+    "comment": "some words about address",
+    "codeFias": "53423243432"
   },
   "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
   "actualAddressFull": {
@@ -1820,7 +1834,8 @@ curl -X GET
     "house": "1",
     "apartment": "111",
     "addInfo": "addinfo",
-    "comment": "some words about address"
+    "comment": "some words about address",
+    "codeFias": "53423243432"
   },
   "inn": "87654321",
   "kpp": "15312532",
