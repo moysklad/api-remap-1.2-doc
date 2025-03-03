@@ -104,7 +104,7 @@
 | **apartment**  | String(30)                                                | Квартира           |
 | **city**       | String(255)                                               | Город              |
 | **comment**    | String(255)                                               | Комментарий        |
-| **fiasCode**   | String(255)                                               | Код ФИАС           |
+| **fiasCode\_\_ru**| String(255)                                               | Код ФИАС           |
 | **country**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные страны  |
 | **house**      | String(30)                                                | Дом                |
 | **postalCode** | String(6)                                                 | Почтовый индекс    |
@@ -392,7 +392,7 @@ curl -X GET
         "apartment":"123",
         "addInfo":"addinfo",
         "comment":"some words about address",
-        "codeFias": "53423243432"
+        "fiasCode__ru": "53423243432"
       },
       "actualAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
       "actualAddressFull":{  
@@ -419,7 +419,7 @@ curl -X GET
         "apartment":"111",
         "addInfo":"addinfo",
         "comment":"some words about address",
-        "codeFias": "53423243432"
+        "fiasCode__ru": "53423243432"
       },
       "inn":"7736570901",
       "kpp":"773601001",
@@ -543,7 +543,7 @@ curl -X GET
         "apartment":"123",
         "addInfo":"addinfo",
         "comment":"some words about address",
-        "codeFias": "53423243432"
+        "fiasCode__ru": "53423243432"
       },
       "actualAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
       "actualAddressFull":{  
@@ -570,7 +570,7 @@ curl -X GET
         "apartment":"111",
         "addInfo":"addinfo",
         "comment":"some words about address",
-        "codeFias": "53423243432"
+        "fiasCode__ru": "53423243432"
       },
       "inn":"7736570902",
       "kpp":"773601002",
@@ -666,7 +666,7 @@ curl -X GET
         "apartment":"123",
         "addInfo":"addinfo",
         "comment":"some words about address",
-        "codeFias": "53423243432"
+        "fiasCode__ru": "53423243432"
       },
       "actualAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
       "actualAddressFull":{  
@@ -693,7 +693,7 @@ curl -X GET
         "apartment":"111",
         "addInfo":"addinfo",
         "comment":"some words about address",
-        "codeFias": "53423243432"
+        "fiasCode__ru": "53423243432"
       },
       "accounts":{  
         "meta":{  
@@ -787,7 +787,7 @@ curl -X GET
         "apartment":"123",
         "addInfo":"addinfo",
         "comment":"some words about address",
-        "codeFias": "53423243432"
+        "fiasCode__ru": "53423243432"
       },
       "actualAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
       "actualAddressFull":{  
@@ -814,7 +814,7 @@ curl -X GET
         "apartment":"111",
         "addInfo":"addinfo",
         "comment":"some words about address",
-        "codeFias": "53423243432"
+        "fiasCode__ru": "53423243432"
       },
       "accounts":{  
         "meta":{  
@@ -1725,7 +1725,7 @@ curl -X POST
     "apartment":"123",
     "addInfo":"addinfo",
     "comment":"some words about address",
-    "codeFias": "53423243432"
+    "fiasCode__ru": "53423243432"
   },
   "actualAddressFull":{  
     "postalCode":"125009",
@@ -1751,7 +1751,7 @@ curl -X POST
     "apartment":"111",
     "addInfo":"addinfo",
     "comment":"some words about address",
-    "codeFias": "53423243432"
+    "fiasCode__ru": "53423243432"
   },
   "inn":"1251521244152",
   "kpp":"121555212",
@@ -1866,7 +1866,7 @@ curl -X POST
     "apartment":"123",
     "addInfo":"addinfo",
     "comment":"some words about address",
-    "codeFias": "53423243432"
+    "fiasCode__ru": "53423243432"
   },
   "actualAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
   "actualAddressFull":{  
@@ -1893,7 +1893,7 @@ curl -X POST
     "apartment":"111",
     "addInfo":"addinfo",
     "comment":"some words about address",
-    "codeFias": "53423243432"
+    "fiasCode__ru": "53423243432"
   },
   "inn":"1251521244152",
   "kpp":"121555212",
@@ -2536,7 +2536,7 @@ curl -X GET
     "apartment":"123",
     "addInfo":"addinfo",
     "comment":"some words about address",
-    "codeFias": "53423243432"
+    "fiasCode__ru": "53423243432"
   },
   "actualAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
   "actualAddressFull":{  
@@ -2563,7 +2563,7 @@ curl -X GET
     "apartment":"111",
     "addInfo":"addinfo",
     "comment":"some words about address",
-    "codeFias": "53423243432"
+    "fiasCode__ru": "53423243432"
   },
   "bonusProgram": {
     "meta": {
@@ -2746,7 +2746,7 @@ curl -X PUT
     "apartment":"123",
     "addInfo":"addinfo",
     "comment":"some words about address",
-    "codeFias": "53423243432"
+    "fiasCode__ru": "53423243432"
   },
   "actualAddressFull":{  
     "postalCode":"125009",
@@ -2772,7 +2772,7 @@ curl -X PUT
     "apartment":"111",
     "addInfo":"addinfo",
     "comment":"some words about address",
-    "codeFias": "53423243432"
+    "fiasCode__ru": "53423243432"
   },
   "inn":"1251581244152",
   "kpp":"121557212",
@@ -2850,7 +2850,7 @@ curl -X PUT
     "apartment":"123",
     "addInfo":"addinfo",
     "comment":"some words about address",
-    "codeFias": "53423243432"
+    "fiasCode__ru": "53423243432"
   },
   "actualAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
   "actualAddressFull":{  
@@ -2877,7 +2877,7 @@ curl -X PUT
     "apartment":"111",
     "addInfo":"addinfo",
     "comment":"some words about address",
-    "codeFias": "53423243432"
+    "fiasCode__ru": "53423243432"
   },
   "inn":"1251581244152",
   "kpp":"121557212",
@@ -3078,7 +3078,7 @@ curl -X PUT
     "apartment":"123",
     "addInfo":"addinfo",
     "comment":"some words about address",
-    "codeFias": "53423243432"
+    "fiasCode__ru": "53423243432"
   },
   "actualAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
   "actualAddressFull":{  
@@ -3105,7 +3105,7 @@ curl -X PUT
     "apartment":"111",
     "addInfo":"addinfo",
     "comment":"some words about address",
-    "codeFias": "53423243432"
+    "fiasCode__ru": "53423243432"
   },
   "inn":"1251581244152",
   "kpp":"121557212",
