@@ -16,7 +16,7 @@
 | **code**         | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Код Статьи расходов                                                                      |
 | **description**  | String(4096)                                              | `=` `!=` `~` `~=` `=~`      | Описание Статьи расходов                                                                 |
 | **externalCode** | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Внешний код Статьи расходов<br>`+Обязательное при ответе`                                |
-| **id**           | UUID                                                      | `=` `!=`                    | ID Страны<br>`+Обязательное при ответе` `+Только для чтения`                             |
+| **id**           | UUID                                                      | `=` `!=`                    | ID Cтатьи расходов<br>`+Обязательное при ответе` `+Только для чтения`                             |
 | **meta**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                             | Метаданные о Статье расходов<br>`+Обязательное при ответе`                               |
 | **name**         | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Наименование Статьи расходов<br>`+Обязательное при ответе` `+Необходимо при создании`    |
 | **updated**      | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`  | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Только для чтения` |
@@ -332,18 +332,20 @@ curl -X POST
   -H "Content-Type: application/json"
   -d '[
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
-            "type": "expenseitem",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/7944ef04-f831-11e5-7a69-971500188b1",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+                "type": "expenseitem",
+                "mediaType": "application/json"
+            }
         },
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
-            "type": "expenseitem",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/7944ef04-f831-11e5-7a69-971500188b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+                "type": "expenseitem",
+                "mediaType": "application/json"
+            }
         }
       ]'
 ```        

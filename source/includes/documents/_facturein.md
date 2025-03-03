@@ -5,7 +5,7 @@
 #### Атрибуты сущности
 
 | Название         | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                      |
-| ---------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------- |
+| ---------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |:----------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**    | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                          |
 | **agent**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные контрагента<br>`+Обязательное при ответе` `+Expand`                                                                                |
 | **applicable**   | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе`                                                                                            |
@@ -23,7 +23,7 @@
 | **moment**       | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе`                                                                                                  |
 | **name**         | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование выданного Счета-фактуры полученного<br>`+Обязательное при ответе`                                                                |
 | **organization** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                          |
-| **owner**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                                                  |
+| **owner**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                             |
 | **printed**      | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                      |
 | **published**    | Boolean                                                   | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                    |
 | **rate**         | Object                                                    |                                                                                                                                                   | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе`                           |
@@ -571,18 +571,20 @@ curl -X POST
   -H "Content-Type: application/json"
   -d '[
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/facturein/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/facturein/metadata",
-            "type": "facturein",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/facturein/7944ef04-f831-11e5-7a69-971500188b1",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/facturein/metadata",
+                "type": "facturein",
+                "mediaType": "application/json"
+            }
         },
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/facturein/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/facturein/metadata",
-            "type": "facturein",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/facturein/7944ef04-f831-11e5-7a69-971500188b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/facturein/metadata",
+                "type": "facturein",
+                "mediaType": "application/json"
+            }
         }
       ]'
 ```        

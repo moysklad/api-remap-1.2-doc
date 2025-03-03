@@ -37,12 +37,16 @@ jobs:
 
       - name: Build
         run:
-          bundle exec middleman build --build-dir=site
+          bundle exec middleman build --build-dir=site --no-parallel
 
       - name: Build index
         run: |
           npm install jsdom@20.0.0
           node ./search/globalindex.js "./site/"
+
+      - name: Build release_date file
+        run:
+          date -I > site/release_date
 
       - name: Deploy
         env:

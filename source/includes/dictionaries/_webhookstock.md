@@ -15,7 +15,7 @@
   "accountId": "f71cb8b6-f7b5-11ec-ac12-000f000000eb",
   "stockType": "stock",
   "reportType": "all",
-  "reportUrl": "https://api.moysklad.ru/api/remap/1.2/report/stock/all/current?fromDate=2022-09-24 19:14:32"
+  "reportUrl": "https://api.moysklad.ru/api/remap/1.2/report/stock/all/current?changedSince=2022-09-24 19:14:32"
 }
 ```
 
@@ -42,7 +42,7 @@
 | Название               | Тип                                                       | Описание                                                                                                                                                                                                                                                                                                           |
 |------------------------| :-------------------------------------------------------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**          | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе`                                                                                                                                                                                                                                                                    |
-| **authorApplication**  | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Приложения, создавшего вебхук на изменение остатков<br>`+Только для чтения`                                                                                                                                                                                                                                                |
+| **authorApplication**  | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Решения, создавшего вебхук на изменение остатков<br>`+Только для чтения`                                                                                                                                                                                                                                                |
 | **enabled**            | Boolean                                                   | Флажок состояния вебхука на изменение остатков (включен / отключен)<br>`+Обязательное при ответе`                                                                                                                                                                                                                 |
 | **stockType**          | Enum                                                      | Тип остатков, изменение которых вызывает вебхук. Возможные значения: `[stock]`<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                                      |
 | **reportType**         | Enum                                                      | Тип отчета остатков, к которым привязан вебхук на изменение остатков. Возможные значения: `[all, bystore]`<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                               |
@@ -142,7 +142,7 @@ curl -X GET
 ### Создать вебхук на изменение остатков
 Сочетание **stockType**, **reportType**, **url** должно быть уникальным. 
 Всего на одно уникальное сочетание **stockType**, **reportType** может быть создано не более 5 вебхуков на изменение 
-остатков с разными **url** для пользователей и не более 1 для приложения.
+остатков с разными **url** для пользователей и не более 1 для решения.
 
 > Пример запроса на создание нового вебхука на изменение остатков.
 
@@ -408,18 +408,20 @@ curl -X POST
   -H "Content-Type: application/json"
   -d '[
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
-            "type": "webhookstock",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b1",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
+                "type": "webhookstock",
+                "mediaType": "application/json"
+            }
         },
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
-            "type": "webhookstock",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/7944ef04-f831-11e5-7a69-971500188b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/metadata",
+                "type": "webhookstock",
+                "mediaType": "application/json"
+            }
         }
       ]'
 ```        

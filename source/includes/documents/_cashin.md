@@ -23,7 +23,7 @@
 | **moment**         | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе`                                                                                                  |
 | **name**           | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Приходного ордера<br>`+Обязательное при ответе`                                                                                  |
 | **organization**   | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                          |
-| **owner**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                                                  |
+| **owner**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                             |
 | **paymentPurpose** | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Основание<br>`+Обязательное при ответе`                                                                                                       |
 | **printed**        | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                      |
 | **project**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand`                                                                                                               |
@@ -32,10 +32,10 @@
 | **salesChannel**   | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные канала продаж<br>`+Expand`                                                                                                         |
 | **shared**         | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                    |
 | **state**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса Приходного ордера<br>`+Expand`                                                                                             |
-| **sum**            | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Приходного ордера в установленной валюте<br>`+Обязательное при ответе` `+Только для чтения`                                             |
+| **sum**            | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Приходного ордера в установленной валюте<br>`+Обязательное при ответе`                                                                  |
 | **syncId**         | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                   |
 | **updated**        | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Приходного ордера<br>`+Обязательное при ответе` `+Только для чтения`                                             |
-| **vatSum**         | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе`                                                                                               |
+| **vatSum**         | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе`                                                                                                       |
 
 #### Связи с другими документами
 
@@ -769,18 +769,20 @@ curl -X POST
   -H "Content-Type: application/json"
   -d '[
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/cashin/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/cashin/metadata",
-            "type": "cashin",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/cashin/7944ef04-f831-11e5-7a69-971500188b1",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/cashin/metadata",
+                "type": "cashin",
+                "mediaType": "application/json"
+            }
         },
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/cashin/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/cashin/metadata",
-            "type": "cashin",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/cashin/7944ef04-f831-11e5-7a69-971500188b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/cashin/metadata",
+                "type": "cashin",
+                "mediaType": "application/json"
+            }
         }
       ]'
 ```        

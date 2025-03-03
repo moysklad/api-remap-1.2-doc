@@ -3,46 +3,46 @@
 ### Приемки 
 #### Атрибуты сущности
 
-| Название                | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                                              |
-|-------------------------|:----------------------------------------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------ |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**           | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                  |
-| **agent**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные контрагента<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler` `+Update-provider`                                                            |
-| **agentAccount**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета контрагента<br>`+Expand` `+Change-handler` `+Update-provider`                                                                                                            |
-| **applicable**          | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                   |
-| **attributes**          | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)<br>`+Change-handler` `+Update-provider`                          |
-| **code**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Приемки                                                                                                                                                           |
-| **contract**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные договора<br>`+Expand` `+Change-handler` `+Update-provider`                                                                                                                     |
-| **created**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                    |
-| **deleted**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Приемки<br>`+Только для чтения`                                                                                                            |
-| **description**         | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Приемки<br>`+Change-handler` `+Update-provider`                                                                                                                              |
-| **externalCode**        | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Приемки<br>`+Обязательное при ответе` `+Change-handler`                                                                                                   |
-| **files**               | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`                         |
-| **group**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                              |
-| **id**                  | UUID                                                      | `=` `!=`                                                                                                                                          | ID Приемки<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                       |
-| **incomingDate**        | DateTime                                                  |                                                                                                                                                   | Входящая дата<br>`+Change-handler` `+Update-provider`                                                                                                                                    |
-| **incomingNumber**      | String(255)                                               |                                                                                                                                                   | Входящий номер<br>`+Change-handler` `+Update-provider`                                                                                                                                   |
-| **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Приемки<br>`+Обязательное при ответе` `+Change-handler`                                                                                                     |
-| **moment**              | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                         |
-| **name**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Приемки<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                   |
-| **organization**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler` `+Update-provider`                                                                 |
-| **organizationAccount** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand` `+Change-handler` `+Update-provider`                                                                                                                 |
+| Название                | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                                                                |
+|-------------------------|:----------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**           | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                  |
+| **agent**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные контрагента<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler` `+Update-provider`                                                          |
+| **agentAccount**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета контрагента<br>`+Expand` `+Change-handler` `+Update-provider`                                                                                                          |
+| **applicable**          | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                 |
+| **attributes**          | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)<br>`+Change-handler` `+Update-provider`                         |
+| **code**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Приемки                                                                                                                                                                             |
+| **contract**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные договора<br>`+Expand` `+Change-handler` `+Update-provider`                                                                                                                   |
+| **created**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                      |
+| **deleted**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Приемки<br>`+Только для чтения`                                                                                                                              |
+| **description**         | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Приемки<br>`+Change-handler` `+Update-provider`                                                                                                                             |
+| **externalCode**        | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Приемки<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                     |
+| **files**               | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`                                           |
+| **group**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                |
+| **id**                  | UUID                                                      | `=` `!=`                                                                                                                                          | ID Приемки<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                         |
+| **incomingDate**        | DateTime                                                  |                                                                                                                                                   | Входящая дата<br>`+Change-handler` `+Update-provider`                                                                                                                                   |
+| **incomingNumber**      | String(255)                                               |                                                                                                                                                   | Входящий номер<br>`+Change-handler` `+Update-provider`                                                                                                                                  |
+| **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Приемки<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                      |
+| **moment**              | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                       |
+| **name**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Приемки<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                 |
+| **organization**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler` `+Update-provider`                                                               |
+| **organizationAccount** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand` `+Change-handler` `+Update-provider`                                                                                                               |
 | **overhead**            | Object                                                    |                                                                                                                                                   | Накладные расходы. [Подробнее тут](../documents/#dokumenty-priemka-priemki-nakladnye-rashody). Если Позиции Приемки не заданы, то накладные расходы нельзя задать<br>`+Update-provider` |
-| **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                                                                          |
-| **payedSum**            | Float                                                     |                                                                                                                                                   | Сумма входящих платежей по Приемке<br>`+Обязательное при ответе` `+Только для чтения`                                                                                 |
-| **positions**           | MetaArray                                                 |                                                                                                                                                   | Метаданные позиций Приемки<br>`+Обязательное при ответе` `+Expand` `+Change-handler` `+Update-provider`                                                                                   |
-| **printed**             | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                              |
-| **project**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand` `+Change-handler` `+Update-provider`                                                                                                                      |
-| **published**           | Boolean                                                   | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                            |
-| **rate**                | Object                                                    |                                                                                                                                                   | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                  |
-| **shared**              | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                                            |
-| **state**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса Приемки<br>`+Expand` `+Change-handler` `+Update-provider`                                                                                                              |
-| **store**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler` `+Update-provider`                                                                 |
-| **sum**                 | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Приемки в копейках<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                         |
-| **syncId**              | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                                           |
-| **updated**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Приемки<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                              |
-| **vatEnabled**          | Boolean                                                   |                                                                                                                                                   | Учитывается ли НДС<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                     |
-| **vatIncluded**         | Boolean                                                   |                                                                                                                                                   | Включен ли НДС в цену<br>`+Change-handler` `+Update-provider`                                                                                                                            |
-| **vatSum**              | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                      |
+| **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                       |
+| **payedSum**            | Float                                                     |                                                                                                                                                   | Сумма входящих платежей по Приемке<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                   |
+| **positions**           | MetaArray                                                 |                                                                                                                                                   | Метаданные позиций Приемки<br>`+Обязательное при ответе` `+Expand` `+Change-handler` `+Update-provider`                                                                                 |
+| **printed**             | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                |
+| **project**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand` `+Change-handler` `+Update-provider`                                                                                                                    |
+| **published**           | Boolean                                                   | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                              |
+| **rate**                | Object                                                    |                                                                                                                                                   | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                |
+| **shared**              | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                              |
+| **state**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса Приемки<br>`+Expand` `+Change-handler` `+Update-provider`                                                                                                            |
+| **store**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler` `+Update-provider`                                                               |
+| **sum**                 | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Приемки в копейках<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                           |
+| **syncId**              | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                                                             |
+| **updated**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Приемки<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                               |
+| **vatEnabled**          | Boolean                                                   |                                                                                                                                                   | Учитывается ли НДС<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                   |
+| **vatIncluded**         | Boolean                                                   |                                                                                                                                                   | Включен ли НДС в цену<br>`+Change-handler` `+Update-provider`                                                                                                                           |
+| **vatSum**              | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                          |
 
 #### Накладные расходы
 Описание полей overhead
@@ -1639,18 +1639,20 @@ curl -X POST
   -H "Content-Type: application/json"
   -d '[
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/supply/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/supply/metadata",
-            "type": "supply",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/supply/7944ef04-f831-11e5-7a69-971500188b1",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/supply/metadata",
+                "type": "supply",
+                "mediaType": "application/json"
+            }
         },
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/supply/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/supply/metadata",
-            "type": "supply",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/supply/7944ef04-f831-11e5-7a69-971500188b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/supply/metadata",
+                "type": "supply",
+                "mediaType": "application/json"
+            }
         }
       ]'
 ```        
@@ -2791,16 +2793,66 @@ curl --location --request GET 'https://api.moysklad.ru/api/remap/1.2/entity/supp
 }
 ```
 
-### Создать позицию Приемки 
+### Позиция Приемки
+ 
+### Получить позицию
+
+**Параметры**
+
+| Параметр       | Описание                                                                                |
+| :------------- | :-------------------------------------------------------------------------------------- |
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приемки.         |
+| **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Приемки. |
+ 
+> Запрос на получение отдельной позиции Приемки с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/supply/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отдельной позиции Приемки.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/supply/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
+    "type": "supplyposition",
+    "mediaType": "application/json"
+  },
+  "id": "34f6344f-015e-11e6-9464-e4de0000006c",
+  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+  "quantity": 1241,
+  "price": 0.0,
+  "discount": 0,
+  "vat": 0,
+  "vatEnabled": false,
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/328b0454-2e62-11e6-8a84-bae500000118",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=392c045c-2842-11e9-ac12-000a00000002"
+    }
+  },
+  "overhead": 0
+}
+```
+
+### Создать позицию
 Запрос на создание новой позиции в Приемке.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
 + **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция.
-Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
-чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Приемки](../documents/#dokumenty-priemka-priemki-pozicii-priemki)
+  Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
+  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Приемки](../documents/#dokumenty-priemka-priemki-pozicii-priemki)
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
-Одновременно можно создать как одну так и несколько позиций Приемки. Все созданные данным запросом позиции
-будут добавлены к уже существующим.
+  Одновременно можно создать как одну так и несколько позиций Приемки. Все созданные данным запросом позиции
+  будут добавлены к уже существующим.
 
 **Параметры**
 
@@ -3159,56 +3211,6 @@ curl --location --request POST 'https://api.moysklad.ru/api/remap/1.2/entity/sup
 ]
 ```
 
-### Позиция Приемки
- 
-### Получить позицию
-
-**Параметры**
-
-| Параметр       | Описание                                                                                |
-| :------------- | :-------------------------------------------------------------------------------------- |
-| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приемки.         |
-| **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Приемки. |
- 
-> Запрос на получение отдельной позиции Приемки с указанным id.
-
-```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/supply/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельной позиции Приемки.
-
-```json
-{
-  "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/supply/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
-    "type": "supplyposition",
-    "mediaType": "application/json"
-  },
-  "id": "34f6344f-015e-11e6-9464-e4de0000006c",
-  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-  "quantity": 1241,
-  "price": 0.0,
-  "discount": 0,
-  "vat": 0,
-  "vatEnabled": false,
-  "assortment": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/328b0454-2e62-11e6-8a84-bae500000118",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
-      "type": "product",
-      "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=392c045c-2842-11e9-ac12-000a00000002"
-    }
-  },
-  "overhead": 0
-}
-```
-
 ### Изменить позицию 
 Запрос на обновление отдельной позиции Приемки. Для обновления позиции нет каких-либо
 обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
@@ -3298,3 +3300,41 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление позиции Приемки.
+
+### Массовое удаление позиций
+
+**Параметры**
+
+| Параметр       | Описание                                                                        |
+| :------------- |:--------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Приемки. |
+
+> Запрос на массовое удаление позиций Приемки.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/supply/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/supply/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "supplyposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/supply/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "supplyposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций Приемки. 
+

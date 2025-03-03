@@ -17,12 +17,12 @@
 #### Атрибуты сущности
 
 | Название                                | Тип                                                       | Фильтрация                  | Описание                                                                                                                                                                                                                                                                      |
-| --------------------------------------- | :-------------------------------------------------------- | :-------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-----------------------------------------| :-------------------------------------------------------- | :-------------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**                           | UUID                                                      | `=` `!=`                    | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                                          |
 | **acquire**                             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                             | Метаданные Банка-эквайера по операциям по карте<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                                                       |
 | **active**                              | Boolean                                                   | `=` `!=`                    | Состояние точки продаж (Включена/Отключена)<br>`+Обязательное при ответе`                                                                                                                                                                                                     |
 | **address**                             | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Адрес Точки продаж                                                                                                                                                                                                                                                            |
-| **addressFull**                         | Object                                                    |                             | Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-adres)                                                                                |
+| **addressFull**                         | Object                                                    |                             | Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status-atributy-suschnosti-adres)                                                                                |
 | **allowCreateProducts**                 | Boolean                                                   |                             | Контроль остатков. Не может быть `true`, если `controlShippingStock` имеет значение `true`<br>`+Обязательное при ответе`                                                                                                                                                      |
 | **allowCustomPrice**                    | Boolean                                                   |                             | Разрешить продажу по свободной цене<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                        |
 | **allowDeleteReceiptPositions**         | Boolean                                                   |                             | Разрешить удалять позиции в чеке<br>`+Обязательное при ответе` по умолчанию `+true`                                                                                                                                                                                           |
@@ -50,10 +50,11 @@
 | **fiscalType**                          | Enum                                                      |                             | Тип формирования чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-formirowaniq-chekow)<br>`+Обязательное при ответе`                                                                                                  |
 | **group**                               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                    | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                                                                                      |
 | **id**                                  | UUID                                                      | `=` `!=`                    | ID Точки продаж<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                                            |
-| **idQR**                                | String(255)                                               |                             | Идентификатор устройства QR (IdQR) для приложения оплаты по QR                                                                                                                                                                                                                |
+| **idQR**                                | String(255)                                               |                             | Идентификатор устройства QR (IdQR) для решения оплаты по QR                                                                                                                                                                                                                |
 | **issueOrders**                         | Boolean                                                   |                             | Выдача заказов<br>`+Обязательное при ответе`                                                                                                                                                                                                                                  |
 | **lastOperationNames**                  | Array(Object)                                             |                             | Последние операции. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-poslednie-operacii)<br>`+Обязательное при ответе` `+Только для чтения`                                                                                      |
 | **markingSellingMode**                  | Enum                                                      |                             | Режим продажи маркированной продукции, если используется формат фискальных документов версии 1.2. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-prodazha-markirowannyh-towarow)<br>`+Обязательное при ответе`                 |
+| **marksCheckMode**                      | Enum                                                      |                             | Настройка проверки КМ перед продажей в ГИС МТ (по умолчанию CORRECT_MARKS_ONLY) [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-prodazha-markirowannyh-towarow)<br>`+Обязательное при ответе`                                   |
 | **masterRetailStores**                  | Array(Object)                                             |                             | Ссылка на точки продаж, которые могут фискализировать операции с текущей точки продаж, если `minionToMaster` = `CHOSEN`<br>`+Expand`                                                                                                                                          |
 | **meta**                                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                             | Метаданные Точки продаж<br>`+Обязательное при ответе`                                                                                                                                                                                                                         |
 | **minionToMasterType**                  | Enum                                                      |                             | Стратегия выбора кассы для фискализации облачных чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-strategiq-wybora-kassy-dlq-fiskalizacii-oblachnyh-chekow)<br>`+Обязательное при ответе`                                 |
@@ -71,7 +72,7 @@
 | **qrAcquire**                           | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                             | Метаданные Банка-эквайера по операциям по QR-коду<br>`+Expand`                                                                                                                                                                                                                |
 | **qrBankPercent**                       | Double                                                    |                             | Комиссия банка-эквайера по операция по QR-коду (в процентах)                                                                                                                                                                                                                  |
 | **qrPayEnabled**                        | Boolean                                                   |                             | Возможность оплаты по QR-коду на точке продаж<br>`+Обязательное при ответе`                                                                                                                                                                                                   |
-| **qrTerminalId**                        | String(255)                                               |                             | Идентификатор терминала (TerminalID) для приложения оплаты по QR                                                                                                                                                                                                              |
+| **qrTerminalId**                        | String(255)                                               |                             | Идентификатор терминала (TerminalID) для решения оплаты по QR                                                                                                                                                                                                              |
 | **receiptTemplate**                     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                             | Метаданные шаблона печати кассовых чеков<br>`+Expand`                                                                                                                                                                                                                         |
 | **requiredFio**                         | Boolean                                                   |                             | Обязательность поля ФИО при создании контрагента<br>`+Обязательное при ответе` по умолчанию `+false`                                                                                                                                                                          |
 | **requiredPhone**                       | Boolean                                                   |                             | Обязательность поля телефон при создании контрагента<br>`+Обязательное при ответе` по умолчанию `+true`                                                                                                                                                                       |
@@ -83,8 +84,11 @@
 | **returnFromClosedShiftEnabled**        | Boolean                                                   |                             | Разрешить возвраты в закрытых сменах<br>`+Обязательное при ответе`                                                                                                                                                                                                            |
 | **sellReserves**                        | Boolean                                                   |                             | Учет резервов<br>`+Обязательное при ответе`                                                                                                                                                                                                                                   |
 | **sendMarksForCheck**                   | Boolean                                                   |                             | Для облачных точек — до продажи отправлять коды маркировки на проверку на точку с ККТ`+Обязательное при ответе`                                                                                                                                                               |
+| **sendMarksToChestnyZnakOnCloud**       | Boolean                                                   |                             | Для облачных точек — отправлять коды маркировки на проверку в Честный Знак`+Обязательное при ответе` по умолчанию `+false`                                                                                                                                                    |
+| **syncAgents**                          | Boolean                                                   |                             | Выгружать покупателей для работы оффлайн<br>`+Обязательное при ответе` по умолчанию `+true`                                                                                                                                                                                   |
 | **shared**                              | Boolean                                                   | `=` `!=`                    | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                                                                                                    |
-| **state**                               | Object                                                    |                             | Информация статусе точки продаж. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status)<br>`+Только для чтения`                                                                                           |
+| **showBeerOnTap**                       | Boolean                                                   |                             | Отображать или нет вскрытые кеги на кассе`+Обязательное при ответе` по умолчанию `+false`                                                                                                                                                                                     |
+| **state**                               | Object                                                    |                             | Информация статусе точки продаж. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status)<br>`+Только для чтения`                                                                                           |
 | **store**                               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                    | Метаданные Склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                                                                                                          |
 | **tobaccoMrcControlType**               | Enum                                                      |                             | Контроль МРЦ для табачной продукции. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-kontrolq-mrc-dlq-tabachnoj-produkcii)<br>`+Обязательное при ответе`                                                                    |
 | **updated**                             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`  | Момент последнего обновления Точки продаж<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                  |
@@ -138,11 +142,11 @@
 
 ##### Продажа маркированных товаров:
 
-| Название                    | Описание                                                    |
-| --------------------------- | :---------------------------------------------------------- |
-| **CORRECT_MARKS_ONLY**      | Только с правильными кодами маркировки                      |
-| **WITHOUT_ERRORS**          | С правильными кодами и те, которые не удалось проверить     |
-| **ALL**                     | Все – независимо от результатов проверки кодов маркировки   |
+| Название                    | Описание                                                            |
+| --------------------------- |:--------------------------------------------------------------------|
+| **CORRECT_MARKS_ONLY**      | Только проверенные и правильные коды маркировки                     |
+| **WITHOUT_ERRORS**          | Правильные коды и те, которые не удалось проверить                  |
+| **ALL**                     | Все — независимо от результатов проверки кодов                      |
 
 ##### Приоритет отправки электронного чека
 
@@ -157,11 +161,11 @@
 | ------------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **device**          | String(255) | Информация об устройстве                                                                                                                           |
 | **os**              | String(255) | Информация об операционной системе                                                                                                                 |
-| **software**        | Object      | Информация о ПО. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-po) |
-| **chequePrinter**   | Object      | Данные о ККТ. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-kkt)   |
+| **software**        | Object      | Информация о ПО. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-atributy-suschnosti-po) |
+| **chequePrinter**   | Object      | Данные о ККТ. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-atributy-suschnosti-kkt)   |
 | **paymentTerminal** | String(255) | Информация о платежном терминале                                                                                                                   |
 
-###### Аттрибуты сущности ПО
+###### Атрибуты сущности ПО
 
 | Название    | Тип         | Описание                                                                 |
 | ----------- | :---------- | :----------------------------------------------------------------------- |
@@ -169,69 +173,69 @@
 | **vendor**  | String(255) | Производитель                                                            |
 | **version** | String(255) | Версия ПО                                                                |
 
-###### Аттрибуты сущности ККТ
+###### Атрибуты сущности ККТ
 
 | Название              | Тип         | Описание                                                                                                                                                                                |
 | --------------------- | :---------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **driver**            | Object      | Информация об используемом драйвере. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-drajwer)             |
+| **driver**            | Object      | Информация об используемом драйвере. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-atributy-suschnosti-drajwer)             |
 | **firmwareVersion**   | String(255) | Версия прошивки ККТ                                                                                                                                                                     |
 | **fiscalDataVersion** | String(255) | Формат фискальных данных                                                                                                                                                                |
-| **fiscalMemory**      | Object      | Информация о фискальном накопителе. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-attributy-suschnosti-fiskal-nyj-nakopitel) |
+| **fiscalMemory**      | Object      | Информация о фискальном накопителе. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-okruzhenie-atributy-suschnosti-fiskal-nyj-nakopitel) |
 | **name**              | String(255) | Наименование ПО<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                |
 | **serial**            | String(255) | Серийный номер                                                                                                                                                                          |
 | **vendor**            | String(255) | Производитель                                                                                                                                                                           |
 
-###### Аттрибуты сущности Драйвер
+###### Атрибуты сущности Драйвер
 
 | Название    | Тип         | Описание              |
 | ----------- | :---------- | :-------------------- |
 | **name**    | String(255) | Наименование драйвера |
 | **version** | String(255) | Версия драйвера       |
 
-###### Аттрибуты сущности Фискальный накопитель
+###### Атрибуты сущности Фискальный накопитель
 
 | Название               | Тип         | Описание                 |
 | ---------------------- | :---------- | :----------------------- |
 | **fiscalDataVersion**  | String(255) | Версия фискальной памяти |
 | **fiscalValidityDate** | DateTime    | Версия фискальной памяти |
 
-##### Аттрибуты сущности Статус
+##### Атрибуты сущности Статус
 
 | Название            | Тип      | Описание                                                                                                                                                                                                               |
 | ------------------- | :------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **sync**            | Object   | Состояние синхронизации. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-sinhronizaciq)                                 |
+| **sync**            | Object   | Состояние синхронизации. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status-atributy-suschnosti-sinhronizaciq)                                 |
 | **lastCheckMoment** | DateTime | Дата и время последней синхронизации                                                                                                                                                                                   |
-| **fiscalMemory**    | Object   | Информация о фискальном накопителе. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-fiskal-naq-pamqt)                   |
-| **paymentTerminal** | Object   | Информация о платежном терминале. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-platezhnyj-terminal)<br>`+Устаревшее` |
+| **fiscalMemory**    | Object   | Информация о фискальном накопителе. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status-atributy-suschnosti-fiskal-naq-pamqt)                   |
+| **paymentTerminal** | Object   | Информация о платежном терминале. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status-atributy-suschnosti-platezhnyj-terminal)<br>`+Устаревшее` |
 
-###### Аттрибуты сущности Синхронизация
+###### Атрибуты сущности Синхронизация
 
 | Название             | Тип         | Описание                                                                            |
 | -------------------- | :---------- | :---------------------------------------------------------------------------------- |
 | **message**          | String(255) | Состояние синхронизации                                                             |
 | **lastAttempMoment** | DateTime    | Дата последней сихронизации (не обязательно успешной)<br>`+Необходимо при создании` |
 
-###### Аттрибуты сущности Фискальная Память
+###### Атрибуты сущности Фискальная Память
 
 | Название            | Тип      | Описание                                                                                                                                                                         |
 | ------------------- |:---------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **error**           | Object   | Информация об ошибке ФН. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-oshibka) |
+| **error**           | Object   | Информация об ошибке ФН. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status-atributy-suschnosti-oshibka) |
 | **notSendDocCount** | Int      | Количество неотправленных документов в ОФД                                                                                                                                       |
 | **notSendFirstDocMoment** | DateTime | Время начала не отправки документов                                                                                                                                              |
 
-###### Аттрибуты сущности Ошибка
+###### Атрибуты сущности Ошибка
 
 | Название    | Тип         | Описание                                      |
 | ----------- |:------------| :-------------------------------------------- |
 | **сode**    | String(255) | Код ошибки ФН<br>`+Обязательное при ответе`   |
 | **message** | String(255) | Описание ошибки<br>`+Обязательное при ответе` |
 
-###### Аттрибуты сущности Платежный Терминал
+###### Атрибуты сущности Платежный Терминал
 | Название          | Тип         | Описание                                           |
 | ----------------- | :---------- | :------------------------------------------------- |
 | **acquiringType** | String(255) | Информация о типе эквайера (например: inpas/payme) |
 
-###### Аттрибуты сущности Адрес
+###### Атрибуты сущности Адрес
 
 | Название       | Тип                                                       | Описание           |
 | -------------- | :-------------------------------------------------------- | :----------------- |
@@ -249,7 +253,7 @@
 При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
 При передаче обоих адресов строковый будет игнорирован.
 При передаче только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
-Для адреса не поддерживается [значение `null`](../#mojsklad-json-api-obschie-swedeniq-podderzhka-null). Передача `null` этому аттрибуту не приведет к его удалению.
+Для адреса не поддерживается [значение `null`](../#mojsklad-json-api-obschie-swedeniq-podderzhka-null). Передача `null` этому атрибуту не приведет к его удалению.
 Для удаления адреса необходимо в строковое поле `address` передать пустую строку `""`.
 
 
@@ -499,6 +503,8 @@ curl -X GET
       "sendMarksForCheck" : false,
       "allowCreateProducts" : false,
       "allowDeleteReceiptPositions" : true,
+      "syncAgents" : true,
+      "showBeerOnTap" : false,
       "productFolders" : {
         "meta" : {
           "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/2b5eb22f-139e-11e6-9464-e4de00000073/productfolders",
@@ -723,6 +729,8 @@ curl -X GET
       "sendMarksForCheck" : false,
       "allowCreateProducts" : false,
       "allowDeleteReceiptPositions" : true,
+      "syncAgents" : true,
+      "showBeerOnTap" : false,
       "productFolders" : {
         "meta" : {
           "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/2b5eb22f-139e-11e6-9464-e4de00000073/productfolders",
@@ -870,6 +878,8 @@ curl -X GET
               "sendMarksForCheck" : false,
               "allowCreateProducts" : false,
               "allowDeleteReceiptPositions" : true,
+               "syncAgents" : true,
+              "showBeerOnTap" : false,
               "productFolders" : [{
                 "meta": {
                   "href": "https://api.moysklad.ru/api/remap/1.2/entity/productfolder/30fe66fd-137a-11e6-9464-e4de00000056",
@@ -1063,6 +1073,8 @@ curl -X GET
   "sendMarksForCheck" : false,
   "allowCreateProducts" : false,
   "allowDeleteReceiptPositions" : true,
+  "syncAgents" : true,
+  "showBeerOnTap" : false,
   "productFolders" : {
     "meta" : {
       "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/966b1795-bf2c-11e9-ee62-204c0000004c/productFolders",
@@ -1265,6 +1277,8 @@ curl -X GET
   "sendMarksForCheck" : false,
   "allowCreateProducts" : true,
   "allowDeleteReceiptPositions" : true,
+  "syncAgents" : true,
+  "showBeerOnTap" : false,
   "productFolders" : {
     "meta" : {
       "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/425999e6-bf2f-11e9-ee62-204c00000041/productFolders",
@@ -1455,6 +1469,8 @@ curl -X GET
     "sendMarksForCheck" : false,
     "allowCreateProducts" : true,
     "allowDeleteReceiptPositions" : true,
+    "syncAgents" : true,
+    "showBeerOnTap" : false,
     "productFolders" : {
       "meta" : {
         "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/425999e6-bf2f-11e9-ee62-204c00000041/productFolders",
@@ -1588,6 +1604,8 @@ curl -X GET
     "sendMarksForCheck" : false,
     "allowCreateProducts" : true,
     "allowDeleteReceiptPositions" : true,
+    "syncAgents" : true,
+    "showBeerOnTap" : false,
     "productFolders" : {
       "meta" : {
         "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/425999e6-bf2f-11e9-ee62-204c00000042/productFolders",
@@ -1643,18 +1661,20 @@ curl -X POST
   -H "Content-Type: application/json"
   -d '[
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
-            "type": "retailstore",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/7944ef04-f831-11e5-7a69-971500188b1",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+                "type": "retailstore",
+                "mediaType": "application/json"
+            }
         },
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
-            "type": "retailstore",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/7944ef04-f831-11e5-7a69-971500188b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+                "type": "retailstore",
+                "mediaType": "application/json"
+            }
         }
       ]'
 ```        
@@ -1763,6 +1783,8 @@ curl -X GET
   "requiredSex" : false,
   "requiredDiscountCardNumber" : false,
   "allowDeleteReceiptPositions": true,
+  "syncAgents" : true,
+  "showBeerOnTap" : false,
     "priceType": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f49fd",
@@ -2018,6 +2040,8 @@ curl -X PUT
   "sendMarksForCheck" : false,
   "allowCreateProducts" : true,
   "allowDeleteReceiptPositions" : true,
+  "syncAgents" : true,
+  "showBeerOnTap" : false,
   "productFolders" : {
     "meta" : {
       "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/425999e6-bf2f-11e9-ee62-204c00000041/productFolders",

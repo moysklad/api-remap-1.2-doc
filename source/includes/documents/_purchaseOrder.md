@@ -27,7 +27,7 @@
 | **name**                  | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Заказа поставщику<br>`+Обязательное при ответе`                                                                                  |
 | **organization**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                          |
 | **organizationAccount**   | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand`                                                                                                          |
-| **owner**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                                                  |
+| **owner**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                             |
 | **payedSum**              | Float                                                     |                                                                                                                                                   | Сумма входящих платежей по Заказу<br>`+Только для чтения`                                                                                     |
 | **positions**             | MetaArray                                                 |                                                                                                                                                   | Метаданные позиций Заказа поставщику<br>`+Обязательное при ответе` `+Expand`                                                                  |
 | **printed**               | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                      |
@@ -35,7 +35,7 @@
 | **published**             | Boolean                                                   | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                    |
 | **rate**                  | Object                                                    |                                                                                                                                                   | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе`                           |
 | **shared**                | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                    |
-| **shippedSum**            | Float                                                     |                                                                                                                                                   | Сумма отгруженного<br>`+Только для чтения`                                                                                                    |
+| **shippedSum**            | Float                                                     |                                                                                                                                                   | Сумма принятого<br>`+Только для чтения`                                                                                                       |
 | **state**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса заказа<br>`+Expand`                                                                                                        |
 | **store**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные склада<br>`+Expand`                                                                                                                |
 | **sum**                   | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Заказа поставщику в установленной валюте<br>`+Только для чтения`                                                                        |
@@ -1450,18 +1450,20 @@ curl -X POST
   -H "Content-Type: application/json"
   -d '[
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata",
-            "type": "purchaseorder",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b1",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata",
+                "type": "purchaseorder",
+                "mediaType": "application/json"
+            }
         },
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata",
-            "type": "purchaseorder",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata",
+                "type": "purchaseorder",
+                "mediaType": "application/json"
+            }
         }
       ]'
 ```        
@@ -2421,7 +2423,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/purchaseOrder/7944ef04-f831-11e5-7a69-971500188b19/positions"
+  "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19/positions"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
@@ -2579,13 +2581,64 @@ curl -X GET
 }
 ```
 
-### Создать позицию Заказа поставщику 
+### Позиция Заказа 
+Отдельная позиция Заказа с указанным id позиции.
+
+**Параметры**
+
+| Параметр       | Описание                                                                                          |
+| :------------- | :------------------------------------------------------------------------------------------------ |
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа поставщику.         |
+| **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Заказа поставщику. |
+
+### Получить позицию 
+> Запрос на получение отдельной позиции Заказа с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отдельной позиции Заказа поставщику.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
+    "type": "purchaseorderposition",
+    "mediaType": "application/json"
+  },
+  "id": "34f6344f-015e-11e6-9464-e4de0000006c",
+  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+  "quantity": 1,
+  "price": 1000.0,
+  "discount": 0,
+  "vat": 0,
+  "vatEnabled": false,
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/7b37adef-3303-11e6-8a84-bae50000bbf7",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002f"
+    }
+  },
+  "shipped": 0,
+  "inTransit": 1
+}
+```
+
+### Создать позицию
 Запрос на создание новой позиции в Заказе поставщику.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
 + **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция.
-Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
-чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Заказа](../documents/#dokumenty-zakaz-postawschiku-zakazy-postawschikam-pozicii-zakaza-postawschiku)
+  Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
+  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Заказа](../documents/#dokumenty-zakaz-postawschiku-zakazy-postawschikam-pozicii-zakaza-postawschiku)
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
 
 **Параметры**
@@ -2598,7 +2651,7 @@ curl -X GET
 
 ```shell
   curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/purchaseOrder/7944ef04-f831-11e5-7a69-971500188b19/positions"
+    "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19/positions"
     -H "Authorization: Basic <Credentials>"
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
@@ -2657,7 +2710,7 @@ curl -X GET
 
 ```shell
   curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/purchaseOrder/7944ef04-f831-11e5-7a69-971500188b19/positions"
+    "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19/positions"
     -H "Authorization: Basic <Credentials>"
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
@@ -2792,58 +2845,7 @@ curl -X GET
 ]
 ```
 
-### Позиция Заказа 
-Отдельная позиция Заказа с указанным id позиции.
-
-**Параметры**
-
-| Параметр       | Описание                                                                                          |
-| :------------- | :------------------------------------------------------------------------------------------------ |
-| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа поставщику.         |
-| **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Заказа поставщику. |
-
-### Получить позицию Заказа 
-> Запрос на получение отдельной позиции Заказа с указанным id.
-
-```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельной позиции Заказа поставщику.
-
-```json
-{
-  "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
-    "type": "purchaseorderposition",
-    "mediaType": "application/json"
-  },
-  "id": "34f6344f-015e-11e6-9464-e4de0000006c",
-  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-  "quantity": 1,
-  "price": 1000.0,
-  "discount": 0,
-  "vat": 0,
-  "vatEnabled": false,
-  "assortment": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/7b37adef-3303-11e6-8a84-bae50000bbf7",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
-      "type": "product",
-      "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002f"
-    }
-  },
-  "shipped": 0,
-  "inTransit": 1
-}
-```
-
-### Изменить позицию Заказа 
+### Изменить позицию 
 Запрос на обновление отдельной позиции Заказа. Для обновления позиции нет каких-либо
 обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
 
@@ -2932,3 +2934,39 @@ curl -X DELETE
 > Response 200 (application/json)
 Успешное удаление позиции Заказа.
 
+### Массовое удаление позиций
+
+**Параметры**
+
+| Параметр       | Описание                                                                                 |
+| :------------- |:-----------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Заказа поставщику.|
+
+> Запрос на массовое удаление позиций Заказа поставщику.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "purchaseorderposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "purchaseorderposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций Заказа поставщику. 

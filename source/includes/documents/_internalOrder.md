@@ -5,13 +5,13 @@
 #### Атрибуты сущности
 
 | Название                  | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                        |
-| ------------------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |:------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**             | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                            |
 | **applicable**            | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе`                                                                                              |
 | **attributes**            | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)<br>`+Только для чтения` |
 | **code**                  | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Внутреннего заказа                                                                                                                          |
 | **created**               | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                |
-| **deleted**               | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Внутреннего заказа<br>`+Обязательное при ответе` `+Только для чтения`                                                |
+| **deleted**               | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Внутреннего заказа<br>`+Только для чтения`                                                                           |
 | **deliveryPlannedMoment** | DateTime                                                  |                                                                                                                                                   | Планируемая дата приемки                                                                                                                        |
 | **description**           | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Внутреннего заказа                                                                                                                  |
 | **externalCode**          | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Внутреннего заказа<br>`+Обязательное при ответе`                                                                                    |
@@ -23,7 +23,7 @@
 | **moves**                 | Array(Object)                                             |                                                                                                                                                   | Коллекция метаданных на связанные заказы перемещения<br>`+Обязательное при ответе`                                                              |
 | **name**                  | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Внутреннего заказа<br>`+Обязательное при ответе` `+Необходимо при создании`                                                        |
 | **organization**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                            |
-| **owner**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                                                    |
+| **owner**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                               |
 | **positions**             | MetaArray                                                 |                                                                                                                                                   | Метаданные позиций Внутреннего заказа<br>`+Обязательное при ответе` `+Только для чтения` `+Expand`                                              |
 | **printed**               | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                        |
 | **project**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand`                                                                                                                 |
@@ -38,7 +38,7 @@
 | **updated**               | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Внутреннего заказа<br>`+Обязательное при ответе` `+Только для чтения`                                              |
 | **vatEnabled**            | Boolean                                                   |                                                                                                                                                   | Учитывается ли НДС<br>`+Обязательное при ответе`                                                                                                |
 | **vatIncluded**           | Boolean                                                   |                                                                                                                                                   | Включен ли НДС в цену                                                                                                                           |
-| **vatSum**                | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе` `+Только для чтения`                                                                            |
+| **vatSum**                | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе` `+Только для чтения`                                                                                    |
 
 #### Позиции Внутреннего заказа
 Позиции Внутреннего заказа - это список товаров/услуг/модификаций/серий.
@@ -1048,18 +1048,20 @@ curl -X POST
   -H "Content-Type: application/json"
   -d '[
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/internalorder/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/internalorder/metadata",
-            "type": "internalorder",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/internalorder/7944ef04-f831-11e5-7a69-971500188b1",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/internalorder/metadata",
+                "type": "internalorder",
+                "mediaType": "application/json"
+            }
         },
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/internalorder/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/internalorder/metadata",
-            "type": "internalorder",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/internalorder/7944ef04-f831-11e5-7a69-971500188b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/internalorder/metadata",
+                "type": "internalorder",
+                "mediaType": "application/json"
+            }
         }
       ]'
 ```        
@@ -1898,3 +1900,41 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление позиции Внутреннего заказа.
+
+
+### Массовое удаление позиций
+
+**Параметры**
+
+| Параметр       | Описание                                                                                           |
+| :------------- |:---------------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 7623cd58-684d-11ee-ac12-000c0000009e* id Внутреннего заказа.         |
+
+> Запрос на массовое удаление позиций Внутреннего заказа.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/internalorder/7623cd58-684d-11ee-ac12-000c0000009e/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/internalorder/7623cd58-684d-11ee-ac12-000c0000009e/positions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "internalorderposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/internalorder/7623cd58-684d-11ee-ac12-000c0000009e/positions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "internalorderposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций Внутреннего заказа.

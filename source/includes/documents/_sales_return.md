@@ -24,7 +24,7 @@
 | **name**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Возврата Покупателя<br>`+Обязательное при ответе` `+Change-handler`                                                              |
 | **organization**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler`                                        |
 | **organizationAccount** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand` `+Change-handler`                                                                                        |
-| **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                                                  |
+| **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                  |
 | **positions**           | MetaArray                                                 |                                                                                                                                                   | Метаданные позиций Возврата Покупателя<br>`+Обязательное при ответе` `+Expand` `+Change-handler`                                              |
 | **printed**             | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                      |
 | **project**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand` `+Change-handler`                                                                                             |
@@ -1028,18 +1028,20 @@ curl -X POST
   -H "Content-Type: application/json"
   -d '[
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata",
-            "type": "salesreturn",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/7944ef04-f831-11e5-7a69-971500188b1",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata",
+                "type": "salesreturn",
+                "mediaType": "application/json"
+            }
         },
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata",
-            "type": "salesreturn",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/7944ef04-f831-11e5-7a69-971500188b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata",
+                "type": "salesreturn",
+                "mediaType": "application/json"
+            }
         }
       ]'
 ```        
@@ -2356,3 +2358,40 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление позиции Возврата покупателей.
+
+### Массовое удаление позиций
+
+**Параметры**
+
+| Параметр       | Описание                                                                                    |
+| :------------- |:--------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Возврата покупателей |
+
+> Запрос на массовое удаление позиций Возврата покупателей.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "internalorderposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "internalorderposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций Возврата покупателей.

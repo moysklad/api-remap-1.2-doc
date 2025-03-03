@@ -7,7 +7,7 @@
 Остатки для документа **Отгрузка**, **Розничная продажа**, **Приемка**, **Возврат поставщика/покупателя** и **Розничный возврат** рассчитываются на момент поля **moment** в данных документах.
 Для **Заказа покупателя**, **Счета покупателя**, **Заказа поставщику** и **Счета поставщику** остатки рассчитываются на текущий момент времени.
 
-#### Атрибуты объекта отчёта:
+#### Атрибуты объекта отчета
 
 | Значение      | Тпи                                                    | Описание                                                    |
 | ------------- |:------------------------------------------------------------|:------------------------------------------------------------|
@@ -22,8 +22,8 @@
 | **name**      | String(255)                                              | Наименование позиции<br>`+Обязательное при ответе`                                                            |
 | **stock**     | Float                                                    | Остаток<br>`+Обязательное при ответе`                                                                         |
 | **cost**      | Float                                                    | Себестоимость в копейках<br>`+Обязательное при ответе`                                                        |
-| **inTransit** | Float                                                    | Ожидание<br>`+Обязательное при ответе`                                                                        |
-| **reserve**   | Float                                                    | Резерв<br>`+Обязательное при ответе`                                                                          |
+| **inTransit** | Float                                                    | Ожидание. У сущности **Комплект** значение всегда `0`.<br>`+Обязательное при ответе`                          |
+| **reserve**   | Float                                                    | Резерв. У сущности **Комплект** значение всегда `0`.<br>`+Обязательное при ответе`                            |
 | **quantity**  | Float                                                    | Доступно. У сущности **Комплект** значение всегда `0`.<br>`+Обязательное при ответе`                          |
 
 ### Получить Остатки по документу 
@@ -38,7 +38,7 @@
 + [Заказ покупателя](../documents/#dokumenty-zakaz-pokupatelq)
 + [Розничная продажа](../documents/#dokumenty-roznichnaq-prodazha)
 + [Счет поставщика](../documents/#dokumenty-schet-postawschika)
-+ [Розничная продажа](../documents/#dokumenty-roznichnaq-prodazha)
++ [Счет покупателю](../documents/#dokumenty-schet-pokupatelu)
 + [Заказ поставщику](../documents/#dokumenty-zakaz-postawschiku)
 + [Приемка](../documents/#dokumenty-priemka)
 + [Розничный возврат](../documents/#dokumenty-roznichnyj-wozwrat)
@@ -83,7 +83,7 @@ curl -X GET
     {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/34efe2ee-015e-11e6-9464-e4de0000006b",
-        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerOrder/metadata",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
         "type": "customerorder",
         "mediaType": "application/json"
       },

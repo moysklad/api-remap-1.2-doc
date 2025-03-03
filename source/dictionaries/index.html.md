@@ -28,6 +28,7 @@ includes:
   - dictionaries/tracking_code
   - dictionaries/bundle
   - dictionaries/counterparty
+  - dictionaries/eventfeed
   - dictionaries/variant
   - dictionaries/companysettings
   - dictionaries/usersettings
@@ -38,6 +39,7 @@ includes:
   - dictionaries/customentity
   - dictionaries/project
   - dictionaries/region
+  - dictionaries/thing
   - dictionaries/consignment
   - dictionaries/discount
   - dictionaries/store

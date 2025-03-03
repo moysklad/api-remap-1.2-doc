@@ -3,48 +3,47 @@
 ### Розничные возвраты 
 #### Атрибуты сущности
 
-| Название                | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                                         |
-| ----------------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**           | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                             |
-| **agent**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные контрагента<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                        |
-| **agentAccount**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета контрагента<br>`+Expand`                                                                                                                        |
-| **applicable**          | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе`                                                                                                               |
-| **attributes**          | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)                                          |
-| **cashSum**             | Float                                                     |                                                                                                                                                   | Оплачено наличными<br>`+Обязательное при ответе`                                                                                                                 |
-| **code**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Розничного возврата                                                                                                                                          |
-| **contract**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные договора<br>`+Expand`                                                                                                                                 |
-| **created**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                 |
-| **deleted**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Розничного возврата<br>`+Только для чтения`                                                                                           |
-| **demand**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные позиций Розничного возврата, по которой произошел возврат<br>`+Expand`                                                                                |
-| **description**         | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Розничного возврата                                                                                                                                  |
-| **externalCode**        | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Розничного возврата<br>`+Обязательное при ответе`                                                                                                    |
-| **group**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                         |
-| **id**                  | UUID                                                      | `=` `!=`                                                                                                                                          | ID Розничного возврата<br>`+Обязательное при ответе` `+Только для чтения`                                                                                        |
-| **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Розничного возврата<br>`+Обязательное при ответе`                                                                                                     |
-| **moment**              | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе`                                                                                                                     |
-| **name**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Розничного возврата<br>`+Обязательное при ответе`                                                                                                   |
-| **noCashSum**           | Float                                                     |                                                                                                                                                   | Оплачено картой<br>`+Обязательное при ответе`                                                                                                                    |
-| **organization**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                             |
-| **organizationAccount** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand`                                                                                                                             |
-| **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                                                                     |
-| **positions**           | MetaArray                                                 |                                                                                                                                                   | Метаданные позиций Розничного возврата<br>`+Обязательное при ответе` `+Expand`                                                                                   |
-| **printed**             | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                         |
-| **project**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand`                                                                                                                                  |
-| **published**           | Boolean                                                   | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                       |
-| **qrSum**               | Float                                                     |                                                                                                                                                   | Оплачено по QR-коду<br>`+Обязательное при ответе`                                                                                                                |
-| **rate**                | Object                                                    |                                                                                                                                                   | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе`                                              |
-| **retailShift**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                                  | Метаданные Розничной смены<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                    |
-| **retailStore**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные Точки продаж<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                       |
-| **shared**              | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                                       |
-| **state**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса Розничного возврата<br>`+Expand`                                                                                                              |
-| **store**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                             |
-| **sum**                 | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Розничного возврата в копейках<br>`+Обязательное при ответе` `+Только для чтения`                                                                          |
-| **syncId**              | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                                      |
-| **taxSystem**           | Enum                                                      |                                                                                                                                                   | Код системы налогообложения. [Подробнее тут](../documents/#dokumenty-roznichnyj-wozwrat-roznichnye-wozwraty-atributy-suschnosti-kod-sistemy-nalogooblozheniq)    |
-| **updated**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Розничного возврата<br>`+Обязательное при ответе` `+Только для чтения`                                                              |
-| **vatEnabled**          | Boolean                                                   |                                                                                                                                                   | Учитывается ли НДС<br>`+Обязательное при ответе`                                                                                                                 |
-| **vatIncluded**         | Boolean                                                   |                                                                                                                                                   | Включен ли НДС в цену                                                                                                                                            |
-| **vatSum**              | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе`                                                                                                                          |
+| Название                | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                                      |
+| ----------------------- | :-------------------------------------------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**           | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                          |
+| **agent**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные контрагента<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                     |
+| **agentAccount**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета контрагента<br>`+Expand`                                                                                                                     |
+| **applicable**          | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе`                                                                                                            |
+| **attributes**          | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)                                       |
+| **cashSum**             | Float                                                     |                                                                                                                                                   | Оплачено наличными<br>`+Обязательное при ответе`                                                                                                              |
+| **code**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Розничного возврата                                                                                                                                       |
+| **contract**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные договора<br>`+Expand`                                                                                                                              |
+| **created**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                              |
+| **deleted**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Розничного возврата<br>`+Только для чтения`                                                                                        |
+| **demand**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные связанной Розничной продажи<br>`+Expand`                                                                                                           |
+| **description**         | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Розничного возврата                                                                                                                               |
+| **externalCode**        | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Розничного возврата<br>`+Обязательное при ответе`                                                                                                 |
+| **group**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                      |
+| **id**                  | UUID                                                      | `=` `!=`                                                                                                                                          | ID Розничного возврата<br>`+Обязательное при ответе` `+Только для чтения`                                                                                     |
+| **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Розничного возврата<br>`+Обязательное при ответе`                                                                                                  |
+| **moment**              | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе`                                                                                                                  |
+| **name**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Розничного возврата<br>`+Обязательное при ответе`                                                                                                |
+| **noCashSum**           | Float                                                     |                                                                                                                                                   | Оплачено картой<br>`+Обязательное при ответе`                                                                                                                 |
+| **organization**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                          |
+| **organizationAccount** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand`                                                                                                                          |
+| **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                                             |
+| **positions**           | MetaArray                                                 |                                                                                                                                                   | Метаданные позиций Розничного возврата<br>`+Обязательное при ответе` `+Expand`                                                                                |
+| **printed**             | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                      |
+| **published**           | Boolean                                                   | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                    |
+| **qrSum**               | Float                                                     |                                                                                                                                                   | Оплачено по QR-коду<br>`+Обязательное при ответе`                                                                                                             |
+| **rate**                | Object                                                    |                                                                                                                                                   | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе`                                           |
+| **retailShift**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные Розничной смены<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                 |
+| **retailStore**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные Точки продаж<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                    |
+| **shared**              | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                                    |
+| **state**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса Розничного возврата<br>`+Expand`                                                                                                           |
+| **store**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                          |
+| **sum**                 | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Розничного возврата в копейках<br>`+Обязательное при ответе` `+Только для чтения`                                                                       |
+| **syncId**              | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                                   |
+| **taxSystem**           | Enum                                                      |                                                                                                                                                   | Код системы налогообложения. [Подробнее тут](../documents/#dokumenty-roznichnyj-wozwrat-roznichnye-wozwraty-atributy-suschnosti-kod-sistemy-nalogooblozheniq) |
+| **updated**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Розничного возврата<br>`+Обязательное при ответе` `+Только для чтения`                                                           |
+| **vatEnabled**          | Boolean                                                   |                                                                                                                                                   | Учитывается ли НДС<br>`+Обязательное при ответе`                                                                                                              |
+| **vatIncluded**         | Boolean                                                   |                                                                                                                                                   | Включен ли НДС в цену                                                                                                                                         |
+| **vatSum**              | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе`                                                                                                                       |
 
 ##### Код системы налогообложения
 Значения поля taxSystem.
@@ -2561,18 +2560,68 @@ curl -X GET
 }
 ```
 
-### Создать позицию 
+### Позиция Розничного возврата
+   
+### Получить позицию
+
+**Параметры**
+
+| Параметр       | Описание                                                                                            |
+| :------------- | :-------------------------------------------------------------------------------------------------- |
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничного возврата.         |
+| **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Розничного возврата. |
+ 
+> Запрос на получение отдельной позиции Розничного возврата с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отдельной позиции Розничного возврата.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
+    "type": "salesreturnposition",
+    "mediaType": "application/json"
+  },
+  "id": "34f6344f-015e-11e6-9464-e4de0000006c",
+  "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
+  "quantity": 103,
+  "price": 999.0,
+  "discount": 0,
+  "vat": 0,
+  "vatEnabled": false,
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+      "type": "variant",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=3bb1af6c-2842-11e9-ac12-000c00000061"
+    }
+  },
+  "cost": 25
+}
+```
+
+### Создать позицию
 Запрос на создание новой позиции в Розничном возврате.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
 + **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция.
-Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
-чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Розничного возврата](../documents/#dokumenty-roznichnyj-wozwrat-roznichnye-wozwraty-pozicii-roznichnogo-wozwrata).
+  Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
+  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Розничного возврата](../documents/#dokumenty-roznichnyj-wozwrat-roznichnye-wozwraty-pozicii-roznichnogo-wozwrata).
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
-Одновременно можно создать как одну так и несколько позиций Розничного возврата. Все созданные данным запросом позиции
-будут добавлены к уже существующим.
-Нельзя создавать позиции, отличные от позиций в документе, по которому создается возврат. Допустимо только
-отличие в **quantity** позиций (количество в позиции в возврате м.б. меньше или равно количеству в позиции в документе).
+  Одновременно можно создать как одну так и несколько позиций Розничного возврата. Все созданные данным запросом позиции
+  будут добавлены к уже существующим.
+  Нельзя создавать позиции, отличные от позиций в документе, по которому создается возврат. Допустимо только
+  отличие в **quantity** позиций (количество в позиции в возврате м.б. меньше или равно количеству в позиции в документе).
 
 **Параметры**
 
@@ -2718,56 +2767,6 @@ curl -X GET
 ]
 ```
 
-### Позиция Розничного возврата
-   
-### Получить позицию
-
-**Параметры**
-
-| Параметр       | Описание                                                                                            |
-| :------------- | :-------------------------------------------------------------------------------------------------- |
-| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничного возврата.         |
-| **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Розничного возврата. |
- 
-> Запрос на получение отдельной позиции Розничного возврата с указанным id.
-
-```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельной позиции Розничного возврата.
-
-```json
-{
-  "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
-    "type": "salesreturnposition",
-    "mediaType": "application/json"
-  },
-  "id": "34f6344f-015e-11e6-9464-e4de0000006c",
-  "accountId": "305f25aa-137a-11e6-9464-e4de00000001",
-  "quantity": 103,
-  "price": 999.0,
-  "discount": 0,
-  "vat": 0,
-  "vatEnabled": false,
-  "assortment": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/609e36c0-137b-11e6-9464-e4de00000179",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
-      "type": "variant",
-      "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=3bb1af6c-2842-11e9-ac12-000c00000061"
-    }
-  },
-  "cost": 25
-}
-```
-        
 ### Изменить позицию 
 Запрос на обновление отдельной позиции Розничного возврата.
 При обновлении отдельной позиции в возврате можно только изменить количество данной позиции.
@@ -2847,3 +2846,41 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление позиции Розничного возврата.
+
+### Массовое удаление позиций
+
+**Параметры**
+
+| Параметр       | Описание                                                                                    |
+| :------------- |:--------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Розничного возврата. |
+
+> Запрос на массовое удаление позиций Розничного возврата.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "salesreturnposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "salesreturnposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций Розничного возврата. 
+

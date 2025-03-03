@@ -1,34 +1,5 @@
 # МойСклад JSON API
-[//]: # (TODO: remove in MC-64261)
-<div class="banner">
-  <h4>Внимание!</h4>
-  <ui><b>До 1 декабря 2023 года необходимо:</b>
-    <li>Перенастроить интеграции на новый домен api.moysklad.ru (вместо online.moysklad.ru)</li>
-    <li>Включить использование <a href='https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow'>сжатия содержимого ответов</a> через передачу заголовка Accept-Encoding</li>
-  </ui>
-  <p>Рекомендации по переезду на новый домен можно прочитать <a href="https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rekomendacii-po-pereezdu-na-nowyj-domen">здесь</a>.</p>
-  <p>После 1 декабря 2023 года перестанут работать интеграции, использующие апи remap-12 на домене online.moysklad.ru</p>
-</div>
-
 ## Общие Сведения
-
-### Рекомендации по переезду на новый домен
-
-С 1 декабря 2023 домен `online.moysklad.ru` перестанет обслуживать запросы к `/api/remap/1.2`. Запросы нужно будет отправлять на новый домен `api.moysklad.ru`. 
-
-До 1 декабря 2023 года обслуживать запросы будут оба вышеуказанных домена. С единственным отличием:
-
-  + В запросах на https://online.moysklad.ru/api/remap/1.2 наличие заголовка «Accept-Encoding»: «gzip» опционально
-  + В запросах на https://api.moysklad.ru/api/remap/1.2 наличие заголовка «Accept-Encoding»: «gzip» **обязательно**
-
-Чтобы работа ваших приложений не прерывалась, рекомендуем начать подготовку к переезду на новый домен `api.moysklad.ru` _уже сейчас_. 
-
-1. Настройте передачу заголовка `Accept-Encoding: gzip` в запросах и чтение gzip-ответов на текущем домене `online.moysklad.ru`.
-2. Проверьте использование в вашей интеграции ссылок (полей `href`), передаваемых в объектах `meta` и в вебхуках. Если вы отправляете запросы, используя информацию из получаемых ссылок, то обратите внимание на то, что:
-   + при отправке запросов на домен `online.moysklad.ru`, в `meta` возвращаются ссылки с доменом `online.moysklad.ru`. А при отправке запросов на домен `api.moysklad.ru`, в `meta` возвращаются ссылки с доменом `api.moysklad.ru`.
-   + до 1 декабря вебхук, созданный через запрос к домену `online.moysklad.ru` будет содержать в теле ссылки с доменом на `online.moysklad.ru`, а вебхук, созданный через запрос к домену `api.moysklad.ru` будет содержать ссылки с доменом `api.moysklad.ru`. После 1 декабря все вебхуки будут содержать ссылки с доменом `api.moysklad.ru`, независимо от домена регистрации. Чтобы проверить корректность обработки ссылок с новым доменом в теле вебхука, вы можете зарегистрировать вебхук на `api.moysklad.ru`. Чтобы определить принадлежность вебхука домену, вы можете использовать временно введенный параметр `oldDomain` в запросах [получения вебхуков](dictionaries/#suschnosti-vebhuki). `oldDomain = true` будет отображать вебхуки старого домена, `oldDomain = false` - нового.
-3. Когда ваша интеграция будет готова передавать заголовок `Accept-Encoding: gzip` и читать gzip-ответы, замените адрес https://online.moysklad.ru/api/remap/1.2 на https://api.moysklad.ru/api/remap/1.2.
-
 ### Аутентификация
 
 Для того чтобы успешно взаимодействовать с JSON API онлайн-сервиса МойСклад, необходимо аутентифицироваться
@@ -71,26 +42,10 @@ curl -X POST
   + Может быть добавлено новое поле без нарушения структуры ответа
   + Может быть добавлен новый ресурс
 
-### Ограничения
-
-Для JSON API установлены следующие ограничения:
-
-  + Не более 45 запросов за 3 секундный период от аккаунта
-  + Не более 5 параллельных запросов от одного пользователя
-  + Не более 20 параллельных запросов от аккаунта
-  + Не более 8Кб в заголовке запроса (url, User-Agent, Authorization и т.д.)
-  + Не более 20 Мб данных в одном запросе, отправляемом на сервер
-  + Не более 4 [асинхронных задач](#mojsklad-json-api-asinhronnyj-obmen) в очереди на аккаунт
-  + Обязательное использование [сжатия содержимого ответов](#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow)
-
-Также накладывается ограничение на максимальное число объектов (позиций, материалов, продуктов), передаваемых в одном массиве в запросе - не более 1000 элементов.
-В случае, если количество элементов коллекции превышает максимально допустимое, произойдет ошибка со статусом 413.
-Если количество позиций превышает максимально допустимое, то для дальнейшего пополнения позиций нужно будет работать со специальным ресурсом,
-описание которого приведено в конкретной сущности.
-
 ### Сжатие содержимого ответов
 
 Сервер апи использует сжатие содержимого ответов, поэтому при обращении к эндпоинтам апи через HTTP-заголовок запроса Accept-Encoding следует указать кодировку сжатия содержимого ответов.
+В редких случаях сервер может не применять сжатие ответа. При использовании сжатия, сервер апи укажет это в заголовке Content-Encoding с используемой кодировкой.
 Сервер апи поддерживает только кодировку **gzip**. Запросы без этого заголовка, а также запросы с заголовком, но иной кодировкой сжатия не будут обработаны. Сервер ответит с кодом 415 без тела ответа.
 
 ### Типы данных
@@ -228,6 +183,7 @@ curl -X GET
 | **410**          | Версия API больше не поддерживается                                                                                                                   |
 | **412**          | Не указан обязательный параметр строки запроса или поле структуры JSON                                                                                |
 | **413**          | Размер запроса или количество элементов запроса превышает лимит (например, количество позиций, передаваемых в массиве **positions**, превышает 1000)  |
+| **415**          | Формат содержимого запроса headers или body не поддерживается.                                                                                        |
 | **429**          | Превышен лимит количества запросов                                                                                                                    |
 | **500**          | При обработке запроса возникла непредвиденная ошибка                                                                                                  |
 | **502**          | Сервис временно недоступен                                                                                                                            |
@@ -261,6 +217,7 @@ JSON API позволяет создавать, обновлять и удаля
 + [Контрагент](dictionaries/#suschnosti-kontragent)
 + [Юрлицо](dictionaries/#suschnosti-jurlico)
 + [Проект](dictionaries/#suschnosti-proekt)
++ [Пользовательский справочник](dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik) (у каждого справочника свои)
 + [Склад](dictionaries/#suschnosti-sklad)
 + [Сотрудник](dictionaries/#suschnosti-sotrudnik)
 + [Товар](dictionaries/#suschnosti-towar)
@@ -293,6 +250,8 @@ JSON API позволяет создавать, обновлять и удаля
   - [Внутренний заказ](documents/#dokumenty-vnutrennij-zakaz)
   - [Заказ на производство](documents/#dokumenty-zakaz-na-proizwodstwo)
   - [Техоперация](documents/#dokumenty-tehoperaciq)
+  - [Производственное задание](documents/#dokumenty-proizwodstwennoe-zadanie)
+  - [Выполнение этапа](documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
   - [Полученный отчет комиссионера](documents/#dokumenty-poluchennyj-otchet-komissionera)
   - [Выданный отчет комиссионера](documents/#dokumenty-vydannyj-otchet-komissionera)
 
@@ -316,20 +275,22 @@ JSON API позволяет создавать, обновлять и удаля
 
 #### Атрибуты доп. поля со значением
 
-| Название  | Тип                                                    | Описание                        |
-| --------- | :----------------------------------------------------- | :------------------------------ |
-| **id**    | UUID                                                   | ID соответствующего доп. поля   |
-| **meta**  | [Meta](#mojsklad-json-api-obschie-swedeniq-metadannye) | Ссылка на метаданные доп. поля  |
-| **name**  | String(255)                                            | Наименование доп. поля          |
-| **value** | Зависит от типа, см. ниже                              | Значение, указанное в доп. поле |
+| Название  | Тип                                                    | Описание                                                               |
+|-----------|:-------------------------------------------------------|:-----------------------------------------------------------------------|
+| **id**    | UUID                                                   | ID соответствующего доп. поля                                          |
+| **meta**  | [Meta](#mojsklad-json-api-obschie-swedeniq-metadannye) | Ссылка на метаданные доп. поля                                         |
+| **file**  | Object                                                 | Описание файла и контент (поле доступно только для доп.поля типа Файл) |
+| **name**  | String(255)                                            | Наименование доп. поля                                                 |
+| **type**  | Enum                                                   | Тип доп. поля                                                          |
+| **value** | Зависит от типа, см. ниже                              | Значение, указанное в доп. поле                                        |
 
 Возможные значения типа доп. поля (поле **type**) и соответствующие им значения типа в JSON, а также
 типы атрибута **value** в JSON объекта доп поля при соответствующем type:
 
 | Тип атрибута        | Значение поля type в JSON          | Тип поля value в JSON |
-| ------------------- | :--------------------------------- | --------------------- |
+| ------------------- | :--------------------------------- |-----------------------|
 | Дата                | time                               | string                |
-| Справочник          | {entityType}                       | object **             |
+| Справочник          | {entityType}                       | object                |
 | Ссылка              | link                               | string                |
 | Строка              | string                             | string                |
 | Текст               | text                               | string                |
@@ -338,9 +299,13 @@ JSON API позволяет создавать, обновлять и удаля
 | Число дробное       | double                             | number                |
 | Число целое         | long                               | number                |
 
-Дополнительные поля типов Файл и Флажок не могуть быть обязательными (поле **required** не может быть `true`).
+Дополнительные поля типов Файл и Флажок не могут быть обязательными (поле **required** не может быть `true`).
 
-При передаче значения `null` в поле **value** значение соответствующего доп. поля сбрасывается. 
+#### Сброс значения в доп. поле
+
+При передаче значения `null` в поле **value** значение соответствующего доп. поля сбрасывается, 
+кроме доп. поля типа Файл. Для сброса значения доп. поля типа Файл нужно передать 
+поле **file** со значением `null`.
 
 #### Дополнительные поля типа справочник
 
@@ -400,7 +365,52 @@ JSON API позволяет создавать, обновлять и удаля
 | **filename** | String(255) | Имя файла<br>`+Обязательное при ответе` `+Необходимо при создании`                            |
 | **content**  | String      | Байты файла, закодированные в base64<br>`+Обязательное при ответе` `+Необходимо при создании` |
 
-Пример указания значения для доп. поля типа файл есть в секции [создания товара](dictionaries/#suschnosti-towar-sozdat-towar)
+Для сброса значения доп. поля типа Файл нужно передать поле **file** со значением `null`.
+
+> Пример присваивания значения доп. полю типа Файл 
+
+```shell
+curl -X PUT 
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025" 
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -d '{
+    "attributes": [
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0ae972f0-2951-11ef-ac12-000e00000001",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          },
+          "file": {
+            "filename": "filename",
+            "content": "5cYwMpOmNk5kSVr4YgZGKtXJb/7KpHVLDUawyZrD5Nf0WDhB7mS1I77VcAMqYQ8DkP/1wDLhb0X6b2JO4pdpKA=="
+          }
+        }
+    ]
+}'
+```
+
+> Пример сброса значения доп. поля типа Файл
+
+```shell
+curl -X PUT 
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025" 
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -d '{
+    "attributes": [
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0ae972f0-2951-11ef-ac12-000e00000001",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          },
+          "file": null
+        }
+    ]
+}'
+```
 
 ### Дополнительные поля сущностей
 Запрос на получение дополнительных полей сущности.
@@ -569,7 +579,7 @@ curl -X POST
   "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
   -d '[
         {
           "name": "Строковое",
@@ -625,7 +635,7 @@ curl -X POST
   "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
   -d '[
         {
           "meta": {
@@ -685,10 +695,10 @@ curl -X POST
   "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
   -d '{
         "customEntityMeta": {
-          "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/0347beb0-a785-11e9-ac12-000800000003",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/0347beb0-a785-11e9-ac12-000800000003/metadata",
           "type": "customentitymetadata",
           "mediaType": "application/json"
         },
@@ -709,7 +719,7 @@ curl -X POST
     "mediaType": "application/json"
   },
   "customEntityMeta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/0347beb0-a785-11e9-ac12-000800000003",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/0347beb0-a785-11e9-ac12-000800000003/metadata",
     "type": "customentitymetadata",
     "mediaType": "application/json"
   },
@@ -732,7 +742,7 @@ curl -X POST
   "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/delete"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
   -d '[
         {
           "meta": {
@@ -854,20 +864,20 @@ curl -X DELETE
 
 ```shell
 curl -X PUT
-  "https://api.moysklad.ru/api/remap/1.2/entity/demand/7bc578d8-6501-11e8-9464-e4de00000001"
+  "https://api.moysklad.ru/api/remap/1.2/entity/demand/a6c50571-e705-11ef-ac12-000e0000001d"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
   -d '{
         "attributes": [
-          {
-            "meta": {
-              "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/986314b4-6500-11e8-9464-e4de00000048",
-              "type": "attributemetadata",
-              "mediaType": "application/json"
-            },
-            "value": "new string"
-          }
+            {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/86a3c86d-e705-11ef-ac12-000e00000007",
+                    "type": "attributemetadata",
+                    "mediaType": "application/json"
+                },
+                "value": "new string"
+            }
         ]
       }'
 ```
@@ -877,21 +887,121 @@ curl -X PUT
 
 ```json
 {
-...
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/a6c50571-e705-11ef-ac12-000e0000001d",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata",
+    "type": "demand",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#demand/edit?id=a6c50571-e705-11ef-ac12-000e0000001d"
+  },
+  "id": "a6c50571-e705-11ef-ac12-000e0000001d",
+  "accountId": "a3816d8b-d7d4-11ef-ac12-001000000001",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/a50d2d81-d7d4-11ef-ac12-000f00000051",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=a50d2d81-d7d4-11ef-ac12-000f00000051"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/a3832874-d7d4-11ef-ac12-001000000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2025-02-09 19:49:07.867",
+  "name": "00001",
+  "externalCode": "Uz0EvPg2jRgvtDL5o44ct0",
+  "moment": "2025-02-09 19:47:00.000",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/a56cd0da-d7d4-11ef-ac12-000f000000a2",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=a56cd0da-d7d4-11ef-ac12-000f000000a2"
+      }
+    }
+  },
+  "sum": 111100.0,
+  "store": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/a56684d8-d7d4-11ef-ac12-000f0000009d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=a56684d8-d7d4-11ef-ac12-000f0000009d"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/a56832b7-d7d4-11ef-ac12-000f000000a0",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=a56832b7-d7d4-11ef-ac12-000f000000a0"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/a2a04526-e705-11ef-ac12-000e00000018",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=a2a04526-e705-11ef-ac12-000e00000018"
+    }
+  },
   "attributes": [
     {
       "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/986314b4-6500-11e8-9464-e4de00000048",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/86a3c86d-e705-11ef-ac12-000e00000007",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
-      "id": "986314b4-6500-11e8-9464-e4de00000048",
-      "name": "Строковое поле",
+      "id": "86a3c86d-e705-11ef-ac12-000e00000007",
+      "name": "Новый атрибут",
       "type": "string",
       "value": "new string"
     }
-  ]
-...
+  ],
+  "created": "2025-02-09 19:48:13.055",
+  "printed": false,
+  "published": false,
+  "files": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/a6c50571-e705-11ef-ac12-000e0000001d/files",
+      "type": "files",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "positions": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/a6c50571-e705-11ef-ac12-000e0000001d/positions",
+      "type": "demandposition",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "vatSum": 0.0,
+  "payedSum": 0.0,
+  "shipmentAddress": "г.Москва, ул.Строителей, д.11",
+  "shipmentAddressFull": {
+    "addInfo": "г.Москва, ул.Строителей, д.11"
+  }
 }
 ```
 
@@ -978,12 +1088,14 @@ curl -X POST
 > Представление остатков и себестоимости в составе позиции
 
 ```json
-"stock": {
+{
+  "stock": {
     "cost": 5000,
     "quantity": 999,
     "reserve": 90,
     "intransit": 9,
     "available": 918
+  }
 }
 ```
 
@@ -1050,12 +1162,12 @@ curl -X POST
 Исключения:
 
 + Структурированный адрес у
-  [Контрагента](dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres),
-  [Юрлица](dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres),
-  [Точки продаж](dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-adres),
-  [Склада](dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres),
-  [Заказа покупателя](documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-attributy-suschnosti-adres-dostawki),
-  [Отгрузки](documents/#dokumenty-otgruzka-otgruzki-attributy-suschnosti-adres-dostawki) не поддерживает удаления передачей `null`.
+  [Контрагента](dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-adres),
+  [Юрлица](dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-adres),
+  [Точки продаж](dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status-atributy-suschnosti-adres),
+  [Склада](dictionaries/#suschnosti-sklad-sklady-atributy-suschnosti-adres),
+  [Заказа покупателя](documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-atributy-suschnosti-adres-dostawki),
+  [Отгрузки](documents/#dokumenty-otgruzka-otgruzki-atributy-suschnosti-adres-dostawki) не поддерживает удаления передачей `null`.
 Для удаления адреса необходимо в строковое поле передать пустую строку `""`. Конкретные строковые поля приведены в соответствующих разделах, переход в которые осуществляется по ссылкам выше.
 
 ### Пустые поля
@@ -1068,9 +1180,7 @@ curl -X POST
 
 + Без миллисекунд: `ГГГГ-ММ-ДД ЧЧ:мм:сс`
 + С миллисекундами: `ГГГГ-ММ-ДД ЧЧ:мм:сс.ммм` В этом формате возвращаются поля типа дата-время в ответах на запросы.
-+ Без секунд: `ГГГГ-ММ-ДД ЧЧ:мм` Только для параметров фильтрации.
-
-Минимальное значение: `1970-01-01 03:00:00`
++ Без секунд: `ГГГГ-ММ-ДД ЧЧ:мм` Только для параметров фильтрации. При фильтрации минимальное значение: `1970-01-01 03:00:00`, а максимальное значение даты ограничено.
 
 Следующие поля устанавливаются и выводятся в JSON API с точностью до минут, а именно со значением секунд и миллисекунд равным `00`:
 
@@ -1174,12 +1284,12 @@ curl -X POST
 
 Пример ссылки:
 
-+ `https://api.moysklad.ru/api/remap/1.2/entity/<type>/<id>`
++ `https://api.moysklad.ru/api/remap/1.2/entity/&lt;type>/&lt;id>`
 
 Вот несколько примеров:
 
-+ `filter=agent=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/<id>`
-+ `filter=ownAgent=https://api.moysklad.ru/api/remap/1.2/entity/organization/<id>`
++ `filter=agent=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/&lt;id>`
++ `filter=ownAgent=https://api.moysklad.ru/api/remap/1.2/entity/organization/&lt;id>`
 
 Ссылочные поля, доступные для фильтрации:
 
@@ -1208,7 +1318,7 @@ curl -X POST
 
 С помощью filter можно фильтровать поля типа ID.
 
-+ `filter=<имя_поля>=<ID>`
++ `filter=<имя_поля>=&lt;ID>`
 
 Пример ID:
 
@@ -1216,7 +1326,7 @@ curl -X POST
 
 Например:
 
-+ `filter=productid=94975104-3cad-11e8-1e44-bd4d00000084`
++ `filter=id=94975104-3cad-11e8-1e44-bd4d00000084`
 
 #### Фильтрация по дополнительным полям
 
@@ -1262,7 +1372,7 @@ state.name Параметр строкового типа. В отфильтро
 
 Пример запроса с использованием фильтра state.name:
 
-`https://api.moysklad.ru/api/remap/1.2/entity/customerOrder?filter=state.name=Новый;state.name=Принят`
+`https://api.moysklad.ru/api/remap/1.2/entity/customerorder?filter=state.name=Новый;state.name=Принят`
 
 Фильтр filter=assortment=<href сущности> позволяет фильтровать документы по наличию позиций с указанными сущностями ассортимента.
 assortment - параметр, принимающий href ассортимента или группы товаров. Допустимые типы сущностей: Товар, Услуга, Модификация, Комплект, Группа товаров. 
@@ -1355,12 +1465,14 @@ curl -X POST
 В результате запроса с таким параметром, в ответе вы получите объект с развернутыми вложенными объектами вместо ссылок.
 К примеру, в документах, имеющих в составе поле **agent**, вместо ссылки на
 контрагента будет выведен объект со всеми полями сущности "Контрагент", описанными [тут](dictionaries/#suschnosti-kontragent).
-Максимальный уровень вложенности **expand** : 3.
-Expand разрешен только на размере выборки не более 100. Если указан больший лимит, но указан expand, то данный параметр будет игнорироваться.
 
-Также **expand** можно применять для результатов операций создания и обновления.
+#### На expand действуют следующие правила:
 
-+ Ниже показаны примеры использования **expand** на [Возврате покупателя](documents/#dokumenty-vozwrat-pokupatelq). В примерах представлены только поля **meta** и **demand**.
+* Expand разрешен только на размере выборки не более 100, пример: `https://api.moysklad.ru/api/remap/1.2/entity/customerorder?expand=positions&limit=100`. Если указан больший лимит и указан expand, то параметр expand будет игнорироваться.
+* Максимальный уровень вложенности **expand** : 3
+* Также **expand** можно применять для результатов операций создания и обновления
+
+Ниже показаны примеры использования **expand** на [Возврате покупателя](documents/#dokumenty-vozwrat-pokupatelq). В примерах представлены только поля **meta** и **demand**.
 
 ### Возврат без expand 
 
@@ -1368,30 +1480,123 @@ Expand разрешен только на размере выборки не б�
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/166909e6-4a99-11e6-8a84-bae500000089"
+  "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
 
-> Объект возврата покупателя в его обычном представлении, имеющий ссылку на отгрузку
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Возврата покупателя без expand.
 
 ```json
 {
   "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/166909e6-4a99-11e6-8a84-bae500000089",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043",
     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata",
     "type": "salesreturn",
-    "mediaType": "application/json"
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#salesreturn/edit?id=685a0eb9-e707-11ef-ac12-000e00000043"
   },
-  ...
-  "demand": {
+  "id": "685a0eb9-e707-11ef-ac12-000e00000043",
+  "accountId": "a3816d8b-d7d4-11ef-ac12-001000000001",
+  "owner": {
     "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/f99544d7-4a98-11e6-8a84-bae50000007f",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata",
-      "type": "demand",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/a50d2d81-d7d4-11ef-ac12-000f00000051",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=a50d2d81-d7d4-11ef-ac12-000f00000051"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/a3832874-d7d4-11ef-ac12-001000000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
       "mediaType": "application/json"
     }
-  }
+  },
+  "updated": "2025-02-09 20:00:47.301",
+  "name": "00002",
+  "externalCode": "EMY-acmYh9LKG6GbGLvkY0",
+  "moment": "2025-02-09 20:00:00.000",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/a56cd0da-d7d4-11ef-ac12-000f000000a2",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=a56cd0da-d7d4-11ef-ac12-000f000000a2"
+      }
+    }
+  },
+  "sum": 111100.0,
+  "store": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/a56684d8-d7d4-11ef-ac12-000f0000009d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=a56684d8-d7d4-11ef-ac12-000f0000009d"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/a56832b7-d7d4-11ef-ac12-000f000000a0",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=a56832b7-d7d4-11ef-ac12-000f000000a0"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/a2a04526-e705-11ef-ac12-000e00000018",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=a2a04526-e705-11ef-ac12-000e00000018"
+    }
+  },
+  "created": "2025-02-09 20:00:47.329",
+  "printed": false,
+  "published": false,
+  "files": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043/files",
+      "type": "files",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "positions": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043/positions",
+      "type": "salesreturnposition",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "vatSum": 0.0,
+  "demand": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/a6c50571-e705-11ef-ac12-000e0000001d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata",
+      "type": "demand",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#demand/edit?id=a6c50571-e705-11ef-ac12-000e0000001d"
+    }
+  },
+  "payedSum": 0.0
 }
 ```
 
@@ -1403,73 +1608,494 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/166909e6-4a99-11e6-8a84-bae500000089?expand=demand"
+  "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043?expand=demand"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
 
-> В ответ придет возврат покупателя, у которого вместо ссылки на отгрузку, по которой производится возврат, будет вложенный объект со всеми полями данной отгрузки.
+>Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Возврата покупателя с развернутым объектом отгрузки.
 
 ```json
 {
   "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/166909e6-4a99-11e6-8a84-bae500000089?expand=demand",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043?expand=demand",
     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata",
     "type": "salesreturn",
-    "mediaType": "application/json"
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#salesreturn/edit?id=685a0eb9-e707-11ef-ac12-000e00000043"
   },
-  ...
+  "id": "685a0eb9-e707-11ef-ac12-000e00000043",
+  "accountId": "a3816d8b-d7d4-11ef-ac12-001000000001",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/a50d2d81-d7d4-11ef-ac12-000f00000051",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=a50d2d81-d7d4-11ef-ac12-000f00000051"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/a3832874-d7d4-11ef-ac12-001000000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2025-02-09 20:00:47.301",
+  "name": "00002",
+  "externalCode": "EMY-acmYh9LKG6GbGLvkY0",
+  "moment": "2025-02-09 20:00:00.000",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/a56cd0da-d7d4-11ef-ac12-000f000000a2",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=a56cd0da-d7d4-11ef-ac12-000f000000a2"
+      }
+    }
+  },
+  "sum": 111100.0,
+  "store": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/a56684d8-d7d4-11ef-ac12-000f0000009d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=a56684d8-d7d4-11ef-ac12-000f0000009d"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/a56832b7-d7d4-11ef-ac12-000f000000a0",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=a56832b7-d7d4-11ef-ac12-000f000000a0"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/a2a04526-e705-11ef-ac12-000e00000018",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=a2a04526-e705-11ef-ac12-000e00000018"
+    }
+  },
+  "created": "2025-02-09 20:00:47.329",
+  "printed": false,
+  "published": false,
+  "files": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043/files",
+      "type": "files",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "positions": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043/positions",
+      "type": "salesreturnposition",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "vatSum": 0.0,
   "demand": {
     "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/f99544d7-4a98-11e6-8a84-bae50000007f",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/a6c50571-e705-11ef-ac12-000e0000001d",
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata",
       "type": "demand",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#demand/edit?id=a6c50571-e705-11ef-ac12-000e0000001d"
     },
-    "id": "f99544d7-4a98-11e6-8a84-bae50000007f",
-    "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+    "id": "a6c50571-e705-11ef-ac12-000e0000001d",
+    "accountId": "a3816d8b-d7d4-11ef-ac12-001000000001",
     "owner": {
       "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/a50d2d81-d7d4-11ef-ac12-000f00000051",
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=a50d2d81-d7d4-11ef-ac12-000f00000051"
       }
     },
     "shared": false,
     "group": {
       "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/a3832874-d7d4-11ef-ac12-001000000002",
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
         "type": "group",
         "mediaType": "application/json"
       }
     },
-    ...
+    "updated": "2025-02-09 20:00:47.396",
+    "name": "00001",
+    "externalCode": "Uz0EvPg2jRgvtDL5o44ct0",
+    "moment": "2025-02-09 19:47:00.000",
+    "applicable": true,
+    "rate": {
+      "currency": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/a56cd0da-d7d4-11ef-ac12-000f000000a2",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=a56cd0da-d7d4-11ef-ac12-000f000000a2"
+        }
+      }
+    },
+    "sum": 111100.0,
+    "store": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/a56684d8-d7d4-11ef-ac12-000f0000009d",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+        "type": "store",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=a56684d8-d7d4-11ef-ac12-000f0000009d"
+      }
+    },
+    "agent": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/a56832b7-d7d4-11ef-ac12-000f000000a0",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=a56832b7-d7d4-11ef-ac12-000f000000a0"
+      }
+    },
+    "organization": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/a2a04526-e705-11ef-ac12-000e00000018",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=a2a04526-e705-11ef-ac12-000e00000018"
+      }
+    },
+    "attributes": [
+      {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/86a3c86d-e705-11ef-ac12-000e00000007",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+        },
+        "id": "86a3c86d-e705-11ef-ac12-000e00000007",
+        "name": "Новый атрибут",
+        "type": "string",
+        "value": "new string"
+      }
+    ],
+    "created": "2025-02-09 19:48:13.055",
+    "printed": false,
+    "published": false,
+    "files": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/a6c50571-e705-11ef-ac12-000e0000001d/files",
+        "type": "files",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
     "positions": {
       "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/f99544d7-4a98-11e6-8a84-bae50000007f/positions",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/a6c50571-e705-11ef-ac12-000e0000001d/positions",
         "type": "demandposition",
         "mediaType": "application/json",
-        "size": 2,
+        "size": 1,
         "limit": 1000,
         "offset": 0
       }
     },
     "vatEnabled": true,
     "vatIncluded": true,
-    "payedSum": 0,
+    "vatSum": 0.0,
+    "payedSum": 0.0,
     "returns": [
       {
         "meta": {
-          "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/166909e6-4a99-11e6-8a84-bae500000089",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043",
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata",
           "type": "salesreturn",
-          "mediaType": "application/json"
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#salesreturn/edit?id=685a0eb9-e707-11ef-ac12-000e00000043"
         }
       }
-    ]
-  }
+    ],
+    "shipmentAddress": "г.Москва, ул.Строителей, д.11",
+    "shipmentAddressFull": {
+      "addInfo": "г.Москва, ул.Строителей, д.11"
+    }
+  },
+  "payedSum": 0.0
+}
+```
+
+### Возвраты с expand отгрузки
+
+Передаем параметр **expand**=demand и limit=100.
+
+> Пример запроса возвратов с expand отгрузки
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn?limit=100&expand=demand"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Возвратов покупателей с развернутым объектом отгрузки
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn?limit=100&expand=demand",
+    "type": "salesreturn",
+    "mediaType": "application/json",
+    "size": 1,
+    "limit": 100,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/c6f47cc4-e1dd-11ee-ac1b-000e00000013?expand=demand",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata",
+        "type": "salesreturn",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#salesreturn/edit?id=c6f47cc4-e1dd-11ee-ac1b-000e00000013"
+      },
+      "id": "c6f47cc4-e1dd-11ee-ac1b-000e00000013",
+      "accountId": "081311c2-c42e-11ee-ac1b-000d00000001",
+      "owner": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/09a8ad82-c42e-11ee-ac1b-000e0000004e",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=09a8ad82-c42e-11ee-ac1b-000e0000004e"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/0815b439-c42e-11ee-ac1b-000d00000002",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2024-03-14 11:35:13.630",
+      "name": "00001",
+      "externalCode": "G9bgN5HggK9J00qB4P5eY2",
+      "moment": "2024-03-14 11:35:00.000",
+      "applicable": true,
+      "rate": {
+        "currency": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0a1b4b87-c42e-11ee-ac1b-000e0000009d",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0a1b4b87-c42e-11ee-ac1b-000e0000009d"
+          }
+        }
+      },
+      "sum": 0.0,
+      "store": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/0a152f4e-c42e-11ee-ac1b-000e00000098",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+          "type": "store",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=0a152f4e-c42e-11ee-ac1b-000e00000098"
+        }
+      },
+      "agent": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/0a0583b3-c42e-11ee-ac1b-000e00000095",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=0a0583b3-c42e-11ee-ac1b-000e00000095"
+        }
+      },
+      "organization": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/0a0583b3-c42e-11ee-ac1b-000e00000095",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=0a0583b3-c42e-11ee-ac1b-000e00000095"
+        }
+      },
+      "created": "2024-03-14 11:35:13.700",
+      "printed": false,
+      "published": false,
+      "files": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/c6f47cc4-e1dd-11ee-ac1b-000e00000013/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "positions": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/c6f47cc4-e1dd-11ee-ac1b-000e00000013/positions",
+          "type": "salesreturnposition",
+          "mediaType": "application/json",
+          "size": 3,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "vatEnabled": true,
+      "vatIncluded": true,
+      "vatSum": 0.0,
+      "demand": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/762474c4-e1dd-11ee-ac1b-000e00000001",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata",
+          "type": "demand",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#demand/edit?id=762474c4-e1dd-11ee-ac1b-000e00000001"
+        },
+        "id": "762474c4-e1dd-11ee-ac1b-000e00000001",
+        "accountId": "081311c2-c42e-11ee-ac1b-000d00000001",
+        "owner": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/09a8ad82-c42e-11ee-ac1b-000e0000004e",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+            "type": "employee",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=09a8ad82-c42e-11ee-ac1b-000e0000004e"
+          }
+        },
+        "shared": false,
+        "group": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/0815b439-c42e-11ee-ac1b-000d00000002",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+            "type": "group",
+            "mediaType": "application/json"
+          }
+        },
+        "updated": "2024-03-14 11:35:13.887",
+        "name": "00001",
+        "externalCode": "H9ZOh5TfhN06gKjCaqoHI1",
+        "moment": "2024-03-14 11:32:00.000",
+        "applicable": true,
+        "rate": {
+          "currency": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0a1b4b87-c42e-11ee-ac1b-000e0000009d",
+              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+              "type": "currency",
+              "mediaType": "application/json",
+              "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0a1b4b87-c42e-11ee-ac1b-000e0000009d"
+            }
+          }
+        },
+        "sum": 0.0,
+        "store": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/0a152f4e-c42e-11ee-ac1b-000e00000098",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "type": "store",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=0a152f4e-c42e-11ee-ac1b-000e00000098"
+          }
+        },
+        "agent": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/0a0583b3-c42e-11ee-ac1b-000e00000095",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+            "type": "organization",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=0a0583b3-c42e-11ee-ac1b-000e00000095"
+          }
+        },
+        "organization": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/0a0583b3-c42e-11ee-ac1b-000e00000095",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+            "type": "organization",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=0a0583b3-c42e-11ee-ac1b-000e00000095"
+          }
+        },
+        "created": "2024-03-14 11:32:58.117",
+        "printed": false,
+        "published": false,
+        "files": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/762474c4-e1dd-11ee-ac1b-000e00000001/files",
+            "type": "files",
+            "mediaType": "application/json",
+            "size": 0,
+            "limit": 1000,
+            "offset": 0
+          }
+        },
+        "positions": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/762474c4-e1dd-11ee-ac1b-000e00000001/positions",
+            "type": "demandposition",
+            "mediaType": "application/json",
+            "size": 3,
+            "limit": 1000,
+            "offset": 0
+          }
+        },
+        "vatEnabled": true,
+        "vatIncluded": true,
+        "vatSum": 0.0,
+        "payedSum": 0.0,
+        "returns": [
+          {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/c6f47cc4-e1dd-11ee-ac1b-000e00000013",
+              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata",
+              "type": "salesreturn",
+              "mediaType": "application/json",
+              "uuidHref": "https://online.moysklad.ru/app/#salesreturn/edit?id=c6f47cc4-e1dd-11ee-ac1b-000e00000013"
+            }
+          }
+        ]
+      },
+      "payedSum": 0.0
+    }
+  ]
 }
 ```
 
@@ -1486,80 +2112,323 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/166909e6-4a99-11e6-8a84-bae500000089?expand=demand.agent"
+  "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043?expand=demand.agent"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
 
-> Ответ с развернутым Demand и Demand.Agent
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Возврата покупателя с развернутыми объетами отгрузок и их агента.
 
 ```json
 {
   "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/166909e6-4a99-11e6-8a84-bae500000089?expand=demand.agent",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043?expand=demand.agent",
     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata",
     "type": "salesreturn",
-    "mediaType": "application/json"
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#salesreturn/edit?id=685a0eb9-e707-11ef-ac12-000e00000043"
   },
-  ...
+  "id": "685a0eb9-e707-11ef-ac12-000e00000043",
+  "accountId": "a3816d8b-d7d4-11ef-ac12-001000000001",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/a50d2d81-d7d4-11ef-ac12-000f00000051",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=a50d2d81-d7d4-11ef-ac12-000f00000051"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/a3832874-d7d4-11ef-ac12-001000000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2025-02-09 20:00:47.301",
+  "name": "00002",
+  "externalCode": "EMY-acmYh9LKG6GbGLvkY0",
+  "moment": "2025-02-09 20:00:00.000",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/a56cd0da-d7d4-11ef-ac12-000f000000a2",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=a56cd0da-d7d4-11ef-ac12-000f000000a2"
+      }
+    }
+  },
+  "sum": 111100.0,
+  "store": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/a56684d8-d7d4-11ef-ac12-000f0000009d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=a56684d8-d7d4-11ef-ac12-000f0000009d"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/a56832b7-d7d4-11ef-ac12-000f000000a0",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=a56832b7-d7d4-11ef-ac12-000f000000a0"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/a2a04526-e705-11ef-ac12-000e00000018",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=a2a04526-e705-11ef-ac12-000e00000018"
+    }
+  },
+  "created": "2025-02-09 20:00:47.329",
+  "printed": false,
+  "published": false,
+  "files": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043/files",
+      "type": "files",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "positions": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043/positions",
+      "type": "salesreturnposition",
+      "mediaType": "application/json",
+      "size": 1,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "vatEnabled": true,
+  "vatIncluded": true,
+  "vatSum": 0.0,
   "demand": {
     "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/f99544d7-4a98-11e6-8a84-bae50000007f?expand=agent",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/a6c50571-e705-11ef-ac12-000e0000001d?expand=agent",
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata",
       "type": "demand",
-      "mediaType": "application/json"
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#demand/edit?id=a6c50571-e705-11ef-ac12-000e0000001d"
     },
-    ...
+    "id": "a6c50571-e705-11ef-ac12-000e0000001d",
+    "accountId": "a3816d8b-d7d4-11ef-ac12-001000000001",
+    "owner": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/a50d2d81-d7d4-11ef-ac12-000f00000051",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=a50d2d81-d7d4-11ef-ac12-000f00000051"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/a3832874-d7d4-11ef-ac12-001000000002",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2025-02-09 20:00:47.396",
+    "name": "00001",
+    "externalCode": "Uz0EvPg2jRgvtDL5o44ct0",
+    "moment": "2025-02-09 19:47:00.000",
+    "applicable": true,
+    "rate": {
+      "currency": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/a56cd0da-d7d4-11ef-ac12-000f000000a2",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=a56cd0da-d7d4-11ef-ac12-000f000000a2"
+        }
+      }
+    },
+    "sum": 111100.0,
+    "store": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/a56684d8-d7d4-11ef-ac12-000f0000009d",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+        "type": "store",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=a56684d8-d7d4-11ef-ac12-000f0000009d"
+      }
+    },
     "agent": {
       "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/147c1f1b-32ca-11e6-8a84-bae500000004",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/a56832b7-d7d4-11ef-ac12-000f000000a0",
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
         "type": "counterparty",
-        "mediaType": "application/json"
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=a56832b7-d7d4-11ef-ac12-000f000000a0"
       },
-      ...
-      "name": "Агент1",
-      "code": "УТ0003074",
-      "externalCode": "kAgs4Xbhiz2Sp5oP2OCaB2",
+      "id": "a56832b7-d7d4-11ef-ac12-000f000000a0",
+      "accountId": "a3816d8b-d7d4-11ef-ac12-001000000001",
+      "owner": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/a50d2d81-d7d4-11ef-ac12-000f00000051",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=a50d2d81-d7d4-11ef-ac12-000f00000051"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/a3832874-d7d4-11ef-ac12-001000000002",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2025-01-21 11:49:37.985",
+      "name": "ООО \"Покупатель\"",
+      "externalCode": "rUQZicYjj0m4JmPQ1tr7J3",
       "archived": false,
-      "legalTitle": "Общество с ограниченной ответственностью «Агент1»",
-      "legalAddress": "107023, г. Москва, Барабанный переулок, дом № 42, строение 2",
-      "inn": "7719864242",
-      "kpp": "771901001",
-      ...
+      "created": "2025-01-21 11:49:37.985",
+      "companyType": "legal",
+      "legalTitle": "Общество с ограниченной ответственностью \"Покупатель\"",
+      "legalAddress": "г.Москва, ул.Строителей, д.11",
+      "legalAddressFull": {
+        "addInfo": "г.Москва, ул.Строителей, д.11"
+      },
+      "inn": "1234567894",
+      "kpp": "773601002",
+      "accounts": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/a56832b7-d7d4-11ef-ac12-000f000000a0/accounts",
+          "type": "account",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "tags": [],
+      "contactpersons": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/a56832b7-d7d4-11ef-ac12-000f000000a0/contactpersons",
+          "type": "contactperson",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "notes": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/a56832b7-d7d4-11ef-ac12-000f000000a0/notes",
+          "type": "note",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salesAmount": 0.0,
+      "files": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/a56832b7-d7d4-11ef-ac12-000f000000a0/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
     },
-    ...
+    "organization": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/a2a04526-e705-11ef-ac12-000e00000018",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=a2a04526-e705-11ef-ac12-000e00000018"
+      }
+    },
+    "attributes": [
+      {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/86a3c86d-e705-11ef-ac12-000e00000007",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+        },
+        "id": "86a3c86d-e705-11ef-ac12-000e00000007",
+        "name": "Новый атрибут",
+        "type": "string",
+        "value": "new string"
+      }
+    ],
+    "created": "2025-02-09 19:48:13.055",
+    "printed": false,
+    "published": false,
+    "files": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/a6c50571-e705-11ef-ac12-000e0000001d/files",
+        "type": "files",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
     "positions": {
       "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/f99544d7-4a98-11e6-8a84-bae50000007f/positions",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/demand/a6c50571-e705-11ef-ac12-000e0000001d/positions",
         "type": "demandposition",
         "mediaType": "application/json",
-        "size": 2,
+        "size": 1,
         "limit": 1000,
         "offset": 0
       }
     },
     "vatEnabled": true,
     "vatIncluded": true,
-    "payedSum": 0,
+    "vatSum": 0.0,
+    "payedSum": 0.0,
     "returns": [
       {
         "meta": {
-          "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/166909e6-4a99-11e6-8a84-bae500000089",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043",
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/metadata",
           "type": "salesreturn",
-          "mediaType": "application/json"
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#salesreturn/edit?id=685a0eb9-e707-11ef-ac12-000e00000043"
         }
       }
-    ]
-  }
-  ...
+    ],
+    "shipmentAddress": "г.Москва, ул.Строителей, д.11",
+    "shipmentAddressFull": {
+      "addInfo": "г.Москва, ул.Строителей, д.11"
+    }
+  },
+  "payedSum": 0.0
 }
 ```
 
 ### Создание отгрузки с expand 
 
-> Развернем поле **agent** у создаваемой отгрузки.
+> Пример запроса на создание отгрузки с раскрытием поля **agent**.
 
 ```shell
 curl -X POST
@@ -1593,7 +2462,8 @@ curl -X POST
 }'
 ```
 
-> В ответ придет созданная отгрузка с развернутым объектом контрагента (**agent**).
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной Отгрузки с развернутым объектом контрагента (**agent**).
 
 ```json
 {
@@ -1761,21 +2631,21 @@ curl -X POST
 
 ### Редактирование отгрузки с expand 
 
-> Теперь обновим эту отгрузку и развернем у нее поля **agent** и **organization**.
-В ответ придет измененная отгрузка с развернутым объектом контрагента (**agent**) и развернутым объектом юрлица (**organization**).
+> Пример запроса на обновление отгрузки с развернутыми объектами **agent** и **organization**.
 
 ```shell
 curl -X PUT
   "https://api.moysklad.ru/api/remap/1.2/entity/demand/1c3f30d2-88b9-11e7-9464-e4de00000000?expand=agent,organization"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: application/json'
   -d '{
   "name": "3738"
 }`
 ```
 
 > Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновлённая Отгрузка с развернутыми объектами контрагента и юрлица
 
 ```json
 {
@@ -2030,18 +2900,19 @@ curl -X PUT
 
 ###### Пользовательские и тарифные пермиссии
 
-| Название             | Описание                              |
-| -------------------- | :------------------------------------ |
-| **admin**            | Является ли сотрудник админом         |
-| **audit_dashboard**  | Просматривать аудит                   |
-| **company_crm**      | Просматривать показатели              |
-| **customAttributes** | Работа с доп. полями                  |
-| **dashboard**        | Просматривать показатели              |
-| **dashboardMoney**   | Видеть остатки денег                  |
-| **viewCashFlow**     | Видеть движение денежных средств      |
-| **pnl**              | Просматривать прибыльность            |
-| **stock**            | Просматривать остатки по товарам      |
-| **tariff_crm**       | Присутствует ли опция CRM на аккаунте |
+| Название                     | Описание                              |
+|------------------------------|:--------------------------------------|
+| **admin**                    | Является ли сотрудник админом         |
+| **audit_dashboard**          | Просматривать аудит                   |
+| **company_crm**              | Просматривать показатели              |
+| **customAttributes**         | Работа с доп. полями                  |
+| **dashboard**                | Просматривать показатели              |
+| **dashboardMoney**           | Видеть остатки денег                  |
+| **viewCashFlow**             | Видеть движение денежных средств      |
+| **viewProductCostAndProfit** | Видеть себестоимость                  |
+| **pnl**                      | Просматривать прибыльность            |
+| **stock**                    | Просматривать остатки по товарам      |
+| **tariff_crm**               | Присутствует ли опция CRM на аккаунте |
 
 При наличии соответствующей пермиссии объект содержит поле **VIEW** со значением `ALL`
 
@@ -2091,7 +2962,7 @@ curl -X PUT
 | **commissionReportOut**    | OPERATION                                                                                                                                          | Выданный отчет комиссионер             |
 | **company**                | DICTIONARY                                                                                                                                         | Контрагенты                            |
 | **contract**               | DICTIONARY                                                                                                                                         | Договоры                               |
-| **counterpartyAdjustment** | DICTIONARY                                                                                                                                         | Корректировка баланса контрагента      |
+| **counterpartyAdjustment** | DICTIONARY                                                                                                                                         | Корректировка взаиморасчетов           |
 | **country**                | BASE                                                                                                                                               | Страны                                 |
 | **currency**               | BASE                                                                                                                                               | Валюты                                 |
 | **customEntity**           | BASE                                                                                                                                               | Элементы пользовательских справочников |
@@ -2114,11 +2985,11 @@ curl -X PUT
 | **prepayment**             | OPERATION                                                                                                                                          | Предоплаты                             |
 | **prepaymentReturn**       | OPERATION                                                                                                                                          | Возврат предоплаты                     |
 | **priceList**              | OPERATION                                                                                                                                          | Прайс-лист                             |
-| **processing**             | BASE                                                                                                                                               | Техоперации                          |
+| **processing**             | BASE                                                                                                                                               | Техоперации                            |
 | **processingOrder**        | OPERATION                                                                                                                                          | Заказ на производство                  |
-| **processingPlan**         | BASE                                                                                                                                               | Техкарты                             |
-| **processingStage**        | BASE                                                                                                                                               | Этапы производства                             |
-| **processingProcess**      | BASE                                                                                                                                               | Техпроцессы                          |
+| **processingPlan**         | BASE                                                                                                                                               | Техкарты                               |
+| **processingStage**        | BASE                                                                                                                                               | Этапы производства                     |
+| **processingProcess**      | BASE                                                                                                                                               | Техпроцессы                            |
 | **project**                | BASE                                                                                                                                               | Проекты                                |
 | **purchaseOrder**          | OPERATION                                                                                                                                          | Заказ поставщикам                      |
 | **purchaseReturn**         | OPERATION                                                                                                                                          | Возврат поставщику                     |
@@ -2694,13 +3565,13 @@ curl -X PUT
 }
 ```
 
-### Серверные приложения
-Для доступа к API может быть использован токен выданный Вендору при установке Серверного приложения пользователем МоегоСклада.
+### Серверные решения
+Для доступа к API может быть использован токен выданный Вендору при установке Серверного решения пользователем МоегоСклада.
 
-#### Получение контекста приложения
-Возвращает параметры приложения, в рамках которого присходит запрос (по аналогии с контекстом Сотрудника).
+#### Получение контекста решения
+Возвращает параметры решения, в рамках которого присходит запрос (по аналогии с контекстом Сотрудника).
 
-> Пример запроса на получение контекста приложения
+> Пример запроса на получение контекста решения
 
 ```shell
 curl -X GET
@@ -2709,7 +3580,7 @@ curl -X GET
   -H "Accept-Encoding: gzip"
 ``` 
 
-> Response 200 (application/json) Успешный запрос. Результат JSON объект, содержащий данные приложения
+> Response 200 (application/json) Успешный запрос. Результат JSON объект, содержащий данные решения
 
 ```json
 {
@@ -2724,16 +3595,16 @@ curl -X GET
 }
 ```
 
-#### Получение сущности установленного приложения
-Возвращает параметры установленного приложения по id установленного на аккаунте приложения. 
+#### Получение сущности установленного решения
+Возвращает параметры установленного решения по id установленного на аккаунте решения. 
 
 **Параметры**
 
 | Параметр | Описание                                                                                                     |
 | :------- | :----------------------------------------------------------------------------------------------------------- |
-| **id**   | `string` (required) *Example: b58a6312-f958-11e9-ac12-000a00000020* id установленного на аккаунте приложения |
+| **id**   | `string` (required) *Example: b58a6312-f958-11e9-ac12-000a00000020* id установленного на аккаунте решения |
 
-> Пример запроса на получение сущности установленного приложения
+> Пример запроса на получение сущности установленного решения
 
 ```shell
 curl -X GET
@@ -2742,7 +3613,7 @@ curl -X GET
   -H "Accept-Encoding: gzip"
 ``` 
 
-> Response 200 (application/json) Успешный запрос. Результат JSON объект, содержащий данные приложения
+> Response 200 (application/json) Успешный запрос. Результат JSON объект, содержащий данные решения
 
 ```json
 {
@@ -2758,32 +3629,41 @@ curl -X GET
 ```
 
 #### Фильтрация выборки с помощью параметра filter=updatedBy
-Для фильтрации выборок сущностей по приложению укажите _uid_ изменившего их приложения.
+Для фильтрации выборок сущностей по решению укажите _uid_ изменившего их решения.
 
-Uid приложения должен быть указан в виде:
+Uid решения должен быть указан в виде:
 `<Application-Alias>.<Vendor-Alias>@<Account-Name>` 
 
 Пример запроса на получение списка входящих платежей:
 `https://api.moysklad.ru/api/remap/1.2/entity/paymentin?filter=updatedBy=test.moysklad@reqwy1` 
 
 #### Фильтрация записей аудита с помощью параметра filter=uid
-Для фильтрации аудита по приложению укажите _uid_ приложения, которое изменяло сущности.
+Для фильтрации аудита по решению укажите _uid_ решения, которое изменяло сущности.
 
-Uid приложения должен быть указан в виде:
+Uid решения должен быть указан в виде:
 `<Application-Alias>.<Vendor-Alias>@<Account-Name>` 
 
 Пример запроса на получение списка записей:
 `https://api.moysklad.ru/api/remap/1.2/audit?filter=uid=test.moysklad@reqwy1` 
 
 #### Фильтрация записей аудита с помощью параметра filter=application
-Для фильтрации аудита по приложению укажите _href_ приложения, которое изменяло сущности.
+Для фильтрации аудита по решению укажите _href_ решения, которое изменяло сущности.
 
-Href приложения должен быть указан в виде:
+Href решения должен быть указан в виде:
 `https://api.moysklad.ru/api/remap/1.2/entity/application/{id}`, 
-где _id_ - UUID установленного на аккаунте приложения
+где _id_ - UUID установленного на аккаунте решения
 
 Пример запроса на получение списка записей:
 `https://api.moysklad.ru/api/remap/1.2/audit?filter=application=https://api.moysklad.ru/api/remap/1.2/entity/application/46ea8005-2965-11e9-9ff4-34e80009ac49` 
 
-### Устаревшие версии JSON API 
-Версия [API REMAP 1.1](https://dev.moysklad.ru/doc/api/remap/1.1/) устарела. Поддерживается и работает, но не развивается и не дополняется новыми возможностями.
+### Региональные заголовки
+Для аккаунтов зарегистрированными с региональными настройками, отличными от российских, необходимо передавать заголовок X-Lognex-Accept-Region.
+Возможные значения для заголовка следующие:
+
+| Значение заголовка X-Lognex-Accept-Region | Описание                               |
+|:------------------------------------------|:---------------------------------------|
+| **ru**                                    | Регион Россия (регион по умолчанию)    |
+|  **uz**                                   | Регион Узбекистан                      |
+
+Передача регионального заголовка, дает возможность получать и изменять регионоспецифичные поля. [Подробнее тут.](dictionaries/#suschnosti-towar-towary-atributy-suschnosti-regiono-specifichnye-atributy-suschnosti)
+Результатом выполнения запроса будет получение ответа содержащий регионоспецифичные поля и заголовок `X-Lognex-Content-Region` c кодом региона.

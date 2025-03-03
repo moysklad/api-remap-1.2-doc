@@ -3,39 +3,41 @@
 ### Перемещения 
 #### Атрибуты сущности
 
-| Название          | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                                                                                   |
-|-------------------|:----------------------------------------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------ |:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**     | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе``+Только для чтения``+Change-handler`                                                                                                                       |
-| **applicable**    | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе``+Change-handler` `+Update-provider`                                                                                                                     |
-| **attributes**    | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)<br> `+Change-handler` `+Update-provider`                                           |
-| **code**          | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Перемещения                                                                                                                                                                                            |
-| **created**       | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения``+Change-handler`                                                                                                                          |
-| **deleted**       | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Перемещения<br>`+Только для чтения`                                                                                                                                             |
-| **description**   | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Перемещения<br>`+Change-handler` `+Update-provider`                                                                                                                                            |
-| **externalCode**  | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Перемещения<br>`+Обязательное при ответе``+Change-handler`                                                                                                                                     |
-| **files**         | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`                                                              |
-| **group**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                   |
-| **id**            | UUID                                                      | `=` `!=`                                                                                                                                          | ID Перемещения<br>`+Обязательное при ответе` `+Только для чтения``+Change-handler`                                                                                                                         |
-| **internalOrder** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Внутреннего заказа, связанного с Перемещением<br>`+Expand`                                                                                                                                      |
-| **customerOrder** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Заказа покупателя, связанного с Перемещением<br>`+Expand`                                                                                                                                       |
-| **meta**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Перемещения<br>`+Обязательное при ответе``+Change-handler`                                                                                                                                      |
-| **moment**        | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе``+Change-handler` `+Update-provider`                                                                                                                           |
-| **name**          | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Перемещения<br>`+Обязательное при ответе``+Change-handler` `+Update-provider`                                                                                                                 |
-| **organization**  | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании``+Change-handler` `+Update-provider`                                                                                   |
+| Название          | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                                                                                |
+|-------------------|:----------------------------------------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------ |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**     | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе``+Только для чтения``+Change-handler`                                                                                                                    |
+| **applicable**    | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе``+Change-handler` `+Update-provider`                                                                                                                  |
+| **attributes**    | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)<br> `+Change-handler` `+Update-provider`                                        |
+| **code**          | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Перемещения                                                                                                                                                                                         |
+| **created**       | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения``+Change-handler`                                                                                                                       |
+| **deleted**       | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Перемещения<br>`+Только для чтения`                                                                                                                                          |
+| **demand**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Отгрузки, связанной с Перемещением<br>`+Только для чтения` `+Expand`                                                                                                                         |
+| **description**   | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Перемещения<br>`+Change-handler` `+Update-provider`                                                                                                                                         |
+| **externalCode**  | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Перемещения<br>`+Обязательное при ответе``+Change-handler`                                                                                                                                  |
+| **files**         | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`                                                           |
+| **group**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                |
+| **id**            | UUID                                                      | `=` `!=`                                                                                                                                          | ID Перемещения<br>`+Обязательное при ответе` `+Только для чтения``+Change-handler`                                                                                                                      |
+| **internalOrder** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Внутреннего заказа, связанного с Перемещением<br>`+Expand`                                                                                                                                   |
+| **customerOrder** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Заказа покупателя, связанного с Перемещением<br>`+Expand`                                                                                                                                    |
+| **meta**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Перемещения<br>`+Обязательное при ответе``+Change-handler`                                                                                                                                   |
+| **moment**        | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе``+Change-handler` `+Update-provider`                                                                                                                        |
+| **name**          | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Перемещения<br>`+Обязательное при ответе``+Change-handler` `+Update-provider`                                                                                                              |
+| **organization**  | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании``+Change-handler` `+Update-provider`                                                                                |
 | **overhead**      | Object                                                    |                                                                                                                                                   | Накладные расходы. [Подробнее тут](../documents/#dokumenty-peremeschenie-peremescheniq-nakladnye-rashody). Если Позиции Перемещения не заданы, то накладные расходы нельзя задать<br>`+Update-provider` |
-| **owner**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                                                                                                               |
-| **positions**     | MetaArray                                                 |                                                                                                                                                   | Метаданные позиций Перемещения<br>`+Обязательное при ответе` `+Expand``+Change-handler` `+Update-provider`                                                                                                 |
-| **printed**       | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                   |
-| **project**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand``+Change-handler` `+Update-provider`                                                                                                                                        |
-| **published**     | Boolean                                                   | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                 |
-| **rate**          | Object                                                    |                                                                                                                                                   | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе``+Change-handler` `+Update-provider`                                                    |
-| **shared**        | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                                 |
-| **sourceStore**   | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные склада, с которого совершается перемещение<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании``+Change-handler` `+Update-provider`                                               |
-| **state**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса Перемещения<br>`+Expand` `+Change-handler` `+Update-provider`                                                                                                                           |
-| **sum**           | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Перемещения в копейках<br>`+Обязательное при ответе` `+Только для чтения``+Change-handler`                                                                                                           |
-| **syncId**        | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                                                                                |
-| **targetStore**   | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные склада, на который совершается перемещение<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании``+Change-handler` `+Update-provider`                                               |
-| **updated**       | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Перемещения<br>`+Обязательное при ответе` `+Только для чтения``+Change-handler`                                                                                               |
+| **owner**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                                       |
+| **positions**     | MetaArray                                                 |                                                                                                                                                   | Метаданные позиций Перемещения<br>`+Обязательное при ответе` `+Expand``+Change-handler` `+Update-provider`                                                                                              |
+| **printed**       | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                |
+| **project**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand``+Change-handler` `+Update-provider`                                                                                                                                     |
+| **published**     | Boolean                                                   | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                              |
+| **rate**          | Object                                                    |                                                                                                                                                   | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе``+Change-handler` `+Update-provider`                                                 |
+| **shared**        | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                              |
+| **sourceStore**   | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные склада, с которого совершается перемещение<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании``+Change-handler` `+Update-provider`                                            |
+| **state**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса Перемещения<br>`+Expand` `+Change-handler` `+Update-provider`                                                                                                                        |
+| **sum**           | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Перемещения в копейках<br>`+Обязательное при ответе` `+Только для чтения``+Change-handler`                                                                                                        |
+| **supply**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Приемки, связанной с Перемещением<br>`+Только для чтения` `+Expand`                                                                                                                          |
+| **syncId**        | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                                                                             |
+| **targetStore**   | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные склада, на который совершается перемещение<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании``+Change-handler` `+Update-provider`                                            |
+| **updated**       | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Перемещения<br>`+Обязательное при ответе` `+Только для чтения``+Change-handler`                                                                                            |
 
 #### Накладные расходы
 Описание полей overhead
@@ -784,18 +786,20 @@ curl -X POST
   -H "Content-Type: application/json"
   -d '[
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/move/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/move/metadata",
-            "type": "move",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/move/7944ef04-f831-11e5-7a69-971500188b1",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/move/metadata",
+                "type": "move",
+                "mediaType": "application/json"
+            }
         },
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/move/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/move/metadata",
-            "type": "move",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/move/7944ef04-f831-11e5-7a69-971500188b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/move/metadata",
+                "type": "move",
+                "mediaType": "application/json"
+            }
         }
       ]'
 ```        
@@ -876,7 +880,7 @@ curl -X POST
 ```
 
 ### Шаблон Перемещения на основе 
-Запрос на получение предзаполненного шаблона перемещения на основе внутреннего заказа.
+Запрос на получение предзаполненного шаблона перемещения на основе внутреннего заказа или заказа покупателя.
 В ответ на запрос вернется предзаполненный шаблон перемещения, который
 затем можно будет использовать для создания нового перемещения с помощью POST запроса.
 
@@ -1027,6 +1031,159 @@ curl -X POST
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/internalorder/64e426af-b0d8-11e6-8a84-bae500000064",
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/internalorder/metadata",
       "type": "internalorder",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
+
+> Пример запроса на получение шаблона перемещения на основе заказа покупателя.
+
+```shell
+  curl -X PUT
+    "https://api.moysklad.ru/api/remap/1.2/entity/move/new"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "customerOrder": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/64e426af-b0d8-11e6-8a84-bae500000064",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
+                "type": "customerorder",
+                "mediaType": "application/json"
+              }
+            }
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление предзаполненного перемещения.
+
+```json
+{
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/b905bfb0-9128-11e6-8a84-bae50000002a",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/b8ba0d3f-9128-11e6-8a84-bae500000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "moment": "2016-11-25 18:02:21",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/b942e6f2-9128-11e6-8a84-bae500000058",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "sum": 9910,
+  "project": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/project/6c6dd3f9-97a1-11e6-8a84-bae500000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/project/metadata",
+      "type": "project",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/b9324d71-9128-11e6-8a84-bae500000051",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
+  "positions": {
+    "rows": [
+      {
+        "quantity": 1,
+        "price": 2230.0,
+        "assortment": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/f4ac4460-acf7-11e6-8a84-bae500000068",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+            "type": "product",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=e64d0a86-2a99-11e9-ac12-000c00000041"
+          }
+        },
+        "overhead": 0
+      },
+      {
+        "quantity": 1,
+        "price": 100.0,
+        "assortment": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/f4ac4460-acf7-11e6-8a84-bae500000068",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+            "type": "product",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002f"
+          }
+        },
+        "overhead": 0
+      },
+      {
+        "quantity": 2,
+        "price": 500.0,
+        "assortment": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/f4ac4460-acf7-11e6-8a84-bae500000068",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+            "type": "product",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=392c045c-2842-11e9-ac12-000a00000002"
+          }
+        },
+        "overhead": 0
+      },
+      {
+        "quantity": 3,
+        "price": 2230.0,
+        "assortment": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/f4ac4460-acf7-11e6-8a84-bae500000068",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+            "type": "product",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3bb1af6c-2842-11e9-ac12-000c00000061"
+          }
+        },
+        "overhead": 0
+      }
+    ]
+  },
+  "targetStore": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/b942743c-9128-11e6-8a84-bae500000053",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json"
+    }
+  },
+  "customerOrder": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/64e426af-b0d8-11e6-8a84-bae500000064",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
+      "type": "customerorder",
       "mediaType": "application/json"
     }
   }
@@ -1825,16 +1982,63 @@ curl -X GET
 }
 ```
 
-### Создать позицию 
+### Позиция Перемещения
+   
+### Получить позицию
+
+**Параметры**
+
+| Параметр       | Описание                                                                            |
+| :------------- | :---------------------------------------------------------------------------------- |
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Перемещения. |
+| **positionID** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b20* id Перемещения. |
+ 
+> Запрос на получение отдельной позиции Перемещения с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/move/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отдельной позиции Перемещения.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/move/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20",
+    "type": "moveposition",
+    "mediaType": "application/json"
+  },
+  "id": "7944ef04-f831-11e5-7a69-971500188b20",
+  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+  "quantity": 4,
+  "price": 0.0,
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/e84aed23-3303-11e6-8a84-bae500014dcd",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002f"
+    }
+  },
+  "overhead": 0
+}
+```
+
+### Создать позицию
 Запрос на создание новой позиции в Перемещении.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
 + **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция.
-Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
-чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Перемещения](../documents/#dokumenty-peremeschenie-peremescheniq-pozicii-peremescheniq)
+  Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
+  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Перемещения](../documents/#dokumenty-peremeschenie-peremescheniq-pozicii-peremescheniq)
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
-Одновременно можно создать как одну так и несколько позиций Перемещения. Все созданные данным запросом позиции
-будут добавлены к уже существующим.
+  Одновременно можно создать как одну так и несколько позиций Перемещения. Все созданные данным запросом позиции
+  будут добавлены к уже существующим.
 
 **Параметры**
 
@@ -1930,53 +2134,6 @@ curl -X GET
 ]
 ```
 
-### Позиция Перемещения
-   
-### Получить позицию
-
-**Параметры**
-
-| Параметр       | Описание                                                                            |
-| :------------- | :---------------------------------------------------------------------------------- |
-| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Перемещения. |
-| **positionID** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b20* id Перемещения. |
- 
-> Запрос на получение отдельной позиции Перемещения с указанным id.
-
-```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/move/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельной позиции Перемещения.
-
-```json
-{
-  "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/move/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20",
-    "type": "moveposition",
-    "mediaType": "application/json"
-  },
-  "id": "7944ef04-f831-11e5-7a69-971500188b20",
-  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-  "quantity": 4,
-  "price": 0.0,
-  "assortment": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/e84aed23-3303-11e6-8a84-bae500014dcd",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
-      "type": "product",
-      "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002f"
-    }
-  },
-  "overhead": 0
-}
-```
-
 ### Изменить позицию 
 Запрос на обновление отдельной позиции Перемещения. Для обновления позиции нет каких-либо
 обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
@@ -2049,3 +2206,40 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление позиции Перемещения.
+
+### Массовое удаление позиций
+
+**Параметры**
+
+| Параметр       | Описание                                                                            |
+| :------------- |:------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Перемещения. |
+
+> Запрос на массовое удаление позиций Перемещения.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/move/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/move/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "moveposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/move/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "moveposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций Перемещения. 

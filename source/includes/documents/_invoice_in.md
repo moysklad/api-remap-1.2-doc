@@ -5,46 +5,46 @@
 #### Атрибуты сущности
 
 | Название                 | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                      |
-| ------------------------ | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------- |
-| **accountId**            | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                          |
-| **agent**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные контрагента<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler`                                                     |
-| **agentAccount**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета контрагента<br>`+Expand` `+Change-handler`                                                                                                     |
-| **applicable**           | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе` `+Change-handler`                                                                                            |
-| **attributes**           | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)<br>`+Change-handler`                       |
+| ------------------------ | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |:----------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**            | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                        |
+| **agent**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные контрагента<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler`                                   |
+| **agentAccount**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета контрагента<br>`+Expand` `+Change-handler`                                                                                   |
+| **applicable**           | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе` `+Change-handler`                                                                          |
+| **attributes**           | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)<br>`+Change-handler`  |
 | **code**                 | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Счета поставщика                                                                                                                          |
-| **contract**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные договора<br>`+Expand` `+Change-handler`                                                                                                              |
-| **created**              | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                              |
+| **contract**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные договора<br>`+Expand` `+Change-handler`                                                                                            |
+| **created**              | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                            |
 | **deleted**              | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Счета поставщика<br>`+Только для чтения`                                                                           |
-| **description**          | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Счета поставщика<br>`+Change-handler`                                                                                                                  |
-| **externalCode**         | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Счета поставщика<br>`+Обязательное при ответе` `+Change-handler`                                                                                    |
+| **description**          | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Счета поставщика<br>`+Change-handler`                                                                                             |
+| **externalCode**         | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Счета поставщика<br>`+Обязательное при ответе` `+Change-handler`                                                                  |
 | **files**                | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand` |
 | **group**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                      |
-| **id**                   | UUID                                                      | `=` `!=`                                                                                                                                          | ID Счета поставщика<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                        |
-| **incomingDate**         | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Входящая дата<br>`+Change-handler`                                                                                                                                 |
-| **incomingNumber**       | Float                                                     | `=` `!=` `~` `~=` `=~`                                                                                                                            | Входящий номер<br>`+Change-handler`                                                                                                                                |
-| **meta**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Счета поставщика<br>`+Обязательное при ответе` `+Change-handler`                                                                                     |
-| **moment**               | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе` `+Change-handler`                                                                                                  |
-| **name**                 | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Счета поставщика<br>`+Обязательное при ответе` `+Change-handler`                                                                                   |
-| **organization**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler`                                                          |
-| **organizationAccount**  | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand` `+Change-handler`                                                                                                          |
-| **owner**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                                                  |
-| **payedSum**             | Float                                                     |                                                                                                                                                   | Сумма входящих платежей по Счету поставщика<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                |
-| **paymentPlannedMoment** | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Планируемая дата оплаты<br>`+Change-handler`                                                                                                                       |
-| **positions**            | MetaArray                                                 |                                                                                                                                                   | Метаданные позиций Счета поставщика<br>`+Обязательное при ответе` `+Expand` `+Change-handler`                                                                   |
+| **id**                   | UUID                                                      | `=` `!=`                                                                                                                                          | ID Счета поставщика<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                      |
+| **incomingDate**         | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Входящая дата<br>`+Change-handler`                                                                                                            |
+| **incomingNumber**       | Float                                                     | `=` `!=` `~` `~=` `=~`                                                                                                                            | Входящий номер<br>`+Change-handler`                                                                                                           |
+| **meta**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Счета поставщика<br>`+Обязательное при ответе` `+Change-handler`                                                                   |
+| **moment**               | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе` `+Change-handler`                                                                                |
+| **name**                 | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Счета поставщика<br>`+Обязательное при ответе` `+Change-handler`                                                                 |
+| **organization**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler`                                        |
+| **organizationAccount**  | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand` `+Change-handler`                                                                                        |
+| **owner**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                             |
+| **payedSum**             | Float                                                     |                                                                                                                                                   | Сумма входящих платежей по Счету поставщика<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                              |
+| **paymentPlannedMoment** | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Планируемая дата оплаты<br>`+Change-handler`                                                                                                  |
+| **positions**            | MetaArray                                                 |                                                                                                                                                   | Метаданные позиций Счета поставщика<br>`+Обязательное при ответе` `+Expand` `+Change-handler`                                                 |
 | **printed**              | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                      |
-| **project**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand` `+Change-handler`                                                                                                               |
+| **project**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand` `+Change-handler`                                                                                             |
 | **published**            | Boolean                                                   | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                    |
-| **rate**                 | Object                                                    |                                                                                                                                                   | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе` `+Change-handler`                           |
+| **rate**                 | Object                                                    |                                                                                                                                                   | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе` `+Change-handler`         |
 | **shared**               | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                    |
-| **shippedSum**           | Float                                                     |                                                                                                                                                   | Сумма отгруженного<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                         |
-| **state**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса счета<br>`+Expand` `+Change-handler`                                                                                                         |
-| **store**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные склада<br>`+Expand` `+Change-handler`                                                                                                                |
-| **sum**                  | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Счета в установленной валюте<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                         |
+| **shippedSum**           | Float                                                     |                                                                                                                                                   | Сумма отгруженного<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                       |
+| **state**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса счета<br>`+Expand` `+Change-handler`                                                                                       |
+| **store**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные склада<br>`+Expand` `+Change-handler`                                                                                              |
+| **sum**                  | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Счета в установленной валюте<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                       |
 | **syncId**               | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                   |
-| **updated**              | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Счета поставщика<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                              |
-| **vatEnabled**           | Boolean                                                   |                                                                                                                                                   | Учитывается ли НДС<br>`+Обязательное при ответе` `+Change-handler`                                                                                              |
-| **vatIncluded**          | Boolean                                                   |                                                                                                                                                   | Включен ли НДС в цену<br>`+Change-handler`                                                                                                                         |
-| **vatSum**               | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                  |
+| **updated**              | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Счета поставщика<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                            |
+| **vatEnabled**           | Boolean                                                   |                                                                                                                                                   | Учитывается ли НДС<br>`+Обязательное при ответе` `+Change-handler`                                                                            |
+| **vatIncluded**          | Boolean                                                   |                                                                                                                                                   | Включен ли НДС в цену<br>`+Change-handler`                                                                                                    |
+| **vatSum**               | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                |
 
 #### Связи с другими документами
 | Название                       | Описание                                                                                                                          |
@@ -1381,18 +1381,20 @@ curl -X POST
   -H "Content-Type: application/json"
   -d '[
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/invoicein/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/invoicein/metadata",
-            "type": "invoicein",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/invoicein/7944ef04-f831-11e5-7a69-971500188b1",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/invoicein/metadata",
+                "type": "invoicein",
+                "mediaType": "application/json"
+            }
         },
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/invoicein/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/invoicein/metadata",
-            "type": "invoicein",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/invoicein/7944ef04-f831-11e5-7a69-971500188b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/invoicein/metadata",
+                "type": "invoicein",
+                "mediaType": "application/json"
+            }
         }
       ]'
 ```        
@@ -2726,13 +2728,62 @@ curl -X GET
 }
 ```
 
-### Добавить позицию в Счет поставщика 
+### Позиция Счета поставщика 
+Отдельная позиция Счета поставщика с указанным id позиции.
+
+**Параметры**
+
+| Параметр       | Описание                                                                                         |
+| :------------- | :----------------------------------------------------------------------------------------------- |
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Счета поставщика.         |
+| **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Счета поставщика. |
+
+### Получить позицию 
+> Запрос на получение отдельной позиции Счета с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/invoicein/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отдельной позиции Счета поставщика.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/invoicein/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
+    "type": "invoiceposition",
+    "mediaType": "application/json"
+  },
+  "id": "34f6344f-015e-11e6-9464-e4de0000006c",
+  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+  "quantity": 1,
+  "price": 0.0,
+  "discount": 0,
+  "vat": 0,
+  "vatEnabled": false,
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/00f1f397-3303-11e6-8a84-bae500000380",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3bb1af6c-2842-11e9-ac12-000c00000061"
+    }
+  }
+}
+```
+
+### Создать позицию
 Запрос на создание новой позиции в Счете поставщика.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
 + **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция.
-Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
-чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Счета](../documents/#dokumenty-schet-postawschika-scheta-postawschikow-pozicii-scheta-postawschika)
+  Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
+  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Счета](../documents/#dokumenty-schet-postawschika-scheta-postawschikow-pozicii-scheta-postawschika)
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
 
 **Параметры**
@@ -2795,56 +2846,7 @@ curl -X GET
 ]
 ```
 
-### Позиция Счета поставщика 
-Отдельная позиция Счета поставщика с указанным id позиции.
-
-**Параметры**
-
-| Параметр       | Описание                                                                                         |
-| :------------- | :----------------------------------------------------------------------------------------------- |
-| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Счета поставщика.         |
-| **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Счета поставщика. |
-
-### Получить позицию Счета 
-> Запрос на получение отдельной позиции Счета с указанным id.
-
-```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/invoicein/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельной позиции Счета поставщика.
-
-```json
-{
-  "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/invoicein/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
-    "type": "invoiceposition",
-    "mediaType": "application/json"
-  },
-  "id": "34f6344f-015e-11e6-9464-e4de0000006c",
-  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-  "quantity": 1,
-  "price": 0.0,
-  "discount": 0,
-  "vat": 0,
-  "vatEnabled": false,
-  "assortment": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/00f1f397-3303-11e6-8a84-bae500000380",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
-      "type": "product",
-      "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3bb1af6c-2842-11e9-ac12-000c00000061"
-    }
-  }
-}
-```
-
-### Изменить позицию Счета 
+### Изменить позицию  
 Запрос на обновление отдельной позиции Счета. Для обновления позиции нет каких-либо
 обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
 
@@ -2917,7 +2919,7 @@ curl -X GET
 | **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Счета поставщика.         |
 | **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Счета поставщика. |
 
-> Запрос на удаление отдельной позиции Счета с указанным id.
+> Запрос на удаление отдельной позиции Счета поставщика с указанным id.
 
 ```shell
 curl -X DELETE
@@ -2927,4 +2929,42 @@ curl -X DELETE
 ```
 
 > Response 200 (application/json)
-Успешное удаление позиции Счета.
+Успешное удаление позиции Счета поставщика.
+
+### Массовое удаление позиций
+
+**Параметры**
+
+| Параметр       | Описание                                                                                 |
+| :------------- |:-----------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Счета поставщика. |
+
+> Запрос на массовое удаление позиций Счета поставщика.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/invoicein/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/invoicein/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "invoiceposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/invoicein/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "invoiceposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций Счета поставщика. 
+

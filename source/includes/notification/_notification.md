@@ -1,14 +1,4 @@
 # Уведомления
-[//]: # (TODO: remove in MC-64261)
-<div class="banner">
-  <h4>Внимание!</h4>
-  <ui><b>До 1 декабря 2023 года необходимо:</b>
-    <li>Перенастроить интеграции на новый домен api.moysklad.ru (вместо online.moysklad.ru)</li>
-    <li>Включить использование <a href='https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow'>сжатия содержимого ответов</a> через передачу заголовка Accept-Encoding</li>
-  </ui>
-  <p>Рекомендации по переезду на новый домен можно прочитать <a href="https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rekomendacii-po-pereezdu-na-nowyj-domen">здесь</a>.</p>
-  <p>После 1 декабря 2023 года перестанут работать интеграции, использующие апи remap-12 на домене online.moysklad.ru</p>
-</div>
 
 ## Лента уведомлений
 ### Общие атрибуты уведомлений
@@ -345,6 +335,7 @@ curl -X PUT
 | **NotificationTaskReopened**            | Задача                 | Задача переоткрыта                                                     |
 | **NotificationTaskUnassigned**          | Задача                 | Задача снята                                                           |
 | **NotificationBonusMoney**              | Баланс                 | На счет зачислены бонусные деньги                                      |
+| **NewMentionInEvent**                   | Упоминания сотрудников | Новое упоминание в ленте событий                                       |
 
 ## Подробное описание типов уведомлений
 
@@ -534,7 +525,7 @@ NotificationInvoiceOutOverdue - просрочен счет покупателя
 | Название                 | Тип                                                       | Описание                                                                                             |
 | ------------------------ | :-------------------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
 | **accountId**            | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Необходимо при создании`                           |
-| **agentName*             | String(255)                                               | Имя контрагента<br>`+Обязательное при ответе`                                                        |
+| **agentName**            | String(255)                                               | Имя контрагента<br>`+Обязательное при ответе`                                                        |
 | **created**              | DateTime                                                  | Дата и время формирования Уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`       |
 | **description**          | String(4096)                                              | Описание уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                        |
 | **id**                   | UUID                                                      | ID Уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                              |
@@ -1905,7 +1896,7 @@ NotificationScript - уведомление из сценария
 | **accountId**   | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                           |
 | **created**     | DateTime                                                  | Дата и время формирования Уведомления<br>`+Обязательное при ответе` `+Только для чтения`       |
 | **description** | String(255)                                               | Описание уведомления<br>`+Обязательное при ответе` `+Только для чтения`                        |
-| **entity**      | Объект                                                    | Ссылка на объект сценария<br>`+Обязательное при ответе` `+Только для чтения`                   |
+| **entity**      | Object                                                    | Ссылка на объект сценария<br>`+Обязательное при ответе` `+Только для чтения`                   |
 | **eventType**   | Событие                                                   | Тип события сценария<br>`+Обязательное при ответе` `+Только для чтения`                        |
 | **id**          | UUID                                                      | ID Уведомления<br>`+Обязательное при ответе` `+Только для чтения`                              |
 | **meta**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные объекта<br>`+Обязательное при ответе` `+Только для чтения`                          |
@@ -2085,24 +2076,110 @@ curl -X GET
 }
 ```
 
+### Новое упоминание в ленте событий
+#### Тип уведомления
+NewMentionInEvent - уведомление о новом упоминании в ленте событий
+#### Атрибуты уведомления
+
+| Название        | Тип                                                       | Описание                                                                                                           |
+| --------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------|
+| **meta**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные объекта<br>`+Обязательное при ответе` `+Только для чтения`                                              |
+| **id**          | UUID                                                      | ID Уведомления<br>`+Обязательное при ответе` `+Только для чтения`                                                  |
+| **accountId**   | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                               |
+| **created**     | DateTime                                                  | Дата и время формирования Уведомления<br>`+Обязательное при ответе` `+Только для чтения`                           |
+| **read**        | Boolean                                                   | Признак того, было ли Уведомление прочитано<br>`+Обязательное при ответе` `+Только для чтения`                     |
+| **title**       | String(255)                                               | Краткий текст уведомления<br>`+Обязательное при ответе` `+Только для чтения`                                       |
+| **description** | String(4096)                                              | Описание уведомления<br>`+Обязательное при ответе` `+Только для чтения`                                            |
+| **operation**   | Object                                                    | Объект, в ленте которого было добавлено событие с упоминанием<br>`+Обязательное при ответе` `+Только для чтения`   |
+
+#### Атрибуты вложенных сущностей
+##### Объект
+Объект, в ленте которого добавили событие с упоминанием.
+
+| Название | Тип                                                       | Описание                                                                |
+| -------- | :-------------------------------------------------------- | :---------------------------------------------------------------------- |
+| **meta** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные объекта<br>`+Обязательное при ответе` `+Только для чтения`   |
+| **id**   | UUID                                                      | ID объекта<br>`+Обязательное при ответе` `+Только для чтения`           |
+| **name** | String(255)                                               | Наименование объекта<br>`+Обязательное при ответе` `+Только для чтения` |
+
+Допустимые значения для **meta.type**:
+
++ **customerorder** - заказ покупателя
+
+**Параметры**
+
+| Параметр | Описание                                                                            |
+| :------- | :---------------------------------------------------------------------------------- |
+| **id**   | `string` (required) *Example: c290e571-f65d-11ee-c0a8-300d0000000a* id Уведомления. |
+
+> Запрос на получение Уведомления с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/notification/c290e571-f65d-11ee-c0a8-300d0000000a"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Уведомления.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/c290e571-f65d-11ee-c0a8-300d0000000a",
+    "type": "NewMentionInEvent",
+    "mediaType": "application/json"
+  },
+  "id": "c290e571-f65d-11ee-c0a8-300d0000000a",
+  "accountId": "3a0c5979-f5ab-11ee-c0a8-300f00000001",
+  "created": "2024-04-09 13:41:45.173",
+  "read": false,
+  "title": "Новое упоминание: Заказ покупателя 00001",
+  "description": "@Петров О. В. позвони по заказу КА",
+  "operation": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/5dee4523-f5ab-11ee-c0a8-3010000000ed",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
+      "type": "customerorder",
+      "mediaType": "application/json"
+    },
+    "id": "5dee4523-f5ab-11ee-c0a8-3010000000ed",
+    "name": "00001"
+  }
+}
+```
+
+
 ## Настройки уведомлений
-### Атрибуты сущности
-+ **groups** - Подписка на уведомления по группам
-  + ``groupName`` - Код группы уведомлений
-    + **enabled**: (boolean, required) - Признак "активна" для подписки на уведомления данной группы
-    + **channels**: (array[string], required) - Массив каналов. Содержит значения из списка: `email` (Email-уведомления), `push` (уведомления на мобильных устройствах)
+### Структура данных
 
-Значения кода группы уведомлений.
+| Название          | Тип                           | Описание               |
+|-------------------|-------------------------------|------------------------|
+| **customerOrder** | Настройки группы уведомлений  | Заказы покупателей     |
+| **dataExchange**  | Настройки группы уведомлений  | Обмен данными          |
+| **invoice**       | Настройки группы уведомлений  | Счета покупателей      |
+| **retail**        | Настройки группы уведомлений  | Розничная торговля     |
+| **scripts**       | Настройки группы уведомлений  | Сценарии               |
+| **stock**         | Настройки группы уведомлений  | Складские остатки      |
+| **task**          | Настройки группы уведомлений  | Задачи                 |
+| **mentions**      | Настройки группы уведомлений  | Упоминания сотрудников |
+| **onlineStores**  | Настройки группы уведомлений  | Интернет-магазины      |
 
-| Код группы уведомлений   | Описание             |
-| ------------------------ | -------------------- |
-| **customer_order**       | Заказы покупателей   |
-| **data_exchange**        | Обмен данными        |
-| **invoice**              | Счета покупателей    |
-| **retail**               | Розничная торговля   |
-| **scripts**              | Сценарии             |
-| **stock**                | Складские остатки    |
-| **task**                 | Задачи               |
+Настройки группы уведомлений
+
+| Название            | Тип                        | Описание                                                                     |
+|---------------------|----------------------------|------------------------------------------------------------------------------|
+| **enabled**         | boolean                    | Признак "активна" для подписки на уведомления данной группы                  |
+| **channelsEnabled** | Настройки каналов доставки | Настройки доставки уведомлений данной группы через отдельные каналы доставки |
+
+Настройки каналов доставки
+
+| Название      | Тип     | Описание                                                                               |
+|---------------|---------|----------------------------------------------------------------------------------------|
+| **email**     | boolean | Признак "активна" для доставки уведомлений по элктронной почте                         |
+| **push**      | boolean | Признак "активна" для доставки уведомлений через пуш-уведомления мобильного приложения |
+| **interface** | boolean | Признак "активна" для доставки уведомлений в веб-интерфейсе МойСклад                   |
 
 ### Получить настройки уведомлений
 Запрос настроек Уведомлений текущего пользователя.
@@ -2111,7 +2188,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/subscription"
+  "https://api.moysklad.ru/api/remap/1.2/notification/settings"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
@@ -2121,38 +2198,76 @@ curl -X GET
 
 ```json
 {
-  "groups" : {
-    "customer_order" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "invoice" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "stock" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "retail" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "task" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "data_exchange" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "scripts" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "online_stores" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
+  "customerOrder" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "dataExchange" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "invoice" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "retail" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "scripts" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "stock" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "task" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "mentions" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "onlineStores" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
     }
   }
 }
@@ -2161,49 +2276,90 @@ curl -X GET
 ### Изменить настройки уведомлений
 Изменение настроек Уведомлений текущего пользователя.
 
-Отключение уведомлений из сценариев недопустимо. Параметр **enabled** игнорируется.
+Отключение уведомлений групп "Сценарии" и "Интернет-магазины" недопустимо. Параметр **enabled** игнорируется.
+
+Если не переданы настройки для какой-либо группы, настройки этой группы остаются неизменными. Если не передано значение
+флага активности для какой-либо группы либо какого-либо канала доставки, настройки для этой группы или этого канала не меняются.
 
 > Изменение настроек Уведомлений текущего пользователя.
 
 ```shell
   curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/notification/subscription"
+    "https://api.moysklad.ru/api/remap/1.2/notification/settings"
     -H "Authorization: Basic <Credentials>"
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
-            "groups" : {
-              "customer_order" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "invoice" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "stock" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "retail" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "task" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "data_exchange" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "scripts" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "online_stores" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
+            "customerOrder" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "dataExchange" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "invoice" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "retail" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "scripts" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "stock" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "task" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "mentions" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "onlineStores" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
               }
             }
           }'

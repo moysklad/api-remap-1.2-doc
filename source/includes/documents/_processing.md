@@ -24,9 +24,9 @@
 | **name**                | String(255)                                                | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Техоперации<br>`+Обязательное при ответе`                                                                                        |
 | **organization**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                          |
 | **organizationAccount** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand`                                                                                                          |
-| **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                                                  |
+| **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                             |
 | **printed**             | Boolean                                                    | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                      |
-| **processingPlan**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  |                                                                                                                                                   | Метаданные Техоперации<br>`+Обязательное при ответе` `+Expand`                                                                                |
+| **processingPlan**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  |                                                                                                                                                   | Метаданные Техкарты<br>`+Expand`                                                                                                              |
 | **processingSum**       | Int                                                        |                                                                                                                                                   | Затраты на производство за единицу объема производства<br>`+Обязательное при ответе`                                                          |
 | **products**            | Array(Object)                                              |                                                                                                                                                   | Список Метаданных готовых продуктов Техоперации<br>`+Обязательное при ответе` `+Expand`                                                       |
 | **productsStore**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  |                                                                                                                                                   | Метаданные склада для продукции<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                            |
@@ -1634,18 +1634,20 @@ curl -X POST
   -H "Content-Type: application/json"
   -d '[
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/processing/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processing/metadata",
-            "type": "processing",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/processing/7944ef04-f831-11e5-7a69-971500188b1",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processing/metadata",
+                "type": "processing",
+                "mediaType": "application/json"
+            }
         },
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/processing/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processing/metadata",
-            "type": "processing",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/processing/7944ef04-f831-11e5-7a69-971500188b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processing/metadata",
+                "type": "processing",
+                "mediaType": "application/json"
+            }
         }
       ]'
 ```        
@@ -2615,7 +2617,7 @@ curl -X GET
 
 ### Материал Техоперации
 
-### Получить материал Техоперации
+### Получить материал
 
 **Параметры**
 
@@ -2800,7 +2802,44 @@ curl -X GET
 > Response 200 (application/json)
 Успешное удаление материала Техоперации.
 
-#### Продукты Техоперации 
+### Массовое удаление материалов
+
+**Параметры**
+
+| Параметр       | Описание                                                                            |
+| :------------- |:------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Техоперации. |
+
+> Запрос на массовое удаление материалов Техоперации.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/processing/3e1c03bb-684f-11ee-ac12-000c000000b0/materials/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/processing/3e1c03bb-684f-11ee-ac12-000c000000b0/materials/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "processingpositionmaterial",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/processing/3e1c03bb-684f-11ee-ac12-000c000000b0/materials/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "processingpositionmaterial",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление материалов Техоперации.
+
+### Продукты Техоперации 
 Отдельный ресурс для управления продуктами Техоперации. С его помощью вы можете управлять продуктами большого документа, количество продуктов в котором превышает лимит на количество продуктов, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
 
 ### Получить продукты Техоперации 
@@ -3080,3 +3119,40 @@ curl -X GET
 
 > Response 200 (application/json)
 Успешное удаление продукта Техоперации.
+
+### Массовое удаление продуктов
+
+**Параметры**
+
+| Параметр       | Описание                                                                            |
+| :------------- |:------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Техоперации. |
+
+> Запрос на массовое удаление продуктов Техоперации.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/processing/3e1c03bb-684f-11ee-ac12-000c000000b0/products/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/processing/3e1c03bb-684f-11ee-ac12-000c000000b0/products/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "processingpositionresult",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/processing/3e1c03bb-684f-11ee-ac12-000c000000b0/products/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "processingpositionresult",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление продуктов Техоперации.

@@ -1,16 +1,5 @@
 # Список изменений
 
-[//]: # (TODO: remove in MC-64261)
-<div class="banner">
-  <h4>Внимание!</h4>
-  <ui><b>До 1 декабря 2023 года необходимо:</b>
-    <li>Перенастроить интеграции на новый домен api.moysklad.ru (вместо online.moysklad.ru)</li>
-    <li>Включить использование <a href='https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-szhatie-soderzhimogo-otwetow'>сжатия содержимого ответов</a> через передачу заголовка Accept-Encoding</li>
-  </ui>
-  <p>Рекомендации по переезду на новый домен можно прочитать <a href="https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-rekomendacii-po-pereezdu-na-nowyj-domen">здесь</a>.</p>
-  <p>После 1 декабря 2023 года перестанут работать интеграции, использующие апи remap-12 на домене online.moysklad.ru</p>
-</div>
-
 В разделе перечислены изменения и расширения возможностей существующих эндпоинтов, а также новые эндпоинты,
  которые позволяют эффективнее работать с API МоегоСклада.
 
@@ -27,127 +16,313 @@
 - добавьте https://github.com/moysklad/api-remap-1.2-doc/commits/master.atom
 - при любом изменении документации придёт нотификация и можно посмотреть, что именно изменилось.
 
-## Отличия API Remap 1.2 от API Remap 1.1
-### Добавлено
-- Аутентификация с использованием [токена](../#mojsklad-json-api-obschie-swedeniq-autentifikaciq)
-- Работа с Изображениями
-  - Изображения [Модификаций](../dictionaries/#suschnosti-modifikaciq) 
-  - Работа с несколькими изображениями 
-    в [Товарах](../dictionaries/#suschnosti-towar-sozdat-towar), 
-    [Комплектах](../dictionaries/#suschnosti-komplekt-sozdat-komplekt), 
-    [Модификациях](../dictionaries/#suschnosti-modifikaciq-massowoe-sozdanie-i-obnowlenie-modifikacij)
-  - [Новый эндпоинт](../dictionaries/#suschnosti-izobrazhenie) для массового 
-    создания, редактирования и удаления изображений у Товаров, Комплектов и Модификаций
-- Изменения в [Вебхуках](../dictionaries/#suschnosti-vebhuki)
-  - добавлена версия АПИ в теле
-  - добавлено поле `accoundId`
-- Существующие эндпоинты
-  - Создание, обновление и удаление [Точек Продаж](../dictionaries/#suschnosti-tochka-prodazh)
-  - Массовое удаление [сущностей](../dictionaries/#suschnosti)
-  - Редактирование полей [Сотрудника](../dictionaries/#suschnosti-sotrudnik), влияющих на разделение доступа: `email`, `group`, `archived`, `owner`, `shared`
-  - Удаление [сущностей](../dictionaries/#suschnosti) по `syncid`
-  - Работа с публикациями для [Розничной смены](../documents/#dokumenty-roznichnaq-smena), 
-    [Заказа на производство](../documents/#dokumenty-zakaz-na-proizwodstwo), 
-    [Отчетов комиссионеров](../documents/#dokumenty-poluchennyj-otchet-komissionera), 
-    [Техоперации](../documents/#dokumenty-tehoperaciq), 
-    [Инвентаризации](../documents/#dokumenty-inwentarizaciq)
-  - Обработка `null` для поля [Алкогольной продукции](../dictionaries/#suschnosti-towar). Теперь через JSON API можно менять тип продукции с алкогольной на неалкогольную, передав `null` в поле `alcoholic`
-  - Новые поля `directorPosition`, `directorSign`, `chiefAccountSign`, `stamp` в [Юрлице](../dictionaries/#suschnosti-jurlico)
-- Работа с Файлами
-  - Возможность работы с файлами в [Операциях](../documents/#dokumenty), [Товарах](../dictionaries/#suschnosti-towar) и [Контрагентах](../dictionaries/#suschnosti-kontragent)
-  - [Новый эндпоинт](../dictionaries/#suschnosti-fajly) для работы с Файлами
-- Новые эндпоинты
-  - Отчет [Прибыльность по Каналам продаж](../reports/#otchety-otchet-pribyl-nost-poluchit-pribyl-nost-po-kanalam-prodazh)
-  - Эндпоинт управления [Типами цен](../dictionaries/#suschnosti-tipy-cen)   
-  - Эндпоинт [Управления настройками справочника товаров](../dictionaries/#suschnosti-assortiment)
-  - Эндпоинт [Управления настройками справочника контрагентов](../dictionaries/#suschnosti-kontragent-nastrojki-sprawochnika-kontragentow)
-  - Эндпоинт [Настройка аккаунта компании](../dictionaries/#suschnosti-nastrojki-kompanii)
-  - Эндпоинт [Настройки пользователя](../dictionaries/#suschnosti-nastrojki-pol-zowatelq)
-  - Отчет [Показатели продаж](../reports/#otchety-pokazateli-prodazh-i-zakazow-pokazateli-prodazh)
-  - Отчет [Показатели заказов](../reports/#otchety-pokazateli-prodazh-i-zakazow-pokazateli-zakazow)
-  - Отчет [Обороты товаров](../reports/#otchety-otchet-oboroty)
-  - Отчет [Текущих остатков](../reports/#otchety-otchet-ostatki-kratkij-otchet-ob-ostatkah)
-  - Создание [характеристик Модификаций](../dictionaries/#suschnosti-harakteristiki-modifikacij)  
-  - Эндпоинты [управления скидками](../dictionaries/#suschnosti-skidki)
-  - Эндпоинт [Автозаполнения цен, скидок, ндс позиций](../documents/#dokumenty-awtozapolnenie)
-  - Эндпоинты для [управления правами сотрудника](../dictionaries/#suschnosti-sotrudnik-rabota-s-prawami-sotrudnika) 
-  - Эндпоинты для [доступа сотрудника к основному сервису МойСклад](../dictionaries/#suschnosti-sotrudnik-aktiwaciq-sotrudnika)
-- Добавлена возможность выполнять запросы [асинхронно](../#mojsklad-json-api-asinhronnyj-obmen) 
-  - Добавлена статья в [воркбук](../workbook/#workbook-rabota-s-asinhronnym-obmenom)
-- Изменения формата JSON
-  - Новые поля `bonusProgram` и `bonusPoints` в [Контрагентах](../dictionaries/#suschnosti-kontragent)
-    и [Организациях](../dictionaries/#suschnosti-jurlico)
-  - Новые поля `minionToMasterType` и `masterRetailStores` в [Точке продаж](../dictionaries/#suschnosti-tochka-prodazh)
-- Фильтрация
-  - Новая фильтрация в отчетах [Деньги](../reports/#otchety-otchet-den-gi), 
-    [Показатели продаж](../reports/#otchety-pokazateli-prodazh-i-zakazow-pokazateli-prodazh) 
-    и [Показатели заказов](../reports/#otchety-pokazateli-prodazh-i-zakazow-pokazateli-zakazow)  
-  - Фильтрация и сортировки в [Отчетах Остатков](../reports/#otchety-otchet-ostatki)  
-  - Фильтрация по `state.name` и `assortment` для [Документов](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-dopolnitel-nye-fil-try)
-  - Операторы фильтрации [Ассортимента](../dictionaries/#suschnosti-assortiment) по полю updated `<`, `>`  
-  - Фильтрация по uid в запросе [Аудита](../audit/#audit-audit-kontexty)
-- Маркетплейс
-  - Получение [контекста приложения](../#mojsklad-json-api-obschie-swedeniq-serwernye-prilozheniq). Возвращает параметры приложения, в рамках которого происходит запрос
-  - [Получение сущности установленного приложения](../#mojsklad-json-api-obschie-swedeniq-serwernye-prilozheniq). Возвращает параметры установленного приложения по id установленного на аккаунте приложения  
-  - [Фильтрация выборки](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter) с помощью параметра `filter` по изменившему сущность приложению
-- Документация
-  - Информация о таймаутах и новом параметре в [Вебхуках](../dictionaries/#suschnosti-vebhuki)
-  - Новый раздел [Workbook](../workbook/#workbook)
-  - Формулировка об ограничении выборки в блоке [Остатки в позициях документов](../documents/#dokumenty)
-  - Описание новых типов для [фильтров Аудита](../audit/#audit-audit-fil-try)    
-  - Описание работы с маркированными товарами в [Приемке](../documents/#dokumenty-priemka) и [Отгрузке](../documents/#dokumenty-otgruzka)  
-  
-### Изменено
-- Общие изменения
-  - Фильтрация только через `filter`. Раньше фильтровать некоторые сущности можно было не используя ключевое слово `filter`
-  - Увеличен лимит выборки до *1000* вместо *100* для массивов: позиций, размера выборки get запроса и т.д.
-  - Можно создавать не более 5 [Веб-хуков](../workbook/#workbook) одного типа на разные url, а не 1 как было ранее
-- Изменения формата JSON
-  - Формат [Типов цен](../dictionaries/#suschnosti-tipy-cen). Теперь тип цены отображается как объект в сущностях, а не как поле
-  - Формат [Штрихкодов](../dictionaries/#suschnosti-towar-towary):
-    - можно сохранять ean8 как ean13
-    - можно сохранять ean13 как ean8  
-    - в значение штрихкода теперь нельзя передавать `null`
-    - штрихкоды без указания типа теперь игнорируются
-    - штрихкоды вида `null` теперь игнорируются
-  - Вывод "денежных" полей, таких как: `vatSum`, `sum`, `commitentSum`, `linkedSum`, `processingSum`, `proceedsNoCash`, `proceedsCash`, 
-    `receivedNoCash`, `receivedCash`, `shippedSum`, `payedSum`, `invoicedSum`, `overhead.sum`, `checkSum` теперь в валюте (соответствует полю rate) [Документа](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny)
-  - В составе [Контрагента](../dictionaries/#suschnosti-kontragent) поле `groups` заменено на `tags`  
-  - Переименовано поле `modificationsCount` в `variantsCount` в [Товарах](../dictionaries/#suschnosti-towar)  
-  - Время в полях типа `дата-время` отображается с точностью до миллисекунд
-- Поведения работы эндпоинта  
-  - Нельзя добавлять пустое значение в массив тегов в [Контрагентах](../dictionaries/#suschnosti-kontragent-kontragenty),
-   [Точках продаж](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh) и т.д. Такие значения будут игнорироваться  
-  - Фильтры в запросе [Ассортимента](../dictionaries/#suschnosti-assortiment)
-    - все фильтры по полям, по доступно и остаток, по search и сортировки теперь могут работать вместе
-  - [Дополнительные поля](../workbook/#workbook-rabota-s-dopolnitel-nymi-polqmi-cherez-json-api) у Товаров, Услуг, Модификаций и Комплектов общие и располагаются в метаданных Товаров.  
-  - Техкарта необязательна при создании [Техоперации](../documents/#dokumenty-tehoperaciq).
-- Путь эндпоинта
-  - Изменен путь к эндпоинтам [Показателям по деньгам](../reports/#otchety-pokazateli) (`report`)      
-- Документация
-  - Дополнена документация по [Аудиту](../audit/#audit) по новым полям и сущностям
-  - Название сущности в документации [Счет-фактура выданный](../documents/#dokumenty-schet-faktura-wydannyj)
-    ([Полученный](../documents/#dokumenty-schet-faktura-poluchennyj)) приведено к общему виду (с написанием "выданный" после)
-  - Описание в документации об ограничении при создании [Веб-хуков](../workbook/#workbook) на одну сущность
-  - [Описание](../#mojsklad-json-api-obschie-swedeniq-ogranicheniq) ограничения по запросу на один IP
-  - Исправлен ряд опечаток в примерах
-  - Исправление опечатки в описании `email` в документации в разделе [Сотрудника](../dictionaries/#suschnosti-sotrudnik)
-  
-### Удалено
-- Заголовки `If-Modified-Since`, `debug`, `X-Lognex-Format-Millisecond`
-- Поле `version`
-- Поле `documents` у [Документов](../#mojsklad-json-api-obschie-swedeniq-ogranicheniq)
-- Передача заголовка `Accept`
-- Поле `createShared` из метаданных [Товаров](../dictionaries/#suschnosti-towar), 
-[Услуг](../dictionaries/#suschnosti-usluga), 
-[Комплектов](../dictionaries/#suschnosti-komplekt), 
-[Групп Товаров](../dictionaries/#suschnosti-gruppa-towarow)
-- Возможность изменения поля `ofdEnabled` для [Точки продаж](../dictionaries/#suschnosti-tochka-prodazh). Теперь оно всегда равно true
-- Описание заголовка `Lognex-Pretty-Print-JSON` в Общих сведениях
-- В [Розничной смене](../documents/#dokumenty-roznichnaq-smena) удалено поле `applicable` в перечислении полей
-
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
+
+### 13-02-2025
+#### Добавлено
+- Типы компаний региона Узбекистан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)
+- Типы компаний региона Узбекистан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-tip-urlica)
+- Реквизиты региона Узбекистан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-rekwizity-uzbekistana)
+- Реквизиты региона Узбекистан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-rekwizity-uzbekistana)
+
+### 12-02-2025
+#### Добавлено
+- Условие автоматического отключения JSON API пользователю в [Ограничения](../#mojsklad-json-api-ogranicheniq)
+
+### 27-01-2025
+#### Добавлено
+- Добавлены [регональные заголовки](../#mojsklad-json-api-obschie-swedeniq-regional-nye-zagolowki)
+- Ошибка  [16114](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-towarow) Ошибка сохранения товара: маркированный товар не может быть разливным
+
+### 16-01-2025
+#### Добавлено
+- Поле `service` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+- Возможность назначать исполнителем не только сотрудника но и контрагента в [Выполнении этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+
+### 16-01-2025
+#### Добавлено
+- поля `files`, `instruction`в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+
+### 15-01-2025
+#### Добавлено
+- Добавлен параметр `withRecalculate` в эндпоинт [Краткий отчет об остатках](../reports/#otchety-otchet-ostatki-kratkij-otchet-ob-ostatkah).
+- Новые типы маркированной продукции `BICYCLE` для велосипедов, `NABEER` для безалкогольного пива, `SEAFOOD` для икры и морепродуктов, `VETPHARMA` для ветеринарных препаратов для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
+
+### 25-12-2024
+#### Добавлено
+- Ошибки [25063](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart), [26114](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq), [26209, 26210](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-vypolnenij-atapow-proizwodstwa)
+- Поле `standardHourCost` в [Этап производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Стоимость нормо-часа
+- Поля `standardHourCost`, `enableHourAccounting` в [Этап техкарты](../dictionaries/#suschnosti-tehkarta-tehkarty)
+- Поля `standardHourCost`, `enableHourAccounting` в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+- Поля `standardHourCost`, `enableHourAccounting` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+
+### 23-12-2024
+#### Изменены
+- Эндпоинты для работы с [Настройками уведомлений](../notification/#uwedomleniq-nastrojki-uwedomlenij) 
+
+### 17-12-2024
+#### Добавлен
+- Параметр фильтрации `entityType` в [Отчетах Прибыльность](../reports/#otchety-otchet-pribyl-nost)
+
+### 02-12-2024
+#### Добавлено
+- Вывод дополнительных полей в элементы [Пользовательских справочников](../dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik)
+- Вывод метаданных дополнительных полей в метаданные пользовательских справочников
+- Поле `ID` в метаданные пользовательского справочника
+
+#### Изменено
+- Актуализирована документация по [Пользовательским справочникам](../dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik)
+
+### 19-11-2024
+#### Добавлено
+- Поле `salesMargin` в [Отчет Прибыльность](../reports/#otchety-otchet-pribyl-nost)
+
+### 01-11-2024
+#### Добавлена
+- Ошибка [4003](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tochek-prodazh) при создании\изменении точки продаж productFolders содержит родительскую группу товаров и ee дочерние группы одновременно
+
+### 29-10-2024
+#### Добавлена
+- Ошибка [71000](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-serij) при создании серии в качестве ассортимента указана серия
+
+### 24-10-2024
+#### Добавлено
+- Поле `advancePaymentVat` в [Юрлица](../dictionaries/#suschnosti-jurlico), Налоговая ставка для авансов для плательщиков НДС
+
+### 17-10-2024
+#### Изменено
+- Изменено одно из [правил бана](../index.html#mojsklad-json-api-ogranicheniq)
+
+### 08-10-2024
+#### Добавлена
+- Возможность фильтровать архивные товары в [отчете оборотов](../reports/#otchety-otchet-oboroty)
+
+### 30-09-2024
+#### Добавлено
+- Возможность обновлять и удалять события в [Ленте Событий](../dictionaries/#suschnosti-lenta-sobytij)
+- Ошибка [2026](../#mojsklad-json-api-oshibki-oshibki-formata)
+
+### 16-09-2024
+#### Добавлено
+- Описание ошибки [70000](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-lenty-sobytij)
+- Возможность добавлять события в [Ленту Событий](../dictionaries/#suschnosti-lenta-sobytij)
+
+### 03-09-2024
+#### Добавлены
+- Поле "склад материалов" (materialStore) в [Этапы Техкарты](../dictionaries/#suschnosti-jetap-proizwodstwa-jetapy)
+- Поле "склад материалов" (materialStore) в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+
+### 28-08-2024
+#### Добавлен
+- Параметр фильтрации `productionTask` в запросе списка [Выполнений этапов производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa-poluchit-spisok-vypolnenij-atapow-proizwodstwa)
+
+### 26-08-2024
+#### Добавлены
+- Параметр фильтрации `moment` в запросе списка [Выполнений этапов производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa-poluchit-spisok-vypolnenij-atapow-proizwodstwa)
+- Параметры фильтрации `moment`, `organization`, `deliveryPlannedMoment` в запросе списка [Производственных заданий](../documents/#dokumenty-proizwodstwennoe-zadanie)
+
+### 22-08-2024
+#### Добавлен
+- Флаг "Без закрывающих документов" для [Исходящего платежа](../documents/#dokumenty-ishodqschij-platezh)
+- Флаг "Без закрывающих документов" для [Расходного ордера](../documents/#dokumenty-rashodnyj-order)
+
+### 19-08-2024
+#### Добавлено
+- Новый тип маркированной продукции `SOFT_DRINKS` для безалкогольных напитков для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
+
+### 22-07-2024
+#### Добавлена
+- Возможность указывать несколько складов в [отчете оборотов](../reports/#otchety-otchet-oboroty)
+
+### 16-07-2024
+#### Добавлено
+- Добавлено описание получения ссылки на [изображение](../dictionaries/#suschnosti-izobrazhenie-poluchit-ssylku-na-izobrazhenie-towara-ili-komplekta-ili-modifikacii)
+
+### 12-07-2024
+#### Добавлен
+- Новый [отчет По документам номенклатуры](../reports/#otchety-otchet-po-dokumentam-nomenklatury)
+
+### 1-07-2024
+#### Изменено
+- Добавлена пермиссия viewProductCostAndProfit в список пермиссий [контекста запроса сотрудника](../#mojsklad-json-api-obschie-swedeniq-kontext-zaprosa-sotrudnika)
+
+### 26-06-2024
+#### Добавлены
+- Условие автоматического отключения JSON API пользователю в [Ограничения](../#mojsklad-json-api-ogranicheniq)
+- Условие автоматического отключения вебхука в [Ограничения](../#mojsklad-json-api-ogranicheniq)
+
+### 24-06-2024
+#### Добавлено
+- Ошибка [17023](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
+
+### 17-06-2024
+#### Добавлена
+- Ошибка [3039](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
+### 10-06-2024
+#### Добавлено
+- Новый тип маркированной продукции `MEDICAL_DEVICES` для медизделий и кресел-колясок для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
+- Поле "нормо-часы" (standardHour) в [Этапы Техкарты](../dictionaries/#suschnosti-tehkarta)
+- Поле "нормо-часы" (standardHourUnit) в [Выполнения этапов производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+- Поле "нормо-часы" (standardHourUnit) в [Производственные этапы](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+
+### 29-05-2024
+#### Добавлена
+- Информация о работе с [Лентой Событий](../dictionaries/#suschnosti-lenta-sobytij)
+
+### 16-05-2024
+#### Добавлен
+- Заголовок `X-Lognex-WebHook-DisableByPrefix` для выборочного отключения [вебхуков](../dictionaries/#suschnosti-vebhuki-primer-webhuka)
+
+### 06-05-2024
+#### Добавлена
+- Возможность фильтрации по полю **store** в [счете покупателя](../documents/#dokumenty-schet-pokupatelu) и [счете поставщика](../documents/#dokumenty-schet-postawschika)
+
+### 02-05-2024
+#### Добавлено
+- Ограничение на поле типа дата, подробнее в разделе [Формат даты и времени](../#mojsklad-json-api-obschie-swedeniq-format-daty-i-wremeni)
+
+### 24-04-2024
+#### Добавлено
+- Поле `allPerformers` в [этапы производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Признак доступности назначения на этап любого сотрудника
+- Поле `performers` в [этапы производства](../dictionaries/#suschnosti-jetap-proizwodstwa), Массив метаданных возможных исполнителей
+- Ошибка [25035](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
+- Добавлен новый тип уведомлений [Новое упоминание в ленте событий](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowoe-upominanie-w-lente-sobytij)
+- Добавлена новая группа уведомлений [Упоминания сотрудников](../notification/#uwedomleniq-nastrojki-uwedomlenij-struktura-dannyh)
+
+### 23-04-2024
+#### Добавлено
+- Поле `salary` в [Сотрудник](../dictionaries/#suschnosti-sotrudnik)
+
+### 22-04-2024
+#### Добавлено
+- Поле `nextPositions` в [Техпроцесс](../dictionaries/#suschnosti-tehprocess), следующие позиции для позиции техпроцесса
+- Ошибки [25033-25034](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
+
+### 17-04-2024
+#### Добавлена
+- Ошибка [3038](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
+### 09-04-2024
+#### Добавлено
+- Новая роль [Сотрудник производства](../dictionaries/#suschnosti-sotrudnik-zapros-na-poluchenie-roli-sotrudnika-proizwodstwa) для [Сотрудника](../dictionaries/#suschnosti-sotrudnik)
+- Ошибки [43030](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-sotrudnikow)
+
+### 02-04-2024
+#### Добавлено
+- Возможность получения [шаблонов](../documents/#dokumenty-obschie-swedeniq-shablony-dokumentow) документов по токену решения
+
+### 28-03-2024
+#### Добавлено
+- Возможность привязки [Заказа поставщика](../documents/#dokumenty-zakaz-postawschiku) к [Заказу покупателя](../documents/#dokumenty-zakaz-pokupatelq)
+
+### 26-03-2024
+#### Добавлено
+- Обновлен список штрихкодов для [Товара](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-shtrihkody), [Модификации](../dictionaries/#suschnosti-modifikaciq-modifikacii-atributy-wlozhennyh-suschnostej-shtrihkody), [Услуги](../dictionaries/#suschnosti-usluga-uslugi-metadannye-uslug-shtrihkody), [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty-komponenty-komplekta-shtrihkody)
+
+### 25-03-2024
+#### Добавлено
+- Поле `costDistributionType` в [Техкарту](../dictionaries/#suschnosti-tehkarta), тип распределения себестоимости
+
+### 11-03-2024
+#### Добавлено
+- Поле `sendMarksToChestnyZnakOnCloud` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), позволяющее управлять отправкой кассой-миньоном КМ на проверку в ЧЗ
+
+### 07-03-2024
+#### Добавлено
+- Создание [шаблона Перемещения на основании](../documents/#dokumenty-peremeschenie-shablon-peremescheniq-na-osnowe) Заказа покупателя
+
+### 06-03-2024
+#### Добавлено
+- Эндпоинт [Серийные номера](../dictionaries/#suschnosti-serijnyj-nomer)
+
+### 04-03-2024
+#### Добавлено
+- Эндпоинты работы с [Производственным заданием](../documents/#dokumenty-proizwodstwennoe-zadanie)
+- Эндпоинты работы с [Выполнением этапа](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+- Ошибки [26101-26112](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq)
+- Ошибки [26200-26208](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-vypolnenij-atapow-proizwodstwa)
+- Ошибки [3035, 3036](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+- Ошибки [1089, 1092](../#mojsklad-json-api-oshibki)
+
+### 26-02-2024
+#### Добавлено
+- Поля связей документов Приемки и Отгрузки в [Перемещение](../documents/#dokumenty-peremeschenie)
+
+### 07-02-2024
+#### Добавлено
+- Поле `marksCheckMode` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), настройка проверки КМ перед продажей в ГИС МТ
+
+### 31-01-2024
+#### Изменено
+- Добавлено поле `state` в [Задачу](../dictionaries/#suschnosti-zadacha) - сущность [Тип задачи](../dictionaries/#suschnosti-zadacha-tip-zadachi)
+
+### 11-01-2024
+#### Добавлено
+- Поле `materialProcessingPlan` в [Техкарту](../dictionaries/#suschnosti-tehkarta), техкарта для материала
+- Ошибка [25062](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart)
+
+### 26-12-2023
+#### Добавлен
+- Добавлен новый тип маркированной продукции `SANITIZER` для антисептиков
+
+### 26-12-2023
+#### Добавлена
+- Ошибка [3037](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
+### 25-12-2023
+#### Изменено
+- Для документа `Корректировка баланса контрагента` добавлена возможность указывать сотрудника в поле `agent`
+- Документ `Корректировка баланса контрагента` переименован в [Корректировка взаиморасчетов](../documents/#dokumenty-korrektirowka-wzaimoraschetow). Путь к документу в АПИ не менялся для совместимости
+- Для документа [Исходящий платеж](../documents/#dokumenty-ishodqschij-platezh) добавлена возможность указывать сотрудника в поле `agent`
+
+### 22-12-2023
+#### Добавлен
+- Добавлен новый тип маркированной продукции `FOOD_SUPPLEMENT` для биологически активных добавок к пище
+
+### 28-11-2023
+#### Добавлено
+- Поле `showBeerOnTap` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), настройка отображения вскрытых кегов на кассе
+
+### 27-11-2023
+#### Изменено
+- Приведение документации обязательности полей у [Договора](../dictionaries/#suschnosti-dogowor) в корректное состояние
+
+#### Добавлена
+- Ошибка [11002](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-statusow)
+
+### 15-11-2023
+#### Добавлена
+- Ошибка [1091](../#mojsklad-json-api-oshibki) при указании некорректного значения для перечислимого параметра
+
+### 14-11-2023
+#### Добавлена
+- Ошибка [3034](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+- Опечатка: удален тег `+Обязательное при ответе` для поля **owner** в документах
+
+### 26-10-2023
+#### Добавлено
+- Добавлен новый тип маркированной продукции `BEER_ALCOHOL` для разливных слабоалкогольных напитков
+- Удален неактуальный код ошибки [16104](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-towarow)
+- Описание и примеры удаления вложенных сущностей в сущностях через использование эндпоинта на массовое удаление для [Комплектов](../dictionaries/#suschnosti-komplekt-massowoe-udalenie-komponentow-komplekta), [Задач](../dictionaries/#suschnosti-zadacha-massowoe-udalenie-komentariew-k-zadache), Техкарт([материалы](../dictionaries/#suschnosti-tehkarta-massowoe-udalenie-materialow), [продукты](../dictionaries/#suschnosti-tehkarta-massowoe-udalenie-produkta)) и [Техпроцессов](../dictionaries/#suschnosti-tehprocess-massowoe-udalenie-pozicij-tehprocessa)
+
+### 16-10-2023
+#### Добавлено
+- Добавлено поле `barcode` в [Ячейку склада](../dictionaries/#suschnosti-sklad-yachejki-sklada)
+- Ошибка [67006](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-yacheek-i-zon-sklada)
+
+### 12-10-2023
+#### Добавлено
+- Описание и примеры удаления позиций в документах через использование эндпоинта на массовое удаление позиций
+
+### 06-10-2023
+#### Добавлено
+- Добавлено поле `syncAgents` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), выгружает покупателей для работы оффлайн.
+
+### 05-10-2023
+#### Добавлено
+- Добавлены новые режимы reserve и inTransit [в краткий отчёт по остаткам](../reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah)
 
 ### 20-09-2023
 #### Удалены
@@ -264,9 +439,9 @@
 
 ### 07-02-2023
 #### Добавлена
-- Возможность привязывать/отвязывать перемещения к/от [Заказа покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej).
-- Описание [Пример привязывания перемещений к заказу покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-obschie-swedeniq-primer-priwqzki-3)
-- Добавлен `3031` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii).
+- Возможность привязывать/отвязывать перемещения к/от [Заказа покупателя](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej).
+- Описание [Пример привязывания перемещений к заказу покупателя](../documents/#dokumenty-obschie-swedeniq-primer-priwqzki-3)
+- Добавлен `3031` код [ошибки](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii).
 
 ### 31-01-2023
 #### Добавлена
@@ -427,12 +602,12 @@
 ### 19-07-2022
 #### Добавлено
 - Дополнено описаниение раздела Адрес у
-[Контрагента](../dictionaries/#suschnosti-kontragent-kontragenty-attributy-suschnosti-adres),
-[Юрлица](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres),
-[Точки продаж](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-attributy-suschnosti-status-attributy-suschnosti-adres),
-[Склада](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres),
-[Заказа покупателя](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-attributy-suschnosti-adres-dostawki),
-[Отгрузки](../documents/#dokumenty-otgruzka-otgruzki-attributy-suschnosti-adres-dostawki), 
+[Контрагента](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-adres),
+[Юрлица](../dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-adres),
+[Точки продаж](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status-atributy-suschnosti-adres),
+[Склада](../dictionaries/#suschnosti-sklad-sklady-atributy-suschnosti-adres),
+[Заказа покупателя](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-atributy-suschnosti-adres-dostawki),
+[Отгрузки](../documents/#dokumenty-otgruzka-otgruzki-atributy-suschnosti-adres-dostawki), 
 об отсутствии поддержки `null`.
 
 ### 07-07-2022
@@ -663,7 +838,7 @@
 ### 15-09-2021
 #### Добавлено
 - Добавлена фильтрация по Доп. полям. и атрибут фильтрации supplier для [Отчет обороты](../reports/#otchety-otchet-oboroty)
-- Документ [Корректировка баланса контрагента](../documents/#dokumenty-korrektirowka-balansa-kontragenta)
+- Документ [Корректировка баланса контрагента](../documents/#dokumenty-korrektirowka-wzaimoraschetow)
 
 ### 08-09-2021
 #### Изменено
@@ -730,7 +905,7 @@
 
 ### 08-06-2021
 #### Изменено
-- Изменены лимиты по [вебхукам](../dictionaries/#suschnosti-vebhuki): выделены отдельные лимиты для приложений  
+- Изменены лимиты по [вебхукам](../dictionaries/#suschnosti-vebhuki): выделены отдельные лимиты для решений  
 
 ### 03-06-2021
 #### Добавлено
@@ -746,7 +921,7 @@
 
 ### 01-06-2021
 #### Добавлено
-- Возможность получать и изменять пользовательские роли от лица приложения
+- Возможность получать и изменять пользовательские роли от лица решения
 - Исправлена ошибка: при изменении пермиссий у роли сотрудника, был невозможен вход в систему
 
 ### 31-05-2021
@@ -828,7 +1003,7 @@
 ### 27-04-2021
 #### Добавлено
 - Очередь для [асинхронных задач](../#mojsklad-json-api-asinhronnyj-obmen)
-- Обновлен список [ограничений](../#mojsklad-json-api-obschie-swedeniq-ogranicheniq) (добавлена информация про размер очереди асинхронных задач)
+- Обновлен список [ограничений](../#mojsklad-json-api-ogranicheniq) (добавлена информация про размер очереди асинхронных задач)
 - Новый статус `PENDING` для [асинхронных задач](../#mojsklad-json-api-asinhronnyj-obmen)
 - Эндпоинт получения [списка статусов асинхронных задач](../#mojsklad-json-api-asinhronnyj-obmen-statusy-asinhronnyh-zadach)
 - Поле **meta** для [асинхронных задач](../#mojsklad-json-api-asinhronnyj-obmen)
@@ -927,7 +1102,7 @@
 ### 04-02-2021
 #### Изменено
 - Добавлен новый тип уведомлений [Уведомление из сценария](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-uwedomlenie-iz-scenariq)
-- Добавлена новая группа уведомлений [Сценарии](../notification/#uwedomleniq-nastrojki-uwedomlenij-atributy-suschnosti)
+- Добавлена новая группа уведомлений [Сценарии](../notification/#uwedomleniq-nastrojki-uwedomlenij-struktura-dannyh)
 
 ### 02-02-2021
 #### Добавлено
@@ -1116,7 +1291,7 @@
 
 ### 26-04-2020
 #### Документация
-- [Изменено описание](../#mojsklad-json-api-obschie-swedeniq-ogranicheniq) ограничения по запросу на один IP
+- [Изменено описание](../#mojsklad-json-api-ogranicheniq) ограничения по запросу на один IP
 
 ### 26-04-2020
 #### Документация

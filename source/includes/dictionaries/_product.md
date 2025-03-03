@@ -13,76 +13,89 @@
 
 #### Атрибуты сущности
 
-| Название                | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                                                                                                                                  |
-| ----------------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **accountId**           | UUID                                                      |                                                                                                                                                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                      |
-| **alcoholic**           | Object                                                    |                                                                                                                                                   | Объект, содержащий поля алкогольной продукции. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-ob-ekt-soderzhaschij-polq-alkogol-noj-produkcii)                                                                  |
-| **archived**            | Boolean                                                   | `=` `!=`                                                                                                                                          | Добавлен ли Товар в архив<br>`+Обязательное при ответе`                                                                                                                                                                                                   |
-| **article**             | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Артикул                                                                                                                                                                                                                                                   |
-| **attributes**          | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция доп. полей                                                                                                                                                                                                                                      |
-| **barcodes**            | Array(Object)                                             | `=` `!=` `~` `~=` `=~`                                                                                                                                                  | Штрихкоды Комплекта. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-shtrihkody)                                                                                                                                 |
-| **buyPrice**            | Object                                                    |                                                                                                                                                   | Закупочная цена. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-zakupochnaq-cena)                                                                                                                               |
-| **code**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Товара                                                                                                                                                                                                                                                |
-| **country**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Страны<br>`+Expand`                                                                                                                                                                                                                            |
-| **description**         | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Описание Товара                                                                                                                                                                                                                                           |
-| **discountProhibited**  | Boolean                                                   |                                                                                                                                                   | Признак запрета скидок<br>`+Обязательное при ответе`                                                                                                                                                                                                      |
-| **effectiveVat**        | Int                                                       |                                                                                                                                                   | Реальный НДС %<br>`+Только для чтения`                                                                                                                                                                                                                    |
-| **effectiveVatEnabled** | Boolean                                                   |                                                                                                                                                   | Дополнительный признак для определения разграничения реального НДС = 0 или "без НДС". (effectiveVat = 0, effectiveVatEnabled = false) -> "без НДС", (effectiveVat = 0, effectiveVatEnabled = true) -> 0%.<br>`+Только для чтения`                         |
-| **externalCode**        | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Товара<br>`+Обязательное при ответе`                                                                                                                                                                                                          |
-| **files**               | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Expand`                                                                                                                                        |
-| **group**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные отдела сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                                                      |
-| **id**                  | UUID                                                      | `=` `!=`                                                                                                                                          | ID Товара<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                              |
-| **images**              | MetaArray                                                 |                                                                                                                                                   | Массив метаданных [Изображений](../dictionaries/#suschnosti-izobrazhenie) (Максимальное количество изображений - 10)<br>`+Expand`                                                                                                                         |
-| **isSerialTrackable**   | Boolean                                                   | `=` `!=`                                                                                                                                          | Учет по серийным номерам. Данная отметка не сочетается с признаками **weighed**, **alcoholic**, **ppeType**, **trackingType**, **onTap**.                                                                                                                 |
-| **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Товара<br>`+Обязательное при ответе`                                                                                                                                                                                                           |
-| **minPrice**            | Object                                                    |                                                                                                                                                   | Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-minimal-naq-cena)                                                                                                                              |
-| **minimumBalance**      | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Неснижаемый остаток                                                                                                                                                                                                                                       |
-| **name**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Товара<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                                                              |
-| **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные владельца (Сотрудника)<br>`+Expand`                                                                                                                                                                                                            |
-| **packs**               | Array(Object)                                             |                                                                                                                                                   | Упаковки Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)                                                                                                                                |
-| **partialDisposal**     | Boolean                                                   |                                                                                                                                                   | Управление состоянием частичного выбытия маркированного товара. «true» - возможность включена.                                                                                                                                                            |
-| **pathName**            | String                                                    | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование группы, в которую входит Товар<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                            |
-| **paymentItemType**     | Enum                                                      |                                                                                                                                                   | Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-priznak-predmeta-rascheta)                                                                                                                         |
-| **ppeType**             | Enum                                                      |                                                                                                                                                   | Код вида номенклатурной классификации медицинских средств индивидуальной защиты (EAN-13). [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-wida-nomenklaturnoj-klassifikacii-medicinskih-sredstw-indiwidual-noj-zaschity) |
-| **productFolder**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные группы Товара<br>`+Expand`                                                                                                                                                                                                                     |
-| **salePrices**          | Array(Object)                                             |                                                                                                                                                   | Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-ceny-prodazhi)                                                                                                                                     |
-| **shared**              | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                                                                                |
-| **supplier**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные контрагента-поставщика<br>`+Expand`                                                                                                                                                                                                            |
-| **syncId**              | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации<br>`+Только для чтения` `+Заполнение при создании`                                                                                                                                                                                       |
-| **taxSystem**           | Enum                                                      |                                                                                                                                                   | Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)                                                                                                                   |
-| **things**              | Array(String)                                             |                                                                                                                                                   | Серийные номера                                                                                                                                                                                                                                           |
-| **tnved**               | String(255)                                               |                                                                                                                                                   | Код ТН ВЭД                                                                                                                                                                                                                                                |
-| **trackingType**        | Enum                                                      |                                                                                                                                                   | Тип маркируемой продукции. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-tip-markiruemoj-produkcii)                                                                                                                        |
-| **uom**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Единицы измерения<br>`+Expand`                                                                                                                                                                                                                            |
-| **updated**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                  |
-| **useParentVat**        | Boolean                                                   |                                                                                                                                                   | Используется ли ставка НДС родительской группы. Если true для единицы ассортимента будет применена ставка, установленная для родительской группы.<br>`+Обязательное при ответе`                                                                           |
-| **variantsCount**       | Int                                                       |                                                                                                                                                   | Количество модификаций у данного товара<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                |
-| **vat**                 | Int                                                       |                                                                                                                                                   | НДС %                                                                                                                                                                                                                                                     |
-| **vatEnabled**          | Boolean                                                   |                                                                                                                                                   | Включен ли НДС для товара. С помощью этого флага для товара можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.                                                     |
-| **volume**              | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Объем                                                                                                                                                                                                                                                     |
-| **weight**              | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Вес                                                                                                                                                                                                                                                       |
+| Название                 | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                                                                                                                                  |
+|--------------------------|:----------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**            | UUID                                                      |                                                                                                                                                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                      |
+| **alcoholic**            | Object                                                    |                                                                                                                                                   | Объект, содержащий поля алкогольной продукции. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-ob-ekt-soderzhaschij-polq-alkogol-noj-produkcii)                                                                  |
+| **archived**             | Boolean                                                   | `=` `!=`                                                                                                                                          | Добавлен ли Товар в архив<br>`+Обязательное при ответе`                                                                                                                                                                                                   |
+| **article**              | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Артикул                                                                                                                                                                                                                                                   |
+| **attributes**           | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция доп. полей                                                                                                                                                                                                                                      |
+| **barcodes**             | Array(Object)                                             | `=` `!=` `~` `~=` `=~`                                                                                                                            | Штрихкоды Товаров. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-shtrihkody). Для фильтрации по полю необходимо указывать его в единственном числе **barcode**.                                                |
+| **buyPrice**             | Object                                                    |                                                                                                                                                   | Закупочная цена. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-zakupochnaq-cena)                                                                                                                               |
+| **code**                 | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Товара                                                                                                                                                                                                                                                |
+| **country**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Страны<br>`+Expand`                                                                                                                                                                                                                            |
+| **description**          | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Описание Товара                                                                                                                                                                                                                                           |
+| **discountProhibited**   | Boolean                                                   |                                                                                                                                                   | Признак запрета скидок<br>`+Обязательное при ответе`                                                                                                                                                                                                      |
+| **effectiveVat**         | Int                                                       |                                                                                                                                                   | Реальный НДС %<br>`+Только для чтения`                                                                                                                                                                                                                    |
+| **effectiveVatEnabled**  | Boolean                                                   |                                                                                                                                                   | Дополнительный признак для определения разграничения реального НДС = 0 или "без НДС". (effectiveVat = 0, effectiveVatEnabled = false) -> "без НДС", (effectiveVat = 0, effectiveVatEnabled = true) -> 0%.<br>`+Только для чтения`                         |
+| **externalCode**         | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Товара<br>`+Обязательное при ответе`                                                                                                                                                                                                          |
+| **files**                | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Expand`                                                                                                                                        |
+| **group**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные отдела сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                                                      |
+| **id**                   | UUID                                                      | `=` `!=`                                                                                                                                          | ID Товара<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                              |
+| **images**               | MetaArray                                                 |                                                                                                                                                   | Массив метаданных [Изображений](../dictionaries/#suschnosti-izobrazhenie) (Максимальное количество изображений - 10)<br>`+Expand`                                                                                                                         |
+| **isSerialTrackable**    | Boolean                                                   | `=` `!=`                                                                                                                                          | Учет по серийным номерам. Данная отметка не сочетается с признаками **weighed**, **alcoholic**, **ppeType**, **trackingType**, **onTap**.                                                                                                                 |
+| **meta**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Товара<br>`+Обязательное при ответе`                                                                                                                                                                                                           |
+| **minPrice**             | Object                                                    |                                                                                                                                                   | Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-minimal-naq-cena)                                                                                                                              |
+| **minimumBalance**       | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Неснижаемый остаток                                                                                                                                                                                                                                       |
+| **name**                 | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Товара<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                                                              |
+| **owner**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные владельца (Сотрудника)<br>`+Expand`                                                                                                                                                                                                            |
+| **packs**                | Array(Object)                                             |                                                                                                                                                   | Упаковки Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)                                                                                                                                |
+| **partialDisposal**      | Boolean                                                   |                                                                                                                                                   | Управление состоянием частичного выбытия маркированного товара. «true» - возможность включена.                                                                                                                                                            |
+| **pathName**             | String                                                    | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование группы, в которую входит Товар<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                            |
+| **paymentItemType**      | Enum                                                      |                                                                                                                                                   | Признак предмета расчета. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-priznak-predmeta-rascheta)                                                                                                                         |
+| **ppeType**              | Enum                                                      |                                                                                                                                                   | Код вида номенклатурной классификации медицинских средств индивидуальной защиты (EAN-13). [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-wida-nomenklaturnoj-klassifikacii-medicinskih-sredstw-indiwidual-noj-zaschity) |
+| **productFolder**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные группы Товара<br>`+Expand`                                                                                                                                                                                                                     |
+| **salePrices**           | Array(Object)                                             |                                                                                                                                                   | Цены продажи. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-ceny-prodazhi)                                                                                                                                     |
+| **shared**               | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                                                                                |
+| **supplier**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные контрагента-поставщика<br>`+Expand`                                                                                                                                                                                                            |
+| **syncId**               | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации<br>`+Только для чтения` `+Заполнение при создании`                                                                                                                                                                                       |
+| **taxSystem**            | Enum                                                      |                                                                                                                                                   | Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-kod-sistemy-nalogooblozheniq)                                                                                                                   |
+| **things**               | Array(String)                                             |                                                                                                                                                   | Серийные номера                                                                                                                                                                                                                                           |
+| **tnved**                | String(255)                                               |                                                                                                                                                   | Код ТН ВЭД                                                                                                                                                                                                                                                |
+| **trackingType**         | Enum                                                      |                                                                                                                                                   | Тип маркируемой продукции. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-suschnosti-tip-markiruemoj-produkcii)                                                                                                                        |
+| **uom**                  | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Единицы измерения<br>`+Expand`                                                                                                                                                                                                                            |
+| **updated**              | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                  |
+| **useParentVat**         | Boolean                                                   |                                                                                                                                                   | Используется ли ставка НДС родительской группы. Если true для единицы ассортимента будет применена ставка, установленная для родительской группы.<br>`+Обязательное при ответе`                                                                           |
+| **variantsCount**        | Int                                                       |                                                                                                                                                   | Количество модификаций у данного товара<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                |
+| **vat**                  | Int                                                       |                                                                                                                                                   | НДС %                                                                                                                                                                                                                                                     |
+| **vatEnabled**           | Boolean                                                   |                                                                                                                                                   | Включен ли НДС для товара. С помощью этого флага для товара можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.                                                     |
+| **volume**               | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Объем                                                                                                                                                                                                                                                     |
+| **weight**               | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Вес                                                                                                                                                                                                                                                       |
 
+Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить с помощью обновления атрибута **productFolder**.
 
-Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить
-с помощью обновления атрибута **productFolder**.
+##### Регионо-специфичные Атрибуты сущности
+| Название                  | Тип    | Описание                                                                                                                                                                                                                      |
+|---------------------------|:-------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **mod\_\_marking\_\_uz**  | Object | Модуль с маркировкой товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-modul-markirowaniq-produkcii-dlq-uzbekistana)<br>`+Только для Узбекистана`                              |
+| **mod\_\_tasnif\_\_uz**   | Object | Модуль с информацией из справочника ТАСНИФ. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-modul-dlq-uzbekistana-s-informaciej-iz-sprawochnika-tasnif)<br>`+Только для Узбекистана` |
 
 ##### Тип маркируемой продукции
 Значения поля trackingType.
 
-| Значение                       | Описание                          |
-| ------------------------------ | :-------------------------------- |
-| **ELECTRONICS**                | Фотокамеры и лампы-вспышки        |
-| **LP_CLOTHES**                 | Тип маркировки "Одежда"           |
-| **LP_LINENS**                  | Тип маркировки "Постельное белье" |
-| **MILK**                       | Молочная продукция                |
-| **NCP**                        | Никотиносодержащая продукция      |
-| **NOT_TRACKED**                | Без маркировки                    |
-| **OTP**                        | Альтернативная табачная продукция |
-| **PERFUMERY**                  | Духи и туалетная вода             |
-| **SHOES**                      | Тип маркировки "Обувь"            |
-| **TIRES**                      | Шины и покрышки                   |
-| **TOBACCO**                    | Тип маркировки "Табак"            |
-| **WATER**                      | Упакованная вода                  |
+| Значение            | Описание                             |
+|---------------------|:-------------------------------------|
+| **BEER_ALCOHOL**    | Пиво и слабоалкогольная продукция    |
+| **BICYCLE**         | Велосипеды                           |
+| **ELECTRONICS**     | Фотокамеры и лампы-вспышки           |
+| **FOOD_SUPPLEMENT** | Биологически активные добавки к пище |
+| **LP_CLOTHES**      | Тип маркировки "Одежда"              |
+| **LP_LINENS**       | Тип маркировки "Постельное белье"    |
+| **MEDICAL_DEVICES** | Медизделия и кресла-коляски          |
+| **MILK**            | Молочная продукция                   |
+| **NABEER**          | Безалкогольное пиво                  |
+| **NCP**             | Никотиносодержащая продукция         |
+| **NOT_TRACKED**     | Без маркировки                       |
+| **OTP**             | Альтернативная табачная продукция    |
+| **PERFUMERY**       | Духи и туалетная вода                |
+| **SANITIZER**       | Антисептики                          |
+| **SEAFOOD**         | Икра и морепродукты                  |
+| **SHOES**           | Тип маркировки "Обувь"               |
+| **SOFT_DRINKS**     | Безалкогольные напитки               |
+| **TIRES**           | Шины и покрышки                      |
+| **TOBACCO**         | Тип маркировки "Табак"               |
+| **VETPHARMA**       | Ветеринарные препараты               |
+| **WATER**           | Упакованная вода                     |
 
 ##### Признак предмета расчета
 Значения поля paymentItemType.
@@ -165,12 +178,12 @@
 #### Атрибуты вложенных сущностей
 ##### Упаковки Товара:
 
-| Название     | Тип                                                       | Описание                                                                                                                                                      |
-| ------------ | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **barcodes** | Array(Object)                                             | Массив штрихкодов упаковок товаров. Данный массив может содержать не более одного штрихкода. Если штрихкод в массиве отсутствует, то данное поле не выводится |
-| **id**       | UUID                                                      | ID упаковки товара<br>`+Обязательное при ответе` `+Только для чтения`                                                                                         |
-| **quantity** | Float                                                     | Количество Товаров в упаковке данного вида<br>`+Обязательное при ответе` `+Необходимо при создании`                                                           |
-| **uom**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные единиц измерения<br>`+Обязательное при ответе` `+Expand`                                                                                           |
+| Название     | Тип                                                       | Описание                                                                                                                                                                                                                                         |
+| ------------ | :-------------------------------------------------------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **barcodes** | Array(Object)                                             | Массив штрихкодов упаковок товаров. Данный массив может содержать не более одного штрихкода. Если штрихкод в массиве отсутствует, то данное поле не выводится. Для фильтрации по полю необходимо указывать его в единственном числе **barcode**. |
+| **id**       | UUID                                                      | ID упаковки товара<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                            |
+| **quantity** | Float                                                     | Количество Товаров в упаковке данного вида<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                              |
+| **uom**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные единиц измерения<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                                              |
 
 В версии API 1.2 был удален отдельный ресурс для работы с упаковками товаров. Теперь упаковки - вложенная коллекция.
 Для того, чтобы создать новую упаковку для данного товара, нужно в запросе на обновление товара указать ее как элемент
@@ -184,8 +197,7 @@
 ##### Метаданные Товаров
 Метаданные Товаров содержат информацию о дополнительных полях.
 
-Посмотреть все созданные в основном интерфейсе доп. поля Товаров,
-а также все типы цен можно с помощью запроса на получение метаданных Товаров.
+Посмотреть все созданные в основном интерфейсе доп. поля Товаров можно с помощью запроса на получение метаданных Товаров.
 Ответ - объект, со следующей структурой:
 
 | Название         | Тип           | Описание                                                                                                                                               |
@@ -199,12 +211,13 @@
 ##### Штрихкоды:
 При создании штрихкода требуется описать объект с полем, являющимся форматом представления штрихкода в нижнем регистре, со строковым значением самого штрихкода. Наименование полей отдельного объекта, представляющего штрихкод:
 
-| Название       | Описание                                                                                                          |
-| -------------- | ----------------------------------------------------------------------------------------------------------------- |
-| **ean13**      | штрихкод в формате EAN13, если требуется создать штрихкод в формате EAN13                                         |
-| **ean8**       | штрихкод в формате EAN8, если требуется создать штрихкод в формате EAN8                                           |
-| **code128**    | штрихкод в формате Code128, если требуется создать штрихкод в формате Code128                                     |
-| **gtin**       | штрихкод в формате GTIN, если требуется создать штрихкод в формате GTIN. Валидируется на соответствие формату GS1 |
+| Название    | Описание                                                                                                          |
+|-------------|-------------------------------------------------------------------------------------------------------------------|
+| **ean13**   | штрихкод в формате EAN13, если требуется создать штрихкод в формате EAN13                                         |
+| **ean8**    | штрихкод в формате EAN8, если требуется создать штрихкод в формате EAN8                                           |
+| **code128** | штрихкод в формате Code128, если требуется создать штрихкод в формате Code128                                     |
+| **gtin**    | штрихкод в формате GTIN, если требуется создать штрихкод в формате GTIN. Валидируется на соответствие формату GS1 |
+| **upc**     | штрихкод в формате UPC, если требуется создать штрихкод в формате UPC                                             |
 
 Для обновления списка штрихкодов необходимо передавать их полный список, включающий как старые, так и новые значения. 
 Отсутствующие значения штрихкодов при обновлении будут удалены. При обновлении списка штрихкодов валидируются только новые значения. 
@@ -228,7 +241,7 @@
 | **strength** | Float   | Крепость                |
 | **volume**   | Float   | Объём тары              |
 
-Данный объект не сочетается с признаками **weighed**, **isSerialTrackable**, **ppeType**, **trackingType**.
+Данный объект не сочетается с признаками **weighed**, **isSerialTrackable**, **ppeType**, **trackingType**, если он не промаркирован как BEER_ALCOHOL или NOT_TRACKED.
 
 ##### Поставщик Товара:
 
@@ -313,6 +326,31 @@
 | **onTap**   | Boolean | Поле, показывающее является ли товар разливным. Если его значение false - поле не отображается.<br>`+Обязательное при ответе` |
 
 Данная отметка не сочетается с признаками **weighed**, **isSerialTrackable**, **ppeType**. Маркировка разливных товаров поддерживается только для типов **MILK**, **PERFUMERY**.
+
+##### Модуль маркирования продукции для Узбекистана
+
+| Название         | Тип  | Описание                                            |
+|------------------|:-----|:----------------------------------------------------|
+| **trackingType** | Enum | Тип маркируемой продукции `+Только для Узбекистана` |
+
+Допустимые значения поля trackingType:
+
+| Значение           | Описание                       |
+|--------------------|:-------------------------------|
+| **ALCOHOL**        | Алкогольная продукция          |
+| **BEER**           | Пивная продукция               |
+| **HOME_APPLIANCE** | Бытовая техника                |
+| **NOT_TRACKED**    | Не маркируется                 |
+| **TOBACCO**        | Табачная продукция             |
+| **WATER**          | Вода и прохладительные напитки |
+
+##### Модуль для Узбекистана с информацией из справочника ТАСНИФ
+
+| Название           | Тип       | Описание                                                    |
+|--------------------|:----------|:------------------------------------------------------------|
+| **ikpu**           | String    | Код из справочника ТАСНИФ `+Только для Узбекистана`         |
+| **packCode**       | String    | Код упаковки из справочника ТАСНИФ `+Только для Узбекистана`|
+| **barcodeTasnif**  | String    | Штрихкод из справочника ТАСНИФ `+Только для Узбекистана`    |
 
 ##### Особенности фильтрации поля archived
 Если одновременно осуществляется фильтрация по полям **id** и **archived**, то фильтрация по полю **archived** не учитывается.
@@ -600,7 +638,7 @@ curl -X GET
           "offset": 0
         }
       },
-      "minprice": {
+      "minPrice": {
        "value": 500.0,
         "currency": {
           "meta": {
@@ -891,7 +929,7 @@ curl -X GET
                 "mediaType": "application/json"
               }
             },
-            "minprice": {
+            "minPrice": {
              "value": 500.0,
               "currency": {
                 "meta": {
@@ -1047,7 +1085,7 @@ curl -X GET
       "offset": 0
     }
   },
-  "minprice": {
+  "minPrice": {
     "value": 500.0,
     "currency": {
       "meta": {
@@ -1286,7 +1324,7 @@ curl -X GET
                 "mediaType": "application/json"
               }
             },
-            "minprice": {
+            "minPrice": {
              "value": 500.0,
               "currency": {
                 "meta": {
@@ -1446,7 +1484,7 @@ curl -X GET
       "offset": 0
     }
   },  
-  "minprice": {
+  "minPrice": {
     "value": 500.0,
     "currency": {
       "meta": {
@@ -1632,7 +1670,7 @@ curl -X GET
       "offset": 0
     }
   },
-  "minprice": {
+  "minPrice": {
     "value": 500.0,
     "currency": {
       "meta": {
@@ -1672,7 +1710,7 @@ curl -X GET
   "isSerialTrackable": false,
   "trackingType": "NOT_TRACKED",
   "vatEnabled": false,
-  "useParentVat": true,
+  "useParentVat": true
 }
 ```
 
@@ -1804,7 +1842,7 @@ curl -X GET
     "isSerialTrackable": false,
     "trackingType": "NOT_TRACKED",
     "vatEnabled": false,
-    "useParentVat": true,
+    "useParentVat": true
   },
   {
     "meta": {
@@ -1863,7 +1901,7 @@ curl -X GET
         "offset": 0
       }
     },    
-    "minprice": {
+    "minPrice": {
     "value": 500.0,
       "currency": {
         "meta": {
@@ -2013,7 +2051,6 @@ curl -X GET
     "trackingType": "NOT_TRACKED"
   }
 ]
-
 ```
 
 
@@ -2057,6 +2094,7 @@ curl -X POST
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
             "type": "product",
             "mediaType": "application/json"
+          }
         },
         {
           "meta": {
@@ -2064,6 +2102,7 @@ curl -X POST
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
             "type": "product",
             "mediaType": "application/json"
+            }
         }
       ]'
 ```        
@@ -2155,7 +2194,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "customEntityMeta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/a27aa372-5311-11e6-8a84-bae500000001",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/a27aa372-5311-11e6-8a84-bae500000001/metadata",
     "type": "customentitymetadata",
     "mediaType": "application/json"
   },
@@ -2247,7 +2286,7 @@ curl -X GET
       "offset": 0
     }
   },  
-  "minprice": {
+  "minPrice": {
     "value": 532000.0,
     "currency": {
       "meta": {
@@ -2448,7 +2487,7 @@ curl -X GET
                 "mediaType": "application/json"
               }
             },
-            "minprice": {
+            "minPrice": {
              "value": 500.0,
               "currency": {
                 "meta": {
@@ -2625,7 +2664,7 @@ curl -X GET
       "offset": 0
     }
   },  
-  "minprice": {
+  "minPrice": {
     "value": 500.0,
     "currency": {
       "meta": {
@@ -2807,7 +2846,7 @@ curl -X GET
                 "mediaType": "application/json"
               }
             },
-            "minprice": {
+            "minPrice": {
              "value": 500.0,
               "currency": {
                 "meta": {
@@ -2954,7 +2993,7 @@ curl -X GET
       "offset": 0
     }
   },  
-  "minprice": {
+  "minPrice": {
     "value": 500.0,
     "currency": {
       "meta": {
@@ -3091,7 +3130,7 @@ curl -X GET
                 "mediaType": "application/json"
               }
             },
-            "minprice": {
+            "minPrice": {
              "value": 500.0,
               "currency": {
                 "meta": {
@@ -3236,7 +3275,7 @@ curl -X GET
       "offset": 0
     }
   },  
-  "minprice": {
+  "minPrice": {
     "value": 500.0,
     "currency": {
       "meta": {

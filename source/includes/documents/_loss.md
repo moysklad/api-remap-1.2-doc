@@ -4,7 +4,7 @@
 #### Атрибуты сущности
 
 | Название         | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                      |
-| ---------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------- |
+| ---------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |:----------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**    | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                        |
 | **applicable**   | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе` `+Change-handler`                                                                          |
 | **attributes**   | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)<br> `+Change-handler` |
@@ -20,7 +20,7 @@
 | **moment**       | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе` `+Change-handler`                                                                                |
 | **name**         | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Списания<br>`+Обязательное при ответе` `+Change-handler`                                                                         |
 | **organization** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler`                                        |
-| **owner**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                                                  |
+| **owner**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                             |
 | **positions**    | MetaArray                                                 |                                                                                                                                                   | Метаданные позиций Списания<br>`+Обязательное при ответе` `+Expand` `+Change-handler`                                                         |
 | **printed**      | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                      |
 | **project**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand` `+Change-handler`                                                                                             |
@@ -38,6 +38,8 @@
 | Название                       | Описание                                                                                                                      |
 | ------------------------------ | :---------------------------------------------------------------------------------------------------------------------------- |
 | **salesReturn**                | Ссылка на связанный со списанием возврат покупателя в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
+| **inventory**                  | Ссылка на связанную со списанием инвентаризацию в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)     |
+
 
 #### Позиции Списания
 Позиции Списания - это список товаров/модификаций/серий.
@@ -745,18 +747,20 @@ curl -X POST
   -H "Content-Type: application/json"
   -d '[
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/loss/metadata",
-            "type": "loss",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b1",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/loss/metadata",
+                "type": "loss",
+                "mediaType": "application/json"
+            }
         },
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/loss/metadata",
-            "type": "loss",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/loss/metadata",
+                "type": "loss",
+                "mediaType": "application/json"
+            }
         }
       ]'
 ```        
@@ -1588,16 +1592,62 @@ curl -X GET
 }
 ```
 
-### Создать позицию Списания 
+### Позиция Списания
+ 
+### Получить позицию
+
+**Параметры**
+
+| Параметр       | Описание                                                                         |
+| :------------- | :------------------------------------------------------------------------------- |
+| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Списания. |
+| **positionID** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b20* id позиции.  |
+ 
+> Запрос на получение отдельной позиции Списания с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отдельной позиции Списания.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20",
+    "type": "lossposition",
+    "mediaType": "application/json"
+  },
+  "id": "7944ef04-f831-11e5-7a69-971500188b20",
+  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+  "quantity": 2,
+  "price": 20000.0,
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/20485cfd-2e62-11e6-8a84-bae500000112",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002"
+    }
+  }
+}
+```
+
+### Создать позицию
 Запрос на создание новой позиции в Списании.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
 + **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция.
-Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
-чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Списания](../documents/#dokumenty-spisanie-spisaniq-pozicii-spisaniq)
+  Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
+  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Списания](../documents/#dokumenty-spisanie-spisaniq-pozicii-spisaniq)
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
-Одновременно можно создать как одну так и несколько позиций Списания. Все созданные данным запросом позиции
-будут добавлены к уже существующим.
+  Одновременно можно создать как одну так и несколько позиций Списания. Все созданные данным запросом позиции
+  будут добавлены к уже существующим.
 
 **Параметры**
 
@@ -1704,52 +1754,6 @@ curl -X GET
 ]
 ```
 
-### Позиция Списания
- 
-### Получить позицию
-
-**Параметры**
-
-| Параметр       | Описание                                                                         |
-| :------------- | :------------------------------------------------------------------------------- |
-| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Списания. |
-| **positionID** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b20* id позиции.  |
- 
-> Запрос на получение отдельной позиции Списания с указанным id.
-
-```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельной позиции Списания.
-
-```json
-{
-  "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20",
-    "type": "lossposition",
-    "mediaType": "application/json"
-  },
-  "id": "7944ef04-f831-11e5-7a69-971500188b20",
-  "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
-  "quantity": 2,
-  "price": 20000.0,
-  "assortment": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/20485cfd-2e62-11e6-8a84-bae500000112",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
-      "type": "product",
-      "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3b1e1f15-2842-11e9-ac12-000c0000002"
-    }
-  }
-}
-```
-
 ### Изменить позицию 
 Запрос на обновление отдельной позиции Списания. Для обновления позиции нет каких-либо
  обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
@@ -1823,3 +1827,41 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление позиции Списания.
+
+### Массовое удаление позиций
+
+**Параметры**
+
+| Параметр       | Описание                                                                                    |
+| :------------- |:--------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 3e1c03bb-684f-11ee-ac12-000c000000b0* id Списания. |
+
+> Запрос на массовое удаление позиций Списания.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/loss/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/loss/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "lossposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/loss/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "lossposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление позиций Списания. 
+

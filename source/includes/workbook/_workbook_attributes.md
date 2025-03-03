@@ -188,35 +188,54 @@ curl
 С возможными типами дополнительных полей вы можете ознакомиться в [документации](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
 ### Дополнительное поле типа Файл
-Для загрузки значения дополнительного поля типа файл нужно в поле **value** указать объект следующей структуры:
+Для загрузки значения дополнительного поля типа файл нужно в поле **file** указать объект следующей структуры:
 
 + filename - Имя файла `Необходимое`
 + content - Байты файла, закодированные в base64 `Необходимое`
 
-Пример создания товара с дополнительным полем типа Файл приведен ниже.
-Для краткости приведено неполное значение содержимого файла.
+Для сброса значения в дополнительном поле необходимо передать поле **file** и значением **null**. 
+Ниже приведены примеры обновления товара с дополнительным полем типа Файл с присваиванием и сбросом значения.
 
-> Запрос
+> Пример присваивания значения доп. полю типа Файл
 
 ```shell
-curl 
-    -X POST 
-    -u login:password
-    -H "Accept-Encoding: gzip" 
-    -H 'Accept: application/json' 
-    -H 'Content-Type: application/json' 
-    "https://api.moysklad.ru/api/remap/1.2/entity/product" 
-    -d '{
-    "name": "Ноутбук",
+curl -X PUT 
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025" 
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -d '{
     "attributes": [
         {
-          "id": "839ca663-75f7-11e8-9107-5048001126a3",
-          "name": "Спецификация",
-          "type": "file",
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0ae972f0-2951-11ef-ac12-000e00000001",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          },
           "file": {
             "filename": "filename",
             "content": "5cYwMpOmNk5kSVr4YgZGKtXJb/7KpHVLDUawyZrD5Nf0WDhB7mS1I77VcAMqYQ8DkP/1wDLhb0X6b2JO4pdpKA=="
           }
+        }
+    ]
+}'
+```
+
+> Пример сброса значения доп. поля типа Файл
+
+```shell
+curl -X PUT 
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025" 
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -d '{
+    "attributes": [
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/0ae972f0-2951-11ef-ac12-000e00000001",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          },
+          "file": null
         }
     ]
 }'

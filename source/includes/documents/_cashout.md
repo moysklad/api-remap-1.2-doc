@@ -19,12 +19,13 @@
 | **externalCode**   | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Расходного ордера<br>`+Обязательное при ответе`                                                                                   |
 | **files**          | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand` |
 | **group**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                      |
+| **noClosingDocs**   | Boolean                                                   |                                                                                                                                         | Признак возможности привязки закрывающих документов и отключения взаиморасчетов с контрагентом по этой выплате<br>`+Обязательное при ответе` `+Только для чтения`                                                     
 | **id**             | UUID                                                      | `=` `!=`                                                                                                                                          | ID Расходного ордера<br>`+Обязательное при ответе` `+Только для чтения`                                                                       |
 | **meta**           | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Расходного ордера<br>`+Обязательное при ответе`                                                                                    |
 | **moment**         | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе`                                                                                                  |
 | **name**           | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Расходного ордера<br>`+Обязательное при ответе`                                                                                  |
 | **organization**   | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                          |
-| **owner**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Expand`                                                                                  |
+| **owner**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                             |
 | **paymentPurpose** | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Основание<br>`+Обязательное при ответе`                                                                                                       |
 | **printed**        | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                      |
 | **project**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand`                                                                                                               |
@@ -33,18 +34,18 @@
 | **salesChannel**   | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные канала продаж<br>`+Expand`                                                                                                         |
 | **shared**         | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                    |
 | **state**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса Расходного ордера<br>`+Expand`                                                                                             |
-| **sum**            | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Сумма расходного ордера в установленной валюте<br>`+Обязательное при ответе` `+Только для чтения`                                       |
+| **sum**            | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма расходного ордера в установленной валюте<br>`+Обязательное при ответе`                                                                  |
 | **syncId**         | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                   |
 | **updated**        | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Расходного ордера<br>`+Обязательное при ответе` `+Только для чтения`                                             |
-| **vatSum**         | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе`                                                                                               |
+| **vatSum**         | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе`                                                                                                       |
 
 
 #### Связи с другими документами
 
-| Название                       | Описание                                                                                                                                |
-| ------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------- |
-| **factureOut**                 | Ссылка на Счет-фактуру выданный, с которым связан этот платеж в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
-| **operations**                 | Массив ссылок на связанные операции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                           |
+| Название                        | Описание                                                                                                                                  |
+|---------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------|
+| **factureIn**                   | Ссылка на Счет-фактуру полученный, с которым связан этот платеж в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
+| **operations**                  | Массив ссылок на связанные операции в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                             |
 
 Разрешенные типы связанных операций:
 
@@ -873,18 +874,20 @@ curl -X POST
   -H "Content-Type: application/json"
   -d '[
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/cashout/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/cashout/metadata",
-            "type": "cashout",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/cashout/7944ef04-f831-11e5-7a69-971500188b1",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/cashout/metadata",
+                "type": "cashout",
+                "mediaType": "application/json"
+            }
         },
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/cashout/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/cashout/metadata",
-            "type": "cashout",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/cashout/7944ef04-f831-11e5-7a69-971500188b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/cashout/metadata",
+                "type": "cashout",
+                "mediaType": "application/json"
+            }
         }
       ]'
 ```        

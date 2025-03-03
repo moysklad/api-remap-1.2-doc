@@ -4,12 +4,12 @@
 #### Атрибуты сущности
 
 | Название              | Тип                                                       | Фильтрация                  | Описание                                                                                                                                                |
-| --------------------- | :-------------------------------------------------------- | :-------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|-----------------------| :-------------------------------------------------------- | :-------------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**         | UUID                                                      | `=` `!=`                    | ID учетной записи Кассира<br>`+Обязательное при ответе` `+Только для чтения`                                                                            |
 | **agent**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                    | Метаданные Контрагента или юрлица, связанного с задачей. Задача может быть привязана либо к конрагенту, либо к юрлицу, либо к документу<br>`+Expand`    |
 | **assignee**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                    | Метаданные ответственного за выполнение задачи<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                       |
-| **author**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                    | Метаданные Сотрудника, создавшего задачу (администратор аккаунта, если автор - Приложение)<br>`+Обязательное при ответе` `+Только для чтения` `+Expand` |
-| **authorApplication** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                             | Метаданные Приложения, создавшего задачу<br>`+Только для чтения` `+Expand`                                                                              |
+| **author**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                    | Метаданные Сотрудника, создавшего задачу (администратор аккаунта, если автор - Решение)<br>`+Обязательное при ответе` `+Только для чтения` `+Expand` |
+| **authorApplication** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                             | Метаданные Решения, создавшего задачу<br>`+Только для чтения` `+Expand`                                                                              |
 | **completed**         | DateTime                                                  |                             | Время выполнения задачи<br>`+Обязательное при ответе` `+Только для чтения`                                                                              |
 | **created**           | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`  | Момент создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                      |
 | **description**       | String(4096)                                              | `=` `!=` `~` `~=` `=~`      | Текст задачи<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                   |
@@ -19,6 +19,7 @@
 | **id**                | UUID                                                      | `=` `!=`                    | ID Задачи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                            |
 | **implementer**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                             | Метаданные Сотрудника, выполнившего задачу<br>`+Только для чтения` `+Expand`                                                                            |
 | **meta**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                             | Метаданные Задачи<br>`+Обязательное при ответе`                                                                                                         |
+| **state**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                             | Метаданные Типа задачи<br>`+Expand`                                                                                                                     |
 | **notes**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                             | Метаданные комментария к задаче<br>`+Обязательное при ответе` `+Expand`                                                                                 |
 | **operation**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                    | Метаданные Документа, связанного с задачей. Задача может быть привязана либо к конрагенту, либо к юрлицу, либо к документу<br>`+Expand`                 |
 | **updated**           | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`  | Момент последнего обновления Задачи<br>`+Обязательное при ответе` `+Только для чтения`                                                                  |
@@ -28,10 +29,32 @@
 
 | Название              | Тип                                                       | Описание                                                                                                                                           |
 | --------------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **author**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Сотрудника, создавшего комментарий (администратор аккаунта, если автор - приложение)<br>`+Обязательное при ответе` `+Только для чтения` |
-| **authorApplication** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Приложения, создавшего комментарий<br>`+Только для чтения`                                                                              |
+| **author**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Сотрудника, создавшего комментарий (администратор аккаунта, если автор - решение)<br>`+Обязательное при ответе` `+Только для чтения` |
+| **authorApplication** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Решения, создавшего комментарий<br>`+Только для чтения`                                                                              |
 | **moment**            | DateTime                                                  | Момент создания комментария<br>`+Обязательное при ответе` `+Только для чтения`                                                                     |
 | **description**       | String(4096)                                              | Текст комментария<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                         |
+
+#### Тип задачи
+Объект типа задачи содержит следующие поля:
+
+| Название       | Тип                                                       | Описание                                                                                  |
+| -------------- |:----------------------------------------------------------|:------------------------------------------------------------------------------------------|
+| **accountId**  | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                      |
+| **color**      | Int                                                       | Цвет Типа задачи<br>`+Обязательное при ответе` `+Необходимо при создании`                 |
+| **entityType** | String(255)                                               | Тип сущности - всегда является task<br>`+Обязательное при ответе` `+Только для чтения`    |
+| **id**         | UUID                                                      | ID Типа задачи<br>`+Обязательное при ответе` `+Только для чтения`                         |
+| **meta**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Типа задачи<br>`+Обязательное при ответе` `+Только для чтения`                 |
+| **name**       | String(255)                                               | Наименование Типа задачи<br>`+Обязательное при ответе` `+Необходимо при создании`         |
+| **stateType**  | Enum                                                      | Тип Статуса<br>`+Обязательное при ответе`                      |
+
+Поле **color** передается в АПИ как целое число состоящее из 4х байт.
+Т.к. цвет передается в цветовом пространстве ARGB, каждый байт отвечает за свой
+цвет соответственно: 1 - за прозрачность, 2 - за красный цвет, 3 - за зеленый,
+4 - за синий. Каждый байт принимает значения от 0 до 255 как и цвет в каждом из
+каналов цветового пространства. Получившееся в итоге из 4 записанных последовательно байт
+число, переведенное в 10-чную систему счисления и является представлением цвета статуса в JSON API.
+
+Пример: цвету `rgb(162, 198, 23)` будет соответствовать следующее значение поля `"color": 10667543`.
 
 #### Отображение списка по умолчанию
 ##### Для администратора
@@ -42,10 +65,11 @@
 Для сотрудника, не являющегося администратором, но имеющего право на просмотр всех задач, список задач по умолчанию будет аналогичен списку задач, выводимому для администратора. В противном случае, при запросе списка задач без каких-либо фильтров, будут выведены активные (**done** = false) задачи, которые создал текущий сотрудник и задачи, за которые ответственен текущий сотрудник.
 
 #### Фильтры из web-интерфейса
-В основном интерфейсе МоегоСклада для отображения списка задач существует 2 группы фильтров:
+В основном интерфейсе МоегоСклада для отображения списка задач существует 3 группы фильтров:
 
 + Фильтр по связанности с текущим сотрудником: `Поручено мне`, `Я поручил`, `Все задачи` (отображается только у администраторов)
 + Фильтр по готовности задачи: `Активные`, `Выполненные`.
++ Фильтр по типу задачи.
 
 Чтобы реализовать подобную фильтрацию списка для JSON API, нужно использовать следующие фильтры для списка задач:
 
@@ -58,6 +82,8 @@
 `https://api.moysklad.ru/api/remap/1.2/entity/task?filter=done=false`
 + **Выполненные**: фильтр по полю **done** со значением true<br>
 `https://api.moysklad.ru/api/remap/1.2/entity/task?filter=done=true`
++ **Тип задачи**: фильтр по полю **state.name**<br>
++ `https://api.moysklad.ru/api/remap/1.2/entity/task?filter=state.name=<название типа задачи>`
 
 #### Права доступа
 | Операция                                                                          | Доступ                                                                        |
@@ -553,18 +579,20 @@ curl -X POST
   -H "Content-Type: application/json"
   -d '[
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
-            "type": "task",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/7944ef04-f831-11e5-7a69-971500188b1",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
+                "type": "task",
+                "mediaType": "application/json"
+            }
         },
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
-            "type": "task",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/7944ef04-f831-11e5-7a69-971500188b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
+                "type": "task",
+                "mediaType": "application/json"
+            }
         }
       ]'
 ```        
@@ -1099,3 +1127,266 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление комментария к Задаче.
+
+### Массовое удаление коментариев к задаче
+
+В теле запроса нужно передать массив, содержащий JSON метаданных комментариев к Задаче, которые требуется удалить.
+
+> Запрос на массовое удаление комментариев к Задаче.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/task/a1ff58c4-726a-11ee-c0a8-e00e00000000/notes/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+    -d '[
+          {
+              "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/a1ff58c4-726a-11ee-c0a8-e00e00000000/notes/a87d4d14-726a-11ee-c0a8-e00e00000011",
+                  "type": "tasknote",
+                  "mediaType": "application/json"
+              }
+          },
+          {
+              "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/a1ff58c4-726a-11ee-c0a8-e00e00000000/notes/836b63c4-726b-11ee-c0a8-e00e0000001d",
+                  "type": "tasknote",
+                  "mediaType": "application/json"
+              }
+          }
+       ]' 
+```
+
+> Response 200 (application/json)
+Успешное удаление комментариев к Задаче.
+
+### Тип задачи
+
+### Получить типы задач
+
+> Получить метаданные, и в том числе типы задач
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
+    "mediaType": "application/json"
+  },
+  "states": [
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata/states/4f70c518-60a1-11e7-6adb-ede500000003",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "4f70c518-60a1-11e7-6adb-ede500000003",
+      "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
+      "name": "Встреча",
+      "color": 15106326,
+      "stateType": "Regular",
+      "entityType": "task"
+    },
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata/states/3b6eb61a-60c5-11e7-6adb-ede500000001",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
+        "type": "state",
+        "mediaType": "application/json"
+      },
+      "id": "3b6eb61a-60c5-11e7-6adb-ede500000001",
+      "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
+      "name": "Связаться",
+      "color": 10667543,
+      "stateType": "Regular",
+      "entityType": "task"
+    }
+  ]
+}
+```
+
+### Создать тип задачи
+
+Тип задачи создается на основе переданного объекта JSON,
+который содержит представление нового Типа.
+Результат - JSON представление созданного Типа. Для создания нового Типа,
+необходимо и достаточно в переданном объекте заполнить поля `name` и `color`.
+
+> Создание одного Типа задачи.
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata/states"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "Встреча",
+            "color": 69446
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного Типа задачи.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata/states/6262b270-60c3-11e7-6adb-ede50000000d",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
+    "type": "state",
+    "mediaType": "application/json"
+  },
+  "id": "6262b270-60c3-11e7-6adb-ede50000000d",
+  "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
+  "name": "Встреча",
+  "color": 69446,
+  "stateType": "Regular",
+  "entityType": "task"
+}
+```
+
+### Изменить тип задачи
+Изменить существующий тип задачи.
+
+#### Описание
+Тип задачи меняется на основе переданного объекта JSON.
+Результат - JSON представление обновленного или созданного Типа.
+Для обновления Типа, необходимо  указать в переданном объекте
+одно или несколько полей с новыми значениями: `name` и `color`.
+
+**Параметры**
+
+| Параметр       | Описание                                                                            |
+| :------------- |:------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 4dcb3f23-60c4-11e7-6adb-ede500000019* id Типа задачи. |
+
+> Изменение типа задачи.
+
+```shell
+  curl -X PUT
+    "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata/states/4dcb3f23-60c4-11e7-6adb-ede500000019"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "color": 255
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление измененного Типа задачи.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata/states/6262b270-60c3-11e7-6adb-ede50000000d",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
+    "type": "state",
+    "mediaType": "application/json"
+  },
+  "id": "6262b270-60c3-11e7-6adb-ede50000000d",
+  "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
+  "name": "Встреча",
+  "color": 255,
+  "stateType": "Regular",
+  "entityType": "task"
+}
+```
+
+### Массовое создание и обновление Типов задач
+[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Типов задач.
+В теле запроса нужно передать массив, содержащий JSON представления Типов, которые вы хотите создать или обновить.
+Обновляемые Типы должны содержать идентификатор в виде метаданных.
+
+> Пример создания и обновления нескольких Типов задач.
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata/states"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '[
+            {
+              "name": "Встреча",
+              "color": 8767198
+            },
+            {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata/states/b56215dc-60c3-11e7-6adb-ede500000013",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
+                "type": "state",
+                "mediaType": "application/json"
+              },
+              "name": "Связаться",
+              "color": 34617
+            }
+          ]'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - массив JSON представлений созданных и обновленных Типов задач.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata/states/b55d2ddf-60c3-11e7-6adb-ede500000010",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
+      "type": "state",
+      "mediaType": "application/json"
+    },
+    "id": "b55d2ddf-60c3-11e7-6adb-ede500000010",
+    "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
+    "name": "Встреча",
+    "color": 8767198,
+    "stateType": "Regular",
+    "entityType": "task"
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata/states/b56215dc-60c3-11e7-6adb-ede500000013",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
+      "type": "state",
+      "mediaType": "application/json"
+    },
+    "id": "b56215dc-60c3-11e7-6adb-ede500000013",
+    "accountId": "0af94520-54f7-11e7-6adb-ede500000001",
+    "name": "Связаться",
+    "color": 34617,
+    "stateType": "Regular",
+    "entityType": "task"
+  }
+]
+```
+
+### Удалить Тип задачи
+
+**Параметры**
+
+| Параметр       | Описание                                                                            |
+| :------------- |:------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: 4dcb3f23-60c4-11e7-6adb-ede500000019* id Типа задачи. |
+
+> Запрос на удаление Типа задачи с указанным id.
+
+```shell
+curl -X DELETE
+  "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata/states/4dcb3f23-60c4-11e7-6adb-ede500000019"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешное удаление Типа задачи.

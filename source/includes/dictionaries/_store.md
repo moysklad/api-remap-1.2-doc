@@ -14,7 +14,7 @@
 | ---------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------- |
 | **accountId**    | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                          |
 | **address**      | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Адрес склада                                                                                                                  |
-| **addressFull**  | Object                                                    |                                                                                                                                                   | Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-attributy-suschnosti-adres) |
+| **addressFull**  | Object                                                    |                                                                                                                                                   | Адрес с детализацией по отдельным полям. [Подробнее тут](../dictionaries/#suschnosti-sklad-sklady-atributy-suschnosti-adres) |
 | **archived**     | Boolean                                                   | `=` `!=`                                                                                                                                          | Добавлен ли Склад в архив<br>`+Обязательное при ответе`                                                                       |
 | **attributes**   | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Массив метаданных дополнительных полей склада                                                                                 |
 | **code**         | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Склада                                                                                                                    |
@@ -32,7 +32,7 @@
 | **zones**        | MetaArray                                                 |                                                                                                                                                   | Зоны склада. [Подробнее тут](../dictionaries/#suschnosti-sklad-zony-sklada)<br>`+Только для чтения` `+Expand`                                       |
 | **slots**        | MetaArray                                                 |                                                                                                                                                   | Ячейки склада. [Подробнее тут](../dictionaries/#suschnosti-sklad-yachejki-sklada)<br>`+Только для чтения` `+Expand`                                       |
 
-#### Аттрибуты сущности Адрес
+#### Атрибуты сущности Адрес
 
 | Название       | Тип                                                       | Описание           |
 | -------------- | :-------------------------------------------------------- | :----------------- |
@@ -50,7 +50,7 @@
 При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
 При передаче обоих адресов строковый будет игнорирован.
 При передаче только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
-Для адреса не поддерживается [значение `null`](../#mojsklad-json-api-obschie-swedeniq-podderzhka-null). Передача `null` этому аттрибуту не приведет к его удалению.
+Для адреса не поддерживается [значение `null`](../#mojsklad-json-api-obschie-swedeniq-podderzhka-null). Передача `null` этому атрибуту не приведет к его удалению.
 Для удаления адреса необходимо в строковое поле `address` передать пустую строку `""`.
 
 О работе с доп. полями Складов можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
@@ -918,18 +918,20 @@ curl -X POST
   -H "Content-Type: application/json"
   -d '[
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b1",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
-            "type": "store",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b1",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "type": "store",
+                "mediaType": "application/json"
+            }
         },
         {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b2",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
-            "type": "store",
-            "mediaType": "application/json"
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/7944ef04-f831-11e5-7a69-971500188b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+                "type": "store",
+                "mediaType": "application/json"
+            }
         }
       ]'
 ```        
@@ -1802,6 +1804,7 @@ curl -X PUT
 | **meta**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Ячейки<br>`+Обязательное при ответе`                                                                               |
 | **name**         | String(255)                                               |                                                                                                                            | Наименование Ячейки<br>`+Обязательное при ответе` `+Необходимо при создании`                                                  |
 | **updated**      | DateTime                                                  |                                                                                                                         | Момент последнего обновления Ячейки<br>`+Обязательное при ответе` `+Только для чтения`                                        |
+| **barcode**   | String(255)                                               |                                                                                                                                                   | Штрихкод ячейки                                                                                                               |
 | **zone**         | Meta                                                      |                                                                                                                                                   | Зона ячейки. [Подробнее тут](../dictionaries/#suschnosti-sklad-zony-sklada)<br>`+Только для чтения` `+Expand`                                       |
 
 ### Получить ячейки склада
@@ -1864,7 +1867,8 @@ curl -X GET
       "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
       "updated": "2016-05-05 16:32:02",
       "name": "slot1",
-      "externalCode": "223ddxzv223"
+      "externalCode": "223ddxzv223",
+      "barcode": "0123456789"
     },
     {
       "meta": {
@@ -1895,7 +1899,7 @@ curl -X GET
 Ячейка склада создается на основе переданного объекта JSON,
 который содержит представление новой Ячейки склада.
 Результат - JSON представление созданной Ячейки склада. Для создания новой Ячейки склада,
-необходимо и достаточно указать в переданном объекте не пустое поле `name`. В рамках одного склада имена Ячеек должны быть уникальны.
+необходимо и достаточно указать в переданном объекте не пустое поле `name`. В рамках одного склада имена и штрихкоды Ячеек должны быть уникальны.
 
 > Запрос на создание Ячейки склада
 
@@ -1906,7 +1910,8 @@ curl -X POST
   -H "Accept-Encoding: gzip"
   -H "Content-Type: application/json"
   -d '{
-        "name": "slot 1"
+        "name": "slot 1",
+        "barcode": "0123456789"
       }'
 ```
 
@@ -1925,7 +1930,8 @@ curl -X POST
         "accountId": "5f69193a-75f8-11ed-ac1a-000f00000001",
         "updated": "2022-12-07 09:29:56.547",
         "name": "slot 1",
-        "externalCode": "wYIaWipYjrZkJZZlw1Amy1"
+        "externalCode": "wYIaWipYjrZkJZZlw1Amy1",
+        "barcode": "0123456789"
     }
 ]
 ```
