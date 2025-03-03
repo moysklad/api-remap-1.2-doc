@@ -83,17 +83,18 @@
 #### Атрибуты вложенных сущностей
 ##### Адрес
 
-| Название       | Тип                                                       | Описание           |
-| -------------- | :-------------------------------------------------------- | :----------------- |
-| **addInfo**    | String(255)                                               | Другое             |
-| **apartment**  | String(30)                                                | Квартира           |
-| **city**       | String(255)                                               | Город              |
-| **comment**    | String(255)                                               | Комментарий        |
-| **country**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные страны  |
-| **house**      | String(30)                                                | Дом                |
-| **postalCode** | String(6)                                                 | Почтовый индекс    |
-| **region**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные региона |
-| **street**     | String(255)                                               | Улица              |
+| Название         | Тип                                                       | Описание           |
+|------------------| :-------------------------------------------------------- | :----------------- |
+| **addInfo**      | String(255)                                               | Другое             |
+| **apartment**    | String(30)                                                | Квартира           |
+| **city**         | String(255)                                               | Город              |
+| **fiasCode\_\_ru** | String(255)                                               | Код ФИАС           |
+| **comment**      | String(255)                                               | Комментарий        |
+| **country**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные страны  |
+| **house**        | String(30)                                                | Дом                |
+| **postalCode**   | String(6)                                                 | Почтовый индекс    |
+| **region**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные региона |
+| **street**       | String(255)                                               | Улица              |
 
 Строка адреса является конкатенацией полей структурированного адреса в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
 При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
@@ -366,7 +367,8 @@ curl -X GET
         "house": "1",
         "apartment": "123",
         "addInfo": "addinfo",
-        "comment": "some words about address"
+        "comment": "some words about address",
+        "fiasCode__ru": "53423243432"
       },
       "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
       "actualAddressFull": {
@@ -392,7 +394,8 @@ curl -X GET
         "house": "1",
         "apartment": "111",
         "addInfo": "addinfo",
-        "comment": "some words about address"
+        "comment": "some words about address",
+        "fiasCode__ru": "53423243432"
       },
       "inn": "8274424278",
       "kpp": "123456789",
@@ -478,7 +481,8 @@ curl -X GET
     "house":"1",
     "apartment":"123",
     "addInfo":"addinfo",
-    "comment":"some words about address"
+    "comment":"some words about address",
+    "fiasCode__ru": "53423243432"
   },
   "actualAddressFull":{  
     "postalCode":"125009",
@@ -503,7 +507,8 @@ curl -X GET
     "house":"1",
     "apartment":"111",
     "addInfo":"addinfo",
-    "comment":"some words about address"
+    "comment":"some words about address",
+    "fiasCode__ru": "53423243432"
   },
   "inn":"87654321",
   "kpp":"15312532",
@@ -598,7 +603,8 @@ curl -X GET
     "house": "1",
     "apartment": "123",
     "addInfo": "addinfo",
-    "comment": "some words about address"
+    "comment": "some words about address",
+    "fiasCode__ru": "53423243432"
   },
   "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
   "actualAddressFull": {
@@ -624,7 +630,8 @@ curl -X GET
     "house": "1",
     "apartment": "111",
     "addInfo": "addinfo",
-    "comment": "some words about address"
+    "comment": "some words about address",
+    "fiasCode__ru": "53423243432"
   },
   "inn": "87654321",
   "kpp": "15312532",
@@ -897,7 +904,8 @@ curl -X GET
     "house": "1",
     "apartment": "123",
     "addInfo": "addinfo",
-    "comment": "some words about address"
+    "comment": "some words about address",
+    "fiasCode__ru": "53423243432"
   },
   "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
   "actualAddressFull": {
@@ -923,7 +931,8 @@ curl -X GET
     "house": "1",
     "apartment": "111",
     "addInfo": "addinfo",
-    "comment": "some words about address"
+    "comment": "some words about address",
+    "fiasCode__ru": "53423243432"
   },
   "inn": "87654321",
   "kpp": "15312532",
@@ -1382,7 +1391,8 @@ curl -X GET
     "house": "1",
     "apartment": "123",
     "addInfo": "addinfo",
-    "comment": "some words about address"
+    "comment": "some words about address",
+    "fiasCode__ru": "53423243432"
   },
   "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
   "actualAddressFull": {
@@ -1408,7 +1418,8 @@ curl -X GET
     "house": "1",
     "apartment": "111",
     "addInfo": "addinfo",
-    "comment": "some words about address"
+    "comment": "some words about address",
+    "fiasCode__ru": "53423243432"
   },
   "inn": "87654321",
   "kpp": "15312532",
@@ -1680,7 +1691,8 @@ curl -X GET
   "house": "1",
   "apartment": "123",
   "addInfo": "addinfo",
-  "comment": "some words about address"
+  "comment": "some words about address",
+  "fiasCode__ru": "53423243432"
 },
 "actualAddressFull": {
   "postalCode": "125009",
@@ -1705,7 +1717,8 @@ curl -X GET
   "house": "1",
   "apartment": "111",
   "addInfo": "addinfo",
-  "comment": "some words about address"
+  "comment": "some words about address",
+  "fiasCode__ru": "53423243432"
 },
   "inn": "87654321",
   "kpp": "15312532",
@@ -1794,7 +1807,8 @@ curl -X GET
     "house": "1",
     "apartment": "123",
     "addInfo": "addinfo",
-    "comment": "some words about address"
+    "comment": "some words about address",
+    "fiasCode__ru": "53423243432"
   },
   "actualAddress": "125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
   "actualAddressFull": {
@@ -1820,7 +1834,8 @@ curl -X GET
     "house": "1",
     "apartment": "111",
     "addInfo": "addinfo",
-    "comment": "some words about address"
+    "comment": "some words about address",
+    "fiasCode__ru": "53423243432"
   },
   "inn": "87654321",
   "kpp": "15312532",
