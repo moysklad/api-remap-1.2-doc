@@ -19,6 +19,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 21-11-2024
+#### Добавлены
+- Документы [Заказ кодов маркировки](../documents/#dokumenty-zakaz-kodow-markirowki), [Вывод кодов маркировки из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota)
+- Ошибки [57000-57002](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-markirowki), [57100-57108](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-zakaza-kodow-markirowki)
+
 ### 13-02-2025
 #### Добавлено
 - Типы компаний региона Узбекистан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)
@@ -73,12 +78,6 @@
 
 #### Изменено
 - Актуализирована документация по [Пользовательским справочникам](../dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik)
-
-### 21-11-2024
-#### Добавлен
-- Документ [Заказ кодов маркировки](../documents/#dokumenty-zakaz-kodow-markirowki)
-- Ошибка [57000](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-markirowki)
-- Ошибки [57100-57108](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-zakaza-kodow-markirowki)
 
 ### 19-11-2024
 #### Добавлено

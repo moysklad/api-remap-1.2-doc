@@ -1,6 +1,11 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 21-11-2024
+#### Добавлены
+- Документы [Заказ кодов маркировки](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-kodow-markirowki), [Вывод кодов маркировки из оборота](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vywod-kodow-markirowki-iz-oborota)
+- Ошибки [57000-57002](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-markirowki), [57100-57108](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-zakaza-kodow-markirowki)
+
 ### 13-02-2025
 #### Добавлено
 - Типы компаний региона Узбекистан для [контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)
@@ -55,11 +60,6 @@
 
 #### Изменено
 - Актуализирована документация по [Пользовательским справочникам](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik)
-
-### 21-11-2024
-#### Добавлен
-- Документ [Заказ кодов маркировки](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-kodow-markirowki)
-
 
 ### 19-11-2024
 #### Добавлено
