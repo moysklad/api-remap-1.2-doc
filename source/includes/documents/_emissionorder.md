@@ -47,7 +47,7 @@
 | **meta**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные позиции заказа кодов маркировки<br>`+Обязательное при ответе` `+Только для чтения`                                                                         |
 | **quantity**      | Float                                                     | Количество товаров данного вида в позиции.<br>`+Обязательное при ответе`                                                                                              |
 | **status**        | Enum                                                      | Статус кодов. <br>`+Обязательное при ответе` `+Только для чтения` [Подробнее тут](../documents/#dokumenty-zakaz-kodow-markirowki-zakaz-kodow-markirowki-status-kodow) |
-| **trackingCodes** | Array(Object)                                             | Коды маркировки товаров. [Подробнее тут](../dictionaries/#suschnosti-kody-markirowki) <br>`+Только для чтения`                                                        |
+
 
 #### Статус кодов
 Значения поля status.
@@ -1227,16 +1227,6 @@ curl -X GET
           "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=2f088dd4-ad7f-11ef-ac12-000d00000115"
         }
       },
-      "trackingCodes": [
-        {
-          "cis": "010002900000106021C4NkN(fUjSFS>%91FFD%92dGVzdE/k9VQL8HW0OdiPrh0XyxPgK8CLYmeZ/Np1x6Q=",
-          "type": "trackingcode"
-        },
-        {
-          "cis": "010002900000106021jMpU&ZOh3Pqn&%91FFD0%92dGVzdJM6eQj669q35NMXowo7OSpJSxpAGhNDZuGqnNA=",
-          "type": "trackingcode"
-        }
-      ],
       "status": "EMISSION_COMPLETED"
     }
   ]
@@ -1284,16 +1274,6 @@ curl -X GET
         "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=2f088dd4-ad7f-11ef-ac12-000d00000115"
       }
     },
-    "trackingCodes": [
-      {
-        "cis": "010002900000106021C4NkN(fUjSFS>%91FFD%92dGVzdE/k9VQL8HW0OdiPrh0XyxPgK8CLYmeZ/Np1x6Q=",
-        "type": "trackingcode"
-      },
-      {
-        "cis": "010002900000106021jMpU&ZOh3Pqn&%91FFD0%92dGVzdJM6eQj669q35NMXowo7OSpJSxpAGhNDZuGqnNA=",
-        "type": "trackingcode"
-      }
-    ],
     "status": "EMISSION_COMPLETED"
 }
 ```
