@@ -2,6 +2,10 @@
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
 ### 04-03-2025
+#### Изменено
+- Изменено описание поля `marksCheckMode` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), настройка проверки КМ перед продажей в ГИС МТ
+
+### 04-03-2025
 #### Добавлено
 - Поле `archived` в [Серии](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-seriq)
 

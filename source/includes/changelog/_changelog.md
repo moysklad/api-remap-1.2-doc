@@ -20,6 +20,10 @@
 Список последних изменений в API Remap 1.2
 
 ### 04-03-2025
+#### Изменено
+- Изменено описание поля `marksCheckMode` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), настройка проверки КМ перед продажей в ГИС МТ
+
+### 04-03-2025
 #### Добавлено
 - Поле `archived` в [Серии](../dictionaries/#suschnosti-seriq)
 
