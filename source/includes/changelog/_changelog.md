@@ -19,9 +19,20 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 04-02-2025
+### 04-03-2025
 #### Изменено
 - Изменено описание поля `marksCheckMode` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), настройка проверки КМ перед продажей в ГИС МТ
+
+### 13-02-2025
+#### Добавлено
+- Типы компаний региона Узбекистан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)
+- Типы компаний региона Узбекистан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-tip-urlica)
+- Реквизиты региона Узбекистан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-rekwizity-uzbekistana)
+- Реквизиты региона Узбекистан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-rekwizity-uzbekistana)
+
+### 12-02-2025
+#### Добавлено
+- Условие автоматического отключения JSON API пользователю в [Ограничения](../#mojsklad-json-api-ogranicheniq)
 
 ### 27-01-2025
 #### Добавлено
@@ -316,6 +327,11 @@
 ### 05-10-2023
 #### Добавлено
 - Добавлены новые режимы reserve и inTransit [в краткий отчёт по остаткам](../reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah)
+
+### 20-09-2023
+#### Удалены
+- Ставший неактуальным `5004` код [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-komissionera).
+- Ограничение на товар и его количество в позиции возврата на склад комиссионера для [полученного отчета комиссионера](../documents/#dokumenty-poluchennyj-otchet-komissionera).
 
 ### 14-09-2023
 #### Добавлено

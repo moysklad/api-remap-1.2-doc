@@ -123,7 +123,7 @@ curl -X GET
             "mediaType": "application/json"
           }
         }
-      ],
+      ]
     },
     {
       "meta": {
