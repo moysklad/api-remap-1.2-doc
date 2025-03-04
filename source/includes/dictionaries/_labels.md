@@ -79,14 +79,14 @@
 
 > Response 202 Headers
 
-```json
+```
   Location: ссылка на статус печати
   Content-Type: application/json
 ```
 
 > Response 303 Headers
 
-```json
+```
   Location: ссылка на файл
   Content-Type: application/json
 ```

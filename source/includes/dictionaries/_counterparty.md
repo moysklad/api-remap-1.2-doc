@@ -66,23 +66,31 @@
 
 ##### Поля реквизитов
 
-| Название              | Тип           | Фильтрация                                                                                                                                        | Описание                                                                                                                                                                                                                                                       |
-|-----------------------| :------------ | :------------------------------------------------------------------------------------------------------------------------------------------------ |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **birthDate**         | DateTime      |                                                                                                                                                   | Дата рождения Контрагента типа `[Физическое лицо]`. Игнорируется для Контрагентов типов `[Индивидуальный предприниматель, Юридическое лицо]`                                                                                                                   |
-| **certificateDate**   | DateTime      |                                                                                                                                                   | Дата свидетельства                                                                                                                                                                                                                                             |
-| **certificateNumber** | String(255)   |                                                                                                                                                   | Номер свидетельства                                                                                                                                                                                                                                            |
-| **inn**               | String(255)   | `=` `!=` `~` `~=` `=~`                                                                                                                            | ИНН                                                                                                                                                                                                                                                            |
-| **kpp**               | String(255)   | `=` `!=` `~` `~=` `=~`                                                                                                                            | КПП                                                                                                                                                                                                                                                            |
-| **legalAddress**      | String(255)   | `=` `!=` `~` `~=` `=~`                                                                                                                            | Юридический адрес Контрагента                                                                                                                                                                                                                                  |
-| **legalAddressFull**  | Object        |                                                                                                                                                   | Юридический адрес Контрагента с детализацией по отдельным полям                                                                                                                                                                                                |
-| **legalFirstName**    | String(255)   |                                                                                                                                                   | Имя для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`                                                                                                                          |
-| **legalLastName**     | String(255)   |                                                                                                                                                   | Фамилия для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`                                                                                                                      |
-| **legalMiddleName**   | String(255)   |                                                                                                                                                   | Отчество для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`                                                                                                                     |
-| **legalTitle**        | String(4096)  | `=` `!=` `~` `~=` `=~`                                                                                                                            | Полное наименование для Контрагента типа `[Юридическое лицо]`. Игнорируется для Контрагентов типа `[Индивидуальный предприниматель, Физическое лицо]`, если передано одно из значений для ФИО и формируется автоматически на основе получаемых ФИО Контрагента |
-| **ogrn**              | String(255)   |                                                                                                                                                   | ОГРН                                                                                                                                                                                                                                                           |
-| **ogrnip**            | String(255)   |                                                                                                                                                   | ОГРНИП                                                                                                                                                                                                                                                         |
-| **okpo**              | String(255)   |                                                                                                                                                   | ОКПО                                                                                                                                                                                                                                                           |
-| **sex**               | String(255)   |                                                                                                                                                   | Пол Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-pol-kontragenta)                                                                                                                                                           |
+| Название                    | Тип           | Фильтрация             | Описание                                                                                                                                                                                                                                                       |
+|-----------------------------| :------------ | :--------------------- |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **birthDate**               | DateTime      |                        | Дата рождения Контрагента типа `[Физическое лицо]`. Игнорируется для Контрагентов типов `[Индивидуальный предприниматель, Юридическое лицо]`                                                                                                                   |
+| **certificateDate**         | DateTime      |                        | Дата свидетельства <br>`+RU`                                                                                                                                                                                                                                   |
+| **certificateNumber**       | String(255)   |                        | Номер свидетельства <br>`+RU`                                                                                                                                                                                                                                  |
+| **inn**                     | String(255)   | `=` `!=` `~` `~=` `=~` | ИНН <br>`+RU`                                                                                                                                                                                                                                                  |
+| **kpp**                     | String(255)   | `=` `!=` `~` `~=` `=~` | КПП <br>`+RU`                                                                                                                                                                                                                                                  |
+| **legalAddress**            | String(255)   | `=` `!=` `~` `~=` `=~` | Юридический адрес Контрагента                                                                                                                                                                                                                                  |
+| **legalAddressFull**        | Object        |                        | Юридический адрес Контрагента с детализацией по отдельным полям                                                                                                                                                                                                |
+| **legalFirstName**          | String(255)   |                        | Имя для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`                                                                                                                          |
+| **legalLastName**           | String(255)   |                        | Фамилия для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`                                                                                                                      |
+| **legalMiddleName**         | String(255)   |                        | Отчество для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`                                                                                                                     |
+| **legalTitle**              | String(4096)  | `=` `!=` `~` `~=` `=~` | Полное наименование для Контрагента типа `[Юридическое лицо]`. Игнорируется для Контрагентов типа `[Индивидуальный предприниматель, Физическое лицо]`, если передано одно из значений для ФИО и формируется автоматически на основе получаемых ФИО Контрагента |
+| **mod\_\_requisites\_\_uz** | Object        |                        | Реквизиты Узбекистана. [Подробнее тут](#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-rekwizity-uzbekistana) <br>`+UZ`                                                                                                                     |
+| **ogrn**                    | String(255)   |                        | ОГРН <br>`+RU`                                                                                                                                                                                                                                                 |
+| **ogrnip**                  | String(255)   |                        | ОГРНИП <br>`+RU`                                                                                                                                                                                                                                               |
+| **okpo**                    | String(255)   |                        | ОКПО <br>`+RU`                                                                                                                                                                                                                                                 |
+| **sex**                     | String(255)   |                        | Пол Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-pol-kontragenta)                                                                                                                                                           |
+
+Поля помеченные тегом региона (например, `+RU`, `+UZ`) валидны только для типов юридического лица
+этого региона.  Регионы, не имеющие своих типов юридических лиц используют типы региона `+RU`.
+
+Отсылка на типы юридических лиц `[Индивидуальный предприниматель, Физическое лицо, Юридическое лицо]` имеет обобщенный характер,
+подразумевая, в том числе, аналогичные регионоспецифичные типы, например, `Индивидуальный предприниматель, Узбекистан` и т.п.
+Подробнее о типах юридических лиц [тут](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta).
 
 Накопительная скидка выводится, если для контрагента хотя бы раз устанавливалась **коррекция суммы накоплений по скидке**, значение будет указано в поле **demandSumCorrection** 
 или при выполнении условий накопительной скидки **Проценты скидок при определенной сумме продаж**, актуальное значение будет отображено в поле **accumulationDiscount**. 
@@ -150,15 +158,39 @@
 | **id**                | UUID                                                      | ID События<br>`+Обязательное при ответе` `+Только для чтения`                                                                                  |
 | **meta**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные событий контрагента<br>`+Обязательное при ответе`                                                                                   |
 
+##### Реквизиты Узбекистана
+
+| Название              | Тип           | Фильтрация             | Описание                            |
+|---------------------- |:--------------| :--------------------- |:------------------------------------|
+| **certificateDate**   | DateTime      | `=` `!=` `~` `~=` `=~` | Дата свидетельства                  |
+| **certificateNumber** | String(255)   | `=` `!=` `~` `~=` `=~` | Номер свидетельства                 |
+| **inn**               | String(20)    | `=` `!=` `~` `~=` `=~` | ИНН                                 |
+| **oked**              | String(255)   | `=` `!=` `~` `~=` `=~` | ОКЕД                                |
+| **pinfl**             | String(20)    | `=` `!=` `~` `~=` `=~` | ПИНФЛ                               |
+| **vatPayerRegCode**   | String(20)    | `=` `!=` `~` `~=` `=~` | Регистрационный код плательщика НДС |
+
+Поля вложены в объект **mod\_\_requisites\_\_uz**.  Конкретный набор полей, определяется типом юридического лица.
+Подробнее о типах юридических лиц [тут](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta).
+
+
 #### Тип Контрагента
 В зависимости от типа контрагента **companyType** в составе его объекта будут выводиться разные наборы реквизитов.
 Типы контрагента и соответствующие значения, которые могут быть переданы в данном поле:
 
-| Значение поля companyType      | Тип контрагента                |
-| ------------------------------ | :----------------------------- |
-| **legal**                      | Юридическое лицо               |
-| **entrepreneur**               | Индивидуальный предприниматель |
-| **individual**                 | Физическое лицо                |
+| Значение поля companyType      | Регион | Тип контрагента                            |
+| ------------------------------ | :----- | :----------------------------------------- |
+| **legal**                      |  RU, * | Юридическое лицо                           |
+| **entrepreneur**               |  RU, * | Индивидуальный предприниматель             |
+| **individual**                 |  RU, * | Физическое лицо                            |
+| **legalUZ**                    |   UZ   | Юридическое лицо, Узбекистан               |
+| **entrepreneurUZ**             |   UZ   | Индивидуальный предприниматель, Узбекистан |
+| **individualUZ**               |   UZ   | Физическое лицо, Узбекистан                |
+
+'*' обозначены типы юридических лиц, используемые в регионах, для которых недоступны отдельные специфичные для региона типы юридических лиц.
+В этих регионах используются юридические лица региона 'RU' и специфичные для него реквизиты.
+Для регионов, в которых появились свои наборы реквизитов рекомендуется переключиться на новые реквизиты.
+Возможность использовать 'RU' реквизиты в этих регионах планируется отключить.
+
 
 Если тип контрагента `Юридическое лицо`, будут выведены следующие поля реквизитов:
 
@@ -171,6 +203,21 @@
 | **ogrn**         | ОГРН                            |
 | **okpo**         | ОКПО                            |
 | **tags**         | Группы (массив)                 |
+
+
+<br>
+
+Если тип контрагента `Юридическое лицо, Узбекистан`, будут выведены следующие поля реквизитов:
+
+| Название                                    | Описание                            |
+| ------------------------------------------- | ----------------------------------- |
+| **legalAddress**                            | Юридический адрес Контрагента       |
+| **legalTitle**                              | Полное наименование Контрагента     |
+| **mod\_\_requisites\_\_uz.inn**             | ИНН                                 |
+| **mod\_\_requisites\_\_uz.oked**            | ОКЕД                                |
+| **mod\_\_requisites\_\_uz.vatPayerRegCode** | Регистрационный код плательщика НДС |
+| **tags**                                    | Группы (массив)                     |
+
 
 Если тип контрагента `Индивидуальный предприниматель`, будут выведены следующие поля реквизитов:
 
@@ -188,6 +235,26 @@
 | **ogrnip**            | ОГРНИП                                                                                                                                                |
 | **okpo**              | ОКПО                                                                                                                                                  |
 
+
+<br>
+
+Если тип контрагента `Индивидуальный предприниматель, Узбекистан`, будут выведены следующие поля реквизитов:
+
+| Название                                      | Описание                                                                                                                                                                       |
+| --------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **legalAddress**                              | Юридический адрес Контрагента                                                                                                                                                  |
+| **legalAddressFull**                          | Юридический адрес Контрагента с детализацией по отдельным полям                                                                                                                |
+| **legalFirstName**                            | Имя для Контрагента типа `[Индивидуальный предприниматель, Узбекистан; Физическое лицо, Узбекистан]`. Игнорируется для Контрагентов типа `[Юридическое лицо, Узбекистан]`      |
+| **legalLastName**                             | Фамилия для Контрагента типа `[Индивидуальный предприниматель, Узбекистан; Физическое лицо, Узбекистан]`. Игнорируется для Контрагентов типа `[Юридическое лицо, Узбекистан]`  |
+| **legalMiddleName**                           | Отчество для Контрагента типа `[Индивидуальный предприниматель, Узбекистан; Физическое лицо, Узбекистан]`. Игнорируется для Контрагентов типа `[Юридическое лицо, Узбекистан]` |
+| **legalTitle**                                | Полное наименование Контрагента. Игнорируется, если передано одно из значений для ФИО. Формируется автоматически на основе получаемых ФИО Контрагента                          |
+| **mod\_\_requisites\_\_uz.certificateDate**   | Дата свидетельства                                                                                                                                                             |
+| **mod\_\_requisites\_\_uz.certificateNumber** | Номер свидетельства                                                                                                                                                            |
+| **mod\_\_requisites\_\_uz.inn**               | ИНН                                                                                                                                                                            |
+| **mod\_\_requisites\_\_uz.pinfl**             | ПИНФЛ                                                                                                                                                                          |
+| **mod\_\_requisites\_\_uz.vatPayerRegCode**   | Регистрационный код плательщика НДС                                                                                                                                            |
+
+
 Если тип контрагента `Физическое лицо`, будут выведены следующие поля реквизитов:
 
 | Название             | Описание                                                                                                                                              |
@@ -201,6 +268,23 @@
 | **legalMiddleName**  | Отчество для Контрагента типа `[Индивидуальный предприниматель, Физическое лицо]`. Игнорируется для Контрагентов типа `[Юридическое лицо]`            |
 | **legalTitle**       | Полное наименование Контрагента. Игнорируется, если передано одно из значений для ФИО. Формируется автоматически на основе получаемых ФИО Контрагента |
 | **sex**              | Пол Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-pol-kontragenta)                                                  |
+
+<br>
+
+Если тип контрагента `Физическое лицо, Узбекистан`, будут выведены следующие поля реквизитов:
+
+| Название                          | Описание                                                                                                                                                                       |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **birthDate**                     | Дата рождения Контрагента типа `[Физическое лицо, Узбекистан]`. Игнорируется для Контрагентов типа `[Индивидуальный предприниматель, Юридическое лицо]`                        |
+| **legalAddress**                  | Юридический адрес Контрагента                                                                                                                                                  |
+| **legalAddressFull**              | Юридический адрес Контрагента с детализацией по отдельным полям                                                                                                                |
+| **legalFirstName**                | Имя для Контрагента типа `[Индивидуальный предприниматель, Узбекистан; Физическое лицо, Узбекистан]`. Игнорируется для Контрагентов типа `[Юридическое лицо, Узбекистан]`      |
+| **legalLastName**                 | Фамилия для Контрагента типа `[Индивидуальный предприниматель, Узбекистан; Физическое лицо, Узбекистан]`. Игнорируется для Контрагентов типа `[Юридическое лицо, Узбекистан]`  |
+| **legalMiddleName**               | Отчество для Контрагента типа `[Индивидуальный предприниматель, Узбекистан; Физическое лицо, Узбекистан]`. Игнорируется для Контрагентов типа `[Юридическое лицо, Узбекистан]` |
+| **legalTitle**                    | Полное наименование Контрагента. Игнорируется, если передано одно из значений для ФИО. Формируется автоматически на основе получаемых ФИО Контрагента                          |
+| **mod\_\_requisites\_\_uz.pinfl** | ПИНФЛ                                                                                                                                                                          |
+| **sex**                           | Пол Контрагента. [Подробнее тут](../dictionaries/#suschnosti-kontragent-kontragenty-pol-kontragenta)                                                                           |
+
 
 О работе с доп. полями Контрагентов можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
@@ -1251,6 +1335,345 @@ curl -X POST
   }
 }
 ```
+
+
+> Пример 5 (работа с UZ контрагентом)
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '{
+    "name": "ООО Радуга",
+    "companyType": "legalUZ",
+    "legalTitle": "Общество с ограниченой ответственностью \"Радуга\"",
+    "legalAddress": "г.Москва ул Авиастроителей д 93 к 12",
+    "mod__requisites__uz": {
+      "inn": "125152124",
+      "oked": "2013557",
+      "vatPayerRegCode": "901283746528"
+    }
+  }'
+```
+
+> Response 200. Успешный запрос. Результат - JSON представление созданного Контрагента.
+
+```json
+{
+  "meta":{
+    "href":"https://api.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000",
+    "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type":"counterparty",
+    "mediaType":"application/json"
+  },
+  "id":"b80ea81b-7058-11e6-8a84-bae500000000",
+  "accountId":"1185513e-692c-11e6-8a84-bae500000001",
+  "owner":{
+    "meta":{
+      "href":"https://api.moysklad.ru/api/remap/1.2/entity/employee/12747f9e-692c-11e6-8a84-bae50000002a",
+      "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type":"employee",
+      "mediaType":"application/json"
+    }
+  },
+  "shared":false,
+  "group":{
+    "meta":{
+      "href":"https://api.moysklad.ru/api/remap/1.2/entity/group/11883c67-692c-11e6-8a84-bae500000002",
+      "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type":"group",
+      "mediaType":"application/json"
+    }
+  },
+  "updated":"2016-09-01 18:28:22",
+  "name":"ООО Радуга",
+  "archived":false,
+  "companyType":"legalUZ",
+  "mod__requisites__uz": {
+    "inn": "125152124",
+    "oked": "2013557",
+    "vatPayerRegCode": "901283746528"
+  },
+  "accounts":{
+    "meta":{
+      "href":"https://api.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/accounts",
+      "type":"account",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
+    }
+  },
+  "tags":[
+  ],
+  "contactpersons":{
+    "meta":{
+      "href":"https://api.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/contactpersons",
+      "type":"contactperson",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
+    }
+  },
+  "notes":{
+    "meta":{
+      "href":"https://api.moysklad.ru/api/remap/1.2/entity/counterparty/b80ea81b-7058-11e6-8a84-bae500000000/notes",
+      "type":"note",
+      "mediaType":"application/json",
+      "size":0,
+      "limit":1000,
+      "offset":0
+    }
+  },
+  "state":{
+    "meta":{
+      "href":"https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
+      "type":"state",
+      "mediaType":"application/json"
+    }
+  }
+}
+```
+
+
+> Пример 6 (работа с UZ контрагентом)
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '{
+        "name": "ИП Иванов",
+        "companyType": "entrepreneurUZ",
+        "legalLastName": "Иванов",
+        "legalFirstName": "Иван",
+        "legalMiddleName": "Иванович",
+        "actualAddress": "г.Москва ул Академика Миля дом 15 к 21",
+        "legalAddress": "г.Москва ул Авиастроителей д 93 к 12",
+        "mod__requisites__uz": {
+          "certificateNumber": "12345",
+          "certificateDate": "2024-10-17 00:00:00",
+          "inn": "125152124",
+          "pinfl": "20135736512389",
+          "vatPayerRegCode": "901283746528"
+        }
+      }'
+```
+> Response 200. Успешный запрос. Результат - JSON представление созданного Контрагента.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/45fd2f10-b0ae-11ea-0a80-163500000000",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type": "counterparty",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=45fd2f10-b0ae-11ea-0a80-163500000000"
+  },
+  "id": "45fd2f10-b0ae-11ea-0a80-163500000000",
+  "accountId": "02865f48-b0ae-11ea-0a80-203a00000002",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/02e06bea-b0ae-11ea-0a80-1d9c00000034",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=02e06bea-b0ae-11ea-0a80-1d9c00000034"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/02877fda-b0ae-11ea-0a80-203a00000003",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "version": 0,
+  "updated": "2020-06-17 18:21:53",
+  "name": "ИП Иванов",
+  "archived": false,
+  "created": "2020-06-17 18:21:53",
+  "companyType": "entrepreneurUZ",
+  "legalTitle": "Индивидуальный предприниматель Иванов Иван Иванович",
+  "legalAddress": "г.Москва ул Авиастроителей д 93 к 12",
+  "legalAddressFull": {
+    "addInfo": "г.Москва ул Авиастроителей д 93 к 12"
+  },
+  "actualAddress": "г.Москва ул Академика Миля дом 15 к 21",
+  "actualAddressFull": {
+    "addInfo": "г.Москва ул Академика Миля дом 15 к 21"
+  },
+  "inn": "87654321",
+  "okpo": "12345",
+  "ogrnip": "58632598y21jk",
+  "legalLastName": "Иванов",
+  "legalFirstName": "Иван",
+  "legalMiddleName": "Иванович",
+  "mod__requisites__uz": {
+    "certificateNumber": "12345",
+    "certificateDate": "2024-10-17 00:00:00",
+    "inn": "125152124",
+    "pinfl": "20135736512389",
+    "vatPayerRegCode": "901283746528"
+  },
+  "accounts": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/45fd2f10-b0ae-11ea-0a80-163500000000/accounts",
+      "type": "account",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 100,
+      "offset": 0
+    }
+  },
+  "tags": [],
+  "contactpersons": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/45fd2f10-b0ae-11ea-0a80-163500000000/contactpersons",
+      "type": "contactperson",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 100,
+      "offset": 0
+    }
+  },
+  "notes": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/45fd2f10-b0ae-11ea-0a80-163500000000/notes",
+      "type": "note",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 100,
+      "offset": 0
+    }
+  },
+  "state": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/03935900-b0ae-11ea-0a80-1d9c0000008c",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "state",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
+
+
+> Пример 7 (работа с UZ контрагентом)
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d ' {
+        "name": "Петров",
+        "companyType": "individualUz",
+        "legalLastName": "Петров",
+        "legalFirstName": "Петр",
+        "legalMiddleName": "Петрович",
+        "sex": "MALE",
+        "birthDate": "1953-11-01 00:00:00.000",
+        "mod__requisites__uz": {
+          "pinfl": "20135736512389"
+        }
+      }'
+```
+> Response 200. Успешный запрос. Результат - JSON представление созданного Контрагента.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/23f049f3-3ad1-11ee-ac13-000c00000000",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type": "counterparty",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=23f049f3-3ad1-11ee-ac13-000c00000000"
+  },
+  "id": "23f049f3-3ad1-11ee-ac13-000c00000000",
+  "accountId": "00081cde-3ad1-11ee-ac13-000d00000001",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/00f97251-3ad1-11ee-ac13-000e0000004c",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=00f97251-3ad1-11ee-ac13-000e0000004c"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/0009beb8-3ad1-11ee-ac13-000d00000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2023-08-14 21:34:00.817",
+  "name": "Петров",
+  "externalCode": "mm62KDCZjOpCCNqvW3DtK1",
+  "archived": false,
+  "created": "2023-08-14 21:34:00.817",
+  "companyType": "individualUZ",
+  "legalTitle": "Петров Петр Петрович",
+  "legalLastName": "Петров",
+  "legalFirstName": "Петр",
+  "legalMiddleName": "Петрович",
+  "birthDate": "1953-11-01 00:00:00.000",
+  "sex": "MALE",
+  "mod__requisites__uz": {
+    "pinfl": "20135736512389"
+  },
+  "accounts": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/23f049f3-3ad1-11ee-ac13-000c00000000/accounts",
+      "type": "account",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "tags": [],
+  "contactpersons": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/23f049f3-3ad1-11ee-ac13-000c00000000/contactpersons",
+      "type": "contactperson",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "notes": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/23f049f3-3ad1-11ee-ac13-000c00000000/notes",
+      "type": "note",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "state": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/states/02b158a9-3ad1-11ee-ac13-000e000000b5",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "state",
+      "mediaType": "application/json"
+    }
+  }
+}
+```
+
 
 > Пример с дополнительными полями
 

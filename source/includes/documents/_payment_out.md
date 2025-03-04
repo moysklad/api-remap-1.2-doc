@@ -953,7 +953,7 @@ curl -X GET
     "mediaType": "application/json"
   },
   "customEntityMeta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/a27aa372-5311-11e6-8a84-bae500000001",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/a27aa372-5311-11e6-8a84-bae500000001/metadata",
     "type": "customentitymetadata",
     "mediaType": "application/json"
   },

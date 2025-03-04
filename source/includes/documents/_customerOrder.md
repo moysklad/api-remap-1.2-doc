@@ -166,7 +166,7 @@ curl -X GET
     }
   },
   "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerOrder",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder",
     "type": "customerorder",
     "mediaType": "application/json",
     "size": 1,
@@ -839,7 +839,7 @@ curl -X GET
       "id": "c2ecd338-015e-11e6-9464-e4de0000008f",
       "name": "AttributeName1",
       "type": "string",
-      "value": "Атрибут заказа",
+      "value": "Атрибут заказа"
     }
   ],
   "created": "2007-02-07 17:16:41",
@@ -1620,7 +1620,7 @@ curl -X GET
 {
   "meta": {
     "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/34efe2ee-015e-11e6-9464-e4de0000006b",
-    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerOrder/metadata",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
     "type": "customerorder",
     "mediaType": "application/json"
   },

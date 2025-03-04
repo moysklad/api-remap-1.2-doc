@@ -1,9 +1,64 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 25-11-2024
+### 04-03-2025
 #### Добавлено
 - Поле `archived` в [Серии](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-seriq)
+
+### 13-02-2025
+#### Добавлено
+- Типы компаний региона Узбекистан для [контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)
+- Типы компаний региона Узбекистан для [юридических лиц](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico-jurlica-tip-urlica)
+- Реквизиты региона Узбекистан для [контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-rekwizity-uzbekistana)
+- Реквизиты региона Узбекистан для [юридических лиц](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-rekwizity-uzbekistana)
+
+### 12-02-2025
+#### Добавлено
+- Условие автоматического отключения JSON API пользователю в [Ограничения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-ogranicheniq)
+
+### 27-01-2025
+#### Добавлено
+- Добавлены [регональные заголовки](https://dev.moysklad.ru/doc/api/remap/1.2/index.html#mojsklad-json-api-obschie-swedeniq-regional-nye-zagolowki)
+- Ошибка  [16114](https://dev.moysklad.ru/doc/api/remap/1.2/index.html#mojsklad-json-api-oshibki-kody-oshibok-dlq-towarow) Ошибка сохранения товара: маркированный товар не может быть разливным
+
+### 16-01-2025
+#### Добавлено
+- Поле `service` в [Выполнение этапа производства](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+- Возможность назначать исполнителем не только сотрудника но и контрагента в [Выполнении этапа производства](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+
+### 16-01-2025
+#### Добавлено
+- поля `files`, `instruction`в [Производственные этапы](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+
+### 15-01-2025
+#### Добавлено
+- Добавлен параметр `withRecalculate` в эндпоинт [Краткий отчет об остатках](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-kratkij-otchet-ob-ostatkah).
+- Новые типы маркированной продукции `BICYCLE` для велосипедов, `NABEER` для безалкогольного пива, `SEAFOOD` для икры и морепродуктов, `VETPHARMA` для ветеринарных препаратов для [Товара](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary) и [Комплекта](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt-komplekty)
+
+### 25-12-2024
+#### Добавлено
+- Ошибки [25063](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-kart), [26114](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq), [26209, 26210](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-vypolnenij-atapow-proizwodstwa)
+- Поле `standardHourCost` в [Этап производства](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jetap-proizwodstwa), Стоимость нормо-часа
+- Поля `standardHourCost`, `enableHourAccounting` в [Этап техкарты](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tehkarta-tehkarty)
+- Поля `standardHourCost`, `enableHourAccounting` в [Производственные этапы](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+- Поля `standardHourCost`, `enableHourAccounting` в [Выполнение этапа производства](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+
+### 23-12-2024
+#### Изменены
+- Эндпоинты для работы с [Настройками уведомлений](https://dev.moysklad.ru/doc/api/remap/1.2/notification/#uwedomleniq-nastrojki-uwedomlenij)
+
+### 17-12-2024
+#### Добавлен
+- Параметр фильтрации `entityType` в [Отчетах Прибыльность](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-pribyl-nost)
+
+### 02-12-2024
+#### Добавлено
+- Вывод дополнительных полей в элементы [Пользовательских справочников](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik)
+- Вывод метаданных дополнительных полей в метаданные пользовательских справочников
+- Поле `ID` в метаданные пользовательского справочника
+
+#### Изменено
+- Актуализирована документация по [Пользовательским справочникам](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik)
 
 ### 19-11-2024
 #### Добавлено
@@ -120,7 +175,7 @@
 - Поле `performers` в [этапы производства](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jetap-proizwodstwa), Метаданные возможных исполнителей
 - Ошибка [25035](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
 - Добавлен новый тип уведомлений [Новое упоминание в ленте событий](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowoe-upominanie-w-lente-sobytij)
-- Добавлена новая группа уведомлений [Упоминания сотрудников](../notification/#uwedomleniq-nastrojki-uwedomlenij-atributy-suschnosti)
+- Добавлена новая группа уведомлений [Упоминания сотрудников](https://dev.moysklad.ru/doc/api/remap/1.2/notification/#uwedomleniq-nastrojki-uwedomlenij-struktura-dannyh)
 
 ### 23-04-2024
 #### Добавлено
@@ -254,6 +309,11 @@
 ### 05-10-2023
 #### Добавлено
 - Добавлены новые режимы reserve и inTransit [в краткий отчёт по остаткам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah)
+
+### 20-09-2023
+#### Удалены
+- Ставший неактуальным `5004` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-komissionera).
+- Ограничение на товар и его количество в позиции возврата на склад комиссионера для [полученного отчета комиссионера](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-poluchennyj-otchet-komissionera).
 
 ### 14-09-2023
 #### Добавлено
@@ -1073,7 +1133,7 @@
 ### 04-02-2021
 #### Изменено
 - Добавлен новый тип уведомлений [Уведомление из сценария](https://dev.moysklad.ru/doc/api/remap/1.2/notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-uwedomlenie-iz-scenariq)
-- Добавлена новая группа уведомлений [Сценарии](https://dev.moysklad.ru/doc/api/remap/1.2/notification/#uwedomleniq-nastrojki-uwedomlenij-atributy-suschnosti)
+- Добавлена новая группа уведомлений [Сценарии](https://dev.moysklad.ru/doc/api/remap/1.2/notification/#uwedomleniq-nastrojki-uwedomlenij-struktura-dannyh)
 
 ### 02-02-2021
 #### Добавлено
