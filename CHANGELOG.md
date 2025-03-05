@@ -1,6 +1,20 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 10-03-2023
+#### Добавлено
+- Поддержка комплектов в документах, содержащих договор комиссии:
+  - Отгрузка
+  - Заказ покупателя
+  - Возврат покупателя
+  - Полученный отчет комиссионера
+
+#### Изменено
+- Описание `32001` кода [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-dogoworow)
+
+#### Удалено
+- `18002` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-prodazh-otgruzok)
+
 ### 04-03-2025
 #### Изменено
 - Изменено описание поля `marksCheckMode` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), настройка проверки КМ перед продажей в ГИС МТ
