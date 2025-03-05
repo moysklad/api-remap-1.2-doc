@@ -1,16 +1,15 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 21-11-2025
+### 05-03-2025
 #### Добавлены
 - Документы [Заказ кодов маркировки](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-kodow-markirowki), [Вывод кодов маркировки из оборота](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vywod-kodow-markirowki-iz-oborota)
 - Ошибки [57000-57002](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-markirowki), [57100-57108](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-zakaza-kodow-markirowki)
 
 ### 04-03-2025
 #### Изменено
-- Изменено описание поля `marksCheckMode` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), настройка проверки КМ перед продажей в ГИС МТ
+- Описание поля `marksCheckMode` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh), настройка проверки КМ перед продажей в ГИС МТ
 
-### 04-03-2025
 #### Добавлено
 - Поле `archived` в [Серии](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-seriq)
 
