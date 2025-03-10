@@ -26,6 +26,7 @@ includes:
   - documents/commissionreportout
   - documents/retaildrawercashout
   - documents/productionStageCompletion
+  - documents/emissionorder
   - documents/processingorder
   - documents/customerOrder
   - documents/purchaseOrder
@@ -52,7 +53,6 @@ includes:
   - documents/factureout
   - documents/facturein
   - documents/processing
-  - documents/emissionorder
 
 search: true
 ---
