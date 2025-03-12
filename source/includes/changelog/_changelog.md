@@ -28,10 +28,10 @@
   - Полученный отчет комиссионера
 
 #### Изменено
-- Описание `32001` кода [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-dogoworow)
+- Описание `32001` кода [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dogoworow)
 
 #### Удалено
-- `18002` код [ошибки](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-prodazh-otgruzok)
+- `18002` код [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-prodazh-otgruzok)
 
 ### 04-03-2025
 #### Изменено
