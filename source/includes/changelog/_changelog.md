@@ -33,11 +33,15 @@
 #### Удалено
 - `18002` код [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-prodazh-otgruzok)
 
-### 04-03-2025
-#### Изменено
-- Изменено описание поля `marksCheckMode` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), настройка проверки КМ перед продажей в ГИС МТ
+### 05-03-2025
+#### Добавлены
+- Документы [Заказ кодов маркировки](../documents/#dokumenty-zakaz-kodow-markirowki), [Вывод кодов маркировки из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota)
+- Ошибки [57000-57002](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-markirowki), [57100-57108](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-zakaza-kodow-markirowki)
 
 ### 04-03-2025
+#### Изменено
+- Описание поля `marksCheckMode` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), настройка проверки КМ перед продажей в ГИС МТ
+
 #### Добавлено
 - Поле `archived` в [Серии](../dictionaries/#suschnosti-seriq)
 

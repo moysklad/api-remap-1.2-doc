@@ -22,9 +22,11 @@ includes:
   - documents/purchase_return
   - documents/prepayment_return
   - documents/payment_in
+  - documents/retireorder
   - documents/commissionreportout
   - documents/retaildrawercashout
   - documents/productionStageCompletion
+  - documents/emissionorder
   - documents/processingorder
   - documents/customerOrder
   - documents/purchaseOrder
