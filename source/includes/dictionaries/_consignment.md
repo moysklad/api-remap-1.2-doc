@@ -13,9 +13,10 @@
 | Название         | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                    |
 | ---------------- |:----------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**    | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                        |
+| **archived**     | Boolean                                                   | `=` `!=`                    | Добавлена ли серия в архив<br>`+Обязательное при ответе`                                                                                    |
 | **attributes**   | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция доп. полей Серии                                                                                                                  |
 | **assortment** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные товара/услуги/комплекта, которую представляет собой компонент<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` |
-| **barcodes**     | Array(Object)                                             | `=` `!=` `~` `~=` `=~`                                                                                                                            | Штрихкоды серии. Для фильтрации по полю необходимо указывать его в единственном числе **barcode**.                                                                                                                           |
+| **barcodes**     | Array(Object)                                             | `=` `!=` `~` `~=` `=~`                                                                                                                            | Штрихкоды серии  . Для фильтрации по полю необходимо указывать его в единственном числе **barcode**.                                                                                                                           |
 | **code**         | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Серии                                                                                                                                   |
 | **description**  | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Описание Серии                                                                                                                              |
 | **externalCode** | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Серии<br>`+Обязательное при ответе`                                                                                             |
@@ -101,6 +102,7 @@ curl -X GET
       "updated": "2017-05-12 10:51:15",
       "name": "product / consignment",
       "code": "1012",
+      "archived": false,
       "externalCode": "g9BOLNRZglk9NMOHxcrVV0",
       "label": "consignment",
       "barcodes": [
@@ -189,6 +191,7 @@ curl -X GET
   "updated": "2016-07-26 12:05:25",
   "name": "фацфацфвф (цфвцф) / Метка",
   "externalCode": "NptSJ1REgVkhqCV0RlyfV0",
+  "archived": false,
   "label": "Метка",
   "barcodes": [
     {
@@ -367,6 +370,7 @@ curl -X POST
     "updated": "2016-07-26 12:05:25",
     "name": "фацфацфвф (цфвцф) / Метка",
     "externalCode": "NptSJ1REgVkhqCV0RlyfV0",
+    "archived": false,
     "label": "Метка",
     "barcodes": [
       {
@@ -401,6 +405,7 @@ curl -X POST
     "name": "фацфацфвф (обхец) / Странный товар",
     "description": "Серии товаров с таким названием лучше отслеживать",
     "code": "ke21k421c1o42n4signment12",
+    "archived": false,
     "externalCode": "fbajkwbfu1249SACSKW241LKSFA2sa1",
     "label": "Странный товар",
     "barcodes": [
@@ -556,6 +561,7 @@ curl -X GET
   "updated": "2017-05-12 10:51:15",
   "name": "product / consignment",
   "code": "1012",
+  "archived": false,
   "externalCode": "g9BOLNRZglk9NMOHxcrVV0",
   "label": "consignment",
   "barcodes": [
@@ -653,6 +659,7 @@ curl -X GET
   "name": "фацфацфвф (обхец) / Странный товар",
   "description": "Серии товаров с таким названием лучше отслеживать",
   "code": "ke21k421c1o42n4signment12",
+  "archived": false,
   "externalCode": "fbajkwbfu1249SACSKW241LKSFA2sa1",
   "label": "Странный товар",
   "barcodes": [

@@ -19,10 +19,36 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 03-03-2025
+### 18-03-2025
 #### Добавлено
 - Поле `fiasCode__ru` для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-adres)
 - Поле `fiasCode__ru` для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-adres)
+
+### 10-03-2025
+#### Добавлено
+- Поддержка комплектов в документах, содержащих договор комиссии:
+  - Отгрузка
+  - Заказ покупателя
+  - Возврат покупателя
+  - Полученный отчет комиссионера
+
+#### Изменено
+- Описание `32001` кода [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dogoworow)
+
+#### Удалено
+- `18002` код [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-prodazh-otgruzok)
+
+### 05-03-2025
+#### Добавлены
+- Документы [Заказ кодов маркировки](../documents/#dokumenty-zakaz-kodow-markirowki), [Вывод кодов маркировки из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota)
+- Ошибки [57000-57002](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-markirowki), [57100-57108](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-zakaza-kodow-markirowki)
+
+### 04-03-2025
+#### Изменено
+- Описание поля `marksCheckMode` в [Точку продаж](../dictionaries/#suschnosti-tochka-prodazh), настройка проверки КМ перед продажей в ГИС МТ
+
+#### Добавлено
+- Поле `archived` в [Серии](../dictionaries/#suschnosti-seriq)
 
 ### 13-02-2025
 #### Добавлено
@@ -328,6 +354,11 @@
 ### 05-10-2023
 #### Добавлено
 - Добавлены новые режимы reserve и inTransit [в краткий отчёт по остаткам](../reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah)
+
+### 20-09-2023
+#### Удалены
+- Ставший неактуальным `5004` код [ошибки](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-komissionera).
+- Ограничение на товар и его количество в позиции возврата на склад комиссионера для [полученного отчета комиссионера](../documents/#dokumenty-poluchennyj-otchet-komissionera).
 
 ### 14-09-2023
 #### Добавлено
