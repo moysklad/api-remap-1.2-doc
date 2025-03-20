@@ -5,6 +5,11 @@
 #### Добавлено
 - Поле `description` в [Выполнение этапа производства](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
 
+### 18-03-2025
+#### Добавлено
+- Поле `fiasCode__ru` для [контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-adres)
+- Поле `fiasCode__ru` для [юридических лиц](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-adres)
+
 ### 10-03-2025
 #### Добавлено
 - Поддержка комплектов в документах, содержащих договор комиссии:
