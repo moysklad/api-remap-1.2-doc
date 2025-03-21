@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 21-03-2025
+#### Изменено
+- Описание поля `accountCountry` в [Настройках компании](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-kompanii)
+
 ### 18-03-2025
 #### Добавлено
 - Поле `fiasCode__ru` для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-adres)
