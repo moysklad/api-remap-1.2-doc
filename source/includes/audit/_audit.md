@@ -48,33 +48,34 @@
 
 Возможные значение параметра `source` преставлены ниже:
 
-| Значение параметра source      | Описание                         |
-| ------------------------------ | :------------------------------- |
-| **registration**               | Регистрация аккаунта             |
-| **clearrecyclebin**            | Автоматическая очистка корзины   |
-| **combine**                    | Объединение                      |
-| **connectors**                 | Синхронизация с ИМ               |
-| **copy**                       | Копирование                      |
-| **emailsend**                  | Отправка сообщения               |
-| **evotor**                     | Синхронизация с Эвотор           |
-| **export**                     | Экспорт                          |
-| **exportediclient1c**          | Экспорт в 1С Клиент ЭДО          |
-| **import**                     | Импорт                           |
-| **import1c**                   | Импорт из 1С                     |
-| **importAlfabank**             | Импорт из Альфа-Банка            |
-| **importModulebank**           | Импорт из Модульбанка            |
-| **importTinkoffbank**          | Импорт из Тинькофф Банка         |
-| **importTochkabank**           | Импорт из Точка Банка            |
-| **importediclient1c**          | Импорт в 1С Клиент ЭДО           |
-| **loginlogout**                | Вход или выход из МоегоСклада    |
-| **phone-1.0**                  | Phone API                        |
-| **posapi**                     | POS API                          |
-| **remap-1.0**                  | JSON API 1.0                     |
-| **remap-1.1**                  | JSON API 1.1                     |
-| **remap-1.2**                  | JSON API 1.2                     |
-| **restapi**                    | REST API                         |
-| **retail**                     | Точка продаж                     |
-| **app**                        | Все действия                     |
+| Значение параметра source      | Описание                       |
+| ------------------------------ |:-------------------------------|
+| **registration**               | Регистрация аккаунта           |
+| **clearrecyclebin**            | Автоматическая очистка корзины |
+| **combine**                    | Объединение                    |
+| **bulkcreate**                 | Массовое создание              |
+| **connectors**                 | Синхронизация с ИМ             |
+| **copy**                       | Копирование                    |
+| **emailsend**                  | Отправка сообщения             |
+| **evotor**                     | Синхронизация с Эвотор         |
+| **export**                     | Экспорт                        |
+| **exportediclient1c**          | Экспорт в 1С Клиент ЭДО        |
+| **import**                     | Импорт                         |
+| **import1c**                   | Импорт из 1С                   |
+| **importAlfabank**             | Импорт из Альфа-Банка          |
+| **importModulebank**           | Импорт из Модульбанка          |
+| **importTinkoffbank**          | Импорт из Тинькофф Банка       |
+| **importTochkabank**           | Импорт из Точка Банка          |
+| **importediclient1c**          | Импорт в 1С Клиент ЭДО         |
+| **loginlogout**                | Вход или выход из МоегоСклада  |
+| **phone-1.0**                  | Phone API                      |
+| **posapi**                     | POS API                        |
+| **remap-1.0**                  | JSON API 1.0                   |
+| **remap-1.1**                  | JSON API 1.1                   |
+| **remap-1.2**                  | JSON API 1.2                   |
+| **restapi**                    | REST API                       |
+| **retail**                     | Точка продаж                   |
+| **app**                        | Все действия                   |
 
 Возможные значение параметров `eventType` и `entityType` приведены в разделе [Фильтры](../audit/#audit-audit-poluchit-fil-try)
 
@@ -523,6 +524,7 @@ curl -X GET
 | **registration**               | Регистрация аккаунта                       |
 | **clearrecyclebin**            | Автоматическая очистка корзины             |
 | **combine**                    | Объединение                                |
+| **bulkcreate**                 | Массовое создание                          |
 | **connectors**                 | Синхронизация с ИМ                         |
 | **copy**                       | Копирование                                |
 | **emailsend**                  | Отправка сообщения                         |
