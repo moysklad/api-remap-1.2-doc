@@ -364,8 +364,7 @@ curl -X GET
  ```
 
 Теперь рассмотрим другой вариант работы с файлами в Товарах. Предположим, со временем понадобилось обновить список 
-файлов для Товара. Например устарела инструкция и нужно 
-удалить старую и прикрепить новую. Это можно сделать через сервис МойСклад, как было указано ранее или воспользоваться 
+файлов для Товара. Например устарела инструкция и нужно прикрепить новую. Это можно сделать через сервис МойСклад, как было указано ранее или воспользоваться 
 средствами JSON API.
 
 > Запрос на обновление списка файлов у Товара
@@ -378,15 +377,13 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '[
             {
-              "filename": "new_instruction.txt",
+              "filename": "new_instruction_step_1.txt",
               "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
             },
-            "meta": {
-                "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/bd1c0a3e-95ee-11e6-8a84-bae500000004/files/f2728180-6afd-4d37-8a13-f3b48069bbb6",
-                "type": "files",
-                "mediaType": "application/json",
-                "downloadHref": "https://api.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6"
-            }                   
+            {
+              "filename": "new_instruction_step_2.txt",
+              "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
+            }                  
           ]'  
   ```
 
@@ -402,8 +399,8 @@ curl -X GET
       "mediaType": "application/json",
       "downloadHref": "https://api.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6"
     },
-    "title": "new_instruction",
-    "filename": "new_instruction.txt",
+    "title": "new_instruction_step_1",
+    "filename": "new_instruction_step_1.txt",
     "size": 14052,
     "updated": "2019-01-24 16:55:24.567",
     "createdBy": {
@@ -418,17 +415,38 @@ curl -X GET
   },
   {
     "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/bd1c0a3e-95ee-11e6-8a84-bae500000004/files/f2728180-6afd-4d37-8a13-f3b48069bbb6",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/bd1c0a3e-95ee-11e6-8a84-bae500000004/files/f2728180-6afd-4d37-8a13-f3b48069bbb5",
+      "type": "files",
+      "mediaType": "application/json",
+      "downloadHref": "https://api.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb5"
+    },
+    "title": "new_instruction_step_2",
+    "filename": "new_instruction_step_2.txt",
+    "size": 14052,
+    "updated": "2019-01-24 16:55:24.567",
+    "createdBy": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/69f5683e-a49b-11ea-ac15-000e000000cf",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+            "type": "employee",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=69f5683e-a49b-11ea-ac15-000e000000cf"
+        }
+    }
+  },
+  {
+    "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/bd1c0a3e-95ee-11e6-8a84-bae500000004/files/f2728180-6afd-4d37-8a13-f3b48069bbb7",
         "type": "files",
         "mediaType": "application/json",
-        "downloadHref": "https://api.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6"
+        "downloadHref": "https://api.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb7"
     },
     "title": "description",
     "filename": "description.png",
     "size": 14052,
-    "updated": "2019-01-24 16:55:24.567",
+    "updated": "2019-01-24 16:11:22.411",
     "miniature": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6?miniature=true",
+        "href": "https://api.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb7?miniature=true",
         "type": "files",
         "mediaType": "image/png",
         "downloadHref": "https://miniature-prod.moysklad.ru/miniature/79b17fec-2f08-11eb-0a80-052200009a8a/documentminiature/7129822c-2409-417c-977f-31a1e889039a"

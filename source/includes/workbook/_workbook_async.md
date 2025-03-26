@@ -262,7 +262,6 @@ Location: https://123.selcdn.ru/batch-prod/batch/002b9772-8583-11eb-ac12-000c000
         }
       ]
     },
-    ...
     {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/cc99c055-fa34-11e5-9464-e4de00000069?expand=supplier",

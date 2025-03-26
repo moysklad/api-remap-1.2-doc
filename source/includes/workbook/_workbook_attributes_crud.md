@@ -44,7 +44,8 @@ JSON API описана в статье [Дополнительные поля](
 
 * *meta* - набор метаданных, заполняется автоматически при создании,
 * *id* - id атрибута, заполняется автоматически при создании,
-* *required* - флаг обязательности атрибута, если равен true - значение атрибута должно быть заполнено при создании или изменении сущности. (По умолчанию false. Для атрибутов типа Флажок не может быть изменен)
+* *required* - флаг обязательности атрибута, если равен true - значение атрибута должно быть заполнено при создании или изменении сущности (По умолчанию false. Для атрибутов типа Флажок не может быть изменен),
+* *authorApplication* - [метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) Решения, создавшего дополнительное поле.
 
 Создание двух дополнительных полей с одинаковыми именами запрещено.
 
@@ -232,50 +233,51 @@ curl
 
 
 ```json
-    "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes",
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes",
+    "type": "attributemetadata",
+    "mediaType": "application/json",
+    "size": 3,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
         "type": "attributemetadata",
-        "mediaType": "application/json",
-        "size": 3,
-        "limit": 1000,
-        "offset": 0
+        "mediaType": "application/json"
+      },
+      "id": "acd884ce-b44f-11e9-7ae5-884b00009002",
+      "name": "Материал корпуса (дополнение)",
+      "type": "string",
+      "required": false
     },
-    "rows": [
-        {
-        "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
-            "type": "attributemetadata",
-            "mediaType": "application/json"
-        },
-        "id": "acd884ce-b44f-11e9-7ae5-884b00009002",
-        "name": "Материал корпуса (дополнение)",
-        "type": "string",
-        "required": false
-    	},
-    	{
-        "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f",
-            "type": "attributemetadata",
-            "mediaType": "application/json"
-        },
-        "id": "33b2fe47-b465-11e9-7ae5-884b0001562f",
-        "name": "Наличие CD-Rom",
-        "type": "boolean",
-        "required": false
-    	},
-   	 	{
-        "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b30b2e-b465-11e9-7ae5-884b00015630",
-            "type": "attributemetadata",
-            "mediaType": "application/json"
-        },
-        "id": "33b30b2e-b465-11e9-7ae5-884b00015630",
-        "name": "Наличие type-C разъема",
-        "type": "boolean",
-        "required": false
-    	}
-    ]
-
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "33b2fe47-b465-11e9-7ae5-884b0001562f",
+      "name": "Наличие CD-Rom",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b30b2e-b465-11e9-7ae5-884b00015630",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+      },
+      "id": "33b30b2e-b465-11e9-7ae5-884b00015630",
+      "name": "Наличие type-C разъема",
+      "type": "boolean",
+      "required": false
+    }
+  ]
+}
 ```
 
 Если указать в запросе id конкретного атрибута, то получим только его.
