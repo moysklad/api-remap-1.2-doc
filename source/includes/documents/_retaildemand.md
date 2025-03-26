@@ -22,14 +22,12 @@
 | **externalCode**       | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Розничной продажи<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                |
 | **files**              | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`                                                |
 | **fiscal**             | Boolean                                                   |                                                                                                                                                   | Отметка о том, был ли использован ФР<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                      |
-| **fiscalPrinterInfo**  | String(255)                                               |                                                                                                                                                   | Информация о фискальном регистраторе                                                                                                                                                         |
 | **group**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                     |
 | **id**                 | UUID                                                      | `=` `!=`                                                                                                                                          | ID Розничной продажи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                    |
 | **meta**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Розничной продажи<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                 |
 | **moment**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                               |
 | **name**               | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Розничной продажи<br>`+Обязательное при ответе` `+Change-handler`                                                                                                               |
 | **noCashSum**          | Float                                                     |                                                                                                                                                   | Оплачено картой<br>`+Обязательное при ответе`                                                                                                                                                |
-| **ofdCode**            | String(255)                                               |                                                                                                                                                   | Код оператора фискальных данных                                                                                                                                                              |
 | **organization**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                         |
 | **organizationAccount** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand`                                                                                                                                                         |
 | **owner**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                            |
@@ -550,12 +548,10 @@ curl -X GET
             "sum": 200,
             "payedSum": 200,
             "fiscal": true,
-            "fiscalPrinterInfo": "The freaking best FiscalPrinter ever!!",
             "documentNumber": 39,
             "checkNumber": 124421,
             "checkSum": 200,
-            "sessionNumber": 251251,
-            "ofdCode": 13
+            "sessionNumber": 251251
           }'  
 ```
 
@@ -646,7 +642,6 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "fiscalPrinterInfo": "The freaking best FiscalPrinter ever!!",
   "documentNumber": 39,
   "checkNumber": 124421,
   "checkSum": 200,
@@ -701,12 +696,10 @@ curl -X GET
             "sum": 200,
             "payedSum": 200,
             "fiscal": true,
-            "fiscalPrinterInfo": "The freaking best FiscalPrinter ever!!",
             "documentNumber": 39,
             "checkNumber": 124421,
             "checkSum": 200,
             "sessionNumber": 251251,
-            "ofdCode": 13,
             "positions": [
               {
                 "quantity": 10,
@@ -839,7 +832,6 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "fiscalPrinterInfo": "The freaking best FiscalPrinter ever!!",
   "documentNumber": 39,
   "checkNumber": 124421,
   "checkSum": 200,
@@ -894,12 +886,10 @@ curl -X GET
             "sum": 200,
             "payedSum": 200,
             "fiscal": true,
-            "fiscalPrinterInfo": "The freaking best FiscalPrinter ever!!",
             "documentNumber": 39,
             "checkNumber": 124421,
             "checkSum": 200,
             "sessionNumber": 251251,
-            "ofdCode": 13,
             "positions": [
               {
                 "quantity": 10,
@@ -1054,7 +1044,6 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "fiscalPrinterInfo": "The freaking best FiscalPrinter ever!!",
   "documentNumber": 39,
   "checkNumber": 124421,
   "checkSum": 200,
@@ -1129,12 +1118,10 @@ curl -X GET
               "sum": 32402222220,
               "payedSum": 23622200,
               "fiscal": false,
-              "fiscalPrinterInfo": "The freaking worst FiscalPrinter ever!!",
               "documentNumber": 3,
               "checkNumber": 1221,
               "checkSum": 1,
-              "sessionNumber": 251251,
-              "ofdCode": 13
+              "sessionNumber": 251251
             }
           ]
 '  
@@ -1354,7 +1341,6 @@ curl -X GET
       }
     },
     "payedSum": 0,
-    "fiscalPrinterInfo": "The freaking worst FiscalPrinter ever!!",
     "documentNumber": 3,
     "checkNumber": 1221,
     "checkSum": 1,
@@ -2012,12 +1998,10 @@ curl -X GET
             "sum": 32402222220,
             "payedSum": 23622200,
             "fiscal": false,
-            "fiscalPrinterInfo": "The freaking worst FiscalPrinter ever!!",
             "documentNumber": 3,
             "checkNumber": 1221,
             "checkSum": 1,
-            "sessionNumber": 251251,
-            "ofdCode": 13
+            "sessionNumber": 251251
           }'  
 ```
 
@@ -2121,7 +2105,6 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "fiscalPrinterInfo": "The freaking worst FiscalPrinter ever!!",
   "documentNumber": 3,
   "checkNumber": 1221,
   "checkSum": 1,
@@ -2174,12 +2157,10 @@ curl -X GET
             "sum": 32400,
             "payedSum": 23622200,
             "fiscal": true,
-            "fiscalPrinterInfo": "The freaking best FiscalPrinter ever!!",
             "documentNumber": 329,
             "checkNumber": 124421,
             "checkSum": 200,
             "sessionNumber": 251251,
-            "ofdCode": 13,
             "positions": [
               {
                 "quantity": 10,
@@ -2321,7 +2302,6 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "fiscalPrinterInfo": "The freaking best FiscalPrinter ever!!",
   "documentNumber": 329,
   "checkNumber": 124421,
   "checkSum": 200,
