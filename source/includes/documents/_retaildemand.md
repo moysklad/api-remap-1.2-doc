@@ -21,7 +21,6 @@
 | **documentNumber**     | String(255)                                               |                                                                                                                                                   | Номер документа                                                                                                                                                                              |
 | **externalCode**       | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Розничной продажи<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                |
 | **files**              | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`                                                |
-| **fiscal**             | Boolean                                                   |                                                                                                                                                   | Отметка о том, был ли использован ФР<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                      |
 | **group**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                     |
 | **id**                 | UUID                                                      | `=` `!=`                                                                                                                                          | ID Розничной продажи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                    |
 | **meta**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Розничной продажи<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                 |
@@ -249,7 +248,6 @@ curl -X GET
         }
       },
       "payedSum": 0,
-      "fiscal": false,
       "retailStore": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
@@ -363,7 +361,6 @@ curl -X GET
         }
       },
       "payedSum": 0,
-      "fiscal": false,
       "retailStore": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
@@ -499,7 +496,6 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "fiscal": false,
   "retailStore": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
@@ -547,7 +543,6 @@ curl -X GET
             "applicable": true,
             "sum": 200,
             "payedSum": 200,
-            "fiscal": true,
             "documentNumber": 39,
             "checkNumber": 124421,
             "checkSum": 200,
@@ -645,7 +640,6 @@ curl -X GET
   "documentNumber": 39,
   "checkNumber": 124421,
   "checkSum": 200,
-  "fiscal": true,
   "sessionNumber": 13,
   "retailStore": {
     "meta": {
@@ -695,7 +689,6 @@ curl -X GET
             "applicable": true,
             "sum": 200,
             "payedSum": 200,
-            "fiscal": true,
             "documentNumber": 39,
             "checkNumber": 124421,
             "checkSum": 200,
@@ -835,7 +828,6 @@ curl -X GET
   "documentNumber": 39,
   "checkNumber": 124421,
   "checkSum": 200,
-  "fiscal": true,
   "sessionNumber": 13,
   "retailStore": {
     "meta": {
@@ -885,7 +877,6 @@ curl -X GET
             "applicable": true,
             "sum": 200,
             "payedSum": 200,
-            "fiscal": true,
             "documentNumber": 39,
             "checkNumber": 124421,
             "checkSum": 200,
@@ -1047,7 +1038,6 @@ curl -X GET
   "documentNumber": 39,
   "checkNumber": 124421,
   "checkSum": 200,
-  "fiscal": true,
   "sessionNumber": 13,
   "retailStore": {
     "meta": {
@@ -1117,7 +1107,6 @@ curl -X GET
               "applicable": false,
               "sum": 32402222220,
               "payedSum": 23622200,
-              "fiscal": false,
               "documentNumber": 3,
               "checkNumber": 1221,
               "checkSum": 1,
@@ -1223,7 +1212,6 @@ curl -X GET
       }
     },
     "payedSum": 0,
-    "fiscal": false,
     "retailStore": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
@@ -1344,7 +1332,6 @@ curl -X GET
     "documentNumber": 3,
     "checkNumber": 1221,
     "checkSum": 1,
-    "fiscal": false,
     "sessionNumber": 13,
     "retailStore": {
       "meta": {
@@ -1703,7 +1690,6 @@ curl -X GET
   "vatEnabled": true,
   "vatIncluded": true,
   "payedSum": 0,
-  "fiscal": false,
   "cashSum": 0,
   "noCashSum": 0,
   "qrSum": 0,
@@ -1810,7 +1796,6 @@ curl -X GET
   "vatEnabled": true,
   "vatIncluded": true,
   "payedSum": 0,
-  "fiscal": false,
   "cashSum": 0,
   "noCashSum": 0,
   "qrSum": 0,
@@ -1939,7 +1924,6 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "fiscal": false,
   "retailStore": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
@@ -1997,7 +1981,6 @@ curl -X GET
             "applicable": false,
             "sum": 32402222220,
             "payedSum": 23622200,
-            "fiscal": false,
             "documentNumber": 3,
             "checkNumber": 1221,
             "checkSum": 1,
@@ -2108,7 +2091,6 @@ curl -X GET
   "documentNumber": 3,
   "checkNumber": 1221,
   "checkSum": 1,
-  "fiscal": false,
   "sessionNumber": 13,
   "retailStore": {
     "meta": {
@@ -2156,7 +2138,6 @@ curl -X GET
             "applicable": true,
             "sum": 32400,
             "payedSum": 23622200,
-            "fiscal": true,
             "documentNumber": 329,
             "checkNumber": 124421,
             "checkSum": 200,
@@ -2305,7 +2286,6 @@ curl -X GET
   "documentNumber": 329,
   "checkNumber": 124421,
   "checkSum": 200,
-  "fiscal": true,
   "sessionNumber": 13,
   "retailStore": {
     "meta": {
