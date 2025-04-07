@@ -11,7 +11,7 @@
 |--------------------------|:----------------------------------------------------------|:---------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**            | UUID                                                      |                            | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                              |
 | **created**              | DateTime                                                  |                            | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                  |
-| **defect**               | Boolean                                                   |                            | Признак брака                                                                                                                                                                                     |
+| **defect**               | Boolean                                                   |                            | Признак брака<br>`+Обязательное при ответе` `+После создания изменить нельзя`                                                                                                                     |
 | **enableHourAccounting** | Boolean                                                   |                            | Признак активности учета по нормо-часам<br>`+Обязательное при ответе`                                                                                                                             |
 | **externalCode**         | String(255)                                               |                            | Внешний код Выполнения этапа производства<br>`+Обязательное при ответе`                                                                                                                           |
 | **group**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                          |
@@ -28,7 +28,7 @@
 | **productionStage**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | [Производственный этап](#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)<br>`+Expand` `+После создания изменить нельзя`                                                                |
 | **productionVolume**     | Double                                                    |                            | Объем производства<br>`+Обязательное при ответе`                                                                                                                                                  |
 | **products**             | MetaArray                                                 |                            | Метаданные Продуктов выполнения этапа производства. Есть только у последнего этапа. [Подробнее тут](#dokumenty-vypolnenie-atapa-proizwodstwa-produkty-wypolneniq-atapa-proizwodstwa)<br>`+Expand` |
-| **service**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  |                            | Услуга, выполняемая контрагентом                                                                                                                                                                  |
+| **service**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Услуга, выполняемая контрагентом                                                                                                                                                                  |
 | **shared**               | Boolean                                                   |                            | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                        |
 | **standardHourCost**     | Double                                                    |                            | Стоимость нормо-часа<br>`+Обязательное при ответе`                                                                                                                                                |
 | **updated**              | DateTime                                                  |                            | Момент последнего обновления Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                     |
@@ -174,7 +174,8 @@ curl -X GET
       "productionVolume": 100000,
       "processingUnitCost": 0.0,
       "labourUnitCost": 0.0,
-      "standardHour": 0.0
+      "standardHour": 0.0,
+      "defect": false
     },
     {
       "meta": {
@@ -242,7 +243,8 @@ curl -X GET
       "productionVolume": 1,
       "processingUnitCost": 0.0,
       "labourUnitCost": 0.0,
-      "standardHour": 0.0
+      "standardHour": 0.0,
+      "defect": false
     },
     {
       "meta": {
@@ -310,7 +312,8 @@ curl -X GET
       "productionVolume": 1,
       "processingUnitCost": 0.0,
       "labourUnitCost": 0.0,
-      "standardHour": 0.0
+      "standardHour": 0.0,
+      "defect": false
     },
     {
       "meta": {
@@ -378,7 +381,8 @@ curl -X GET
       "productionVolume": 1.1235,
       "processingUnitCost": 0.0,
       "labourUnitCost": 0.0,
-      "standardHourUnit": 0.0
+      "standardHourUnit": 0.0,
+      "defect": false
     },
     {
       "meta": {
@@ -446,7 +450,8 @@ curl -X GET
       "productionVolume": 1.6,
       "processingUnitCost": 0.0,
       "labourUnitCost": 0.0,
-      "standardHourUnit": 0.0
+      "standardHourUnit": 0.0,
+      "defect": false
     }
   ]
 }
@@ -554,11 +559,12 @@ curl -X GET
   "productionVolume": 5,
   "processingUnitCost": 10.0,
   "labourUnitCost": 20.0,
-  "standardHourUnit": 30.0
+  "standardHourUnit": 30.0,
+  "defect": false  
 }
 ```
 
-> Пример создания нового Выполнения этапа производства с более насыщенным телом запроса.
+> Пример создания нового Выполнения этапа производства с признаком брака и более насыщенным телом запроса.
 
 ```shell
   curl -X POST
@@ -605,7 +611,8 @@ curl -X GET
             "productionVolume": 5,
             "processingUnitCost": 10.0,
             "labourUnitCost": 20.0,
-            "standardHourUnit": 30.0
+            "standardHourUnit": 30.0,
+            "defect": true            
           }'  
 ```
 
@@ -688,7 +695,8 @@ curl -X GET
   "productionVolume": 5,
   "processingUnitCost": 10.0,
   "labourUnitCost": 20.0,
-  "standardHourUnit": 30.0
+  "standardHourUnit": 30.0,
+  "defect": true
 }
 ```
 > Пример создания нового Выполнения этапа, где исполнителем указан контрагент и передана услуга.
@@ -816,7 +824,8 @@ curl -X GET
   "productionVolume": 5,
   "processingUnitCost": 10.0,
   "labourUnitCost": 20.0,
-  "standardHourUnit": 30.0
+  "standardHourUnit": 30.0,
+  "defect": false  
 }
 ```
 
@@ -949,7 +958,8 @@ curl -X GET
     "productionVolume": 15,
     "processingUnitCost": 0.0,
     "labourUnitCost": 0.0,
-    "standardHourUnit": 0.0
+    "standardHourUnit": 0.0,
+    "defect": false    
   },
   {
     "meta": {
@@ -1017,7 +1027,8 @@ curl -X GET
     "productionVolume": 5,
     "processingUnitCost": 0.0,
     "labourUnitCost": 0.0,
-    "standardHourUnit": 0.0
+    "standardHourUnit": 0.0,
+    "defect": false    
   }
 ]
 ```
@@ -1177,7 +1188,9 @@ curl -X GET
   "productionVolume": 100000,
   "processingUnitCost": 0.0,
   "labourUnitCost": 0.0,
-  "standardHourUnit": 0.0
+  "standardHourUnit": 0.0,
+  "productionVolume": 0.1,
+  "defect": false
 }
 ```
 
@@ -1277,7 +1290,8 @@ curl -X GET
   "productionVolume": 22,
   "processingUnitCost": 0.0,
   "labourUnitCost": 0.0,
-  "standardHourUnit": 0.0
+  "standardHourUnit": 0.0,
+  "defect": false
 }
 ```
 
