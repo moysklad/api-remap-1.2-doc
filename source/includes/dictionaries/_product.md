@@ -36,7 +36,8 @@
 | **isSerialTrackable**    | Boolean                                                   | `=` `!=`                                                                                                                                          | Учет по серийным номерам. Данная отметка не сочетается с признаками **weighed**, **alcoholic**, **ppeType**, **trackingType**, **onTap**.                                                                                                                 |
 | **meta**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Товара<br>`+Обязательное при ответе`                                                                                                                                                                                                           |
 | **minPrice**             | Object                                                    |                                                                                                                                                   | Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-minimal-naq-cena)                                                                                                                              |
-| **minimumBalance**       | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Неснижаемый остаток                                                                                                                                                                                                                                       |
+| **minimumBalance**       | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Неснижаемый остаток<br>`+Устаревшее`                                                                                                                                                                                                                      |
+| **minimumStock**         | Object                                                    |                                                                                                                                                   | Неснижаемый остаток. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-nesnizhaemyj-ostatok)<br>`+Выводится по запросу`                                                                                            |
 | **name**                 | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Товара<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                                                              |
 | **owner**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные владельца (Сотрудника)<br>`+Expand`                                                                                                                                                                                                            |
 | **packs**                | Array(Object)                                             |                                                                                                                                                   | Упаковки Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)                                                                                                                                |
@@ -275,6 +276,60 @@
 | ------------ | :-------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------- |
 | **value**    | Float                                                     | Значение цены<br>`+Обязательное при ответе`                                                                                        |
 | **currency** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)<br>`+Обязательное при ответе` `+Expand` |
+
+##### Неснижаемый остаток
+Неснижаемый остаток — минимальное количество товара, которое всегда должно быть на складе.
+
+Типы Неснижаемого остатка:
+
++ ALL_WAREHOUSE_SUM (В сумме на всех складах)
++ ALL_WAREHOUSE_SAME (Одинаковый на всех складах)
++ WAREHOUSE_VARIED (Задан для каждого склада)
+
+Примеры можно посмотреть в разделах [получения](../dictionaries/#suschnosti-towar-poluchit-spisok-towarow), [создания](../dictionaries/#suschnosti-towar-sozdat-towar)
+или [обновления](../dictionaries/#suschnosti-towar-izmenit-towar) товаров.
+[//]: # (TODO Строку ниже раскоментировать, и нужно добавить ссылку на раздел с фичей fields. Раздел добавится в тикете https://lognex.atlassian.net/browse/DND-2905)
+[//]: # (Особенности: поле Неснижаемого остатка выводится только, если пользователь API сам пожелал увидеть его в выводе. )
+
+###### Атрибуты Неснижаемого остатка с типом ALL_WAREHOUSE_SUM
+
+| Название     | Тип    | Описание                                                                                                         |
+|--------------|:-------|:-----------------------------------------------------------------------------------------------------------------|
+| **type**     | String | Разновидность Неснижаемого остатка<br>`+Обязательное при ответе` `+Только для чтения`                            |
+| **quantity** | Double | Количество Неснижаемого остатка в сумме на всех складах<br>`+Обязательное при ответе` `+Необходимо при создании` |
+
+###### Атрибуты Неснижаемого остатка с типом ALL_WAREHOUSE_SAME
+
+| Название     | Тип    | Описание                                                                                                               |
+|--------------|:-------|:-----------------------------------------------------------------------------------------------------------------------|
+| **type**     | String | Разновидность Неснижаемого остатка<br>`+Обязательное при ответе` `+Только для чтения`                                  |
+| **quantity** | Double | Количество Неснижаемого остатка одинаковое для каждого склада<br>`+Обязательное при ответе` `+Необходимо при создании` |
+
+###### Атрибуты Неснижаемого остатка с типом WAREHOUSE_VARIED
+
+| Название          | Тип       | Описание                                                                                                             |
+|-------------------|:----------|:---------------------------------------------------------------------------------------------------------------------|
+| **type**          | String    | Разновидность Неснижаемого остатка<br>`+Обязательное при ответе` `+Только для чтения`                                |
+| **storebalances** | MetaArray | Количество Неснижаемого остатка заданное для каждого склада<br>`+Обязательное при ответе` `+Необходимо при создании` |
+
+Структура объекта в коллекции **storebalances**:
+
+| Название     | Тип                                                       | Описание                                                                                                          |
+|--------------|:----------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------|
+| **meta**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Неснижаемого остатка<br>`+Обязательное при ответе` `+Только для чтения`                                |
+| **store**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные склада для которого задан Неснижаемый остаток<br>`+Обязательное при ответе` `+Необходимо при создании` |
+| **quantity** | Double                                                    | Количество Неснижаемого остатка для склада<br>`+Обязательное при ответе` `+Необходимо при создании`               |
+
+Для создания или изменения Неснижаемого остатка для склада (складов) можно передать в теле запроса на [создание](../dictionaries/#suschnosti-towar-sozdat-towar) 
+или [обновление](../dictionaries/#suschnosti-towar-izmenit-towar) товара Неснижаемые остатки с указанием склада и количества неснижаемого остатка для данного склада. 
+Также есть отдельные ресурсы для управления Неснижаемыми остатками по складам:
+
++ Получение списка (`/entity/product/{product_id}/storebalances`)
++ Получение объекта (`/entity/product/{product_id}/storebalances/{minimumstock_id}`)
++ Создание (`/entity/product/{product_id}/storebalances`)
++ Изменение (`/entity/product/{product_id}/storebalances/{minimumstock_id}`)
++ Удаление (`/entity/product/{product_id}/storebalances/{minimumstock_id}`)
+
 
 ##### Изображение: структура и загрузка.
 При запросе Товара с изображениями будет выведено json представление этого Товара, содержащее поле **images**. Данное поле является 
@@ -870,6 +925,370 @@ curl -X GET
         }
       ],
       "ppeType" : "2400001323807"
+    }
+  ]
+}
+```
+
+> Получить список Товаров с выводом Неснижаемого остатка
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/product?fields=minimumStock"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка Товаров с выводом Неснижаемого остатка.
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/?fields=minimumStock",
+    "type": "product",
+    "mediaType": "application/json",
+    "size": 3,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/15007028-137a-11f0-ac15-001100000008",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=14ff096e-137a-11f0-ac15-001100000006"
+      },
+      "id": "15007028-137a-11f0-ac15-001100000008",
+      "accountId": "762af84a-0ec6-11f0-ac15-001000000001",
+      "shared": true,
+      "group": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/762c4293-0ec6-11f0-ac15-001000000002",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2025-04-07 09:33:42.574",
+      "name": "Картофель",
+      "externalCode": "CKZHMt1FgJgYEoLogvpi40",
+      "archived": false,
+      "pathName": "",
+      "useParentVat": true,
+      "images": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/15007028-137a-11f0-ac15-001100000008/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "minPrice": {
+        "value": 0,
+        "currency": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+          }
+        }
+      },
+      "salePrices": [
+        {
+          "value": 0,
+          "currency": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+              "type": "currency",
+              "mediaType": "application/json",
+              "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+            }
+          },
+          "priceType": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/77f67b4c-0ec6-11f0-ac15-0012000000a5",
+              "type": "pricetype",
+              "mediaType": "application/json"
+            },
+            "id": "77f67b4c-0ec6-11f0-ac15-0012000000a5",
+            "name": "Цена продажи",
+            "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+          }
+        }
+      ],
+      "buyPrice": {
+        "value": 0,
+        "currency": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+          }
+        }
+      },
+      "paymentItemType": "GOOD",
+      "discountProhibited": false,
+      "weight": 0,
+      "volume": 0,
+      "minimumBalance": 10,
+      "variantsCount": 0,
+      "isSerialTrackable": false,
+      "trackingType": "NOT_TRACKED",
+      "files": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/15007028-137a-11f0-ac15-001100000008/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "minimumStock": {
+        "type": "ALL_WAREHOUSE_SUM",
+        "quantity": 10
+      }
+    },
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/291872e6-137a-11f0-ac15-00110000000f",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=29185f80-137a-11f0-ac15-00110000000d"
+      },
+      "id": "291872e6-137a-11f0-ac15-00110000000f",
+      "accountId": "762af84a-0ec6-11f0-ac15-001000000001",
+      "shared": true,
+      "group": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/762c4293-0ec6-11f0-ac15-001000000002",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2025-04-07 09:33:04.460",
+      "name": "Помидоры",
+      "code": "1",
+      "externalCode": "3mFqwJgqhuIuGeP0Vsqzh3",
+      "archived": false,
+      "pathName": "",
+      "useParentVat": true,
+      "images": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/291872e6-137a-11f0-ac15-00110000000f/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "minPrice": {
+        "value": 0,
+        "currency": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+          }
+        }
+      },
+      "salePrices": [
+        {
+          "value": 0,
+          "currency": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+              "type": "currency",
+              "mediaType": "application/json",
+              "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+            }
+          },
+          "priceType": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/77f67b4c-0ec6-11f0-ac15-0012000000a5",
+              "type": "pricetype",
+              "mediaType": "application/json"
+            },
+            "id": "77f67b4c-0ec6-11f0-ac15-0012000000a5",
+            "name": "Цена продажи",
+            "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+          }
+        }
+      ],
+      "buyPrice": {
+        "value": 0,
+        "currency": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+          }
+        }
+      },
+      "paymentItemType": "GOOD",
+      "discountProhibited": false,
+      "weight": 0,
+      "volume": 0,
+      "variantsCount": 0,
+      "isSerialTrackable": false,
+      "trackingType": "NOT_TRACKED",
+      "files": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/291872e6-137a-11f0-ac15-00110000000f/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "minimumStock": {
+        "type": "ALL_WAREHOUSE_SAME",
+        "quantity": 5
+      }
+    },
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/3bdfdb5b-137a-11f0-ac15-001100000018",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=3bdfb95e-137a-11f0-ac15-001100000016"
+      },
+      "id": "3bdfdb5b-137a-11f0-ac15-001100000018",
+      "accountId": "762af84a-0ec6-11f0-ac15-001000000001",
+      "shared": true,
+      "group": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/762c4293-0ec6-11f0-ac15-001000000002",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2025-04-07 09:33:35.954",
+      "name": "Баклажаны",
+      "code": "00005",
+      "externalCode": "jIWckEqShIHKVVLBacIy02",
+      "archived": false,
+      "pathName": "",
+      "useParentVat": true,
+      "images": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/3bdfdb5b-137a-11f0-ac15-001100000018/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "minPrice": {
+        "value": 0,
+        "currency": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+          }
+        }
+      },
+      "salePrices": [
+        {
+          "value": 0,
+          "currency": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+              "type": "currency",
+              "mediaType": "application/json",
+              "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+            }
+          },
+          "priceType": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/77f67b4c-0ec6-11f0-ac15-0012000000a5",
+              "type": "pricetype",
+              "mediaType": "application/json"
+            },
+            "id": "77f67b4c-0ec6-11f0-ac15-0012000000a5",
+            "name": "Цена продажи",
+            "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+          }
+        }
+      ],
+      "buyPrice": {
+        "value": 0,
+        "currency": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+          }
+        }
+      },
+      "paymentItemType": "GOOD",
+      "discountProhibited": false,
+      "weight": 0,
+      "volume": 0,
+      "variantsCount": 0,
+      "isSerialTrackable": false,
+      "trackingType": "NOT_TRACKED",
+      "files": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/3bdfdb5b-137a-11f0-ac15-001100000018/files",
+          "type": "files",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "minimumStock": {
+        "type": "WAREHOUSE_VARIED",
+        "storebalances": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/3bdfdb5b-137a-11f0-ac15-001100000018/storebalances",
+            "type": "minimumstock",
+            "mediaType": "application/json",
+            "size": 1,
+            "limit": 1000,
+            "offset": 0
+          }
+        }
+      }
     }
   ]
 }
@@ -1716,6 +2135,135 @@ curl -X GET
 }
 ```
 
+> Пример запроса на создание Товара с заполненным полем Неснижаемого остатка.
+
+  ```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/product"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "name": "Картофель",
+            "minimumStock": {
+              "type": "ALL_WAREHOUSE_SUM",
+              "quantity": 10
+            }
+          }'  
+  ```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного Товара с Неснижаемым остатком.
+
+  ```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/15007028-137a-11f0-ac15-001100000008",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+    "type": "product",
+    "mediaType": "application/json",
+    "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=14ff096e-137a-11f0-ac15-001100000006"
+  },
+  "id": "15007028-137a-11f0-ac15-001100000008",
+  "accountId": "762af84a-0ec6-11f0-ac15-001000000001",
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/762c4293-0ec6-11f0-ac15-001000000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2025-04-07 09:33:42.574",
+  "name": "Картофель",
+  "externalCode": "CKZHMt1FgJgYEoLogvpi40",
+  "archived": false,
+  "pathName": "",
+  "useParentVat": true,
+  "images": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/15007028-137a-11f0-ac15-001100000008/images",
+      "type": "image",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "minPrice": {
+    "value": 0,
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+      }
+    }
+  },
+  "salePrices": [
+    {
+      "value": 0,
+      "currency": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json",
+          "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+        }
+      },
+      "priceType": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/77f67b4c-0ec6-11f0-ac15-0012000000a5",
+          "type": "pricetype",
+          "mediaType": "application/json"
+        },
+        "id": "77f67b4c-0ec6-11f0-ac15-0012000000a5",
+        "name": "Цена продажи",
+        "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+      }
+    }
+  ],
+  "buyPrice": {
+    "value": 0,
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+      }
+    }
+  },
+  "paymentItemType": "GOOD",
+  "discountProhibited": false,
+  "weight": 0,
+  "volume": 0,
+  "minimumBalance": 10,
+  "variantsCount": 0,
+  "isSerialTrackable": false,
+  "trackingType": "NOT_TRACKED",
+  "files": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/15007028-137a-11f0-ac15-001100000008/files",
+      "type": "files",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "minimumStock": {
+    "type": "ALL_WAREHOUSE_SUM",
+    "quantity": 10
+  }
+}
+```
+
 ### Массовое создание и обновление товаров 
 [Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) товаров.
 В теле запроса нужно передать массив, содержащий JSON представления товаров, которые вы хотите создать или обновить.
@@ -2438,7 +2986,7 @@ curl -X GET
 + Если у данного атрибута в составе объекта значение присутствует, однако оно отсутствует
 в передаваемой в теле запроса коллекции (не передается совсем), то значение атрибута объекта не изменяется.
 
-Для обновленя полей алкогольной продукции в теле запроса на обновление товара должен присутствовать объект **alcoholic**,
+Для обновления полей алкогольной продукции в теле запроса на обновление товара должен присутствовать объект **alcoholic**,
 с вложенными в него полями, отражающими свойства алкогольной продукции:
 
 | Название                       | Описание                     |
@@ -3375,5 +3923,204 @@ curl -X GET
   "volume": 400,
   "isSerialTrackable": false,
   "trackingType": "NOT_TRACKED"
+}
+```  
+
+> Пример запроса на изменение Товара с Неснижаемым остатком.
+
+```shell
+  curl -X PUT
+    "https://api.moysklad.ru/api/remap/1.2/entity/product/3bdfdb5b-137a-11f0-ac15-001100000018"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+    -d '
+{
+  "minimumStock": {
+    "type": "WAREHOUSE_VARIED",
+    "storebalances": [
+      {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/88df2fc1-1065-11f0-ac15-000700000012/storebalances/de922f92-113b-11f0-ac15-001000000009",
+          "type": "minimumstock",
+          "mediaType": "application/json"
+        },
+        "quantity": 2.5,
+        "store": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/da1c5548-0ecf-11f0-ac15-001200000125",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "type": "store",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=da1c5548-0ecf-11f0-ac15-001200000125"
+          }
+        }
+      },
+      {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/88df2fc1-1065-11f0-ac15-000700000012/storebalances/de922f92-113b-11f0-ac15-001000000001",
+          "type": "minimumstock",
+          "mediaType": "application/json"
+        },
+        "quantity": 1.5,
+        "store": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/da1c5548-0ecf-11f0-ac15-001200000126",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "type": "store",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=da1c5548-0ecf-11f0-ac15-001200000126"
+          }
+        }
+      }
+    ]
+  }
+}'  
+```  
+        
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновлённого Товара.
+  
+  ```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/3bdfdb5b-137a-11f0-ac15-001100000018",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+    "type": "product",
+    "mediaType": "application/json",
+    "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=3bdfb95e-137a-11f0-ac15-001100000016"
+  },
+  "id": "3bdfdb5b-137a-11f0-ac15-001100000018",
+  "accountId": "762af84a-0ec6-11f0-ac15-001000000001",
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/762c4293-0ec6-11f0-ac15-001000000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2025-04-07 09:33:35.954",
+  "name": "Баклажаны",
+  "code": "00005",
+  "externalCode": "jIWckEqShIHKVVLBacIy02",
+  "archived": false,
+  "pathName": "",
+  "useParentVat": true,
+  "images": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/3bdfdb5b-137a-11f0-ac15-001100000018/images",
+      "type": "image",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "minPrice": {
+    "value": 0,
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+      }
+    }
+  },
+  "salePrices": [
+    {
+      "value": 0,
+      "currency": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json",
+          "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+        }
+      },
+      "priceType": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/77f67b4c-0ec6-11f0-ac15-0012000000a5",
+          "type": "pricetype",
+          "mediaType": "application/json"
+        },
+        "id": "77f67b4c-0ec6-11f0-ac15-0012000000a5",
+        "name": "Цена продажи",
+        "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+      }
+    }
+  ],
+  "buyPrice": {
+    "value": 0,
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+      }
+    }
+  },
+  "paymentItemType": "GOOD",
+  "discountProhibited": false,
+  "weight": 0,
+  "volume": 0,
+  "variantsCount": 0,
+  "isSerialTrackable": false,
+  "trackingType": "NOT_TRACKED",
+  "files": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/3bdfdb5b-137a-11f0-ac15-001100000018/files",
+      "type": "files",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "minimumStock": {
+    "type": "WAREHOUSE_VARIED",
+    "storebalances": [
+      {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/88df2fc1-1065-11f0-ac15-000700000012/storebalances/de922f92-113b-11f0-ac15-001000000009",
+          "type": "minimumstock",
+          "mediaType": "application/json"
+        },
+        "quantity": 2.5,
+        "store": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/da1c5548-0ecf-11f0-ac15-001200000125",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "type": "store",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=da1c5548-0ecf-11f0-ac15-001200000125"
+          }
+        }
+      },
+      {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/88df2fc1-1065-11f0-ac15-000700000012/storebalances/de922f92-113b-11f0-ac15-001000000001",
+          "type": "minimumstock",
+          "mediaType": "application/json"
+        },
+        "quantity": 1.5,
+        "store": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/da1c5548-0ecf-11f0-ac15-001200000126",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "type": "store",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=da1c5548-0ecf-11f0-ac15-001200000126"
+          }
+        }
+      }
+    ]
+  }
 }
 ```  
