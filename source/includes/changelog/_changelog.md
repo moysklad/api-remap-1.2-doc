@@ -19,6 +19,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+[//]: # (TODO сменить дату на актуальную. Год указал спецаильно чтобы в случае чего упал чеккер на даты)
+### 08-04-2026
+#### Добавлено
+- Поле `minimumStock` в сущности [товар](../dictionaries/#suschnosti-towar-towary) и [модификация](../dictionaries/#suschnosti-modifikaciq-modifikacii) для работы с неснижаемыми остатками
+
 ### 18-03-2025
 #### Добавлено
 - Поле `fiasCode__ru` для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-adres)
