@@ -2,10 +2,9 @@
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
 
-[//]: # (TODO сменить дату на актуальную. Год указал спецаильно чтобы в случае чего упал чеккер на даты)
-### 08-04-2026
+### 25-04-2025
 #### Добавлено
-- Поле `minimumStock` в сущности [товар](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary) и [модификация](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-modifikaciq-modifikacii) для работы с неснижаемыми остатками
+- Поле `minimumStock` в сущность [товар](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary) для работы с неснижаемыми остатками
 
 ### 18-03-2025
 #### Добавлено
