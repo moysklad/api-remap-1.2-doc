@@ -38,7 +38,7 @@
 | **salesChannel**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные канала продаж<br>`+Expand`                                                                                                                                                      |
 | **shared**              | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                 |
 | **shipmentAddress**     | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Адрес доставки Отгрузки  <br/>  `+Change-handler`                                                                                                                                          |
-| **shipmentAddressFull** | Object                                                    |                                                                                                                                                   | Адрес доставки Отгрузки с детализацией по отдельным полям. [Подробнее тут](../documents/#dokumenty-otgruzka-otgruzki-attributy-suschnosti-adres-dostawki)<br>  `+Change-handler`           |
+| **shipmentAddressFull** | Object                                                    |                                                                                                                                                   | Адрес доставки Отгрузки с детализацией по отдельным полям. [Подробнее тут](../documents/#dokumenty-otgruzka-otgruzki-atributy-suschnosti-adres-dostawki)<br>  `+Change-handler`           |
 | **state**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса Отгрузки<br>`+Expand`  `+Change-handler` `+Update-provider`                                                                                                             |
 | **store**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`  `+Change-handler` `+Update-provider`                                                                 |
 | **sum**                 | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Отгрузки в копейках<br>`+Обязательное при ответе` `+Только для чтения`  `+Change-handler`                                                                                            |
@@ -86,7 +86,7 @@
 | **accountId**          | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`  `+Change-handler`                                                                                                                                                                                     |
 | **assortment**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные товара/услуги/серии/модификации/комплекта, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand`  `+Change-handler` `+Update-provider`                                                                                                                         |
 | **cost**               | Int                                                       | Себестоимость (только для услуг)                                                                                                                                                                                                                         |
-| **discount**           | Int                                                       | Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%<br>`+Обязательное при ответе`  `+Change-handler` `+Update-provider`                                                                                                                       |
+| **discount**           | Float                                                     | Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%<br>`+Обязательное при ответе`  `+Change-handler` `+Update-provider`                                                                                                                       |
 | **id**                 | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения`   `+Change-handler`                                                                                                                                                                                          |
 | **pack**               | Object                                                    | Упаковка Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)  `+Change-handler` `+Update-provider`                                                                                                                              |
 | **price**              | Float                                                     | Цена товара/услуги в копейках<br>`+Обязательное при ответе`  `+Change-handler` `+Update-provider`                                                                                                                                                                                              |
@@ -155,7 +155,7 @@
   
 Недопустимо сохранение дублирующихся кодов маркировки и серийных номеров внутри документа Отгрузки. 
 
-#### Аттрибуты сущности Адрес доставки
+#### Атрибуты сущности Адрес доставки
 
 | Название       | Тип                                                       | Описание           |
 | -------------- | :-------------------------------------------------------- | :----------------- |
@@ -173,7 +173,7 @@
 При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
 При передаче обоих адресов строковый будет игнорирован.
 При передаче только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
-Для адреса не поддерживается [значение `null`](../#mojsklad-json-api-obschie-swedeniq-podderzhka-null). Передача `null` этому аттрибуту не приведет к его удалению.
+Для адреса не поддерживается [значение `null`](../#mojsklad-json-api-obschie-swedeniq-podderzhka-null). Передача `null` этому атрибуту не приведет к его удалению.
 Для удаления адреса необходимо в строковое поле `shipmentAddress` передать пустую строку `""`.
 
 
@@ -1567,7 +1567,7 @@ curl -X GET
     "customerOrder": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/34efe2ee-015e-11e6-9464-e4de0000006b",
-        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerOrder/metadata",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
         "type": "customerorder",
         "mediaType": "application/json"
       }
@@ -2309,7 +2309,7 @@ curl -X GET
   "customerOrder": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/34efe2ee-015e-11e6-9464-e4de0000006b",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerOrder/metadata",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
       "type": "customerorder",
       "mediaType": "application/json"
     }
@@ -2586,7 +2586,7 @@ curl -X GET
   "customerOrder": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/34efe2ee-015e-11e6-9464-e4de0000006b",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerOrder/metadata",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
       "type": "customerorder",
       "mediaType": "application/json"
     }
@@ -2849,7 +2849,7 @@ curl -X GET
   "customerOrder": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/34efe2ee-015e-11e6-9464-e4de0000006b",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerOrder/metadata",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
       "type": "customerorder",
       "mediaType": "application/json"
     }
@@ -3112,7 +3112,7 @@ curl -X GET
   "customerOrder": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/34efe2ee-015e-11e6-9464-e4de0000006b",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerOrder/metadata",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
       "type": "customerorder",
       "mediaType": "application/json"
     }
@@ -3520,9 +3520,7 @@ curl -X GET
 Запрос на создание новой позиции в Отгрузке.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
-+ **assortment** - Ссылка на товар/услугу/серию/модификацию/комплект, которую представляет собой позиция.
-  Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
-  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Отгрузки](../documents/#dokumenty-otgruzka-otgruzki-pozicii-otgruzki)
++ **assortment** - Ссылка на товар/услугу/серию/модификацию/комплект, которую представляет собой позиция. Подробнее об этом поле можно прочитать в описании [позиции Отгрузки](../documents/#dokumenty-otgruzka-otgruzki-pozicii-otgruzki)
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
   Одновременно можно создать как одну так и несколько позиций Отгрузки. Все созданные данным запросом позиции
   будут добавлены к уже существующим.

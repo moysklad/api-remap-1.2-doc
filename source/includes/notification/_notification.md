@@ -336,6 +336,8 @@ curl -X PUT
 | **NotificationTaskUnassigned**          | Задача                 | Задача снята                                                           |
 | **NotificationBonusMoney**              | Баланс                 | На счет зачислены бонусные деньги                                      |
 | **NewMentionInEvent**                   | Упоминания сотрудников | Новое упоминание в ленте событий                                       |
+| **AppChangePermissions**                | Решения                | Права доступа в решении изменены                                       |
+
 
 ## Подробное описание типов уведомлений
 
@@ -2150,26 +2152,85 @@ curl -X GET
 }
 ```
 
+### Устарели права доступа в решении
+#### Тип уведомления
+AppChangePermissions - Уведомление о запросе на изменение прав доступа в установленном решении
+#### Атрибуты уведомления
+
+| Название        | Тип                                                       | Описание                                                                                             |
+| --------------- | :-------------------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
+| **accountId**   | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Необходимо при создании`                           |
+| **created**     | DateTime                                                  | Дата и время формирования Уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`       |
+| **description** | String(4096)                                              | Описание уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                        |
+| **id**          | UUID                                                      | ID Уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                              |
+| **meta**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные объекта<br>`+Обязательное при ответе` `+Необходимо при создании`                          |
+| **read**        | Boolean                                                   | Признак того, было ли Уведомление прочитано<br>`+Обязательное при ответе` `+Необходимо при создании` |
+| **title**       | String(255)                                               | Краткий текст уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                   |
+
+**Параметры**
+
+| Параметр | Описание                                                                            |
+| :------- | :---------------------------------------------------------------------------------- |
+| **id**   | `string` (required) *Example: c290e571-f65d-11ee-c0a8-300d0000000a* id Уведомления. |
+
+> Запрос на получение Уведомления с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/notification/c290e571-f65d-11ee-c0a8-300d0000000a"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Уведомления.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/c290e571-f65d-11ee-c0a8-300d0000000a",
+    "type": "AppChangePermissions",
+    "mediaType": "application/json"
+  },
+  "id": "c290e571-f65d-11ee-c0a8-300d0000000a",
+  "accountId": "3a0c5979-f5ab-11ee-c0a8-300f00000001",
+  "created": "2024-04-09 13:41:45.173",
+  "read": false,
+  "title": "Устарели права доступа: Онлайн-заказ",
+  "description": "Обновите права доступа, чтобы решение использовало актуальные настройки."
+}
+```
+
 
 ## Настройки уведомлений
-### Атрибуты сущности
-+ **groups** - Подписка на уведомления по группам
-  + ``groupName`` - Код группы уведомлений
-    + **enabled**: (boolean, required) - Признак "активна" для подписки на уведомления данной группы
-    + **channels**: (array[string], required) - Массив каналов. Содержит значения из списка: `email` (Email-уведомления), `push` (уведомления на мобильных устройствах)
+### Структура данных
 
-Значения кода группы уведомлений.
+| Название          | Тип                           | Описание               |
+|-------------------|-------------------------------|------------------------|
+| **customerOrder** | Настройки группы уведомлений  | Заказы покупателей     |
+| **dataExchange**  | Настройки группы уведомлений  | Обмен данными          |
+| **invoice**       | Настройки группы уведомлений  | Счета покупателей      |
+| **retail**        | Настройки группы уведомлений  | Розничная торговля     |
+| **scripts**       | Настройки группы уведомлений  | Сценарии               |
+| **stock**         | Настройки группы уведомлений  | Складские остатки      |
+| **task**          | Настройки группы уведомлений  | Задачи                 |
+| **mentions**      | Настройки группы уведомлений  | Упоминания сотрудников |
+| **onlineStores**  | Настройки группы уведомлений  | Интернет-магазины      |
 
-| Код группы уведомлений   | Описание               |
-| ------------------------ | -----------------------|
-| **customer_order**       | Заказы покупателей     |
-| **data_exchange**        | Обмен данными          |
-| **invoice**              | Счета покупателей      |
-| **retail**               | Розничная торговля     |
-| **scripts**              | Сценарии               |
-| **stock**                | Складские остатки      |
-| **task**                 | Задачи                 |
-| **mentions**             | Упоминания сотрудников |
+Настройки группы уведомлений
+
+| Название            | Тип                        | Описание                                                                     |
+|---------------------|----------------------------|------------------------------------------------------------------------------|
+| **enabled**         | boolean                    | Признак "активна" для подписки на уведомления данной группы                  |
+| **channelsEnabled** | Настройки каналов доставки | Настройки доставки уведомлений данной группы через отдельные каналы доставки |
+
+Настройки каналов доставки
+
+| Название      | Тип     | Описание                                                                               |
+|---------------|---------|----------------------------------------------------------------------------------------|
+| **email**     | boolean | Признак "активна" для доставки уведомлений по элктронной почте                         |
+| **push**      | boolean | Признак "активна" для доставки уведомлений через пуш-уведомления мобильного приложения |
+| **interface** | boolean | Признак "активна" для доставки уведомлений в веб-интерфейсе МойСклад                   |
 
 ### Получить настройки уведомлений
 Запрос настроек Уведомлений текущего пользователя.
@@ -2178,7 +2239,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/subscription"
+  "https://api.moysklad.ru/api/remap/1.2/notification/settings"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
@@ -2188,42 +2249,76 @@ curl -X GET
 
 ```json
 {
-  "groups" : {
-    "customer_order" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "invoice" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "stock" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "retail" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "task" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "data_exchange" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "scripts" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "online_stores" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
-    },
-    "mentions" : {
-      "enabled" : true,
-      "channels" : [ "email", "push" ]
+  "customerOrder" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "dataExchange" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "invoice" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "retail" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "scripts" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "stock" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "task" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "mentions" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
+    }
+  },
+  "onlineStores" : {
+    "enabled" : true,
+    "channelsEnabled" : {
+      "email" : true,
+      "interface" : true,
+      "push" : true
     }
   }
 }
@@ -2232,53 +2327,90 @@ curl -X GET
 ### Изменить настройки уведомлений
 Изменение настроек Уведомлений текущего пользователя.
 
-Отключение уведомлений из сценариев недопустимо. Параметр **enabled** игнорируется.
+Отключение уведомлений групп "Сценарии" и "Интернет-магазины" недопустимо. Параметр **enabled** игнорируется.
+
+Если не переданы настройки для какой-либо группы, настройки этой группы остаются неизменными. Если не передано значение
+флага активности для какой-либо группы либо какого-либо канала доставки, настройки для этой группы или этого канала не меняются.
 
 > Изменение настроек Уведомлений текущего пользователя.
 
 ```shell
   curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/notification/subscription"
+    "https://api.moysklad.ru/api/remap/1.2/notification/settings"
     -H "Authorization: Basic <Credentials>"
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
-            "groups" : {
-              "customer_order" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "invoice" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "stock" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "retail" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "task" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "data_exchange" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "scripts" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "online_stores" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
-              },
-              "mentions" : {
-                "enabled" : true,
-                "channels" : [ "email", "push" ]
+            "customerOrder" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "dataExchange" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "invoice" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "retail" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "scripts" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "stock" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "task" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "mentions" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
+              }
+            },
+            "onlineStores" : {
+              "enabled" : true,
+              "channelsEnabled" : {
+                "email" : true,
+                "interface" : true,
+                "push" : true
               }
             }
           }'

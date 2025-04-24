@@ -37,7 +37,7 @@
 | **salesChannel**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные канала продаж<br>`+Expand`                                                                                                                                                                     |
 | **shared**                | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                                |
 | **shipmentAddress**       | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Адрес доставки Заказа покупателя<br>`+Change-handler`                                                                                                                                                     |
-| **shipmentAddressFull**   | Object                                                    |                                                                                                                                                   | Адрес доставки Заказа покупателя с детализацией по отдельным полям. [Подробнее тут](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-attributy-suschnosti-adres-dostawki)<br>`+Change-handler` |
+| **shipmentAddressFull**   | Object                                                    |                                                                                                                                                   | Адрес доставки Заказа покупателя с детализацией по отдельным полям. [Подробнее тут](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-atributy-suschnosti-adres-dostawki)<br>`+Change-handler` |
 | **shippedSum**            | Float                                                     |                                                                                                                                                   | Сумма отгруженного<br>`+Обязательное при ответе` `+Только для чтения``+Change-handler`                                                                                                                    |
 | **state**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса заказа<br>`+Expand``+Change-handler` `+Update-provider`                                                                                                                                |
 | **store**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные склада<br>`+Expand``+Change-handler` `+Update-provider`                                                                                                                                        |
@@ -79,8 +79,8 @@
 | Название       | Тип                                                      | Описание                                                                                                                                                                                                                                                                                     |
 | -------------- |:---------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**  | UUID                                                     | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения``+Change-handler`                                                                                                                                                                                                        |
-| **assortment** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Метаданные товара/услуги/серии/модификации, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand``+Change-handler` `+Update-provider`                                                                                                                                   |
-| **discount**   | Int                                                      | Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%<br>`+Обязательное при ответе``+Change-handler` `+Update-provider`                                                                                                                       |
+| **assortment** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Метаданные товара/услуги/серии/модификации/комплекта, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand``+Change-handler` `+Update-provider`                                                                                                                         |
+| **discount**   | Float                                                    | Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%<br>`+Обязательное при ответе``+Change-handler` `+Update-provider`                                                                                                                       |
 | **id**         | UUID                                                     | ID позиции<br>`+Обязательное при ответе` `+Только для чтения``+Change-handler` `+Update-provider`                                                                                                                                                                                            |
 | **pack**       | Object                                                   | Упаковка Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)<br>`+Change-handler` `+Update-provider`                                                                                                                           |
 | **price**      | Float                                                    | Цена товара/услуги в копейках<br>`+Обязательное при ответе``+Change-handler` `+Update-provider`                                                                                                                                                                                              |
@@ -103,7 +103,7 @@
 
 О работе с доп. полями Заказов покупателей можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
-#### Аттрибуты сущности Адрес доставки
+#### Атрибуты сущности Адрес доставки
 
 | Название       | Тип                                                       | Описание           |
 | -------------- | :-------------------------------------------------------- | :----------------- |
@@ -121,7 +121,7 @@
 При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
 При передаче обоих адресов строковый будет игнорирован.
 При передаче только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
-Для адреса не поддерживается [значение `null`](../#mojsklad-json-api-obschie-swedeniq-podderzhka-null). Передача `null` этому аттрибуту не приведет к его удалению.
+Для адреса не поддерживается [значение `null`](../#mojsklad-json-api-obschie-swedeniq-podderzhka-null). Передача `null` этому атрибуту не приведет к его удалению.
 Для удаления адреса необходимо в строковое поле `shipmentAddress` передать пустую строку `""`.
 
 ### Получить список Заказов покупателей 
@@ -166,7 +166,7 @@ curl -X GET
     }
   },
   "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerOrder",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder",
     "type": "customerorder",
     "mediaType": "application/json",
     "size": 1,
@@ -839,7 +839,7 @@ curl -X GET
       "id": "c2ecd338-015e-11e6-9464-e4de0000008f",
       "name": "AttributeName1",
       "type": "string",
-      "value": "Атрибут заказа",
+      "value": "Атрибут заказа"
     }
   ],
   "created": "2007-02-07 17:16:41",
@@ -1620,7 +1620,7 @@ curl -X GET
 {
   "meta": {
     "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/34efe2ee-015e-11e6-9464-e4de0000006b",
-    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerOrder/metadata",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
     "type": "customerorder",
     "mediaType": "application/json"
   },
@@ -2579,10 +2579,7 @@ curl -X GET
 Запрос на создание новой позиции в Заказе покупателя.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
-+ **assortment** - Ссылка на товар/услугу/серию/модификацию/комплект, которую представляет собой позиция.
-
-Также можно указать поле с именем **product**, **service**, **consignment**, **variant**, **bundle** в соответствии с тем,
-чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Заказа](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-pozicii-zakaza-pokupatelq)
++ **assortment** - Ссылка на товар/услугу/серию/модификацию/комплект, которую представляет собой позиция. Подробнее об этом поле можно прочитать в описании [позиции Заказа](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-pozicii-zakaza-pokupatelq)
 
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
 

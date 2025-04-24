@@ -22,15 +22,12 @@
 | **documentNumber**     | String(255)                                               |                                                                                                                                                   | Номер документа                                                                                                                                                                              |
 | **externalCode**       | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Розничной продажи<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                |
 | **files**              | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`                                                |
-| **fiscal**             | Boolean                                                   |                                                                                                                                                   | Отметка о том, был ли использован ФР<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                      |
-| **fiscalPrinterInfo**  | String(255)                                               |                                                                                                                                                   | Информация о фискальном регистраторе                                                                                                                                                         |
 | **group**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                     |
 | **id**                 | UUID                                                      | `=` `!=`                                                                                                                                          | ID Розничной продажи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                    |
 | **meta**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Розничной продажи<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                 |
 | **moment**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                               |
 | **name**               | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Розничной продажи<br>`+Обязательное при ответе` `+Change-handler`                                                                                                               |
 | **noCashSum**          | Float                                                     |                                                                                                                                                   | Оплачено картой<br>`+Обязательное при ответе`                                                                                                                                                |
-| **ofdCode**            | String(255)                                               |                                                                                                                                                   | Код оператора фискальных данных                                                                                                                                                              |
 | **organization**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                         |
 | **organizationAccount** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand`                                                                                                                                                         |
 | **owner**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                            |
@@ -105,7 +102,7 @@
 | **accountId**  | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                                                                                                    |
 | **assortment** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные товара/услуги/серии/модификации, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand` `+Change-handler`                                                                                                                                  |
 | **cost**       | Int                                                       | Себестоимость (только для услуг)                                                                                                                                                                                                                                          |
-| **discount**   | Int                                                       | Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                      |
+| **discount**   | Float                                                     | Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                      |
 | **id**         | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                                                                                                           |
 | **pack**       | Object                                                    | Упаковка Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)<br>`+Change-handler`                                                                                                                           |
 | **price**      | Float                                                     | Цена товара/услуги в копейках<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                                                                                             |
@@ -255,7 +252,6 @@ curl -X GET
         }
       },
       "payedSum": 0,
-      "fiscal": false,
       "retailStore": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
@@ -370,7 +366,6 @@ curl -X GET
         }
       },
       "payedSum": 0,
-      "fiscal": false,
       "retailStore": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
@@ -507,7 +502,6 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "fiscal": false,
   "retailStore": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
@@ -556,13 +550,10 @@ curl -X GET
             "applicable": true,
             "sum": 200,
             "payedSum": 200,
-            "fiscal": true,
-            "fiscalPrinterInfo": "The freaking best FiscalPrinter ever!!",
             "documentNumber": 39,
             "checkNumber": 124421,
             "checkSum": 200,
-            "sessionNumber": 251251,
-            "ofdCode": 13
+            "sessionNumber": 251251
           }'  
 ```
 
@@ -653,11 +644,9 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "fiscalPrinterInfo": "The freaking best FiscalPrinter ever!!",
   "documentNumber": 39,
   "checkNumber": 124421,
   "checkSum": 200,
-  "fiscal": true,
   "sessionNumber": 13,
   "retailStore": {
     "meta": {
@@ -708,13 +697,10 @@ curl -X GET
             "applicable": true,
             "sum": 200,
             "payedSum": 200,
-            "fiscal": true,
-            "fiscalPrinterInfo": "The freaking best FiscalPrinter ever!!",
             "documentNumber": 39,
             "checkNumber": 124421,
             "checkSum": 200,
             "sessionNumber": 251251,
-            "ofdCode": 13,
             "positions": [
               {
                 "quantity": 10,
@@ -847,11 +833,9 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "fiscalPrinterInfo": "The freaking best FiscalPrinter ever!!",
   "documentNumber": 39,
   "checkNumber": 124421,
   "checkSum": 200,
-  "fiscal": true,
   "sessionNumber": 13,
   "retailStore": {
     "meta": {
@@ -902,13 +886,10 @@ curl -X GET
             "applicable": true,
             "sum": 200,
             "payedSum": 200,
-            "fiscal": true,
-            "fiscalPrinterInfo": "The freaking best FiscalPrinter ever!!",
             "documentNumber": 39,
             "checkNumber": 124421,
             "checkSum": 200,
             "sessionNumber": 251251,
-            "ofdCode": 13,
             "positions": [
               {
                 "quantity": 10,
@@ -1063,11 +1044,9 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "fiscalPrinterInfo": "The freaking best FiscalPrinter ever!!",
   "documentNumber": 39,
   "checkNumber": 124421,
   "checkSum": 200,
-  "fiscal": true,
   "sessionNumber": 13,
   "retailStore": {
     "meta": {
@@ -1138,13 +1117,10 @@ curl -X GET
               "applicable": false,
               "sum": 32402222220,
               "payedSum": 23622200,
-              "fiscal": false,
-              "fiscalPrinterInfo": "The freaking worst FiscalPrinter ever!!",
               "documentNumber": 3,
               "checkNumber": 1221,
               "checkSum": 1,
-              "sessionNumber": 251251,
-              "ofdCode": 13
+              "sessionNumber": 251251
             }
           ]
 '  
@@ -1246,7 +1222,6 @@ curl -X GET
       }
     },
     "payedSum": 0,
-    "fiscal": false,
     "retailStore": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
@@ -1365,11 +1340,9 @@ curl -X GET
       }
     },
     "payedSum": 0,
-    "fiscalPrinterInfo": "The freaking worst FiscalPrinter ever!!",
     "documentNumber": 3,
     "checkNumber": 1221,
     "checkSum": 1,
-    "fiscal": false,
     "sessionNumber": 13,
     "retailStore": {
       "meta": {
@@ -1729,7 +1702,6 @@ curl -X GET
   "vatEnabled": true,
   "vatIncluded": true,
   "payedSum": 0,
-  "fiscal": false,
   "cashSum": 0,
   "noCashSum": 0,
   "qrSum": 0,
@@ -1837,7 +1809,6 @@ curl -X GET
   "vatEnabled": true,
   "vatIncluded": true,
   "payedSum": 0,
-  "fiscal": false,
   "cashSum": 0,
   "noCashSum": 0,
   "qrSum": 0,
@@ -1967,7 +1938,6 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "fiscal": false,
   "retailStore": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/851f8576-f504-11e5-8a84-bae50000016c",
@@ -2026,13 +1996,10 @@ curl -X GET
             "applicable": false,
             "sum": 32402222220,
             "payedSum": 23622200,
-            "fiscal": false,
-            "fiscalPrinterInfo": "The freaking worst FiscalPrinter ever!!",
             "documentNumber": 3,
             "checkNumber": 1221,
             "checkSum": 1,
-            "sessionNumber": 251251,
-            "ofdCode": 13
+            "sessionNumber": 251251
           }'  
 ```
 
@@ -2136,11 +2103,9 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "fiscalPrinterInfo": "The freaking worst FiscalPrinter ever!!",
   "documentNumber": 3,
   "checkNumber": 1221,
   "checkSum": 1,
-  "fiscal": false,
   "sessionNumber": 13,
   "retailStore": {
     "meta": {
@@ -2189,13 +2154,10 @@ curl -X GET
             "applicable": true,
             "sum": 32400,
             "payedSum": 23622200,
-            "fiscal": true,
-            "fiscalPrinterInfo": "The freaking best FiscalPrinter ever!!",
             "documentNumber": 329,
             "checkNumber": 124421,
             "checkSum": 200,
             "sessionNumber": 251251,
-            "ofdCode": 13,
             "positions": [
               {
                 "quantity": 10,
@@ -2337,11 +2299,9 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "fiscalPrinterInfo": "The freaking best FiscalPrinter ever!!",
   "documentNumber": 329,
   "checkNumber": 124421,
   "checkSum": 200,
-  "fiscal": true,
   "sessionNumber": 13,
   "retailStore": {
     "meta": {
@@ -2531,9 +2491,7 @@ curl -X GET
 Запрос на создание новой позиции в Розничной продаже.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
-+ **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция.
-  Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
-  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Розничной продажи](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-pozicii-roznichnoj-prodazhi).
++ **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция. Подробнее об этом поле можно прочитать в описании [позиции Розничной продажи](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-pozicii-roznichnoj-prodazhi).
 
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
   Одновременно можно создать как одну так и несколько позиций Розничной продажи. Все созданные данным запросом позиции
