@@ -5,6 +5,10 @@
 #### Добавлены
 - Поле "валюта" (currency) во вложенную сущность [Юрлица](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico-jurlica) Счета юрлица
 
+### 10-04-2025
+#### Добавлено
+- Описание отключения JSON API пользователю в [Ограничения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-ogranicheniq)
+
 ### 18-03-2025
 #### Добавлено
 - Поле `fiasCode__ru` для [контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-adres)
