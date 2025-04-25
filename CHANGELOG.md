@@ -1,13 +1,13 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 10-04-2025
-#### Добавлено
-- Описание отключения JSON API пользователю в [Ограничения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-ogranicheniq)
-
 ### 25-04-2025
 #### Добавлено
 - Поле `minimumStock` в сущность [товар](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary) для работы с неснижаемыми остатками
+
+### 10-04-2025
+#### Добавлено
+- Описание отключения JSON API пользователю в [Ограничения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-ogranicheniq)
 
 ### 18-03-2025
 #### Добавлено
