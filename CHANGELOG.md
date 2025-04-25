@@ -1,6 +1,9 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 10-04-2025
+#### Добавлено
+- Описание отключения JSON API пользователю в [Ограничения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-ogranicheniq)
 
 ### 25-04-2025
 #### Добавлено

@@ -23,6 +23,10 @@
 #### Добавлено
 - Поле `minimumStock` в сущность [товар](../dictionaries/#suschnosti-towar-towary) для работы с неснижаемыми остатками
 
+### 10-04-2025
+#### Добавлено
+- Описание отключения JSON API пользователю в [Ограничения](../#mojsklad-json-api-ogranicheniq)
+
 ### 18-03-2025
 #### Добавлено
 - Поле `fiasCode__ru` для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-adres)
