@@ -30,7 +30,7 @@
 
 ### 24-04-2025
 #### Добавлено
-- Поле "валюта" (currency) во вложенную сущность [Юрлица](../dictionaries/#suschnosti-jurlico-jurlica) Счета юрлица
+- Поле `minimumStock` в сущность [товар](../dictionaries/#suschnosti-towar-towary) для работы с неснижаемыми остатками
 
 ### 10-04-2025
 #### Добавлено

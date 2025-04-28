@@ -12,7 +12,7 @@
 
 ### 24-04-2025
 #### Добавлено
-- Поле "валюта" (currency) во вложенную сущность [Юрлица](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico-jurlica) Счета юрлица
+- Поле `minimumStock` в сущность [товар](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary) для работы с неснижаемыми остатками
 
 ### 10-04-2025
 #### Добавлено
