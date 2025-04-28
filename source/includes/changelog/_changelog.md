@@ -19,7 +19,7 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 25-04-2025
+### 28-04-2025
 #### Добавлено
 - Поле `advancePaymentSum` в [Розничную продажу](../documents/#dokumenty-roznichnaq-prodazha)
 - Ошибка `18007`
@@ -28,7 +28,7 @@
 - Описание [работы с полями оплаты розничной продажи](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-rabota-s-polqmi-oplaty-roznichnoj-prodazhi)
 - Текст ошибок `18000`, `18005` и `18006`
 
-### 24-04-2025
+### 25-04-2025
 #### Добавлено
 - Поле `minimumStock` в сущность [товар](../dictionaries/#suschnosti-towar-towary) для работы с неснижаемыми остатками
 
