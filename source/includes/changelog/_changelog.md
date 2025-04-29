@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 29-04-2025
+#### Добавлено
+- Поле `minimumStock` в сущность [модификация](../dictionaries/#suschnosti-modifikaciq) для работы с неснижаемыми остатками
+
 ### 28-04-2025
 #### Добавлено
 - Поле `advancePaymentSum` в [Розничную продажу](../documents/#dokumenty-roznichnaq-prodazha)
