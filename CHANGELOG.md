@@ -3,7 +3,7 @@
 
 ### 29-04-2025
 #### Добавлено
-- Поле `minimumStock` в сущность [модификация](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-modifikaciq) для работы с неснижаемыми остатками
+- Поле `minimumStock` в сущность [модификация](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-modifikaciq-modifikacii) для работы с неснижаемыми остатками
 
 ### 28-04-2025
 #### Добавлено
