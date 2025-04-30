@@ -12,6 +12,7 @@
 | **accountId**            | UUID                                                      |                            | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                              |
 | **created**              | DateTime                                                  |                            | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                  |
 | **defect**               | Boolean                                                   |                            | Признак брака<br>`+Обязательное при ответе` `+После создания изменить нельзя`                                                                                                                     |
+| **description**          | String(4096)                                              | `=` `!=` `~` `~=` `=~`     | Комментарий Выполнения этапа<br>                                                                                                                                                                  |
 | **enableHourAccounting** | Boolean                                                   |                            | Признак активности учета по нормо-часам<br>`+Обязательное при ответе`                                                                                                                             |
 | **externalCode**         | String(255)                                               |                            | Внешний код Выполнения этапа производства<br>`+Обязательное при ответе`                                                                                                                           |
 | **group**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                          |
@@ -612,7 +613,8 @@ curl -X GET
             "processingUnitCost": 10.0,
             "labourUnitCost": 20.0,
             "standardHourUnit": 30.0,
-            "defect": true            
+            "defect": true,
+            "description" : "Комментарий по выполнению"            
           }'  
 ```
 
@@ -696,7 +698,8 @@ curl -X GET
   "processingUnitCost": 10.0,
   "labourUnitCost": 20.0,
   "standardHourUnit": 30.0,
-  "defect": true
+  "defect": true,
+  "description" : "Комментарий по выполнению"
 }
 ```
 > Пример создания нового Выполнения этапа, где исполнителем указан контрагент и передана услуга.

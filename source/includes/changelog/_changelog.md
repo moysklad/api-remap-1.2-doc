@@ -21,7 +21,8 @@
 
 ### 30-04-2025
 #### Добавлено
-- Поле `defect` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+- Поля `description`, `defect` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+- Ошибки [26211-26213](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-vypolnenij-atapow-proizwodstwa)
 
 ### 28-04-2025
 #### Добавлено
