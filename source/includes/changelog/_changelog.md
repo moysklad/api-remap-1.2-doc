@@ -19,9 +19,26 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 31-03-2025
+### 30-04-2025
 #### Добавлено
 - Поле `defect` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+
+### 28-04-2025
+#### Добавлено
+- Поле `advancePaymentSum` в [Розничную продажу](../documents/#dokumenty-roznichnaq-prodazha)
+- Ошибка `18007`
+
+#### Изменено
+- Описание [работы с полями оплаты розничной продажи](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-rabota-s-polqmi-oplaty-roznichnoj-prodazhi)
+- Текст ошибок `18000`, `18005` и `18006`
+
+### 25-04-2025
+#### Добавлено
+- Поле `minimumStock` в сущность [товар](../dictionaries/#suschnosti-towar-towary) для работы с неснижаемыми остатками
+
+### 10-04-2025
+#### Добавлено
+- Описание отключения JSON API пользователю в [Ограничения](../#mojsklad-json-api-ogranicheniq)
 
 ### 18-03-2025
 #### Добавлено

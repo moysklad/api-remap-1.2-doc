@@ -71,7 +71,7 @@
 | **accountId**     | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                                                                                                     |
 | **assortment**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные товара/услуги/серии/модификации, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand` `+Change-handler` `+Update-provider`                                                                                                                                   |
 | **country**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные страны<br>`+Expand`                                                                                                                                                                                                                           |
-| **discount**      | Int                                                       | Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                                       |
+| **discount**      | Float                                                     | Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                                       |
 | **gtd**           | Object                                                    | ГТД. [Подробнее тут](../dictionaries/#suschnosti-gruzowaq-tamozhennaq-deklaraciq-gtd)                                                                                                                                                                                                                                                   |
 | **id**            | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                                                                                                            |
 | **pack**          | Object                                                    | Упаковка Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)<br>`+Change-handler` `+Update-provider`                                                                                                                               |
@@ -2847,9 +2847,7 @@ curl -X GET
 Запрос на создание новой позиции в Приемке.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
-+ **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция.
-  Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
-  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Приемки](../documents/#dokumenty-priemka-priemki-pozicii-priemki)
++ **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция. Подробнее об этом поле можно прочитать в описании [позиции Приемки](../documents/#dokumenty-priemka-priemki-pozicii-priemki)
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
   Одновременно можно создать как одну так и несколько позиций Приемки. Все созданные данным запросом позиции
   будут добавлены к уже существующим.
