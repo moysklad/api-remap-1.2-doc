@@ -6,6 +6,7 @@
 | Название               | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                                                                     |
 |------------------------| :-------------------------------------------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**          | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                       |
+| **advancePaymentSum**  | Float                                                     |                                                                                                                                                   | Оплачено из аванса<br>`+Обязательное при ответе`                                                                                                                                             |
 | **agent**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные контрагента<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler`                                                                                  |
 | **agentAccount**       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета контрагента<br>`+Expand`                                                                                                                                                    |
 | **applicable**         | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                         |
@@ -66,7 +67,7 @@
 | **PATENT_BASED**                         | Патент                       |
 
 #### Работа с полями оплаты розничной продажи
-Сумма полей **cashSum**, **noCashSum**, **qrSum**, **prepaymentCashSum**, **prepaymentNoCashSum** и **prepaymentNoCashSum** должна совпадать с суммой по Розничной продаже
+Сумма полей **cashSum**, **noCashSum**, **qrSum**, **prepaymentCashSum**, **prepaymentNoCashSum**, **prepaymentNoCashSum** и **advancePaymentSum** должна совпадать с суммой по Розничной продаже
 (т.е. с суммарной стоимостью всех переданных вами позиций). Каждое из полей не может иметь отрицательное значение.
 
 Смешанная оплата со способом по QR-коду недопустима. Если **qrSum** или **prepaymentQrSum** ненулевое, то другие поля не могут быть использованы, иначе вернется ошибка.
@@ -89,6 +90,9 @@
 
 - Если передаются **qrSum** и **prepaymentQrSum**, сумма всех полей должна соответствовать сумме по Розничной продаже, иначе вернется ошибка.
 
+Не допускается одновременное использование аванса и предоплаты. Если поле **advancePaymentSum** ненулевое, то не допускается 
+ненулевое значение для полей **prepaymentByQrSum**, **prepaymentByCardSum**, **prepaymentCashSum**
+
 #### Позиции Розничной продажи
 Позиции Розничной продажи - это список товаров/услуг/модификаций/серий/комплектов.
 Объект позиции Розничной продажи содержит следующие поля:
@@ -98,7 +102,7 @@
 | **accountId**  | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                                                                                                    |
 | **assortment** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные товара/услуги/серии/модификации, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand` `+Change-handler`                                                                                                                                  |
 | **cost**       | Int                                                       | Себестоимость (только для услуг)                                                                                                                                                                                                                                          |
-| **discount**   | Int                                                       | Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                      |
+| **discount**   | Float                                                     | Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                      |
 | **id**         | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                                                                                                           |
 | **pack**       | Object                                                    | Упаковка Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)<br>`+Change-handler`                                                                                                                           |
 | **price**      | Float                                                     | Цена товара/услуги в копейках<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                                                                                             |
@@ -268,6 +272,7 @@ curl -X GET
       "prepaymentCashSum": 0,
       "prepaymentNoCashSum": 0,
       "prepaymentQrSum": 0,
+      "advancePaymentSum": 0,
       "taxSystem": "GENERAL_TAX_SYSTEM"
     },
     {
@@ -380,7 +385,8 @@ curl -X GET
       "qrSum": 0,
       "prepaymentCashSum": 0,
       "prepaymentNoCashSum": 0,
-      "prepaymentQrSum": 0
+      "prepaymentQrSum": 0,
+      "advancePaymentSum": 0
     }
   ]
 }
@@ -515,7 +521,8 @@ curl -X GET
   "qrSum": 0,
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
-  "prepaymentQrSum": 0
+  "prepaymentQrSum": 0,
+  "advancePaymentSum": 0
 }
 
 ```
@@ -662,7 +669,8 @@ curl -X GET
   "qrSum": 0,
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
-  "prepaymentQrSum": 0
+  "prepaymentQrSum": 0,
+  "advancePaymentSum": 0
 }
 ```
 
@@ -850,7 +858,8 @@ curl -X GET
   "qrSum": 0,
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
-  "prepaymentQrSum": 0
+  "prepaymentQrSum": 0,
+  "advancePaymentSum": 0
 }
 ```
 
@@ -1060,7 +1069,8 @@ curl -X GET
   "qrSum": 0,
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
-  "prepaymentQrSum": 0
+  "prepaymentQrSum": 0,
+  "advancePaymentSum": 0
 }
 ```
 
@@ -1231,7 +1241,8 @@ curl -X GET
     "qrSUm": 0,
     "prepaymentCashSum": 0,
     "prepaymentNoCashSum": 0,
-    "prepaymentQrSum": 0
+    "prepaymentQrSum": 0,
+    "advancePaymentSum": 0
   },
   {
     "meta": {
@@ -1354,7 +1365,8 @@ curl -X GET
     "qrSum": 0,
     "prepaymentCashSum": 0,
     "prepaymentNoCashSum": 0,
-    "prepaymentQrSum": 0
+    "prepaymentQrSum": 0,
+    "advancePaymentSum": 0
   }
 ]
 ```
@@ -1695,7 +1707,8 @@ curl -X GET
   "qrSum": 0,
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
-  "prepaymentQrSum": 0
+  "prepaymentQrSum": 0,
+  "advancePaymentSum": 0
 }
 ```
 
@@ -1802,6 +1815,7 @@ curl -X GET
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
   "prepaymentQrSum": 0,
+  "advancePaymentSum": 0,
   "customerOrder": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/1b2b2caf-055e-11e6-9464-e4de0000007c",
@@ -1943,7 +1957,8 @@ curl -X GET
   "qrSum": 0,
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
-  "prepaymentQrSum": 0
+  "prepaymentQrSum": 0,
+  "advancePaymentSum": 0
 }
 ```
 
@@ -2113,7 +2128,8 @@ curl -X GET
   "qrSum": 0,
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
-  "prepaymentQrSum": 0
+  "prepaymentQrSum": 0,
+  "advancePaymentSum": 0
 }
 ```
 
@@ -2308,7 +2324,8 @@ curl -X GET
   "qrSum": 0,
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
-  "prepaymentQrSum": 0
+  "prepaymentQrSum": 0,
+  "advancePaymentSum": 0
 }
 ```
 
@@ -2474,9 +2491,7 @@ curl -X GET
 Запрос на создание новой позиции в Розничной продаже.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
-+ **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция.
-  Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
-  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Розничной продажи](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-pozicii-roznichnoj-prodazhi).
++ **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция. Подробнее об этом поле можно прочитать в описании [позиции Розничной продажи](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-pozicii-roznichnoj-prodazhi).
 
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
   Одновременно можно создать как одну так и несколько позиций Розничной продажи. Все созданные данным запросом позиции
