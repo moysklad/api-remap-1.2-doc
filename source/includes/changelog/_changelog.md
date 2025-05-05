@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 05-05-2025
+#### Добавлен
+- Краткий [Отчет на остатки по ячейкам](../reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah-po-qchejkam)
+
 ### 28-04-2025
 #### Добавлено
 - Поле `advancePaymentSum` в [Розничную продажу](../documents/#dokumenty-roznichnaq-prodazha)
