@@ -168,7 +168,7 @@
 | **ALL_WAREHOUSE_SAME** | Одинаковый на всех складах `+Только для чтения` |
 | **WAREHOUSE_VARIED**   | Задан для каждого склада                        |
 
-Как-либо редактировать Неснижаемые остатки в модификации допустимо в случае, когда Неснижаемый остаток не наследуется от товара
+Как-либо редактировать Неснижаемые остатки в модификации допустимо в случае, когда Неснижаемый остаток не наследуется от товара.
 Примеры можно посмотреть в разделах [получения](../dictionaries/#suschnosti-modifikaciq-poluchit-spisok-modifikacij), [создания](../dictionaries/#suschnosti-modifikaciq-sozdat-modifikaciu)
 или [обновления](../dictionaries/#suschnosti-modifikaciq-izmenit-modifikaciu) модификации.
 
@@ -402,6 +402,7 @@ curl -X GET
 }
 ```
 > Получить список модификаций с выводом Неснижаемого остатка
+
 ```shell
 curl -X GET
   "https://api.moysklad.ru/api/remap/1.2/entity/variant?fields=minimumStock"
@@ -764,6 +765,7 @@ curl -X GET
 ```
 
 > Пример запроса на создание новой Модификации с заполненным полем Неснижаемого остатка.
+
   ```shell
   curl -X POST
     "https://api.moysklad.ru/api/remap/1.2/entity/variant"
@@ -1862,6 +1864,7 @@ curl -X GET
 ```
 
 > Пример запроса на обновление Модификации с переопределением Неснижаемого остатка.
+
   ```shell
   curl -X PUT
     "https://api.moysklad.ru/api/remap/1.2/entity/variant/7a80d64e-1394-11f0-ac15-001100000028"
