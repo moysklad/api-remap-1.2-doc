@@ -335,6 +335,7 @@
 + Создание (`/entity/product/{product_id}/storebalances`)
 + Изменение (`/entity/product/{product_id}/storebalances/{minimumstock_id}`)
 + Удаление (`/entity/product/{product_id}/storebalances/{minimumstock_id}`)
++ Массовое удаление (`/entity/product/{product_id}/storebalances/delete`)
 
 
 ##### Изображение: структура и загрузка.
@@ -4093,7 +4094,7 @@ curl -X GET
         "type": "WAREHOUSE_VARIED",
         "storeBalances": {
             "meta": {
-                "href": "https://api-api-1.testms-test.lognex.ru/api/remap/1.2/entity/product/88df2fc1-1065-11f0-ac15-000700000012/storebalances",
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/88df2fc1-1065-11f0-ac15-000700000012/storebalances",
                 "type": "minimumstock",
                 "mediaType": "application/json",
                 "size": 2,
@@ -4144,3 +4145,33 @@ curl -X GET
     }
 }
 ```  
+
+> Запрос на массовое удаление неснижаемых остатков по складам в товаре.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/3e1c03bb-684f-11ee-ac12-000c000000b0/storebalances/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/3e1c03bb-684f-11ee-ac12-000c000000b0/storebalances/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "minimumstock",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/3e1c03bb-684f-11ee-ac12-000c000000b0/storebalances/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "minimumstock",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление неснижаемых остатков по складам в товаре. 
+
