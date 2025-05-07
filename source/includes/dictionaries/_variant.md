@@ -215,7 +215,7 @@
 + Создание (`/entity/variant/{variant_id}/storebalances`)
 + Изменение (`/entity/variant/{variant_id}/storebalances/{minimumstock_id}`)
 + Удаление (`/entity/variant/{variant_id}/storebalances/{minimumstock_id}`)
-+ Массовое удаление (`/entity/product/{product_id}/storebalances/delete`)
++ Массовое удаление (`/entity/variant/{variant_id}/storebalances/delete`)
 
 
 ##### Упаковки Модификации
