@@ -320,11 +320,13 @@
 
 Структура объекта в коллекции **storeBalances**:
 
-| Название     | Тип                                                       | Описание                                                  |
-|--------------|:----------------------------------------------------------|:----------------------------------------------------------|
-| **meta**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Неснижаемого остатка                           |
-| **store**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные склада, для которого задан Неснижаемый остаток |
-| **quantity** | Double                                                    | Количество Неснижаемого остатка для склада                |
+| Название      | Тип                                                       | Описание                                                  |
+|---------------|:----------------------------------------------------------|:----------------------------------------------------------|
+| **accountId** | UUID                                                      | ID учетной записи<br>`+Только для чтения`                 |
+| **id**        | UUID                                                      | ID позиции Неснижаемого остатка<br> `+Только для чтения`  |
+| **meta**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Неснижаемого остатка<br> `+Только для чтения`  |
+| **store**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные склада, для которого задан Неснижаемый остаток |
+| **quantity**  | Double                                                    | Количество Неснижаемого остатка для склада                |
 
 Для создания или изменения Неснижаемого остатка для склада (складов) можно передать в теле запроса на [создание](../dictionaries/#suschnosti-towar-sozdat-towar) 
 или [обновление](../dictionaries/#suschnosti-towar-izmenit-towar) товара Неснижаемые остатки с указанием склада и количества неснижаемого остатка для данного склада. 
@@ -4093,7 +4095,7 @@ curl -X GET
         "type": "WAREHOUSE_VARIED",
         "storeBalances": {
             "meta": {
-                "href": "https://api-api-1.testms-test.lognex.ru/api/remap/1.2/entity/product/88df2fc1-1065-11f0-ac15-000700000012/storebalances",
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/88df2fc1-1065-11f0-ac15-000700000012/storebalances",
                 "type": "minimumstock",
                 "mediaType": "application/json",
                 "size": 2,
