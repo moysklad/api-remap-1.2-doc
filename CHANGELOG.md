@@ -4,6 +4,7 @@
 ### 30-04-2025
 #### Добавлено
 - Поле `defect` в [Выполнение этапа производства](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+- Поле `description` в [Выполнение этапа производства](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vypolnenie-atapa-proizwodstwa) 
 
 ### 28-04-2025
 #### Добавлено

@@ -22,6 +22,7 @@
 ### 30-04-2025
 #### Добавлено
 - Поле `defect` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+- Поле `description` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
 
 ### 28-04-2025
 #### Добавлено
