@@ -19,6 +19,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 30-04-2025
+#### Добавлено
+- Поле `defect` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+- Поле `description` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+
 ### 28-04-2025
 #### Добавлено
 - Поле `advancePaymentSum` в [Розничную продажу](../documents/#dokumenty-roznichnaq-prodazha)
