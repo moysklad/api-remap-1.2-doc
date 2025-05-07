@@ -215,6 +215,7 @@
 + Создание (`/entity/variant/{variant_id}/storebalances`)
 + Изменение (`/entity/variant/{variant_id}/storebalances/{minimumstock_id}`)
 + Удаление (`/entity/variant/{variant_id}/storebalances/{minimumstock_id}`)
++ Массовое удаление (`/entity/product/{product_id}/storebalances/delete`)
 
 
 ##### Упаковки Модификации
@@ -1961,3 +1962,32 @@ curl -X GET
   }
 }
 ```
+
+> Запрос на массовое удаление Неснижаемых остатков по складам в Модификации.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/variant/3e1c03bb-684f-11ee-ac12-000c000000b0/storebalances/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/3e1c03bb-684f-11ee-ac12-000c000000b0/storebalances/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "minimumstock",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/3e1c03bb-684f-11ee-ac12-000c000000b0/storebalances/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "minimumstock",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление Неснижаемых остатков по складам в Модификации. 

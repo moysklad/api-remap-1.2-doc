@@ -4095,7 +4095,7 @@ curl -X GET
         "type": "WAREHOUSE_VARIED",
         "storeBalances": {
             "meta": {
-                "href": "https://api-api-1.testms-test.lognex.ru/api/remap/1.2/entity/product/88df2fc1-1065-11f0-ac15-000700000012/storebalances",
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/88df2fc1-1065-11f0-ac15-000700000012/storebalances",
                 "type": "minimumstock",
                 "mediaType": "application/json",
                 "size": 2,
