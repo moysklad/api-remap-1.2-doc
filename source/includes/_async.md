@@ -5,18 +5,18 @@
 
 Асинхронный обмен поддерживается не для всех запросов. Список запросов, которые могут быть выполнены асинхронно:
 
-+ [Отчет Остатки](reports/#otchety-otchet-ostatki)
-+ [Отчет Прибыльность](reports/#otchety-otchet-pribyl-nost)
-+ [Отчет Деньги](reports/#otchety-otchet-den-gi)
-+ [Отчет Показатели продаж и заказов](reports/#otchety-pokazateli-prodazh-i-zakazow)
-+ [Отчет Показатели контрагентов](reports/#otchety-otchet-pokazateli-kontragentow) (кроме [выборочных показателей](reports/#otchety-otchet-pokazateli-kontragentow-vyborochnye-pokazateli-kontragentow))
-+ [Отчет Показатели](reports/#otchety-pokazateli)
-+ [Получение списка Контрагентов](dictionaries/#suschnosti-kontragent-poluchit-spisok-kontragentow)
-+ [Получение Ассортимента](dictionaries/#suschnosti-assortiment)
++ [Отчет Остатки](#/reports/report-stock#2-otchet-ostatki)
++ [Отчет Прибыльность](#/reports/report-pnl#2-otchet-pribylnost)
++ [Отчет Деньги](#/reports/report-money#2-otchet-dengi)
++ [Отчет Показатели продаж и заказов](#/reports/report-sales-orders#2-pokazateli-prodazh-i-zakazov)
++ [Отчет Показатели контрагентов](#/reports/report-counterparty#2-otchet-pokazateli-kontragentov) (кроме [выборочных показателей](#/reports/report-counterparty#3-vyborochnye-pokazateli-kontragentov))
++ [Отчет Показатели](#/reports/dashboard#2-pokazateli)
++ [Получение списка Контрагентов](#/dictionaries/counterparty#3-poluchit-spisok-kontragentov)
++ [Получение Ассортимента](#/dictionaries/assortment#2-assortiment)
 
 После выполнения запроса в асинхронном режиме результат доступен в течение 1 часа. 
 
-На количество задач в очереди и число одновременно выполняющихся асинхронных задач установлены [ограничения](#mojsklad-json-api-ogranicheniq).
+На количество задач в очереди и число одновременно выполняющихся асинхронных задач установлены [ограничения](#/restrictions#2-ogranicheniya).
 
 На данный момент в процессе асинхронного выполнения запроса могут возникать дубли позиций коллекции, 
 если параллельно с подготовкой результата добавляются новые элементы. 
@@ -70,11 +70,11 @@ Content-Location: https://api.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6
 | **deletionDate** | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=` | Дата, после которой результат выполнения задачи станет недоступен. Содержится в ответе, если поле **state** имеет значение `DONE`<br>`+Только для чтения`                                                                                  |
 | **errors**       | Object                                                    |                            | json ошибки апи, если поле **state** имеет значение `API_ERROR`<br>`+Только для чтения`                                                                                                                                                    |
 | **id**           | UUID                                                      |                            | ID Асинхронной задачи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                   |
-| **meta**         | [Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)    |                            | Метаданные Асинхронной задачи<br>`+Обязательное при ответе`                                                                                                                                                                                |
-| **owner**        | [Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)    |                            | Пользователь или решение, которые создали Асинхронную задачу<br>`+Только для чтения`                                                                                                                                                      |
+| **meta**         | [Meta](#/general#3-metadannye)    |                            | Метаданные Асинхронной задачи<br>`+Обязательное при ответе`                                                                                                                                                                                |
+| **owner**        | [Meta](#/general#3-metadannye)    |                            | Пользователь или решение, которые создали Асинхронную задачу<br>`+Только для чтения`                                                                                                                                                      |
 | **request**      | String                                                    | `=` `!=`                   | URL запроса, по которому создана Асинхронная задача<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                     |
 | **resultUrl**    | String                                                    |                            | Ссылка на результат выполнения задачи. Содержится в ответе, если поле **state** имеет значение `DONE`<br>`+Только для чтения`                                                                                                              |
-| **state**        | Enum                                                      | `=` `!=`                   | Статус выполнения Асинхронной задачи. [Подробнее тут](#mojsklad-json-api-asinhronnyj-obmen-asinhronnaq-zadacha-atributy-dostupnye-dlq-sortirowki-status-wypolneniq-asinhronnoj-zadachi)<br>`+Обязательное при ответе` `+Только для чтения` |
+| **state**        | Enum                                                      | `=` `!=`                   | Статус выполнения Асинхронной задачи. [Подробнее тут](#/async#5-status-vypolneniya-asinhronnoj-zadachi)<br>`+Обязательное при ответе` `+Только для чтения` |
 
 #### Атрибуты доступные для сортировки
 | Название          | Описание                                                           |
@@ -369,7 +369,7 @@ curl -X GET
 то результат выполнения запроса будет иметь статус `302 FOUND` с заголовком **Location**, в котором и содержится ссылка на результат. 
 После наступления даты, указанной в поле **deletionDate**, результат становится недоступен. 
 
-Если статус задачи имеет значение `API_ERROR`, то в json ответе на запрос получения результата задачи будет указана [ошибка](#mojsklad-json-api-oshibki), 
+Если статус задачи имеет значение `API_ERROR`, то в json ответе на запрос получения результата задачи будет указана [ошибка](#/errors#2-oshibki), 
 аналогичная той, которую вернул синхронный вызов ресурса.
 
 > Пример запроса на получение результата Асинхронной задачи со статусом API_ERROR
@@ -399,7 +399,7 @@ Response 403 Forbidden
 
 ### Вебхуки Асинхронной задачи
 
-Настроить [вебхуки](dictionaries/#suschnosti-vebhuki) для асинхронной задачи можно аналогично остальным сущностям, но есть ряд исключений:
+Настроить [вебхуки](#/dictionaries/webhook#2-vebhuki) для асинхронной задачи можно аналогично остальным сущностям, но есть ряд исключений:
 
 * для асинхронных задач нельзя настроить вебхук на событие удаления, так как удаление асинхронных задач происходит автоматически
 * для асинхронных задач в вебхуках появляется новое событие `PROCESSED`. Оно означает, что задача завершилась и можно узнать ее статус

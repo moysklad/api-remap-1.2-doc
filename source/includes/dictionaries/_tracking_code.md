@@ -41,8 +41,8 @@
 
 | Название  | Тип | Описание                    |
 | --------- |:----|:----------------------------|
-**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
-**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
+**meta** |[Meta](#/general#3-metadannye)|Метаданные о выдаче,
+**context** | [Meta](#/general#3-metadannye) | Метаданные о сотруднике, выполнившем запрос.
 **rows** |Array(Object)| Массив JSON объектов, представляющих собой коды маркировки.
 
 > Пример запроса на получение Кодов маркировки

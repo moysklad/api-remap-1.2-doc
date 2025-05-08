@@ -14,22 +14,22 @@
 | **accountId**     | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                   |
 | **created**       | DateTime                                                  | Момент создания Заказа кодов маркировки<br>`+Обязательное при ответе` `+Только для чтения`                                                                                             |
 | **description**   | String(255)                                               | Комментарий                                                                                                                                                                            |
-| **documentState** | Enum                                                      | Способ ввода в оборот. [Подробнее тут](../documents/#dokumenty-zakaz-kodow-markirowki-zakaz-kodow-markirowki-sposob-wwoda-w-oborot) <br>`+Только для чтения`                           |
-| **emissionType**  | Enum                                                      | Состояние документов маркировки. [Подробнее тут](../documents/#dokumenty-zakaz-kodow-markirowki-zakaz-kodow-markirowki-sostoqnie-dokumentow-markirowki) <br>`+Обязательное при ответе` |
+| **documentState** | Enum                                                      | Способ ввода в оборот. [Подробнее тут](#/documents/emissionorder#4-sposob-vvoda-v-oborot) <br>`+Только для чтения`                           |
+| **emissionType**  | Enum                                                      | Состояние документов маркировки. [Подробнее тут](#/documents/emissionorder#4-sostoyanie-dokumentov-markirovki) <br>`+Обязательное при ответе` |
 | **externalCode**  | String(255)                                               | Внешний код Заказа кодов маркировки<br>`+Обязательное при ответе`                                                                                                                      |
-| **group**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                               |
+| **group**         | [Meta](#/general#3-metadannye) | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                               |
 | **id**            | UUID                                                      | ID Заказа кодов маркировки<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                          |
-| **meta**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Заказа кодов маркировки<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                  |
+| **meta**          | [Meta](#/general#3-metadannye) | Метаданные Заказа кодов маркировки<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                  |
 | **moment**        | DateTime                                                  | Дата документа<br>`+Обязательное при ответе`                                                                                                                                           |
 | **name**          | String(255)                                               | Наименование Заказа кодов маркировки <br>`+Обязательное при ответе`                                                                                                                    |
-| **organization**  | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand`                                                                                                                              |
-| **owner**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                      |
+| **organization**  | [Meta](#/general#3-metadannye) | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand`                                                                                                                              |
+| **owner**         | [Meta](#/general#3-metadannye) | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                      |
 | **positions**     | MetaArray                                                 | Метаданные позиций Заказа кодов маркировки<br>`+Обязательное при ответе` `+Expand`                                                                                                     |
 | **printed**       | Boolean                                                   | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                               |
 | **published**     | Boolean                                                   | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                             |
 | **shared**        | Boolean                                                   | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                             |
-| **state**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные статуса Заказа кодов маркировки<br>`+Expand`                                                                                                                                |
-| **trackingType**  | Enum                                                      | Тип маркируемой продукции. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-tip-markiruemoj-produkcii) <br>`+Обязательное при ответе`                |
+| **state**         | [Meta](#/general#3-metadannye) | Метаданные статуса Заказа кодов маркировки<br>`+Expand`                                                                                                                                |
+| **trackingType**  | Enum                                                      | Тип маркируемой продукции. [Подробнее тут](#/dictionaries/bundle#5-tip-markiruemoj-produkcii) <br>`+Обязательное при ответе`                |
 | **updated**       | DateTime                                                  | Момент последнего обновления<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                        |
 
 #### Позиции Заказа кодов маркировки
@@ -42,11 +42,11 @@
 | Название          | Тип                                                       | Описание                                                                                                                                                              |
 |-------------------|:----------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**     | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                  |
-| **assortment**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные товара/модификации/серии, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand`                                                       |
+| **assortment**    | [Meta](#/general#3-metadannye) | Метаданные товара/модификации/серии, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand`                                                       |
 | **id**            | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                         |
-| **meta**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные позиции заказа кодов маркировки<br>`+Обязательное при ответе` `+Только для чтения`                                                                         |
+| **meta**          | [Meta](#/general#3-metadannye) | Метаданные позиции заказа кодов маркировки<br>`+Обязательное при ответе` `+Только для чтения`                                                                         |
 | **quantity**      | Float                                                     | Количество товаров данного вида в позиции.<br>`+Обязательное при ответе`                                                                                              |
-| **status**        | Enum                                                      | Статус кодов. <br>`+Обязательное при ответе` `+Только для чтения` [Подробнее тут](../documents/#dokumenty-zakaz-kodow-markirowki-zakaz-kodow-markirowki-status-kodow) |
+| **status**        | Enum                                                      | Статус кодов. <br>`+Обязательное при ответе` `+Только для чтения` [Подробнее тут](#/documents/emissionorder#4-status-kodov) |
 
 
 #### Статус кодов
@@ -270,9 +270,9 @@ curl -X GET
 
 | Параметр         | Описание                                                                                                                                                |
 |------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **organization** | Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                                                         |
-| **trackingType** | Тип маркируемой продукции. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-tip-markiruemoj-produkcii)                |
-| **emissionType** | Состояние документов маркировки. [Подробнее тут](../documents/#dokumenty-zakaz-kodow-markirowki-zakaz-kodow-markirowki-sostoqnie-dokumentow-markirowki) |
+| **organization** | Ссылка на ваше юрлицо в формате [Метаданных](#/general#3-metadannye)                                                         |
+| **trackingType** | Тип маркируемой продукции. [Подробнее тут](#/dictionaries/bundle#5-tip-markiruemoj-produkcii)                |
+| **emissionType** | Состояние документов маркировки. [Подробнее тут](#/documents/emissionorder#4-sostoyanie-dokumentov-markirovki) |
 
 > Пример создания нового Заказа кодов маркировки с телом запроса, содержащим только необходимые поля.
 
@@ -602,7 +602,7 @@ curl -X GET
 ```
 
 ### Массовое создание и обновление Заказов кодов маркировки
-[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Заказов кодов маркировки.
+[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Заказов кодов маркировки.
 В теле запроса необходимо передать массив, содержащий JSON представления Заказов кодов маркировки, которые вы хотите создать или обновить.
 Обновляемые Заказы кодов маркировки должны содержать идентификатор в виде метаданных.
 
@@ -906,7 +906,7 @@ curl -X GET
 ### Изменить Заказ кодов маркировки
 Запрос на обновление Заказа кодов маркировки с указанным id.
 В теле запроса можно указать только те поля, которые необходимо изменить у Заказа кодов маркировки, кроме тех, что
-помечены `Только для чтения` в описании [атрибутов Заказа кодов маркировки](../documents/#dokumenty-zakaz-kodow-markirowki).
+помечены `Только для чтения` в описании [атрибутов Заказа кодов маркировки](#/documents/emissionorder#2-zakaz-kodov-markirovki).
 
 **Параметры**
 
@@ -1284,7 +1284,7 @@ curl -X GET
 
 + **assortment** - Ссылка на товар/серию/модификацию, которую представляет собой позиция.
   Также можно указать поле с именем **consignment**, **variant** в зависимости от того, 
-  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Заказа](../documents/#dokumenty-zakaz-kodow-markirowki-zakaz-kodow-markirowki-pozicii-zakaza-kodow-markirowki)
+  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Заказа](#/documents/emissionorder#4-pozicii-zakaza-kodov-markirovki)
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
 
 Тип маркируемой продукции у позиций и у заказа Кодов маркировки должен быть идентичным.

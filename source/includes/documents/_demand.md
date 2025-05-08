@@ -9,38 +9,38 @@
 | Название                | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                                                                   |
 |-------------------------|:----------------------------------------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------ |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**           | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`  `+Change-handler`                                                                                                    |
-| **agent**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные контрагента<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`  `+Change-handler` `+Update-provider`                                                            |
-| **agentAccount**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета контрагента<br>`+Expand`  `+Change-handler` `+Update-provider`                                                                                                            |
+| **agent**               | [Meta](#/general#3-metadannye) | `=` `!=`                                                                                                                                          | Метаданные контрагента<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`  `+Change-handler` `+Update-provider`                                                            |
+| **agentAccount**        | [Meta](#/general#3-metadannye) |                                                                                                                                                   | Метаданные счета контрагента<br>`+Expand`  `+Change-handler` `+Update-provider`                                                                                                            |
 | **applicable**          | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе`  `+Change-handler` `+Update-provider`                                                                                                   |
-| **attributes**          | Array(Object)                                             | [Операторы доп. полей](../#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-fil-traciq-po-dopolnitel-nym-polqm) | Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)<br> `+Change-handler` `+Update-provider`                           |
+| **attributes**          | Array(Object)                                             | [Операторы доп. полей](#/general#4-filtraciya-po-dopolnitelnym-polyam) | Коллекция метаданных доп. полей. [Поля объекта](#/general#3-rabota-s-dopolnitelnymi-polyami)<br> `+Change-handler` `+Update-provider`                           |
 | **code**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Отгрузки                                                                                                                                                                               |
-| **contract**            | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные договора<br>`+Expand`  `+Change-handler` `+Update-provider`                                                                                                                     |
+| **contract**            | [Meta](#/general#3-metadannye) | `=` `!=`                                                                                                                                          | Метаданные договора<br>`+Expand`  `+Change-handler` `+Update-provider`                                                                                                                     |
 | **created**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`  `+Change-handler`                                                                                                        |
 | **deleted**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Отгрузки<br>`+Только для чтения`                                                                                                                                |
 | **description**         | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Отгрузки  <br/>  `+Change-handler` `+Update-provider`                                                                                                                          |
 | **externalCode**        | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Отгрузки<br>`+Обязательное при ответе`  `+Change-handler`                                                                                                                      |
-| **files**               | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`                                              |
-| **group**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                   |
+| **files**               | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](#/dictionaries/files#2-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`                                              |
+| **group**               | [Meta](#/general#3-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                   |
 | **id**                  | UUID                                                      | `=` `!=`                                                                                                                                          | ID Отгрузки<br>`+Обязательное при ответе` `+Только для чтения`  `+Change-handler`                                                                                                          |
-| **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Отгрузки<br>`+Обязательное при ответе`  `+Change-handler`                                                                                                                       |
+| **meta**                | [Meta](#/general#3-metadannye) |                                                                                                                                                   | Метаданные Отгрузки<br>`+Обязательное при ответе`  `+Change-handler`                                                                                                                       |
 | **moment**              | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе`  `+Change-handler` `+Update-provider`                                                                                                         |
 | **name**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Отгрузки<br>`+Обязательное при ответе`  `+Change-handler` `+Update-provider`                                                                                                  |
-| **organization**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`  `+Change-handler` `+Update-provider`                                                                 |
-| **organizationAccount** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand`  `+Change-handler` `+Update-provider`                                                                                                                 |
-| **overhead**            | Object                                                    |                                                                                                                                                   | Накладные расходы. [Подробнее тут](../documents/#dokumenty-otgruzka-otgruzki-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать<br>`+Update-provider` |
-| **owner**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                          |
+| **organization**        | [Meta](#/general#3-metadannye) | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`  `+Change-handler` `+Update-provider`                                                                 |
+| **organizationAccount** | [Meta](#/general#3-metadannye) |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand`  `+Change-handler` `+Update-provider`                                                                                                                 |
+| **overhead**            | Object                                                    |                                                                                                                                                   | Накладные расходы. [Подробнее тут](#/documents/demand#4-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать<br>`+Update-provider` |
+| **owner**               | [Meta](#/general#3-metadannye) | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                          |
 | **payedSum**            | Float                                                     |                                                                                                                                                   | Сумма входящих платежей по Отгрузке<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                     |
 | **positions**           | MetaArray                                                 |                                                                                                                                                   | Метаданные позиций Отгрузки<br>`+Обязательное при ответе` `+Expand`  `+Change-handler` `+Update-provider`                                                                                  |
 | **printed**             | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                   |
-| **project**             | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand`  `+Change-handler` `+Update-provider`                                                                                                                      |
+| **project**             | [Meta](#/general#3-metadannye) | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand`  `+Change-handler` `+Update-provider`                                                                                                                      |
 | **published**           | Boolean                                                   | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                 |
-| **rate**                | Object                                                    |                                                                                                                                                   | Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)<br>`+Обязательное при ответе`  `+Change-handler` `+Update-provider`                                  |
-| **salesChannel**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные канала продаж<br>`+Expand`                                                                                                                                                      |
+| **rate**                | Object                                                    |                                                                                                                                                   | Валюта. [Подробнее тут](#/documents/common-info#3-valyuta-v-dokumentah)<br>`+Обязательное при ответе`  `+Change-handler` `+Update-provider`                                  |
+| **salesChannel**        | [Meta](#/general#3-metadannye) | `=` `!=`                                                                                                                                          | Метаданные канала продаж<br>`+Expand`                                                                                                                                                      |
 | **shared**              | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                 |
 | **shipmentAddress**     | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Адрес доставки Отгрузки  <br/>  `+Change-handler`                                                                                                                                          |
-| **shipmentAddressFull** | Object                                                    |                                                                                                                                                   | Адрес доставки Отгрузки с детализацией по отдельным полям. [Подробнее тут](../documents/#dokumenty-otgruzka-otgruzki-atributy-suschnosti-adres-dostawki)<br>  `+Change-handler`           |
-| **state**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса Отгрузки<br>`+Expand`  `+Change-handler` `+Update-provider`                                                                                                             |
-| **store**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`  `+Change-handler` `+Update-provider`                                                                 |
+| **shipmentAddressFull** | Object                                                    |                                                                                                                                                   | Адрес доставки Отгрузки с детализацией по отдельным полям. [Подробнее тут](#/documents/demand#4-atributy-sushnosti-adres-dostavki)<br>  `+Change-handler`           |
+| **state**               | [Meta](#/general#3-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса Отгрузки<br>`+Expand`  `+Change-handler` `+Update-provider`                                                                                                             |
+| **store**               | [Meta](#/general#3-metadannye) | `=` `!=`                                                                                                                                          | Метаданные склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`  `+Change-handler` `+Update-provider`                                                                 |
 | **sum**                 | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Отгрузки в копейках<br>`+Обязательное при ответе` `+Только для чтения`  `+Change-handler`                                                                                            |
 | **syncId**              | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                                                                |
 | **updated**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Отгрузки<br>`+Обязательное при ответе` `+Только для чтения`  `+Change-handler`                                                                                |
@@ -59,18 +59,18 @@
 #### Связи с другими документами
 | Название                       | Описание                                                                                                                                  |
 | ------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------- |
-| **customerOrder**              | Ссылка на Заказ Покупателя, с которым связана эта Отгрузка в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)      |
-| **factureOut**                 | Ссылка на Счет-фактуру выданный, с которым связана эта Отгрузка в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
-| **returns**                    | Массив ссылок на связанные возвраты в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                             |
-| **payments**                   | Массив ссылок на связанные платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                              |
-| **invoicesOut**                | Массив ссылок на связанные счета покупателям в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                    |
+| **customerOrder**              | Ссылка на Заказ Покупателя, с которым связана эта Отгрузка в формате [Метаданных](#/general#3-metadannye)      |
+| **factureOut**                 | Ссылка на Счет-фактуру выданный, с которым связана эта Отгрузка в формате [Метаданных](#/general#3-metadannye) |
+| **returns**                    | Массив ссылок на связанные возвраты в формате [Метаданных](#/general#3-metadannye)                             |
+| **payments**                   | Массив ссылок на связанные платежи в формате [Метаданных](#/general#3-metadannye)                              |
+| **invoicesOut**                | Массив ссылок на связанные счета покупателям в формате [Метаданных](#/general#3-metadannye)                    |
 
 ####  Другие поля 
 | Название                    | Тип                                                       | Описание                                                        |
 | --------------------------- | :-------------------------------------------------------- | :-------------------------------------------------------------- |
 | **cargoName**               | String(255)                                               | Наименование груза <br/>  `+Change-handler`                                              |
-| **carrier**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные перевозчика (контрагент или юрлицо)<br>`+Expand`  `+Change-handler`    |
-| **consignee**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные грузополучателя (контрагент или юрлицо) <br/>  `+Change-handler`              |
+| **carrier**                 | [Meta](#/general#3-metadannye) | Метаданные перевозчика (контрагент или юрлицо)<br>`+Expand`  `+Change-handler`    |
+| **consignee**               | [Meta](#/general#3-metadannye) | Метаданные грузополучателя (контрагент или юрлицо) <br/>  `+Change-handler`              |
 | **goodPackQuantity**        | Int                                                       | Всего мест <br/>  `+Change-handler`                                                     |
 | **shippingInstructions**    | String(255)                                               | Указания грузоотправителя   <br/>  `+Change-handler`                                    |
 | **stateContractId**         | String(255)                                               | Идентификатор государственного контракта, договора (соглашения) <br/>  `+Change-handler` |
@@ -84,22 +84,22 @@
 | Название               | Тип                                                       | Описание                                                                                                                                                                                                                                                 |
 | ---------------------- |:----------------------------------------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **accountId**          | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`  `+Change-handler`                                                                                                                                                                                     |
-| **assortment**         | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные товара/услуги/серии/модификации/комплекта, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand`  `+Change-handler` `+Update-provider`                                                                                                                         |
+| **assortment**         | [Meta](#/general#3-metadannye) | Метаданные товара/услуги/серии/модификации/комплекта, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand`  `+Change-handler` `+Update-provider`                                                                                                                         |
 | **cost**               | Int                                                       | Себестоимость (только для услуг)                                                                                                                                                                                                                         |
 | **discount**           | Int                                                       | Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%<br>`+Обязательное при ответе`  `+Change-handler` `+Update-provider`                                                                                                                       |
 | **id**                 | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения`   `+Change-handler`                                                                                                                                                                                          |
-| **pack**               | Object                                                    | Упаковка Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)  `+Change-handler` `+Update-provider`                                                                                                                              |
+| **pack**               | Object                                                    | Упаковка Товара. [Подробнее тут](#/dictionaries/product#5-upakovki-tovara)  `+Change-handler` `+Update-provider`                                                                                                                              |
 | **price**              | Float                                                     | Цена товара/услуги в копейках<br>`+Обязательное при ответе`  `+Change-handler` `+Update-provider`                                                                                                                                                                                              |
 | **quantity**           | Float                                                     | Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.<br>`+Обязательное при ответе`  `+Change-handler` `+Update-provider` |
-| **slot**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Ячейка на складе. [Подробнее тут](../dictionaries/#suschnosti-sklad-yachejki-sklada)<br>`+Expand` |
+| **slot**               | [Meta](#/general#3-metadannye) | Ячейка на складе. [Подробнее тут](#/dictionaries/store#3-yachejki-sklada)<br>`+Expand` |
 | **things**             | Array(String)                                             | Серийные номера. Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете. В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.  `+Change-handler`                         |
-| **trackingCodes**      | Array(Object)                                             | Коды маркировки товаров и транспортных упаковок. [Подробнее тут](../documents/#dokumenty-otgruzka-otgruzki-kody-markirowki-towarow-i-transportnyh-upakowok)                                                                                              |
-| **trackingCodes_1162** | Array(Object)                                             | Коды маркировки товаров в формате тега 1162. [Подробнее тут](../documents/#dokumenty-otgruzka-otgruzki-kody-markirowki-towarow-i-transportnyh-upakowok-w-formate-tega-1162)                                                                              |
-| **overhead**           | Int                                                       | Накладные расходы. [Подробнее тут](../documents/#dokumenty-otgruzka-otgruzki-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать.<br>`+Обязательное при ответе`  `+Только для чтения`                                                                                                                                                                                  |
+| **trackingCodes**      | Array(Object)                                             | Коды маркировки товаров и транспортных упаковок. [Подробнее тут](#/documents/demand#4-kody-markirovki-tovarov-i-transportnyh-upakovok)                                                                                              |
+| **trackingCodes_1162** | Array(Object)                                             | Коды маркировки товаров в формате тега 1162. [Подробнее тут](#/documents/demand#4-kody-markirovki-tovarov-i-transportnyh-upakovok-v-formate-tega-1162)                                                                              |
+| **overhead**           | Int                                                       | Накладные расходы. [Подробнее тут](#/documents/demand#4-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать.<br>`+Обязательное при ответе`  `+Только для чтения`                                                                                                                                                                                  |
 | **vat**                | Int                                                       | НДС, которым облагается текущая позиция<br>`+Обязательное при ответе`  `+Change-handler` `+Update-provider`                                                                                                                                                                                   |
 | **vatEnabled**         | Boolean                                                   | Включен ли НДС для позиции. С помощью этого флага для позиции можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.<br>`+Обязательное при ответе`  `+Change-handler` `+Update-provider`                   |
 
-С позициями можно работать с помощью [специальных ресурсов для управления позициями Отгрузки](../documents/#dokumenty-otgruzka-pozicii-otgruzki),
+С позициями можно работать с помощью [специальных ресурсов для управления позициями Отгрузки](#/documents/demand#3-pozicii-otgruzki),
 а также в составе отдельной Отгрузки. При работе в составе отдельной Отгрузки,
 вы можете отправлять запросы на создание отдельной Отгрузки с включенным в тело запроса
 массивом позиций Отгрузки. Если количество позиций превышает максимально допустимое, то для
@@ -109,7 +109,7 @@
 восприниматься как "все позиции Отгрузки" и полностью заменит уже существующую коллекцию при обновлении объекта - лишние
 позиции будут удалены, новые добавлены, существующие - изменены.
 
-О работе с доп. полями Отгрузок можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
+О работе с доп. полями Отгрузок можно прочитать [здесь](#/general#3-rabota-s-dopolnitelnymi-polyami)
 
 #### Коды маркировки товаров и транспортных упаковок
 Поддержаны в виде иерархической структуры JSON. 
@@ -163,17 +163,17 @@
 | **apartment**  | String(30)                                                | Квартира           |
 | **city**       | String(255)                                               | Город              |
 | **comment**    | String(255)                                               | Комментарий        |
-| **country**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные страны  |
+| **country**    | [Meta](#/general#3-metadannye) | Метаданные страны  |
 | **house**      | String(30)                                                | Дом                |
 | **postalCode** | String(6)                                                 | Почтовый индекс    |
-| **region**     | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные региона |
+| **region**     | [Meta](#/general#3-metadannye) | Метаданные региона |
 | **street**     | String(255)                                               | Улица              |
 
 Строка адреса является конкатенацией полей структурированного адреса в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
 При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
 При передаче обоих адресов строковый будет игнорирован.
 При передаче только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
-Для адреса не поддерживается [значение `null`](../#mojsklad-json-api-obschie-swedeniq-podderzhka-null). Передача `null` этому атрибуту не приведет к его удалению.
+Для адреса не поддерживается [значение `null`](#/general#3-podderzhka-null). Передача `null` этому атрибуту не приведет к его удалению.
 Для удаления адреса необходимо в строковое поле `shipmentAddress` передать пустую строку `""`.
 
 
@@ -183,8 +183,8 @@
 
 | Название    | Тип                                                       | Описание                                             |
 | ----------- | :-------------------------------------------------------- | :--------------------------------------------------- |
-| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче,                                 |
-| **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.         |
+| **meta**    | [Meta](#/general#3-metadannye) | Метаданные о выдаче,                                 |
+| **context** | [Meta](#/general#3-metadannye) | Метаданные о сотруднике, выполнившем запрос.         |
 | **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой Отгрузки. |
 
 **Параметры**
@@ -494,9 +494,9 @@ curl -X GET
 
 | Параметр                       | Описание                                                                                        |
 | ------------------------------ | :---------------------------------------------------------------------------------------------- |
-| **organization**               | Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
-| **agent**                      | Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
-| **store**                      | Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)       |
+| **organization**               | Ссылка на ваше юрлицо в формате [Метаданных](#/general#3-metadannye) |
+| **agent**                      | Ссылка на контрагента в формате [Метаданных](#/general#3-metadannye) |
+| **store**                      | Ссылка на склад в формате [Метаданных](#/general#3-metadannye)       |
 
 > Пример создания новой Отгрузки с телом запроса, содержащим только необходимые поля.
 
@@ -1252,7 +1252,7 @@ curl -X GET
 ```
 
 ### Массовое создание и обновление Отгрузок 
-[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Отгрузок.
+[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Отгрузок.
 В теле запроса нужно передать массив, содержащий JSON представления Отгрузок, которые вы хотите создать или обновить.
 Обновляемые Отгрузки должны содержать идентификатор в виде метаданных.
 
@@ -1650,11 +1650,11 @@ curl -X POST
 | Параметр                       | Описание                                                                                                      |
 | ------------------------------ | :------------------------------------------------------------------------------------------------------------ |
 | **meta**                       | Ссылка на метаданные Отгрузок                                                                                 |
-| **attributes**                 | Массив объектов доп. полей Отгрузок в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
+| **attributes**                 | Массив объектов доп. полей Отгрузок в формате [Метаданных](#/general#3-metadannye) |
 | **states**                     | Массив статусов Отгрузок                                                                                      |
 | **createShared**               | создавать новые Отгрузки с меткой "Общий"                                                                     |
 
-Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
+Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](#/general#3-rabota-s-dopolnitelnymi-polyami).
 
 > Метаданные Отгрузок
 
@@ -2371,7 +2371,7 @@ curl -X GET
 ### Изменить Отгрузку 
 Запрос на обновление Отгрузки с указанным id.
 В теле запроса можно указать только те поля, которые необходимо изменить у Отгрузки, кроме тех, что
-помечены `Только для чтения` в описании [атрибутов Отгрузки](../documents/#dokumenty-otgruzka).
+помечены `Только для чтения` в описании [атрибутов Отгрузки](#/documents/demand#2-otgruzka).
 При обновлении полей **organization** и **agent** нужно также обновить поля **organizationAccount** и
 **agentAccount** соответственно, иначе произойдет ошибка.
 
@@ -3122,15 +3122,15 @@ curl -X GET
 ```
 
 ### Позиции Отгрузки 
-Отдельный ресурс для управления позициями Отгрузки. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
+Отдельный ресурс для управления позициями Отгрузки. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](#/general#3-rabota-s-poziciyami-dokumentov).
 
 ### Получить позиции Отгрузки 
 Запрос на получение списка всех позиций данной Отгрузки.
 
 | Название    | Тип                                                       | Описание                                                     |
 | ----------- | :-------------------------------------------------------- | :----------------------------------------------------------- |
-| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче,                                         |
-| **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.                 |
+| **meta**    | [Meta](#/general#3-metadannye) | Метаданные о выдаче,                                         |
+| **context** | [Meta](#/general#3-metadannye) | Метаданные о сотруднике, выполнившем запрос.                 |
 | **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой позиции Отгрузки. |
 
 **Параметры**
@@ -3522,7 +3522,7 @@ curl -X GET
 
 + **assortment** - Ссылка на товар/услугу/серию/модификацию/комплект, которую представляет собой позиция.
   Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
-  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Отгрузки](../documents/#dokumenty-otgruzka-otgruzki-pozicii-otgruzki)
+  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Отгрузки](#/documents/demand#4-pozicii-otgruzki)
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
   Одновременно можно создать как одну так и несколько позиций Отгрузки. Все созданные данным запросом позиции
   будут добавлены к уже существующим.

@@ -7,17 +7,17 @@
 | Название                        | Тип                                                       | Описание                                                                                                                                        |
 | ------------------------------- | :-------------------------------------------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------|
 | **autoShowReports**             | Boolean                                                   | Строить ли отчеты автоматически при переходе на вкладку с отчетом<br>`+Обязательное при ответе`                                                 |
-| **defaultCompany**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Организации, которая будет использоваться по умолчанию в документах<br>`+Обязательное при ответе`                                    |
-| **defaultCustomerCounterparty** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Покупателя, который будет использоваться по умолчанию в документах раздела "Продажи"<br>`+Обязательное при ответе`                   |
-| **defaultPlace**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Склада, который будет использоваться по умолчанию в документах<br>`+Обязательное при ответе`                                         |
-| **defaultProject**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Проекта, который будет использоваться по умолчанию в документах<br>`+Обязательное при ответе`                                        |
-| **defaultPurchaseCounterparty** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Поставщика, который будет использоваться по умолчанию в документах раздела "Закупки"<br>`+Обязательное при ответе`                   |
-| **defaultScreen**               | Enum                                                      | [Страница, которая открывается у пользователя при логине](./#suschnosti-nastrojki-pol-zowatelq-startowyj-akran)<br>`+Обязательное при ответе`   |
+| **defaultCompany**              | [Meta](#/general#3-metadannye) | Метаданные Организации, которая будет использоваться по умолчанию в документах<br>`+Обязательное при ответе`                                    |
+| **defaultCustomerCounterparty** | [Meta](#/general#3-metadannye) | Метаданные Покупателя, который будет использоваться по умолчанию в документах раздела "Продажи"<br>`+Обязательное при ответе`                   |
+| **defaultPlace**                | [Meta](#/general#3-metadannye) | Метаданные Склада, который будет использоваться по умолчанию в документах<br>`+Обязательное при ответе`                                         |
+| **defaultProject**              | [Meta](#/general#3-metadannye) | Метаданные Проекта, который будет использоваться по умолчанию в документах<br>`+Обязательное при ответе`                                        |
+| **defaultPurchaseCounterparty** | [Meta](#/general#3-metadannye) | Метаданные Поставщика, который будет использоваться по умолчанию в документах раздела "Закупки"<br>`+Обязательное при ответе`                   |
+| **defaultScreen**               | Enum                                                      | [Страница, которая открывается у пользователя при логине](#/dictionaries/usersettings#4-startovyj-ekran)<br>`+Обязательное при ответе`   |
 | **fieldsPerRow**                | Int                                                       | Количество столбцов, в которых будут располагаться дополнительные поля в документах<br>`+Обязательное при ответе`                               |
 | **locale**                      | Enum                                                      | Язык системы. Допустимые значения "ru_RU" и "en_US"<br>`+Обязательное при ответе`                                                               |
 | **mailFooter**                  | Boolean                                                   | Подставляется в подпись в письмах, отправляемых из МС<br>`+Обязательное при ответе`                                                             |
-| **meta**                        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные настроек<br>`+Обязательное при ответе`                                                                                               |
-| **printFormat**                 | Enum                                                      | [Правила печати документов](./#suschnosti-nastrojki-pol-zowatelq-prawila-pechati-dokumentow)<br>`+Обязательное при ответе`                      |
+| **meta**                        | [Meta](#/general#3-metadannye) | Метаданные настроек<br>`+Обязательное при ответе`                                                                                               |
+| **printFormat**                 | Enum                                                      | [Правила печати документов](#/dictionaries/usersettings#4-pravila-pechati-dokumentov)<br>`+Обязательное при ответе`                      |
 
 #### Правила печати документов
 Допустимые правила печати:
@@ -195,16 +195,16 @@ curl -X GET
 | Название                        | Тип                                                       | Описание                                                                                                          |
 | ------------------------------- | :-------------------------------------------------------- |:------------------------------------------------------------------------------------------------------------------|
 | **autoShowReports**             | Boolean                                                   | Строить ли отчеты автоматически при переходе на вкладку с отчетом                                                 |
-| **defaultCompany**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Организации, которая будет использоваться по умолчанию в документах                                    |
-| **defaultCustomerCounterparty** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Покупателя, который будет использоваться по умолчанию в документах раздела "Продажи"                   |
-| **defaultPlace**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Склада, который будет использоваться по умолчанию в документах                                         |
-| **defaultProject**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Проекта, который будет использоваться по умолчанию в документах                                        |
-| **defaultPurchaseCounterparty** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Поставщика, который будет использоваться по умолчанию в документах раздела "Закупки"                   |
-| **defaultScreen**               | Enum                                                      | [Страница, которая открывается у пользователя при логине](./#suschnosti-nastrojki-pol-zowatelq-startowyj-akran)   |
+| **defaultCompany**              | [Meta](#/general#3-metadannye) | Метаданные Организации, которая будет использоваться по умолчанию в документах                                    |
+| **defaultCustomerCounterparty** | [Meta](#/general#3-metadannye) | Метаданные Покупателя, который будет использоваться по умолчанию в документах раздела "Продажи"                   |
+| **defaultPlace**                | [Meta](#/general#3-metadannye) | Метаданные Склада, который будет использоваться по умолчанию в документах                                         |
+| **defaultProject**              | [Meta](#/general#3-metadannye) | Метаданные Проекта, который будет использоваться по умолчанию в документах                                        |
+| **defaultPurchaseCounterparty** | [Meta](#/general#3-metadannye) | Метаданные Поставщика, который будет использоваться по умолчанию в документах раздела "Закупки"                   |
+| **defaultScreen**               | Enum                                                      | [Страница, которая открывается у пользователя при логине](#/dictionaries/usersettings#4-startovyj-ekran)   |
 | **fieldsPerRow**                | Int                                                       | Количество столбцов, в которых будут располагаться дополнительные поля в документах                               |
 | **locale**                      | Enum                                                      | Язык системы. Допустимые значения "ru_RU" и "en_US"                                                               |
 | **mailFooter**                  | Boolean                                                   | Подставляется в подпись в письмах, отправляемых из МС                                                             |
-| **printFormat**                 | Enum                                                      | [Правила печати документов](./#suschnosti-nastrojki-pol-zowatelq-prawila-pechati-dokumentow)                      |
+| **printFormat**                 | Enum                                                      | [Правила печати документов](#/dictionaries/usersettings#4-pravila-pechati-dokumentov)                      |
 
 Допускается частичное редактирование - отредактированы будут только присутствующие в запросе поля.
 > Запрос на изменение настроек пользователя:

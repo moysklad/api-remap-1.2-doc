@@ -873,4 +873,4 @@ curl -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product?limit=100&expa
 }
 ```
 
-Больше примеров и информации можно найти в разделе [замена ссылок объектами с помощью expand.](../#mojsklad-json-api-obschie-swedeniq-zamena-ssylok-ob-ektami-s-pomosch-u-expand)
+Больше примеров и информации можно найти в разделе [замена ссылок объектами с помощью expand.](#/general#3-zamena-ssylok-obuektami-s-pomoshyu-expand)

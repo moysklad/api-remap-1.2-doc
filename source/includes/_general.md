@@ -54,13 +54,13 @@ curl -X POST
 | --------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Array(Type)**       | Массив объектов/значений. Type - тип элементов массива.                                                                                                                                                                                                    |
 | **Boolean**           | Представляет значение `true` или `false`.                                                                                                                                                                                                                  |
-| **DateTime**          | Представляет строку в формате "гггг-мм-дд чч-мм-сс". Пример значения: `"2016-08-23 15:21:09"`. [Подробнее тут](#mojsklad-json-api-obschie-swedeniq-format-daty-i-wremeni)                                                                                  |
+| **DateTime**          | Представляет строку в формате "гггг-мм-дд чч-мм-сс". Пример значения: `"2016-08-23 15:21:09"`. [Подробнее тут](#/general#3-format-daty-i-vremeni)                                                                                  |
 | **Enum**              | Представляет строку, принимающую константное множество значений.                                                                                                                                                                                           |
 | **Float**             | Представляет дробное числовое значение. Пример значения: `200.8`.                                                                                                                                                                                          |
 | **Int**               | Представляет целое числовое значение в диапазоне -2^31 – 2^31. Пример значения: `200`.                                                                                                                                                                     |
 | **Long**              | Представляет целое числовое значение в диапазоне -2^63 – 2^63. Пример значения: `1613766951558`.                                                                                                                                                           |
-| **Meta**              | Представляет объект в формате [Метаданных](#mojsklad-json-api-obschie-swedeniq-metadannye).                                                                                                                                                                |
-| **MetaArray**         | Объект с полями **meta** и **rows**, где **rows** - массив объектов. Элементы массива **rows** можно запросить, используя [параметр запроса expand](#mojsklad-json-api-obschie-swedeniq-zamena-ssylok-ob-ektami-s-pomosch-u-expand) соответствующего поля. |
+| **Meta**              | Представляет объект в формате [Метаданных](#/general#3-metadannye).                                                                                                                                                                |
+| **MetaArray**         | Объект с полями **meta** и **rows**, где **rows** - массив объектов. Элементы массива **rows** можно запросить, используя [параметр запроса expand](#/general#3-zamena-ssylok-obuektami-s-pomoshyu-expand) соответствующего поля. |
 | **Object**            | Представляет сущность с вложенными полями.                                                                                                                                                                                                                 |
 | **String(MaxLength)** | Представляет текстовые данные в виде последовательности символов UTF-8. MaxLength - максимальная длина строки для конкретного поля. Пример значения: `"Москва"`.                                                                                           |
 | **URL**               | Соответствующая стандартам FRC 3986 и RFC 3987 строка URI. Пример значения: `"https://api.moysklad.ru/api/remap/1.2/entity/counterparty"`.                                                                                                              |
@@ -165,8 +165,8 @@ curl -X GET
 | **moreInfo**      | link                                                           | Ссылка на документацию с описанием полученной ошибки                                                                                                                      |
 | **line**          | Int                                                            | Строка JSON, на которой произошла ошибка                                                                                                                                  |
 | **column**        | Int                                                            | Координата элемента в строке `line`, на котором произошла ошибка                                                                                                          |
-| **dependencies**  | Array([Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)) | Список метаданных зависимых сущностей или документов. Выводится при невозможности удаления сущности, документа, если имеются зависимости от удаляемой сущности, документа |
-| **meta**          | [Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)         | Метаданные сущности, документа на котором произошла ошибка                                                                                                                |
+| **dependencies**  | Array([Meta](#/general#3-metadannye)) | Список метаданных зависимых сущностей или документов. Выводится при невозможности удаления сущности, документа, если имеются зависимости от удаляемой сущности, документа |
+| **meta**          | [Meta](#/general#3-metadannye)         | Метаданные сущности, документа на котором произошла ошибка                                                                                                                |
 
 ###### Возвращаемые HTTP статусы ошибок и их значения:
 
@@ -213,47 +213,47 @@ JSON API позволяет создавать, обновлять и удаля
 
 Список сущностей, у которых есть доп. поля:
 
-+ [Договор](dictionaries/#suschnosti-dogowor)
-+ [Контрагент](dictionaries/#suschnosti-kontragent)
-+ [Юрлицо](dictionaries/#suschnosti-jurlico)
-+ [Проект](dictionaries/#suschnosti-proekt)
-+ [Пользовательский справочник](dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik) (у каждого справочника свои)
-+ [Склад](dictionaries/#suschnosti-sklad)
-+ [Сотрудник](dictionaries/#suschnosti-sotrudnik)
-+ [Товар](dictionaries/#suschnosti-towar)
-+ [Услуга](dictionaries/#suschnosti-usluga) (располагаются в метаданных Товаров)
-+ [Комплект](dictionaries/#suschnosti-komplekt) (располагаются в метаданных Товаров)
-+ [Серия](dictionaries/#suschnosti-seriq)
++ [Договор](#/dictionaries/contract#2-dogovor)
++ [Контрагент](#/dictionaries/counterparty#2-kontragent)
++ [Юрлицо](#/dictionaries/organization#2-yurlico)
++ [Проект](#/dictionaries/project#2-proekt)
++ [Пользовательский справочник](#/dictionaries/customentity#2-polzovatelskij-spravochnik) (у каждого справочника свои)
++ [Склад](#/dictionaries/store#2-sklad)
++ [Сотрудник](#/dictionaries/employee#2-sotrudnik)
++ [Товар](#/dictionaries/product#2-tovar)
++ [Услуга](#/dictionaries/service#2-usluga) (располагаются в метаданных Товаров)
++ [Комплект](#/dictionaries/bundle#2-komplekt) (располагаются в метаданных Товаров)
++ [Серия](#/dictionaries/consignment#2-seriya)
 + Все документы:
-  - [Возврат покупателя](documents/#dokumenty-vozwrat-pokupatelq)
-  - [Возврат поставщику](documents/#dokumenty-vozwrat-postawschiku)
-  - [Входящий платеж](documents/#dokumenty-vhodqschij-platezh)
-  - [Заказ покупателя](documents/#dokumenty-zakaz-pokupatelq)
-  - [Заказ поставщику](documents/#dokumenty-zakaz-postawschiku)
-  - [Исходящий платеж](documents/#dokumenty-ishodqschij-platezh)
-  - [Оприходование](documents/#dokumenty-oprihodowanie)
-  - [Отгрузка](documents/#dokumenty-otgruzka)
-  - [Перемещение](documents/#dokumenty-peremeschenie)
-  - [Приемка](documents/#dokumenty-priemka)
-  - [Приходный ордер](documents/#dokumenty-prihodnyj-order)
-  - [Расходный ордер](documents/#dokumenty-rashodnyj-order)
-  - [Розничная продажа](documents/#dokumenty-roznichnaq-prodazha)
-  - [Розничная смена](documents/#dokumenty-roznichnaq-smena)
-  - [Розничный возврат](documents/#dokumenty-roznichnyj-wozwrat)
-  - [Списание](documents/#dokumenty-spisanie)
-  - [Инвентаризация](documents/#dokumenty-inwentarizaciq)
-  - [Счет покупателю](documents/#dokumenty-schet-pokupatelu)
-  - [Счет поставщика](documents/#dokumenty-schet-postawschika)
-  - [Счет-фактура выданный](documents/#dokumenty-schet-faktura-wydannyj)
-  - [Счет-фактура полученный](documents/#dokumenty-schet-faktura-poluchennyj)
-  - [Прайс-лист](documents/#dokumenty-prajs-list)
-  - [Внутренний заказ](documents/#dokumenty-vnutrennij-zakaz)
-  - [Заказ на производство](documents/#dokumenty-zakaz-na-proizwodstwo)
-  - [Техоперация](documents/#dokumenty-tehoperaciq)
-  - [Производственное задание](documents/#dokumenty-proizwodstwennoe-zadanie)
-  - [Выполнение этапа](documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
-  - [Полученный отчет комиссионера](documents/#dokumenty-poluchennyj-otchet-komissionera)
-  - [Выданный отчет комиссионера](documents/#dokumenty-vydannyj-otchet-komissionera)
+  - [Возврат покупателя](#/documents/sales-return#2-vozvrat-pokupatelya)
+  - [Возврат поставщику](#/documents/purchase-return#2-vozvrat-postavshiku)
+  - [Входящий платеж](#/documents/payment-in#2-vhodyashij-platezh)
+  - [Заказ покупателя](#/documents/customerOrder#2-zakaz-pokupatelya)
+  - [Заказ поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku)
+  - [Исходящий платеж](#/documents/payment-out#2-ishodyashij-platezh)
+  - [Оприходование](#/documents/enter#2-oprihodovanie)
+  - [Отгрузка](#/documents/demand#2-otgruzka)
+  - [Перемещение](#/documents/move#2-peremeshenie)
+  - [Приемка](#/documents/supply#2-priemka)
+  - [Приходный ордер](#/documents/cashin#2-prihodnyj-order)
+  - [Расходный ордер](#/documents/cashout#2-rashodnyj-order)
+  - [Розничная продажа](#/documents/retaildemand#2-roznichnaya-prodazha)
+  - [Розничная смена](#/documents/retailshift#2-roznichnaya-smena)
+  - [Розничный возврат](#/documents/retail-sales-return#2-roznichnyj-vozvrat)
+  - [Списание](#/documents/loss#2-spisanie)
+  - [Инвентаризация](#/documents/inventory#2-inventarizaciya)
+  - [Счет покупателю](#/documents/invoice-out#2-schet-pokupatelyu)
+  - [Счет поставщика](#/documents/invoice-in#2-schet-postavshika)
+  - [Счет-фактура выданный](#/documents/factureout#2-schet-faktura-vydannyj)
+  - [Счет-фактура полученный](#/documents/facturein#2-schet-faktura-poluchennyj)
+  - [Прайс-лист](#/documents/pricelist#2-prajs-list)
+  - [Внутренний заказ](#/documents/internalOrder#2-vnutrennij-zakaz)
+  - [Заказ на производство](#/documents/processingorder#2-zakaz-na-proizvodstvo)
+  - [Техоперация](#/documents/processing#2-tehoperaciya)
+  - [Производственное задание](#/documents/productionTask#2-proizvodstvennoe-zadanie)
+  - [Выполнение этапа](#/documents/productionStageCompletion#2-vypolnenie-etapa-proizvodstva)
+  - [Полученный отчет комиссионера](#/documents/commissionreportin#2-poluchennyj-otchet-komissionera)
+  - [Выданный отчет комиссионера](#/documents/commissionreportout#2-vydannyj-otchet-komissionera)
 
 Посмотреть все созданные доп. поля можно с помощью запроса на получение метаданных сущности.
 Ответ будет содержать описание доп. полей в виде коллекции **attributes**, если указанная сущность поддерживает работу с доп. полями.
@@ -264,7 +264,7 @@ JSON API позволяет создавать, обновлять и удаля
 | --------------- | :----------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
 | **description** | String(4096)                                           | Описание доп. поля                                                                                                                  |
 | **id**          | UUID                                                   | ID доп. поля<br>`+Обязательное при ответе` `+Только для чтения`                                                                     |
-| **meta**        | [Meta](#mojsklad-json-api-obschie-swedeniq-metadannye) | Ссылка на метаданные доп. поля<br>`+Обязательное при ответе`                                                                        |
+| **meta**        | [Meta](#/general#3-metadannye) | Ссылка на метаданные доп. поля<br>`+Обязательное при ответе`                                                                        |
 | **name**        | String(255)                                            | Наименование доп. поля<br>`+Обязательное при ответе` `+Необходимо при создании`                                                     |
 | **required**    | Boolean                                                | Является ли доп. поле обязательным<br>`+Обязательное при ответе`                                                                    |
 | **show**        | Boolean                                                | Показывать ли доп. поле на UI. Не может быть скрытым и обязательным одновременно. Только для операций<br>`+Обязательное при ответе` |
@@ -278,7 +278,7 @@ JSON API позволяет создавать, обновлять и удаля
 | Название  | Тип                                                    | Описание                                                               |
 |-----------|:-------------------------------------------------------|:-----------------------------------------------------------------------|
 | **id**    | UUID                                                   | ID соответствующего доп. поля                                          |
-| **meta**  | [Meta](#mojsklad-json-api-obschie-swedeniq-metadannye) | Ссылка на метаданные доп. поля                                         |
+| **meta**  | [Meta](#/general#3-metadannye) | Ссылка на метаданные доп. поля                                         |
 | **file**  | Object                                                 | Описание файла и контент (поле доступно только для доп.поля типа Файл) |
 | **name**  | String(255)                                            | Наименование доп. поля                                                 |
 | **type**  | Enum                                                   | Тип доп. поля                                                          |
@@ -326,16 +326,16 @@ JSON API позволяет создавать, обновлять и удаля
 | [Товар]                           | product                                  |
 | Имя_пользовательского справочника | customentity                             |
 
-Если в качестве типа доп. поля выбран [Пользовательский справочник](dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik), то в составе объекта данного
+Если в качестве типа доп. поля выбран [Пользовательский справочник](#/dictionaries/customentity#2-polzovatelskij-spravochnik), то в составе объекта данного
 доп. поля появится новый атрибут **customEntityMeta** являющийся ссылкой на метаданные этого справочника.
 Полный набор атрибутов доп. поля будет выглядеть следующим образом:
 
 | Название             | Тип                                                    | Описание                                                                                              |
 | -------------------- | :----------------------------------------------------- | :---------------------------------------------------------------------------------------------------- |
-| **customEntityMeta** | [Meta](#mojsklad-json-api-obschie-swedeniq-metadannye) | Ссылка на метаданные пользовательского справочника                                                    |
+| **customEntityMeta** | [Meta](#/general#3-metadannye) | Ссылка на метаданные пользовательского справочника                                                    |
 | **description**      | String(4096)                                           | Описание доп. поля                                                                                    |
 | **id**               | UUID                                                   | ID доп. поля                                                                                          |
-| **meta**             | [Meta](#mojsklad-json-api-obschie-swedeniq-metadannye) | Ссылка на метаданные доп. поля                                                                        |
+| **meta**             | [Meta](#/general#3-metadannye) | Ссылка на метаданные доп. поля                                                                        |
 | **name**             | String(255)                                            | Наименование доп. поля                                                                                |
 | **required**         | Boolean                                                | Является ли доп. поле обязательным                                                                    |
 | **show**             | Boolean                                                | Показывать ли доп. поле на UI. Не может быть скрытым и обязательным одновременно. Только для операций |
@@ -345,7 +345,7 @@ JSON API позволяет создавать, обновлять и удаля
 
 | Название | Тип                                                    | Описание                                         |
 | -------- | :----------------------------------------------------- | :----------------------------------------------- |
-| **meta** | [Meta](#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные сущности соответствующего справочника |
+| **meta** | [Meta](#/general#3-metadannye) | Метаданные сущности соответствующего справочника |
 | **name** | String(255)                                            | Наименование соответствующей сущности            |
 
 Обнуление доп. поля типа "справочник" происходит так же, как и при работе с другими доп. полями.
@@ -414,9 +414,9 @@ curl -X PUT
 
 ### Дополнительные поля сущностей
 Запрос на получение дополнительных полей сущности.
-Список доступных типов сущностей перечислен [тут](#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
+Список доступных типов сущностей перечислен [тут](#/general#3-rabota-s-dopolnitelnymi-polyami).
 
-Структура объекта доп. поля подробно описана в секции [Работа с дополнительными полями](#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
+Структура объекта доп. поля подробно описана в секции [Работа с дополнительными полями](#/general#3-rabota-s-dopolnitelnymi-polyami).
 
 **Параметры**
 
@@ -432,7 +432,7 @@ curl -X PUT
 
 | Название | Тип                                                    | Описание                                              |
 | -------- | :----------------------------------------------------- | :---------------------------------------------------- |
-| **meta** | [Meta](#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче                                   |
+| **meta** | [Meta](#/general#3-metadannye) | Метаданные о выдаче                                   |
 | **rows** | Array(Object)                                          | Массив JSON объектов, представляющих собой доп. поля. |
 
 > Получить доп поля отгрузок
@@ -1007,11 +1007,11 @@ curl -X PUT
 
 ### Работа с позициями документов
 
-API сервиса МойСклад позволяет оперировать с такими документами как [Отгрузка](documents/#dokumenty-otgruzka), [Заказ покупателя](documents/#dokumenty-zakaz-pokupatelq), [Счет покупателю](documents/#dokumenty-schet-pokupatelu),
-[Розничная продажа](documents/#dokumenty-roznichnaq-prodazha), [Полученный отчет комиссионера](documents/#dokumenty-poluchennyj-otchet-komissionera), [Выданный отчет комиссионера](documents/#dokumenty-vydannyj-otchet-komissionera), [Оприходование](documents/#dokumenty-oprihodowanie),
-[Внутренний заказ](documents/#dokumenty-vnutrennij-zakaz), [Инвентаризация](documents/#dokumenty-inwentarizaciq), [Списание](documents/#dokumenty-spisanie), [Перемещение](documents/#dokumenty-peremeschenie), [Прайс-лист](documents/#dokumenty-prajs-list),
-[Заказ на производство](documents/#dokumenty-zakaz-na-proizwodstwo), [Возврат поставщику](documents/#dokumenty-vozwrat-postawschiku), [Заказ поставщику](documents/#dokumenty-zakaz-postawschiku),
-[Розничный возврат](documents/#dokumenty-roznichnyj-wozwrat), [Возврат покупателя](documents/#dokumenty-vozwrat-pokupatelq), [Приемка](documents/#dokumenty-priemka), [Счет поставщика](documents/#dokumenty-schet-postawschika). Перечисленные документы содержат позиции, работать с которыми можно как в составе отдельного документа,
+API сервиса МойСклад позволяет оперировать с такими документами как [Отгрузка](#/documents/demand#2-otgruzka), [Заказ покупателя](#/documents/customerOrder#2-zakaz-pokupatelya), [Счет покупателю](#/documents/invoice-out#2-schet-pokupatelyu),
+[Розничная продажа](#/documents/retaildemand#2-roznichnaya-prodazha), [Полученный отчет комиссионера](#/documents/commissionreportin#2-poluchennyj-otchet-komissionera), [Выданный отчет комиссионера](#/documents/commissionreportout#2-vydannyj-otchet-komissionera), [Оприходование](#/documents/enter#2-oprihodovanie),
+[Внутренний заказ](#/documents/internalOrder#2-vnutrennij-zakaz), [Инвентаризация](#/documents/inventory#2-inventarizaciya), [Списание](#/documents/loss#2-spisanie), [Перемещение](#/documents/move#2-peremeshenie), [Прайс-лист](#/documents/pricelist#2-prajs-list),
+[Заказ на производство](#/documents/processingorder#2-zakaz-na-proizvodstvo), [Возврат поставщику](#/documents/purchase-return#2-vozvrat-postavshiku), [Заказ поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku),
+[Розничный возврат](#/documents/retail-sales-return#2-roznichnyj-vozvrat), [Возврат покупателя](#/documents/sales-return#2-vozvrat-pokupatelya), [Приемка](#/documents/supply#2-priemka), [Счет поставщика](#/documents/invoice-in#2-schet-postavshika). Перечисленные документы содержат позиции, работать с которыми можно как в составе отдельного документа,
 так и с помощью специальных ресурсов для управления позициями документа.
 
 ######  Работа с позициями в рамках отдельного документа
@@ -1162,12 +1162,12 @@ curl -X POST
 Исключения:
 
 + Структурированный адрес у
-  [Контрагента](dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-adres),
-  [Юрлица](dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-adres),
-  [Точки продаж](dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-atributy-suschnosti-status-atributy-suschnosti-adres),
-  [Склада](dictionaries/#suschnosti-sklad-sklady-atributy-suschnosti-adres),
-  [Заказа покупателя](documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-atributy-suschnosti-adres-dostawki),
-  [Отгрузки](documents/#dokumenty-otgruzka-otgruzki-atributy-suschnosti-adres-dostawki) не поддерживает удаления передачей `null`.
+  [Контрагента](#/dictionaries/counterparty#5-adres),
+  [Юрлица](#/dictionaries/organization#5-adres),
+  [Точки продаж](#/dictionaries/retailstore#6-atributy-sushnosti-adres),
+  [Склада](#/dictionaries/store#4-atributy-sushnosti-adres),
+  [Заказа покупателя](#/documents/customerOrder#4-atributy-sushnosti-adres-dostavki),
+  [Отгрузки](#/documents/demand#4-atributy-sushnosti-adres-dostavki) не поддерживает удаления передачей `null`.
 Для удаления адреса необходимо в строковое поле передать пустую строку `""`. Конкретные строковые поля приведены в соответствующих разделах, переход в которые осуществляется по ссылкам выше.
 
 ### Пустые поля
@@ -1201,7 +1201,7 @@ curl -X POST
 Значение этого параметра - **urlencoded** строка с условиями сортировки, перечисленными через `;`. (Все примеры ниже указаны без urlencoded для лучшей читаемости)
 Каждое условие сортировки- это сочетание названия поля, запятой (опционально, если указывается направление сортировки), направления сортировки (опционально; может принимать значения  `asc` и `desc`. Значение по умолчанию - `asc`).
 
-Сортировка поддерживается для следующих типов полей: числовой, строковый, дата-время, логический и uuid. Подробное описание доступно в [соответствующем разделе](workbook/#workbook-sortirowka).
+Сортировка поддерживается для следующих типов полей: числовой, строковый, дата-время, логический и uuid. Подробное описание доступно в [соответствующем разделе](#/workbook/workbook-sorting#2-sortirovka).
 
 Примеры запросов с сортировкой:
 
@@ -1443,7 +1443,7 @@ curl -X POST
 
 ### Применение сохраненного фильтра
 
-В JSON API есть возможность применения сохраненных фильтров. Подробное описание доступно в [соответствующем разделе](dictionaries/#suschnosti-sohranennye-fil-try).
+В JSON API есть возможность применения сохраненных фильтров. Подробное описание доступно в [соответствующем разделе](#/dictionaries/named-filter#2-sohranennye-filtry).
 
 ### Ссылки на файлы
 
@@ -1458,13 +1458,13 @@ curl -X POST
 ### Замена ссылок объектами с помощью expand 
 
 В JSON API, в составе сущностей можно встретить ссылки на связанные объекты.
-Ссылки выводятся в формате [Метаданных](#mojsklad-json-api-obschie-swedeniq-metadannye). Для того, чтобы вместо ссылок получить связанные объекты,
+Ссылки выводятся в формате [Метаданных](#/general#3-metadannye). Для того, чтобы вместо ссылок получить связанные объекты,
 не обязательно делать отдельные запросы для каждого из них. Вместо этого, вместе с запросом на получение сущности, нужно передать параметр **expand**.
 В качестве значения данного параметра нужно перечислить через запятую все необходимые поля-ссылки,
 на месте которых вы бы хотели видеть связанные объекты.
 В результате запроса с таким параметром, в ответе вы получите объект с развернутыми вложенными объектами вместо ссылок.
 К примеру, в документах, имеющих в составе поле **agent**, вместо ссылки на
-контрагента будет выведен объект со всеми полями сущности "Контрагент", описанными [тут](dictionaries/#suschnosti-kontragent).
+контрагента будет выведен объект со всеми полями сущности "Контрагент", описанными [тут](#/dictionaries/counterparty#2-kontragent).
 
 #### На expand действуют следующие правила:
 
@@ -1472,7 +1472,7 @@ curl -X POST
 * Максимальный уровень вложенности **expand** : 3
 * Также **expand** можно применять для результатов операций создания и обновления
 
-Ниже показаны примеры использования **expand** на [Возврате покупателя](documents/#dokumenty-vozwrat-pokupatelq). В примерах представлены только поля **meta** и **demand**.
+Ниже показаны примеры использования **expand** на [Возврате покупателя](#/documents/sales-return#2-vozvrat-pokupatelya). В примерах представлены только поля **meta** и **demand**.
 
 ### Возврат без expand 
 
@@ -2864,7 +2864,7 @@ curl -X PUT
 | **accountId**    | UUID                                                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                               |
 | **archived**     | Boolean                                                | Добавлен ли Сотрудник в архив<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                   |
 | **attributes**   | Array(Object)                                          | Дополнительные поля Сотрудника<br>`+Только для чтения`                                                                                                                                                             |
-| **cashiers**     | MetaArray                                              | Массив кассиров. [Подробнее тут](dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-kassir)<br>`+Только для чтения` `+Expand`                                                           |
+| **cashiers**     | MetaArray                                              | Массив кассиров. [Подробнее тут](#/dictionaries/employee#5-kassir)<br>`+Только для чтения` `+Expand`                                                           |
 | **code**         | String(255)                                            | Код Сотрудника<br>`+Только для чтения`                                                                                                                                                                             |
 | **created**      | DateTime                                               | Момент создания Сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                      |
 | **description**  | String(4096)                                           | Комментарий к Сотруднику<br>`+Только для чтения`                                                                                                                                                                   |
@@ -2872,16 +2872,16 @@ curl -X PUT
 | **externalCode** | String(255)                                            | Внешний код Сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                          |
 | **firstName**    | String(255)                                            | Имя<br>`+Только для чтения`                                                                                                                                                                                        |
 | **fullName**     | String(255)                                            | Имя Отчество Фамилия<br>`+Только для чтения`                                                                                                                                                                       |
-| **group**        | [Meta](#mojsklad-json-api-obschie-swedeniq-metadannye) | Отдел сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                |
+| **group**        | [Meta](#/general#3-metadannye) | Отдел сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                |
 | **id**           | UUID                                                   | ID Сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                   |
-| **image**        | Object                                                 | Фотография сотрудника. [Подробнее тут](dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-fotografiq-sotrudnika-struktura-i-zagruzka)<br>`+Только для чтения`                           |
+| **image**        | Object                                                 | Фотография сотрудника. [Подробнее тут](#/dictionaries/employee#5-fotografiya-sotrudnika-struktura-i-zagruzka)<br>`+Только для чтения`                           |
 | **inn**          | String(255)                                            | ИНН сотрудника (в формате ИНН физического лица)<br>`+Только для чтения`                                                                                                                                            |
 | **lastName**     | String(255)                                            | Фамилия<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                         |
-| **meta**         | [Meta](#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                           |
+| **meta**         | [Meta](#/general#3-metadannye) | Метаданные Сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                           |
 | **middleName**   | String(255)                                            | Отчество<br>`+Только для чтения`                                                                                                                                                                                   |
 | **name**         | String(255)                                            | Наименование Сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                         |
-| **owner**        | [Meta](#mojsklad-json-api-obschie-swedeniq-metadannye) | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                            |
-| **permissions**  | Object                                                 | Перечисление пермиссий сотрудника. [Подробнее тут](#mojsklad-json-api-obschie-swedeniq-kontext-zaprosa-sotrudnika-atributy-wlozhennyh-suschnostej-permissii-sotrudnika)<br>`+Обязательное при ответе` `+Только для чтения` |
+| **owner**        | [Meta](#/general#3-metadannye) | Владелец (Сотрудник)<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                            |
+| **permissions**  | Object                                                 | Перечисление пермиссий сотрудника. [Подробнее тут](#/general#5-permissii-sotrudnika)<br>`+Обязательное при ответе` `+Только для чтения` |
 | **phone**        | String(255)                                            | Телефон сотрудника<br>`+Только для чтения`                                                                                                                                                                         |
 | **position**     | String(255)                                            | Должность сотрудника<br>`+Только для чтения`                                                                                                                                                                       |
 | **shared**       | Boolean                                                | Общий доступ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                    |
@@ -2891,7 +2891,7 @@ curl -X PUT
 
 #### Атрибуты вложенных сущностей
 
-Многие атрибуты, представленные в этом запросе, за исключением поля `permissions`, повторяют атрибуты запроса [Сотрудника](dictionaries/#suschnosti-sotrudnik-sotrudniki), подробное описание которых можно посмотреть в соответствующем разделе.
+Многие атрибуты, представленные в этом запросе, за исключением поля `permissions`, повторяют атрибуты запроса [Сотрудника](#/dictionaries/employee#3-sotrudniki), подробное описание которых можно посмотреть в соответствующем разделе.
 
 ##### Пермиссии сотрудника
 
@@ -3001,7 +3001,7 @@ curl -X PUT
 | **retailStore**            | BASE                                                                                                                                               | Точка продаж                           |
 | **salesReturn**            | OPERATION                                                                                                                                          | Возврат покупателя                     |
 | **supply**                 | OPERATION                                                                                                                                          | Приемки                                |
-| **task**                   | [Особый](#mojsklad-json-api-obschie-swedeniq-kontext-zaprosa-sotrudnika-atributy-wlozhennyh-suschnostej-permissii-sotrudnika-permissii-dlq-zadach) | Задачи                                 |
+| **task**                   | [Особый](#/general#6-permissii-dlya-zadach) | Задачи                                 |
 | **uom**                    | BASE                                                                                                                                               | Единицы измерения                      |
 | **warehouse**              | BASE                                                                                                                                               | Склады                                 |
 | **webhook**                | DICTIONARY                                                                                                                                         | Вебхуки                                |
@@ -3665,5 +3665,5 @@ Href решения должен быть указан в виде:
 | **ru**                                    | Регион Россия (регион по умолчанию)    |
 | **uz**                                    | Регион Узбекистан                      |
 
-Передача регионального заголовка, дает возможность получать и изменять регионоспецифичные поля. [Пример для товара](dictionaries/#suschnosti-towar-towary-atributy-suschnosti-regionospecifichnye-atributy-suschnosti)
+Передача регионального заголовка, дает возможность получать и изменять регионоспецифичные поля. [Пример для товара](#/dictionaries/product#5-regionospecifichnye-atributy-sushnosti)
 Результатом выполнения запроса будет получение ответа содержащий регионоспецифичные поля и заголовок `X-Lognex-Content-Region` c кодом региона.

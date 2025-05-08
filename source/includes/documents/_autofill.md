@@ -2,37 +2,37 @@
 
 Средствами JSON API можно рассчитать значение скидок, цен и ндс для позиций следующих документов:
 
-- [Оприходование](../documents/#dokumenty-oprihodowanie)
-- [Заказ покупателя](../documents/#dokumenty-zakaz-pokupatelq)
-- [Заказ поставщику](../documents/#dokumenty-zakaz-postawschiku)
-- [Счет покупателю](../documents/#dokumenty-schet-pokupatelu)
-- [Счет поставщику](../documents/#dokumenty-schet-postawschika)
-- [Отгрузка](../documents/#dokumenty-otgruzka)
-- [Приемка](../documents/#dokumenty-priemka)
-- [Списание](../documents/#dokumenty-spisanie)
-- [Перемещение](../documents/#dokumenty-peremeschenie)
-- [Розничная продажа](../documents/#dokumenty-roznichnaq-prodazha)
-- [Розничный возврат](../documents/#dokumenty-roznichnyj-wozwrat)
-- [Возврат покупателя](../documents/#dokumenty-vozwrat-pokupatelq)
-- [Возврат поставщику](../documents/#dokumenty-vozwrat-postawschiku)
-- [Инвентаризация](../documents/#dokumenty-inwentarizaciq)
-- [Полученный отчет комиссионера](../documents/#dokumenty-poluchennyj-otchet-komissionera)
-- [Выданный отчет комиссионера](../documents/#dokumenty-vydannyj-otchet-komissionera)
-- [Внутренний заказ](../documents/#dokumenty-vnutrennij-zakaz)
+- [Оприходование](#/documents/enter#2-oprihodovanie)
+- [Заказ покупателя](#/documents/customerOrder#2-zakaz-pokupatelya)
+- [Заказ поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku)
+- [Счет покупателю](#/documents/invoice-out#2-schet-pokupatelyu)
+- [Счет поставщику](#/documents/invoice-in#2-schet-postavshika)
+- [Отгрузка](#/documents/demand#2-otgruzka)
+- [Приемка](#/documents/supply#2-priemka)
+- [Списание](#/documents/loss#2-spisanie)
+- [Перемещение](#/documents/move#2-peremeshenie)
+- [Розничная продажа](#/documents/retaildemand#2-roznichnaya-prodazha)
+- [Розничный возврат](#/documents/retail-sales-return#2-roznichnyj-vozvrat)
+- [Возврат покупателя](#/documents/sales-return#2-vozvrat-pokupatelya)
+- [Возврат поставщику](#/documents/purchase-return#2-vozvrat-postavshiku)
+- [Инвентаризация](#/documents/inventory#2-inventarizaciya)
+- [Полученный отчет комиссионера](#/documents/commissionreportin#2-poluchennyj-otchet-komissionera)
+- [Выданный отчет комиссионера](#/documents/commissionreportout#2-vydannyj-otchet-komissionera)
+- [Внутренний заказ](#/documents/internalOrder#2-vnutrennij-zakaz)
 
 Заполнение скидок не поддерживает следующие типы:
 
-- [Инвентаризация](../documents/#dokumenty-inwentarizaciq)
-- [Перемещение](../documents/#dokumenty-peremeschenie)
-- [Внутренний заказ](../documents/#dokumenty-vnutrennij-zakaz)
-- [Оприходование](../documents/#dokumenty-oprihodowanie)
-- [Списание](../documents/#dokumenty-spisanie)
+- [Инвентаризация](#/documents/inventory#2-inventarizaciya)
+- [Перемещение](#/documents/move#2-peremeshenie)
+- [Внутренний заказ](#/documents/internalOrder#2-vnutrennij-zakaz)
+- [Оприходование](#/documents/enter#2-oprihodovanie)
+- [Списание](#/documents/loss#2-spisanie)
 
-Заполнение цен не поддерживает [Инвентаризация](../documents/#dokumenty-inwentarizaciq)
+Заполнение цен не поддерживает [Инвентаризация](#/documents/inventory#2-inventarizaciya)
 
 Заполнение себестоимости поддерживается только для возвратов без основания следующих типов:
-- [Возврат покупателя](../documents/#dokumenty-vozwrat-pokupatelq)
-- [Розничный возврат](../documents/#dokumenty-roznichnyj-wozwrat)
+- [Возврат покупателя](#/documents/sales-return#2-vozvrat-pokupatelya)
+- [Розничный возврат](#/documents/retail-sales-return#2-roznichnyj-vozvrat)
 
 
 ### Шаблон автозаполнения
@@ -44,13 +44,13 @@
 
 Ниже приводятся поля, которые влияют на заполнение скидок, цен, ндс и себестоимости.
 
-+ **organization** - Ссылка на юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye). Обязателен со значением `evaluate_vat` параметра `action`
-+ **agent** - Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye). 
++ **organization** - Ссылка на юрлицо в формате [Метаданных](#/general#3-metadannye). Обязателен со значением `evaluate_vat` параметра `action`
++ **agent** - Ссылка на контрагента в формате [Метаданных](#/general#3-metadannye). 
 Обязателен со значениями `evaluate_price`, `evaluate_discount` параметра `action`
 + **vatEnabled** - Учитывается ли НДС
 + **vatIncluded** - Включен ли НДС в цену
 + **rate** - Валюта. Если не передано, заполняется валютой учета
-+ **store** - Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye). Обязателен со значением `evaluate_cost` параметра `action`
++ **store** - Ссылка на склад в формате [Метаданных](#/general#3-metadannye). Обязателен со значением `evaluate_cost` параметра `action`
 + **moment** - Дата проведения документа. Влияет на расчет себестоимости 
 + **positions** - Позиции документа
 
@@ -74,7 +74,7 @@
 + **discount** - Процент скидки или наценки.
 + **vat** - НДС, которым облагается текущая позиция.
 + **vatEnabled** - включен ли НДС для текущей позиции. С помощью этого флага для позиции можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.
-+ **assortment** - Ссылка на товар/услугу/серию/модификацию/комплект, которую представляет собой позиция, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
++ **assortment** - Ссылка на товар/услугу/серию/модификацию/комплект, которую представляет собой позиция, в формате [Метаданных](#/general#3-metadannye)
 + **discountedPrice** - Цена товара/услуги с учетом скидок и ндс в копейках.
 + **sum** - Общая сумма с учетом скидки за указанное количество товара в позиции в копейках. Рассчитывается при передаче поля **quantity**.
 

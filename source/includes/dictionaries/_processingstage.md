@@ -11,12 +11,12 @@
 | **archived**           | Boolean                                                   | `=` `!=`                   | Добавлен ли Этап в архив<br>`+Обязательное при ответе`                                 |
 | **description**        | String(4096)                                              | `=` `!=` `~` `~=` `=~`     | Комментарий Этапа                                                                      |
 | **externalCode**       | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Внешний код Этапа<br>`+Обязательное при ответе`                                        |
-| **group**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                               |
+| **group**              | [Meta](#/general#3-metadannye) | `=` `!=`                   | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                               |
 | **id**                 | UUID                                                      | `=` `!=`                   | ID Этапа<br>`+Обязательное при ответе` `+Только для чтения`                            |
-| **materialStore**      | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Метаданные склада материалов<br>`+Только для чтения`                                   |
-| **meta**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                            | Метаданные Этапа<br>`+Обязательное при ответе` `+Только для чтения`                    |
+| **materialStore**      | [Meta](#/general#3-metadannye) |                            | Метаданные склада материалов<br>`+Только для чтения`                                   |
+| **meta**               | [Meta](#/general#3-metadannye) |                            | Метаданные Этапа<br>`+Обязательное при ответе` `+Только для чтения`                    |
 | **name**               | String(255)                                               | `=` `!=` `~` `~=` `=~`     | Наименование Этапа<br>`+Обязательное при ответе` `+Необходимо при создании`            |
-| **owner**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br> `+Expand`                                                     |
+| **owner**              | [Meta](#/general#3-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br> `+Expand`                                                     |
 | **performers**         | MetaArray                                                 |                            | Метаданные возможных исполнителей<br>`+Обязательное при ответе`                        |
 | **shared**             | Boolean                                                   | `=` `!=`                   | Общий доступ<br>`+Обязательное при ответе`                                             |
 | **standardHourCost**   | Double                                                    |                            | Стоимость нормо-часа<br>`+Обязательное при ответе`                                     |
@@ -34,8 +34,8 @@
 
 | Название    | Тип                                                       | Описание                                        |
 | ----------- | :-------------------------------------------------------- |:------------------------------------------------|
-| **meta**    | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о выдаче                             |
-| **context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос     |
+| **meta**    | [Meta](#/general#3-metadannye) | Метаданные о выдаче                             |
+| **context** | [Meta](#/general#3-metadannye) | Метаданные о сотруднике, выполнившем запрос     |
 | **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой Этапы|
 
 **Параметры**
@@ -195,7 +195,7 @@ curl -X GET
 ```
 
 ### Массовое создание и обновление этапов
-[Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) этапов.
+[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) этапов.
 В теле запроса нужно передать массив, содержащий JSON представления этапов, которые вы хотите создать или обновить.
 Обновляемые этапы должны содержать идентификатор в виде метаданных.
 

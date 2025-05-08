@@ -9,11 +9,11 @@
 
 | Название          | Тип    | Описание                                                                                                                                                                                                     |
 | ----------------- | :----- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **assortment**    | Object | Краткое представление Товара или Модификации в отчете. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-assortment)<br>`+Обязательное при ответе`                                |
-| **onPeriodStart** | Object | Показатели на начало периода. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе`                |
-| **onPeriodEnd**   | Object | Показатели на конец периода. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе`                 |
-| **income**        | Object | Показатели прихода в течение периода отчета. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе` |
-| **outcome**       | Object | Показатели расхода в течение периода отчета. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaram-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе` |
+| **assortment**    | Object | Краткое представление Товара или Модификации в отчете. [Подробнее тут](#/reports/report-turnover#4-struktura-obuekta-assortment-v-otchete-po-tovaram)<br>`+Обязательное при ответе`                                |
+| **onPeriodStart** | Object | Показатели на начало периода. [Подробнее тут](#/reports/report-turnover#4-struktura-obuekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе`                |
+| **onPeriodEnd**   | Object | Показатели на конец периода. [Подробнее тут](#/reports/report-turnover#4-struktura-obuekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе`                 |
+| **income**        | Object | Показатели прихода в течение периода отчета. [Подробнее тут](#/reports/report-turnover#4-struktura-obuekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе` |
+| **outcome**       | Object | Показатели расхода в течение периода отчета. [Подробнее тут](#/reports/report-turnover#4-struktura-obuekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе` |
 
 #### Структура объекта assortment в отчете по товарам
 
@@ -22,7 +22,7 @@
 | **article**       | String(255)                                               | Артикул Товара                                                    |
 | **code**          | String(255)                                               | Код Товара                                                        |
 | **image**         | Object                                                    | Первое изображение Товара или Модификации                         |
-| **meta**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Товара или Модификации<br>`+Обязательное при ответе`   |
+| **meta**          | [Meta](#/general#3-metadannye) | Метаданные Товара или Модификации<br>`+Обязательное при ответе`   |
 | **name**          | String(255)                                               | Наименование Товара или Модификации<br>`+Обязательное при ответе` |
 | **productFolder** | Object                                                    | Группа Товара или Модификации                                     |
 | **uom**           | Object                                                    | Единица измерения                                                 |
@@ -81,7 +81,7 @@ C помощью параметра filter выборку также можно 
 
 Для фильтрации по значению дополнительных полей типа строка, текст и ссылка нужно использовать оператор `=`. Также можно использовать операторы `=` и `!=` с пустым значением, чтобы получить товары только с незаполненным дополнительным полем или только заполненным, соответственно.
 
-Для фильтрации по значению дополнительных полей типа целое число, вещественное число, дата можно использовать операторы `=`, `>=`, `<=`. Также можно использовать операторы `=` и `!=` с пустым значением, чтобы получить товары только с незаполненным дополнительным полем или только заполненным, соответственно. Для дополнительного поля типа дата-время значение передается в виде строки в [формате дата-время](../#mojsklad-json-api-obschie-swedeniq-format-daty-i-wremeni).
+Для фильтрации по значению дополнительных полей типа целое число, вещественное число, дата можно использовать операторы `=`, `>=`, `<=`. Также можно использовать операторы `=` и `!=` с пустым значением, чтобы получить товары только с незаполненным дополнительным полем или только заполненным, соответственно. Для дополнительного поля типа дата-время значение передается в виде строки в [формате дата-время](#/general#3-format-daty-i-vremeni).
 
 Для фильтрации по значению дополнительных полей типа справочник можно использовать операторы `=` и `!=`. В качестве значения нужно передавать ссылку на объект справочника. Также можно использовать операторы `=` и `!=` с пустым значением, чтобы получить товары только с незаполненным дополнительным полем или только заполненным, соответственно.
 
@@ -265,8 +265,8 @@ curl -X GET
 
 | Название         | Тип    | Описание                                                                                                                                                                                               |
 | ---------------- | :----- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **assortment**   | Object | Краткое представление Товара или Модификации в отчете. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-assortment)<br>`+Обязательное при ответе` |
-| **stockByStore** | Object | Детализация оборотов по складам. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-detalizaciq-oborotow-po-skladam)<br>`+Обязательное при ответе`  |
+| **assortment**   | Object | Краткое представление Товара или Модификации в отчете. [Подробнее тут](#/reports/report-turnover#4-struktura-obuekta-assortment-v-otchete-po-tovaru-s-detalizaciej-po-skladam)<br>`+Обязательное при ответе` |
+| **stockByStore** | Object | Детализация оборотов по складам. [Подробнее тут](#/reports/report-turnover#4-struktura-obuekta-detalizaciya-oborotov-po-skladam)<br>`+Обязательное при ответе`  |
 
 #### Структура объекта assortment в отчете по товару с детализацией по складам
 
@@ -275,7 +275,7 @@ curl -X GET
 | **article**       | String(255)                                               | Артикул Товара                                                    |
 | **code**          | String(255)                                               | Код Товара                                                        |
 | **image**         | Object                                                    | Первое изображение Товара или Модификации                         |
-| **meta**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Товара или Модификации<br>`+Обязательное при ответе`   |
+| **meta**          | [Meta](#/general#3-metadannye) | Метаданные Товара или Модификации<br>`+Обязательное при ответе`   |
 | **name**          | String(255)                                               | Наименование Товара или Модификации<br>`+Обязательное при ответе` |
 | **productFolder** | Object                                                    | Группа Товара или Модификации                                     |
 | **uom**           | Object                                                    | Единица измерения                                                 |
@@ -285,10 +285,10 @@ curl -X GET
 | Название          | Тип    | Описание                                                                                                                                                                                                                              |
 | ----------------- | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **store**         | Object | Склад.<br>`+Обязательное при ответе`                                                                                                                                                                                                  |
-| **onPeriodStart** | Object | Показатели на начало периода. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе`                |
-| **onPeriodEnd**   | Object | Показатели на конец периода. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе`                 |
-| **income**        | Object | Показатели прихода в течение периода отчета. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе` |
-| **outcome**       | Object | Показатели расхода в течение периода отчета. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-skladam-struktura-ob-ekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе` |
+| **onPeriodStart** | Object | Показатели на начало периода. [Подробнее тут](#/reports/report-turnover#4-struktura-obuekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе`                |
+| **onPeriodEnd**   | Object | Показатели на конец периода. [Подробнее тут](#/reports/report-turnover#4-struktura-obuekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе`                 |
+| **income**        | Object | Показатели прихода в течение периода отчета. [Подробнее тут](#/reports/report-turnover#4-struktura-obuekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе` |
+| **outcome**       | Object | Показатели расхода в течение периода отчета. [Подробнее тут](#/reports/report-turnover#4-struktura-obuekta-pokazateli-onperiodstart-onperiodend-income-outcome)<br>`+Обязательное при ответе` |
 
 #### Структура объекта показатели (onPeriodStart, onPeriodEnd, income, outcome)
 
@@ -523,9 +523,9 @@ curl -X GET
 
 | Название       | Тип    | Описание                                                                                                                                                                                                  |
 | -------------- | :----- |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **assortment** | Object | Краткое представление Товара или Модификации в отчете. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-dokumentam-struktura-ob-ekta-assortment)<br>`+Обязательное при ответе` |
+| **assortment** | Object | Краткое представление Товара или Модификации в отчете. [Подробнее тут](#/reports/report-turnover#4-struktura-obuekta-assortment-v-otchete-po-tovaru-s-detalizaciej-po-dokumentam)<br>`+Обязательное при ответе` |
 | **store**      | Object | Склад.<br>`+Обязательное при ответе`                                                                                                                                                                      |
-| **operation**  | Object | Документ, связанный с Товаром. [Подробнее тут](#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-dokumentam-struktura-ob-ekta-operation)<br>`+Обязательное при ответе`                          |
+| **operation**  | Object | Документ, связанный с Товаром. [Подробнее тут](#/reports/report-turnover#4-struktura-obuekta-operation)<br>`+Обязательное при ответе`                          |
 | **quantity**   | Float  | Количество товара в документе.<br>`+Обязательное при ответе`                                                                                                                                              |
 | **cost**       | Float  | Себестоимость товара в копейках в документе.<br>`+Обязательное при ответе`                                                                                                                                |
 | **sum**        | Float  | Сумма себестоимостей в копейках.<br>`+Обязательное при ответе`                                                                                                                                            |
@@ -534,7 +534,7 @@ curl -X GET
 
 | Название          | Тип                                                       | Описание                                                          |
 | ----------------- | :-------------------------------------------------------- | :---------------------------------------------------------------- |
-| **meta**          | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные Товара или Модификации<br>`+Обязательное при ответе`   |
+| **meta**          | [Meta](#/general#3-metadannye) | Метаданные Товара или Модификации<br>`+Обязательное при ответе`   |
 | **name**          | String(255)                                               | Наименование Товара или Модификации<br>`+Обязательное при ответе` |
 | **code**          | String(255)                                               | Код Товара                                                        |
 | **article**       | String(255)                                               | Артикул Товара                                                    |
@@ -545,7 +545,7 @@ curl -X GET
 
 | Название        | Тип                                                       | Описание                                                |
 | --------------- | :-------------------------------------------------------- | :------------------------------------------------------ |
-| **meta**        | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные документа<br>`+Обязательное при ответе`      |
+| **meta**        | [Meta](#/general#3-metadannye) | Метаданные документа<br>`+Обязательное при ответе`      |
 | **name**        | String(255)                                               | Номер документа<br>`+Обязательное при ответе`           |
 | **description** | String(255)                                               | Комментарий к документу                                 |
 | **moment**      | Object                                                    | Дата проведения документа<br>`+Обязательное при ответе` |

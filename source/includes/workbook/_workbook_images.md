@@ -351,4 +351,4 @@ curl -X GET
 ```
 
 Подробнее про работу с изображениями можно прочитать 
-[тут](../dictionaries/#suschnosti-izobrazhenie).
+[тут](#/dictionaries/images#2-izobrazhenie).
