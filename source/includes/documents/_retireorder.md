@@ -69,6 +69,7 @@
 
 | Значение            | Описание                             |
 |---------------------|:-------------------------------------|
+| **BICYCLE**         | Велосипеды                           |
 | **ELECTRONICS**     | Фотокамеры и лампы-вспышки           |
 | **FOOD_SUPPLEMENT** | Биологически активные добавки к пище |
 | **LP_CLOTHES**      | Тип маркировки "Одежда"              |
@@ -77,8 +78,12 @@
 | **MILK**            | Молочная продукция                   |
 | **PERFUMERY**       | Духи и туалетная вода                |
 | **SANITIZER**       | Антисептики                          |
+| **SEAFOOD**         | Икра и морепродукты                  |
 | **SHOES**           | Тип маркировки "Обувь"               |
+| **SOFT_DRINKS**     | Безалкогольные напитки               |
 | **TIRES**           | Шины и покрышки                      |
+| **VETPHARMA**       | Ветеринарные препараты               |
+| **WATER**           | Упакованная вода                     |
 
 #### Способ вывода из оборота 
 
@@ -91,6 +96,7 @@
 | **DAMAGE_AND_LOSS**      | Утрата                                                 |
 | **DESTRUCTION**          | Уничтожение                                            |
 | **DISTANCE**             | Дистанционная продажа                                  |
+| **DONATION**             | Безвозмездная передача                                 |
 | **EXPIRATION**           | Истечение срока годности                               |
 | **EXPORT_INSIDE_EEU**    | Трансграничная продажа в страны ЕАЭС                   |
 | **EXPORT_OUTSIDE_EEU**   | Экспорт за пределы стран ЕАЭС                          |
@@ -476,6 +482,11 @@ curl -X GET
 | **SHOES, LP_CLOTHES, LP_LINENS, PERFUMERY, ELECTRONICS, TIRES** | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, RETURN_TO_INDIVIDUAL                         |
 | **MILK**                                                        | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, PRODUCTION_USE, EXPIRATION, VENDING, PACKING |
 | **FOOD_SUPPLEMENT, SANITIZER, MEDICAL_DEVICES**                 | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT                                               |
+| **BICYCLE**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, RETURN_TO_INDIVIDUAL, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE                      |
+| **VETPHARMA**                                                   | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION                                |
+| **SOFT_DRINKS**                                                 | RETAIL_SALE, EXPORT_OUTSIDE_EEU, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, OWN_USE, PACKING, PRODUCTION_USE, STATE_CONTRACT, VENDING, DONATION                                                                            |
+| **WATER**                                                       | RETAIL_SALE, EXPORT_OUTSIDE_EEU, CONFISCATE_SALE, DESTRUCTION, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, DAMAGE_AND_LOSS, OWN_USE, PRODUCTION_USE, STATE_CONTRACT, VENDING, BY_SAMPLES, UTILIZATION, DONATION             |
+| **SEAFOOD**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION, VENDING                       |
 
 Связь допустимых значений поля **supportingTransaction** в зависимости от **retireOrderType**
 
@@ -486,6 +497,7 @@ curl -X GET
 | **DAMAGE_AND_LOSS**      | OTHER                                                  |
 | **DESTRUCTION**          | CERTIFICATE_OF_DESTRUCTION, OTHER                      |
 | **DISTANCE**             | RECEIPT, SALES_RECEIPT, OTHER, CONSIGNMENT_NOTE, UTD   |
+| **DONATION**             | OTHER, CONSIGNMENT_NOTE                                |
 | **EXPIRATION**           | OTHER                                                  |
 | **EXPORT_OUTSIDE_EEU**   | CUSTOMS_DECLARATION, OTHER                             |
 | **MEDICAL_USE**          | OTHER                                                  |
