@@ -13,6 +13,7 @@
 | Название                        | Тип                                                        | Описание                                                                                                                                                                                                                                                |
 |---------------------------------|:-----------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**                   | UUID                                                       | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                    |
+| **agent**                       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  | Метаданные контрагента<br>`+Expand`                                                                                                                                                                                                                     |
 | **code**                        | String(255)                                                | Код Вывода из оборота                                                                                                                                                                                                                                   |
 | **created**                     | DateTime                                                   | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                        |
 | **deleted**                     | DateTime                                                   | Момент последнего удаления Вывода из оборота<br>`+Только для чтения`                                                                                                                                                                                    |
@@ -737,6 +738,13 @@ curl -X GET
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
+              "agent": {
+                  "meta": {
+                      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/2a0c7808-2f09-11f0-0a81-0aec000000a3",
+                      "type": "counterparty",
+                      "mediaType": "application/json"
+                  }
+              },
               "organization": {
                   "meta": {
                       "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
@@ -801,6 +809,15 @@ curl -X GET
     }
   },
   "sum": 0.0,
+  "agent": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/2a0c7808-2f09-11f0-0a81-0aec000000a3",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=2a0c7808-2f09-11f0-0a81-0aec000000a3"
+    }
+  },
   "organization": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
@@ -845,6 +862,13 @@ curl -X GET
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
+              "agent": {
+                  "meta": {
+                      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/2a0c7808-2f09-11f0-0a81-0aec000000a3",
+                      "type": "counterparty",
+                      "mediaType": "application/json"
+                  }
+              },
               "organization": {
                   "meta": {
                       "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
@@ -927,6 +951,15 @@ curl -X GET
     }
   },
   "sum": 0.0,
+  "agent": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/2a0c7808-2f09-11f0-0a81-0aec000000a3",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=2a0c7808-2f09-11f0-0a81-0aec000000a3"
+    }
+  },
   "organization": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
@@ -989,6 +1022,13 @@ curl -X GET
                   "trackingType": "MILK"
               },
               {
+                  "agent": {
+                      "meta": {
+                          "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/2a0c7808-2f09-11f0-0a81-0aec000000a3",
+                          "type": "counterparty",
+                          "mediaType": "application/json"
+                      }
+                  },
                   "organization": {
                       "meta": {
                           "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
@@ -1075,6 +1115,15 @@ curl -X GET
       }
     },
     "sum": 0.0,
+    "agent": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/2a0c7808-2f09-11f0-0a81-0aec000000a3",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=2a0c7808-2f09-11f0-0a81-0aec000000a3"
+      }
+    },
     "organization": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
