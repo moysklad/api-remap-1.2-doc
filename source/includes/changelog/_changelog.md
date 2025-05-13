@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 13-05-2025
+#### Добавлено
+- Новые типы документов для [Ленты Событий](../dictionaries/#suschnosti-lenta-sobytij)
+
 ### 28-04-2025
 #### Добавлено
 - Поле `advancePaymentSum` в [Розничную продажу](../documents/#dokumenty-roznichnaq-prodazha)

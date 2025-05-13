@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 13-05-2025
+#### Добавлено
+- Новые типы документов для [Ленты Событий](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-lenta-sobytij)
+
 ### 28-04-2025
 #### Добавлено
 - Поле `advancePaymentSum` в [Розничную продажу](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha)
