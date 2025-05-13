@@ -21,19 +21,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout the Repository
-      - uses: actions/checkout@v4
+    - name: Checkout the Repository
+    - uses: actions/checkout@v4
 
-      - name: Setup node 22
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
+    - name: Setup node 22
+      uses: actions/setup-node@v4
+      with:
+        node-version: "22"
 
-      - name: Run Markdown Lint
-        env:
-          REPORT_ONLY: true
-          SHOW_ERRORS: true
-        run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/markdown-lint/master/pipeline.sh)
+    - name: Run Markdown Lint
+      env:
+        REPORT_ONLY: true
+        SHOW_ERRORS: true
+      run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/markdown-lint/master/pipeline.sh)
 
   build:
     runs-on: ubuntu-latest
