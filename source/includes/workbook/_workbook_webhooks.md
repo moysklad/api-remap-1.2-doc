@@ -225,9 +225,9 @@ curl -X GET
 уникальный тестовый url, который необходимо указать в вебхуке, и интерактивно показывает входящие запросы, т.е. уведомления вебхуков.
 
 1. Переходим на <a href="https://webhook.site/" target="_blank">сайт</a>
- ![useful image](../../images/webhooks/step-1.png?raw=true)
+ ![useful image](./images/webhooks/step-1.png?raw=true)
 2. Получаем уникальный url. Необходимо скопировать его, чтобы использовать при создании вебхука.
- ![useful image](../../images/webhooks/step-2.png?raw=true)
+ ![useful image](./images/webhooks/step-2.png?raw=true)
  
  > Запрос на создание вебхука на создание услуги
  
@@ -263,4 +263,4 @@ curl -X POST
 <p>4. Создаем услугу в МоемСкладе, в примере ниже создание услуги через JSON API</p>
 
 <p>5. На наш уникальный адрес пришло уведомление!</p>
- ![useful image](../../images/webhooks/step-5.png?raw=true)
+ ![useful image](./images/webhooks/step-5.png?raw=true)
