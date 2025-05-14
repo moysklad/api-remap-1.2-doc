@@ -19,11 +19,15 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 15-05-2025
+### 14-05-2025
 #### Добавлено
 - Поле `agent` в документе [Вывод кодов маркировки из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-atributy-suschnosti)
 - Значения для поля `trackingType` в документе [Вывод кодов маркировки из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii): `BICYCLE`, `VETPHARMA`, `SOFT_DRINKS`, `WATER`, `SEAFOOD`
 - Значение `DONATION` для поля `retireOrderType` в документе [Вывод кодов маркировки из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-sposob-wywoda-iz-oborota)
+
+### 13-05-2025
+#### Добавлено
+- Описание и примеры удаления неснижаемых остатков по складам через использование эндпоинта на массовое удаление для [товар](../dictionaries/#suschnosti-towar-towary)
 
 ### 28-04-2025
 #### Добавлено
