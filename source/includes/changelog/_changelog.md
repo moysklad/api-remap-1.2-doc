@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 15-05-2025
+#### Добавлено
+- Поле "валюта" (currency) во вложенную сущность [Юрлица](../dictionaries/#suschnosti-jurlico-jurlica) Счета юрлица
+
 ### 14-05-2025
 #### Добавлено
 - Поле `agent` в документе [Вывод кодов маркировки из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-atributy-suschnosti)
