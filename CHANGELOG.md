@@ -5,6 +5,33 @@
 #### Изменено
 - Описание поля `accountCountry` в [Настройках компании](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-kompanii)
 
+### 14-05-2025
+#### Добавлено
+- Поле `agent` в документе [Вывод кодов маркировки из оборота](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-atributy-suschnosti)
+- Значения для поля `trackingType` в документе [Вывод кодов маркировки из оборота](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii): `BICYCLE`, `VETPHARMA`, `SOFT_DRINKS`, `WATER`, `SEAFOOD`
+- Значение `DONATION` для поля `retireOrderType` в документе [Вывод кодов маркировки из оборота](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-sposob-wywoda-iz-oborota)
+
+### 13-05-2025
+#### Добавлено
+- Описание и примеры удаления неснижаемых остатков по складам через использование эндпоинта на массовое удаление для [товар](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary)
+
+### 28-04-2025
+#### Добавлено
+- Поле `advancePaymentSum` в [Розничную продажу](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha)
+- Ошибка `18007`
+
+#### Изменено
+- Описание [работы с полями оплаты розничной продажи](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-rabota-s-polqmi-oplaty-roznichnoj-prodazhi)
+- Текст ошибок `18000`, `18005` и `18006`
+
+### 25-04-2025
+#### Добавлено
+- Поле `minimumStock` в сущность [товар](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary) для работы с неснижаемыми остатками
+
+### 10-04-2025
+#### Добавлено
+- Описание отключения JSON API пользователю в [Ограничения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-ogranicheniq)
+
 ### 18-03-2025
 #### Добавлено
 - Поле `fiasCode__ru` для [контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-adres)
