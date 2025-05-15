@@ -26,7 +26,7 @@
 В сервисе [МойСклад](https://www.moysklad.ru) добавить, удалить или отредактировать список файлов товара можно через 
 окно `Карточки товара`.
 
- ![useful image](../../images/files/good_files.png?raw=true)
+ ![useful image](./images/files/good_files.png?raw=true)
  
  Для добавления файла через JSON API нужно задать поля `filename` и `content`, соответствующие названию и содержанию файла,
   закодированному в Base64, соответственно.
