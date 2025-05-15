@@ -23,6 +23,10 @@
 #### Добавлено
 - Поле "валюта" (currency) во вложенную сущность [Юрлица](../dictionaries/#suschnosti-jurlico-jurlica) Счета юрлица
 
+### 15-05-2025
+#### Изменено
+- Описание поля `accountCountry` в [Настройках компании](../dictionaries/#suschnosti-nastrojki-kompanii)
+
 ### 14-05-2025
 #### Добавлено
 - Поле `agent` в документе [Вывод кодов маркировки из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-atributy-suschnosti)
