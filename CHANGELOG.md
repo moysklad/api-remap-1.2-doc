@@ -1,10 +1,6 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 15-05-2025
-#### Добавлено
-- Поле "валюта" (currency) во вложенную сущность [Юрлица](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico-jurlica) Счета юрлица
-
 ### 14-05-2025
 #### Добавлено
 - Поле `agent` в документе [Вывод кодов маркировки из оборота](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-atributy-suschnosti)
