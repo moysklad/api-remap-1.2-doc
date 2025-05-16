@@ -20,10 +20,6 @@
 Список последних изменений в API Remap 1.2
 
 ### 15-05-2025
-#### Добавлено
-- Поле "валюта" (currency) во вложенную сущность [Юрлица](../dictionaries/#suschnosti-jurlico-jurlica) Счета юрлица
-
-### 15-05-2025
 #### Изменено
 - Описание поля `accountCountry` в [Настройках компании](../dictionaries/#suschnosti-nastrojki-kompanii)
 

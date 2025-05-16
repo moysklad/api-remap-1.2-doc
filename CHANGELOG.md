@@ -2,10 +2,6 @@
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
 ### 15-05-2025
-#### Добавлено
-- Поле "валюта" (currency) во вложенную сущность [Юрлица](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico-jurlica) Счета юрлица
-
-### 15-05-2025
 #### Изменено
 - Описание поля `accountCountry` в [Настройках компании](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-kompanii)
 
