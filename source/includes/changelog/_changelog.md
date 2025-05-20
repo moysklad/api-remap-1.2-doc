@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 20-05-2025
+#### Добавлено
+- Добавлена новая [ошибка 3042](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
 ### 15-05-2025
 #### Изменено
 - Описание поля `accountCountry` в [Настройках компании](../dictionaries/#suschnosti-nastrojki-kompanii)

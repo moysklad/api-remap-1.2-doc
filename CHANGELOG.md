@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 20-05-2025
+#### Добавлено
+- Добавлена новая [ошибка 3042](https://dev.moysklad.ru/doc/api/remap/1.2/index.html#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
 ### 15-05-2025
 #### Изменено
 - Описание поля `accountCountry` в [Настройках компании](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-kompanii)
