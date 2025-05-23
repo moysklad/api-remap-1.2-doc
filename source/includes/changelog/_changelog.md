@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 23-05-2025
+#### Добавлен
+- Плановая дата завершения этапа `plannedEndDate` в запросе [Производственных этапов](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+
 ### 20-05-2025
 #### Добавлено
 - Добавлена новая [ошибка 3042](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
