@@ -575,6 +575,7 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '{
             "name": "000034",
+            "description" : "Комментарий по выполнению",
             "owner": {
               "meta": {
                 "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
@@ -613,8 +614,7 @@ curl -X GET
             "processingUnitCost": 10.0,
             "labourUnitCost": 20.0,
             "standardHourUnit": 30.0,
-            "defect": true,
-            "description" : "Комментарий по выполнению"            
+            "defect": true           
           }'  
 ```
 
@@ -652,6 +652,7 @@ curl -X GET
   },
   "updated": "2023-12-08 18:25:24.325",
   "name": "000034",
+  "description" : "Комментарий по выполнению",
   "externalCode": "EnuNEmG2jyUF4t9tgPQk72",
   "moment": "2016-04-19 13:50:24",
   "created": "2023-12-08 18:25:24.386",
@@ -698,8 +699,7 @@ curl -X GET
   "processingUnitCost": 10.0,
   "labourUnitCost": 20.0,
   "standardHourUnit": 30.0,
-  "defect": true,
-  "description" : "Комментарий по выполнению"
+  "defect": true
 }
 ```
 > Пример создания нового Выполнения этапа, где исполнителем указан контрагент и передана услуга.
