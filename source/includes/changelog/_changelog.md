@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 26-05-2025
+#### Добавлено
+- Поле **declaration** с информацией о прослеживаемости импортных товаров в позиции документов [отгрузка](../documents/#dokumenty-otgruzka-otgruzki-pozicii-otgruzki), [розничная продажа](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-pozicii-roznichnoj-prodazhi), [списание](../documents/#dokumenty-spisanie-spisaniq-pozicii-spisaniq)
+
 ### 20-05-2025
 #### Добавлено
 - Добавлена новая [ошибка 3042](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
