@@ -1,9 +1,35 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 13-05-2025
+### 27-05-2025
 #### Добавлено
 - Новые типы документов для [Ленты Событий](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-lenta-sobytij)
+
+### 27-05-2025
+#### Изменено
+- [Особенности поведения при создании Вывода из оборота](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-sozdat-vywod-iz-oborota-osobennosti-powedeniq-pri-sozdanii-vywoda-iz-oborota) для способа вывода `DISTANCE`
+
+### 26-05-2025
+#### Добавлено
+- Поле **declaration** с информацией о прослеживаемости импортных товаров в позиции документов [отгрузка](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka-otgruzki-pozicii-otgruzki), [розничная продажа](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-pozicii-roznichnoj-prodazhi), [списание](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-spisanie-spisaniq-pozicii-spisaniq)
+
+### 20-05-2025
+#### Добавлено
+- Добавлена новая [ошибка 3042](https://dev.moysklad.ru/doc/api/remap/1.2/index.html#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
+### 15-05-2025
+#### Изменено
+- Описание поля `accountCountry` в [Настройках компании](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-kompanii)
+
+### 14-05-2025
+#### Добавлено
+- Поле `agent` в документе [Вывод кодов маркировки из оборота](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-atributy-suschnosti)
+- Значения для поля `trackingType` в документе [Вывод кодов маркировки из оборота](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii): `BICYCLE`, `VETPHARMA`, `SOFT_DRINKS`, `WATER`, `SEAFOOD`
+- Значение `DONATION` для поля `retireOrderType` в документе [Вывод кодов маркировки из оборота](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-sposob-wywoda-iz-oborota)
+
+### 13-05-2025
+#### Добавлено
+- Описание и примеры удаления неснижаемых остатков по складам через использование эндпоинта на массовое удаление для [товар](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary)
 
 ### 28-04-2025
 #### Добавлено
