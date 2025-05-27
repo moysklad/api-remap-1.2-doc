@@ -5,6 +5,14 @@
 #### Изменено
 - [Особенности поведения при создании Вывода из оборота](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-sozdat-vywod-iz-oborota-osobennosti-powedeniq-pri-sozdanii-vywoda-iz-oborota) для способа вывода `DISTANCE`
 
+### 26-05-2025
+#### Добавлено
+- Поле **declaration** с информацией о прослеживаемости импортных товаров в позиции документов [отгрузка](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka-otgruzki-pozicii-otgruzki), [розничная продажа](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-pozicii-roznichnoj-prodazhi), [списание](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-spisanie-spisaniq-pozicii-spisaniq)
+
+### 20-05-2025
+#### Добавлено
+- Добавлена новая [ошибка 3042](https://dev.moysklad.ru/doc/api/remap/1.2/index.html#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
 ### 15-05-2025
 #### Изменено
 - Описание поля `accountCountry` в [Настройках компании](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-kompanii)
