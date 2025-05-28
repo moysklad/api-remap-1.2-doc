@@ -1,7 +1,7 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 05-05-2025
+### 02-06-2025
 #### Добавлен
 - Краткий [Отчет на остатки по ячейкам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah-po-qchejkam)
 
