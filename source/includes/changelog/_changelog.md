@@ -19,6 +19,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 03-06-2025
+#### Добавлено
+- Тип маркируемой продукции `BEER_ALCOHOL` (Пиво и слабоалкогольная продукция) в документ [Вывод из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii)
+- Способ вывода `MISMATCH` (Пересортица по кодам) в документ [Вывод из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-sposob-wywoda-iz-oborota)
+
 ### 27-05-2025
 #### Добавлено
 - Новые типы документов для [Ленты Событий](../dictionaries/#suschnosti-lenta-sobytij)
