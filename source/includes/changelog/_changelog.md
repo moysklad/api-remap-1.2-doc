@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 02-06-2025
+#### Добавлен
+- Краткий [Отчет на остатки по ячейкам](../reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah-po-qchejkam)
+
 ### 27-05-2025
 #### Добавлено
 - Новые типы документов для [Ленты Событий](../dictionaries/#suschnosti-lenta-sobytij)
