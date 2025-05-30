@@ -19,6 +19,18 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 27-05-2025
+#### Добавлено
+- Новые типы документов для [Ленты Событий](../dictionaries/#suschnosti-lenta-sobytij)
+
+### 27-05-2025
+#### Изменено
+- [Особенности поведения при создании Вывода из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-sozdat-vywod-iz-oborota-osobennosti-powedeniq-pri-sozdanii-vywoda-iz-oborota) для способа вывода `DISTANCE`
+
+### 26-05-2025
+#### Добавлено
+- Поле **declaration** с информацией о прослеживаемости импортных товаров в позиции документов [отгрузка](../documents/#dokumenty-otgruzka-otgruzki-pozicii-otgruzki), [розничная продажа](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-pozicii-roznichnoj-prodazhi), [списание](../documents/#dokumenty-spisanie-spisaniq-pozicii-spisaniq)
+
 ### 20-05-2025
 #### Добавлено
 - Добавлена новая [ошибка 3042](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
