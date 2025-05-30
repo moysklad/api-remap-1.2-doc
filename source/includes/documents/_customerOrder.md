@@ -63,14 +63,15 @@
 
 #### Связи с другими документами
 
-| Название           | Описание                                                                                                                |
-|--------------------|:------------------------------------------------------------------------------------------------------------------------|
-| **purchaseOrders** | Массив ссылок на связанные заказы поставщикам в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
-| **demands**        | Массив ссылок на связанные отгрузки в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)           |
-| **payments**       | Массив ссылок на связанные платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)            |
-| **invoicesOut**    | Массив ссылок на связанные счета покупателям в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)  |
-| **moves**          | Массив ссылок на связанные перемещения в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)        |
-| **prepayments**    | Массив ссылок на связанные предоплаты в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)         |
+| Название             | Описание                                                                                                                       |
+|----------------------|:-------------------------------------------------------------------------------------------------------------------------------|
+| **purchaseOrders**   | Массив ссылок на связанные заказы поставщикам в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)        |
+| **demands**          | Массив ссылок на связанные отгрузки в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                  |
+| **payments**         | Массив ссылок на связанные платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                   |
+| **productionTasks**  | Массив ссылок на связанные производственные задания в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)  |
+| **invoicesOut**      | Массив ссылок на связанные счета покупателям в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)         |
+| **moves**            | Массив ссылок на связанные перемещения в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)               |
+| **prepayments**      | Массив ссылок на связанные предоплаты в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                |
 
 #### Позиции Заказа покупателя
 Позиции Заказа - это список товаров/услуг/модификаций/серий/комплектов.
