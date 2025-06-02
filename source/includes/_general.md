@@ -1032,7 +1032,7 @@ API сервиса МойСклад позволяет оперировать с
 
 ```shell
 curl -X DELETE 
-  "https://api.moysklad.ru/api/remap/1.2/{код сущности документа, в составе JSON API}/{id отдельного документа}/positions/179dd832-960c-11e6-8a84-bae5000000dc
+  "https://api.moysklad.ru/api/remap/1.2/{код сущности документа, в составе JSON API}/{id отдельного документа}/positions/179dd832-960c-11e6-8a84-bae5000000dc"
   -H "Authorization: Bearer <Access-Token>"
   -H "Accept-Encoding: gzip"
 ```
@@ -1050,7 +1050,7 @@ curl -X DELETE
 
 ```shell
 curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/{код сущности документа, в составе JSON API}/{id отдельного документа}/positions/delete
+  "https://api.moysklad.ru/api/remap/1.2/{код сущности документа, в составе JSON API}/{id отдельного документа}/positions/delete"
   -H "Authorization: Bearer <Access-Token>"
   -H "Accept-Encoding: gzip"
 ```
@@ -2641,7 +2641,7 @@ curl -X PUT
   -H 'Content-Type: application/json'
   -d '{
   "name": "3738"
-}`
+}'
 ```
 
 > Response 200 (application/json)

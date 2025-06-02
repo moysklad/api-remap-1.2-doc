@@ -1359,7 +1359,7 @@ curl -X GET
                   "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
                   "type" : "retailstore",
                   "mediaType" : "application/json",
-                  "uuidHref" : "https://online.moysklad.ru/app/#retailstore/edit?id=425999e6-bf2f-11e9-ee62-204c00000042
+                  "uuidHref" : "https://online.moysklad.ru/app/#retailstore/edit?id=425999e6-bf2f-11e9-ee62-204c00000042"
               }
             }
           ]'
@@ -1701,7 +1701,7 @@ curl -X POST
 ]
 ```
 
-#### Точка продаж 
+#### Запросы - Точка продаж 
 
 ### Получить точку продаж
 

@@ -1876,7 +1876,7 @@ curl -X PUT
 ```shell
 curl -X DELETE
   "https://api.moysklad.ru/api/remap/1.2/entity/role/ae6e61ad-ad8c-11eb-0a80-380e00001e6c"
-  -H "Authorization: Basic <Credentials>
+  -H "Authorization: Basic <Credentials>"
 ```
 
 > Response 200 (application/json)
