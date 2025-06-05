@@ -161,7 +161,7 @@
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/assortment"
+  "https://api.kladana.com/api/remap/1.2/entity/assortment"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
