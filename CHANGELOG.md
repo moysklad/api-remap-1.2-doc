@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 05-06-2025
+#### Добавлено
+- Поля связей документов в [Производственное задание](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-proizwodstwennoe-zadanie)
+
 ### 03-06-2025
 #### Добавлено
 - Поля `description`, `defect` в [Выполнение этапа производства](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vypolnenie-atapa-proizwodstwa)

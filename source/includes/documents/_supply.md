@@ -56,11 +56,11 @@
 
 | Название             | Описание                                                                                                                                   |
 |----------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
-| **productionTask**   | Ссылка на связанное производственное задание в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                     |
 | **purchaseOrder**    | Ссылка на связанный заказ поставщику в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                             |
 | **factureIn**        | Ссылка на Счет-фактуру полученный, с которым связана эта Приемка в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
 | **invoicesIn**       | Массив ссылок на связанные счета поставщиков в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                     |
 | **payments**         | Массив ссылок на связанные платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                               |
+| **productionTask**   | Ссылка на связанное производственное задание в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                     |
 | **returns**          | Массив ссылок на связанные возвраты в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                              |
 
 #### Позиции Приемки

@@ -53,15 +53,16 @@
 
 #### Связи с другими документами
 
-| Название            | Описание                                                                                                                      |
-|---------------------|:------------------------------------------------------------------------------------------------------------------------------|
-| **customerOrders**  | Массив ссылок на связанные заказы покупателей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)       |
-| **emissionOrders**  | Массив ссылок на связанные заказы кодов маркировки [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)            |
-| **internalOrders**  | Массив ссылок на связанные внутренние заказы в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)        |
-| **moves**           | Массив ссылок на связанные перемещения в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)              |
-| **productionTasks** | Массив ссылок на связанные производственные задания в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
-| **purchaseOrders**  | Массив ссылок на связанные заказы поставщикам в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)       |
-| **supplies**        | Массив ссылок на связанные приемки в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                  |
+| Название                   | Описание                                                                                                                                                       |
+|----------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **customerOrders**         | Массив ссылок на связанные заказы покупателей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                                        |
+| **emissionOrders**         | Массив ссылок на связанные заказы кодов маркировки [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                                             |
+| **internalOrders**         | Массив ссылок на связанные внутренние заказы в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                                         |
+| **moves**                  | Массив ссылок на связанные перемещения в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                                               |
+| **productionTasks**        | Массив ссылок на связанные производственные задания в качестве документов-оснований в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)  |
+| **productionTaskSupplies** | Массив ссылок на связанные производственные задания в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                                  |
+| **purchaseOrders**         | Массив ссылок на связанные заказы поставщикам в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                                        |
+| **supplies**               | Массив ссылок на связанные приемки в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                                                   |
 
 #### Позиции Производственного задания
 Позиции производственного задания - это список [Техкарт](../dictionaries/#suschnosti-tehkarta), добавленных в Производственное задание.
