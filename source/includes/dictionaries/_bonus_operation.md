@@ -96,7 +96,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/bonustransaction/metadata",
         "type": "bonustransaction",
         "mediaType": "application/json",
-        "uuidHref": "https://online.moysklad.ru/app/#bonustransaction/edit?id=7c6ecd51-b738-11e8-727d-307300000028"
+        "uuidHref": "https://app.kladana.com/app/#bonustransaction/edit?id=7c6ecd51-b738-11e8-727d-307300000028"
       },
       "id": "7c6ecd51-b738-11e8-727d-307300000028",
       "accountId": "ba5d8717-d6e7-4741-9f2e-4e343a447fb9",
