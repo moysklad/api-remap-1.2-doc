@@ -1852,7 +1852,7 @@ curl -X GET
 
 ```shell
   curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/demand/new"
+    "https://api.kladana.com/api/remap/1.2/entity/demand/new"
     -H "Authorization: Basic <Credentials>"
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
