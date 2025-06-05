@@ -27,6 +27,9 @@
 окно `Карточки товара`.
 
  ![useful image](../../images/files/good_files.png?raw=true)
+
+
+ ![from fs](https://api-api-1.testms-test.lognex.ru/api/anon/1.0/download?url=https://storage.files.mow1.cloud.servers.ru/v1/SERVERSCOM_2ce3101fed274bd6b24d2124be063f47/image-prod/image/45eb22e0-0e7b-11e2-1c31-3c4a92f3a0a7/goodimage/dbcd0d14-80a2-41d6-a0ce-0663c43252d0?temp_url_sig=5b0755d1b0a2f704d7c79c6c2b478f793af15a04%26temp_url_expires=1749193700%26filename=finn.gif)
  
  Для добавления файла через JSON API нужно задать поля `filename` и `content`, соответствующие названию и содержанию файла,
   закодированному в Base64, соответственно.
