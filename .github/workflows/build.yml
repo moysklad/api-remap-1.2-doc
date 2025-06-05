@@ -23,10 +23,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Test urls names in md files
+      - name: Test api urls names in md files
         run:
           if sudo grep -l "api.kladana.com" source/includes/*/*; then
-          echo "Допущена ошибка в названии домена, должен быть api.kladana.com";
+          echo "Допущена ошибка в названии домена, должен быть api.moysklad.com";
+          exit 1;
+          fi
+
+      - name: Test online urls names in md files
+        run:
+          if sudo grep -l "online.kladana.com" source/includes/*/*; then
+          echo "Допущена ошибка в названии домена, должен быть online.moysklad.com";
           exit 1;
           fi
 
