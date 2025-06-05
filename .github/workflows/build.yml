@@ -32,7 +32,7 @@ jobs:
 
       - name: Test online urls names in md files
         run:
-          if sudo grep -l "online.kladana.com" source/includes/*/*; then
+          if sudo grep -l "app.kladana.com" source/includes/*/*; then
           echo "Допущена ошибка в названии домена, должен быть online.moysklad.ru";
           exit 1;
           fi
