@@ -19,6 +19,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 05-06-2025
+#### Добавлено
+- Поля связей документов в [Производственное задание](../documents/#dokumenty-proizwodstwennoe-zadanie)
+- Ошибка [17024](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
+
 ### 03-06-2025
 #### Добавлено
 - Поля `description`, `defect` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
