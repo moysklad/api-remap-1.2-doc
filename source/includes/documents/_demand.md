@@ -114,7 +114,7 @@
 
 #### Информация о прослеживаемости импортных товаров
 Поле **declaration** выводится по запросу. Для вывода в позициях документа информации о прослеживаемости импортных товаров 
-необходимо передать в URL запроса дополнительный параметр `fields=declaration`, например `../demand/{id}/positions?fields=declaration`.
+необходимо передать в URL запроса дополнительный параметр `fields=declaration`, например `../demand/{id}/positions?fields=declaration`. [Подробнее о параметре fields](../#mojsklad-json-api-obschie-swedeniq-chto-takoe-fields).
 
 Аттрибуты объекта:
 

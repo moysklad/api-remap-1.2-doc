@@ -19,9 +19,17 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 02-06-2025
-#### Добавлен
+### 09-06-2025
+#### Добавлено
+- Описание параметра `fields` [Fields](../#mojsklad-json-api-obschie-swedeniq-chto-takoe-fields)
 - Краткий [Отчет на остатки по ячейкам](../reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah-po-qchejkam)
+
+### 03-06-2025
+#### Добавлено
+- Поля `description`, `defect` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+- Ошибки [26211-26213](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-vypolnenij-atapow-proizwodstwa)
+- Тип маркируемой продукции `BEER_ALCOHOL` (Пиво и слабоалкогольная продукция) в документ [Вывод из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii)
+- Способ вывода `MISMATCH` (Пересортица по кодам) в документ [Вывод из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-sposob-wywoda-iz-oborota)
 
 ### 27-05-2025
 #### Добавлено
