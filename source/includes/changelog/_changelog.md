@@ -23,7 +23,6 @@
 #### Добавлено
 - Поле `minimumStock` в сущность [модификация](../dictionaries/#suschnosti-modifikaciq-modifikacii) для работы с неснижаемыми остатками
 
-
 ### 03-06-2025
 #### Добавлено
 - Поля `description`, `defect` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
