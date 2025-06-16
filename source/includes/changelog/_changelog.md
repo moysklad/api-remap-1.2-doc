@@ -19,9 +19,47 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 29-04-2025
+### 19-06-2025
 #### Добавлено
 - Поле `minimumStock` в сущность [модификация](../dictionaries/#suschnosti-modifikaciq-modifikacii) для работы с неснижаемыми остатками
+
+
+### 03-06-2025
+#### Добавлено
+- Поля `description`, `defect` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+- Ошибки [26211-26213](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-vypolnenij-atapow-proizwodstwa)
+- Тип маркируемой продукции `BEER_ALCOHOL` (Пиво и слабоалкогольная продукция) в документ [Вывод из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii)
+- Способ вывода `MISMATCH` (Пересортица по кодам) в документ [Вывод из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-sposob-wywoda-iz-oborota)
+
+### 27-05-2025
+#### Добавлено
+- Новые типы документов для [Ленты Событий](../dictionaries/#suschnosti-lenta-sobytij)
+
+### 27-05-2025
+#### Изменено
+- [Особенности поведения при создании Вывода из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-sozdat-vywod-iz-oborota-osobennosti-powedeniq-pri-sozdanii-vywoda-iz-oborota) для способа вывода `DISTANCE`
+
+### 26-05-2025
+#### Добавлено
+- Поле **declaration** с информацией о прослеживаемости импортных товаров в позиции документов [отгрузка](../documents/#dokumenty-otgruzka-otgruzki-pozicii-otgruzki), [розничная продажа](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-pozicii-roznichnoj-prodazhi), [списание](../documents/#dokumenty-spisanie-spisaniq-pozicii-spisaniq)
+
+### 20-05-2025
+#### Добавлено
+- Добавлена новая [ошибка 3042](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
+### 15-05-2025
+#### Изменено
+- Описание поля `accountCountry` в [Настройках компании](../dictionaries/#suschnosti-nastrojki-kompanii)
+
+### 14-05-2025
+#### Добавлено
+- Поле `agent` в документе [Вывод кодов маркировки из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-atributy-suschnosti)
+- Значения для поля `trackingType` в документе [Вывод кодов маркировки из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii): `BICYCLE`, `VETPHARMA`, `SOFT_DRINKS`, `WATER`, `SEAFOOD`
+- Значение `DONATION` для поля `retireOrderType` в документе [Вывод кодов маркировки из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-sposob-wywoda-iz-oborota)
+
+### 13-05-2025
+#### Добавлено
+- Описание и примеры удаления неснижаемых остатков по складам через использование эндпоинта на массовое удаление для [товар](../dictionaries/#suschnosti-towar-towary)
 
 ### 28-04-2025
 #### Добавлено

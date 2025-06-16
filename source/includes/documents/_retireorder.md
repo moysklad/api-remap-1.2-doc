@@ -13,6 +13,7 @@
 | Название                        | Тип                                                        | Описание                                                                                                                                                                                                                                                |
 |---------------------------------|:-----------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**                   | UUID                                                       | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                    |
+| **agent**                       | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)  | Метаданные контрагента<br>`+Expand`                                                                                                                                                                                                                     |
 | **code**                        | String(255)                                                | Код Вывода из оборота                                                                                                                                                                                                                                   |
 | **created**                     | DateTime                                                   | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                        |
 | **deleted**                     | DateTime                                                   | Момент последнего удаления Вывода из оборота<br>`+Только для чтения`                                                                                                                                                                                    |
@@ -68,6 +69,8 @@
 
 | Значение            | Описание                             |
 |---------------------|:-------------------------------------|
+| **BEER_ALCOHOL**    | Пиво и слабоалкогольная продукция    |
+| **BICYCLE**         | Велосипеды                           |
 | **ELECTRONICS**     | Фотокамеры и лампы-вспышки           |
 | **FOOD_SUPPLEMENT** | Биологически активные добавки к пище |
 | **LP_CLOTHES**      | Тип маркировки "Одежда"              |
@@ -76,8 +79,12 @@
 | **MILK**            | Молочная продукция                   |
 | **PERFUMERY**       | Духи и туалетная вода                |
 | **SANITIZER**       | Антисептики                          |
+| **SEAFOOD**         | Икра и морепродукты                  |
 | **SHOES**           | Тип маркировки "Обувь"               |
+| **SOFT_DRINKS**     | Безалкогольные напитки               |
 | **TIRES**           | Шины и покрышки                      |
+| **VETPHARMA**       | Ветеринарные препараты               |
+| **WATER**           | Упакованная вода                     |
 
 #### Способ вывода из оборота 
 
@@ -90,10 +97,12 @@
 | **DAMAGE_AND_LOSS**      | Утрата                                                 |
 | **DESTRUCTION**          | Уничтожение                                            |
 | **DISTANCE**             | Дистанционная продажа                                  |
+| **DONATION**             | Безвозмездная передача                                 |
 | **EXPIRATION**           | Истечение срока годности                               |
 | **EXPORT_INSIDE_EEU**    | Трансграничная продажа в страны ЕАЭС                   |
 | **EXPORT_OUTSIDE_EEU**   | Экспорт за пределы стран ЕАЭС                          |
 | **MEDICAL_USE**          | Использование для медицинского применения              |
+| **MISMATCH**             | Пересортица по кодам                                   |
 | **OWN_USE**              | Использование для собственных нужд                     |
 | **PACKING**              | Фасовка                                                |
 | **PRODUCTION_USE**       | Использование для производственных целей               |
@@ -475,6 +484,12 @@ curl -X GET
 | **SHOES, LP_CLOTHES, LP_LINENS, PERFUMERY, ELECTRONICS, TIRES** | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, RETURN_TO_INDIVIDUAL                         |
 | **MILK**                                                        | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, PRODUCTION_USE, EXPIRATION, VENDING, PACKING |
 | **FOOD_SUPPLEMENT, SANITIZER, MEDICAL_DEVICES**                 | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT                                               |
+| **BICYCLE**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, RETURN_TO_INDIVIDUAL, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE                      |
+| **VETPHARMA**                                                   | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION                                |
+| **SOFT_DRINKS**                                                 | RETAIL_SALE, EXPORT_OUTSIDE_EEU, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, OWN_USE, PACKING, PRODUCTION_USE, STATE_CONTRACT, VENDING, DONATION                                                                            |
+| **WATER**                                                       | RETAIL_SALE, EXPORT_OUTSIDE_EEU, CONFISCATE_SALE, DESTRUCTION, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, DAMAGE_AND_LOSS, OWN_USE, PRODUCTION_USE, STATE_CONTRACT, VENDING, BY_SAMPLES, UTILIZATION, DONATION             |
+| **SEAFOOD**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION, VENDING                       |
+| **BEER_ALCOHOL**                                                | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, MISMATCH                                  |
 
 Связь допустимых значений поля **supportingTransaction** в зависимости от **retireOrderType**
 
@@ -485,9 +500,11 @@ curl -X GET
 | **DAMAGE_AND_LOSS**      | OTHER                                                  |
 | **DESTRUCTION**          | CERTIFICATE_OF_DESTRUCTION, OTHER                      |
 | **DISTANCE**             | RECEIPT, SALES_RECEIPT, OTHER, CONSIGNMENT_NOTE, UTD   |
+| **DONATION**             | OTHER, CONSIGNMENT_NOTE                                |
 | **EXPIRATION**           | OTHER                                                  |
 | **EXPORT_OUTSIDE_EEU**   | CUSTOMS_DECLARATION, OTHER                             |
 | **MEDICAL_USE**          | OTHER                                                  |
+| **MISMATCH**             | OTHER                                                  |
 | **OWN_USE**              | OTHER                                                  |
 | **PACKING**              | OTHER                                                  |
 | **PRODUCTION_USE**       | OTHER                                                  |
@@ -499,6 +516,7 @@ curl -X GET
 Способ вывода из оборота **retireOrderType**:
 
 + Если выбрано любое значение из перечисленных в таблице выше, поля **supportingTransaction**, **supportingTransactionDate** и **supportingTransactionNumber** являются обязательными.
++ Если выбрано значение **DISTANCE**, то поля **supportingTransaction**, **supportingTransactionDate** и **supportingTransactionNumber** становятся необязательными. Поля **supportingTransactionDate** и **supportingTransactionNumber** очищаются при указании значения **null** для поля **supportingTransaction**.
 + Если выбрано значение **STATE_CONTRACT**, то поле **stateContractId** является обязательным.
 + Если выбрано значение **EXPORT_INSIDE_EEU**, то поле **destinationCountry** является обязательным и допускаются значения: Армения, Беларусь, Казахстан, Киргизия.
 
@@ -737,6 +755,13 @@ curl -X GET
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
+              "agent": {
+                  "meta": {
+                      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/2a0c7808-2f09-11f0-0a81-0aec000000a3",
+                      "type": "counterparty",
+                      "mediaType": "application/json"
+                  }
+              },
               "organization": {
                   "meta": {
                       "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
@@ -801,6 +826,15 @@ curl -X GET
     }
   },
   "sum": 0.0,
+  "agent": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/2a0c7808-2f09-11f0-0a81-0aec000000a3",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=2a0c7808-2f09-11f0-0a81-0aec000000a3"
+    }
+  },
   "organization": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
@@ -845,6 +879,13 @@ curl -X GET
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
       -d '{
+              "agent": {
+                  "meta": {
+                      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/2a0c7808-2f09-11f0-0a81-0aec000000a3",
+                      "type": "counterparty",
+                      "mediaType": "application/json"
+                  }
+              },
               "organization": {
                   "meta": {
                       "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
@@ -927,6 +968,15 @@ curl -X GET
     }
   },
   "sum": 0.0,
+  "agent": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/2a0c7808-2f09-11f0-0a81-0aec000000a3",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=2a0c7808-2f09-11f0-0a81-0aec000000a3"
+    }
+  },
   "organization": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
@@ -989,6 +1039,13 @@ curl -X GET
                   "trackingType": "MILK"
               },
               {
+                  "agent": {
+                      "meta": {
+                          "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/2a0c7808-2f09-11f0-0a81-0aec000000a3",
+                          "type": "counterparty",
+                          "mediaType": "application/json"
+                      }
+                  },
                   "organization": {
                       "meta": {
                           "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
@@ -1075,6 +1132,15 @@ curl -X GET
       }
     },
     "sum": 0.0,
+    "agent": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/2a0c7808-2f09-11f0-0a81-0aec000000a3",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=2a0c7808-2f09-11f0-0a81-0aec000000a3"
+      }
+    },
     "organization": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/ace4017a-ad7d-11ef-ac12-000d0000009a",
@@ -1186,7 +1252,7 @@ curl -X GET
 ]
 ```
 
-### Изменить Вывода из оборота
+### Изменение Вывода из оборота
 Запрос на обновление Вывода из оборота с указанным id.
 В теле запроса можно указать только те поля, которые необходимо изменить у Вывода из оборота, кроме тех, что
 помечены `Только для чтения` в описании [атрибутов Вывода из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota).
