@@ -19,7 +19,7 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 11-08-2025
+### 01-07-2025
 #### Добавлено
 - Типы компаний региона Казахстан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)
 - Типы компаний региона Казахстан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-tip-urlica)
