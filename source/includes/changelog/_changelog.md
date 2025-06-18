@@ -19,10 +19,15 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 05-06-2025
+### 18-06-2025
 #### Добавлено
 - Поля связей документов в [Производственное задание](../documents/#dokumenty-proizwodstwennoe-zadanie)
 - Ошибка [17024](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
+
+### 09-06-2025
+#### Добавлено
+- Описание параметра `fields` [Fields](../#mojsklad-json-api-obschie-swedeniq-chto-takoe-fields)
+- Краткий [Отчет на остатки по ячейкам](../reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah-po-qchejkam)
 
 ### 03-06-2025
 #### Добавлено
