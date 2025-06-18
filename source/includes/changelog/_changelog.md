@@ -22,7 +22,7 @@
 ### 18-06-2025
 #### Добавлено
 - Поля связей документов в [Производственное задание](../documents/#dokumenty-proizwodstwennoe-zadanie)
-- Ошибка [17024](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
+- Ошибки [17024б 26115](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
 
 ### 09-06-2025
 #### Добавлено

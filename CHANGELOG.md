@@ -4,7 +4,7 @@
 ### 18-06-2025
 #### Добавлено
 - Поля связей документов в [Производственное задание](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-proizwodstwennoe-zadanie)
-- Ошибка [17024](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
+- Ошибки [17024, 26115](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
 
 ### 09-06-2025
 #### Добавлено
