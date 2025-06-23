@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 17-06-2025
+#### Добавлено
+- Поле `giftCards` в [Розничную продажу](../documents/#dokumenty-roznichnaq-prodazha)
+
 ### 09-06-2025
 #### Добавлено
 - Описание параметра `fields` [Fields](../#mojsklad-json-api-obschie-swedeniq-chto-takoe-fields)
