@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 25-05-2025
+#### Добавлено
+- Добавлена новая [ошибка 3043](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
 ### 09-06-2025
 #### Добавлено
 - Описание параметра `fields` [Fields](../#mojsklad-json-api-obschie-swedeniq-chto-takoe-fields)
