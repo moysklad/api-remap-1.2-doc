@@ -3303,7 +3303,7 @@ curl -X POST
 [
   {
     "meta": {
-      "href": "http://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b18",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b18",
       "type": "account",
       "mediaType": "application/json"
     },
@@ -3393,7 +3393,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "http://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b18",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b18",
     "type": "account",
     "mediaType": "application/json"
   },
