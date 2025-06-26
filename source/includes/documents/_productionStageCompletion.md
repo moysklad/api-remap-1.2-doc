@@ -725,7 +725,7 @@ curl -X GET
                     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
                     "type": "counterparty",
                     "mediaType": "application/json",
-                    "uuidHref": "https://api.moysklad.ru/app/#company/edit?id=c8c0f0de-b6c6-11ef-ac12-00130000009e"
+                    "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=c8c0f0de-b6c6-11ef-ac12-00130000009e"
                 }
             },
             "service": {
@@ -734,7 +734,7 @@ curl -X GET
                     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
                     "type": "service",
                     "mediaType": "application/json",
-                    "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=18615d1c-b6c7-11ef-ac12-001300000101"
+                    "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=18615d1c-b6c7-11ef-ac12-001300000101"
                 }
             }
           } 
@@ -784,7 +784,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
       "type": "counterparty",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#company/edit?id=c8c0f0de-b6c6-11ef-ac12-00130000009e"
+      "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=c8c0f0de-b6c6-11ef-ac12-00130000009e"
     }
   },
   "productionStage": {
@@ -801,7 +801,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
       "type": "service",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=18615d1c-b6c7-11ef-ac12-001300000101"
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=18615d1c-b6c7-11ef-ac12-001300000101"
     }
   },
   "materials": {
