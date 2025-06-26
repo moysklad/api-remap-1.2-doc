@@ -1,7 +1,7 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 23-05-2025
+### 26-06-2025
 #### Добавлен
 - Плановая дата завершения этапа `plannedEndDate` в запросе [Производственных этапов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
 
