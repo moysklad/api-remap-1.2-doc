@@ -36,7 +36,7 @@
 | **isSerialTrackable**    | Boolean                                                   | `=` `!=`                                                                                                                                          | Учет по серийным номерам. Данная отметка не сочетается с признаками **weighed**, **alcoholic**, **ppeType**, **trackingType**, **onTap**.                                                                                                                 |
 | **meta**                 | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Товара<br>`+Обязательное при ответе`                                                                                                                                                                                                           |
 | **minPrice**             | Object                                                    |                                                                                                                                                   | Минимальная цена. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-minimal-naq-cena)                                                                                                                              |
-| **minimumBalance**       | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Неснижаемый остаток<br>`+Устаревшее`                                                                                                                                                                                                                      |
+| **minimumBalance**       | Float                                                     | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Неснижаемый остаток<br>`+Устаревшее`                                                                                                                                                                                                                      |
 | **minimumStock**         | Object                                                    |                                                                                                                                                   | Неснижаемый остаток. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-nesnizhaemyj-ostatok)<br>`+Выводится по запросу`                                                                                            |
 | **name**                 | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Товара<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                                                              |
 | **owner**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные владельца (Сотрудника)<br>`+Expand`                                                                                                                                                                                                            |
@@ -60,8 +60,8 @@
 | **variantsCount**        | Int                                                       |                                                                                                                                                   | Количество модификаций у данного товара<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                |
 | **vat**                  | Int                                                       |                                                                                                                                                   | НДС %                                                                                                                                                                                                                                                     |
 | **vatEnabled**           | Boolean                                                   |                                                                                                                                                   | Включен ли НДС для товара. С помощью этого флага для товара можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.                                                     |
-| **volume**               | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Объем                                                                                                                                                                                                                                                     |
-| **weight**               | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Вес                                                                                                                                                                                                                                                       |
+| **volume**               | Float                                                     | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Объем                                                                                                                                                                                                                                                     |
+| **weight**               | Float                                                     | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Вес                                                                                                                                                                                                                                                       |
 
 Атрибут **pathName** сам по себе является атрибутом только для чтения, однако его можно изменить с помощью обновления атрибута **productFolder**.
 
@@ -279,7 +279,7 @@
 
 ##### Неснижаемый остаток
 Неснижаемый остаток — минимальное количество товара, которое всегда должно быть на складе. Поле `minimumStock` доступно при использовании дополнительного параметра `fields=minimumStock` или при 
-передаче поля в запросе создания или изменения сущности.
+передаче поля в запросе создания или изменения сущности. [Подробнее о параметре fields](../#mojsklad-json-api-obschie-swedeniq-chto-takoe-fields)
 Пример:
 
 + `.../product/{id товара}?fields=minimumStock`
@@ -976,7 +976,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "product",
         "mediaType": "application/json",
-        "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=14ff096e-137a-11f0-ac15-001100000006"
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=14ff096e-137a-11f0-ac15-001100000006"
       },
       "id": "15007028-137a-11f0-ac15-001100000008",
       "accountId": "762af84a-0ec6-11f0-ac15-001000000001",
@@ -1013,7 +1013,7 @@ curl -X GET
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json",
-            "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
           }
         }
       },
@@ -1026,7 +1026,7 @@ curl -X GET
               "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
               "type": "currency",
               "mediaType": "application/json",
-              "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+              "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
             }
           },
           "priceType": {
@@ -1049,7 +1049,7 @@ curl -X GET
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json",
-            "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
           }
         }
       },
@@ -1082,7 +1082,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "product",
         "mediaType": "application/json",
-        "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=29185f80-137a-11f0-ac15-00110000000d"
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=29185f80-137a-11f0-ac15-00110000000d"
       },
       "id": "291872e6-137a-11f0-ac15-00110000000f",
       "accountId": "762af84a-0ec6-11f0-ac15-001000000001",
@@ -1120,7 +1120,7 @@ curl -X GET
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json",
-            "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
           }
         }
       },
@@ -1133,7 +1133,7 @@ curl -X GET
               "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
               "type": "currency",
               "mediaType": "application/json",
-              "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+              "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
             }
           },
           "priceType": {
@@ -1156,7 +1156,7 @@ curl -X GET
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json",
-            "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
           }
         }
       },
@@ -1188,7 +1188,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "product",
         "mediaType": "application/json",
-        "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=3bdfb95e-137a-11f0-ac15-001100000016"
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3bdfb95e-137a-11f0-ac15-001100000016"
       },
       "id": "3bdfdb5b-137a-11f0-ac15-001100000018",
       "accountId": "762af84a-0ec6-11f0-ac15-001000000001",
@@ -1226,7 +1226,7 @@ curl -X GET
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json",
-            "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
           }
         }
       },
@@ -1239,7 +1239,7 @@ curl -X GET
               "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
               "type": "currency",
               "mediaType": "application/json",
-              "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+              "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
             }
           },
           "priceType": {
@@ -1262,7 +1262,7 @@ curl -X GET
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json",
-            "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
           }
         }
       },
@@ -2169,7 +2169,7 @@ curl -X GET
     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
     "type": "product",
     "mediaType": "application/json",
-    "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=14ff096e-137a-11f0-ac15-001100000006"
+    "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=14ff096e-137a-11f0-ac15-001100000006"
   },
   "id": "15007028-137a-11f0-ac15-001100000008",
   "accountId": "762af84a-0ec6-11f0-ac15-001000000001",
@@ -2206,7 +2206,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
         "type": "currency",
         "mediaType": "application/json",
-        "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
       }
     }
   },
@@ -2219,7 +2219,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
           "type": "currency",
           "mediaType": "application/json",
-          "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+          "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
         }
       },
       "priceType": {
@@ -2242,7 +2242,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
         "type": "currency",
         "mediaType": "application/json",
-        "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
       }
     }
   },
@@ -3959,7 +3959,7 @@ curl -X GET
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
             "type": "store",
             "mediaType": "application/json",
-            "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=da1c5548-0ecf-11f0-ac15-001200000125"
+            "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=da1c5548-0ecf-11f0-ac15-001200000125"
           }
         }
       },
@@ -3976,7 +3976,7 @@ curl -X GET
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
             "type": "store",
             "mediaType": "application/json",
-            "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=da1c5548-0ecf-11f0-ac15-001200000126"
+            "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=da1c5548-0ecf-11f0-ac15-001200000126"
           }
         }
       }
@@ -3995,7 +3995,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "product",
         "mediaType": "application/json",
-        "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=3bdfb95e-137a-11f0-ac15-001100000016"
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3bdfb95e-137a-11f0-ac15-001100000016"
     },
     "id": "3bdfdb5b-137a-11f0-ac15-001100000018",
     "accountId": "762af84a-0ec6-11f0-ac15-001000000001",
@@ -4033,7 +4033,7 @@ curl -X GET
                 "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
                 "type": "currency",
                 "mediaType": "application/json",
-                "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+                "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
             }
         }
     },
@@ -4046,7 +4046,7 @@ curl -X GET
                     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
                     "type": "currency",
                     "mediaType": "application/json",
-                    "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+                    "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
                 }
             },
             "priceType": {
@@ -4069,7 +4069,7 @@ curl -X GET
                 "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
                 "type": "currency",
                 "mediaType": "application/json",
-                "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+                "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
             }
         }
     },
@@ -4117,7 +4117,7 @@ curl -X GET
                             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
                             "type": "store",
                             "mediaType": "application/json",
-                            "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=da1c5548-0ecf-11f0-ac15-001200000125"
+                            "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=da1c5548-0ecf-11f0-ac15-001200000125"
                         }
                     }
                 },
@@ -4136,7 +4136,7 @@ curl -X GET
                             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
                             "type": "store",
                             "mediaType": "application/json",
-                            "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=da1c5548-0ecf-11f0-ac15-001200000126"
+                            "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=da1c5548-0ecf-11f0-ac15-001200000126"
                         }
                     }
                 }

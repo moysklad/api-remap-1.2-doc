@@ -69,6 +69,7 @@
 
 | Значение            | Описание                             |
 |---------------------|:-------------------------------------|
+| **BEER_ALCOHOL**    | Пиво и слабоалкогольная продукция    |
 | **BICYCLE**         | Велосипеды                           |
 | **ELECTRONICS**     | Фотокамеры и лампы-вспышки           |
 | **FOOD_SUPPLEMENT** | Биологически активные добавки к пище |
@@ -101,6 +102,7 @@
 | **EXPORT_INSIDE_EEU**    | Трансграничная продажа в страны ЕАЭС                   |
 | **EXPORT_OUTSIDE_EEU**   | Экспорт за пределы стран ЕАЭС                          |
 | **MEDICAL_USE**          | Использование для медицинского применения              |
+| **MISMATCH**             | Пересортица по кодам                                   |
 | **OWN_USE**              | Использование для собственных нужд                     |
 | **PACKING**              | Фасовка                                                |
 | **PRODUCTION_USE**       | Использование для производственных целей               |
@@ -487,6 +489,7 @@ curl -X GET
 | **SOFT_DRINKS**                                                 | RETAIL_SALE, EXPORT_OUTSIDE_EEU, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, OWN_USE, PACKING, PRODUCTION_USE, STATE_CONTRACT, VENDING, DONATION                                                                            |
 | **WATER**                                                       | RETAIL_SALE, EXPORT_OUTSIDE_EEU, CONFISCATE_SALE, DESTRUCTION, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, DAMAGE_AND_LOSS, OWN_USE, PRODUCTION_USE, STATE_CONTRACT, VENDING, BY_SAMPLES, UTILIZATION, DONATION             |
 | **SEAFOOD**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION, VENDING                       |
+| **BEER_ALCOHOL**                                                | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, MISMATCH                                  |
 
 Связь допустимых значений поля **supportingTransaction** в зависимости от **retireOrderType**
 
@@ -501,6 +504,7 @@ curl -X GET
 | **EXPIRATION**           | OTHER                                                  |
 | **EXPORT_OUTSIDE_EEU**   | CUSTOMS_DECLARATION, OTHER                             |
 | **MEDICAL_USE**          | OTHER                                                  |
+| **MISMATCH**             | OTHER                                                  |
 | **OWN_USE**              | OTHER                                                  |
 | **PACKING**              | OTHER                                                  |
 | **PRODUCTION_USE**       | OTHER                                                  |
@@ -512,6 +516,7 @@ curl -X GET
 Способ вывода из оборота **retireOrderType**:
 
 + Если выбрано любое значение из перечисленных в таблице выше, поля **supportingTransaction**, **supportingTransactionDate** и **supportingTransactionNumber** являются обязательными.
++ Если выбрано значение **DISTANCE**, то поля **supportingTransaction**, **supportingTransactionDate** и **supportingTransactionNumber** становятся необязательными. Поля **supportingTransactionDate** и **supportingTransactionNumber** очищаются при указании значения **null** для поля **supportingTransaction**.
 + Если выбрано значение **STATE_CONTRACT**, то поле **stateContractId** является обязательным.
 + Если выбрано значение **EXPORT_INSIDE_EEU**, то поле **destinationCountry** является обязательным и допускаются значения: Армения, Беларусь, Казахстан, Киргизия.
 

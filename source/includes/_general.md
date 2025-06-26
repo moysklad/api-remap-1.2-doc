@@ -1100,7 +1100,7 @@ curl -X POST
 ```
 
 При запросе и обновлении документов есть возможность получать остатки и себестоимость позиций этих документов.
-Для получения остатков и себестоимости в позициях документа в запросе нужно передать дополнительный параметр `fields=stock`.
+Для получения остатков и себестоимости в позициях документа в запросе нужно передать дополнительный параметр `fields=stock`. [Подробнее о параметре fields](../#mojsklad-json-api-obschie-swedeniq-chto-takoe-fields).
 Например,
 
 + `/customerorder/{id документа}?fields=stock&expand=positions`
@@ -2852,6 +2852,26 @@ curl -X PUT
     "payedSum": 0
 }
 ```
+
+### Что такое fields
+
+В JSON API некоторые поля сущностей не выводятся по умолчанию. Для получения этих дополнительных данных нужно передать параметр `fields`.
+В качестве значения указывается ключ поля, которое нужно включить в ответ.
+
+#### На fields действуют следующие правила:
+* В одном запросе можно передать только 1 значение
+* Неподдерживаемые или отсутствующие значения приведут к [ошибке 3042](#mojsklad-json-api-oshibki).
+  Пример: `?fields=stock` (корректно), `?fields=stock,declaration` (некорректно)
+* Для получения вложенных объектов в скрытых полях нужно явно указывать `expand`.
+  Пример: `/customerorder/{id}?fields=stock&expand=positions`.
+* Разрешен только на размере выборки не более 100, пример: `https://api.moysklad.ru/api/remap/1.2/entity/customerorder?fields=stock&expand=positions&limit=100`. Если указан больший лимит и указан expand, то параметр fields будет игнорироваться.
+
+#### Применяется в:
+* [Остатки в документах](#mojsklad-json-api-obschie-swedeniq-ostatki-i-sebestoimost-w-poziciqh-dokumentow)
+* [Прослеживаемость товаров в отгрузках](documents/#dokumenty-otgruzka-otgruzki-informaciq-o-proslezhiwaemosti-importnyh-towarow)
+* [Прослеживаемость товаров в списаниях](documents/#dokumenty-spisanie-spisaniq-informaciq-o-proslezhiwaemosti-importnyh-towarow)
+* [Прослеживаемость товаров в розничной продаже](documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-informaciq-o-proslezhiwaemosti-importnyh-towarow)
+* [Неснижаемый остаток в товаре](dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-nesnizhaemyj-ostatok)
 
 ### Контекст запроса сотрудника
 
