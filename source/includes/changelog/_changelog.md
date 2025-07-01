@@ -19,7 +19,7 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 26-06-2025
+### 01-07-2025
 #### Добавлен
 - Плановая дата завершения этапа `plannedEndDate` в запросе [Производственных этапов](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
 
