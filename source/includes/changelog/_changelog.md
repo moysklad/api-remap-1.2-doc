@@ -22,6 +22,7 @@
 ### 02-07-2025
 #### Исправлено
 - Актуализирована документация [Настройки пользователя](../dictionaries/#suschnosti-nastrojki-pol-zowatelq)
+- Новые типы маркированной продукции `VEGETABLE_OIL` для растительных масел, `PET_FOOD` для кормов для животных для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
 
 ### 01-07-2025
 #### Добавлен
