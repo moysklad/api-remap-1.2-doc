@@ -19,6 +19,14 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 02-07-2025
+#### Исправлено
+- Актуализирована документация [Настройки пользователя](../dictionaries/#suschnosti-nastrojki-pol-zowatelq)
+
+### 01-07-2025
+#### Добавлен
+- Плановая дата завершения этапа `plannedEndDate` в запросе [Производственных этапов](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+
 ### 17-06-2025
 #### Добавлено
 - Поле `giftCards` в [Розничную продажу](../documents/#dokumenty-roznichnaq-prodazha)
