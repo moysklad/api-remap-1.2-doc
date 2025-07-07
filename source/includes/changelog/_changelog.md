@@ -19,10 +19,22 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 18-06-2025
+### 07-07-2025
 #### Добавлено
 - Поля связей документов в [Производственное задание](../documents/#dokumenty-proizwodstwennoe-zadanie)
 - Ошибки [17024б 26115](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
+
+### 02-07-2025
+#### Исправлено
+- Актуализирована документация [Настройки пользователя](../dictionaries/#suschnosti-nastrojki-pol-zowatelq)
+
+### 01-07-2025
+#### Добавлен
+- Плановая дата завершения этапа `plannedEndDate` в запросе [Производственных этапов](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+
+### 17-06-2025
+#### Добавлено
+- Поле `giftCards` в [Розничную продажу](../documents/#dokumenty-roznichnaq-prodazha)
 
 ### 09-06-2025
 #### Добавлено
