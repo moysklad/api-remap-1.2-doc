@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 09-07-2025
+#### Добавлено
+- Добавлена новая [ошибка 3043](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
 ### 03-07-2025
 #### Добавлено
 - Новые типы маркированной продукции `VEGETABLE_OIL` для растительных масел, `PET_FOOD` для кормов для животных для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
