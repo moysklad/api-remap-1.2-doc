@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 10-07-2025
+#### Добавлена
+- Ошибка при работе с печатными формами [33013](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-pechatnyh-form)
+
 ### 09-07-2025
 #### Добавлено
 - Добавлена новая [ошибка 3043](https://dev.moysklad.ru/doc/api/remap/1.2/index.html#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)

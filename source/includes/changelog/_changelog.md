@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 10-07-2025
+#### Добавлена
+- Ошибка при работе с печатными формами [33013](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-pechatnyh-form)
+
 ### 09-07-2025
 #### Добавлено
 - Добавлена новая [ошибка 3043](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
