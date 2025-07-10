@@ -1,6 +1,11 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 10-07-2025
+#### Добавлено
+- Добавлен новый тип уведомлений [Новое событие в отслеживаемом документе](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowoe-sobytie-w-otslezhiwaemom-dokumente)
+- Добавлена новая группа уведомлений [Отслеживаемые события](../notification/#uwedomleniq-nastrojki-uwedomlenij-struktura-dannyh)
+
 ### 09-07-2025
 #### Добавлено
 - Добавлена новая [ошибка 3043](https://dev.moysklad.ru/doc/api/remap/1.2/index.html#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
