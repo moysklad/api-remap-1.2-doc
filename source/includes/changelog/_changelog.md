@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 17-08-2025
+#### Добавлена
+- Ошибка [13005](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-ostatkow)
+
 ### 10-07-2025
 #### Добавлена
 - Ошибка при работе с печатными формами [33013](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-pechatnyh-form)
