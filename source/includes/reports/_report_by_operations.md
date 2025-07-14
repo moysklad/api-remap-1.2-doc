@@ -93,7 +93,7 @@ curl -X GET
                     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
                     "type": "product",
                     "mediaType": "application/json",
-                    "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=bb175fd6-32e1-11ef-ac16-001100000001"
+                    "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=bb175fd6-32e1-11ef-ac16-001100000001"
                 }
             },
             "operation": {
@@ -102,7 +102,7 @@ curl -X GET
                     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/supply/metadata",
                     "type": "supply",
                     "mediaType": "application/json",
-                    "uuidHref": "https://api.moysklad.ru/app/#supply/edit?id=ff473101-3871-11ef-ac16-001100000039"
+                    "uuidHref": "https://online.moysklad.ru/app/#supply/edit?id=ff473101-3871-11ef-ac16-001100000039"
                 }
             },
             "moment": "2024-07-02 15:52:00.000",
@@ -112,7 +112,7 @@ curl -X GET
                     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
                     "type": "store",
                     "mediaType": "application/json",
-                    "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=eca7b8c0-32e0-11ef-ac16-0011000000cb"
+                    "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=eca7b8c0-32e0-11ef-ac16-0011000000cb"
                 }
             },
             "stock": 1.0,
@@ -201,7 +201,7 @@ curl -X GET
                     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
                     "type": "product",
                     "mediaType": "application/json",
-                    "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=bb175fd6-32e1-11ef-ac16-001100000001"
+                    "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=bb175fd6-32e1-11ef-ac16-001100000001"
                 }
             },
             "operation": {
@@ -210,7 +210,7 @@ curl -X GET
                     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
                     "type": "customerorder",
                     "mediaType": "application/json",
-                    "uuidHref": "https://api.moysklad.ru/app/#customerorder/edit?id=59826b4c-3879-11ef-ac16-000f00000032"
+                    "uuidHref": "https://online.moysklad.ru/app/#customerorder/edit?id=59826b4c-3879-11ef-ac16-000f00000032"
                 }
             },
             "moment": "2024-07-02 16:45:00.000",
@@ -220,7 +220,7 @@ curl -X GET
                     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
                     "type": "store",
                     "mediaType": "application/json",
-                    "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=eca7b8c0-32e0-11ef-ac16-0011000000cb"
+                    "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=eca7b8c0-32e0-11ef-ac16-0011000000cb"
                 }
             },
             "reserve": 5.0
@@ -306,7 +306,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "product",
           "mediaType": "application/json",
-          "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=bb175fd6-32e1-11ef-ac16-001100000001"
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=bb175fd6-32e1-11ef-ac16-001100000001"
         }
       },
       "operation": {
@@ -315,7 +315,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/metadata",
           "type": "purchaseorder",
           "mediaType": "application/json",
-          "uuidHref": "https://api.moysklad.ru/app/#purchaseorder/edit?id=dba8c216-401c-11ef-ac16-00110000002b"
+          "uuidHref": "https://online.moysklad.ru/app/#purchaseorder/edit?id=dba8c216-401c-11ef-ac16-00110000002b"
         }
       },
       "moment": "2024-07-12 10:03:00.000",
@@ -325,7 +325,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
           "type": "store",
           "mediaType": "application/json",
-          "uuidHref": "https://api.moysklad.ru/app/#warehouse/edit?id=eca7b8c0-32e0-11ef-ac16-0011000000cb"
+          "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=eca7b8c0-32e0-11ef-ac16-0011000000cb"
         }
       },
       "inTransit": 5.0
