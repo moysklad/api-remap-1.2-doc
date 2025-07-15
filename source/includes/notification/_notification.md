@@ -2275,7 +2275,7 @@ curl -X GET
   "read": false,
   "title": "Новое событие: Заказ покупателя 00001",
   "description": "Привет! Какой статус?",
-  "operation": {
+  "entity": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/5dee4523-f5ab-11ee-c0a8-3010000000ed",
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
