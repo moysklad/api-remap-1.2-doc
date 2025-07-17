@@ -23,6 +23,13 @@
 #### Добавлена
 - Ошибка [13005](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-ostatkow)
 
+### 16-07-2025
+#### Добавлено
+- Типы компаний региона Казахстан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)
+- Типы компаний региона Казахстан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-tip-urlica)
+- Реквизиты региона Казахстан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-rekwizity-kazahstana)
+- Реквизиты региона Казахстан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-rekwizity-kazahstana)
+
 ### 10-07-2025
 #### Добавлена
 - Ошибка при работе с печатными формами [33013](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-pechatnyh-form)
