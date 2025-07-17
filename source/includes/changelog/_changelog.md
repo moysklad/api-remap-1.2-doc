@@ -19,10 +19,17 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 15-07-2025
+### 17-07-2025
 #### Добавлено
 - Поля связей документов в [Производственное задание](../documents/#dokumenty-proizwodstwennoe-zadanie)
 - Ошибки [17024, 26115](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
+
+### 16-07-2025
+#### Добавлено
+- Типы компаний региона Казахстан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)
+- Типы компаний региона Казахстан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-tip-urlica)
+- Реквизиты региона Казахстан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-rekwizity-kazahstana)
+- Реквизиты региона Казахстан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-rekwizity-kazahstana)
 
 ### 10-07-2025
 #### Добавлена
