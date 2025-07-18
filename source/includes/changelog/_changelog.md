@@ -29,7 +29,6 @@
 - Поля связей документов в [Приемка](../documents/#dokumenty-priemka)
 - Поля связей документов в [Производственное задание](../documents/#dokumenty-proizwodstwennoe-zadanie)
 - Ошибка [17024](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
-- Ошибка [26115](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq)
 
 ### 17-07-2025
 #### Добавлена
