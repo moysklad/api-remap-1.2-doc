@@ -31,7 +31,7 @@
 - Ошибка [17024](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
 - Ошибка [26115](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq)
 
-### 17-08-2025
+### 17-07-2025
 #### Добавлена
 - Ошибка [13005](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-ostatkow)
 
