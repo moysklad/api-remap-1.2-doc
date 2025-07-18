@@ -21,8 +21,15 @@
 
 ### 17-07-2025
 #### Добавлено
+- Поля связей документов в [Внутренний заказ](../documents/#dokumenty-vnutrennij-zakaz)
+- Поля связей документов в [Заказ кодов маркировки](../documents/#dokumenty-zakaz-kodow-markirowki)
+- Поля связей документов в [Заказ покупателя](../documents/#dokumenty-zakaz-pokupatelq)
+- Поля связей документов в [Заказ поставщику](../documents/#dokumenty-zakaz-postawschiku)
+- Поля связей документов в [Перемещение](../documents/#dokumenty-peremeschenie)
+- Поля связей документов в [Приемка](../documents/#dokumenty-priemka)
 - Поля связей документов в [Производственное задание](../documents/#dokumenty-proizwodstwennoe-zadanie)
-- Ошибки [17024, 26115](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
+- Ошибка [17024](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
+- Ошибка [26115](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq)
 
 ### 16-07-2025
 #### Добавлено
