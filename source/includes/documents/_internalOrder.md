@@ -74,7 +74,7 @@
 | **purchaseOrder**   | Ссылка на Заказ Поставщика, с которым связан этот Внутренний заказ в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)         |
 | **move**            | Ссылка на Перемещение, с которой связан этот Внутренний заказ в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)              |
 | **processingOrder** | Ссылка на Заказ на производство, с которым связан этот Внутренний заказ в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)    |
-| **productionTask**  | Ссылка на Производственное задание, с которым связан этот Внутренний заказ в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) |
+| **productionTasks** | Массив ссылок на связанные производственные задания в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)                        |
 
 ### Получить Внутренние заказы 
 

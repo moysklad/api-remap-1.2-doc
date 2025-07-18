@@ -19,7 +19,18 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 17-08-2025
+### 18-07-2025
+#### Добавлено
+- Поля связей документов в [Внутренний заказ](../documents/#dokumenty-vnutrennij-zakaz)
+- Поля связей документов в [Заказ кодов маркировки](../documents/#dokumenty-zakaz-kodow-markirowki)
+- Поля связей документов в [Заказ покупателя](../documents/#dokumenty-zakaz-pokupatelq)
+- Поля связей документов в [Заказ поставщику](../documents/#dokumenty-zakaz-postawschiku)
+- Поля связей документов в [Перемещение](../documents/#dokumenty-peremeschenie)
+- Поля связей документов в [Приемка](../documents/#dokumenty-priemka)
+- Поля связей документов в [Производственное задание](../documents/#dokumenty-proizwodstwennoe-zadanie)
+- Ошибка [17024](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
+
+### 17-07-2025
 #### Добавлена
 - Ошибка [13005](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-ostatkow)
 
