@@ -1,7 +1,7 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 17-07-2025
+### 18-07-2025
 #### Добавлено
 - Поля связей документов в [Внутренний заказ](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vnutrennij-zakaz)
 - Поля связей документов в [Заказ кодов маркировки](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-kodow-markirowki)
@@ -12,6 +12,10 @@
 - Поля связей документов в [Производственное задание](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-proizwodstwennoe-zadanie)
 - Ошибка [17024](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
 - Ошибка [26115](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq)
+
+### 17-08-2025
+#### Добавлена
+- Ошибка [13005](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-ostatkow)
 
 ### 16-07-2025
 #### Добавлено
@@ -43,7 +47,6 @@
 ### 17-06-2025
 #### Добавлено
 - Поле `giftCards` в [Розничную продажу](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha)
-
 
 ### 09-06-2025
 #### Добавлено
