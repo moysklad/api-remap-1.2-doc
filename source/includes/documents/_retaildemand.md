@@ -22,6 +22,7 @@
 | **documentNumber**     | String(255)                                               |                                                                                                                                                   | Номер документа                                                                                                                                                                              |
 | **externalCode**       | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Розничной продажи<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                |
 | **files**              | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`                                                |
+| **giftCards**          | Array(Object)                                             |                                                                                                                                                   | Коллекция подарочных сертификатов, используемых при оплате продажи. [Подробнее тут](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-podarochnye-sertificaty)                 |
 | **group**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                     |
 | **id**                 | UUID                                                      | `=` `!=`                                                                                                                                          | ID Розничной продажи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                    |
 | **meta**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Розничной продажи<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                 |
@@ -67,7 +68,7 @@
 | **PATENT_BASED**                         | Патент                       |
 
 #### Работа с полями оплаты розничной продажи
-Сумма полей **cashSum**, **noCashSum**, **qrSum**, **prepaymentCashSum**, **prepaymentNoCashSum**, **prepaymentNoCashSum** и **advancePaymentSum** должна совпадать с суммой по Розничной продаже
+Сумма полей **cashSum**, **noCashSum**, **qrSum**, **prepaymentCashSum**, **prepaymentNoCashSum**, **prepaymentQrSum** и **advancePaymentSum** должна совпадать с суммой по Розничной продаже
 (т.е. с суммарной стоимостью всех переданных вами позиций). Каждое из полей не может иметь отрицательное значение.
 
 Смешанная оплата со способом по QR-коду недопустима. Если **qrSum** или **prepaymentQrSum** ненулевое, то другие поля не могут быть использованы, иначе вернется ошибка.
@@ -124,9 +125,18 @@
 
 О работе с доп. полями Розничных продаж можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
+#### Подарочные сертификаты
+Подарочные сертификаты Розничной продажи - это список подарочных сертификатов, используемых при оплате розничной продажи.
+Объект позиции Розничной продажи содержит следующие поля:
+
+| Название        | Тип                                                       | Описание                                                   |
+|-----------------|:----------------------------------------------------------|:----------------------------------------------------------|
+| **name**        | String                                                    | Номер сертификата<br>`+Обязательное при ответе`           |
+| **paymentSum**  | Float                                                     | Сумма сертификата<br>`+Обязательное при ответе`           |
+
 #### Информация о прослеживаемости импортных товаров
 Поле **declaration** выводится по запросу. Для вывода в позициях документа информации о прослеживаемости импортных товаров
-необходимо передать в URL запроса дополнительный параметр `fields=declaration`, например `../retaildemand/{id}/positions?fields=declaration`.
+необходимо передать в URL запроса дополнительный параметр `fields=declaration`, например `../retaildemand/{id}/positions?fields=declaration`. [Подробнее о параметре fields](../#mojsklad-json-api-obschie-swedeniq-chto-takoe-fields). 
 
 Аттрибуты объекта:
 
@@ -286,7 +296,17 @@ curl -X GET
       "prepaymentNoCashSum": 0,
       "prepaymentQrSum": 0,
       "advancePaymentSum": 0,
-      "taxSystem": "GENERAL_TAX_SYSTEM"
+      "taxSystem": "GENERAL_TAX_SYSTEM",
+      "giftCards": [
+        {
+          "name": "123457",
+          "paymentSum": 500
+        },
+        {
+          "name": "1234578",
+          "paymentSum": 1000
+        }
+      ]
     },
     {
       "meta": {
@@ -399,7 +419,17 @@ curl -X GET
       "prepaymentCashSum": 0,
       "prepaymentNoCashSum": 0,
       "prepaymentQrSum": 0,
-      "advancePaymentSum": 0
+      "advancePaymentSum": 0,
+      "giftCards": [
+        {
+          "name": "123457",
+          "paymentSum": 500
+        },
+        {
+          "name": "1234578",
+          "paymentSum": 1000
+        }
+      ]
     }
   ]
 }
@@ -1255,7 +1285,17 @@ curl -X GET
     "prepaymentCashSum": 0,
     "prepaymentNoCashSum": 0,
     "prepaymentQrSum": 0,
-    "advancePaymentSum": 0
+    "advancePaymentSum": 0,
+    "giftCards": [
+      {
+        "name": "123457",
+        "paymentSum": 500
+      },
+      {
+        "name": "1234578",
+        "paymentSum": 1000
+      }
+    ]
   },
   {
     "meta": {
@@ -1379,7 +1419,17 @@ curl -X GET
     "prepaymentCashSum": 0,
     "prepaymentNoCashSum": 0,
     "prepaymentQrSum": 0,
-    "advancePaymentSum": 0
+    "advancePaymentSum": 0,
+    "giftCards": [
+      {
+        "name": "123457",
+        "paymentSum": 500
+      },
+      {
+        "name": "1234578",
+        "paymentSum": 1000
+      }
+    ]
   }
 ]
 ```
@@ -1971,7 +2021,17 @@ curl -X GET
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
   "prepaymentQrSum": 0,
-  "advancePaymentSum": 0
+  "advancePaymentSum": 0,
+  "giftCards": [
+    {
+      "name": "123457",
+      "paymentSum": 500
+    },
+    {
+      "name": "1234578",
+      "paymentSum": 1000
+    }
+  ]
 }
 ```
 
@@ -2142,7 +2202,17 @@ curl -X GET
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
   "prepaymentQrSum": 0,
-  "advancePaymentSum": 0
+  "advancePaymentSum": 0,
+  "giftCards": [
+    {
+      "name": "123457",
+      "paymentSum": 500
+    },
+    {
+      "name": "1234578",
+      "paymentSum": 1000
+    }
+  ]
 }
 ```
 
@@ -2338,7 +2408,17 @@ curl -X GET
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
   "prepaymentQrSum": 0,
-  "advancePaymentSum": 0
+  "advancePaymentSum": 0,
+  "giftCards": [
+    {
+      "name": "123457",
+      "paymentSum": 500
+    },
+    {
+      "name": "1234578",
+      "paymentSum": 1000
+    }
+  ]
 }
 ```
 

@@ -19,9 +19,49 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 19-06-2025
+### 22-07-2025
 #### Добавлено
 - Поле `minimumStock` в сущность [модификация](../dictionaries/#suschnosti-modifikaciq-modifikacii) для работы с неснижаемыми остатками
+
+### 17-07-2025
+#### Добавлена
+- Ошибка [13005](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-ostatkow)
+
+### 16-07-2025
+#### Добавлено
+- Типы компаний региона Казахстан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)
+- Типы компаний региона Казахстан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-tip-urlica)
+- Реквизиты региона Казахстан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-rekwizity-kazahstana)
+- Реквизиты региона Казахстан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-rekwizity-kazahstana)
+
+### 10-07-2025
+#### Добавлена
+- Ошибка при работе с печатными формами [33013](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-pechatnyh-form)
+
+### 09-07-2025
+#### Добавлено
+- Добавлена новая [ошибка 3043](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
+### 03-07-2025
+#### Добавлено
+- Новые типы маркированной продукции `VEGETABLE_OIL` для растительных масел, `PET_FOOD` для кормов для животных для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
+
+### 02-07-2025
+#### Исправлено
+- Актуализирована документация [Настройки пользователя](../dictionaries/#suschnosti-nastrojki-pol-zowatelq)
+
+### 01-07-2025
+#### Добавлен
+- Плановая дата завершения этапа `plannedEndDate` в запросе [Производственных этапов](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+
+### 17-06-2025
+#### Добавлено
+- Поле `giftCards` в [Розничную продажу](../documents/#dokumenty-roznichnaq-prodazha)
+
+### 09-06-2025
+#### Добавлено
+- Описание параметра `fields` [Fields](../#mojsklad-json-api-obschie-swedeniq-chto-takoe-fields)
+- Краткий [Отчет на остатки по ячейкам](../reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah-po-qchejkam)
 
 ### 03-06-2025
 #### Добавлено

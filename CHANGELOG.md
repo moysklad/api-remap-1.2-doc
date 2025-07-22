@@ -1,9 +1,49 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 19-06-2025
+### 22-07-2025
 #### Добавлено
 - Поле `minimumStock` в сущность [модификация](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-modifikaciq-modifikacii) для работы с неснижаемыми остатками
+
+### 17-07-2025
+#### Добавлена
+- Ошибка [13005](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-ostatkow)
+
+### 16-07-2025
+#### Добавлено
+- Типы компаний региона Казахстан для [контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)
+- Типы компаний региона Казахстан для [юридических лиц](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico-jurlica-tip-urlica)
+- Реквизиты региона Казахстан для [контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-rekwizity-kazahistana)
+- Реквизиты региона Казахстан для [юридических лиц](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-rekwizity-kazahistana)
+
+### 10-07-2025
+#### Добавлена
+- Ошибка при работе с печатными формами [33013](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-pechatnyh-form)
+
+### 09-07-2025
+#### Добавлено
+- Добавлена новая [ошибка 3043](https://dev.moysklad.ru/doc/api/remap/1.2/index.html#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
+### 03-07-2025
+#### Добавлено
+- Новые типы маркированной продукции `VEGETABLE_OIL` для растительных масел, `PET_FOOD` для кормов для животных для [Товара](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar-towary) и [Комплекта](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt-komplekty)
+
+### 02-07-2025
+#### Исправлено
+- Актуализирована документация [Настройки пользователя](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-nastrojki-pol-zowatelq)
+
+### 01-07-2025
+#### Добавлен
+- Плановая дата завершения этапа `plannedEndDate` в запросе [Производственных этапов](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+
+### 17-06-2025
+#### Добавлено
+- Поле `giftCards` в [Розничную продажу](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha)
+
+### 09-06-2025
+#### Добавлено
+- Описание параметра `fields` [Fields](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-chto-takoe-fields)
+- Краткий [Отчет на остатки по ячейкам](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah-po-qchejkam)
 
 ### 03-06-2025
 #### Добавлено
