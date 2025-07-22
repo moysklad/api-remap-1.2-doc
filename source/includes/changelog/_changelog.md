@@ -19,7 +19,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 17-08-2025
+### 24-07-2025
+#### Поправлена
+- Опечатка типа данных c int на float для полей `volume` и `weight` для [комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
+
+### 17-07-2025
 #### Добавлена
 - Ошибка [13005](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-ostatkow)
 

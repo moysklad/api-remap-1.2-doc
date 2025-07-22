@@ -1,7 +1,11 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 17-08-2025
+### 24-07-2025
+#### Поправлена
+- Опечатка типа данных c int на float для полей `volume` и `weight` для [комплекта](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt-komplekty)
+
+### 17-07-2025
 #### Добавлена
 - Ошибка [13005](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-ostatkow)
 
