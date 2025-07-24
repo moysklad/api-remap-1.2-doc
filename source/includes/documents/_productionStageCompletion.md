@@ -1,5 +1,7 @@
 ## Выполнение этапа производства
 
+Кодом сущности для Выполнения этапа производства в составе JSON API является ключевое слово **productionstagecompletion**.
+
 Средствами JSON API можно создавать, обновлять и удалять сведения о Выполнениях этапов производства,
 запрашивать списки Выполнений этапов производства и сведения по отдельным Выполнениям этапов производства.
 Если производство не начато по Производственному заданию, то попытки создать Выполненный этап на это Производственное задание будут завершаться ошибкой.
@@ -7,32 +9,36 @@
 ### Выполнения этапов производства
 #### Атрибуты сущности
 
-| Название                  | Тип                                                       | Фильтрация                 | Описание                                                                                                                                                                                          |
-|---------------------------|:----------------------------------------------------------|:---------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**             | UUID                                                      |                            | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                              |
-| **created**               | DateTime                                                  |                            | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                  |
-| **enableHourAccounting**  | Boolean                                                   |                            | Признак активности учета по нормо-часам<br>`+Обязательное при ответе`                                                                                                                             |
-| **externalCode**          | String(255)                                               |                            | Внешний код Выполнения этапа производства<br>`+Обязательное при ответе`                                                                                                                           |
-| **group**                 | [Meta](#/general#3-metadannye) |                            | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                          |
-| **id**                    | UUID                                                      |                            | ID Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                               |
-| **labourUnitCost**        | Double                                                    |                            | Оплата труда за единицу объема производства<br>`+Обязательное при ответе`                                                                                                                         |
-| **standardHourUnit**      | Double                                                    |                            | Нормо-часы единицы объема производства<br>`+Обязательное при ответе`                                                                                                                              |
-| **materials**             | MetaArray                                                 |                            | Метаданные Материалов выполнения этапа производства. [Подробнее тут](#/documents/productionStageCompletion#3-materialy-vypolneniya-etapa-proizvodstva)<br>`+Expand`                               |
-| **meta**                  | [Meta](#/general#3-metadannye) |                            | Метаданные Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                       |
-| **moment**                | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=` | Дата документа<br>`+Обязательное при ответе`                                                                                                                                                      |
-| **name**                  | String(255)                                               |                            | Наименование Выполнения этапа производства<br>`+Обязательное при ответе`                                                                                                                          |
-| **owner**                 | [Meta](#/general#3-metadannye) |                            | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                                 |
-| **performer**             | [Meta](#/general#3-metadannye) |                            | Исполнитель (Сотрудник)<br>`+Expand`                                                                                                                                                              |
-| **processingUnitCost**    | Double                                                    |                            | Затраты на единицу объема производства<br>`+Обязательное при ответе`                                                                                                                              |
-| **productionStage**       | [Meta](#/general#3-metadannye) |                            | [Производственный этап](#/documents/productionTask#3-proizvodstvennye-etapy)<br>`+Expand` `+После создания изменить нельзя`                                                                |
-| **productionVolume**      | Double                                                    |                            | Объем производства<br>`+Обязательное при ответе`                                                                                                                                                  |
-| **products**              | MetaArray                                                 |                            | Метаданные Продуктов выполнения этапа производства. Есть только у последнего этапа. [Подробнее тут](#/documents/productionStageCompletion#3-produkty-vypolneniya-etapa-proizvodstva)<br>`+Expand` |
-| **service**            | [Meta](#/general#3-metadannye)  |                            | Услуга, выполняемая контрагентом                                                                                                                                                                  |
-| **shared**                | Boolean                                                   |                            | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                        |
-| **standardHourCost**      | Double                                                    |                            | Стоимость нормо-часа<br>`+Обязательное при ответе`                                                                                                                                                |
-| **updated**               | DateTime                                                  |                            | Момент последнего обновления Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                     |
+| Название                   | Тип                            | Фильтрация                 | Описание                                                                                                                                                                                          |
+|----------------------------|:-------------------------------|:---------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**              | UUID                           |                            | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                              |
+| **created**                | DateTime                       |                            | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                  |
+| **defect**                 | Boolean                        |                            | Признак брака<br>`+Обязательное при ответе` `+После создания изменить нельзя`                                                                                                                     |
+| **description**            | String(4096)                   | `=` `!=` `~` `~=` `=~`     | Комментарий Выполнения этапа<br>                                                                                                                                                                  |
+| **enableHourAccounting**   | Boolean                        |                            | Признак активности учета по нормо-часам<br>`+Обязательное при ответе`                                                                                                                             |
+| **externalCode**           | String(255)                    |                            | Внешний код Выполнения этапа производства<br>`+Обязательное при ответе`                                                                                                                           |
+| **group**                  | [Meta](#/general#3-metadannye) |                            | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                          |
+| **id**                     | UUID                           |                            | ID Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                               |
+| **labourUnitCost**         | Double                         |                            | Оплата труда за единицу объема производства<br>`+Обязательное при ответе`                                                                                                                         |
+| **standardHourUnit**       | Double                         |                            | Нормо-часы единицы объема производства<br>`+Обязательное при ответе`                                                                                                                              |
+| **materials**              | MetaArray                      |                            | Метаданные Материалов выполнения этапа производства. [Подробнее тут](#/documents/productionStageCompletion#3-materialy-vypolneniya-etapa-proizvodstva)<br>`+Expand`                               |
+| **meta**                   | [Meta](#/general#3-metadannye) |                            | Метаданные Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                       |
+| **moment**                 | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Дата документа<br>`+Обязательное при ответе`                                                                                                                                                      |
+| **name**                   | String(255)                    |                            | Наименование Выполнения этапа производства<br>`+Обязательное при ответе`                                                                                                                          |
+| **owner**                  | [Meta](#/general#3-metadannye) |                            | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                                 |
+| **performer**              | [Meta](#/general#3-metadannye) |                            | Исполнитель (Сотрудник)<br>`+Expand`                                                                                                                                                              |
+| **processingUnitCost**     | Double                         |                            | Затраты на единицу объема производства<br>`+Обязательное при ответе`                                                                                                                              |
+| **productionStage**        | [Meta](#/general#3-metadannye) |                            | [Производственный этап](#/documents/productionTask#3-proizvodstvennye-etapy)<br>`+Expand` `+После создания изменить нельзя`                                                                       |
+| **productionVolume**       | Double                         |                            | Объем производства<br>`+Обязательное при ответе`                                                                                                                                                  |
+| **products**               | MetaArray                      |                            | Метаданные Продуктов выполнения этапа производства. Есть только у последнего этапа. [Подробнее тут](#/documents/productionStageCompletion#3-produkty-vypolneniya-etapa-proizvodstva)<br>`+Expand` |
+| **service**                | [Meta](#/general#3-metadannye) |                            | Услуга, выполняемая контрагентом                                                                                                                                                                  |
+| **shared**                 | Boolean                        |                            | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                        |
+| **standardHourCost**       | Double                         |                            | Стоимость нормо-часа<br>`+Обязательное при ответе`                                                                                                                                                |
+| **updated**                | DateTime                       |                            | Момент последнего обновления Выполнения этапа производства<br>`+Обязательное при ответе` `+Только для чтения`                                                                                     |
 Особенности:
 Для сущности действуют ограничения на expand: для поля **productionStage.productionRow** недоступен expand вложенных полей.
+
+Можно фильтровать по **assortment** c `=`, что позволит получить выполненые этапы производства с определённым материалом или продуктом.
 
 Для создания Выполнения этапа с контрагентом в качестве исполнителя может быть передана услуга. 
 Иначе будет сохранена та услуга, которая выбрана для данного контрагента в [Этапе производства](#/dictionaries/processingstage#2-etap-proizvodstva). 
@@ -173,7 +179,8 @@ curl -X GET
       "productionVolume": 100000,
       "processingUnitCost": 0.0,
       "labourUnitCost": 0.0,
-      "standardHour": 0.0
+      "standardHour": 0.0,
+      "defect": false
     },
     {
       "meta": {
@@ -241,7 +248,8 @@ curl -X GET
       "productionVolume": 1,
       "processingUnitCost": 0.0,
       "labourUnitCost": 0.0,
-      "standardHour": 0.0
+      "standardHour": 0.0,
+      "defect": false
     },
     {
       "meta": {
@@ -309,7 +317,8 @@ curl -X GET
       "productionVolume": 1,
       "processingUnitCost": 0.0,
       "labourUnitCost": 0.0,
-      "standardHour": 0.0
+      "standardHour": 0.0,
+      "defect": false
     },
     {
       "meta": {
@@ -377,7 +386,8 @@ curl -X GET
       "productionVolume": 1.1235,
       "processingUnitCost": 0.0,
       "labourUnitCost": 0.0,
-      "standardHourUnit": 0.0
+      "standardHourUnit": 0.0,
+      "defect": false
     },
     {
       "meta": {
@@ -445,7 +455,8 @@ curl -X GET
       "productionVolume": 1.6,
       "processingUnitCost": 0.0,
       "labourUnitCost": 0.0,
-      "standardHourUnit": 0.0
+      "standardHourUnit": 0.0,
+      "defect": false
     }
   ]
 }
@@ -553,11 +564,12 @@ curl -X GET
   "productionVolume": 5,
   "processingUnitCost": 10.0,
   "labourUnitCost": 20.0,
-  "standardHourUnit": 30.0
+  "standardHourUnit": 30.0,
+  "defect": false  
 }
 ```
 
-> Пример создания нового Выполнения этапа производства с более насыщенным телом запроса.
+> Пример создания нового Выполнения этапа производства с признаком брака и более насыщенным телом запроса.
 
 ```shell
   curl -X POST
@@ -567,6 +579,7 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '{
             "name": "000034",
+            "description" : "Комментарий по выполнению",
             "owner": {
               "meta": {
                 "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
@@ -590,7 +603,7 @@ curl -X GET
                 "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
                 "type": "employee",
                 "mediaType": "application/json",
-                "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+                "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
               }
             },      
             "productionStage": {
@@ -604,7 +617,8 @@ curl -X GET
             "productionVolume": 5,
             "processingUnitCost": 10.0,
             "labourUnitCost": 20.0,
-            "standardHourUnit": 30.0
+            "standardHourUnit": 30.0,
+            "defect": true           
           }'  
 ```
 
@@ -642,6 +656,7 @@ curl -X GET
   },
   "updated": "2023-12-08 18:25:24.325",
   "name": "000034",
+  "description" : "Комментарий по выполнению",
   "externalCode": "EnuNEmG2jyUF4t9tgPQk72",
   "moment": "2016-04-19 13:50:24",
   "created": "2023-12-08 18:25:24.386",
@@ -651,7 +666,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json",
-      "uuidHref": "https://online-api-4.testms-test.lognex.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=a7354b1a-95dd-11ee-0a81-07230000004d"
     }
   },
   "productionStage": {
@@ -687,7 +702,8 @@ curl -X GET
   "productionVolume": 5,
   "processingUnitCost": 10.0,
   "labourUnitCost": 20.0,
-  "standardHourUnit": 30.0
+  "standardHourUnit": 30.0,
+  "defect": true
 }
 ```
 > Пример создания нового Выполнения этапа, где исполнителем указан контрагент и передана услуга.
@@ -713,7 +729,7 @@ curl -X GET
                     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
                     "type": "counterparty",
                     "mediaType": "application/json",
-                    "uuidHref": "https://api.moysklad.ru/app/#company/edit?id=c8c0f0de-b6c6-11ef-ac12-00130000009e"
+                    "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=c8c0f0de-b6c6-11ef-ac12-00130000009e"
                 }
             },
             "service": {
@@ -722,7 +738,7 @@ curl -X GET
                     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
                     "type": "service",
                     "mediaType": "application/json",
-                    "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=18615d1c-b6c7-11ef-ac12-001300000101"
+                    "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=18615d1c-b6c7-11ef-ac12-001300000101"
                 }
             }
           } 
@@ -772,7 +788,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
       "type": "counterparty",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#company/edit?id=c8c0f0de-b6c6-11ef-ac12-00130000009e"
+      "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=c8c0f0de-b6c6-11ef-ac12-00130000009e"
     }
   },
   "productionStage": {
@@ -789,7 +805,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
       "type": "service",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=18615d1c-b6c7-11ef-ac12-001300000101"
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=18615d1c-b6c7-11ef-ac12-001300000101"
     }
   },
   "materials": {
@@ -815,7 +831,8 @@ curl -X GET
   "productionVolume": 5,
   "processingUnitCost": 10.0,
   "labourUnitCost": 20.0,
-  "standardHourUnit": 30.0
+  "standardHourUnit": 30.0,
+  "defect": false  
 }
 ```
 
@@ -948,7 +965,8 @@ curl -X GET
     "productionVolume": 15,
     "processingUnitCost": 0.0,
     "labourUnitCost": 0.0,
-    "standardHourUnit": 0.0
+    "standardHourUnit": 0.0,
+    "defect": false    
   },
   {
     "meta": {
@@ -1016,7 +1034,8 @@ curl -X GET
     "productionVolume": 5,
     "processingUnitCost": 0.0,
     "labourUnitCost": 0.0,
-    "standardHourUnit": 0.0
+    "standardHourUnit": 0.0,
+    "defect": false    
   }
 ]
 ```
@@ -1176,7 +1195,9 @@ curl -X GET
   "productionVolume": 100000,
   "processingUnitCost": 0.0,
   "labourUnitCost": 0.0,
-  "standardHourUnit": 0.0
+  "standardHourUnit": 0.0,
+  "productionVolume": 0.1,
+  "defect": false
 }
 ```
 
@@ -1276,7 +1297,8 @@ curl -X GET
   "productionVolume": 22,
   "processingUnitCost": 0.0,
   "labourUnitCost": 0.0,
-  "standardHourUnit": 0.0
+  "standardHourUnit": 0.0,
+  "defect": false
 }
 ```
 

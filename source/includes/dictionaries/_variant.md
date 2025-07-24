@@ -20,27 +20,28 @@
 + `filter=productid=677c4032-8667-11e6-8a84-bae500003344;productid=421c4032-4709-31e4-1d2r-awe5000025me`
 
 #### Атрибуты Сущности
-| Название               | Тип                                                       | Фильтрация                  | Описание                                                                                                                                                                                                                                    |
-| ---------------------- | :-------------------------------------------------------- | :-------------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**          | UUID                                                      | `=` `!=`                    | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                        |
-| **archived**           | Boolean                                                   | `=` `!=`                    | Добавлен ли товар в архив<br>`+Обязательное при ответе`                                                                                                                                                                                     |
-| **barcodes**           | Array(Object)                                             | `=` `!=` `~` `~=` `=~`                            | Массив штрихкодов модификации. [Подробнее тут](#/dictionaries/variant#5-shtrihkody).  Для фильтрации по полю необходимо указывать его в единственном числе **barcode**.            |
-| **buyPrice**           | Object                                                    |                             | Закупочная цена                                                                                                                                                                                                                             |
-| **characteristics**    | Array(Object)                                             |                             | Характеристики Модификации. [Подробнее тут](#/dictionaries/variant#6-harakteristiki-modifikacii)<br>`+Обязательное при ответе` `+Необходимо при создании` |
-| **code**               | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Код Модификации                                                                                                                                                                                                                             |
-| **description**        | String(4096)	                                             | `=` `!=` `~` `~=` `=~`      | Описание Модификации                                                                                                                                                                                                                        |
-| **discountProhibited** | Boolean                                                   |                             | Признак запрета скидок<br>`+Обязательное при ответе`                                                                                                                                                                                        |
-| **externalCode**       | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Внешний код Модификации<br>`+Обязательное при ответе`                                                                                                                                                                                       |
-| **id**                 | UUID                                                      | `=` `!=`                    | ID Модификации<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                           |
-| **images**             | MetaArray                                                 |                             | Массив метаданных [Изображений](#/dictionaries/images#2-izobrazhenie) (Максимальное количество изображений - 10)<br>`+Обязательное при ответе` `+Expand`                                                                                |
-| **meta**               | [Meta](#/general#3-metadannye) |                             | Метаданные Модификации<br>`+Обязательное при ответе`                                                                                                                                                                                        |
-| **minPrice**           | Object                                                    |                             | Минимальная цена. [Подробнее тут](#/dictionaries/variant#5-minimalnaya-cena)                                                                                                     |
-| **name**               | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Наименование товара с Модификацией<br>`+Обязательное при ответе`                                                                                                                                                                            |
-| **packs**              | Array(Object)                                             |                             | Упаковки модификации [Подробнее тут](#/dictionaries/variant#5-upakovki-modifikacii)                                                                                              |
-| **product**            | [Meta](#/general#3-metadannye) |                             | Метаданные [товара](#/dictionaries/product#2-tovar), к которому привязана Модификация<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                 |
-| **salePrices**         | Array(Object)                                             |                             | Цены продажи. [Подробнее тут](#/dictionaries/variant#5-ceny-prodazhi)                                                                                                            |
-| **things**             | Array(String)                                             |                             | Серийные номера<br>`+Только для чтения`                                                                                                                                                                                                     |
-| **updated**            | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`  | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                    |
+| Название               | Тип                            | Фильтрация                 | Описание                                                                                                                                                                  |
+| ---------------------- |:-------------------------------|:---------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**          | UUID                           | `=` `!=`                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                      |
+| **archived**           | Boolean                        | `=` `!=`                   | Добавлен ли товар в архив<br>`+Обязательное при ответе`                                                                                                                   |
+| **barcodes**           | Array(Object)                  | `=` `!=` `~` `~=` `=~`     | Массив штрихкодов модификации. [Подробнее тут](#/dictionaries/variant#5-shtrihkody).  Для фильтрации по полю необходимо указывать его в единственном числе **barcode**.   |
+| **buyPrice**           | Object                         |                            | Закупочная цена                                                                                                                                                           |
+| **characteristics**    | Array(Object)                  |                            | Характеристики Модификации. [Подробнее тут](#/dictionaries/variant#6-harakteristiki-modifikacii)<br>`+Обязательное при ответе` `+Необходимо при создании`                 |
+| **code**               | String(255)                    | `=` `!=` `~` `~=` `=~`     | Код Модификации                                                                                                                                                           |
+| **description**        | String(4096)	                  |                            | Описание Модификации                                                                                                                                                      |
+| **discountProhibited** | Boolean                        |                            | Признак запрета скидок<br>`+Обязательное при ответе`                                                                                                                      |
+| **externalCode**       | String(255)                    | `=` `!=` `~` `~=` `=~`     | Внешний код Модификации<br>`+Обязательное при ответе`                                                                                                                     |
+| **id**                 | UUID                           | `=` `!=`                   | ID Модификации<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                         |
+| **images**             | MetaArray                      |                            | Массив метаданных [Изображений](#/dictionaries/images#2-izobrazhenie) (Максимальное количество изображений - 10)<br>`+Обязательное при ответе` `+Expand`                  |
+| **meta**               | [Meta](#/general#3-metadannye) |                            | Метаданные Модификации<br>`+Обязательное при ответе`                                                                                                                      |
+| **minPrice**           | Object                         |                            | Минимальная цена. [Подробнее тут](#/dictionaries/variant#5-minimalnaya-cena)                                                                                              |
+| **minimumStock**       | Object                         |                            | Неснижаемый остаток. [Подробнее тут](#/dictionaries/product#5-nesnizhaemyj-ostatok)<br>`+Выводится по запросу` |
+| **name**               | String(255)                    | `=` `!=` `~` `~=` `=~`     | Наименование товара с Модификацией<br>`+Обязательное при ответе`                                                                                                          |
+| **packs**              | Array(Object)                  |                            | Упаковки модификации [Подробнее тут](#/dictionaries/variant#5-upakovki-modifikacii)                                                                                       |
+| **product**            | [Meta](#/general#3-metadannye) |                            | Метаданные [товара](#/dictionaries/product#2-tovar), к которому привязана Модификация<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                  |
+| **salePrices**         | Array(Object)                  |                            | Цены продажи. [Подробнее тут](#/dictionaries/variant#5-ceny-prodazhi)                                                                                                     |
+| **things**             | Array(String)                  |                            | Серийные номера<br>`+Только для чтения`                                                                                                                                   |
+| **updated**            | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Только для чтения`                                                                                  |
 
 #### Атрибуты доступные для сортировки
 
@@ -150,6 +151,71 @@
 | ------------ | :-------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------- |
 | **value**    | Float                                                     | Значение цены<br>`+Обязательное при ответе`                                                                                        |
 | **currency** | [Meta](#/general#3-metadannye) | Ссылка на валюту в формате [Метаданных](#/general#3-metadannye)<br>`+Обязательное при ответе` `+Expand` |
+
+##### Неснижаемый остаток
+Неснижаемый остаток — минимальное количество товара, которое всегда должно быть на складе. Поле `minimumStock` доступно при использовании дополнительного параметра `fields=minimumStock` или при 
+передаче поля в запросе создания или изменения сущности.
+Пример:
+
++ `.../variant/{id модификции}?fields=minimumStock`
+
+##### Тип Неснижаемого остатка
+Значения поля type.
+
+| Значение               | Описание                                        |
+|------------------------|:------------------------------------------------|
+| **ALL_WAREHOUSE_SUM**  | В сумме на всех складах                         |
+| **ALL_WAREHOUSE_SAME** | Одинаковый на всех складах `+Только для чтения` |
+| **WAREHOUSE_VARIED**   | Задан для каждого склада                        |
+
+Как-либо редактировать Неснижаемые остатки в модификации допустимо в случае, когда Неснижаемый остаток не наследуется от товара.
+Примеры можно посмотреть в разделах [получения](#/dictionaries/variant#3-poluchit-spisok-modifikacij), [создания](#/dictionaries/variant#3-sozdat-modifikaciyu)
+или [обновления](#/dictionaries/variant#3-izmenit-modifikaciyu) модификации.
+
+###### Атрибуты Неснижаемого остатка с типом ALL_WAREHOUSE_SUM
+
+| Название      | Тип     | Описание                                                            |
+|---------------|:--------|:--------------------------------------------------------------------|
+| **type**      | String  | Разновидность Неснижаемого остатка                                  |
+| **inherited** | Boolean | Признак, наследуется ли Неснижаемый остаток от родительского товара |
+| **quantity**  | Double  | Количество Неснижаемого остатка в сумме на всех складах             |
+
+###### Атрибуты Неснижаемого остатка с типом ALL_WAREHOUSE_SAME
+
+| Название      | Тип     | Описание                                                                              |
+|---------------|:--------|:--------------------------------------------------------------------------------------|
+| **type**      | String  | Разновидность Неснижаемого остатка<br>`+Только для чтения`                            |
+| **inherited** | Boolean | Признак, наследуется ли Неснижаемый остаток от родительского товара                   |
+| **quantity**  | Double  | Количество Неснижаемого остатка одинаковое для каждого склада<br>`+Только для чтения` |
+
+###### Атрибуты Неснижаемого остатка с типом WAREHOUSE_VARIED
+
+| Название          | Тип       | Описание                                                            |
+|-------------------|:----------|:--------------------------------------------------------------------|
+| **type**          | String    | Разновидность Неснижаемого остатка                                  |
+| **inherited**     | Boolean   | Признак, наследуется ли Неснижаемый остаток от родительского товара |
+| **storebalances** | MetaArray | Количество Неснижаемого остатка заданное для каждого склада         |
+
+Структура объекта в коллекции **storebalances**:
+
+| Название      | Тип                                                       | Описание                                                 |
+|---------------|:----------------------------------------------------------|:---------------------------------------------------------|
+| **accountId** | UUID                                                      | ID учетной записи<br>`+Только для чтения`                |
+| **id**        | UUID                                                      | ID позиции Неснижаемого остатка<br> `+Только для чтения` |
+| **meta**      | [Meta](#/general#3-metadannye) | Метаданные Неснижаемого остатка<br> `+Только для чтения` |
+| **store**     | [Meta](#/general#3-metadannye) | Метаданные склада для которого задан Неснижаемый остаток |
+| **quantity**  | Double                                                    | Количество Неснижаемого остатка для склада               |
+
+Для создания или изменения Неснижаемого остатка для склада (складов) можно передать в теле запроса на [создание](#/dictionaries/variant#3-sozdat-modifikaciyu)
+или [обновление](#/dictionaries/variant#3-izmenit-modifikaciyu) модификации Неснижаемые остатки с указанием склада и количества неснижаемого остатка для данного склада.
+Также есть отдельные ресурсы для управления Неснижаемыми остатками по складам:
+
++ Получение списка (`/entity/variant/{variant_id}/storebalances`)
++ Получение объекта (`/entity/variant/{variant_id}/storebalances/{minimumstock_id}`)
++ Создание (`/entity/variant/{variant_id}/storebalances`)
++ Изменение (`/entity/variant/{variant_id}/storebalances/{minimumstock_id}`)
++ Удаление (`/entity/variant/{variant_id}/storebalances/{minimumstock_id}`)
++ Массовое удаление (`/entity/variant/{variant_id}/storebalances/delete`)
 
 ##### Упаковки Модификации
 
@@ -335,7 +401,133 @@ curl -X GET
   ]
 }
 ```
+> Получить список модификаций с выводом Неснижаемого остатка
 
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/variant?fields=minimumStock"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка Модификаций.
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/?fields=minimumStock",
+    "type": "variant",
+    "mediaType": "application/json",
+    "size": 1,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/0fc3547c-1395-11f0-ac15-001100000045",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+        "type": "variant",
+        "mediaType": "application/json",
+        "uuidHref": "https://api.moysklad.ru/app/#feature/edit?id=0fc34911-1395-11f0-ac15-001100000043"
+      },
+      "id": "0fc3547c-1395-11f0-ac15-001100000045",
+      "accountId": "762af84a-0ec6-11f0-ac15-001000000001",
+      "updated": "2025-04-07 12:45:38.399",
+      "name": "Potato (yellow)",
+      "code": "00004",
+      "externalCode": "KDnPv4IYhLVJKh4NKP9mL0",
+      "archived": false,
+      "characteristics": [
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/7a797ba3-1394-11f0-ac15-001100000025",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          },
+          "id": "7a797ba3-1394-11f0-ac15-001100000025",
+          "name": "Colour",
+          "value": "yellow"
+        }
+      ],
+      "images": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/0fc3547c-1395-11f0-ac15-001100000045/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
+      "salePrices": [
+        {
+          "value": 0.0,
+          "currency": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+              "type": "currency",
+              "mediaType": "application/json",
+              "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+            }
+          },
+          "priceType": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/77f67b4c-0ec6-11f0-ac15-0012000000a5",
+              "type": "pricetype",
+              "mediaType": "application/json"
+            },
+            "id": "77f67b4c-0ec6-11f0-ac15-0012000000a5",
+            "name": "Цена продажи",
+            "externalCode": "cbcf493b-55bc-11d9-848a-00112f43529a"
+          }
+        }
+      ],
+      "barcodes": [
+        {
+          "ean13": "2000000000107"
+        }
+      ],
+      "discountProhibited": false,
+      "minimumStock": {
+        "type": "WAREHOUSE_VARIED",
+        "inherited": true,
+        "storebalances": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/0fc3547c-1395-11f0-ac15-001100000045/storebalances",
+            "type": "minimumstock",
+            "mediaType": "application/json",
+            "size": 1,
+            "limit": 1000,
+            "offset": 0
+          }
+        }
+      },
+      "product": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/3bdfdb5b-137a-11f0-ac15-001100000018",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json",
+          "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=3bdfb95e-137a-11f0-ac15-001100000016"
+        }
+      }
+    }
+  ]
+}
+```
 
 ### Создать Модификацию 
 Создать новую Модификацию. Для создания новой Модификации необходимы поля **product**, **characteristics**.
@@ -567,6 +759,119 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
       "type": "product",
       "mediaType": "application/json"
+    }
+  }
+}
+```
+
+> Пример запроса на создание новой Модификации с заполненным полем Неснижаемого остатка.
+
+  ```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/variant"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "characteristics": [
+              {
+                "id": "7a797ba3-1394-11f0-ac15-001100000025",
+                "value": "yellow"
+              }
+            ],
+            "product": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/15007028-137a-11f0-ac15-001100000008",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                "type": "product",
+                "mediaType": "application/json"
+              }
+            }
+            "minimumStock": {
+              "type": "ALL_WAREHOUSE_SUM",
+              "inherited" : false,
+              "quantity": 8.0
+            }
+          }'  
+  ```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной Модификации с переопределенным Неснижаемым остатком.
+
+  ```json
+{
+  "meta" : {
+    "href" : "https://api.moysklad.ru/api/remap/1.2/entity/variant/7a80d64e-1394-11f0-ac15-001100000028",
+    "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+    "type" : "variant",
+    "mediaType" : "application/json",
+    "uuidHref" : "https://api.moysklad.ru/app/#feature/edit?id=7a80c220-1394-11f0-ac15-001100000026"
+  },
+  "id" : "7a80d64e-1394-11f0-ac15-001100000028",
+  "accountId" : "762af84a-0ec6-11f0-ac15-001000000001",
+  "updated" : "2025-04-07 12:41:53.560",
+  "name" : "Potato (yellow)",
+  "code" : "00002",
+  "externalCode" : "Mk0FH0vcg-B9rndAHA1vW1",
+  "archived" : false,
+  "characteristics" : [ {
+    "meta" : {
+      "href" : "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/7a797ba3-1394-11f0-ac15-001100000025",
+      "type" : "attributemetadata",
+      "mediaType" : "application/json"
+    },
+    "id" : "7a797ba3-1394-11f0-ac15-001100000025",
+    "name" : "Colour",
+    "value" : "yellow"
+  } ],
+  "images" : {
+    "meta" : {
+      "href" : "https://api.moysklad.ru/api/remap/1.2/entity/variant/7a80d64e-1394-11f0-ac15-001100000028/images",
+      "type" : "image",
+      "mediaType" : "application/json",
+      "size" : 0,
+      "limit" : 1000,
+      "offset" : 0
+    }
+  },
+  "salePrices" : [ {
+    "value" : 0.0,
+    "currency" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type" : "currency",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+      }
+    },
+    "priceType" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/77f67b4c-0ec6-11f0-ac15-0012000000a5",
+        "type" : "pricetype",
+        "mediaType" : "application/json"
+      },
+      "id" : "77f67b4c-0ec6-11f0-ac15-0012000000a5",
+      "name" : "Цена продажи",
+      "externalCode" : "cbcf493b-55bc-11d9-848a-00112f43529a"
+    }
+  } ],
+  "barcodes" : [ {
+    "ean13" : "2000000000084"
+  } ],
+  "discountProhibited" : false,
+  "minimumStock" : {
+    "type" : "ALL_WAREHOUSE_SUM",
+    "inherited" : false,
+    "quantity" : 8.0
+  },
+  "product" : {
+    "meta" : {
+      "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/15007028-137a-11f0-ac15-001100000008",
+      "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type" : "product",
+      "mediaType" : "application/json",
+      "uuidHref" : "https://api.moysklad.ru/app/#good/edit?id=14ff096e-137a-11f0-ac15-001100000006"
     }
   }
 }
@@ -1555,3 +1860,131 @@ curl -X GET
   }
 }
 ```
+
+> Пример запроса на обновление Модификации с переопределением Неснижаемого остатка.
+
+  ```shell
+  curl -X PUT
+    "https://api.moysklad.ru/api/remap/1.2/entity/variant/7a80d64e-1394-11f0-ac15-001100000028"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "minimumStock": {
+              "type": "ALL_WAREHOUSE_SUM",
+              "inherited" : false,
+              "quantity": 1.0
+            }
+          }'  
+  ```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленной Модификации с переопределенным Неснижаемым остатком.
+
+  ```json
+{
+  "meta" : {
+    "href" : "https://api.moysklad.ru/api/remap/1.2/entity/variant/7a80d64e-1394-11f0-ac15-001100000028",
+    "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+    "type" : "variant",
+    "mediaType" : "application/json",
+    "uuidHref" : "https://api.moysklad.ru/app/#feature/edit?id=7a80c220-1394-11f0-ac15-001100000026"
+  },
+  "id" : "7a80d64e-1394-11f0-ac15-001100000028",
+  "accountId" : "762af84a-0ec6-11f0-ac15-001000000001",
+  "updated" : "2025-04-07 12:41:53.560",
+  "name" : "Potato (yellow)",
+  "code" : "00002",
+  "externalCode" : "Mk0FH0vcg-B9rndAHA1vW1",
+  "archived" : false,
+  "characteristics" : [ {
+    "meta" : {
+      "href" : "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/7a797ba3-1394-11f0-ac15-001100000025",
+      "type" : "attributemetadata",
+      "mediaType" : "application/json"
+    },
+    "id" : "7a797ba3-1394-11f0-ac15-001100000025",
+    "name" : "Colour",
+    "value" : "yellow"
+  } ],
+  "images" : {
+    "meta" : {
+      "href" : "https://api.moysklad.ru/api/remap/1.2/entity/variant/7a80d64e-1394-11f0-ac15-001100000028/images",
+      "type" : "image",
+      "mediaType" : "application/json",
+      "size" : 0,
+      "limit" : 1000,
+      "offset" : 0
+    }
+  },
+  "salePrices" : [ {
+    "value" : 0.0,
+    "currency" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/77a29ae9-0ec6-11f0-ac15-0012000000a4",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type" : "currency",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://api.moysklad.ru/app/#currency/edit?id=77a29ae9-0ec6-11f0-ac15-0012000000a4"
+      }
+    },
+    "priceType" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/77f67b4c-0ec6-11f0-ac15-0012000000a5",
+        "type" : "pricetype",
+        "mediaType" : "application/json"
+      },
+      "id" : "77f67b4c-0ec6-11f0-ac15-0012000000a5",
+      "name" : "Цена продажи",
+      "externalCode" : "cbcf493b-55bc-11d9-848a-00112f43529a"
+    }
+  } ],
+  "barcodes" : [ {
+    "ean13" : "2000000000084"
+  } ],
+  "discountProhibited" : false,
+  "minimumStock" : {
+    "type" : "ALL_WAREHOUSE_SUM",
+    "inherited" : false,
+    "quantity" : 1.0
+  },
+  "product" : {
+    "meta" : {
+      "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/15007028-137a-11f0-ac15-001100000008",
+      "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type" : "product",
+      "mediaType" : "application/json",
+      "uuidHref" : "https://api.moysklad.ru/app/#good/edit?id=14ff096e-137a-11f0-ac15-001100000006"
+    }
+  }
+}
+```
+
+> Запрос на массовое удаление Неснижаемых остатков по складам в Модификации.
+
+```shell
+curl -X POST
+  "https://api.moysklad.ru/api/remap/1.2/entity/variant/3e1c03bb-684f-11ee-ac12-000c000000b0/storebalances/delete"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+  -H "Content-Type: application/json"
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/3e1c03bb-684f-11ee-ac12-000c000000b0/storebalances/7fce2da5-684d-11ee-ac12-000c000000a2",
+            "type": "minimumstock",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/3e1c03bb-684f-11ee-ac12-000c000000b0/storebalances/7fce37a5-684d-11ee-ac12-000c000000a3",
+            "type": "minimumstock",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json)
+Успешное удаление Неснижаемых остатков по складам в Модификации. 

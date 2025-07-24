@@ -6,6 +6,7 @@
 | Название               | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                                                                     |
 |------------------------| :-------------------------------------------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**          | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                       |
+| **advancePaymentSum**  | Float                                                     |                                                                                                                                                   | Оплачено из аванса<br>`+Обязательное при ответе`                                                                                                                                             |
 | **agent**              | [Meta](#/general#3-metadannye) | `=` `!=`                                                                                                                                          | Метаданные контрагента<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler`                                                                                  |
 | **agentAccount**       | [Meta](#/general#3-metadannye) |                                                                                                                                                   | Метаданные счета контрагента<br>`+Expand`                                                                                                                                                    |
 | **applicable**         | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                         |
@@ -21,6 +22,7 @@
 | **documentNumber**     | String(255)                                               |                                                                                                                                                   | Номер документа                                                                                                                                                                              |
 | **externalCode**       | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Розничной продажи<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                |
 | **files**              | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](#/dictionaries/files#2-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`                                                |
+| **giftCards**          | Array(Object)                                             |                                                                                                                                                   | Коллекция подарочных сертификатов, используемых при оплате продажи. [Подробнее тут](#/documents/retaildemand#4-podarochnye-sertifikaty)                 |
 | **group**              | [Meta](#/general#3-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                     |
 | **id**                 | UUID                                                      | `=` `!=`                                                                                                                                          | ID Розничной продажи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                    |
 | **meta**               | [Meta](#/general#3-metadannye) |                                                                                                                                                   | Метаданные Розничной продажи<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                 |
@@ -66,7 +68,7 @@
 | **PATENT_BASED**                         | Патент                       |
 
 #### Работа с полями оплаты розничной продажи
-Сумма полей **cashSum**, **noCashSum**, **qrSum**, **prepaymentCashSum**, **prepaymentNoCashSum** и **prepaymentNoCashSum** должна совпадать с суммой по Розничной продаже
+Сумма полей **cashSum**, **noCashSum**, **qrSum**, **prepaymentCashSum**, **prepaymentNoCashSum**, **prepaymentQrSum** и **advancePaymentSum** должна совпадать с суммой по Розничной продаже
 (т.е. с суммарной стоимостью всех переданных вами позиций). Каждое из полей не может иметь отрицательное значение.
 
 Смешанная оплата со способом по QR-коду недопустима. Если **qrSum** или **prepaymentQrSum** ненулевое, то другие поля не могут быть использованы, иначе вернется ошибка.
@@ -89,6 +91,9 @@
 
 - Если передаются **qrSum** и **prepaymentQrSum**, сумма всех полей должна соответствовать сумме по Розничной продаже, иначе вернется ошибка.
 
+Не допускается одновременное использование аванса и предоплаты. Если поле **advancePaymentSum** ненулевое, то не допускается 
+ненулевое значение для полей **prepaymentByQrSum**, **prepaymentByCardSum**, **prepaymentCashSum**
+
 #### Позиции Розничной продажи
 Позиции Розничной продажи - это список товаров/услуг/модификаций/серий/комплектов.
 Объект позиции Розничной продажи содержит следующие поля:
@@ -98,7 +103,8 @@
 | **accountId**  | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                                                                                                    |
 | **assortment** | [Meta](#/general#3-metadannye) | Метаданные товара/услуги/серии/модификации, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand` `+Change-handler`                                                                                                                                  |
 | **cost**       | Int                                                       | Себестоимость (только для услуг)                                                                                                                                                                                                                                          |
-| **discount**   | Int                                                       | Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                      |
+| **declaration**| Array(Object)                                             | Информация о прослеживаемости импортных товаров. [Подробнее тут](#/documents/retaildemand#4-informaciya-o-proslezhivaemosti-importnyh-tovarov)<br>`+Выводится по запросу` `+Только для чтения`                                        |
+| **discount**   | Float                                                     | Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                      |
 | **id**         | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                                                                                                           |
 | **pack**       | Object                                                    | Упаковка Товара. [Подробнее тут](#/dictionaries/product#5-upakovki-tovara)<br>`+Change-handler`                                                                                                                           |
 | **price**      | Float                                                     | Цена товара/услуги в копейках<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                                                                                             |
@@ -119,6 +125,27 @@
 
 О работе с доп. полями Розничных продаж можно прочитать [здесь](#/general#3-rabota-s-dopolnitelnymi-polyami)
 
+#### Подарочные сертификаты
+Подарочные сертификаты Розничной продажи - это список подарочных сертификатов, используемых при оплате розничной продажи.
+Объект позиции Розничной продажи содержит следующие поля:
+
+| Название        | Тип                                                       | Описание                                                   |
+|-----------------|:----------------------------------------------------------|:----------------------------------------------------------|
+| **name**        | String                                                    | Номер сертификата<br>`+Обязательное при ответе`           |
+| **paymentSum**  | Float                                                     | Сумма сертификата<br>`+Обязательное при ответе`           |
+
+#### Информация о прослеживаемости импортных товаров
+Поле **declaration** выводится по запросу. Для вывода в позициях документа информации о прослеживаемости импортных товаров
+необходимо передать в URL запроса дополнительный параметр `fields=declaration`, например `../retaildemand/{id}/positions?fields=declaration`. [Подробнее о параметре fields](#/general#3-chto-takoe-fields).
+
+Аттрибуты объекта:
+
+| Название     | Тип                                                       | Описание                                                                                |
+| -------------|:----------------------------------------------------------|:----------------------------------------------------------------------------------------|
+| **gtd**      | String                                                    | Регистрационный номер партии товара<br>`+Только для чтения`                             |
+| **rnpt**     | String                                                    | Грузовая таможенная декларация<br>`+Только для чтения`                                  |
+| **country**  | [Meta](#/general#3-metadannye) | Страна происхождения товара<br>`+Только для чтения`                                     |
+| **quantity** | Float                                                     | Количество товара с указанными ГТД или РНПТ в позиции документа<br>`+Только для чтения` |
 
 ### Получить Розничные продажи 
 Запрос всех Розничных продаж на данной учетной записи.
@@ -268,7 +295,18 @@ curl -X GET
       "prepaymentCashSum": 0,
       "prepaymentNoCashSum": 0,
       "prepaymentQrSum": 0,
-      "taxSystem": "GENERAL_TAX_SYSTEM"
+      "advancePaymentSum": 0,
+      "taxSystem": "GENERAL_TAX_SYSTEM",
+      "giftCards": [
+        {
+          "name": "123457",
+          "paymentSum": 500
+        },
+        {
+          "name": "1234578",
+          "paymentSum": 1000
+        }
+      ]
     },
     {
       "meta": {
@@ -380,7 +418,18 @@ curl -X GET
       "qrSum": 0,
       "prepaymentCashSum": 0,
       "prepaymentNoCashSum": 0,
-      "prepaymentQrSum": 0
+      "prepaymentQrSum": 0,
+      "advancePaymentSum": 0,
+      "giftCards": [
+        {
+          "name": "123457",
+          "paymentSum": 500
+        },
+        {
+          "name": "1234578",
+          "paymentSum": 1000
+        }
+      ]
     }
   ]
 }
@@ -515,7 +564,8 @@ curl -X GET
   "qrSum": 0,
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
-  "prepaymentQrSum": 0
+  "prepaymentQrSum": 0,
+  "advancePaymentSum": 0
 }
 
 ```
@@ -662,7 +712,8 @@ curl -X GET
   "qrSum": 0,
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
-  "prepaymentQrSum": 0
+  "prepaymentQrSum": 0,
+  "advancePaymentSum": 0
 }
 ```
 
@@ -850,7 +901,8 @@ curl -X GET
   "qrSum": 0,
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
-  "prepaymentQrSum": 0
+  "prepaymentQrSum": 0,
+  "advancePaymentSum": 0
 }
 ```
 
@@ -1060,7 +1112,8 @@ curl -X GET
   "qrSum": 0,
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
-  "prepaymentQrSum": 0
+  "prepaymentQrSum": 0,
+  "advancePaymentSum": 0
 }
 ```
 
@@ -1231,7 +1284,18 @@ curl -X GET
     "qrSUm": 0,
     "prepaymentCashSum": 0,
     "prepaymentNoCashSum": 0,
-    "prepaymentQrSum": 0
+    "prepaymentQrSum": 0,
+    "advancePaymentSum": 0,
+    "giftCards": [
+      {
+        "name": "123457",
+        "paymentSum": 500
+      },
+      {
+        "name": "1234578",
+        "paymentSum": 1000
+      }
+    ]
   },
   {
     "meta": {
@@ -1354,7 +1418,18 @@ curl -X GET
     "qrSum": 0,
     "prepaymentCashSum": 0,
     "prepaymentNoCashSum": 0,
-    "prepaymentQrSum": 0
+    "prepaymentQrSum": 0,
+    "advancePaymentSum": 0,
+    "giftCards": [
+      {
+        "name": "123457",
+        "paymentSum": 500
+      },
+      {
+        "name": "1234578",
+        "paymentSum": 1000
+      }
+    ]
   }
 ]
 ```
@@ -1693,7 +1768,8 @@ curl -X GET
   "qrSum": 0,
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
-  "prepaymentQrSum": 0
+  "prepaymentQrSum": 0,
+  "advancePaymentSum": 0
 }
 ```
 
@@ -1800,6 +1876,7 @@ curl -X GET
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
   "prepaymentQrSum": 0,
+  "advancePaymentSum": 0,
   "customerOrder": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/1b2b2caf-055e-11e6-9464-e4de0000007c",
@@ -1941,7 +2018,18 @@ curl -X GET
   "qrSum": 0,
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
-  "prepaymentQrSum": 0
+  "prepaymentQrSum": 0,
+  "advancePaymentSum": 0,
+  "giftCards": [
+    {
+      "name": "123457",
+      "paymentSum": 500
+    },
+    {
+      "name": "1234578",
+      "paymentSum": 1000
+    }
+  ]
 }
 ```
 
@@ -2111,7 +2199,18 @@ curl -X GET
   "qrSum": 0,
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
-  "prepaymentQrSum": 0
+  "prepaymentQrSum": 0,
+  "advancePaymentSum": 0,
+  "giftCards": [
+    {
+      "name": "123457",
+      "paymentSum": 500
+    },
+    {
+      "name": "1234578",
+      "paymentSum": 1000
+    }
+  ]
 }
 ```
 
@@ -2306,7 +2405,18 @@ curl -X GET
   "qrSum": 0,
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
-  "prepaymentQrSum": 0
+  "prepaymentQrSum": 0,
+  "advancePaymentSum": 0,
+  "giftCards": [
+    {
+      "name": "123457",
+      "paymentSum": 500
+    },
+    {
+      "name": "1234578",
+      "paymentSum": 1000
+    }
+  ]
 }
 ```
 
@@ -2473,8 +2583,7 @@ curl -X GET
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
 + **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция.
-  Также можно указать поле с именем **service**, **consignment**, **variant** в соответствии с тем,
-  чем является указанная позиция. Подробнее об этом поле можно прочитать в описании [позиции Розничной продажи](#/documents/retaildemand#4-pozicii-roznichnoj-prodazhi).
+  Подробнее об этом поле можно прочитать в описании [позиции Розничной продажи](#/documents/retaildemand#4-pozicii-roznichnoj-prodazhi).
 
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка.
   Одновременно можно создать как одну так и несколько позиций Розничной продажи. Все созданные данным запросом позиции

@@ -1,6 +1,102 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 22-07-2025
+**Добавлено**
+- Поле `minimumStock` в сущность [модификация](#/dictionaries/variant#2-modifikaciya) для работы с неснижаемыми остатками
+
+### 17-07-2025
+**Добавлено**а
+- Ошибка [13005](#/errors#3-kody-oshibok-dlya-otchetov-ostatkov)
+
+### 16-07-2025
+**Добавлено**
+- Типы компаний региона Казахстан для [контрагентов](#/dictionaries/counterparty#4-tip-kontragenta)
+- Типы компаний региона Казахстан для [юридических лиц](#/dictionaries/organization#4-tip-yurlica)
+- Реквизиты региона Казахстан для [контрагентов](#/dictionaries/counterparty#5-rekvizity-kazahstana)
+- Реквизиты региона Казахстан для [юридических лиц](#/dictionaries/organization#5-rekvizity-kazahstana)
+
+### 10-07-2025
+**Добавлено**а
+- Ошибка при работе с печатными формами [33013](#/errors#3-kody-oshibok-dlya-pechatnyh-form)
+
+### 09-07-2025
+**Добавлено**
+- Добавлена новая [ошибка 3043](#/errors#3-obshie-oshibki-validacii)
+
+### 03-07-2025
+**Добавлено**
+- Новые типы маркированной продукции `VEGETABLE_OIL` для растительных масел, `PET_FOOD` для кормов для животных для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty)
+
+### 02-07-2025
+**Исправлено**
+- Актуализирована документация [Настройки пользователя](#/dictionaries/usersettings#2-nastrojki-polzovatelya)
+
+### 01-07-2025
+**Добавлено**
+- Плановая дата завершения этапа `plannedEndDate` в запросе [Производственных этапов](#/documents/productionTask#3-proizvodstvennye-etapy)
+
+### 17-06-2025
+**Добавлено**
+- Поле `giftCards` в [Розничную продажу](#/documents/retaildemand#2-roznichnaya-prodazha)
+
+### 09-06-2025
+**Добавлено**
+- Описание параметра `fields` [Fields](#/general#3-chto-takoe-fields)
+- Краткий [Отчет на остатки по ячейкам](#/reports/report-stock#3-poluchit-kratkij-otchet-ob-ostatkah-po-yachejkam)
+
+### 03-06-2025
+**Добавлено**
+- Поля `description`, `defect` в [Выполнение этапа производства](#/documents/productionStageCompletion#2-vypolnenie-etapa-proizvodstva)
+- Ошибки [26211-26213](#/errors#3-kody-oshibok-dlya-vypolnenij-etapov-proizvodstva)
+- Тип маркируемой продукции `BEER_ALCOHOL` (Пиво и слабоалкогольная продукция) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Способ вывода `MISMATCH` (Пересортица по кодам) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+
+### 27-05-2025
+**Добавлено**
+- Новые типы документов для [Ленты Событий](#/dictionaries/eventfeed#2-lenta-sobytij)
+**Изменено**
+- [Особенности поведения при создании Вывода из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota) для способа вывода `DISTANCE`
+
+### 26-05-2025
+**Добавлено**
+- Поле **declaration** с информацией о прослеживаемости импортных товаров в позиции документов [отгрузка](#/documents/demand#4-pozicii-otgruzki), [розничная продажа](#/documents/retaildemand#4-pozicii-roznichnoj-prodazhi), [списание](#/documents/loss#4-pozicii-spisaniya)
+
+### 20-05-2025
+**Добавлено**
+- Добавлена новая [ошибка 3042](#/errors#3-obshie-oshibki-validacii)
+
+### 15-05-2025
+**Изменено**
+- Описание поля `accountCountry` в [Настройках компании](#/dictionaries/companysettings#2-nastrojki-kompanii)
+
+### 14-05-2025
+**Добавлено**
+- Поле `agent` в документе [Вывод кодов маркировки из оборота](#/documents/retireorder#4-atributy-sushnosti)
+- Значения для поля `trackingType` в документе [Вывод кодов маркировки из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii): `BICYCLE`, `VETPHARMA`, `SOFT_DRINKS`, `WATER`, `SEAFOOD`
+- Значение `DONATION` для поля `retireOrderType` в документе [Вывод кодов маркировки из оборота](#/documents/retireorder#4-sposob-vyvoda-iz-oborota)
+
+### 13-05-2025
+**Добавлено**
+- Описание и примеры удаления неснижаемых остатков по складам через использование эндпоинта на массовое удаление для [товар](#/dictionaries/product#3-tovary)
+
+### 28-04-2025
+**Добавлено**
+- Поле `advancePaymentSum` в [Розничную продажу](#/documents/retaildemand#2-roznichnaya-prodazha)
+- Ошибка `18007`
+
+**Изменено**
+- Описание [работы с полями оплаты розничной продажи](#/documents/retaildemand#4-rabota-s-polyami-oplaty-roznichnoj-prodazhi)
+- Текст ошибок `18000`, `18005` и `18006`
+
+### 25-04-2025
+**Добавлено**
+- Поле `minimumStock` в сущность [товар](#/dictionaries/product#3-tovary) для работы с неснижаемыми остатками
+
+### 10-04-2025
+**Добавлено**
+- Описание отключения JSON API пользователю в [Ограничения](#/restrictions#2-ogranicheniya)
+
 ### 18-03-2025
 **Добавлено**
 - Поле `fiasCode__ru` для [контрагентов](#/dictionaries/counterparty#5-adres)

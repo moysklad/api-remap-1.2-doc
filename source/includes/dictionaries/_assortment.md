@@ -804,7 +804,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "product",
         "mediaType": "application/json",
-        "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=ba3a833f-3d33-11ef-ac15-0010000000ed"
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=ba3a833f-3d33-11ef-ac15-0010000000ed"
       },
       "id": "ba3c6d6d-3d33-11ef-ac15-0010000000ef",
       "accountId": "1e831ee5-3d33-11ef-ac15-000f00000001",
@@ -814,7 +814,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
-          "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=2004c794-3d33-11ef-ac15-00100000004e"
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=2004c794-3d33-11ef-ac15-00100000004e"
         }
       },
       "shared": true,
@@ -860,7 +860,7 @@ curl -X GET
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json",
-            "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
           }
         }
       },
@@ -873,7 +873,7 @@ curl -X GET
               "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
               "type": "currency",
               "mediaType": "application/json",
-              "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
+              "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
             }
           },
           "priceType": {
@@ -896,7 +896,7 @@ curl -X GET
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json",
-            "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
           }
         }
       },
@@ -933,7 +933,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/consignment/metadata",
         "type": "consignment",
         "mediaType": "application/json",
-        "uuidHref": "https://api.moysklad.ru/app/#consignment/edit?id=95b97e84-3d34-11ef-ac15-000d00000000"
+        "uuidHref": "https://online.moysklad.ru/app/#consignment/edit?id=95b97e84-3d34-11ef-ac15-000d00000000"
       },
       "id": "95b97e84-3d34-11ef-ac15-000d00000000",
       "accountId": "1e831ee5-3d33-11ef-ac15-000f00000001",
@@ -963,7 +963,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "product",
           "mediaType": "application/json",
-          "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=ba3a833f-3d33-11ef-ac15-0010000000ed"
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=ba3a833f-3d33-11ef-ac15-0010000000ed"
         }
       },
       "stock": 0.0,
@@ -977,7 +977,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
         "type": "variant",
         "mediaType": "application/json",
-        "uuidHref": "https://api.moysklad.ru/app/#feature/edit?id=f7953353-3d33-11ef-ac15-00100000011c"
+        "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=f7953353-3d33-11ef-ac15-00100000011c"
       },
       "id": "f7954456-3d33-11ef-ac15-00100000011e",
       "accountId": "1e831ee5-3d33-11ef-ac15-000f00000001",
@@ -1017,7 +1017,7 @@ curl -X GET
               "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
               "type": "currency",
               "mediaType": "application/json",
-              "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
+              "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
             }
           },
           "priceType": {
@@ -1044,7 +1044,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "product",
           "mediaType": "application/json",
-          "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=ba3a833f-3d33-11ef-ac15-0010000000ed"
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=ba3a833f-3d33-11ef-ac15-0010000000ed"
         }
       },
       "stock": 0.0,
@@ -1058,7 +1058,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
         "type": "variant",
         "mediaType": "application/json",
-        "uuidHref": "https://api.moysklad.ru/app/#feature/edit?id=f79db7c3-3d33-11ef-ac15-001000000121"
+        "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=f79db7c3-3d33-11ef-ac15-001000000121"
       },
       "id": "f79dd660-3d33-11ef-ac15-001000000123",
       "accountId": "1e831ee5-3d33-11ef-ac15-000f00000001",
@@ -1098,7 +1098,7 @@ curl -X GET
               "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
               "type": "currency",
               "mediaType": "application/json",
-              "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
+              "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
             }
           },
           "priceType": {
@@ -1125,7 +1125,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "product",
           "mediaType": "application/json",
-          "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=ba3a833f-3d33-11ef-ac15-0010000000ed"
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=ba3a833f-3d33-11ef-ac15-0010000000ed"
         }
       },
       "stock": 0.0,
@@ -1139,7 +1139,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "service",
         "mediaType": "application/json",
-        "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=c57db591-3d33-11ef-ac15-0010000000fa"
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=c57db591-3d33-11ef-ac15-0010000000fa"
       },
       "id": "c57dcc60-3d33-11ef-ac15-0010000000fc",
       "accountId": "1e831ee5-3d33-11ef-ac15-000f00000001",
@@ -1149,7 +1149,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
-          "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=2004c794-3d33-11ef-ac15-00100000004e"
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=2004c794-3d33-11ef-ac15-00100000004e"
         }
       },
       "shared": true,
@@ -1185,7 +1185,7 @@ curl -X GET
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json",
-            "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
           }
         }
       },
@@ -1198,7 +1198,7 @@ curl -X GET
               "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
               "type": "currency",
               "mediaType": "application/json",
-              "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
+              "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
             }
           },
           "priceType": {
@@ -1221,7 +1221,7 @@ curl -X GET
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json",
-            "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
           }
         }
       },
@@ -1249,7 +1249,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
         "type": "bundle",
         "mediaType": "application/json",
-        "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=da60604b-3d33-11ef-ac15-00100000010b"
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=da60604b-3d33-11ef-ac15-00100000010b"
       },
       "id": "da607138-3d33-11ef-ac15-00100000010d",
       "accountId": "1e831ee5-3d33-11ef-ac15-000f00000001",
@@ -1259,7 +1259,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
-          "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=2004c794-3d33-11ef-ac15-00100000004e"
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=2004c794-3d33-11ef-ac15-00100000004e"
         }
       },
       "shared": true,
@@ -1304,7 +1304,7 @@ curl -X GET
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json",
-            "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
           }
         }
       },
@@ -1317,7 +1317,7 @@ curl -X GET
               "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
               "type": "currency",
               "mediaType": "application/json",
-              "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
+              "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=2084dec0-3d33-11ef-ac15-00100000009d"
             }
           },
           "priceType": {

@@ -2,8 +2,18 @@
 
 ### Работа с Лентой Событий в документе с помощью специальных ресурсов
 
+Кодом сущности для Ленты событий в составе JSON API является ключевое слово **notes**.
+
 Средствами JSON API можно создавать, обновлять и удалять события, запрашивать списки событий, а также сведения по
-отдельным событиям для документов следующего типа: [Заказ покупателя](#/documents/customerOrder#2-zakaz-pokupatelya)
+отдельным событиям для документов следующего типа:
+
++ [Возврат поставщику](#/documents/purchase-return#2-vozvrat-postavshiku)
++ [Выданный отчет комиссионера](#/documents/commissionreportout#2-vydannyj-otchet-komissionera)
++ [Заказ покупателя](#/documents/customerOrder#2-zakaz-pokupatelya)
++ [Заказ поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku)
++ [Приемка](#/documents/supply#2-priemka)
++ [Счет покупателю](#/documents/invoice-out#2-schet-pokupatelyu)
++ [Счет поставщика](#/documents/invoice-in#2-schet-postavshika)
 
 #### Работа с упоминаниями в Ленте Событий
 
