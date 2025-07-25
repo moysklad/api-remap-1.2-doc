@@ -23,6 +23,10 @@
 #### Поправлена
 - Опечатка типа данных c int на float для полей `volume` и `weight` для [комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
 
+### 22-07-2025
+#### Добавлено
+- Поле `minimumStock` в сущность [модификация](../dictionaries/#suschnosti-modifikaciq-modifikacii) для работы с неснижаемыми остатками
+
 ### 17-07-2025
 #### Добавлена
 - Ошибка [13005](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-ostatkow)
