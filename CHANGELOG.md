@@ -1,10 +1,29 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 22-07-2025
+### 29-07-2025
 #### Добавлено
 - Тип маркируемой продукции `VEGETABLE_OIL` (Растительные масла) в документ [Вывод из оборота](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii)
 - Тип маркируемой продукции `PET_FOOD` (Корма для животных) в документ [Вывод из оборота](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii)
+
+### 24-07-2025
+#### Поправлена
+- Опечатка типа данных c int на float для полей `volume` и `weight` для [комплекта](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt-komplekty)
+
+### 22-07-2025
+#### Добавлено
+- Поле `minimumStock` в сущность [модификация](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-modifikaciq-modifikacii) для работы с неснижаемыми остатками
+
+### 17-07-2025
+#### Добавлена
+- Ошибка [13005](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-ostatkow)
+
+### 16-07-2025
+#### Добавлено
+- Типы компаний региона Казахстан для [контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)
+- Типы компаний региона Казахстан для [юридических лиц](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico-jurlica-tip-urlica)
+- Реквизиты региона Казахстан для [контрагентов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-rekwizity-kazahistana)
+- Реквизиты региона Казахстан для [юридических лиц](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-rekwizity-kazahistana)
 
 ### 10-07-2025
 #### Добавлена

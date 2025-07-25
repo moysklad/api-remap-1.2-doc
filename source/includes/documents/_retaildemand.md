@@ -68,7 +68,7 @@
 | **PATENT_BASED**                         | Патент                       |
 
 #### Работа с полями оплаты розничной продажи
-Сумма полей **cashSum**, **noCashSum**, **qrSum**, **prepaymentCashSum**, **prepaymentNoCashSum**, **prepaymentNoCashSum** и **advancePaymentSum** должна совпадать с суммой по Розничной продаже
+Сумма полей **cashSum**, **noCashSum**, **qrSum**, **prepaymentCashSum**, **prepaymentNoCashSum**, **prepaymentQrSum** и **advancePaymentSum** должна совпадать с суммой по Розничной продаже
 (т.е. с суммарной стоимостью всех переданных вами позиций). Каждое из полей не может иметь отрицательное значение.
 
 Смешанная оплата со способом по QR-коду недопустима. Если **qrSum** или **prepaymentQrSum** ненулевое, то другие поля не могут быть использованы, иначе вернется ошибка.
