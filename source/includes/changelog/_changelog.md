@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 08-08-2025
+#### Добавлено
+- Информация по работе с заголовком [Accept-Language](../#mojsklad-json-api-obschie-swedeniq-zagolowok-accept-language)
+
 ### 31-07-2025
 #### Добавлено
 - Поля связей документов в [Внутренний заказ](../documents/#dokumenty-vnutrennij-zakaz)
