@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 08-08-2025
+#### Добавлено
+- Информация по работе с заголовком [Accept-Language](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-zagolowok-accept-language)
+
 ### 31-07-2025
 #### Добавлено
 - Поля связей документов в [Внутренний заказ](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vnutrennij-zakaz)
