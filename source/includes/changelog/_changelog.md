@@ -19,9 +19,14 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 08-08-2025
+### 12-08-2025
 #### Добавлено
 - Информация по работе с заголовком [Accept-Language](../#mojsklad-json-api-obschie-swedeniq-zagolowok-accept-language)
+
+### 07-08-2025
+#### Добавлено
+- Добавлен новый тип уведомлений [Новое событие в отслеживаемом объекте](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowoe-sobytie-w-otslezhiwaemom-dokumente)
+- Добавлена новая группа уведомлений [Отслеживаемые события](../notification/#uwedomleniq-nastrojki-uwedomlenij-struktura-dannyh)
 
 ### 31-07-2025
 #### Добавлено
