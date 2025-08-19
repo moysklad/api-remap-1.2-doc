@@ -19,6 +19,7 @@ async function getDoc(filename) {
       dom.window.addEventListener("searchDocsGenerated", (event) => {
         event.detail.documents.forEach(doc => doc.id = doc.title + "|" + innerFilename + "|" + doc.id);
         resolve(event.detail.documents);
+        dom.window.close();
       });
     });
   }, err => console.log(err));
