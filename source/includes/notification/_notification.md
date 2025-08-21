@@ -97,6 +97,23 @@ curl -X GET
     },
     {
       "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/notification/0f423542-5b7a-11e9-9bea-3ff70000000f",
+        "type": "RetireOrderByDemandNotification",
+        "mediaType": "application/json"
+      },
+      "id": "0f423542-5b7a-11e9-9bea-3ff70000000f",
+      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
+      "created": "2019-04-10 13:19:01.123",
+      "read": true,
+      "title": "Импорт завершен",
+      "description": "Товары и остатки (Excel). Оприходование 00002 создано. Обработано 7 строк, создано 7 элементов, обновлено 0 элементов",
+      "message": "Обработано 7 строк, создано 7 элементов, обновлено 0 элементов",
+      "taskType": "importer_good",
+      "taskState": "completed",
+      "createdDocumentName": "00002"
+    },
+    {
+      "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/notification/a805beb5-5adf-11e9-9bea-3ff700000025",
         "type": "NotificationTaskChanged",
         "mediaType": "application/json"
@@ -339,6 +356,7 @@ curl -X PUT
 | **NotificationBonusMoney**              | Баланс                 | На счет зачислены бонусные деньги                                      |
 | **NewMentionInEvent**                   | Упоминания сотрудников | Новое упоминание в ленте событий                                       |
 | **NewEventInEventFeed**                 | Отслеживаемые события  | Новое событие в отслеживаемом объекте                                  |
+| **RetireOrderByDemandNotification**     | Обмен данными          | Вывод из оборота на основании отгрузок выполнен                        |
 
 
 ## Подробное описание типов уведомлений
@@ -552,6 +570,83 @@ curl -X GET
   "message": "Обработано 3 строки, создано 0 контрагентов, обновлено 0 контрагентов.",
   "taskType": "importer_csv_agent",
   "taskState": "completed"
+}
+```
+
+### Завершение импорта
+#### Тип уведомления
+RetireOrderByDemandNotification - завершение импорта
+#### Атрибуты уведомления
+
+    private NotificationType notificationType;
+    private boolean ignoreSubscriptionDisabled = false;
+
+    private UUID accountId;
+    protected String message;
+    protected String errorMessage;
+    protected String taskType;
+    protected String taskState;
+    protected String createdDocumentName;
+
+    private String message;
+    private String taskState;
+    private Date startDate;
+    private Date endDate;
+    private int createdDocsCount;
+
+| Название                | Тип                                                       | Описание                                                                                                                                                                                                  |
+|-------------------------|:----------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**           | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                |
+| **created**             | DateTime                                                  | Дата и время формирования Уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                            |
+| **createdDocsCount**    | Int                                                       | Количество созданных документов                                                                                                                                                                           |
+| **description**         | String(4096)                                              | Описание уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                             |
+| **errorMessage**        | String(255)                                               | Сообщение об ошибке                                                                                                                                                                                       |
+| **id**                  | UUID                                                      | ID Уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                   |
+| **message**             | String(255)                                               | Сообщение о завершении экспорта                                                                                                                                                                           |
+| **meta**                | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные объекта<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                               |
+| **read**                | Boolean                                                   | Признак того, было ли Уведомление прочитано<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                      |
+| **taskState**           | Object                                                    | Статус завершения. Может принимать значения `completed`, `interrupted`, `interrupted_by_user`, `interrupted_by_timeout`, `interrupted_by_system`<br>`+Обязательное при ответе` `+Необходимо при создании` |
+| **title**               | String(255)                                               | Краткий текст уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                        |
+| **startDate**           | DateTime                                                  | Дата и время начала создания документов Вывод из оборота                                                                                                                                                  |
+| **endDate**             | DateTime                                                  | Дата и время окончания создания документов Вывод из оборота                                                                                                                                               |
+
+
+**Параметры**
+
+| Параметр | Описание                                                                            |
+| :------- |:------------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: 02950e31-35f2-11e9-9ff4-34e8000799c1* id Уведомления. |
+
+> Запрос на получение Уведомления с указанным id.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/notification/02950e31-35f2-11e9-9ff4-34e8000799c1"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Уведомления.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/02950e31-35f2-11e9-9ff4-34e8000799c1",
+    "type": "RetireOrderByDemandNotification",
+    "mediaType": "application/json"
+  },
+  "id": "02950e31-35f2-11e9-9ff4-34e8000799c1",
+  "accountId": "45eb22e0-0e7b-11e2-1c31-3c4a92f3a0a7",
+  "created": "2025-08-21 19:01:55.277",
+  "read": true,
+  "title": "Создано 2 документа Вывода из Оборота",
+  "description": "Операция выполнена успешно! Перейдите в реестр документов маркировки для ознакомления с созданными выводами из оборота",
+  "message": "Операция выполнена успешно! Перейдите в реестр документов маркировки для ознакомления с созданными выводами из оборота",
+  "taskState": "completed",
+  "createdDocsCount": 2,
+  "startDate": "2025-08-21 19:01:55.277",
+  "endDate": "2025-08-21 19:02:55.277"
 }
 ```
 
