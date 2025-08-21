@@ -578,22 +578,6 @@ curl -X GET
 RetireOrderByDemandNotification - завершение импорта
 #### Атрибуты уведомления
 
-    private NotificationType notificationType;
-    private boolean ignoreSubscriptionDisabled = false;
-
-    private UUID accountId;
-    protected String message;
-    protected String errorMessage;
-    protected String taskType;
-    protected String taskState;
-    protected String createdDocumentName;
-
-    private String message;
-    private String taskState;
-    private Date startDate;
-    private Date endDate;
-    private int createdDocsCount;
-
 | Название                | Тип                                                       | Описание                                                                                                                                                                                                  |
 |-------------------------|:----------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**           | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                |
