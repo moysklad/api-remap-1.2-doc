@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 22-08-2025
+#### Добавлено
+- Новый тип уведомлений [Завершение Вывода из оборота на основании отгрузок](https://dev.moysklad.ru/doc/api/remap/1.2/notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zawershenie-vywoda-iz-oborota-na-osnowanii-otgruzok).
+
 ### 12-08-2025
 #### Добавлено
 - Информация по работе с заголовком [Accept-Language](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq-zagolowok-accept-language)

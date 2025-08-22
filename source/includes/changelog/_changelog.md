@@ -19,6 +19,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 22-08-2025
+#### Добавлено
+- Новый тип уведомлений [Завершение Вывода из оборота на основании отгрузок](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zawershenie-vywoda-iz-oborota-na-osnowanii-otgruzok).
+
 ### 12-08-2025
 #### Добавлено
 - Информация по работе с заголовком [Accept-Language](../#mojsklad-json-api-obschie-swedeniq-zagolowok-accept-language)
