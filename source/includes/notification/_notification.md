@@ -96,21 +96,22 @@ curl -X GET
     "createdDocumentName": "00002"
     },
     {
-      "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/notification/0f423542-5b7a-11e9-9bea-3ff70000000f",
-        "type": "RetireOrderByDemandNotification",
-        "mediaType": "application/json"
+      "meta" : {
+        "href" : "http://localhost/api/remap/1.2/notification/9a068003-7f4f-11f0-ac12-001400000003",
+        "type" : "RetireOrderByDemandNotificationCompleted",
+        "mediaType" : "application/json"
       },
-      "id": "0f423542-5b7a-11e9-9bea-3ff70000000f",
-      "accountId": "45b76d0a-5aa2-11e9-727d-307300000002",
-      "created": "2019-04-10 13:19:01.123",
-      "read": true,
-      "title": "Импорт завершен",
-      "description": "Товары и остатки (Excel). Оприходование 00002 создано. Обработано 7 строк, создано 7 элементов, обновлено 0 элементов",
-      "message": "Обработано 7 строк, создано 7 элементов, обновлено 0 элементов",
-      "taskType": "importer_good",
-      "taskState": "completed",
-      "createdDocumentName": "00002"
+      "id" : "9a068003-7f4f-11f0-ac12-001400000003",
+      "accountId" : "0de71249-7f4f-11f0-ac12-001300000002",
+      "created" : "2025-08-22 15:00:31.168",
+      "read" : true,
+      "title" : "Создан 1 документ Вывода из оборота",
+      "description" : "Операция выполнена успешно! Перейдите в реестр документов маркировки для ознакомления с созданными выводами из оборота",
+      "message" : "Обработан 1 документ, создан 1 документ",
+      "taskState" : "COMPLETED",
+      "startMoment" : "2025-08-22 15:00:19.949",
+      "endMoment" : "2025-08-22 15:00:31.101",
+      "createdDocsCount" : 1
     },
     {
       "meta": {
@@ -573,9 +574,9 @@ curl -X GET
 }
 ```
 
-### Завершение импорта
+### Завершение Вывода из оборота на основании отгрузок
 #### Тип уведомления
-RetireOrderByDemandNotification - завершение импорта
+RetireOrderByDemandNotification - завершение Вывода из оборота на основании отгрузок
 #### Атрибуты уведомления
 
 | Название                | Тип                                                       | Описание                                                                                                                                                                                                  |
@@ -591,21 +592,21 @@ RetireOrderByDemandNotification - завершение импорта
 | **read**                | Boolean                                                   | Признак того, было ли Уведомление прочитано<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                      |
 | **taskState**           | Object                                                    | Статус завершения. Может принимать значения `completed`, `interrupted`, `interrupted_by_user`, `interrupted_by_timeout`, `interrupted_by_system`<br>`+Обязательное при ответе` `+Необходимо при создании` |
 | **title**               | String(255)                                               | Краткий текст уведомления<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                        |
-| **startDate**           | DateTime                                                  | Дата и время начала создания документов Вывод из оборота                                                                                                                                                  |
-| **endDate**             | DateTime                                                  | Дата и время окончания создания документов Вывод из оборота                                                                                                                                               |
+| **startMoment**         | DateTime                                                  | Дата и время начала создания документов Вывод из оборота                                                                                                                                                  |
+| **endMoment**           | DateTime                                                  | Дата и время окончания создания документов Вывод из оборота                                                                                                                                               |
 
 
 **Параметры**
 
 | Параметр | Описание                                                                            |
 | :------- |:------------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: 02950e31-35f2-11e9-9ff4-34e8000799c1* id Уведомления. |
+| **id**   | `string` (required) *Example: 9a068003-7f4f-11f0-ac12-001400000003* id Уведомления. |
 
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
 curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/02950e31-35f2-11e9-9ff4-34e8000799c1"
+  "https://api.moysklad.ru/api/remap/1.2/notification/9a068003-7f4f-11f0-ac12-001400000003"
   -H "Authorization: Basic <Credentials>"
   -H "Accept-Encoding: gzip"
 ```
@@ -615,22 +616,22 @@ curl -X GET
 
 ```json
 {
-  "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/notification/02950e31-35f2-11e9-9ff4-34e8000799c1",
-    "type": "RetireOrderByDemandNotification",
-    "mediaType": "application/json"
+  "meta" : {
+    "href" : "https://api.moysklad.ru/api/remap/1.2/notification/9a068003-7f4f-11f0-ac12-001400000003",
+    "type" : "RetireOrderByDemandNotificationCompleted",
+    "mediaType" : "application/json"
   },
-  "id": "02950e31-35f2-11e9-9ff4-34e8000799c1",
-  "accountId": "45eb22e0-0e7b-11e2-1c31-3c4a92f3a0a7",
-  "created": "2025-08-21 19:01:55.277",
-  "read": true,
-  "title": "Создано 2 документа Вывода из Оборота",
-  "description": "Операция выполнена успешно! Перейдите в реестр документов маркировки для ознакомления с созданными выводами из оборота",
-  "message": "Операция выполнена успешно! Перейдите в реестр документов маркировки для ознакомления с созданными выводами из оборота",
-  "taskState": "completed",
-  "createdDocsCount": 2,
-  "startDate": "2025-08-21 19:01:55.277",
-  "endDate": "2025-08-21 19:02:55.277"
+  "id" : "9a068003-7f4f-11f0-ac12-001400000003",
+  "accountId" : "0de71249-7f4f-11f0-ac12-001300000002",
+  "created" : "2025-08-22 15:00:31.168",
+  "read" : true,
+  "title" : "Создан 1 документ Вывода из оборота",
+  "description" : "Операция выполнена успешно! Перейдите в реестр документов маркировки для ознакомления с созданными выводами из оборота",
+  "message" : "Обработан 1 документ, создан 1 документ",
+  "taskState" : "COMPLETED",
+  "startMoment" : "2025-08-22 15:00:19.949",
+  "endMoment" : "2025-08-22 15:00:31.101",
+  "createdDocsCount" : 1
 }
 ```
 
