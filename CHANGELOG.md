@@ -3,7 +3,7 @@
 
 ### 22-08-2025
 #### Добавлено
-- Новый тип уведомлений [Завершение Вывода из оборота на основании отгрузок](https://dev.moysklad.ru/doc/api/remap/1.2/notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zawershenie-vywoda-iz-oborota-na-osnowanii-otgruzok).
+- Новый тип уведомлений [Завершение Вывода из оборота на основании отгрузок](https://dev.moysklad.ru/doc/api/remap/1.2/notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zawershenie-sozdaniq-vywoda-iz-oborota-na-osnowanii-otgruzok).
 
 ### 12-08-2025
 #### Добавлено
