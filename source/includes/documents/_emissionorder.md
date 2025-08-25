@@ -32,6 +32,12 @@
 | **trackingType**  | Enum                                                      | Тип маркируемой продукции. [Подробнее тут](../dictionaries/#suschnosti-komplekt-komplekty-atributy-suschnosti-tip-markiruemoj-produkcii) <br>`+Обязательное при ответе`                |
 | **updated**       | DateTime                                                  | Момент последнего обновления<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                        |
 
+#### Связи с другими документами
+
+| Название                   | Описание                                                                                                                       |
+|----------------------------|:-------------------------------------------------------------------------------------------------------------------------------|
+| **productionTasks**        | Массив ссылок на связанные производственные задания в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)  |
+
 #### Позиции Заказа кодов маркировки
 Позиции Заказа кодов маркировки - это список товаров/модификаций/серий.
 В Заказе кодов маркировки не может присутствовать больше 10 позиций.
@@ -143,7 +149,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
-          "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
         }
       },
       "shared": false,
@@ -176,7 +182,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
           "type": "organization",
           "mediaType": "application/json",
-          "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=bcbee227-a66f-11ef-ac12-000d00000099"
+          "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=bcbee227-a66f-11ef-ac12-000d00000099"
         }
       },
       "emissionType": "LOCAL",
@@ -209,7 +215,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
-          "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
         }
       },
       "shared": false,
@@ -242,7 +248,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
           "type": "organization",
           "mediaType": "application/json",
-          "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=bcbee227-a66f-11ef-ac12-000d00000099"
+          "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=bcbee227-a66f-11ef-ac12-000d00000099"
         }
       },
       "emissionType": "LOCAL",
@@ -316,7 +322,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
     }
   },
   "shared": false,
@@ -340,7 +346,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
       "type": "organization",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=850c8195-f504-11e5-8a84-bae50000015e"
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=850c8195-f504-11e5-8a84-bae50000015e"
     }
   },
   "emissionType": "LOCAL",
@@ -429,7 +435,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
     }
   },
   "shared": false,
@@ -462,7 +468,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
       "type": "organization",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=bcbee227-a66f-11ef-ac12-000d00000099"
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=bcbee227-a66f-11ef-ac12-000d00000099"
     }
   },
   "emissionType": "LOCAL",
@@ -558,7 +564,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
     }
   },
   "shared": false,
@@ -582,7 +588,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
       "type": "organization",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=850c8195-f504-11e5-8a84-bae50000015e"
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=850c8195-f504-11e5-8a84-bae50000015e"
     }
   },
   "emissionType": "LOCAL",
@@ -664,7 +670,7 @@ curl -X POST
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json",
-        "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
       }
     },
     "shared": false,
@@ -720,7 +726,7 @@ curl -X POST
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
         "type": "employee",
         "mediaType": "application/json",
-        "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
       }
     },
     "shared": false,
@@ -852,7 +858,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
     }
   },
   "shared": false,
@@ -884,7 +890,7 @@ curl -X GET
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
       "type": "organization",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=bcbee227-a66f-11ef-ac12-000d00000099"
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=bcbee227-a66f-11ef-ac12-000d00000099"
     }
   },
   "emissionType": "LOCAL",
@@ -929,7 +935,7 @@ curl -X PUT
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
             "type": "employee",
             "mediaType": "application/json",
-            "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
+            "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
           }
         },
         "shared": false,
@@ -958,7 +964,7 @@ curl -X PUT
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
             "type": "organization",
             "mediaType": "application/json",
-            "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=bcbee227-a66f-11ef-ac12-000d00000099"
+            "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=bcbee227-a66f-11ef-ac12-000d00000099"
           }
         },
         "emissionType": "LOCAL",
@@ -976,7 +982,7 @@ curl -X PUT
     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata",
     "type": "emissionorder",
     "mediaType": "application/json",
-    "uuidHref": "https://api.moysklad.ru/app/#emissionorder/edit?id=33c8ac0b-a670-11ef-ac12-000d00000111"
+    "uuidHref": "https://online.moysklad.ru/app/#emissionorder/edit?id=33c8ac0b-a670-11ef-ac12-000d00000111"
   },
   "id": "33c8ac0b-a670-11ef-ac12-000d00000111",
   "accountId": "b9c9f2e4-a66f-11ef-ac12-000f00000001",
@@ -986,7 +992,7 @@ curl -X PUT
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
     }
   },
   "shared": false,
@@ -1020,7 +1026,7 @@ curl -X PUT
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
       "type": "organization",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=bcbee227-a66f-11ef-ac12-000d00000099"
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=bcbee227-a66f-11ef-ac12-000d00000099"
     }
   },
   "emissionType": "LOCAL",
@@ -1114,7 +1120,7 @@ curl -X PUT
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=bc5114ab-a66f-11ef-ac12-000d00000050"
     }
   },
   "shared": false,
@@ -1146,7 +1152,7 @@ curl -X PUT
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
       "type": "organization",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#mycompany/edit?id=850c8195-f504-11e5-8a84-bae50000015e"
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=850c8195-f504-11e5-8a84-bae50000015e"
     }
   },
   "emissionType": "LOCAL",

@@ -133,11 +133,20 @@ under the License.
     history.pushState({}, '', '?' + generateNewQueryString(language) + '#' + hash);
 
     // save language as next default
-    localStorage.setItem("language", language);
+    try {
+      localStorage.setItem("language", language);
+    } catch (e) {
+      console.error("[pushURL] Ошибка при сохранении языка в localStorage:", e);
+    }
   }
 
   function setupLanguages(l) {
-    var defaultLanguage = localStorage.getItem("language");
+    var defaultLanguage = null;
+    try {
+      defaultLanguage = localStorage.getItem("language");
+    } catch (e) {
+      console.error("[setupLanguages] Ошибка при чтении localStorage:", e);
+    }
 
     languages = l;
 
@@ -146,7 +155,11 @@ under the License.
       // the language is in the URL, so use that language!
       activateLanguage(presetLanguage);
 
-      localStorage.setItem("language", presetLanguage);
+      try {
+        localStorage.setItem("language", presetLanguage);
+      } catch (e) {
+        console.error("[setupLanguages] Ошибка при сохранении языка из URL:", e);
+      }
     } else if ((defaultLanguage !== null) && (jQuery.inArray(defaultLanguage, languages) != -1)) {
       // the language was the last selected one saved in localstorage, so use that language!
       activateLanguage(defaultLanguage);

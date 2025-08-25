@@ -23,9 +23,105 @@
 #### Добавлено
 - Поле `applicable` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
 
-### 15-05-2025
+### 12-08-2025
 #### Добавлено
-- Поле "валюта" (currency) во вложенную сущность [Юрлица](../dictionaries/#suschnosti-jurlico-jurlica) Счета юрлица
+- Информация по работе с заголовком [Accept-Language](../#mojsklad-json-api-obschie-swedeniq-zagolowok-accept-language)
+
+### 07-08-2025
+#### Добавлено
+- Добавлен новый тип уведомлений [Новое событие в отслеживаемом объекте](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowoe-sobytie-w-otslezhiwaemom-dokumente)
+- Добавлена новая группа уведомлений [Отслеживаемые события](../notification/#uwedomleniq-nastrojki-uwedomlenij-struktura-dannyh)
+
+### 31-07-2025
+#### Добавлено
+- Поля связей документов в [Внутренний заказ](../documents/#dokumenty-vnutrennij-zakaz)
+- Поля связей документов в [Заказ кодов маркировки](../documents/#dokumenty-zakaz-kodow-markirowki)
+- Поля связей документов в [Заказ покупателя](../documents/#dokumenty-zakaz-pokupatelq)
+- Поля связей документов в [Заказ поставщику](../documents/#dokumenty-zakaz-postawschiku)
+- Поля связей документов в [Перемещение](../documents/#dokumenty-peremeschenie)
+- Поля связей документов в [Приемка](../documents/#dokumenty-priemka)
+- Поля связей документов в [Производственное задание](../documents/#dokumenty-proizwodstwennoe-zadanie)
+- Ошибка [17024](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-dokumentow)
+
+### 29-07-2025
+#### Добавлено
+- Тип маркируемой продукции `VEGETABLE_OIL` (Растительные масла) в документ [Вывод из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii)
+- Тип маркируемой продукции `PET_FOOD` (Корма для животных) в документ [Вывод из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii)
+
+### 24-07-2025
+#### Поправлена
+- Опечатка типа данных c int на float для полей `volume` и `weight` для [комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
+
+### 22-07-2025
+#### Добавлено
+- Поле `minimumStock` в сущность [модификация](../dictionaries/#suschnosti-modifikaciq-modifikacii) для работы с неснижаемыми остатками
+
+### 17-07-2025
+#### Добавлена
+- Ошибка [13005](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-otchetow-ostatkow)
+
+### 16-07-2025
+#### Добавлено
+- Типы компаний региона Казахстан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-tip-kontragenta)
+- Типы компаний региона Казахстан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-tip-urlica)
+- Реквизиты региона Казахстан для [контрагентов](../dictionaries/#suschnosti-kontragent-kontragenty-atributy-wlozhennyh-suschnostej-rekwizity-kazahstana)
+- Реквизиты региона Казахстан для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-rekwizity-kazahstana)
+
+### 10-07-2025
+#### Добавлена
+- Ошибка при работе с печатными формами [33013](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-pechatnyh-form)
+
+### 09-07-2025
+#### Добавлено
+- Добавлена новая [ошибка 3043](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
+### 03-07-2025
+#### Добавлено
+- Новые типы маркированной продукции `VEGETABLE_OIL` для растительных масел, `PET_FOOD` для кормов для животных для [Товара](../dictionaries/#suschnosti-towar-towary) и [Комплекта](../dictionaries/#suschnosti-komplekt-komplekty)
+
+### 02-07-2025
+#### Исправлено
+- Актуализирована документация [Настройки пользователя](../dictionaries/#suschnosti-nastrojki-pol-zowatelq)
+
+### 01-07-2025
+#### Добавлен
+- Плановая дата завершения этапа `plannedEndDate` в запросе [Производственных этапов](../documents/#dokumenty-proizwodstwennoe-zadanie-proizwodstwennye-atapy)
+
+### 17-06-2025
+#### Добавлено
+- Поле `giftCards` в [Розничную продажу](../documents/#dokumenty-roznichnaq-prodazha)
+
+### 09-06-2025
+#### Добавлено
+- Описание параметра `fields` [Fields](../#mojsklad-json-api-obschie-swedeniq-chto-takoe-fields)
+- Краткий [Отчет на остатки по ячейкам](../reports/#otchety-otchet-ostatki-poluchit-kratkij-otchet-ob-ostatkah-po-qchejkam)
+
+### 03-06-2025
+#### Добавлено
+- Поля `description`, `defect` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
+- Ошибки [26211-26213](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-vypolnenij-atapow-proizwodstwa)
+- Тип маркируемой продукции `BEER_ALCOHOL` (Пиво и слабоалкогольная продукция) в документ [Вывод из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii)
+- Способ вывода `MISMATCH` (Пересортица по кодам) в документ [Вывод из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-sposob-wywoda-iz-oborota)
+
+### 27-05-2025
+#### Добавлено
+- Новые типы документов для [Ленты Событий](../dictionaries/#suschnosti-lenta-sobytij)
+
+### 27-05-2025
+#### Изменено
+- [Особенности поведения при создании Вывода из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-sozdat-vywod-iz-oborota-osobennosti-powedeniq-pri-sozdanii-vywoda-iz-oborota) для способа вывода `DISTANCE`
+
+### 26-05-2025
+#### Добавлено
+- Поле **declaration** с информацией о прослеживаемости импортных товаров в позиции документов [отгрузка](../documents/#dokumenty-otgruzka-otgruzki-pozicii-otgruzki), [розничная продажа](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-pozicii-roznichnoj-prodazhi), [списание](../documents/#dokumenty-spisanie-spisaniq-pozicii-spisaniq)
+
+### 20-05-2025
+#### Добавлено
+- Добавлена новая [ошибка 3042](../#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
+### 15-05-2025
+#### Изменено
+- Описание поля `accountCountry` в [Настройках компании](../dictionaries/#suschnosti-nastrojki-kompanii)
 
 ### 14-05-2025
 #### Добавлено

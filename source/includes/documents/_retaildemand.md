@@ -4,7 +4,7 @@
 #### Атрибуты сущности
 
 | Название               | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                                                                     |
-|------------------------| :-------------------------------------------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|------------------------|:----------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**          | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                       |
 | **advancePaymentSum**  | Float                                                     |                                                                                                                                                   | Оплачено из аванса<br>`+Обязательное при ответе`                                                                                                                                             |
 | **agent**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные контрагента<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler`                                                                                  |
@@ -22,6 +22,7 @@
 | **documentNumber**     | String(255)                                               |                                                                                                                                                   | Номер документа                                                                                                                                                                              |
 | **externalCode**       | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Розничной продажи<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                |
 | **files**              | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`                                                |
+| **giftCards**          | Array(Object)                                             |                                                                                                                                                   | Коллекция подарочных сертификатов, используемых при оплате продажи. [Подробнее тут](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-podarochnye-sertificaty)                 |
 | **group**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                     |
 | **id**                 | UUID                                                      | `=` `!=`                                                                                                                                          | ID Розничной продажи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                    |
 | **meta**               | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) |                                                                                                                                                   | Метаданные Розничной продажи<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                 |
@@ -46,7 +47,7 @@
 | **shared**             | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                   |
 | **state**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные статуса Розничной продажи<br>`+Expand` `+Change-handler`                                                                                                                          |
 | **store**              | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | `=` `!=`                                                                                                                                          | Метаданные склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                         |
-| **sum**                | Int                                                       | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Розничной продажи в копейках<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                      |
+| **sum**                | Float                                                     | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Розничной продажи в копейках<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                      |
 | **syncId**             | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                                                                  |
 | **taxSystem**          | Enum                                                      |                                                                                                                                                   | Код системы налогообложения. [Подробнее тут](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-atributy-suschnosti-kod-sistemy-nalogooblozheniq)<br>`+Обязательное при ответе` |
 | **updated**            | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Розничной продажи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                          |
@@ -67,7 +68,7 @@
 | **PATENT_BASED**                         | Патент                       |
 
 #### Работа с полями оплаты розничной продажи
-Сумма полей **cashSum**, **noCashSum**, **qrSum**, **prepaymentCashSum**, **prepaymentNoCashSum**, **prepaymentNoCashSum** и **advancePaymentSum** должна совпадать с суммой по Розничной продаже
+Сумма полей **cashSum**, **noCashSum**, **qrSum**, **prepaymentCashSum**, **prepaymentNoCashSum**, **prepaymentQrSum** и **advancePaymentSum** должна совпадать с суммой по Розничной продаже
 (т.е. с суммарной стоимостью всех переданных вами позиций). Каждое из полей не может иметь отрицательное значение.
 
 Смешанная оплата со способом по QR-коду недопустима. Если **qrSum** или **prepaymentQrSum** ненулевое, то другие поля не могут быть использованы, иначе вернется ошибка.
@@ -102,6 +103,7 @@
 | **accountId**  | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                                                                                                    |
 | **assortment** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные товара/услуги/серии/модификации, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand` `+Change-handler`                                                                                                                                  |
 | **cost**       | Int                                                       | Себестоимость (только для услуг)                                                                                                                                                                                                                                          |
+| **declaration**| Array(Object)                                             | Информация о прослеживаемости импортных товаров. [Подробнее тут](../documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-informaciq-o-proslezhiwaemosti-importnyh-towarow)<br>`+Выводится по запросу` `+Только для чтения`                                        |
 | **discount**   | Float                                                     | Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                      |
 | **id**         | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                                                                                                           |
 | **pack**       | Object                                                    | Упаковка Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)<br>`+Change-handler`                                                                                                                           |
@@ -123,6 +125,27 @@
 
 О работе с доп. полями Розничных продаж можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
+#### Подарочные сертификаты
+Подарочные сертификаты Розничной продажи - это список подарочных сертификатов, используемых при оплате розничной продажи.
+Объект позиции Розничной продажи содержит следующие поля:
+
+| Название        | Тип                                                       | Описание                                                   |
+|-----------------|:----------------------------------------------------------|:----------------------------------------------------------|
+| **name**        | String                                                    | Номер сертификата<br>`+Обязательное при ответе`           |
+| **paymentSum**  | Float                                                     | Сумма сертификата<br>`+Обязательное при ответе`           |
+
+#### Информация о прослеживаемости импортных товаров
+Поле **declaration** выводится по запросу. Для вывода в позициях документа информации о прослеживаемости импортных товаров
+необходимо передать в URL запроса дополнительный параметр `fields=declaration`, например `../retaildemand/{id}/positions?fields=declaration`. [Подробнее о параметре fields](../#mojsklad-json-api-obschie-swedeniq-chto-takoe-fields). 
+
+Аттрибуты объекта:
+
+| Название     | Тип                                                       | Описание                                                                                |
+| -------------|:----------------------------------------------------------|:----------------------------------------------------------------------------------------|
+| **gtd**      | String                                                    | Регистрационный номер партии товара<br>`+Только для чтения`                             |
+| **rnpt**     | String                                                    | Грузовая таможенная декларация<br>`+Только для чтения`                                  |
+| **country**  | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Страна происхождения товара<br>`+Только для чтения`                                     |
+| **quantity** | Float                                                     | Количество товара с указанными ГТД или РНПТ в позиции документа<br>`+Только для чтения` |
 
 ### Получить Розничные продажи 
 Запрос всех Розничных продаж на данной учетной записи.
@@ -273,7 +296,17 @@ curl -X GET
       "prepaymentNoCashSum": 0,
       "prepaymentQrSum": 0,
       "advancePaymentSum": 0,
-      "taxSystem": "GENERAL_TAX_SYSTEM"
+      "taxSystem": "GENERAL_TAX_SYSTEM",
+      "giftCards": [
+        {
+          "name": "123457",
+          "paymentSum": 500
+        },
+        {
+          "name": "1234578",
+          "paymentSum": 1000
+        }
+      ]
     },
     {
       "meta": {
@@ -386,7 +419,17 @@ curl -X GET
       "prepaymentCashSum": 0,
       "prepaymentNoCashSum": 0,
       "prepaymentQrSum": 0,
-      "advancePaymentSum": 0
+      "advancePaymentSum": 0,
+      "giftCards": [
+        {
+          "name": "123457",
+          "paymentSum": 500
+        },
+        {
+          "name": "1234578",
+          "paymentSum": 1000
+        }
+      ]
     }
   ]
 }
@@ -1242,7 +1285,17 @@ curl -X GET
     "prepaymentCashSum": 0,
     "prepaymentNoCashSum": 0,
     "prepaymentQrSum": 0,
-    "advancePaymentSum": 0
+    "advancePaymentSum": 0,
+    "giftCards": [
+      {
+        "name": "123457",
+        "paymentSum": 500
+      },
+      {
+        "name": "1234578",
+        "paymentSum": 1000
+      }
+    ]
   },
   {
     "meta": {
@@ -1366,7 +1419,17 @@ curl -X GET
     "prepaymentCashSum": 0,
     "prepaymentNoCashSum": 0,
     "prepaymentQrSum": 0,
-    "advancePaymentSum": 0
+    "advancePaymentSum": 0,
+    "giftCards": [
+      {
+        "name": "123457",
+        "paymentSum": 500
+      },
+      {
+        "name": "1234578",
+        "paymentSum": 1000
+      }
+    ]
   }
 ]
 ```
@@ -1958,7 +2021,17 @@ curl -X GET
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
   "prepaymentQrSum": 0,
-  "advancePaymentSum": 0
+  "advancePaymentSum": 0,
+  "giftCards": [
+    {
+      "name": "123457",
+      "paymentSum": 500
+    },
+    {
+      "name": "1234578",
+      "paymentSum": 1000
+    }
+  ]
 }
 ```
 
@@ -2129,7 +2202,17 @@ curl -X GET
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
   "prepaymentQrSum": 0,
-  "advancePaymentSum": 0
+  "advancePaymentSum": 0,
+  "giftCards": [
+    {
+      "name": "123457",
+      "paymentSum": 500
+    },
+    {
+      "name": "1234578",
+      "paymentSum": 1000
+    }
+  ]
 }
 ```
 
@@ -2325,7 +2408,17 @@ curl -X GET
   "prepaymentCashSum": 0,
   "prepaymentNoCashSum": 0,
   "prepaymentQrSum": 0,
-  "advancePaymentSum": 0
+  "advancePaymentSum": 0,
+  "giftCards": [
+    {
+      "name": "123457",
+      "paymentSum": 500
+    },
+    {
+      "name": "1234578",
+      "paymentSum": 1000
+    }
+  ]
 }
 ```
 
