@@ -770,6 +770,30 @@ html, body {
   pre + blockquote, pre + button {
     margin-top: 2px;
   }
+   .banner {
+      margin-top: -20px;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #FFE6E6;
+      border-radius: 8px;
+      border: 1px solid #FF555A;
+      ui {
+        padding: 0;
+        line-height: 2;
+        li {
+          margin-left: 32px;
+          line-height: 2;
+        }
+      }
+      h4 {
+        padding: 10px 0;
+        font-size: 24px;
+      }
+      p {
+        margin: 10px 0 0 0;
+        padding: 0;
+      }
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
