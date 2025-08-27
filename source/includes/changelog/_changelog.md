@@ -37,7 +37,7 @@
 
 ### 07-08-2025
 #### Добавлено
-- Добавлен новый тип уведомлений [Новое событие в отслеживаемом объекте](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowoe-sobytie-w-otslezhiwaemom-dokumente)
+- Добавлен новый тип уведомлений [Новое событие в отслеживаемом объекте](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowoe-sobytie-w-otslezhiwaemom-ob-ekte)
 - Добавлена новая группа уведомлений [Отслеживаемые события](../notification/#uwedomleniq-nastrojki-uwedomlenij-struktura-dannyh)
 
 ### 31-07-2025
