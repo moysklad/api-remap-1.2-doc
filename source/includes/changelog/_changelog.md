@@ -1,7 +1,7 @@
 # Список изменений
 
 <div class="banner">
-  <ui>С 1 сентября появятся публичные постоянные ссылки на изображения в товарах, комплектах и модификациях.
+  <ui>С 1 сентября появились публичные постоянные ссылки на изображения в товарах, комплектах и модификациях.
     <li>ссылка будет бессрочной и не потребует авторизации;</li>
     <li>её удобно использовать в онлайн-витринах, на страницах заказов, личных кабинетах покупателей и т.д.</li>
   </ui>
@@ -26,6 +26,10 @@
 
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
+
+### 01-09-2025
+#### Добавлено
+- Поле `downloadPermanentHref` в [Изображениях](../dictionaries/#suschnosti-izobrazhenie-poluchit-spisok-izobrazhenij-towara-komplekta-i-modifikacii-poluchit-postoqnnuu-ssylku-na-izobrazhenie-towara-komplekta-ili-modifikacii)
 
 ### 25-08-2025
 #### Добавлено
@@ -307,7 +311,7 @@
 
 ### 16-07-2024
 #### Добавлено
-- Добавлено описание получения ссылки на [изображение](../dictionaries/#suschnosti-izobrazhenie-poluchit-ssylku-na-izobrazhenie-towara-ili-komplekta-ili-modifikacii)
+- Добавлено описание получения ссылки на [изображение](../dictionaries/#suschnosti-izobrazhenie-poluchit-wremennuu-ssylku-na-izobrazhenie-towara-komplekta-ili-modifikacii)
 
 ### 12-07-2024
 #### Добавлен
