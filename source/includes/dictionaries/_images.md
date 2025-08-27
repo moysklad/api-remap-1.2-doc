@@ -159,7 +159,7 @@ curl -X GET
                 "type": "image",
                 "mediaType": "application/json",
                 "downloadHref": "https://api.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6",
-                "downloadPermanentHref": "https://cdn.moysklad.ru/5ae5567f-f62d-4127-a899-ee955ebfe993/i/e492d7db-a1f0-4e2e-9c73-7e87f57d6a8e"
+                "downloadPermanentHref": "https://cdn.moysklad.ru/5ae5567f-f62d-4127-a899-ee955ebfe993/image/e492d7db-a1f0-4e2e-9c73-7e87f57d6a8e"
             },
             "title": "birdimage",
             "filename": "birdimage.png",
