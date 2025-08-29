@@ -27,6 +27,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 29-08-2025
+#### Добавлено
+- Поле `distributionRequired` в [Этап производства](../dictionaries/#suschnosti-jetap-proizwodstwa)
+
 ### 25-08-2025
 #### Добавлено
 - Поле `applicable` в [Выполнение этапа производства](../documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
