@@ -113,6 +113,7 @@ curl -X GET
       "externalCode": "sTV9PL-HjZkNgDMUqvKKe3",
       "archived": false,
       "allPerformers": false,
+      "distributionRequired" : false,
       "performers": [
         {
           "meta": {
@@ -191,6 +192,7 @@ curl -X GET
   "externalCode": "456",
   "archived": false,
   "allPerformers": true,
+  "distributionRequired" : false,
   "performers": []
 }
 ```
@@ -264,6 +266,7 @@ curl -X GET
     "externalCode": "hsthsrehs",
     "archived": false,
     "allPerformers": true,
+    "distributionRequired" : false,
     "performers": []
   },
   {
@@ -301,6 +304,7 @@ curl -X GET
     "externalCode": "sTV9PL-HjZkNgDMUqvKKe3",
     "archived": false,
     "allPerformers": true,
+    "distributionRequired" : false,
     "performers": []
   }
 ]
@@ -429,6 +433,7 @@ curl -X GET
   "externalCode": "sTV9PL-HjZkNgDMUqvKKe3",
   "archived": false,
   "allPerformers": true,
+  "distributionRequired" : false,
   "performers": []
 }
 ```
@@ -502,6 +507,7 @@ curl -X GET
   "externalCode": "sTV9PL-HjZkNgDMUqvKKe3",
   "archived": false,
   "allPerformers" : false,
+  "distributionRequired" : false,
   "performers": [
     {
       "meta": {
