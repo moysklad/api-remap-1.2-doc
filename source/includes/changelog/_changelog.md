@@ -27,7 +27,7 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 01-09-2025
+### 02-09-2025
 #### Добавлено
 - Поле `downloadPermanentHref` в [Изображениях](../dictionaries/#suschnosti-izobrazhenie-poluchit-spisok-izobrazhenij-towara-komplekta-i-modifikacii-poluchit-postoqnnuu-ssylku-na-izobrazhenie-towara-komplekta-ili-modifikacii)
 
