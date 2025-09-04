@@ -27,6 +27,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 15-09-2025
+#### Изменено
+- Разрешен Способ вывода из оборота `PACKING` (Фасовка) для Категории маркированной продукции `PET_FOOD` (Корма для животных) в документ [Вывод из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii)
+
 ### 02-09-2025
 #### Добавлено
 - Поле `downloadPermanentHref` в [Изображениях](../dictionaries/#suschnosti-izobrazhenie-poluchit-spisok-izobrazhenij-towara-komplekta-i-modifikacii-poluchit-postoqnnuu-ssylku-na-izobrazhenie-towara-komplekta-ili-modifikacii)
