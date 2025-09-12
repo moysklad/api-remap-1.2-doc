@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### 11-09-2025
+#### Добавлено
+- Ошибка [26115](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq)
+
 ### 02-09-2025
 #### Добавлено
 - Поле `downloadPermanentHref` в [Изображениях](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-izobrazhenie-poluchit-spisok-izobrazhenij-towara-komplekta-i-modifikacii-poluchit-postoqnnuu-ssylku-na-izobrazhenie-towara-komplekta-ili-modifikacii)

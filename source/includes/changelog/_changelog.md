@@ -27,6 +27,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 11-09-2025
+#### Добавлено
+- Ошибка [26115](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-proizwodstwennogo-zadaniq)
+
 ### 02-09-2025
 #### Добавлено
 - Поле `downloadPermanentHref` в [Изображениях](../dictionaries/#suschnosti-izobrazhenie-poluchit-spisok-izobrazhenij-towara-komplekta-i-modifikacii-poluchit-postoqnnuu-ssylku-na-izobrazhenie-towara-komplekta-ili-modifikacii)
