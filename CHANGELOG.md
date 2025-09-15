@@ -1,9 +1,15 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 10-09-2025
+### <актуальная дата>
 #### Добавлено
 - Настройки НДС для [юридических лиц](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico-jurlica-polq-rekwizitow)
+
+### 15-09-2025
+#### Добавлено
+- Новый тип уведомлений [Завершение создания Вывода из оборота на основании Отгрузок](https://dev.moysklad.ru/doc/api/remap/1.2/notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zawershenie-sozdaniq-vywoda-iz-oborota-na-osnowanii-otgruzok).
+#### Изменено
+- Разрешен Способ вывода из оборота `PACKING` (Фасовка) для Категории маркированной продукции `PET_FOOD` (Корма для животных) в документ [Вывод из оборота](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii)
 
 ### 02-09-2025
 #### Добавлено

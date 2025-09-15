@@ -31,6 +31,12 @@
 #### Добавлено
 - Настройки НДС для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-polq-rekwizitow)
 
+### 15-09-2025
+#### Добавлено
+- Новый тип уведомлений [Завершение создания Вывода из оборота на основании Отгрузок](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zawershenie-sozdaniq-vywoda-iz-oborota-na-osnowanii-otgruzok).
+#### Изменено
+- Разрешен Способ вывода из оборота `PACKING` (Фасовка) для Категории маркированной продукции `PET_FOOD` (Корма для животных) в документ [Вывод из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii)
+
 ### 02-09-2025
 #### Добавлено
 - Поле `downloadPermanentHref` в [Изображениях](../dictionaries/#suschnosti-izobrazhenie-poluchit-spisok-izobrazhenij-towara-komplekta-i-modifikacii-poluchit-postoqnnuu-ssylku-na-izobrazhenie-towara-komplekta-ili-modifikacii)
