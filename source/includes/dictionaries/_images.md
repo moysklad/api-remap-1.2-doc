@@ -117,7 +117,71 @@ curl -X GET
 }
 ```
 
-### Получить ссылку на Изображение Товара или Комплекта или Модификации
+#### Получить постоянную ссылку на Изображение Товара, Комплекта или Модификации
+На платных тарифах есть возможность получить постоянную ссылку для скачивания изображения. Для этого необходимо указать дополнительный параметр `fields=downloadPermanentHref`. Параметр влияет 
+на вывод поля meta у Изображения, поэтому его можно применять вместе с параметром `expand=images`.
+
+Скачать изображение по ссылке можно без авторизации.
+
+```shell
+curl -X GET
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images?fields=downloadPermanentHref"
+  -H "Authorization: Basic <Credentials>"
+  -H "Accept-Encoding: gzip"
+```
+> Response 200 (application/json)
+Успешный запрос. Результат - постоянная ссылка downloadPermanentHref в meta Изображения.
+
+```json
+{
+    "context": {
+        "employee": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                "type": "employee",
+                "mediaType": "application/json"
+            }
+        }
+    },
+    "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images",
+        "type": "image",
+        "mediaType": "application/json",
+        "size": 1,
+        "limit": 1000,
+        "offset": 0
+    },
+    "rows": [
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/images/f2728180-6afd-4d37-8a13-f3b48069bbb6",
+                "type": "image",
+                "mediaType": "application/json",
+                "downloadHref": "https://api.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6",
+                "downloadPermanentHref": "https://cdn.moysklad.ru/5ae5567f-f62d-4127-a899-ee955ebfe993/image/e492d7db-a1f0-4e2e-9c73-7e87f57d6a8e"
+            },
+            "title": "birdimage",
+            "filename": "birdimage.png",
+            "size": 14052,
+            "updated": "2019-01-24 16:55:24.567",
+            "miniature": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6?miniature=true",
+                "type": "image",
+                "mediaType": "image/png",
+                "downloadHref": "https://miniature-prod.moysklad.ru/miniature/79b17fec-2f08-11eb-0a80-052200009a8a/documentminiature/7129822c-2409-417c-977f-31a1e889039a"
+            },
+            "tiny": {
+                "href": "https://online.moysklad.ru/static/tinyimage/f2aab4d2-1fd3-11e9-ac12-000800000001/tinyimage/ebb10350-0272-45db-9d33-ca5a01fd5543/t.png",
+                "type": "image",
+                "mediaType": "image/png"
+            }
+        }
+    ]
+}
+```
+
+### Получить временную ссылку на Изображение Товара, Комплекта или Модификации
 Получить ссылку на скачивание изображения можно обратившись по адресу указанному в поле `downloadHref` у меты изображения.
 
 > Получить ссылку на Изображение Товара

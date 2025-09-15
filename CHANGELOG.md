@@ -1,9 +1,17 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 22-08-2025
+### 15-09-2025
 #### Добавлено
 - Новый тип уведомлений [Завершение создания Вывода из оборота на основании Отгрузок](https://dev.moysklad.ru/doc/api/remap/1.2/notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zawershenie-sozdaniq-vywoda-iz-oborota-na-osnowanii-otgruzok).
+
+### 02-09-2025
+#### Добавлено
+- Поле `downloadPermanentHref` в [Изображениях](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-izobrazhenie-poluchit-spisok-izobrazhenij-towara-komplekta-i-modifikacii-poluchit-postoqnnuu-ssylku-na-izobrazhenie-towara-komplekta-ili-modifikacii)
+
+### 25-08-2025
+#### Добавлено
+- Поле `applicable` в [Выполнение этапа производства](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vypolnenie-atapa-proizwodstwa)
 
 ### 12-08-2025
 #### Добавлено
@@ -11,7 +19,7 @@
 
 ### 07-08-2025
 #### Добавлено
-- Добавлен новый тип уведомлений [Новое событие в отслеживаемом объекте](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowoe-sobytie-w-otslezhiwaemom-dokumente)
+- Добавлен новый тип уведомлений [Новое событие в отслеживаемом объекте](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowoe-sobytie-w-otslezhiwaemom-ob-ekte)
 - Добавлена новая группа уведомлений [Отслеживаемые события](../notification/#uwedomleniq-nastrojki-uwedomlenij-struktura-dannyh)
 
 ### 31-07-2025
@@ -281,7 +289,7 @@
 
 ### 16-07-2024
 #### Добавлено
-- Добавлено описание получения ссылки на [изображение](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-izobrazhenie-poluchit-ssylku-na-izobrazhenie-towara-ili-komplekta-ili-modifikacii)
+- Добавлено описание получения ссылки на [изображение](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-izobrazhenie-poluchit-wremennuu-ssylku-na-izobrazhenie-towara-komplekta-ili-modifikacii)
 
 ### 12-07-2024
 #### Добавлен
