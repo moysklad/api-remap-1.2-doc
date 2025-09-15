@@ -115,19 +115,9 @@
 | **defaultCompanyVat**        | **Float**   | НДС‑ставка по умолчанию для юрлица. Передаётся в ответе только если `useCompanyVat == true`.                     |
 | **defaultCompanyVatEnabled** | **Boolean** | Флаг, определяющий, следует ли выставлять «без НДС». Передаётся в ответе только если `useCompanyVat == true` |
 
-В POST / PUT запросах
+В POST / PUT запросах если `defaultCompanyVat` ≥ 0 и < 100 и `defaultCompanyVatEnabled == false` то для организации сохранится значение «без НДС». Если `defaultCompanyVat == 0` и `defaultCompanyVatEnabled == true` (или поле `defaultCompanyVatEnabled` не указано), тогда сохранится НДС = 0.   
 
-| Условие                                                                             | Что будет сохранено       |
-|-------------------------------------------------------------------------------------|---------------------------|
-| `defaultCompanyVat` ≥ 0 и < 100 и `defaultCompanyVatEnabled == false`               | Устанавливается «без НДС» |
-| `defaultCompanyVat == 0` и (`defaultCompanyVatEnabled == true` или поле не указано) | Устанавливается НДС = 0.  |
-
-В GET запросах
-
-| Что сохранено                                               | Что возвращается в `companyVat`                                               |
-|-------------------------------------------------------------|-------------------------------------------------------------------------------|
-| НДС по умолчанию для юрлица **≥ 0** и **< 100** (включая 0) | `defaultCompanyVat` = существующее значение, `defaultCompanyVatEnabled = true`. |
-| НДС по умолчанию для юрлица установлен в "Без НДС"          | `defaultCompanyVat` **не возвращается**, `defaultCompanyVatEnabled = false`.  |
+В GET запросах, если для компании НДС по умолчанию ≥ 0 и < 100 (включая 0), то в `companyVat` вернётся `defaultCompanyVat` = текущее значение НДС и `defaultCompanyVatEnabled = true`. Если НДС по умолчанию -- «без НДС», тогда в `companyVat` вернётся `defaultCompanyVatEnabled = false`, а поле `defaultCompanyVat` будет отсутствовать.
 
 ##### Подписи и печать
 
