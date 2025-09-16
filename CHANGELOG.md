@@ -1,6 +1,10 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
+### <актуальная дата>
+#### Добавлено
+- Настройки НДС для [юридических лиц](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico-jurlica-polq-rekwizitow)
+
 ### 15-09-2025
 #### Добавлено
 - Новый тип уведомлений [Завершение создания Вывода из оборота на основании Отгрузок](https://dev.moysklad.ru/doc/api/remap/1.2/notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zawershenie-sozdaniq-vywoda-iz-oborota-na-osnowanii-otgruzok).

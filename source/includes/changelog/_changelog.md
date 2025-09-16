@@ -27,6 +27,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### <актуальная дата>
+#### Добавлено
+- Настройки НДС для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-polq-rekwizitow)
+
 ### 15-09-2025
 #### Добавлено
 - Новый тип уведомлений [Завершение создания Вывода из оборота на основании Отгрузок](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zawershenie-sozdaniq-vywoda-iz-oborota-na-osnowanii-otgruzok).
