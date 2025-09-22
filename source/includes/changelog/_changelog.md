@@ -1,7 +1,7 @@
 # Список изменений
 
 <div class="banner">
-  <ui>С 1 сентября появятся публичные постоянные ссылки на изображения в товарах, комплектах и модификациях.
+  <ui>Со 2 сентября появились публичные постоянные ссылки на изображения в товарах, комплектах и модификациях.
     <li>ссылка будет бессрочной и не потребует авторизации;</li>
     <li>её удобно использовать в онлайн-витринах, на страницах заказов, личных кабинетах покупателей и т.д.</li>
   </ui>
@@ -27,9 +27,19 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 29-08-2025
+### 22-09-2025
 #### Добавлено
 - Поле `distributionRequired` в [Этап производства](../dictionaries/#suschnosti-jetap-proizwodstwa)
+
+### 15-09-2025
+#### Добавлено
+- Новый тип уведомлений [Завершение создания Вывода из оборота на основании Отгрузок](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zawershenie-sozdaniq-vywoda-iz-oborota-na-osnowanii-otgruzok).
+#### Изменено
+- Разрешен Способ вывода из оборота `PACKING` (Фасовка) для Категории маркированной продукции `PET_FOOD` (Корма для животных) в документ [Вывод из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii)
+
+### 02-09-2025
+#### Добавлено
+- Поле `downloadPermanentHref` в [Изображениях](../dictionaries/#suschnosti-izobrazhenie-poluchit-spisok-izobrazhenij-towara-komplekta-i-modifikacii-poluchit-postoqnnuu-ssylku-na-izobrazhenie-towara-komplekta-ili-modifikacii)
 
 ### 25-08-2025
 #### Добавлено
@@ -311,7 +321,7 @@
 
 ### 16-07-2024
 #### Добавлено
-- Добавлено описание получения ссылки на [изображение](../dictionaries/#suschnosti-izobrazhenie-poluchit-ssylku-na-izobrazhenie-towara-ili-komplekta-ili-modifikacii)
+- Добавлено описание получения ссылки на [изображение](../dictionaries/#suschnosti-izobrazhenie-poluchit-wremennuu-ssylku-na-izobrazhenie-towara-komplekta-ili-modifikacii)
 
 ### 12-07-2024
 #### Добавлен
