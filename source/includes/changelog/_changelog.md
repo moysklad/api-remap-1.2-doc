@@ -27,6 +27,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 23-09-2025
+#### Добавлено
+- Условие автоматического отключения JSON API пользователю в [Ограничения](../#mojsklad-json-api-ogranicheniq)
+
 ### 15-09-2025
 #### Добавлено
 - Новый тип уведомлений [Завершение создания Вывода из оборота на основании Отгрузок](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zawershenie-sozdaniq-vywoda-iz-oborota-na-osnowanii-otgruzok).
