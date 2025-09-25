@@ -1,9 +1,13 @@
 # JSON API 1.2 Changelog
 Изменения в JSON API 1.2 будут описаны в данном документе.
 
-### 23-09-2025
+### 25-09-2025
 #### Добавлено
 - Условие автоматического отключения JSON API пользователю в [Ограничения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-ogranicheniq)
+
+### 22-09-2025
+#### Добавлено
+- Поле `distributionRequired` в [Этап производства](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jetap-proizwodstwa)
 
 ### 15-09-2025
 #### Добавлено
