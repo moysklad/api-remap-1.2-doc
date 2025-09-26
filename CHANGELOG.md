@@ -5,6 +5,14 @@
 #### Добавлено
 - Настройки НДС для [юридических лиц](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico-jurlica-polq-rekwizitow)
 
+### 25-09-2025
+#### Добавлено
+- Условие автоматического отключения JSON API пользователю в [Ограничения](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-ogranicheniq)
+
+### 22-09-2025
+#### Добавлено
+- Поле `distributionRequired` в [Этап производства](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jetap-proizwodstwa)
+
 ### 15-09-2025
 #### Добавлено
 - Новый тип уведомлений [Завершение создания Вывода из оборота на основании Отгрузок](https://dev.moysklad.ru/doc/api/remap/1.2/notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zawershenie-sozdaniq-vywoda-iz-oborota-na-osnowanii-otgruzok).
