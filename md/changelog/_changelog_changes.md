@@ -8,12 +8,14 @@
 ### 22-09-2025
 **Добавлено**
 - Поле `distributionRequired` в [Этап производства](#/dictionaries/processingstage#2-etap-proizvodstva)
+
 **Изменено**
 - Доступ к отчету [Краткий отчет об остатках](#/reports/report-stock#3-kratkij-otchet-ob-ostatkah) расширен: помимо администраторов, его могут просматривать сотрудники с пермиссией Остатки.
 
 ### 15-09-2025
 **Добавлено**
 - Новый тип уведомлений [Завершение создания Вывода из оборота на основании Отгрузок](#/notification/notification-types-details#3-zavershenie-sozdaniya-vyvoda-iz-oborota-na-osnovanii-otgruzok).
+
 **Изменено**
 - Разрешен Способ вывода из оборота `PACKING` (Фасовка) для Категории маркированной продукции `PET_FOOD` (Корма для животных) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
 
@@ -108,6 +110,7 @@
 ### 27-05-2025
 **Добавлено**
 - Новые типы документов для [Ленты Событий](#/dictionaries/eventfeed#2-lenta-sobytij)
+
 **Изменено**
 - [Особенности поведения при создании Вывода из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota) для способа вывода `DISTANCE`
 
@@ -520,6 +523,7 @@
 ### 19-07-2023
 **Исправлено**
 - Добавлены закрывающие скобки в примере запроса в разделе [массовое удаление отгрузок](#/documents/demand#3-massovoe-udalenie-otgruzok)
+
 **Добавлено**
 - Значение "Начало работы" в допустимые значения [Стартового экрана](#/dictionaries/usersettings#4-startovyj-ekran)
 
@@ -555,6 +559,7 @@
 - Возможность создания и удаления продуктов и материалов в [Техоперации](#/documents/processing#3-sozdat-tehoperaciyu).
 - Возможность создания [Техоперации](#/documents/processing#3-sozdat-tehoperaciyu) без привязки Техкарты.
 - Новый `25003` код [ошибки](#/errors#3-kody-oshibok-dlya-tehnologicheskih-kart).
+
 **Удалены**
 - Ставшие неактуальными `25001` и `25002` коды [ошибок](#/errors#3-kody-oshibok-dlya-tehnologicheskih-kart).
 
@@ -663,6 +668,7 @@
 **Добавлено**
 - Параметр фильтрации `productFolder` с поддержкой (в том числе и исключающей) фильтрации по нескольким группам товаров в [Отчетах Прибыльность](#/reports/report-pnl#2-otchet-pribylnost)
 - Параметр фильтрации `withSubFolders` в [Отчетах Прибыльность](#/reports/report-pnl#2-otchet-pribylnost), позволяющий фильтровать по заданной группе товаров без учета ее подгрупп.
+
 **Изменено**
 - Параметр `product` получил поддержку фильтрации по нескольким товарам в [Отчетах Прибыльность](#/reports/report-pnl#2-otchet-pribylnost)
 - Параметр `product` получил поддержку исключающей фильтрации по товарам в [Отчетах Прибыльность](#/reports/report-pnl#2-otchet-pribylnost)
@@ -819,6 +825,7 @@
 ### 18-04-2022
 **Добавлено**
 - Параметр фильтрации withSubFolders в [Отчете остатков](#/reports/report-stock#2-otchet-ostatki), позволяющий фильтровать по заданной группе товаров без учета ее подгрупп.
+
 **Документация**
 - Добавлено описание [Группа техкарт](#/dictionaries/processingplanfolder#2-gruppa-tehkart)
 
@@ -826,12 +833,14 @@
 **Добавлено**
 - Поле `onTap` в [Товарах](#/dictionaries/product#2-tovar)
 - Ошибки [16011, 16012, 16013, 16014, 16015, 16113](#/errors#3-kody-oshibok-dlya-tovarov)
+
 **Изменено**
 - Описание полей `isSerialTrackable`, `ppeType`, `alcoholic`, `weighed` в [Товарах](#/dictionaries/product#2-tovar)
 
 ### 23-03-2022
 **Добавлено**
 - Добавлено поле `accumulationDiscount` в скидки Контрагента, См. [Поля реквизитов контрагентов](#/dictionaries/counterparty#5-polya-rekvizitov)
+
 **Изменено**
 - Дополнительные поля типов Файл и Флажок не могут быть обязательными [Работа с дополнительными полями](#/general#3-rabota-s-dopolnitelnymi-polyami)
 
@@ -850,6 +859,7 @@
 - Добавлен отчёт [Текущих Остатков](#/reports/report-stock#3-kratkij-otchet-ob-ostatkah).
 - Отчет [Прибыльность по Каналам продаж](#/reports/report-pnl#3-poluchit-pribylnost-po-kanalam-prodazh)
 - Описание отчета [Прибыльность по Каналам продаж](#/reports/report-pnl#3-poluchit-pribylnost-po-kanalam-prodazh)
+
 **Изменено**
 - Часть ссылок в [Отчетах Прибыльность](#/reports/report-pnl#2-otchet-pribylnost)
 
@@ -857,6 +867,7 @@
 **Изменено**
 - Изменено время ожидания ответа на отправку [Веб-хука](#/dictionaries/webhook#2-vebhuki) с 5 секунд до 1.5 секунд.
 - Отключены переотправки по истечении времени ожидания ответа
+
 **Добавлено**
 - Поля `stock`, `reserve`, `inTransit`, `quantity` могут быть дробными в [Отчёте Остатки](#/reports/report-stock#2-otchet-ostatki).
 
@@ -908,10 +919,10 @@
 **Добавлено**
 - Возможность получения и применения [сохраненных фильтров](#/dictionaries/named-filter#2-sohranennye-filtry) других сотрудников для администраторов
 - Описание ошибок [63004 и 63005](#/errors#3-kody-oshibok-dlya-sohranennogo-filtra)
+- Поддержка протокола update-provider в [Заказе покупателя](#/documents/customerOrder#2-zakaz-pokupatelya).
+
 **Изменено**
 - Изменено максимальное ограничение на получение записей [аудита](#/audit/audit#1-audit) с 25 на 100 записей
-**Добавлено**
-- Поддержка протокола update-provider в [Заказе покупателя](#/documents/customerOrder#2-zakaz-pokupatelya).
 
 ### 15-11-2021
 **Добавлено**
@@ -959,7 +970,6 @@
 ### 20-09-2021
 **Добавлено**
 - Добавлены поля `shipmentAddress` и `shipmentAddressFull` в [Заказ покупателя](#/documents/customerOrder#2-zakaz-pokupatelya) и [Отгрузку](#/documents/demand#2-otgruzka)
-**Исправлено**
 - Исправлен список возможных атрибутов у документа [Списание](#/documents/loss#2-spisanie)
 
 ### 16-09-2021
@@ -1039,6 +1049,7 @@
 ### 03-06-2021
 **Добавлено**
 - Возможность перехода к соответствующему разделу с описанием ошибки по ссылке в `errors.moreInfo`
+
 **Документация**
 - Исправлено описание атрибута `pack` у позиций документов
 
@@ -1067,12 +1078,14 @@
 ### 21-05-2021
 **Документация**
 - Исправлено описание пермиссий при работе с пользовательскими справочниками
+
 **Добавлено**
 - Исправлена отметка об обязательности складов для части документов
 - Добавлен новый эндпоинт для системных ролей
 - Добавлен новый эндпоинт (crud) для пользовательских ролей
 - Новый ресурс [отмены асинхронной задачи](#/async#3-otmena-asinhronnoj-zadachi)
 - Ошибка [61007](#/errors#3-kody-oshibok-dlya-asinhronnogo-obmena)
+
 **Исправлено**
 - В примерах исправлен url получения метаданных [Комплектов](#/dictionaries/bundle#2-komplekt)
   и [Услуг](#/dictionaries/service#2-usluga)
@@ -1129,14 +1142,17 @@
 ### 26-04-2021
 **Изменено**
 - Исправлен некорректный url в примерах json [Управления настройками справочника ассортимента](#/dictionaries/assortment#3-poluchit-nastrojki-spravochnika-tovarov)
+
 **Добавлены**
 - Новые поля `directorPosition`, `directorSign`, `chiefAccountSign`, `stamp` в [Юрлице](#/dictionaries/organization#2-yurlico)
+
 **Изменено**
 - Исправлено неточное описание привязок документов в общих сведениях
 
 ### 24-04-2021
 **Документация**
 - Добавлен новый раздел [Подписка компании](#/dictionaries/companysubscription#2-podpiska-kompanii)
+
 **Изменено**
 - Исправлена работа с документом [Возврат поставщику](#/documents/purchase-return#2-vozvrat-postavshiku):
   добавлена проверка совпадения значения поля `vatEnabled` при создании и обновлении документа на основании [Приемки](#/documents/supply#2-priemka)
@@ -1170,6 +1186,7 @@
 - Для полей **consignee** и **carrier** в Отгрузках и Счетах-фактурах выданных добавлена пометка про тип сущностей
 - Удалена пометка об обязательности поля **house** в адресах
 - Исправлен тип поля **certificateNumber** у Юрлиц на корректный
+
 **Изменено**
 - Изменен регистр ключевого слова в [заказе покупателя](#/documents/customerOrder#2-zakaz-pokupatelya)
 - Изменен регистр ключевого слова в [заказе поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku)
@@ -1237,6 +1254,7 @@
 **Изменено**
 - Исправлен http метод в запросе на удаление группы товаров с GET на DELETE в [Группа товаров](#/dictionaries/productFolder#3-udalit-gruppu-tovarov)
   и тип полей `minPrice`, `buyPrice` c Double на Object в [Товаре](#/dictionaries/product#2-tovar)
+
 **Документация**
 - Из параметров удален `states`, добавленные туда по ошибке в [метаданных Розничных смен](#/documents/retailshift#3-metadannye-roznichnyh-smen)
 
@@ -1280,6 +1298,7 @@
 **Изменено**
 - Описание ограничений в [Общих сведениях](#/general#2-obshie-svedeniya)
 - Добавлена возможность создавать, изменять и удалять [Отделы](#/dictionaries/group#2-otdel)
+
 **Добавлено**
 - Добавлено заполнение себестоимости в эндпоинт [Автозаполнения](#/documents/autofill#3-zapros-avtozapoleniya-sebestoimosti)
 
@@ -1289,6 +1308,7 @@
 - Поля `qrSum` и `prepaymentQrSum` в [Розничную продажу](#/documents/retaildemand#2-roznichnaya-prodazha)
 - Поле `qrSum` в [Розничный возврат](#/documents/retail-sales-return#2-roznichnyj-vozvrat)
 - Ошибки `18005`, `18006`, `19003` и `19004`
+
 **Изменено**
 - Описание полей `acquire` и `bankPercent` в [Точке продаж](#/dictionaries/retailstore#2-tochka-prodazh)
 - Описание [работы с полями оплаты розничной продажи](#/documents/retaildemand#4-rabota-s-polyami-oplaty-roznichnoj-prodazhi)
@@ -1366,6 +1386,7 @@
 ### 28-05-2020
 **Документация**
 - Добавлена информация об [ограничениях](#/workbook/workbook-first-steps#3-ogranicheniya) и новом [параметре в Вебхуках](#/dictionaries/webhook#2-vebhuki)
+
 **Добавлено в API Remap 1.1 и 1.2**
 - Для работы с маркированной продукцией добавлены поля `trackingType` - тип маркированной продукции, `tnved` - код ТНВЭД в сущности [Товар](#/dictionaries/product#3-sozdat-tovar)
 
@@ -1408,6 +1429,7 @@
 ### 04-03-2020
 **Добавлено**
 - Поле `stockDays` - количество дней на складе в [Отчет Остатки -> Все Остатки](#/reports/report-stock#4-atributy-obuekta-rasshirennogo-otcheta)
+
 **Документация**
 - Добавлен новый раздел [Workbook](#/workbook/workbook-first-steps#1-workbook)
 
