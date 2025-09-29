@@ -48,7 +48,7 @@
 | **certificateNumber**       | String(255)   |                                                                                                                                                   | Номер свидетельства <br>`+RU`                                                                                                                                                  |
 | **chiefAccountSign**        | Object        |                                                                                                                                                   | Подпись главного бухгалтера. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-podpisi-i-pechat)                                     |
 | **chiefAccountant**         | String(255)   |                                                                                                                                                   | Главный бухгалтер                                                                                                                                                              |
-| **companyVat**              | Object        |                                                                                                                                                   | Настройки НДС                                                                                                                                                                  |
+| **companyVat__ru**          | Object        |                                                                                                                                                   | Настройки НДС                                                                                                                                                                  |
 | **director**                | String(255)   |                                                                                                                                                   | Руководитель                                                                                                                                                                   |
 | **directorPosition**        | String(255)   |                                                                                                                                                   | Должность руководителя                                                                                                                                                         |
 | **directorSign**            | Object        |                                                                                                                                                   | Подпись руководителя. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-atributy-wlozhennyh-suschnostej-podpisi-i-pechat)                                            |
@@ -107,12 +107,12 @@
 
 ##### Настройки НДС
 
-Объект `companyVat` возвращается и может указываться в запросе только при `payerVat == true`.
+Объект `companyVat__ru` возвращается и может указываться в запросе только при `payerVat == true`.
 
 | Поле                         | Тип         | Описание                                                                                                    |
 |------------------------------|-------------|-------------------------------------------------------------------------------------------------------------|
 | **useCompanyVat**            | **Boolean** | Признак использования НДС из карточки юрлица. Если `false` – все остальные поля объекта игнорируются        |
-| **defaultCompanyVat**        | **Float**   | НДС‑ставка по умолчанию для юрлица. Передаётся в ответе только если `useCompanyVat == true`                 |
+| **defaultCompanyVat**        | **Int**     | НДС‑ставка по умолчанию для юрлица. Передаётся в ответе только если `useCompanyVat == true`                 |
 | **defaultCompanyVatEnabled** | **Boolean** | Флаг, определяющий, следует ли выставлять «без НДС». Передаётся в ответе только если `useCompanyVat == true` |
 
 В POST / PUT запросах если `defaultCompanyVat` ≥ 0 и < 100 и `defaultCompanyVatEnabled == false` то для организации сохранится значение «без НДС». Если `defaultCompanyVat == 0` и `defaultCompanyVatEnabled == true` (или поле `defaultCompanyVatEnabled` не указано), тогда сохранится НДС = 0.   
