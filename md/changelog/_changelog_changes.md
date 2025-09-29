@@ -1,15 +1,23 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 25-09-2025
+**Добавлено**
+- Условие автоматического отключения JSON API пользователю в [Ограничения](#/restrictions#2-ogranicheniya)
+
+### 22-09-2025
+**Добавлено**
+- Поле `distributionRequired` в [Этап производства](#/dictionaries/processingstage#2-etap-proizvodstva)
+
 ### 15-09-2025
 **Добавлено**
-- Новый тип уведомлений [Завершение создания Вывода из оборота на основании Отгрузок](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zawershenie-sozdaniq-vywoda-iz-oborota-na-osnowanii-otgruzok).
+- Новый тип уведомлений [Завершение создания Вывода из оборота на основании Отгрузок](#/notification/notification-types-details#3-zavershenie-sozdaniya-vyvoda-iz-oborota-na-osnovanii-otgruzok).
 **Изменено**
-- Разрешен Способ вывода из оборота `PACKING` (Фасовка) для Категории маркированной продукции `PET_FOOD` (Корма для животных) в документ [Вывод из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii)
+- Разрешен Способ вывода из оборота `PACKING` (Фасовка) для Категории маркированной продукции `PET_FOOD` (Корма для животных) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
 
 ### 02-09-2025
 **Добавлено**
-- Поле `downloadPermanentHref` в [Изображениях](../dictionaries/#suschnosti-izobrazhenie-poluchit-spisok-izobrazhenij-towara-komplekta-i-modifikacii-poluchit-postoqnnuu-ssylku-na-izobrazhenie-towara-komplekta-ili-modifikacii)
+- Поле `downloadPermanentHref` в [Изображениях](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-ili-modifikacii)
 
 ### 25-08-2025
 **Добавлено**
@@ -17,11 +25,11 @@
 
 ### 12-08-2025
 **Добавлено**
-- Информация по работе с заголовком [Accept-Language](../#mojsklad-json-api-obschie-swedeniq-zagolowok-accept-language)
+- Информация по работе с заголовком [Accept-Language](#/general#3-zagolovok-accept-language)
 
 ### 07-08-2025
 **Добавлено**
-- Добавлен новый тип уведомлений [Новое событие в отслеживаемом объекте](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-nowoe-sobytie-w-otslezhiwaemom-ob-ekte)
+- Добавлен новый тип уведомлений [Новое событие в отслеживаемом объекте](#/notification/notification-types-details#3-novoe-sobytie-v-otslezhivaemom-obuekte)
 - Добавлена новая группа уведомлений [Отслеживаемые события](#/notification/notification-settings#3-struktura-dannyh)
 
 ### 31-07-2025
