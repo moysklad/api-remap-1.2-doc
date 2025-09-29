@@ -27,9 +27,21 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 25-09-2025
+#### Добавлено
+- Условие автоматического отключения JSON API пользователю в [Ограничения](../#mojsklad-json-api-ogranicheniq)
+
 ### 22-09-2025
+#### Добавлено
+- Поле `distributionRequired` в [Этап производства](../dictionaries/#suschnosti-jetap-proizwodstwa)
 #### Изменено
-- Доступ к отчету [Краткий отчет об остатках](https://dev.moysklad.ru/doc/api/remap/1.2/reports/#otchety-otchet-ostatki-kratkij-otchet-ob-ostatkah) расширен: помимо администраторов, его могут просматривать сотрудники с пермиссией Остатки.
+- Доступ к отчету [Краткий отчет об остатках](../reports/#otchety-otchet-ostatki-kratkij-otchet-ob-ostatkah) расширен: помимо администраторов, его могут просматривать сотрудники с пермиссией Остатки.
+
+### 15-09-2025
+#### Добавлено
+- Новый тип уведомлений [Завершение создания Вывода из оборота на основании Отгрузок](../notification/#uwedomleniq-podrobnoe-opisanie-tipow-uwedomlenij-zawershenie-sozdaniq-vywoda-iz-oborota-na-osnowanii-otgruzok).
+#### Изменено
+- Разрешен Способ вывода из оборота `PACKING` (Фасовка) для Категории маркированной продукции `PET_FOOD` (Корма для животных) в документ [Вывод из оборота](../documents/#dokumenty-vywod-kodow-markirowki-iz-oborota-vywod-iz-oborota-tip-markiruemoj-produkcii)
 
 ### 02-09-2025
 #### Добавлено
