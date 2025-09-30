@@ -117,7 +117,7 @@
 
 В POST / PUT запросах если `defaultCompanyVat` ≥ 0 и < 100 и `defaultCompanyVatEnabled == false` то для организации сохранится значение «без НДС». Если `defaultCompanyVat == 0` и `defaultCompanyVatEnabled == true` (или поле `defaultCompanyVatEnabled` не указано), тогда сохранится НДС = 0.   
 
-В GET запросах, если для компании НДС по умолчанию ≥ 0 и < 100 (включая 0), то в `companyVat` вернётся `defaultCompanyVat` = текущее значение НДС и `defaultCompanyVatEnabled = true`. Если НДС по умолчанию -- «без НДС», тогда в `companyVat` вернётся `defaultCompanyVatEnabled = false`, а поле `defaultCompanyVat` будет отсутствовать.
+В GET запросах, если для компании НДС по умолчанию ≥ 0 и < 100 (включая 0), то в `companyVat__ru` вернётся `defaultCompanyVat` = текущее значение НДС и `defaultCompanyVatEnabled = true`. Если НДС по умолчанию -- «без НДС», тогда в `companyVat__ru` вернётся `defaultCompanyVatEnabled = false`, а поле `defaultCompanyVat` будет отсутствовать.
 
 ##### Подписи и печать
 
