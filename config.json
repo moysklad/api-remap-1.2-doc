@@ -1,0 +1,953 @@
+[
+  {
+    "title": "МойСклад JSON API",
+    "level": 1,
+    "folderPath": "md",
+    "children": [
+      {
+        "title": "Общие Сведения",
+        "level": 2,
+        "folderPath": "./_general.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Ограничения",
+        "level": 2,
+        "folderPath": "./_restrictions.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Асинхронный обмен",
+        "level": 2,
+        "folderPath": "./_async.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Ошибки",
+        "level": 2,
+        "folderPath": "./_errors.md",
+        "children": [
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Сущности",
+    "level": 1,
+    "folderPath": "./dictionaries/_assortment.md",
+    "children": [
+      {
+        "title": "Ассортимент",
+        "level": 2,
+        "folderPath": "./dictionaries/_assortment.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Бонусная операция",
+        "level": 2,
+        "folderPath": "./dictionaries/_bonus_operation.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Бонусная программа",
+        "level": 2,
+        "folderPath": "./dictionaries/_bonus_program.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Валюта",
+        "level": 2,
+        "folderPath": "./dictionaries/_currency.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Вебхуки",
+        "level": 2,
+        "folderPath": "./dictionaries/_webhook.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Вебхук на изменение остатков",
+        "level": 2,
+        "folderPath": "./dictionaries/_webhookstock.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Грузовая таможенная декларация (ГТД)",
+        "level": 2,
+        "folderPath": "./dictionaries/_gtd.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Группа техкарт",
+        "level": 2,
+        "folderPath": "./dictionaries/_processingplanfolder.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Группа товаров",
+        "level": 2,
+        "folderPath": "./dictionaries/_productFolder.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Договор",
+        "level": 2,
+        "folderPath": "./dictionaries/_contract.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Единица измерения",
+        "level": 2,
+        "folderPath": "./dictionaries/_uom.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Задача",
+        "level": 2,
+        "folderPath": "./dictionaries/_task.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Изображение",
+        "level": 2,
+        "folderPath": "./dictionaries/_images.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Канал продаж",
+        "level": 2,
+        "folderPath": "./dictionaries/_saleschannel.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Кассир",
+        "level": 2,
+        "folderPath": "./dictionaries/_cashier.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Коды маркировки",
+        "level": 2,
+        "folderPath": "./dictionaries/_tracking_code.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Комплект",
+        "level": 2,
+        "folderPath": "./dictionaries/_bundle.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Контрагент",
+        "level": 2,
+        "folderPath": "./dictionaries/_counterparty.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Лента событий",
+        "level": 2,
+        "folderPath": "./dictionaries/_eventfeed.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Модификация",
+        "level": 2,
+        "folderPath": "./dictionaries/_variant.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Настройки компании",
+        "level": 2,
+        "folderPath": "./dictionaries/_companysettings.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Настройки пользователя",
+        "level": 2,
+        "folderPath": "./dictionaries/_usersettings.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Отдел",
+        "level": 2,
+        "folderPath": "./dictionaries/_group.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Печать этикеток и ценников",
+        "level": 2,
+        "folderPath": "./dictionaries/_labels.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Подписка компании",
+        "level": 2,
+        "folderPath": "./dictionaries/_companysubscription.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Пользовательские роли",
+        "level": 2,
+        "folderPath": "./dictionaries/_custom_role.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Пользовательский справочник",
+        "level": 2,
+        "folderPath": "./dictionaries/_customentity.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Проект",
+        "level": 2,
+        "folderPath": "./dictionaries/_project.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Регион",
+        "level": 2,
+        "folderPath": "./dictionaries/_region.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Серийный номер",
+        "level": 2,
+        "folderPath": "./dictionaries/_thing.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Серия",
+        "level": 2,
+        "folderPath": "./dictionaries/_consignment.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Скидки",
+        "level": 2,
+        "folderPath": "./dictionaries/_discount.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Склад",
+        "level": 2,
+        "folderPath": "./dictionaries/_store.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Сотрудник",
+        "level": 2,
+        "folderPath": "./dictionaries/_employee.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Сохраненные фильтры",
+        "level": 2,
+        "folderPath": "./dictionaries/_named_filter.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Ставка НДС",
+        "level": 2,
+        "folderPath": "./dictionaries/_taxrate.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Статусы документов",
+        "level": 2,
+        "folderPath": "./dictionaries/_states.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Статья расходов",
+        "level": 2,
+        "folderPath": "./dictionaries/_expenseitem.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Страна",
+        "level": 2,
+        "folderPath": "./dictionaries/_country.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Техкарта",
+        "level": 2,
+        "folderPath": "./dictionaries/_processingplan.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Техпроцесс",
+        "level": 2,
+        "folderPath": "./dictionaries/_processingprocess.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Типы цен",
+        "level": 2,
+        "folderPath": "./dictionaries/_pricetypes.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Товар",
+        "level": 2,
+        "folderPath": "./dictionaries/_product.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Точка продаж",
+        "level": 2,
+        "folderPath": "./dictionaries/_retailstore.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Услуга",
+        "level": 2,
+        "folderPath": "./dictionaries/_service.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Файлы",
+        "level": 2,
+        "folderPath": "./dictionaries/_files.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Характеристики модификаций",
+        "level": 2,
+        "folderPath": "./dictionaries/_characteristic.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Шаблон печатной формы",
+        "level": 2,
+        "folderPath": "./dictionaries/_template.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Юрлицо",
+        "level": 2,
+        "folderPath": "./dictionaries/_organization.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Этап производства",
+        "level": 2,
+        "folderPath": "./dictionaries/_processingstage.md",
+        "children": [
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Документы",
+    "level": 1,
+    "folderPath": "./documents/_common_info.md",
+    "children": [
+      {
+        "title": "Общие сведения",
+        "level": 2,
+        "folderPath": "./documents/_common_info.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Печать документов",
+        "level": 2,
+        "folderPath": "./documents/_print.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Публикация документов",
+        "level": 2,
+        "folderPath": "./documents/_publication.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Автозаполнение",
+        "level": 2,
+        "folderPath": "./documents/_autofill.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Внесение денег",
+        "level": 2,
+        "folderPath": "./documents/_retaildrawercashin.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Внутренний заказ",
+        "level": 2,
+        "folderPath": "./documents/_internalOrder.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Возврат покупателя",
+        "level": 2,
+        "folderPath": "./documents/_sales_return.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Возврат поставщику",
+        "level": 2,
+        "folderPath": "./documents/_purchase_return.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Возврат предоплаты",
+        "level": 2,
+        "folderPath": "./documents/_prepayment_return.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Входящий платеж",
+        "level": 2,
+        "folderPath": "./documents/_payment_in.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Вывод кодов маркировки из оборота",
+        "level": 2,
+        "folderPath": "./documents/_retireorder.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Выданный отчет комиссионера",
+        "level": 2,
+        "folderPath": "./documents/_commissionreportout.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Выплата денег",
+        "level": 2,
+        "folderPath": "./documents/_retaildrawercashout.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Выполнение этапа производства",
+        "level": 2,
+        "folderPath": "./documents/_productionStageCompletion.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Заказ кодов маркировки",
+        "level": 2,
+        "folderPath": "./documents/_emissionorder.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Заказ на производство",
+        "level": 2,
+        "folderPath": "./documents/_processingorder.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Заказ покупателя",
+        "level": 2,
+        "folderPath": "./documents/_customerOrder.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Заказ поставщику",
+        "level": 2,
+        "folderPath": "./documents/_purchaseOrder.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Инвентаризация",
+        "level": 2,
+        "folderPath": "./documents/_inventory.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Исходящий платеж",
+        "level": 2,
+        "folderPath": "./documents/_payment_out.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Корректировка взаиморасчетов",
+        "level": 2,
+        "folderPath": "./documents/_counterpartyadjustment.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Оприходование",
+        "level": 2,
+        "folderPath": "./documents/_enter.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Отгрузка",
+        "level": 2,
+        "folderPath": "./documents/_demand.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Перемещение",
+        "level": 2,
+        "folderPath": "./documents/_move.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Полученный отчет комиссионера",
+        "level": 2,
+        "folderPath": "./documents/_commissionreportin.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Прайс-лист",
+        "level": 2,
+        "folderPath": "./documents/_pricelist.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Предоплата",
+        "level": 2,
+        "folderPath": "./documents/_prepayment.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Приемка",
+        "level": 2,
+        "folderPath": "./documents/_supply.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Приходный ордер",
+        "level": 2,
+        "folderPath": "./documents/_cashin.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Производственное задание",
+        "level": 2,
+        "folderPath": "./documents/_productionTask.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Расходный ордер",
+        "level": 2,
+        "folderPath": "./documents/_cashout.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Розничная продажа",
+        "level": 2,
+        "folderPath": "./documents/_retaildemand.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Розничная смена",
+        "level": 2,
+        "folderPath": "./documents/_retailshift.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Розничный возврат",
+        "level": 2,
+        "folderPath": "./documents/_retail_sales_return.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Списание",
+        "level": 2,
+        "folderPath": "./documents/_loss.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Счет покупателю",
+        "level": 2,
+        "folderPath": "./documents/_invoice_out.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Счет поставщика",
+        "level": 2,
+        "folderPath": "./documents/_invoice_in.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Счет-фактура выданный",
+        "level": 2,
+        "folderPath": "./documents/_factureout.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Счет-фактура полученный",
+        "level": 2,
+        "folderPath": "./documents/_facturein.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Техоперация",
+        "level": 2,
+        "folderPath": "./documents/_processing.md",
+        "children": [
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Отчеты",
+    "level": 1,
+    "folderPath": "./reports/_report_stock.md",
+    "children": [
+      {
+        "title": "Отчет Остатки",
+        "level": 2,
+        "folderPath": "./reports/_report_stock.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Отчет Прибыльность",
+        "level": 2,
+        "folderPath": "./reports/_report_pnl.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Отчет Деньги",
+        "level": 2,
+        "folderPath": "./reports/_report_money.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Показатели продаж и заказов",
+        "level": 2,
+        "folderPath": "./reports/_report_sales_orders.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Отчет Показатели контрагентов",
+        "level": 2,
+        "folderPath": "./reports/_report_counterparty.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Отчет Обороты",
+        "level": 2,
+        "folderPath": "./reports/_report_turnover.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Отчет По документам номенклатуры",
+        "level": 2,
+        "folderPath": "./reports/_report_by_operations.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Показатели",
+        "level": 2,
+        "folderPath": "./reports/_dashboard.md",
+        "children": [
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Аудит",
+    "level": 1,
+    "folderPath": "./audit/_audit.md",
+    "children": [
+      {
+        "title": "Аудит",
+        "level": 2,
+        "folderPath": "./audit/_audit.md",
+        "children": [
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Уведомления",
+    "level": 1,
+    "folderPath": "./notification/_notifications.md",
+    "children": [
+      {
+        "title": "Лента уведомлений",
+        "level": 2,
+        "folderPath": "./notification/_notifications.md",
+        "children": []
+      },
+      {
+        "title": "Уведомление",
+        "level": 2,
+        "folderPath": "./notification/_notification.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Типы уведомлений",
+        "level": 2,
+        "folderPath": "./notification/_notification_types.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Подробное описание типов уведомлений",
+        "level": 2,
+        "folderPath": "./notification/_notification_types_details.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Настройки уведомлений",
+        "level": 2,
+        "folderPath": "./notification/_notification_settings.md",
+        "children": [
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Workbook",
+    "level": 1,
+    "folderPath": "./workbook/_workbook_first_steps.md",
+    "children": [
+      {
+        "title": "Что нужно знать для начала работы с JSON API",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_first_steps.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Фильтрация, листание, поиск и сортировка",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_filter_paging_search_sort.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Что такое expand",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_expand.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Вебхуки",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_webhooks.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Метаданные",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_meta.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Листание",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_paging.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Сортировка",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_sorting.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Работа с остатками",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_stock.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Публикация документов",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_publication.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Шаблоны печатной формы",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_print_templates.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Создание публикаций в JSON API",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_publication_creation.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Ссылки публикаций",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_publication_links.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Работа с дополнительными полями через JSON API",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_attributes_crud.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Работа с Изображениями в Товарах, Модификациях и Комплектах",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_images.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Работа с Файлами в Документах, Номенклатуре и Контрагентах",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_files.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Работа со Штрихкодами",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_barcode.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Работа с характеристиками в Модификациях",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_modification.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Работа с асинхронным обменом",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_async.md",
+        "children": [
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Список изменений",
+    "level": 1,
+    "folderPath": "./changelog/_changelog.md",
+    "children": [
+      {
+        "title": "Нотификация в изменениях API",
+        "level": 2,
+        "folderPath": "./changelog/_changelog.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Список последних изменений",
+        "level": 2,
+        "folderPath": "./changelog/_changelog_changes.md",
+        "children": [
+        ]
+      }
+    ]
+  }
+] 
