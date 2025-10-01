@@ -2194,6 +2194,7 @@ curl -X DELETE
 | **standardHourCost**     | Double                                                    |            | Стоимость нормо-часа<br>`+Обязательное при ответе`                                                                                                                  |
 | **standardHourUnit**     | Double                                                    |            | Нормо-часы единицы объема производства                                                                                                                              |
 | **plannedEndDate**       | DateTime                                                  |            | Плановая дата завершения этапа                                                                                                                                      |
+
 Особенности:
 Для сущности действуют ограничения на expand: для поля **productionRow** недоступен expand вложенных полей.
 
