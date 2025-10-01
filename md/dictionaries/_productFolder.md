@@ -489,53 +489,13 @@ curl -X GET
   "meta": {
     "href": "https://api.moysklad.ru/api/remap/1.2/entity/productfolder/metadata",
     "mediaType": "application/json"
-  },
-  "attributes": [
-    {
-      "id": "5290a290-0313-11e6-9464-e4de00000020",
-      "name": "attribute_name",
-      "type": "boolean",
-      "required": false
-    }
-  ]
+  }
 }
 ```
   
 ### Отдельное доп. поле
 
-**Параметры**
-
-| Параметр | Описание                                                                          |
-| :------- | :-------------------------------------------------------------------------------- |
-| **id**   | `string` (required) *Example: 5290a290-0313-11e6-9464-e4de00000020* id Доп. поля. |
-
-#### Запросы - Отдельное доп. поле
- 
-> Запрос на получение информации по отдельному дополнительному полю.
-
-```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/productfolder/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельного доп. поля.
-
-```json
-{
-  "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productfolder/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020",
-    "type": "attributemetadata",
-    "mediaType": "application/json"
-  },
-  "id": "5290a290-0313-11e6-9464-e4de00000020",
-  "name": "attribute_name",
-  "type": "boolean",
-  "required": false
-}
-```
+У группы товаров нет допполей.
  
 ### Запросы - Группа товаров 
 
