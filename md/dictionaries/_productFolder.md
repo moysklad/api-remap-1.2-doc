@@ -459,41 +459,8 @@ curl -X POST
     "info":"Сущность 'productfolder' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
   }
 ]
-```  
-
-### Метаданные Групп товаров 
- 
-Запрос на получение метаданных Групп товаров. Результат - объект JSON, включающий в себя:
-
-| Название       | Тип                                                       | Описание                                               |
-| -------------- | :-------------------------------------------------------- | :----------------------------------------------------- |
-| **meta**       | [Meta](#/general#3-metadannye) | Метаданные Групп товаров<br>`+Обязательное при ответе` |
-
-> Получить метаданные Групп товаров
-
-```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/productfolder/metadata"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление метаданных Групп товаров.
-
-```json
-{
-  "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productfolder/metadata",
-    "mediaType": "application/json"
-  }
-}
-```
-  
-### Отдельное доп. поле
-
-У группы товаров нет допполей.
- 
 ### Запросы - Группа товаров 
 
 **Параметры**
