@@ -459,84 +459,8 @@ curl -X POST
     "info":"Сущность 'productfolder' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
   }
 ]
-```  
-
-### Метаданные Групп товаров 
- 
-Запрос на получение метаданных Групп товаров. Результат - объект JSON, включающий в себя:
-
-| Название       | Тип                                                       | Описание                                               |
-| -------------- | :-------------------------------------------------------- | :----------------------------------------------------- |
-| **meta**       | [Meta](#/general#3-metadannye) | Метаданные Групп товаров<br>`+Обязательное при ответе` |
-| **attributes** | Array(Object)                                             | Коллекция доп. полей                                   |
-
-Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](#/general#3-rabota-s-dopolnitelnymi-polyami).
-
-> Получить метаданные Групп товаров
-
-```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/productfolder/metadata"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление доп. полей Групп товаров.
-
-```json
-{
-  "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productfolder/metadata",
-    "mediaType": "application/json"
-  },
-  "attributes": [
-    {
-      "id": "5290a290-0313-11e6-9464-e4de00000020",
-      "name": "attribute_name",
-      "type": "boolean",
-      "required": false
-    }
-  ]
-}
-```
-  
-### Отдельное доп. поле
-
-**Параметры**
-
-| Параметр | Описание                                                                          |
-| :------- | :-------------------------------------------------------------------------------- |
-| **id**   | `string` (required) *Example: 5290a290-0313-11e6-9464-e4de00000020* id Доп. поля. |
-
-#### Запросы - Отдельное доп. поле
- 
-> Запрос на получение информации по отдельному дополнительному полю.
-
-```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/productfolder/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление отдельного доп. поля.
-
-```json
-{
-  "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/entity/productfolder/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020",
-    "type": "attributemetadata",
-    "mediaType": "application/json"
-  },
-  "id": "5290a290-0313-11e6-9464-e4de00000020",
-  "name": "attribute_name",
-  "type": "boolean",
-  "required": false
-}
-```
- 
 ### Запросы - Группа товаров 
 
 **Параметры**
