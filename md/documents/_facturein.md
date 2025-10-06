@@ -44,7 +44,7 @@
 
 | Название           | Тип      | Описание       |
 | ------------------ | :------- | :------------- |
-| **incomingNumber** | Int      | Входящий номер |
+| **incomingNumber** | String(255)      | Входящий номер |
 | **incomingDate**   | DateTime | Входящая дата  |
 
 О работе с доп. полями Счетов-фактур можно прочитать [здесь](#/general#3-rabota-s-dopolnitelnymi-polyami)
