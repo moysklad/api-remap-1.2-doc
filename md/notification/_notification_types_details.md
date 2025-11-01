@@ -2013,8 +2013,8 @@ curl -X GET
   "description": "@Администратор Какой цвет ленточки?",
   "task": {
     "meta": {
-      "href": "http://localhost/api/remap/1.2/entity/task/54c55c03-b671-11f0-9be5-430a00000031",
-      "metadataHref": "http://localhost/api/remap/1.2/entity/task/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/9017ee1b-b671-11f0-27bc-f26c0000000d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
       "type": "task",
       "mediaType": "application/json"
     },
