@@ -916,13 +916,13 @@ curl -X GET
 
 | Параметр | Описание                                                                       |
 | :------- | :----------------------------------------------------------------------------- |
-| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id задачи. |
+| **id**   | `string` (required) *Example: 47bc1d9b-8b87-11e8-d9ce-84d900000017* id задачи. |
 
 > Пример создания одного комментария к Задаче.
 
 ```shell
   curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/task/7944ef04-f831-11e5-7a69-971500188b19/notes"
+    "https://api.moysklad.ru/api/remap/1.2/entity/task/47bc1d9b-8b87-11e8-d9ce-84d900000017/notes"
     -H "Authorization: Basic <Credentials>"
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
@@ -961,7 +961,7 @@ curl -X GET
 
 ```shell
   curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/task/7944ef04-f831-11e5-7a69-971500188b19/notes"
+    "https://api.moysklad.ru/api/remap/1.2/entity/task/47bc1d9b-8b87-11e8-d9ce-84d900000017/notes"
     -H "Authorization: Basic <Credentials>"
     -H "Accept-Encoding: gzip"
     -H "Content-Type: application/json"
@@ -1016,6 +1016,57 @@ curl -X GET
     "text": "текст комментрания 5",
     "moment": "2018-07-19 22:32:59"
   }
+]
+```
+
+> Пример создания комментария к Задаче с упоминанием.
+
+```shell
+  curl -X POST
+    "https://api.moysklad.ru/api/remap/1.2/entity/task/47bc1d9b-8b87-11e8-d9ce-84d900000017/notes"
+    -H "Authorization: Basic <Credentials>"
+    -H "Accept-Encoding: gzip"
+    -H "Content-Type: application/json"
+      -d '{
+            "text": "Привет, {{employee;861d34a9-f1b3-11ee-ac12-00110000004e}}! Задача актуальна?"
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного комментария отдельной Задачи.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/47bc1d9b-8b87-11e8-d9ce-84d900000017/notes/5528751f-8b8a-11e8-d9ce-84d90000000f",
+      "type": "tasknote",
+      "mediaType": "application/json"
+    },
+        "id": "2050793f-b8c6-11f0-0a80-204500000006",
+        "accountId": "5ae35472-b8c5-11f0-0a82-042d00000002",
+        "author": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/5c32c7bb-b8c5-11f0-0a83-01ce00000055",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                "type": "employee",
+                "mediaType": "application/json",
+                "uuidHref": "https://online-crm-2.testms-test.lognex.ru/app/#employee/edit?id=5c32c7bb-b8c5-11f0-0a83-01ce00000055"
+            }
+        },
+        "text": "Привет, {{employee;861d34a9-f1b3-11ee-ac12-00110000004e}}! Задача актуальна?",
+        "moment": "2025-11-01 18:02:33.338",
+        "files": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/47bc1d9b-8b87-11e8-d9ce-84d900000017/notes/2050793f-b8c6-11f0-0a80-204500000006/files",
+                "type": "files",
+                "mediaType": "application/json",
+                "size": 0,
+                "limit": 1000,
+                "offset": 0
+            }
+        }
+    }
 ]
 ```
 
