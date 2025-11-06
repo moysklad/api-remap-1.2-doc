@@ -3,7 +3,7 @@
 
 ### 05-11-2025
 #### Добавлено
-- Поле `cheque` в [Розничную продажу](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha)
+- Поле `cheque` в [Розничную продажу](#/documents/retaildemand#2-roznichnaya-prodazha)
 
 ### 30-10-2025
 **Добавлено**
