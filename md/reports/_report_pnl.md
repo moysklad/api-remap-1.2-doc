@@ -545,6 +545,7 @@ curl -X GET
 | **offset**                     | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                                                            |
 | **momentFrom**                 | `date` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#/general#3-filtraciya-vyborki-s-pomoshyu-parametra-filter). |
 | **momentTo**                   | `date` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#/general#3-filtraciya-vyborki-s-pomoshyu-parametra-filter). |
+
 При отсутствии параметров **momentFrom** и **momentTo** отображаются отчеты за последний месяц.  
 При отсутствии параметра **momentFrom** и указании параметра **momentTo** отображаются отчеты с начала текущего года по **momentTo**.  
 При отсутствии параметра **momentTo** и указании параметра **momentFrom** отображаются отчеты с **momentFrom** по текущий день.  
@@ -660,7 +661,9 @@ curl -X GET
 Примеры фильтрации:
 
 - `filter=product=https://api.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044`
+
 - `filter=product=https://api.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;product=https://api.moysklad.ru/api/remap/1.2/entity/service/706b9cd3-8552-11e6-8a84-bae500000045;product=https://api.moysklad.ru/api/remap/1.2/entity/bundle/7a5f0ed5-8552-11e6-8a84-bae500000046`
+
 - `filter=productFolder=https://api.moysklad.ru/api/remap/1.2/entity/productfolder/c56d0702-85c7-11e9-ac12-000d000000b1`
 - `filter=productFolder=https://api.moysklad.ru/api/remap/1.2/entity/productfolder/c56d0702-85c7-11e9-ac12-000d000000b1;withSubFolders=false`
 - `filter=productFolder=https://api.moysklad.ru/api/remap/1.2/entity/productfolder/c56d0702-85c7-11e9-ac12-000d000000b1;productFolder=https://api.moysklad.ru/api/remap/1.2/entity/productfolder/c56d0702-85c7-11e9-ac12-000d000000b2`
@@ -674,7 +677,9 @@ curl -X GET
 - `filter=entityType=demand`
 - `filter=supplier=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
 - `filter=salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
+
 - `filter=salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9;salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/ea012b09-4df3-439b-acf7-7d0464fbf603`
+
 - `filter=product=https://api.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://api.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://api.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://api.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://api.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030;salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
 
 ### Получить Прибыльность по покупателям
@@ -687,6 +692,7 @@ curl -X GET
 | **offset**                     | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                                                            |
 | **momentFrom**                 | `date` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#/general#3-filtraciya-vyborki-s-pomoshyu-parametra-filter). |
 | **momentTo**                   | `date` (optional) *Example: 2016-04-15 15:48:46* Один из [параметров фильтрации выборки](#/general#3-filtraciya-vyborki-s-pomoshyu-parametra-filter). |
+
 При отсутствии параметров **momentFrom** и **momentTo** отображаются отчеты за последний месяц.  
 При отсутствии параметра **momentFrom** и указании параметра **momentTo** отображаются отчеты с начала текущего года по **momentTo**.  
 При отсутствии параметра **momentTo** и указании параметра **momentFrom** отображаются отчеты с **momentFrom** по текущий день.  
