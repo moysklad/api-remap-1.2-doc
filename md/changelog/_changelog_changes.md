@@ -1,10 +1,6 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 07-11-2025
-**Добавлено**
-- Ошибка [26115](https://dev.moysklad.ru/doc/api/remap/1.2/#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya)
-
 ### 30-10-2025
 **Добавлено**
 - Ошибка [19005](https://dev.moysklad.ru/doc/api/remap/1.2/#/errors#3-kody-oshibok-dlya-vozvratov)
