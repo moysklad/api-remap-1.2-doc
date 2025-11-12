@@ -1,9 +1,13 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
-### 07-11-2025
+### 12-11-2025
 **Добавлено**
 - Ошибка [26115](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya)
+
+### 05-11-2025
+#### Добавлено
+- Поле `cheque` в [Розничную продажу](#/documents/retaildemand#2-roznichnaya-prodazha)
 
 ### 30-10-2025
 **Добавлено**
