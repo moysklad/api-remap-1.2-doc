@@ -23,7 +23,7 @@
   
 ### 01-10-2025
 **Добавлено**
-- Настройки НДС для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-polq-rekwizitow)
+- Настройки НДС для [юридических лиц](#/dictionaries/organization#4-polya-rekvizitov)
 
 ### 25-09-2025
 **Добавлено**
@@ -323,7 +323,7 @@
 
 ### 16-07-2024
 **Добавлено**
-- Добавлено описание получения ссылки на [изображение](#/dictionaries/images#3-poluchit-ssylku-na-izobrazhenie-tovara-ili-komplekta-ili-modifikacii)
+- Добавлено описание получения ссылки на [изображение](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-ili-modifikacii)
 
 ### 12-07-2024
 **Добавлен**
@@ -1324,7 +1324,7 @@
 - Добавлена возможность создавать, изменять и удалять [Отделы](#/dictionaries/group#2-otdel)
 
 **Добавлено**
-- Добавлено заполнение себестоимости в эндпоинт [Автозаполнения](#/documents/autofill#3-zapros-avtozapoleniya-sebestoimosti)
+- Добавлено заполнение себестоимости в эндпоинт [Автозаполнения](#/documents/autofill#3-zapros-avtozapolneniya-sebestoimosti)
 
 ### 20-10-2020
 **Добавлено**
