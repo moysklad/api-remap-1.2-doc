@@ -5,6 +5,18 @@
 **Изменено**
 - Значение поля `name` в сущности [склада](#/dictionaries/#suschnosti-sklad) должно быть уникальным.
 
+### 13-11-2025
+**Добавлено**
+- Ошибка [26115](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya)
+
+### 05-11-2025
+#### Добавлено
+- Поле `cheque` в [Розничную продажу](#/documents/retaildemand#2-roznichnaya-prodazha)
+
+### 30-10-2025
+**Добавлено**
+- Ошибка [19005](https://dev.moysklad.ru/doc/api/remap/1.2/#/errors#3-kody-oshibok-dlya-vozvratov)
+
 ### 09-10-2025
 **Добавлено**
 - К каждому заголовку добавлена кнопка «Копировать для LLM» — для удобства в генерации промптов и работы с моделями.
