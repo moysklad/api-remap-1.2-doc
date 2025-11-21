@@ -3,7 +3,7 @@
 
 ### 18-11-2025
 **Изменено**
-- Значение поля `name` в сущности [склада](#/dictionaries/#suschnosti-sklad) должно быть уникальным.
+- Значение поля `name` в сущности [склада](#/dictionaries/store#2-sklad) должно быть уникальным.
 
 ### 13-11-2025
 **Добавлено**
@@ -15,7 +15,7 @@
 
 ### 30-10-2025
 **Добавлено**
-- Ошибка [19005](https://dev.moysklad.ru/doc/api/remap/1.2/#/errors#3-kody-oshibok-dlya-vozvratov)
+- Ошибка [19005](#/errors#3-kody-oshibok-dlya-vozvratov)
 
 ### 09-10-2025
 **Добавлено**
