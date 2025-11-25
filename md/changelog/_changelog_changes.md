@@ -1,6 +1,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 18-11-2025
+**Изменено**
+- Значение поля `name` в сущности [склада](#/dictionaries/store#2-sklad) должно быть уникальным.
+
 ### 17-11-2025
 **Добавлено**
 - Модуль `mod__nct__kz` с информацией из Национального каталога товаров в сущность [Товар](#/dictionaries/product#3-tovary) `+Только для Казахстана`
@@ -15,7 +19,7 @@
 
 ### 30-10-2025
 **Добавлено**
-- Ошибка [19005](https://dev.moysklad.ru/doc/api/remap/1.2/#/errors#3-kody-oshibok-dlya-vozvratov)
+- Ошибка [19005](#/errors#3-kody-oshibok-dlya-vozvratov)
 
 ### 09-10-2025
 **Добавлено**
@@ -27,7 +31,7 @@
   
 ### 01-10-2025
 **Добавлено**
-- Настройки НДС для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-polq-rekwizitow)
+- Настройки НДС для [юридических лиц](#/dictionaries/organization#4-polya-rekvizitov)
 
 ### 25-09-2025
 **Добавлено**
@@ -327,7 +331,7 @@
 
 ### 16-07-2024
 **Добавлено**
-- Добавлено описание получения ссылки на [изображение](#/dictionaries/images#3-poluchit-ssylku-na-izobrazhenie-tovara-ili-komplekta-ili-modifikacii)
+- Добавлено описание получения ссылки на [изображение](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-ili-modifikacii)
 
 ### 12-07-2024
 **Добавлен**
@@ -1328,7 +1332,7 @@
 - Добавлена возможность создавать, изменять и удалять [Отделы](#/dictionaries/group#2-otdel)
 
 **Добавлено**
-- Добавлено заполнение себестоимости в эндпоинт [Автозаполнения](#/documents/autofill#3-zapros-avtozapoleniya-sebestoimosti)
+- Добавлено заполнение себестоимости в эндпоинт [Автозаполнения](#/documents/autofill#3-zapros-avtozapolneniya-sebestoimosti)
 
 ### 20-10-2020
 **Добавлено**
