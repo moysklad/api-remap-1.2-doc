@@ -3,7 +3,7 @@
 
 ### 01-12-2025
 **Добавлено**
-- Механизм упоминаний в [комментарии к задаче](#/dictionaries/task#4-kommentarii-zadachi)
+- Механизм упоминаний в [комментарии к задаче](#/dictionaries/task#3-kommentarii-zadachi)
 - [Уведомления](#/notification/notification-types-details#3-novoe-upominanie-v-kommentaryah-zadach) по упоминаниям в комментариях задач
 
 ### 18-11-2025
