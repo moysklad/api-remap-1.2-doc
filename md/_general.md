@@ -2879,7 +2879,7 @@ curl -X PUT
 
 #### Применяется в:
 * [Остатки в документах](#/general#3-ostatki-i-sebestoimost-v-poziciyah-dokumentov)
-* [Прослеживаемость товаров в отгрузках](#/documents/demand#4-informaciya-o-proslezhivaemosti-importnyh-tovarov)
+* [Прослеживаемость товаров в отгрузках](#/documents/demand#4-informaciya-o-dvizhenii-importnyh-tovarov)
 * [Прослеживаемость товаров в списаниях](#/documents/loss#4-informaciya-o-proslezhivaemosti-importnyh-tovarov)
 * [Прослеживаемость товаров в розничной продаже](#/documents/retaildemand#4-informaciya-o-proslezhivaemosti-importnyh-tovarov)
 * [Неснижаемый остаток в товаре](#/dictionaries/product#5-nesnizhaemyj-ostatok)
