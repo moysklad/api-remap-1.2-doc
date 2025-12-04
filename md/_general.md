@@ -33,23 +33,20 @@
   </style>
 
   <div class="banner">
-    <h4>Изменение стоимости лимита запросов отчета Остатки</h4>
+    <h4>Внимание: Повышается расход лимита API на запросы остатков</h4>
+    <p><strong>Какие отчеты затронуты?</strong></p>
     <ul>
-      С 15 декабря 2025 года изменяется вес API-запросов:
       <li>
-        <code>GET https://api.moysklad.ru/api/remap/1.2/report/stock/all</code>  
-        <br />
-        — 2 единицы с 15 декабря 2025 года  
-        <br />
-        — 5 единиц с января 2026 года
+        <code>GET https://api.moysklad.ru/api/remap/1.2/report/stock/all</code>
       </li>
       <li>
-        <code>GET https://api.moysklad.ru/api/remap/1.2/report/stock/bystore</code>  
-        <br />
-        — 2 единицы с 15 декабря 2025 года  
-        <br />
-        — 5 единиц с января 2026 года
+        <code>GET https://api.moysklad.ru/api/remap/1.2/report/stock/bystore</code>
       </li>
+    </ul>
+    <p><strong>График изменений</strong></p>
+    <ul>
+      <li>2 единицы лимита за запрос (вместо 1) с 15 декабря 2025 года</li>
+      <li>5 единиц лимита за запрос с февраля 2026 года</li>
     </ul>
   </div>
 </div>
