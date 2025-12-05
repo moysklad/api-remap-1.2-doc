@@ -1,6 +1,12 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 05-10-2025
+**Изменено**
+- Ошибка [22003](#/errors#3-kody-oshibok-dlya-platezhej)
+- Поле [Без закрывающих документов](#/documents/cashout#2-rashodnyj-order) добавлена поддержка CUD операций.
+- Поле [Без закрывающих документов](#/documents/payment-out#2-ishodyashij-platezh) добавлена поддержка CUD операций.
+
 ### 03-12-2025
 **Добавлено**
 - Механизм упоминаний в [комментарии к задаче](#/dictionaries/task#3-kommentarii-zadachi)
