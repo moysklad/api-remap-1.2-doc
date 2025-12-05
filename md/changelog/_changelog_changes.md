@@ -1,6 +1,12 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 03-12-2025
+**Добавлено**
+- Механизм упоминаний в [комментарии к задаче](#/dictionaries/task#3-kommentarii-zadachi)
+- [Уведомления](#/notification/notification-types-details#3-novoe-upominanie-v-kommentariyah-zadach) по упоминаниям в комментариях задач
+- Ошибка [3046](#/errors#3-obshie-oshibki-validacii)
+
 ### 18-11-2025
 **Изменено**
 - Значение поля `name` в сущности [склада](#/dictionaries/store#2-sklad) должно быть уникальным.
