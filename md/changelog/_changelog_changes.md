@@ -4,8 +4,7 @@
 ### 05-12-2025
 **Изменено**
 - Ошибка [22003](#/errors#3-kody-oshibok-dlya-platezhej)
-- Поле [Без закрывающих документов](#/documents/cashout#2-rashodnyj-order) добавлена поддержка CUD операций.
-- Поле [Без закрывающих документов](#/documents/payment-out#2-ishodyashij-platezh) добавлена поддержка CUD операций.
+- Поле **noClosingDocs** в [Расходном ордере](#/documents/cashout#2-rashodnyj-order) и [Исходящем платеже](#/documents/payment-out#2-ishodyashij-platezh) теперь доступно для редактирования.
 
 ### 03-12-2025
 **Добавлено**
