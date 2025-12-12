@@ -252,7 +252,7 @@ curl --compressed -X GET  \
 
 ```shell
 curl --compressed -X POST  \
-  'https://api.moysklad.ru/api/remap/1.2/entity/bundle?expand=components' 
+  'https://api.moysklad.ru/api/remap/1.2/entity/bundle?expand=components' \
   -H 'Authorization: Bearer <Access-Token>' \
   -H "Accept-Encoding: gzip" \
   -H 'Cache-Control: no-cache'  \
