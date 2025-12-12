@@ -113,6 +113,7 @@
 | **STATE_CONTRACT**       | Продажа по государственному (муниципальному) контракту |
 | **UTILIZATION**          | Утилизация                                             |
 | **VENDING**              | Продажа через вендинговый аппарат                      |
+| **VETERINARY_USE**       | Использование для ветеринарного применения             |
 
 #### Тип документа-основания
 
@@ -481,41 +482,42 @@ curl -X GET
 #### Особенности поведения при создании Вывода из оборота
 Связь допустимых значений поля **retireOrderType** в зависимости от **trackingType**
 
-| **trackingType**                                                | **retireOrderType**                                                                                                                                                                                                      |
-|-----------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **SHOES, LP_CLOTHES, LP_LINENS, PERFUMERY, ELECTRONICS, TIRES** | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, RETURN_TO_INDIVIDUAL                         |
-| **MILK**                                                        | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, PRODUCTION_USE, EXPIRATION, VENDING, PACKING |
-| **FOOD_SUPPLEMENT, SANITIZER, MEDICAL_DEVICES**                 | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT                                               |
-| **BICYCLE**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, RETURN_TO_INDIVIDUAL, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE                      |
-| **VETPHARMA**                                                   | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION                                |
-| **SOFT_DRINKS**                                                 | RETAIL_SALE, EXPORT_OUTSIDE_EEU, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, OWN_USE, PACKING, PRODUCTION_USE, STATE_CONTRACT, VENDING, DONATION                                                                            |
-| **WATER**                                                       | RETAIL_SALE, EXPORT_OUTSIDE_EEU, CONFISCATE_SALE, DESTRUCTION, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, DAMAGE_AND_LOSS, OWN_USE, PRODUCTION_USE, STATE_CONTRACT, VENDING, BY_SAMPLES, UTILIZATION, DONATION             |
-| **SEAFOOD**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION, VENDING                       |
-| **BEER_ALCOHOL**                                                | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, MISMATCH                                  |
-| **VEGETABLE_OIL**                                               | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, PACKING, DISTANCE, BY_SAMPLES    |
-| **PET_FOOD**                                                    | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, DISTANCE, BY_SAMPLES             |
+| **trackingType**                                                | **retireOrderType**                                                                                                                                                                                                          |
+|-----------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **SHOES, LP_CLOTHES, LP_LINENS, PERFUMERY, ELECTRONICS, TIRES** | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, RETURN_TO_INDIVIDUAL                             |
+| **MILK**                                                        | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, PRODUCTION_USE, EXPIRATION, VENDING, PACKING     |
+| **FOOD_SUPPLEMENT, SANITIZER, MEDICAL_DEVICES**                 | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT                                                   |
+| **BICYCLE**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, RETURN_TO_INDIVIDUAL, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE                          |
+| **VETPHARMA**                                                   | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION, VENDING, DONATION, VETERINARY_USE |
+| **SOFT_DRINKS**                                                 | RETAIL_SALE, EXPORT_OUTSIDE_EEU, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, OWN_USE, PACKING, PRODUCTION_USE, STATE_CONTRACT, VENDING, DONATION                                                                                |
+| **WATER**                                                       | RETAIL_SALE, EXPORT_OUTSIDE_EEU, CONFISCATE_SALE, DESTRUCTION, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, DAMAGE_AND_LOSS, OWN_USE, PRODUCTION_USE, STATE_CONTRACT, VENDING, BY_SAMPLES, UTILIZATION, DONATION                 |
+| **SEAFOOD**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION, VENDING                           |
+| **BEER_ALCOHOL**                                                | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, MISMATCH                                      |
+| **VEGETABLE_OIL**                                               | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, PACKING, DISTANCE, BY_SAMPLES        |
+| **PET_FOOD**                                                    | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, DISTANCE, BY_SAMPLES                 |
 
 Связь допустимых значений поля **supportingTransaction** в зависимости от **retireOrderType**
 
-| **retireOrderType**      | **supportingTransaction**                              |
-|--------------------------|:-------------------------------------------------------|
-| **BY_SAMPLES**           | RECEIPT, SALES_RECEIPT, OTHER, CONSIGNMENT_NOTE, UTD   |
-| **CONFISCATE_SALE**      | OTHER, CONSIGNMENT_NOTE, UTD                           |
-| **DAMAGE_AND_LOSS**      | OTHER                                                  |
-| **DESTRUCTION**          | CERTIFICATE_OF_DESTRUCTION, OTHER                      |
-| **DISTANCE**             | RECEIPT, SALES_RECEIPT, OTHER, CONSIGNMENT_NOTE, UTD   |
-| **DONATION**             | OTHER, CONSIGNMENT_NOTE                                |
-| **EXPIRATION**           | OTHER                                                  |
-| **EXPORT_OUTSIDE_EEU**   | CUSTOMS_DECLARATION, OTHER                             |
-| **MEDICAL_USE**          | OTHER                                                  |
-| **MISMATCH**             | OTHER                                                  |
-| **OWN_USE**              | OTHER                                                  |
-| **PACKING**              | OTHER                                                  |
-| **PRODUCTION_USE**       | OTHER                                                  |
-| **RETAIL_SALE**          | RECEIPT, SALES_RECEIPT, OTHER                          |
-| **RETURN_TO_INDIVIDUAL** | OTHER                                                  |
-| **UTILIZATION**          | OTHER                                                  |
-| **VENDING**              | OTHER                                                  |
+| **retireOrderType**      | **supportingTransaction**                            |
+|--------------------------|:-----------------------------------------------------|
+| **BY_SAMPLES**           | RECEIPT, SALES_RECEIPT, OTHER, CONSIGNMENT_NOTE, UTD |
+| **CONFISCATE_SALE**      | OTHER, CONSIGNMENT_NOTE, UTD                         |
+| **DAMAGE_AND_LOSS**      | OTHER                                                |
+| **DESTRUCTION**          | CERTIFICATE_OF_DESTRUCTION, OTHER                    |
+| **DISTANCE**             | RECEIPT, SALES_RECEIPT, OTHER, CONSIGNMENT_NOTE, UTD |
+| **DONATION**             | OTHER, CONSIGNMENT_NOTE                              |
+| **EXPIRATION**           | OTHER                                                |
+| **EXPORT_OUTSIDE_EEU**   | CUSTOMS_DECLARATION, OTHER                           |
+| **MEDICAL_USE**          | OTHER                                                |
+| **MISMATCH**             | OTHER                                                |
+| **OWN_USE**              | OTHER                                                |
+| **PACKING**              | OTHER                                                |
+| **PRODUCTION_USE**       | OTHER                                                |
+| **RETAIL_SALE**          | RECEIPT, SALES_RECEIPT, OTHER                        |
+| **RETURN_TO_INDIVIDUAL** | OTHER                                                |
+| **UTILIZATION**          | OTHER                                                |
+| **VENDING**              | OTHER                                                |
+| **VETERINARY_USE**       | OTHER                                                |
 
 Способ вывода из оборота **retireOrderType**:
 
