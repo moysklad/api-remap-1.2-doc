@@ -1,6 +1,11 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 12-12-2025
+**Добавлено**
+- Эндпойнт [Площадки для продаж](#/dictionaries/saleplatform#2-ploshadka-dlya-prodazh)
+- Эндпойнт [Карточки контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
 ### 03-12-2025
 **Добавлено**
 - Механизм упоминаний в [комментарии к задаче](#/dictionaries/task#3-kommentarii-zadachi)
