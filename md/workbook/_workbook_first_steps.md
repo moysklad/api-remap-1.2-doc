@@ -107,24 +107,24 @@ JSON API доступен пользователям на всех тарифа�
 > Запрос на создание товара c логином и паролем
 
 ```shell
-curl -X POST 
-  -u login:password 
-  -H "Accept-Encoding: gzip" 
-  -H "Content-Type: application/json" 
-  -H "Lognex-Pretty-Print-JSON: true" 
-  "https://api.moysklad.ru/api/remap/1.2/entity/product" 
+curl --compressed -X POST  \
+  -u login:password  \
+  -H "Accept-Encoding: gzip"  \
+  -H "Content-Type: application/json"  \
+  -H "Lognex-Pretty-Print-JSON: true"  \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product"  \
   -d '{"name":"Просто замечательный товар"}'
 ```
 
 > Запрос на создание товара c токеном
 
 ```shell
-curl -X POST 
-  -H "Authorization: Bearer <Access-Token>"
-  -H "Accept-Encoding: gzip" 
-  -H "Content-Type: application/json" 
-  -H "Lognex-Pretty-Print-JSON: true" 
-  "https://api.moysklad.ru/api/remap/1.2/entity/product" 
+curl --compressed -X POST  \
+  -H "Authorization: Bearer <Access-Token>" \
+  -H "Accept-Encoding: gzip"  \
+  -H "Content-Type: application/json"  \
+  -H "Lognex-Pretty-Print-JSON: true"  \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product"  \
   -d '{"name":"Просто замечательный товар"}'
 ```
 
@@ -1033,11 +1033,11 @@ curl -X DELETE
 > Пример массового удаления Товаров 
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '[
         {
             "meta": {

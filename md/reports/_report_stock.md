@@ -245,9 +245,9 @@ C помощью параметра filter выборку также можно 
 > Запрос на получение Расширенного отчета об остатках.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/stock/all"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/all" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -802,9 +802,9 @@ curl -X GET
 > Запрос на получение текущих остатков без разбиения по складам.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/stock/all/current"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/all/current" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -821,9 +821,9 @@ curl -X GET
 > Запрос на получение текущих остатков "доступно" с выводом нулевых значений.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/stock/all/current?stockType=quantity&include=zeroLines"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/all/current?stockType=quantity&include=zeroLines" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -842,9 +842,9 @@ curl -X GET
 > Запрос на получение остатков с параметром "changedSince".
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/stock/all/current?changedSince=2022-08-23 15:00:00"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/all/current?changedSince=2022-08-23 15:00:00" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -861,9 +861,9 @@ curl -X GET
 > Запрос на получение текущих остатков по складам с указанием типа остатка "freeStock".
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?stockType=freeStock"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?stockType=freeStock" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -883,9 +883,9 @@ curl -X GET
 > Запрос на получение текущих резервов по складам с указанием типа "reserve".
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?stockType=reserve"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?stockType=reserve" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -905,9 +905,9 @@ curl -X GET
 > Запрос на получение текущих ожиданий по складам с указанием типа "inTransit".
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?stockType=inTransit"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?stockType=inTransit" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -927,9 +927,9 @@ curl -X GET
 > Запрос на получение текущих остатков с фильтрацией.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?filter=assortmentId=12345678-5838-aaeb-0a80-003a003ef439,12345678-279c-aaeb-0a80-00d6001f847c;storeId=12345678-b123-aaee-0a80-012b0001bb10,12345678-b123-aaee-0a80-012b0001bb13"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?filter=assortmentId=12345678-5838-aaeb-0a80-003a003ef439,12345678-279c-aaeb-0a80-00d6001f847c;storeId=12345678-b123-aaee-0a80-012b0001bb10,12345678-b123-aaee-0a80-012b0001bb13" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -946,9 +946,9 @@ curl -X GET
 > Запрос на получение остатков с параметром "withRecalculate".
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?withRecalculate=true"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore/current?withRecalculate=true" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -989,9 +989,9 @@ curl -X GET
 > Запрос на получение текущих остатков по ячейкам с фильтрацией.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/stock/byslot/current?filter=assortmentId=12345678-5838-aaeb-0a80-003a003ef439,12345678-279c-aaeb-0a80-00d6001f847c;storeId=12345678-b123-aaee-0a80-012b0001bb10,12345678-b123-aaee-0a80-012b0001bb13"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/byslot/current?filter=assortmentId=12345678-5838-aaeb-0a80-003a003ef439,12345678-279c-aaeb-0a80-00d6001f847c;storeId=12345678-b123-aaee-0a80-012b0001bb10,12345678-b123-aaee-0a80-012b0001bb13" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1143,9 +1143,9 @@ C помощью параметра filter выборку также можно 
 > Запрос на получение отчета "Остатки по складам".
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1469,9 +1469,9 @@ curl -X GET
 > Запрос на получение текущих остатков без разбиения по складам.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/stock/byoperation?operation.id=34efe2ee-015e-11e6-9464-e4de0000006b"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/byoperation?operation.id=34efe2ee-015e-11e6-9464-e4de0000006b" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 

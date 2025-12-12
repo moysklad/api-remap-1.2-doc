@@ -151,9 +151,9 @@
 > Получить Контексты
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/audit"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/audit" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -212,9 +212,9 @@ https://api.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder
 > Получить Контексты c фильтрацией
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -374,9 +374,9 @@ curl -X GET
 > Получить События по Контексту
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/audit/7944ef04-f831-11e5-7a69-971500188b19/events"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/audit/7944ef04-f831-11e5-7a69-971500188b19/events" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -457,9 +457,9 @@ curl -X GET
 > Получить События по Сущности
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/audit"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/audit" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -639,9 +639,9 @@ curl -X GET
 > Получить Фильтры
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/audit/metadata/filters"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/audit/metadata/filters" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 

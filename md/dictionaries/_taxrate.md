@@ -44,9 +44,9 @@
 > Пример запроса на получение ставок НДС на данной учетной записи
 
 ```shell
-curl -X GET 
-  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/"
-  -H 'Authorization: Basic <Credentials>'
+curl --compressed -X GET  \
+  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/" \
+  -H 'Authorization: Basic <Credentials>' \
   -H 'Content-Type: application/json'
 ```
 
@@ -236,10 +236,10 @@ curl -X GET
 > Запрос на создание ставки НДС
 
 ```shell
-curl -X POST 
-  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate"
-  -H 'Authorization: Basic <Credentials>'
-  -H 'Content-Type: application/json'
+curl --compressed -X POST  \
+  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate" \
+  -H 'Authorization: Basic <Credentials>' \
+  -H 'Content-Type: application/json' \
   -d '{
     "rate": 33,
     "comment": "Ставка на продукты с ГМО",
@@ -293,10 +293,10 @@ curl -X POST
 > Запрос на массовое обновление ставок НДС
 
 ```shell
-curl -X POST 
-  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate"
-  -H 'Authorization: Basic <Credentials>'
-  -H 'Content-Type: application/json'
+curl --compressed -X POST  \
+  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate" \
+  -H 'Authorization: Basic <Credentials>' \
+  -H 'Content-Type: application/json' \
   -d '[
     {
       "rate": 33,
@@ -405,9 +405,9 @@ curl -X POST
 > Запрос на удаление ставки НДС
 
 ```shell
-curl -X DELETE 
-  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007"
-  -H 'Authorization: Basic <Credentials>'
+curl --compressed -X DELETE  \
+  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007" \
+  -H 'Authorization: Basic <Credentials>' \
   -H 'Content-Type: application/json'
 ```
 
@@ -423,10 +423,10 @@ curl -X DELETE
 > Запрос на массовое удаление ставок НДС
 
 ```shell
-curl -X POST 
-  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/delete"
-  -H 'Authorization: Basic <Credentials>'
-  -H 'Content-Type: application/json'
+curl --compressed -X POST  \
+  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/delete" \
+  -H 'Authorization: Basic <Credentials>' \
+  -H 'Content-Type: application/json' \
   -d '[
     {
       "meta": {
@@ -475,10 +475,10 @@ curl -X POST
 > Пример запроса на получение ставки НДС по ID
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
   -H "Content-Type: application/json"  
 ```
 
@@ -534,10 +534,10 @@ curl -X GET
 > Запрос на изменение ставки НДС
 
 ```shell
-curl -X PUT 
-  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007"
-  -H 'Authorization: Basic <Credentials>'
-  -H 'Content-Type: application/json'
+curl --compressed -X PUT  \
+  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/6031a4ab-fec1-11ec-0a80-059200000007" \
+  -H 'Authorization: Basic <Credentials>' \
+  -H 'Content-Type: application/json' \
   -d '{
     "rate": 28,
     "comment": "Ставка на жвачку Turbo",

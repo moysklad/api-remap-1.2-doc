@@ -39,9 +39,9 @@
 > Запрос на получение показателей за день.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/dashboard/day"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/dashboard/day" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -74,9 +74,9 @@ curl -X GET
 > Запрос на получение показателей за неделю.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/dashboard/week"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/dashboard/week" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -110,9 +110,9 @@ curl -X GET
 > Запрос на получение показателей за месяц.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/dashboard/month"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/dashboard/month" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 

@@ -46,9 +46,9 @@
 
 > Получить Сущности
 
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/some_entity"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/some_entity" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 
 
