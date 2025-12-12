@@ -3,8 +3,8 @@
 
 ### 12-12-2025
 **Добавлено**
-- Эндпойнт [Площадки для продаж](#/dictionaries/saleplatform#2-ploshchadka-dlya-prodazh)
-- Эндпойнт [Карточки контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+- Эндпойнт Площадки для продаж
+- Эндпойнт Карточки контента
 
 ### 03-12-2025
 **Добавлено**
