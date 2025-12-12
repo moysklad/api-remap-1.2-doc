@@ -1,3 +1,5 @@
+# Уведомления
+## Лента уведомлений
 <div class="banner-wrapper">
   <style>
     .banner {
@@ -43,15 +45,12 @@
         <code>GET https://api.moysklad.ru/api/remap/1.2/report/stock/bystore</code>
       </li>
     </ul>
-    <p><strong>График изменений</strong></p>
+    <p><strong>Дата вступления изменений в силу</strong></p>
     <ul>
       <li>5 единиц лимита за запрос с февраля 2026 года</li>
     </ul>
   </div>
 </div>
-
-# Уведомления
-## Лента уведомлений
 ### Общие атрибуты уведомлений
 
 | Название        | Тип                                                       | Описание                                                                                 |
