@@ -7,7 +7,7 @@
 - [Уведомления](#/notification/notification-types-details#3-novoe-upominanie-v-kommentariyah-zadach) по упоминаниям в комментариях задач
 - Ошибка [3046](#/errors#3-obshie-oshibki-validacii)
 
-### 04-12-2025
+### 15-12-2025
 **Добавлено**
 - Поддержка авансовых полей в [Счете-фактуре выданном](#/documents/factureout#2-schet-faktura-vydannyj): поля `advancePaymentVat` (ставка НДС для авансового платежа), `paymentPurpose` (назначение платежа) и `vatSum` (сумма включая НДС). Поля доступны только для счетов-фактур с основаниями-платежами.
 
