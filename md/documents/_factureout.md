@@ -33,6 +33,9 @@
 | **sum**             | Float                          | `=` `!=` `<` `>` `<=` `>=`                                             | Сумма Счета-фактуры выданного в копейках<br>`+Обязательное при ответе` `+Только для чтения`                                              |
 | **syncId**          | UUID                           | `=` `!=`                                                               | ID синхронизации. После заполнения недоступен для изменения                                                                              |
 | **updated**         | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Момент последнего обновления Счета-фактуры выданного<br>`+Обязательное при ответе` `+Только для чтения`                                  |
+| **advancePaymentVat** | Int                          |                                                                        | Ставка НДС для авансового платежа (в процентах)<br>Доступно только для счетов-фактур с основаниями-платежами<br>                         |
+| **paymentPurpose** | String(255)                     | `=` `!=` `~` `~=` `=~`                                                 | Назначение платежа<br>Доступно только для счетов-фактур с основаниями-платежами                                                          |
+| **vatSum**         | Float                           |                                                                        | Сумма включая НДС<br>Доступно только для счетов-фактур с основаниями-платежами<br>`+Обязательное при ответе` `+Только для чтения`        |
 
 #### Связи с другими документами
 
@@ -221,9 +224,17 @@ curl -X GET
 ```
 
 ### Создать Счет-фактуру 
-Запрос на создание Счета-фактуры на основании отгрузки, входящего платежа или возврата поставщику.
+Запрос на создание Счета-фактуры на основании отгрузки, входящего платежа, приходного ордера или возврата поставщику.
 Документ-основание должен быть указан в единственном экземпляре.</br>
 Для установки **paymentNumber**, **paymentDate** значения должны быть переданы в теле Json, так как перечисленные поля не заполняются из документа-основания.
+
+**Особенности работы с авансовыми полями:**
+- Для счетов-фактур с основаниями-платежами (например, CashIn, PaymentIn) можно передавать и обновлять поля **advancePaymentVat** и **paymentPurpose**. Поля **advancePaymentVat**, **paymentPurpose** и **vatSum** возвращаются в ответе если у счета-фактуры есть связанные платежи.
+- При передаче **advancePaymentVat** значение **vatSum** рассчитывается по формуле: `sum * vatRate / (100 + vatRate)`, где `sum` — сумма платежа, `vatRate` — значение `advancePaymentVat`. Если **advancePaymentVat** не передан, **vatSum** берется из платежа.
+- При создании счета-фактуры на основании платежа, если **advancePaymentVat** не указан, значение может быть автозаполнено из настроек организации.
+- При обновлении счета-фактуры с платежами поля **advancePaymentVat** и **paymentPurpose** обрабатываются только если они переданы в запросе.
+- Для счетов-фактур с основаниями-отгрузками/возвратами (Demand, PurchaseReturn) поля **advancePaymentVat** и **paymentPurpose** игнорируются при создании/обновлении и не возвращаются в ответе.
+- Валидация **advancePaymentVat**: значение должно быть неотрицательным (ошибка [3002](#/errors#3-obshie-oshibki-validacii)), не превышать 100 (ошибка [3008](#/errors#3-obshie-oshibki-validacii)), ставка должна существовать в справочнике ставок НДС (ошибка [3005](#/errors#3-obshie-oshibki-validacii)).
 
 > Пример создания нового Счета-фактуры, содержащим только необходимые поля.
 
@@ -324,6 +335,110 @@ curl -X GET
   ]
 }
 
+```
+
+
+> Пример создания Счета-фактуры выданного на аванс на основании входящего платежа.
+```shell
+  curl -X POST
+    "https://online.moysklad.ru/api/remap/1.2/entity/factureout"
+    -H "Authorization: Basic <Credentials>"
+    -H "Content-Type: application/json"
+      -d '{
+            "payments": [
+              {
+                "meta": {
+                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/f69cb6ec-6d45-11e7-6adb-ede50000001c",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/metadata",
+                  "type": "paymentin",
+                  "mediaType": "application/json"
+                }
+              }
+            ],
+            "advancePaymentVat": 20,
+            "paymentPurpose": "Авансовый платеж по договору №123"
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного Счета-фактуры.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.2/entity/factureout/fa610268-2b5d-11e7-1542-821d00000010",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/factureout/metadata",
+    "type": "factureout",
+    "mediaType": "application/json"
+  },
+  "id": "fa610268-2b5d-11e7-1542-821d00000010",
+  "accountId": "f4917c99-2346-11e7-1542-821d00000001",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/f500c39b-2346-11e7-1542-821d0000002a",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f49447eb-2346-11e7-1542-821d00000002",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2017-04-27 18:27:08",
+  "name": "00001",
+  "externalCode": "KAwh2VT7hIzHDWQoIcfvS0",
+  "moment": "2017-04-27 18:27:00",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/f52dd97c-2346-11e7-1542-821d00000058",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "sum": 10000,
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f52d95dd-2346-11e7-1542-821d00000056",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/f52a29b3-2346-11e7-1542-821d00000051",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "created": "2017-04-27 18:27:09",
+  "printed": true,
+  "published": true,
+  "payments": [
+    {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/f69cb6ec-6d45-11e7-6adb-ede50000001c",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/metadata",
+        "type": "paymentin",
+        "mediaType": "application/json"
+      }
+    }
+  ],
+  "advancePaymentVat": 20,
+  "paymentPurpose": "Авансовый платеж по договору №123",
+  "vatSum": 1666.67
+}
 ```
 
 ### Массовое создание и обновление Счетов-фактур выданных 
