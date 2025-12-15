@@ -469,10 +469,10 @@ curl --compressed -X GET \
 > Пример запроса на получения Файла Товара
 
   ```shell
-  curl -X GET
-    "https://api.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
+  curl --compressed -X GET \
+    "https://api.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json"  
   ```
 Ответ придет со статусом 302 (Found), где в заголовке ответа в `Location` будет указанна ссылка на скачивание. Важно 

@@ -63,7 +63,7 @@
 > Запрос на получение списка всех валют на данной учетной записи.
 
 ```shell
-curl --compressed -X GET  \
+curl --compressed -X GET \
   "https://api.moysklad.ru/api/remap/1.2/entity/currency/" \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
@@ -172,11 +172,11 @@ curl --compressed -X GET  \
 > Запрос на создание новой валюты.
 
 ```shell
-curl --compressed -X POST  \
+curl --compressed -X POST \
   https://api.moysklad.ru/api/remap/1.2/entity/currency/ \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip" \
-  -H 'Content-Type: application/json'  \
+  -H 'Content-Type: application/json' \
   -d '{
   "name": "доллар",
   "rate": 63,
@@ -227,11 +227,11 @@ curl --compressed -X POST  \
 > Запрос на создание системной валюты с автоматическим обновлением курса по ISO коду.
 
 ```shell
-curl --compressed -X POST  \
+curl --compressed -X POST \
   https://api.moysklad.ru/api/remap/1.2/entity/currency/ \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip" \
-  -H 'Content-Type: application/json'  \
+  -H 'Content-Type: application/json' \
   -d '{
   "system": true,
   "isoCode": "EUR"
@@ -281,11 +281,11 @@ curl --compressed -X POST  \
 > Запрос на создание системной валюты с ручным обновлением курса по цифровому коду.
 
 ```shell
-curl --compressed -X POST  \
+curl --compressed -X POST \
   https://api.moysklad.ru/api/remap/1.2/entity/currency/ \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip" \
-  -H 'Content-Type: application/json'  \
+  -H 'Content-Type: application/json' \
   -d '{
   "system": true,
   "code": "978",

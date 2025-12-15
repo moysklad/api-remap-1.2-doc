@@ -64,11 +64,11 @@
 > Запрос
 
 ```shell
-curl --compressed -X POST  \
-  https://api.moysklad.ru/api/remap/1.2/entity/webhook  \
-  -H 'Authorization: Bearer <Access-Token>'  \
+curl --compressed -X POST \
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook \
+  -H 'Authorization: Bearer <Access-Token>' \
   -H "Accept-Encoding: gzip" \
-  -H 'Content-Type: application/json'  \
+  -H 'Content-Type: application/json' \
   -d '{
   "url": "http://www.example.com",
   "action": "CREATE",
@@ -104,8 +104,8 @@ curl --compressed -X POST  \
 > Запрос
 
 ```shell
-curl --compressed -X GET  \
-  https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3  \
+curl --compressed -X GET \
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 \
   -H 'Authorization: Bearer <Access-Token>' \
   -H "Accept-Encoding: gzip" \
   -H 'Content-Type: application/json' 
@@ -117,11 +117,11 @@ curl --compressed -X GET  \
 > Запрос
 
 ```shell
-curl --compressed -X PUT  \
-  https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3  \
+curl --compressed -X PUT \
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 \
   -H 'Authorization: Bearer <Access-Token>' \
   -H "Accept-Encoding: gzip" \
-  -H 'Content-Type: application/json'  \
+  -H 'Content-Type: application/json' \
   -d '{
   "action": "UPDATE"
 }'
@@ -130,11 +130,11 @@ curl --compressed -X PUT  \
 > Пример запроса с отключением вебхука.
 
 ```shell
-curl --compressed -X PUT  \
-  https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3  \
+curl --compressed -X PUT \
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 \
   -H 'Authorization: Bearer <Access-Token>' \
   -H "Accept-Encoding: gzip" \
-  -H 'Content-Type: application/json'  \
+  -H 'Content-Type: application/json' \
   -d '{
   "enabled": false
 }'
@@ -143,8 +143,8 @@ curl --compressed -X PUT  \
 > Удаление вебхука выполняется по аналогии, но только используется метод DELETE.
 
 ```shell
-curl --compressed -X DELETE  \
-  https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3  \
+curl --compressed -X DELETE \
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook/a5b3cd1f-caee-11e8-9ff4-34e80022dcb3 \
   -H 'Authorization: Bearer <Access-Token>' \
   -H "Accept-Encoding: gzip" \
   -H 'Content-Type: application/json' 
@@ -153,8 +153,8 @@ curl --compressed -X DELETE  \
 > Получить все вебхуки можно с помощью типичного GET запроса.
 
 ```shell
-curl --compressed -X GET  \
-  https://api.moysklad.ru/api/remap/1.2/entity/webhook  \
+curl --compressed -X GET \
+  https://api.moysklad.ru/api/remap/1.2/entity/webhook \
   -H 'Authorization: Bearer <Access-Token>' \
   -H "Accept-Encoding: gzip" \
   -H 'Content-Type: application/json' 
@@ -232,12 +232,12 @@ curl --compressed -X GET  \
  > Запрос на создание вебхука на создание услуги
  
  ```shell
- curl --compressed -X POST  \
-   https://api.moysklad.ru/api/remap/1.2/entity/webhook  \
+ curl --compressed -X POST \
+   https://api.moysklad.ru/api/remap/1.2/entity/webhook \
    -H 'Authorization: Bearer <Access-Token>' \
    -H "Accept-Encoding: gzip" \
-   -H 'Cache-Control: no-cache'  \
-   -H 'Content-Type: application/json'  \
+   -H 'Cache-Control: no-cache' \
+   -H 'Content-Type: application/json' \
    -d '{
      "url": "https://webhook.site/c314f269-d524-4b1a-bf9e-5c59060b220c",
      "action": "CREATE",
@@ -250,11 +250,11 @@ curl --compressed -X GET  \
 > Запрос на создание услуги
 
 ```shell
-curl -X POST 
-  https://api.moysklad.ru/api/remap/1.2/entity/service 
-  -H 'Authorization: Bearer <Access-Token>'
-  -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json' 
+curl --compressed -X POST \
+  https://api.moysklad.ru/api/remap/1.2/entity/service \
+  -H 'Authorization: Bearer <Access-Token>' \
+  -H "Accept-Encoding: gzip" \
+  -H 'Content-Type: application/json' \
   -d '{
   "name": "Заточка коньков"
 }'

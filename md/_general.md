@@ -428,8 +428,8 @@ JSON API позволяет создавать, обновлять и удаля
 > Пример присваивания значения доп. полю типа Файл 
 
 ```shell
-curl --compressed -X PUT  \
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025"  \
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025" \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip" \
   -d '{
@@ -452,8 +452,8 @@ curl --compressed -X PUT  \
 > Пример сброса значения доп. поля типа Файл
 
 ```shell
-curl --compressed -X PUT  \
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025"  \
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025" \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip" \
   -d '{
@@ -1089,7 +1089,7 @@ API сервиса МойСклад позволяет оперировать с
 > Пример URL для запроса на удаление с помощью DELETE:
 
 ```shell
-curl --compressed -X DELETE  \
+curl --compressed -X DELETE \
   "https://api.moysklad.ru/api/remap/1.2/{код сущности документа, в составе JSON API}/{id отдельного документа}/positions/179dd832-960c-11e6-8a84-bae5000000dc" \
   -H "Authorization: Bearer <Access-Token>" \
   -H "Accept-Encoding: gzip"

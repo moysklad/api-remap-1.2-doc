@@ -52,12 +52,12 @@ JSON API описана в статье [Дополнительные поля](
 > Запрос
 
 ```shell
-curl --compressed -X POST  \
-  -u login:password  \
-  -H "Accept-Encoding: gzip"  \
-  -H 'Accept: application/json'  \
-  -H 'Content-Type: application/json'  \
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes"  \
+curl --compressed -X POST \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes" \
   -d '{
     "name": "Материал корпуса",
     "type": "string"
@@ -97,12 +97,12 @@ curl --compressed -X POST  \
 > Запрос
 
 ```shell
-curl --compressed -X POST  \
-  -u login:password  \
-  -H "Accept-Encoding: gzip"  \
-  -H 'Accept: application/json'  \
-  -H 'Content-Type: application/json'  \
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes"  \
+curl --compressed -X POST \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes" \
   -d '{
     "name": "Чехол",
     "type": "product"
@@ -144,12 +144,12 @@ curl --compressed -X POST  \
 > Запрос
 
 ```shell
-curl --compressed -X POST  \
-  -u login:password  \
-  -H "Accept-Encoding: gzip"  \
-  -H 'Accept: application/json'  \
-  -H 'Content-Type: application/json'  \
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes"  \
+curl --compressed -X POST \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes" \
   -d '[
         {
             "meta": {
@@ -221,11 +221,11 @@ curl --compressed -X POST  \
 > Запрос
 
 ```shell
-curl --compressed  \
-    -X GET  \
+curl --compressed \
+    -X GET \
     -u login:password \
-    -H "Accept-Encoding: gzip"  \
-    -H "Lognex-Pretty-Print-JSON: true"  \
+    -H "Accept-Encoding: gzip" \
+    -H "Lognex-Pretty-Print-JSON: true" \
     "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes"
 ```
 
@@ -285,11 +285,11 @@ curl --compressed  \
 > Запрос
 
 ```shell
-curl --compressed  \
-    -X GET  \
+curl --compressed \
+    -X GET \
     -u login:password \
-    -H "Accept-Encoding: gzip"  \
-    -H "Lognex-Pretty-Print-JSON: true"  \
+    -H "Accept-Encoding: gzip" \
+    -H "Lognex-Pretty-Print-JSON: true" \
     "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002"
 ```
 
@@ -320,12 +320,12 @@ curl --compressed  \
 > Запрос
 
 ```shell
-curl --compressed -X PUT  \
-  -u login:password  \
-  -H "Accept-Encoding: gzip"  \
-  -H 'Accept: application/json'  \
-  -H 'Content-Type: application/json'  \
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f"  \
+curl --compressed -X PUT \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f" \
   -d '{
         "name":"Наличие CD/DVD-Rom"
       }'
@@ -357,11 +357,11 @@ curl --compressed -X PUT  \
 > Запрос
 
 ```shell
-curl --compressed -X DELETE  \
-  -u login:password  \
-  -H "Accept-Encoding: gzip"  \
-  -H 'Accept: application/json'  \
-  -H 'Content-Type: application/json'  \
+curl --compressed -X DELETE \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
   "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f" 
 ```
 
@@ -373,12 +373,12 @@ curl --compressed -X DELETE  \
 > Запрос
 
 ```shell
-curl --compressed -X POST  \
-  -u login:password  \
-  -H "Accept-Encoding: gzip"  \
-  -H 'Accept: application/json'  \
-  -H 'Content-Type: application/json'  \
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/delete"  \
+curl --compressed -X POST \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/delete" \
   -d '[
         {
           "meta": {
@@ -413,11 +413,11 @@ curl --compressed -X POST  \
 > Запрос
 
 ```shell
-curl --compressed  \
-    -X GET  \
+curl --compressed \
+    -X GET \
     -u login:password \
-    -H "Accept-Encoding: gzip"  \
-    -H "Lognex-Pretty-Print-JSON: true"  \
+    -H "Accept-Encoding: gzip" \
+    -H "Lognex-Pretty-Print-JSON: true" \
     "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes"
 ```
 
@@ -480,13 +480,13 @@ curl --compressed  \
 > Запрос
 
 ```shell
-curl --compressed  \
-    -X POST  \
+curl --compressed \
+    -X POST \
     -u login:password \
-    -H "Accept-Encoding: gzip"  \
-    -H 'Accept: application/json'  \
-    -H 'Content-Type: application/json'  \
-    "https://api.moysklad.ru/api/remap/1.2/entity/product"  \
+    -H "Accept-Encoding: gzip" \
+    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
+    "https://api.moysklad.ru/api/remap/1.2/entity/product" \
     -d '{
         "name": "Ноутбук",
         "vat": 18,
@@ -548,13 +548,13 @@ curl --compressed  \
 > Запрос
 
 ```shell
-curl --compressed  \
-    -X PUT  \
+curl --compressed \
+    -X PUT \
     -u login:password \
-    -H "Accept-Encoding: gzip"  \
-    -H 'Accept: application/json'  \
-    -H 'Content-Type: application/json'  \
-    "https://api.moysklad.ru/api/remap/1.2/entity/product/630c578a-cb05-11e8-9109-f8fc0037889a"  \
+    -H "Accept-Encoding: gzip" \
+    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
+    "https://api.moysklad.ru/api/remap/1.2/entity/product/630c578a-cb05-11e8-9109-f8fc0037889a" \
     -d '{
   "name": "Ноутбук обновленный",
   "attributes": [
@@ -601,8 +601,8 @@ curl --compressed  \
 > Пример присваивания значения доп. полю типа Файл
 
 ```shell
-curl --compressed -X PUT  \
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025"  \
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025" \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip" \
   -d '{
@@ -625,8 +625,8 @@ curl --compressed -X PUT  \
 > Пример сброса значения доп. поля типа Файл
 
 ```shell
-curl --compressed -X PUT  \
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025"  \
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025" \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip" \
   -d '{
@@ -656,11 +656,11 @@ curl --compressed -X PUT  \
 > Запрос
 
 ```shell
-curl --compressed  \
-    -X GET  \
+curl --compressed \
+    -X GET \
     -u login:password \
-    -H "Accept-Encoding: gzip"  \
-    -H "Lognex-Pretty-Print-JSON: true"  \
+    -H "Accept-Encoding: gzip" \
+    -H "Lognex-Pretty-Print-JSON: true" \
     "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata"
 ```
 
@@ -785,13 +785,13 @@ curl --compressed  \
 > Запрос
 
 ```shell
-curl --compressed  \
-    -X POST  \
+curl --compressed \
+    -X POST \
     -u login:password \
-    -H "Accept-Encoding: gzip"  \
-    -H 'Accept: application/json'  \
-    -H 'Content-Type: application/json'  \
-    "https://api.moysklad.ru/api/remap/1.2/entity/counterparty"  \
+    -H "Accept-Encoding: gzip" \
+    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
+    "https://api.moysklad.ru/api/remap/1.2/entity/counterparty" \
     -d '{
     "name": "ООО Восток",
     "attributes": [
@@ -956,12 +956,12 @@ JSON API позволяет осуществлять фильтрацию по �
 > Запрос
 
 ```shell
-curl --compressed  \
-    -X GET  \
+curl --compressed \
+    -X GET \
     -u login:password \
-    -H "Accept-Encoding: gzip"  \
-    -H 'Accept: application/json'  \
-    -H 'Content-Type: application/json'  \
+    -H "Accept-Encoding: gzip" \
+    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
     "https://api.moysklad.ru/api/remap/1.2/entity/product?filter=https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/630c578a-cb05-11e8-9109-f8fc0037889a%3E%3D5"
 ```
 

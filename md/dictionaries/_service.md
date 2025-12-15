@@ -1604,11 +1604,11 @@ curl --compressed -X GET \
 > Пример запроса на обновление Услуги
   
   ```shell
-    curl -X PUT
-      "https://api.moysklad.ru/api/remap/1.2/entity/service/7944ef04-f831-11e5-7a69-971500188b19"
-      -H "Authorization: Basic <Credentials>"
-      -H "Accept-Encoding: gzip"
-      -H "Content-Type: application/json"
+    curl --compressed -X PUT \
+      "https://api.moysklad.ru/api/remap/1.2/entity/service/7944ef04-f831-11e5-7a69-971500188b19" \
+      -H "Authorization: Basic <Credentials>" \
+      -H "Accept-Encoding: gzip" \
+      -H "Content-Type: application/json" \
         -d '{
               "name": "Доставка товара",
               "description": "Доставка на дом выбранного товара",
@@ -1815,11 +1815,11 @@ curl --compressed -X GET \
 > Пример запроса на изменение Услуги с дополнительными полями.
  
  ```shell
-   curl -X PUT
-     "https://api.moysklad.ru/api/remap/1.2/entity/service/7944ef04-f831-11e5-7a69-971500188b19"
-     -H "Authorization: Basic <Credentials>"
-     -H "Accept-Encoding: gzip"
-     -H "Content-Type: application/json"
+   curl --compressed -X PUT \
+     "https://api.moysklad.ru/api/remap/1.2/entity/service/7944ef04-f831-11e5-7a69-971500188b19" \
+     -H "Authorization: Basic <Credentials>" \
+     -H "Accept-Encoding: gzip" \
+     -H "Content-Type: application/json" \
        -d '{
              "name": "Облицовка груза",
              "description": "Облицовка доставляемого груза",
