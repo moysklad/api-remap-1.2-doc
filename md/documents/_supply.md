@@ -2592,8 +2592,10 @@ curl --compressed -X GET \
 > Пример с кодами маркировки
 
 ```shell
-curl --compressed --location --request GET 'https://api.moysklad.ru/api/remap/1.2/entity/supply/63918a49-886e-11ea-0a80-151b0000007f?expand=positions' \
---header 'Authorization: Basic <Credentials>'
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/supply/63918a49-886e-11ea-0a80-151b0000007f?expand=positions" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
 ```
 
 > Response 200 (application/json)
@@ -3084,10 +3086,12 @@ curl --compressed -X GET \
 > Пример с кодами маркировки
 
 ```shell
-curl --location --request POST 'https://api.moysklad.ru/api/remap/1.2/entity/supply/63918a49-886e-11ea-0a80-151b0000007f/positions' \
---header 'Authorization: Basic <Credentials>' \
---header 'Content-Type: application/json' \
---data-raw '{
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/supply/63918a49-886e-11ea-0a80-151b0000007f/positions" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+    -d '{
    "quantity":10.0,
    "price":11100.0,
    "discount":0.0,
