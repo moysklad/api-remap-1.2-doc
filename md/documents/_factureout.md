@@ -340,10 +340,10 @@ curl --compressed -X GET \
 
 > Пример создания Счета-фактуры выданного на аванс на основании входящего платежа.
 ```shell
-  curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/factureout"
-    -H "Authorization: Basic <Credentials>"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://online.moysklad.ru/api/remap/1.2/entity/factureout" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Content-Type: application/json" \
       -d '{
             "payments": [
               {
