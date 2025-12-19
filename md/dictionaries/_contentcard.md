@@ -181,7 +181,7 @@ curl -X GET
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
           "type": "product",
           "mediaType": "application/json",
-          "uuidHref": "https://online-ecommerce-3.testms-test.lognex.ru/app/#good/edit?id=013b7724-d667-11f0-0a80-073800000146"
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=013b7724-d667-11f0-0a80-073800000146"
         }
       },
       "salePlatform": {
@@ -199,7 +199,7 @@ curl -X GET
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/metadata",
             "type": "saleschannel",
             "mediaType": "application/json",
-            "uuidHref": "https://api.moysklad.ru/app/#saleschannel/edit?id=31e8ce0f-c99f-4824-a930-83fe7de68cd6"
+            "uuidHref": "https://online.moysklad.ru/app/#saleschannel/edit?id=31e8ce0f-c99f-4824-a930-83fe7de68cd6"
           }
         }
       ]
@@ -284,7 +284,7 @@ curl -X GET
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/metadata",
         "type": "saleschannel",
         "mediaType": "application/json",
-        "uuidHref": "https://api.moysklad.ru/app/#saleschannel/edit?id=31e8ce0f-c99f-4824-a930-83fe7de68cd6"
+        "uuidHref": "https://online.moysklad.ru/app/#saleschannel/edit?id=31e8ce0f-c99f-4824-a930-83fe7de68cd6"
       }
     }
   ]
