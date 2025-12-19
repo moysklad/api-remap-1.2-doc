@@ -17,7 +17,11 @@
 | **owner**           | [Meta](#/general#3-metadannye) | `=` `!=`               | Метаданные владельца (Сотрудника)<br>`+Expand`                          |
 | **shared**          | Boolean                        |                | Общий доступ<br>`+Обязательное при ответе` `+Только для чтения`         |
 | **salePlatform**    | [Meta](#/general#3-metadannye) | `=` `!=`               | Метаданные Площадки для продаж<br>`+Expand` `+Обязательное при ответе`  |
-| **salesChannels**   | MetaArray                      | `=`                    | Массив Каналов продаж<br>`+Expand` `+Обязательное при ответе`           |
+
+#### Связи с другими сущностями
+| Значение              | Описание                                                                                                           | Фильтрация |
+|-----------------------|:-------------------------------------------------------------------------------------------------------------------|------------|
+| **salesChannels**         | Массив ссылок на связанные каналы продаж в формате [Метаданных](#/general#3-metadannye). Максимальное число - 1000<br>`+Expand` `+Обязательное при ответе` | `=`        |
 
 #### Атрибуты доступные для фильтрации
 | Значение              | Описание                      |
@@ -111,6 +115,7 @@ curl -X GET
       },
       "name": "товар",
       "description": "Описание",
+      "cardContentName": "Название",
       "assortment": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/013c258e-d667-11f0-0a80-073800000148",
@@ -128,16 +133,17 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
-      "salesChannels": {
-        "meta": {
-          "href": "https://api.moysklad.ru/api/remap/1.2/entity/contentcard/529eb5b6-d726-11f0-0a80-073800000329/salesChannels",
-          "type": "saleschannel",
-          "mediaType": "application/json",
-          "size": 1,
-          "limit": 1000,
-          "offset": 0
+      "salesChannels": [
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/f26b01a3-dbdb-11f0-f406-77170000015d",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/metadata",
+            "type": "saleschannel",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#saleschannel/edit?id=f26b01a3-dbdb-11f0-f406-77170000015d"
+          }
         }
-      }
+      ]
     },
     {
       "meta": {
@@ -168,6 +174,7 @@ curl -X GET
       },
       "name": "товар",
       "description": "описание",
+      "cardContentName": "название",
       "assortment": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/013c258e-d667-11f0-0a80-073800000148",
@@ -185,16 +192,17 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
-      "salesChannels": {
-        "meta": {
-          "href": "https://api.moysklad.ru/api/remap/1.2/entity/contentcard/dfbef48e-d67d-11f0-0a80-0738000002d8/salesChannels",
-          "type": "saleschannel",
-          "mediaType": "application/json",
-          "size": 1,
-          "limit": 1000,
-          "offset": 0
+      "salesChannels": [
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/31e8ce0f-c99f-4824-a930-83fe7de68cd6",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/metadata",
+            "type": "saleschannel",
+            "mediaType": "application/json",
+            "uuidHref": "https://api.moysklad.ru/app/#saleschannel/edit?id=31e8ce0f-c99f-4824-a930-83fe7de68cd6"
+          }
         }
-      }
+      ]
     }
   ]
 }
@@ -251,6 +259,7 @@ curl -X GET
   },
   "name": "товар",
   "description": "Описание",
+  "cardContentName": "Название",
   "assortment": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/013c258e-d667-11f0-0a80-073800000148",
@@ -268,15 +277,16 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "salesChannels": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/contentcard/529eb5b6-d726-11f0-0a80-073800000329/salesChannels",
-      "type": "saleschannel",
-      "mediaType": "application/json",
-      "size": 1,
-      "limit": 1000,
-      "offset": 0
+  "salesChannels": [
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/31e8ce0f-c99f-4824-a930-83fe7de68cd6",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/metadata",
+        "type": "saleschannel",
+        "mediaType": "application/json",
+        "uuidHref": "https://api.moysklad.ru/app/#saleschannel/edit?id=31e8ce0f-c99f-4824-a930-83fe7de68cd6"
+      }
     }
-  }
+  ]
 }
 ```
