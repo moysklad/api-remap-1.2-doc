@@ -2,9 +2,9 @@
 Список последних изменений в API Remap 1.2
 
 ### 12-12-2025
-**Добавлено**
-- Эндпойнт [Площадок для продаж](#/dictionaries/saleplatform#2-ploshadka-dlya-prodazh)
-- Эндпойнт [Карточек контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+**Добавлены**
+- Эндпоинт [Площадок для продаж](#/dictionaries/saleplatform#2-ploshadka-dlya-prodazh)
+- Эндпоинт [Карточек контента](#/dictionaries/contentcard#2-kartochka-kontenta)
 
 ### 03-12-2025
 **Добавлено**
