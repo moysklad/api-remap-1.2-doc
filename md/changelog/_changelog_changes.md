@@ -53,6 +53,11 @@
 
 Список последних изменений в API Remap 1.2
 
+### 15-12-2025
+**Добавлено**
+- Способ вывода `VETERINARY_USE` (Использование для ветеринарного применения) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Способы вывода `VENDING` и `DONATION` в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типа маркируемой продукции `VETPHARMA`
+
 ### 03-12-2025
 **Добавлено**
 - Механизм упоминаний в [комментарии к задаче](#/dictionaries/task#3-kommentarii-zadachi)
