@@ -140,9 +140,9 @@
 > Запрос на получение Настроек пользователя:
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/context/usersettings"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/context/usersettings" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -212,11 +212,11 @@ curl -X GET
 > Запрос на изменение настроек пользователя:
 
 ```shell
-curl -X PUT
-  "https://api.moysklad.ru/api/remap/1.2/context/usersettings"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/context/usersettings" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
       -d '{
   "defaultCompany": {
     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",

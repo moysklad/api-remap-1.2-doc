@@ -1,4 +1,56 @@
 # Документы
+<div class="banner-wrapper">
+  <style>
+    .banner {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #F8FAFF;
+      border: 1px solid #086EFC;
+    }
+    .banner ul {
+      padding: 0;
+      line-height: 2;
+    }
+    .banner ul li {
+      margin-left: 32px;
+      line-height: 2;
+    }
+    .banner h4 {
+      padding: 10px 0;
+      font-size: 24px;
+    }
+    .banner p {
+      margin: 10px 0 0 0;
+      padding: 0;
+    }
+    html.dark .banner,
+    body.dark .banner {
+        background-color: #0B1F3A;
+        border-color: #3B82F6;
+        color: #E5E7EB;
+    }
+  </style>
+
+  <div class="banner">
+    <h4>Внимание: Повышается расход лимита API на запросы остатков</h4>
+    <p><strong>Какие отчеты затронуты?</strong></p>
+    <ul>
+      <li>
+        <code>GET https://api.moysklad.ru/api/remap/1.2/report/stock/all</code>
+      </li>
+      <li>
+        <code>GET https://api.moysklad.ru/api/remap/1.2/report/stock/bystore</code>
+      </li>
+    </ul>
+    <p><strong>Дата вступления изменений в силу</strong></p>
+    <ul>
+      <li>5 единиц лимита за запрос с февраля 2026 года</li>
+    </ul>
+  </div>
+</div>
+
 ## Общие сведения
 ### Шаблоны документов
 
@@ -84,11 +136,11 @@
 > Запрос на удаление Приемки с указанным id в корзину.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/supply/be3a3a0e-370c-11e7-1542-821d00000001/trash"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/supply/be3a3a0e-370c-11e7-1542-821d00000001/trash" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d ''  
 ```
 
@@ -112,11 +164,11 @@
 > Пример запроса на привязку внутреннего заказа к перемещению.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/move/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/move/7944ef04-f831-11e5-7a69-971500188b19" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "internalOrder": {
               "meta": {
@@ -226,11 +278,11 @@
 > Пример запроса на привязку счета покупателю к отгрузке.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/demand/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/demand/7944ef04-f831-11e5-7a69-971500188b19" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "invoicesOut": [
               {
@@ -354,11 +406,11 @@
 > Пример запроса на привязку перемещений к заказу покупателя.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/c60e87dc-97b2-11ed-c0a8-a00d00000001"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/c60e87dc-97b2-11ed-c0a8-a00d00000001" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "moves": [
                     {
@@ -484,11 +536,11 @@
 > Пример запроса на привязку платежа к полученному отчету комиссионера.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/paymentin/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/paymentin/7944ef04-f831-11e5-7a69-971500188b19" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "operations": [
               {
@@ -578,12 +630,11 @@
 > Пример запроса на привязку приходного ордера к заказу покупателя.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/cashin/7944ef04-f831-11e5-7a69-971500188b19
-"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/cashin/7944ef04-f831-11e5-7a69-971500188b19" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "operations": [
               {

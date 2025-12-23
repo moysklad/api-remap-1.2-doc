@@ -66,9 +66,9 @@
 > Получить все скидки
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/discount"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/discount" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -308,11 +308,11 @@ curl -X GET
 > Пример создания новой накопительной скидки
 
 ```shell
-curl -X POST
-"https://api.moysklad.ru/api/remap/1.2/entity/accumulationdiscount"
--H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
--H "Content-Type: application/json"
+curl --compressed -X POST \
+"https://api.moysklad.ru/api/remap/1.2/entity/accumulationdiscount" \
+-H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+-H "Content-Type: application/json" \
 -d '{
 "name": "discountName",
 "active": true,
@@ -409,9 +409,9 @@ curl -X POST
 > Пример получения накопительной скидки
 
 ```shell
-curl -X GET
-"https://api.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001"
--H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+"https://api.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001" \
+-H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -478,11 +478,11 @@ curl -X GET
 > Пример обновления накопительной скидки
 
 ```shell
-curl -X PUT
-"https://api.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001"
--H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
--H "Content-Type: application/json"
+curl --compressed -X PUT \
+"https://api.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001" \
+-H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+-H "Content-Type: application/json" \
 -d '{
 "name": "updatedName",
 "active": false,
@@ -578,9 +578,9 @@ curl -X PUT
 > Запрос на удаление накопительной скидки.
 
 ```shell
-curl -X DELETE
-"https://api.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001"
--H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+"https://api.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001" \
+-H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -593,11 +593,11 @@ curl -X DELETE
 > Пример создания новой персональной скидки
 
 ```shell
-curl -X POST
-"https://api.moysklad.ru/api/remap/1.2/entity/personaldiscount"
--H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
--H "Content-Type: application/json"
+curl --compressed -X POST \
+"https://api.moysklad.ru/api/remap/1.2/entity/personaldiscount" \
+-H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+-H "Content-Type: application/json" \
 -d '{
 "name": "discountName",
 "active": true,
@@ -682,9 +682,9 @@ curl -X POST
 > Пример получения персональной скидки
 
 ```shell
-curl -X GET
-"https://api.moysklad.ru/api/remap/1.2/entity/personaldiscount/8ae26646-b1aa-11ea-ac12-000b00000001"
--H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+"https://api.moysklad.ru/api/remap/1.2/entity/personaldiscount/8ae26646-b1aa-11ea-ac12-000b00000001" \
+-H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -745,11 +745,11 @@ curl -X GET
 > Пример обновления персональной скидки
 
 ```shell
-curl -X PUT
-"https://api.moysklad.ru/api/remap/1.2/entity/personaldiscount/8ae26646-b1aa-11ea-ac12-000b00000001"
--H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
--H "Content-Type: application/json"
+curl --compressed -X PUT \
+"https://api.moysklad.ru/api/remap/1.2/entity/personaldiscount/8ae26646-b1aa-11ea-ac12-000b00000001" \
+-H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+-H "Content-Type: application/json" \
 -d '{
 "name": "updatedName",
 "active": false,
@@ -833,9 +833,9 @@ curl -X PUT
 > Запрос на удаление персональной скидки.
 
 ```shell
-curl -X DELETE
-"https://api.moysklad.ru/api/remap/1.2/entity/personaldiscount/8ae26646-b1aa-11ea-ac12-000b00000001"
--H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+"https://api.moysklad.ru/api/remap/1.2/entity/personaldiscount/8ae26646-b1aa-11ea-ac12-000b00000001" \
+-H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -848,11 +848,11 @@ curl -X DELETE
 > Пример создания новой специальной цены
 
 ```shell
-curl -X POST
-"https://api.moysklad.ru/api/remap/1.2/entity/specialpricediscount"
--H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
--H "Content-Type: application/json"
+curl --compressed -X POST \
+"https://api.moysklad.ru/api/remap/1.2/entity/specialpricediscount" \
+-H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+-H "Content-Type: application/json" \
 -d '{
 "name": "Специальная цена",
 "active": false,
@@ -957,9 +957,9 @@ curl -X POST
 > Пример получения специальной цены
 
 ```shell
-curl -X GET
-"https://api.moysklad.ru/api/remap/1.2/entity/specialpricediscount/8ae26646-b1aa-11ea-ac12-000b00000001"
--H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+"https://api.moysklad.ru/api/remap/1.2/entity/specialpricediscount/8ae26646-b1aa-11ea-ac12-000b00000001" \
+-H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1034,11 +1034,11 @@ curl -X GET
 > Пример обновления специальной цены
 
 ```shell
-curl -X PUT
-"https://api.moysklad.ru/api/remap/1.2/entity/specialpricediscount/8ae26646-b1aa-11ea-ac12-000b00000001"
--H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
--H "Content-Type: application/json"
+curl --compressed -X PUT \
+"https://api.moysklad.ru/api/remap/1.2/entity/specialpricediscount/8ae26646-b1aa-11ea-ac12-000b00000001" \
+-H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+-H "Content-Type: application/json" \
 -d '{
 "name": "updatedName",
 "usePriceType": false,
@@ -1118,9 +1118,9 @@ curl -X PUT
 > Запрос на удаление специальной цены.
 
 ```shell
-curl -X DELETE
-"https://api.moysklad.ru/api/remap/1.2/entity/specialpricediscount/8ae26646-b1aa-11ea-ac12-000b00000001"
--H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+"https://api.moysklad.ru/api/remap/1.2/entity/specialpricediscount/8ae26646-b1aa-11ea-ac12-000b00000001" \
+-H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1137,11 +1137,11 @@ curl -X DELETE
 > Пример обновления округления копеек
 
 ```shell
-curl -X PUT
-"https://api.moysklad.ru/api/remap/1.2/entity/discount/8ae26646-b1aa-11ea-ac12-000b00000001"
--H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
--H "Content-Type: application/json"
+curl --compressed -X PUT \
+"https://api.moysklad.ru/api/remap/1.2/entity/discount/8ae26646-b1aa-11ea-ac12-000b00000001" \
+-H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+-H "Content-Type: application/json" \
 -d '{
 "name": "updatedName",
 "active": true

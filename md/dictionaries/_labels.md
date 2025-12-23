@@ -42,11 +42,11 @@
 > Пример запроса на печать этикеток и ценников по шаблону печатной формы для товаров.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/product/a86708d2-f8d3-4e67-8f04-6101158da808/export/"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/product/a86708d2-f8d3-4e67-8f04-6101158da808/export/" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "organization": {
               "meta": {

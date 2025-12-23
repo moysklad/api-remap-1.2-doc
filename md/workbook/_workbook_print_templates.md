@@ -6,11 +6,11 @@
 > Запрос встроенных шаблонов заказов покупателей:
 
 ``` shell
-curl 
-    -X GET 
-    -u login:password
-    -H "Accept-Encoding: gzip" 
-    -H "Lognex-Pretty-Print-JSON: true" 
+curl --compressed \
+    -X GET \
+    -u login:password \
+    -H "Accept-Encoding: gzip" \
+    -H "Lognex-Pretty-Print-JSON: true" \
     "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/embeddedtemplate/"
 ```
 
@@ -55,11 +55,11 @@ curl
 > Запрос пользовательских шаблонов заказов покупателей:
 
 ``` shell
-curl 
-    -X GET 
-    -u login:password
-    -H "Accept-Encoding: gzip" 
-    -H "Lognex-Pretty-Print-JSON: true" 
+curl --compressed \
+    -X GET \
+    -u login:password \
+    -H "Accept-Encoding: gzip" \
+    -H "Lognex-Pretty-Print-JSON: true" \
     "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata/customtemplate/"
 ```
 

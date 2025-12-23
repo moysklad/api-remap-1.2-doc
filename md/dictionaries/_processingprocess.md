@@ -55,9 +55,9 @@
 > Запрос на получение списка Техпроцессов
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -143,9 +143,9 @@ curl -X GET
 > Запрос на получение отдельного Техпроцесса с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/d2308bcc-8fd9-11ed-ac12-000b000000c1"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/d2308bcc-8fd9-11ed-ac12-000b000000c1" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -208,11 +208,11 @@ curl -X GET
 > Запрос на создание нового Техпроцесса с телом запроса, содержащим только необходимые поля.
 
 ```shell
-curl -X POST
-"https://api.moysklad.ru/api/remap/1.2/entity/processingprocess"
--H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
--H "Content-Type: application/json"
+curl --compressed -X POST \
+"https://api.moysklad.ru/api/remap/1.2/entity/processingprocess" \
+-H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+-H "Content-Type: application/json" \
 -d '{
 	"name": "Изготавливаем двигатель",
 	"positions": [
@@ -294,11 +294,11 @@ curl -X POST
 > Запрос на обновление Техпроцесса с заменой этапа у существующей позиции и создание новой позиции.
 
 ```shell
-curl -X PUT
-"https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/117cae13-a612-11ed-ac12-000900000022"
--H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
--H "Content-Type: application/json"
+curl --compressed -X PUT \
+"https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/117cae13-a612-11ed-ac12-000900000022" \
+-H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+-H "Content-Type: application/json" \
 -d '
 {
 	"name": "Изготавливаем двигатель №2",
@@ -394,9 +394,9 @@ curl -X PUT
 > Запрос на удаление Техпроцесса с указанным id.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/d2308bcc-8fd9-11ed-ac12-000b000000c1"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/d2308bcc-8fd9-11ed-ac12-000b000000c1" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -436,9 +436,9 @@ curl -X DELETE
 > Запрос на получение списка позиций Техпроцесса
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/d5069703-988e-11ed-ac19-000400000029/positions"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/d5069703-988e-11ed-ac19-000400000029/positions" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -500,9 +500,9 @@ curl -X GET
 > Запрос на получение отдельной позиции Техпроцесса с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/1d4adde5-a6bb-11ed-ac12-00090000003f/positions/23a62e19-a6bb-11ed-ac12-000900000043"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/1d4adde5-a6bb-11ed-ac12-00090000003f/positions/23a62e19-a6bb-11ed-ac12-000900000043" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -541,11 +541,11 @@ curl -X GET
 > Запрос на создание позиций Техпроцесса
 
 ```shell
-curl -X POST
-"https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/1d4adde5-a6bb-11ed-ac12-00090000003f/positions"
--H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
--H "Content-Type: application/json"
+curl --compressed -X POST \
+"https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/1d4adde5-a6bb-11ed-ac12-00090000003f/positions" \
+-H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+-H "Content-Type: application/json" \
 -d '
 [
 	{
@@ -601,11 +601,11 @@ curl -X POST
 > Запрос на обновление позиции Техпроцесса
 
 ```shell
-curl -X PUT
-"https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/1d4adde5-a6bb-11ed-ac12-00090000003f/positions/23a62e19-a6bb-11ed-ac12-000900000043"
--H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
--H "Content-Type: application/json"
+curl --compressed -X PUT \
+"https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/1d4adde5-a6bb-11ed-ac12-00090000003f/positions/23a62e19-a6bb-11ed-ac12-000900000043" \
+-H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+-H "Content-Type: application/json" \
 -d '
 {
 	"processingstage": {
@@ -655,9 +655,9 @@ curl -X PUT
 > Запрос на удаление позиции Техпроцесса с указанным id.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/d5069703-988e-11ed-ac19-000400000029/positions/d5069da5-988e-11ed-ac19-00040000002a"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/d5069703-988e-11ed-ac19-000400000029/positions/d5069da5-988e-11ed-ac19-00040000002a" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -671,11 +671,11 @@ curl -X DELETE
 > Запрос на массовое удаление позиций Техпроцесса.
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/5fe17cd6-72fd-11ee-c0a8-e00e00000017/positions/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/5fe17cd6-72fd-11ee-c0a8-e00e00000017/positions/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
     -d '[
           {
               "meta": {
@@ -704,11 +704,11 @@ curl -X POST
 > Запрос на создание и обновление нескольких Техпроцессов
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
     -d '
     [
       {
@@ -841,11 +841,11 @@ curl -X POST
 > Запрос на массовое удаление Техпроцессов.
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '
   [
     {

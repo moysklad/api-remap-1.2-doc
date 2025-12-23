@@ -30,9 +30,9 @@
 > Запрос на получение всех отделов на данной учетной записи.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/group"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/group" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -102,9 +102,9 @@ curl -X GET
 > Запрос на получение отдельного отдела с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -137,11 +137,11 @@ curl -X GET
 > Пример добавления отдела.
   
   ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/group"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/group" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "Новый отдел",
           }'  
@@ -168,11 +168,11 @@ curl -X GET
 > Пример вставки Отдела в начало списка.
   
   ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/group"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/group" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "Новый отдел",
             "index" : 0
@@ -203,11 +203,11 @@ curl -X GET
 > Пример изменения названия Отдела.
   
   ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/group/a4047c9a-0fca-11eb-ac13-000700000003"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/group/a4047c9a-0fca-11eb-ac13-000700000003" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "Новое имя отдела",
           }'  
@@ -234,11 +234,11 @@ curl -X GET
 > Пример перемещения Отдела в начало списка.
   
   ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/group/a4047c9a-0fca-11eb-ac13-000700000003"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/group/a4047c9a-0fca-11eb-ac13-000700000003" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "index": 0
           }'  
@@ -273,9 +273,9 @@ curl -X GET
 > Запрос на удаление Отдела с указанным id.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/group/a4047c9a-0fca-11eb-ac13-000700000003"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/group/a4047c9a-0fca-11eb-ac13-000700000003" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
