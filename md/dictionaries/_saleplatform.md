@@ -21,11 +21,11 @@
 
 | Название                       | Описание          |
 | ------------------------------ |:------------------|
-| **MESSENGERS**                  | Мессенджеры       |
-| **SOCIAL_NETWORKS**             | Социальные сети   |
 | **MARKETPLACES**                | Маркетплейсы      |
-| **ONLINE_STORES**                  | Интернет-магазины |
+| **MESSENGERS**                  | Мессенджеры       |
 | **OFFLINE_STORES**             | Офлайн-магазины   |
+| **ONLINE_STORES**                  | Интернет-магазины |
+| **SOCIAL_NETWORKS**             | Социальные сети   |
 
 #### Атрибуты доступные для фильтрации
 | Значение                       | Описание                   |
@@ -54,7 +54,7 @@
 > Получить Сущности
 
 ```shell
-curl --compressed -X GET
+curl --compressed -X GET \
   "https://api.moysklad.ru/api/remap/1.2/entity/saleplatform" \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
@@ -122,7 +122,7 @@ curl --compressed -X GET
 > Запрос на получение отдельной площадки для продаж с указанным id.
 
 ```shell
-curl --compressed -X GET
+curl --compressed -X GET \
   "https://api.moysklad.ru/api/remap/1.2/entity/saleplatform/39aaefe6-0304-4b85-ad3c-e8b93549f426" \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"

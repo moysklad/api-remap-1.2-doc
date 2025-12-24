@@ -53,7 +53,7 @@
 > Получить Сущности
 
 ```shell
-curl --compressed -X GET
+curl --compressed -X GET \
   "https://api.moysklad.ru/api/remap/1.2/entity/contentcard" \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
@@ -217,7 +217,7 @@ curl --compressed -X GET
 > Запрос на получение отдельной карточки контента с указанным id.
 
 ```shell
-curl --compressed -X GET
+curl --compressed -X GET \
   "https://api.moysklad.ru/api/remap/1.2/entity/contentcard/529eb5b6-d726-11f0-0a80-073800000329" \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
