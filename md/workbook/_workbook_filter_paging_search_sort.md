@@ -10,10 +10,10 @@
 > Запрос
 
 ``` shell
-curl -X GET 
-  -u login:password
-  -H "Accept-Encoding: gzip" 
-  -H "Lognex-Pretty-Print-JSON: true" 
+curl --compressed -X GET \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H "Lognex-Pretty-Print-JSON: true" \
   "https://api.moysklad.ru/api/remap/1.2/entity/product?filter=name=Просто замечательный товар;updated>2018-01-01 00:00:00"
 ```
 
@@ -142,9 +142,9 @@ curl -X GET
 > Запрос
 
 ``` shell
-curl -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product"
-  -u login:password
-  -H "Accept-Encoding: gzip" 
+curl --compressed -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product" \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
   -H "Lognex-Pretty-Print-JSON: true"
 ```
 
@@ -798,9 +798,9 @@ curl -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product"
 > Запрос с limit и offset
 
 ``` shell
-curl -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product?limit=1&offset=0"
-  -u login:password
-  -H "Accept-Encoding: gzip" 
+curl --compressed -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product?limit=1&offset=0" \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
   -H "Lognex-Pretty-Print-JSON: true"
 ```
 
@@ -970,10 +970,10 @@ curl -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product?limit=1&offset
 > Запрос
 
 ``` shell
-curl -X GET 
-  -u login:password
-  -H "Accept-Encoding: gzip" 
-  -H "Lognex-Pretty-Print-JSON: true" 
+curl --compressed -X GET \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H "Lognex-Pretty-Print-JSON: true" \
   "https://api.moysklad.ru/api/remap/1.2/entity/country?search=Рос"
 ```
 
@@ -1029,9 +1029,9 @@ curl -X GET
 > Запрос
 
 ``` shell
-curl -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product?order=name,desc;updated"
-  -u login:password
-  -H "Accept-Encoding: gzip" 
+curl --compressed -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product?order=name,desc;updated" \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
   -H "Lognex-Pretty-Print-JSON: true"
 ```
 

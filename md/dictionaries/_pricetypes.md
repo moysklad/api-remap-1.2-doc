@@ -16,9 +16,9 @@
 > Получить список всех типов цен
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -72,11 +72,11 @@ curl -X GET
 > Пример создания нового типа цены.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
     -d '[
           {
             "meta": {
@@ -126,11 +126,11 @@ curl -X GET
 > Пример обновления существующего списка.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
     -d '[
           {
             "meta": {
@@ -197,9 +197,9 @@ curl -X GET
 > Получить тип цены по ID
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/a8967d6b-b026-11e7-9464-d04800000000"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/a8967d6b-b026-11e7-9464-d04800000000" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -224,9 +224,9 @@ curl -X GET
 > Получить тип цены по умолчанию
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/default"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/default" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 

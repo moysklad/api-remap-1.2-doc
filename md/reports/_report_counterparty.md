@@ -71,9 +71,9 @@
 > Запрос на получение отчета по контрагентам.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/counterparty"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/counterparty" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -284,11 +284,11 @@ curl -X GET
 > Пример запроса отчетов для нескольких контрагентов.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/report/counterparty"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/report/counterparty" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "counterparties": [
               {
@@ -425,9 +425,9 @@ curl -X GET
 > Запрос на получение отчета по контрагенту с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/counterparty/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
