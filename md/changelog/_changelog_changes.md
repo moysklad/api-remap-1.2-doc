@@ -53,6 +53,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 29-12-2025
+**Добавлена**
+- Фильтрация для документа [Заказ кодов маркировки](#/documents/emissionorder#2-zakaz-kodov-markirovki)
+
 ### 24-12-2025
 **Добавлены**
 - Эндпоинт [Площадок для продаж](#/dictionaries/saleplatform#2-ploshadka-dlya-prodazh)
