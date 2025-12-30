@@ -53,6 +53,15 @@
 
 Список последних изменений в API Remap 1.2
 
+### 30-12-2025
+**Добавлено**
+- Поле `expiryDate` в [Атрибуты сущности серии](#/dictionaries/consignment#4-atributy-sushnosti)
+- Ошибка [71001](#/errors#3-kody-oshibok-dlya-serij)
+
+**Изменено**
+- Поле `label` в [Атрибутах сущности серии](#/dictionaries/consignment#4-atributy-sushnosti)
+- Описания [Серии](#/dictionaries/consignment#3-serii)
+
 ### 24-12-2025
 **Добавлены**
 - Эндпоинт [Площадок для продаж](#/dictionaries/saleplatform#2-ploshadka-dlya-prodazh)
