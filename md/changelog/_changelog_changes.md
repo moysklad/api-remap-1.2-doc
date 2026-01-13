@@ -53,6 +53,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 13-01-2026
+**Добавлена**
+- Фильтрация для документа [Вывод кодов маркировки из оборота](#/documents/retireorder#2-vyvod-kodov-markirovki-iz-oborota)
+
 ### 29-12-2025
 **Добавлена**
 - Фильтрация для документа [Заказ кодов маркировки](#/documents/emissionorder#2-zakaz-kodov-markirovki)
