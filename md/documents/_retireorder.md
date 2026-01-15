@@ -39,6 +39,7 @@
 | **supportingTransaction**       | Enum                           |                            | Тип документа-основания. [Подробнее тут](#/documents/retireorder#4-tip-dokumenta-osnovaniya)                                                                                                           |
 | **supportingTransactionDate**   | DateTime                       |                            | Дата документа-основания                                                                                                                                                                               |
 | **supportingTransactionNumber** | String(255)                    |                            | Номер документа-основания                                                                                                                                                                              |
+| **reasonDescription**           | String(1024)                   |                            | Описание причины                                                                                                                                                                                       |
 | **syncId**                      | UUID                           |                            | ID синхронизации. После заполнения недоступен для изменения                                                                                                                                            |
 | **trackingType**                | Enum                           |                            | Тип маркируемой продукции. [Подробнее тут](#/documents/retireorder#4-tip-markiruemoj-produkcii) <br>`+Обязательное при ответе` `+Необходимо при создании`                                              |
 | **updated**                     | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления Вывода из оборота.<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                     |
@@ -76,6 +77,7 @@
 | **LP_LINENS**       | Тип маркировки "Постельное белье"    |
 | **MEDICAL_DEVICES** | Медизделия и кресла-коляски          |
 | **MILK**            | Молочная продукция                   |
+| **NABEER**          | Безалкогольное пиво                  |
 | **PERFUMERY**       | Духи и туалетная вода                |
 | **PET_FOOD**        | Корма для животных                   |
 | **SANITIZER**       | Антисептики                          |
@@ -104,6 +106,7 @@
 | **EXPORT_OUTSIDE_EEU**   | Экспорт за пределы стран ЕАЭС                          |
 | **MEDICAL_USE**          | Использование для медицинского применения              |
 | **MISMATCH**             | Пересортица по кодам                                   |
+| **OTHER_TYPE**           | Другое                                                 |
 | **OWN_USE**              | Использование для собственных нужд                     |
 | **PACKING**              | Фасовка                                                |
 | **PRODUCTION_USE**       | Использование для производственных целей               |
@@ -493,7 +496,8 @@ curl --compressed -X GET \
 | **SEAFOOD**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION, VENDING                           |
 | **BEER_ALCOHOL**                                                | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, MISMATCH                                      |
 | **VEGETABLE_OIL**                                               | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, PACKING, DISTANCE, BY_SAMPLES        |
-| **PET_FOOD**                                                    | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, DISTANCE, BY_SAMPLES                 |
+| **PET_FOOD**                                                    | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, DISTANCE, BY_SAMPLES, PACKING        |
+| **NABEER**                                                      | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, DISTANCE, BY_SAMPLES, OTHER_TYPE     |
 
 Связь допустимых значений поля **supportingTransaction** в зависимости от **retireOrderType**
 
@@ -517,6 +521,7 @@ curl --compressed -X GET \
 | **UTILIZATION**          | OTHER                                                |
 | **VENDING**              | OTHER                                                |
 | **VETERINARY_USE**       | OTHER                                                |
+| **OTHER_TYPE**           | OTHER                                                |
 
 Способ вывода из оборота **retireOrderType**:
 
@@ -524,6 +529,7 @@ curl --compressed -X GET \
 + Если выбрано значение **DISTANCE**, то поля **supportingTransaction**, **supportingTransactionDate** и **supportingTransactionNumber** становятся необязательными. Поля **supportingTransactionDate** и **supportingTransactionNumber** очищаются при указании значения **null** для поля **supportingTransaction**.
 + Если выбрано значение **STATE_CONTRACT**, то поле **stateContractId** является обязательным.
 + Если выбрано значение **EXPORT_INSIDE_EEU**, то поле **destinationCountry** является обязательным и допускаются значения: Армения, Беларусь, Казахстан, Киргизия.
++ Если выбрано значение **OTHER**, то поле **reasonDescription** является обязательным.
 
 Тип документа-основания **supportingTransaction**:
 
