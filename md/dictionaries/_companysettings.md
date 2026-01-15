@@ -54,9 +54,9 @@
 > Запрос на получение Настроек компании.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/context/companysettings"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/context/companysettings" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -153,11 +153,11 @@ curl -X GET
 > Запрос на изменение Настроек компании.
 
 ```shell
-curl -X PUT
-  "https://api.moysklad.ru/api/remap/1.2/context/companysettings"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/context/companysettings" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
       -d '{
 	  "globalOperationNumbering": true,
 	  "checkShippingStock": true,
@@ -251,9 +251,9 @@ curl -X PUT
 > Запрос на получение метаданных Настроек компании.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 

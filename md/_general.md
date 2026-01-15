@@ -1,3 +1,4 @@
+# МойСклад JSON API
 <div class="banner-wrapper">
   <style>
     .banner {
@@ -43,14 +44,13 @@
         <code>GET https://api.moysklad.ru/api/remap/1.2/report/stock/bystore</code>
       </li>
     </ul>
-    <p><strong>График изменений</strong></p>
+    <p><strong>Дата вступления изменений в силу</strong></p>
     <ul>
       <li>5 единиц лимита за запрос с февраля 2026 года</li>
     </ul>
   </div>
 </div>
 
-# МойСклад JSON API
 ## Общие Сведения
 ### Аутентификация
 
@@ -73,9 +73,9 @@
 > Пример запроса на получение нового токена
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/security/token"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/security/token" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ``` 
 
@@ -158,9 +158,9 @@ JSON API позволяет получить метаданные всех су�
 > Пример запроса на получение метаданных с помощью GET:
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/metadata?filter=type=product;type=service;type=demand"
-  -H "Authorization: Bearer <Access-Token>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/metadata?filter=type=product;type=service;type=demand" \
+  -H "Authorization: Bearer <Access-Token>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -428,10 +428,10 @@ JSON API позволяет создавать, обновлять и удаля
 > Пример присваивания значения доп. полю типа Файл 
 
 ```shell
-curl -X PUT 
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025" 
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
   -d '{
     "attributes": [
         {
@@ -452,10 +452,10 @@ curl -X PUT
 > Пример сброса значения доп. поля типа Файл
 
 ```shell
-curl -X PUT 
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025" 
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/dde7f6d3-1c09-11ef-ac12-000f00000025" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
   -d '{
     "attributes": [
         {
@@ -496,9 +496,9 @@ curl -X PUT
 > Получить доп поля отгрузок
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -633,11 +633,11 @@ curl -X GET
 > Создание двух новых доп. полей для отгрузок.
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json'
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H 'Content-Type: application/json' \
   -d '[
         {
           "name": "Строковое",
@@ -689,11 +689,11 @@ curl -X POST
 > Пример создания нового доп. поля Отгрузок и обновления существующего одним запросом.
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json'
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H 'Content-Type: application/json' \
   -d '[
         {
           "meta": {
@@ -749,11 +749,11 @@ curl -X POST
 > Пример создания дополнительного поля типа пользовательский справочник.
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json'
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H 'Content-Type: application/json' \
   -d '{
         "customEntityMeta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/0347beb0-a785-11e9-ac12-000800000003/metadata",
@@ -796,11 +796,11 @@ curl -X POST
 > Удаление двух доп полей одним запросом
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json'
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H 'Content-Type: application/json' \
   -d '[
         {
           "meta": {
@@ -836,9 +836,9 @@ curl -X POST
 > Запрос на получение отдельного доп. поля отгрузки
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -868,10 +868,10 @@ curl -X GET
 > Запрос на обновление доп. поля отгрузки
 
 ```shell
-curl -X PUT
-  "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
   -H 'Content-Type: application/json' \
   -d '{
         "name": "обновленное Строковое поле",
@@ -906,9 +906,9 @@ curl -X PUT
 > Запрос на удаление доп. поля отгрузки
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/7bc578d8-6501-11e8-9464-e4de00000004" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -921,11 +921,11 @@ curl -X DELETE
 > Запрос на обновление доп. полей отгрузки
 
 ```shell
-curl -X PUT
-  "https://api.moysklad.ru/api/remap/1.2/entity/demand/a6c50571-e705-11ef-ac12-000e0000001d"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json'
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/demand/a6c50571-e705-11ef-ac12-000e0000001d" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H 'Content-Type: application/json' \
   -d '{
         "attributes": [
             {
@@ -1089,9 +1089,9 @@ API сервиса МойСклад позволяет оперировать с
 > Пример URL для запроса на удаление с помощью DELETE:
 
 ```shell
-curl -X DELETE 
-  "https://api.moysklad.ru/api/remap/1.2/{код сущности документа, в составе JSON API}/{id отдельного документа}/positions/179dd832-960c-11e6-8a84-bae5000000dc"
-  -H "Authorization: Bearer <Access-Token>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/{код сущности документа, в составе JSON API}/{id отдельного документа}/positions/179dd832-960c-11e6-8a84-bae5000000dc" \
+  -H "Authorization: Bearer <Access-Token>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1107,9 +1107,9 @@ curl -X DELETE
 > Пример URL для запроса на массовое удаление позиций с помощью POST:
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/{код сущности документа, в составе JSON API}/{id отдельного документа}/positions/delete"
-  -H "Authorization: Bearer <Access-Token>"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/{код сущности документа, в составе JSON API}/{id отдельного документа}/positions/delete" \
+  -H "Authorization: Bearer <Access-Token>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1486,9 +1486,9 @@ accounts.accountnumber Параметр строкового типа. В отф
 > Пример удаления Приёмки в корзину
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/move/b8fe9f6b-f48f-11ed-ac1a-000d0000003a/trash"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/move/b8fe9f6b-f48f-11ed-ac1a-000d0000003a/trash" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ``` 
 
@@ -1542,9 +1542,9 @@ curl -X POST
 > Пример запроса возврата без expand
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1670,9 +1670,9 @@ curl -X GET
 > Пример запроса возврата с expand отгрузки
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043?expand=demand"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043?expand=demand" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1917,9 +1917,9 @@ curl -X GET
 > Пример запроса возвратов с expand отгрузки
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn?limit=100&expand=demand"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn?limit=100&expand=demand" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -2174,9 +2174,9 @@ curl -X GET
 > Пример запроса возврата c expand с глубиной 2 
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043?expand=demand.agent"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn/685a0eb9-e707-11ef-ac12-000e00000043?expand=demand.agent" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -2494,10 +2494,10 @@ curl -X GET
 > Пример запроса на создание отгрузки с раскрытием поля **agent**.
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/demand?expand=agent"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/demand?expand=agent" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
   -H 'Content-Type: application/json' \
   -d '{
   "name": "0001",
@@ -2697,11 +2697,11 @@ curl -X POST
 > Пример запроса на обновление отгрузки с развернутыми объектами **agent** и **organization**.
 
 ```shell
-curl -X PUT
-  "https://api.moysklad.ru/api/remap/1.2/entity/demand/1c3f30d2-88b9-11e7-9464-e4de00000000?expand=agent,organization"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H 'Content-Type: application/json'
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/demand/1c3f30d2-88b9-11e7-9464-e4de00000000?expand=agent,organization" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H 'Content-Type: application/json' \
   -d '{
   "name": "3738"
 }'
@@ -3118,9 +3118,9 @@ curl -X PUT
 > Пример запроса на получения контекста запроса Cотрудника.
 
 ```shell
-  curl -X GET
-    "https://api.moysklad.ru/api/remap/1.2/context/employee/"
-    -H "Authorization: Basic <Credentials>"
+  curl --compressed -X GET \
+    "https://api.moysklad.ru/api/remap/1.2/context/employee/" \
+    -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip"
 ```
 
@@ -3657,9 +3657,9 @@ curl -X PUT
 > Пример запроса на получение контекста решения
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/context/application"
-  -H "Authorization: Bearer <Access-Token>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/context/application" \
+  -H "Authorization: Bearer <Access-Token>" \
   -H "Accept-Encoding: gzip"
 ``` 
 
@@ -3690,9 +3690,9 @@ curl -X GET
 > Пример запроса на получение сущности установленного решения
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/application/b58a6312-f958-11e9-ac12-000a00000020"
-  -H "Authorization: Bearer <Access-Token>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/application/b58a6312-f958-11e9-ac12-000a00000020" \
+  -H "Authorization: Bearer <Access-Token>" \
   -H "Accept-Encoding: gzip"
 ``` 
 
@@ -3743,10 +3743,11 @@ Href решения должен быть указан в виде:
 Для аккаунтов зарегистрированными с региональными настройками, отличными от российских, необходимо передавать заголовок X-Lognex-Accept-Region.
 Возможные значения для заголовка следующие:
 
-| Значение заголовка X-Lognex-Accept-Region | Описание                               |
-|:------------------------------------------|:---------------------------------------|
-| **ru**                                    | Регион Россия (регион по умолчанию)    |
-| **uz**                                    | Регион Узбекистан                      |
+| Значение заголовка X-Lognex-Accept-Region | Описание                            |
+|:------------------------------------------|:------------------------------------|
+| **ru**                                    | Регион Россия (регион по умолчанию) |
+| **uz**                                    | Регион Узбекистан                   |
+| **kz**                                    | Регион Казахстан                    |
 
 Передача регионального заголовка, дает возможность получать и изменять регионоспецифичные поля. [Пример для товара](#/dictionaries/product#5-regionospecifichnye-atributy-sushnosti)
 Результатом выполнения запроса будет получение ответа содержащий регионоспецифичные поля и заголовок `X-Lognex-Content-Region` c кодом региона.

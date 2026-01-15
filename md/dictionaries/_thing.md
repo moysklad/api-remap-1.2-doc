@@ -31,9 +31,9 @@
 > Получить серийные номера
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/thing"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/thing" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -103,9 +103,9 @@ curl -X GET
 > Запрос на получение серийного номера с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/thing/3840d8d8-9f2d-11ee-8c90-0242ac120002"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/thing/3840d8d8-9f2d-11ee-8c90-0242ac120002" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 

@@ -1,3 +1,4 @@
+# Сущности
 <div class="banner-wrapper">
   <style>
     .banner {
@@ -43,14 +44,12 @@
         <code>GET https://api.moysklad.ru/api/remap/1.2/report/stock/bystore</code>
       </li>
     </ul>
-    <p><strong>График изменений</strong></p>
+    <p><strong>Дата вступления изменений в силу</strong></p>
     <ul>
       <li>5 единиц лимита за запрос с февраля 2026 года</li>
     </ul>
   </div>
 </div>
-
-# Сущности
 
 ## Ассортимент
 Сущность assortment представляет собой список всех товаров, услуг, комплектов, модификаций и серий с полями `stock`,
@@ -212,9 +211,9 @@
 > Запрос на получение всех товаров, услуг, комплектов и модификаций в виде списка.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/assortment"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/assortment" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -822,9 +821,9 @@ curl -X GET
 > Запрос на получение всех товаров, услуг, комплектов, модификаций и серий в виде списка.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/assortment?groupBy=consignment"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/assortment?groupBy=consignment" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1428,11 +1427,11 @@ curl -X GET
 > Запрос на массовое удаление позиций в Ассортименте. 
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/assortment/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/assortment/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '[
         {
             "meta": {
@@ -1471,9 +1470,9 @@ curl -X POST
 > Запрос на получение настроек справочника товаров
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/assortment/settings"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/assortment/settings" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1509,11 +1508,11 @@ curl -X GET
 > Запрос на изменение метаданных справочника товаров.
 
 ```shell
-curl -X PUT
-  "https://api.moysklad.ru/api/remap/1.2/entity/assortment/settings"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/assortment/settings" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '{
   "uniqueCodeRules": {
     "checkUniqueCodeBoolean": true,

@@ -49,9 +49,9 @@
 > Пример запроса на получение Кодов маркировки
 
 ```shell
-  curl -X GET
-    "https://api.moysklad.ru/api/remap/1.2/entity/supply/161d0246-1477-11ec-ac18-000b00000001/positions/161d25a8-1477-11ec-ac18-000b00000002/trackingCodes"
-    -H "Authorization: Basic <Credentials>"
+  curl --compressed -X GET \
+    "https://api.moysklad.ru/api/remap/1.2/entity/supply/161d0246-1477-11ec-ac18-000b00000001/positions/161d25a8-1477-11ec-ac18-000b00000002/trackingCodes" \
+    -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip"
 ```
 
@@ -109,10 +109,10 @@
 > Пример создания и обновления нескольких кодов маркировки
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/supply/161d0246-1477-11ec-ac18-000b00000001/positions/161d25a8-1477-11ec-ac18-000b00000002/trackingCodes"
-    -H "Authorization: Basic <Credentials>"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/supply/161d0246-1477-11ec-ac18-000b00000001/positions/161d25a8-1477-11ec-ac18-000b00000002/trackingCodes" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Content-Type: application/json" \
       -d '[
             {
               "id": "f591e101-1bc0-11ec-ac18-000c00000004",
@@ -152,10 +152,10 @@
 > Запрос на массовое удаление Кодов маркировки
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/supply/161d0246-1477-11ec-ac18-000b00000001/positions/161d25a8-1477-11ec-ac18-000b00000002/trackingCodes/delete"
-    -H "Authorization: Basic <Credentials>"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/supply/161d0246-1477-11ec-ac18-000b00000001/positions/161d25a8-1477-11ec-ac18-000b00000002/trackingCodes/delete" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Content-Type: application/json" \
       -d '[
             {
               "meta": {

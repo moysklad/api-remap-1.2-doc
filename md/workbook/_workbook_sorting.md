@@ -87,12 +87,12 @@
 > Запрос
 
 ```shell
-curl -X POST 
-  https://api.moysklad.ru/api/remap/1.2/entity/product 
-  -H 'Authorization: Bearer <Access-Token>'
-  -H "Accept-Encoding: gzip"
-  -H 'Cache-Control: no-cache' 
-  -H 'Content-Type: application/json' 
+curl --compressed -X POST \
+  https://api.moysklad.ru/api/remap/1.2/entity/product \
+  -H 'Authorization: Bearer <Access-Token>' \
+  -H "Accept-Encoding: gzip" \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
   -d '[
      {
       "name":"12345",
@@ -154,10 +154,10 @@ curl -X POST
 > Запрос
 
 ```shell
-curl -X GET 
-  'https://api.moysklad.ru/api/remap/1.2/entity/product?order=name' 
-  -H 'Authorization: Bearer <Access-Token>' 
-  -H "Accept-Encoding: gzip"
+curl --compressed -X GET \
+  'https://api.moysklad.ru/api/remap/1.2/entity/product?order=name' \
+  -H 'Authorization: Bearer <Access-Token>' \
+  -H "Accept-Encoding: gzip" \
   -H 'Cache-Control: no-cache'
 ```
 Ответ будет содержать следующий порядок по возрастанию:
@@ -180,10 +180,10 @@ curl -X GET
 > Запрос
 
 ```shell
-curl -X GET 
-  'https://api.moysklad.ru/api/remap/1.2/entity/product?order=name,desc' 
-  -H 'Authorization: Bearer <Access-Token>'
-  -H "Accept-Encoding: gzip"
+curl --compressed -X GET \
+  'https://api.moysklad.ru/api/remap/1.2/entity/product?order=name,desc' \
+  -H 'Authorization: Bearer <Access-Token>' \
+  -H "Accept-Encoding: gzip" \
   -H 'Cache-Control: no-cache'
 ```
 
@@ -205,11 +205,11 @@ curl -X GET
 > Запрос
 
 ```shell
-curl -X GET 
-  'https://api.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;name' 
-  -H 'Authorization: Bearer <Access-Token>'
-  -H "Accept-Encoding: gzip"
-  -H 'Cache-Control: no-cache' 
+curl --compressed -X GET \
+  'https://api.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;name' \
+  -H 'Authorization: Bearer <Access-Token>' \
+  -H "Accept-Encoding: gzip" \
+  -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json'
 ```
 
@@ -231,11 +231,11 @@ curl -X GET
 > Запрос
 
 ```shell
-curl -X GET 
-  'https://api.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;weight,desc;name' 
-  -H 'Authorization: Bearer <Access-Token>'
-  -H "Accept-Encoding: gzip"
-  -H 'Cache-Control: no-cache' 
+curl --compressed -X GET \
+  'https://api.moysklad.ru/api/remap/1.2/entity/product?order=weighed,desc;weight,desc;name' \
+  -H 'Authorization: Bearer <Access-Token>' \
+  -H "Accept-Encoding: gzip" \
+  -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json'
 ```
 
@@ -258,11 +258,11 @@ curl -X GET
 > Запрос
 
 ```shell
-curl -X GET 
-  'https://api.moysklad.ru/api/remap/1.2/entity/product?order=syncId' 
-  -H 'Authorization: Bearer <Access-Token>'
-  -H "Accept-Encoding: gzip"
-  -H 'Cache-Control: no-cache' 
+curl --compressed -X GET \
+  'https://api.moysklad.ru/api/remap/1.2/entity/product?order=syncId' \
+  -H 'Authorization: Bearer <Access-Token>' \
+  -H "Accept-Encoding: gzip" \
+  -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json'
 ```
 

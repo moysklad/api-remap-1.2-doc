@@ -74,9 +74,9 @@
 > Получить список Событий для Заказа покупателя
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -162,11 +162,11 @@ curl -X GET
 > Запрос на добавление нового события для Заказа покупателя.
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
     -d '{
           "description": "Привет, {{employee;730c1b3d-00ba-11ef-ac12-00120000000d}}! Как у тебя дела?"
         }'  
@@ -213,9 +213,9 @@ curl -X POST
 > Получить Событие Заказа покупателя
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes/844a0ef9-19ac-11ef-ac12-000b00000000"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes/844a0ef9-19ac-11ef-ac12-000b00000000" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -260,11 +260,11 @@ curl -X GET
 > Обновить Событие Заказа покупателя
 
 ```shell
-curl -X PUT
-  "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes/844a0ef9-19ac-11ef-ac12-000b00000000"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes/844a0ef9-19ac-11ef-ac12-000b00000000" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
     -d '{
           "description": "Привет, {{employee;730c1b3d-00ba-11ef-ac12-00120000000d}}! Как у тебя дела?"
         }'  
@@ -311,9 +311,9 @@ curl -X PUT
 > Удалить Событие Заказа покупателя
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes/844a0ef9-19ac-11ef-ac12-000b00000000"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes/844a0ef9-19ac-11ef-ac12-000b00000000" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 

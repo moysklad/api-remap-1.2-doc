@@ -1,3 +1,4 @@
+# Аудит
 <div class="banner-wrapper">
   <style>
     .banner {
@@ -43,15 +44,12 @@
         <code>GET https://api.moysklad.ru/api/remap/1.2/report/stock/bystore</code>
       </li>
     </ul>
-    <p><strong>График изменений</strong></p>
+    <p><strong>Дата вступления изменений в силу</strong></p>
     <ul>
       <li>5 единиц лимита за запрос с февраля 2026 года</li>
     </ul>
   </div>
 </div>
-
-
-# Аудит
 
 Сервис МойСклад накапливает сведения о всех событиях в системе. Эта часть сервиса называется аудит, а накопленные сведения - событиями аудита.
 Изменения по конкретной сущности доступны пользователям при наличии прав на просмотр.
@@ -83,20 +81,20 @@
 
 ##### Атрибуты сущности
 
-| Название          | Тип                                                       | Описание                                                                                                                                                                                   |
-| ----------------- | :-------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **entityType**    | Enum                                                      | Название сущности (поле присутствует, только если оно одинаково у всех Событий в рамках данного Контекста)<br>`+Обязательное при ответе` `+Только для чтения`                              |
-| **eventType**     | Enum                                                      | Действие Событий (поле присутствует, только если оно одинаково у всех Событий в рамках данного Контекста)<br>`+Обязательное при ответе` `+Только для чтения`                               |
-| **events**        | Array(Object)                                             | Список методанных Событий аудита<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                        |
-| **id**            | UUID                                                      | ID Контекста<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                            |
-| **info**          | String(255)                                               | Краткое описание<br>`+Только для чтения`                                                                                                                                                   |
-| **meta**          | [Meta](#/general#3-metadannye) | Метаданные сущности Контекста<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                           |
-| **moment**        | DateTime                                                  | Дата изменения<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                          |
-| **objectCount**   | Int                                                       | количество измененных объектов<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                          |
-| **objectType**    | Enum                                                      | Тип сущностей, с которыми связанно данное изменение. Поле присутствует только для `entityType` = `entitysettings` или `statesettings` или `templatesettings`<br>`+Обязательное при ответе` |
-| **source**        | Enum                                                      | Тип изменения<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                           |
-| **supportAccess** | Boolean                                                   | Был ли доступ произведен поддержкой от имени пользователя. Флаг отсутствует, если значение false<br>`+Обязательное при ответе` `+Только для чтения`                                        |
-| **uid**           | String(255)                                               | Логин Сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                        |
+| Название          | Тип                                                    | Описание                                                                                                                                                                                   |
+| ----------------- |:-------------------------------------------------------| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **entityType**    | Enum                                                   | Название сущности (поле присутствует, только если оно одинаково у всех Событий в рамках данного Контекста)<br>`+Обязательное при ответе` `+Только для чтения`                              |
+| **eventType**     | Enum                                                   | Действие Событий (поле присутствует, только если оно одинаково у всех Событий в рамках данного Контекста)<br>`+Обязательное при ответе` `+Только для чтения`                               |
+| **events**        | Array(Object)                                          | Список методанных Событий аудита<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                        |
+| **id**            | UUID                                                   | ID Контекста<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                            |
+| **info**          | Object                                                 | Краткое описание<br>`+Только для чтения`                                                                                                                                                   |
+| **meta**          | [Meta](#/general#3-metadannye)                         | Метаданные сущности Контекста<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                           |
+| **moment**        | DateTime                                               | Дата изменения<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                          |
+| **objectCount**   | Int                                                    | количество измененных объектов<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                          |
+| **objectType**    | Enum                                                   | Тип сущностей, с которыми связанно данное изменение. Поле присутствует только для `entityType` = `entitysettings` или `statesettings` или `templatesettings`<br>`+Обязательное при ответе` |
+| **source**        | Enum                                                   | Тип изменения<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                           |
+| **supportAccess** | Boolean                                                | Был ли доступ произведен поддержкой от имени пользователя. Флаг отсутствует, если значение false<br>`+Обязательное при ответе` `+Только для чтения`                                        |
+| **uid**           | String(255)                                            | Логин Сотрудника<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                        |
 
 Возможные значение параметра `source` преставлены ниже:
 
@@ -153,9 +151,9 @@
 > Получить Контексты
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/audit"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/audit" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -214,9 +212,9 @@ https://api.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder
 > Получить Контексты c фильтрацией
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/audit?filter=entityType=customerorder" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -376,9 +374,9 @@ curl -X GET
 > Получить События по Контексту
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/audit/7944ef04-f831-11e5-7a69-971500188b19/events"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/audit/7944ef04-f831-11e5-7a69-971500188b19/events" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -459,9 +457,9 @@ curl -X GET
 > Получить События по Сущности
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/audit"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/audit" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -641,9 +639,9 @@ curl -X GET
 > Получить Фильтры
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/audit/metadata/filters"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/audit/metadata/filters" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 

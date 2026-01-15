@@ -16,9 +16,9 @@
 > Пример запроса на получение с expand
 
 ``` shell
-curl -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product/0884d27a-b0e3-11ea-ac12-000b00000002?expand=owner,owner.group"
-  -u login:password
-  -H "Accept-Encoding: gzip" 
+curl --compressed -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product/0884d27a-b0e3-11ea-ac12-000b00000002?expand=owner,owner.group" \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
   -H "Lognex-Pretty-Print-JSON: true"
 ```
 
@@ -176,10 +176,10 @@ curl -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product/0884d27a-b0e3-
 >  Пример запроса на обновление с expand
 
 ``` shell
-curl -X PUT "https://api.moysklad.ru/api/remap/1.2/entity/product/0884d27a-b0e3-11ea-ac12-000b00000002?expand=owner,owner.group"
-  -u login:password
-  -H "Accept-Encoding: gzip" 
-  -H "Lognex-Pretty-Print-JSON: true"
+curl --compressed -X PUT "https://api.moysklad.ru/api/remap/1.2/entity/product/0884d27a-b0e3-11ea-ac12-000b00000002?expand=owner,owner.group" \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H "Lognex-Pretty-Print-JSON: true" \
   -d '{"name":"Новое наименование"}'
 ```
 
@@ -337,9 +337,9 @@ curl -X PUT "https://api.moysklad.ru/api/remap/1.2/entity/product/0884d27a-b0e3-
 > Пример запроса на получение с expand множества товаров
 
 ``` shell
-curl -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product?limit=100&expand=owner,owner.group"
-  -u login:password
-  -H "Accept-Encoding: gzip" 
+curl --compressed -X GET "https://api.moysklad.ru/api/remap/1.2/entity/product?limit=100&expand=owner,owner.group" \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
   -H "Lognex-Pretty-Print-JSON: true"
 ```
 

@@ -31,8 +31,8 @@
 > Запрос на получение подписки компании.
 
 ```shell
-curl -X GET 
-  "https://api.moysklad.ru/api/remap/1.2/accountSettings/subscription"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/accountSettings/subscription" \
   -H Authorization: Basic <Credentials>
 ```
 
