@@ -143,7 +143,16 @@
 | **correspondentAccount** | String(255)                                               | Корр счет                                                                              |
 | **id**                   | UUID                                                      | ID Счета<br>`+Обязательное при ответе` `+Только для чтения`                            |
 | **isDefault**            | Boolean                                                   | Является ли счет основным счетом юрлица<br>`+Обязательное при ответе`                  |
+| **rate**                 | Object                                                    | Объект валюты расчетного счета. Содержит объект **currency** с метаданными валюты счета. Возвращается для счетов, у которых заполнено поле **accountNumber**. |
 | **updated**              | DateTime                                                  | Момент последнего обновления юрлица<br>`+Обязательное при ответе` `+Только для чтения` |
+
+###### Валюта расчетного счета
+
+Поле **rate** содержит объект, представляющий валюту расчетного счета.
+
+| Название     | Тип                                                       | Описание                                                                                          |
+| ------------ | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------ |
+| **currency** | [Meta](#/general#3-metadannye) | Метаданные валюты расчетного счета<br>`+Обязательное при ответе` `+Expand`                        |
 
 
 ##### Реквизиты Узбекистана
@@ -526,6 +535,11 @@ curl --compressed -X GET \
 #### Описание создания нового юрлица
 Юрлицо создается на основе переданного объекта JSON,
 который содержит представление нового юрлица.
+
+Если при создании юрлица в теле запроса передается поле **accounts** с массивом расчетных счетов, действуют дополнительные правила:
+
+- хотя бы один из переданных расчетных счетов должен быть в валюте учета компании; при отсутствии такого счета создание завершится ошибкой [80001](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov);
+- после создания расчетного счета его валюту (поле `rate.currency`) изменить нельзя — при попытке изменить метаданные валюты счета сервер вернет ошибку [80000](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov).
 
 > Пример создания нового юрлица.
 
@@ -1630,6 +1644,11 @@ curl --compressed -X GET \
 ### Изменить юрлицо 
 Запрос на обновление юрлица с указанным id.
 
+При обновлении юрлица через `PUT /entity/organization/{id}`:
+
+- если при создании юрлица поле **accounts** отсутствовало и счета добавляются впервые, хотя бы один из добавляемых расчетных счетов должен быть в валюте учета компании, иначе вернется ошибка [80001](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov);
+- если счета были созданы ранее, для существующих расчетных счетов запрещено менять валюту (поле `rate.currency`) — при попытке изменить валюту любого из счетов вернется ошибка [80000](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov).
+
 **Параметры**
 
 | Параметр                       | Описание                                                                       |
@@ -2014,6 +2033,7 @@ curl --compressed -X GET \
       "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
       "updated": "2016-04-18 17:53:21",
       "isDefault": true,
+      "accountNumber": "40702810100000000001",
       "agent": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/4b9d5bec-0575-11e6-9464-e4de00000008",
@@ -2021,9 +2041,152 @@ curl --compressed -X GET \
           "type": "organization",
           "mediaType": "application/json"
         }
+      },
+      "rate": {
+        "currency": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0f5fbe16-ceff-11ee-0a83-00490000009d"
+          }
+        }
       }
     }
   ]
+}
+```
+
+### Получить счет юрлица
+Возвращает JSON представление отдельного счета юрлица.
+
+**Параметры**
+
+| Параметр                       | Описание                                                                                                                               |
+| ------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------- |
+| **id**                         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id юрлица.                                                         |
+| **accountId**                  | `string` (required) *Example: 4b9d69b7-0575-11e6-9464-e4de00000009* id счета юрлица.                                                    |
+
+> Получить счет юрлица
+
+```shell
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/organization/7944ef04-f831-11e5-7a69-971500188b19/accounts/4b9d69b7-0575-11e6-9464-e4de00000009" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/4b9d5bec-0575-11e6-9464-e4de00000008/accounts/4b9d69b7-0575-11e6-9464-e4de00000009",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+    "type": "account",
+    "mediaType": "application/json"
+  },
+  "id": "4b9d69b7-0575-11e6-9464-e4de00000009",
+  "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+  "updated": "2016-04-18 17:53:21",
+  "isDefault": true,
+  "accountNumber": "40702810100000000001",
+  "bankName": "ОАО Сбербанк",
+  "bankLocation": "г Москва",
+  "correspondentAccount": "30101810400000000225",
+  "bic": "044525225",
+  "agent": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/4b9d5bec-0575-11e6-9464-e4de00000008",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0f5fbe16-ceff-11ee-0a83-00490000009d"
+      }
+    }
+  }
+}
+```
+
+### Изменить счет юрлица
+Обновляет отдельный счет юрлица с указанным id.
+
+**Важно:** После создания расчетного счета его валюта больше не может быть изменена. При попытке изменить метаданные валюты в объекте `rate.currency` будет возвращена ошибка [80000](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov).
+
+**Параметры**
+
+| Параметр                       | Описание                                                                       |
+| ------------------------------ | :----------------------------------------------------------------------------- |
+| **id**                         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id юрлица. |
+| **accountId**                  | `string` (required) *Example: 4b9d69b7-0575-11e6-9464-e4de00000009* id счета юрлица. |
+
+> Изменить счет юрлица
+
+```shell
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/organization/7944ef04-f831-11e5-7a69-971500188b19/accounts/4b9d69b7-0575-11e6-9464-e4de00000009" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+    -d '{
+  "accountNumber": "40702810100000000002",
+  "bankName": "ОАО Сбербанк",
+  "bankLocation": "г Москва",
+  "correspondentAccount": "30101810400000000225",
+  "bic": "044525225"
+}'
+```
+
+> Response 200 (application/json)
+Успешный запрос.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/4b9d5bec-0575-11e6-9464-e4de00000008/accounts/4b9d69b7-0575-11e6-9464-e4de00000009",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+    "type": "account",
+    "mediaType": "application/json"
+  },
+  "id": "4b9d69b7-0575-11e6-9464-e4de00000009",
+  "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
+  "updated": "2016-04-18 17:53:22",
+  "isDefault": true,
+  "accountNumber": "40702810100000000002",
+  "bankName": "ОАО Сбербанк",
+  "bankLocation": "г Москва",
+  "correspondentAccount": "30101810400000000225",
+  "bic": "044525225",
+  "agent": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/4b9d5bec-0575-11e6-9464-e4de00000008",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0f5fbe16-ceff-11ee-0a83-00490000009d"
+      }
+    }
+  }
 }
 ```
 
@@ -2093,7 +2256,18 @@ curl --compressed -X GET \
     "bankName": "ОАО Сбербанк",
     "bankLocation": "г Москва",
     "correspondentAccount": "123141242451",
-    "bic": "21412hhhh4"
+    "bic": "21412hhhh4",
+    "rate": {
+      "currency": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0f5fbe16-ceff-11ee-0a83-00490000009d"
+        }
+      }
+    }
   },
   {
     "meta": {
@@ -2109,7 +2283,18 @@ curl --compressed -X GET \
     "bankName": "ОАО БАНК",
     "bankLocation": "г Москва",
     "correspondentAccount": "123141242451",
-    "bic": "21412555554"
+    "bic": "21412555554",
+    "rate": {
+      "currency": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0f5fbe16-ceff-11ee-0a83-00490000009d"
+        }
+      }
+    }
   }
 ]
 ```
