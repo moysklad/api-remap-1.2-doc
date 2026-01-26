@@ -2,6 +2,11 @@
 
 Список последних изменений в API Remap 1.2
 
+### 03-02-2026
+**Добавлено**
+- Эндпоинт на [получение роли владельца аккаунта](#/dictionaries/employee#3-zapros-na-poluchenie-roli-vladelca-akkaunta)
+- Коды ошибок для работы с владельцем аккаунта: [43031-43037](#/errors#3-kody-oshibok-dlya-sotrudnikov)
+
 ### 15-01-2026
 **Добавлено**
 - Коды ошибок для валидации серийных номеров: [3048-3050](#/errors#3-obshie-oshibki-validacii)
