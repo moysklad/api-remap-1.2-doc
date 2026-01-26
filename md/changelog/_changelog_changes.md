@@ -2,7 +2,7 @@
 
 Список последних изменений в API Remap 1.2
 
-### 22-01-2026
+### 26-01-2026
 **Добавлено**
 - Тип маркируемой продукции `NABEER` (Безалкогольное пиво) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
 - Способы вывода `OTHER_TYPE` (Другое) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типа маркируемой продукции `NABEER`
