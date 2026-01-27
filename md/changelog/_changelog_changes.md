@@ -5,7 +5,11 @@
 ### 03-02-2026
 **Добавлено**
 - Эндпоинт на [получение роли владельца аккаунта](#/dictionaries/employee#3-zapros-na-poluchenie-roli-vladelca-akkaunta)
-- Коды ошибок для работы с владельцем аккаунта: [43031-43037](#/errors#3-kody-oshibok-dlya-sotrudnikov)
+- Коды ошибок для работы с владельцем аккаунта: [43031-43036](#/errors#3-kody-oshibok-dlya-sotrudnikov)
+- Новые [пермиссии](#/general#5-permissii-sotrudnika)
+
+**Изменено**
+- Cписок пермиссий в ответе на [запрос о контексте Cотрудника](#/general#4-poluchit-kontekst-sotrudnika)
 
 ### 15-01-2026
 **Добавлено**
