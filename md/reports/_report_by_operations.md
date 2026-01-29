@@ -56,9 +56,9 @@
 > Запрос на получение Отчета по документам отображающий остатки.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/byoperations/stock?filter=assortment=https://api.moysklad.ru/api/remap/1.2/entity/product/bb1865dc-32e1-11ef-ac16-001100000003"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/byoperations/stock?filter=assortment=https://api.moysklad.ru/api/remap/1.2/entity/product/bb1865dc-32e1-11ef-ac16-001100000003" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -164,9 +164,9 @@ curl -X GET
 > Запрос на получение Отчета по документам отображающий резервы.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/byoperations/reserve?filter=assortment=https://api.moysklad.ru/api/remap/1.2/entity/product/bb1865dc-32e1-11ef-ac16-001100000003"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/byoperations/reserve?filter=assortment=https://api.moysklad.ru/api/remap/1.2/entity/product/bb1865dc-32e1-11ef-ac16-001100000003" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -269,9 +269,9 @@ curl -X GET
 > Запрос на получение Отчета по документам отображающий ожидание.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/byoperations/intransit?filter=assortment=https://api.moysklad.ru/api/remap/1.2/entity/product/bb1865dc-32e1-11ef-ac16-001100000003"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/byoperations/intransit?filter=assortment=https://api.moysklad.ru/api/remap/1.2/entity/product/bb1865dc-32e1-11ef-ac16-001100000003" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 

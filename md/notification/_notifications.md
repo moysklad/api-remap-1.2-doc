@@ -32,9 +32,9 @@
 > Получить ленту уведомлений
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 

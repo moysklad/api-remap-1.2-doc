@@ -34,10 +34,10 @@
 > Пример запроса на получение списка фильтров для товаров
 
 ```shell
-  curl -X GET
-    "https://api.moysklad.ru/api/remap/1.2/entity/product/namedfilter"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
+  curl --compressed -X GET \
+    "https://api.moysklad.ru/api/remap/1.2/entity/product/namedfilter" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json"  
 ```
 
@@ -95,10 +95,10 @@
 > Пример запроса на получение списка фильтров другого пользователя
 
 ```shell
-  curl -X GET
-    "https://api.moysklad.ru/api/remap/1.2/entity/product/namedfilter?owner=https://api.moysklad.ru/api/remap/1.2/entity/employee/25863410-ca86-11eb-ac12-000d00000234"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
+  curl --compressed -X GET \
+    "https://api.moysklad.ru/api/remap/1.2/entity/product/namedfilter?owner=https://api.moysklad.ru/api/remap/1.2/entity/employee/25863410-ca86-11eb-ac12-000d00000234" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json"  
 ```
 
@@ -160,10 +160,10 @@
 > Пример запроса на получение фильтра для товара по id
 
 ```shell
-  curl -X GET
-    "https://api.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
+  curl --compressed -X GET \
+    "https://api.moysklad.ru/api/remap/1.2/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json"  
 ```
 

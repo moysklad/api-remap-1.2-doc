@@ -55,24 +55,24 @@ JSON API доступен пользователям на всех тарифа�
 > Запрос на создание товара c логином и паролем
 
 ```shell
-curl -X POST 
-  -u login:password 
-  -H "Accept-Encoding: gzip" 
-  -H "Content-Type: application/json" 
-  -H "Lognex-Pretty-Print-JSON: true" 
-  "https://api.moysklad.ru/api/remap/1.2/entity/product" 
+curl --compressed -X POST \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -H "Lognex-Pretty-Print-JSON: true" \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product" \
   -d '{"name":"Просто замечательный товар"}'
 ```
 
 > Запрос на создание товара c токеном
 
 ```shell
-curl -X POST 
-  -H "Authorization: Bearer <Access-Token>"
-  -H "Accept-Encoding: gzip" 
-  -H "Content-Type: application/json" 
-  -H "Lognex-Pretty-Print-JSON: true" 
-  "https://api.moysklad.ru/api/remap/1.2/entity/product" 
+curl --compressed -X POST \
+  -H "Authorization: Bearer <Access-Token>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -H "Lognex-Pretty-Print-JSON: true" \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product" \
   -d '{"name":"Просто замечательный товар"}'
 ```
 
@@ -197,10 +197,10 @@ curl -X POST
 > Теперь его можно увидеть в списке товаров:
 
 ``` shell
-curl -X GET 
-  -u login:password 
-  -H "Accept-Encoding: gzip" 
-  -H "Lognex-Pretty-Print-JSON: true" 
+curl --compressed -X GET \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H "Lognex-Pretty-Print-JSON: true" \
   "https://api.moysklad.ru/api/remap/1.2/entity/product"
 ```
 
@@ -375,10 +375,10 @@ curl -X GET
 > Запрос метаданных товаров:
 
 ``` shell
-curl -X GET 
-  -u login:password 
-  -H "Accept-Encoding: gzip" 
-  -H "Lognex-Pretty-Print-JSON: true"
+curl --compressed -X GET \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H "Lognex-Pretty-Print-JSON: true" \
   "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata"
 ```
 
@@ -410,11 +410,11 @@ curl -X GET
 > При создании товара обязательно указывать наименование, если этого не сделать, вернется ошибка.
 
 ``` shell
-curl -X POST 
-  -u login:password 
-  -H "Accept-Encoding: gzip" 
-  -H "Content-Type: application/json" 
-  -H "Lognex-Pretty-Print-JSON: true" 
+curl --compressed -X POST \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -H "Lognex-Pretty-Print-JSON: true" \
   "https://api.moysklad.ru/api/remap/1.2/entity/product" 
   -d '{}'
 ```
@@ -453,10 +453,10 @@ curl -X POST
 > GET - запрос списка товаров
 
 ``` shell
-curl -X GET 
-  -u login:password 
-  -H "Accept-Encoding: gzip" 
-  -H "Lognex-Pretty-Print-JSON: true" 
+curl --compressed -X GET \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H "Lognex-Pretty-Print-JSON: true" \
   "https://api.moysklad.ru/api/remap/1.2/entity/product"
 ```
 
@@ -595,12 +595,12 @@ curl -X GET
 > POST - создание товара
 
 ``` shell
-curl -X POST 
-  -u login:password
-  -H "Accept-Encoding: gzip" 
-  -H "Content-Type: application/json" 
-  -H "Lognex-Pretty-Print-JSON: true" 
-  "https://api.moysklad.ru/api/remap/1.2/entity/product" 
+curl --compressed -X POST \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -H "Lognex-Pretty-Print-JSON: true" \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product" \
   -d '{"name":"Просто замечательный товар"}'
 ```
 
@@ -720,10 +720,10 @@ curl -X POST
 > GET - запрос конкретного товара
 
 ``` shell
-curl -X GET 
-  -u login:password
-  -H "Accept-Encoding: gzip" 
-  -H "Lognex-Pretty-Print-JSON: true" 
+curl --compressed -X GET \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H "Lognex-Pretty-Print-JSON: true" \
   "https://api.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002"
 ```
 
@@ -842,11 +842,11 @@ curl -X GET
 > PUT - изменение товара
 
 ``` shell
-curl -X PUT 
-  -u login:password
-  -H "Accept-Encoding: gzip" 
-  -H "Lognex-Pretty-Print-JSON: true" 
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002"
+curl --compressed -X PUT \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H "Lognex-Pretty-Print-JSON: true" \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002" \
   -d '{"name":"Новое наименование"}'
 ```
 
@@ -966,9 +966,9 @@ curl -X PUT
 > DELETE - удаление товара
 
 ``` shell
-curl -X DELETE 
-  -u login:password
-  -H "Accept-Encoding: gzip" 
+curl --compressed -X DELETE \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
   "https://api.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002"
 ```
 
@@ -981,11 +981,11 @@ curl -X DELETE
 > Пример массового удаления Товаров 
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '[
         {
             "meta": {
@@ -1028,12 +1028,12 @@ curl -X POST
 > При обновлении объектов не обязательно передавать все поля. При указании части полей будут изменены только переданные поля.
 
 ``` shell
-curl -X PUT 
-  -u login:password
-  -H "Accept-Encoding: gzip" 
-  -H "Content-Type: application/json" 
-  -H "Lognex-Pretty-Print-JSON: true" 
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002" 
+curl --compressed -X PUT \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -H "Lognex-Pretty-Print-JSON: true" \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002" \
   -d {"country": null}
 ```
 
@@ -1152,12 +1152,12 @@ curl -X PUT
 > Запрос на неверное обновление
 
 ``` shell
-curl -X PUT 
-  -u login:password
-  -H "Accept-Encoding: gzip" 
-  -H "Content-Type: application/json" 
-  -H "Lognex-Pretty-Print-JSON: true" 
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002" 
+curl --compressed -X PUT \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -H "Lognex-Pretty-Print-JSON: true" \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002" \
   -d '{"name": null}'
 ```
 
@@ -1189,11 +1189,11 @@ curl -X PUT
 > Пример запроса с полем updated в товарах
 
 ``` shell
-curl -X GET 
-  -u login:password
-  -H "Accept-Encoding: gzip" 
-  -H "Lognex-Pretty-Print-JSON: true" 
-  -H "X-Lognex-Format-Millisecond: true" 
+curl --compressed -X GET \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H "Lognex-Pretty-Print-JSON: true" \
+  -H "X-Lognex-Format-Millisecond: true" \
   "https://api.moysklad.ru/api/remap/1.2/entity/product/6b44332f-b0ac-11ea-ac14-000a00000002"
 ```
 
@@ -1327,10 +1327,10 @@ curl -X GET
 > Запрос отчетов
 
 ``` shell
-curl -X GET 
-  -u login:password
-  -H "Accept-Encoding: gzip" 
-  -H "Lognex-Pretty-Print-JSON: true" 
+curl --compressed -X GET \
+  -u login:password \
+  -H "Accept-Encoding: gzip" \
+  -H "Lognex-Pretty-Print-JSON: true" \
   "https://api.moysklad.ru/api/remap/1.2/report/stock/all?stockMode=all"
 ```
 

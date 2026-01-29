@@ -138,6 +138,13 @@
         ]
       },
       {
+        "title": "Карточка контента",
+        "level": 2,
+        "folderPath": "./dictionaries/_contentcard.md",
+        "children": [
+        ]
+      },
+      {
         "title": "Кассир",
         "level": 2,
         "folderPath": "./dictionaries/_cashier.md",
@@ -204,6 +211,13 @@
         "title": "Печать этикеток и ценников",
         "level": 2,
         "folderPath": "./dictionaries/_labels.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Площадка для продаж",
+        "level": 2,
+        "folderPath": "./dictionaries/_saleplatform.md",
         "children": [
         ]
       },
@@ -950,4 +964,4 @@
       }
     ]
   }
-] 
+]

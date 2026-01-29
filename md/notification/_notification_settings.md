@@ -35,9 +35,9 @@
 > Запрос настроек Уведомлений текущего пользователя.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/settings"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/settings" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -140,11 +140,11 @@ curl -X GET
 > Изменение настроек Уведомлений текущего пользователя.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/notification/settings"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/notification/settings" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "customerOrder" : {
               "enabled" : true,

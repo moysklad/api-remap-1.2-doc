@@ -10,43 +10,43 @@
 
 #### Атрибуты сущности
 
-| Название                        | Тип                             | Описание                                                                                                                                                                                                                                                |
-|---------------------------------|:--------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**                   | UUID                            | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                    |
-| **agent**                       | [Meta](#/general#3-metadannye)  | Метаданные контрагента<br>`+Expand`                                                                                                                                                                                                                     |
-| **code**                        | String(255)                     | Код Вывода из оборота                                                                                                                                                                                                                                   |
-| **created**                     | DateTime                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                        |
-| **deleted**                     | DateTime                        | Момент последнего удаления Вывода из оборота<br>`+Только для чтения`                                                                                                                                                                                    |
-| **description**                 | String(4096)                    | Комментарий Вывода из оборота<br>                                                                                                                                                                                                                       |
-| **destinationCountry**          | [Meta](#/general#3-metadannye)  | Страна назначения                                                                                                                                                                                                                                       |
-| **documentState**               | Enum                            | Статус процесса вывода кодов маркировки из оборота. [Подробнее тут](#/documents/retireorder#4-statusy-processa-vyvoda-kodov-markirovki-iz-oborota) <br>`+Обязательное при ответе` `+Только для чтения` |
-| **externalCode**                | String(255)                     | Внешний код Вывода из оборота<br>`+Обязательное при ответе`                                                                                                                                                                                             |
-| **group**                       | [Meta](#/general#3-metadannye)  | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                                                                |
-| **id**                          | UUID                            | ID Вывода из оборота<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                 |
-| **meta**                        | [Meta](#/general#3-metadannye)  | Метаданные Вывода из оборота<br>`+Обязательное при ответе`                                                                                                                                                                                              |
-| **moment**                      | DateTime                        | Дата документа<br>`+Обязательное при ответе`                                                                                                                                                                                                            |
-| **name**                        | String(255)                     | Наименование Вывода из оборота<br>`+Обязательное при ответе`                                                                                                                                                                                            |
-| **organization**                | [Meta](#/general#3-metadannye)  | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                                                                                    |
-| **owner**                       | [Meta](#/general#3-metadannye)  | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                                                                                       |
-| **positions**                   | MetaArray                       | Метаданные позиций Вывода из оборота<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                                            |
-| **primaryDocumentName**         | String(255)                     | Наименование первичного документа                                                                                                                                                                                                                       |
-| **printed**                     | Boolean                         | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                |
-| **published**                   | Boolean                         | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                              |
-| **rate**                        | Object                          | Валюта. [Подробнее тут](#/documents/common-info#3-valyuta-v-dokumentah)<br>`+Обязательное при ответе`                                                                                                                                     |
-| **retireOrderType**             | Enum                            | Способ вывода из оборота. [Подробнее тут](#/documents/retireorder#4-sposob-vyvoda-iz-oborota) <br>`+Обязательное при ответе` `+Необходимо при создании`                                                |
-| **shared**                      | Boolean                         | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                                                                              |
-| **state**                       | [Meta](#/general#3-metadannye)  | Метаданные статуса Вывода из оборота<br>`+Expand`                                                                                                                                                                                                       |
-| **stateContractId**             | String(255)                     | Идентификатор государственного контракта, договора (соглашения)                                                                                                                                                                                         |
-| **supportingTransaction**       | Enum                            | Тип документа-основания. [Подробнее тут](#/documents/retireorder#4-tip-dokumenta-osnovaniya)                                                                                                            |
-| **supportingTransactionDate**   | DateTime                        | Дата документа-основания                                                                                                                                                                                                                                |
-| **supportingTransactionNumber** | String(255)                     | Номер документа-основания                                                                                                                                                                                                                               |
-| **syncId**                      | UUID                            | ID синхронизации. После заполнения недоступен для изменения                                                                                                                                                                                             |
-| **trackingType**                | Enum                            | Тип маркируемой продукции. [Подробнее тут](#/documents/retireorder#4-tip-markiruemoj-produkcii) <br>`+Обязательное при ответе` `+Необходимо при создании`                                              |
-| **updated**                     | DateTime                        | Момент последнего обновления Вывода из оборота.<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                      |
-| **sum**                         | Float                           | Сумма вывода из оборота в установленной валюте<br>`+Обязательное при ответе`                                                                                                                                                                            |
-| **vatEnabled**                  | Boolean                         | Учитывается ли НДС<br>`+Обязательное при ответе`                                                                                                                                                                                                        |
-| **vatIncluded**                 | Boolean                         | Включен ли НДС в цену                                                                                                                                                                                                                                   |
-| **vatSum**                      | Float                           | Сумма НДС <br/>  `+Только для чтения`                                                                                                                                                                                                                   |
+| Название                        | Тип                            | Фильтрация                 | Описание                                                                                                                                                                                               |
+|---------------------------------|:-------------------------------|:---------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**                   | UUID                           |                            | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                   |
+| **agent**                       | [Meta](#/general#3-metadannye) |                            | Метаданные контрагента<br>`+Expand`                                                                                                                                                                    |
+| **created**                     | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                       |
+| **deleted**                     | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Момент последнего удаления Вывода из оборота<br>`+Только для чтения`                                                                                                                                   |
+| **description**                 | String(4096)                   | `=` `!=` `~` `~=` `=~`     | Комментарий Вывода из оборота<br>                                                                                                                                                                      |
+| **destinationCountry**          | [Meta](#/general#3-metadannye) |                            | Страна назначения                                                                                                                                                                                      |
+| **documentState**               | Enum                           |                            | Статус процесса вывода кодов маркировки из оборота. [Подробнее тут](#/documents/retireorder#4-statusy-processa-vyvoda-kodov-markirovki-iz-oborota) <br>`+Обязательное при ответе` `+Только для чтения` |
+| **externalCode**                | String(255)                    | `=` `!=` `~` `~=` `=~`     | Внешний код Вывода из оборота<br>`+Обязательное при ответе`                                                                                                                                            |
+| **group**                       | [Meta](#/general#3-metadannye) | `=` `!=`                   | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                               |
+| **id**                          | UUID                           | `=` `!=`                   | ID Вывода из оборота<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                |
+| **meta**                        | [Meta](#/general#3-metadannye) |                            | Метаданные Вывода из оборота<br>`+Обязательное при ответе`                                                                                                                                             |
+| **moment**                      | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Дата документа<br>`+Обязательное при ответе`                                                                                                                                                           |
+| **name**                        | String(255)                    | `=` `!=` `~` `~=` `=~`     | Наименование Вывода из оборота<br>`+Обязательное при ответе`                                                                                                                                           |
+| **organization**                | [Meta](#/general#3-metadannye) | `=` `!=`                   | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                                   |
+| **owner**                       | [Meta](#/general#3-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                                      |
+| **positions**                   | MetaArray                      |                            | Метаданные позиций Вывода из оборота<br>`+Обязательное при ответе` `+Expand`                                                                                                                           |
+| **primaryDocumentName**         | String(255)                    |                            | Наименование первичного документа                                                                                                                                                                      |
+| **printed**                     | Boolean                        |                            | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                               |
+| **published**                   | Boolean                        |                            | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                             |
+| **rate**                        | Object                         |                            | Валюта. [Подробнее тут](#/documents/common-info#3-valyuta-v-dokumentah)<br>`+Обязательное при ответе`                                                                                                  |
+| **reasonDescription**           | String(1024)                   |                            | Описание причины                                                                                                                                                                                       |
+| **retireOrderType**             | Enum                           |                            | Способ вывода из оборота. [Подробнее тут](#/documents/retireorder#4-sposob-vyvoda-iz-oborota) <br>`+Обязательное при ответе` `+Необходимо при создании`                                                |
+| **shared**                      | Boolean                        | `=` `!=`                   | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                             |
+| **state**                       | [Meta](#/general#3-metadannye) |                            | Метаданные статуса Вывода из оборота<br>`+Expand`                                                                                                                                                      |
+| **stateContractId**             | String(255)                    |                            | Идентификатор государственного контракта, договора (соглашения)                                                                                                                                        |
+| **supportingTransaction**       | Enum                           |                            | Тип документа-основания. [Подробнее тут](#/documents/retireorder#4-tip-dokumenta-osnovaniya)                                                                                                           |
+| **supportingTransactionDate**   | DateTime                       |                            | Дата документа-основания                                                                                                                                                                               |
+| **supportingTransactionNumber** | String(255)                    |                            | Номер документа-основания                                                                                                                                                                              |
+| **syncId**                      | UUID                           |                            | ID синхронизации. После заполнения недоступен для изменения                                                                                                                                            |
+| **trackingType**                | Enum                           |                            | Тип маркируемой продукции. [Подробнее тут](#/documents/retireorder#4-tip-markiruemoj-produkcii) <br>`+Обязательное при ответе` `+Необходимо при создании`                                              |
+| **updated**                     | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления Вывода из оборота.<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                     |
+| **sum**                         | Float                          |                            | Сумма вывода из оборота в установленной валюте<br>`+Обязательное при ответе`                                                                                                                           |
+| **vatEnabled**                  | Boolean                        |                            | Учитывается ли НДС<br>`+Обязательное при ответе`                                                                                                                                                       |
+| **vatIncluded**                 | Boolean                        |                            | Включен ли НДС в цену                                                                                                                                                                                  |
+| **vatSum**                      | Float                          |                            | Сумма НДС <br/> `+Только для чтения`                                                                                                                                                                   |
 
 #### Статусы процесса вывода кодов маркировки из оборота
 
@@ -77,6 +77,7 @@
 | **LP_LINENS**       | Тип маркировки "Постельное белье"    |
 | **MEDICAL_DEVICES** | Медизделия и кресла-коляски          |
 | **MILK**            | Молочная продукция                   |
+| **NABEER**          | Безалкогольное пиво                  |
 | **PERFUMERY**       | Духи и туалетная вода                |
 | **PET_FOOD**        | Корма для животных                   |
 | **SANITIZER**       | Антисептики                          |
@@ -105,6 +106,7 @@
 | **EXPORT_OUTSIDE_EEU**   | Экспорт за пределы стран ЕАЭС                          |
 | **MEDICAL_USE**          | Использование для медицинского применения              |
 | **MISMATCH**             | Пересортица по кодам                                   |
+| **OTHER_TYPE**           | Другое                                                 |
 | **OWN_USE**              | Использование для собственных нужд                     |
 | **PACKING**              | Фасовка                                                |
 | **PRODUCTION_USE**       | Использование для производственных целей               |
@@ -113,6 +115,7 @@
 | **STATE_CONTRACT**       | Продажа по государственному (муниципальному) контракту |
 | **UTILIZATION**          | Утилизация                                             |
 | **VENDING**              | Продажа через вендинговый аппарат                      |
+| **VETERINARY_USE**       | Использование для ветеринарного применения             |
 
 #### Тип документа-основания
 
@@ -173,9 +176,9 @@
 > Получить Выводы из оборота
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -377,9 +380,9 @@ curl -X GET
 > Запрос на получение отдельного Вывода из оборота с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -481,41 +484,44 @@ curl -X GET
 #### Особенности поведения при создании Вывода из оборота
 Связь допустимых значений поля **retireOrderType** в зависимости от **trackingType**
 
-| **trackingType**                                                | **retireOrderType**                                                                                                                                                                                                      |
-|-----------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **SHOES, LP_CLOTHES, LP_LINENS, PERFUMERY, ELECTRONICS, TIRES** | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, RETURN_TO_INDIVIDUAL                         |
-| **MILK**                                                        | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, PRODUCTION_USE, EXPIRATION, VENDING, PACKING |
-| **FOOD_SUPPLEMENT, SANITIZER, MEDICAL_DEVICES**                 | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT                                               |
-| **BICYCLE**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, RETURN_TO_INDIVIDUAL, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE                      |
-| **VETPHARMA**                                                   | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION                                |
-| **SOFT_DRINKS**                                                 | RETAIL_SALE, EXPORT_OUTSIDE_EEU, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, OWN_USE, PACKING, PRODUCTION_USE, STATE_CONTRACT, VENDING, DONATION                                                                            |
-| **WATER**                                                       | RETAIL_SALE, EXPORT_OUTSIDE_EEU, CONFISCATE_SALE, DESTRUCTION, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, DAMAGE_AND_LOSS, OWN_USE, PRODUCTION_USE, STATE_CONTRACT, VENDING, BY_SAMPLES, UTILIZATION, DONATION             |
-| **SEAFOOD**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION, VENDING                       |
-| **BEER_ALCOHOL**                                                | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, MISMATCH                                  |
-| **VEGETABLE_OIL**                                               | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, PACKING, DISTANCE, BY_SAMPLES    |
-| **PET_FOOD**                                                    | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, DISTANCE, BY_SAMPLES             |
+| **trackingType**                                                | **retireOrderType**                                                                                                                                                                                                          |
+|-----------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **SHOES, LP_CLOTHES, LP_LINENS, PERFUMERY, ELECTRONICS, TIRES** | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, RETURN_TO_INDIVIDUAL                             |
+| **MILK**                                                        | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, PRODUCTION_USE, EXPIRATION, VENDING, PACKING     |
+| **FOOD_SUPPLEMENT, SANITIZER, MEDICAL_DEVICES**                 | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT                                                   |
+| **BICYCLE**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, RETURN_TO_INDIVIDUAL, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE                          |
+| **VETPHARMA**                                                   | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION, VENDING, DONATION, VETERINARY_USE |
+| **SOFT_DRINKS**                                                 | RETAIL_SALE, EXPORT_OUTSIDE_EEU, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, OWN_USE, PACKING, PRODUCTION_USE, STATE_CONTRACT, VENDING, DONATION                                                                                |
+| **WATER**                                                       | RETAIL_SALE, EXPORT_OUTSIDE_EEU, CONFISCATE_SALE, DESTRUCTION, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, DAMAGE_AND_LOSS, OWN_USE, PRODUCTION_USE, STATE_CONTRACT, VENDING, BY_SAMPLES, UTILIZATION, DONATION                 |
+| **SEAFOOD**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION, VENDING                           |
+| **BEER_ALCOHOL**                                                | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, MISMATCH                                      |
+| **VEGETABLE_OIL**                                               | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, PACKING, DISTANCE, BY_SAMPLES        |
+| **PET_FOOD**                                                    | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, DISTANCE, BY_SAMPLES, PACKING        |
+| **NABEER**                                                      | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, DISTANCE, BY_SAMPLES, OTHER_TYPE     |
 
 Связь допустимых значений поля **supportingTransaction** в зависимости от **retireOrderType**
 
-| **retireOrderType**      | **supportingTransaction**                              |
-|--------------------------|:-------------------------------------------------------|
-| **BY_SAMPLES**           | RECEIPT, SALES_RECEIPT, OTHER, CONSIGNMENT_NOTE, UTD   |
-| **CONFISCATE_SALE**      | OTHER, CONSIGNMENT_NOTE, UTD                           |
-| **DAMAGE_AND_LOSS**      | OTHER                                                  |
-| **DESTRUCTION**          | CERTIFICATE_OF_DESTRUCTION, OTHER                      |
-| **DISTANCE**             | RECEIPT, SALES_RECEIPT, OTHER, CONSIGNMENT_NOTE, UTD   |
-| **DONATION**             | OTHER, CONSIGNMENT_NOTE                                |
-| **EXPIRATION**           | OTHER                                                  |
-| **EXPORT_OUTSIDE_EEU**   | CUSTOMS_DECLARATION, OTHER                             |
-| **MEDICAL_USE**          | OTHER                                                  |
-| **MISMATCH**             | OTHER                                                  |
-| **OWN_USE**              | OTHER                                                  |
-| **PACKING**              | OTHER                                                  |
-| **PRODUCTION_USE**       | OTHER                                                  |
-| **RETAIL_SALE**          | RECEIPT, SALES_RECEIPT, OTHER                          |
-| **RETURN_TO_INDIVIDUAL** | OTHER                                                  |
-| **UTILIZATION**          | OTHER                                                  |
-| **VENDING**              | OTHER                                                  |
+| **retireOrderType**      | **supportingTransaction**                            |
+|--------------------------|:-----------------------------------------------------|
+| **BY_SAMPLES**           | RECEIPT, SALES_RECEIPT, OTHER, CONSIGNMENT_NOTE, UTD |
+| **CONFISCATE_SALE**      | OTHER, CONSIGNMENT_NOTE, UTD                         |
+| **DAMAGE_AND_LOSS**      | OTHER                                                |
+| **DESTRUCTION**          | CERTIFICATE_OF_DESTRUCTION, OTHER                    |
+| **DISTANCE**             | RECEIPT, SALES_RECEIPT, OTHER, CONSIGNMENT_NOTE, UTD |
+| **DONATION**             | OTHER, CONSIGNMENT_NOTE                              |
+| **EXPIRATION**           | OTHER                                                |
+| **EXPORT_OUTSIDE_EEU**   | CUSTOMS_DECLARATION, OTHER                           |
+| **MEDICAL_USE**          | OTHER                                                |
+| **MISMATCH**             | OTHER                                                |
+| **OWN_USE**              | OTHER                                                |
+| **PACKING**              | OTHER                                                |
+| **PRODUCTION_USE**       | OTHER                                                |
+| **RETAIL_SALE**          | RECEIPT, SALES_RECEIPT, OTHER                        |
+| **RETURN_TO_INDIVIDUAL** | OTHER                                                |
+| **UTILIZATION**          | OTHER                                                |
+| **VENDING**              | OTHER                                                |
+| **VETERINARY_USE**       | OTHER                                                |
+| **OTHER_TYPE**           | OTHER                                                |
 
 Способ вывода из оборота **retireOrderType**:
 
@@ -523,6 +529,7 @@ curl -X GET
 + Если выбрано значение **DISTANCE**, то поля **supportingTransaction**, **supportingTransactionDate** и **supportingTransactionNumber** становятся необязательными. Поля **supportingTransactionDate** и **supportingTransactionNumber** очищаются при указании значения **null** для поля **supportingTransaction**.
 + Если выбрано значение **STATE_CONTRACT**, то поле **stateContractId** является обязательным.
 + Если выбрано значение **EXPORT_INSIDE_EEU**, то поле **destinationCountry** является обязательным и допускаются значения: Армения, Беларусь, Казахстан, Киргизия.
++ Если выбрано значение **OTHER_TYPE**, то поле **reasonDescription** является обязательным.
 
 Тип документа-основания **supportingTransaction**:
 
@@ -535,11 +542,11 @@ curl -X GET
 > Пример создания нового Вывода из оборота - Трансграничная продажа в страны ЕАЭС.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
               "organization": {
                   "meta": {
@@ -651,11 +658,11 @@ curl -X GET
 > Пример создания нового Вывода из оборота - Продажа по государственному (муниципальному) контракту.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
               "organization": {
                   "meta": {
@@ -753,11 +760,11 @@ curl -X GET
 > Пример создания нового Вывода из оборота - Использование для собственных нужд.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
               "agent": {
                   "meta": {
@@ -877,11 +884,11 @@ curl -X GET
 > Пример создания нового Вывода из оборота с позициями.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
               "agent": {
                   "meta": {
@@ -1024,11 +1031,11 @@ curl -X GET
 > Пример создания и обновления нескольких Выводов из оборота
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '[
               {
                   "meta": {
@@ -1273,11 +1280,11 @@ curl -X GET
 > Пример запроса на обновление отдельного Вывода из оборота
 
 ```shell
-curl -X PUT
-  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
     -d '{
     "name": "обновленный",
     "description": "новое описание Вывода из оборота"
@@ -1391,9 +1398,9 @@ curl -X PUT
 > Получить позиции Вывода из оборота
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32/positions"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32/positions" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1503,9 +1510,9 @@ curl -X GET
 > Запрос на получение отдельной позиции Вывода из оборота с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32/positions/05c97192-d4d3-4781-b2e8-85edc190347b"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/b14bcb5e-3b17-4765-87cf-bc4569fc5f32/positions/05c97192-d4d3-4781-b2e8-85edc190347b" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1563,11 +1570,11 @@ curl -X GET
 > Пример создания позиций в Выводе из оборота.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '   {
                 "assortment": {
                   "meta": {
@@ -1636,11 +1643,11 @@ curl -X GET
 > Пример запроса на обновление отдельной позиции в Вывода из оборота.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions/d3040339-a8bd-11ef-ac15-000400000059"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions/d3040339-a8bd-11ef-ac15-000400000059" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "trackingCodes": [
               {
@@ -1705,9 +1712,9 @@ curl -X GET
 > Запрос на удаление отдельной позиции Вывода из оборота с указанным id.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions/d3040339-a8bd-11ef-ac15-000400000059"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions/d3040339-a8bd-11ef-ac15-000400000059" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1725,11 +1732,11 @@ curl -X DELETE
 > Запрос на массовое удаление позиций Вывода из оборота.
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retireorder/7944ef04-f831-11e5-7a69-971500188b19/positions/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '[
         {
           "meta": {

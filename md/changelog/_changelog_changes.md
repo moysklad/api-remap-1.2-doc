@@ -1,5 +1,43 @@
 ## Список последних изменений
+
 Список последних изменений в API Remap 1.2
+
+### 26-01-2026
+**Добавлено**
+- Тип маркируемой продукции `NABEER` (Безалкогольное пиво) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Способы вывода `OTHER_TYPE` (Другое) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типа маркируемой продукции `NABEER`
+- Поле `reasonDescription` (Описание причины) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+
+### 15-01-2026
+**Добавлено**
+- Коды ошибок для валидации серийных номеров: [3048-3050](#/errors#3-obshie-oshibki-validacii)
+
+### 13-01-2026
+**Добавлена**
+- Фильтрация для документа [Вывод кодов маркировки из оборота](#/documents/retireorder#2-vyvod-kodov-markirovki-iz-oborota)
+
+### 29-12-2025
+**Добавлена**
+- Фильтрация для документа [Заказ кодов маркировки](#/documents/emissionorder#2-zakaz-kodov-markirovki)
+
+### 24-12-2025
+**Добавлены**
+- Эндпоинт [Площадок для продаж](#/dictionaries/saleplatform#2-ploshadka-dlya-prodazh)
+- Эндпоинт [Карточек контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
+### 23-12-2025
+**Изменено**
+- Ошибка [22003](#/errors#3-kody-oshibok-dlya-platezhej)
+- Поле **noClosingDocs** в [Расходном ордере](#/documents/cashout#2-rashodnyj-order) и [Исходящем платеже](#/documents/payment-out#2-ishodyashij-platezh) теперь доступно для редактирования.
+
+### 22-12-2025
+**Добавлено**
+- Способ вывода `VETERINARY_USE` (Использование для ветеринарного применения) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Способы вывода `VENDING` и `DONATION` в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типа маркируемой продукции `VETPHARMA`
+
+### 15-12-2025
+**Добавлено**
+- Поддержка авансовых полей в [Счете-фактуре выданном](#/documents/factureout#2-schet-faktura-vydannyj): поля `advancePaymentVat` (ставка НДС для авансового платежа), `paymentPurpose` (назначение платежа) и `vatSum` (сумма включая НДС). Поля доступны только для счетов-фактур с основаниями-платежами.
 
 ### 03-12-2025
 **Добавлено**

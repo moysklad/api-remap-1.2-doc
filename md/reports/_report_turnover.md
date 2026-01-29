@@ -122,9 +122,9 @@ C помощью параметра filter выборку также можно 
 > Запрос на получение отчета "Обороты по товарам".
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/turnover/all"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/turnover/all" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -358,9 +358,9 @@ curl -X GET
 > Запрос на получение отчета "Обороты по товару" с указанным id товара.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/turnover/bystore?filter=product=https://api.moysklad.ru/api/remap/1.2/entity/product/66990dc7-bdfe-11eb-c0a8-800c00000016"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/turnover/bystore?filter=product=https://api.moysklad.ru/api/remap/1.2/entity/product/66990dc7-bdfe-11eb-c0a8-800c00000016" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -609,9 +609,9 @@ curl -X GET
 > Запрос на получение отчета "Обороты по товару с детализацией по документам" с указанным id товара.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/turnover/byoperations?filter=product=https://api.moysklad.ru/api/remap/1.2/entity/product/66990dc7-bdfe-11eb-c0a8-800c00000016"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/turnover/byoperations?filter=product=https://api.moysklad.ru/api/remap/1.2/entity/product/66990dc7-bdfe-11eb-c0a8-800c00000016" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
