@@ -539,6 +539,7 @@ curl --compressed -X GET \
 + Если выбрано значение **STATE_CONTRACT**, то поле **stateContractId** является обязательным.
 + Если выбрано значение **EXPORT_INSIDE_EEU**, то поле **destinationCountry** является обязательным и допускаются значения: Армения, Беларусь, Казахстан, Киргизия.
 + Если выбрано значение **OTHER_TYPE**, то поле **reasonDescription** является обязательным.
++ Если выбрано значение **STATE_SECRET**, то поле **stateContractId** является обязательным.
 
 Тип документа-основания **supportingTransaction**:
 
