@@ -143,16 +143,8 @@
 | **correspondentAccount** | String(255)                                               | Корр счет                                                                              |
 | **id**                   | UUID                                                      | ID Счета<br>`+Обязательное при ответе` `+Только для чтения`                            |
 | **isDefault**            | Boolean                                                   | Является ли счет основным счетом юрлица<br>`+Обязательное при ответе`                  |
-| **rate**                 | Object                                                    | Объект валюты расчетного счета. Содержит объект **currency** с метаданными валюты счета. Возвращается для счетов, у которых заполнено поле **accountNumber**. |
+| **currency**             | [Meta](#/general#3-metadannye) | Метаданные валюты расчетного счета. Возвращается для счетов, у которых заполнено поле **accountNumber**.<br>`+Обязательное при ответе` `+Expand` |
 | **updated**              | DateTime                                                  | Момент последнего обновления юрлица<br>`+Обязательное при ответе` `+Только для чтения` |
-
-###### Валюта расчетного счета
-
-Поле **rate** содержит объект, представляющий валюту расчетного счета.
-
-| Название     | Тип                                                       | Описание                                                                                          |
-| ------------ | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------ |
-| **currency** | [Meta](#/general#3-metadannye) | Метаданные валюты расчетного счета<br>`+Обязательное при ответе` `+Expand`                        |
 
 
 ##### Реквизиты Узбекистана
@@ -538,8 +530,8 @@ curl --compressed -X GET \
 
 Если при создании юрлица в теле запроса передается поле **accounts** с массивом расчетных счетов, действуют дополнительные правила:
 
-- хотя бы один из переданных расчетных счетов должен быть в валюте учета компании; при отсутствии такого счета создание завершится ошибкой [80001](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov);
-- после создания расчетного счета его валюту (поле `rate.currency`) изменить нельзя — при попытке изменить метаданные валюты счета сервер вернет ошибку [80000](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov).
+- хотя бы один из переданных расчетных счетов должен быть в валюте учета компании; при отсутствии такого счета создание завершится ошибкой [72000](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov);
+- после создания расчетного счета его валюту (поле `currency`) изменить нельзя — при попытке изменить метаданные валюты счета сервер вернет ошибку [3001](#/errors#3-obshie-oshibki-validacii).
 
 > Пример создания нового юрлица.
 
@@ -804,6 +796,110 @@ curl --compressed -X GET \
        }
    },
   "advancePaymentVat" : 20
+}
+```
+
+> Пример создания юрлица с расчетными счетами и указанием валюты счетов.
+
+```shell
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/organization?expand=accounts" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
+      -d '{  
+  "name":"ОАО СвеПром111",
+  "accounts": {
+    "rows": [
+        {
+            "accountNumber" : "5755999",
+            "currency": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+                    "type": "currency",
+                    "mediaType": "application/json"
+                }
+            }
+        }
+    ]
+  }
+}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданного юрлица.
+
+```json
+{
+    "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/13033b66-4a17-11f0-0a83-01ea00000020?expand=accounts",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=13033b66-4a17-11f0-0a83-01ea00000020"
+    },
+    "id": "13033b66-4a17-11f0-0a83-01ea00000020",
+    "accountId": "5e259af8-4571-11f0-0a82-19ae00000023",
+    "owner": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/5e8379dc-4571-11f0-0a81-141c00000520",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+            "type": "employee",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=5e8379dc-4571-11f0-0a81-141c00000520"
+        }
+    },
+    "shared": true,
+    "group": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/5e261def-4571-11f0-0a82-19ae00000024",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+            "type": "group",
+            "mediaType": "application/json"
+        }
+    },
+    "updated": "2025-06-15 21:32:21.156",
+    "name": "ОАО СвеПром111",
+    "externalCode": "mzVw8qgNgo-3sVsZ2Vtn30",
+    "archived": false,
+    "created": "2025-06-15 21:32:21.156",
+    "companyType": "legal",
+    "accounts": {
+        "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/13033b66-4a17-11f0-0a83-01ea00000020/accounts",
+            "type": "account",
+            "mediaType": "application/json",
+            "size": 1,
+            "limit": 1000,
+            "offset": 0
+        },
+        "rows": [
+            {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/13033b66-4a17-11f0-0a83-01ea00000020/accounts/130353db-4a17-11f0-0a83-01ea00000021",
+                    "type": "account",
+                    "mediaType": "application/json"
+                },
+                "id": "130353db-4a17-11f0-0a83-01ea00000021",
+                "accountId": "5e259af8-4571-11f0-0a82-19ae00000023",
+                "updated": "2025-06-15 21:32:21.199",
+                "isDefault": true,
+                "accountNumber": "5755999",
+                "currency": {
+                    "meta": {
+                        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
+                        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+                        "type": "currency",
+                        "mediaType": "application/json",
+                        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0f5fbe16-ceff-11ee-0a83-00490000009d"
+                    }
+                }
+            }
+        ]
+    },
+    "isEgaisEnable": false,
+    "payerVat": true
 }
 ```
 
@@ -1646,8 +1742,9 @@ curl --compressed -X GET \
 
 При обновлении юрлица через `PUT /entity/organization/{id}`:
 
-- если при создании юрлица поле **accounts** отсутствовало и счета добавляются впервые, хотя бы один из добавляемых расчетных счетов должен быть в валюте учета компании, иначе вернется ошибка [80001](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov);
-- если счета были созданы ранее, для существующих расчетных счетов запрещено менять валюту (поле `rate.currency`) — при попытке изменить валюту любого из счетов вернется ошибка [80000](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov).
+- если при создании юрлица поле **accounts** отсутствовало и счета добавляются впервые, хотя бы один из добавляемых расчетных счетов должен быть в валюте учета компании, иначе вернется ошибка [72000](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov);
+- если при создании юрлица поле **accounts** присутствовало и добавляются дополнительные расчетные счета, новые счета можно создавать в любой валюте;
+- для существующих расчетных счетов запрещено менять валюту (поле `currency`) — при попытке изменить метаданные валюты любого из счетов вернется ошибка [3001](#/errors#3-obshie-oshibki-validacii).
 
 **Параметры**
 
@@ -2042,15 +2139,13 @@ curl --compressed -X GET \
           "mediaType": "application/json"
         }
       },
-      "rate": {
-        "currency": {
-          "meta": {
-            "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
-            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-            "type": "currency",
-            "mediaType": "application/json",
-            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0f5fbe16-ceff-11ee-0a83-00490000009d"
-          }
+      "currency": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type": "currency",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0f5fbe16-ceff-11ee-0a83-00490000009d"
         }
       }
     }
@@ -2105,15 +2200,13 @@ curl --compressed -X GET \
       "mediaType": "application/json"
     }
   },
-  "rate": {
-    "currency": {
-      "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
-        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-        "type": "currency",
-        "mediaType": "application/json",
-        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0f5fbe16-ceff-11ee-0a83-00490000009d"
-      }
+  "currency": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+      "type": "currency",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0f5fbe16-ceff-11ee-0a83-00490000009d"
     }
   }
 }
@@ -2122,7 +2215,7 @@ curl --compressed -X GET \
 ### Изменить счет юрлица
 Обновляет отдельный счет юрлица с указанным id.
 
-**Важно:** После создания расчетного счета его валюта больше не может быть изменена. При попытке изменить метаданные валюты в объекте `rate.currency` будет возвращена ошибка [80000](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov).
+**Важно:** После создания расчетного счета его валюта больше не может быть изменена. При попытке изменить метаданные валюты в поле `currency` будет возвращена ошибка [3001](#/errors#3-obshie-oshibki-validacii).
 
 **Параметры**
 
@@ -2176,15 +2269,13 @@ curl --compressed -X PUT \
       "mediaType": "application/json"
     }
   },
-  "rate": {
-    "currency": {
-      "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
-        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-        "type": "currency",
-        "mediaType": "application/json",
-        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0f5fbe16-ceff-11ee-0a83-00490000009d"
-      }
+  "currency": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+      "type": "currency",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0f5fbe16-ceff-11ee-0a83-00490000009d"
     }
   }
 }
@@ -2196,6 +2287,8 @@ curl --compressed -X PUT \
 Обновляются все поля, указанные в JSON объекте запроса, кроме
 помеченных `Только для чтения` в описании [атрибутов счетов юрлица](#/dictionaries/organization#3-zaprosy-scheta-yurlica).
 Поля, которые не были указаны в JSON запроса, не изменяются.
+
+**Важно:** Для существующих расчетных счетов запрещено менять валюту (поле `currency`) — при попытке изменить метаданные валюты любого из счетов вернется ошибка [3001](#/errors#3-obshie-oshibki-validacii). Новые счета можно создавать в любой валюте.
 
 **Параметры**
 
@@ -2257,15 +2350,13 @@ curl --compressed -X PUT \
     "bankLocation": "г Москва",
     "correspondentAccount": "123141242451",
     "bic": "21412hhhh4",
-    "rate": {
-      "currency": {
-        "meta": {
-          "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
-          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-          "type": "currency",
-          "mediaType": "application/json",
-          "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0f5fbe16-ceff-11ee-0a83-00490000009d"
-        }
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0f5fbe16-ceff-11ee-0a83-00490000009d"
       }
     }
   },
@@ -2284,15 +2375,13 @@ curl --compressed -X PUT \
     "bankLocation": "г Москва",
     "correspondentAccount": "123141242451",
     "bic": "21412555554",
-    "rate": {
-      "currency": {
-        "meta": {
-          "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
-          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
-          "type": "currency",
-          "mediaType": "application/json",
-          "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0f5fbe16-ceff-11ee-0a83-00490000009d"
-        }
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=0f5fbe16-ceff-11ee-0a83-00490000009d"
       }
     }
   }
