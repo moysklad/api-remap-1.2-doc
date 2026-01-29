@@ -537,9 +537,9 @@ curl --compressed -X GET \
 + Если выбрано любое значение из перечисленных в таблице выше, поля **supportingTransaction**, **supportingTransactionDate** и **supportingTransactionNumber** являются обязательными.
 + Если выбрано значение **DISTANCE**, то поля **supportingTransaction**, **supportingTransactionDate** и **supportingTransactionNumber** становятся необязательными. Поля **supportingTransactionDate** и **supportingTransactionNumber** очищаются при указании значения **null** для поля **supportingTransaction**.
 + Если выбрано значение **STATE_CONTRACT**, то поле **stateContractId** является обязательным.
++ Если выбрано значение **STATE_SECRET**, то поле **stateContractId** является обязательным.
 + Если выбрано значение **EXPORT_INSIDE_EEU**, то поле **destinationCountry** является обязательным и допускаются значения: Армения, Беларусь, Казахстан, Киргизия.
 + Если выбрано значение **OTHER_TYPE**, то поле **reasonDescription** является обязательным.
-+ Если выбрано значение **STATE_SECRET**, то поле **stateContractId** является обязательным.
 
 Тип документа-основания **supportingTransaction**:
 
