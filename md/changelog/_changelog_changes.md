@@ -1,59 +1,8 @@
 ## Список последних изменений
-<div class="banner-wrapper">
-  <style>
-    .banner {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      padding: 20px;
-      border-radius: 8px;
-      background-color: #F8FAFF;
-      border: 1px solid #086EFC;
-    }
-    .banner ul {
-      padding: 0;
-      line-height: 2;
-    }
-    .banner ul li {
-      margin-left: 32px;
-      line-height: 2;
-    }
-    .banner h4 {
-      padding: 10px 0;
-      font-size: 24px;
-    }
-    .banner p {
-      margin: 10px 0 0 0;
-      padding: 0;
-    }
-    html.dark .banner,
-    body.dark .banner {
-        background-color: #0B1F3A;
-        border-color: #3B82F6;
-        color: #E5E7EB;
-    }
-  </style>
-
-  <div class="banner">
-    <h4>Внимание: Повышается расход лимита API на запросы остатков</h4>
-    <p><strong>Какие отчеты затронуты?</strong></p>
-    <ul>
-      <li>
-        <code>GET https://api.moysklad.ru/api/remap/1.2/report/stock/all</code>
-      </li>
-      <li>
-        <code>GET https://api.moysklad.ru/api/remap/1.2/report/stock/bystore</code>
-      </li>
-    </ul>
-    <p><strong>Дата вступления изменений в силу</strong></p>
-    <ul>
-      <li>5 единиц лимита за запрос с февраля 2026 года</li>
-    </ul>
-  </div>
-</div>
 
 Список последних изменений в API Remap 1.2
 
-### 30-12-2025
+### 02-02-2026
 **Добавлено**
 - Поле `expiryDate` в [Атрибуты сущности серии](#/dictionaries/consignment#4-atributy-sushnosti)
 - Ошибка [71001](#/errors#3-kody-oshibok-dlya-serij)
@@ -61,6 +10,24 @@
 **Изменено**
 - Поле `label` в [Атрибутах сущности серии](#/dictionaries/consignment#4-atributy-sushnosti)
 - Описания [Серии](#/dictionaries/consignment#3-serii)
+
+### 26-01-2026
+**Добавлено**
+- Тип маркируемой продукции `NABEER` (Безалкогольное пиво) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Способы вывода `OTHER_TYPE` (Другое) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типа маркируемой продукции `NABEER`
+- Поле `reasonDescription` (Описание причины) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+
+### 15-01-2026
+**Добавлено**
+- Коды ошибок для валидации серийных номеров: [3048-3050](#/errors#3-obshie-oshibki-validacii)
+
+### 13-01-2026
+**Добавлена**
+- Фильтрация для документа [Вывод кодов маркировки из оборота](#/documents/retireorder#2-vyvod-kodov-markirovki-iz-oborota)
+
+### 29-12-2025
+**Добавлена**
+- Фильтрация для документа [Заказ кодов маркировки](#/documents/emissionorder#2-zakaz-kodov-markirovki)
 
 ### 24-12-2025
 **Добавлены**

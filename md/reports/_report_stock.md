@@ -1,56 +1,4 @@
 # Отчеты
-<div class="banner-wrapper">
-  <style>
-    .banner {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      padding: 20px;
-      border-radius: 8px;
-      background-color: #F8FAFF;
-      border: 1px solid #086EFC;
-    }
-    .banner ul {
-      padding: 0;
-      line-height: 2;
-    }
-    .banner ul li {
-      margin-left: 32px;
-      line-height: 2;
-    }
-    .banner h4 {
-      padding: 10px 0;
-      font-size: 24px;
-    }
-    .banner p {
-      margin: 10px 0 0 0;
-      padding: 0;
-    }
-    html.dark .banner,
-    body.dark .banner {
-        background-color: #0B1F3A;
-        border-color: #3B82F6;
-        color: #E5E7EB;
-    }
-  </style>
-
-  <div class="banner">
-    <h4>Внимание: Повышается расход лимита API на запросы остатков</h4>
-    <p><strong>Какие отчеты затронуты?</strong></p>
-    <ul>
-      <li>
-        <code>GET https://api.moysklad.ru/api/remap/1.2/report/stock/all</code>
-      </li>
-      <li>
-        <code>GET https://api.moysklad.ru/api/remap/1.2/report/stock/bystore</code>
-      </li>
-    </ul>
-    <p><strong>Дата вступления изменений в силу</strong></p>
-    <ul>
-      <li>5 единиц лимита за запрос с февраля 2026 года</li>
-    </ul>
-  </div>
-</div>
-
 ## Отчет Остатки
 Отчет об остатках в МоемСкладе доступен в расширенном и кратком виде. Запросить отчет можно с помощью JSON API. Также можно подписаться на вебхуки на изменение остатков. Используйте JSON API, если остатки меняются часто, и вы хотите запрашивать их каждые несколько минут. Если остатки меняются реже, чем раз в несколько минут, и вы хотите получать уведомления об изменениях, используйте вебхуки. 
 
@@ -60,6 +8,8 @@
 
 - данные по конкретным товарам и складам; 
 - себестоимость, цена закупки, прибыль.
+
+**Важно**: В отчет попадают только товары с уже пересчитанными остатками на момент запроса. Пересчет остатков в системе не моментальный, его продолжительность зависит от количества единовременно пересчитываемых остатков по товарам. Эту особенность следует учитывать при работе с эндпоинтами отчетов по остаткам.
 
 Подробнее об остатках и работе с ними читайте в статье [Остатки](https://support.moysklad.ru/hc/ru/articles/203319073-%D0%9E%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B8). 
 
