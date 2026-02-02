@@ -2,6 +2,15 @@
 
 Список последних изменений в API Remap 1.2
 
+### 02-02-2026
+**Добавлено**
+- Поле `expiryDate` в [Атрибуты сущности серии](#/dictionaries/consignment#4-atributy-sushnosti)
+- Ошибка [71001](#/errors#3-kody-oshibok-dlya-serij)
+
+**Изменено**
+- Поле `label` в [Атрибутах сущности серии](#/dictionaries/consignment#4-atributy-sushnosti)
+- Описания [Серии](#/dictionaries/consignment#3-serii)
+
 ### 26-01-2026
 **Добавлено**
 - Тип маркируемой продукции `NABEER` (Безалкогольное пиво) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
