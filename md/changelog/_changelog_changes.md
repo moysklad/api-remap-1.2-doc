@@ -8,6 +8,11 @@
 - Способы вывода `OTHER_TYPE` (Другое) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типа маркируемой продукции `NABEER`
 - Поле `reasonDescription` (Описание причины) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
 
+### 23-01-2026
+**Добавлено**
+- Поле `currency` с валютой расчетного счета в счетах юрлица, возвращаемое в ответах [Юрлица](#/dictionaries/organization#2-yurlico) (раздел «Счета юрлица»).
+- Код ошибки для расчетных счетов: [72000](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov)
+
 ### 15-01-2026
 **Добавлено**
 - Коды ошибок для валидации серийных номеров: [3048-3050](#/errors#3-obshie-oshibki-validacii)
