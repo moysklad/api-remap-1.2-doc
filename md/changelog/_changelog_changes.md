@@ -2,7 +2,7 @@
 
 Список последних изменений в API Remap 1.2
 
-### 02-02-2026
+### 09-02-2026
 **Добавлено**
 - Поле `expiryDate` в [Атрибуты сущности серии](#/dictionaries/consignment#4-atributy-sushnosti)
 - Ошибка [71001](#/errors#3-kody-oshibok-dlya-serij)
