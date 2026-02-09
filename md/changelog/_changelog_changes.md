@@ -9,7 +9,9 @@
 - Новые пермиссии у [сотрудника](#/general#5-permissii-sotrudnika) и в списке [пользовательских пермиссий](#/dictionaries/employee#6-spisok-polzovatelskih-permissij)
 
 **Изменено**
-- Cписок пермиссий в ответе на [запрос о контексте Cотрудника](#/general#4-poluchit-kontekst-sotrudnika)
+- Cписок пермиссий в ответе на запрос [о контексте Cотрудника](#/general#4-poluchit-kontekst-sotrudnika) и [о правах сотрудника](#/dictionaries/employee#3-poluchit-informaciyu-o-pravah-sotrudnika)
+- Cписок пермиссий в ответе на запросы о получении [пользовательской роли](#/dictionaries/custom-role#3-poluchit-polzovatelskuyu-rol), и [всех пользовательских ролях](#/dictionaries/custom-role#3-poluchit-vse-polzovatelskie-roli)
+- Cписок пермиссий в запросе и ответе при [создании](#/dictionaries/custom-role#3-sozdat-polzovatelskuyu-rol), и [редактировании](#/dictionaries/custom-role#3-obnovit-polzovatelskuyu-rol) пользовательской роли
 - Cписок [существующих ролей](#/dictionaries/employee#5-rol)
 
 ### 15-01-2026

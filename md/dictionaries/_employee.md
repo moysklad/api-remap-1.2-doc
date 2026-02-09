@@ -1071,6 +1071,9 @@ curl --compressed -X GET \
             "subscriptionControl": false,
             "purchaseControl": true,
             "listenCalls": true,
+            "ownerAssign": false,
+            "ownerDataUpdate": false,
+            "accountDelete": false,
             "remarkingOrder": {
                 "view": "NO",
                 "print": "NO",
