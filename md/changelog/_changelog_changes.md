@@ -4,6 +4,11 @@
 
 ### 09-02-2026
 **Добавлено**
+- Новые типы маркированной продукции `AUTO_FLUIDS` (Моторные масла), `CHEMISTRY` (Косметика, бытовая химия, товары личной гигиены) и `GROCERY` (Бакалея) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty)
+- Типы маркируемой продукции `AUTO_FLUIDS` (Моторные масла), `CHEMISTRY` (Косметика, бытовая химия, товары личной гигиены) и `GROCERY` (Бакалея) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Способы вывода `RECALL` (Отзыв с рынка) и `STATE_SECRET` (Продажа по сделке с государственной тайной) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Способ вывода `RECALL` (Отзыв с рынка) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типа маркируемой продукции `CHEMISTRY`
+- Способ вывода `STATE_SECRET` (Продажа по сделке с государственной тайной) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типов маркируемой продукции `AUTO_FLUIDS` и `CHEMISTRY`
 - Поле `expiryDate` в [Атрибуты сущности серии](#/dictionaries/consignment#4-atributy-sushnosti)
 - Ошибка [71001](#/errors#3-kody-oshibok-dlya-serij)
 
