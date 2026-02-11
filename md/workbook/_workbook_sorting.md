@@ -23,7 +23,7 @@
 | <a href="../dictionaries/#suschnosti-komplekt">Комплект</a>|`id`, `version`, `updated`, `updatedBy`, `name`, `description`, `code`, `externalCode`, `archived`, `pathName`, `article`, `weight`, `volume`,  `syncId` |
 | <a href="../dictionaries/#suschnosti-modifikaciq">Модификация</a>|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode` |
 | <a href="../dictionaries/#suschnosti-gruppa-towarow">Группа товаров</a>|`id`, `version`, `updated`, `updatedBy`, `name`, `externalCode`, `archived`, `pathName` |
-| <a href="../dictionaries/#suschnosti-seriq">Серия</a>|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode` |
+| <a href="../dictionaries/#suschnosti-partiq">Партия</a>|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode` |
 | <a href="../dictionaries/#suschnosti-dogowor">Договор</a>|`id`, `version`, `updated`, `updatedBy`, `name`, `description`, `code`, `externalCode`, `archived`, `moment` |
 | <a href="../dictionaries/#suschnosti-proekt">Проект</a>|`id`,`version`, `updated`,`updatedBy`, `name`, `code`,`externalCode`, `archived` |
 | <a href="../dictionaries/#suschnosti-stat-q-rashodow">Статья расходов</a>|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode` |

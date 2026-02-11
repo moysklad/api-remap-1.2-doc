@@ -229,7 +229,7 @@ JSON API позволяет создавать, обновлять и удаля
 + [Товар](#/dictionaries/product#2-tovar)
 + [Услуга](#/dictionaries/service#2-usluga) (располагаются в метаданных Товаров)
 + [Комплект](#/dictionaries/bundle#2-komplekt) (располагаются в метаданных Товаров)
-+ [Серия](#/dictionaries/consignment#2-seriya)
++ [Партия](#/dictionaries/consignment#2-partiya)
 + Все документы:
   - [Возврат покупателя](#/documents/sales-return#2-vozvrat-pokupatelya)
   - [Возврат поставщику](#/documents/purchase-return#2-vozvrat-postavshiku)
