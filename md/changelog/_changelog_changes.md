@@ -18,7 +18,7 @@
 
 **Изменено**
 - Поле `label` в [Атрибутах сущности серии](#/dictionaries/consignment#4-atributy-sushnosti)
-- Описания [Серии](#/dictionaries/consignment#3-serii)
+- Описания [Серии](#/dictionaries/consignment#3-partii)
 
 ### 26-01-2026
 **Добавлено**
