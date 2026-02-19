@@ -2,6 +2,24 @@
 
 Список последних изменений в API Remap 1.2
 
+### 11-02-2026
+**Изменено**
+- Изменения в политике учета лимитов. [Подробнее о лимитах](#/restrictions#3-limity-i-ogranicheniya-v-json-api)
+
+### 09-02-2026
+**Добавлено**
+- Новые типы маркированной продукции `AUTO_FLUIDS` (Моторные масла), `CHEMISTRY` (Косметика, бытовая химия, товары личной гигиены) и `GROCERY` (Бакалея) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty)
+- Типы маркируемой продукции `AUTO_FLUIDS` (Моторные масла), `CHEMISTRY` (Косметика, бытовая химия, товары личной гигиены) и `GROCERY` (Бакалея) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Способы вывода `RECALL` (Отзыв с рынка) и `STATE_SECRET` (Продажа по сделке с государственной тайной) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Способ вывода `RECALL` (Отзыв с рынка) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типа маркируемой продукции `CHEMISTRY`
+- Способ вывода `STATE_SECRET` (Продажа по сделке с государственной тайной) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типов маркируемой продукции `AUTO_FLUIDS` и `CHEMISTRY`
+- Поле `expiryDate` в [Атрибуты сущности серии](#/dictionaries/consignment#4-atributy-sushnosti)
+- Ошибка [71001](#/errors#3-kody-oshibok-dlya-serij)
+
+**Изменено**
+- Поле `label` в [Атрибутах сущности серии](#/dictionaries/consignment#4-atributy-sushnosti)
+- Описания [Серии](#/dictionaries/consignment#3-serii)
+
 ### 03-02-2026
 **Добавлено**
 - Эндпоинт на [получение роли владельца аккаунта](#/dictionaries/employee#3-zapros-na-poluchenie-roli-vladelca-akkaunta)
@@ -13,6 +31,12 @@
 - Cписок пермиссий в ответе на запросы о получении [пользовательской роли](#/dictionaries/custom-role#3-poluchit-polzovatelskuyu-rol), и [всех пользовательских ролях](#/dictionaries/custom-role#3-poluchit-vse-polzovatelskie-roli)
 - Cписок пермиссий в запросе и ответе при [создании](#/dictionaries/custom-role#3-sozdat-polzovatelskuyu-rol), и [редактировании](#/dictionaries/custom-role#3-obnovit-polzovatelskuyu-rol) пользовательской роли
 - Cписок [существующих ролей](#/dictionaries/employee#5-rol)
+
+### 26-01-2026
+**Добавлено**
+- Тип маркируемой продукции `NABEER` (Безалкогольное пиво) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Способы вывода `OTHER_TYPE` (Другое) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типа маркируемой продукции `NABEER`
+- Поле `reasonDescription` (Описание причины) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
 
 ### 15-01-2026
 **Добавлено**
@@ -85,7 +109,7 @@
 
 ### 25-09-2025
 **Добавлено**
-- Условие автоматического отключения JSON API пользователю в [Ограничения](#/restrictions#2-ogranicheniya)
+- Условие автоматического отключения JSON API пользователю в [Ограничения](#/restrictions#3-limity-i-ogranicheniya-v-json-api)
 
 ### 22-09-2025
 **Добавлено**
@@ -233,7 +257,7 @@
 
 ### 10-04-2025
 **Добавлено**
-- Описание отключения JSON API пользователю в [Ограничения](#/restrictions#2-ogranicheniya)
+- Описание отключения JSON API пользователю в [Ограничения](#/restrictions#3-limity-i-ogranicheniya-v-json-api)
 
 ### 18-03-2025
 **Добавлено**
@@ -275,7 +299,7 @@
 
 ### 12-02-2025
 **Добавлено**
-- Условие автоматического отключения JSON API пользователю в [Ограничения](#/restrictions#2-ogranicheniya)
+- Условие автоматического отключения JSON API пользователю в [Ограничения](#/restrictions#3-limity-i-ogranicheniya-v-json-api)
 
 ### 27-01-2025
 **Добавлено**
@@ -336,7 +360,7 @@
 
 ### 17-10-2024
 **Изменено**
-- Изменено одно из [правил бана](#/restrictions#2-ogranicheniya)
+- Изменено одно из [правил бана](#/restrictions#3-limity-i-ogranicheniya-v-json-api)
 
 ### 08-10-2024
 **Добавлена**
@@ -393,8 +417,8 @@
 
 ### 26-06-2024
 **Добавлены**
-- Условие автоматического отключения JSON API пользователю в [Ограничения](#/restrictions#2-ogranicheniya)
-- Условие автоматического отключения вебхука в [Ограничения](#/restrictions#2-ogranicheniya)
+- Условие автоматического отключения JSON API пользователю в [Ограничения](#/restrictions#3-limity-i-ogranicheniya-v-json-api)
+- Условие автоматического отключения вебхука в [Ограничения](#/restrictions#3-limity-i-ogranicheniya-v-json-api)
 
 ### 24-06-2024
 **Добавлено**
@@ -1215,7 +1239,7 @@
 ### 27-04-2021
 **Добавлено**
 - Очередь для [асинхронных задач](#/async#2-asinhronnyj-obmen)
-- Обновлен список [ограничений](#/restrictions#2-ogranicheniya) (добавлена информация про размер очереди асинхронных задач)
+- Обновлен список [ограничений](#/restrictions#3-limity-i-ogranicheniya-v-json-api) (добавлена информация про размер очереди асинхронных задач)
 - Новый статус `PENDING` для [асинхронных задач](#/async#2-asinhronnyj-obmen)
 - Эндпоинт получения [списка статусов асинхронных задач](#/async#3-statusy-asinhronnyh-zadach)
 - Поле **meta** для [асинхронных задач](#/async#2-asinhronnyj-obmen)
@@ -1491,7 +1515,7 @@
 
 ### 26-04-2020
 **Документация**
-- [Изменено описание](#/restrictions#2-ogranicheniya) ограничения по запросу на один IP
+- [Изменено описание](#/restrictions#3-limity-i-ogranicheniya-v-json-api) ограничения по запросу на один IP
 - Исправление опечатки в описании `email` [Сотрудника](#/dictionaries/employee#2-sotrudnik)
 
 ### 14-04-2020
