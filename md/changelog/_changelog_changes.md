@@ -1,6 +1,10 @@
 ## Список последних изменений
 Список последних изменений в API Remap 1.2
 
+### 25-02-2026
+#### Добавлено
+- Поддержка протоколов change-handler и update-provider в [Заказе кодов маркировки](#/documents/emissionorder#2-zakaz-kodov-markirovki).
+
 ### 05-11-2025
 #### Добавлено
 - Поле `cheque` в [Розничную продажу](#/documents/retaildemand#2-roznichnaya-prodazha)
