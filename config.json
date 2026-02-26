@@ -208,6 +208,13 @@
         ]
       },
       {
+        "title": "Партия",
+        "level": 2,
+        "folderPath": "./dictionaries/_consignment.md",
+        "children": [
+        ]
+      },
+      {
         "title": "Печать этикеток и ценников",
         "level": 2,
         "folderPath": "./dictionaries/_labels.md",
@@ -260,13 +267,6 @@
         "title": "Серийный номер",
         "level": 2,
         "folderPath": "./dictionaries/_thing.md",
-        "children": [
-        ]
-      },
-      {
-        "title": "Серия",
-        "level": 2,
-        "folderPath": "./dictionaries/_consignment.md",
         "children": [
         ]
       },

@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 26-02-2026
+**Изменено**
+- Сущность `Серия` переименована в [Партия](#/dictionaries/consignment#2-partiya)
+
 ### 25-02-2026
 **Добавлена**
 - Возможность чтения поля `expenseItem` у документа [Списание](#/documents/loss#2-spisanie)
@@ -18,11 +22,11 @@
 - Способ вывода `RECALL` (Отзыв с рынка) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типа маркируемой продукции `CHEMISTRY`
 - Способ вывода `STATE_SECRET` (Продажа по сделке с государственной тайной) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типов маркируемой продукции `AUTO_FLUIDS` и `CHEMISTRY`
 - Поле `expiryDate` в [Атрибуты сущности серии](#/dictionaries/consignment#4-atributy-sushnosti)
-- Ошибка [71001](#/errors#3-kody-oshibok-dlya-serij)
+- Ошибка [71001](#/errors#3-kody-oshibok-dlya-partij)
 
 **Изменено**
 - Поле `label` в [Атрибутах сущности серии](#/dictionaries/consignment#4-atributy-sushnosti)
-- Описания [Серии](#/dictionaries/consignment#3-serii)
+- Описания [Серии](#/dictionaries/consignment#3-partii)
 
 ### 03-02-2026
 **Добавлено**
@@ -292,7 +296,7 @@
 - Описание поля `marksCheckMode` в [Точку продаж](#/dictionaries/retailstore#2-tochka-prodazh), настройка проверки КМ перед продажей в ГИС МТ
 
 **Добавлено**
-- Поле `archived` в [Серии](#/dictionaries/consignment#2-seriya)
+- Поле `archived` в [Серии](#/dictionaries/consignment#2-partiya)
 
 ### 13-02-2025
 **Добавлено**
@@ -356,7 +360,7 @@
 
 ### 29-10-2024
 **Добавлена**
-- Ошибка [71000](#/errors#3-kody-oshibok-dlya-serij) при создании серии в качестве ассортимента указана серия
+- Ошибка [71000](#/errors#3-kody-oshibok-dlya-partij) при создании серии в качестве ассортимента указана серия
 
 ### 24-10-2024
 **Добавлено**
@@ -862,7 +866,7 @@
 Добавлено описание операторов фильтрации штрихкодов для [товаров](#/dictionaries/product#2-tovar),
 [комплектов](#/dictionaries/bundle#2-komplekt),
 [модификаций](#/dictionaries/variant#2-modifikaciya),
-[серий](#/dictionaries/consignment#2-seriya) и
+[серий](#/dictionaries/consignment#2-partiya) и
 [услуг](#/dictionaries/service#2-usluga)
 
 ### 19-07-2022
