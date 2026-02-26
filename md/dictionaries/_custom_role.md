@@ -73,6 +73,9 @@ curl --compressed -X GET \
     "subscriptionControl": false,
     "purchaseControl": true,
     "listenCalls": true,
+    "ownerAssign": false,
+    "ownerDataUpdate": false,
+    "accountDelete": false,
     "supply": {
       "view": "ALL",
       "print": "ALL",
@@ -529,6 +532,9 @@ curl --compressed -X GET \
         "subscriptionControl": false,
         "purchaseControl": true,
         "listenCalls": true,
+        "ownerAssign": false,
+        "ownerDataUpdate": false,
+        "accountDelete": false,
         "supply": {
           "view": "ALL",
           "print": "ALL",
@@ -956,7 +962,10 @@ curl --compressed -X POST \
     "editCurrencyRateOfDocument": false,
     "subscriptionControl": false,
     "purchaseControl": false,
-    "listenCalls": false
+    "listenCalls": false,
+    "ownerAssign": false,
+    "ownerDataUpdate": false,
+    "accountDelete": false,
   }
 }'
 ```
@@ -1002,6 +1011,9 @@ curl --compressed -X POST \
     "subscriptionControl": false,
     "purchaseControl": false,
     "listenCalls": false,
+    "ownerAssign": false,
+    "ownerDataUpdate": false,
+    "accountDelete": false,
     "supply": {
       "view": "NO",
       "print": "NO",
@@ -1433,7 +1445,10 @@ curl --compressed -X PUT \
     "editCurrencyRateOfDocument": false,
     "subscriptionControl": false,
     "purchaseControl": false,
-    "listenCalls": false
+    "listenCalls": false,
+    "ownerAssign": false,
+    "ownerDataUpdate": false,
+    "accountDelete": false
   }
 }'
 ```
@@ -1479,6 +1494,9 @@ curl --compressed -X PUT \
     "subscriptionControl": false,
     "purchaseControl": false,
     "listenCalls": false,
+    "ownerAssign": false,
+    "ownerDataUpdate": false,
+    "accountDelete": false,
     "supply": {
       "view": "NO",
       "print": "NO",

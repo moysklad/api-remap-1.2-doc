@@ -2,9 +2,13 @@
 
 Список последних изменений в API Remap 1.2
 
-### 17-02-2026
+### 26-02-2026
 **Изменено**
 - Сущность `Серия` переименована в [Партия](#/dictionaries/consignment#2-partiya)
+
+### 25-02-2026
+**Добавлена**
+- Возможность чтения поля `expenseItem` у документа [Списание](#/documents/loss#2-spisanie)
 
 ### 11-02-2026
 **Изменено**
@@ -23,6 +27,18 @@
 **Изменено**
 - Поле `label` в [Атрибутах сущности серии](#/dictionaries/consignment#4-atributy-sushnosti)
 - Описания [Серии](#/dictionaries/consignment#3-partii)
+
+### 03-02-2026
+**Добавлено**
+- Эндпоинт на [получение роли владельца аккаунта](#/dictionaries/employee#3-zapros-na-poluchenie-roli-vladelca-akkaunta)
+- Коды ошибок для работы с владельцем аккаунта: [43031-43036](#/errors#3-kody-oshibok-dlya-sotrudnikov)
+- Новые пермиссии у [сотрудника](#/general#5-permissii-sotrudnika) и в списке [пользовательских пермиссий](#/dictionaries/employee#6-spisok-polzovatelskih-permissij)
+
+**Изменено**
+- Cписок пермиссий в ответе на запрос [о контексте Cотрудника](#/general#4-poluchit-kontekst-sotrudnika) и [о правах сотрудника](#/dictionaries/employee#3-poluchit-informaciyu-o-pravah-sotrudnika)
+- Cписок пермиссий в ответе на запросы о получении [пользовательской роли](#/dictionaries/custom-role#3-poluchit-polzovatelskuyu-rol), и [всех пользовательских ролях](#/dictionaries/custom-role#3-poluchit-vse-polzovatelskie-roli)
+- Cписок пермиссий в запросе и ответе при [создании](#/dictionaries/custom-role#3-sozdat-polzovatelskuyu-rol), и [редактировании](#/dictionaries/custom-role#3-obnovit-polzovatelskuyu-rol) пользовательской роли
+- Cписок [существующих ролей](#/dictionaries/employee#5-rol)
 
 ### 26-01-2026
 **Добавлено**

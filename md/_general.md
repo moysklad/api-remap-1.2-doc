@@ -2944,6 +2944,9 @@ curl --compressed -X PUT \
 | **pnl**                      | Просматривать прибыльность            |
 | **stock**                    | Просматривать остатки по товарам      |
 | **tariff_crm**               | Присутствует ли опция CRM на аккаунте |
+| **ownerDataUpdate**          | Редактировать данные владельца        |
+| **ownerAssign**              | Передавать владение аккаунтом         |
+| **accountDelete**            | Удалять аккаунт                       |
 
 При наличии соответствующей пермиссии объект содержит поле **VIEW** со значением `ALL`
 
@@ -3590,6 +3593,15 @@ curl --compressed -X PUT \
             "view": "ALL"
         },
         "dashboardMoney": {
+            "view": "ALL"
+        },
+        "ownerDataUpdate": {
+            "view": "ALL"
+        },
+        "ownerAssign": {
+            "view": "ALL"
+        },
+        "accountDelete": {
             "view": "ALL"
         }
     }
