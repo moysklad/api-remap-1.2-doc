@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 27-02-2026
+**Добавлена**
+- Поддержка протоколов change-handler и update-provider в [Заказе кодов маркировки](#/documents/emissionorder#2-zakaz-kodov-markirovki)
+
 ### 25-02-2026
 **Добавлена**
 - Возможность чтения поля `expenseItem` у документа [Списание](#/documents/loss#2-spisanie)
