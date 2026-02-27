@@ -8,28 +8,28 @@
 
 #### Атрибуты сущности
 
-| Название          | Тип                            | Описание                                                                                                                                                          |
-|-------------------|:-------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**     | UUID                           | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                            |
-| **created**       | DateTime                       | Момент создания Заказа кодов маркировки<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                      |
-| **description**   | String(255)                    | Комментарий `+Change-handler` `+Update-provider`                                                                                                                  |
-| **documentState** | Enum                           | Состояние документов маркировки. [Подробнее тут](#/documents/emissionorder#4-sostoyanie-dokumentov-markirovki) <br>`+Только для чтения` `+Change-handler`         |
-| **emissionType**  | Enum                           | Способ ввода в оборот. [Подробнее тут](#/documents/emissionorder#4-sposob-vvoda-v-oborot) <br> `+Обязательное при ответе` `+Change-handler` `+Update-provider`    |
-| **externalCode**  | String(255)                    | Внешний код Заказа кодов маркировки<br>`+Обязательное при ответе` `+Change-handler`                                                                               |
-| **group**         | [Meta](#/general#3-metadannye) | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                          |
-| **id**            | UUID                           | ID Заказа кодов маркировки<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                   |
-| **meta**          | [Meta](#/general#3-metadannye) | Метаданные Заказа кодов маркировки<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                           |
-| **moment**        | DateTime                       | Дата документа<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                 |
-| **name**          | String(255)                    | Наименование Заказа кодов маркировки <br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                          |
-| **organization**  | [Meta](#/general#3-metadannye) | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Change-handler` `+Update-provider`                                                                    |
-| **owner**         | [Meta](#/general#3-metadannye) | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                 |
-| **positions**     | MetaArray                      | Метаданные позиций Заказа кодов маркировки<br>`+Обязательное при ответе` `+Expand` `+Change-handler` `+Update-provider`                                           |
-| **printed**       | Boolean                        | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                          |
-| **published**     | Boolean                        | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                        |
-| **shared**        | Boolean                        | Общий доступ<br>`+Обязательное при ответе`                                                                                                                        |
-| **state**         | [Meta](#/general#3-metadannye) | Метаданные статуса Заказа кодов маркировки<br>`+Expand` `+Change-handler` `+Update-provider`                                                                      |
-| **trackingType**  | Enum                           | Тип маркируемой продукции. [Подробнее тут](#/dictionaries/bundle#5-tip-markiruemoj-produkcii) <br>`+Обязательное при ответе` `+Change-handler` `+Update-provider` |
-| **updated**       | DateTime                       | Момент последнего обновления<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                 |
+| Название          | Тип                            | Фильтрация                 | Описание                                                                                                                                      |
+|-------------------|:-------------------------------|:---------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**     | UUID                           |                            | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                          |
+| **created**       | DateTime                       |                            | Момент создания Заказа кодов маркировки<br>`+Обязательное при ответе` `+Только для чтения`                                                    |
+| **description**   | String(255)                    | `=` `!=` `~` `~=` `=~`     | Комментарий                                                                                                                                   |
+| **documentState** | Enum                           |                            | Состояние документов маркировки. [Подробнее тут](#/documents/emissionorder#4-sostoyanie-dokumentov-markirovki) <br>`+Обязательное при ответе` |
+| **emissionType**  | Enum                           |                            | Способ ввода в оборот. [Подробнее тут](#/documents/emissionorder#4-sposob-vvoda-v-oborot) <br>`+Только для чтения`                            |
+| **externalCode**  | String(255)                    | `=` `!=` `~` `~=` `=~`     | Внешний код Заказа кодов маркировки<br>`+Обязательное при ответе`                                                                             |
+| **group**         | [Meta](#/general#3-metadannye) | `=` `!=`                   | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                      |
+| **id**            | UUID                           |                            | ID Заказа кодов маркировки<br>`+Обязательное при ответе` `+Только для чтения`                                                                 |
+| **meta**          | [Meta](#/general#3-metadannye) |                            | Метаданные Заказа кодов маркировки<br>`+Обязательное при ответе` `+Только для чтения`                                                         |
+| **moment**        | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Дата документа<br>`+Обязательное при ответе`                                                                                                  |
+| **name**          | String(255)                    | `=` `!=` `~` `~=` `=~`     | Наименование Заказа кодов маркировки <br>`+Обязательное при ответе`                                                                           |
+| **organization**  | [Meta](#/general#3-metadannye) |                            | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand`                                                                                     |
+| **owner**         | [Meta](#/general#3-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br>`+Expand`                                                                                                             |
+| **positions**     | MetaArray                      |                            | Метаданные позиций Заказа кодов маркировки<br>`+Обязательное при ответе` `+Expand`                                                            |
+| **printed**       | Boolean                        |                            | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                      |
+| **published**     | Boolean                        |                            | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                    |
+| **shared**        | Boolean                        | `=` `!=`                   | Общий доступ<br>`+Обязательное при ответе`                                                                                                    |
+| **state**         | [Meta](#/general#3-metadannye) | `=` `!=`                   | Метаданные статуса Заказа кодов маркировки<br>`+Expand`                                                                                       |
+| **trackingType**  | Enum                           |                            | Тип маркируемой продукции. [Подробнее тут](#/dictionaries/bundle#5-tip-markiruemoj-produkcii) <br>`+Обязательное при ответе`                  |
+| **updated**       | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления<br>`+Обязательное при ответе` `+Только для чтения`                                                               |
 
 #### Связи с другими документами
 
@@ -102,9 +102,9 @@
 > Получить заказы кодов маркировки
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -282,11 +282,11 @@ curl -X GET
 > Пример создания нового Заказа кодов маркировки с телом запроса, содержащим только необходимые поля.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "organization": {
               "meta": {
@@ -367,11 +367,11 @@ curl -X GET
 > Пример создания нового Заказа кодов маркировки с более насыщенным телом запроса.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "2000",
             "organization": {
@@ -489,11 +489,11 @@ curl -X GET
 > Пример запроса на создание Заказа кодов маркировки   с позициями в теле запроса.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "888",
             "organization": {
@@ -614,11 +614,11 @@ curl -X GET
 > Пример создания и обновления нескольких Заказов кодов маркировки
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '[
         {
           "name": "Order001",
@@ -782,9 +782,9 @@ curl -X POST
 > Метаданные Заказа кодов маркировки
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/metadata" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -830,9 +830,9 @@ curl -X GET
 > Запрос на Получение отдельного заказа кодов маркировки с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/33c8ac0b-a670-11ef-ac12-000d00000111"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/33c8ac0b-a670-11ef-ac12-000d00000111" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -921,11 +921,11 @@ curl -X GET
 > Пример запроса на обновление отдельного Заказа кодов маркировки.
 
 ```shell
-curl -X PUT
-  "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/33c8ac0b-a670-11ef-ac12-000d00000111"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/33c8ac0b-a670-11ef-ac12-000d00000111" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '{
         "owner": {
           "meta": {
@@ -1046,11 +1046,11 @@ curl -X PUT
 > Пример запроса на обновление Заказа кодов маркировки с позициями в теле запроса.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/33c8ac0b-a670-11ef-ac12-000d00000111"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/33c8ac0b-a670-11ef-ac12-000d00000111" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
     -d '{
             "name": "new",
             "organization": {
@@ -1183,9 +1183,9 @@ curl -X PUT
 > Получить позиции Заказа кодов маркировки
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/33c8ac0b-a670-11ef-ac12-000d00000111/positions"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/33c8ac0b-a670-11ef-ac12-000d00000111/positions" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1250,9 +1250,9 @@ curl -X GET
 > Запрос на получение отдельной позиции Заказа кодов маркировки с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/33c8ac0b-a670-11ef-ac12-000d00000111/positions/33c8bd7c-a670-11ef-ac12-000d00000112"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/33c8ac0b-a670-11ef-ac12-000d00000111/positions/33c8bd7c-a670-11ef-ac12-000d00000112" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1301,11 +1301,11 @@ curl -X GET
 > Пример создания одной позиции в Заказе кодов маркировки.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/7944ef04-f831-11e5-7a69-971500188b19/positions"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/7944ef04-f831-11e5-7a69-971500188b19/positions" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "quantity": 49,
             "assortment": {
@@ -1350,11 +1350,11 @@ curl -X GET
 > Пример создания сразу нескольких позиций в Заказе кодов маркировки.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/7944ef04-f831-11e5-7a69-971500188b19/positions"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/7944ef04-f831-11e5-7a69-971500188b19/positions" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '[
             {
               "quantity": 12,
@@ -1474,11 +1474,11 @@ curl -X GET
 > Пример запроса на обновление отдельной позиции в Заказе кодов маркировки.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/emissionorder/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "quantity": 44,
             "assortment": {

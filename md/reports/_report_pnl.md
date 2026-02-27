@@ -97,9 +97,9 @@
 > Запрос на получение отчета "Прибыльность по товарам".
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/profit/byproduct"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/profit/byproduct" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -328,9 +328,9 @@ curl -X GET
 > Запрос на получение отчета "Прибыльность по модификациям".
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/profit/byvariant"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/profit/byvariant" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -553,9 +553,9 @@ curl -X GET
 > Запрос на получение отчета "Прибыльность по сотрудникам".
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/profit/byemployee"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/profit/byemployee" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -708,9 +708,9 @@ curl -X GET
 > Запрос на получение отчета "Прибыльность по покупателям".
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/profit/bycounterparty"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/profit/bycounterparty" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -850,9 +850,9 @@ curl -X GET
 > Запрос на получение отчета "Прибыльность по каналам продаж".
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/profit/bysaleschannel"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/profit/bysaleschannel" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 

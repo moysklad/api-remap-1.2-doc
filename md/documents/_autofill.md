@@ -101,11 +101,11 @@
 > Запрос автозаполнения цен
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/wizard/demand?action=evaluate_price"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/wizard/demand?action=evaluate_price" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '
 {
    "agent":{
@@ -203,11 +203,11 @@
 > Запрос автозаполнения скидок
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/wizard/demand?action=evaluate_discount"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/wizard/demand?action=evaluate_discount" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '
 {
    "agent":{
@@ -300,11 +300,11 @@
 > Запрос автозаполнения НДС
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/wizard/demand?action=evaluate_vat"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/wizard/demand?action=evaluate_vat" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '
 {
     "organization": {
@@ -423,11 +423,11 @@
 > Запрос автозаполнения себестоимости
 
 ```shell
-  curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/wizard/salesreturn?action=evaluate_cost"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+  curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/wizard/salesreturn?action=evaluate_cost" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
     -d '
 {
   "store": {

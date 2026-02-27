@@ -1,9 +1,99 @@
 ## Список последних изменений
+
 Список последних изменений в API Remap 1.2
 
 ### 25-02-2026
 #### Добавлено
 - Поддержка протоколов change-handler и update-provider в [Заказе кодов маркировки](#/documents/emissionorder#2-zakaz-kodov-markirovki).
+
+### 25-02-2026
+**Добавлена**
+- Возможность чтения поля `expenseItem` у документа [Списание](#/documents/loss#2-spisanie)
+
+### 11-02-2026
+**Изменено**
+- Изменения в политике учета лимитов. [Подробнее о лимитах](#/restrictions#3-limity-i-ogranicheniya-v-json-api)
+
+### 09-02-2026
+**Добавлено**
+- Новые типы маркированной продукции `AUTO_FLUIDS` (Моторные масла), `CHEMISTRY` (Косметика, бытовая химия, товары личной гигиены) и `GROCERY` (Бакалея) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty)
+- Типы маркируемой продукции `AUTO_FLUIDS` (Моторные масла), `CHEMISTRY` (Косметика, бытовая химия, товары личной гигиены) и `GROCERY` (Бакалея) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Способы вывода `RECALL` (Отзыв с рынка) и `STATE_SECRET` (Продажа по сделке с государственной тайной) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Способ вывода `RECALL` (Отзыв с рынка) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типа маркируемой продукции `CHEMISTRY`
+- Способ вывода `STATE_SECRET` (Продажа по сделке с государственной тайной) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типов маркируемой продукции `AUTO_FLUIDS` и `CHEMISTRY`
+- Поле `expiryDate` в [Атрибуты сущности серии](#/dictionaries/consignment#4-atributy-sushnosti)
+- Ошибка [71001](#/errors#3-kody-oshibok-dlya-serij)
+
+**Изменено**
+- Поле `label` в [Атрибутах сущности серии](#/dictionaries/consignment#4-atributy-sushnosti)
+- Описания [Серии](#/dictionaries/consignment#3-serii)
+
+### 03-02-2026
+**Добавлено**
+- Эндпоинт на [получение роли владельца аккаунта](#/dictionaries/employee#3-zapros-na-poluchenie-roli-vladelca-akkaunta)
+- Коды ошибок для работы с владельцем аккаунта: [43031-43036](#/errors#3-kody-oshibok-dlya-sotrudnikov)
+- Новые пермиссии у [сотрудника](#/general#5-permissii-sotrudnika) и в списке [пользовательских пермиссий](#/dictionaries/employee#6-spisok-polzovatelskih-permissij)
+
+**Изменено**
+- Cписок пермиссий в ответе на запрос [о контексте Cотрудника](#/general#4-poluchit-kontekst-sotrudnika) и [о правах сотрудника](#/dictionaries/employee#3-poluchit-informaciyu-o-pravah-sotrudnika)
+- Cписок пермиссий в ответе на запросы о получении [пользовательской роли](#/dictionaries/custom-role#3-poluchit-polzovatelskuyu-rol), и [всех пользовательских ролях](#/dictionaries/custom-role#3-poluchit-vse-polzovatelskie-roli)
+- Cписок пермиссий в запросе и ответе при [создании](#/dictionaries/custom-role#3-sozdat-polzovatelskuyu-rol), и [редактировании](#/dictionaries/custom-role#3-obnovit-polzovatelskuyu-rol) пользовательской роли
+- Cписок [существующих ролей](#/dictionaries/employee#5-rol)
+
+### 26-01-2026
+**Добавлено**
+- Тип маркируемой продукции `NABEER` (Безалкогольное пиво) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Способы вывода `OTHER_TYPE` (Другое) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типа маркируемой продукции `NABEER`
+- Поле `reasonDescription` (Описание причины) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+
+### 15-01-2026
+**Добавлено**
+- Коды ошибок для валидации серийных номеров: [3048-3050](#/errors#3-obshie-oshibki-validacii)
+
+### 13-01-2026
+**Добавлена**
+- Фильтрация для документа [Вывод кодов маркировки из оборота](#/documents/retireorder#2-vyvod-kodov-markirovki-iz-oborota)
+
+### 29-12-2025
+**Добавлена**
+- Фильтрация для документа [Заказ кодов маркировки](#/documents/emissionorder#2-zakaz-kodov-markirovki)
+
+### 24-12-2025
+**Добавлены**
+- Эндпоинт [Площадок для продаж](#/dictionaries/saleplatform#2-ploshadka-dlya-prodazh)
+- Эндпоинт [Карточек контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
+### 23-12-2025
+**Изменено**
+- Ошибка [22003](#/errors#3-kody-oshibok-dlya-platezhej)
+- Поле **noClosingDocs** в [Расходном ордере](#/documents/cashout#2-rashodnyj-order) и [Исходящем платеже](#/documents/payment-out#2-ishodyashij-platezh) теперь доступно для редактирования.
+
+### 22-12-2025
+**Добавлено**
+- Способ вывода `VETERINARY_USE` (Использование для ветеринарного применения) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Способы вывода `VENDING` и `DONATION` в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типа маркируемой продукции `VETPHARMA`
+
+### 15-12-2025
+**Добавлено**
+- Поддержка авансовых полей в [Счете-фактуре выданном](#/documents/factureout#2-schet-faktura-vydannyj): поля `advancePaymentVat` (ставка НДС для авансового платежа), `paymentPurpose` (назначение платежа) и `vatSum` (сумма включая НДС). Поля доступны только для счетов-фактур с основаниями-платежами.
+
+### 03-12-2025
+**Добавлено**
+- Механизм упоминаний в [комментарии к задаче](#/dictionaries/task#3-kommentarii-zadachi)
+- [Уведомления](#/notification/notification-types-details#3-novoe-upominanie-v-kommentariyah-zadach) по упоминаниям в комментариях задач
+- Ошибка [3046](#/errors#3-obshie-oshibki-validacii)
+
+### 18-11-2025
+**Изменено**
+- Значение поля `name` в сущности [склада](#/dictionaries/store#2-sklad) должно быть уникальным.
+
+### 17-11-2025
+**Добавлено**
+- Модуль `mod__nct__kz` с информацией из Национального каталога товаров в сущность [Товар](#/dictionaries/product#3-tovary) `+Только для Казахстана`
+
+### 13-11-2025
+**Добавлено**
+- Ошибка [26115](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya)
 
 ### 05-11-2025
 #### Добавлено
@@ -11,7 +101,7 @@
 
 ### 30-10-2025
 **Добавлено**
-- Ошибка [19005](https://dev.moysklad.ru/doc/api/remap/1.2/#/errors#3-kody-oshibok-dlya-vozvratov)
+- Ошибка [19005](#/errors#3-kody-oshibok-dlya-vozvratov)
 
 ### 09-10-2025
 **Добавлено**
@@ -23,11 +113,11 @@
   
 ### 01-10-2025
 **Добавлено**
-- Настройки НДС для [юридических лиц](../dictionaries/#suschnosti-jurlico-jurlica-polq-rekwizitow)
+- Настройки НДС для [юридических лиц](#/dictionaries/organization#4-polya-rekvizitov)
 
 ### 25-09-2025
 **Добавлено**
-- Условие автоматического отключения JSON API пользователю в [Ограничения](#/restrictions#2-ogranicheniya)
+- Условие автоматического отключения JSON API пользователю в [Ограничения](#/restrictions#3-limity-i-ogranicheniya-v-json-api)
 
 ### 22-09-2025
 **Добавлено**
@@ -175,7 +265,7 @@
 
 ### 10-04-2025
 **Добавлено**
-- Описание отключения JSON API пользователю в [Ограничения](#/restrictions#2-ogranicheniya)
+- Описание отключения JSON API пользователю в [Ограничения](#/restrictions#3-limity-i-ogranicheniya-v-json-api)
 
 ### 18-03-2025
 **Добавлено**
@@ -217,7 +307,7 @@
 
 ### 12-02-2025
 **Добавлено**
-- Условие автоматического отключения JSON API пользователю в [Ограничения](#/restrictions#2-ogranicheniya)
+- Условие автоматического отключения JSON API пользователю в [Ограничения](#/restrictions#3-limity-i-ogranicheniya-v-json-api)
 
 ### 27-01-2025
 **Добавлено**
@@ -278,7 +368,7 @@
 
 ### 17-10-2024
 **Изменено**
-- Изменено одно из [правил бана](#/restrictions#2-ogranicheniya)
+- Изменено одно из [правил бана](#/restrictions#3-limity-i-ogranicheniya-v-json-api)
 
 ### 08-10-2024
 **Добавлена**
@@ -323,7 +413,7 @@
 
 ### 16-07-2024
 **Добавлено**
-- Добавлено описание получения ссылки на [изображение](#/dictionaries/images#3-poluchit-ssylku-na-izobrazhenie-tovara-ili-komplekta-ili-modifikacii)
+- Добавлено описание получения ссылки на [изображение](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-ili-modifikacii)
 
 ### 12-07-2024
 **Добавлен**
@@ -335,8 +425,8 @@
 
 ### 26-06-2024
 **Добавлены**
-- Условие автоматического отключения JSON API пользователю в [Ограничения](#/restrictions#2-ogranicheniya)
-- Условие автоматического отключения вебхука в [Ограничения](#/restrictions#2-ogranicheniya)
+- Условие автоматического отключения JSON API пользователю в [Ограничения](#/restrictions#3-limity-i-ogranicheniya-v-json-api)
+- Условие автоматического отключения вебхука в [Ограничения](#/restrictions#3-limity-i-ogranicheniya-v-json-api)
 
 ### 24-06-2024
 **Добавлено**
@@ -1157,7 +1247,7 @@
 ### 27-04-2021
 **Добавлено**
 - Очередь для [асинхронных задач](#/async#2-asinhronnyj-obmen)
-- Обновлен список [ограничений](#/restrictions#2-ogranicheniya) (добавлена информация про размер очереди асинхронных задач)
+- Обновлен список [ограничений](#/restrictions#3-limity-i-ogranicheniya-v-json-api) (добавлена информация про размер очереди асинхронных задач)
 - Новый статус `PENDING` для [асинхронных задач](#/async#2-asinhronnyj-obmen)
 - Эндпоинт получения [списка статусов асинхронных задач](#/async#3-statusy-asinhronnyh-zadach)
 - Поле **meta** для [асинхронных задач](#/async#2-asinhronnyj-obmen)
@@ -1324,7 +1414,7 @@
 - Добавлена возможность создавать, изменять и удалять [Отделы](#/dictionaries/group#2-otdel)
 
 **Добавлено**
-- Добавлено заполнение себестоимости в эндпоинт [Автозаполнения](#/documents/autofill#3-zapros-avtozapoleniya-sebestoimosti)
+- Добавлено заполнение себестоимости в эндпоинт [Автозаполнения](#/documents/autofill#3-zapros-avtozapolneniya-sebestoimosti)
 
 ### 20-10-2020
 **Добавлено**
@@ -1433,7 +1523,7 @@
 
 ### 26-04-2020
 **Документация**
-- [Изменено описание](#/restrictions#2-ogranicheniya) ограничения по запросу на один IP
+- [Изменено описание](#/restrictions#3-limity-i-ogranicheniya-v-json-api) ограничения по запросу на один IP
 - Исправление опечатки в описании `email` [Сотрудника](#/dictionaries/employee#2-sotrudnik)
 
 ### 14-04-2020

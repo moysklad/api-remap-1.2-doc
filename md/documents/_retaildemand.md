@@ -181,9 +181,9 @@
 > Получить Розничные продажи
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -475,11 +475,11 @@ curl -X GET
 > Пример создания новой Розничной продажи с телом запроса, содержащим только необходимые поля.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "retailShift": {
               "meta": {
@@ -601,11 +601,11 @@ curl -X GET
 > Пример создания новой Розничной продажи с более насыщенным телом запроса.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "retailShift": {
               "meta": {
@@ -748,11 +748,11 @@ curl -X GET
 > Пример запроса на создание Розничной продажи с позициями в теле запроса.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "retailShift": {
               "meta": {
@@ -937,11 +937,11 @@ curl -X GET
 > Пример запроса на создание Розничной продажи с доп. полями.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "retailShift": {
               "meta": {
@@ -1153,11 +1153,11 @@ curl -X GET
 > Пример создания и обновления нескольких Розничных продаж
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '[
             {
               "retailShift": {
@@ -1487,9 +1487,9 @@ curl -X GET
 > Запрос на удаление Розничной продажи с указанным id.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1504,11 +1504,11 @@ curl -X DELETE
 > Запрос на массовое удаление Розничных продаж. 
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '[
         {
             "meta": {
@@ -1557,9 +1557,9 @@ curl -X POST
 > Метаданные Розничных продаж
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1695,9 +1695,9 @@ curl -X GET
 > Запрос на получение информации по отдельному дополнительному полю.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1729,11 +1729,11 @@ curl -X GET
 > Пример получения шаблона розничной продажи с телом запроса, содержащим информацию о розничной смене.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/new"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/new" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "retailShift": {
               "meta": {
@@ -1818,11 +1818,11 @@ curl -X GET
 > Пример получения шаблона розничной продажи с телом запроса, содержащим информацию о розничной смене и заказе покупателя.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/new"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/new" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "retailShift": {
               "meta": {
@@ -1942,9 +1942,9 @@ curl -X GET
 > Запрос на получение отдельной Розничной продажи с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -2098,11 +2098,11 @@ curl -X GET
 > Пример запроса на обновление Розничной продажи.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "retailShift": {
               "meta": {
@@ -2273,11 +2273,11 @@ curl -X GET
 > Пример запроса на обновление Розничной продажи с доп. полями и позициями в теле запроса.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "retailShift": {
               "meta": {
@@ -2506,9 +2506,9 @@ curl -X GET
 > Получить позиции
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19/positions"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19/positions" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -2605,9 +2605,9 @@ curl -X GET
 > Запрос на получение отдельной позиции Розничной продажи с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -2661,11 +2661,11 @@ curl -X GET
 > Пример запроса на создание позиций в Розничной продаже.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19/positions"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19/positions" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '[
             {
               "quantity": 103,
@@ -2810,11 +2810,11 @@ curl -X GET
 > Пример запроса на обновление отдельной позиции в Розничной продаже.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "quantity": 90,
             "price": 26700.0,
@@ -2871,9 +2871,9 @@ curl -X GET
 > Запрос на удаление отдельной позиции Розничной продажи с указанным id.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -2891,11 +2891,11 @@ curl -X DELETE
 > Запрос на массовое удаление позиций Розничной продажи.
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '[
         {
           "meta": {

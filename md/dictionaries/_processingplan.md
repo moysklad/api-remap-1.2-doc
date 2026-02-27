@@ -112,9 +112,9 @@
 > Получить список Техкарт
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -389,11 +389,11 @@ curl -X GET
 > Пример создания новой Техкарты с телом запроса, содержащим только необходимые поля.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "Example",
             "cost": 1000,
@@ -514,11 +514,11 @@ curl -X GET
 > Пример создания и обновления нескольких Техкарт
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '[
             {
               "name": "Example",
@@ -753,9 +753,9 @@ curl -X GET
 > Запрос на удаление Техкарты с указанным id.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -770,11 +770,11 @@ curl -X DELETE
 > Запрос на массовое удаление Техкарт. 
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '[
         {
             "meta": {
@@ -821,9 +821,9 @@ curl -X POST
 > Запрос на получение отдельной Техкарты с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -922,11 +922,11 @@ curl -X GET
 > Пример запроса на обновление отдельной Техкарты.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "Техкарта",
             "cost": 100000
@@ -1036,9 +1036,9 @@ curl -X GET
 > Получить этапы Техкарты
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/stages"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/stages" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1091,9 +1091,9 @@ curl -X GET
 > Запрос на получение отдельного этапа Техкарты с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/stages/9560e3e3-9609-11e6-8af5-581e00000008"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/stages/9560e3e3-9609-11e6-8af5-581e00000008" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1135,11 +1135,11 @@ curl -X GET
 > Пример запроса на обновление отдельного этапа в Техкарте.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/stages/9560e3e3-9609-11e6-8af5-581e00000008"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/stages/9560e3e3-9609-11e6-8af5-581e00000008" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "cost": 5.5
           }'  
@@ -1193,9 +1193,9 @@ curl -X GET
 > Получить материалы Техкарты
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/materials"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/materials" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1274,9 +1274,9 @@ curl -X GET
 > Запрос на получение отдельного материала Техкарты с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/materials/9560e3e3-9609-11e6-8af5-581e00000008"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/materials/9560e3e3-9609-11e6-8af5-581e00000008" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1336,11 +1336,11 @@ curl -X GET
 > Пример создания одного материала в Техкарте.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/materials"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/materials" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '[
             {
               "assortment": {
@@ -1400,11 +1400,11 @@ curl -X GET
 > Пример создания сразу нескольких материалов в Техкарте с привязкой и без привязки к позициям Техпроцесса
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/materials"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/materials" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '[
             {
               "assortment": {
@@ -1526,11 +1526,11 @@ curl -X GET
 > Пример запроса на обновление отдельного материала в Техкарте.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/materials/9560e3e3-9609-11e6-8af5-581e00000008"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/materials/9560e3e3-9609-11e6-8af5-581e00000008" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "quantity": 5
           }'  
@@ -1589,9 +1589,9 @@ curl -X GET
 > Запрос на удаление материала Техкарты с указанным id.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/materials/9560e3e3-9609-11e6-8af5-581e00000008"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/materials/9560e3e3-9609-11e6-8af5-581e00000008" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1605,11 +1605,11 @@ curl -X DELETE
 > Запрос на массовое удаление материалов Техкарты.
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/e435045e-7274-11ee-c0a8-e00e00000030/materials/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/e435045e-7274-11ee-c0a8-e00e00000030/materials/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
     -d '[
           {
               "meta": {
@@ -1654,9 +1654,9 @@ curl -X POST
 > Получить продукты Техкарты
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/products"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/products" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1728,9 +1728,9 @@ curl -X GET
 > Запрос на получение отдельного продукта Техкарты с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/products/9560e3e3-9609-11e6-8af5-581e00000008"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/products/9560e3e3-9609-11e6-8af5-581e00000008" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1784,11 +1784,11 @@ curl -X GET
 > Пример создания одного продукта в Техкарте.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/products"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/products" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '[
             {
               "assortment": {
@@ -1841,11 +1841,11 @@ curl -X GET
 > Пример создания сразу нескольких продуктов в Техкарте.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/products"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/products" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '[
             {
               "assortment": {
@@ -1946,11 +1946,11 @@ curl -X GET
 > Пример запроса на обновление отдельного продукта в Техкарте.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/products/9560e3e3-9609-11e6-8af5-581e00000008"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/products/9560e3e3-9609-11e6-8af5-581e00000008" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "quantity": 5
           }'  
@@ -2003,9 +2003,9 @@ curl -X GET
 > Запрос на удаление продукта Техкарты с указанным id.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/products/9560e3e3-9609-11e6-8af5-581e00000008"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d72b4281-b000-11e6-8af5-581e00000074/products/9560e3e3-9609-11e6-8af5-581e00000008" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -2019,11 +2019,11 @@ curl -X DELETE
 > Запрос на массовое удаление продуктов Техкарты.
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d9c43e3b-7274-11ee-c0a8-e00e00000023/products/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/d9c43e3b-7274-11ee-c0a8-e00e00000023/products/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
     -d '[
           {
               "meta": {

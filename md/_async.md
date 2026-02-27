@@ -16,7 +16,7 @@
 
 После выполнения запроса в асинхронном режиме результат доступен в течение 1 часа. 
 
-На количество задач в очереди и число одновременно выполняющихся асинхронных задач установлены [ограничения](#/restrictions#2-ogranicheniya).
+На количество задач в очереди и число одновременно выполняющихся асинхронных задач установлены [ограничения](#/restrictions#3-limity-i-ogranicheniya-v-json-api).
 
 На данный момент в процессе асинхронного выполнения запроса могут возникать дубли позиций коллекции, 
 если параллельно с подготовкой результата добавляются новые элементы. 
@@ -28,9 +28,9 @@
 > Пример запроса на создание Асинхронной задачи
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore?async=true"
-  -H "Authorization: Bearer <Access-Token>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore?async=true" \
+  -H "Authorization: Bearer <Access-Token>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -98,9 +98,9 @@ Content-Location: https://api.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6
 > Пример запроса на получение списка статусов Асинхронных задач
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/async/"
-  -H "Authorization: Bearer <Access-Token>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/async/" \
+  -H "Authorization: Bearer <Access-Token>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -182,9 +182,9 @@ curl -X GET
 > Пример запроса на получение статуса Асинхронной задачи
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089"
-  -H "Authorization: Bearer <Access-Token>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089" \
+  -H "Authorization: Bearer <Access-Token>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -256,9 +256,9 @@ curl -X GET
 > Пример запроса на получение результата Асинхронной задачи
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089/result"
-  -H "Authorization: Bearer <Access-Token>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089/result" \
+  -H "Authorization: Bearer <Access-Token>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -375,9 +375,9 @@ curl -X GET
 > Пример запроса на получение результата Асинхронной задачи со статусом API_ERROR
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089/result"
-  -H "Authorization: Bearer <Access-Token>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089/result" \
+  -H "Authorization: Bearer <Access-Token>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -410,11 +410,11 @@ Response 403 Forbidden
  > Пример запроса на создание вебхука на событие PROCESSED для Асинхронной задачи
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/webhook"
-  -H "Authorization: Bearer <Access-Token>"
-  -H "Content-Type: application/json"
-  -H "Accept-Encoding: gzip"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/webhook" \
+  -H "Authorization: Bearer <Access-Token>" \
+  -H "Content-Type: application/json" \
+  -H "Accept-Encoding: gzip" \
   -d '{
           "url": "http://some_url.ru",
           "action": "PROCESSED",
@@ -468,9 +468,9 @@ curl -X POST
 > Пример запроса на отмену Асинхронной задачи
 
 ```shell
-curl -X PUT
-  "https://api.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089/cancel"
-  -H "Authorization: Bearer <Access-Token>"
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089/cancel" \
+  -H "Authorization: Bearer <Access-Token>" \
   -H "Accept-Encoding: gzip"
 ```
 

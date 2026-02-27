@@ -26,9 +26,9 @@
 > Запрос на получение пользовательской роли с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/role/736da682-ad8b-11eb-0a80-17ef000000d4"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/role/736da682-ad8b-11eb-0a80-17ef000000d4" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -73,6 +73,9 @@ curl -X GET
     "subscriptionControl": false,
     "purchaseControl": true,
     "listenCalls": true,
+    "ownerAssign": false,
+    "ownerDataUpdate": false,
+    "accountDelete": false,
     "supply": {
       "view": "ALL",
       "print": "ALL",
@@ -463,9 +466,9 @@ curl -X GET
 > Запрос на получение пользовательских ролей.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/role/"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/role/" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -529,6 +532,9 @@ curl -X GET
         "subscriptionControl": false,
         "purchaseControl": true,
         "listenCalls": true,
+        "ownerAssign": false,
+        "ownerDataUpdate": false,
+        "accountDelete": false,
         "supply": {
           "view": "ALL",
           "print": "ALL",
@@ -921,11 +927,11 @@ curl -X GET
 > Запрос на создание пользовательской роли.
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/role/"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/role/" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
       -d '{
   "name": "testRole",
   "permissions": {
@@ -956,7 +962,10 @@ curl -X POST
     "editCurrencyRateOfDocument": false,
     "subscriptionControl": false,
     "purchaseControl": false,
-    "listenCalls": false
+    "listenCalls": false,
+    "ownerAssign": false,
+    "ownerDataUpdate": false,
+    "accountDelete": false,
   }
 }'
 ```
@@ -1002,6 +1011,9 @@ curl -X POST
     "subscriptionControl": false,
     "purchaseControl": false,
     "listenCalls": false,
+    "ownerAssign": false,
+    "ownerDataUpdate": false,
+    "accountDelete": false,
     "supply": {
       "view": "NO",
       "print": "NO",
@@ -1398,11 +1410,11 @@ curl -X POST
 > Запрос на обновление пользовательской роли.
 
 ```shell
-curl -X PUT
-  "https://api.moysklad.ru/api/remap/1.2/entity/role/ae6e61ad-ad8c-11eb-0a80-380e00001e6c"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/role/ae6e61ad-ad8c-11eb-0a80-380e00001e6c" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
       -d '{
   "name": "updatedTestRole",
   "permissions": {
@@ -1433,7 +1445,10 @@ curl -X PUT
     "editCurrencyRateOfDocument": false,
     "subscriptionControl": false,
     "purchaseControl": false,
-    "listenCalls": false
+    "listenCalls": false,
+    "ownerAssign": false,
+    "ownerDataUpdate": false,
+    "accountDelete": false
   }
 }'
 ```
@@ -1479,6 +1494,9 @@ curl -X PUT
     "subscriptionControl": false,
     "purchaseControl": false,
     "listenCalls": false,
+    "ownerAssign": false,
+    "ownerDataUpdate": false,
+    "accountDelete": false,
     "supply": {
       "view": "NO",
       "print": "NO",
@@ -1876,8 +1894,8 @@ curl -X PUT
 > Запрос на удаление пользовательской роли.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/role/ae6e61ad-ad8c-11eb-0a80-380e00001e6c"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/role/ae6e61ad-ad8c-11eb-0a80-380e00001e6c" \
   -H "Authorization: Basic <Credentials>"
 ```
 

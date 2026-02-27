@@ -3,35 +3,36 @@
 ### Списания 
 #### Атрибуты сущности
 
-| Название         | Тип                               | Фильтрация                                                                                                                                        | Описание                                                                                                                                      |
-| ---------------- |:----------------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------ |:----------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**    | UUID                              | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                        |
-| **applicable**   | Boolean                           | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе` `+Change-handler`                                                                          |
-| **attributes**   | Array(Object)                     | [Операторы доп. полей](#/general#4-filtraciya-po-dopolnitelnym-polyam) | Коллекция метаданных доп. полей. [Поля объекта](#/general#3-rabota-s-dopolnitelnymi-polyami)<br> `+Change-handler` |
-| **code**         | String(255)                       | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Списания                                                                                                                                  |
-| **created**      | DateTime                          | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                            |
-| **deleted**      | DateTime                          | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Списания<br>`+Только для чтения`                                                                                   |
-| **description**  | String(4096)                      | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Списания<br>`+Change-handler`                                                                                                     |
-| **externalCode** | String(255)                       | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Списания<br>`+Обязательное при ответе` `+Change-handler`                                                                          |
-| **files**        | MetaArray                         |                                                                                                                                                   | Метаданные массива [Файлов](#/dictionaries/files#2-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand` |
-| **group**        | [Meta](#/general#3-metadannye)    | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                      |
-| **id**           | UUID                              | `=` `!=`                                                                                                                                          | ID Списания<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                              |
-| **meta**         | [Meta](#/general#3-metadannye)    |                                                                                                                                                   | Метаданные Списания<br>`+Обязательное при ответе` `+Change-handler`                                                                           |
-| **moment**       | DateTime                          | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе` `+Change-handler`                                                                                |
-| **name**         | String(255)                       | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Списания<br>`+Обязательное при ответе` `+Change-handler`                                                                         |
-| **organization** | [Meta](#/general#3-metadannye)    | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler`                                        |
-| **owner**        | [Meta](#/general#3-metadannye)    | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                             |
-| **positions**    | MetaArray                         |                                                                                                                                                   | Метаданные позиций Списания<br>`+Обязательное при ответе` `+Expand` `+Change-handler`                                                         |
-| **printed**      | Boolean                           | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                      |
-| **project**      | [Meta](#/general#3-metadannye)    | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand` `+Change-handler`                                                                                             |
-| **published**    | Boolean                           | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                    |
-| **rate**         | Object                            |                                                                                                                                                   | Валюта. [Подробнее тут](#/documents/common-info#3-valyuta-v-dokumentah)<br>`+Обязательное при ответе` `+Change-handler`         |
-| **shared**       | Boolean                           | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                    |
-| **state**        | [Meta](#/general#3-metadannye)    | `=` `!=`                                                                                                                                          | Метаданные статуса Списания<br>`+Expand` `+Change-handler`                                                                                    |
-| **store**        | [Meta](#/general#3-metadannye)    | `=` `!=`                                                                                                                                          | Метаданные склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler`                                        |
-| **sum**          | Float                             | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Списания в копейках<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                |
-| **syncId**       | UUID                              | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                   |
-| **updated**      | DateTime                          | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Списания<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                    |
+| Название         | Тип                            | Фильтрация                                                             | Описание                                                                                                                                 |
+|------------------|:-------------------------------|:-----------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**    | UUID                           | `=` `!=`                                                               | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                   |
+| **applicable**   | Boolean                        | `=` `!=`                                                               | Отметка о проведении<br>`+Обязательное при ответе` `+Change-handler`                                                                     |
+| **attributes**   | Array(Object)                  | [Операторы доп. полей](#/general#4-filtraciya-po-dopolnitelnym-polyam) | Коллекция метаданных доп. полей. [Поля объекта](#/general#3-rabota-s-dopolnitelnymi-polyami)<br> `+Change-handler`                       |
+| **code**         | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Код Списания                                                                                                                             |
+| **created**      | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Дата создания<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                       |
+| **deleted**      | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Момент последнего удаления Списания<br>`+Только для чтения`                                                                              |
+| **description**  | String(4096)                   | `=` `!=` `~` `~=` `=~`                                                 | Комментарий Списания<br>`+Change-handler`                                                                                                |
+| **expenseItem**  | [Meta](#/general#3-metadannye) |                                                                        | Метаданные Статьи расходов<br>`+Только для чтения` `+Expand`                                                                             |
+| **externalCode** | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Внешний код Списания<br>`+Обязательное при ответе` `+Change-handler`                                                                     |
+| **files**        | MetaArray                      |                                                                        | Метаданные массива [Файлов](#/dictionaries/files#2-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand` |
+| **group**        | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                 |
+| **id**           | UUID                           | `=` `!=`                                                               | ID Списания<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                         |
+| **meta**         | [Meta](#/general#3-metadannye) |                                                                        | Метаданные Списания<br>`+Обязательное при ответе` `+Change-handler`                                                                      |
+| **moment**       | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Дата документа<br>`+Обязательное при ответе` `+Change-handler`                                                                           |
+| **name**         | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Наименование Списания<br>`+Обязательное при ответе` `+Change-handler`                                                                    |
+| **organization** | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler`                                   |
+| **owner**        | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Владелец (Сотрудник)<br>`+Expand`                                                                                                        |
+| **positions**    | MetaArray                      |                                                                        | Метаданные позиций Списания<br>`+Обязательное при ответе` `+Expand` `+Change-handler`                                                    |
+| **printed**      | Boolean                        | `=` `!=`                                                               | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                 |
+| **project**      | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные проекта<br>`+Expand` `+Change-handler`                                                                                        |
+| **published**    | Boolean                        | `=` `!=`                                                               | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                               |
+| **rate**         | Object                         |                                                                        | Валюта. [Подробнее тут](#/documents/common-info#3-valyuta-v-dokumentah)<br>`+Обязательное при ответе` `+Change-handler`                  |
+| **shared**       | Boolean                        | `=` `!=`                                                               | Общий доступ<br>`+Обязательное при ответе`                                                                                               |
+| **state**        | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные статуса Списания<br>`+Expand` `+Change-handler`                                                                               |
+| **store**        | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler`                                   |
+| **sum**          | Float                          | `=` `!=` `<` `>` `<=` `>=`                                             | Сумма Списания в копейках<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                           |
+| **syncId**       | UUID                           | `=` `!=`                                                               | ID синхронизации. После заполнения недоступен для изменения                                                                              |
+| **updated**      | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Момент последнего обновления Списания<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                               |
 
 #### Связи с другими документами
 
@@ -104,9 +105,9 @@
 > Получить Списания
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/loss"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/loss" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -218,6 +219,14 @@ curl -X GET
           "limit": 1000,
           "offset": 0
         }
+      },
+      "expenseItem": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+          "type": "expenseitem",
+          "mediaType": "application/json"
+        }
       }
     },
     {
@@ -325,11 +334,11 @@ curl -X GET
 > Пример создания нового Списания.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/loss"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/loss" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "store": {
               "meta": {
@@ -468,11 +477,11 @@ curl -X GET
 > Пример создания и обновления нескольких Списаний
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/loss"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/loss" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '[
             {
               "store": {
@@ -736,9 +745,9 @@ curl -X GET
 > Запрос на удаление Списания с указанным id.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -753,11 +762,11 @@ curl -X DELETE
 > Запрос на массовое удаление Списаний. 
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/loss/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/loss/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '[
         {
             "meta": {
@@ -806,9 +815,9 @@ curl -X POST
 > Метаданные Списаний
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/loss/metadata"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/loss/metadata" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -862,9 +871,9 @@ curl -X GET
 > Запрос на получение информации по отдельному дополнительному полю.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/loss/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/loss/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -889,11 +898,11 @@ curl -X GET
 > Запрос на получение предзаполненого стандартными значениями шаблона списания без связи с каким-либо документом.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/loss/new"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/loss/new" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d ''  
 ```
 
@@ -942,11 +951,11 @@ curl -X GET
 > Пример с заказом (application/json)
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/loss/new"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/loss/new" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "salesReturn": {
               "meta": {
@@ -1083,9 +1092,9 @@ curl -X GET
 > Запрос на получение отдельного списания с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1191,11 +1200,11 @@ curl -X GET
 > Пример запроса на обновление отдельного Списания.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "00606234",
             "externalCode": "3498142кук",
@@ -1319,11 +1328,11 @@ curl -X GET
 > Пример запроса на изменение Списания с дополнительными полями.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "00606234",
             "externalCode": "3498142кук",
@@ -1509,9 +1518,9 @@ curl -X GET
 > Получить позиции Списания
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19/positions"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19/positions" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1617,9 +1626,9 @@ curl -X GET
 > Запрос на получение отдельной позиции Списания с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1669,11 +1678,11 @@ curl -X GET
 > Пример создания позиций в Списании.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19/positions"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19/positions" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '[
             {
               "meta": {
@@ -1779,11 +1788,11 @@ curl -X GET
 > Пример запроса на обновление отдельной позиции в Списании.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "quantity": 172,
             "price": 7777.0,
@@ -1830,9 +1839,9 @@ curl -X GET
 > Запрос на удаление отдельной позиции Списания с указанным id.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/loss/7944ef04-f831-11e5-7a69-971500188b19/positions/7944ef04-f831-11e5-7a69-971500188b20" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1850,11 +1859,11 @@ curl -X DELETE
 > Запрос на массовое удаление позиций Списания.
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/loss/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/loss/3e1c03bb-684f-11ee-ac12-000c000000b0/positions/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '[
         {
           "meta": {

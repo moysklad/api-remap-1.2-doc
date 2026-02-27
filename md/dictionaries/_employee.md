@@ -107,9 +107,9 @@
 > Получить Сотрудников
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/employee"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/employee" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
  
@@ -228,11 +228,11 @@ curl -X GET
 > Пример обновления нескольких Сотрудников
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/employee"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/employee" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '[
             {
               "meta": {
@@ -361,9 +361,9 @@ curl -X GET
 > Запрос на удаление Сотрудника с указанным id.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -377,11 +377,11 @@ curl -X DELETE
 > Запрос на массовое удаление Сотрудников. 
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/employee/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/employee/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '[
         {
             "meta": {
@@ -429,9 +429,9 @@ curl -X POST
 > Метаданные Сотрудников
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -468,9 +468,9 @@ curl -X GET
 > Запрос на получение информации по отдельному дополнительному полю.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -504,9 +504,9 @@ curl -X GET
 > Запрос на получение отдельного сотрудника с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -584,11 +584,11 @@ curl -X GET
 > Пример запроса на создание Сотрудника.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/employee/"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/employee/" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "firstName": "Петр",
             "middleName": "Иванович",
@@ -682,11 +682,11 @@ curl -X GET
 > Пример запроса на обновление Сотрудника.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "firstName": "Петр",
             "middleName": "Иванович",
@@ -804,7 +804,7 @@ curl -X GET
 #### Атрибуты вложенных сущностей сущности Сотрудник
 ##### Роль
 
-Роли бывают пяти типов: `Системный администратор`, `Кассир`, `Сотрудник производства`, `Пользовательская роль` и `Индивидуальная роль`. 
+Роли бывают шести типов: `Владелец аккаунта`, `Системный администратор`, `Кассир`, `Сотрудник производства`, `Пользовательская роль` и `Индивидуальная роль`. 
 Роль `Сотрудник производства` доступна только при подключенной опции `Управление производством`. Использовать
 `Индивидуальную роль` (с пермиссиями не по умолчанию) и `Пользовательскую роль` можно только на тарифах `Профессиональный` 
 или `Корпоративный`. Для `Индивидуальной роли` можно настраивать список пермиссий, заполняя поле `permissions`.
@@ -822,6 +822,7 @@ curl -X GET
 | Название                            | Возможные значения   | Значение по умолчанию  | Описание                                             |
 |-------------------------------------| :------------------- | :--------------------- | :--------------------------------------------------- |
 | **apiRequest**                      | Boolean              | true                   | Доступ по АПИ                                        |
+| **accountDelete**                   | Boolean              | false                  | Удалять аккаунт                                      |
 | **deleteFromRecycleBin**            | Boolean              | true                   | Очищать корзину                                      |
 | **editCurrencyRateOfDocument**      | Boolean              | true                   | Редактировать курс валюты документа                  |
 | **editDocumentTemplates**           | Boolean              | true                   | Редактировать шаблоны документов и отчетов           |
@@ -830,6 +831,8 @@ curl -X GET
 | **importData**                      | Boolean              | true                   | Импортировать данные                                 |
 | **listenCalls**                     | Boolean              | true                   | Прослушивание звонков                                |
 | **onlineShops**                     | Boolean              | true                   | Интернет магазины                                    |
+| **ownerAssign**                     | Boolean              | false                  | Передавать владение аккаунтом                        |
+| **ownerDataUpdate**                 | Boolean              | false                  | Редактировать данные владельца                       |
 | **purchaseControl**                 | Boolean              | true                   | Управление закупками                                 |
 | **restoreFromRecycleBin**           | Boolean              | true                   | Восстанавливать документы                            |
 | **sendEmail**                       | Boolean              | true                   | Отправлять почту                                     |
@@ -1004,9 +1007,9 @@ curl -X GET
 > Пример запроса на получения информации о правах Сотрудника.
 
 ```shell
-  curl -X GET
-    "https://api.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19/security"
-    -H "Authorization: Basic <Credentials>"
+  curl --compressed -X GET \
+    "https://api.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19/security" \
+    -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip"
 ```
 
@@ -1068,6 +1071,9 @@ curl -X GET
             "subscriptionControl": false,
             "purchaseControl": true,
             "listenCalls": true,
+            "ownerAssign": false,
+            "ownerDataUpdate": false,
+            "accountDelete": false,
             "remarkingOrder": {
                 "view": "NO",
                 "print": "NO",
@@ -1583,11 +1589,11 @@ curl -X GET
 > Пример запроса на изменение информации о правах Сотрудника.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19/security"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19/security" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "group": {
                 "meta": {
@@ -1664,11 +1670,11 @@ true. Это означает, что на указанную у сотрудн�
 > Пример запроса на активацию Сотрудника.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19/access/activate"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19/access/activate" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "login": "newcashier@lognex",
             "group": {
@@ -1711,9 +1717,9 @@ true. Это означает, что на указанную у сотрудн�
 > Пример запроса на деактивацию Сотрудника.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19/access/deactivate"
-    -H "Authorization: Basic <Credentials>"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19/access/deactivate" \
+    -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip"
 ```
 
@@ -1732,23 +1738,47 @@ true. Это означает, что на указанную у сотрудн�
 > Пример запроса на сброс пароля Сотрудника.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19/access/resetpassword"
-    -H "Authorization: Basic <Credentials>"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/employee/7944ef04-f831-11e5-7a69-971500188b19/access/resetpassword" \
+    -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip"
 ```
 
 > Response 204
 
 
+### Запрос на получение роли владельца аккаунта
+
+> Пример запроса на получение роли владельца аккаунта.
+
+```shell
+  curl --compressed -X GET \
+    "https://api.moysklad.ru/api/remap/1.2/entity/role/owner" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление информации о роли владельца аккаунта.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/role/owner",
+    "type": "systemrole",
+    "mediaType": "application/json"
+  }
+}
+```
+
 ### Запрос на получение роли админа
 
 > Пример запроса на получение роли админа.
 
 ```shell
-  curl -X GET
-    "https://api.moysklad.ru/api/remap/1.2/entity/role/admin"
-    -H "Authorization: Basic <Credentials>"
+  curl --compressed -X GET \
+    "https://api.moysklad.ru/api/remap/1.2/entity/role/admin" \
+    -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip"
 ```
 
@@ -1770,9 +1800,9 @@ true. Это означает, что на указанную у сотрудн�
 > Пример запроса на получение индивидуальной роли.
 
 ```shell
-  curl -X GET
-    "https://api.moysklad.ru/api/remap/1.2/entity/role/individual"
-    -H "Authorization: Basic <Credentials>"
+  curl --compressed -X GET \
+    "https://api.moysklad.ru/api/remap/1.2/entity/role/individual" \
+    -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip"
 ```
 
@@ -1794,9 +1824,9 @@ true. Это означает, что на указанную у сотрудн�
 > Пример запроса на получение роли кассира.
 
 ```shell
-  curl -X GET
-    "https://api.moysklad.ru/api/remap/1.2/entity/role/cashier"
-    -H "Authorization: Basic <Credentials>"
+  curl --compressed -X GET \
+    "https://api.moysklad.ru/api/remap/1.2/entity/role/cashier" \
+    -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip"
 ```
 
@@ -1820,9 +1850,9 @@ true. Это означает, что на указанную у сотрудн�
 > Пример запроса на получение роли сотрудника производства.
 
 ```shell
-  curl -X GET
-    "https://api.moysklad.ru/api/remap/1.2/entity/role/worker"
-    -H "Authorization: Basic <Credentials>"
+  curl --compressed -X GET \
+    "https://api.moysklad.ru/api/remap/1.2/entity/role/worker" \
+    -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip"
 ```
 

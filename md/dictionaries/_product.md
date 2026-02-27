@@ -68,39 +68,43 @@
 ##### Регионоспецифичные Атрибуты сущности
 При работе с регионоспецифичными полями необходимо передавать заголовок. Подробнее можно посмотреть [здесь](#/general#3-regionalnye-zagolovki)
 
-| Название                  | Тип    | Описание                                                                                                                                                                                                                      |
-|---------------------------|:-------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **mod\_\_marking\_\_uz**  | Object | Модуль с маркировкой товара. [Подробнее тут](#/dictionaries/product#5-modul-markirovaniya-produkcii-dlya-uzbekistana)<br>`+Только для Узбекистана`                              |
-| **mod\_\_tasnif\_\_uz**   | Object | Модуль с информацией из справочника ТАСНИФ. [Подробнее тут](#/dictionaries/product#5-modul-dlya-uzbekistana-s-informaciej-iz-spravochnika-tasnif)<br>`+Только для Узбекистана` |
+| Название                  | Тип    | Описание                                                                                                                                                                                           |
+|---------------------------|:-------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **mod\_\_marking\_\_uz**  | Object | Модуль с маркировкой товара. [Подробнее тут](#/dictionaries/product#5-modul-markirovaniya-produkcii-dlya-uzbekistana)<br>`+Только для Узбекистана`                                                 |
+| **mod\_\_tasnif\_\_uz**   | Object | Модуль с информацией из справочника ТАСНИФ. [Подробнее тут](#/dictionaries/product#5-modul-dlya-uzbekistana-s-informaciej-iz-spravochnika-tasnif)<br>`+Только для Узбекистана`                     |
+| **mod\_\_nct\_\_kz**      | Object | Модуль с информацией из Национального каталога товаров. [Подробнее тут](#/dictionaries/product#5-modul-dlya-kazahstana-s-informaciej-iz-nacionalnogo-kataloga-tovarov)<br>`+Только для Казахстана` |
 
 ##### Тип маркируемой продукции
 Значения поля trackingType.
 
-| Значение            | Описание                             |
-|---------------------|:-------------------------------------|
-| **BEER_ALCOHOL**    | Пиво и слабоалкогольная продукция    |
-| **BICYCLE**         | Велосипеды                           |
-| **ELECTRONICS**     | Фотокамеры и лампы-вспышки           |
-| **FOOD_SUPPLEMENT** | Биологически активные добавки к пище |
-| **LP_CLOTHES**      | Тип маркировки "Одежда"              |
-| **LP_LINENS**       | Тип маркировки "Постельное белье"    |
-| **MEDICAL_DEVICES** | Медизделия и кресла-коляски          |
-| **MILK**            | Молочная продукция                   |
-| **NABEER**          | Безалкогольное пиво                  |
-| **NCP**             | Никотиносодержащая продукция         |
-| **NOT_TRACKED**     | Без маркировки                       |
-| **OTP**             | Альтернативная табачная продукция    |
-| **PERFUMERY**       | Духи и туалетная вода                |
-| **PET_FOOD**        | Корма для животных                   |
-| **SANITIZER**       | Антисептики                          |
-| **SEAFOOD**         | Икра и морепродукты                  |
-| **SHOES**           | Тип маркировки "Обувь"               |
-| **SOFT_DRINKS**     | Безалкогольные напитки               |
-| **TIRES**           | Шины и покрышки                      |
-| **TOBACCO**         | Тип маркировки "Табак"               |
-| **VEGETABLE_OIL**   | Растительные масла                   |
-| **VETPHARMA**       | Ветеринарные препараты               |
-| **WATER**           | Упакованная вода                     |
+| Значение            | Описание                                        |
+|---------------------|:------------------------------------------------|
+| **AUTO_FLUIDS**     | Моторные масла                                  |
+| **BEER_ALCOHOL**    | Пиво и слабоалкогольная продукция               |
+| **BICYCLE**         | Велосипеды                                      |
+| **CHEMISTRY**       | Косметика, бытовая химия, товары личной гигиены |
+| **ELECTRONICS**     | Фотокамеры и лампы-вспышки                      |
+| **FOOD_SUPPLEMENT** | Биологически активные добавки к пище            |
+| **GROCERY**         | Бакалея                                         |
+| **LP_CLOTHES**      | Тип маркировки "Одежда"                         |
+| **LP_LINENS**       | Тип маркировки "Постельное белье"               |
+| **MEDICAL_DEVICES** | Медизделия и кресла-коляски                     |
+| **MILK**            | Молочная продукция                              |
+| **NABEER**          | Безалкогольное пиво                             |
+| **NCP**             | Никотиносодержащая продукция                    |
+| **NOT_TRACKED**     | Без маркировки                                  |
+| **OTP**             | Альтернативная табачная продукция               |
+| **PERFUMERY**       | Духи и туалетная вода                           |
+| **PET_FOOD**        | Корма для животных                              |
+| **SANITIZER**       | Антисептики                                     |
+| **SEAFOOD**         | Икра и морепродукты                             |
+| **SHOES**           | Тип маркировки "Обувь"                          |
+| **SOFT_DRINKS**     | Безалкогольные напитки                          |
+| **TIRES**           | Шины и покрышки                                 |
+| **TOBACCO**         | Тип маркировки "Табак"                          |
+| **VEGETABLE_OIL**   | Растительные масла                              |
+| **VETPHARMA**       | Ветеринарные препараты                          |
+| **WATER**           | Упакованная вода                                |
 
 ##### Признак предмета расчета
 Значения поля paymentItemType.
@@ -420,6 +424,12 @@
 | **packCode**       | String    | Код упаковки из справочника ТАСНИФ `+Только для Узбекистана`|
 | **barcodeTasnif**  | String    | Штрихкод из справочника ТАСНИФ `+Только для Узбекистана`    |
 
+##### Модуль для Казахстана с информацией из Национального каталога товаров
+
+| Название           | Тип         | Описание                                                  |
+|--------------------|:------------|:----------------------------------------------------------|
+| **ntin**           | String(255) | Идентификационный код товара `+Только для Казахстана`     |
+
 ##### Особенности фильтрации поля archived
 Если одновременно осуществляется фильтрация по полям **id** и **archived**, то фильтрация по полю **archived** не учитывается.
 
@@ -444,9 +454,9 @@
 > Получить список Товаров
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/product"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -944,9 +954,9 @@ curl -X GET
 > Получить список Товаров с выводом Неснижаемого остатка
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/product?fields=minimumStock"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product?fields=minimumStock" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1332,11 +1342,11 @@ curl -X GET
 > Пример наиболее полного по количеству полей запроса.
   
   ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/product"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/product" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "Бананы",
             "code": "one1",
@@ -1616,11 +1626,11 @@ curl -X GET
 > Пример запроса на создание Товара с единственным необходимым полем.
   
   ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/product"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/product" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "Мандарины"
           }'  
@@ -1728,11 +1738,11 @@ curl -X GET
 > Пример запроса на создание Товара с доп. полями.
   
   ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/product"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/product" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "Тыква",
             "code": "pumpkin1",
@@ -2040,11 +2050,11 @@ curl -X GET
 > Пример запроса на создание Товара с загрузкой изображения.
   
   ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/product"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/product" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "testimage",
             "images": [
@@ -2149,11 +2159,11 @@ curl -X GET
 > Пример запроса на создание Товара с заполненным полем Неснижаемого остатка.
 
   ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/product"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/product" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "Картофель",
             "minimumStock": {
@@ -2283,12 +2293,12 @@ curl -X GET
 > Пример создания и обновления нескольких товаров
   
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/product
-"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/product \
+" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '[
             {
               "name": "Мандарины"
@@ -2626,9 +2636,9 @@ curl -X GET
 > Запрос на удаление Товара с указанным id.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -2643,11 +2653,11 @@ curl -X DELETE
 > Запрос на массовое удаление Товаров. 
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '[
         {
           "meta": {
@@ -2696,9 +2706,9 @@ curl -X POST
 > Метаданные Товаров
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -2737,9 +2747,9 @@ curl -X GET
 > Запрос на получение информации по отдельному дополнительному полю.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -2779,9 +2789,9 @@ curl -X GET
 > Запрос на получение Товара с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -3019,11 +3029,11 @@ curl -X GET
 > Пример запроса на обновление Товара
   
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "Тыква",
             "code": "pumpkin1",
@@ -3378,11 +3388,11 @@ curl -X GET
 > Пример запроса на изменение Товара с дополнительными полями.
   
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "Тыква",
             "code": "pumpkin1",
@@ -3662,11 +3672,11 @@ curl -X GET
 > Пример запроса на изменение Товара с упаковками.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "Тыква",
             "code": "pumpkin1",
@@ -3939,11 +3949,11 @@ curl -X GET
 > Пример запроса на изменение Товара с Неснижаемым остатком.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/product/3bdfdb5b-137a-11f0-ac15-001100000018?expand=minimumStock.storeBalances"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/product/3bdfdb5b-137a-11f0-ac15-001100000018?expand=minimumStock.storeBalances" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
     -d '
 {
   "minimumStock": {
@@ -4152,11 +4162,11 @@ curl -X GET
 > Запрос на массовое удаление неснижаемых остатков по складам в товаре.
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/product/3e1c03bb-684f-11ee-ac12-000c000000b0/storebalances/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/product/3e1c03bb-684f-11ee-ac12-000c000000b0/storebalances/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '[
         {
           "meta": {

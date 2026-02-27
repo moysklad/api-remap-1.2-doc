@@ -48,9 +48,9 @@
 > Запрос на получение графика движения денежных средств
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/money/plotseries?momentFrom=2018-09-01&momentTo=2018-09-04&interval=day"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/money/plotseries?momentFrom=2018-09-01&momentTo=2018-09-04&interval=day" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -108,9 +108,9 @@ curl -X GET
 > Запрос графика с фильтрацией
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/money/plotseries?momentFrom=2018-09-01&momentTo=2018-09-04&interval=day&filter=organization=https://api.moysklad.ru/api/remap/1.2/entity/organization/00cd5a99-6897-11e7-7a6c-d2a9000c4fc0;project=https://api.moysklad.ru/api/remap/1.2/entity/project/02e64f51-6897-11e7-7a34-5acf000c8448"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/money/plotseries?momentFrom=2018-09-01&momentTo=2018-09-04&interval=day&filter=organization=https://api.moysklad.ru/api/remap/1.2/entity/organization/00cd5a99-6897-11e7-7a6c-d2a9000c4fc0;project=https://api.moysklad.ru/api/remap/1.2/entity/project/02e64f51-6897-11e7-7a34-5acf000c8448" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -191,9 +191,9 @@ curl -X GET
 > Запрос на получение остатков денежных средств по кассам и счетам
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/report/money/byaccount"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/money/byaccount" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 

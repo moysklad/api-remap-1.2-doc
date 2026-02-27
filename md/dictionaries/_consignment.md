@@ -9,24 +9,27 @@
 + по наименованию Серии **name**
 + по описанию Серии **description**
 
+При создании или изменении серии необходимо указать метку серии **label** или срок годности серии **expiryDate**.
+
 #### Атрибуты сущности
 
-| Название         | Тип                            | Фильтрация                                                             | Описание                                                                                                                                     |
-|------------------|:-------------------------------|:-----------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**    | UUID                           | `=` `!=`                                                               | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                         |
-| **archived**     | Boolean                        | `=` `!=`                                                               | Добавлена ли серия в архив<br>`+Обязательное при ответе`                                                                                     |
-| **attributes**   | Array(Object)                  | [Операторы доп. полей](#/general#4-filtraciya-po-dopolnitelnym-polyam) | Коллекция доп. полей Серии                                                                                                                   |
-| **assortment**   | [Meta](#/general#3-metadannye) |                                                                        | Метаданные товара/услуги/комплекта, которую представляет собой компонент<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`  |
-| **barcodes**     | Array(Object)                  | `=` `!=` `~` `~=` `=~`                                                 | Штрихкоды серии  . Для фильтрации по полю необходимо указывать его в единственном числе **barcode**.                                         |
-| **code**         | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Код Серии                                                                                                                                    |
-| **description**  | String(4096)                   | `=` `!=` `~` `~=` `=~`                                                 | Описание Серии                                                                                                                               |
-| **externalCode** | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Внешний код Серии<br>`+Обязательное при ответе`                                                                                              |
-| **id**           | UUID                           | `=` `!=`                                                               | ID Серии<br>`+Обязательное при ответе` `+Только для чтения`                                                                                  |
-| **image**        | [Meta](#/general#3-metadannye) |                                                                        | Изображение товара, к которому относится данная серия                                                                                        |
-| **label**        | String(255)                    |                                                                        | Метка Серии<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                         |
-| **meta**         | [Meta](#/general#3-metadannye) |                                                                        | Метаданные Серии<br>`+Обязательное при ответе`                                                                                               |
-| **name**         | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Наименование Серии. "Собирается" и отображается как "Наименование товара / Метка Серии"<br>`+Обязательное при ответе` `+Только для чтения`   |
-| **updated**      | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Только для чтения`                                                     |
+| Название         | Тип                            | Фильтрация                                                             | Описание                                                                                                                                                    |
+|------------------|:-------------------------------|:-----------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**    | UUID                           | `=` `!=`                                                               | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                        |
+| **archived**     | Boolean                        | `=` `!=`                                                               | Добавлена ли серия в архив<br>`+Обязательное при ответе`                                                                                                    |
+| **attributes**   | Array(Object)                  | [Операторы доп. полей](#/general#4-filtraciya-po-dopolnitelnym-polyam) | Коллекция доп. полей Серии                                                                                                                                  |
+| **assortment**   | [Meta](#/general#3-metadannye) |                                                                        | Метаданные товара/услуги/комплекта, которую представляет собой компонент<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                 |
+| **barcodes**     | Array(Object)                  | `=` `!=` `~` `~=` `=~`                                                 | Штрихкоды серии  . Для фильтрации по полю необходимо указывать его в единственном числе **barcode**.                                                        |
+| **code**         | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Код Серии                                                                                                                                                   |
+| **description**  | String(4096)                   | `=` `!=` `~` `~=` `=~`                                                 | Описание Серии                                                                                                                                              |
+| **expiryDate**   | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Срок годности Серии<br>`+Необходимо при создании`                                                                                                           |
+| **externalCode** | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Внешний код Серии<br>`+Обязательное при ответе`                                                                                                             |
+| **id**           | UUID                           | `=` `!=`                                                               | ID Серии<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                 |
+| **images**       | MetaArray |                                                                        | Массив метаданных [Изображений](#/dictionaries/images#2-izobrazhenie) товара, к которому относится данная серия (Максимальное количество изображений - 10) <br>`+Только для чтения`  |
+| **label**        | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Метка Серии<br>`+Необходимо при создании`                                                                                                                   |
+| **meta**         | [Meta](#/general#3-metadannye) |                                                                        | Метаданные Серии<br>`+Обязательное при ответе`                                                                                                              |
+| **name**         | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Наименование Серии. "Собирается" и отображается как "Наименование товара / Метка Серии"<br>`+Обязательное при ответе` `+Только для чтения`                  |
+| **updated**      | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Только для чтения`                                                                    |
 
 #### Атрибуты вложенных сущностей
 ##### Метаданные Серий
@@ -60,9 +63,9 @@
 > Получить список Серий
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/consignment"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/consignment" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -147,11 +150,11 @@ curl -X GET
 > Пример создания новой серии.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/consignment"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/consignment" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '
   "label": "Метка",
   "barcodes": [
@@ -228,9 +231,9 @@ curl -X GET
 > Запрос на удаление Серии с указанным id.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/consignment/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/consignment/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -245,11 +248,11 @@ curl -X DELETE
 > Запрос на массовое удаление Серий. 
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/consignment/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/consignment/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '[
         {
             "meta": {
@@ -292,11 +295,11 @@ curl -X POST
 > Пример создания и обновления нескольких Серий
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/consignment"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/consignment" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '[
             {
               "label": "Метка",
@@ -445,9 +448,9 @@ curl -X POST
 > Получить метданные Серии
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/consignment/metadata"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/consignment/metadata" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -501,9 +504,9 @@ curl -X GET
 > Запрос на получение информации по отдельному дополнительному полю.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/consignment/metadata/attributes/958b275e-3bbf-11e7-8a7f-40d000000004"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/consignment/metadata/attributes/958b275e-3bbf-11e7-8a7f-40d000000004" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -538,9 +541,9 @@ curl -X GET
 > Запрос на получение Серии с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/consignment/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/consignment/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -609,11 +612,11 @@ curl -X GET
 > Пример запроса на обновление серии.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/consignment/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/consignment/7944ef04-f831-11e5-7a69-971500188b19" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "code": "ke21k421c1o42n4signment12",
             "externalCode": "fbajkwbfu1249SACSKW241LKSFA2sa1",
@@ -682,5 +685,3 @@ curl -X GET
   }
 }
 ```
-
-

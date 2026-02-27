@@ -4,42 +4,42 @@
 
 #### Атрибуты сущности
 
-| Название                | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                                          |
-| ----------------------- |:----------------------------------------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------ |:------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**           | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                              |
-| **agent**               | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные контрагента, сотрудника или юр.лица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                 |
-| **agentAccount**        | [Meta](#/general#3-metadannye)                            |                                                                                                                                                   | Метаданные счета контрагента или юр.лица<br>`+Expand`                                                                                                             |
-| **applicable**          | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе`                                                                                                                |
-| **attributes**          | Array(Object)                                             | [Операторы доп. полей](#/general#4-filtraciya-po-dopolnitelnym-polyam) | Коллекция метаданных доп. полей. [Поля объекта](#/general#3-rabota-s-dopolnitelnymi-polyami)                                           |
-| **code**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Исходящего платежа                                                                                                                                            |
-| **contract**            | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные договора<br>`+Expand`                                                                                                                                  |
-| **created**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                  |
-| **deleted**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Исходящего платежа<br>`+Только для чтения`                                                                                             |
-| **description**         | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Исходящего платежа                                                                                                                                    |
-| **expenseItem**         | [Meta](#/general#3-metadannye)                            |                                                                                                                                                   | Метаданные Статьи расходов<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                     |
-| **externalCode**        | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Исходящего платежа<br>`+Обязательное при ответе`                                                                                                      |
-| **files**               | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](#/dictionaries/files#2-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`                     |
-| **group**               | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                          |
-| **noClosingDocs**      | Boolean                                                   | | Признак возможности привязки закрывающих документов и отключения взаиморасчетов с контрагентом по этой выплате<br>`+Обязательное при ответе` `+Только для чтения` 
-| **id**                  | UUID                                                      | `=` `!=`                                                                                                                                          | ID Исходящегоо платежа<br>`+Обязательное при ответе` `+Только для чтения`                                                                                         |
-| **meta**                | [Meta](#/general#3-metadannye)                            |                                                                                                                                                   | Метаданные Исходящего платежа<br>`+Обязательное при ответе`                                                                                                       |
-| **moment**              | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе`                                                                                                                      |
-| **name**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Исходящего платежа<br>`+Обязательное при ответе`                                                                                                     |
-| **organization**        | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                              |
-| **organizationAccount** | [Meta](#/general#3-metadannye)                            |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand`                                                                                                                              |
-| **owner**               | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                 |
-| **paymentPurpose**      | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Назначение платежа<br>`+Обязательное при ответе`                                                                                                                  |
-| **printed**             | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                          |
-| **project**             | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand`                                                                                                                                   |
-| **published**           | Boolean                                                   | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                        |
-| **rate**                | Object                                                    |                                                                                                                                                   | Валюта. [Подробнее тут](#/documents/common-info#3-valyuta-v-dokumentah)<br>`+Обязательное при ответе`                                               |
-| **salesChannel**        | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные канала продаж<br>`+Expand`                                                                                                                             |
-| **shared**              | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                                        |
-| **state**               | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные статуса Исходящего платежа<br>`+Expand`                                                                                                                |
-| **sum**                 | Float                                                     | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Исходящего платежа в установленной валюте<br>`+Обязательное при ответе`                                                                                     |
-| **syncId**              | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                                       |
-| **updated**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Исходящего платежа<br>`+Обязательное при ответе` `+Только для чтения`                                                                |
-| **vatSum**              | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе`                                                                                                                           |
+| Название                | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                                         |
+| ----------------------- |:----------------------------------------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------ |:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**           | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                             |
+| **agent**               | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные контрагента, сотрудника или юр.лица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                |
+| **agentAccount**        | [Meta](#/general#3-metadannye)                            |                                                                                                                                                   | Метаданные счета контрагента или юр.лица<br>`+Expand`                                                                                                            |
+| **applicable**          | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе`                                                                                                               |
+| **attributes**          | Array(Object)                                             | [Операторы доп. полей](#/general#4-filtraciya-po-dopolnitelnym-polyam) | Коллекция метаданных доп. полей. [Поля объекта](#/general#3-rabota-s-dopolnitelnymi-polyami)                                                                     |
+| **code**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Исходящего платежа                                                                                                                                           |
+| **contract**            | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные договора<br>`+Expand`                                                                                                                                 |
+| **created**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                 |
+| **deleted**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Исходящего платежа<br>`+Только для чтения`                                                                                            |
+| **description**         | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Исходящего платежа                                                                                                                                   |
+| **expenseItem**         | [Meta](#/general#3-metadannye)                            |                                                                                                                                                   | Метаданные Статьи расходов<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                    |
+| **externalCode**        | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Исходящего платежа<br>`+Обязательное при ответе`                                                                                                     |
+| **files**               | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](#/dictionaries/files#2-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`                         |
+| **group**               | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                         |
+| **noClosingDocs**      | Boolean                                                   |                                                                                                                                                    | Признак "Без закрывающих документов". Нельзя одновременно передать **noClosingDocs = true** и непустой **operations**<br>`+Обязательное при ответе`              |
+| **id**                  | UUID                                                      | `=` `!=`                                                                                                                                          | ID Исходящегоо платежа<br>`+Обязательное при ответе` `+Только для чтения`                                                                                        |
+| **meta**                | [Meta](#/general#3-metadannye)                            |                                                                                                                                                   | Метаданные Исходящего платежа<br>`+Обязательное при ответе`                                                                                                      |
+| **moment**              | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе`                                                                                                                     |
+| **name**                | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Исходящего платежа<br>`+Обязательное при ответе`                                                                                                    |
+| **organization**        | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                             |
+| **organizationAccount** | [Meta](#/general#3-metadannye)                            |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand`                                                                                                                             |
+| **owner**               | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                |
+| **paymentPurpose**      | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Назначение платежа<br>`+Обязательное при ответе`                                                                                                                 |
+| **printed**             | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                         |
+| **project**             | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand`                                                                                                                                  |
+| **published**           | Boolean                                                   | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                       |
+| **rate**                | Object                                                    |                                                                                                                                                   | Валюта. [Подробнее тут](#/documents/common-info#3-valyuta-v-dokumentah)<br>`+Обязательное при ответе`                                                            |
+| **salesChannel**        | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные канала продаж<br>`+Expand`                                                                                                                            |
+| **shared**              | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                                       |
+| **state**               | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные статуса Исходящего платежа<br>`+Expand`                                                                                                               |
+| **sum**                 | Float                                                     | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Исходящего платежа в установленной валюте<br>`+Обязательное при ответе`                                                                                    |
+| **syncId**              | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                                      |
+| **updated**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Исходящего платежа<br>`+Обязательное при ответе` `+Только для чтения`                                                               |
+| **vatSum**              | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе`                                                                                                                          |
 
 #### Связи с другими документами
 
@@ -80,9 +80,9 @@
 > Получить Исходящие платежи
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/paymentout"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/paymentout" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -429,12 +429,11 @@ curl -X GET
 > Пример создания нового Исходящего платежа  с телом запроса, содержащим только необходимые поля.
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout
-"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "organization": {
               "meta": {
@@ -559,11 +558,11 @@ curl -X GET
 > Пример создания и обновления нескольких Исходящих платежей
 
 ```shell
-  curl -X POST
-    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '[
             {
               "name": "333222",
@@ -798,9 +797,9 @@ curl -X GET
 > Запрос на удаление Исходящего платежа  с указанным id.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -815,11 +814,11 @@ curl -X DELETE
 > Запрос на массовое удаление Исходящих платежей. 
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '[
         {
             "meta": {
@@ -868,9 +867,9 @@ curl -X POST
 > Метаданные Исходящих платежей
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/metadata"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/metadata" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -935,9 +934,9 @@ curl -X GET
 > Запрос на получение информации по отдельному дополнительному полю.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/metadata/attributes/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -967,11 +966,11 @@ curl -X GET
 > Запрос на получение предзаполненого стандартными значениями шаблона исходящего платежа без связи с каким-либо документом.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/new"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/new" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d ''  
 ```
 
@@ -1007,11 +1006,11 @@ curl -X GET
 > Запрос на получение шаблона исходящего платежа на основе заказа поставщику.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/new"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/new" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "operations": [
               {
@@ -1095,11 +1094,11 @@ curl -X GET
 > Запрос на получение шаблона исходящего платежа на основе возврата покупателя.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/new"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/new" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "operations": [
               {
@@ -1183,11 +1182,11 @@ curl -X GET
 > Запрос на получение шаблона исходящего платежа на основе приемки.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/new"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/new" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "operations": [
               {
@@ -1271,11 +1270,11 @@ curl -X GET
 > Запрос на получение шаблона исходящего платежа на основе счета поставщика.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/new"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/new" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "operations": [
               {
@@ -1359,11 +1358,11 @@ curl -X GET
 > Запрос на получение шаблона исходящего платежа на основе выданного отчета комиссионера.
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/new"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/new" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "operations": [
               {
@@ -1492,9 +1491,9 @@ curl -X GET
 > Запрос на получение отдельного Исходящего платежа с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1643,11 +1642,11 @@ curl -X GET
 > Пример запроса на обновление отдельного Исходящего платежа .
 
 ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/7944ef04-f831-11e5-7a69-971500188b19" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "888",
             "description": "НИП",

@@ -23,9 +23,9 @@ AppAsyncButton - Уведомление об окончании обработк
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/c290e571-f65d-11ee-c0a8-300d0000000a"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/c290e571-f65d-11ee-c0a8-300d0000000a" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -71,9 +71,9 @@ AppChangePermissions - Уведомление о запросе на измен�
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/c290e571-f65d-11ee-c0a8-300d0000000a"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/c290e571-f65d-11ee-c0a8-300d0000000a" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -124,9 +124,9 @@ NotificationExportCompleted - завершение экспорта
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/02950e3c-35f2-11e9-9ff4-34e8000799c0"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/02950e3c-35f2-11e9-9ff4-34e8000799c0" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -180,9 +180,9 @@ NotificationImportCompleted - завершение импорта
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/02950e31-35f2-11e9-9ff4-34e8000799c0"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/02950e31-35f2-11e9-9ff4-34e8000799c0" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -238,9 +238,9 @@ RetireOrderByDemandNotificationCompleted - завершение создания
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/9a068003-7f4f-11f0-ac12-001400000003"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/9a068003-7f4f-11f0-ac12-001400000003" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -294,9 +294,9 @@ NotificationGoodCountTooLow - снижение остатка товара ни�
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/9338c8bd-56e5-11e9-c0a8-100b00000023"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/9338c8bd-56e5-11e9-c0a8-100b00000023" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -358,9 +358,9 @@ NotificationInvoiceOutOverdue - просрочен счет покупателя
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/572d1dd9-56fc-11e9-c0a8-100b00000006"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/572d1dd9-56fc-11e9-c0a8-100b00000006" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -423,9 +423,9 @@ NotificationOrderNew - новый заказ
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/c6082a9e-56e1-11e9-c0a8-100b00000011"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/c6082a9e-56e1-11e9-c0a8-100b00000011" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -487,9 +487,9 @@ NotificationOrderOverdue - просроченный заказ
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/c6082a9e-56e1-11e9-c0a8-100b00000011"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/c6082a9e-56e1-11e9-c0a8-100b00000011" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -547,9 +547,9 @@ NotificationSubscribeExpired - окончание подписки
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000123"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000123" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -596,9 +596,9 @@ NotificationSubscribeTermsExpired - условия подписки истека
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000125"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000125" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -666,9 +666,9 @@ NotificationTaskAssigned - задача назначена
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/bcd815b9-56ca-11e9-c0a8-100b00000001"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/bcd815b9-56ca-11e9-c0a8-100b00000001" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -754,9 +754,9 @@ NotificationTaskUnassigned - задача снята
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/80c8a58b-56cb-11e9-c0a8-100b00000009"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/80c8a58b-56cb-11e9-c0a8-100b00000009" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -854,9 +854,9 @@ NotificationTaskChanged - задача изменена
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/bd0dbccf-56ca-11e9-c0a8-100b00000003"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/bd0dbccf-56ca-11e9-c0a8-100b00000003" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -949,9 +949,9 @@ NotificationTaskCompleted - задача выполнена
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/7945a089-56fd-11e9-c0a8-100b00000008"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/7945a089-56fd-11e9-c0a8-100b00000008" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1035,9 +1035,9 @@ NotificationTaskDeleted - задача удалена
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/8d07388c-56cb-11e9-c0a8-100b0000000d"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/8d07388c-56cb-11e9-c0a8-100b0000000d" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1106,9 +1106,9 @@ NotificationTaskOverdue - задача просрочена
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/51a5b0a3-56e4-11e9-c0a8-100b00000014"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/51a5b0a3-56e4-11e9-c0a8-100b00000014" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1185,9 +1185,9 @@ NotificationTaskReopened - задача переоткрыта
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/df0c3e22-56fd-11e9-c0a8-100b0000000a"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/df0c3e22-56fd-11e9-c0a8-100b0000000a" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1275,9 +1275,9 @@ NotificationTaskNewComment - новый комментарий к задаче
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/240706df-5704-11e9-c0a8-100b00000003"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/240706df-5704-11e9-c0a8-100b00000003" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1367,9 +1367,9 @@ NotificationTaskCommentChanged - изменен комментарий к зад
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/3d3423ee-5704-11e9-c0a8-100b00000007"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/3d3423ee-5704-11e9-c0a8-100b00000007" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1463,9 +1463,9 @@ NotificationTaskCommentDeleted - удален комментарий к зада
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/3d2abf0f-5704-11e9-c0a8-100b00000005"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/3d2abf0f-5704-11e9-c0a8-100b00000005" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1536,9 +1536,9 @@ NotificationRetailShiftOpened - смена открыта
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/8002409b-351d-11e9-9ff4-34e80002a126"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/8002409b-351d-11e9-9ff4-34e80002a126" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1621,9 +1621,9 @@ NotificationRetailShiftClosed - смена закрыта
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/3929d717-351c-11e9-9ff4-34e800029ad4"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/3929d717-351c-11e9-9ff4-34e800029ad4" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1732,9 +1732,9 @@ NotificationScript - уведомление из сценария
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/b22dc861-645b-11eb-0a80-1f8500000044"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/b22dc861-645b-11eb-0a80-1f8500000044" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1793,9 +1793,9 @@ FacebookTokenExpirationNotification - предупреждение о скоро
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/9596251d-da73-11eb-ac12-000c00000015"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/9596251d-da73-11eb-ac12-000c00000015" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1843,9 +1843,9 @@ NotificationBonusMoney - На счет зачислены бонусные де�
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000123"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/c2582a9e-56e1-11e9-c0a8-100b00000123" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1912,9 +1912,9 @@ NewMentionInEvent - уведомление о новом упоминании в
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/c290e571-f65d-11ee-c0a8-300d0000000a"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/c290e571-f65d-11ee-c0a8-300d0000000a" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -1946,6 +1946,83 @@ curl -X GET
   }
 }
 ```
+
+### Новое упоминание в комментариях Задач
+
+NewMentionInTaskNote - уведомление о новом упоминании в комментариях Задач
+
+#### NewMentionInTaskNote: Атрибуты уведомления
+
+| Название        | Тип                            | Описание                                                                                                    |
+|-----------------|:-------------------------------|:------------------------------------------------------------------------------------------------------------|
+| **meta**        | [Meta](#/general#3-metadannye) | Метаданные объекта<br>`+Обязательное при ответе` `+Только для чтения`                                       |
+| **id**          | UUID                           | ID Уведомления<br>`+Обязательное при ответе` `+Только для чтения`                                           |
+| **accountId**   | UUID                           | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                        |
+| **created**     | DateTime                       | Дата и время формирования Уведомления<br>`+Обязательное при ответе` `+Только для чтения`                    |
+| **read**        | Boolean                        | Признак того, было ли Уведомление прочитано<br>`+Обязательное при ответе` `+Только для чтения`              |
+| **title**       | String(255)                    | Краткий текст уведомления<br>`+Обязательное при ответе` `+Только для чтения`                                |
+| **description** | String(4096)                   | Описание уведомления<br>`+Обязательное при ответе` `+Только для чтения`                                     |
+| **task**        | Object                         | Задача, в которую был добавлен комментарий с упоминанием<br>`+Обязательное при ответе` `+Только для чтения` |
+
+#### NewMentionInTaskNote: Атрибуты вложенных сущностей
+
+##### NewMentionInTaskNote: Задача
+
+Задача, в которую был добавлен комментарий с упоминанием.
+
+| Название | Тип                            | Описание                                                                |
+|----------|:-------------------------------|:------------------------------------------------------------------------|
+| **meta** | [Meta](#/general#3-metadannye) | Метаданные объекта<br>`+Обязательное при ответе` `+Только для чтения`   |
+| **id**   | UUID                           | ID объекта<br>`+Обязательное при ответе` `+Только для чтения`           |
+| **name** | String(255)                    | Наименование объекта<br>`+Обязательное при ответе` `+Только для чтения` |
+
+Допустимые значения для **meta.type**:
+
++ **task** - Задача
+
+**Параметры**
+
+| Параметр | Описание                                                                            |
+|:---------|:------------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: 9017ee1b-b671-11f0-27bc-f26c0000000d* id Уведомления. |
+
+> Запрос на получение Уведомления с указанным id.
+
+```shell
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/9017ee1b-b671-11f0-27bc-f26c0000000d" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+> Успешный запрос. Результат - JSON представление Уведомления.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/notification/9017ee1b-b671-11f0-27bc-f26c0000000d",
+    "type": "NewMentionInTaskNote",
+    "mediaType": "application/json"
+  },
+  "id": "9017ee1b-b671-11f0-27bc-f26c0000000d",
+  "accountId": "cc6f702a-b66d-11f0-ff6f-15bb00000001",
+  "created": "2025-10-31 18:52:11.352",
+  "read": false,
+  "title": "Новое упоминание в задаче: Упаковать подарок для КА",
+  "description": "@Администратор Какой цвет ленточки?",
+  "task": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/task/54c55c03-b671-11f0-9be5-430a00000031",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/task/metadata",
+      "type": "task",
+      "mediaType": "application/json"
+    },
+    "id": "54c55c03-b671-11f0-9be5-430a00000031",
+    "name": "Упаковать подарок для КА"
+  }
+}
+ ```
 
 ### Новое событие в отслеживаемом объекте
 NewEventInEventFeed - уведомление о создании нового события в ленте отслеживаемого объекта
@@ -1991,9 +2068,9 @@ NewEventInEventFeed - уведомление о создании нового с
 > Запрос на получение Уведомления с указанным id.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/notification/c290e571-f65d-11ee-c0a8-300d0000000a"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/notification/c290e571-f65d-11ee-c0a8-300d0000000a" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 

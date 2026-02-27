@@ -1,7 +1,7 @@
 ## Контрагент
 ### Контрагенты 
 Средствами JSON API можно создавать и обновлять сведения о Контрагентах, запрашивать списки Контрагентов и сведения по отдельным Контрагентам. Счетами Контрагента и его контактными лицами можно управлять как в составе отдельного Контрагента, так и отдельно - с помощью специальных ресурсов для управления счетами и контактными лицами Контрагента. Кодом сущности для Контрагента в составе JSON API является ключевое слово **counterparty**. Больше о Контрагентах и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203053486-%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%B8%D0%BA-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2).
-По данной сущности можно осуществлять контекстный поиск с помощью специального параметра `search`. Подробнее можно узнать по [ссылке](#/general#3-kontekstnyj-poisk).
+По данной сущности можно осуществлять контекстный поиск с помощью специального параметра `search`. Подробнее можно узнать по [ссылке](#/general#3-kontekstnyj-poisk). Поиск с параметром search отличается от других тем, что поиск не префиксный и без токенизации. Ищет такие строки, в которые входит значение строки поиска.
 
 Поиск среди объектов Контрагента осуществляется по нескольким условиям. Если значения полей контрагента удовлетворяют хотя бы одному из условий, то контрагент будет найден.
 
@@ -377,9 +377,9 @@
 > Запрос на получения списка Контрагентов
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -969,11 +969,11 @@ curl -X GET
 > Пример 1
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '{
     "name": "ООО Радуга",
     "description": "Сеть стройматериалов Радуга ЭКСПО",
@@ -1098,11 +1098,11 @@ curl -X POST
 > Пример 2
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '{
         "name": "ООО Радуга"
       }'
@@ -1187,11 +1187,11 @@ curl -X POST
 > Пример 3
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '{
         "name": "ИП Иванов",
         "code" : "someCode",
@@ -1309,10 +1309,10 @@ curl -X POST
 > Пример 4
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Credentials>"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Content-Type: application/json" \
   -d ' {
         "name": "Петров",
         "companyType": "individual",
@@ -1423,11 +1423,11 @@ curl -X POST
 > Пример 5 (работа с UZ контрагентом)
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '{
     "name": "ООО Радуга",
     "companyType": "legalUZ",
@@ -1525,11 +1525,11 @@ curl -X POST
 > Пример 6 (работа с UZ контрагентом)
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '{
         "name": "ИП Иванов",
         "companyType": "entrepreneurUZ",
@@ -1652,10 +1652,10 @@ curl -X POST
 > Пример 7 (работа с UZ контрагентом)
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Credentials>"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Content-Type: application/json" \
   -d ' {
         "name": "Петров",
         "companyType": "individualUz",
@@ -1760,11 +1760,11 @@ curl -X POST
 > Пример 8 (работа с KZ контрагентом)
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '{
     "name": "ООО Радуга",
     "companyType": "legalKZ",
@@ -1862,11 +1862,11 @@ curl -X POST
 > Пример 9 (работа с KZ контрагентом)
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '{
         "name": "ИП Иванов",
         "companyType": "entrepreneurKZ",
@@ -1990,10 +1990,10 @@ curl -X POST
 > Пример 10 (работа с KZ контрагентом)
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Credentials>"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Content-Type: application/json" \
   -d ' {
         "name": "Петров",
         "companyType": "individualKZ",
@@ -2101,11 +2101,11 @@ curl -X POST
 > Пример с дополнительными полями
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '{  
   "name":"ООО Овощ Экспресс",
   "description":"Сеть доставки овощей",
@@ -2401,11 +2401,11 @@ curl -X POST
 > Массовое создание и обновление Контрагентов
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '[  
   {  
     "name":"ООО Радуга",
@@ -2656,9 +2656,9 @@ curl -X POST
 > Запрос на удаление Контрагента с указанным id.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"  
 ```
 
@@ -2672,11 +2672,11 @@ curl -X DELETE
 > Запрос на массовое удаление Контрагентов. 
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/delete"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '[
         {
             "meta": {
@@ -2714,9 +2714,9 @@ curl -X POST
 > Запрос на получение метаданных Контрагентов. 
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"  
 ```
 
@@ -2795,9 +2795,9 @@ curl -X GET
 > Запрос на получение информации по отдельному дополнительному полю.
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata/attributes/5290a290-0313-11e6-9464-e4de00000020" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"  
 ```
 
@@ -2831,9 +2831,9 @@ curl -X GET
 > Пример 1
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"  
 ```
 
@@ -2993,9 +2993,9 @@ curl -X GET
 > Пример 2
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"  
 ```
 
@@ -3120,11 +3120,11 @@ curl -X GET
 > Пример
 
 ```shell
-curl -X PUT
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
     -d '{  
   "name":"ООО Радуга ЭКСПО",
   "description":"Сеть рынков стройматериалов Радуга ЭКСПО",
@@ -3341,11 +3341,11 @@ curl -X PUT
 > Пример с дополнительными полями
 
 ```shell
-curl -X PUT
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
     -d '
 {
   "name": "ООО Овощ Экспресс",
@@ -3617,9 +3617,9 @@ curl -X PUT
 > Получить счета Контрагента
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -3695,11 +3695,11 @@ curl -X GET
 > Пример запроса на создание счета Контрагента.
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
     -d '{
           "accountNumber": "86686868768768757656876876"
         }'  
@@ -3739,9 +3739,9 @@ curl -X POST
 > Получить счет Контрагент
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b18"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b18" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -3780,11 +3780,11 @@ curl -X GET
 > Пример запроса на обновление счета Контрагента.
 
   ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b18"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b18" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "accountNumber": "86686868768768757656876876",
             "isDefault": false,
@@ -3832,9 +3832,9 @@ curl -X GET
 > Список контактных лиц
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -3949,11 +3949,11 @@ curl -X GET
 > Пример запроса на создание контактного лица Контрагента.
 
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
     -d '{
           "name": "Петр",
           "code": "Petya the deliverer",
@@ -4011,9 +4011,9 @@ curl -X POST
 > Получить контактное лицо
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -4064,11 +4064,11 @@ curl -X GET
 > Пример запроса на обновление контактного лица Контрагента.
   
   ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons/7944ef04-f831-11e5-7a69-971500188b19" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "name": "Петр",
             "code": "Petya the deliverer",
@@ -4122,9 +4122,9 @@ curl -X GET
 > Список событий
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -4219,11 +4219,11 @@ curl -X GET
 > Запрос на добавление нового события.
   
 ```shell
-curl -X POST
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
     -d '{
           "description": "текст"
         }'  
@@ -4277,9 +4277,9 @@ curl -X POST
 > Получить событие 
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/notes/7944ef04-f831-11e5-7a69-971500188b19"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/notes/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -4333,11 +4333,11 @@ curl -X GET
 > Пример запроса на обновление события Контрагента.
 
   ```shell
-  curl -X PUT
-    "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/notes/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Credentials>"
-    -H "Accept-Encoding: gzip"
-    -H "Content-Type: application/json"
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/notes/7944ef04-f831-11e5-7a69-971500188b19" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
       -d '{
             "description": "измененный текст"
           }'  
@@ -4387,9 +4387,9 @@ curl -X GET
 > Запрос на удаление события с указанным id.
 
 ```shell
-curl -X DELETE
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes/50b318cb-3cb0-11e7-8af5-581e00000007"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/67e5a691-3c9c-11e7-8af5-581e00000056/notes/50b318cb-3cb0-11e7-8af5-581e00000007" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -4419,9 +4419,9 @@ curl -X DELETE
 > Запрос на получение настроек справочника контрагентов
 
 ```shell
-curl -X GET
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/settings"
-  -H "Authorization: Basic <Credentials>"
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/settings" \
+  -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
 
@@ -4452,11 +4452,11 @@ curl -X GET
 > Запрос на изменение метаданных справочника контрагентов.
 
 ```shell
-curl -X PUT
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/settings"
-  -H "Authorization: Basic <Credentials>"
-  -H "Accept-Encoding: gzip"
-  -H "Content-Type: application/json"
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/settings" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
   -d '{
   "uniqueCodeRules": {
     "checkUniqueCode": true,
