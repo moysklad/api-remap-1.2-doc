@@ -109,7 +109,7 @@
   
 ### 01-10-2025
 **Добавлено**
-- Настройки НДС для [юридических лиц](#/dictionaries/organization#4-polya-rekvizitov)
+- Настройки НДС для [юридических лиц](#/dictionaries/organization#5-nastrojki-nds) 
 
 ### 25-09-2025
 **Добавлено**
