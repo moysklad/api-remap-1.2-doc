@@ -2,9 +2,16 @@
 
 Список последних изменений в API Remap 1.2
 
-### 26-02-2026
+### 05-03-2026
 **Изменено**
 - Сущность `Серия` переименована в [Партия](#/dictionaries/consignment#2-partiya)
+
+### 03-03-2026
+**Добавлена**
+- Поддержка протоколов change-handler и update-provider в [Заказе кодов маркировки](#/documents/emissionorder#2-zakaz-kodov-markirovki)
+
+**Изменено**
+- Способ вывода из оборота `MEDICAL_USE` (Использование для медицинского применения) теперь доступен только для типа маркированной продукции `MEDICAL_DEVICES` (Медизделия и кресла-коляски) в документе [Вывод из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
 
 ### 25-02-2026
 **Добавлена**
@@ -113,7 +120,7 @@
   
 ### 01-10-2025
 **Добавлено**
-- Настройки НДС для [юридических лиц](#/dictionaries/organization#4-polya-rekvizitov)
+- Настройки НДС для [юридических лиц](#/dictionaries/organization#5-nastrojki-nds) 
 
 ### 25-09-2025
 **Добавлено**

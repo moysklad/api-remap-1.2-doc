@@ -112,7 +112,7 @@ curl --compressed -X GET \
   -H "Accept-Encoding: gzip"
 ```
 
-> Пример тела запроса:
+> Пример тела ответа:
 
 ```json
 {
