@@ -27,7 +27,7 @@
 - [Внутренний заказ](#/documents/internalOrder#2-vnutrennij-zakaz)
 - [Оприходование](#/documents/enter#2-oprihodovanie)
 - [Списание](#/documents/loss#2-spisanie)
-- [Начисление зарплаты](#/documents/payroll#2)
+- Начисление зарплаты
 
 Заполнение цен не поддерживает [Инвентаризация](#/documents/inventory#2-inventarizaciya)
 
