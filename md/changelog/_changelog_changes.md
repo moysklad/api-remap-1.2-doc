@@ -4,7 +4,7 @@
 
 ### 16-03-2026
 **Добавлено**
-- Новый тип маркированной продукции `NATURAL_FUR` (Натуральный мех) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty)
+- Новый тип маркированной продукции `FURSLP` (Натуральный мех) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty)
 
 ### 05-03-2026
 **Изменено**
