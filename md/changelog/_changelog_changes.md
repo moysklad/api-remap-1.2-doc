@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 16-03-2026
+**Добавлено**
+- Новый тип маркированной продукции `NATURAL_FUR` (Натуральный мех) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty)
+
 ### 05-03-2026
 **Изменено**
 - Сущность `Серия` переименована в [Партия](#/dictionaries/consignment#2-partiya)
