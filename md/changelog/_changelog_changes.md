@@ -2,6 +2,11 @@
 
 Список последних изменений в API Remap 1.2
 
+
+### 17-03-2026
+**Добавлено**
+- Сущность `Начисления зарплат` [payroll](#/documents/payroll#2-nachislenie-zarplaty)
+
 ### 05-03-2026
 **Изменено**
 - Сущность `Серия` переименована в [Партия](#/dictionaries/consignment#2-partiya)
