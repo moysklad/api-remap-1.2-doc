@@ -2,6 +2,12 @@
 
 Список последних изменений в API Remap 1.2
 
+### 23-03-2026
+**Изменено**
+- Ошибка [16107](#errors#3-kody-oshibok-dlya-tovarov)
+- Описание типов маркируемой продукции `BEER_ALCOHOL`, `FOOD_SUPPLEMENT`, `LP_CLOTHES`, `LP_LINENS`, `SHOES` для [Товара](#/dictionaries/product#3-tovary), [Комплекта](#/dictionaries/bundle#3-komplekty) и [Вывода из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Описание типов маркируемой продукции `NOT_TRACKED` и `TOBACCO` для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty)
+
 ### 05-03-2026
 **Изменено**
 - Сущность `Серия` переименована в [Партия](#/dictionaries/consignment#2-partiya)
