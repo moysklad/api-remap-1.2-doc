@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 30-03-2026
+**Добавлено**
+- Новое поле Канал продаж (`salesChannel`) в протоколе change-handler для документов: [Отгрузка](#/documents/demand#2-otgruzka), [Заказ покупателя](#/documents/customerOrder#2-zakaz-pokupatelya), [Счет покупателю](#/documents/invoice-out#2-schet-pokupatelyu) и [Возврат покупателя](#/documents/sales-return#2-vozvrat-pokupatelya)
+
 ### 23-03-2026
 **Добавлено**
 - Новый тип маркированной продукции `FURSLP` (Натуральный мех) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty)
