@@ -2,6 +2,11 @@
 
 Список последних изменений в API Remap 1.2
 
+### 31-03-2026
+**Добавлено**
+- Поля связей документов в [Производственное задание](../documents/#dokumenty-proizwodstwennoe-zadanie)
+- Поля связей документов в [Отгрузка](#/documents/demand#4-pozicii-otgruzki)
+
 ### 23-03-2026
 **Добавлено**
 - Новый тип маркированной продукции `FURSLP` (Натуральный мех) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty)
