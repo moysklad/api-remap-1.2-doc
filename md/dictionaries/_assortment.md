@@ -9,7 +9,7 @@
 
 `X-Lognex-Remap-Beta-Feature: assortmentWithoutStock`
 
- Если заголовок не передан, запрос обрабатывается [старым эндпоинтом ассортимента](#/dictionaries/assortment-legacy), который планируется к удалению.
+ Если заголовок не передан, запрос обрабатывается [старым эндпоинтом ассортимента](#/dictionaries/assortment-legacy#2-assortiment-deprecated), который планируется к удалению.
 
 ### Отличия от старого эндпоинта
 

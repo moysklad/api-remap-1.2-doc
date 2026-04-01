@@ -16,5 +16,5 @@ startDate: 2026-03-31
 
 **Старый эндпоинт** (`GET /entity/assortment` без заголовка) планируется к удалению в будущих версиях API. Рекомендуем переходить на новый.
 
-[Документация нового ассортимента эндпоинта](#/dictionaries/assortment)  
-[Документация старого ассортимента эндпоинта](#/dictionaries/assortment-legacy)
+[Документация нового ассортимента эндпоинта](#/dictionaries/assortment#2-assortiment)  
+[Документация старого ассортимента эндпоинта](#/dictionaries/assortment-legacy#2-assortiment-deprecated)
