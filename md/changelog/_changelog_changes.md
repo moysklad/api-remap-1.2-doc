@@ -4,8 +4,8 @@
 
 ### 31-03-2026
 **Добавлено**
-- Поля связей документов в [Производственное задание](../documents/#dokumenty-proizwodstwennoe-zadanie)
-- Поля связей документов в [Отгрузка](#/documents/demand#4-pozicii-otgruzki)
+- Поле связи с документами Отгрузки в [Производственное задание](#/documents/productionTask#2-proizvodstvennoe-zadanie)
+- Поле связи с документами Производственного задания в [Отгрузку](#/documents/demand#4-svyazi-s-drugimi-dokumentami)
 
 ### 23-03-2026
 **Добавлено**
