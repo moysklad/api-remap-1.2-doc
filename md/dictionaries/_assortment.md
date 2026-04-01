@@ -9,7 +9,7 @@
 
 `X-Lognex-Remap-Beta-Feature: assortmentWithoutStock`
 
- Если заголовок не передан, запрос обрабатывается [старым эндпоинтом ассортимента](#/dictionaries/assortment-legacy#2-assortiment-deprecated), который планируется к удалению.
+Если заголовок не передан, запрос обрабатывается [старым эндпоинтом ассортимента](#/dictionaries/assortment-legacy#2-assortiment-deprecated), который планируется к удалению.
 
 ### Отличия от старого эндпоинта
 
@@ -19,14 +19,104 @@
 
 Для получения остатков используйте [Краткий отчет об остатках](#/reports/report-stock#3-kratkij-otchet-ob-ostatkah):
 
-- `GET /report/stock/all/current` - остатки по товарам
-- `GET /report/stock/bystore/current` - остатки в разрезе складов
+Связать данные можно по полю `id` из ответа ассортимента и полю `assortmentId` из краткого отчёта об остатках.
 
-Связать данные можно по `meta.href` из ответа ассортимента и полю `meta` из отчёта об остатках.
+**Пример получения ассортимента с остатками:**
+
+> Получить ассортимент:
+
+```shell
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/assortment" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "X-Lognex-Remap-Beta-Feature: assortmentWithoutStock"
+```
+
+> Из ответа берём `id` нужных позиций:
+
+```json
+{
+  "rows": [
+    { "id": "35427052-36e7-11e7-8a7f-40d0000000d7", "name": "Товар А" },
+    { "id": "437f2d67-36e7-11e7-8a7f-40d0000000df", "name": "Товар Б" }
+  ]
+}
+```
+
+> Запросить все типы остатков (`stockType` принимает только одно значение за раз, запросы выполняются параллельно):
+
+```shell
+# stock — физический остаток
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/all/current?stockType=stock&filter=assortmentId=35427052-36e7-11e7-8a7f-40d0000000d7,437f2d67-36e7-11e7-8a7f-40d0000000df" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+
+# reserve — резерв
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/all/current?stockType=reserve&filter=assortmentId=35427052-36e7-11e7-8a7f-40d0000000d7,437f2d67-36e7-11e7-8a7f-40d0000000df" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+
+# inTransit — ожидание
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/all/current?stockType=inTransit&filter=assortmentId=35427052-36e7-11e7-8a7f-40d0000000d7,437f2d67-36e7-11e7-8a7f-40d0000000df" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+
+# quantity — доступно (с учётом резерва и ожидания)
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/report/stock/all/current?stockType=quantity&filter=assortmentId=35427052-36e7-11e7-8a7f-40d0000000d7,437f2d67-36e7-11e7-8a7f-40d0000000df" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json). Успешный запрос. `stockType=stock`
+
+```json
+[{ "assortmentId": "35427052-36e7-11e7-8a7f-40d0000000d7", "stock": 15 },
+ { "assortmentId": "437f2d67-36e7-11e7-8a7f-40d0000000df", "stock": 3 }]
+```
+
+> Response 200 (application/json). Успешный запрос. `stockType=reserve`
+
+```json
+[{ "assortmentId": "35427052-36e7-11e7-8a7f-40d0000000d7", "reserve": 2 },
+ { "assortmentId": "437f2d67-36e7-11e7-8a7f-40d0000000df", "reserve": 0 }]
+```
+
+> Response 200 (application/json). Успешный запрос. `stockType=inTransit`
+
+```json
+[{ "assortmentId": "35427052-36e7-11e7-8a7f-40d0000000d7", "inTransit": 5 },
+ { "assortmentId": "437f2d67-36e7-11e7-8a7f-40d0000000df", "inTransit": 1 }]
+```
+
+> Response 200 (application/json). Успешный запрос. `stockType=quantity`
+
+```json
+[{ "assortmentId": "35427052-36e7-11e7-8a7f-40d0000000d7", "quantity": 18 },
+ { "assortmentId": "437f2d67-36e7-11e7-8a7f-40d0000000df", "quantity": 4 }]
+```
+
+Сопоставление: `assortment.rows[i].id === stockReport[j].assortmentId`.
 
 #### Недоступные фильтры
 
-`stockMode`, `quantityMode`, `stockMoment`, `stockStore`, `minimumBalance`, `salePrice`, `article`, `alcoholic.type`, `isSerialTrackable`, `owner`, `updatedBy`, `weighed`.
+- `alcoholic.type`
+- `article`
+- `isSerialTrackable`
+- `minimumBalance`
+- `owner`
+- `quantityMode`
+- `salePrice`
+- `shared`
+- `stockMode`
+- `stockMoment`
+- `stockStore`
+- `updatedBy`
+- `weighed`
 
 #### Изменения в поведении фильтров
 
@@ -39,7 +129,12 @@
 
 #### Недоступные сортировки
 
-`stock`, `minimumBalance`, `reserve`, `intransit`, `quantity`, `salePrice`.
+- `inTransit`
+- `minimumBalance`
+- `quantity`
+- `reserve`
+- `salePrice`
+- `stock`
 
 ### Атрибуты доступные для фильтрации
 

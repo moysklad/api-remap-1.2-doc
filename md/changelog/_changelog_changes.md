@@ -7,7 +7,7 @@
 - Новый эндпоинт [Ассортимент](#/dictionaries/assortment#2-assortiment) облегчённая версия без расчёта остатков
 
 **Изменено**
-- Эндпоинт [Ассортимент](#/dictionaries/assortment-legacy#2-assortiment-deprecated) помечен как планируемый к удалению
+- Эндпоинт [Ассортимент](#/dictionaries/assortment-legacy#2-assortiment-deprecated) будет постепенно выведен из эксплуатации в 2027 году
 
 ### 23-03-2026
 **Добавлено**
