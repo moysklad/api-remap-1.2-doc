@@ -2,7 +2,7 @@
 
 Список последних изменений в API Remap 1.2
 
-### 30-03-2026
+### 02-04-2026
 **Добавлено**
 - Новое поле Канал продаж (`salesChannel`) в протоколе change-handler для документов: [Отгрузка](#/documents/demand#2-otgruzka), [Заказ покупателя](#/documents/customerOrder#2-zakaz-pokupatelya), [Счет покупателю](#/documents/invoice-out#2-schet-pokupatelyu) и [Возврат покупателя](#/documents/sales-return#2-vozvrat-pokupatelya)
 
