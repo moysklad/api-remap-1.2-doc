@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 07-04-2026
+**Добавлено**
+- Ошибок для валидации переполнения групп: [3051](#/errors#3-obshie-oshibki-validacii)
+
 ### 02-04-2026
 **Добавлено**
 - Новое поле Канал продаж (`salesChannel`) в протоколе change-handler для документов: [Отгрузка](#/documents/demand#2-otgruzka), [Заказ покупателя](#/documents/customerOrder#2-zakaz-pokupatelya), [Счет покупателю](#/documents/invoice-out#2-schet-pokupatelyu) и [Возврат покупателя](#/documents/sales-return#2-vozvrat-pokupatelya)
