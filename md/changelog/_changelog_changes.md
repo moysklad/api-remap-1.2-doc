@@ -6,6 +6,12 @@
 **Добавлено**
 - Ошибок для валидации переполнения групп: [3051](#/errors#3-obshie-oshibki-validacii)
 
+### 06-04-2026
+**Добавлено**
+- Поле связи с документами Отгрузки в [Производственное задание](#/documents/productionTask#4-svyazi-s-drugimi-dokumentami)
+- Поле связи с документами Производственного задания в [Отгрузку](#/documents/demand#4-svyazi-s-drugimi-dokumentami)
+
+
 ### 02-04-2026
 **Добавлено**
 - Новое поле Канал продаж (`salesChannel`) в протоколе change-handler для документов: [Отгрузка](#/documents/demand#2-otgruzka), [Заказ покупателя](#/documents/customerOrder#2-zakaz-pokupatelya), [Счет покупателю](#/documents/invoice-out#2-schet-pokupatelyu) и [Возврат покупателя](#/documents/sales-return#2-vozvrat-pokupatelya)
