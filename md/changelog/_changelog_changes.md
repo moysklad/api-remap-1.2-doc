@@ -2,11 +2,19 @@
 
 Список последних изменений в API Remap 1.2
 
-### 23-03-2026
+### 06-04-2026
 **Изменено**
 - Ошибка [16107](#/errors#3-kody-oshibok-dlya-tovarov)
 - Описание типов маркируемой продукции `BEER_ALCOHOL`, `FOOD_SUPPLEMENT`, `LP_CLOTHES`, `LP_LINENS`, `SHOES` для [Товара](#/dictionaries/product#3-tovary), [Комплекта](#/dictionaries/bundle#3-komplekty) и [Вывода из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
 - Описание типов маркируемой продукции `NOT_TRACKED` и `TOBACCO` для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty)
+
+### 02-04-2026
+**Добавлено**
+- Новое поле Канал продаж (`salesChannel`) в протоколе change-handler для документов: [Отгрузка](#/documents/demand#2-otgruzka), [Заказ покупателя](#/documents/customerOrder#2-zakaz-pokupatelya), [Счет покупателю](#/documents/invoice-out#2-schet-pokupatelyu) и [Возврат покупателя](#/documents/sales-return#2-vozvrat-pokupatelya)
+
+### 23-03-2026
+**Добавлено**
+- Новый тип маркированной продукции `FURSLP` (Натуральный мех) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty)
 
 ### 05-03-2026
 **Изменено**
