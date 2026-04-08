@@ -2985,60 +2985,60 @@ curl --compressed -X PUT \
 
 ###### Пермиссии сущностей и документов, которые присутствуют в запросе
 
-| Название                   | Возможные значения                                                                                                                                 | Описание                               |
-|----------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------- |:---------------------------------------|
-| **accountAdjustment**      | DICTIONARY                                                                                                                                         | Корректировка остатков на счете        |
-| **bonusTransaction**       | OPERATION                                                                                                                                          | Бонусные баллы                         |
-| **cashIn**                 | OPERATION                                                                                                                                          | Приходной ордер                        |
-| **cashOut**                | OPERATION                                                                                                                                          | Расходной ордер                        |
-| **cashboxAdjustment**      | DICTIONARY                                                                                                                                         | Корректировка остатков в кассе         |
-| **commissionReportIn**     | OPERATION                                                                                                                                          | Полученный отчет комиссионера          |
-| **commissionReportOut**    | OPERATION                                                                                                                                          | Выданный отчет комиссионер             |
-| **company**                | DICTIONARY                                                                                                                                         | Контрагенты                            |
-| **contract**               | DICTIONARY                                                                                                                                         | Договоры                               |
-| **counterpartyAdjustment** | DICTIONARY                                                                                                                                         | Корректировка взаиморасчетов           |
-| **country**                | BASE                                                                                                                                               | Страны                                 |
-| **currency**               | BASE                                                                                                                                               | Валюты                                 |
-| **customEntity**           | BASE                                                                                                                                               | Элементы пользовательских справочников |
-| **customerOrder**          | OPERATION                                                                                                                                          | Заказ покупателям                      |
-| **demand**                 | OPERATION                                                                                                                                          | Отгрузка                               |
-| **employee**               | BASE                                                                                                                                               | Сотрудники                             |
-| **enter**                  | OPERATION                                                                                                                                          | Оприходование                          |
-| **factureIn**              | OPERATION                                                                                                                                          | Счета-фактуры полученные               |
-| **factureOut**             | OPERATION                                                                                                                                          | Счета-фактуры выданные                 |
-| **good**                   | DICTIONARY                                                                                                                                         | Товары и Услуги                        |
-| **internalOrder**          | OPERATION                                                                                                                                          | Внутренние заказы                      |
-| **inventory**              | DICTIONARY                                                                                                                                         | Инвентаризация                         |
-| **invoiceIn**              | OPERATION                                                                                                                                          | Счет поставщику                        |
-| **invoiceOut**             | OPERATION                                                                                                                                          | Счет покупателям                       |
-| **loss**                   | OPERATION                                                                                                                                          | Списание                               |
-| **move**                   | OPERATION                                                                                                                                          | Перемещение                            |
-| **myCompany**              | BASE                                                                                                                                               | Юр. Лица                               |
-| **paymentIn**              | OPERATION                                                                                                                                          | Входящий платеж                        |
-| **paymentOut**             | OPERATION                                                                                                                                          | Исходящий платеж                       |
-| **prepayment**             | OPERATION                                                                                                                                          | Предоплаты                             |
-| **prepaymentReturn**       | OPERATION                                                                                                                                          | Возврат предоплаты                     |
-| **priceList**              | OPERATION                                                                                                                                          | Прайс-лист                             |
-| **processing**             | BASE                                                                                                                                               | Техоперации                            |
-| **processingOrder**        | OPERATION                                                                                                                                          | Заказ на производство                  |
-| **processingPlan**         | BASE                                                                                                                                               | Техкарты                               |
-| **processingStage**        | BASE                                                                                                                                               | Этапы производства                     |
-| **processingProcess**      | BASE                                                                                                                                               | Техпроцессы                            |
-| **project**                | BASE                                                                                                                                               | Проекты                                |
-| **purchaseOrder**          | OPERATION                                                                                                                                          | Заказ поставщикам                      |
-| **purchaseReturn**         | OPERATION                                                                                                                                          | Возврат поставщику                     |
-| **retailDemand**           | OPERATION                                                                                                                                          | Продажи                                |
-| **retailDrawerCashIn**     | OPERATION                                                                                                                                          | Внесения                               |
-| **retailDrawerCashOut**    | OPERATION                                                                                                                                          | Выплаты                                |
-| **retailSalesReturn**      | OPERATION                                                                                                                                          | Возвраты                               |
-| **retailShift**            | DICTIONARY                                                                                                                                         | Смены                                  |
-| **retailStore**            | BASE                                                                                                                                               | Точка продаж                           |
-| **salesReturn**            | OPERATION                                                                                                                                          | Возврат покупателя                     |
-| **supply**                 | OPERATION                                                                                                                                          | Приемки                                |
-| **task**                   | [Особый](#/general#6-permissii-dlya-zadach) | Задачи                                 |
-| **uom**                    | BASE                                                                                                                                               | Единицы измерения                      |
-| **warehouse**              | BASE                                                                                                                                               | Склады                                 |
-| **webhook**                | DICTIONARY                                                                                                                                         | Вебхуки                                |
+| Название                                                                                         | Возможные значения                          | Описание                               |
+|--------------------------------------------------------------------------------------------------|:--------------------------------------------|:---------------------------------------|
+| **accountAdjustment**                                                                            | DICTIONARY                                  | Корректировка остатков на счете        |
+| [**bonusTransaction**](#/dictionaries/bonus-operation#2-bonusnaya-operaciya)                     | OPERATION                                   | Бонусные баллы                         |
+| [**cashIn**](#/documents/cashin#2-prihodnyj-order)                                               | OPERATION                                   | Приходной ордер                        |
+| [**cashOut**](#/documents/cashout#2-rashodnyj-order)                                             | OPERATION                                   | Расходной ордер                        |
+| **cashboxAdjustment**                                                                            | DICTIONARY                                  | Корректировка остатков в кассе         |
+| [**commissionReportIn**](#/documents/commissionreportin#2-poluchennyj-otchet-komissionera)       | OPERATION                                   | Полученный отчет комиссионера          |
+| [**commissionReportOut**](#/documents/commissionreportout#2-vydannyj-otchet-komissionera)        | OPERATION                                   | Выданный отчет комиссионера            |
+| [**company**](#/dictionaries/counterparty#2-kontragent)                                          | DICTIONARY                                  | Контрагенты                            |
+| [**contract**](#/dictionaries/contract#2-dogovor)                                                | DICTIONARY                                  | Договоры                               |
+| [**counterpartyAdjustment**](#/documents/counterpartyadjustment#2-korrektirovka-vzaimoraschetov) | DICTIONARY                                  | Корректировка взаиморасчетов           |
+| [**country**](#/dictionaries/country#2-strana)                                                   | BASE                                        | Страны                                 |
+| [**currency**](#/dictionaries/currency#2-valyuta)                                                | BASE                                        | Валюты                                 |
+| [**customEntity**](#/dictionaries/customentity#2-polzovatelskij-spravochnik)                     | BASE                                        | Элементы пользовательских справочников |
+| [**customerOrder**](#/documents/customerOrder#2-zakaz-pokupatelya)                               | OPERATION                                   | Заказ покупателям                      |
+| [**demand**](#/documents/demand#2-otgruzka)                                                      | OPERATION                                   | Отгрузка                               |
+| [**employee**](#/dictionaries/employee#2-sotrudnik)                                              | BASE                                        | Сотрудники                             |
+| [**enter**](#/documents/enter#2-oprihodovanie)                                                   | OPERATION                                   | Оприходование                          |
+| [**factureIn**](#/documents/facturein#2-schet-faktura-poluchennyj)                               | OPERATION                                   | Счета-фактуры полученные               |
+| [**factureOut**](#/documents/factureout#2-schet-faktura-vydannyj)                                | OPERATION                                   | Счета-фактуры выданные                 |
+| [**good**](#/dictionaries/assortment#2-assortiment)                                              | DICTIONARY                                  | Товары и Услуги                        |
+| [**internalOrder**](#/documents/internalOrder#2-vnutrennij-zakaz)                                | OPERATION                                   | Внутренние заказы                      |
+| [**inventory**](#/documents/inventory#2-inventarizaciya)                                         | DICTIONARY                                  | Инвентаризация                         |
+| [**invoiceIn**](#/documents/invoice-in#2-schet-postavshika)                                      | OPERATION                                   | Счет поставщику                        |
+| [**invoiceOut**](#/documents/invoice-out#2-schet-pokupatelyu)                                    | OPERATION                                   | Счет покупателям                       |
+| [**loss**](#/documents/loss#2-spisanie)                                                          | OPERATION                                   | Списание                               |
+| [**move**](#/documents/move#2-peremeshenie)                                                      | OPERATION                                   | Перемещение                            |
+| [**myCompany**](#/dictionaries/organization#2-yurlico)                                           | BASE                                        | Юр. Лица                               |
+| [**paymentIn**](#/documents/payment-in#2-vhodyashij-platezh)                                     | OPERATION                                   | Входящий платеж                        |
+| [**paymentOut**](#/documents/payment-out#2-ishodyashij-platezh)                                  | OPERATION                                   | Исходящий платеж                       |
+| [**prepayment**](#/documents/prepayment#2-predoplata)                                            | OPERATION                                   | Предоплаты                             |
+| [**prepaymentReturn**](#/documents/prepayment-return#2-vozvrat-predoplaty)                       | OPERATION                                   | Возврат предоплаты                     |
+| [**priceList**](#/documents/pricelist#2-prajs-list)                                              | OPERATION                                   | Прайс-лист                             |
+| [**processing**](#/documents/processing#2-tehoperaciya)                                          | BASE                                        | Техоперации                            |
+| [**processingOrder**](#/documents/processingorder#2-zakaz-na-proizvodstvo)                       | OPERATION                                   | Заказ на производство                  |
+| [**processingPlan**](#/dictionaries/processingplan#2-tehkarta)                                   | BASE                                        | Техкарты                               |
+| [**processingStage**](#/dictionaries/processingstage#2-etap-proizvodstva)                        | BASE                                        | Этапы производства                     |
+| [**processingProcess**](#/dictionaries/processingprocess#2-tehprocess)                           | BASE                                        | Техпроцессы                            |
+| [**project**](#/dictionaries/project#2-proekt)                                                   | BASE                                        | Проекты                                |
+| [**purchaseOrder**](#/documents/purchaseOrder#2-zakaz-postavshiku)                               | OPERATION                                   | Заказ поставщикам                      |
+| [**purchaseReturn**](#/documents/purchase-return#2-vozvrat-postavshiku)                          | OPERATION                                   | Возврат поставщику                     |
+| [**retailDemand**](#/documents/retaildemand#2-roznichnaya-prodazha)                              | OPERATION                                   | Продажи                                |
+| [**retailDrawerCashIn**](#/documents/retaildrawercashin#2-vnesenie-deneg)                        | OPERATION                                   | Внесения                               |
+| [**retailDrawerCashOut**](#/documents/retaildrawercashout#2-vyplata-deneg)                       | OPERATION                                   | Выплаты                                |
+| [**retailSalesReturn**](#/documents/retail-sales-return#2-roznichnyj-vozvrat)                    | OPERATION                                   | Возвраты                               |
+| [**retailShift**](#/documents/retailshift#2-roznichnaya-smena)                                   | DICTIONARY                                  | Смены                                  |
+| [**retailStore**](#/dictionaries/retailstore#2-tochka-prodazh)                                   | BASE                                        | Точка продаж                           |
+| [**salesReturn**](#/documents/sales-return#2-vozvrat-pokupatelya)                                | OPERATION                                   | Возврат покупателя                     |
+| [**supply**](#/documents/supply#2-priemka)                                                       | OPERATION                                   | Приемки                                |
+| [**task**](#/dictionaries/task#2-zadacha)                                                        | [Особый](#/general#6-permissii-dlya-zadach) | Задачи                                 |
+| [**uom**](#/dictionaries/uom#2-edinica-izmereniya)                                               | BASE                                        | Единицы измерения                      |
+| [**warehouse**](#/dictionaries/store#2-sklad)                                                    | BASE                                        | Склады                                 |
+| [**webhook**](#/dictionaries/webhook#2-vebhuki)                                                  | DICTIONARY                                  | Вебхуки                                |
 
 ###### Пермиссии для задач
 
