@@ -2883,6 +2883,7 @@ curl --compressed -X PUT \
 * [Прослеживаемость товаров в списаниях](#/documents/loss#4-informaciya-o-proslezhivaemosti-importnyh-tovarov)
 * [Прослеживаемость товаров в розничной продаже](#/documents/retaildemand#4-informaciya-o-proslezhivaemosti-importnyh-tovarov)
 * [Неснижаемый остаток в товаре](#/dictionaries/product#5-nesnizhaemyj-ostatok)
+* [Неснижаемый остаток в модификации](#/dictionaries/variant#5-nesnizhaemyj-ostatok)
 * [Постоянная ссылка на изображение](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-ili-modifikacii)
 
 ### Контекст запроса сотрудника
