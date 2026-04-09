@@ -2,9 +2,19 @@
 
 Список последних изменений в API Remap 1.2
 
-### 07-04-2026
+### 10-04-2026
 **Добавлено**
 - Ошибка для валидации переполнения групп: [3051](#/errors#3-obshie-oshibki-validacii)
+
+### 07-04-2026
+**Добавлено**
+- Новый эндпоинт [Ассортимент](#/dictionaries/assortment#2-assortiment) облегчённая версия без расчёта остатков
+
+**Изменено**
+- Эндпоинт [Ассортимент](#/dictionaries/assortment-legacy#2-assortiment-deprecated) будет постепенно выведен из эксплуатации в 2027 году
+- Ошибка [16107](#/errors#3-kody-oshibok-dlya-tovarov)
+- Описание типов маркируемой продукции `BEER_ALCOHOL`, `FOOD_SUPPLEMENT`, `LP_CLOTHES`, `LP_LINENS`, `SHOES` для [Товара](#/dictionaries/product#3-tovary), [Комплекта](#/dictionaries/bundle#3-komplekty) и [Вывода из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Описание типов маркируемой продукции `NOT_TRACKED` и `TOBACCO` для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty)
 
 ### 06-04-2026
 **Добавлено**
