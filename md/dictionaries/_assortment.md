@@ -122,6 +122,7 @@ curl --compressed -X GET \
 
 - **`barcode`** — оператор `!=` не поддерживается. Доступные операторы: `=`, `~`, `~=`, `=~`.
 - **Комбинации LIKE-операторов** — несовместимые комбинации для одного поля (например, `code~val1;code~val2`). Доступны только комбинации `~=`, `=~` (например, `code=~val1;code~=val2` или `code~=val1;code=~val2`).
+- доступна фильтрация по доп. полям партии.
 
 #### Ограничения expand
 
@@ -174,6 +175,10 @@ curl --compressed -X GET \
 ##### Фильтрация доп. полей
 
 Подробнее функциональность описана в разделе [Фильтрация по дополнительным полям](#/general#4-filtraciya-po-dopolnitelnym-polyam).
+Также доступна фильтрация по доп. полям партии.
+
+Особенности при фильтрации по доп. полю: 
+ - при фильтре `filter={допполе}=` или `filter={допполе}=false` - будут выведены также сущности у которых доп.поле отсутствует
 
 Примеры фильтрации:
 
@@ -193,6 +198,7 @@ curl --compressed -X GET \
 - `filter=search=див`
 - `filter=https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/b83c12e7-42bf-11ec-0a80-08bb00000161=color`
 - `filter=https://api.moysklad.ru/api/remap/1.2/entity/product/metadata/attributes/83386e05-51c0-11ec-0a83-0640000001bb>=2021-11-30 12:39:00`
+- `filter=https://api.moysklad.ru/api/remap/1.2/entity/consignment/metadata/attributes/83386e05-51c0-11ec-0a83-0640000001bb>=2021-11-30 12:39:00`
 
 
 **Параметры**
