@@ -4,7 +4,7 @@
 
 ### 17-04-2026
 **Добавлено**
-- Ошибка [25036](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
+- Ошибка [25036](#/errors#3-kody-oshibok-dlya-tehnologicheskih-processov)
 
 ### 10-04-2026
 **Добавлено**
