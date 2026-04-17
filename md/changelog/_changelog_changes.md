@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 17-04-2026
+**Добавлено**
+- Ошибка [25036](../#mojsklad-json-api-oshibki-kody-oshibok-dlq-tehnologicheskih-processow)
+
 ### 10-04-2026
 **Добавлено**
 - Ошибка для валидации переполнения групп: [3051](#/errors#3-obshie-oshibki-validacii)
