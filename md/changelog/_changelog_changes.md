@@ -6,7 +6,7 @@
 ### 17-03-2026
 **Добавлено**
 - Сущность `Начисления зарплат` [payroll](#/documents/payroll#2-nachisleniya-zarplaty)
-- Добавлена ошибка [3051](#/errors#3-obshie-oshibki-validacii)
+- Добавлена ошибка [3052](#/errors#3-obshie-oshibki-validacii)
 
 ### 05-03-2026
 **Изменено**
