@@ -2,6 +2,12 @@
 
 Список последних изменений в API Remap 1.2
 
+### 23-04-2026
+**Добавлено**
+- Поле consignor (Грузоотправитель) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Поле shippingDocumentNumber (Номер перевозочного документа) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Поле shippingDocumentDate (Дата перевозочного документа) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+
 ### 10-04-2026
 **Добавлено**
 - Ошибка для валидации переполнения групп: [3051](#/errors#3-obshie-oshibki-validacii)
