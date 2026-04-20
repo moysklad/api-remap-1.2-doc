@@ -47,6 +47,13 @@
         ]
       },
       {
+        "title": "Ассортимент (Deprecated)",
+        "level": 2,
+        "folderPath": "./dictionaries/_assortment_legacy.md",
+        "children": [
+        ]
+      },
+      {
         "title": "Бонусная операция",
         "level": 2,
         "folderPath": "./dictionaries/_bonus_operation.md",

@@ -3,10 +3,37 @@
 Список последних изменений в API Remap 1.2
 
 
-### 17-03-2026
+### 22-04-2026
 **Добавлено**
 - Сущность `Начисления зарплат` [payroll](#/documents/payroll#2-nachisleniya-zarplaty)
 - Добавлена ошибка [3052](#/errors#3-obshie-oshibki-validacii)
+
+### 10-04-2026
+**Добавлено**
+- Ошибка для валидации переполнения групп: [3051](#/errors#3-obshie-oshibki-validacii)
+
+### 07-04-2026
+**Добавлено**
+- Новый эндпоинт [Ассортимент](#/dictionaries/assortment#2-assortiment) облегчённая версия без расчёта остатков
+
+**Изменено**
+- Эндпоинт [Ассортимент](#/dictionaries/assortment-legacy#2-assortiment-deprecated) будет постепенно выведен из эксплуатации в 2027 году
+- Ошибка [16107](#/errors#3-kody-oshibok-dlya-tovarov)
+- Описание типов маркируемой продукции `BEER_ALCOHOL`, `FOOD_SUPPLEMENT`, `LP_CLOTHES`, `LP_LINENS`, `SHOES` для [Товара](#/dictionaries/product#3-tovary), [Комплекта](#/dictionaries/bundle#3-komplekty) и [Вывода из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Описание типов маркируемой продукции `NOT_TRACKED` и `TOBACCO` для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty)
+
+### 06-04-2026
+**Добавлено**
+- Поле связи с документами Отгрузки в [Производственное задание](#/documents/productionTask#4-svyazi-s-drugimi-dokumentami)
+- Поле связи с документами Производственного задания в [Отгрузку](#/documents/demand#4-svyazi-s-drugimi-dokumentami)
+
+### 02-04-2026
+**Добавлено**
+- Новое поле Канал продаж (`salesChannel`) в протоколе change-handler для документов: [Отгрузка](#/documents/demand#2-otgruzka), [Заказ покупателя](#/documents/customerOrder#2-zakaz-pokupatelya), [Счет покупателю](#/documents/invoice-out#2-schet-pokupatelyu) и [Возврат покупателя](#/documents/sales-return#2-vozvrat-pokupatelya)
+
+### 23-03-2026
+**Добавлено**
+- Новый тип маркированной продукции `FURSLP` (Натуральный мех) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty)
 
 ### 05-03-2026
 **Изменено**

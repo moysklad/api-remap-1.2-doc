@@ -890,78 +890,77 @@ curl --compressed -X GET \
  Если не указывать одно из полей, то данное действие будет запрещено к выполнению для данного сотрудника. 
  
  Список пермиссий сущностей
- 
 
-| Название                      | Возможные значения   | Значение по умолчанию                       | Описание                              |
-|-------------------------------|:---------------------|:--------------------------------------------|:--------------------------------------|
-| **GTINList**                  | view, create, delete | Все NO                                      | Список GTIN                           |
-| **accountAdjustment**         | DICTIONARY           | Все ALL                                     | Корректировка остатков на счете       |
-| **bonusTransaction**          | OPERATION            | Все ALL                                     | Бонусные баллы                        |
-| **cashIn**                    | OPERATION            | Все ALL                                     | Приходной ордер                       |
-| **cashOut**                   | OPERATION            | Все ALL                                     | Расходной ордер                       |
-| **cashboxAdjustment**         | DICTIONARY           | Все ALL                                     | Корректировка остатков в кассе        |
-| **commissionReportIn**        | OPERATION            | Все ALL                                     | Полученный отчет комиссионера         |
-| **commissionReportOut**       | OPERATION            | Все ALL                                     | Выданный отчет комиссионер            |
-| **company**                   | DICTIONARY           | Все ALL                                     | Контрагенты                           |
-| **contract**                  | DICTIONARY           | Все ALL                                     | Договоры                              |
-| **counterpartyAdjustment**    | DICTIONARY           | Все ALL                                     | Корректировка взаиморасчетов          |
-| **country**                   | BASE                 | Все ALL                                     | Страны                                |
-| **crptCancellation**          | DICTIONARY           | Все NO                                      | Списание кодов маркировки             |
-| **crptPackageCreation**       | DICTIONARY           | Все NO                                      | Формирование упаковки                 |
-| **crptPackageDisaggregation** | DICTIONARY           | Все NO                                      | Расформирование упаковки              |
-| **crptPackageItemRemoval**    | DICTIONARY           | Все NO                                      | Изъятие из упаковки                   |
-| **currency**                  | BASE                 | Все ALL                                     | Валюты                                |
-| **customEntity**              | BASE                 | Все ALL                                     | Элементы пользовательских справочников |
-| **customerOrder**             | OPERATION            | Все ALL                                     | Заказ покупателям                     |
-| **demand**                    | OPERATION            | Все ALL                                     | Отгрузка                              |
-| **emissionOrder**             | DICTIONARY           | Все NO                                      | Заказ кодов маркировки                |
-| **utilizationReport**         | DICTIONARY           | Все NO                                      | Отчет об использовании                |
-| **atkAggregation**            | DICTIONARY           | Все NO                                      | Формирование АТК                      |
-| **retireOrderOSU**            | DICTIONARY           | Все NO                                      | Вывод из оборота ОСУ                  |
-| **employee**                  | BASE                 | Все ALL                                     | Сотрудники                            |
-| **enrollOrder**               | DICTIONARY           | Все NO                                      | Ввод в оборот кодов маркировки        |
-| **enter**                     | OPERATION            | Все ALL                                     | Оприходование                         |
-| **factureIn**                 | OPERATION            | Все ALL                                     | Счета-фактуры полученные              |
-| **factureOut**                | OPERATION            | Все ALL                                     | Счета-фактуры выданные                |
-| **good**                      | DICTIONARY           | Все ALL                                     | Товары и Услуги                       |
-| **internalOrder**             | OPERATION            | Все ALL                                     | Внутренние заказы                     |
-| **inventory**                 | DICTIONARY           | Все ALL                                     | Инвентаризация                        |
-| **invoiceIn**                 | OPERATION            | Все ALL                                     | Счет поставщику                       |
-| **invoiceOut**                | OPERATION            | Все ALL                                     | Счет покупателям                      |
-| **loss**                      | OPERATION            | Все ALL                                     | Списание                              |
-| **move**                      | OPERATION            | Все ALL                                     | Перемещение                           |
-| **myCompany**                 | BASE                 | view: ALL, create: NO, edit: NO, delete: NO | Юр. Лица                              |
-| **paymentIn**                 | OPERATION            | Все ALL                                     | Входящий платеж                       |
-| **paymentOut**                | OPERATION            | Все ALL                                     | Исходящий платеж                      |
-| **prepayment**                | OPERATION            | Все ALL                                     | Предоплаты                            |
-| **prepaymentReturn**          | OPERATION            | Все ALL                                     | Возврат предоплаты                    |
-| **priceList**                 | OPERATION            | Все ALL                                     | Прайс-лист                            |
-| **processing**                | BASE                 | Все ALL                                     | Техоперации                           |
-| **processingOrder**           | OPERATION            | Все ALL                                     | Заказ на производство                 |
-| **processingPlan**            | BASE                 | Все ALL                                     | Техкарты                              |
-| **processingStage**           | BASE                 | Все ALL                                     | Этапы производства                    |
-| **processingProcess**         | BASE                 | Все ALL                                     | Техпроцессы                           |
-| **productionTask**            | OPERATION            | Все ALL                                     | Производственные задания              |
-| **productionStageCompletion** | DICTIONARY           | Все ALL                                     | Выполнение этапов                     |
-| **project**                   | BASE                 | Все ALL                                     | Проекты                               |
-| **purchaseOrder**             | OPERATION            | Все ALL                                     | Заказ поставщикам                     |
-| **purchaseReturn**            | OPERATION            | Все ALL                                     | Возврат поставщику                    |
-| **remainsOrder**              | DICTIONARY           | Все NO                                      | Описание остатков                     |
-| **remarkingOrder**            | DICTIONARY           | Все NO                                      | Перемаркировка                        |
-| **retailDemand**              | OPERATION            | Все ALL                                     | Продажи                               |
-| **retailDrawerCashIn**        | OPERATION            | Все ALL                                     | Внесения                              |
-| **retailDrawerCashOut**       | OPERATION            | Все ALL                                     | Выплаты                               |
-| **retailSalesReturn**         | OPERATION            | Все ALL                                     | Возвраты                              |
-| **retailShift**               | DICTIONARY           | Все ALL                                     | Смены                                 |
-| **retailStore**               | BASE                 | Все ALL                                     | Точка продаж                          |
-| **retireOrder**               | DICTIONARY           | Все NO                                      | Вывод из оборота                      |
-| **salesReturn**               | OPERATION            | Все ALL                                     | Возврат покупателя                    |
-| **supply**                    | OPERATION            | Все ALL                                     | Приемки                               |
-| **taxrate**                   | BASE                 | Все ALL                                     | Ставки НДС                            |
-| **trackingCodeList**          | view, print          | Все NO                                      | Коды маркировки                       |
-| **uom**                       | BASE                 | Все ALL                                     | Единицы измерения                     |
-| **warehouse**                 | BASE                 | Все ALL                                     | Склады                                |
-| **salesChannel**              | BASE                 | Все ALL                                     | Канал продаж                          |
+| Название                      | Возможные значения   | Значение по умолчанию                       | Описание                                                                                              |
+|-------------------------------|:---------------------|:--------------------------------------------|:------------------------------------------------------------------------------------------------------|
+| **GTINList**                  | view, create, delete | Все NO                                      | Список GTIN                                                                                           |
+| **accountAdjustment**         | DICTIONARY           | Все ALL                                     | Корректировка остатков на счете                                                                       |
+| **bonusTransaction**          | OPERATION            | Все ALL                                     | [Бонусные баллы](#/dictionaries/bonus-operation#2-bonusnaya-operaciya)                                |
+| **cashIn**                    | OPERATION            | Все ALL                                     | [Приходной ордер](#/documents/cashin#2-prihodnyj-order)                                               |
+| **cashOut**                   | OPERATION            | Все ALL                                     | [Расходной ордер](#/documents/cashout#2-rashodnyj-order)                                              |
+| **cashboxAdjustment**         | DICTIONARY           | Все ALL                                     | Корректировка остатков в кассе                                                                        |
+| **commissionReportIn**        | OPERATION            | Все ALL                                     | [Полученный отчет комиссионера](#/documents/commissionreportin#2-poluchennyj-otchet-komissionera)     |
+| **commissionReportOut**       | OPERATION            | Все ALL                                     | [Выданный отчет комиссионера](#/documents/commissionreportout#2-vydannyj-otchet-komissionera)         |
+| **company**                   | DICTIONARY           | Все ALL                                     | [Контрагенты](#/dictionaries/counterparty#2-kontragent)                                               |
+| **contract**                  | DICTIONARY           | Все ALL                                     | [Договоры](#/dictionaries/contract#2-dogovor)                                                         |
+| **counterpartyAdjustment**    | DICTIONARY           | Все ALL                                     | [Корректировка взаиморасчетов](#/documents/counterpartyadjustment#2-korrektirovka-vzaimoraschetov)    |
+| **country**                   | BASE                 | Все ALL                                     | [Страны](#/dictionaries/country#2-strana)                                                             |
+| **crptCancellation**          | DICTIONARY           | Все NO                                      | Списание кодов маркировки                                                                             |
+| **crptPackageCreation**       | DICTIONARY           | Все NO                                      | Формирование упаковки                                                                                 |
+| **crptPackageDisaggregation** | DICTIONARY           | Все NO                                      | Расформирование упаковки                                                                              |
+| **crptPackageItemRemoval**    | DICTIONARY           | Все NO                                      | Изъятие из упаковки                                                                                   |
+| **currency**                  | BASE                 | Все ALL                                     | [Валюты](#/dictionaries/currency#2-valyuta)                                                           |
+| **customEntity**              | BASE                 | Все ALL                                     | [Элементы пользовательских справочников](#/dictionaries/customentity#2-polzovatelskij-spravochnik)    |
+| **customerOrder**             | OPERATION            | Все ALL                                     | [Заказ покупателям](#/documents/customerOrder#2-zakaz-pokupatelya)                                    |
+| **demand**                    | OPERATION            | Все ALL                                     | [Отгрузка](#/documents/demand#2-otgruzka)                                                             |
+| **emissionOrder**             | DICTIONARY           | Все NO                                      | [Заказ кодов маркировки](#/documents/emissionorder#2-zakaz-kodov-markirovki)                          |
+| **utilizationReport**         | DICTIONARY           | Все NO                                      | Отчет об использовании                                                                                |
+| **atkAggregation**            | DICTIONARY           | Все NO                                      | Формирование АТК                                                                                      |
+| **retireOrderOSU**            | DICTIONARY           | Все NO                                      | Вывод из оборота ОСУ                                                                                  |
+| **employee**                  | BASE                 | Все ALL                                     | [Сотрудники](#/dictionaries/employee#2-sotrudnik)                                                     |
+| **enrollOrder**               | DICTIONARY           | Все NO                                      | Ввод в оборот кодов маркировки                                                                        |
+| **enter**                     | OPERATION            | Все ALL                                     | [Оприходование](#/documents/enter#2-oprihodovanie)                                                    |
+| **factureIn**                 | OPERATION            | Все ALL                                     | [Счета-фактуры полученные](#/documents/facturein#2-schet-faktura-poluchennyj)                         |
+| **factureOut**                | OPERATION            | Все ALL                                     | [Счета-фактуры выданные](#/documents/factureout#2-schet-faktura-vydannyj)                             |
+| **good**                      | DICTIONARY           | Все ALL                                     | [Товары и Услуги](#/dictionaries/product#2-tovar)                                                     |
+| **internalOrder**             | OPERATION            | Все ALL                                     | [Внутренние заказы](#/documents/internalOrder#2-vnutrennij-zakaz)                                     |
+| **inventory**                 | DICTIONARY           | Все ALL                                     | [Инвентаризация](#/documents/inventory#2-inventarizaciya)                                             |
+| **invoiceIn**                 | OPERATION            | Все ALL                                     | [Счет поставщику](#/documents/invoice-in#2-schet-postavshika)                                         |
+| **invoiceOut**                | OPERATION            | Все ALL                                     | [Счет покупателям](#/documents/invoice-out#2-schet-pokupatelyu)                                       |
+| **loss**                      | OPERATION            | Все ALL                                     | [Списание](#/documents/loss#2-spisanie)                                                               |
+| **move**                      | OPERATION            | Все ALL                                     | [Перемещение](#/documents/move#2-peremeshenie)                                                        |
+| **myCompany**                 | BASE                 | view: ALL, create: NO, edit: NO, delete: NO | [Юр. Лица](#/dictionaries/organization#2-yurlico)                                                     |
+| **paymentIn**                 | OPERATION            | Все ALL                                     | [Входящий платеж](#/documents/payment-in#2-vhodyashij-platezh)                                        |
+| **paymentOut**                | OPERATION            | Все ALL                                     | [Исходящий платеж](#/documents/payment-out#2-ishodyashij-platezh)                                     |
+| **prepayment**                | OPERATION            | Все ALL                                     | [Предоплаты](#/documents/prepayment#2-predoplata)                                                     |
+| **prepaymentReturn**          | OPERATION            | Все ALL                                     | [Возврат предоплаты](#/documents/prepayment-return#2-vozvrat-predoplaty)                              |
+| **priceList**                 | OPERATION            | Все ALL                                     | [Прайс-лист](#/documents/pricelist#2-prajs-list)                                                      |
+| **processing**                | BASE                 | Все ALL                                     | [Техоперации](#/documents/processing#2-tehoperaciya)                                                  |
+| **processingOrder**           | OPERATION            | Все ALL                                     | [Заказ на производство](#/documents/processingorder#2-zakaz-na-proizvodstvo)                          |
+| **processingPlan**            | BASE                 | Все ALL                                     | [Техкарты](#/dictionaries/processingplan#2-tehkarta)                                                  |
+| **processingStage**           | BASE                 | Все ALL                                     | [Этапы производства](#/dictionaries/processingstage#2-etap-proizvodstva)                              |
+| **processingProcess**         | BASE                 | Все ALL                                     | [Техпроцессы](#/dictionaries/processingprocess#2-tehprocess)                                          |
+| **productionTask**            | OPERATION            | Все ALL                                     | [Производственные задания](#/documents/productionTask#2-proizvodstvennoe-zadanie)                     |
+| **productionStageCompletion** | DICTIONARY           | Все ALL                                     | [Выполнение этапов](#/documents/productionStageCompletion#2-vypolnenie-etapa-proizvodstva)            |
+| **project**                   | BASE                 | Все ALL                                     | [Проекты](#/dictionaries/project#2-proekt)                                                            |
+| **purchaseOrder**             | OPERATION            | Все ALL                                     | [Заказ поставщикам](#/documents/purchaseOrder#2-zakaz-postavshiku)                                    |
+| **purchaseReturn**            | OPERATION            | Все ALL                                     | [Возврат поставщику](#/documents/purchase-return#2-vozvrat-postavshiku)                               |
+| **remainsOrder**              | DICTIONARY           | Все NO                                      | Описание остатков                                                                                     |
+| **remarkingOrder**            | DICTIONARY           | Все NO                                      | Перемаркировка                                                                                        |
+| **retailDemand**              | OPERATION            | Все ALL                                     | [Продажи](#/documents/retaildemand#2-roznichnaya-prodazha)                                            |
+| **retailDrawerCashIn**        | OPERATION            | Все ALL                                     | [Внесения](#/documents/retaildrawercashin#2-vnesenie-deneg)                                           |
+| **retailDrawerCashOut**       | OPERATION            | Все ALL                                     | [Выплаты](#/documents/retaildrawercashout#2-vyplata-deneg)                                            |
+| **retailSalesReturn**         | OPERATION            | Все ALL                                     | [Возвраты](#/documents/retail-sales-return#2-roznichnyj-vozvrat)                                      |
+| **retailShift**               | DICTIONARY           | Все ALL                                     | [Смены](#/documents/retailshift#2-roznichnaya-smena)                                                  |
+| **retailStore**               | BASE                 | Все ALL                                     | [Точка продаж](#/dictionaries/retailstore#2-tochka-prodazh)                                           |
+| **retireOrder**               | DICTIONARY           | Все NO                                      | [Вывод из оборота](#/documents/retireorder#2-vyvod-kodov-markirovki-iz-oborota)                       |
+| **salesReturn**               | OPERATION            | Все ALL                                     | [Возврат покупателя](#/documents/sales-return#2-vozvrat-pokupatelya)                                  |
+| **supply**                    | OPERATION            | Все ALL                                     | [Приемки](#/documents/supply#2-priemka)                                                               |
+| **taxrate**                   | BASE                 | Все ALL                                     | [Ставки НДС](#/dictionaries/taxrate#2-stavka-nds)                                                     |
+| **trackingCodeList**          | view, print          | Все NO                                      | [Коды маркировки](#/dictionaries/tracking-code#2-kody-markirovki)                                     |
+| **uom**                       | BASE                 | Все ALL                                     | [Единицы измерения](#/dictionaries/uom#2-edinica-izmereniya)                                          |
+| **warehouse**                 | BASE                 | Все ALL                                     | [Склады](#/dictionaries/store#2-sklad)                                                                |
+| **salesChannel**              | BASE                 | Все ALL                                     | [Канал продаж](#/dictionaries/saleschannel#2-kanal-prodazh)                                           |
 
 Для пермиссий `currency`, `country`, `taxrate` и `uom` значение `view` не изменяемое и равно `ALL`. При попытке изменить значение `view`
  для данных пермиссий, будет возвращена ошибка.
