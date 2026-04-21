@@ -2,9 +2,9 @@
 
 Список последних изменений в API Remap 1.2
 
-### 17-04-2026
+### 21-04-2026
 **Добавлено**
-- Ошибка валидации этапа производства: [25036](#/errors#3-kody-oshibok-dlya-tehnologicheskih-processov)
+- Ошибка валидации этапа производства: [25101](#/errors#3-kody-oshibok-dlya-tehnologicheskih-processov)
 
 ### 10-04-2026
 **Добавлено**
