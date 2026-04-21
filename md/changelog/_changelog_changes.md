@@ -4,7 +4,7 @@
 
 ### 21-04-2026
 **Добавлено**
-- Ошибка валидации этапа производства: [25101](#/errors#3-kody-oshibok-dlya-tehnologicheskih-processov)
+- Ошибка валидации этапа производства: [25101](#/errors#3-kody-oshibok-dlya-etapov-proizvodstva)
 
 ### 10-04-2026
 **Добавлено**
