@@ -3,7 +3,7 @@
 Список последних изменений в API Remap 1.2
 
 
-### 22-04-2026
+### 23-04-2026
 **Добавлено**
 - Сущность `Начисления зарплат` [payroll](#/documents/payroll#2-nachisleniya-zarplaty)
 - Добавлена ошибка [3052](#/errors#3-obshie-oshibki-validacii)
