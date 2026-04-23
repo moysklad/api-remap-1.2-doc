@@ -40,6 +40,10 @@
 **Изменено**
 - Способ вывода из оборота `MEDICAL_USE` (Использование для медицинского применения) теперь доступен только для типа маркированной продукции `MEDICAL_DEVICES` (Медизделия и кресла-коляски) в документе [Вывод из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
 
+### 27-02-2026
+**Изменено**
+- Подсчет поля `balance` в валюте счета у документа [Остатки денежных средств](#/reports/report-money#3-ostatki-denezhnyh-sredstv)
+
 ### 25-02-2026
 **Добавлена**
 - Возможность чтения поля `expenseItem` у документа [Списание](#/documents/loss#2-spisanie)
