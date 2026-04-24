@@ -3,20 +3,20 @@
 Список последних изменений в API Remap 1.2
 
 
-### 23-04-2026
-**Добавлено**
-- Сущность `Начисления зарплат` [payroll](#/documents/payroll#2-nachisleniya-zarplaty)
-- Добавлена ошибка [3052](#/errors#3-obshie-oshibki-validacii)
-
 ### 24-04-2026
 **Добавлено**
 - Поле `currency` с валютой расчетного счета в счетах юрлица, возвращаемое в ответах [Юрлица](#/dictionaries/organization#2-yurlico) (раздел «Счета юрлица»).
-- Ошибка [72000](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov) при сохранении расчетных счетов должен быть хотя бы один счет в валюте учета
+- Ошибка [72000](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov) при сохранении расчетных счетов: должен быть хотя бы один счет в валюте учета
 - Ошибка [4004](#/errors#3-kody-oshibok-dlya-tochek-prodazh) при сохранении сущностей (в т.ч. [точки продаж](#/dictionaries/retailstore#2-tochka-prodazh)), если у выбранной организации основной расчётный счёт не в валюте учёта
 - Ошибка [22004](#/errors#3-kody-oshibok-dlya-platezhej) при сохранении [входящего](#/documents/payment-in#2-vhodyashij-platezh) и [исходящего](#/documents/payment-out#2-ishodyashij-platezh) платежа, если валюта документа не совпадает с валютой счёта организации
 
 **Изменено**
 - Подсчет поля `balance` в валюте счета у документа [Остатки денежных средств](#/reports/report-money#3-ostatki-denezhnyh-sredstv)
+
+### 23-04-2026
+**Добавлено**
+- Сущность `Начисления зарплат` [payroll](#/documents/payroll#2-nachisleniya-zarplaty)
+- Добавлена ошибка [3052](#/errors#3-obshie-oshibki-validacii)
 
 ### 10-04-2026
 **Добавлено**
