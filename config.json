@@ -565,6 +565,13 @@
         ]
       },
       {
+        "title": "Начисления зарплаты",
+        "level": 2,
+        "folderPath": "./documents/_payroll.md",
+        "children": [
+        ]
+      },
+      {
         "title": "Оприходование",
         "level": 2,
         "folderPath": "./documents/_enter.md",

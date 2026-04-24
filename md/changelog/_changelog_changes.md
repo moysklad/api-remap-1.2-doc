@@ -2,6 +2,12 @@
 
 Список последних изменений в API Remap 1.2
 
+
+### 23-04-2026
+**Добавлено**
+- Сущность `Начисления зарплат` [payroll](#/documents/payroll#2-nachisleniya-zarplaty)
+- Добавлена ошибка [3052](#/errors#3-obshie-oshibki-validacii)
+
 ### 24-04-2026
 **Добавлено**
 - Поле `currency` с валютой расчетного счета в счетах юрлица, возвращаемое в ответах [Юрлица](#/dictionaries/organization#2-yurlico) (раздел «Счета юрлица»).
