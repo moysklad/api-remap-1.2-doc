@@ -2,6 +2,11 @@
 
 Список последних изменений в API Remap 1.2
 
+### 24-04-2026
+**Добавлено**
+- Ошибка [4004](#/errors#3-kody-oshibok-dlya-tochek-prodazh) при сохранении сущностей (в т.ч. [точки продаж](#/dictionaries/retailstore#2-tochka-prodazh)), если у выбранной организации основной расчётный счёт не в валюте учёта
+- Ошибка [22004](#/errors#3-kody-oshibok-dlya-platezhej) при сохранении [входящего](#/documents/payment-in#2-vhodyashij-platezh) и [исходящего](#/documents/payment-out#2-ishodyashij-platezh) платежа, если валюта документа не совпадает с валютой счёта организации
+
 ### 10-04-2026
 **Добавлено**
 - Ошибка для валидации переполнения групп: [3051](#/errors#3-obshie-oshibki-validacii)
