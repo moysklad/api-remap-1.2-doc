@@ -54,7 +54,7 @@
 Запрос Выполнений этапов производства на аккаунте.
 
 При получении списка Выполнений этапов можно передать фильтр на конкретное производственное задание:  
-`filter=productionTask=https://api.moysklad.ru/api/remap/1.2/entity/productionTask/&lt;id>`.
+`filter=productionTask=https://api.moysklad.ru/api/remap/1.2/entity/productionTask/<id>`.
 
 Результат: Объект JSON, включающий в себя поля:
 
