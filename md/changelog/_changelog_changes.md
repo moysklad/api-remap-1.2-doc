@@ -4,8 +4,13 @@
 
 ### 24-04-2026
 **Добавлено**
+- Поле `currency` с валютой расчетного счета в счетах юрлица, возвращаемое в ответах [Юрлица](#/dictionaries/organization#2-yurlico) (раздел «Счета юрлица»).
+- Ошибка [72000](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov) при сохранении расчетных счетов должен быть хотя бы один счет в валюте учета
 - Ошибка [4004](#/errors#3-kody-oshibok-dlya-tochek-prodazh) при сохранении сущностей (в т.ч. [точки продаж](#/dictionaries/retailstore#2-tochka-prodazh)), если у выбранной организации основной расчётный счёт не в валюте учёта
 - Ошибка [22004](#/errors#3-kody-oshibok-dlya-platezhej) при сохранении [входящего](#/documents/payment-in#2-vhodyashij-platezh) и [исходящего](#/documents/payment-out#2-ishodyashij-platezh) платежа, если валюта документа не совпадает с валютой счёта организации
+
+**Изменено**
+- Подсчет поля `balance` в валюте счета у документа [Остатки денежных средств](#/reports/report-money#3-ostatki-denezhnyh-sredstv)
 
 ### 10-04-2026
 **Добавлено**
@@ -44,10 +49,6 @@
 
 **Изменено**
 - Способ вывода из оборота `MEDICAL_USE` (Использование для медицинского применения) теперь доступен только для типа маркированной продукции `MEDICAL_DEVICES` (Медизделия и кресла-коляски) в документе [Вывод из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
-
-### 27-02-2026
-**Изменено**
-- Подсчет поля `balance` в валюте счета у документа [Остатки денежных средств](#/reports/report-money#3-ostatki-denezhnyh-sredstv)
 
 ### 25-02-2026
 **Добавлена**
@@ -88,11 +89,6 @@
 - Тип маркируемой продукции `NABEER` (Безалкогольное пиво) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
 - Способы вывода `OTHER_TYPE` (Другое) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii) для типа маркируемой продукции `NABEER`
 - Поле `reasonDescription` (Описание причины) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
-
-### 23-01-2026
-**Добавлено**
-- Поле `currency` с валютой расчетного счета в счетах юрлица, возвращаемое в ответах [Юрлица](#/dictionaries/organization#2-yurlico) (раздел «Счета юрлица»).
-- Код ошибки для расчетных счетов: [72000](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov)
 
 ### 15-01-2026
 **Добавлено**
