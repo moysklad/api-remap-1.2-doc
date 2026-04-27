@@ -1296,12 +1296,12 @@ curl --compressed -X POST \
 
 Пример ссылки:
 
-+ `https://api.moysklad.ru/api/remap/1.2/entity/&lt;type>/&lt;id>`
++ `https://api.moysklad.ru/api/remap/1.2/entity/<type>/<id>`
 
 Вот несколько примеров:
 
-+ `filter=agent=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/&lt;id>`
-+ `filter=ownAgent=https://api.moysklad.ru/api/remap/1.2/entity/organization/&lt;id>`
++ `filter=agent=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/<id>`
++ `filter=ownAgent=https://api.moysklad.ru/api/remap/1.2/entity/organization/<id>`
 
 Ссылочные поля, доступные для фильтрации:
 
@@ -1330,7 +1330,7 @@ curl --compressed -X POST \
 
 С помощью filter можно фильтровать поля типа ID.
 
-+ `filter=<имя_поля>=&lt;ID>`
++ `filter=<имя_поля>=<ID>`
 
 Пример ID:
 
@@ -1349,15 +1349,15 @@ curl --compressed -X POST \
 
 | Название         | Тип поля value в JSON  | Значение поля type в JSON | Описание                                                                                                                              |
 | ---------------- | ---------------------- |---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Дата**         | string                 | time                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `&lt;val`, `>val`,  `>=val`, `<=val`, `>=val;<=val2`  |
+| **Дата**         | string                 | time                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `<val`, `>val`,  `>=val`, `<=val`, `>=val;<=val2`  |
 | **Справочник**   | object                 | {entityType}              | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`                                                        |
 | **Ссылка**       | string                 | link                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `~=val`, `=~val`                                                 |
 | **Строка**       | string                 | string                    | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `~=val`, `=~val`                                                 |
 | **Текст**        | string                 | text                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `~=val`, `=~val`                                                 |
 | **Файл**         | string                 | file                      | Фильтрация не поддерживается                                                                                                          |
 | **Флажок**       | boolean                | boolean                   | `=true`, `=false`, `!=true`, `!=false`                                                                                                                     |
-| **Число дробное**| number                 | double                    | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `&lt;val`, `>val`, `>=val`, `<=val`, `>=val;<=val2`   |
-| **Число целое**  | number                 | long                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `&lt;val`, `>val`, `>=val`, `<=val`, `>=val;<=val2`   |
+| **Число дробное**| number                 | double                    | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `<val`, `>val`, `>=val`, `<=val`, `>=val;<=val2`   |
+| **Число целое**  | number                 | long                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `<val`, `>val`, `>=val`, `<=val`, `>=val;<=val2`   |
 
 `=val` - фильтрация по значению <br>
 `=` - фильтрация по пустому значению <br>
