@@ -511,6 +511,7 @@ curl --compressed -X GET \
 | **GROCERY**                                                     | RETAIL_SALE, BY_SAMPLES, DISTANCE, DONATION, OWN_USE, PRODUCTION_USE, CONFISCATE_SALE, OTHER_TYPE, UTILIZATION, DESTRUCTION, DAMAGE_AND_LOSS, EXPIRATION, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU                                                                               |
 | **CHEMISTRY**                                                   | RETAIL_SALE, BY_SAMPLES, DISTANCE, VENDING, PACKING, OWN_USE, PRODUCTION_USE, DONATION, STATE_SECRET, STATE_CONTRACT, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, RETURN_TO_INDIVIDUAL, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, OTHER_TYPE, UTILIZATION, RECALL, EXPIRATION |
 | **TOBACCO, OTP, NCP**                                           | RETAIL_SALE, OWN_USE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, OTHER_TYPE, UTILIZATION, RECALL, STATE_CONTRACT, STATE_SECRET                                                                                                     |
+
 Связь допустимых значений поля **supportingTransaction** в зависимости от **retireOrderType**
 
 | **retireOrderType**      | **supportingTransaction**                            |
