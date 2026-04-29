@@ -530,8 +530,9 @@ curl --compressed -X GET \
 
 Если при создании юрлица в теле запроса передается поле **accounts** с массивом расчетных счетов, действуют дополнительные правила:
 
-- хотя бы один из переданных расчетных счетов должен быть в валюте учета компании; при отсутствии такого счета создание завершится ошибкой;
-- после создания расчетного счета его валюту (поле `currency`) изменить нельзя — при попытке изменить метаданные валюты счета сервер вернет ошибку.
+- хотя бы один из переданных расчетных счетов должен быть в валюте учета компании; при отсутствии такого счета создание завершится ошибкой [72000](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov);
+- если у создаваемого расчетного счета не передано поле `currency`, счет будет создан в валюте учета компании;
+- после создания расчетного счета его валюту (поле `currency`) изменить нельзя — при попытке изменить метаданные валюты счета сервер вернет ошибку [3001](#/errors#3-obshie-oshibki-validacii).
 
 > Пример создания нового юрлица.
 
@@ -816,6 +817,17 @@ curl --compressed -X GET \
             "currency": {
                 "meta": {
                     "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+                    "type": "currency",
+                    "mediaType": "application/json"
+                }
+            }
+        },
+        {
+            "accountNumber" : "1234567890",
+            "currency": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/79b17fec-ceff-11ee-0a83-00490000009d",
                     "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
                     "type": "currency",
                     "mediaType": "application/json"
@@ -2131,14 +2143,6 @@ curl --compressed -X GET \
       "updated": "2016-04-18 17:53:21",
       "isDefault": true,
       "accountNumber": "40702810100000000001",
-      "agent": {
-        "meta": {
-          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/4b9d5bec-0575-11e6-9464-e4de00000008",
-          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-          "type": "organization",
-          "mediaType": "application/json"
-        }
-      },
       "currency": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
@@ -2192,14 +2196,6 @@ curl --compressed -X GET \
   "bankLocation": "г Москва",
   "correspondentAccount": "30101810400000000225",
   "bic": "044525225",
-  "agent": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/4b9d5bec-0575-11e6-9464-e4de00000008",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-      "type": "organization",
-      "mediaType": "application/json"
-    }
-  },
   "currency": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
@@ -2261,14 +2257,6 @@ curl --compressed -X PUT \
   "bankLocation": "г Москва",
   "correspondentAccount": "30101810400000000225",
   "bic": "044525225",
-  "agent": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/4b9d5bec-0575-11e6-9464-e4de00000008",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-      "type": "organization",
-      "mediaType": "application/json"
-    }
-  },
   "currency": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/0f5fbe16-ceff-11ee-0a83-00490000009d",
