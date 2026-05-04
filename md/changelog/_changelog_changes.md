@@ -3,6 +3,10 @@
 Список последних изменений в API Remap 1.2
 
 
+### 04-05-2026
+**Добавлено**
+- Новые адресные поля (`shipmentAddress` и `shipmentAddressFull`) в протоколе update-provider в [Заказе покупателя](#/documents/customerOrder#2-zakaz-pokupatelya)
+
 ### 23-04-2026
 **Добавлено**
 - Сущность `Начисления зарплат` [payroll](#/documents/payroll#2-nachisleniya-zarplaty)
