@@ -2346,7 +2346,16 @@ curl --compressed -X PUT \
     "bankName": "ОАО Сбербанк",
     "bankLocation": "г Москва",
     "correspondentAccount": "123141242451",
-    "bic": "21412hhhh4"
+    "bic": "21412hhhh4",
+    "currency": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/f12530fb-9f97-4ba9-9103-7ea6e4573774",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=f12530fb-9f97-4ba9-9103-7ea6e4573774"
+      }
+    }
   },
   {
     "meta": {
