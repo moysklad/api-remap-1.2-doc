@@ -404,6 +404,13 @@
         ]
       },
       {
+        "title": "Подразделение юридического лица",
+        "level": 2,
+        "folderPath": "./dictionaries/_organizationbranch.md",
+        "children": [
+        ]
+      },
+      {
         "title": "Этап производства",
         "level": 2,
         "folderPath": "./dictionaries/_processingstage.md",
