@@ -71,7 +71,7 @@
 | **limit**         | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
 | **offset**        | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
 
-> Получить список Событий для Заказа покупателя
+> Получить список Событий Заказа покупателя
 
 ```shell
 curl --compressed -X GET \
@@ -148,57 +148,6 @@ curl --compressed -X GET \
 }
 ```
 
-### Добавить Событие
-
-Запрос на добавление События документа для данной учетной записи.
-
-**Параметры**
-
-| Параметр          | Описание                                                                                                          |
-|-------------------|:------------------------------------------------------------------------------------------------------------------|
-| **document_type** | `string` (required) *Example: customerorder* тип документа, для которого создается Событие.                       |
-| **document_id**   | `string` (required) *Example: e4609c69-00bc-11ef-ac12-00120000001a* id документа, для которого создается Событие. |
-
-> Запрос на добавление нового события для Заказа покупателя.
-
-```shell
-curl --compressed -X POST \
-  "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes" \
-  -H "Authorization: Basic <Credentials>" \
-  -H "Accept-Encoding: gzip" \
-  -H "Content-Type: application/json" \
-    -d '{
-          "description": "Привет, {{employee;730c1b3d-00ba-11ef-ac12-00120000000d}}! Как у тебя дела?"
-        }'  
-```
-
-> Response 201 (application/json). Успешный запрос. Результат - JSON представление добавленного События.
-
-```json
-[
-  {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes/844a0ef9-19ac-11ef-ac12-000b00000000",
-      "type": "eventnote",
-      "mediaType": "application/json"
-    },
-    "id": "844a0ef9-19ac-11ef-ac12-000b00000000",
-    "accountId": "85284e22-f1b3-11ee-ac12-000f00000001",
-    "created": "2024-05-24 12:03:40.849",
-    "description": "Привет, {{employee;730c1b3d-00ba-11ef-ac12-00120000000d}}! Как у тебя дела?",
-    "author": {
-      "meta": {
-        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/861d34a9-f1b3-11ee-ac12-00110000004e",
-        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-        "type": "employee",
-        "mediaType": "application/json",
-        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=861d34a9-f1b3-11ee-ac12-00110000004e"
-      }
-    }
-  }
-]
-```
-
 ### Получить Событие
 Запрос на получение одного События документа для данной учетной записи.
 
@@ -243,6 +192,57 @@ curl --compressed -X GET \
     }
   }
 }
+```
+
+### Добавить Событие
+
+Запрос на добавление События документа для данной учетной записи.
+
+**Параметры**
+
+| Параметр          | Описание                                                                                                          |
+|-------------------|:------------------------------------------------------------------------------------------------------------------|
+| **document_type** | `string` (required) *Example: customerorder* тип документа, для которого создается Событие.                       |
+| **document_id**   | `string` (required) *Example: e4609c69-00bc-11ef-ac12-00120000001a* id документа, для которого создается Событие. |
+
+> Добавить новое Событие Заказа покупателя.
+
+```shell
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+    -d '{
+          "description": "Привет, {{employee;730c1b3d-00ba-11ef-ac12-00120000000d}}! Как у тебя дела?"
+        }'  
+```
+
+> Response 201 (application/json). Успешный запрос. Результат - JSON представление добавленного События.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes/844a0ef9-19ac-11ef-ac12-000b00000000",
+      "type": "eventnote",
+      "mediaType": "application/json"
+    },
+    "id": "844a0ef9-19ac-11ef-ac12-000b00000000",
+    "accountId": "85284e22-f1b3-11ee-ac12-000f00000001",
+    "created": "2024-05-24 12:03:40.849",
+    "description": "Привет, {{employee;730c1b3d-00ba-11ef-ac12-00120000000d}}! Как у тебя дела?",
+    "author": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/861d34a9-f1b3-11ee-ac12-00110000004e",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=861d34a9-f1b3-11ee-ac12-00110000004e"
+      }
+    }
+  }
+]
 ```
 
 ### Обновить Событие
@@ -296,6 +296,83 @@ curl --compressed -X PUT \
 }
 ```
 
+### Массовое создание и обновление Событий
+
+[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Событий.
+В теле запроса нужно передать массив, содержащий JSON представления Событий, которые вы хотите создать или обновить.
+Обновляемые События должны содержать идентификатор в виде метаданных.
+
+> Создать и обновить несколько Событий Заказа Покупателя
+
+```shell
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
+      -d '[
+            {
+              "description": "Привет, {{employee;730c1b3d-00ba-11ef-ac12-00120000000d}}! Это новое Событие"
+            },
+            {
+              "description": "Привет, {{employee;730c1b3d-00ba-11ef-ac12-00120000000d}}! Это обновленное Событие",
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes/844a0ef9-19ac-11ef-ac12-000b00000000",
+                "type": "eventnote",
+                "mediaType": "application/json"
+              }
+            }
+          ]'  
+```
+
+> Response 200 (application/json)
+> Успешный запрос. Результат — массив JSON представлений созданных и обновленных Событий.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes/c49d7517-5b69-40dc-9254-6721f72a860a",
+      "type": "eventnote",
+      "mediaType": "application/json"
+    },
+    "id": "c49d7517-5b69-40dc-9254-6721f72a860a",
+    "accountId": "85284e22-f1b3-11ee-ac12-000f00000001",
+    "created": "2026-05-07 12:03:40.849",
+    "description": "Привет, {{employee;730c1b3d-00ba-11ef-ac12-00120000000d}}! Это новое Событие",
+    "author": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/861d34a9-f1b3-11ee-ac12-00110000004e",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=861d34a9-f1b3-11ee-ac12-00110000004e"
+      }
+    }
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes/844a0ef9-19ac-11ef-ac12-000b00000000",
+      "type": "eventnote",
+      "mediaType": "application/json"
+    },
+    "id": "844a0ef9-19ac-11ef-ac12-000b00000000",
+    "accountId": "85284e22-f1b3-11ee-ac12-000f00000001",
+    "created": "2024-05-24 12:03:40.849",
+    "description": "Привет, {{employee;730c1b3d-00ba-11ef-ac12-00120000000d}}! Это обновленное Событие",
+    "author": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/861d34a9-f1b3-11ee-ac12-00110000004e",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=861d34a9-f1b3-11ee-ac12-00110000004e"
+      }
+    }
+  }
+]
+```
+
 ### Удалить Событие
 
 Запрос на удаление одного События документа для данной учетной записи.
@@ -320,12 +397,12 @@ curl --compressed -X DELETE \
 > Response 204 (application/json)
 > Успешное удаление События.
 
-### Массовое удаление Событий через JSON API
+### Массовое удаление Событий
 
 Для удаления сразу нескольких Событий нужно выполнить следующий POST-запрос, указав в теле метаданные удаляемых
 сущностей:
 
-> Запрос
+> Удалить несколько Событий Заказа Покупателя
 
 ```shell
 curl --compressed -X POST \

@@ -4,8 +4,8 @@
 
 ### 27-04-2026
 **Добавлено**
-- Массовые операции [создания/обновления](#/dictionaries/eventfeed#3-dobavit-sobytie) в Ленте Событий
-- Массовые операции [удаления](#/dictionaries/eventfeed#3-massovoe-udalenie-sobytij-cherez-json-api) в Ленте Событий
+- Массовые операции [создания/обновления](#/dictionaries/eventfeed#3-massovoe-sozdanie-i-obnovlenie-sobytij) в Ленте Событий
+- Массовые операции [удаления](#/dictionaries/eventfeed#3-massovoe-udalenie-sobytij) в Ленте Событий
 
 ### 23-04-2026
 **Добавлено**
