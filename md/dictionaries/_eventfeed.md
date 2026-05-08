@@ -325,7 +325,7 @@ curl --compressed -X PUT \
           ]'  
 ```
 
-> Response 200 (application/json)
+> Response 201 (application/json)
 > Успешный запрос. Результат — массив JSON представлений созданных и обновленных Событий.
 
 ```json
