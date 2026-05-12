@@ -9,25 +9,26 @@
 
 ### Подразделения юридического лица
 
-| Название         | Тип                                                       | Фильтрация                  | Описание                                                                                                                         |
-|------------------|:----------------------------------------------------------|:----------------------------|:---------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**    | UUID                                                      | `=` `!=`                    | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                             |
-| **actualAddress**| String(255)                                               | `=` `!=` `~` `~=` `=~`      | Фактический адрес Подразделения                                                                                                  |
-| **archived**     | Boolean                                                   | `=` `!=`                    | Добавлено ли Подразделение в архив<br>`+Обязательное при ответе`                                                                 |
-| **code**         | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Код Подразделения                                                                                                                |
-| **created**      | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`  | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                 |
-| **description**  | String(4096)                                              | `=` `!=` `~` `~=` `=~`      | Комментарий к Подразделению                                                                                                      |
-| **externalCode** | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Внешний код Подразделения<br>`+Обязательное при ответе`                                                                          |
-| **group**        | [Meta](#/general#3-metadannye)                            |                             | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                        |
-| **id**           | UUID                                                      | `=` `!=`                    | ID Подразделения<br>`+Обязательное при ответе` `+Только для чтения`                                                              |
-| **kpp**          | String(255)                                               | `=` `!=` `~` `~=` `=~`      | КПП                                                                                                                             |
-| **meta**         | [Meta](#/general#3-metadannye)                            |                             | Метаданные Подразделения<br>`+Обязательное при ответе`                                                                           |
-| **name**         | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Наименование Подразделения<br>`+Обязательное при ответе` `+Необходимо при создании`                                              |
-| **organization** | [Meta](#/general#3-metadannye)                            |                             | Метаданные юрлица, к которому относится подразделение<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`        |
-| **owner**        | [Meta](#/general#3-metadannye)                            | `=` `!=`                    | Владелец (Сотрудник)<br>`+Expand`                                                                                               |
-| **shared**       | Boolean                                                   | `=` `!=`                    | Общий доступ<br>`+Обязательное при ответе`                                                                                      |
-| **syncId**       | UUID                                                      | `=` `!=`                    | ID синхронизации<br>`+После заполнения недоступно для изменения`                                                                 |
-| **updated**      | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`  | Момент последнего обновления Подразделения<br>`+Обязательное при ответе` `+Только для чтения`                                   |
+| Название              | Тип                            | Фильтрация                 | Описание                                                                                                                 |
+|-----------------------|:-------------------------------|:---------------------------|:-------------------------------------------------------------------------------------------------------------------------|
+| **accountId**         | UUID                           | `=` `!=`                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                     |
+| **actualAddress**     | String(255)                    | `=` `!=` `~` `~=` `=~`     | Фактический адрес Подразделения                                                                                          |
+| **actualAddressFull** | Object                         |                            | Фактический адрес Контрагента с детализацией по отдельным полям. [Подробнее тут](#/dictionaries/counterparty#5-adres)    |
+| **archived**          | Boolean                        | `=` `!=`                   | Добавлено ли Подразделение в архив<br>`+Обязательное при ответе`                                                         |
+| **code**              | String(255)                    | `=` `!=` `~` `~=` `=~`     | Код Подразделения                                                                                                        |
+| **created**           | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                         |
+| **description**       | String(4096)                   | `=` `!=` `~` `~=` `=~`     | Комментарий к Подразделению                                                                                              |
+| **externalCode**      | String(255)                    | `=` `!=` `~` `~=` `=~`     | Внешний код Подразделения<br>`+Обязательное при ответе`                                                                  |
+| **group**             | [Meta](#/general#3-metadannye) |                            | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                 |
+| **id**                | UUID                           | `=` `!=`                   | ID Подразделения<br>`+Обязательное при ответе` `+Только для чтения`                                                      |
+| **kpp**               | String(255)                    | `=` `!=` `~` `~=` `=~`     | КПП                                                                                                                      |
+| **meta**              | [Meta](#/general#3-metadannye) |                            | Метаданные Подразделения<br>`+Обязательное при ответе`                                                                   |
+| **name**              | String(255)                    | `=` `!=` `~` `~=` `=~`     | Наименование Подразделения<br>`+Обязательное при ответе` `+Необходимо при создании`                                      |
+| **organization**      | [Meta](#/general#3-metadannye) |                            | Метаданные юрлица, к которому относится подразделение<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` |
+| **owner**             | [Meta](#/general#3-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br>`+Expand`                                                                                        |
+| **shared**            | Boolean                        | `=` `!=`                   | Общий доступ<br>`+Обязательное при ответе`                                                                               |
+| **syncId**            | UUID                           | `=` `!=`                   | ID синхронизации<br>`+После заполнения недоступно для изменения`                                                         |
+| **updated**           | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления Подразделения<br>`+Обязательное при ответе` `+Только для чтения`                            |
 
 ### Получить список подразделений юридического лица
 Запрос на получение списка подразделений юридического лица на данной учетной записи.
@@ -55,7 +56,7 @@ curl --compressed -X GET \
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление списка подразделений юридического лица.
+> Успешный запрос. Результат - JSON представление списка подразделений юридического лица.
 
 ```json
 {
@@ -121,7 +122,33 @@ curl --compressed -X GET \
         }
       },
       "kpp": "123456789",
-      "actualAddress": "125009, Россия, г Москва, ул Тверская, 1"
+      "actualAddress": "125009, Россия, г Москва, ул Тверская, 1",
+      "actualAddressFull":{
+        "postalCode":"125009",
+        "country":{
+          "meta":{
+            "href":"https://api.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type":"country",
+            "mediaType":"application/json"
+          }
+        },
+        "region":{
+          "meta":{
+            "href":"https://api.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type":"region",
+            "mediaType":"application/json"
+          }
+        },
+        "city":"Москва",
+        "street":"ул Тверская",
+        "house":"1",
+        "apartment":"111",
+        "addInfo":"addinfo",
+        "comment":"some words about address",
+        "fiasCode__ru": "53423243432"
+      }
     }
   ]
 }
@@ -154,13 +181,39 @@ curl --compressed -X POST \
         },
         "kpp": "123456789",
         "actualAddress": "125009, Россия, г Москва, ул Тверская, 1",
+        "actualAddressFull":{  
+          "postalCode":"125009",
+          "country":{  
+            "meta":{  
+              "href":"https://api.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+              "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
+              "type":"country",
+              "mediaType":"application/json"
+            }
+          },
+          "region":{  
+            "meta":{  
+              "href":"https://api.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+              "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
+              "type":"region",
+              "mediaType":"application/json"
+            }
+          },
+          "city":"Москва",
+          "street":"ул Тверская",
+          "house":"1",
+          "apartment":"111",
+          "addInfo":"addinfo",
+          "comment":"some words about address",
+          "fiasCode__ru": "53423243432"
+        },
         "description": "Подразделение в Москве",
         "code": "MSC-001"
       }'
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление созданного подразделения юридического лица.
+> Успешный запрос. Результат - JSON представление созданного подразделения юридического лица.
 
 ```json
 {
@@ -206,6 +259,32 @@ curl --compressed -X POST \
   },
   "kpp": "123456789",
   "actualAddress": "125009, Россия, г Москва, ул Тверская, 1"
+  "actualAddressFull":{
+    "postalCode":"125009",
+    "country":{
+      "meta":{
+        "href":"https://api.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
+      }
+    },
+    "region":{
+      "meta":{
+        "href":"https://api.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
+      }
+    },
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"111",
+    "addInfo":"addinfo",
+    "comment":"some words about address",
+    "fiasCode__ru": "53423243432"
+  }
 }
 ```
 
@@ -248,7 +327,7 @@ curl --compressed -X POST \
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - массив JSON представлений созданных и обновленных Подразделений юридического лица.
+> Успешный запрос. Результат - массив JSON представлений созданных и обновленных Подразделений юридического лица.
 
 ```json
 [
@@ -339,7 +418,7 @@ curl --compressed -X DELETE \
 ```
 
 > Response 200 (application/json)
-Успешное удаление Подразделения юридического лица.
+> Успешное удаление Подразделения юридического лица.
 
 ### Массовое удаление Подразделений юридического лица
 
@@ -374,7 +453,7 @@ curl --compressed -X POST \
 ```
 
 > Response 200 (application/json)
-Успешное удаление Подразделений юридического лица.
+> Успешное удаление Подразделений юридического лица.
 
 ### Получить Подразделение юридического лица
 
@@ -394,7 +473,7 @@ curl --compressed -X GET \
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление подразделения юридического лица.
+> Успешный запрос. Результат - JSON представление подразделения юридического лица.
 
 ```json
 {
@@ -440,6 +519,32 @@ curl --compressed -X GET \
   },
   "kpp": "123456789",
   "actualAddress": "125009, Россия, г Москва, ул Тверская, 1"
+  "actualAddressFull":{
+    "postalCode":"125009",
+    "country":{
+      "meta":{
+        "href":"https://api.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
+      }
+    },
+    "region":{
+      "meta":{
+        "href":"https://api.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
+      }
+    },
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"111",
+    "addInfo":"addinfo",
+    "comment":"some words about address",
+    "fiasCode__ru": "53423243432"
+  }
 }
 ```
 
@@ -468,7 +573,7 @@ curl --compressed -X PUT \
 ```
 
 > Response 200 (application/json)
-Успешный запрос. Результат - JSON представление обновленного подразделения юридического лица.
+> Успешный запрос. Результат - JSON представление обновленного подразделения юридического лица.
 
 ```json
 {
@@ -513,6 +618,32 @@ curl --compressed -X PUT \
     }
   },
   "kpp": "987654321",
-  "actualAddress": "125009, Россия, г Москва, ул Тверская, 10"
+  "actualAddress": "125009, Россия, г Москва, ул Тверская, 10",
+  "actualAddressFull": {
+    "postalCode": "125009",
+    "country": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type": "country",
+        "mediaType": "application/json"
+      }
+    },
+    "region": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type": "region",
+        "mediaType": "application/json"
+      }
+    },
+    "city": "Москва",
+    "street": "ул Тверская",
+    "house": "1",
+    "apartment": "111",
+    "addInfo": "addinfo",
+    "comment": "some words about address",
+    "fiasCode__ru": "53423243432"
+  }
 }
 ```
