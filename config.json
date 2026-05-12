@@ -243,6 +243,13 @@
         ]
       },
       {
+        "title": "Подразделение юридического лица",
+        "level": 2,
+        "folderPath": "./dictionaries/_organizationbranch.md",
+        "children": [
+        ]
+      },
+      {
         "title": "Пользовательские роли",
         "level": 2,
         "folderPath": "./dictionaries/_custom_role.md",
@@ -400,13 +407,6 @@
         "title": "Юрлицо",
         "level": 2,
         "folderPath": "./dictionaries/_organization.md",
-        "children": [
-        ]
-      },
-      {
-        "title": "Подразделение юридического лица",
-        "level": 2,
-        "folderPath": "./dictionaries/_organizationbranch.md",
         "children": [
         ]
       },
