@@ -1600,4 +1600,4 @@
 - Добавлен новый раздел [Workbook](#/workbook/workbook-first-steps#1-workbook)
 
 ##
-[Более полный список изменений](https://github.com/moysklad/api-remap-1.2-doc/blob/master/CHANGELOG.md)
+[Исходный файл со списком изменений](https://github.com/moysklad/api-remap-1.2-doc/blob/master/md/changelog/_changelog_changes.md)
