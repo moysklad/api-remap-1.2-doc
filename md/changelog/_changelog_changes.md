@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 12-05-2026
+**Добавлено**
+- Новые адресные поля (`shipmentAddress` и `shipmentAddressFull`) в протоколе update-provider в [Заказе покупателя](#/documents/customerOrder#2-zakaz-pokupatelya)
+
 ### 07-05-2026
 **Добавлено**
 - Ошибка [62004](#/errors#3-kody-oshibok-dlya-rasshirennoj-bonusnoj-programmy) при превышении допустимого предела баланса бонусного счёта контрагента
@@ -16,10 +20,6 @@
 
 **Изменено**
 - Подсчет поля `balance` в валюте счета у документа [Остатки денежных средств](#/reports/report-money#3-ostatki-denezhnyh-sredstv)
-
-### 04-05-2026
-**Добавлено**
-- Новые адресные поля (`shipmentAddress` и `shipmentAddressFull`) в протоколе update-provider в [Заказе покупателя](#/documents/customerOrder#2-zakaz-pokupatelya)
 
 ### 23-04-2026
 **Добавлено**
