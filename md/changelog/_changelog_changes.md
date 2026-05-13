@@ -2,6 +2,11 @@
 
 Список последних изменений в API Remap 1.2
 
+### 14-05-2026
+**Добавлено**
+- Сущность `Подразделение юридического лица` [organizationbranch](#/dictionaries/organizationbranch#2-podrazdelenie-yuridicheskogo-lica)
+- Добавлены ошибки [3053, 3054, 3055](#/errors#3-obshie-oshibki-validacii)
+
 ### 07-05-2026
 **Добавлено**
 - Ошибка [62004](#/errors#3-kody-oshibok-dlya-rasshirennoj-bonusnoj-programmy) при превышении допустимого предела баланса бонусного счёта контрагента
