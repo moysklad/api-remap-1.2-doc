@@ -8,7 +8,7 @@
 - Ошибка [74000](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) при передаче полей `owner`, `group` или `shared`, которые отличаются от соответствующих полей указанного Ассортимента
 
 **Изменено**
-- Поля `owner`, `group` и `shared` в [Карточках контента](#/dictionaries/contentcard#2-kartochka-kontenta) помечены как доступные только для чтения
+- Поля `owner`, `group`, `shared` и `assortment` в [Карточках контента](#/dictionaries/contentcard#2-kartochka-kontenta) помечены как доступные только для чтения
 
 ### 07-05-2026
 **Добавлено**
