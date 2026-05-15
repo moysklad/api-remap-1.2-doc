@@ -6,6 +6,30 @@
 **Добавлено**
 - Новые типы маркированной продукции `TOYS` (Детские игрушки), `CONSERVE` (Консервированные продукты), `CONSTRUCTION` (Строительные материалы), `RADIO` (Радиоэлектроника), `GADGETS` (Радиоэлектроника. Ноутбуки и смартфоны) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty)
 
+### 12-05-2026
+**Добавлено**
+- Новые адресные поля (`shipmentAddress` и `shipmentAddressFull`) в протоколе update-provider в [Заказе покупателя](#/documents/customerOrder#2-zakaz-pokupatelya)
+
+### 07-05-2026
+**Добавлено**
+- Ошибка [62004](#/errors#3-kody-oshibok-dlya-rasshirennoj-bonusnoj-programmy) при превышении допустимого предела баланса бонусного счёта контрагента
+
+### 04-05-2026
+**Добавлено**
+- Поле `currency` с валютой расчетного счета в счетах юрлица, возвращаемое в ответах [Юрлица](#/dictionaries/organization#2-yurlico) (раздел «Счета юрлица»).
+- Ошибка [72000](#/errors#3-kody-oshibok-dlya-raschetnyh-schetov) при сохранении расчетных счетов: должен быть хотя бы один счет в валюте учета
+- Ошибка [4004](#/errors#3-kody-oshibok-dlya-tochek-prodazh) при сохранении сущностей (в т.ч. [точки продаж](#/dictionaries/retailstore#2-tochka-prodazh)), если у выбранной организации основной расчётный счёт не в валюте учёта
+- Ошибка [22004](#/errors#3-kody-oshibok-dlya-platezhej) при сохранении [входящего](#/documents/payment-in#2-vhodyashij-platezh) и [исходящего](#/documents/payment-out#2-ishodyashij-platezh) платежа, если валюта документа не совпадает с валютой счёта организации
+- Ошибка [1096](#/errors#3-obshie-oshibki-validacii)
+
+**Изменено**
+- Подсчет поля `balance` в валюте счета у документа [Остатки денежных средств](#/reports/report-money#3-ostatki-denezhnyh-sredstv)
+
+### 23-04-2026
+**Добавлено**
+- Сущность `Начисления зарплат` [payroll](#/documents/payroll#2-nachisleniya-zarplaty)
+- Добавлена ошибка [3052](#/errors#3-obshie-oshibki-validacii)
+
 ### 10-04-2026
 **Добавлено**
 - Ошибка для валидации переполнения групп: [3051](#/errors#3-obshie-oshibki-validacii)
@@ -1584,4 +1608,4 @@
 - Добавлен новый раздел [Workbook](#/workbook/workbook-first-steps#1-workbook)
 
 ##
-[Более полный список изменений](https://github.com/moysklad/api-remap-1.2-doc/blob/master/CHANGELOG.md)
+[Исходный файл со списком изменений](https://github.com/moysklad/api-remap-1.2-doc/blob/master/md/changelog/_changelog_changes.md)

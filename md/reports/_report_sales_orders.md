@@ -152,7 +152,7 @@ curl --compressed -X GET \
 
 ```shell
 curl --compressed -X GET \
-  "https://api.moysklad.ru/api/remap/1.2/report/sales/plotseries?momentFrom=2018-09-06 00:00:00&momentTo=2018-09-10 01:00:01&interval=hour&filter=retailStore=https://api.moysklad.ru/api/remap/1.2/entity/retailstore/d9a8a213-6703-11e7-9464-e4de00000060&amp;project=https://api.moysklad.ru/api/remap/1.2/entity/project/d9a8a213-6703-11e7-9464-e4de00000060&amp;store=https://api.moysklad.ru/api/remap/1.2/entity/store/d9a8a213-6703-11e7-9464-e4de00000060&amp;organization=https://api.moysklad.ru/api/remap/1.2/entity/organization/d9a8a213-6703-11e7-9464-e4de00000060" \
+  "https://api.moysklad.ru/api/remap/1.2/report/sales/plotseries?momentFrom=2018-09-06 00:00:00&momentTo=2018-09-10 01:00:01&interval=hour&filter=retailStore=https://api.moysklad.ru/api/remap/1.2/entity/retailstore/d9a8a213-6703-11e7-9464-e4de00000060&project=https://api.moysklad.ru/api/remap/1.2/entity/project/d9a8a213-6703-11e7-9464-e4de00000060&store=https://api.moysklad.ru/api/remap/1.2/entity/store/d9a8a213-6703-11e7-9464-e4de00000060&organization=https://api.moysklad.ru/api/remap/1.2/entity/organization/d9a8a213-6703-11e7-9464-e4de00000060" \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
@@ -173,7 +173,7 @@ curl --compressed -X GET \
     }
   },
   "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.2/report/sales/plotseries?momentFrom=2018-09-06 00:00:00&momentTo=2018-09-10 01:00:01&interval=hour&filter=retailStore=https://api.moysklad.ru/api/remap/1.2/entity/retailstore/d9a8a213-6703-11e7-9464-e4de00000060&amp;project=https://api.moysklad.ru/api/remap/1.2/entity/project/d9a8a213-6703-11e7-9464-e4de00000060&amp;store=https://api.moysklad.ru/api/remap/1.2/entity/store/d9a8a213-6703-11e7-9464-e4de00000060&amp;organization=https://api.moysklad.ru/api/remap/1.2/entity/organization/d9a8a213-6703-11e7-9464-e4de00000060",
+    "href": "https://api.moysklad.ru/api/remap/1.2/report/sales/plotseries?momentFrom=2018-09-06 00:00:00&momentTo=2018-09-10 01:00:01&interval=hour&filter=retailStore=https://api.moysklad.ru/api/remap/1.2/entity/retailstore/d9a8a213-6703-11e7-9464-e4de00000060&project=https://api.moysklad.ru/api/remap/1.2/entity/project/d9a8a213-6703-11e7-9464-e4de00000060&store=https://api.moysklad.ru/api/remap/1.2/entity/store/d9a8a213-6703-11e7-9464-e4de00000060&organization=https://api.moysklad.ru/api/remap/1.2/entity/organization/d9a8a213-6703-11e7-9464-e4de00000060",
     "type": "salesplotseries",
     "mediaType": "application/json"
   },
