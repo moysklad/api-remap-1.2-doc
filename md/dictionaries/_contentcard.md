@@ -596,9 +596,17 @@ curl --compressed -X PUT \
   -H "Accept-Encoding: gzip" \
   -H "Content-Type: application/json" \
   -d '{
-        "name": "товар",
+        "name": "Обновленное название товара",
         "description": "Обновленное описание",
         "cardContentName": "Обновленное название",
+        "salePlatform": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/saleplatform/0f9b8b4c-4597-4772-b896-c8aff047a117",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/saleplatform/metadata",
+            "type": "saleplatform",
+            "mediaType": "application/json"
+          }
+        },
         "salesChannels": [
           {
             "meta": {
@@ -643,7 +651,7 @@ curl --compressed -X PUT \
       "mediaType": "application/json"
     }
   },
-  "name": "товар",
+  "name": "Обновленное название товара",
   "description": "Обновленное описание",
   "cardContentName": "Обновленное название",
   "assortment": {
