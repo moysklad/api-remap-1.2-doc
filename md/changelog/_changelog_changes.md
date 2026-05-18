@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### ----------
+**Добавлено**
+- Ошибка [67007](#/errors#3-kody-oshibok-dlya-yacheek-i-zon-sklada) при превышении допустимого количества активных складов на аккаунте
+
 ### 12-05-2026
 **Добавлено**
 - Новые адресные поля (`shipmentAddress` и `shipmentAddressFull`) в протоколе update-provider в [Заказе покупателя](#/documents/customerOrder#2-zakaz-pokupatelya)
