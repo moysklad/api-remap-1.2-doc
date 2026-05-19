@@ -2,10 +2,19 @@
 
 Список последних изменений в API Remap 1.2
 
-### 14-05-2026
+### 21-05-2026
 **Добавлено**
 - Сущность `Подразделение юридического лица` [organizationbranch](#/dictionaries/organizationbranch#2-podrazdelenie-yuridicheskogo-lica)
 - Добавлены ошибки [3053, 3054, 3055](#/errors#3-obshie-oshibki-validacii)
+
+### 18-05-2026
+**Добавлено**
+- Массовые операции [создания/обновления](#/dictionaries/eventfeed#3-massovoe-sozdanie-i-obnovlenie-sobytij) в Ленте Событий
+- Массовые операции [удаления](#/dictionaries/eventfeed#3-massovoe-udalenie-sobytij) в Ленте Событий
+
+### 12-05-2026
+**Добавлено**
+- Новые адресные поля (`shipmentAddress` и `shipmentAddressFull`) в протоколе update-provider в [Заказе покупателя](#/documents/customerOrder#2-zakaz-pokupatelya)
 
 ### 07-05-2026
 **Добавлено**
@@ -1605,4 +1614,4 @@
 - Добавлен новый раздел [Workbook](#/workbook/workbook-first-steps#1-workbook)
 
 ##
-[Более полный список изменений](https://github.com/moysklad/api-remap-1.2-doc/blob/master/CHANGELOG.md)
+[Исходный файл со списком изменений](https://github.com/moysklad/api-remap-1.2-doc/blob/master/md/changelog/_changelog_changes.md)
