@@ -451,6 +451,12 @@ curl --compressed -X GET \
       "update": "AUTHOR",
       "delete": "AUTHOR"
     },
+    "expenseitem": {
+      "view": "ALL",
+      "create": "ALL",
+      "update": "ALL",
+      "delete": "ALL"
+    },
     "taxrate": {
       "view": "ALL",
       "create": "ALL",
@@ -909,6 +915,12 @@ curl --compressed -X GET \
           "done": "AUTHOR_OR_ASSIGNEE",
           "update": "AUTHOR",
           "delete": "AUTHOR"
+        },
+        "expenseitem": {
+          "view": "ALL",
+          "create": "ALL",
+          "update": "ALL",
+          "delete": "ALL"
         },
         "taxrate": {
           "view": "ALL",
@@ -1388,6 +1400,12 @@ curl --compressed -X POST \
       "done": "NO",
       "update": "NO",
       "delete": "NO"
+    },
+    "expenseitem": {
+      "view": "ALL",
+      "create": "ALL",
+      "update": "ALL",
+      "delete": "ALL"
     },
     "taxrate": {
       "view": "ALL",
@@ -1871,6 +1889,12 @@ curl --compressed -X PUT \
       "done": "NO",
       "update": "NO",
       "delete": "NO"
+    },
+    "expenseitem": {
+      "view": "ALL",
+      "create": "ALL",
+      "update": "ALL",
+      "delete": "ALL"
     },
     "taxrate": {
       "view": "ALL",
