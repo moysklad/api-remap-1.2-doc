@@ -5,7 +5,6 @@
 ### 21-05-2026
 **Добавлено**
 - Сущность `Подразделение юридического лица` [organizationbranch](#/dictionaries/organizationbranch#2-podrazdelenie-yuridicheskogo-lica)
-- Добавлены ошибки [3053, 3054, 3055](#/errors#3-obshie-oshibki-validacii)
 
 ### 18-05-2026
 **Добавлено**
