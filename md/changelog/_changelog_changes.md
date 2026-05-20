@@ -7,7 +7,6 @@
 - Методы создания, обновления и удаления, а также массового создания, обновления и удаления для [Карточек контента](#/dictionaries/contentcard#2-kartochka-kontenta)
 
 **Изменено**
-- Поля `owner`, `group` и `shared` в [Карточках контента](#/dictionaries/contentcard#2-kartochka-kontenta) помечены как доступные только для чтения
 - Обновлено описание полей `assortment`, `cardContentName`, `description`, `name`, `salePlatform`, `salesChannels` в [Карточках контента](#/dictionaries/contentcard#2-kartochka-kontenta)
 
 ### 07-05-2026
