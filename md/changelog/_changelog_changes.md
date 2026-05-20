@@ -2,9 +2,13 @@
 
 Список последних изменений в API Remap 1.2
 
-### 21-05-2026
+### 25-05-2026
 **Добавлено**
 - Сущность `Подразделение юридического лица` [organizationbranch](#/dictionaries/organizationbranch#2-podrazdelenie-yuridicheskogo-lica)
+
+### 20-05-2026
+**Добавлено**
+- Ошибка валидации этапа производства: [25101](#/errors#3-kody-oshibok-dlya-etapov-proizvodstva)
 
 ### 18-05-2026
 **Добавлено**
