@@ -2,11 +2,20 @@
 
 Список последних изменений в API Remap 1.2
 
-### 15-05-2026
+### 21-05-2026
 **Добавлено**
 - Новые типы маркированной продукции `TOYS` (Детские игрушки), `CONSERVE` (Консервированные продукты), `CONSTRUCTION` (Строительные материалы), `RADIO` (Радиоэлектроника), `GADGETS` (Радиоэлектроника. Ноутбуки и смартфоны) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty) и [Вывода из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
-**Изменено**
+  **Изменено**
 - Ошибка [16106](#/errors#3-kody-oshibok-dlya-tovarov)
+
+### 20-05-2026
+**Добавлено**
+- Ошибка валидации этапа производства: [25101](#/errors#3-kody-oshibok-dlya-etapov-proizvodstva)
+
+### 18-05-2026
+**Добавлено**
+- Массовые операции [создания/обновления](#/dictionaries/eventfeed#3-massovoe-sozdanie-i-obnovlenie-sobytij) в Ленте Событий
+- Массовые операции [удаления](#/dictionaries/eventfeed#3-massovoe-udalenie-sobytij) в Ленте Событий
 
 ### 12-05-2026
 **Добавлено**
