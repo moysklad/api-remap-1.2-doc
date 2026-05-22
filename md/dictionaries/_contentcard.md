@@ -10,12 +10,9 @@
 | **assortment**      | [Meta](#/general#3-metadannye) | `=` `!=`               | Метаданные Ассортимента<br>`+Expand` `+Обязательное при ответе`                                                                                                                                                                                                                                                          |
 | **cardContentName** | String(255)                    |  | Как карточка контента отображается в списке на UI                                                                                                                                                                                                                                                                        |
 | **description**     | String(10000)                  |  | Описание товара или услуги                                                                                                                                                                                                                                                                                               |
-| **group**           | [Meta](#/general#3-metadannye) | `=` `!=`               | Метаданные отдела сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                                                                                                                     |
 | **id**              | UUID                           | `=` `!=`               | ID Карточки контента<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                                                                                  |
 | **meta**            | [Meta](#/general#3-metadannye) |                        | Метаданные Карточки контента<br>`+Обязательное при ответе`                                                                                                                                                                                                                                                               |
 | **name**            | String(255)                    |  | Название товара или услуги<br>`+Обязательное при ответе`                                                                                                                                                                                                                                                                 |
-| **owner**           | [Meta](#/general#3-metadannye) | `=` `!=`               | Метаданные владельца (Сотрудника)<br>`+Expand`                                                                                                                                                                                                                                                                           |
-| **shared**          | Boolean                        |                | Общий доступ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                                                                                          |
 | **salePlatform**    | [Meta](#/general#3-metadannye) | `=` `!=`               | Метаданные Площадки для продаж. [Подробнее тут](#/dictionaries/saleplatform#2-ploshadka-dlya-prodazh).<br>`+Expand` `+Обязательное при ответе`                                                                                                                                                                           |
 | **salesChannels**   | Array(Object) | `=` | Массив ссылок на связанные каналы продаж в формате [Метаданных](#/general#3-metadannye). [Подробнее тут](#/dictionaries/saleschannel#2-kanal-prodazh). Максимальное число - 1000. Для фильтрации по полю необходимо указывать его в единственном числе **salesChannel**.<br>`+Expand` `+Обязательное при ответе`         |
 
@@ -25,9 +22,7 @@
 |-----------------------|:------------------------------|
 | **accountId**         | ID учетной записи             |
 | **assortment**         | Ассортимент карточки контента |
-| **group**             | Отдел сотрудника              |
 | **id**                | ID Карточки контента          |
-| **owner**             | Владелец (Сотрудник)          |
 | **salePlatform** | Площадка для продаж           |
 | **salesChannel**             | Канал продаж                  |
 
@@ -92,24 +87,6 @@ curl --compressed -X GET \
       },
       "id": "529eb5b6-d726-11f0-0a80-073800000329",
       "accountId": "e008259e-d666-11f0-0a83-14a000000002",
-      "owner": {
-        "meta": {
-          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/e0b3018f-d666-11f0-0a80-073800000055",
-          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json",
-          "uuidHref": "https://online.moysklad.ru//app/#employee/edit?id=e0b3018f-d666-11f0-0a80-073800000055"
-        }
-      },
-      "shared": true,
-      "group": {
-        "meta": {
-          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/e00acc42-d666-11f0-0a83-14a000000003",
-          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
-          "type": "group",
-          "mediaType": "application/json"
-        }
-      },
       "name": "товар",
       "description": "Описание",
       "cardContentName": "Название",
@@ -151,24 +128,6 @@ curl --compressed -X GET \
       },
       "id": "dfbef48e-d67d-11f0-0a80-0738000002d8",
       "accountId": "e008259e-d666-11f0-0a83-14a000000002",
-      "owner": {
-        "meta": {
-          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/e0b3018f-d666-11f0-0a80-073800000055",
-          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-          "type": "employee",
-          "mediaType": "application/json",
-          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=e0b3018f-d666-11f0-0a80-073800000055"
-        }
-      },
-      "shared": true,
-      "group": {
-        "meta": {
-          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/e00acc42-d666-11f0-0a83-14a000000003",
-          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
-          "type": "group",
-          "mediaType": "application/json"
-        }
-      },
       "name": "товар",
       "description": "описание",
       "cardContentName": "название",
@@ -236,24 +195,6 @@ curl --compressed -X GET \
   },
   "id": "529eb5b6-d726-11f0-0a80-073800000329",
   "accountId": "e008259e-d666-11f0-0a83-14a000000002",
-  "owner": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/e0b3018f-d666-11f0-0a80-073800000055",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
-      "type": "employee",
-      "mediaType": "application/json",
-      "uuidHref": "https://online.moysklad.ru//app/#employee/edit?id=e0b3018f-d666-11f0-0a80-073800000055"
-    }
-  },
-  "shared": true,
-  "group": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/e00acc42-d666-11f0-0a83-14a000000003",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
-      "type": "group",
-      "mediaType": "application/json"
-    }
-  },
   "name": "товар",
   "description": "Описание",
   "cardContentName": "Название",
