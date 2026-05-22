@@ -2,6 +2,11 @@
 
 Список последних изменений в API Remap 1.2
 
+
+### 22-05-2026
+**Удалено**
+- Поля `owner`, `group`, `shared` в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
 ### 21-05-2026
 **Добавлено**
 - Новые типы маркированной продукции `TOYS` (Детские игрушки), `CONSERVE` (Консервированные продукты), `CONSTRUCTION` (Строительные материалы), `RADIO` (Радиоэлектроника), `GADGETS` (Радиоэлектроника. Ноутбуки и смартфоны) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty) и [Вывода из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
@@ -9,8 +14,6 @@
 **Изменено**
 - Ошибка [16106](#/errors#3-kody-oshibok-dlya-tovarov)
 
-**Удалено**
-- Поля `owner`, `group`, `shared` в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
 
 ### 20-05-2026
 **Добавлено**
