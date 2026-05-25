@@ -260,6 +260,7 @@ JSON API позволяет создавать, обновлять и удаля
   - [Выполнение этапа](#/documents/productionStageCompletion#2-vypolnenie-etapa-proizvodstva)
   - [Полученный отчет комиссионера](#/documents/commissionreportin#2-poluchennyj-otchet-komissionera)
   - [Выданный отчет комиссионера](#/documents/commissionreportout#2-vydannyj-otchet-komissionera)
+  - [Начисления зарплаты](#/documents/payroll#2-nachisleniya-zarplaty)
 
 Посмотреть все созданные доп. поля можно с помощью запроса на получение метаданных сущности.
 Ответ будет содержать описание доп. полей в виде коллекции **attributes**, если указанная сущность поддерживает работу с доп. полями.
@@ -1017,7 +1018,7 @@ API сервиса МойСклад позволяет оперировать с
 [Розничная продажа](#/documents/retaildemand#2-roznichnaya-prodazha), [Полученный отчет комиссионера](#/documents/commissionreportin#2-poluchennyj-otchet-komissionera), [Выданный отчет комиссионера](#/documents/commissionreportout#2-vydannyj-otchet-komissionera), [Оприходование](#/documents/enter#2-oprihodovanie),
 [Внутренний заказ](#/documents/internalOrder#2-vnutrennij-zakaz), [Инвентаризация](#/documents/inventory#2-inventarizaciya), [Списание](#/documents/loss#2-spisanie), [Перемещение](#/documents/move#2-peremeshenie), [Прайс-лист](#/documents/pricelist#2-prajs-list),
 [Заказ на производство](#/documents/processingorder#2-zakaz-na-proizvodstvo), [Возврат поставщику](#/documents/purchase-return#2-vozvrat-postavshiku), [Заказ поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku),
-[Розничный возврат](#/documents/retail-sales-return#2-roznichnyj-vozvrat), [Возврат покупателя](#/documents/sales-return#2-vozvrat-pokupatelya), [Приемка](#/documents/supply#2-priemka), [Счет поставщика](#/documents/invoice-in#2-schet-postavshika). Перечисленные документы содержат позиции, работать с которыми можно как в составе отдельного документа,
+[Розничный возврат](#/documents/retail-sales-return#2-roznichnyj-vozvrat), [Возврат покупателя](#/documents/sales-return#2-vozvrat-pokupatelya), [Приемка](#/documents/supply#2-priemka), [Счет поставщика](#/documents/invoice-in#2-schet-postavshika), [Начисления зарплаты](#/documents/payroll#2-nachisleniya-zarplaty). Перечисленные документы содержат позиции, работать с которыми можно как в составе отдельного документа,
 так и с помощью специальных ресурсов для управления позициями документа.
 
 ######  Работа с позициями в рамках отдельного документа
@@ -1295,12 +1296,12 @@ curl --compressed -X POST \
 
 Пример ссылки:
 
-+ `https://api.moysklad.ru/api/remap/1.2/entity/&lt;type>/&lt;id>`
++ `https://api.moysklad.ru/api/remap/1.2/entity/<type>/<id>`
 
 Вот несколько примеров:
 
-+ `filter=agent=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/&lt;id>`
-+ `filter=ownAgent=https://api.moysklad.ru/api/remap/1.2/entity/organization/&lt;id>`
++ `filter=agent=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/<id>`
++ `filter=ownAgent=https://api.moysklad.ru/api/remap/1.2/entity/organization/<id>`
 
 Ссылочные поля, доступные для фильтрации:
 
@@ -1329,7 +1330,7 @@ curl --compressed -X POST \
 
 С помощью filter можно фильтровать поля типа ID.
 
-+ `filter=<имя_поля>=&lt;ID>`
++ `filter=<имя_поля>=<ID>`
 
 Пример ID:
 
@@ -1348,15 +1349,15 @@ curl --compressed -X POST \
 
 | Название         | Тип поля value в JSON  | Значение поля type в JSON | Описание                                                                                                                              |
 | ---------------- | ---------------------- |---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Дата**         | string                 | time                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `&lt;val`, `>val`,  `>=val`, `<=val`, `>=val;<=val2`  |
+| **Дата**         | string                 | time                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `<val`, `>val`,  `>=val`, `<=val`, `>=val;<=val2`  |
 | **Справочник**   | object                 | {entityType}              | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`                                                        |
 | **Ссылка**       | string                 | link                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `~=val`, `=~val`                                                 |
 | **Строка**       | string                 | string                    | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `~=val`, `=~val`                                                 |
 | **Текст**        | string                 | text                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `~val`, `~=val`, `=~val`                                                 |
 | **Файл**         | string                 | file                      | Фильтрация не поддерживается                                                                                                          |
 | **Флажок**       | boolean                | boolean                   | `=true`, `=false`, `!=true`, `!=false`                                                                                                                     |
-| **Число дробное**| number                 | double                    | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `&lt;val`, `>val`, `>=val`, `<=val`, `>=val;<=val2`   |
-| **Число целое**  | number                 | long                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `&lt;val`, `>val`, `>=val`, `<=val`, `>=val;<=val2`   |
+| **Число дробное**| number                 | double                    | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `<val`, `>val`, `>=val`, `<=val`, `>=val;<=val2`   |
+| **Число целое**  | number                 | long                      | `=val`, `=`, `!=val`, `!=`, `=val;=val2`, `!=val;!=val2`, `=val;=`, `!=val;!=`, `<val`, `>val`, `>=val`, `<=val`, `>=val;<=val2`   |
 
 `=val` - фильтрация по значению <br>
 `=` - фильтрация по пустому значению <br>
