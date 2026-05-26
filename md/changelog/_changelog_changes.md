@@ -2,6 +2,12 @@
 
 Список последних изменений в API Remap 1.2
 
+### 26-05-2026
+**Добавлено**
+- Поле `parametricMaterials` коллекция метаданных параметрических материалов [Техкарты](#/dictionaries/processingplan#4-parametricheskie-materialy-tehkarty)
+- Новый эндпоинт для работы с параметрическими материалами [Техкарты](#/dictionaries/processingplan#3-upravlenie-parametricheskimi-materialami-tehkarty)
+- Ошибка [25064](#/errors#3-kody-oshibok-dlya-tehnologicheskih-kart) при добавлении второго и более продуктов в Параметрическую техкарту
+
 ### 12-05-2026
 **Добавлено**
 - Новые адресные поля (`shipmentAddress` и `shipmentAddressFull`) в протоколе update-provider в [Заказе покупателя](#/documents/customerOrder#2-zakaz-pokupatelya)
