@@ -2,6 +2,11 @@
 
 Список последних изменений в API Remap 1.2
 
+### 25-05-2026
+**Добавлено**
+- Сущность `Подразделение юридического лица` [organizationbranch](#/dictionaries/organizationbranch#2-podrazdelenie-yuridicheskogo-lica)
+- Ошибка [74000](#/errors#3-kody-oshibok-dlya-podrazdeleniya-yuridicheskogo-lica)
+
 ### 21-05-2026
 **Добавлено**
 - Новые типы маркированной продукции `TOYS` (Детские игрушки), `CONSERVE` (Консервированные продукты), `CONSTRUCTION` (Строительные материалы), `RADIO` (Радиоэлектроника), `GADGETS` (Радиоэлектроника. Ноутбуки и смартфоны) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty) и [Вывода из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
