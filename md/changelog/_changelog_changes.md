@@ -2,9 +2,18 @@
 
 Список последних изменений в API Remap 1.2
 
-### 26-05-2026
+### 01-06-2026
 **Изменено**
 - Поле `lastOperationNames` в сущности [Точка продаж](#/dictionaries/retailstore#2-tochka-prodazh) помечено **устаревшим**
+
+### 28-05-2026
+**Добавлено**
+- Поле consignor (Грузоотправитель) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Поле shippingDocumentNumber (Номер перевозочного документа) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Поле shippingDocumentDate (Дата перевозочного документа) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Типы маркируемой продукции `TOBACCO` (Табачная продукция), `OTP` (Альтернативная табачная продукция), `NCP` (Никотиносодержащая продукция) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+  **Изменено**
+- Ошибка [16106](#/errors#3-kody-oshibok-dlya-tovarov)
 
 ### 21-05-2026
 **Добавлено**

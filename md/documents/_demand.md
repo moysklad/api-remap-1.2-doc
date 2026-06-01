@@ -67,16 +67,19 @@
 | **invoicesOut**      | Массив ссылок на связанные счета покупателям в формате [Метаданных](#/general#3-metadannye)                    |
 
 ####  Другие поля 
-| Название                    | Тип                                                       | Описание                                                        |
-| --------------------------- | :-------------------------------------------------------- | :-------------------------------------------------------------- |
-| **cargoName**               | String(255)                                               | Наименование груза <br/>  `+Change-handler`                                              |
-| **carrier**                 | [Meta](#/general#3-metadannye) | Метаданные перевозчика (контрагент или юрлицо)<br>`+Expand`  `+Change-handler`    |
-| **consignee**               | [Meta](#/general#3-metadannye) | Метаданные грузополучателя (контрагент или юрлицо) <br/>  `+Change-handler`              |
-| **goodPackQuantity**        | Int                                                       | Всего мест <br/>  `+Change-handler`                                                     |
-| **shippingInstructions**    | String(255)                                               | Указания грузоотправителя   <br/>  `+Change-handler`                                    |
-| **stateContractId**         | String(255)                                               | Идентификатор государственного контракта, договора (соглашения) <br/>  `+Change-handler` |
-| **transportFacility**       | String(255)                                               | Транспортное средство  <br/>  `+Change-handler`                                         |
-| **transportFacilityNumber** | String(255)                                               | Номер автомобиля   <br/>  `+Change-handler`                                             |
+| Название                    | Тип                            | Описание                                                                                     |
+|-----------------------------|:-------------------------------|:---------------------------------------------------------------------------------------------|
+| **cargoName**               | String(255)                    | Наименование груза <br/>  `+Change-handler`                                                  |
+| **carrier**                 | [Meta](#/general#3-metadannye) | Метаданные перевозчика (контрагент или юрлицо)<br>`+Expand`  `+Change-handler`               |
+| **consignee**               | [Meta](#/general#3-metadannye) | Метаданные грузополучателя (контрагент или юрлицо) <br/>  `+Change-handler`                  |
+| **consignor**               | [Meta](#/general#3-metadannye) | Метаданные грузоотправителя (контрагент или юрлицо) <br/>  `+Change-handler`                 |
+| **goodPackQuantity**        | Int                            | Всего мест <br/>  `+Change-handler`                                                          |
+| **shippingInstructions**    | String(255)                    | Указания грузоотправителя   <br/>  `+Change-handler`                                         |
+| **stateContractId**         | String(255)                    | Идентификатор государственного контракта, договора (соглашения) <br/>  `+Change-handler`     |
+| **transportFacility**       | String(255)                    | Транспортное средство  <br/>  `+Change-handler`                                              |
+| **transportFacilityNumber** | String(255)                    | Номер автомобиля   <br/>  `+Change-handler`                                                  |
+| **shippingDocumentNumber**  | String(255)                    | Номер перевозочного документа   <br/>  `+Change-handler`                                     |
+| **shippingDocumentDate**    | DateTime                       | Дата перевозочного документа   <br/>  `+Change-handler`                                      |
 
 #### Позиции Отгрузки
 Позиции Отгрузки - это список товаров/услуг/модификаций/партий/комплектов.
@@ -355,7 +358,17 @@ curl --compressed -X GET \
           "mediaType": "application/json"
         }
       },
+      "consignor": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/869d7628-6396-11e6-8a84-bae50000000b",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      },
       "transportFacilityNumber": "лb777m",
+      "shippingDocumentNumber": "76543210",
+      "shippingDocumentDate": "2026-04-15 00:00:00.000",
       "shippingInstructions": "Беречь от воздействия солнца",
       "cargoName": "Овощи",
       "transportFacility": "Mercedes benz",
