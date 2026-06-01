@@ -4,9 +4,9 @@
 
 ### 01-06-2026
 **Добавлено**
-- Ощибка [74000](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) нельзя указать архивный канал продаж в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
-- Ощибка [74001](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) нельзя добавить больше 1000 каналов продаж для одной [Карточки контента](#/dictionaries/contentcard#2-kartochka-kontenta)
-- Ощибка [74002](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) можно создать максимум 100 [Карточек контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+- Ошибка [74000](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) нельзя указать архивный канал продаж в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+- Ошибка [74001](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) нельзя добавить больше 1000 каналов продаж для одной [Карточки контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+- Ошибка [74002](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) можно создать максимум 100 [Карточек контента](#/dictionaries/contentcard#2-kartochka-kontenta)
 
 ### 13-05-2026
 **Добавлено**
