@@ -3,7 +3,7 @@
 Список последних изменений в API Remap 1.2
 
 
-### 22-05-2026
+### 02-06-2026
 **Удалено**
 - Поля `owner`, `group`, `shared` в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
 
