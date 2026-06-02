@@ -5,13 +5,13 @@
 ### 02-06-2026
 **Удалено**
 - Поля `owner`, `group`, `shared` в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
-  **Добавлено**
 
 ### 01-06-2026
-  **Изменено**
+**Изменено**
 - Поле `lastOperationNames` в сущности [Точка продаж](#/dictionaries/retailstore#2-tochka-prodazh) помечено **устаревшим**
 
 ### 28-05-2026
+**Добавлено**
 - Поле consignor (Грузоотправитель) для документа [Отгрузка](#/documents/demand#2-otgruzka)
 - Поле shippingDocumentNumber (Номер перевозочного документа) для документа [Отгрузка](#/documents/demand#2-otgruzka)
 - Поле shippingDocumentDate (Дата перевозочного документа) для документа [Отгрузка](#/documents/demand#2-otgruzka)
