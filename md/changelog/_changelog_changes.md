@@ -7,6 +7,40 @@
 - Поле модификации продукции параметрической техкарты `productionVariant` в [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya)
 - Ошибка [26116](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при изменении [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) нельзя изменить модификацию продукции параметрической техкарты
 - Ошибка [26117](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) с параметрической техкартой должна быть указана модификация продукции
+- Ошибка [26118](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) с параметрической техкартой должна быть указана модификация продукции, которая принадлежит продукту техкарты 
+
+### 02-06-2026
+**Удалено**
+- Поля `owner`, `group`, `shared` в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
+### 01-06-2026
+**Изменено**
+- Поле `lastOperationNames` в сущности [Точка продаж](#/dictionaries/retailstore#2-tochka-prodazh) помечено **устаревшим**
+
+### 28-05-2026
+**Добавлено**
+- Поле consignor (Грузоотправитель) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Поле shippingDocumentNumber (Номер перевозочного документа) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Поле shippingDocumentDate (Дата перевозочного документа) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Типы маркируемой продукции `TOBACCO` (Табачная продукция), `OTP` (Альтернативная табачная продукция), `NCP` (Никотиносодержащая продукция) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+  **Изменено**
+- Ошибка [16106](#/errors#3-kody-oshibok-dlya-tovarov)
+
+### 21-05-2026
+**Добавлено**
+- Новые типы маркированной продукции `TOYS` (Детские игрушки), `CONSERVE` (Консервированные продукты), `CONSTRUCTION` (Строительные материалы), `RADIO` (Радиоэлектроника), `GADGETS` (Радиоэлектроника. Ноутбуки и смартфоны) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty) и [Вывода из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+
+**Изменено**
+- Ошибка [16106](#/errors#3-kody-oshibok-dlya-tovarov)
+
+### 20-05-2026
+**Добавлено**
+- Ошибка валидации этапа производства: [25101](#/errors#3-kody-oshibok-dlya-etapov-proizvodstva)
+
+### 18-05-2026
+**Добавлено**
+- Массовые операции [создания/обновления](#/dictionaries/eventfeed#3-massovoe-sozdanie-i-obnovlenie-sobytij) в Ленте Событий
+- Массовые операции [удаления](#/dictionaries/eventfeed#3-massovoe-udalenie-sobytij) в Ленте Событий
 
 ### 12-05-2026
 **Добавлено**
