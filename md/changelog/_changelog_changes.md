@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 02-06-2026
+**Добавлено**
+- Поле `operatingExpenses` (Учитывать в прибыли) в сущности [Статья расходов](#/dictionaries/expenseitem#2-stati-rasxodov)
+
 ### 01-06-2026
 **Изменено**
 - Поле `lastOperationNames` в сущности [Точка продаж](#/dictionaries/retailstore#2-tochka-prodazh) помечено **устаревшим**
