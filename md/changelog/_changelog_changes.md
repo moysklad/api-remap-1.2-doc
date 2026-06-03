@@ -6,8 +6,7 @@
 **Добавлено**
 - Методы создания, обновления и удаления, а также массового создания, обновления и удаления для [Карточек контента](#/dictionaries/contentcard#2-kartochka-kontenta)
 - Ошибка [74000](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) нельзя указать архивный канал продаж в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
-- Ошибка [74001](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) нельзя добавить больше 1000 каналов продаж для одной [Карточки контента](#/dictionaries/contentcard#2-kartochka-kontenta) 
-- Ошибка [74002](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) можно создать максимум 100 [Карточек контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+- Ошибка [74001](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) можно создать максимум 100 [Карточек контента](#/dictionaries/contentcard#2-kartochka-kontenta)
 
 **Изменено**
 - Обновлено описание полей `assortment`, `cardContentName`, `description`, `name`, `salePlatform`, `salesChannels` в [Карточках контента](#/dictionaries/contentcard#2-kartochka-kontenta)
