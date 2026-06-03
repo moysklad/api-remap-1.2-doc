@@ -2,7 +2,7 @@
 
 Список последних изменений в API Remap 1.2
 
-### 02-06-2026
+### 03-06-2026
 **Добавлено**
 - Методы создания, обновления и удаления, а также массового создания, обновления и удаления для [Карточек контента](#/dictionaries/contentcard#2-kartochka-kontenta)
 - Ошибка [74000](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) нельзя указать архивный канал продаж в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
@@ -11,6 +11,10 @@
 
 **Изменено**
 - Обновлено описание полей `assortment`, `cardContentName`, `description`, `name`, `salePlatform`, `salesChannels` в [Карточках контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
+### 02-06-2026
+**Удалено**
+- Поля `owner`, `group`, `shared` в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
 
 ### 01-06-2026
 **Изменено**
