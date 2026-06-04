@@ -2,12 +2,13 @@
 
 Список последних изменений в API Remap 1.2
 
-### 19-05-2026
+### 19-06-2026
 **Добавлено**
 - Поле модификации продукции параметрической техкарты `productionVariant` в [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya)
 - Ошибка [26116](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при изменении [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) нельзя изменить модификацию продукции параметрической техкарты
 - Ошибка [26117](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) с параметрической техкартой должна быть указана модификация продукции
 - Ошибка [26118](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) с параметрической техкартой должна быть указана модификация продукции, которая принадлежит продукту техкарты 
+- Ошибка [26119](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) нельзя указывать модификацию продукции с непараметрической техкартой
 
 ### 02-06-2026
 **Удалено**
