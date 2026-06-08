@@ -4,7 +4,7 @@
 
 ### ----------
 **Добавлено**
-- Ошибка [67007](#/errors#3-kody-oshibok-dlya-yacheek-i-zon-sklada) при превышении допустимого количества активных складов на аккаунте
+- Ошибка [67007](#/errors#3-kody-oshibok-dlya-skladov) при превышении допустимого количества активных складов на аккаунте
 
 ### 12-05-2026
 **Добавлено**
@@ -645,7 +645,7 @@
 ### 16-10-2023
 **Добавлено**
 - Добавлено поле `barcode` в [Ячейку склада](#/dictionaries/store#3-yachejki-sklada)
-- Ошибка [67006](#/errors#3-kody-oshibok-dlya-yacheek-i-zon-sklada)
+- Ошибка [67006](#/errors#3-kody-oshibok-dlya-skladov)
 
 ### 12-10-2023
 **Добавлено**
@@ -814,7 +814,7 @@
 
 ### 14-12-2022
 **Добавлено**
-- Дополнено описание [ошибок](#/errors#3-kody-oshibok-dlya-yacheek-i-zon-sklada) при работе с ячейками и зонами. Добавлены ошибки 67002, 67003, 67004, 67005, 67006.
+- Дополнено описание [ошибок](#/errors#3-kody-oshibok-dlya-skladov) при работе с ячейками и зонами. Добавлены ошибки 67002, 67003, 67004, 67005, 67006.
 - Добавлена информация по созданию, обновлению и удалению [зон](#/dictionaries/store#3-zony-sklada) и [ячеек](#/dictionaries/store#3-yachejki-sklada) в [складах](#/dictionaries/store#3-sklady)
 
 ### 12-12-2022
@@ -830,7 +830,7 @@
 - Ячейки в позиции [Отгрузки](#/documents/demand#2-otgruzka)
 - Ячейки в позиции [Возврата покупателя](#/documents/sales-return#2-vozvrat-pokupatelya)
 - Ячейки в позиции [Возврата поставщику](#/documents/purchase-return#2-vozvrat-postavshiku)
-- Описание [ошибок](#/errors#3-kody-oshibok-dlya-yacheek-i-zon-sklada) при работе с ячейками и зонами
+- Описание [ошибок](#/errors#3-kody-oshibok-dlya-skladov) при работе с ячейками и зонами
 
 ### 20-11-2022
 **Добавлено**
