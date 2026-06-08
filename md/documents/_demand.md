@@ -67,19 +67,19 @@
 | **invoicesOut**      | Массив ссылок на связанные счета покупателям в формате [Метаданных](#/general#3-metadannye)                    |
 
 ####  Другие поля 
-| Название                    | Тип                            | Описание                                                                                     |
-|-----------------------------|:-------------------------------|:---------------------------------------------------------------------------------------------|
-| **cargoName**               | String(255)                    | Наименование груза <br/>  `+Change-handler`                                                  |
-| **carrier**                 | [Meta](#/general#3-metadannye) | Метаданные перевозчика (контрагент или юрлицо)<br>`+Expand`  `+Change-handler`               |
-| **consignee**               | [Meta](#/general#3-metadannye) | Метаданные грузополучателя (контрагент или юрлицо) <br/>  `+Change-handler`                  |
-| **consignor**               | [Meta](#/general#3-metadannye) | Метаданные грузоотправителя (контрагент или юрлицо) <br/>  `+Change-handler`                 |
-| **goodPackQuantity**        | Int                            | Всего мест <br/>  `+Change-handler`                                                          |
-| **shippingInstructions**    | String(255)                    | Указания грузоотправителя   <br/>  `+Change-handler`                                         |
-| **stateContractId**         | String(255)                    | Идентификатор государственного контракта, договора (соглашения) <br/>  `+Change-handler`     |
-| **transportFacility**       | String(255)                    | Транспортное средство  <br/>  `+Change-handler`                                              |
-| **transportFacilityNumber** | String(255)                    | Номер автомобиля   <br/>  `+Change-handler`                                                  |
-| **shippingDocumentNumber**  | String(255)                    | Номер перевозочного документа   <br/>  `+Change-handler`                                     |
-| **shippingDocumentDate**    | DateTime                       | Дата перевозочного документа   <br/>  `+Change-handler`                                      |
+| Название                    | Тип                            | Описание                                                                                 |
+|-----------------------------|:-------------------------------|:-----------------------------------------------------------------------------------------|
+| **cargoName**               | String(255)                    | Наименование груза <br/>  `+Change-handler`                                              |
+| **carrier**                 | [Meta](#/general#3-metadannye) | Метаданные перевозчика (контрагент или юрлицо)<br>`+Expand`  `+Change-handler`           |
+| **consignee**               | [Meta](#/general#3-metadannye) | Метаданные грузополучателя (контрагент или юрлицо) <br/>`+Expand`  `+Change-handler`     |
+| **consignor**               | [Meta](#/general#3-metadannye) | Метаданные грузоотправителя (контрагент или юрлицо) <br/>`+Expand`  `+Change-handler`    |
+| **goodPackQuantity**        | Int                            | Всего мест <br/>  `+Change-handler`                                                      |
+| **shippingInstructions**    | String(255)                    | Указания грузоотправителя   <br/>  `+Change-handler`                                     |
+| **stateContractId**         | String(255)                    | Идентификатор государственного контракта, договора (соглашения) <br/>  `+Change-handler` |
+| **transportFacility**       | String(255)                    | Транспортное средство  <br/>  `+Change-handler`                                          |
+| **transportFacilityNumber** | String(255)                    | Номер автомобиля   <br/>  `+Change-handler`                                              |
+| **shippingDocumentNumber**  | String(255)                    | Номер перевозочного документа   <br/>  `+Change-handler`                                 |
+| **shippingDocumentDate**    | DateTime                       | Дата перевозочного документа   <br/>  `+Change-handler`                                  |
 
 #### Позиции Отгрузки
 Позиции Отгрузки - это список товаров/услуг/модификаций/партий/комплектов.
