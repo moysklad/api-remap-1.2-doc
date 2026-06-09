@@ -6,6 +6,48 @@
 **Добавлено**
 - Ошибка [67007](#/errors#3-kody-oshibok-dlya-skladov) при превышении допустимого количества активных складов на аккаунте
 
+### 08-06-2026
+**Добавлено**
+- Методы создания, обновления и удаления, а также массового создания, обновления и удаления для [Карточек контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+- Ошибка [75000](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) нельзя указать архивный канал продаж в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+- Ошибка [75001](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) можно создать максимум 100 [Карточек контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
+**Изменено**
+- Обновлено описание полей `assortment`, `cardContentName`, `description`, `name`, `salePlatform`, `salesChannels` в [Карточках контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
+### 02-06-2026
+**Удалено**
+- Поля `owner`, `group`, `shared` в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
+### 01-06-2026
+**Изменено**
+- Поле `lastOperationNames` в сущности [Точка продаж](#/dictionaries/retailstore#2-tochka-prodazh) помечено **устаревшим**
+
+### 28-05-2026
+**Добавлено**
+- Поле consignor (Грузоотправитель) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Поле shippingDocumentNumber (Номер перевозочного документа) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Поле shippingDocumentDate (Дата перевозочного документа) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Типы маркируемой продукции `TOBACCO` (Табачная продукция), `OTP` (Альтернативная табачная продукция), `NCP` (Никотиносодержащая продукция) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+  **Изменено**
+- Ошибка [16106](#/errors#3-kody-oshibok-dlya-tovarov)
+
+### 21-05-2026
+**Добавлено**
+- Новые типы маркированной продукции `TOYS` (Детские игрушки), `CONSERVE` (Консервированные продукты), `CONSTRUCTION` (Строительные материалы), `RADIO` (Радиоэлектроника), `GADGETS` (Радиоэлектроника. Ноутбуки и смартфоны) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty) и [Вывода из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+
+**Изменено**
+- Ошибка [16106](#/errors#3-kody-oshibok-dlya-tovarov)
+
+### 20-05-2026
+**Добавлено**
+- Ошибка валидации этапа производства: [25101](#/errors#3-kody-oshibok-dlya-etapov-proizvodstva)
+
+### 18-05-2026
+**Добавлено**
+- Массовые операции [создания/обновления](#/dictionaries/eventfeed#3-massovoe-sozdanie-i-obnovlenie-sobytij) в Ленте Событий
+- Массовые операции [удаления](#/dictionaries/eventfeed#3-massovoe-udalenie-sobytij) в Ленте Событий
+
 ### 12-05-2026
 **Добавлено**
 - Новые адресные поля (`shipmentAddress` и `shipmentAddressFull`) в протоколе update-provider в [Заказе покупателя](#/documents/customerOrder#2-zakaz-pokupatelya)
