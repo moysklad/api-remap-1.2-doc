@@ -2,6 +2,14 @@
 
 Список последних изменений в API Remap 1.2
 
+### 11-06-2026
+**Добавлено**
+- Поле `images` в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+- Ошибка [75002](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) размер изображения превышает допустимый для [Карточки контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+- Ошибка [75003](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) для [Карточки контента](#/dictionaries/contentcard#2-kartochka-kontenta) можно добавить только 15 изображений
+- Ошибка [75004](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) в [Карточку контента](#/dictionaries/contentcard#2-kartochka-kontenta) можно добавлять изображения только в форматах: JPEG, PNG, BMP и GIF
+
+
 ### 10-06-2026
 **Добавлено**
 - Ошибка [67007](#/errors#3-kody-oshibok-dlya-skladov) при превышении допустимого количества активных складов на аккаунте
