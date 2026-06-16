@@ -713,6 +713,7 @@ curl --compressed -X GET \
       "code": "00002",
       "externalCode": "BrmW28jLhRMI-jOPUdfWW0",
       "archived": false,
+      "article": "T01 (MO1)",
       "characteristics": [
         {
           "meta": {
