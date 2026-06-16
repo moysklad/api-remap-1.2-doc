@@ -290,6 +290,7 @@ curl --compressed -X GET \
       "code": "00005",
       "externalCode": "rAhHA0T1glL2xY3d1aHFT2",
       "archived": false,
+      "article": "T01 (M01)",
       "discountProhibited": false,
       "characteristics": [
         {
