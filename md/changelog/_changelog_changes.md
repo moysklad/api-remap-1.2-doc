@@ -247,7 +247,7 @@
 
 ### 02-09-2025
 **Добавлено**
-- Поле `downloadPermanentHref` в [Изображениях](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-ili-modifikacii)
+- Поле `downloadPermanentHref` в [Изображениях](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-modifikacii-ili-kartochki-kontenta)
 
 ### 25-08-2025
 **Добавлено**
@@ -525,7 +525,7 @@
 
 ### 16-07-2024
 **Добавлено**
-- Добавлено описание получения ссылки на [изображение](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-ili-modifikacii)
+- Добавлено описание получения ссылки на [изображение](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-modifikacii-ili-kartochki-kontenta)
 
 ### 12-07-2024
 **Добавлен**
