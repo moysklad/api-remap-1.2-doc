@@ -556,6 +556,7 @@ curl --compressed -X GET \
     -H "Content-Type: application/json" \
       -d '{
             "name": "(оверспелый, желтый)",
+            "article": "T01 (M01)",
             "characteristics": [
               {
                 "id": "627610e3-2cb1-11e6-8a84-bae500000054",
@@ -655,6 +656,7 @@ curl --compressed -X GET \
   "code": "00011",
   "externalCode": "tQcC7LdEjTZMh85Em6FTW1",
   "archived": false,
+  "article": "T01 (M01)",
   "discountProhibited": false,
   "characteristics": [
     {
@@ -897,6 +899,7 @@ curl --compressed -X GET \
       -d '[
             {
               "name": "(оверспелый, желтый)",
+              "article": "T01 (M01)",
               "characteristics": [
                 {
                   "id": "627610e3-2cb1-11e6-8a84-bae500000054",
@@ -1082,6 +1085,7 @@ curl --compressed -X GET \
     "code": "00011",
     "externalCode": "tQcC7LdEjTZMh85Em6FTW1",
     "archived": false,
+    "article": "T01 (M01)",
     "discountProhibited": false,
     "characteristics": [
       {
@@ -1509,6 +1513,7 @@ curl --compressed -X GET \
   "code": "00003",
   "externalCode": "YQ3kNHfDgtHOVhf20Md7Q0",
   "archived": false,
+  "article": "T01 (M01)",
   "discountProhibited": false,
   "characteristics": [
     {
@@ -1654,6 +1659,7 @@ curl --compressed -X GET \
             ],
             "discountProhibited": false,
             "code": "orangeCode",
+            "article": "T01 (M01)",
             "externalCode": "orange303",
             "buyPrice": {
               "value": 700.0
@@ -1742,6 +1748,7 @@ curl --compressed -X GET \
   "code": "orangeCode",
   "externalCode": "orange303",
   "archived": false,
+  "article": "T01 (M01)",
   "discountProhibited": false,
   "characteristics": [
     {

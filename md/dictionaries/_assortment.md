@@ -777,6 +777,7 @@ curl --compressed -X GET \
       "code": "00003",
       "externalCode": "i0u4rktiiVX6BWL60IVkJ1",
       "archived": false,
+      "article": "T01 (MO1)",
       "characteristics": [
         {
           "meta": {
@@ -1046,6 +1047,7 @@ curl --compressed -X GET \
       "code": "00002",
       "externalCode": "wc0O05KgiXC-4gxxp02DN0",
       "archived": false,
+      "article": "T01 (MO1)",
       "characteristics": [
         {
           "meta": {
@@ -1123,6 +1125,7 @@ curl --compressed -X GET \
       "code": "00003",
       "externalCode": "3PFqcaJagqpvSiIgKLaCq1",
       "archived": false,
+      "article": "T01 (MO1)",
       "characteristics": [
         {
           "meta": {
