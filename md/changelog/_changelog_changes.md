@@ -2,6 +2,13 @@
 
 Список последних изменений в API Remap 1.2
 
+### 22-06-2026
+**Добавлено**
+- Ограничение значений для поля `destinationCountry` (Страна назначения) в зависимости от `trackingType` (Тип маркируемой продукции) в документе [Вывод из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
+
+**Изменено**
+- Описание ошибки [57200](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota)
+
 ### 10-06-2026
 **Добавлено**
 - Ошибка [67007](#/errors#3-kody-oshibok-dlya-skladov) при превышении допустимого количества активных складов на аккаунте
