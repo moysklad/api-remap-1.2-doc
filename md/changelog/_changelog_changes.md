@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 23-06-2026
+**Добавлено**
+- Статья [Выгрузка статистики запросов к API](#/workbook/workbook-api-statistics#2-vygruzka-statistiki-zaprosov-k-api) в разделе [Workbook](#/workbook/workbook-first-steps#1-workbook)
+
 ### 10-06-2026
 **Добавлено**
 - Ошибка [67007](#/errors#3-kody-oshibok-dlya-skladov) при превышении допустимого количества активных складов на аккаунте
