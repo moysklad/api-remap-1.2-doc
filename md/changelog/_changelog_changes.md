@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 23-06-2026
+**Добавлено**
+- Поддержка протоколов change-handler и validation-feedback в [Заказе поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku)
+
 ### 10-06-2026
 **Добавлено**
 - Ошибка [67007](#/errors#3-kody-oshibok-dlya-skladov) при превышении допустимого количества активных складов на аккаунте
