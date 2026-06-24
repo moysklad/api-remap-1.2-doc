@@ -7,8 +7,8 @@
 - Поле `images` в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
 
 **Изменено**
-- Сообщение для ошибки [51004](#/errors#3-kody-oshibok-dlya-izobrazhenii)
-- Сообщение и описание для ошибки [51006](#/errors#3-kody-oshibok-dlya-izobrazhenii)
+- Сообщение для ошибки [51004](#/errors#3-kody-oshibok-dlya-izobrazhenij)
+- Сообщение и описание для ошибки [51006](#/errors#3-kody-oshibok-dlya-izobrazhenij)
 
 ### 10-06-2026
 **Добавлено**
