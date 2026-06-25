@@ -2,11 +2,65 @@
 
 Список последних изменений в API Remap 1.2
 
-### 26-05-2026
+### 26-06-2026
 **Добавлено**
 - Поле `parametricMaterials` коллекция метаданных параметрических материалов [Техкарты](#/dictionaries/processingplan#4-parametricheskie-materialy-tehkarty)
 - Новый эндпоинт для работы с параметрическими материалами [Техкарты](#/dictionaries/processingplan#3-upravlenie-parametricheskimi-materialami-tehkarty)
 - Ошибка [25064](#/errors#3-kody-oshibok-dlya-tehnologicheskih-kart) при добавлении второго и более продуктов в Параметрическую техкарту
+
+### 25-06-2026
+**Добавлено**
+- Поле модификации продукции параметрической техкарты `productionVariant` в [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya)
+- Ошибка [26116](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при изменении [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) нельзя изменить модификацию продукции в позиции производственного задания
+- Ошибка [26117](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) с параметрической техкартой должна быть указана модификация продукции
+- Ошибка [26118](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) с параметрической техкартой должна быть указана модификация продукции, которая принадлежит продукту техкарты
+- Ошибка [26119](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) нельзя указывать модификацию продукции с непараметрической техкартой
+
+### 10-06-2026
+**Добавлено**
+- Ошибка [67007](#/errors#3-kody-oshibok-dlya-skladov) при превышении допустимого количества активных складов на аккаунте
+
+### 08-06-2026
+**Добавлено**
+- Методы создания, обновления и удаления, а также массового создания, обновления и удаления для [Карточек контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+- Ошибка [75000](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) нельзя указать архивный канал продаж в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+- Ошибка [75001](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) можно создать максимум 100 [Карточек контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
+**Изменено**
+- Обновлено описание полей `assortment`, `cardContentName`, `description`, `name`, `salePlatform`, `salesChannels` в [Карточках контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
+### 02-06-2026
+**Удалено**
+- Поля `owner`, `group`, `shared` в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
+### 01-06-2026
+**Изменено**
+- Поле `lastOperationNames` в сущности [Точка продаж](#/dictionaries/retailstore#2-tochka-prodazh) помечено **устаревшим**
+
+### 28-05-2026
+**Добавлено**
+- Поле consignor (Грузоотправитель) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Поле shippingDocumentNumber (Номер перевозочного документа) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Поле shippingDocumentDate (Дата перевозочного документа) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Типы маркируемой продукции `TOBACCO` (Табачная продукция), `OTP` (Альтернативная табачная продукция), `NCP` (Никотиносодержащая продукция) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+  **Изменено**
+- Ошибка [16106](#/errors#3-kody-oshibok-dlya-tovarov)
+
+### 21-05-2026
+**Добавлено**
+- Новые типы маркированной продукции `TOYS` (Детские игрушки), `CONSERVE` (Консервированные продукты), `CONSTRUCTION` (Строительные материалы), `RADIO` (Радиоэлектроника), `GADGETS` (Радиоэлектроника. Ноутбуки и смартфоны) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty) и [Вывода из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+
+**Изменено**
+- Ошибка [16106](#/errors#3-kody-oshibok-dlya-tovarov)
+
+### 20-05-2026
+**Добавлено**
+- Ошибка валидации этапа производства: [25101](#/errors#3-kody-oshibok-dlya-etapov-proizvodstva)
+
+### 18-05-2026
+**Добавлено**
+- Массовые операции [создания/обновления](#/dictionaries/eventfeed#3-massovoe-sozdanie-i-obnovlenie-sobytij) в Ленте Событий
+- Массовые операции [удаления](#/dictionaries/eventfeed#3-massovoe-udalenie-sobytij) в Ленте Событий
 
 ### 12-05-2026
 **Добавлено**
@@ -647,7 +701,7 @@
 ### 16-10-2023
 **Добавлено**
 - Добавлено поле `barcode` в [Ячейку склада](#/dictionaries/store#3-yachejki-sklada)
-- Ошибка [67006](#/errors#3-kody-oshibok-dlya-yacheek-i-zon-sklada)
+- Ошибка [67006](#/errors#3-kody-oshibok-dlya-skladov)
 
 ### 12-10-2023
 **Добавлено**
@@ -816,7 +870,7 @@
 
 ### 14-12-2022
 **Добавлено**
-- Дополнено описание [ошибок](#/errors#3-kody-oshibok-dlya-yacheek-i-zon-sklada) при работе с ячейками и зонами. Добавлены ошибки 67002, 67003, 67004, 67005, 67006.
+- Дополнено описание [ошибок](#/errors#3-kody-oshibok-dlya-skladov) при работе с ячейками и зонами. Добавлены ошибки 67002, 67003, 67004, 67005, 67006.
 - Добавлена информация по созданию, обновлению и удалению [зон](#/dictionaries/store#3-zony-sklada) и [ячеек](#/dictionaries/store#3-yachejki-sklada) в [складах](#/dictionaries/store#3-sklady)
 
 ### 12-12-2022
@@ -832,7 +886,7 @@
 - Ячейки в позиции [Отгрузки](#/documents/demand#2-otgruzka)
 - Ячейки в позиции [Возврата покупателя](#/documents/sales-return#2-vozvrat-pokupatelya)
 - Ячейки в позиции [Возврата поставщику](#/documents/purchase-return#2-vozvrat-postavshiku)
-- Описание [ошибок](#/errors#3-kody-oshibok-dlya-yacheek-i-zon-sklada) при работе с ячейками и зонами
+- Описание [ошибок](#/errors#3-kody-oshibok-dlya-skladov) при работе с ячейками и зонами
 
 ### 20-11-2022
 **Добавлено**
