@@ -6,7 +6,7 @@
 **Добавлено**
 - Поле `parametricMaterials` коллекция метаданных параметрических материалов [Техкарты](#/dictionaries/processingplan#4-parametricheskie-materialy-tehkarty)
 - Новый эндпоинт для работы с параметрическими материалами [Техкарты](#/dictionaries/processingplan#3-upravlenie-parametricheskimi-materialami-tehkarty)
-- Ошибка [25064](#/errors#3-kody-oshibok-dlya-tehnologicheskih-kart) при добавлении второго и более продуктов в Параметрическую техкарту
+- Ошибки [25064-25071](#/errors#3-kody-oshibok-dlya-tehnologicheskih-kart)
 
 ### 25-06-2026
 **Добавлено**

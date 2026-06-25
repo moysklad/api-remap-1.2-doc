@@ -5,28 +5,28 @@
 ### Техкарты 
 #### Атрибуты сущности
 
-| Название                  | Тип                            | Фильтрация                 | Описание                                                                                                                            |
-|---------------------------|:-------------------------------|:---------------------------|:------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**             | UUID                           | `=` `!=`                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                |
-| **archived**              | Boolean                        | `=` `!=`                   | Добавлена ли Техкарта в архив<br>`+Обязательное при ответе`                                                                         |
-| **code**                  | String(255)                    | `=` `!=` `~` `~=` `=~`     | Код Техкарты                                                                                                                        |
-| **cost**                  | Double                         |                            | Стоимость производства                                                                                                              |
-| **costDistributionType**  | Enum                           |                            | Тип распределения себестоимости. Возможные значения: `BY_PRICE`, `BY_PRODUCTION`<br>`+Обязательное при ответе` `+Только для чтения` |
-| **externalCode**          | String(255)                    | `=` `!=` `~` `~=` `=~`     | Внешний код Техкарты<br>`+Обязательное при ответе`                                                                                  |
-| **group**                 | [Meta](#/general#3-metadannye) | `=` `!=`                   | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                            |
-| **id**                    | UUID                           | `=` `!=`                   | ID Техкарты<br>`+Обязательное при ответе` `+Только для чтения`                                                                      |
-| **stages**                | MetaArray                      |                            | Коллекция метаданных этапов Техкарты<br>`+Обязательное при ответе` `+Expand`                                                        |
-| **parametricMaterials**   | MetaArray                      |                            | Коллекция метаданных зависимых материалов Параметрической Техкарты<br>`+Обязательное при ответе` `+Expand`                          |
-| **materials**             | MetaArray                      |                            | Коллекция метаданных материалов Техкарты<br>`+Обязательное при ответе` `+Expand`                                                    |
-| **meta**                  | [Meta](#/general#3-metadannye) |                            | Метаданные Техкарты<br>`+Обязательное при ответе`                                                                                   |
-| **name**                  | String(255)                    | `=` `!=` `~` `~=` `=~`     | Наименование Техкарты<br>`+Обязательное при ответе` `+Необходимо при создании`                                                      |
-| **owner**                 | [Meta](#/general#3-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br>`+Expand`                                                                                                   |
-| **parent**                | [Meta](#/general#3-metadannye) |                            | Метаданные группы Техкарты<br>`+Обязательное при ответе` `+Expand`                                                                  |
-| **pathName**              | String                         |                            | Наименование группы, в которую входит Техкарта<br>`+Обязательное при ответе` `+Только для чтения`                                   |
-| **processingProcess**     | [Meta](#/general#3-metadannye) |                            | Метаданные Техпроцесса<br>`+Обязательное при ответе` `+Expand`                                                                      |
-| **products**              | MetaArray                      |                            | Коллекция метаданных готовых продуктов Техкарты<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                  |
-| **shared**                | Boolean                        | `=` `!=`                   | Общий доступ<br>`+Обязательное при ответе`                                                                                          |
-| **updated**               | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления Техкарты<br>`+Обязательное при ответе` `+Только для чтения`                                            |
+| Название                 | Тип                            | Фильтрация                 | Описание                                                                                                                                                                                                           |
+|--------------------------|:-------------------------------|:---------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**            | UUID                           | `=` `!=`                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                               |
+| **archived**             | Boolean                        | `=` `!=`                   | Добавлена ли Техкарта в архив<br>`+Обязательное при ответе`                                                                                                                                                        |
+| **code**                 | String(255)                    | `=` `!=` `~` `~=` `=~`     | Код Техкарты                                                                                                                                                                                                       |
+| **cost**                 | Double                         |                            | Стоимость производства                                                                                                                                                                                             |
+| **costDistributionType** | Enum                           |                            | Тип распределения себестоимости. Возможные значения: `BY_PRICE`, `BY_PRODUCTION`<br>`+Обязательное при ответе` `+Только для чтения`                                                                                |
+| **externalCode**         | String(255)                    | `=` `!=` `~` `~=` `=~`     | Внешний код Техкарты<br>`+Обязательное при ответе`                                                                                                                                                                 |
+| **group**                | [Meta](#/general#3-metadannye) | `=` `!=`                   | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                           |
+| **id**                   | UUID                           | `=` `!=`                   | ID Техкарты<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                     |
+| **stages**               | MetaArray                      |                            | Коллекция метаданных этапов Техкарты<br>`+Обязательное при ответе` `+Expand`                                                                                                                                       |
+| **parametricMaterials**  | MetaArray                      |                            | Коллекция метаданных зависимых материалов Параметрической Техкарты<br>`+Обязательное при ответе` `+Expand`                                                                                                         |
+| **materials**            | MetaArray                      |                            | Коллекция метаданных материалов Техкарты<br>`+Обязательное при ответе` `+Expand`                                                                                                                                   |
+| **meta**                 | [Meta](#/general#3-metadannye) |                            | Метаданные Техкарты<br>`+Обязательное при ответе`                                                                                                                                                                  |
+| **name**                 | String(255)                    | `=` `!=` `~` `~=` `=~`     | Наименование Техкарты<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                     |
+| **owner**                | [Meta](#/general#3-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                                                  |
+| **parent**               | [Meta](#/general#3-metadannye) |                            | Метаданные группы Техкарты<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                 |
+| **pathName**             | String                         |                            | Наименование группы, в которую входит Техкарта<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                  |
+| **processingProcess**    | [Meta](#/general#3-metadannye) |                            | Метаданные Техпроцесса<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                     |
+| **products**             | MetaArray                      |                            | Коллекция метаданных готовых продуктов Техкарты. В параметрической техкарте может быть только один продукт (родительский товар с модификациями)<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` |
+| **shared**               | Boolean                        | `=` `!=`                   | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                                         |
+| **updated**              | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления Техкарты<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                           |
 
 Особенности:
 Для costDistributionType значение BY_PRODUCTION доступно только для техкарт с двумя и более позициями продукции. При изменении количества позиций продукции на значение меньшее, чем 2 автоматически меняется на BY_PRICE.
@@ -34,16 +34,16 @@
 #### Этапы Техкарты
 Объект этап Техкарты содержит следующие поля:
 
-| Название                      | Тип                                                       | Описание                                                                 |
-|-------------------------------|:----------------------------------------------------------|:-------------------------------------------------------------------------|
-| **accountId**                 | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`     |
-| **enableHourAccounting**      | Boolean                                                   | Признак активности учета по нормо-часам<br>`+Обязательное при ответе`    |
-| **id**                        | UUID                                                      | ID Материала<br>`+Обязательное при ответе` `+Только для чтения`          |
-| **cost**                      | Double                                                    | Стоимость производства, на определенном этапе `+Обязательное при ответе` |
-| **labourCost**                | Double                                                    | Оплата труда, на определенном этапе `+Обязательное при ответе`           |
-| **standardHour**              | Double                                                    | Нормо-часы, на определенном этапе<br>`+Обязательное при ответе`          |
+| Название                      | Тип                            | Описание                                                                 |
+|-------------------------------|:-------------------------------|:-------------------------------------------------------------------------|
+| **accountId**                 | UUID                           | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`     |
+| **enableHourAccounting**      | Boolean                        | Признак активности учета по нормо-часам<br>`+Обязательное при ответе`    |
+| **id**                        | UUID                           | ID Материала<br>`+Обязательное при ответе` `+Только для чтения`          |
+| **cost**                      | Double                         | Стоимость производства, на определенном этапе `+Обязательное при ответе` |
+| **labourCost**                | Double                         | Оплата труда, на определенном этапе `+Обязательное при ответе`           |
+| **standardHour**              | Double                         | Нормо-часы, на определенном этапе<br>`+Обязательное при ответе`          |
 | **processingProcessPosition** | [Meta](#/general#3-metadannye) | Метаданные позиции техпроцесса<br>`+Обязательное при ответе`             |
-| **standardHourCost**          | Double                                                    | Стоимость нормо-часа<br>`+Обязательное при ответе` `+Только для чтения`  |
+| **standardHourCost**          | Double                         | Стоимость нормо-часа<br>`+Обязательное при ответе` `+Только для чтения`  |
 
 Особенности:
 Этапы Техкарты строго соответствует этапам в позициях привязанного техпроцесса.
@@ -57,13 +57,13 @@
 Материалы Техкарты - это список товаров/модификаций, используемых для производства готовых продуктов.
 Объект материала Техкарты содержит следующие поля:
 
-| Название                      | Тип                                                       | Описание                                                                                                                                                                                      |
-|-------------------------------|:----------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**                 | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                          |
+| Название                      | Тип                            | Описание                                                                                                                                                                                      |
+|-------------------------------|:-------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**                 | UUID                           | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                          |
 | **assortment**                | [Meta](#/general#3-metadannye) | Метаданные товара или модификации позиции<br>`+Обязательное при ответе` `+Expand`                                                                                                             |
-| **id**                        | UUID                                                      | ID Материала<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                               |
+| **id**                        | UUID                           | ID Материала<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                               |
 | **product**                   | [Meta](#/general#3-metadannye) | Метаданные товара позиции. В случае, если в поле **assortment** указана модификация, то это поле содержит товар, к которому относится эта модификация<br>`+Обязательное при ответе` `+Expand` |
-| **quantity**                  | Float                                                     | Количество товаров данного вида в позиции<br>`+Обязательное при ответе`                                                                                                                       |
+| **quantity**                  | Float                          | Количество товаров данного вида в позиции<br>`+Обязательное при ответе`                                                                                                                       |
 | **processingProcessPosition** | [Meta](#/general#3-metadannye) | Метаданные позиции Техпроцесса<br>`+Обязательное при ответе`                                                                                                                                  |
 | **materialProcessingPlan**    | [Meta](#/general#3-metadannye) | Метаданные техкарты материала<br>`+Только для чтения`                                                                                                                                         |
 
@@ -78,7 +78,6 @@
 | **accountId**                   | UUID                           | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                                             |
 | **assortment**                  | [Meta](#/general#3-metadannye) | Метаданные товара или модификации позиции<br>`+Обязательное при ответе` `+Expand`                                                                                                                                                                                                |
 | **id**                          | UUID                           | ID Материала<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                                                  |
-| **product**                     | [Meta](#/general#3-metadannye) | Метаданные товара позиции. В случае, если в поле **assortment** указана модификация, то это поле содержит товар, к которому относится эта модификация<br>`+Обязательное при ответе` `+Expand`                                                                                    |
 | **quantity**                    | Float                          | Количество товаров данного вида в позиции<br>`+Обязательное при ответе`                                                                                                                                                                                                          |
 | **paramFeatureCharacteristic**  | [Meta](#/general#3-metadannye) | Метаданные характеристики продукта, от которой зависит выбор материала для данной позиции параметрического материала. Возвращает null в режиме, когда задан конкретный материал.<br>`Обязательное при ответе`                                                                    |
 | **paramQuantityCharacteristic** | [Meta](#/general#3-metadannye) | Метаданные характеристики продукта, от которой зависит норма расхода для данной позиции параметрического материала. Возвращает null в режиме, когда норма единая для всей позиции параметрических материалов.<br>`Обязательное при ответе`                                       |
@@ -93,13 +92,13 @@
 Продукты Техкарты - это список товаров/модификаций, получаемых при производстве.
 Объект продукта Техкарты содержит следующие поля:
 
-| Название       | Тип                                                       | Описание                                                                                                                                                                                      |
-|----------------|:----------------------------------------------------------| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **accountId**  | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                          |
+| Название       | Тип                            | Описание                                                                                                                                                                                      |
+|----------------|:-------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**  | UUID                           | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                          |
 | **assortment** | [Meta](#/general#3-metadannye) | Метаданные товара или модификации позиции<br>`+Обязательное при ответе` `+Expand`                                                                                                             |
-| **id**         | UUID                                                      | ID Продукта<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                |
+| **id**         | UUID                           | ID Продукта<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                |
 | **product**    | [Meta](#/general#3-metadannye) | Метаданные товара позиции. В случае, если в поле **assortment** указана модификация, то это поле содержит товар, к которому относится эта модификация<br>`+Обязательное при ответе` `+Expand` |
-| **quantity**   | Float                                                     | Количество товаров данного вида в позиции<br>`+Обязательное при ответе`                                                                                                                       |
+| **quantity**   | Float                          | Количество товаров данного вида в позиции<br>`+Обязательное при ответе`                                                                                                                       |
 
 С материалами и продуктами можно работать с помощью [специальных ресурсов для управления позициями Техкарты](#/dictionaries/processingplan#3-upravlenie-materialami-tehkarty),
 а также в составе отдельной Техкарты. При работе в составе отдельной Техкарты,
@@ -116,19 +115,19 @@
 Запрос всех Техкарт на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-| Название    | Тип                                                       | Описание                                               |
-| ----------- | :-------------------------------------------------------- |:-------------------------------------------------------|
-| **meta**    | [Meta](#/general#3-metadannye) | Метаданные о выдаче,                                   |
-| **context** | [Meta](#/general#3-metadannye) | Метаданные о сотруднике, выполнившем запрос.           |
-| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой Техкарты.   |
+| Название    | Тип                            | Описание                                             |
+|-------------|:-------------------------------|:-----------------------------------------------------|
+| **meta**    | [Meta](#/general#3-metadannye) | Метаданные о выдаче,                                 |
+| **context** | [Meta](#/general#3-metadannye) | Метаданные о сотруднике, выполнившем запрос.         |
+| **rows**    | Array(Object)                  | Массив JSON объектов, представляющих собой Техкарты. |
 
 **Параметры**
 
-| Параметр                       | Описание                                                                                                                               |
-| ------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------- |
-| **limit**                      | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
-| **offset**                     | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
-| **search**                     | `string` (optional) *Example: 0001* Фильтр документов по указанной поисковой строке.                                                   |
+| Параметр   | Описание                                                                                                                               |
+|------------|:---------------------------------------------------------------------------------------------------------------------------------------|
+| **limit**  | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
+| **offset** | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
+| **search** | `string` (optional) *Example: 0001* Фильтр документов по указанной поисковой строке.                                                   |
 
 > Получить список Техкарт
 
@@ -556,6 +555,320 @@ curl --compressed -X GET \
    "type": "processingplanparametricmaterial",
    "mediaType": "application/json",
    "size": 0,
+   "limit": 1000,
+   "offset": 0
+  }
+ }
+}
+```
+
+> Пример создания новой Техкарты с телом запроса, содержащим только обычные материалы.
+
+```shell
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "name": "plan_name",
+  "products": [
+    {
+      "assortment": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/3b89c8e1-6fae-11f1-c5b5-417f00000153",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      },
+      "quantity": 1
+    }
+  ],
+  "materials": [
+    {
+      "assortment": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/4d2cdff9-6fae-11f1-c5b5-417f00000176",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      },
+      "quantity": 1
+    }
+  ]
+}'
+```
+
+> Response 200 (application/json)
+> Успешный запрос. Результат - JSON представление созданной Техкарты.
+
+```json
+{
+ "meta": {
+  "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/2ca7125a-7068-11f1-dd6d-6f1800000024",
+  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
+  "type": "processingplan",
+  "mediaType": "application/json",
+  "uuidHref": "https://api.moysklad.ru/app/#processingplan/edit?id=2ca7125a-7068-11f1-dd6d-6f1800000024"
+ },
+ "id": "2ca7125a-7068-11f1-dd6d-6f1800000024",
+ "accountId": "f1b6a7de-6fad-11f1-7ba9-aab600000001",
+ "owner": {
+  "meta": {
+   "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/f2f6a239-6fad-11f1-c5b5-417f00000058",
+   "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+   "type": "employee",
+   "mediaType": "application/json",
+   "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=f2f6a239-6fad-11f1-c5b5-417f00000058"
+  }
+ },
+ "shared": true,
+ "group": {
+  "meta": {
+   "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f1ba4000-6fad-11f1-7ba9-aab600000002",
+   "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+   "type": "group",
+   "mediaType": "application/json"
+  }
+ },
+ "updated": "2026-06-25 10:33:35.211",
+ "name": "plan_name",
+ "externalCode": "qwl-9vmoiB4cm4dS0SByT2",
+ "archived": false,
+ "pathName": "",
+ "processingProcess": {
+  "meta": {
+   "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/f4221eb5-6fad-11f1-c5b5-417f00000100",
+   "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
+   "type": "processingprocess",
+   "mediaType": "application/json",
+   "uuidHref": "https://api.moysklad.ru/app/#processingprocess/edit?id=f4221eb5-6fad-11f1-c5b5-417f00000100"
+  }
+ },
+ "cost": 0.0,
+ "costDistributionType": "BY_PRICE",
+ "stages": {
+  "meta": {
+   "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/2ca7125a-7068-11f1-dd6d-6f1800000024/stages",
+   "type": "processingplanstage",
+   "mediaType": "application/json",
+   "size": 1,
+   "limit": 1000,
+   "offset": 0
+  }
+ },
+ "materials": {
+  "meta": {
+   "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/2ca7125a-7068-11f1-dd6d-6f1800000024/materials",
+   "type": "processingplanmaterial",
+   "mediaType": "application/json",
+   "size": 1,
+   "limit": 1000,
+   "offset": 0
+  }
+ },
+ "parametricMaterials": {
+  "meta": {
+   "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/2ca7125a-7068-11f1-dd6d-6f1800000024/parametricmaterials",
+   "type": "processingplanparametricmaterial",
+   "mediaType": "application/json",
+   "size": 0,
+   "limit": 1000,
+   "offset": 0
+  }
+ },
+ "products": {
+  "meta": {
+   "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/2ca7125a-7068-11f1-dd6d-6f1800000024/products",
+   "type": "processingplanresult",
+   "mediaType": "application/json",
+   "size": 1,
+   "limit": 1000,
+   "offset": 0
+  }
+ }
+}
+```
+
+> Пример создания новой Техкарты с телом запроса, содержащим обычный и парметрический материалы.
+
+```shell
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "name": "plan_name",
+  "products": [
+    {
+      "assortment": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/3b89c8e1-6fae-11f1-c5b5-417f00000153",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      },
+      "quantity": 1
+    }
+  ],
+  "materials": [
+    {
+      "assortment": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/4d2cdff9-6fae-11f1-c5b5-417f00000176",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      },
+      "quantity": 1
+    }
+  ],
+  "parametricMaterials": [
+    {
+      "paramFeatureCharacteristic": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/58fe2fba-6fae-11f1-c5b5-417f00000183",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+        }
+      },
+      "paramFeatures": [
+        {
+          "characteristicValue": "blue",
+          "assortment": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/48a9a623-6fae-11f1-c5b5-417f00000168",
+              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+              "type": "product",
+              "mediaType": "application/json",
+              "uuidHref": "https://api.moysklad.ru/app/#feature/edit?id=48a98379-6fae-11f1-c5b5-417f00000166"
+            }
+          }
+        },
+        {
+          "characteristicValue": "red",
+          "assortment": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/4af31bf0-6fae-11f1-c5b5-417f0000016f",
+              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+              "type": "product",
+              "mediaType": "application/json",
+              "uuidHref": "https://api.moysklad.ru/app/#feature/edit?id=4af30c01-6fae-11f1-c5b5-417f0000016d"
+            }
+          }
+        }
+      ],
+      "paramQuantityCharacteristic": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/58fe3a69-6fae-11f1-c5b5-417f00000184",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+        }
+      },
+      "paramQuantities": [
+        {
+          "characteristicValue": "L",
+          "quantity": 2.0
+        },
+        {
+          "characteristicValue": "M",
+          "quantity": 1.0
+        }
+      ]
+    }
+  ]
+}'
+```
+
+> Response 200 (application/json)
+> Успешный запрос. Результат - JSON представление созданной Техкарты.
+
+```json
+{
+ "meta": {
+  "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/05a7341e-7062-11f1-dd6d-6f1800000011",
+  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
+  "type": "processingplan",
+  "mediaType": "application/json",
+  "uuidHref": "https://api.moysklad.ru/app/#processingplan/edit?id=05a7341e-7062-11f1-dd6d-6f1800000011"
+ },
+ "id": "05a7341e-7062-11f1-dd6d-6f1800000011",
+ "accountId": "f1b6a7de-6fad-11f1-7ba9-aab600000001",
+ "owner": {
+  "meta": {
+   "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/f2f6a239-6fad-11f1-c5b5-417f00000058",
+   "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+   "type": "employee",
+   "mediaType": "application/json",
+   "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=f2f6a239-6fad-11f1-c5b5-417f00000058"
+  }
+ },
+ "shared": true,
+ "group": {
+  "meta": {
+   "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f1ba4000-6fad-11f1-7ba9-aab600000002",
+   "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+   "type": "group",
+   "mediaType": "application/json"
+  }
+ },
+ "updated": "2026-06-25 09:49:32.726",
+ "name": "plan_name",
+ "externalCode": "8Ax3rk4ZiUzNpSO9M3JB60",
+ "archived": false,
+ "pathName": "",
+ "processingProcess": {
+  "meta": {
+   "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/f4221eb5-6fad-11f1-c5b5-417f00000100",
+   "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/metadata",
+   "type": "processingprocess",
+   "mediaType": "application/json",
+   "uuidHref": "https://api.moysklad.ru/app/#processingprocess/edit?id=f4221eb5-6fad-11f1-c5b5-417f00000100"
+  }
+ },
+ "cost": 0.0,
+ "costDistributionType": "BY_PRICE",
+ "stages": {
+  "meta": {
+   "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/05a7341e-7062-11f1-dd6d-6f1800000011/stages",
+   "type": "processingplanstage",
+   "mediaType": "application/json",
+   "size": 1,
+   "limit": 1000,
+   "offset": 0
+  }
+ },
+ "materials": {
+  "meta": {
+   "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/05a7341e-7062-11f1-dd6d-6f1800000011/materials",
+   "type": "processingplanmaterial",
+   "mediaType": "application/json",
+   "size": 1,
+   "limit": 1000,
+   "offset": 0
+  }
+ },
+ "parametricMaterials": {
+  "meta": {
+   "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/05a7341e-7062-11f1-dd6d-6f1800000011/parametricmaterials",
+   "type": "processingplanparametricmaterial",
+   "mediaType": "application/json",
+   "size": 1,
+   "limit": 1000,
+   "offset": 0
+  }
+ },
+ "products": {
+  "meta": {
+   "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/05a7341e-7062-11f1-dd6d-6f1800000011/products",
+   "type": "processingplanresult",
+   "mediaType": "application/json",
+   "size": 1,
    "limit": 1000,
    "offset": 0
   }
@@ -1077,7 +1390,7 @@ curl --compressed -X GET \
    "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/1a18770e-ad9a-11e6-5bed-427b00000064/products",
    "type": "processingplanresult",
    "mediaType": "application/json",
-   "size": 2,
+   "size": 1,
    "limit": 1000,
    "offset": 0
   }
@@ -1105,9 +1418,9 @@ curl --compressed -X GET \
 
 **Параметры**
 
-| Параметр | Описание                                                                           |
-| :------- |:-----------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Техкарты.   |
+| Параметр | Описание                                                                         |
+|:---------|:---------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Техкарты. |
 
 > Пример запроса на обновление отдельной Техкарты.
 
@@ -1219,16 +1532,16 @@ curl --compressed -X GET \
 ### Получить этапы Техкарты
 Запрос на получение списка всех этапов данной Техкарты.
 
-| Название    | Тип                                                       | Описание                                                     |
-| ----------- | :-------------------------------------------------------- |:-------------------------------------------------------------|
-| **meta**    | [Meta](#/general#3-metadannye) | Метаданные о выдаче,                                         |
-| **context** | [Meta](#/general#3-metadannye) | Метаданные о сотруднике, выполнившем запрос.                 |
-| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой этапы Техкарты.   |
+| Название    | Тип                            | Описание                                                   |
+|-------------|:-------------------------------|:-----------------------------------------------------------|
+| **meta**    | [Meta](#/general#3-metadannye) | Метаданные о выдаче,                                       |
+| **context** | [Meta](#/general#3-metadannye) | Метаданные о сотруднике, выполнившем запрос.               |
+| **rows**    | Array(Object)                  | Массив JSON объектов, представляющих собой этапы Техкарты. |
 
 **Параметры**
 
 | Параметр   | Описание                                                                                                                               |
-| :--------- |:---------------------------------------------------------------------------------------------------------------------------------------|
+|:-----------|:---------------------------------------------------------------------------------------------------------------------------------------|
 | **id**     | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Техкарты.                                                       |
 | **limit**  | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
 | **offset** | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
@@ -1283,10 +1596,10 @@ curl --compressed -X GET \
 
 **Параметры**
 
-| Параметр       | Описание                                                                                 |
-| :------------- |:-----------------------------------------------------------------------------------------|
-| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Техкарты.         |
-| **stagesID**   | `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id этапа Техкарты.   |
+| Параметр     | Описание                                                                               |
+|:-------------|:---------------------------------------------------------------------------------------|
+| **id**       | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Техкарты.       |
+| **stagesID** | `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id этапа Техкарты. |
 
 > Запрос на получение отдельного этапа Техкарты с указанным id.
 
@@ -1327,10 +1640,10 @@ curl --compressed -X GET \
 
 **Параметры**
 
-| Параметр       | Описание                                                                               |
-| :------------- |:---------------------------------------------------------------------------------------|
-| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Техкарты.       |
-| **stagesID**   | `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id этапа Техкарты. |
+| Параметр     | Описание                                                                               |
+|:-------------|:---------------------------------------------------------------------------------------|
+| **id**       | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Техкарты.       |
+| **stagesID** | `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id этапа Техкарты. |
 
 > Пример запроса на обновление отдельного этапа в Техкарте.
 
@@ -1376,16 +1689,16 @@ curl --compressed -X GET \
 ### Получить материалы Техкарты 
 Запрос на получение списка всех материалов данной Техкарты.
 
-| Название    | Тип                                                       | Описание                                                         |
-| ----------- | :-------------------------------------------------------- |:-----------------------------------------------------------------|
-| **meta**    | [Meta](#/general#3-metadannye) | Метаданные о выдаче,                                             |
-| **context** | [Meta](#/general#3-metadannye) | Метаданные о сотруднике, выполнившем запрос.                     |
-| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой материалы Техкарты.   |
+| Название    | Тип                            | Описание                                                       |
+|-------------|:-------------------------------|:---------------------------------------------------------------|
+| **meta**    | [Meta](#/general#3-metadannye) | Метаданные о выдаче,                                           |
+| **context** | [Meta](#/general#3-metadannye) | Метаданные о сотруднике, выполнившем запрос.                   |
+| **rows**    | Array(Object)                  | Массив JSON объектов, представляющих собой материалы Техкарты. |
 
 **Параметры**
 
 | Параметр   | Описание                                                                                                                               |
-| :--------- |:---------------------------------------------------------------------------------------------------------------------------------------|
+|:-----------|:---------------------------------------------------------------------------------------------------------------------------------------|
 | **id**     | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Техкарты.                                                       |
 | **limit**  | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
 | **offset** | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
@@ -1467,7 +1780,7 @@ curl --compressed -X GET \
 **Параметры**
 
 | Параметр       | Описание                                                                                 |
-| :------------- |:-----------------------------------------------------------------------------------------|
+|:---------------|:-----------------------------------------------------------------------------------------|
 | **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Техкарты.         |
 | **positionID** | `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Техкарты. |
  
@@ -1529,9 +1842,9 @@ curl --compressed -X GET \
 
 **Параметры**
 
-| Параметр | Описание                                                                          |
-| :------- |:----------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Техкарты.  |
+| Параметр | Описание                                                                         |
+|:---------|:---------------------------------------------------------------------------------|
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Техкарты. |
 
 > Пример создания одного материала в Техкарте.
 
@@ -1719,7 +2032,7 @@ curl --compressed -X GET \
 **Параметры**
 
 | Параметр       | Описание                                                                                 |
-| :------------- |:-----------------------------------------------------------------------------------------|
+|:---------------|:-----------------------------------------------------------------------------------------|
 | **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Техкарты.         |
 | **positionID** | `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Техкарты. |
 
@@ -1782,7 +2095,7 @@ curl --compressed -X GET \
 **Параметры**
 
 | Параметр       | Описание                                                                                 |
-| :------------- |:-----------------------------------------------------------------------------------------|
+|:---------------|:-----------------------------------------------------------------------------------------|
 | **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Техкарты.         |
 | **positionID** | `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Техкарты. |
 
@@ -1839,16 +2152,16 @@ curl --compressed -X POST \
 
 Для случаев, когда от характеристики зависит лишь материал, а норма является конкретным значением, метаданные характеристики в quantityCharacteristic ==  null, а сами значения characteristicValue в массиве quantityValues[] с единственным значением нормы не возвращаются. Аналогично, когда норма расхода конкретного материала зависит от характеристики, то при materialCharacteristic  ==  null не будут возвращаться значения characteristicValue в массиве materialValues[], содержащим единственный материал.
 
-| Название    | Тип                                                       | Описание                                                         |
-| ----------- | :-------------------------------------------------------- |:-----------------------------------------------------------------|
-| **meta**    | [Meta](#/general#3-metadannye) | Метаданные о выдаче,                                             |
-| **context** | [Meta](#/general#3-metadannye) | Метаданные о сотруднике, выполнившем запрос.                     |
-| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой материалы Техкарты.   |
+| Название    | Тип                            | Описание                                                                       |
+|-------------|:-------------------------------|:-------------------------------------------------------------------------------|
+| **meta**    | [Meta](#/general#3-metadannye) | Метаданные о выдаче,                                                           |
+| **context** | [Meta](#/general#3-metadannye) | Метаданные о сотруднике, выполнившем запрос.                                   |
+| **rows**    | Array(Object)                  | Массив JSON объектов, представляющих собой параметрические материалы Техкарты. |
 
 **Параметры**
 
 | Параметр   | Описание                                                                                                                               |
-| :--------- |:---------------------------------------------------------------------------------------------------------------------------------------|
+|:-----------|:---------------------------------------------------------------------------------------------------------------------------------------|
 | **id**     | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Техкарты.                                                       |
 | **limit**  | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
 | **offset** | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
@@ -2037,7 +2350,7 @@ curl --compressed -X GET \
 ```
 
 ### Создать параметрический материал
-Как и обычный материал, коллекция должна состоять как из материалов, так и из норм. Допустимо использование конкретных значений без указания характеристики только для чего-то одного: либо для материала, либо для нормы. Если требуется добавить материал, который будет использоваться при производстве всех модификаций и не зависеть от характеристик, то необходимо использовать ресурс /materials.
+Как и обычный материал, коллекция должна состоять как из материалов, так и из норм. Допустимо использование конкретных значений без указания характеристики только для чего-то одного: либо для материала, либо для нормы. Если требуется добавить материал, который будет использоваться при производстве всех модификаций и не зависеть от характеристик, то необходимо использовать ресурс [/materials](#/dictionaries/processingplan#3-material-tehkarty).
 
 > Пример создания одного параметрического материала в Техкарте.
 
@@ -2174,6 +2487,204 @@ curl --compressed -X GET \
  }
 ]
 ```
+
+> Пример создания параметрического материала в Техкарте в котором параметризировано только количество.
+
+```shell
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/parametricmaterials" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -d '[
+    {
+      "assortment": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/4d2cdff9-6fae-11f1-c5b5-417f00000176",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      },
+      "paramQuantityCharacteristic": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/58fe3a69-6fae-11f1-c5b5-417f00000184",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+        }
+      },
+      "paramQuantities": [
+        {
+          "characteristicValue": "L",
+          "quantity": 2.0
+        },
+        {
+          "characteristicValue": "M",
+          "quantity": 1.0
+        }
+      ]
+    }
+  ]'
+
+```
+
+> Response 200 (application/json)
+> Успешный запрос. Результат - JSON представление созданного параметрического материала отдельной Техкарты.
+
+```json
+[
+ {
+  "meta": {
+   "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/89af70a4-6fae-11f1-c5b5-417f000001d7/parametricmaterials/cba80368-7066-11f1-dd6d-6f180000001c",
+   "type": "processingplanparametricmaterial",
+   "mediaType": "application/json"
+  },
+  "id": "cba80368-7066-11f1-dd6d-6f180000001c",
+  "accountId": "f1b6a7de-6fad-11f1-7ba9-aab600000001",
+  "assortment": {
+   "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/4d2cdff9-6fae-11f1-c5b5-417f00000176",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+    "type": "product",
+    "mediaType": "application/json",
+    "uuidHref": "https://api.moysklad.ru/app/#good/edit?id=4d2cc5e9-6fae-11f1-c5b5-417f00000174"
+   }
+  },
+  "paramQuantityCharacteristic": {
+   "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/58fe3a69-6fae-11f1-c5b5-417f00000184",
+    "type": "attributemetadata",
+    "mediaType": "application/json"
+   }
+  },
+  "paramQuantities": [
+   {
+    "characteristicValue": "L",
+    "quantity": 2.0
+   },
+   {
+    "characteristicValue": "M",
+    "quantity": 1.0
+   }
+  ],
+  "processingProcessPosition": {
+   "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/f4221eb5-6fad-11f1-c5b5-417f00000100/positions/f422252c-6fad-11f1-c5b5-417f00000101",
+    "type": "processingprocessposition",
+    "mediaType": "application/json"
+   }
+  }
+ }
+]
+```
+
+> Пример создания параметрического материала в Техкарте в котором параметризирован только используемый продукт или модификация.
+
+```shell
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/parametricmaterials" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -d '[
+    {
+      "paramFeatureCharacteristic": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/58fe2fba-6fae-11f1-c5b5-417f00000183",
+          "type": "attributemetadata",
+          "mediaType": "application/json"
+        }
+      },
+      "paramFeatures": [
+        {
+          "characteristicValue": "blue",
+          "assortment": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/48a9a623-6fae-11f1-c5b5-417f00000168",
+              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+              "type": "product",
+              "mediaType": "application/json",
+              "uuidHref": "https://api.moysklad.ru/app/#feature/edit?id=48a98379-6fae-11f1-c5b5-417f00000166"
+            }
+          }
+        },
+        {
+          "characteristicValue": "red",
+          "assortment": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/4af31bf0-6fae-11f1-c5b5-417f0000016f",
+              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+              "type": "product",
+              "mediaType": "application/json",
+              "uuidHref": "https://api.moysklad.ru/app/#feature/edit?id=4af30c01-6fae-11f1-c5b5-417f0000016d"
+            }
+          }
+        }
+      ],
+      "quantity": 3.5
+    }
+  ]'
+
+```
+
+> Response 200 (application/json)
+> Успешный запрос. Результат - JSON представление созданного параметрического материала отдельной Техкарты.
+
+```json
+[
+ {
+  "meta": {
+   "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/89af70a4-6fae-11f1-c5b5-417f000001d7/parametricmaterials/cba81c40-7066-11f1-dd6d-6f180000001f",
+   "type": "processingplanparametricmaterial",
+   "mediaType": "application/json"
+  },
+  "id": "cba81c40-7066-11f1-dd6d-6f180000001f",
+  "accountId": "f1b6a7de-6fad-11f1-7ba9-aab600000001",
+  "paramFeatureCharacteristic": {
+   "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata/characteristics/58fe2fba-6fae-11f1-c5b5-417f00000183",
+    "type": "attributemetadata",
+    "mediaType": "application/json"
+   }
+  },
+  "paramFeatures": [
+   {
+    "characteristicValue": "blue",
+    "assortment": {
+     "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/48a9a623-6fae-11f1-c5b5-417f00000168",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+      "type": "variant",
+      "mediaType": "application/json",
+      "uuidHref": "https://api.moysklad.ru/app/#feature/edit?id=48a993b5-6fae-11f1-c5b5-417f00000167"
+     }
+    }
+   },
+   {
+    "characteristicValue": "red",
+    "assortment": {
+     "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/4af31bf0-6fae-11f1-c5b5-417f0000016f",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+      "type": "variant",
+      "mediaType": "application/json",
+      "uuidHref": "https://api.moysklad.ru/app/#feature/edit?id=4af31684-6fae-11f1-c5b5-417f0000016e"
+     }
+    }
+   }
+  ],
+  "quantity": 3.5,
+  "processingProcessPosition": {
+   "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/f4221eb5-6fad-11f1-c5b5-417f00000100/positions/f422252c-6fad-11f1-c5b5-417f00000101",
+    "type": "processingprocessposition",
+    "mediaType": "application/json"
+   }
+  }
+ }
+]
+```
+
 ### Изменить параметрический материал
 
 > Пример запроса на обновление отдельного параметрического материала в Техкарте.
@@ -2321,19 +2832,19 @@ curl --compressed -X POST \
 ### Получить продукты Техкарты 
 Запрос на получение списка всех продуктов данной Техкарты.
 
-| Название    | Тип                                                       | Описание                                                     |
-| ----------- | :-------------------------------------------------------- |:-------------------------------------------------------------|
-| **meta**    | [Meta](#/general#3-metadannye) | Метаданные о выдаче,                                         |
-| **context** | [Meta](#/general#3-metadannye) | Метаданные о сотруднике, выполнившем запрос.                 |
-| **rows**    | Array(Object)                                             | Массив JSON объектов, представляющих собой продукты Техкарты.|
+| Название    | Тип                            | Описание                                                      |
+|-------------|:-------------------------------|:--------------------------------------------------------------|
+| **meta**    | [Meta](#/general#3-metadannye) | Метаданные о выдаче,                                          |
+| **context** | [Meta](#/general#3-metadannye) | Метаданные о сотруднике, выполнившем запрос.                  |
+| **rows**    | Array(Object)                  | Массив JSON объектов, представляющих собой продукты Техкарты. |
 
 **Параметры**
 
-| Параметр   | Описание                                                                                                                              |
-| :--------- |:--------------------------------------------------------------------------------------------------------------------------------------|
-| **id**     | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Техкарты.                                                      |
-| **limit**  | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
-| **offset** | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                |
+| Параметр   | Описание                                                                                                                               |
+|:-----------|:---------------------------------------------------------------------------------------------------------------------------------------|
+| **id**     | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Техкарты.                                                       |
+| **limit**  | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
+| **offset** | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
 
 > Получить продукты Техкарты
 
@@ -2404,10 +2915,10 @@ curl --compressed -X GET \
 
 **Параметры**
 
-| Параметр       | Описание                                                                                 |
-| :------------- |:-----------------------------------------------------------------------------------------|
-| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Техкарты.         |
-| **positionID** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id продукта Техкарты.|
+| Параметр       | Описание                                                                                  |
+|:---------------|:------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Техкарты.          |
+| **positionID** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id продукта Техкарты. |
  
 > Запрос на получение отдельного продукта Техкарты с указанным id.
 
@@ -2453,7 +2964,7 @@ curl --compressed -X GET \
 ```
 
 ### Создать продукт
-Запрос на создание нового продукта в Техкарте.
+Запрос добавляет новый продукт к уже имеющимся в Техкарте. Параметрические Техкарты поддерживают работу только с одним продуктом и для них добавление ограничено.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
 + **product** - Ссылка на товар, которую представляет собой позиция.
@@ -2462,7 +2973,7 @@ curl --compressed -X GET \
 **Параметры**
 
 | Параметр | Описание                                                                         |
-| :------- |:---------------------------------------------------------------------------------|
+|:---------|:---------------------------------------------------------------------------------|
 | **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Техкарты. |
 
 > Пример создания одного продукта в Техкарте.
@@ -2619,11 +3130,13 @@ curl --compressed -X GET \
 ### Изменить продукт 
 Запрос на обновление отдельного продукта Техкарты. Для обновления продукта нет каких-либо
  обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
+При замене единственного продукта Параметрической Техкарты на другой продукт уже настроенные параметрические материалы будут сброшены. 
+Характеристики и их значения у нового продукта должны совпадать с теми, что были заданы для материалов. Перенос материалов при частичном совпадении невозможен.
 
 **Параметры**
 
 | Параметр       | Описание                                                                                  |
-| :------------- |:------------------------------------------------------------------------------------------|
+|:---------------|:------------------------------------------------------------------------------------------|
 | **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Техкарты.          |
 | **positionID** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id продукта Техкарты. |
 
@@ -2679,10 +3192,10 @@ curl --compressed -X GET \
 
 **Параметры**
 
-| Параметр       | Описание                                                                                    |
-| :------------- |:--------------------------------------------------------------------------------------------|
-| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Техкарты.            |
-| **positionID** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id продукта Техкарты.   |
+| Параметр       | Описание                                                                                  |
+|:---------------|:------------------------------------------------------------------------------------------|
+| **id**         | `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Техкарты.          |
+| **positionID** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id продукта Техкарты. |
  
 > Запрос на удаление продукта Техкарты с указанным id.
 
