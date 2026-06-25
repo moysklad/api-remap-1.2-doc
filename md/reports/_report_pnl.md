@@ -3,7 +3,7 @@
 Для доступа к отчету через API требуется право на просмотр отчета *Прибыльность*.
 О том, что представляет собой отчет "Прибыльность" вы можете прочитать по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203025326-%D0%9E%D1%82%D1%87%D0%B5%D1%82-%D0%9F%D1%80%D0%B8%D0%B1%D1%8B%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C).
 
-#### Прибыльность по товарам 
+### Прибыльность по товарам
 #### Атрибуты объекта отчета Прибыльность по товарам
 
 | Название           | Тип   | Описание                                                                                                                                                                       |
@@ -78,7 +78,7 @@
 - `filter=salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9;salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/ea012b09-4df3-439b-acf7-7d0464fbf603`
 - `filter=product=https://api.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://api.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://api.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://api.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://api.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030;salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
 
-### Получить Прибыльность по товарам
+#### Получить Прибыльность по товарам
 
 Отчет прибыльности по товарам включает: товары, комплекты, услуги. В товаре учитывается прибыльность по его модификациям, но без указания самих модификаций.
 
@@ -235,7 +235,7 @@ curl --compressed -X GET \
 }
 ```
 
-#### Прибыльность по модификациям 
+### Прибыльность по модификациям
 #### Атрибуты объекта отчета Прибыльность по модификациям
 
 | Название           | Тип   | Описание                                                                                                                                                                                                                                          |
@@ -309,7 +309,7 @@ curl --compressed -X GET \
 - `filter=salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9;salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/ea012b09-4df3-439b-acf7-7d0464fbf603`
 - `filter=product=https://api.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://api.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://api.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://api.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://api.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030;salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
 
-### Получить Прибыльность по модификациям
+#### Получить Прибыльность по модификациям
 
 Отчет прибыльности по товарам включает: товары, комплекты, услуги и модификации (выводится сама модификация, не родительский товар).
 
@@ -466,7 +466,7 @@ curl --compressed -X GET \
 }
 ```
 
-#### Прибыльность по сотрудникам 
+### Прибыльность по сотрудникам
 #### Атрибуты объекта отчета Прибыльность по сотрудникам
 
 | Название           | Тип    | Описание                                                                                                                        |
@@ -535,7 +535,7 @@ curl --compressed -X GET \
 - `filter=salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9;salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/ea012b09-4df3-439b-acf7-7d0464fbf603`
 - `filter=product=https://api.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://api.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://api.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://api.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://api.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030;salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
 
-### Получить Прибыльность по сотрудникам
+#### Получить Прибыльность по сотрудникам
 
 **Параметры**
 
@@ -609,7 +609,7 @@ curl --compressed -X GET \
 }
 ```
 
-#### Прибыльность по покупателям 
+### Прибыльность по покупателям
 #### Атрибуты объекта отчета Прибыльность по покупателям
 
 | Название           | Тип    | Описание                                                                                                                         |
@@ -690,7 +690,7 @@ curl --compressed -X GET \
    retailStore=https://api.moysklad.ru/api/remap/1.2/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030;
    salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
 
-### Получить Прибыльность по покупателям
+#### Получить Прибыльность по покупателям
 
 **Параметры**
 
@@ -765,7 +765,7 @@ curl --compressed -X GET \
 }
 ```
 
-#### Прибыльность по каналам продаж
+### Прибыльность по каналам продаж
 #### Атрибуты объекта отчета Прибыльность по каналам продаж
 
 | Название           | Тип    | Описание                                                                                                                               |
@@ -833,8 +833,8 @@ curl --compressed -X GET \
 - `filter=salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9;salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/ea012b09-4df3-439b-acf7-7d0464fbf603`
 - `filter=product=https://api.moysklad.ru/api/remap/1.2/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://api.moysklad.ru/api/remap/1.2/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://api.moysklad.ru/api/remap/1.2/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://api.moysklad.ru/api/remap/1.2/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://api.moysklad.ru/api/remap/1.2/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;salesChannel=https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/65cc7e08-ea79-4ad7-9cde-3cc053f1c1b9`
 
-### Получить Прибыльность по каналам продаж
-
+#### Получить Прибыльность по каналам продаж
+п
 **Параметры**
 
 | Параметр       | Описание                                                                                                                                                                          |
