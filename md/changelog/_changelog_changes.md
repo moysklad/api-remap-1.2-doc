@@ -2,13 +2,17 @@
 
 Список последних изменений в API Remap 1.2
 
-### 19-06-2026
+### 25-06-2026
 **Добавлено**
 - Поле модификации продукции параметрической техкарты `productionVariant` в [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya)
 - Ошибка [26116](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при изменении [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) нельзя изменить модификацию продукции в позиции производственного задания
 - Ошибка [26117](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) с параметрической техкартой должна быть указана модификация продукции
 - Ошибка [26118](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) с параметрической техкартой должна быть указана модификация продукции, которая принадлежит продукту техкарты
 - Ошибка [26119](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) нельзя указывать модификацию продукции с непараметрической техкартой
+
+### 10-06-2026
+**Добавлено**
+- Ошибка [67007](#/errors#3-kody-oshibok-dlya-skladov) при превышении допустимого количества активных складов на аккаунте
 
 ### 08-06-2026
 **Добавлено**
@@ -691,7 +695,7 @@
 ### 16-10-2023
 **Добавлено**
 - Добавлено поле `barcode` в [Ячейку склада](#/dictionaries/store#3-yachejki-sklada)
-- Ошибка [67006](#/errors#3-kody-oshibok-dlya-yacheek-i-zon-sklada)
+- Ошибка [67006](#/errors#3-kody-oshibok-dlya-skladov)
 
 ### 12-10-2023
 **Добавлено**
@@ -860,7 +864,7 @@
 
 ### 14-12-2022
 **Добавлено**
-- Дополнено описание [ошибок](#/errors#3-kody-oshibok-dlya-yacheek-i-zon-sklada) при работе с ячейками и зонами. Добавлены ошибки 67002, 67003, 67004, 67005, 67006.
+- Дополнено описание [ошибок](#/errors#3-kody-oshibok-dlya-skladov) при работе с ячейками и зонами. Добавлены ошибки 67002, 67003, 67004, 67005, 67006.
 - Добавлена информация по созданию, обновлению и удалению [зон](#/dictionaries/store#3-zony-sklada) и [ячеек](#/dictionaries/store#3-yachejki-sklada) в [складах](#/dictionaries/store#3-sklady)
 
 ### 12-12-2022
@@ -876,7 +880,7 @@
 - Ячейки в позиции [Отгрузки](#/documents/demand#2-otgruzka)
 - Ячейки в позиции [Возврата покупателя](#/documents/sales-return#2-vozvrat-pokupatelya)
 - Ячейки в позиции [Возврата поставщику](#/documents/purchase-return#2-vozvrat-postavshiku)
-- Описание [ошибок](#/errors#3-kody-oshibok-dlya-yacheek-i-zon-sklada) при работе с ячейками и зонами
+- Описание [ошибок](#/errors#3-kody-oshibok-dlya-skladov) при работе с ячейками и зонами
 
 ### 20-11-2022
 **Добавлено**

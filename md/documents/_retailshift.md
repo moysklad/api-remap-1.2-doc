@@ -16,13 +16,12 @@
 | **bankPercent**         | Double                                                    |                                                                                                                                                   | Комиссия банка-эквайера по операциям по карте (в процентах)<br>`+Обязательное при ответе`                                                                                                                                 |
 | **cheque**              | Object                                                    |                                                                                                                                                   | Информация о смене ККТ. [Подробнее тут](#/documents/retailshift#4-informaciya-o-smene-kkt)                                                                                                 |
 | **closeDate**           | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата закрытия смены                                                                                                                                                                                                       |
-| **contract**            | [Meta](#/general#3-metadannye) | `=` `!=`                                                                                                                                          | Метаданные договора<br>`+Только для чтения` `+Expand`                                                                                                                                                                     |
 | **created**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                          |
 | **deleted**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Розничной смены<br>`+Только для чтения`                                                                                                                                                        |
 | **description**         | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Розничной смены                                                                                                                                                                                               |
 | **externalCode**        | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Розничной смены<br>`+Обязательное при ответе`                                                                                                                                                                 |
 | **files**               | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](#/dictionaries/files#2-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`                                                                             |
-| **group**               | [Meta](#/general#3-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Только для чтения` `+Expand`                                                                                                                                             |
+| **group**               | [Meta](#/general#3-metadannye) | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе`  `+Expand`                                                                                                                                             |
 | **id**                  | UUID                                                      | `=` `!=`                                                                                                                                          | ID Розничной смены<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                     |
 | **meta**                | [Meta](#/general#3-metadannye) |                                                                                                                                                   | Метаданные Розничной смены<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                             |
 | **moment**              | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата смены<br>`+Обязательное при ответе`                                                                                                                                                                                  |
@@ -42,7 +41,7 @@
 | **receivedCash**        | Float                                                     |                                                                                                                                                   | Получено наличными<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                     |
 | **receivedNoCash**      | Float                                                     |                                                                                                                                                   | Получено безнал<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                        |
 | **retailStore**         | [Meta](#/general#3-metadannye) | `=` `!=`                                                                                                                                          | Метаданные точки продаж<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                                                |
-| **shared**              | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                           |
+| **shared**              | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                                                                            |
 | **store**               | [Meta](#/general#3-metadannye) |                                                                                                                                                   | Метаданные склада. Если не указано, заполняется с точки продаж автоматически<br>`+Обязательное при ответе` `+Expand`                                                                                                      |
 | **syncId**              | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                                                                                               |
 | **updated**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Розничной смены<br>`+Обязательное при ответе`                                                                                                                                                |
@@ -71,10 +70,10 @@
 #### Информация о закрытии смены ККТ
 | Название            | Тип      | Описание                                  |
 | ------------------- | :------- | :---------------------------------------- |
-| **chequesTotal**    | String   | Количество чеков за смену                 |
+| **chequesTotal**    | Int      | Количество чеков за смену                 |
 | **fiscalDocNumber** | String   | Номер фискального документа               |
 | **fiscalDocSign**   | String   | Фискальный признак документа              |
-| **fiscalDocsTotal** | String   | Количество фискальных документов за смену |
+| **fiscalDocsTotal** | Int      | Количество фискальных документов за смену |
 | **fnNumber**        | String   | Номер фискального накопителя              |
 | **kktRegNumber**    | String   | Регистрационный номер ККТ                 |
 | **shiftNumber**     | String   | Номер смены ККТ                           |
@@ -797,6 +796,139 @@ curl --compressed -X GET \
 }
 ```
 
+### Массовое создание и обновление Розничных смен
+[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Розничных смен.
+В теле запроса нужно передать массив, содержащий JSON представления Розничных смен, которые вы хотите создать или обновить.
+Обновляемые Розничные смены должны содержать идентификатор в виде метаданных.
+
+> Пример создания и обновления нескольких Розничных смен
+
+```shell
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retailshift" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
+      -d '[
+            {
+              "organization": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                  "type": "organization",
+                  "mediaType": "application/json"
+                }
+              },
+              "retailStore": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/74940da1-0016-11ec-ac12-000b00000096",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+                  "type": "retailstore",
+                  "mediaType": "application/json"
+                }
+              },
+              "name": "00012"
+            },
+            {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/49819758-0017-11ec-ac12-000a00000000",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+                "type": "retailshift",
+                "mediaType": "application/json"
+              },
+              "name": "0001",
+              "description": "Розничная смена созданная и измененная через API",
+              "bankPercent": 22.0
+            }
+          ]'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - массив JSON представлений созданных и обновленных Розничных смен.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/6706043c-018c-11ec-ac12-000a00000005",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+      "type": "retailshift",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#retailshift/edit?id=6706043c-018c-11ec-ac12-000a00000005"
+    },
+    "id": "6706043c-018c-11ec-ac12-000a00000005",
+    "accountId": "73215387-0016-11ec-ac12-000c00000001",
+    "owner": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/73d6e937-0016-11ec-ac12-000b00000042",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=73d6e937-0016-11ec-ac12-000b00000042"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/73230224-0016-11ec-ac12-000c00000002",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2021-08-20 10:58:27.611",
+    "name": "00012",
+    "externalCode": "D2XRGmC5gLVJCq1ocBXd82",
+    "moment": "2021-08-20 10:58:00.000",
+    "organization": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/b4343660-0016-11ec-ac12-000b000000d7",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=b4343660-0016-11ec-ac12-000b000000d7"
+      }
+    },
+    "created": "2021-08-20 10:58:27.699",
+    "printed": false,
+    "published": false,
+    "retailStore": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/74940da1-0016-11ec-ac12-000b00000096",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+        "type": "retailstore",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#retailstore/edit?id=74940da1-0016-11ec-ac12-000b00000096"
+      }
+    },
+    "bankPercent": 0.0,
+    "bankComission": 0.0,
+    "qrBankPercent": 0.0,
+    "qrBankComission": 0.0
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/49819758-0017-11ec-ac12-000a00000000",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+      "type": "retailshift",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#retailshift/edit?id=49819758-0017-11ec-ac12-000a00000000"
+    },
+    "id": "49819758-0017-11ec-ac12-000a00000000",
+    "accountId": "73215387-0016-11ec-ac12-000c00000001",
+    "updated": "2021-08-18 18:43:40.740",
+    "name": "0001",
+    "description": "Розничная смена созданная и измененная через API",
+    "externalCode": "srR4xJ90hAOHZPHrsSCS51",
+    "moment": "2021-08-17 16:56:00.000",
+    "bankPercent": 22.0,
+    "bankComission": 0.0,
+    "qrBankPercent": 0.0,
+    "qrBankComission": 0.0
+  }
+]
+```
+
 ### Удалить Розничную смену
 
 **Параметры**
@@ -816,6 +948,52 @@ curl --compressed -X DELETE \
 
 > Response 200 (application/json)
 Успешное удаление Розничной смены.
+
+### Массовое удаление Розничных смен
+
+В теле запроса нужно передать массив, содержащий JSON метаданных Розничных смен, которые вы хотите удалить.
+
+
+> Запрос на массовое удаление Розничных смен.
+
+```shell
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -d '[
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/7944ef04-f831-11e5-7a69-971500188b1",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+                "type": "retailshift",
+                "mediaType": "application/json"
+            }
+        },
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/7944ef04-f831-11e5-7a69-971500188b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+                "type": "retailshift",
+                "mediaType": "application/json"
+            }
+        }
+      ]'
+```
+
+> Успешный запрос. Результат - JSON информация об удалении Розничных смен.
+
+```json
+[
+  {
+    "info":"Сущность 'retailshift' с UUID: 7944ef04-f831-11e5-7a69-971500188b1 успешно удалена"
+  },
+  {
+    "info":"Сущность 'retailshift' с UUID: 7944ef04-f831-11e5-7a69-971500188b2 успешно удалена"
+  }
+]
+```
 
 ### Метаданные Розничных смен 
 Запрос на получение метаданных Розничных смен. Результат - объект JSON, включающий в себя:
