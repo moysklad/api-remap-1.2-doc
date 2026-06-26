@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 23-06-2026
+**Добавлено**
+- Статья [Выгрузка статистики запросов к API](#/workbook/workbook-api-statistics#2-vygruzka-statistiki-zaprosov-k-api) в разделе [Workbook](#/workbook/workbook-first-steps#1-workbook)
+
 ### 16-06-2026
 **Добавлено**
 - Поле `article` в сущность [модификация](#/dictionaries/variant#2-modifikaciya) для работы с артикулом модификации
