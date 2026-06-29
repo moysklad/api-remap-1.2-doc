@@ -341,15 +341,15 @@ curl --compressed -X GET \
 > Пример создания Счета-фактуры выданного на аванс на основании входящего платежа.
 ```shell
   curl --compressed -X POST \
-    "https://online.moysklad.ru/api/remap/1.2/entity/factureout" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/factureout" \
     -H "Authorization: Basic <Credentials>" \
     -H "Content-Type: application/json" \
       -d '{
             "payments": [
               {
                 "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/f69cb6ec-6d45-11e7-6adb-ede50000001c",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/metadata",
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/paymentin/f69cb6ec-6d45-11e7-6adb-ede50000001c",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/paymentin/metadata",
                   "type": "paymentin",
                   "mediaType": "application/json"
                 }
@@ -366,8 +366,8 @@ curl --compressed -X GET \
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/entity/factureout/fa610268-2b5d-11e7-1542-821d00000010",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/factureout/metadata",
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/factureout/fa610268-2b5d-11e7-1542-821d00000010",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/factureout/metadata",
     "type": "factureout",
     "mediaType": "application/json"
   },
@@ -375,8 +375,8 @@ curl --compressed -X GET \
   "accountId": "f4917c99-2346-11e7-1542-821d00000001",
   "owner": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/f500c39b-2346-11e7-1542-821d0000002a",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/f500c39b-2346-11e7-1542-821d0000002a",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
       "type": "employee",
       "mediaType": "application/json"
     }
@@ -384,8 +384,8 @@ curl --compressed -X GET \
   "shared": false,
   "group": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f49447eb-2346-11e7-1542-821d00000002",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f49447eb-2346-11e7-1542-821d00000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
       "type": "group",
       "mediaType": "application/json"
     }
@@ -398,8 +398,8 @@ curl --compressed -X GET \
   "rate": {
     "currency": {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/f52dd97c-2346-11e7-1542-821d00000058",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/f52dd97c-2346-11e7-1542-821d00000058",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
         "type": "currency",
         "mediaType": "application/json"
       }
@@ -408,16 +408,16 @@ curl --compressed -X GET \
   "sum": 10000,
   "agent": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/f52d95dd-2346-11e7-1542-821d00000056",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/f52d95dd-2346-11e7-1542-821d00000056",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
       "type": "counterparty",
       "mediaType": "application/json"
     }
   },
   "organization": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/entity/organization/f52a29b3-2346-11e7-1542-821d00000051",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/f52a29b3-2346-11e7-1542-821d00000051",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
       "type": "organization",
       "mediaType": "application/json"
     }
@@ -428,8 +428,8 @@ curl --compressed -X GET \
   "payments": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/f69cb6ec-6d45-11e7-6adb-ede50000001c",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/paymentin/metadata",
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/paymentin/f69cb6ec-6d45-11e7-6adb-ede50000001c",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/paymentin/metadata",
         "type": "paymentin",
         "mediaType": "application/json"
       }
