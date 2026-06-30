@@ -2,9 +2,21 @@
 
 Список последних изменений в API Remap 1.2
 
+### 30-06-2026
+**Добавлено**
+- Ограничение значений для поля `destinationCountry` (Страна назначения) в зависимости от `trackingType` (Тип маркируемой продукции) в документе [Вывод из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
+
+**Изменено**
+- Описание ошибки [57200](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota)
+
+### 26-06-2026
+**Добавлено**
+- Поле `article` в сущность [модификация](#/dictionaries/variant#2-modifikaciya) для работы с артикулом модификации
+- Поле `article` для номенклатуры с типом модификации для сущности [Ассортимент](#/dictionaries/assortment#2-assortiment) для работы с артикулом модификации
+
 ### 23-06-2026
 **Добавлено**
-- Поддержка протоколов change-handler и validation-feedback в [Заказе поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku)
+- Статья [Выгрузка статистики запросов к API](#/workbook/workbook-api-statistics#2-vygruzka-statistiki-zaprosov-k-api) в разделе [Workbook](#/workbook/workbook-first-steps#1-workbook)
 
 ### 10-06-2026
 **Добавлено**
