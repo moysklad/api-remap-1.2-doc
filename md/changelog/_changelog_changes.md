@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 01-07-2026
+**Добавлено**
+- Поддержка протокола change-handler во [Внутреннем заказе](#/documents/internalOrder#2-vnutrennij-zakaz)
+
 ### 30-06-2026
 **Добавлено**
 - Поддержка протокола change-handler в [Заказе поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku)
