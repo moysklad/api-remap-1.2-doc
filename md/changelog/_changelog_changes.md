@@ -4,6 +4,10 @@
 
 ### 30-06-2026
 **Добавлено**
+- Поддержка протокола change-handler в [Заказе поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku)
+
+### 30-06-2026
+**Добавлено**
 - Ограничение значений для поля `destinationCountry` (Страна назначения) в зависимости от `trackingType` (Тип маркируемой продукции) в документе [Вывод из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
 
 **Изменено**
