@@ -24,6 +24,7 @@
 | ---------------------- |:-------------------------------|:---------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**          | UUID                           | `=` `!=`                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                      |
 | **archived**           | Boolean                        | `=` `!=`                   | Добавлен ли товар в архив<br>`+Обязательное при ответе`                                                                                                                   |
+| **article**            | String(255)                    | `=` `!=` `~` `~=` `=~`     | Артикул модификации                                                                                                                                                       |
 | **barcodes**           | Array(Object)                  | `=` `!=` `~` `~=` `=~`     | Массив штрихкодов модификации. [Подробнее тут](#/dictionaries/variant#5-shtrihkody).  Для фильтрации по полю необходимо указывать его в единственном числе **barcode**.   |
 | **buyPrice**           | Object                         |                            | Закупочная цена                                                                                                                                                           |
 | **characteristics**    | Array(Object)                  |                            | Характеристики Модификации. [Подробнее тут](#/dictionaries/variant#6-harakteristiki-modifikacii)<br>`+Обязательное при ответе` `+Необходимо при создании`                 |
@@ -50,6 +51,7 @@
 | **code**         | Код Модификации                     |
 | **externalCode** | Внешний код Модификации             |
 | **archived**     | Добавлен ли товар в архив           |
+| **article**      | Артикул модификации                 |
 
 #### Атрибуты вложенных сущностей
 
@@ -288,6 +290,7 @@ curl --compressed -X GET \
       "code": "00005",
       "externalCode": "rAhHA0T1glL2xY3d1aHFT2",
       "archived": false,
+      "article": "T01 (M01)",
       "discountProhibited": false,
       "characteristics": [
         {
@@ -446,6 +449,7 @@ curl --compressed -X GET \
       "accountId": "762af84a-0ec6-11f0-ac15-001000000001",
       "updated": "2025-04-07 12:45:38.399",
       "name": "Potato (yellow)",
+      "article": "T01 (M01)",
       "code": "00004",
       "externalCode": "KDnPv4IYhLVJKh4NKP9mL0",
       "archived": false,
@@ -552,6 +556,7 @@ curl --compressed -X GET \
     -H "Content-Type: application/json" \
       -d '{
             "name": "(оверспелый, желтый)",
+            "article": "T01 (M01)",
             "characteristics": [
               {
                 "id": "627610e3-2cb1-11e6-8a84-bae500000054",
@@ -651,6 +656,7 @@ curl --compressed -X GET \
   "code": "00011",
   "externalCode": "tQcC7LdEjTZMh85Em6FTW1",
   "archived": false,
+  "article": "T01 (M01)",
   "discountProhibited": false,
   "characteristics": [
     {
@@ -893,6 +899,7 @@ curl --compressed -X GET \
       -d '[
             {
               "name": "(оверспелый, желтый)",
+              "article": "T01 (M01)",
               "characteristics": [
                 {
                   "id": "627610e3-2cb1-11e6-8a84-bae500000054",
@@ -1078,6 +1085,7 @@ curl --compressed -X GET \
     "code": "00011",
     "externalCode": "tQcC7LdEjTZMh85Em6FTW1",
     "archived": false,
+    "article": "T01 (M01)",
     "discountProhibited": false,
     "characteristics": [
       {
@@ -1505,6 +1513,7 @@ curl --compressed -X GET \
   "code": "00003",
   "externalCode": "YQ3kNHfDgtHOVhf20Md7Q0",
   "archived": false,
+  "article": "T01 (M01)",
   "discountProhibited": false,
   "characteristics": [
     {
@@ -1650,6 +1659,7 @@ curl --compressed -X GET \
             ],
             "discountProhibited": false,
             "code": "orangeCode",
+            "article": "T01 (M01)",
             "externalCode": "orange303",
             "buyPrice": {
               "value": 700.0
@@ -1738,6 +1748,7 @@ curl --compressed -X GET \
   "code": "orangeCode",
   "externalCode": "orange303",
   "archived": false,
+  "article": "T01 (M01)",
   "discountProhibited": false,
   "characteristics": [
     {
