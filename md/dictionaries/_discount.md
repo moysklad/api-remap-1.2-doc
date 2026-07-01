@@ -1179,3 +1179,78 @@ curl --compressed -X PUT \
   "agentTags": []
 }
 ```
+
+### Массовое обновление округления копеек
+[Массовое обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) округления копеек.
+В теле запроса нужно передать массив, содержащий JSON представления округлений копеек, которые вы хотите обновить.
+Поддерживается только изменение существующих сущностей. Обновляемые сущности должны содержать идентификатор в виде метаданных.
+В теле запроса необходимо передать поля, которые будут обновлены (**name** или **active**). В ответе также будут приходить поля **agentTags** и **allAgents**, но их нельзя изменить.
+
+> Пример обновления нескольких округлений копеек
+
+```shell
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/discount" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -d '[
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/discount/8ae26646-b1aa-11ea-ac12-000b00000001",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/discount/metadata",
+        "type": "discount",
+        "mediaType": "application/json"
+      },
+      "name": "updatedName",
+      "active": true
+    },
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/discount/8ae26646-b1aa-11ea-ac12-000b00000002",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/discount/metadata",
+        "type": "discount",
+        "mediaType": "application/json"
+      },
+      "active": false
+    }
+  ]'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - массив JSON представлений обновленных округлений копеек.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/discount/8ae26646-b1aa-11ea-ac12-000b00000001",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/discount/metadata",
+      "type": "discount",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+    },
+    "id": "8ae26646-b1aa-11ea-ac12-000b00000001",
+    "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
+    "name": "updatedName",
+    "active": true,
+    "allAgents": true,
+    "agentTags": []
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/discount/8ae26646-b1aa-11ea-ac12-000b00000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/discount/metadata",
+      "type": "discount",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000002"
+    },
+    "id": "8ae26646-b1aa-11ea-ac12-000b00000002",
+    "accountId": "5e8a41b1-a419-11ea-ac12-000c00000001",
+    "name": "Округление копеек",
+    "active": false,
+    "allAgents": true,
+    "agentTags": []
+  }
+]
+```
