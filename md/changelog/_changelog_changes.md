@@ -3,8 +3,18 @@
 Список последних изменений в API Remap 1.2
 
 ### 01-07-2026
+**Добавлено**
+- Поддержка протокола change-handler в [Заказе поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku)
+
 **Удалено**
 - значение `CROSSBORDER` (Ввезен из стран ЕАЭС) для поля `emissionType` (Способ ввода в оборот) для сущности [Заказ кодов маркировки](#/documents/emissionorder#4-sposob-vvoda-v-oborot)
+
+### 30-06-2026
+**Добавлено**
+- Ограничение значений для поля `destinationCountry` (Страна назначения) в зависимости от `trackingType` (Тип маркируемой продукции) в документе [Вывод из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
+
+**Изменено**
+- Описание ошибки [57200](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota)
 
 ### 26-06-2026
 **Добавлено**
