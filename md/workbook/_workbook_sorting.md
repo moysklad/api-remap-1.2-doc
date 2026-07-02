@@ -21,7 +21,7 @@
 | <a href="../dictionaries/#suschnosti-towar">Товар</a>|`id`, `version`, `updated`, `updatedBy`, `name`, `code`, `externalCode`, `archived`, `pathName`, `article`, `isSerialTrackable`, `weighed`, `weight`, `volume`, `syncId` |
 | <a href="../dictionaries/#suschnosti-usluga">Услуга</a>|`id`, `version`, `updated`, `updatedBy`, `name`, `code`, `externalCode`, `archived`, `pathName`, `syncId` |
 | <a href="../dictionaries/#suschnosti-komplekt">Комплект</a>|`id`, `version`, `updated`, `updatedBy`, `name`, `description`, `code`, `externalCode`, `archived`, `pathName`, `article`, `weight`, `volume`,  `syncId` |
-| <a href="../dictionaries/#suschnosti-modifikaciq">Модификация</a>|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode` |
+| <a href="../dictionaries/#suschnosti-modifikaciq">Модификация</a>|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`, `externalCode`, `article` |
 | <a href="../dictionaries/#suschnosti-gruppa-towarow">Группа товаров</a>|`id`, `version`, `updated`, `updatedBy`, `name`, `externalCode`, `archived`, `pathName` |
 | <a href="../dictionaries/#suschnosti-partiq">Партия</a>|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode` |
 | <a href="../dictionaries/#suschnosti-dogowor">Договор</a>|`id`, `version`, `updated`, `updatedBy`, `name`, `description`, `code`, `externalCode`, `archived`, `moment` |

@@ -547,6 +547,15 @@ curl --compressed -X GET \
 | **OTHER_TYPE**           | OTHER                                                |
 | **RECALL**               | OTHER                                                |
 
+Связь допустимых значений поля **destinationCountry** в зависимости от **trackingType**
+
+| **trackingType**      | **retireOrderType**                    |
+|-----------------------|:---------------------------------------|
+| **SHOES**             | Армения, Киргизия                      |
+| **TIRES**             | Армения, Казахстан, Киргизия           |
+| **Все остальные**     | Армения, Беларусь, Казахстан, Киргизия |
+
+
 Способ вывода из оборота **retireOrderType**:
 
 + Если выбрано любое значение из перечисленных в таблице выше, поля **supportingTransaction**, **supportingTransactionDate** и **supportingTransactionNumber** являются обязательными.

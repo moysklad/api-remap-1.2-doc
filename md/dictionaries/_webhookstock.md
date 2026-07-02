@@ -104,7 +104,7 @@ curl --compressed -X GET \
       "accountId": "8afc8c88-38a5-11ed-ac14-000f00000001",
       "stockType": "stock",
       "reportType": "all",
-      "url": "http://www.example.com",
+      "url": "https://www.example.com",
       "enabled": true
     },
     {
@@ -118,7 +118,7 @@ curl --compressed -X GET \
       "accountId": "8afc8c88-38a5-11ed-ac14-000f00000001",
       "stockType": "stock",
       "reportType": "all",
-      "url": "http://www.example.com",
+      "url": "https://www.example.com",
       "enabled": true
     },
     {
@@ -132,7 +132,7 @@ curl --compressed -X GET \
       "accountId": "8afc8c88-38a5-11ed-ac14-000f00000001",
       "stockType": "stock",
       "reportType": "all",
-      "url": "http://www.example.com",
+      "url": "https://www.example.com",
       "enabled": true
     }
   ]
@@ -153,7 +153,7 @@ curl --compressed -X GET \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
       -d '{
-            "url": "http://www.example.com",
+            "url": "https://www.example.com",
             "enabled": true,
             "reportType": "all",
             "stockType": "stock"
@@ -175,7 +175,7 @@ curl --compressed -X GET \
   "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
   "stockType": "stock",
   "reportType": "all",
-  "url": "http://www.example.com",
+  "url": "https://www.example.com",
   "enabled": true
 }
 ```
@@ -195,7 +195,7 @@ curl --compressed -X GET \
     -H "Content-Type: application/json" \
       -d '[
             {
-              "url": "http://www.example.com",
+              "url": "https://www.example.com",
               "stockType": "stock",
               "reportType": "all",
             },
@@ -206,7 +206,7 @@ curl --compressed -X GET \
                 "type": "webhookstock",
                 "mediaType": "application/json"
               },
-              "url": "http://www.example.com",
+              "url": "https://www.example.com",
               "stockType": "stock",
               "reportType": "bystore",
             }
@@ -229,7 +229,7 @@ curl --compressed -X GET \
     "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
     "stockType": "stock",
     "reportType": "all",
-    "url": "http://www.example.com",
+    "url": "https://www.example.com",
     "enabled": true
   },
   {
@@ -243,7 +243,7 @@ curl --compressed -X GET \
     "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
     "stockType": "stock",
     "reportType": "bystore",
-    "url": "http://www.example.com",
+    "url": "https://www.example.com",
     "enabled": true
   }
 ]
@@ -282,7 +282,7 @@ curl --compressed -X GET \
   "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
   "stockType": "stock",
   "reportType": "bystore",
-  "url": "http://www.example.com",
+  "url": "https://www.example.com",
   "enabled": true
 }
 ```
@@ -305,7 +305,7 @@ curl --compressed -X GET \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
       -d '{
-            "url": "http://www.example.com",
+            "url": "https://www.example.com",
             "stockType": "stock",
             "reportType": "bystore"
           }'  
@@ -326,7 +326,7 @@ curl --compressed -X GET \
   "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
   "stockType": "stock",
   "reportType": "bystore",
-  "url": "http://www.example.com",
+  "url": "https://www.example.com",
   "enabled": true
 }
 ```
@@ -368,7 +368,7 @@ curl --compressed -X GET \
   "accountId": "b8b74698-9128-11e6-8a84-bae500000001",
   "stockType": "stock",
   "reportType": "bystore",
-  "url": "http://www.example.com",
+  "url": "https://www.example.com",
   "enabled": false
 }
 ```

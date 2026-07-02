@@ -54,6 +54,7 @@
 | **assortment** | [Meta](#/general#3-metadannye) | Метаданные товара/партии/модификации, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand` |
 | **id**         | UUID                                                      | ID Техоперации<br>`+Обязательное при ответе` `+Только для чтения`                                               |
 | **quantity**   | Float                                                     | Количество товаров данного вида в позиции<br>`+Обязательное при ответе`                                         |
+| **slot**       | [Meta](#/general#3-metadannye) | Ячейка на складе. [Подробнее тут](#/dictionaries/store#3-yachejki-sklada)<br>`+Expand` |
 
 #### Продукты Техоперации
 Продукты Техоперации - это список товаров/модификаций, получаемых при производстве.
@@ -65,6 +66,7 @@
 | **assortment** | [Meta](#/general#3-metadannye) | Метаданные товара/партии/модификации, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand` |
 | **id**         | UUID                                                      | ID Техоперации<br>`+Обязательное при ответе` `+Только для чтения`                                               |
 | **quantity**   | Float                                                     | Количество товаров данного вида в позиции<br>`+Обязательное при ответе`                                         |
+| **slot**       | [Meta](#/general#3-metadannye) | Ячейка на складе. [Подробнее тут](#/dictionaries/store#3-yachejki-sklada)<br>`+Expand` |
 
 С материалами и продуктами можно работать с помощью [специальных ресурсов для управления позициями Техоперации](#/documents/processing#4-materialy-tehoperacii),
 а также в составе отдельной Техоперации. При работе в составе отдельной Техоперации,
@@ -1093,6 +1095,13 @@ curl --compressed -X GET \
                     "mediaType": "application/json",
                     "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=7a6fd2ab-df4e-11ed-ac12-000c00000144"
                   }
+                },
+                "slot": {
+                  "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/133ac518-df4e-11ed-ac12-000c000000c6/slots/c3b59812-cd5a-11ed-0a80-0142000026a3",
+                    "type": "slot",
+                    "mediaType": "application/json"
+                  }
                 }
               }
             ],
@@ -1106,6 +1115,13 @@ curl --compressed -X GET \
                     "type": "product",
                     "mediaType": "application/json",
                     "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=7a6fd2ab-df4e-11ed-ac12-000c00000144"
+                  }
+                },
+                "slot": {
+                  "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/133ac518-df4e-11ed-ac12-000c000000c6/slots/c3b59812-cd5a-11ed-0a80-0142000026a3",
+                    "type": "slot",
+                    "mediaType": "application/json"
                   }
                 }
               }
@@ -2687,6 +2703,13 @@ curl --compressed -X GET \
                 "mediaType": "application/json",
                 "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=7a6fd2ab-df4e-11ed-ac12-000c00000144"
               }
+            },
+            "slot": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/133ac518-df4e-11ed-ac12-000c000000c6/slots/c3b59812-cd5a-11ed-0a80-0142000026a3",
+                "type": "slot",
+                "mediaType": "application/json"
+              }
             }
           }'  
 ```
@@ -3003,6 +3026,13 @@ curl --compressed -X GET \
                 "type": "product",
                 "mediaType": "application/json",
                 "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=7a6fd2ab-df4e-11ed-ac12-000c00000144"
+              }
+            },
+            "slot": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/133ac518-df4e-11ed-ac12-000c000000c6/slots/c3b59812-cd5a-11ed-0a80-0142000026a3",
+                "type": "slot",
+                "mediaType": "application/json"
               }
             }
           }'  

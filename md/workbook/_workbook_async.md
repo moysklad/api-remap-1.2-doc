@@ -361,7 +361,7 @@ curl --compressed -X POST \
   -H "Accept-Encoding: gzip" \
   -H "Content-Type: application/json" \
   -d '{
-          "url": "http://some_url.ru",
+          "url": "https://some_url.ru",
           "action": "PROCESSED",
           "entityType": "async"
       }'
@@ -381,7 +381,7 @@ curl --compressed -X POST \
     "id": "c6010bf9-a683-11eb-ac12-000900000001",
     "accountId": "6c240ac7-a683-11eb-ac12-000c00000000",
     "entityType": "async",
-    "url": "http://some_url.ru",
+    "url": "https://some_url.ru",
     "method": "POST",
     "enabled": true,
     "action": "PROCESSED"
