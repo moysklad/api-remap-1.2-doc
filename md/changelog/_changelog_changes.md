@@ -2,13 +2,24 @@
 
 Список последних изменений в API Remap 1.2
 
-### 06-07-2026
+### 07-07-2026
 **Добавлено**
 - Поддержка протокола change-handler во [Внутреннем заказе](#/documents/internalOrder#2-vnutrennij-zakaz)
+
+### 02-07-2026
+**Добавлено**
+- Поле `images` в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
+**Изменено**
+- Сообщение для ошибки [51004](#/errors#3-kody-oshibok-dlya-izobrazhenij)
+- Сообщение и описание для ошибки [51006](#/errors#3-kody-oshibok-dlya-izobrazhenij)
 
 ### 01-07-2026
 **Добавлено**
 - Поддержка протокола change-handler в [Заказе поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku)
+
+**Удалено**
+- значение `CROSSBORDER` (Ввезен из стран ЕАЭС) для поля `emissionType` (Способ ввода в оборот) для сущности [Заказ кодов маркировки](#/documents/emissionorder#4-sposob-vvoda-v-oborot)
 
 ### 30-06-2026
 **Добавлено**
@@ -263,7 +274,7 @@
 
 ### 02-09-2025
 **Добавлено**
-- Поле `downloadPermanentHref` в [Изображениях](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-ili-modifikacii)
+- Поле `downloadPermanentHref` в [Изображениях](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-modifikacii-ili-kartochki-kontenta)
 
 ### 25-08-2025
 **Добавлено**
@@ -541,7 +552,7 @@
 
 ### 16-07-2024
 **Добавлено**
-- Добавлено описание получения ссылки на [изображение](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-ili-modifikacii)
+- Добавлено описание получения ссылки на [изображение](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-modifikacii-ili-kartochki-kontenta)
 
 ### 12-07-2024
 **Добавлен**

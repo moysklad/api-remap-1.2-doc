@@ -5,7 +5,7 @@
 
 #### Атрибуты сущности
 | Название            | Тип                            | Фильтрация             | Описание                                                                                                                                                                                                                                                                                                                                       |
-|---------------------|:-------------------------------|:-----------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|---------------------|:---------------------------------------------------------|:-----------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**       | UUID                           | `=` `!=`               | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                                                                                                           |
 | **assortment**      | [Meta](#/general#3-metadannye) | `=` `!=`               | Метаданные Ассортимента<br>`+Expand` `+Обязательное при ответе` `+Необходимо при создании` `+После заполнения недоступно для изменения`                                                                                                                                                                                                        |
 | **cardContentName** | String(255)                    |  | Как карточка контента отображается в списке на UI<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                                                                                                                     |
@@ -15,7 +15,7 @@
 | **name**            | String(255)                    |  | Название товара или услуги<br> `+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                                                                                                                                           |
 | **salePlatform**    | [Meta](#/general#3-metadannye) | `=` `!=`               | Метаданные Площадки для продаж. [Подробнее тут](#/dictionaries/saleplatform#2-ploshadka-dlya-prodazh).<br>`+Expand` `+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                                                      |
 | **salesChannels**   | Array(Object) | `=` | Массив ссылок на связанные каналы продаж в формате [Метаданных](#/general#3-metadannye). [Подробнее тут](#/dictionaries/saleschannel#2-kanal-prodazh). Максимальное число - 1000. Для фильтрации по полю необходимо указывать его в единственном числе **salesChannel**.<br>`+Expand` `+Обязательное при ответе` `+Необходимо при создании`    |
-
+| **images**          | MetaArray                                                |               | Массив метаданных [Изображений](#/dictionaries/images#2-izobrazhenie) (Максимальное количество изображений - 15)<br>`+Expand`                                                                                                                                                                                    |
 
 #### Атрибуты доступные для фильтрации
 | Значение              | Описание                      |
@@ -107,6 +107,16 @@ curl --compressed -X GET \
           "mediaType": "application/json"
         }
       },
+      "images": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/contentcard/529eb5b6-d726-11f0-0a80-073800000329/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
+        }
+      },
       "salesChannels": [
         {
           "meta": {
@@ -146,6 +156,16 @@ curl --compressed -X GET \
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/saleplatform/metadata",
           "type": "saleplatform",
           "mediaType": "application/json"
+        }
+      },
+      "images": {
+        "meta": {
+          "href": "http://localhost/api/remap/1.2/entity/contentcard/dfbef48e-d67d-11f0-0a80-0738000002d8/images",
+          "type": "image",
+          "mediaType": "application/json",
+          "size": 0,
+          "limit": 1000,
+          "offset": 0
         }
       },
       "salesChannels": [
@@ -213,6 +233,16 @@ curl --compressed -X GET \
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/saleplatform/metadata",
       "type": "saleplatform",
       "mediaType": "application/json"
+    }
+  },
+  "images": {
+    "meta": {
+      "href": "http://localhost/api/remap/1.2/entity/contentcard/529eb5b6-d726-11f0-0a80-073800000329/images",
+      "type": "image",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
     }
   },
   "salesChannels": [
@@ -304,6 +334,16 @@ curl --compressed -X POST \
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/saleplatform/metadata",
       "type": "saleplatform",
       "mediaType": "application/json"
+    }
+  },
+  "images": {
+    "meta": {
+      "href": "http://localhost/api/remap/1.2/entity/contentcard/529eb5b6-d726-11f0-0a80-073800000329/images",
+      "type": "image",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
     }
   },
   "salesChannels": [
@@ -411,6 +451,16 @@ curl --compressed -X POST \
         "mediaType": "application/json"
       }
     },
+    "images": {
+      "meta": {
+        "href": "http://localhost/api/remap/1.2/entity/contentcard/529eb5b6-d726-11f0-0a80-073800000329/images",
+        "type": "image",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    },
     "salesChannels": [
       {
         "meta": {
@@ -449,6 +499,16 @@ curl --compressed -X POST \
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/saleplatform/metadata",
         "type": "saleplatform",
         "mediaType": "application/json"
+      }
+    },
+    "images": {
+      "meta": {
+        "href": "http://localhost/api/remap/1.2/entity/contentcard/dfbef48e-d67d-11f0-0a80-0738000002d8/images",
+        "type": "image",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
       }
     },
     "salesChannels": [
@@ -538,6 +598,16 @@ curl --compressed -X PUT \
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/saleplatform/metadata",
       "type": "saleplatform",
       "mediaType": "application/json"
+    }
+  },
+  "images": {
+    "meta": {
+      "href": "http://localhost/api/remap/1.2/entity/contentcard/529eb5b6-d726-11f0-0a80-073800000329/images",
+      "type": "image",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
     }
   },
   "salesChannels": [
