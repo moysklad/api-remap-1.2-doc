@@ -2203,6 +2203,60 @@ curl --compressed -X GET \
 }
 ```
 
+### Создать счет юрлица
+
+Запрос на создание нового расчетного счета юрлица.
+Для успешного создания необходимо в теле запроса указать следующее поле:
+
++ **accountNumber** - Номер счета.
+
+**Параметры**
+
+| Параметр | Описание                                                                       |
+| :------- | :----------------------------------------------------------------------------- |
+| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id юрлица. |
+
+> Пример запроса на создание счета юрлица.
+
+```shell
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/organization/7944ef04-f831-11e5-7a69-971500188b19/accounts" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+    -d '{
+          "accountNumber": "86686868768768757656876876"
+        }'
+```
+
+> Response 200 (application/json). Успешное создание.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/7944ef04-f831-11e5-7a69-971500188b19/accounts/d9560d0e-6703-11e7-9464-e4de00000052",
+      "type": "account",
+      "mediaType": "application/json"
+    },
+    "id": "d9560d0e-6703-11e7-9464-e4de00000052",
+    "accountId": "d8a2e973-6703-11e7-9464-e4de00000001",
+    "updated": "2024-01-22 17:57:54.558",
+    "isDefault": false,
+    "accountNumber": "86686868768768757656876876",
+    "currency": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/8b3f8407-7934-11f1-0a83-050900000058",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+                "type": "currency",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=8b3f8407-7934-11f1-0a83-050900000058"
+            }
+        }
+  }
+]
+```
+
 ### Изменить счет Юрлица
 Обновляет отдельный счет Юрлица с указанным id.
 
@@ -2398,9 +2452,7 @@ curl --compressed -X DELETE \
 ```
 
 > Response 200 (application/json)
-```text
-Успешное удаление счета Юрлица возвращает статус `200`.
-```
+Успешное удаление счета юрлица.
 
 ### Массовое удаление счетов Юрлица
 
@@ -2439,6 +2491,4 @@ curl --compressed -X POST \
 ```
 
 > Response 200 (application/json)
-```text
-Успешное удаление счетов Юрлица возвращает статус `200`.
-```
+Успешное удаление счетов юрлица.
