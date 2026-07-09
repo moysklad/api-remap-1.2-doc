@@ -68,7 +68,7 @@
 | **ogrn**                    | String(255)   |                                                                                                                                                   | ОГРН <br>`+RU`                                                                                                                                                                 |
 | **ogrnip**                  | String(255)   |                                                                                                                                                   | ОГРНИП <br>`+RU`                                                                                                                                                               |
 | **okpo**                    | String(255)   |                                                                                                                                                   | ОКПО <br>`+RU`                                                                                                                                                                 |
-| **payerVat**                | Boolean       |                                                                                                                                                   | Является ли данное юрлицо плательщиком НДС                                                                                                                                     |
+| **payerVat**                | Boolean       |                                                                                                                                                   | Является ли данное Юрлицо плательщиком НДС                                                                                                                                     |
 | **phone**                   | String(255)   | `=` `!=` `~` `~=` `=~`                                                                                                                            | Номер городского телефона                                                                                                                                                      |
 | **stamp**                   | Object        |                                                                                                                                                   | Печать. [Подробнее тут](#/dictionaries/organization#5-podpisi-i-pechat)                                                          |
 
@@ -419,7 +419,7 @@ curl --compressed -X GET \
       },
       "updated": "2016-04-18 17:26:20",
       "name": "ООО ОАО ООО ОАО",
-      "description": "юрлицо, делающее основнуб прибыль",
+      "description": "Юрлицо, делающее основнуб прибыль",
       "code": "1214124",
       "externalCode": "6IRv89VSgKY7yQAmAuV7n0",
       "archived": false,
@@ -519,7 +519,7 @@ curl --compressed -X GET \
 }
 ```
 
-### Создать юрлицо 
+### Создать Юрлицо 
 Запрос на создание нового Юрлица.
 #### Описание создания нового Юрлица
 Юрлицо создается на основе переданного объекта JSON,
@@ -541,7 +541,7 @@ curl --compressed -X GET \
     -H "Content-Type: application/json" \
       -d '{  
   "name":"ОАО СветПром",
-  "description":"юрлицо, делающее маленькую прибыль",
+  "description":"Юрлицо, делающее маленькую прибыль",
   "code":"666",
   "externalCode":"666АААА666",
   "archived":false,
@@ -662,7 +662,7 @@ curl --compressed -X GET \
   },
   "updated": "2016-04-18 17:53:21",
   "name": "ОАО СветПром",
-  "description": "юрлицо, делающее маленькую прибыль",
+  "description": "Юрлицо, делающее маленькую прибыль",
   "code": "666",
   "externalCode": "666АААА666",
   "archived": false,
@@ -1018,7 +1018,7 @@ curl --compressed -X GET \
     -H "Content-Type: application/json" \
       -d '{
   "name": "ОАО СветПром",
-  "description": "Новое юрлицо",
+  "description": "Новое Юрлицо",
   "code": "666",
   "archived": false,
   "trackingContractNumber": "12345678",
@@ -1076,7 +1076,7 @@ curl --compressed -X GET \
   },
   "updated": "2016-05-05 18:40:51",
   "name": "ОАО СветПром",
-  "description": "Новое юрлицо",
+  "description": "Новое Юрлицо",
   "code": "666",
   "externalCode": "sfwafn22-124124sa",
   "archived": false,
@@ -1187,7 +1187,7 @@ curl --compressed -X GET \
       -d '[
   {
     "name": "ОАО СветПром",
-    "description": "юрлицо, делающее маленькую прибыль",
+    "description": "Юрлицо, делающее маленькую прибыль",
     "code": "666",
     "externalCode": "666АААА666",
     "archived": false,
@@ -1218,7 +1218,7 @@ curl --compressed -X GET \
       "mediaType": "application/json"
     },
     "name": "ОАО СветПром",
-    "description": "юрлицо, делающее маленькую прибыль",
+    "description": "Юрлицо, делающее маленькую прибыль",
     "code": "666",
     "externalCode": "666АААА666",
     "archived": false,
@@ -1274,7 +1274,7 @@ curl --compressed -X GET \
     },
     "updated": "2016-04-18 17:53:21",
     "name": "ОАО СветПром",
-    "description": "юрлицо, делающее маленькую прибыль",
+    "description": "Юрлицо, делающее маленькую прибыль",
     "code": "666",
     "externalCode": "666АААА666",
     "archived": false,
@@ -1334,7 +1334,7 @@ curl --compressed -X GET \
     },
     "updated": "2016-05-05 18:40:51",
     "name": "ОАО СветГАЗКАМАЗПром",
-    "description": "Новое юрлицо",
+    "description": "Новое Юрлицо",
     "code": "666",
     "externalCode": "sfwafn22-124124sa",
     "archived": false,
@@ -1368,7 +1368,7 @@ curl --compressed -X GET \
 ]
 ```
 
-### Удалить юрлицо
+### Удалить Юрлицо
 
 **Параметры**
 
@@ -1511,7 +1511,7 @@ curl --compressed -X GET \
 
 ### Запросы - Юрлицо
 
-### Получить юрлицо 
+### Получить Юрлицо 
 Запрос на получение Юрлица с указанным id.
 
 **Параметры**
@@ -1563,7 +1563,7 @@ curl --compressed -X GET \
   },
   "updated": "2016-04-18 17:57:27",
   "name": "ОАО СветПром",
-  "description": "юрлицо, делающее маленькую прибыль",
+  "description": "Юрлицо, делающее маленькую прибыль",
   "code": "666",
   "externalCode": "666АААА666",
   "archived": false,
@@ -1744,7 +1744,7 @@ curl --compressed -X GET \
 }
 ```
 
-### Изменить юрлицо 
+### Изменить Юрлицо 
 Запрос на обновление Юрлица с указанным id.
 
 При обновлении Юрлица через `PUT /entity/organization/{id}`:
@@ -1769,7 +1769,7 @@ curl --compressed -X GET \
     -H "Content-Type: application/json" \
       -d '{
   "name": "ОАО СветПром",
-  "description": "юрлицо, делающее маленькую прибыль",
+  "description": "Юрлицо, делающее маленькую прибыль",
   "code": "666",
   "externalCode": "666АААА666",
   "archived": false,
@@ -1826,7 +1826,7 @@ curl --compressed -X GET \
   },
   "updated": "2016-04-18 17:53:21",
   "name": "ОАО СветПром",
-  "description": "юрлицо, делающее маленькую прибыль",
+  "description": "Юрлицо, делающее маленькую прибыль",
   "code": "666",
   "externalCode": "666АААА666",
   "archived": false,
@@ -1870,7 +1870,7 @@ curl --compressed -X GET \
     -H "Content-Type: application/json" \
       -d '{
   "name": "ОАО СветПром",
-  "description": "юрлицо, делающее маленькую прибыль",
+  "description": "Юрлицо, делающее маленькую прибыль",
   "code": "666",
   "externalCode": "666АААА666",
   "archived": false,
@@ -1984,7 +1984,7 @@ curl --compressed -X GET \
   },
   "updated": "2016-05-05 18:40:51",
   "name": "ОАО СветГАЗКАМАЗПром",
-  "description": "Новое юрлицо",
+  "description": "Новое Юрлицо",
   "code": "666",
   "externalCode": "sfwafn22-124124sa",
   "archived": false,
@@ -2398,7 +2398,7 @@ curl --compressed -X DELETE \
 ```
 
 > Response 200 (application/json)
-Успешное удаление счета Юрлица.
+> Успешное удаление счета Юрлица.
 
 ### Массовое удаление счетов Юрлица
 
@@ -2437,4 +2437,4 @@ curl --compressed -X POST \
 ```
 
 > Response 200 (application/json)
-Успешное удаление счетов Юрлица.
+> Успешное удаление счетов Юрлица.
