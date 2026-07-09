@@ -2398,6 +2398,7 @@ curl --compressed -X DELETE \
 ```
 
 Успешное удаление счета Юрлица возвращает статус `200`.
+
 > Response 200 (application/json)
 
 ### Массовое удаление счетов Юрлица
@@ -2437,4 +2438,5 @@ curl --compressed -X POST \
 ```
 
 Успешное удаление счетов Юрлица возвращает статус `200`.
+
 > Response 200 (application/json)
