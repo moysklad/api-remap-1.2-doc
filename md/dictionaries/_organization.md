@@ -2397,8 +2397,8 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
+Успешное удаление счета Юрлица возвращает статус `200`.
 > Response 200 (application/json)
-> Успешное удаление счета Юрлица.
 
 ### Массовое удаление счетов Юрлица
 
@@ -2436,5 +2436,5 @@ curl --compressed -X POST \
       ]'
 ```
 
-> Response 200 (application/json) 
-> Успешное удаление счетов Юрлица.
+Успешное удаление счетов Юрлица возвращает статус `200`.
+> Response 200 (application/json)
