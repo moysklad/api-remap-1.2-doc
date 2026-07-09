@@ -2436,5 +2436,5 @@ curl --compressed -X POST \
       ]'
 ```
 
-> Response 200 (application/json)
-> Успешное удаление счетов Юрлица.
+
+> Response 200 (application/json) Успешное удаление счетов Юрлица.
