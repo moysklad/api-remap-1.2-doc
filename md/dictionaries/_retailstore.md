@@ -30,7 +30,7 @@
 | **createCashInOnRetailShiftClosing**    | Boolean                        |                            | Создавать ПКО при закрытии смены<br>`+Обязательное при ответе`                                                                                                                                                               |
 | **createOrderWithState**                | [Meta](#/general#3-metadannye) |                            | Метаданные статуса, который будет указан при создании заказа<br>`+Expand`                                                                                                                                                    |
 | **createPaymentInOnRetailShiftClosing** | Boolean                        |                            | Создавать входящий платеж при закрытии смены<br>`+Обязательное при ответе`                                                                                                                                                   |
-| **customerOrderStates**                 | Array(Object)                  |                            | Статусы, в которых выгружаются заказы в точку продаж (если указано)<br>`+Expand`                                                                                                                                              |
+| **customerOrderStates**                 | Array(Object)                  |                            | Статусы, в которых выгружаются заказы в точку продаж (если указано)<br>`+Expand`                                                                                                                                             |
 | **defaultTaxSystem**                    | Enum                           |                            | Код системы налогообложения по умолчанию. [Подробнее тут](#/dictionaries/retailstore#5-kod-sistemy-nalogooblozheniya-po-umolchaniyu)<br>`+Обязательное при ответе`                                                           |
 | **demandPrefix**                        | String(255)                    |                            | Префикс номера продаж                                                                                                                                                                                                        |
 | **description**                         | String(4096)                   | `=` `!=` `~` `~=` `=~`     | Комментарий к Точке продаж                                                                                                                                                                                                   |
@@ -57,6 +57,7 @@
 | **orderTaxSystem**                      | Enum                           |                            | Код системы налогообложения для заказов. [Подробнее тут](#/dictionaries/retailstore#5-kod-sistemy-nalogooblozheniya-dlya-zakazov)<br>`+Обязательное при ответе`                                                              |
 | **orderToState**                        | [Meta](#/general#3-metadannye) |                            | Метаданные статуса, который проставится заказу после проведения продажи на его основании (если указано)<br>`+Expand`                                                                                                         |
 | **organization**                        | [Meta](#/general#3-metadannye) | `=` `!=`                   | Метаданные Юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                                                         |
+| **organizationBranch**                  | [Meta](#/general#3-metadannye) | `=` `!=`                   | Метаданные подразделения юрлица<br>`+Expand`                                                                                                                                                                                 |
 | **owner**                               | [Meta](#/general#3-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                                                            |
 | **priceType**                           | Object                         |                            | Тип цен, с которыми будут продаваться товары в рознице<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                                              |
 | **printAlways**                         | Boolean                        |                            | Всегда печатать кассовые чеки<br>`+Обязательное при ответе`                                                                                                                                                                  |
@@ -429,6 +430,14 @@ curl --compressed -X GET \
           "mediaType": "application/json"
         }
       },
+      "organizationBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json"
+        }
+      },
       "store": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/30fe30a0-137a-11e6-9464-e4de00000050",
@@ -655,6 +664,14 @@ curl --compressed -X GET \
           "mediaType": "application/json"
         }
       },
+      "organizationBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json"
+        }
+      },
       "store": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/30fe30a0-137a-11e6-9464-e4de00000050",
@@ -850,6 +867,14 @@ curl --compressed -X GET \
                   "mediaType" : "application/json"
                 }
               },
+              "organizationBranch": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+                  "type": "organizationbranch",
+                  "mediaType": "application/json"
+                }
+              },
               "store" : {
                 "meta" : {
                   "href" : "https://api.moysklad.ru/api/remap/1.2/entity/store/30fe66fd-137a-11e6-9464-e4de00000053",
@@ -1015,6 +1040,14 @@ curl --compressed -X GET \
       "type" : "organization",
       "mediaType" : "application/json",
       "uuidHref" : "https://online.moysklad.ru/app/#mycompany/edit?id=30fe66fd-137a-11e6-9464-e4de00000051"
+    }
+  },
+  "organizationBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json"
     }
   },
   "store" : {
@@ -1246,6 +1279,14 @@ curl --compressed -X GET \
       "uuidHref" : "https://online.moysklad.ru/app/#mycompany/edit?id=30fe66fd-137a-11e6-9464-e4de00000050"
     }
   },
+  "organizationBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json"
+    }
+  },
   "store" : {
     "meta" : {
       "href" : "https://api.moysklad.ru/api/remap/1.2/entity/store/30fe66fd-137a-11e6-9464-e4de00000051",
@@ -1438,6 +1479,14 @@ curl --compressed -X GET \
         "uuidHref" : "https://online.moysklad.ru/app/#mycompany/edit?id=30fe66fd-137a-11e6-9464-e4de00000050"
       }
     },
+    "organizationBranch": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+        "type": "organizationbranch",
+        "mediaType": "application/json"
+      }
+    },
     "store" : {
       "meta" : {
         "href" : "https://api.moysklad.ru/api/remap/1.2/entity/store/30fe66fd-137a-11e6-9464-e4de00000051",
@@ -1565,6 +1614,14 @@ curl --compressed -X GET \
         "uuidHref" : "https://online.moysklad.ru/app/#mycompany/edit?id=30fe66fd-137a-11e6-9464-e4de00000040"
       }
     },
+   "organizationBranch": {
+     "meta": {
+       "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+       "type": "organizationbranch",
+       "mediaType": "application/json"
+     }
+   },
     "store" : {
       "meta" : {
         "href" : "https://api.moysklad.ru/api/remap/1.2/entity/store/30fe66fd-137a-11e6-9464-e4de00000041",
@@ -1819,6 +1876,14 @@ curl --compressed -X GET \
       "mediaType": "application/json"
     }
   },
+  "organizationBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json"
+    }
+  },
   "store": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/30fe30a0-137a-11e6-9464-e4de00000050",
@@ -1999,6 +2064,14 @@ curl --compressed -X PUT \
       "type" : "organization",
       "mediaType" : "application/json",
       "uuidHref" : "https://online.moysklad.ru/app/#mycompany/edit?id=30fe66fd-137a-11e6-9464-e4de00000050"
+    }
+  },
+  "organizationBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json"
     }
   },
   "store" : {
