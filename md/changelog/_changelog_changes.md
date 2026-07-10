@@ -2,6 +2,11 @@
 
 Список последних изменений в API Remap 1.2
 
+### 13-07-2026
+**Добавлено**
+- Сущность `Подразделение юридического лица` [organizationbranch](#/dictionaries/organizationbranch#2-podrazdelenie-yuridicheskogo-lica)
+- Ошибка [74000](#/errors#3-kody-oshibok-dlya-podrazdeleniya-yuridicheskogo-lica)
+
 ### 07-07-2026
 **Добавлено**
 - Поддержка протокола change-handler во [Внутреннем заказе](#/documents/internalOrder#2-vnutrennij-zakaz)
