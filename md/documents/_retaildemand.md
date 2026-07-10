@@ -12,7 +12,7 @@
 | **applicable**          | Boolean                        | `=` `!=`                                                               | Отметка о проведении<br>`+Обязательное при ответе` `+Change-handler`                                                                     |
 | **attributes**          | Array(Object)                  | [Операторы доп. полей](#/general#4-filtraciya-po-dopolnitelnym-polyam) | Коллекция метаданных доп. полей. [Поля объекта](#/general#3-rabota-s-dopolnitelnymi-polyami) `+Change-handler`                           |
 | **cashSum**             | Float                          |                                                                        | Оплачено наличными<br>`+Обязательное при ответе`                                                                                         |
-| **checkNumber**         | String(255)                    |                                                                        | Номер чека                                                                                                                               |
+| **checkNumber**         | Int                            |                                                                        | Номер чека                                                                                                                               |
 | **checkSum**            | Float                          |                                                                        | Сумма Чека                                                                                                                               |
 | **cheque**              | Object                         |                                                                        | Фискальные данные продажи. [Подробнее тут](#/documents/retaildemand#4-dannye-fiskalnogo-cheka)<br> `+Только для чтения`                  |
 | **code**                | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Код Розничной продажи<br>                                                                                                                |
@@ -20,7 +20,7 @@
 | **customerOrder**       | [Meta](#/general#3-metadannye) |                                                                        | Метаданные Заказа Покупателя<br>`+Expand`                                                                                                |
 | **deleted**             | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Момент последнего удаления Розничной продажи<br>`+Только для чтения`                                                                     |
 | **description**         | String(4096)                   | `=` `!=` `~` `~=` `=~`                                                 | Комментарий Розничной продажи<br>`+Change-handler`                                                                                       |
-| **documentNumber**      | String(255)                    |                                                                        | Номер документа                                                                                                                          |
+| **documentNumber**      | Int                            |                                                                        | Номер документа                                                                                                                          |
 | **externalCode**        | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Внешний код Розничной продажи<br>`+Обязательное при ответе` `+Change-handler`                                                            |
 | **files**               | MetaArray                      |                                                                        | Метаданные массива [Файлов](#/dictionaries/files#2-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand` |
 | **giftCards**           | Array(Object)                  |                                                                        | Коллекция подарочных сертификатов, используемых при оплате продажи. [Подробнее тут](#/documents/retaildemand#4-podarochnye-sertifikaty)  |
@@ -44,7 +44,7 @@
 | **rate**                | Object                         |                                                                        | Валюта. [Подробнее тут](#/documents/common-info#3-valyuta-v-dokumentah)<br>`+Обязательное при ответе` `+Change-handler`                  |
 | **retailShift**         | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные Розничной смены<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                            |
 | **retailStore**         | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные Точки продаж<br>`+Обязательное при ответе` `+Expand`                                                                          |
-| **sessionNumber**       | String(255)                    |                                                                        | Номер сессии                                                                                                                             |
+| **sessionNumber**       | Int                            |                                                                        | Номер сессии                                                                                                                             |
 | **shared**              | Boolean                        | `=` `!=`                                                               | Общий доступ<br>`+Обязательное при ответе`                                                                                               |
 | **state**               | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные статуса Розничной продажи<br>`+Expand` `+Change-handler`                                                                      |
 | **store**               | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                     |
@@ -102,7 +102,7 @@
 | Название       | Тип                                                       | Описание                                                                                                                                                                                                                                                                  |
 | -------------- |:----------------------------------------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **accountId**  | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                                                                                                    |
-| **assortment** | [Meta](#/general#3-metadannye) | Метаданные товара/услуги/партии/модификации, которую представляет собой позиция<br>`+Обязательное при ответе` `+Expand` `+Change-handler`                                                                                                                                  |
+| **assortment** | [Meta](#/general#3-metadannye) | Метаданные товара/услуги/партии/модификации/комплекта, которые представляет собой позиция<br>`+Обязательное при ответе` `+Expand` `+Change-handler`                                                                                                                                  |
 | **cost**       | Int                                                       | Себестоимость (только для услуг)                                                                                                                                                                                                                                          |
 | **declaration**| Array(Object)                                             | Информация о прослеживаемости импортных товаров. [Подробнее тут](#/documents/retaildemand#4-informaciya-o-proslezhivaemosti-importnyh-tovarov)<br>`+Выводится по запросу` `+Только для чтения`                                        |
 | **discount**   | Float                                                     | Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                      |
@@ -110,8 +110,10 @@
 | **pack**       | Object                                                    | Упаковка Товара. [Подробнее тут](#/dictionaries/product#5-upakovki-tovara)<br>`+Change-handler`                                                                                                                           |
 | **price**      | Float                                                     | Цена товара/услуги в копейках<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                                                                                             |
 | **quantity**   | Float                                                     | Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.<br>`+Обязательное при ответе` `+Change-handler`|
-| **things**     | Array(String)                                             | Серийные номера. Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете. В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.<br>`+Change-handler`                      |
-| **vat**        | Int                                                       | НДС, которым облагается текущая позиция<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                                                                                   |
+| **things**             | Array(String)                                             | Серийные номера. Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете. В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.<br>`+Change-handler`                      |
+| **trackingCodes**      | Array(Object)                                             | Коды маркировки товаров и транспортных упаковок. [Подробнее тут](#/documents/retaildemand#4-kody-markirovki-tovarov-i-transportnyh-upakovok)                                                                                              |
+| **trackingCodes_1162** | Array(Object)                                             | Коды маркировки товаров в формате тега 1162. [Подробнее тут](#/documents/retaildemand#4-kody-markirovki-tovarov-i-transportnyh-upakovok-v-formate-tega-1162)                                                                              |
+| **vat**                | Int                                                       | НДС, которым облагается текущая позиция<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                                                                                   |
 | **vatEnabled** | Boolean                                                   | Включен ли НДС для позиции. С помощью этого флага для позиции можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.<br>`+Обязательное при ответе` `+Change-handler`                   |
 
 С позициями можно работать с помощью специальных [ресурсов для управления позициями Розничной продажи](#/documents/retaildemand#3-upravlenie-poziciyami-roznichnoj-prodazhi),
@@ -128,12 +130,12 @@
 
 #### Подарочные сертификаты
 Подарочные сертификаты Розничной продажи - это список подарочных сертификатов, используемых при оплате розничной продажи.
-Объект позиции Розничной продажи содержит следующие поля:
+Объект подарочного сертификата содержит следующие поля:
 
 | Название        | Тип                                                       | Описание                                                   |
 |-----------------|:----------------------------------------------------------|:----------------------------------------------------------|
 | **name**        | String                                                    | Номер сертификата<br>`+Обязательное при ответе`           |
-| **paymentSum**  | Float                                                     | Сумма сертификата<br>`+Обязательное при ответе`           |
+| **paymentSum**  | Float                                                     | Сумма сертификата<br>`+Обязательное при ответе` `+Только для чтения`           |
 
 #### Данные фискального чека
 Данные из чека, полученного при фискализации операции Розничной продажи.
@@ -160,6 +162,50 @@
 | **rnpt**     | String                                                    | Грузовая таможенная декларация<br>`+Только для чтения`                                  |
 | **country**  | [Meta](#/general#3-metadannye) | Страна происхождения товара<br>`+Только для чтения`                                     |
 | **quantity** | Float                                                     | Количество товара с указанными ГТД или РНПТ в позиции документа<br>`+Только для чтения` |
+
+#### Коды маркировки товаров и транспортных упаковок
+Поддержаны в виде иерархической структуры JSON. 
+
+| Название          | Тип           | Описание                                                                                                                                          |
+| ----------------- | :------------ | :------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **cis**           | String        | Значение кода маркировки<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                 |
+| **type**          | Enum          | Тип кода маркировки. Возможные значения: `trackingcode`, `consumerpack`, `transportpack`<br>`+Обязательное при ответе` `+Необходимо при создании` |
+| **trackingCodes** | Array(Object) | Массив вложенных кодов маркировки. Может присутствовать, только если **type** имеет значения `consumerpack` или `transportpack`                   |
+
+Значение кода указывается в атрибуте **cis**. 
+Для каждого кода указывается тип **type**: `trackingcode` (код маркировки товара), `consumerpack` (код маркировки потребительской упаковки) или `transportpack` (код транспортной упаковки). 
+Допустима вложенность кодов маркировки товаров в транспортные упаковки. Транспортные упаковки не могут иметь вложенных упаковок. 
+Коды упаковок могут отсутствовать - в этом случае структура не будет вложенной. 
+Если продукция не является маркированной, то коды маркировки для позиции не будут сохранены. 
+Количество кодов маркировки может отличаться от фактического количества единиц продукции.
+
+#### Коды маркировки товаров и транспортных упаковок в формате тега 1162
+Поддержаны в виде иерархической структуры JSON. 
+
+| Название               | Тип           | Описание                                                                                                                                            |
+| ---------------------- | :------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **cis_1162**           | String        | Значение кода маркировки в формате тега 1162<br>`+Обязательное при ответе` `+Только для чтения`                                                     |
+| **type**               | Enum          | Тип кода маркировки. Возможные значения: `trackingcode`, `consumerpack`, `transportpack`<br>`+Обязательное при ответе` `+Только для чтения`         |
+| **trackingCodes_1162** | Array(Object) | Массив вложенных кодов маркировки в формате тега 1162. Может присутствовать, только если **type** имеет значения `consumerpack` или `transportpack` |
+
+Значение кода указывается в атрибуте **cis_1162**.
+Для каждого кода указывается тип **type**: `trackingcode` (код маркировки товара), `consumerpack` (код маркировки потребительской упаковки) или `transportpack` (код транспортной упаковки). 
+Допустима вложенность кодов маркировки товаров в транспортные упаковки. Транспортные упаковки не могут иметь вложенных упаковок.
+Коды упаковок могут отсутствовать - в этом случае структура не будет вложенной. 
+Если продукция не является маркированной, то коды маркировки в формате тега 1162 для позиции не будут сохранены.
+Количество кодов маркировки может отличаться от фактического количества единиц продукции.
+
+#### Особенности работы с кодами маркировки и серийными номерами для позиции документа
+
+При работе с позицией Розничной продажи следует учитывать следующие особенности.
+
++ Количество кодов маркировки **trackingCodes** в позиции документа не влияет на количество единиц **quantity** в позиции.
++ Количество серийных номеров **things** в позиции документа строго соответствует количеству единиц **quantity** в позиции. 
+  Изменение **quantity** на значение, не соответствующее количеству серийных номеров, недопустимо. 
++ Для обновления списка кодов маркировки **trackingCodes** и списка серийных номеров **things** позиции Розничной продажи, 
+  необходимо передавать их полный список, включающий как старые, так и новые значения. Отсутствующие значения при обновлении будут удалены.
+  
+Недопустимо сохранение дублирующихся кодов маркировки и серийных номеров внутри документа Розничной продажи. 
 
 ### Получить Розничные продажи 
 Запрос всех Розничных продаж на данной учетной записи.
@@ -2591,6 +2637,193 @@ curl --compressed -X GET \
 }
 ```
 
+> Пример с кодами маркировки
+
+```shell
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/8830a022-8a03-11ea-0a80-01cb00000040/positions" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка позиций Розничной продажи.
+
+```json
+{
+   "context":{
+      "employee":{
+         "meta":{
+            "href":"https://api.moysklad.ru/api/remap/1.2/context/employee",
+            "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+            "type":"employee",
+            "mediaType":"application/json"
+         }
+      }
+   },
+   "meta":{
+      "href":"https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/8830a022-8a03-11ea-0a80-01cb00000040/positions",
+      "type":"demandposition",
+      "mediaType":"application/json",
+      "size":2,
+      "limit":1000,
+      "offset":0
+   },
+   "rows":[
+      {
+         "meta":{
+            "href":"https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/8830a022-8a03-11ea-0a80-01cb00000040/positions/8830b0fe-8a03-11ea-0a80-01cb00000041",
+            "type":"demandposition",
+            "mediaType":"application/json"
+         },
+         "id":"8830b0fe-8a03-11ea-0a80-01cb00000041",
+         "accountId":"de6b5113-8491-11ea-0a80-134500000014",
+         "quantity":20.0,
+         "price":200.0,
+         "discount":0.0,
+         "vat":21,
+         "vatEnabled": true,
+         "assortment":{
+            "meta":{
+               "href":"https://api.moysklad.ru/api/remap/1.2/entity/product/aa1b1814-8493-11ea-0a80-037a00000307",
+               "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+               "type":"product",
+               "mediaType":"application/json",
+               "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=aa1b0d42-8493-11ea-0a80-037a00000305"
+            }
+         },
+         "trackingCodes":[
+            {
+               "cis":"012345678912345672",
+               "type":"transportpack",
+               "trackingCodes":[
+                  {
+                     "cis":"010463003759026521uHpIIf2111111",
+                     "type":"trackingcode"
+                  },
+                  {
+                     "cis":"010463003759026521uHpIIf2111114",
+                     "type":"trackingcode"
+                  }
+               ]
+            }
+         ],
+         "trackingCodes_1162":[
+            {
+               "cis_1162":"0000",
+               "type":"transportpack",
+               "trackingCodes_1162":[
+                  {
+                     "cis_1162":"444D043603BEF0F975487049496632313131313131",
+                     "type":"trackingcode"
+                  },
+                  {
+                     "cis_1162":"444D043603BEF0F975487049496632313131313134",
+                     "type":"trackingcode"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "meta":{
+            "href":"https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/8830a022-8a03-11ea-0a80-01cb00000040/positions/770f45b4-8a04-11ea-0a80-01cb00000060",
+            "type":"demandposition",
+            "mediaType":"application/json"
+         },
+         "id":"770f45b4-8a04-11ea-0a80-01cb00000060",
+         "accountId":"de6b5113-8491-11ea-0a80-134500000014",
+         "quantity":10.0,
+         "price":0.0,
+         "discount":0.0,
+         "vat":0,
+         "vatEnabled": false,
+         "assortment":{
+            "meta":{
+               "href":"https://api.moysklad.ru/api/remap/1.2/entity/product/b20184da-8493-11ea-0a80-037a00000314",
+               "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+               "type":"product",
+               "mediaType":"application/json",
+               "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=b20178fb-8493-11ea-0a80-037a00000312"
+            }
+         },
+         "trackingCodes":[
+            {
+               "cis":"010463003759026521uHpIIf-nXIH>1",
+               "type":"trackingcode"
+            },
+            {
+               "cis":"012345678912345671",
+               "type":"transportpack"
+            },
+            {
+               "cis":"012345678912345678",
+               "type":"transportpack",
+               "trackingCodes":[
+                  {
+                     "cis":"010463003759026521uHpIIf-nXIH>0",
+                     "type":"trackingcode"
+                  },
+                  {
+                     "cis":"010463003759026521uHpIIf-nXIH>4",
+                     "type":"trackingcode"
+                  },
+                  {
+                     "cis":"010463003759026521uHpIIf-111114",
+                     "type":"trackingcode"
+                  }
+               ]
+            },
+            {
+               "cis":"010463003759026521uHpIIf-111122",
+               "type":"trackingcode"
+            },
+            {
+               "cis":"010463003759026521uHpIIf-nXIH>2",
+               "type":"trackingcode"
+            }
+         ],
+         "trackingCodes_1162":[
+            {
+               "cis_1162":"444D043603BEF0F97548704949662D6E5849483E31",
+               "type":"trackingcode"
+            },
+            {
+               "cis_1162":"0000",
+               "type":"transportpack"
+            },
+            {
+               "cis_1162":"0000",
+               "type":"transportpack",
+               "trackingCodes_1162":[
+                  {
+                     "cis_1162":"444D043603BEF0F97548704949662D6E5849483E30",
+                     "type":"trackingcode"
+                  },
+                  {
+                     "cis_1162":"444D043603BEF0F97548704949662D6E5849483E34",
+                     "type":"trackingcode"
+                  },
+                  {
+                     "cis_1162":"444D043603BEF0F97548704949662D313131313134",
+                     "type":"trackingcode"
+                  }
+               ]
+            },
+            {
+               "cis_1162":"444D043603BEF0F97548704949662D313131313232",
+               "type":"trackingcode"
+            },
+            {
+               "cis_1162":"444D043603BEF0F97548704949662D6E5849483E32",
+               "type":"trackingcode"
+            }
+         ]
+      }
+   ]
+}
+```
+
 ### Позиция Розничной продажи
 
 ### Получить позицию
@@ -2796,6 +3029,170 @@ curl --compressed -X GET \
 ]
 ```
 
+> Пример с кодами маркировки.
+
+```shell
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/8830a022-8a03-11ea-0a80-01cb00000040/positions" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+    -d '{
+   "quantity":10.0,
+   "price":100.0,
+   "discount":0.0,
+   "vat":0,
+   "assortment":{
+      "meta":{
+         "href":"https://api.moysklad.ru/api/remap/1.2/entity/product/b20184da-8493-11ea-0a80-037a00000314",
+         "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+         "type":"product",
+         "mediaType":"application/json",
+         "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=b20178fb-8493-11ea-0a80-037a00000312"
+      }
+   },
+   "trackingCodes":[
+      {
+         "cis":"010463003759026521uHpIIf-111122",
+         "type":"trackingcode"
+      },
+      {
+         "cis":"012345678912345671",
+         "type":"transportpack"
+      },
+      {
+         "cis":"010463003759026521uHpIIf-nXIH>1",
+         "type":"trackingcode"
+      },
+      {
+         "cis":"012345678912345678",
+         "type":"transportpack",
+         "trackingCodes":[
+            {
+               "cis":"010463003759026521uHpIIf-111114",
+               "type":"trackingcode"
+            },
+            {
+               "cis":"010463003759026521uHpIIf-nXIH>4",
+               "type":"trackingcode"
+            },
+            {
+               "cis":"010463003759026521uHpIIf-nXIH>0",
+               "type":"trackingcode"
+            }
+         ]
+      },
+      {
+         "cis":"010463003759026521uHpIIf-nXIH>2",
+         "type":"trackingcode"
+      }
+   ]
+}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной позиции Розничной продажи.
+
+```json
+[
+   {
+      "meta":{
+         "href":"https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/8830a022-8a03-11ea-0a80-01cb00000040/positions/770f45b4-8a04-11ea-0a80-01cb00000060",
+         "type":"demandposition",
+         "mediaType":"application/json"
+      },
+      "id":"770f45b4-8a04-11ea-0a80-01cb00000060",
+      "accountId":"de6b5113-8491-11ea-0a80-134500000014",
+      "quantity":10.0,
+      "price":100.0,
+      "discount":0.0,
+      "vat":0,
+      "vatEnabled": false,
+      "assortment":{
+         "meta":{
+            "href":"https://api.moysklad.ru/api/remap/1.2/entity/product/b20184da-8493-11ea-0a80-037a00000314",
+            "metadataHref":"https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+            "type":"product",
+            "mediaType":"application/json",
+            "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=b20178fb-8493-11ea-0a80-037a00000312"
+         }
+      },
+      "trackingCodes":[
+         {
+            "cis":"010463003759026521uHpIIf-111122",
+            "type":"trackingcode"
+         },
+         {
+            "cis":"012345678912345671",
+            "type":"transportpack"
+         },
+         {
+            "cis":"010463003759026521uHpIIf-nXIH>1",
+            "type":"trackingcode"
+         },
+         {
+            "cis":"012345678912345678",
+            "type":"transportpack",
+            "trackingCodes":[
+               {
+                  "cis":"010463003759026521uHpIIf-111114",
+                  "type":"trackingcode"
+               },
+               {
+                  "cis":"010463003759026521uHpIIf-nXIH>4",
+                  "type":"trackingcode"
+               },
+               {
+                  "cis":"010463003759026521uHpIIf-nXIH>0",
+                  "type":"trackingcode"
+               }
+            ]
+         },
+         {
+            "cis":"010463003759026521uHpIIf-nXIH>2",
+            "type":"trackingcode"
+         }
+      ],
+      "trackingCodes_1162":[
+         {
+            "cis_1162":"444D043603BEF0F97548704949662D313131313232",
+            "type":"trackingcode"
+         },
+         {
+            "cis_1162":"0000",
+            "type":"transportpack"
+         },
+         {
+            "cis_1162":"444D043603BEF0F97548704949662D6E5849483E31",
+            "type":"trackingcode"
+         },
+         {
+            "cis_1162":"0000",
+            "type":"transportpack",
+            "trackingCodes_1162":[
+               {
+                  "cis_1162":"444D043603BEF0F97548704949662D313131313134",
+                  "type":"trackingcode"
+               },
+               {
+                  "cis_1162":"444D043603BEF0F97548704949662D6E5849483E34",
+                  "type":"trackingcode"
+               },
+               {
+                  "cis_1162":"444D043603BEF0F97548704949662D6E5849483E30",
+                  "type":"trackingcode"
+               }
+            ]
+         },
+         {
+            "cis_1162":"444D043603BEF0F97548704949662D6E5849483E32",
+            "type":"trackingcode"
+         }
+      ]
+   }
+]
+```
+
 ### Изменить позицию
 
 **Параметры**
@@ -2805,7 +3202,11 @@ curl --compressed -X GET \
 | **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной продажи.         |
 | **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Розничной продажи. |
  
-Запрос на обновление отдельной позиции Розничной продажи.
+Запрос на обновление отдельной позиции Розничной продажи. Для обновления позиции нет каких-либо
+обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
+
+При обновлении списка кодов маркировки учитывать, что их количество может отличаться от фактического количества единиц продукции.
+Для изменения количества единиц продукции необходимо использовать параметр **quantity**.
 
 > Пример запроса на обновление отдельной позиции в Розничной продаже.
 

@@ -961,6 +961,13 @@
         "folderPath": "./workbook/_workbook_async.md",
         "children": [
         ]
+      },
+      {
+        "title": "Выгрузка статистики запросов к API",
+        "level": 2,
+        "folderPath": "./workbook/_workbook_api_statistics.md",
+        "children": [
+        ]
       }
     ]
   },

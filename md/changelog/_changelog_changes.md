@@ -2,15 +2,81 @@
 
 Список последних изменений в API Remap 1.2
 
-### 25-05-2026
+### 13-07-2026
 **Добавлено**
 - Сущность `Подразделение юридического лица` [organizationbranch](#/dictionaries/organizationbranch#2-podrazdelenie-yuridicheskogo-lica)
 - Ошибка [74000](#/errors#3-kody-oshibok-dlya-podrazdeleniya-yuridicheskogo-lica)
 
+### 07-07-2026
+**Добавлено**
+- Поддержка протокола change-handler во [Внутреннем заказе](#/documents/internalOrder#2-vnutrennij-zakaz)
+
+### 02-07-2026
+**Добавлено**
+- Поле `images` в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
+**Изменено**
+- Сообщение для ошибки [51004](#/errors#3-kody-oshibok-dlya-izobrazhenij)
+- Сообщение и описание для ошибки [51006](#/errors#3-kody-oshibok-dlya-izobrazhenij)
+
+### 01-07-2026
+**Добавлено**
+- Поддержка протокола change-handler в [Заказе поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku)
+
+**Удалено**
+- значение `CROSSBORDER` (Ввезен из стран ЕАЭС) для поля `emissionType` (Способ ввода в оборот) для сущности [Заказ кодов маркировки](#/documents/emissionorder#4-sposob-vvoda-v-oborot)
+
+### 30-06-2026
+**Добавлено**
+- Ограничение значений для поля `destinationCountry` (Страна назначения) в зависимости от `trackingType` (Тип маркируемой продукции) в документе [Вывод из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
+
+**Изменено**
+- Описание ошибки [57200](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota)
+
+### 26-06-2026
+**Добавлено**
+- Поле `article` в сущность [модификация](#/dictionaries/variant#2-modifikaciya) для работы с артикулом модификации
+- Поле `article` для номенклатуры с типом модификации для сущности [Ассортимент](#/dictionaries/assortment#2-assortiment) для работы с артикулом модификации
+
+### 23-06-2026
+**Добавлено**
+- Статья [Выгрузка статистики запросов к API](#/workbook/workbook-api-statistics#2-vygruzka-statistiki-zaprosov-k-api) в разделе [Workbook](#/workbook/workbook-first-steps#1-workbook)
+
+### 10-06-2026
+**Добавлено**
+- Ошибка [67007](#/errors#3-kody-oshibok-dlya-skladov) при превышении допустимого количества активных складов на аккаунте
+
+### 08-06-2026
+**Добавлено**
+- Методы создания, обновления и удаления, а также массового создания, обновления и удаления для [Карточек контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+- Ошибка [75000](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) нельзя указать архивный канал продаж в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+- Ошибка [75001](#/errors#3-kody-oshibok-dlya-kartochek-kontenta) можно создать максимум 100 [Карточек контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
+**Изменено**
+- Обновлено описание полей `assortment`, `cardContentName`, `description`, `name`, `salePlatform`, `salesChannels` в [Карточках контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
+### 02-06-2026
+**Удалено**
+- Поля `owner`, `group`, `shared` в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
+### 01-06-2026
+**Изменено**
+- Поле `lastOperationNames` в сущности [Точка продаж](#/dictionaries/retailstore#2-tochka-prodazh) помечено **устаревшим**
+
+### 28-05-2026
+**Добавлено**
+- Поле consignor (Грузоотправитель) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Поле shippingDocumentNumber (Номер перевозочного документа) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Поле shippingDocumentDate (Дата перевозочного документа) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Типы маркируемой продукции `TOBACCO` (Табачная продукция), `OTP` (Альтернативная табачная продукция), `NCP` (Никотиносодержащая продукция) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+  **Изменено**
+- Ошибка [16106](#/errors#3-kody-oshibok-dlya-tovarov)
+
 ### 21-05-2026
 **Добавлено**
 - Новые типы маркированной продукции `TOYS` (Детские игрушки), `CONSERVE` (Консервированные продукты), `CONSTRUCTION` (Строительные материалы), `RADIO` (Радиоэлектроника), `GADGETS` (Радиоэлектроника. Ноутбуки и смартфоны) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty) и [Вывода из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
-  **Изменено**
+
+**Изменено**
 - Ошибка [16106](#/errors#3-kody-oshibok-dlya-tovarov)
 
 ### 20-05-2026
@@ -213,7 +279,7 @@
 
 ### 02-09-2025
 **Добавлено**
-- Поле `downloadPermanentHref` в [Изображениях](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-ili-modifikacii)
+- Поле `downloadPermanentHref` в [Изображениях](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-modifikacii-ili-kartochki-kontenta)
 
 ### 25-08-2025
 **Добавлено**
@@ -491,7 +557,7 @@
 
 ### 16-07-2024
 **Добавлено**
-- Добавлено описание получения ссылки на [изображение](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-ili-modifikacii)
+- Добавлено описание получения ссылки на [изображение](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-modifikacii-ili-kartochki-kontenta)
 
 ### 12-07-2024
 **Добавлен**
@@ -661,7 +727,7 @@
 ### 16-10-2023
 **Добавлено**
 - Добавлено поле `barcode` в [Ячейку склада](#/dictionaries/store#3-yachejki-sklada)
-- Ошибка [67006](#/errors#3-kody-oshibok-dlya-yacheek-i-zon-sklada)
+- Ошибка [67006](#/errors#3-kody-oshibok-dlya-skladov)
 
 ### 12-10-2023
 **Добавлено**
@@ -830,7 +896,7 @@
 
 ### 14-12-2022
 **Добавлено**
-- Дополнено описание [ошибок](#/errors#3-kody-oshibok-dlya-yacheek-i-zon-sklada) при работе с ячейками и зонами. Добавлены ошибки 67002, 67003, 67004, 67005, 67006.
+- Дополнено описание [ошибок](#/errors#3-kody-oshibok-dlya-skladov) при работе с ячейками и зонами. Добавлены ошибки 67002, 67003, 67004, 67005, 67006.
 - Добавлена информация по созданию, обновлению и удалению [зон](#/dictionaries/store#3-zony-sklada) и [ячеек](#/dictionaries/store#3-yachejki-sklada) в [складах](#/dictionaries/store#3-sklady)
 
 ### 12-12-2022
@@ -846,7 +912,7 @@
 - Ячейки в позиции [Отгрузки](#/documents/demand#2-otgruzka)
 - Ячейки в позиции [Возврата покупателя](#/documents/sales-return#2-vozvrat-pokupatelya)
 - Ячейки в позиции [Возврата поставщику](#/documents/purchase-return#2-vozvrat-postavshiku)
-- Описание [ошибок](#/errors#3-kody-oshibok-dlya-yacheek-i-zon-sklada) при работе с ячейками и зонами
+- Описание [ошибок](#/errors#3-kody-oshibok-dlya-skladov) при работе с ячейками и зонами
 
 ### 20-11-2022
 **Добавлено**
