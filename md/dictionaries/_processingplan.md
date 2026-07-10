@@ -2042,5 +2042,4 @@ curl --compressed -X POST \
        ]' 
 ```
 
-> Response 200 (application/json)
-Успешное удаление продуктов Техкарты.
+> Response 200 (application/json) Успешное удаление продуктов Техкарты.
