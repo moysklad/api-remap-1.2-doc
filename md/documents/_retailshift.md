@@ -586,15 +586,6 @@ curl --compressed -X GET \
       "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=b4343660-0016-11ec-ac12-000b000000d7"
     }
   },
-  "organizationBranch": {
-    "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
-      "type": "organizationbranch",
-      "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
-    }
-  },
   "created": "2021-08-20 10:58:27.699",
   "printed": false,
   "published": false,
