@@ -7,9 +7,6 @@
 - Поле `parametricMaterials` коллекция метаданных параметрических материалов [Техкарты](#/dictionaries/processingplan#4-parametricheskie-materialy-tehkarty)
 - Новый эндпоинт для работы с параметрическими материалами [Техкарты](#/dictionaries/processingplan#3-upravlenie-parametricheskimi-materialami-tehkarty)
 - Ошибки [25064-25071](#/errors#3-kody-oshibok-dlya-tehnologicheskih-kart)
-
-### 25-06-2026
-**Добавлено**
 - Поле модификации продукции параметрической техкарты `productionVariant` в [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya)
 - Ошибка [26116](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при изменении [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) нельзя изменить модификацию продукции в позиции производственного задания
 - Ошибка [26117](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) с параметрической техкартой должна быть указана модификация продукции
