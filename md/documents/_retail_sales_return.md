@@ -4,7 +4,7 @@
 #### Атрибуты сущности
 
 | Название                | Тип                                                        | Фильтрация                                                                                                                                        | Описание                                                                                                                                                      |
-| ----------------------- |:-----------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-------------------------|:-----------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**           | UUID                                                       | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                          |
 | **agent**               | [Meta](#/general#3-metadannye)                             | `=` `!=`                                                                                                                                          | Метаданные контрагента<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                     |
 | **agentAccount**        | [Meta](#/general#3-metadannye)                             |                                                                                                                                                   | Метаданные счета контрагента<br>`+Expand`                                                                                                                     |
@@ -26,6 +26,7 @@
 | **noCashSum**           | Float                                                      |                                                                                                                                                   | Оплачено картой<br>`+Обязательное при ответе`                                                                                                                 |
 | **organization**        | [Meta](#/general#3-metadannye)                             | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                          |
 | **organizationAccount** | [Meta](#/general#3-metadannye)                             |                                                                                                                                                   | Метаданные счета юрлица<br>`+Expand`                                                                                                                          |
+| **organizationBranch**  | [Meta](#/general#3-metadannye)                             | `=` `!=`                                                                                                                                          | Метаданные подразделения юрлица<br>`+Expand` `+Только для чтения`                                                                          |
 | **owner**               | [Meta](#/general#3-metadannye)                             | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                                             |
 | **positions**           | MetaArray                                                  |                                                                                                                                                   | Метаданные позиций Розничного возврата<br>`+Обязательное при ответе` `+Expand`                                                                                |
 | **printed**             | Boolean                                                    | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                                      |
@@ -191,6 +192,15 @@ curl --compressed -X GET \
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
           "type": "organization",
           "mediaType": "application/json"
+        }
+      },
+      "organizationBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
         }
       },
       "store": {
@@ -482,6 +492,15 @@ curl --compressed -X GET \
                 "mediaType": "application/json"
               }
             },
+            "organizationBranch": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+                "type": "organizationbranch",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+              }
+            },
             "store": {
               "meta": {
                 "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/30fe30a0-137a-11e6-9464-e4de00000050",
@@ -592,6 +611,15 @@ curl --compressed -X GET \
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
       "type": "organization",
       "mediaType": "application/json"
+    }
+  },
+  "organizationBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
     }
   },
   "store": {
@@ -1209,6 +1237,15 @@ curl --compressed -X GET \
                   "mediaType": "application/json"
                 }
               },
+              "organizationBranch": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+                  "type": "organizationbranch",
+                  "mediaType": "application/json",
+                  "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+                }
+              },
               "store": {
                 "meta": {
                   "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/1076a96a-36e7-11e7-8a7f-40d000000092",
@@ -1391,6 +1428,15 @@ curl --compressed -X GET \
         "mediaType": "application/json"
       }
     },
+    "organizationBranch": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+        "type": "organizationbranch",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+      }
+    },
     "created": "2016-08-25 19:55:00",
     "printed": true,
     "published": true,
@@ -1487,6 +1533,15 @@ curl --compressed -X GET \
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
         "type": "organization",
         "mediaType": "application/json"
+      }
+    },
+    "organizationBranch": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+        "type": "organizationbranch",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
       }
     },
     "store": {
@@ -2109,6 +2164,15 @@ curl --compressed -X GET \
       "mediaType": "application/json"
     }
   },
+  "organizationBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+    }
+  },
   "store": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/850ee995-f504-11e5-8a84-bae500000160",
@@ -2320,6 +2384,15 @@ curl --compressed -X GET \
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
       "type": "organization",
       "mediaType": "application/json"
+    }
+  },
+  "organizationBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
     }
   },
   "store": {

@@ -18,7 +18,9 @@
 | **code**                    | String(255)                    | `=` `!=` `~` `~=` `=~`     | Код Подразделения                                                                                                                                                     |
 | **created**                 | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                      |
 | **description**             | String(4096)                   | `=` `!=` `~` `~=` `=~`     | Комментарий к Подразделению                                                                                                                                           |
+| **email**                   | String(255)                    | `=` `!=` `~` `~=` `=~`     | Адрес электронной почты Подразделения                                                                                                                                 |
 | **externalCode**            | String(255)                    | `=` `!=` `~` `~=` `=~`     | Внешний код Подразделения<br>`+Обязательное при ответе`                                                                                                               |
+| **fax**                     | String(255)                    | `=` `!=` `~` `~=` `=~`     | Номер факса Подразделения                                                                                                                                             |
 | **group**                   | [Meta](#/general#3-metadannye) |                            | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                              |
 | **id**                      | UUID                           | `=` `!=`                   | ID Подразделения<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                   |
 | **mod\_\_requisites\_\_ru** | Object                         |                            | Реквизиты подразделения РФ. [Подробнее тут](#/dictionaries/organizationbranch#5-rekvizity-rf) <br>`+RU`                                                               |
@@ -26,6 +28,7 @@
 | **name**                    | String(255)                    | `=` `!=` `~` `~=` `=~`     | Наименование Подразделения<br>`+Обязательное при ответе` `+Необходимо при создании`                                                                                   |
 | **organization**            | [Meta](#/general#3-metadannye) |                            | Метаданные юрлица, к которому относится подразделение<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+После заполнения недоступно для изменения` |
 | **owner**                   | [Meta](#/general#3-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                     |
+| **phone**                   | String(255)                    | `=` `!=` `~` `~=` `=~`     | Номер телефона Подразделения                                                                                                                                          |
 | **shared**                  | Boolean                        | `=` `!=`                   | Общий доступ<br>`+Обязательное при ответе`                                                                                                                            |
 | **syncId**                  | UUID                           | `=` `!=`                   | ID синхронизации<br>`+После заполнения недоступно для изменения`                                                                                                      |
 | **updated**                 | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления Подразделения<br>`+Обязательное при ответе` `+Только для чтения`                                                                         |
@@ -122,6 +125,9 @@ curl --compressed -X GET \
       "externalCode": "extMSC001",
       "archived": false,
       "created": "2024-01-15 09:00:00",
+      "email": "admin@moysklad.ru",
+      "phone": "+79998881122",
+      "fax": "333333",
       "organization": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e",
@@ -212,6 +218,9 @@ curl --compressed -X POST \
               "mediaType":"application/json"
             }
           },
+          "email": "admin@moysklad.ru",
+          "phone": "+79998881122",
+          "fax": "333333",
           "city":"Москва",
           "street":"ул Тверская",
           "house":"1",
@@ -262,6 +271,9 @@ curl --compressed -X POST \
   "externalCode": "extMSC001",
   "archived": false,
   "created": "2024-06-10 12:00:00",
+  "email": "admin@moysklad.ru",
+  "phone": "+79998881122",
+  "fax": "333333",
   "organization": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e",
@@ -339,6 +351,9 @@ curl --compressed -X POST \
           "mod__requisites__ru": {
             "kpp": "123456789"
           },
+          "email": "admin@moysklad.ru",
+          "phone": "+79998881122",
+          "fax": "333333"
         }
       ]'
 ```
@@ -404,6 +419,9 @@ curl --compressed -X POST \
     "externalCode": "extMSC001",
     "archived": false,
     "created": "2024-06-10 12:00:00",
+    "email": "admin@moysklad.ru",
+    "phone": "+79998881122",
+    "fax": "333333",
     "organization": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e",
@@ -528,6 +546,9 @@ curl --compressed -X GET \
   "externalCode": "extMSC001",
   "archived": false,
   "created": "2024-01-15 09:00:00",
+  "email": "admin@moysklad.ru",
+  "phone": "+79998881122",
+  "fax": "333333",
   "organization": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e",
@@ -632,6 +653,9 @@ curl --compressed -X PUT \
   "externalCode": "extMSC001",
   "archived": false,
   "created": "2024-01-15 09:00:00",
+  "email": "admin@moysklad.ru",
+  "phone": "+79998881122",
+  "fax": "333333",
   "organization": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e",

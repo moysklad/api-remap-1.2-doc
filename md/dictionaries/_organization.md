@@ -2250,7 +2250,7 @@ curl --compressed -X POST \
                 "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
                 "type": "currency",
                 "mediaType": "application/json",
-                "uuidHref": "https://api.moysklad.ru/app/#currency/edit?id=8b3f8407-7934-11f1-0a83-050900000058"
+                "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=8b3f8407-7934-11f1-0a83-050900000058"
             }
         }
   }
