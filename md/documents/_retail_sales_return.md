@@ -200,7 +200,7 @@ curl --compressed -X GET \
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
           "type": "organizationbranch",
           "mediaType": "application/json",
-          "uuidHref": "https://api.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+          "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
         }
       },
       "store": {
@@ -498,7 +498,7 @@ curl --compressed -X GET \
                 "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
                 "type": "organizationbranch",
                 "mediaType": "application/json",
-                "uuidHref": "https://api.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+                "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
               }
             },
             "store": {
@@ -619,7 +619,7 @@ curl --compressed -X GET \
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
       "type": "organizationbranch",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+      "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
     }
   },
   "store": {
@@ -1243,7 +1243,7 @@ curl --compressed -X GET \
                   "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
                   "type": "organizationbranch",
                   "mediaType": "application/json",
-                  "uuidHref": "https://api.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+                  "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
                 }
               },
               "store": {
@@ -1434,7 +1434,7 @@ curl --compressed -X GET \
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
         "type": "organizationbranch",
         "mediaType": "application/json",
-        "uuidHref": "https://api.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+        "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
       }
     },
     "created": "2016-08-25 19:55:00",
@@ -1541,7 +1541,7 @@ curl --compressed -X GET \
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
         "type": "organizationbranch",
         "mediaType": "application/json",
-        "uuidHref": "https://api.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+        "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
       }
     },
     "store": {
@@ -2170,7 +2170,7 @@ curl --compressed -X GET \
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
       "type": "organizationbranch",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+      "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
     }
   },
   "store": {
@@ -2392,7 +2392,7 @@ curl --compressed -X GET \
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
       "type": "organizationbranch",
       "mediaType": "application/json",
-      "uuidHref": "https://api.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+      "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
     }
   },
   "store": {

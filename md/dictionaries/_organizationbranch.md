@@ -126,7 +126,7 @@ curl --compressed -X GET \
       "archived": false,
       "created": "2024-01-15 09:00:00",
       "email": "admin@moysklad.ru",
-      "phone": "+79878172568",
+      "phone": "+79998881122",
       "fax": "333333",
       "organization": {
         "meta": {
@@ -219,7 +219,7 @@ curl --compressed -X POST \
             }
           },
           "email": "admin@moysklad.ru",
-          "phone": "+79878172568",
+          "phone": "+79998881122",
           "fax": "333333",
           "city":"Москва",
           "street":"ул Тверская",
@@ -272,7 +272,7 @@ curl --compressed -X POST \
   "archived": false,
   "created": "2024-06-10 12:00:00",
   "email": "admin@moysklad.ru",
-  "phone": "+79878172568",
+  "phone": "+79998881122",
   "fax": "333333",
   "organization": {
     "meta": {
@@ -352,7 +352,7 @@ curl --compressed -X POST \
             "kpp": "123456789"
           },
           "email": "admin@moysklad.ru",
-          "phone": "+79878172568",
+          "phone": "+79998881122",
           "fax": "333333"
         }
       ]'
@@ -420,7 +420,7 @@ curl --compressed -X POST \
     "archived": false,
     "created": "2024-06-10 12:00:00",
     "email": "admin@moysklad.ru",
-    "phone": "+79878172568",
+    "phone": "+79998881122",
     "fax": "333333",
     "organization": {
       "meta": {
@@ -547,7 +547,7 @@ curl --compressed -X GET \
   "archived": false,
   "created": "2024-01-15 09:00:00",
   "email": "admin@moysklad.ru",
-  "phone": "+79878172568",
+  "phone": "+79998881122",
   "fax": "333333",
   "organization": {
     "meta": {
@@ -654,7 +654,7 @@ curl --compressed -X PUT \
   "archived": false,
   "created": "2024-01-15 09:00:00",
   "email": "admin@moysklad.ru",
-  "phone": "+79878172568",
+  "phone": "+79998881122",
   "fax": "333333",
   "organization": {
     "meta": {
