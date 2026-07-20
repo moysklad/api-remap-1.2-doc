@@ -6,6 +6,10 @@
 **Добавлены**
 - Коды ошибок [31001-31003](#/errors#3-kody-oshibok-dlya-valyut) при работе с валютами
 
+### 15-07-2026
+**Добавлено**
+- значение `REAPPLY` (Маркировка вне производства или импорта) для поля `emissionType` (Способ ввода в оборот) для сущности [Заказ кодов маркировки](#/documents/emissionorder#4-sposob-vvoda-v-oborot)
+
 ### 07-07-2026
 **Добавлено**
 - Поддержка протокола change-handler во [Внутреннем заказе](#/documents/internalOrder#2-vnutrennij-zakaz)
