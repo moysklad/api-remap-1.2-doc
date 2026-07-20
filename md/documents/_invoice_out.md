@@ -1460,8 +1460,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Счета покупателю.
+> Response 200 (application/json) Успешное удаление Счета покупателю.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Счетов покупателям
 
@@ -2765,8 +2767,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции Счета.
+> Response 200 (application/json) Успешное удаление позиции Счета.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций
 
@@ -2802,6 +2806,7 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиций Счета покупателя. 
-
+> Response 200 (application/json) Успешное удаление позиций Счета покупателя.
+```json
+<Response body is empty>
+```

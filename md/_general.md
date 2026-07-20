@@ -769,8 +769,10 @@ curl --compressed -X POST \
       ]'
 ```
 
-> Response 200 (application/json)
-Успешное удаление доп. полей.
+> Response 200 (application/json) Успешное удаление доп. полей.
+```json
+<Response body is empty>
+```
 
 ### Дополнительное поле
 **Параметры**
@@ -862,8 +864,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление доп. поля.
+> Response 200 (application/json) Успешное удаление доп. поля.
+```json
+<Response body is empty>
+```
 
 ### Обновление значений дополнительных полей
 Запрос на обновление коллекции доп. полей конкретной сущности.

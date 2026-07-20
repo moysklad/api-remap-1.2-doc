@@ -903,8 +903,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Начисления зарплаты.
+> Response 200 (application/json) Успешное удаление Начисления зарплаты.
+```json
+<Response body is empty>
+```
 
 ### Метаданные Начисления зарплат
 Запрос на получение метаданных Начисления зарплат. Результат - объект JSON, включающий в себя:
@@ -1873,8 +1875,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции Начисления зарплаты.
+> Response 200 (application/json) Успешное удаление позиции Начисления зарплаты.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций
 
@@ -1910,5 +1914,7 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиций Начисления зарплаты. 
+> Response 200 (application/json) Успешное удаление позиций Начисления зарплаты.
+```json
+<Response body is empty>
+```

@@ -1035,8 +1035,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Внутреннего заказа.
+> Response 200 (application/json) Успешное удаление Внутреннего заказа.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Внутренних заказов
 
@@ -1901,9 +1903,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции Внутреннего заказа.
-
+> Response 200 (application/json) Успешное удаление позиции Внутреннего заказа.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций
 
@@ -1939,5 +1942,7 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиций Внутреннего заказа.
+> Response 200 (application/json) Успешное удаление позиций Внутреннего заказа.
+```json
+<Response body is empty>
+```

@@ -641,8 +641,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Карточки контента.
+> Response 200 (application/json) Успешное удаление Карточки контента.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Карточек контента
 

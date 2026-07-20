@@ -400,8 +400,10 @@ curl --compressed -X DELETE \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
-> Response 200 (application/json)
-Успешное удаление Изображения.
+> Response 200 (application/json) Успешное удаление Изображения.
+```json
+<Response body is empty>
+```
 
 ### Удалить группу Изображений
 
@@ -440,5 +442,7 @@ curl --compressed -X POST \
   }
 ]'
 ```
-> Response 200 (application/json)
-Успешное удаление Изображений.
+> Response 200 (application/json) Успешное удаление Изображений.
+```json
+<Response body is empty>
+```

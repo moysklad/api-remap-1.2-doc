@@ -561,8 +561,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление задачи.
+> Response 200 (application/json) Успешное удаление задачи.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Задач
 
@@ -1171,8 +1173,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление комментария к Задаче.
+> Response 200 (application/json) Успешное удаление комментария к Задаче.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление коментариев к задаче
 
@@ -1204,8 +1208,10 @@ curl --compressed -X POST \
        ]' 
 ```
 
-> Response 200 (application/json)
-Успешное удаление комментариев к Задаче.
+> Response 200 (application/json) Успешное удаление комментариев к Задаче.
+```json
+<Response body is empty>
+```
 
 ### Запросы - Тип задачи
 
@@ -1434,5 +1440,7 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Типа задачи.
+> Response 200 (application/json) Успешное удаление Типа задачи.
+```json
+<Response body is empty>
+```

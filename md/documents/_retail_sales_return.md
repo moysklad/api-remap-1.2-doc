@@ -1590,8 +1590,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Розничного возврата.
+> Response 200 (application/json) Успешное удаление Розничного возврата.
+```json
+<Response body is empty>
+```
 
 ### Метаданные Розничных возвратов 
 Запрос на получение метаданных Розничных возвратов. Результат - объект JSON, включающий в себя:
@@ -2842,8 +2844,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции Розничного возврата.
+> Response 200 (application/json) Успешное удаление позиции Розничного возврата.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций
 
@@ -2879,6 +2883,7 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиций Розничного возврата. 
-
+> Response 200 (application/json) Успешное удаление позиций Розничного возврата.
+```json
+<Response body is empty>
+```

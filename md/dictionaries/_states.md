@@ -297,5 +297,7 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Статуса.
+> Response 200 (application/json) Успешное удаление Статуса.
+```json
+<Response body is empty>
+```
