@@ -1360,8 +1360,10 @@ curl --compressed -X GET \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip"      
 ```
-> Response 200 (application/json)
-Успешное удаление Услуги.
+> Response 200 (application/json) Успешное удаление Услуги.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Услуг
 

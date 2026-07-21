@@ -1371,8 +1371,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Заказа покупателя.
+> Response 200 (application/json) Успешное удаление Заказа покупателя.
+```json
+<Response body is empty>
+```
 
 ### Метаданные Заказов покупателей 
 Запрос на получение метаданных Заказов покупателей. Результат - объект JSON, включающий в себя:
@@ -2871,8 +2873,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции Заказа.
+> Response 200 (application/json) Успешное удаление позиции Заказа.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций
 
@@ -2908,5 +2912,7 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиций Заказа покупателя. 
+> Response 200 (application/json) Успешное удаление позиций Заказа покупателя.
+```json
+<Response body is empty>
+```

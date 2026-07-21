@@ -806,8 +806,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Исходящего платежа .
+> Response 200 (application/json) Успешное удаление Исходящего платежа .
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Исходящих платежей
 

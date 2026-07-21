@@ -567,8 +567,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Инвентаризации.
+> Response 200 (application/json) Успешное удаление Инвентаризации.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Инвентаризаций
 
@@ -1434,8 +1436,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции Инвентаризации.
+> Response 200 (application/json) Успешное удаление позиции Инвентаризации.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций
 
@@ -1471,8 +1475,10 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиций Инвентаризации.
+> Response 200 (application/json) Успешное удаление позиций Инвентаризации.
+```json
+<Response body is empty>
+```
 
 ### Пересчет расчетного остатка в инвентаризации
 

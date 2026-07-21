@@ -412,8 +412,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Группы товаров.
+> Response 200 (application/json) Успешное удаление Группы товаров.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Групп товаров
 

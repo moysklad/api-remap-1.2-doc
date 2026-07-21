@@ -635,8 +635,10 @@ curl --compressed -X GET \
     -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Выданного отчета комиссионера.
+> Response 200 (application/json) Успешное удаление Выданного отчета комиссионера.
+```json
+<Response body is empty>
+```
 
 ### Массовое создание и обновление Выданных отчетов комиссионера 
 [Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Выданных отчетов комиссионера.
@@ -2034,8 +2036,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции Выданного отчета комиссионера.
+> Response 200 (application/json) Успешное удаление позиции Выданного отчета комиссионера.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций
 
@@ -2071,6 +2075,7 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиций Выданного отчета комиссионера. 
-
+> Response 200 (application/json) Успешное удаление позиций Выданного отчета комиссионера.
+```json
+<Response body is empty>
+```

@@ -447,8 +447,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Валюты
+> Response 200 (application/json) Успешное удаление Валюты
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Валют
 

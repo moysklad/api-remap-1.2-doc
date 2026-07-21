@@ -1628,8 +1628,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Производственного задания.
+> Response 200 (application/json) Успешное удаление Производственного задания.
+```json
+<Response body is empty>
+```
 
 ### Управление продуктами производственного задания
 Отдельный ресурс для управления продуктами Производственного задания. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](#/general#3-rabota-s-poziciyami-dokumentov).
@@ -1957,8 +1959,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление продукта Производственного задания.
+> Response 200 (application/json) Успешное удаление продукта Производственного задания.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление продуктов Производственного задания
 
@@ -1994,8 +1998,10 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление продуктов Производственного задания.
+> Response 200 (application/json) Успешное удаление продуктов Производственного задания.
+```json
+<Response body is empty>
+```
 
 ### Позиции производственного задания
 
@@ -2157,9 +2163,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции Производственного задания.
-
+> Response 200 (application/json) Успешное удаление позиции Производственного задания.
+```json
+<Response body is empty>
+```
 
 ### Производственные этапы
 
@@ -2637,5 +2644,7 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление материала Производственного этапа.
+> Response 200 (application/json) Успешное удаление материала Производственного этапа.
+```json
+<Response body is empty>
+```
