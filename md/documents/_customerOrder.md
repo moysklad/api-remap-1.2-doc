@@ -47,7 +47,7 @@
 | **updated**               | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Момент последнего обновления Заказа покупателя<br>`+Обязательное при ответе` `+Только для чтения``+Change-handler`                                                                         |
 | **vatEnabled**            | Boolean                        |                                                                        | Учитывается ли НДС<br>`+Обязательное при ответе``+Change-handler` `+Update-provider`                                                                                                       |
 | **vatIncluded**           | Boolean                        |                                                                        | Включен ли НДС в цену<br>`+Change-handler` `+Update-provider`                                                                                                                              |
-| **vatSum**                | Float                          |                                                                        | Сумма НДС<br>`+Обязательное при ответе` `+Только для чтения``+Change-handler`                                                                                                              |
+| **vatSum**                | Float                          |                                                                        | Сумма НДС<br>`+Только для чтения``+Change-handler`                                                                                                              |
 
 ##### Код системы налогообложения
 Значения поля taxSystem.
