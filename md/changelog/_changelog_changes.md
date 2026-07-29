@@ -2,7 +2,7 @@
 
 Список последних изменений в API Remap 1.2
 
-### 26-06-2026
+### 29-07-2026
 **Добавлено**
 - Поле `parametricMaterials` коллекция метаданных параметрических материалов [Техкарты](#/dictionaries/processingplan#4-parametricheskie-materialy-tehkarty)
 - Новый эндпоинт для работы с параметрическими материалами [Техкарты](#/dictionaries/processingplan#3-upravlenie-parametricheskimi-materialami-tehkarty)
@@ -12,6 +12,53 @@
 - Ошибка [26117](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) с параметрической техкартой должна быть указана модификация продукции
 - Ошибка [26118](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) с параметрической техкартой должна быть указана модификация продукции, которая принадлежит продукту техкарты
 - Ошибка [26119](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) нельзя указывать модификацию продукции с непараметрической техкартой
+
+### 21-07-2026
+**Добавлено**
+- Поддержка протокола change-handler в [Инвентаризации](#/documents/inventory#2-inventarizaciya)
+
+### 20-07-2026
+**Добавлены**
+- Коды ошибок [31001-31003](#/errors#3-kody-oshibok-dlya-valyut) при работе с валютами
+
+### 15-07-2026
+**Добавлено**
+- значение `REAPPLY` (Маркировка вне производства или импорта) для поля `emissionType` (Способ ввода в оборот) для сущности [Заказ кодов маркировки](#/documents/emissionorder#4-sposob-vvoda-v-oborot)
+
+### 07-07-2026
+**Добавлено**
+- Поддержка протокола change-handler во [Внутреннем заказе](#/documents/internalOrder#2-vnutrennij-zakaz)
+
+### 02-07-2026
+**Добавлено**
+- Поле `images` в [Карточке контента](#/dictionaries/contentcard#2-kartochka-kontenta)
+
+**Изменено**
+- Сообщение для ошибки [51004](#/errors#3-kody-oshibok-dlya-izobrazhenij)
+- Сообщение и описание для ошибки [51006](#/errors#3-kody-oshibok-dlya-izobrazhenij)
+
+### 01-07-2026
+**Добавлено**
+- Поддержка протокола change-handler в [Заказе поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku)
+
+**Удалено**
+- значение `CROSSBORDER` (Ввезен из стран ЕАЭС) для поля `emissionType` (Способ ввода в оборот) для сущности [Заказ кодов маркировки](#/documents/emissionorder#4-sposob-vvoda-v-oborot)
+
+### 30-06-2026
+**Добавлено**
+- Ограничение значений для поля `destinationCountry` (Страна назначения) в зависимости от `trackingType` (Тип маркируемой продукции) в документе [Вывод из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
+
+**Изменено**
+- Описание ошибки [57200](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota)
+
+### 26-06-2026
+**Добавлено**
+- Поле `article` в сущность [модификация](#/dictionaries/variant#2-modifikaciya) для работы с артикулом модификации
+- Поле `article` для номенклатуры с типом модификации для сущности [Ассортимент](#/dictionaries/assortment#2-assortiment) для работы с артикулом модификации
+
+### 23-06-2026
+**Добавлено**
+- Статья [Выгрузка статистики запросов к API](#/workbook/workbook-api-statistics#2-vygruzka-statistiki-zaprosov-k-api) в разделе [Workbook](#/workbook/workbook-first-steps#1-workbook)
 
 ### 10-06-2026
 **Добавлено**
@@ -250,7 +297,7 @@
 
 ### 02-09-2025
 **Добавлено**
-- Поле `downloadPermanentHref` в [Изображениях](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-ili-modifikacii)
+- Поле `downloadPermanentHref` в [Изображениях](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-modifikacii-ili-kartochki-kontenta)
 
 ### 25-08-2025
 **Добавлено**
@@ -528,7 +575,7 @@
 
 ### 16-07-2024
 **Добавлено**
-- Добавлено описание получения ссылки на [изображение](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-ili-modifikacii)
+- Добавлено описание получения ссылки на [изображение](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-modifikacii-ili-kartochki-kontenta)
 
 ### 12-07-2024
 **Добавлен**

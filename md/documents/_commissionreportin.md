@@ -1240,8 +1240,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Полученного отчета комиссионера.
+> Response 200 (application/json) Успешное удаление Полученного отчета комиссионера.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Полученных отчетов комиссионера
 
@@ -2117,8 +2119,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции реализовано комиссионером.
+> Response 200 (application/json) Успешное удаление позиции реализовано комиссионером.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций реализовано комиссионером
 
@@ -2154,8 +2158,10 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиций реализовано комиссионером.
+> Response 200 (application/json) Успешное удаление позиций реализовано комиссионером.
+```json
+<Response body is empty>
+```
 
 ### Позиции возврата на склад комиссионера
 Отдельный ресурс для управления позициями возврата на склад комиссионера в Полученном отчете комиссионера. С его помощью вы можете управлять позициями большого документа,
@@ -2470,8 +2476,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции возврата на склад комиссионера.
+> Response 200 (application/json) Успешное удаление позиции возврата на склад комиссионера.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций возврата на склад комиссионера
 
@@ -2507,5 +2515,7 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиций возврата на склад комиссионера
+> Response 200 (application/json) Успешное удаление позиций возврата на склад комиссионера
+```json
+<Response body is empty>
+```

@@ -367,8 +367,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Сотрудника.
+> Response 200 (application/json) Успешное удаление Сотрудника.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Сотрудников
 

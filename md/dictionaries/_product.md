@@ -2648,8 +2648,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Товара.
+> Response 200 (application/json) Успешное удаление Товара.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Товаров
 
@@ -2791,6 +2793,8 @@ curl --compressed -X GET \
 | Параметр | Описание                                                                       |
 | :------- | :----------------------------------------------------------------------------- |
 | **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Товара. |
+
+В URL указывается API ID товара (поле `id` в ответе). При указании UUID из интерфейса (значение `UUID` в `meta.uuidHref`) сервер вернёт редирект **308** с заголовком `Location` на URL с API ID. [Подробнее](#/general#3-obrabotka-oshibok)
 
 > Запрос на получение Товара с указанным id.
 
@@ -4191,6 +4195,7 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление неснижаемых остатков по складам в товаре. 
-
+> Response 200 (application/json) Успешное удаление неснижаемых остатков по складам в товаре.
+```json
+<Response body is empty>
+```

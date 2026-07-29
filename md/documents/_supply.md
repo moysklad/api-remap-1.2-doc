@@ -42,7 +42,7 @@
 | **updated**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Приемки<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                               |
 | **vatEnabled**          | Boolean                                                   |                                                                                                                                                   | Учитывается ли НДС<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                   |
 | **vatIncluded**         | Boolean                                                   |                                                                                                                                                   | Включен ли НДС в цену<br>`+Change-handler` `+Update-provider`                                                                                                                           |
-| **vatSum**              | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                          |
+| **vatSum**              | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Только для чтения` `+Change-handler`                                                                                                          |
 
 #### Накладные расходы
 Описание полей overhead
@@ -1622,8 +1622,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Приемки.
+> Response 200 (application/json) Успешное удаление Приемки.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Приемок
 
@@ -3299,8 +3301,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции Приемки.
+> Response 200 (application/json) Успешное удаление позиции Приемки.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций
 
@@ -3336,6 +3340,7 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиций Приемки. 
-
+> Response 200 (application/json) Успешное удаление позиций Приемки.
+```json
+<Response body is empty>
+```

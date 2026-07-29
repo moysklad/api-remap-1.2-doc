@@ -1153,8 +1153,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-> Успешное удаление Техкарты.
+> Response 200 (application/json) Успешное удаление Техкарты.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Техкарт
 
@@ -2108,8 +2110,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-> Успешное удаление материала Техкарты.
+> Response 200 (application/json) Успешное удаление материала Техкарты.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление материалов
 
@@ -2142,7 +2146,9 @@ curl --compressed -X POST \
 ```
 
 > Response 200 (application/json)
-> Успешное удаление материалов Техкарты.
+```json
+<Response body is empty>
+```
 
 ### Управление параметрическими материалами Техкарты
 Отдельный ресурс для управления параметрическими материалами Техкарты. Как и ресурсом для обычного материала, с его помощью можно управлять большим количеством материалов, чем доступно при сохранении материалов вместе с документом (лимит для количества материалов в документе равняется 1000).
@@ -2792,8 +2798,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-> Успешное удаление материала Техкарты.
+> Response 200 (application/json) Успешное удаление параметрического материала Техкарты.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление параметрических материалов
 
@@ -2823,8 +2831,10 @@ curl --compressed -X POST \
 ]' 
 ```
 
-> Response 200 (application/json)
-> Успешное удаление параметрических материалов Техкарты.
+> Response 200 (application/json) Успешное удаление параметрических материалов Техкарты.
+```json
+<Response body is empty>
+```
 
 ### Управление продуктами Техкарты 
 Отдельный ресурс для управления продуктами Техкарты. С его помощью вы можете управлять продуктами большого документа, количество продуктов в котором превышает лимит на количество продуктов, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](#/general#3-rabota-s-poziciyami-dokumentov).
@@ -3206,8 +3216,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-> Успешное удаление продукта Техкарты.
+> Response 200 (application/json) Успешное удаление продукта Техкарты.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление продукта
 
@@ -3239,5 +3251,7 @@ curl --compressed -X POST \
        ]' 
 ```
 
-> Response 200 (application/json)
-> Успешное удаление продуктов Техкарты.
+> Response 200 (application/json) Успешное удаление продуктов Техкарты.
+```json
+<Response body is empty>
+```

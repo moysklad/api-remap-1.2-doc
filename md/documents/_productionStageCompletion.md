@@ -1058,8 +1058,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Выполнения этапа производства.
+> Response 200 (application/json) Успешное удаление Выполнения этапа производства.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Выполнений этапов производства
 

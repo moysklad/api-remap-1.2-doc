@@ -314,8 +314,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление статьи расходов.
+> Response 200 (application/json) Успешное удаление статьи расходов.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Статей расходов
 

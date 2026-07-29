@@ -1079,8 +1079,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Договора.
+> Response 200 (application/json) Успешное удаление Договора.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Договоров
 

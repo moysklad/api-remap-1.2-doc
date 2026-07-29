@@ -946,8 +946,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Розничной смены.
+> Response 200 (application/json) Успешное удаление Розничной смены.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Розничных смен
 

@@ -39,7 +39,7 @@
 | **updated**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Возврата Покупателя<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                         |
 | **vatEnabled**          | Boolean                                                   |                                                                                                                                                   | Учитывается ли НДС<br>`+Обязательное при ответе` `+Change-handler`                                                                            |
 | **vatIncluded**         | Boolean                                                   |                                                                                                                                                   | Включен ли НДС в цену `+Change-handler`                                                                                                       |
-| **vatSum**              | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе` `+Change-handler`                                                                             |
+| **vatSum**              | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Только для чтения` `+Change-handler`                                                                             |
 
 #### Связи с другими документами
 
@@ -1010,8 +1010,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Возврата покупателей.
+> Response 200 (application/json) Успешное удаление Возврата покупателей.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Возвратов покупателей
 
@@ -2353,8 +2355,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции Возврата покупателей.
+> Response 200 (application/json) Успешное удаление позиции Возврата покупателей.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций
 
@@ -2390,5 +2394,7 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиций Возврата покупателей.
+> Response 200 (application/json) Успешное удаление позиций Возврата покупателей.
+```json
+<Response body is empty>
+```

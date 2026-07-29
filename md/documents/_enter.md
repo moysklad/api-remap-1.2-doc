@@ -862,8 +862,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Оприходования.
+> Response 200 (application/json) Успешное удаление Оприходования.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Оприходований
 
@@ -1690,8 +1692,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции Оприходования.
+> Response 200 (application/json) Успешное удаление позиции Оприходования.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций
 
@@ -1727,5 +1731,7 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиций Оприходования. 
+> Response 200 (application/json) Успешное удаление позиций Оприходования.
+```json
+<Response body is empty>
+```
