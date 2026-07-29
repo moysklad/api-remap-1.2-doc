@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 29-07-2026
+**Добавлено**
+- Поле `operatingExpenses` (Учитывать в прибыли) в сущности [Статья расходов](#/dictionaries/expenseitem#2-stati-rasxodov)
+
 ### 21-07-2026
 **Добавлено**
 - Поддержка протокола change-handler в [Инвентаризации](#/documents/inventory#2-inventarizaciya)
