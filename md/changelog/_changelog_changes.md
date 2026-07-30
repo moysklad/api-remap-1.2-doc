@@ -4,7 +4,7 @@
 
 ### 29-07-2026
 **Добавлено**
-- Поле `operatingExpenses` (Учитывать в прибыли) в сущности [Статья расходов](#/dictionaries/expenseitem#2-stati-rasxodov)
+- Поле `operatingExpenses` (Учитывать в прибыли) в сущности [Статья расходов](#/dictionaries/expenseitem#3-stati-rashodov)
 
 ### 21-07-2026
 **Добавлено**
