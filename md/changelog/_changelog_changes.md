@@ -6,6 +6,10 @@
 **Добавлено**
 - Поддержка протокола update-provider во [Внутреннем заказе](#/documents/internalOrder#2-vnutrennij-zakaz)
 
+### 30-07-2026
+**Добавлено**
+- Поддержка протокола update-provider в [Списании](#/documents/loss#2-spisanie) и [Счете покупателю](#/documents/invoice-out#2-schet-pokupatelyu).
+
 ### 29-07-2026
 **Добавлено**
 - Поле `parametricMaterials` коллекция метаданных параметрических материалов [Техкарты](#/dictionaries/processingplan#4-parametricheskie-materialy-tehkarty)
@@ -974,7 +978,6 @@
 
 ### 12-10-2022
 **Добавлено**
-- Поддержка протокола update-provider в [Списании](#/documents/loss#2-spisanie) и [Счете покупателю](#/documents/invoice-out#2-schet-pokupatelyu).
 - Поле moves в [Заказ покупателя](#/documents/customerOrder#3-zakazy-pokupatelej).
 - Поле prepayments в [Заказ покупателя](#/documents/customerOrder#3-zakazy-pokupatelej).
 - Поле customerOrder в [Перемещение](#/documents/move#3-peremesheniya).
