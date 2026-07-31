@@ -301,8 +301,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Бонусной программы
+> Response 200 (application/json) Успешное удаление Бонусной программы
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Бонусных программ
 

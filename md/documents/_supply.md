@@ -42,7 +42,7 @@
 | **updated**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Приемки<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                               |
 | **vatEnabled**          | Boolean                                                   |                                                                                                                                                   | Учитывается ли НДС<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                   |
 | **vatIncluded**         | Boolean                                                   |                                                                                                                                                   | Включен ли НДС в цену<br>`+Change-handler` `+Update-provider`                                                                                                                           |
-| **vatSum**              | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                          |
+| **vatSum**              | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Только для чтения` `+Change-handler`                                                                                                          |
 
 #### Накладные расходы
 Описание полей overhead
@@ -82,7 +82,7 @@
 | **things**        | Array(String)                                             | Серийные номера. Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете. В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.                          |
 | **trackingCodes** | Array(Object)                                             | Коды маркировки товаров и транспортных упаковок. [Подробнее тут](#/documents/supply#4-kody-markirovki-tovarov-i-transportnyh-upakovok)                                                                                                |
 | **overhead**      | Int                                                       | Накладные расходы. [Подробнее тут](#/documents/supply#4-nakladnye-rashody). Если Позиции Приемки не заданы, то накладные расходы нельзя задать.<br>`+Обязательное при ответе` `+Только для чтения`                                                       |
-| **vat**           | Boolean                                                   | НДС, которым облагается текущая позиция<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                                                                                                    |
+| **vat**           | Int                                                       | НДС, которым облагается текущая позиция<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                                                                                                    |
 | **vatEnabled**    | Boolean                                                   | Включен ли НДС для позиции. С помощью этого флага для позиции можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                    |
 
 С позициями можно работать с помощью [специальных ресурсов для управления позициями Приемки](#/documents/supply#3-upravlenie-poziciyami-priemki),
@@ -1622,8 +1622,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Приемки.
+> Response 200 (application/json) Успешное удаление Приемки.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Приемок
 
@@ -3299,8 +3301,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции Приемки.
+> Response 200 (application/json) Успешное удаление позиции Приемки.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций
 
@@ -3336,6 +3340,7 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиций Приемки. 
-
+> Response 200 (application/json) Успешное удаление позиций Приемки.
+```json
+<Response body is empty>
+```
