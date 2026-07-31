@@ -4173,29 +4173,6 @@ curl --compressed -X GET \
 }
 ```
 
-### Удалить контактное лицо Контрагента
-
-**Параметры**
-
-| Параметр                       | Описание                                                                                   |
-| ------------------------------ | :----------------------------------------------------------------------------------------- |
-| **contactpersonId**            | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id контактного лица. |
-| **id**                         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента.      |
-
-> Запрос на удаление события с указанным id.
-
-```shell
-curl --compressed -X DELETE \
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons/7944ef04-f831-11e5-7a69-971500188b19" \
-  -H "Authorization: Basic <Credentials>" \
-  -H "Accept-Encoding: gzip"
-```
-
-> Response 200 (application/json) Успешное удаление контактного лица Контрагента.
-```json
-<Response body is empty>
-```
-
 ### Запросы - События Контрагента
 
 **Параметры**
