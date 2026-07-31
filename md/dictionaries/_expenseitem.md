@@ -146,6 +146,23 @@ curl --compressed -X GET \
       },
       "id": "fb0a4b75-2e58-11e6-8a84-bae500000058",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "owner": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
       "updated": "2016-06-09 18:43:58",
       "name": "Аренда",
       "description": "Аренда",
@@ -161,6 +178,23 @@ curl --compressed -X GET \
       },
       "id": "fb0c8620-2e58-11e6-8a84-bae500000059",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "owner": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
       "updated": "2016-06-09 18:43:58",
       "name": "Зарплата",
       "description": "Зарплата",
@@ -176,6 +210,23 @@ curl --compressed -X GET \
       },
       "id": "fb0dc966-2e58-11e6-8a84-bae50000005a",
       "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+      "owner": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json"
+        }
+      },
+      "shared": false,
+      "group": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
       "updated": "2016-06-09 18:43:58",
       "name": "Маркетинг и реклама",
       "description": "Маркетинг и реклама",
@@ -202,7 +253,24 @@ curl --compressed -X GET \
             "name": "Налоги и не налоги",
             "description": "Статья расходов налоги",
             "code": "nalogi",
-            "externalCode": "wwoaon21431"
+            "externalCode": "wwoaon21431",
+            "shared": false,
+            "owner": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                "type": "employee",
+                "mediaType": "application/json"
+              }
+            },
+            "group": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                "type": "group",
+                "mediaType": "application/json"
+              }
+            }
           }'  
 ```
 
@@ -219,6 +287,23 @@ curl --compressed -X GET \
   },
   "id": "76e88dff-3f9b-11e6-8a84-bae50000009b",
   "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
   "updated": "2016-07-01 17:52:42",
   "name": "Налоги и не налоги",
   "description": "Статья расходов налоги",
@@ -276,6 +361,23 @@ curl --compressed -X GET \
     },
     "id": "76e88dff-3f9b-11e6-8a84-bae50000009b",
     "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+    "owner": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
     "updated": "2016-07-01 17:52:42",
     "name": "Налоги и не налоги",
     "description": "Статья расходов налоги",
@@ -291,6 +393,23 @@ curl --compressed -X GET \
     },
     "id": "7944ef04-f831-11e5-7a69-971500188b19",
     "accountId": "7944ef04-f831-11e5-7a69-971500188b19",
+    "owner": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    },
+    "shared": false,
+    "group": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
     "updated": "2016-07-01 17:52:42",
     "name": "Дополнительные расходы",
     "description": "Еще дополнительные расходы",
@@ -300,7 +419,7 @@ curl --compressed -X GET \
 ]
 ```
 
-Стандартные (системные) статьи расходов нельзя изменять и удалять. При попытке изменения возвращается ошибка [1024](#/errors#3-obshie-oshibki-validacii), при удалении — [1025](#/errors#3-obshie-oshibki-validacii).
+Стандартные (системные) статьи расходов нельзя изменять и удалять. При попытке изменения возвращается ошибка [1024](#/errors#2-oshibki), при удалении — [1025](#/errors#2-oshibki).
 
 ### Удалить Статью расходов
 
@@ -405,6 +524,23 @@ curl --compressed -X GET \
   },
   "id": "fb0a4b75-2e58-11e6-8a84-bae500000058",
   "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
   "updated": "2016-06-09 18:43:58",
   "name": "Аренда",
   "description": "Аренда",
@@ -451,6 +587,23 @@ curl --compressed -X GET \
   },
   "id": "76e88dff-3f9b-11e6-8a84-bae50000009b",
   "accountId": "f976ed28-2e58-11e6-8a84-bae500000001",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
   "updated": "2016-07-01 17:52:42",
   "name": "Не налоги и налоги",
   "description": "Налоги и не налоги. Такая вот статья",

@@ -3013,6 +3013,7 @@ curl --compressed -X PUT \
 | **demand**                 | OPERATION                                   | [Отгрузка](#/documents/demand#2-otgruzka)                                                          |
 | **employee**               | BASE                                        | [Сотрудники](#/dictionaries/employee#2-sotrudnik)                                                  |
 | **enter**                  | OPERATION                                   | [Оприходование](#/documents/enter#2-oprihodovanie)                                                 |
+| **expenseitem**            | BASE                                        | [Статьи расходов](#/dictionaries/expenseitem#2-statya-rashodov)                                    |
 | **factureIn**              | OPERATION                                   | [Счета-фактуры полученные](#/documents/facturein#2-schet-faktura-poluchennyj)                      |
 | **factureOut**             | OPERATION                                   | [Счета-фактуры выданные](#/documents/factureout#2-schet-faktura-vydannyj)                          |
 | **good**                   | DICTIONARY                                  | [Товары и Услуги](#/dictionaries/product#2-tovar)                                                  |
@@ -3210,6 +3211,12 @@ curl --compressed -X PUT \
             "delete": "ALL"
         },
         "employee": {
+            "view": "ALL",
+            "create": "ALL",
+            "update": "ALL",
+            "delete": "ALL"
+        },
+        "expenseitem": {
             "view": "ALL",
             "create": "ALL",
             "update": "ALL",

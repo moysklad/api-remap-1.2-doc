@@ -451,7 +451,7 @@ curl --compressed -X GET \
       "update": "AUTHOR",
       "delete": "AUTHOR"
     },
-    "expenseitem": {
+    "expenseItem": {
       "view": "ALL",
       "create": "ALL",
       "update": "ALL",
@@ -916,7 +916,7 @@ curl --compressed -X GET \
           "update": "AUTHOR",
           "delete": "AUTHOR"
         },
-        "expenseitem": {
+        "expenseItem": {
           "view": "ALL",
           "create": "ALL",
           "update": "ALL",
@@ -1401,7 +1401,7 @@ curl --compressed -X POST \
       "update": "NO",
       "delete": "NO"
     },
-    "expenseitem": {
+    "expenseItem": {
       "view": "ALL",
       "create": "ALL",
       "update": "ALL",
@@ -1890,7 +1890,7 @@ curl --compressed -X PUT \
       "update": "NO",
       "delete": "NO"
     },
-    "expenseitem": {
+    "expenseItem": {
       "view": "ALL",
       "create": "ALL",
       "update": "ALL",
