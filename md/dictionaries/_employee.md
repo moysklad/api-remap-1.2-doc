@@ -922,7 +922,7 @@ curl --compressed -X GET \
 | **employee**                  | BASE                 | Все ALL                                     | [Сотрудники](#/dictionaries/employee#2-sotrudnik)                                                     |
 | **enrollOrder**               | DICTIONARY           | Все NO                                      | Ввод в оборот кодов маркировки                                                                        |
 | **enter**                     | OPERATION            | Все ALL                                     | [Оприходование](#/documents/enter#2-oprihodovanie)                                                    |
-| **expenseitem**               | BASE                 | Все ALL                                     | [Статьи расходов](#/dictionaries/expenseitem#2-statya-rashodov)                                       |
+| **expenseItem**               | BASE                 | Все ALL                                     | [Статьи расходов](#/dictionaries/expenseitem#2-statya-rashodov)                                       |
 | **factureIn**                 | OPERATION            | Все ALL                                     | [Счета-фактуры полученные](#/documents/facturein#2-schet-faktura-poluchennyj)                         |
 | **factureOut**                | OPERATION            | Все ALL                                     | [Счета-фактуры выданные](#/documents/factureout#2-schet-faktura-vydannyj)                             |
 | **good**                      | DICTIONARY           | Все ALL                                     | [Товары и Услуги](#/dictionaries/product#2-tovar)                                                     |
@@ -1560,7 +1560,7 @@ curl --compressed -X GET \
                 "update": "AUTHOR",
                 "delete": "AUTHOR"
             },
-            "expenseitem": {
+            "expenseItem": {
                 "view": "ALL",
                 "create": "ALL",
                 "update": "ALL",

@@ -3216,7 +3216,7 @@ curl --compressed -X PUT \
             "update": "ALL",
             "delete": "ALL"
         },
-        "expenseItem": {
+        "expenseitem": {
             "view": "ALL",
             "create": "ALL",
             "update": "ALL",
