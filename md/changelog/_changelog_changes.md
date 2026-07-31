@@ -4,7 +4,7 @@
 
 ### 31-07-2026
 **Добавлено**
-- Поддержка протокола update-provider во [Внутреннем заказе](#/documents/internalOrder#2-vnutrennij-zakaz)
+- Поддержка протокола update-provider во [Внутреннем заказе](#/documents/internalOrder#2-vnutrennij-zakaz) и [Заказе поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku)
 
 ### 29-07-2026
 **Добавлено**
