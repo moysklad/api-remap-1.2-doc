@@ -4186,7 +4186,7 @@ curl --compressed -X GET \
 
 ```shell
 curl --compressed -X DELETE \
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b19" \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/contactpersons/7944ef04-f831-11e5-7a69-971500188b19" \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
