@@ -3819,6 +3819,69 @@ curl --compressed -X GET \
 }
 ```
 
+### Удалить счет Контрагента
+
+**Параметры**
+
+| Параметр      | Описание                                                                              |
+|---------------|:--------------------------------------------------------------------------------------|
+| **accountId** | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b18* - id счёта.       |
+| **id**        | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента. |
+
+> Запрос на удаление события с указанным id.
+
+```shell
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b18" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json) Успешное удаление счета Контрагента.
+```json
+<Response body is empty>
+```
+
+### Массовое удаление счетов Контрагентов
+
+В теле запроса нужно передать массив, содержащий JSON метаданных счетов Контрагентов, которые вы хотите удалить.
+
+**Параметры**
+
+| Параметр      | Описание                                                                              |
+|---------------|:--------------------------------------------------------------------------------------|
+| **id**        | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента. |
+
+> Запрос на массовое удаление счетов Контрагентов. 
+
+```shell
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -d '[
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b18",
+                "type": "account",
+                "mediaType": "application/json"
+            }
+        },
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b19",
+                "type": "account",
+                "mediaType": "application/json"
+            }
+        }
+    ]'
+```        
+
+> Response 200 (application/json) Успешное удаление счетов Контрагента.
+```json
+<Response body is empty>
+```
 
 ### Контактные лица Контрагента
 
@@ -4108,6 +4171,29 @@ curl --compressed -X GET \
     }
   }
 }
+```
+
+### Удалить контактное лицо Контрагента
+
+**Параметры**
+
+| Параметр                       | Описание                                                                                   |
+| ------------------------------ | :----------------------------------------------------------------------------------------- |
+| **contactpersonId**            | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id контактного лица. |
+| **id**                         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* - id Контрагента.      |
+
+> Запрос на удаление события с указанным id.
+
+```shell
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19/accounts/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json) Успешное удаление контактного лица Контрагента.
+```json
+<Response body is empty>
 ```
 
 ### Запросы - События Контрагента
