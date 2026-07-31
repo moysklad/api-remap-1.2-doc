@@ -340,8 +340,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Группы техкарт.
+> Response 200 (application/json) Успешное удаление Группы техкарт.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Групп техкарт
 

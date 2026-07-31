@@ -76,6 +76,7 @@
 | **id**                 | UUID                                                     | ID позиции<br>`+Обязательное при ответе` `+Только для чтения`                            |
 | **name**               | String(255)                                              | Наименование                                                                             |
 | **processingPlan**     | [Meta](#/general#3-metadannye)| Метаданные [Техкарты](#/dictionaries/processingplan#2-tehkarta)<br>`+Обязательное при ответе`|
+| **productionVariant**  | [Meta](#/general#3-metadannye)| Метаданные [Модификации](#/dictionaries/variant#2-modifikaciya) продукции параметрической техкарты |
 | **productionVolume**   | Float                                                    | Объем производства.<br>`+Обязательное при ответе`                                        |
 | **updated**            | DateTime                                                 | Момент последнего обновления Производственного задания<br>`+Обязательное при ответе`     |
 
@@ -646,6 +647,15 @@ curl --compressed -X GET \
                         "uuidHref": "https://online.moysklad.ru/app/#processingplan/edit?id=5a6729bb-98d8-11ee-0a81-05c700000a34"
                     }
                 },
+                "productionVariant": {
+                    "meta": {
+                        "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/c2774209-421f-11f1-0a82-06c50000023f",
+                        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                        "type": "variant",
+                        "mediaType": "application/json",
+                        "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=c2772aff-421f-11f1-0a82-06c50000023c"
+                    }
+                },                
                 "productionVolume": 10.0
                 }
             ],
@@ -835,6 +845,15 @@ curl --compressed -X GET \
                                 "uuidHref": "https://online.moysklad.ru/app/#processingplan/edit?id=5a6729bb-98d8-11ee-0a81-05c700000a34"
                             }
                         },
+                        "productionVariant": {
+                            "meta": {
+                                "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/c2774209-421f-11f1-0a82-06c50000023f",
+                                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                                "type": "variant",
+                                "mediaType": "application/json",
+                                "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=c2772aff-421f-11f1-0a82-06c50000023c"
+                            }
+                        },                
                         "productionVolume": 10.0
                     }
                 ],
@@ -1357,6 +1376,15 @@ curl --compressed -X GET \
                             "uuidHref": "https://online.moysklad.ru/app/#processingplan/edit?id=5a6729bb-98d8-11ee-0a81-05c700000a34"
                         }
                     },
+                    "productionVariant": {
+                        "meta": {
+                            "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/c2774209-421f-11f1-0a82-06c50000023f",
+                            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                            "type": "variant",
+                            "mediaType": "application/json",
+                            "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=c2772aff-421f-11f1-0a82-06c50000023c"
+                        }
+                    },                
                     "productionVolume": 15.0
                 }
             ]
@@ -1628,8 +1656,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Производственного задания.
+> Response 200 (application/json) Успешное удаление Производственного задания.
+```json
+<Response body is empty>
+```
 
 ### Управление продуктами производственного задания
 Отдельный ресурс для управления продуктами Производственного задания. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](#/general#3-rabota-s-poziciyami-dokumentov).
@@ -1957,8 +1987,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление продукта Производственного задания.
+> Response 200 (application/json) Успешное удаление продукта Производственного задания.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление продуктов Производственного задания
 
@@ -1994,8 +2026,10 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление продуктов Производственного задания.
+> Response 200 (application/json) Успешное удаление продуктов Производственного задания.
+```json
+<Response body is empty>
+```
 
 ### Позиции производственного задания
 
@@ -2044,6 +2078,15 @@ curl --compressed -X GET \
           "uuidHref": "https://online.moysklad.ru/app/#processingplan/edit?id=81269542-99d6-11ee-ac12-000f00000115"
         }
       },
+      "productionVariant": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/c2774209-421f-11f1-0a82-06c50000023f",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+          "type": "variant",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=c2772aff-421f-11f1-0a82-06c50000023c"
+        }
+      },
       "productionVolume": 2.0,
       "updated": "2023-12-13 19:41:53.990"
     }
@@ -2084,6 +2127,15 @@ curl --compressed -X GET \
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/metadata",
       "type": "processingplan",
       "uuidHref": "https://online.moysklad.ru/app/#processingplan/edit?id=81269542-99d6-11ee-ac12-000f00000115"
+    }
+  },
+  "productionVariant": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/c2774209-421f-11f1-0a82-06c50000023f",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+      "type": "variant",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=c2772aff-421f-11f1-0a82-06c50000023c"
     }
   },
   "productionVolume": 2.0,
@@ -2140,6 +2192,15 @@ curl --compressed -X GET \
       "uuidHref": "https://online.moysklad.ru/app/#processingplan/edit?id=e296b1de-9a5c-11ee-0a83-0a2e00000907"
     }
   },
+  "productionVariant": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/c2774209-421f-11f1-0a82-06c50000023f",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+      "type": "variant",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=c2772aff-421f-11f1-0a82-06c50000023c"
+    }
+  },
   "productionVolume": 5.0
 }
 ```
@@ -2157,9 +2218,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции Производственного задания.
-
+> Response 200 (application/json) Успешное удаление позиции Производственного задания.
+```json
+<Response body is empty>
+```
 
 ### Производственные этапы
 
@@ -2637,5 +2699,7 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление материала Производственного этапа.
+> Response 200 (application/json) Успешное удаление материала Производственного этапа.
+```json
+<Response body is empty>
+```

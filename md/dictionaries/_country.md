@@ -377,8 +377,10 @@ curl --compressed -X GET \
     -H "Accept-Encoding: gzip"  
 ```
 
-> Response 200 (application/json)
-Успешное удаление Розничной продажи.
+> Response 200 (application/json) Успешное удаление Розничной продажи.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Стран
 

@@ -2662,7 +2662,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"  
 ```
 
-> Response  200. Успешное удаление Контрагента.
+> Response 200 (application/json) Успешное удаление Контрагента.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Контрагентов
 
@@ -4393,7 +4396,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json). Успешное удаление События.
+> Response 200 (application/json) Успешное удаление События.
+```json
+<Response body is empty>
+```
 
 ### Настройки справочника контрагентов
 

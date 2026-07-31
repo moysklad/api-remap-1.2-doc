@@ -64,9 +64,12 @@
 | **BEER_ALCOHOL**    | Пиво и слабоалкогольные напитки                   |
 | **BICYCLE**         | Велосипеды                                        |
 | **CHEMISTRY**       | Косметика, бытовая химия, товары личной гигиены   |
+| **CONSERVE**        | Консервированные продукты                         |
+| **CONSTRUCTION**    | Строительные материалы                            |
 | **ELECTRONICS**     | Фотокамеры и лампы-вспышки                        |
 | **FOOD_SUPPLEMENT** | Специализированная пищевая продукция и БАД к пище |
 | **FURSLP**          | Натуральный мех                                   |
+| **GADGETS**         | Радиоэлектроника. Ноутбуки и смартфоны            |
 | **GROCERY**         | Бакалея                                           |
 | **LP_CLOTHES**      | Одежда                                            |
 | **LP_LINENS**       | Постельное белье                                  |
@@ -78,12 +81,14 @@
 | **OTP**             | Альтернативная табачная продукция                 |
 | **PERFUMERY**       | Духи и туалетная вода                             |
 | **PET_FOOD**        | Корма для животных                                |
+| **RADIO**           | Радиоэлектроника                                  |
 | **SANITIZER**       | Антисептики                                       |
 | **SEAFOOD**         | Икра и морепродукты                               |
 | **SHOES**           | Обувь                                             |
 | **SOFT_DRINKS**     | Безалкогольные напитки                            |
 | **TIRES**           | Шины и покрышки                                   |
 | **TOBACCO**         | Табачная продукция                                |
+| **TOYS**            | Детские игрушки                                   |
 | **VEGETABLE_OIL**   | Растительные масла                                |
 | **VETPHARMA**       | Ветеринарные препараты                            |
 | **WATER**           | Упакованная вода                                  |
@@ -1677,8 +1682,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Комплекта.
+> Response 200 (application/json) Успешное удаление Комплекта.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Комплектов
 
@@ -1983,8 +1990,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление компонента Комплекта.
+> Response 200 (application/json) Успешное удаление компонента Комплекта.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление компонентов Комплекта
 
@@ -2016,5 +2025,7 @@ curl --compressed -X POST \
        ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление компонентов Комплекта.
+> Response 200 (application/json) Успешное удаление компонентов Комплекта.
+```json
+<Response body is empty>
+```
