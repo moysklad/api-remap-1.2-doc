@@ -649,16 +649,25 @@ curl --compressed -X GET \
         "name": "Товары Из кастомной группы",
         "pathName": "Группа"
       },
-      "images": {
-        "meta": {
-          "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/d1bef0a1-ffe7-11e5-9464-e4de0000001c/images",
-          "type": "image",
-          "mediaType": "application/json",
-          "size": 1,
-          "limit": 1000,
-          "offset": 0
-        }
-      },
+       "image": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/download/d2bc700a-696c-4082-b807-be8cfff7d7a1",
+                    "mediaType": "application/octet-stream"
+                },
+                "title": "image-product",
+                "filename": "image-product.jpg",
+                "size": 7180,
+                "updated": "2026-08-04 14:08:31.663",
+                "miniature": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/download/bd159783-95ee-11e6-8a84-bae500000001?miniature=true",
+                  "mediaType": "image/png",
+                  "downloadHref": "https://miniature-prod.moysklad.ru/miniature/79b17fec-2f08-11eb-0a80-052200009a8a/documentminiature/7129822c-2409-417c-977f-31a1e889039a"
+                },
+                "tiny": {
+                  "href": "https://online.moysklad.ru/app/download/bd14f0b6-95ee-11e6-8a84-bae500000000.png",
+                  "mediaType": "image/png"
+                }
+              },
       "externalCode": "ibWbdtWWhXiIwfZVEal6z2"
     }
   ]
