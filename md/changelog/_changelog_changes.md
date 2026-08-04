@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 30-07-2026
+**Добавлено**
+- Поддержка протокола update-provider в [Инвентаризации](#/documents/inventory#2-inventarizaciya)
+
 ### 29-07-2026
 **Добавлено**
 - Поле `parametricMaterials` коллекция метаданных параметрических материалов [Техкарты](#/dictionaries/processingplan#4-parametricheskie-materialy-tehkarty)
