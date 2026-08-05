@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 21-05-2026
+**Добавлено**
+- Новый тип маркированной продукции `SWEETS` (Сладости и кондитерские изделия) для [Товара](#/dictionaries/product#3-tovary) и [Комплекта](#/dictionaries/bundle#3-komplekty)
+
 ### 31-07-2026
 **Добавлено**
 - [пермиссии сущности expenseitem](#/dictionaries/employee#3-rabota-s-pravami-sotrudnika) (Статьи расходов)
