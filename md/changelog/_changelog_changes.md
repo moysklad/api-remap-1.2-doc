@@ -2,9 +2,29 @@
 
 Список последних изменений в API Remap 1.2
 
+### 31-07-2026
+**Добавлено**
+- [пермиссии сущности expenseitem](#/dictionaries/employee#3-rabota-s-pravami-sotrudnika) (Статьи расходов)
+- данные о пермиссиях сущности expenseitem (Статьи расходов) добавлены в возвращаемые JSON в разделе [Пользовательские роли](#/dictionaries/custom-role#3-poluchit-polzovatelskuyu-rol)
+- Поле `operatingExpenses` (Учитывать в прибыли) в сущности [Статья расходов](#/dictionaries/expenseitem#3-stati-rashodov)
+
+**Изменено**
+- описание сущности [Статьи расходов](#/dictionaries/expenseitem#2-statya-rashodov): поля **owner**, **group**, **shared**
+
+### 30-07-2026
+**Добавлено**
+- Поддержка протокола update-provider в [Инвентаризации](#/documents/inventory#2-inventarizaciya)
+
 ### 29-07-2026
 **Добавлено**
-- Поле `operatingExpenses` (Учитывать в прибыли) в сущности [Статья расходов](#/dictionaries/expenseitem#3-stati-rashodov)
+- Поле `parametricMaterials` коллекция метаданных параметрических материалов [Техкарты](#/dictionaries/processingplan#4-parametricheskie-materialy-tehkarty)
+- Новый эндпоинт для работы с параметрическими материалами [Техкарты](#/dictionaries/processingplan#3-upravlenie-parametricheskimi-materialami-tehkarty)
+- Ошибки [25064-25071](#/errors#3-kody-oshibok-dlya-tehnologicheskih-kart)
+- Поле модификации продукции параметрической техкарты `productionVariant` в [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya)
+- Ошибка [26116](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при изменении [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) нельзя изменить модификацию продукции в позиции производственного задания
+- Ошибка [26117](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) с параметрической техкартой должна быть указана модификация продукции
+- Ошибка [26118](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) с параметрической техкартой должна быть указана модификация продукции, которая принадлежит продукту техкарты
+- Ошибка [26119](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) нельзя указывать модификацию продукции с непараметрической техкартой
 
 ### 21-07-2026
 **Добавлено**
