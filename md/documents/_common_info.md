@@ -94,8 +94,10 @@
       -d ''  
 ```
 
-> Response 200 (application/json)
-Успешное удаление Приемки.
+> Response 200 (application/json) Успешное удаление Приемки.
+```json
+<Response body is empty>
+```
 
 ##### Связи документов
 ### Привязка документов к документам 

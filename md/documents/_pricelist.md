@@ -916,8 +916,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Прайс-листа.
+> Response 200 (application/json) Успешное удаление Прайс-листа.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Прайс-листов
 
@@ -2022,8 +2024,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции Прайс-листа.
+> Response 200 (application/json) Успешное удаление позиции Прайс-листа.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций
 
@@ -2059,6 +2063,7 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиций Прайс-листа. 
-
+> Response 200 (application/json) Успешное удаление позиций Прайс-листа.
+```json
+<Response body is empty>
+```

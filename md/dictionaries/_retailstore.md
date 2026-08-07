@@ -1648,8 +1648,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Розничной точки продаж.
+> Response 200 (application/json) Успешное удаление Розничной точки продаж.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Точек продаж
 

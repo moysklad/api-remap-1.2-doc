@@ -438,8 +438,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Проекта.
+> Response 200 (application/json) Успешное удаление Проекта.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Проектов
 

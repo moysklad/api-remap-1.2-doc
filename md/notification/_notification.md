@@ -68,9 +68,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Уведомления.
-
+> Response 200 (application/json) Успешное удаление Уведомления.
+```json
+<Response body is empty>
+```
 
 ### Отметить Уведомление как прочитанное
 Отметить конкретное уведомление, как прочитанное. Можно отмечать только Уведомления текущего пользователя.

@@ -177,6 +177,7 @@ curl --compressed -X GET \
 | **301**          | Запрашиваемый ресурс находится по другому URL.                                                                                                       |
 | **302**          | Запрашиваемый ресурс временно находится по другому URI.                                                                                              |
 | **303**          | Запрашиваемый ресурс может быть найден по другому URI и должен быть найден с использоваием GET запроса                                               |
+| **308**          | Запрашиваемый ресурс находится по другому URL.                                                                                                       |
 | **400**          | Ошибка в структуре JSON передаваемого запроса                                                                                                        |
 | **401**          | Имя и/или пароль пользователя указаны неверно или заблокированы пользователь или аккаунт                                                             |
 | **403**          | У вас нет прав на просмотр данного объекта                                                                                                           |
@@ -199,7 +200,7 @@ curl --compressed -X GET \
 + X-Lognex-Auth - расширенный код ошибки аутентификации
 + X-Lognex-Auth-Message - сообщение об ошибке.
 + X-Lognex-API-Version-Deprecated - дата отключения запрошенной версии API.
-+ Location - URL по которому доступен запрашиваемый ресурс (в случае ответа с кодом 301 или кодом 303)
++ Location - URL по которому доступен запрашиваемый ресурс (в случае ответа с кодом 301, кодом 303 или кодом 308)
 
 Количество оставшихся запросов в рамках лимита «запросов в единицу времени» можно определить с помощью следующих заголовков:
 
@@ -768,8 +769,10 @@ curl --compressed -X POST \
       ]'
 ```
 
-> Response 200 (application/json)
-Успешное удаление доп. полей.
+> Response 200 (application/json) Успешное удаление доп. полей.
+```json
+<Response body is empty>
+```
 
 ### Дополнительное поле
 **Параметры**
@@ -861,8 +864,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление доп. поля.
+> Response 200 (application/json) Успешное удаление доп. поля.
+```json
+<Response body is empty>
+```
 
 ### Обновление значений дополнительных полей
 Запрос на обновление коллекции доп. полей конкретной сущности.
@@ -2886,7 +2891,7 @@ curl --compressed -X PUT \
 * [Прослеживаемость товаров в розничной продаже](#/documents/retaildemand#4-informaciya-o-proslezhivaemosti-importnyh-tovarov)
 * [Неснижаемый остаток в товаре](#/dictionaries/product#5-nesnizhaemyj-ostatok)
 * [Неснижаемый остаток в модификации](#/dictionaries/variant#5-nesnizhaemyj-ostatok)
-* [Постоянная ссылка на изображение](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-ili-modifikacii)
+* [Постоянная ссылка на изображение](#/dictionaries/images#4-poluchit-postoyannuyu-ssylku-na-izobrazhenie-tovara-komplekta-modifikacii-ili-kartochki-kontenta)
 
 ### Контекст запроса сотрудника
 

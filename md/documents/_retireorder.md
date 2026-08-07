@@ -156,7 +156,7 @@
 | **price**         | Float                                                     | Цена товара в копейках<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                                                                                                     |
 | **quantity**      | Float                                                     | Количество товаров данного вида в позиции <br>`+Обязательное при ответе` `+Change-handler`                                                                                                                                                                                 |
 | **trackingCodes** | Array(Object)                                             | Коды маркировки товаров. [Подробнее тут](#/dictionaries/tracking-code#2-kody-markirovki) <br> `+Обязательное при ответе` `+Необходимо при создании`                                                                                                                           |
-| **vat**           | Boolean                                                   | НДС, которым облагается текущая позиция<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                                                                                 |
+| **vat**           | Int                                                       | НДС, которым облагается текущая позиция<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                                                                                 |
 | **vatEnabled**    | Boolean                                                   | Включен ли НДС для позиции. С помощью этого флага для позиции можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider` |
 
 С позициями можно работать с помощью [специальных ресурсов для управления позициями Вывода из оборота](#/documents/retireorder#3-upravlenie-poziciyami-vyvoda-iz-oborota),
@@ -546,6 +546,15 @@ curl --compressed -X GET \
 | **VETERINARY_USE**       | OTHER                                                |
 | **OTHER_TYPE**           | OTHER                                                |
 | **RECALL**               | OTHER                                                |
+
+Связь допустимых значений поля **destinationCountry** в зависимости от **trackingType**
+
+| **trackingType**      | **retireOrderType**                    |
+|-----------------------|:---------------------------------------|
+| **SHOES**             | Армения, Киргизия                      |
+| **TIRES**             | Армения, Казахстан, Киргизия           |
+| **Все остальные**     | Армения, Беларусь, Казахстан, Киргизия |
+
 
 Способ вывода из оборота **retireOrderType**:
 
@@ -1742,8 +1751,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции Вывода из оборота.
+> Response 200 (application/json) Успешное удаление позиции Вывода из оборота.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций
 
@@ -1779,6 +1790,7 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиций Вывода из оборота. 
-
+> Response 200 (application/json) Успешное удаление позиций Вывода из оборота.
+```json
+<Response body is empty>
+```
