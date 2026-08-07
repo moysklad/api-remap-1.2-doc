@@ -6,6 +6,7 @@
 **Добавлено**
 - [пермиссии сущности expenseitem](#/dictionaries/employee#3-rabota-s-pravami-sotrudnika) (Статьи расходов)
 - данные о пермиссиях сущности expenseitem (Статьи расходов) добавлены в возвращаемые JSON в разделе [Пользовательские роли](#/dictionaries/custom-role#3-poluchit-polzovatelskuyu-rol)
+- Поле `operatingExpenses` (Учитывать в прибыли) в сущности [Статья расходов](#/dictionaries/expenseitem#3-stati-rashodov)
 
 **Изменено**
 - описание сущности [Статьи расходов](#/dictionaries/expenseitem#2-statya-rashodov): поля **owner**, **group**, **shared**
