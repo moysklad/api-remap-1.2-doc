@@ -5,6 +5,15 @@
 ### 31-07-2026
 **Добавлено**
 - Поддержка протокола update-provider во [Внутреннем заказе](#/documents/internalOrder#2-vnutrennij-zakaz) и [Заказе поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku)
+- [пермиссии сущности expenseitem](#/dictionaries/employee#3-rabota-s-pravami-sotrudnika) (Статьи расходов)
+- данные о пермиссиях сущности expenseitem (Статьи расходов) добавлены в возвращаемые JSON в разделе [Пользовательские роли](#/dictionaries/custom-role#3-poluchit-polzovatelskuyu-rol)
+
+**Изменено**
+- описание сущности [Статьи расходов](#/dictionaries/expenseitem#2-statya-rashodov): поля **owner**, **group**, **shared**
+
+### 30-07-2026
+**Добавлено**
+- Поддержка протокола update-provider в [Инвентаризации](#/documents/inventory#2-inventarizaciya)
 
 ### 29-07-2026
 **Добавлено**
@@ -974,7 +983,6 @@
 
 ### 12-10-2022
 **Добавлено**
-- Поддержка протокола update-provider в [Списании](#/documents/loss#2-spisanie) и [Счете покупателю](#/documents/invoice-out#2-schet-pokupatelyu).
 - Поле moves в [Заказ покупателя](#/documents/customerOrder#3-zakazy-pokupatelej).
 - Поле prepayments в [Заказ покупателя](#/documents/customerOrder#3-zakazy-pokupatelej).
 - Поле customerOrder в [Перемещение](#/documents/move#3-peremesheniya).
