@@ -4,7 +4,7 @@
 
 ### 17-08-2026
 **Добавлено**
-- Новый тип уведомлений [Новое сообщение от менеджера отдела продаж](#/notification/notification-types-details#3-novoe-soobshchenie-ot-menedzhera-otdela-prodazh)
+- Новый тип уведомлений [Новое сообщение от менеджера отдела продаж](#/notification/notification-types-details#3-novoe-soobshenie-ot-menedzhera-otdela-prodazh)
 
 ### 11-08-2026
 **Добавлена**
