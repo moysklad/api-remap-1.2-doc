@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 17-08-2026
+**Добавлено**
+- Новый тип уведомлений [Новое сообщение от менеджера отдела продаж](#/notification/notification-types-details#3-novoe-soobshchenie-ot-menedzhera-otdela-prodazh)
+
 ### 11-08-2026
 **Добавлена**
 - Фильтрация по полям `accountId`, `applicable`, `description`, `created`, `externalCode`, `group`, `id`, `moment`, `name`, `owner`, `shared`, `sum`, `updated` для документа [Начисления зарплаты](#/documents/payroll#2-nachisleniya-zarplaty)
