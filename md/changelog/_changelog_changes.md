@@ -2,8 +2,17 @@
 
 Список последних изменений в API Remap 1.2
 
+### 17-08-2026
+**Добавлено**
+- Новый тип уведомлений [Новое сообщение от менеджера отдела продаж](#/notification/notification-types-details#3-novoe-soobshenie-ot-menedzhera-otdela-prodazh)
+
+### 11-08-2026
+**Добавлена**
+- Фильтрация по полям `accountId`, `applicable`, `description`, `created`, `externalCode`, `group`, `id`, `moment`, `name`, `owner`, `shared`, `sum`, `updated` для документа [Начисления зарплаты](#/documents/payroll#2-nachisleniya-zarplaty)
+
 ### 31-07-2026
 **Добавлено**
+- Поддержка протокола update-provider во [Внутреннем заказе](#/documents/internalOrder#2-vnutrennij-zakaz) и [Заказе поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku)
 - [пермиссии сущности expenseitem](#/dictionaries/employee#3-rabota-s-pravami-sotrudnika) (Статьи расходов)
 - данные о пермиссиях сущности expenseitem (Статьи расходов) добавлены в возвращаемые JSON в разделе [Пользовательские роли](#/dictionaries/custom-role#3-poluchit-polzovatelskuyu-rol)
 - Поле `operatingExpenses` (Учитывать в прибыли) в сущности [Статья расходов](#/dictionaries/expenseitem#3-stati-rashodov)
