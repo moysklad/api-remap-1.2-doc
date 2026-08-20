@@ -109,6 +109,7 @@ curl --compressed -X GET \
       "updated": "2015-05-27 17:03:10",
       "name": "Налоги и сборы",
       "description": "Расходы по налогам и сборам учитываются как отдельная статья, не включенная в операционные расходы",
+      "operatingExpenses": true,
       "code": "2",
       "externalCode": "2"
     },
@@ -123,6 +124,7 @@ curl --compressed -X GET \
       "updated": "2015-05-27 17:03:24",
       "name": "Списания",
       "description": "Списания",
+      "operatingExpenses": true,
       "code": "4",
       "externalCode": "4"
     },
@@ -137,6 +139,7 @@ curl --compressed -X GET \
       "updated": "2016-06-09 18:40:35",
       "name": "Перемещение",
       "description": "Перемещения денег между кассами не учитываются в отчете «Прибыли и убытки».",
+      "operatingExpenses": false,
       "code": "5",
       "externalCode": "5"
     },
@@ -152,6 +155,7 @@ curl --compressed -X GET \
       "updated": "2016-06-09 18:43:58",
       "name": "Аренда",
       "description": "Аренда",
+      "operatingExpenses": true,
       "code": "Аренда",
       "externalCode": "IVslr34uhCUuglxPD7Idm0"
     },
@@ -167,6 +171,7 @@ curl --compressed -X GET \
       "updated": "2016-06-09 18:43:58",
       "name": "Зарплата",
       "description": "Зарплата",
+      "operatingExpenses": true,
       "code": "Зарплата",
       "externalCode": "RY7G3TULiTyjqYRrzr3V03"
     },
@@ -182,6 +187,7 @@ curl --compressed -X GET \
       "updated": "2016-06-09 18:43:58",
       "name": "Маркетинг и реклама",
       "description": "Маркетинг и реклама",
+      "operatingExpenses": true,
       "code": "Маркетинг и реклама",
       "externalCode": "1PMtKJq-jjVJQbu5OWqBG1"
     }
@@ -283,6 +289,7 @@ curl --compressed -X GET \
     "updated": "2016-07-01 17:52:42",
     "name": "Налоги и не налоги",
     "description": "Статья расходов налоги",
+    "operatingExpenses": true,
     "code": "nalogi",
     "externalCode": "wwoaon21431"
   },
@@ -435,6 +442,7 @@ curl --compressed -X GET \
       -d '{
             "name": "Не налоги и налоги",
             "description": "Налоги и не налоги. Такая вот статья",
+            "operatingExpenses": true,
             "code": "nalogi i net",
             "externalCode": "wwoa1142aon21431"
           }'  
