@@ -2,6 +2,14 @@
 
 Список последних изменений в API Remap 1.2
 
+### 20-08-2026
+**Добавлено**
+- Ошибки [57205-57207](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota) сохранения Вывода из оборота
+- Описание особенностей поведения при создании и изменении [Вывода из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
+
+**Изменено**
+- Текст ошибки [57200](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota)
+
 ### 17-08-2026
 **Добавлено**
 - Новый тип уведомлений [Новое сообщение от менеджера отдела продаж](#/notification/notification-types-details#3-novoe-soobshenie-ot-menedzhera-otdela-prodazh)
