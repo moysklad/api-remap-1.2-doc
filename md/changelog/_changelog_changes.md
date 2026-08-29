@@ -1258,7 +1258,7 @@
 
 ### 30-09-2021
 **Изменено**
-- Информация о новом типе маркированной продукции (Упакованная вода) в [Товарах](#/dictionaries/product#2-tovar)
+- Информация о новом типе маркированной продукции (фасованная вода) в [Товарах](#/dictionaries/product#2-tovar)
 
 ### 23-09-2021
 **Добавлено**
@@ -1276,7 +1276,7 @@
 
 ### 15-09-2021
 **Добавлено**
-- Возможность работы с упаковками [Модификаций](#/dictionaries/variant#2-modifikaciya), [фильтрация ассортимента](#/dictionaries/assortment#5-nastrojki-pravil-shtrihkodov-dlya-sushnostej-spravochnika) по штрихкоду упаковок модификаций.
+- Возможность работы с фасовками [Модификаций](#/dictionaries/variant#2-modifikaciya), [фильтрация ассортимента](#/dictionaries/assortment#5-nastrojki-pravil-shtrihkodov-dlya-sushnostej-spravochnika) по штрихкоду фасовок модификаций.
 - Добавлена фильтрация по Доп. полям. и атрибут фильтрации supplier для [Отчет обороты](#/reports/report-turnover#2-otchet-oboroty)
 - Документ [Корректировка баланса контрагента](#/documents/counterpartyadjustment#2-korrektirovka-vzaimoraschetov)
 
@@ -1363,7 +1363,7 @@
 ### 31-05-2021
 **Добавлено**
 - Добавлены поля `welcomeBonusesEnabled`, `welcomeBonusesValue`, `welcomeBonusesMode` в [Бонусную программу](#/dictionaries/bonus-program#2-bonusnaya-programma)
-- Возможность получать коды маркировки товаров и транспортных упаковок в формате тега 1162 (поле `trackingCodes_1162`) для документа типа [Отгрузка](#/documents/demand#4-kody-markirovki-tovarov-i-transportnyh-upakovok-v-formate-tega-1162).
+- Возможность получать коды маркировки товаров и транспортных фасовок в формате тега 1162 (поле `trackingCodes_1162`) для документа типа [Отгрузка](#/documents/demand#4-kody-markirovki-tovarov-i-transportnyh-upakovok-v-formate-tega-1162).
 
 ### 28-05-2021
 **Документация**
@@ -1469,8 +1469,8 @@
 
 ### 13-04-2021
 **Добавлено**
-- Добавлена новая ошибка [17020](#/errors#3-kody-oshibok-dlya-dokumentov) - товар из упаковки в позиции документа не соответствует товару, указанному в данной позиции
-- Добавлена валидация товара из упаковки в позиции документа
+- Добавлена новая ошибка [17020](#/errors#3-kody-oshibok-dlya-dokumentov) - товар из фасовки в позиции документа не соответствует товару, указанному в данной позиции
+- Добавлена валидация товара из фасовки в позиции документа
 
 ### 09-04-2021
 **Документация**
@@ -1535,7 +1535,7 @@
 
 ### 27-01-2021
 **Документация**
-- Изменен тип поля quantity с Int на Float в разделе описания вложенной [Упаковки товара](#/dictionaries/product#5-upakovki-tovara)
+- Изменен тип поля quantity с Int на Float в разделе описания вложенной [фасовки товара](#/dictionaries/product#5-fasovki-tovara)
 - Удалено описание полей объекта доп. полей из документов.
   Его по-прежнему можно найти в разделе [Работа с доп. полями](#/general#3-rabota-s-dopolnitelnymi-polyami)
 - Исправлен ряд опечаток в этом разделе
