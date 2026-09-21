@@ -26,6 +26,7 @@
 | **moment**                      | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Дата документа<br>`+Обязательное при ответе`                                                                                                                                                           |
 | **name**                        | String(255)                    | `=` `!=` `~` `~=` `=~`     | Наименование Вывода из оборота<br>`+Обязательное при ответе`                                                                                                                                           |
 | **organization**                | [Meta](#/general#3-metadannye) | `=` `!=`                   | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                                   |
+| **organizationBranch**          | [Meta](#/general#3-metadannye) | `=` `!=`                   | Метаданные подразделения юрлица<br>`+Expand`                                                                                                                                                           |
 | **owner**                       | [Meta](#/general#3-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                                      |
 | **positions**                   | MetaArray                      |                            | Метаданные позиций Вывода из оборота<br>`+Обязательное при ответе` `+Expand`                                                                                                                           |
 | **primaryDocumentName**         | String(255)                    |                            | Наименование первичного документа                                                                                                                                                                      |
@@ -274,6 +275,15 @@ curl --compressed -X GET \
           "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=972559f1-cbf3-11e1-9eb9-889ffa6f49fd"
         }
       },
+      "organizationBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+        }
+      },
       "created": "2024-11-22 13:37:51.431",
       "printed": false,
       "published": false,
@@ -350,6 +360,15 @@ curl --compressed -X GET \
           "type": "organization",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=972559f1-cbf3-11e1-9eb9-889ffa6f49fd"
+        }
+      },
+      "organizationBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
         }
       },
       "created": "2024-11-22 13:37:51.431",
@@ -455,6 +474,15 @@ curl --compressed -X GET \
       "type": "organization",
       "mediaType": "application/json",
       "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=972559f1-cbf3-11e1-9eb9-889ffa6f49fd"
+    }
+  },
+  "organizationBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
     }
   },
   "created": "2024-11-22 13:37:51.431",
@@ -1097,6 +1125,15 @@ curl --compressed -X GET \
                           "mediaType": "application/json"
                       }
                   },
+                  "organizationBranch": {
+                      "meta": {
+                          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+                          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+                          "type": "organizationbranch",
+                          "mediaType": "application/json",
+                          "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+                      }
+                  },
                   "description": "Новый вывод из оборота",
                   "retireOrderType": "OWN_USE",
                   "supportingTransaction": "OTHER",
@@ -1269,6 +1306,15 @@ curl --compressed -X GET \
         "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=ace4017a-ad7d-11ef-ac12-000d0000009a"
       }
     },
+    "organizationBranch": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+        "type": "organizationbranch",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+      }
+    },
     "created": "2024-12-10 09:22:39.067",
     "printed": false,
     "published": false,
@@ -1380,6 +1426,15 @@ curl --compressed -X PUT \
           "type": "organization",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=972559f1-cbf3-11e1-9eb9-889ffa6f49fd"
+        }
+      },
+      "organizationBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
         }
       },
       "created": "2024-11-22 13:37:51.431",
