@@ -265,5 +265,7 @@ curl --compressed -X DELETE \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip"
 ```
-> Response 200 (application/json)
-Успешное удаление Файла.
+> Response 200 (application/json) Успешное удаление Файла.
+```json
+<Response body is empty>
+```

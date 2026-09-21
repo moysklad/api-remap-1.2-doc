@@ -1385,8 +1385,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Юрлица.
+> Response 200 (application/json) Успешное удаление Юрлица.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Организаций
 
@@ -2451,8 +2453,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление счета юрлица.
+> Response 200 (application/json) Успешное удаление счета юрлица.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление счетов Юрлица
 
@@ -2490,5 +2494,7 @@ curl --compressed -X POST \
       ]'
 ```
 
-> Response 200 (application/json)
-Успешное удаление счетов юрлица.
+> Response 200 (application/json) Успешное удаление счетов юрлица.
+```json
+<Response body is empty>
+```

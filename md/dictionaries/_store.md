@@ -903,8 +903,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Склада.
+> Response 200 (application/json) Успешное удаление Склада.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Складов
 
@@ -1667,8 +1669,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Зоны склада.
+> Response 200 (application/json) Успешное удаление Зоны склада.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление зон склада
 
@@ -2065,8 +2069,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Ячейки склада.
+> Response 200 (application/json) Успешное удаление Ячейки склада.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление ячеек склада
 

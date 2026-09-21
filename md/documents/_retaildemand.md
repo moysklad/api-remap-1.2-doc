@@ -55,7 +55,7 @@
 | **updated**             | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Момент последнего обновления Розничной продажи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                      |
 | **vatEnabled**          | Boolean                        |                                                                        | Учитывается ли НДС<br>`+Обязательное при ответе` `+Change-handler`                                                                       |
 | **vatIncluded**         | Boolean                        |                                                                        | Включен ли НДС в цену<br>`+Change-handler`                                                                                               |
-| **vatSum**              | Float                          |                                                                        | Сумма НДС<br>`+Обязательное при ответе` `+Change-handler`                                                                                |
+| **vatSum**              | Float                          |                                                                        | Сумма НДС<br>`+Только для чтения` `+Change-handler`                                                                                |
 
 ##### Код системы налогообложения
 Значения поля taxSystem.
@@ -1612,8 +1612,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Розничной продажи.
+> Response 200 (application/json) Успешное удаление Розничной продажи.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Розничных продаж
 
@@ -3378,8 +3380,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции Розничной продажи.
+> Response 200 (application/json) Успешное удаление позиции Розничной продажи.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций
 
@@ -3415,6 +3419,7 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиций Розничной продажи. 
-
+> Response 200 (application/json) Успешное удаление позиций Розничной продажи.
+```json
+<Response body is empty>
+```

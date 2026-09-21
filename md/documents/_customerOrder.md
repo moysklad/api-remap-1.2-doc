@@ -47,7 +47,7 @@
 | **updated**               | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Момент последнего обновления Заказа покупателя<br>`+Обязательное при ответе` `+Только для чтения``+Change-handler`                                                                         |
 | **vatEnabled**            | Boolean                        |                                                                        | Учитывается ли НДС<br>`+Обязательное при ответе``+Change-handler` `+Update-provider`                                                                                                       |
 | **vatIncluded**           | Boolean                        |                                                                        | Включен ли НДС в цену<br>`+Change-handler` `+Update-provider`                                                                                                                              |
-| **vatSum**                | Float                          |                                                                        | Сумма НДС<br>`+Обязательное при ответе` `+Только для чтения``+Change-handler`                                                                                                              |
+| **vatSum**                | Float                          |                                                                        | Сумма НДС<br>`+Только для чтения``+Change-handler`                                                                                                              |
 
 ##### Код системы налогообложения
 Значения поля taxSystem.
@@ -1371,8 +1371,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Заказа покупателя.
+> Response 200 (application/json) Успешное удаление Заказа покупателя.
+```json
+<Response body is empty>
+```
 
 ### Метаданные Заказов покупателей 
 Запрос на получение метаданных Заказов покупателей. Результат - объект JSON, включающий в себя:
@@ -2871,8 +2873,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиции Заказа.
+> Response 200 (application/json) Успешное удаление позиции Заказа.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций
 
@@ -2908,5 +2912,7 @@ curl --compressed -X POST \
       ]'  
 ```
 
-> Response 200 (application/json)
-Успешное удаление позиций Заказа покупателя. 
+> Response 200 (application/json) Успешное удаление позиций Заказа покупателя.
+```json
+<Response body is empty>
+```

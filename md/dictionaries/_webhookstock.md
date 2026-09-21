@@ -390,8 +390,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление вебхука на изменение остатков.
+> Response 200 (application/json) Успешное удаление вебхука на изменение остатков.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление вебхуков на изменение остатков
 

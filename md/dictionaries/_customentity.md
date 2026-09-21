@@ -121,8 +121,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-> Успешное удаление Пользовательского справочника.
+> Response 200 (application/json) Успешное удаление Пользовательского справочника.
+```json
+<Response body is empty>
+```
 
 ### Метаданные справочника
 
@@ -642,7 +644,7 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-> Успешное удаление элемента Пользовательского справочника.
-
-
+> Response 200 (application/json) Успешное удаление элемента Пользовательского справочника.
+```json
+<Response body is empty>
+```

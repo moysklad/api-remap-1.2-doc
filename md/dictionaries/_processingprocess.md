@@ -400,8 +400,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Техпроцесса
+> Response 200 (application/json) Успешное удаление Техпроцесса
+```json
+<Response body is empty>
+```
 
 ### Запросы - Позиции Техпроцесса
 
@@ -661,8 +663,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление отдельной позиции Техпроцесса
+> Response 200 (application/json) Успешное удаление отдельной позиции Техпроцесса
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций Техпроцесса
 

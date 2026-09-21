@@ -394,8 +394,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 204 (application/json)
-> Успешное удаление События.
+> Response 204 (application/json) Успешное удаление События.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Событий
 

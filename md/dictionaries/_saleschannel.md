@@ -363,8 +363,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Канала продаж.
+> Response 200 (application/json) Успешное удаление Канала продаж.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Каналов продаж
 

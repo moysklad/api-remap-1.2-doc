@@ -751,8 +751,10 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешное удаление Приходного ордера.
+> Response 200 (application/json) Успешное удаление Приходного ордера.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление Приходных ордеров
 

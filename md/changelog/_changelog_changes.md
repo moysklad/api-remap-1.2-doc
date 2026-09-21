@@ -2,11 +2,56 @@
 
 Список последних изменений в API Remap 1.2
 
-### 13-07-2026
+### 21-09-2026
 **Добавлено**
 - Сущность `Подразделение юридического лица` [organizationbranch](#/dictionaries/organizationbranch#2-podrazdelenie-yuridicheskogo-lica)
 - Ошибка [74000](#/errors#3-kody-oshibok-dlya-podrazdeleniya-yuridicheskogo-lica)
 - Поле связи с `Подразделением юридического лица` (`organizationBranch`) для сущностей: [Точка продаж](#/dictionaries/retailstore#2-tochka-prodazh), [Розничная смена](#/documents/retailshift#2-roznichnaya-smena), [Розничная продажа](#/documents/retaildemand#2-roznichnaya-prodazha), [Розничный возврат](#/documents/retail-sales-return#2-roznichnyj-vozvrat), [Внесение денег](#/documents/retaildrawercashin#2-vnesenie-deneg), [Выплата денег](#/documents/retaildrawercashout#2-vyplata-deneg), [Предоплата](#/documents/prepayment#2-predoplata) и [Возврат предоплаты](#/documents/prepayment-return#2-vozvrat-predoplaty)
+
+### 17-08-2026
+**Добавлено**
+- Новый тип уведомлений [Новое сообщение от менеджера отдела продаж](#/notification/notification-types-details#3-novoe-soobshenie-ot-menedzhera-otdela-prodazh)
+
+### 11-08-2026
+**Добавлена**
+- Фильтрация по полям `accountId`, `applicable`, `description`, `created`, `externalCode`, `group`, `id`, `moment`, `name`, `owner`, `shared`, `sum`, `updated` для документа [Начисления зарплаты](#/documents/payroll#2-nachisleniya-zarplaty)
+
+### 31-07-2026
+**Добавлено**
+- Поддержка протокола update-provider во [Внутреннем заказе](#/documents/internalOrder#2-vnutrennij-zakaz) и [Заказе поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku)
+- [пермиссии сущности expenseitem](#/dictionaries/employee#3-rabota-s-pravami-sotrudnika) (Статьи расходов)
+- данные о пермиссиях сущности expenseitem (Статьи расходов) добавлены в возвращаемые JSON в разделе [Пользовательские роли](#/dictionaries/custom-role#3-poluchit-polzovatelskuyu-rol)
+- Поле `operatingExpenses` (Учитывать в прибыли) в сущности [Статья расходов](#/dictionaries/expenseitem#3-stati-rashodov)
+
+**Изменено**
+- описание сущности [Статьи расходов](#/dictionaries/expenseitem#2-statya-rashodov): поля **owner**, **group**, **shared**
+
+### 30-07-2026
+**Добавлено**
+- Поддержка протокола update-provider в [Инвентаризации](#/documents/inventory#2-inventarizaciya)
+
+### 29-07-2026
+**Добавлено**
+- Поле `parametricMaterials` коллекция метаданных параметрических материалов [Техкарты](#/dictionaries/processingplan#4-parametricheskie-materialy-tehkarty)
+- Новый эндпоинт для работы с параметрическими материалами [Техкарты](#/dictionaries/processingplan#3-upravlenie-parametricheskimi-materialami-tehkarty)
+- Ошибки [25064-25071](#/errors#3-kody-oshibok-dlya-tehnologicheskih-kart)
+- Поле модификации продукции параметрической техкарты `productionVariant` в [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya)
+- Ошибка [26116](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при изменении [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) нельзя изменить модификацию продукции в позиции производственного задания
+- Ошибка [26117](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) с параметрической техкартой должна быть указана модификация продукции
+- Ошибка [26118](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) с параметрической техкартой должна быть указана модификация продукции, которая принадлежит продукту техкарты
+- Ошибка [26119](#/errors#3-kody-oshibok-dlya-proizvodstvennogo-zadaniya) при создании [Позиции производственного задания](#/documents/productionTask#3-pozicii-proizvodstvennogo-zadaniya) нельзя указывать модификацию продукции с непараметрической техкартой
+
+### 21-07-2026
+**Добавлено**
+- Поддержка протокола change-handler в [Инвентаризации](#/documents/inventory#2-inventarizaciya)
+
+### 20-07-2026
+**Добавлены**
+- Коды ошибок [31001-31003](#/errors#3-kody-oshibok-dlya-valyut) при работе с валютами
+
+### 15-07-2026
+**Добавлено**
+- значение `REAPPLY` (Маркировка вне производства или импорта) для поля `emissionType` (Способ ввода в оборот) для сущности [Заказ кодов маркировки](#/documents/emissionorder#4-sposob-vvoda-v-oborot)
 
 ### 07-07-2026
 **Добавлено**
