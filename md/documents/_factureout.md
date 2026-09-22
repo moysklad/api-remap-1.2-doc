@@ -1202,6 +1202,15 @@ curl --compressed -X GET \
     }
   ],
   "stateContractId": "005674",
+  "consignee": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/e125ef4f-b685-11f1-0a83-233b00002a9d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=e125ef4f-b685-11f1-0a83-233b00002a9d"
+    }
+  },
   "demands": [
     {
       "meta": {
