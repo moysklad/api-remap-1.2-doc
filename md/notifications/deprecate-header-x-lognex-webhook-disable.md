@@ -1,7 +1,7 @@
 ---
 id: deprecate-header-x-lognex-webhook-disable
 type: warning
-title: Устаревший заголовок x-lognex-webhook-disable перестанет работать с 1 октября 2026 г.
+title: Устаревший заголовок X-Lognex-WebHook-Disable перестанет работать с 1 октября 2026 г.
 startDate: 2026-09-22
 ---
 
