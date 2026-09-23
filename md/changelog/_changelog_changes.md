@@ -2,6 +2,13 @@
 
 Список последних изменений в API Remap 1.2
 
+### 99-99-9999
+**Добавлено**
+- Поле `accrualDate` (Дата начисления) для документов [Исходящего платежа](#/documents/payment-out#3-ishodyashie-platezhi) и [Расходного ордера](#/documents/cashout#3-rashodnye-ordera)
+- Ошибка [22005](#/errors#3-kody-oshibok-dlya-platezhej) при создании или изменении [Исходящего платежа](#/documents/cashout#3-rashodnye-ordera) или [Расходного ордера](#/documents/payment-out#3-ishodyashie-platezhi) при указании даты начисления, если статья расходов не относится к операционным расходам или не участвует в учете прибыли
+- Ошибка [22006](#/errors#3-kody-oshibok-dlya-platezhej) при создании или изменении [Исходящего платежа](#/documents/cashout#3-rashodnye-ordera) или [Расходного ордера](#/documents/payment-out#3-ishodyashie-platezhi) на основании Возврата покупателя, если указывать статью расходов, отличную от возврата
+- Ошибка [22007](#/errors#3-kody-oshibok-dlya-platezhej) при создании или изменении [Исходящего платежа](#/documents/cashout#3-rashodnye-ordera) или [Расходного ордера](#/documents/payment-out#3-ishodyashie-platezhi) с датой начисления без активной опции "Финансы"
+
 ### 17-08-2026
 **Добавлено**
 - Новый тип уведомлений [Новое сообщение от менеджера отдела продаж](#/notification/notification-types-details#3-novoe-soobshenie-ot-menedzhera-otdela-prodazh)
