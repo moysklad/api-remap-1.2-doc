@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 99-99-9999
+**Добавлено**
+- Поле `archived` в [Статьи расходов](#/dictionaries/expenseitem#3-stati-rashodov)
+
 ### 17-08-2026
 **Добавлено**
 - Новый тип уведомлений [Новое сообщение от менеджера отдела продаж](#/notification/notification-types-details#3-novoe-soobshenie-ot-menedzhera-otdela-prodazh)
