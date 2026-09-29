@@ -51,19 +51,333 @@
 | **limit**  | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
 | **offset** | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
 
-<Пример запроса>
+> Получить список Транспортных упаковок
+
+```shell
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка пользовательских Транспортных упаковок.
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack",
+    "type": "aggregatepack",
+    "mediaType": "application/json",
+    "size": 1,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/a2da962a-bc05-11f1-0a82-14dc0000659f",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/metadata",
+        "type": "aggregatepack",
+        "mediaType": "application/json"
+      },
+      "id": "a2da962a-bc05-11f1-0a82-14dc0000659f",
+      "accountId": "41af84c3-b8d8-11f1-0a83-128600000017",
+      "owner": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/41de4dd4-b8d8-11f1-0a81-12b50000034f",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "type": "employee",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=41de4dd4-b8d8-11f1-0a81-12b50000034f"
+        }
+      },
+      "shared": true,
+      "group": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/41afe3e0-b8d8-11f1-0a83-128600000018",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "type": "group",
+          "mediaType": "application/json"
+        }
+      },
+      "updated": "2026-09-29 15:59:41.561",
+      "moment": "2026-09-29 15:59:00.000",
+      "level": 1,
+      "barcodes": [
+        {
+          "ean8": "00000000"
+        },
+        {
+          "ean13": "2000000000015"
+        },
+        {
+          "code128": "code128 barcode"
+        }
+      ],
+      "positions": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/a2da962a-bc05-11f1-0a82-14dc0000659f/positions",
+          "type": "aggregatepackposition",
+          "mediaType": "application/json",
+          "size": 1,
+          "limit": 1000,
+          "offset": 0
+        }
+      }
+    }
+  ]
+}
+```
 
 ### Создать Транспортную упаковку 
 
 Запрос на создание новой Транспортной упаковки. Для успешного создания Транспортной упаковки, обязательно должно быть передано поле **barcodes**.
 
-<Пример запроса>
+> Пример создания новой Транспортной упаковки.
 
-#### Массовое создание и редактирование Транспортных упаковок
+```shell
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
+      -d '{
+              "barcodes": [
+                  {
+                      "ean8": "00000000"
+                  },
+                  {
+                      "ean13": "2000000000015"
+                  },
+                  {
+                      "code128": "code128 barcode"
+                  }
+              ]
+          }'  
+```
+
+> Response 200
+Успешный запрос. Результат - массив JSON представлений созданной Транспортной упаковки.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/91850817-bc06-11f1-0a82-14dc000065ab",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/metadata",
+    "type": "aggregatepack",
+    "mediaType": "application/json"
+  },
+  "id": "91850817-bc06-11f1-0a82-14dc000065ab",
+  "accountId": "41af84c3-b8d8-11f1-0a83-128600000017",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/41de4dd4-b8d8-11f1-0a81-12b50000034f",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=41de4dd4-b8d8-11f1-0a81-12b50000034f"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/41afe3e0-b8d8-11f1-0a83-128600000018",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2026-09-29 16:06:22.229",
+  "moment": "2026-09-29 16:06:00.000",
+  "level": 1,
+  "barcodes": [
+    {
+      "ean8": "00000000"
+    },
+    {
+      "ean13": "2000000000015"
+    },
+    {
+      "code128": "code128 barcode"
+    }
+  ],
+  "positions": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/91850817-bc06-11f1-0a82-14dc000065ab/positions",
+      "type": "aggregatepackposition",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
+
+### Массовое создание и обновление Транспортных упаковок
 
 [Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Транспортных упаковок. В теле запроса нужно передать массив, содержащий JSON представления Транспортных упаковок, которые вы хотите создать или обновить. Обновляемые Транспортные упаковки должны содержать идентификатор в виде метаданных. 
 
-<Пример запроса>
+> Пример создания и обновления нескольких Транспортных упаковок
+
+```shell
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
+      -d '[
+            {
+                "barcodes": [
+                    {
+                        "ean8": "20000011"
+                    }
+                ],
+                "moment": "2026-09-29 16:00:00.000",
+                "group": {
+                    "meta": {
+                        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/41afe3e0-b8d8-11f1-0a83-128600000018",
+                        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                        "type": "group",
+                        "mediaType": "application/json"
+                    }
+                },
+                "owner": {
+                    "meta": {
+                        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/41de4dd4-b8d8-11f1-0a81-12b50000034f",
+                        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                        "type": "employee",
+                        "mediaType": "application/json"
+                    }
+                }
+            },
+            {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/91850817-bc06-11f1-0a82-14dc000065ab",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/metadata",
+                    "type": "aggregatepack",
+                    "mediaType": "application/json"
+                },
+                "barcodes": [
+                    {
+                        "ean8": "00000000"
+                    }
+                ],
+                "moment": "2026-09-29 16:06:00.000"
+            }
+        ]'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - массив JSON представлений созданных и обновленных Транспортных упаковок.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/f5598694-bc07-11f1-0a82-14dc000065b2",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/metadata",
+      "type": "aggregatepack",
+      "mediaType": "application/json"
+    },
+    "id": "f5598694-bc07-11f1-0a82-14dc000065b2",
+    "accountId": "41af84c3-b8d8-11f1-0a83-128600000017",
+    "owner": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/41de4dd4-b8d8-11f1-0a81-12b50000034f",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=41de4dd4-b8d8-11f1-0a81-12b50000034f"
+      }
+    },
+    "shared": true,
+    "group": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/41afe3e0-b8d8-11f1-0a83-128600000018",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2026-09-29 16:16:19.144",
+    "moment": "2026-09-29 16:00:00.000",
+    "level": 1,
+    "barcodes": [
+      {
+        "ean8": "20000011"
+      }
+    ],
+    "positions": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/f5598694-bc07-11f1-0a82-14dc000065b2/positions",
+        "type": "aggregatepackposition",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    }
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/91850817-bc06-11f1-0a82-14dc000065ab",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/metadata",
+      "type": "aggregatepack",
+      "mediaType": "application/json"
+    },
+    "id": "91850817-bc06-11f1-0a82-14dc000065ab",
+    "accountId": "41af84c3-b8d8-11f1-0a83-128600000017",
+    "owner": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/41de4dd4-b8d8-11f1-0a81-12b50000034f",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=41de4dd4-b8d8-11f1-0a81-12b50000034f"
+      }
+    },
+    "shared": true,
+    "group": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/41afe3e0-b8d8-11f1-0a83-128600000018",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type": "group",
+        "mediaType": "application/json"
+      }
+    },
+    "updated": "2026-09-29 16:06:22.229",
+    "moment": "2026-09-29 16:06:00.000",
+    "level": 1,
+    "barcodes": [
+      {
+        "ean8": "00000000"
+      }
+    ],
+    "positions": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/91850817-bc06-11f1-0a82-14dc000065ab/positions",
+        "type": "aggregatepackposition",
+        "mediaType": "application/json",
+        "size": 0,
+        "limit": 1000,
+        "offset": 0
+      }
+    }
+  }
+]
+```
 
 ### Удалить Транспортную упаковку
 
@@ -71,15 +385,64 @@
 
 | Параметр | Описание                                                                                      |
 |:---------|:----------------------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Транспортной упаковки. |
+| **id**   | `string` (required) *Example: 9497f3a3-bc09-11f1-0a82-14dc000065bb* id Транспортной упаковки. |
 
-<Пример запроса>
+> Удалить Транспортную упаковку
 
-#### Массовое удаление Транспортных упаковок 
+```shell
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос.
+
+### Массовое удаление Транспортных упаковок 
 
 В теле запроса нужно передать массив, содержащий JSON метаданных Транспортных упаковок, которые вы хотите удалить.
 
-<Пример запроса>
+> Запрос на массовое удаление Транспортных упаковок.
+
+```shell
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -d '[
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/91850817-bc06-11f1-0a82-14dc000065ab",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/metadata",
+                "type": "aggregatepack",
+                "mediaType": "application/json"
+            }
+        },
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/f5598694-bc07-11f1-0a82-14dc000065b2",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/metadata",
+                "type": "aggregatepack",
+                "mediaType": "application/json"
+            }
+        }
+    ]'
+```        
+
+> Успешный запрос. Результат - JSON информация об удалении Транспортных упаковок.
+
+```json
+[
+  {
+    "info": "Сущность 'aggregatepack' с UUID: 91850817-bc06-11f1-0a82-14dc000065ab успешно удалена"
+  },
+  {
+    "info": "Сущность 'aggregatepack' с UUID: f5598694-bc07-11f1-0a82-14dc000065b2 успешно удалена"
+  }
+]
+```
 
 ### Получить Транспортную упаковку 
 
@@ -87,9 +450,68 @@
 
 | Параметр | Описание                                                                                      |
 |:---------|:----------------------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Транспортной упаковки. |
+| **id**   | `string` (required) *Example: 9497f3a3-bc09-11f1-0a82-14dc000065bb* id Транспортной упаковки. |
 
-<Пример запроса>
+> Запрос на получение Транспортных упаковок.
+
+```shell
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Транспортной упаковки.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/metadata",
+    "type": "aggregatepack",
+    "mediaType": "application/json"
+  },
+  "id": "9497f3a3-bc09-11f1-0a82-14dc000065bb",
+  "accountId": "41af84c3-b8d8-11f1-0a83-128600000017",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/41de4dd4-b8d8-11f1-0a81-12b50000034f",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=41de4dd4-b8d8-11f1-0a81-12b50000034f"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/41afe3e0-b8d8-11f1-0a83-128600000018",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2026-09-29 16:27:55.852",
+  "moment": "2026-09-29 16:00:00.000",
+  "level": 1,
+  "barcodes": [
+    {
+      "ean8": "00000000"
+    }
+  ],
+  "positions": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions",
+      "type": "aggregatepackposition",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
 
 ### Изменить Транспортную упаковку 
 
@@ -97,11 +519,95 @@
 
 | Параметр | Описание                                                                                      |
 |:---------|:----------------------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Транспортной упаковки. |
+| **id**   | `string` (required) *Example: 9497f3a3-bc09-11f1-0a82-14dc000065bb* id Транспортной упаковки. |
 
-Запрос на обновление партии. Обновить можно только те поля, что не помечены `Только для чтения`
+Запрос на обновление Транспортной упаковки. Обновить можно только те поля, что не помечены `Только для чтения`
 
-<Пример запроса>
+> Пример запроса на обновление Транспортной упаковки
+
+ ```shell
+   curl --compressed -X PUT \
+     "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb" \
+     -H "Authorization: Basic <Credentials>" \
+     -H "Accept-Encoding: gzip" \
+     -H "Content-Type: application/json" \
+     -d '{
+          "barcodes": [
+              {
+                  "ean8": "00000000"
+              }
+          ],
+          "shared": true,
+          "moment": "2026-09-29 16:00:00.000",
+          "group": {
+              "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/41afe3e0-b8d8-11f1-0a83-128600000018",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                  "type": "group",
+                  "mediaType": "application/json"
+              }
+          },
+          "owner": {
+              "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/41de4dd4-b8d8-11f1-0a81-12b50000034f",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                  "type": "employee",
+                  "mediaType": "application/json"
+              }
+          }
+      }  
+ ```
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление Транспортной упаковки.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/metadata",
+    "type": "aggregatepack",
+    "mediaType": "application/json"
+  },
+  "id": "9497f3a3-bc09-11f1-0a82-14dc000065bb",
+  "accountId": "41af84c3-b8d8-11f1-0a83-128600000017",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/41de4dd4-b8d8-11f1-0a81-12b50000034f",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=41de4dd4-b8d8-11f1-0a81-12b50000034f"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/41afe3e0-b8d8-11f1-0a83-128600000018",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2026-09-29 16:27:55.852",
+  "moment": "2026-09-29 16:00:00.000",
+  "level": 1,
+  "barcodes": [
+    {
+      "ean8": "00000000"
+    }
+  ],
+  "positions": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions",
+      "type": "aggregatepackposition",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
 
 ### Управление позициями Транспортной упаковки
 
@@ -121,12 +627,65 @@
 
 | Параметр   | Описание                                                                                                                               |
 |------------|:---------------------------------------------------------------------------------------------------------------------------------------|
-| **id**     | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Транспортной упаковки.                                          |
+| **id**     | `string` (required) *Example: 9497f3a3-bc09-11f1-0a82-14dc000065bb* id Транспортной упаковки.                                          |
 | **limit**  | `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`. |
 | **offset** | `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.                                                 |
 
-<Пример запроса>
+> Запрос на получение списка всех позиций данной Транспортной упаковки.
 
+```shell
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка позиций отдельной Транспортной упаковки
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions",
+    "type": "aggregatepackposition",
+    "mediaType": "application/json",
+    "size": 1,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions/d48cab60-bc0b-11f1-0a82-14dc000065c0",
+        "type": "aggregatepackposition",
+        "mediaType": "application/json"
+      },
+      "id": "d48cab60-bc0b-11f1-0a82-14dc000065c0",
+      "accountId": "41af84c3-b8d8-11f1-0a83-128600000017",
+      "assortment": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/001e6a8f-b8dc-11f1-0a82-14dc00003d64",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=001e6367-b8dc-11f1-0a82-14dc00003d62"
+        }
+      },
+      "quantity": 1.0
+    }
+  ]
+}
+```
 ### Позиция Транспортной упаковки
 
 ### Получить позицию
@@ -135,28 +694,214 @@
 
 | Параметр       | Описание                                                                                              |
 |:---------------|:------------------------------------------------------------------------------------------------------|
-| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Транспортной упаковки.         |
-| **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Транспортной упаковки. |
+| **id**         | `string` (required) *Example: 9497f3a3-bc09-11f1-0a82-14dc000065bb* id Транспортной упаковки.         |
+| **positionID** | `string` (required) *Example: d48cab60-bc0b-11f1-0a82-14dc000065c0* id позиции Транспортной упаковки. |
 
-<Пример запроса>
+> Запрос на получение отдельной позиции Транспортной упаковки с указанным id.
+
+```shell
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions/d48cab60-bc0b-11f1-0a82-14dc000065c0" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление отдельной позиции Транспортной упаковки.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions/d48cab60-bc0b-11f1-0a82-14dc000065c0",
+    "type": "aggregatepackposition",
+    "mediaType": "application/json"
+  },
+  "id": "d48cab60-bc0b-11f1-0a82-14dc000065c0",
+  "accountId": "41af84c3-b8d8-11f1-0a83-128600000017",
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/001e6a8f-b8dc-11f1-0a82-14dc00003d64",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=001e6367-b8dc-11f1-0a82-14dc00003d62"
+    }
+  },
+  "quantity": 1.0
+}
+```
 
 ### Создать позицию
 
 Запрос на создание новой позиции в Транспортной упаковке. Для успешного создания необходимо в теле запроса указать следующие поля: 
 
 + **assortment** - Ссылка на товар/партию/модификацию, которую представляет собой позиция.
-  Подробнее об этом поле можно прочитать в описании [позиции Транспортной упаковки](#/documents/handling_unit#4-pozicii-zakaza-kodov-markirovki) <ссылка>
+  Подробнее об этом поле можно прочитать в описании [позиции Транспортной упаковки](#/documents/handling_unit#4-pozicii-zakaza-kodov-markirovki) <ссылка>!!!!!!
 + **quantity** - Количество указанной позиции. Должно быть положительным, иначе возникнет ошибка. Одновременно можно создать как одну, так и несколько позиций Транспортной упаковки. Все созданные данным запросом позиции будут добавлены к уже существующим.
 
 **Параметры**
 
 | Параметр | Описание                                                                                      |
 |:---------|:----------------------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Транспортной упаковки. |
+| **id**   | `string` (required) *Example: 9497f3a3-bc09-11f1-0a82-14dc000065bb* id Транспортной упаковки. |
 
-<Пример создания 1 позиции>
+> Пример создания одной позиции в Транспортной упаковке.
 
-<Пример создания нескольких позиций>
+```shell
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
+      -d '{
+            "assortment": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/001e6a8f-b8dc-11f1-0a82-14dc00003d64",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                    "type": "product",
+                    "mediaType": "application/json"
+                }
+            },
+            "quantity": 1.0
+        }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной позиции отдельной Транспортной упаковки.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions/e3a7eea7-bc0c-11f1-0a82-14dc000065c3",
+      "type": "aggregatepackposition",
+      "mediaType": "application/json"
+    },
+    "id": "e3a7eea7-bc0c-11f1-0a82-14dc000065c3",
+    "accountId": "41af84c3-b8d8-11f1-0a83-128600000017",
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/001e6a8f-b8dc-11f1-0a82-14dc00003d64",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=001e6367-b8dc-11f1-0a82-14dc00003d62"
+      }
+    },
+    "quantity": 1.0
+  }
+]
+```
+
+> Пример создания сразу нескольких позиций в Транспортной упаковки.
+
+```shell
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
+      -d '[
+            {
+                "assortment": {
+                    "meta": {
+                        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/001e6a8f-b8dc-11f1-0a82-14dc00003d64",
+                        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                        "type": "product",
+                        "mediaType": "application/json"
+                    }
+                },
+                "quantity": 1.0
+            },
+            {
+                "assortment": {
+                    "meta": {
+                        "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/62d0f26e-bc0d-11f1-0a81-12b500001dc6",
+                        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                        "type": "variant",
+                        "mediaType": "application/json"
+                    }
+                },
+                "quantity": 2.0
+            },
+            {
+                "assortment": {
+                    "meta": {
+                        "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/62d3eaee-bc0d-11f1-0a81-12b500001dd0",
+                        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                        "type": "variant",
+                        "mediaType": "application/json"
+                    }
+                },
+                "quantity": 3.0
+            }
+        ]'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка созданных позиций отдельной Транспортной упаковки.
+
+```json
+[
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions/8f3947c7-bc0d-11f1-0a82-14dc000065c6",
+      "type": "aggregatepackposition",
+      "mediaType": "application/json"
+    },
+    "id": "8f3947c7-bc0d-11f1-0a82-14dc000065c6",
+    "accountId": "41af84c3-b8d8-11f1-0a83-128600000017",
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/001e6a8f-b8dc-11f1-0a82-14dc00003d64",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=001e6367-b8dc-11f1-0a82-14dc00003d62"
+      }
+    },
+    "quantity": 1.0
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions/8f394e25-bc0d-11f1-0a82-14dc000065c7",
+      "type": "aggregatepackposition",
+      "mediaType": "application/json"
+    },
+    "id": "8f394e25-bc0d-11f1-0a82-14dc000065c7",
+    "accountId": "41af84c3-b8d8-11f1-0a83-128600000017",
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/62d0f26e-bc0d-11f1-0a81-12b500001dc6",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+        "type": "variant",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=62d0ea00-bc0d-11f1-0a81-12b500001dc4"
+      }
+    },
+    "quantity": 2.0
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions/8f39521b-bc0d-11f1-0a82-14dc000065c8",
+      "type": "aggregatepackposition",
+      "mediaType": "application/json"
+    },
+    "id": "8f39521b-bc0d-11f1-0a82-14dc000065c8",
+    "accountId": "41af84c3-b8d8-11f1-0a83-128600000017",
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/62d3eaee-bc0d-11f1-0a81-12b500001dd0",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+        "type": "variant",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=62d3e3da-bc0d-11f1-0a81-12b500001dce"
+      }
+    },
+    "quantity": 3.0
+  }
+]
+```
 
 ### Изменить позицию
 
@@ -166,10 +911,54 @@
 
 | Параметр       | Описание                                                                                              |
 |:---------------|:------------------------------------------------------------------------------------------------------|
-| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Транспортной упаковки.         |
-| **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Транспортной упаковки. |
+| **id**         | `string` (required) *Example: 9497f3a3-bc09-11f1-0a82-14dc000065bb* id Транспортной упаковки.         |
+| **positionID** | `string` (required) *Example: e3a7eea7-bc0c-11f1-0a82-14dc000065c3* id позиции Транспортной упаковки. |
 
-<пример запроса>
+> Пример запроса на обновление отдельной позиции в Транспортной упаковке.
+
+```shell
+  curl --compressed -X PUT \
+    "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions/e3a7eea7-bc0c-11f1-0a82-14dc000065c3" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
+      -d '{
+            "quantity": 2,
+            "assortment": {
+              "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/62d3eaee-bc0d-11f1-0a81-12b500001dd0",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+                  "type": "variant",
+                  "mediaType": "application/json"
+              }
+            }
+          }'  
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление обновленной позиции Транспортной упаковки.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions/e3a7eea7-bc0c-11f1-0a82-14dc000065c3",
+    "type": "aggregatepackposition",
+    "mediaType": "application/json"
+  },
+  "id": "e3a7eea7-bc0c-11f1-0a82-14dc000065c3",
+  "accountId": "41af84c3-b8d8-11f1-0a83-128600000017",
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/variant/62d3eaee-bc0d-11f1-0a81-12b500001dd0",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/variant/metadata",
+      "type": "variant",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#feature/edit?id=62d3e3da-bc0d-11f1-0a81-12b500001dce"
+    }
+  },
+  "quantity": 2.0
+}
+```
 
 ### Удалить позицию
 
@@ -177,10 +966,22 @@
 
 | Параметр       | Описание                                                                                              |
 |:---------------|:------------------------------------------------------------------------------------------------------|
-| **id**         | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Транспортной упаковки.         |
-| **positionID** | `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Транспортной упаковки. |
+| **id**         | `string` (required) *Example: 9497f3a3-bc09-11f1-0a82-14dc000065bb* id Транспортной упаковки.         |
+| **positionID** | `string` (required) *Example: 001e6a8f-b8dc-11f1-0a82-14dc00003d64* id позиции Транспортной упаковки. |
 
-<пример запроса>
+> Запрос на удаление позиции Транспортной упаковки с указанным id.
+
+```shell
+curl --compressed -X DELETE \
+  "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions/001e6a8f-b8dc-11f1-0a82-14dc00003d64" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json) Успешное удаление позиции Транспортной упаковки.
+```json
+<Response body is empty>
+```
 
 ### Массовое удаление позиций
 
@@ -188,6 +989,35 @@
 
 | Параметр | Описание                                                                                      |
 |:---------|:----------------------------------------------------------------------------------------------|
-| **id**   | `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Транспортной упаковки. |
+| **id**   | `string` (required) *Example: 9497f3a3-bc09-11f1-0a82-14dc000065bb* id Транспортной упаковки. |
 
-<пример запроса>
+> Запрос на массовое удаление позиций Транспортной упаковки.
+
+```shell
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions/delete" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -d '[
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions/001e6a8f-b8dc-11f1-0a82-14dc00003d64",
+            "type": "aggregatepackposition",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions/8f394e25-bc0d-11f1-0a82-14dc000065c7",
+            "type": "aggregatepackposition",
+            "mediaType": "application/json"
+          }
+        }
+      ]'  
+```
+
+> Response 200 (application/json) Успешное удаление позиций Транспортной упаковки.
+```json
+<Response body is empty>
+```
