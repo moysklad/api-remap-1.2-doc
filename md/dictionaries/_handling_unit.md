@@ -6,20 +6,120 @@
 
 #### Атрибуты сущности
 
-| Название  | Тип           | Фильтрация                 | Описание                                                                                                                                                                   |
-|-----------|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| accountId | UUID          | `=` `!=`                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                       |
-| barcodes  | Array(Object) | `=` `!=` `~` `~=` `=~`     | Штрихкоды Транспортных упаковок. Для фильтрации по полю необходимо указывать его в единственном числе **barcode**<br>`+Обязательное при ответе` `+Необходимо при создании` |
-| childList | Meta          |                            | Метаданные вложенных Транспортных упаковок                                                                                                                                 |
-| group     | Meta          | `=` `!=`                   | Метаданные отдела сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                       |
-| id        | UUID          | `=` `!=`                   | ID Транспортной упаковки<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                |
-| level     | Int           | `=` `!=` `<` `>` `<=` `>=` | Максимальный уровень вложенности, на котором находится упаковка<br>`+Обязательное при ответе` `+Только для чтения`                                                         |
-| meta      | Meta          |                            | Метаданные Транспортной упаковки<br>`+Обязательное при ответе`                                                                                                             |
-| moment    | DateTime      | `=` `!=` `<` `>` `<=` `>=` | Дата Транспортной упаковки<br>`+Обязательное при ответе`                                                                                                                   |
-| owner     | Meta          | `=` `!=`                   | Метаданные владельца (Сотрудника)<br>`+Expand`                                                                                                                             |
-| positions | MetaArray     |                            | Метаданные позиций Транспортной упаковки<br>`+Обязательное при ответе` `+Expand`                                                                                           |
-| shared    | Boolean       | `=` `!=`                   | Общий доступ                                                                                                                                                               |
-| updated   | DateTime      | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Только для чтения`                                                                                   |
+| Название     | Тип           | Фильтрация                 | Описание                                                                                                                                                                   |
+|--------------|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| accountId    | UUID          | `=` `!=`                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                       |
+| barcodes     | Array(Object) | `=` `!=` `~` `~=` `=~`     | Штрихкоды Транспортных упаковок. Для фильтрации по полю необходимо указывать его в единственном числе **barcode**<br>`+Обязательное при ответе` `+Необходимо при создании` |
+| childrenList | Array(Meta)   |                            | Метаданные вложенных Транспортных упаковок<br>Поле доступно только при использовании заголовка `X-Lognex-Remap-Beta-Feature: aggregatePackChildrenList`.<br>`+Expand`      |
+| group        | Meta          | `=` `!=`                   | Метаданные отдела сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                                       |
+| id           | UUID          | `=` `!=`                   | ID Транспортной упаковки<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                |
+| level        | Int           | `=` `!=` `<` `>` `<=` `>=` | Максимальный уровень вложенности, на котором находится упаковка<br>`+Обязательное при ответе` `+Только для чтения`                                                         |
+| meta         | Meta          |                            | Метаданные Транспортной упаковки<br>`+Обязательное при ответе`                                                                                                             |
+| moment       | DateTime      | `=` `!=` `<` `>` `<=` `>=` | Дата Транспортной упаковки<br>`+Обязательное при ответе`                                                                                                                   |
+| owner        | Meta          | `=` `!=`                   | Метаданные владельца (Сотрудника)<br>`+Expand`                                                                                                                             |
+| positions    | MetaArray     |                            | Метаданные позиций Транспортной упаковки<br>`+Обязательное при ответе` `+Expand`                                                                                           |
+| shared       | Boolean       | `=` `!=`                   | Общий доступ                                                                                                                                                               |
+| updated      | DateTime      | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Только для чтения`                                                                                   |
+
+#### Вложенные Транспортные упаковки
+
+Для получения и передачи поля **childrenList** необходимо передать заголовок `X-Lognex-Remap-Beta-Feature: aggregatePackChildrenList`.
+
+Если заголовок не передан:
+
++ поле **childrenList** не возвращается в ответе.
++ поле **childrenList**, переданное в теле запроса, не обрабатывается.
+
+> Пример создания Транспортной упаковки с вложенной Транспортной упаковкой.
+
+```shell
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "X-Lognex-Remap-Beta-Feature: aggregatePackChildrenList" \
+    -H "Content-Type: application/json" \
+      -d '{
+            "barcodes": [
+                {
+                    "ean8": "00000000"
+                }
+            ],
+            "childrenList": [
+                {
+                    "meta": {
+                        "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/247d9890-bcd6-11f1-0a83-006800000000",
+                        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/metadata",
+                        "type": "aggregatepack",
+                        "mediaType": "application/json"
+                    }
+                }
+            ]
+        }'  
+```
+
+> Response 200
+Успешный запрос. Результат - JSON представление созданной Транспортной упаковки.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/c7ddac29-bcd6-11f1-0a83-00680000000c",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/metadata",
+    "type": "aggregatepack",
+    "mediaType": "application/json"
+  },
+  "id": "c7ddac29-bcd6-11f1-0a83-00680000000c",
+  "accountId": "04d9a089-bcd6-11f1-0a80-24d80000000c",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/050ee558-bcd6-11f1-0a83-049d000001bf",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=050ee558-bcd6-11f1-0a83-049d000001bf"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/04da0849-bcd6-11f1-0a80-24d80000000d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2026-09-30 16:56:48.686",
+  "moment": "2026-09-30 16:56:00.000",
+  "level": 1,
+  "barcodes": [
+    {
+      "ean8": "00000000"
+    }
+  ],
+  "positions": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/c7ddac29-bcd6-11f1-0a83-00680000000c/positions",
+      "type": "aggregatepackposition",
+      "mediaType": "application/json",
+      "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  },
+  "childrenList": [
+    {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/247d9890-bcd6-11f1-0a83-006800000000",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/metadata",
+        "type": "aggregatepack",
+        "mediaType": "application/json"
+      }
+    }
+  ]
+}
+```
+
 
 ### Позиции Транспортной упаковки
 
