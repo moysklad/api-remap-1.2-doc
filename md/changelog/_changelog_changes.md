@@ -2,6 +2,12 @@
 
 Список последних изменений в API Remap 1.2
 
+### 99-99-9999
+**Добавлено**
+- Поле `payments` в [Начисление зарплаты](#/documents/payroll#2-nachisleniya-zarplaty) для связи с документами [Расходного ордера](#/documents/cashout#2-rashodnyj-order) и [Исходящего платежа](#/documents/payment-out#2-ishodyashij-platezh)
+- Новый тип: Начисление зарплаты в массиве связей `operations` в [Расходном ордере](#/documents/cashout#2-rashodnyj-order)
+- Новый тип: Начисление зарплаты в массиве связей `operations` в [Исходящем платеже](#/documents/payment-out#2-ishodyashij-platezh)
+
 ### 17-08-2026
 **Добавлено**
 - Новый тип уведомлений [Новое сообщение от менеджера отдела продаж](#/notification/notification-types-details#3-novoe-soobshenie-ot-menedzhera-otdela-prodazh)
