@@ -4,40 +4,41 @@
 
 #### Атрибуты сущности
 
-| Название           | Тип                                                       | Фильтрация                                                                                                                                        | Описание                                                                                                                                            |
-| ------------------ |:----------------------------------------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------ |:----------------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**      | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                |
-| **agent**          | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные контрагента<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                           |
-| **applicable**     | Boolean                                                   | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе`                                                                                                  |
-| **attributes**     | Array(Object)                                             | [Операторы доп. полей](#/general#4-filtraciya-po-dopolnitelnym-polyam) | Коллекция метаданных доп. полей. [Поля объекта](#/general#3-rabota-s-dopolnitelnymi-polyami)                                                        |
-| **code**           | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Код Расходного ордера                                                                                                                               |
-| **contract**       | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные договора<br>`+Expand`                                                                                                                    |
-| **created**        | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                    |
-| **deleted**        | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Расходного ордера<br>`+Только для чтения`                                                                                |
-| **description**    | String(4096)                                              | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Расходного ордера                                                                                                                       |
-| **expenseItem**    | [Meta](#/general#3-metadannye)                            |                                                                                                                                                   | Метаданные Статьи расходов<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                       |
-| **externalCode**   | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Расходного ордера<br>`+Обязательное при ответе`                                                                                         |
-| **files**          | MetaArray                                                 |                                                                                                                                                   | Метаданные массива [Файлов](#/dictionaries/files#2-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`            |
-| **group**          | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                            |
-| **noClosingDocs**  | Boolean                                                   |                                                                                                                                                   | Признак "Без закрывающих документов". Нельзя одновременно передать **noClosingDocs = true** и непустой **operations**<br>`+Обязательное при ответе` |
-| **id**             | UUID                                                      | `=` `!=`                                                                                                                                          | ID Расходного ордера<br>`+Обязательное при ответе` `+Только для чтения`                                                                             |
-| **meta**           | [Meta](#/general#3-metadannye)                            |                                                                                                                                                   | Метаданные Расходного ордера<br>`+Обязательное при ответе`                                                                                          |
-| **moment**         | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе`                                                                                                        |
-| **name**           | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Расходного ордера<br>`+Обязательное при ответе`                                                                                        |
-| **organization**   | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                |
-| **owner**          | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                                   |
-| **paymentPurpose** | String(255)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Основание<br>`+Обязательное при ответе`                                                                                                             |
-| **printed**        | Boolean                                                   | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                            |
-| **project**        | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные проекта<br>`+Expand`                                                                                                                     |
-| **published**      | Boolean                                                   | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                          |
-| **rate**           | Object                                                    |                                                                                                                                                   | Валюта. [Подробнее тут](#/documents/common-info#3-valyuta-v-dokumentah)<br>`+Обязательное при ответе`                                               |
-| **salesChannel**   | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные канала продаж<br>`+Expand`                                                                                                               |
-| **shared**         | Boolean                                                   | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                                          |
-| **state**          | [Meta](#/general#3-metadannye)                            | `=` `!=`                                                                                                                                          | Метаданные статуса Расходного ордера<br>`+Expand`                                                                                                   |
-| **sum**            | Float                                                     | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма расходного ордера в установленной валюте<br>`+Обязательное при ответе`                                                                        |
-| **syncId**         | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                         |
-| **updated**        | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Расходного ордера<br>`+Обязательное при ответе` `+Только для чтения`                                                   |
-| **vatSum**         | Float                                                     |                                                                                                                                                   | Сумма НДС<br>`+Обязательное при ответе`                                                                                                             |
+| Название           | Тип                            | Фильтрация                                                             | Описание                                                                                                                                            |
+|--------------------|:-------------------------------|:-----------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**      | UUID                           | `=` `!=`                                                               | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                |
+| **agent**          | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные контрагента<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                           |
+| **applicable**     | Boolean                        | `=` `!=`                                                               | Отметка о проведении<br>`+Обязательное при ответе`                                                                                                  |
+| **attributes**     | Array(Object)                  | [Операторы доп. полей](#/general#4-filtraciya-po-dopolnitelnym-polyam) | Коллекция метаданных доп. полей. [Поля объекта](#/general#3-rabota-s-dopolnitelnymi-polyami)                                                        |
+| **code**           | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Код Расходного ордера                                                                                                                               |
+| **contract**       | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные договора<br>`+Expand`                                                                                                                    |
+| **created**        | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                    |
+| **deleted**        | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Момент последнего удаления Расходного ордера<br>`+Только для чтения`                                                                                |
+| **description**    | String(4096)                   | `=` `!=` `~` `~=` `=~`                                                 | Комментарий Расходного ордера                                                                                                                       |
+| **expenseItem**    | [Meta](#/general#3-metadannye) |                                                                        | Метаданные Статьи расходов<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                       |
+| **externalCode**   | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Внешний код Расходного ордера<br>`+Обязательное при ответе`                                                                                         |
+| **files**          | MetaArray                      |                                                                        | Метаданные массива [Файлов](#/dictionaries/files#2-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`            |
+| **group**          | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                            |
+| **noClosingDocs**  | Boolean                        |                                                                        | Признак "Без закрывающих документов". Нельзя одновременно передать **noClosingDocs = true** и непустой **operations**<br>`+Обязательное при ответе` |
+| **id**             | UUID                           | `=` `!=`                                                               | ID Расходного ордера<br>`+Обязательное при ответе` `+Только для чтения`                                                                             |
+| **meta**           | [Meta](#/general#3-metadannye) |                                                                        | Метаданные Расходного ордера<br>`+Обязательное при ответе`                                                                                          |
+| **moment**         | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Дата документа<br>`+Обязательное при ответе`                                                                                                        |
+| **name**           | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Наименование Расходного ордера<br>`+Обязательное при ответе`                                                                                        |
+| **organization**   | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                |
+| **owner**          | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Владелец (Сотрудник)<br>`+Expand`                                                                                                                   |
+| **paymentPurpose** | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Основание<br>`+Обязательное при ответе`                                                                                                             |
+| **printed**        | Boolean                        | `=` `!=`                                                               | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                            |
+| **project**        | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные проекта<br>`+Expand`                                                                                                                     |
+| **published**      | Boolean                        | `=` `!=`                                                               | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                          |
+| **rate**           | Object                         |                                                                        | Валюта. [Подробнее тут](#/documents/common-info#3-valyuta-v-dokumentah)<br>`+Обязательное при ответе`                                               |
+| **salesChannel**   | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные канала продаж<br>`+Expand`                                                                                                               |
+| **shared**         | Boolean                        | `=` `!=`                                                               | Общий доступ<br>`+Обязательное при ответе`                                                                                                          |
+| **state**          | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные статуса Расходного ордера<br>`+Expand`                                                                                                   |
+| **sum**            | Float                          | `=` `!=` `<` `>` `<=` `>=`                                             | Сумма расходного ордера в установленной валюте<br>`+Обязательное при ответе`                                                                        |
+| **syncId**         | UUID                           | `=` `!=`                                                               | ID синхронизации. После заполнения недоступен для изменения                                                                                         |
+| **updated**        | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Момент последнего обновления Расходного ордера<br>`+Обязательное при ответе` `+Только для чтения`                                                   |
+| **vatSum**         | Float                          |                                                                        | Сумма НДС<br>`+Обязательное при ответе`                                                                                                             |
+| **accrualDate**    | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Дата начисления                                                                                                                                     |
 
 
 #### Связи с другими документами
@@ -201,6 +202,7 @@ curl --compressed -X GET \
         }
       ],
       "paymentPurpose": "Оплата еще одной приемки",
+      "accrualDate": "2026-09-23 00:29:14.514",
       "expenseItem": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
@@ -309,6 +311,7 @@ curl --compressed -X GET \
         }
       ],
       "paymentPurpose": "Оплата еще одной приемки",
+      "accrualDate": "2026-09-23 00:29:14.514",
       "expenseItem": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
@@ -429,6 +432,7 @@ curl --compressed -X GET \
         }
       ],
       "paymentPurpose": "Оплата приемки",
+      "accrualDate": "2026-09-23 00:29:14.514",
       "expenseItem": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/82031d62-2e58-11e6-ab5c-d8cb8a84bae5",
@@ -478,6 +482,7 @@ curl --compressed -X GET \
                 "mediaType": "application/json"
               }
             },
+            "accrualDate": "2026-09-23 00:29:14.514",
             "expenseItem": {
               "meta": {
                 "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
@@ -550,6 +555,7 @@ curl --compressed -X GET \
       "mediaType": "application/json"
     }
   },
+  "accrualDate": "2026-09-23 00:29:14.514",
   "expenseItem": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
@@ -593,6 +599,7 @@ curl --compressed -X GET \
                   "mediaType": "application/json"
                 }
               },
+              "accrualDate": "2026-09-23 00:29:14.514",
               "expenseItem": {
                 "meta": {
                   "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
@@ -618,6 +625,7 @@ curl --compressed -X GET \
               "applicable": true,
               "sum": 25190,
               "paymentPurpose": "Оплата нового заказа поставщику",
+              "accrualDate": "2026-09-23 00:29:14.514",
               "expenseItem": {
                 "meta": {
                   "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be23a18-0479-11e5-a260-448a5b426e7e",
@@ -718,6 +726,7 @@ curl --compressed -X GET \
         "mediaType": "application/json"
       }
     },
+    "accrualDate": "2026-09-23 00:29:14.514",
     "expenseItem": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
@@ -826,6 +835,7 @@ curl --compressed -X GET \
       }
     ],
     "paymentPurpose": "Оплата нового заказа поставщику",
+    "accrualDate": "2026-09-23 00:29:14.514",
     "expenseItem": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be23a18-0479-11e5-a260-448a5b426e7e",
@@ -1083,6 +1093,7 @@ curl --compressed -X GET \
       "mediaType": "application/json"
     }
   },
+  "accrualDate": "2026-09-23 00:29:14.514",
   "expenseItem": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
@@ -1167,6 +1178,7 @@ curl --compressed -X GET \
       "linkedSum": 0
     }
   ],
+  "accrualDate": "2026-09-23 00:29:14.514",
   "expenseItem": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
@@ -1248,6 +1260,7 @@ curl --compressed -X GET \
       "linkedSum": 0
     }
   ],
+  "accrualDate": "2026-09-23 00:29:14.514",
   "expenseItem": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2395a-0479-11e5-baee-448a5b426e7e",
@@ -1329,6 +1342,7 @@ curl --compressed -X GET \
       "linkedSum": 0
     }
   ],
+  "accrualDate": "2026-09-23 00:29:14.514",
   "expenseItem": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
@@ -1410,6 +1424,7 @@ curl --compressed -X GET \
       "linkedSum": 0
     }
   ],
+  "accrualDate": "2026-09-23 00:29:14.514",
   "expenseItem": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
@@ -1525,6 +1540,7 @@ curl --compressed -X GET \
       "linkedSum": 10200850
     }
   ],
+  "accrualDate": "2026-09-23 00:29:14.514",
   "expenseItem": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
@@ -1659,6 +1675,7 @@ curl --compressed -X GET \
     }
   ],
   "paymentPurpose": "Оплата приемки",
+  "accrualDate": "2026-09-23 00:29:14.514",
   "expenseItem": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/82031d62-2e58-11e6-ab5c-d8cb8a84bae5",
@@ -1715,6 +1732,7 @@ curl --compressed -X GET \
             "applicable": true,
             "sum": 25190,
             "paymentPurpose": "Оплата нового заказа поставщику",
+            "accrualDate": "2026-09-23 00:29:14.514",
             "expenseItem": {
               "meta": {
                 "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be23a18-0479-11e5-a260-448a5b426e7e",
@@ -1855,6 +1873,7 @@ curl --compressed -X GET \
     }
   ],
   "paymentPurpose": "Оплата нового заказа поставщику",
+  "accrualDate": "2026-09-23 00:29:14.514",
   "expenseItem": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be23a18-0479-11e5-a260-448a5b426e7e",
