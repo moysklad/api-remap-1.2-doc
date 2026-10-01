@@ -4,10 +4,10 @@
 
 ### 30-09-2026
 **Добавлено**
-- Сущность [Транспортная упаковка](#/dictionaries/ссылка)
-- Ошибки для [штрихкодов](#/errors)
-- Ошибки для [серийных номеров](#/errors)
-- Ошибки для [транспортных упаковок](#/errors)
+- Сущность [Транспортная упаковка](#/documents/internalOrder#2-vnutrennij-zakaz)
+- Ошибка [78000](#/errors#3-kody-oshibok-dlya-tehnologicheskih-kart)
+- Ошибки [79000-79004](#/errors#3-kody-oshibok-dlya-tehnologicheskih-kart)
+- Ошибки [80000-80005](#/errors#3-kody-oshibok-dlya-tehnologicheskih-kart)
 
 ### 17-08-2026
 **Добавлено**
