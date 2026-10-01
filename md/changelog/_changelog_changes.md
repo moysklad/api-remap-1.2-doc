@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 01-10-2026
+**Изменено**
+- Услуги можно использовать в качестве продукции в [Техкартах](#/dictionaries/processingplan#2-tehnologicheskaya-karta), [Техоперациях](#/documents/processing#2-tehnologicheskaya-operaciya), [Производственных заданиях](#/documents/productionTask#2-proizvodstvennoe-zadanie) и [Выполнениях этапа производства](#/documents/productionStageCompletion#2-vypolnenie-etapa-proizvodstva)
+
 ### 17-08-2026
 **Добавлено**
 - Новый тип уведомлений [Новое сообщение от менеджера отдела продаж](#/notification/notification-types-details#3-novoe-soobshenie-ot-menedzhera-otdela-prodazh)
