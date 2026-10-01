@@ -655,7 +655,7 @@ curl --compressed -X GET \
                   "mediaType": "application/json"
               }
           }
-      }  
+      }'  
  ```
 > Response 200 (application/json)
 Успешный запрос. Результат - JSON представление Транспортной упаковки.
