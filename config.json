@@ -369,6 +369,13 @@
         ]
       },
       {
+        "title": "Транспортная упаковка",
+        "level": 2,
+        "folderPath": "./dictionaries/_handling_unit.md",
+        "children": [
+        ]
+      },
+      {
         "title": "Услуга",
         "level": 2,
         "folderPath": "./dictionaries/_service.md",
