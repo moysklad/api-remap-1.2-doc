@@ -4,10 +4,10 @@
 
 ### 30-09-2026
 **Добавлено**
-- Сущность [Транспортная упаковка](#/documents/internalOrder#2-vnutrennij-zakaz)
-- Ошибка [78000](#/errors#3-kody-oshibok-dlya-tehnologicheskih-kart)
-- Ошибки [79000-79004](#/errors#3-kody-oshibok-dlya-tehnologicheskih-kart)
-- Ошибки [80000-80005](#/errors#3-kody-oshibok-dlya-tehnologicheskih-kart)
+- Сущность [Транспортная упаковка](#/dictionaries/handling-unit#2-transportnaya-upakovka)
+- Ошибка [78000](#/errors#3-kody-oshibok-dlya-shtrihkodov)
+- Ошибки [79000-79004](#/errors#3-kody-oshibok-dlya-serijnyh-nomerov)
+- Ошибки [80000-80005](#/errors#3-kody-oshibok-dlya-transportnyh-upakovok)
 
 ### 17-08-2026
 **Добавлено**
