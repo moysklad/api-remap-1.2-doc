@@ -2,6 +2,13 @@
 
 Список последних изменений в API Remap 1.2
 
+### 30-09-2026
+**Добавлено**
+- Сущность [Транспортная упаковка](#/dictionaries/handling-unit#2-transportnaya-upakovka)
+- Ошибка [78000](#/errors#3-kody-oshibok-dlya-shtrihkodov)
+- Ошибки [79000-79004](#/errors#3-kody-oshibok-dlya-serijnyh-nomerov)
+- Ошибки [80000-80005](#/errors#3-kody-oshibok-dlya-transportnyh-upakovok)
+
 ### 17-08-2026
 **Добавлено**
 - Новый тип уведомлений [Новое сообщение от менеджера отдела продаж](#/notification/notification-types-details#3-novoe-soobshenie-ot-menedzhera-otdela-prodazh)
