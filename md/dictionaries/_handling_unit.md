@@ -25,6 +25,8 @@
 
 Для получения и передачи поля **childrenList** необходимо передать заголовок `X-Lognex-Remap-Beta-Feature: aggregatePackChildrenList`.
 
+Поле **childrenList** доступно в рамках бета-функциональности и в дальнейшем может быть изменено или удалено.
+
 Если заголовок не передан:
 
 + поле **childrenList** не возвращается в ответе.
@@ -244,7 +246,7 @@ curl --compressed -X GET \
 
 Запрос на создание новой Транспортной упаковки. Для успешного создания Транспортной упаковки обязательно должно быть передано поле **barcodes**.
 
-> Пример создания новой Транспортной упаковки.
+> Пример создания новой Транспортной упаковки с запросом, Тело которого содержит только обязательные поля.
 
 ```shell
   curl --compressed -X POST \
@@ -318,6 +320,118 @@ curl --compressed -X GET \
       "type": "aggregatepackposition",
       "mediaType": "application/json",
       "size": 0,
+      "limit": 1000,
+      "offset": 0
+    }
+  }
+}
+```
+
+> Пример создания новой Транспортной упаковки с более насыщенным телом запроса.
+
+```shell
+  curl --compressed -X POST \
+    "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/" \
+    -H "Authorization: Basic <Credentials>" \
+    -H "Accept-Encoding: gzip" \
+    -H "Content-Type: application/json" \
+      -d '{
+            "barcodes": [
+                {
+                    "ean8": "00000000"
+                },
+                {
+                    "ean13": "2000000000015"
+                },
+                {
+                    "code128": "code128 barcode"
+                }
+            ],
+            "group": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/41afe3e0-b8d8-11f1-0a83-128600000018",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                    "type": "group",
+                    "mediaType": "application/json"
+                }
+            },
+            "moment": "2026-09-29 16:06:00.000",
+            "owner": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/41de4dd4-b8d8-11f1-0a81-12b50000034f",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                    "type": "employee",
+                    "mediaType": "application/json"
+                }
+            },
+            "shared": true,
+            "positions": [
+                {
+                    "assortment": {
+                        "meta": {
+                            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/001e6a8f-b8dc-11f1-0a82-14dc00003d64",
+                            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+                            "type": "product",
+                            "mediaType": "application/json"
+                        }
+                    },
+                    "quantity": 1.0
+                }
+            ]
+        }'  
+```
+
+> Response 200
+Успешный запрос. Результат - JSON представление созданной Транспортной упаковки.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/91850817-bc06-11f1-0a82-14dc000065ab",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/metadata",
+    "type": "aggregatepack",
+    "mediaType": "application/json"
+  },
+  "id": "91850817-bc06-11f1-0a82-14dc000065ab",
+  "accountId": "41af84c3-b8d8-11f1-0a83-128600000017",
+  "owner": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/41de4dd4-b8d8-11f1-0a81-12b50000034f",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=41de4dd4-b8d8-11f1-0a81-12b50000034f"
+    }
+  },
+  "shared": true,
+  "group": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/41afe3e0-b8d8-11f1-0a83-128600000018",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2026-09-29 16:06:22.229",
+  "moment": "2026-09-29 16:06:00.000",
+  "level": 1,
+  "barcodes": [
+    {
+      "ean8": "00000000"
+    },
+    {
+      "ean13": "2000000000015"
+    },
+    {
+      "code128": "code128 barcode"
+    }
+  ],
+  "positions": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/91850817-bc06-11f1-0a82-14dc000065ab/positions",
+      "type": "aggregatepackposition",
+      "mediaType": "application/json",
+      "size": 1,
       "limit": 1000,
       "offset": 0
     }
