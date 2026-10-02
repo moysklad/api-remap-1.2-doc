@@ -1545,3 +1545,35 @@ curl --compressed -X PUT \
   "createdShared": false
 }
 ```
+
+### Получить аналоги
+
+```shell
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/assortment/alternatives" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление ассортимента с аналогами.
+
+```json
+{
+  "meta" : {
+    "href" : "https://api.moysklad.ru/api/remap/1.2/entity/assortment/settings",
+    "type" : "assortmentsettings",
+    "mediaType" : "application/json"
+  },
+  "barcodeRules" : {
+    "fillEAN13Barcode" : true,
+    "weightBarcode" : true,
+    "weightBarcodePrefix" : 77
+  },
+  "uniqueCodeRules" : {
+    "checkUniqueCode" : true,
+    "fillUniqueCode" : true
+  },
+  "createdShared" : true
+}
+```
