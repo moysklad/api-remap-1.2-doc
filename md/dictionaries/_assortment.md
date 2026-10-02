@@ -1546,7 +1546,68 @@ curl --compressed -X PUT \
 }
 ```
 
-### Получить аналоги
+### Аналоги
+
+Средствами JSON API можно получить аналоги Товаров, Услуг, Комплектов и Модификаций.
+
+Каждый элемент ответа содержит позицию Ассортимента и список её аналогов. Связь между аналогами двусторонняя: если позиция А является аналогом позиции Б, позиция Б также является аналогом позиции А.
+
+Без фильтра возвращаются только позиции Ассортимента, у которых есть аналоги.
+
+#### Атрибуты объекта
+
+| Название         | Тип                          | Фильтрация | Описание |
+| ---------------- | :--------------------------- | :--------- | :------- |
+| **assortment**   | [Meta](#/general#3-metadannye) | `=` `!=`   | Метаданные Ассортимента.<br>`+Expand` `+Обязательное при ответе` |
+| **alternatives** | Array(Object)                |            | Список аналогов позиции Ассортимента.<br>`+Обязательное при ответе` |
+
+Каждый элемент массива **alternatives** содержит следующие атрибуты:
+
+| Название       | Тип                          | Описание |
+| -------------- | :--------------------------- | :------- |
+| **assortment** | [Meta](#/general#3-metadannye) | Метаданные Ассортимента, указанного в качестве аналога.<br>`+Expand` `+Обязательное при ответе` |
+
+#### Атрибуты доступные для фильтрации
+
+| Название       | Описание |
+| -------------- | :------- |
+| **assortment** | Ссылка на позицию Ассортимента. Можно передать несколько значений. |
+
+Особенности фильтрации:
+
+- При использовании `assortment=` возвращаются указанные позиции, в том числе позиции без аналогов. Для позиции без аналогов массив **alternatives** будет пустым.
+- При использовании `assortment!=` указанные позиции исключаются из результата. Возвращаются только позиции, у которых есть аналоги.
+- Фильтр применяется к позициям в **rows** и не ограничивает содержимое их массивов **alternatives**. Исключённая из результата позиция может присутствовать в качестве аналога другой позиции.
+
+Примеры фильтрации:
+
+- `filter=assortment=https://api.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d7`
+- `filter=assortment!=https://api.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d7`
+
+#### Получить аналоги
+
+Запрос на получение Ассортимента с аналогами.
+
+Результат: Объект JSON, включающий в себя поля:
+
+| Название    | Тип                          | Описание |
+| ----------- | :--------------------------- | :------- |
+| **meta**    | [Meta](#/general#3-metadannye) | Метаданные о выдаче. |
+| **context** | [Meta](#/general#3-metadannye) | Метаданные о сотруднике, выполнившем запрос. |
+| **rows**    | Array(Object)                | Массив JSON объектов, представляющих Ассортимент с аналогами. |
+
+**Параметры**
+
+| Параметр   | Описание |
+| ---------- | :------- |
+| **limit**  | `number` (optional) **Default: 1000** *Example: 100* Максимальное количество позиций Ассортимента в ответе. Допустимые значения: `1–1000`. |
+| **offset** | `number` (optional) **Default: 0** *Example: 40* Отступ в списке позиций Ассортимента. |
+
+Пагинация применяется к элементам `rows`. Список `alternatives` каждого элемента возвращается полностью.
+
+Допустимые значения параметра `expand`: `assortment`, `alternatives.assortment`.
+
+> Получить аналоги
 
 ```shell
 curl --compressed -X GET \
@@ -1555,25 +1616,73 @@ curl --compressed -X GET \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление ассортимента с аналогами.
+> Response 200 (application/json). Успешный запрос. Результат — JSON представление позиций Ассортимента со списком аналогов.
 
 ```json
 {
-  "meta" : {
-    "href" : "https://api.moysklad.ru/api/remap/1.2/entity/assortment/settings",
-    "type" : "assortmentsettings",
-    "mediaType" : "application/json"
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
   },
-  "barcodeRules" : {
-    "fillEAN13Barcode" : true,
-    "weightBarcode" : true,
-    "weightBarcodePrefix" : 77
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/assortment/alternatives",
+    "type": "assortmentalternatives",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
   },
-  "uniqueCodeRules" : {
-    "checkUniqueCode" : true,
-    "fillUniqueCode" : true
-  },
-  "createdShared" : true
+  "rows": [
+    {
+      "assortment": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d7",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      },
+      "alternatives": [
+        {
+          "assortment": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/437f2d67-36e7-11e7-8a7f-40d0000000df",
+              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+              "type": "product",
+              "mediaType": "application/json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "assortment": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/437f2d67-36e7-11e7-8a7f-40d0000000df",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      },
+      "alternatives": [
+        {
+          "assortment": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d7",
+              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+              "type": "product",
+              "mediaType": "application/json"
+            }
+          }
+        }
+      ]
+    }
+  ]
 }
 ```
