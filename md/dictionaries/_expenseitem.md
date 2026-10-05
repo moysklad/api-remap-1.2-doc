@@ -20,6 +20,7 @@
 | **id**           | UUID                                                      | `=` `!=`                    | ID Cтатьи расходов<br>`+Обязательное при ответе` `+Только для чтения`                             |
 | **meta**         | [Meta](#/general#3-metadannye) |                             | Метаданные о Статье расходов<br>`+Обязательное при ответе`                               |
 | **name**         | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Наименование Статьи расходов<br>`+Обязательное при ответе` `+Необходимо при создании`    |
+| **operatingExpenses** | Boolean                                               | `=` `!=`                    | Признак включения/исключения в учет прибыли. По умолчанию значение `true`.<br>`+Обязательное при ответе` |
 | **owner**        | [Meta](#/general#3-metadannye) | `=` `!=`                    | Владелец (Сотрудник)<br>`+Expand` `+Для пользовательских статей расходов`                |
 | **shared**       | Boolean                                                   | `=` `!=`                    | Общий доступ<br>`+Обязательное при ответе` `+Для пользовательских статей расходов`       |
 | **updated**      | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`  | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Только для чтения` |
@@ -78,6 +79,7 @@ curl --compressed -X GET \
       "updated": "2015-05-27 17:03:10",
       "name": "Закупка товаров",
       "description": "Расходы на закупку товаров учитываются в отчете «Прибыли и убытки» как себестоимость проданных товаров",
+      "operatingExpenses": true,
       "code": "1",
       "externalCode": "1"
     },
@@ -92,6 +94,7 @@ curl --compressed -X GET \
       "updated": "2015-05-27 17:03:10",
       "name": "Возврат",
       "description": "Расходы по возвратам не учитываются в отчете «Прибыли и убытки»",
+      "operatingExpenses": false,
       "code": "3",
       "externalCode": "3"
     },
@@ -106,6 +109,7 @@ curl --compressed -X GET \
       "updated": "2015-05-27 17:03:10",
       "name": "Налоги и сборы",
       "description": "Расходы по налогам и сборам учитываются как отдельная статья, не включенная в операционные расходы",
+      "operatingExpenses": true,
       "code": "2",
       "externalCode": "2"
     },
@@ -120,6 +124,7 @@ curl --compressed -X GET \
       "updated": "2015-05-27 17:03:24",
       "name": "Списания",
       "description": "Списания",
+      "operatingExpenses": true,
       "code": "4",
       "externalCode": "4"
     },
@@ -134,6 +139,7 @@ curl --compressed -X GET \
       "updated": "2016-06-09 18:40:35",
       "name": "Перемещение",
       "description": "Перемещения денег между кассами не учитываются в отчете «Прибыли и убытки».",
+      "operatingExpenses": false,
       "code": "5",
       "externalCode": "5"
     },
@@ -149,6 +155,7 @@ curl --compressed -X GET \
       "updated": "2016-06-09 18:43:58",
       "name": "Аренда",
       "description": "Аренда",
+      "operatingExpenses": true,
       "code": "Аренда",
       "externalCode": "IVslr34uhCUuglxPD7Idm0"
     },
@@ -164,6 +171,7 @@ curl --compressed -X GET \
       "updated": "2016-06-09 18:43:58",
       "name": "Зарплата",
       "description": "Зарплата",
+      "operatingExpenses": true,
       "code": "Зарплата",
       "externalCode": "RY7G3TULiTyjqYRrzr3V03"
     },
@@ -179,6 +187,7 @@ curl --compressed -X GET \
       "updated": "2016-06-09 18:43:58",
       "name": "Маркетинг и реклама",
       "description": "Маркетинг и реклама",
+      "operatingExpenses": true,
       "code": "Маркетинг и реклама",
       "externalCode": "1PMtKJq-jjVJQbu5OWqBG1"
     }
@@ -222,6 +231,7 @@ curl --compressed -X GET \
   "updated": "2016-07-01 17:52:42",
   "name": "Налоги и не налоги",
   "description": "Статья расходов налоги",
+  "operatingExpenses": true,
   "code": "nalogi",
   "externalCode": "wwoaon21431"
 }
@@ -279,6 +289,7 @@ curl --compressed -X GET \
     "updated": "2016-07-01 17:52:42",
     "name": "Налоги и не налоги",
     "description": "Статья расходов налоги",
+    "operatingExpenses": true,
     "code": "nalogi",
     "externalCode": "wwoaon21431"
   },
@@ -294,13 +305,12 @@ curl --compressed -X GET \
     "updated": "2016-07-01 17:52:42",
     "name": "Дополнительные расходы",
     "description": "Еще дополнительные расходы",
+    "operatingExpenses": false,
     "code": "additional",
     "externalCode": "sdeEfr32rfe"
   }
 ]
 ```
-
-Стандартные (системные) статьи расходов нельзя изменять и удалять. При попытке изменения возвращается ошибка [1024](#/errors#3-obshie-oshibki-validacii), при удалении — [1025](#/errors#3-obshie-oshibki-validacii).
 
 ### Удалить Статью расходов
 
@@ -319,10 +329,8 @@ curl --compressed -X DELETE \
   -H "Accept-Encoding: gzip"
 ```
 
-> Response 200 (application/json) Успешное удаление статьи расходов.
-```json
-<Response body is empty>
-```
+> Response 200 (application/json)
+Успешное удаление статьи расходов.
 
 ### Массовое удаление Статей расходов
 
@@ -408,6 +416,7 @@ curl --compressed -X GET \
   "updated": "2016-06-09 18:43:58",
   "name": "Аренда",
   "description": "Аренда",
+  "operatingExpenses": true,
   "code": "Аренда",
   "externalCode": "IVslr34uhCUuglxPD7Idm0"
 }
@@ -433,6 +442,7 @@ curl --compressed -X GET \
       -d '{
             "name": "Не налоги и налоги",
             "description": "Налоги и не налоги. Такая вот статья",
+            "operatingExpenses": true,
             "code": "nalogi i net",
             "externalCode": "wwoa1142aon21431"
           }'  
@@ -454,6 +464,7 @@ curl --compressed -X GET \
   "updated": "2016-07-01 17:52:42",
   "name": "Не налоги и налоги",
   "description": "Налоги и не налоги. Такая вот статья",
+  "operatingExpenses": true,
   "code": "nalogi i net",
   "externalCode": "wwoa1142aon21431"
 }

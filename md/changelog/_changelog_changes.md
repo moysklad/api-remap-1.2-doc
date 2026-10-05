@@ -2,13 +2,17 @@
 
 Список последних изменений в API Remap 1.2
 
-### 20-08-2026
+### 05-10-2026
 **Добавлено**
 - Ошибки [57205-57207](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota) сохранения Вывода из оборота
 - Описание особенностей поведения при создании и изменении [Вывода из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
 
 **Изменено**
 - Текст ошибки [57200](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota)
+
+### 02-10-2026
+**Добавлено**
+- Раздел по подключению [MCP-сервера](#/mcp/mcp-dev#2-mcp-dev) к ИИ-агенту
 
 ### 17-08-2026
 **Добавлено**
@@ -23,6 +27,7 @@
 - Поддержка протокола update-provider во [Внутреннем заказе](#/documents/internalOrder#2-vnutrennij-zakaz) и [Заказе поставщику](#/documents/purchaseOrder#2-zakaz-postavshiku)
 - [пермиссии сущности expenseitem](#/dictionaries/employee#3-rabota-s-pravami-sotrudnika) (Статьи расходов)
 - данные о пермиссиях сущности expenseitem (Статьи расходов) добавлены в возвращаемые JSON в разделе [Пользовательские роли](#/dictionaries/custom-role#3-poluchit-polzovatelskuyu-rol)
+- Поле `operatingExpenses` (Учитывать в прибыли) в сущности [Статья расходов](#/dictionaries/expenseitem#3-stati-rashodov)
 
 **Изменено**
 - описание сущности [Статьи расходов](#/dictionaries/expenseitem#2-statya-rashodov): поля **owner**, **group**, **shared**
