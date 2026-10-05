@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 02-10-2026
+**Добавлено**
+- Эндпоинт для работы с [Аналогами ассортимента](#/dictionaries/assortment#3-analogi)
+
 ### 17-08-2026
 **Добавлено**
 - Новый тип уведомлений [Новое сообщение от менеджера отдела продаж](#/notification/notification-types-details#3-novoe-soobshenie-ot-menedzhera-otdela-prodazh)
