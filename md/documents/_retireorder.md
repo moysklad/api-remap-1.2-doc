@@ -77,6 +77,7 @@
 | **CONSTRUCTION**    | Строительные материалы                            |
 | **ELECTRONICS**     | Фотокамеры и лампы-вспышки                        |
 | **FOOD_SUPPLEMENT** | Специализированная пищевая продукция и БАД к пище |
+| **FURSLP**          | Натуральный мех                                   |
 | **GADGETS**         | Радиоэлектроника. Ноутбуки и смартфоны            |
 | **GROCERY**         | Бакалея                                           |
 | **LP_CLOTHES**      | Одежда                                            |
@@ -523,6 +524,7 @@ curl --compressed -X GET \
 | **RADIO**                                                       | DONATION, DISTANCE, OTHER_TYPE, PRODUCTION_USE, OWN_USE, CONFISCATE_SALE, STATE_CONTRACT, BY_SAMPLES, STATE_SECRET, RETAIL_SALE, EXPORT_INSIDE_EEU, DESTRUCTION, UTILIZATION, DAMAGE_AND_LOSS, EXPORT_OUTSIDE_EEU                                                                 |
 | **GADGETS**                                                     | DONATION, OTHER_TYPE, PRODUCTION_USE, OWN_USE, CONFISCATE_SALE, STATE_CONTRACT, RETAIL_SALE, EXPORT_INSIDE_EEU, DESTRUCTION, UTILIZATION, DAMAGE_AND_LOSS, EXPORT_OUTSIDE_EEU, BY_SAMPLES, STATE_SECRET, DISTANCE                                                                 |
 | **TOBACCO, OTP, NCP**                                           | RETAIL_SALE, OWN_USE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, OTHER_TYPE, UTILIZATION, RECALL, STATE_CONTRACT, STATE_SECRET                                                                                                         |
+| **FURSLP**                                                      | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, DONATION, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, PRODUCTION_USE, UTILIZATION, OWN_USE, OTHER_TYPE, STATE_SECRET                                                                 |
 
 Связь допустимых значений поля **supportingTransaction** в зависимости от **retireOrderType**
 

@@ -4,6 +4,7 @@
 
 ### 05-10-2026
 **Добавлено**
+- Тип маркируемой продукции `FURSLP` (Натуральный мех) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
 - Ошибки [57205-57207](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota) сохранения Вывода из оборота
 - Описание особенностей поведения при создании и изменении [Вывода из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
 
