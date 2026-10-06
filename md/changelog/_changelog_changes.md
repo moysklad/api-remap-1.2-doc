@@ -2,7 +2,7 @@
 
 Список последних изменений в API Remap 1.2
 
-### 05-10-2026
+### 06-10-2026
 **Добавлено**
 - Тип маркируемой продукции `FURSLP` (Натуральный мех) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
 - Ошибки [57205-57207](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota) сохранения Вывода из оборота
