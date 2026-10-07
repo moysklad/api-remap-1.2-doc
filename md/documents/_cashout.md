@@ -7,6 +7,7 @@
 | Название           | Тип                            | Фильтрация                                                             | Описание                                                                                                                                            |
 |--------------------|:-------------------------------|:-----------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**      | UUID                           | `=` `!=`                                                               | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                |
+| **accrualDate**    | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Дата начисления                                                                                                                                     |
 | **agent**          | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные контрагента<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                           |
 | **applicable**     | Boolean                        | `=` `!=`                                                               | Отметка о проведении<br>`+Обязательное при ответе`                                                                                                  |
 | **attributes**     | Array(Object)                  | [Операторы доп. полей](#/general#4-filtraciya-po-dopolnitelnym-polyam) | Коллекция метаданных доп. полей. [Поля объекта](#/general#3-rabota-s-dopolnitelnymi-polyami)                                                        |
@@ -38,7 +39,6 @@
 | **syncId**         | UUID                           | `=` `!=`                                                               | ID синхронизации. После заполнения недоступен для изменения                                                                                         |
 | **updated**        | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Момент последнего обновления Расходного ордера<br>`+Обязательное при ответе` `+Только для чтения`                                                   |
 | **vatSum**         | Float                          |                                                                        | Сумма НДС<br>`+Обязательное при ответе`                                                                                                             |
-| **accrualDate**    | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Дата начисления                                                                                                                                     |
 
 
 #### Связи с другими документами
@@ -202,10 +202,9 @@ curl --compressed -X GET \
         }
       ],
       "paymentPurpose": "Оплата еще одной приемки",
-      "accrualDate": "2026-09-23 00:29:14.514",
       "expenseItem": {
         "meta": {
-          "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/9147f086-b794-4448-9578-83542c8ad1db",
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
           "type": "expenseitem",
           "mediaType": "application/json"
@@ -482,7 +481,6 @@ curl --compressed -X GET \
                 "mediaType": "application/json"
               }
             },
-            "accrualDate": "2026-09-23 00:29:14.514",
             "expenseItem": {
               "meta": {
                 "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
@@ -1093,7 +1091,6 @@ curl --compressed -X GET \
       "mediaType": "application/json"
     }
   },
-  "accrualDate": "2026-09-23 00:29:14.514",
   "expenseItem": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
@@ -1178,7 +1175,6 @@ curl --compressed -X GET \
       "linkedSum": 0
     }
   ],
-  "accrualDate": "2026-09-23 00:29:14.514",
   "expenseItem": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
@@ -1260,7 +1256,6 @@ curl --compressed -X GET \
       "linkedSum": 0
     }
   ],
-  "accrualDate": "2026-09-23 00:29:14.514",
   "expenseItem": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2395a-0479-11e5-baee-448a5b426e7e",
@@ -1342,7 +1337,6 @@ curl --compressed -X GET \
       "linkedSum": 0
     }
   ],
-  "accrualDate": "2026-09-23 00:29:14.514",
   "expenseItem": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
@@ -1424,7 +1418,6 @@ curl --compressed -X GET \
       "linkedSum": 0
     }
   ],
-  "accrualDate": "2026-09-23 00:29:14.514",
   "expenseItem": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
@@ -1540,7 +1533,6 @@ curl --compressed -X GET \
       "linkedSum": 10200850
     }
   ],
-  "accrualDate": "2026-09-23 00:29:14.514",
   "expenseItem": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
