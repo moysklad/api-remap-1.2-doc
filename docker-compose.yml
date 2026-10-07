@@ -1,0 +1,21 @@
+services:
+  docs:
+    image: docker.infra.lognex/react-doc-engine:${REACT_DOC_ENGINE_VERSION:-AS-4800-483503}
+    ports:
+      - "4568:4568"
+    environment:
+      DOC_CONTENT_ID: json-api
+    volumes:
+      - ./md:/src/assets/md:ro
+      - ./config.json:/src/assets/config.json:ro
+      - ./hash-redirect-map.json:/src/assets/hash-redirect-map.json:ro
+      - ./site.json:/src/assets/site.json:ro
+      - ./images:/public/images:ro
+    command:
+      - sh
+      - -c
+      - |
+        node src/assets/config_generator.js &&
+        node build-notifications-index.js &&
+        npm run build-index &&
+        exec npm run serve -- --host 0.0.0.0 --port 4568 --client-web-socket-url auto://0.0.0.0:0/ws
