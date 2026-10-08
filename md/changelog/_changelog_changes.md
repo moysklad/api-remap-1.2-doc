@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 08-10-2026
+**Изменено**
+- Расширен список допустимых способов вывода из оборота `retireOrderType` в зависимости от типа маркируемой продукции `trackingType` в документе [Вывод из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
+
 ### 06-10-2026
 **Добавлено**
 - Тип маркируемой продукции `FURSLP` (Натуральный мех) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
