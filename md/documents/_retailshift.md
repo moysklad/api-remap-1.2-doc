@@ -10,7 +10,6 @@
 | ----------------------- | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **accountId**           | UUID                                                      | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                      |
 | **acquire**             | [Meta](#/general#3-metadannye) |                                                                                                                                                   | Метаданные Банка-эквайера по операциям по карте<br>`+Обязательное при ответе` `+Expand`                                                                                                                                   |
-| **agentAccount**        | [Meta](#/general#3-metadannye) |                                                                                                                                                   | Метаданные счета контрагента<br>`+Только для чтения` `+Expand`                                                                                                                                                            |
 | **attributes**          | Array(Object)                                             | [Операторы доп. полей](#/general#4-filtraciya-po-dopolnitelnym-polyam) | Коллекция метаданных доп. полей. [Поля объекта](#/general#3-rabota-s-dopolnitelnymi-polyami)                                                                                                   |
 | **bankComission**       | Double                                                    |                                                                                                                                                   | Сумма комиссии эквайера за проведение безналичных платежей по банковской карте. Не может превышать общую сумму безналичных платежей по карте. Если не указано, заполняется 0 автоматически.<br>`+Обязательное при ответе` |
 | **bankPercent**         | Double                                                    |                                                                                                                                                   | Комиссия банка-эквайера по операциям по карте (в процентах)<br>`+Обязательное при ответе`                                                                                                                                 |
@@ -45,8 +44,6 @@
 | **store**               | [Meta](#/general#3-metadannye) |                                                                                                                                                   | Метаданные склада. Если не указано, заполняется с точки продаж автоматически<br>`+Обязательное при ответе` `+Expand`                                                                                                      |
 | **syncId**              | UUID                                                      | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                                                                                                               |
 | **updated**             | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Розничной смены<br>`+Обязательное при ответе`                                                                                                                                                |
-| **vatEnabled**          | Boolean                                                   |                                                                                                                                                   | Учитывается ли НДС<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                     |
-| **vatIncluded**         | Boolean                                                   |                                                                                                                                                   | Включен ли НДС в цену                                                                                                                                                                                                     |
 
 О работе с доп. полями Розничных смен можно прочитать [здесь](#/general#3-rabota-s-dopolnitelnymi-polyami)
 
@@ -160,8 +157,6 @@ curl --compressed -X GET \
       "created": "2016-08-25 19:55:00",
       "printed": true,
       "published": true,
-      "vatEnabled": true,
-      "vatIncluded": true,
       "organization": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e",
@@ -333,8 +328,6 @@ curl --compressed -X GET \
       "created": "2016-08-25 19:55:00",
       "printed": true,
       "published": true,
-      "vatEnabled": true,
-      "vatIncluded": true,
       "organization": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e",
@@ -1130,8 +1123,6 @@ curl --compressed -X GET \
   "created": "2016-08-25 19:55:00",
   "printed": true,
   "published": true,
-  "vatEnabled": true,
-  "vatIncluded": true,
   "organization": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/850c8195-f504-11e5-8a84-bae50000015e",

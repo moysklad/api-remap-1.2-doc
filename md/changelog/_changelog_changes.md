@@ -2,11 +2,24 @@
 
 Список последних изменений в API Remap 1.2
 
-### 99-99-9999
+### 08-10-2026
 **Добавлено**
 - Поле `payments` в [Начисление зарплаты](#/documents/payroll#2-nachisleniya-zarplaty) для связи с документами [Расходного ордера](#/documents/cashout#2-rashodnyj-order) и [Исходящего платежа](#/documents/payment-out#2-ishodyashij-platezh)
 - Новый тип: Начисление зарплаты в массиве связей `operations` в [Расходном ордере](#/documents/cashout#2-rashodnyj-order)
 - Новый тип: Начисление зарплаты в массиве связей `operations` в [Исходящем платеже](#/documents/payment-out#2-ishodyashij-platezh)
+
+### 06-10-2026
+**Добавлено**
+- Тип маркируемой продукции `FURSLP` (Натуральный мех) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
+- Ошибки [57205-57207](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota) сохранения Вывода из оборота
+- Описание особенностей поведения при создании и изменении [Вывода из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
+
+**Изменено**
+- Текст ошибки [57200](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota)
+
+### 02-10-2026
+**Добавлено**
+- Раздел по подключению [MCP-сервера](#/mcp/mcp-dev#2-mcp-dev) к ИИ-агенту
 
 ### 17-08-2026
 **Добавлено**

@@ -77,6 +77,7 @@
 | **CONSTRUCTION**    | Строительные материалы                            |
 | **ELECTRONICS**     | Фотокамеры и лампы-вспышки                        |
 | **FOOD_SUPPLEMENT** | Специализированная пищевая продукция и БАД к пище |
+| **FURSLP**          | Натуральный мех                                   |
 | **GADGETS**         | Радиоэлектроника. Ноутбуки и смартфоны            |
 | **GROCERY**         | Бакалея                                           |
 | **LP_CLOTHES**      | Одежда                                            |
@@ -495,6 +496,8 @@ curl --compressed -X GET \
 
 
 #### Особенности поведения при создании Вывода из оборота
+Допустимые комбинации значений полей trackingType и retireOrderType определяются требованиями системы маркировки «Честный знак» и могут изменяться. Таблица ниже отражает актуальный на момент публикации документации набор комбинаций. При создании документа API проверяет допустимость переданной комбинации. Если комбинация недопустима, запрос завершится ошибкой.
+
 Связь допустимых значений поля **retireOrderType** в зависимости от **trackingType**
 
 | **trackingType**                                                | **retireOrderType**                                                                                                                                                                                                                                                               |
@@ -521,6 +524,7 @@ curl --compressed -X GET \
 | **RADIO**                                                       | DONATION, DISTANCE, OTHER_TYPE, PRODUCTION_USE, OWN_USE, CONFISCATE_SALE, STATE_CONTRACT, BY_SAMPLES, STATE_SECRET, RETAIL_SALE, EXPORT_INSIDE_EEU, DESTRUCTION, UTILIZATION, DAMAGE_AND_LOSS, EXPORT_OUTSIDE_EEU                                                                 |
 | **GADGETS**                                                     | DONATION, OTHER_TYPE, PRODUCTION_USE, OWN_USE, CONFISCATE_SALE, STATE_CONTRACT, RETAIL_SALE, EXPORT_INSIDE_EEU, DESTRUCTION, UTILIZATION, DAMAGE_AND_LOSS, EXPORT_OUTSIDE_EEU, BY_SAMPLES, STATE_SECRET, DISTANCE                                                                 |
 | **TOBACCO, OTP, NCP**                                           | RETAIL_SALE, OWN_USE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, OTHER_TYPE, UTILIZATION, RECALL, STATE_CONTRACT, STATE_SECRET                                                                                                         |
+| **FURSLP**                                                      | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, DONATION, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, PRODUCTION_USE, UTILIZATION, OWN_USE, OTHER_TYPE, STATE_SECRET                                                                 |
 
 Связь допустимых значений поля **supportingTransaction** в зависимости от **retireOrderType**
 
@@ -546,6 +550,8 @@ curl --compressed -X GET \
 | **VETERINARY_USE**       | OTHER                                                |
 | **OTHER_TYPE**           | OTHER                                                |
 | **RECALL**               | OTHER                                                |
+
+Допустимый набор стран назначения зависит от trackingType и требований системы «Честный знак» и может изменяться. При указании недопустимой страны возвращается ошибка 57200.
 
 Связь допустимых значений поля **destinationCountry** в зависимости от **trackingType**
 
@@ -1303,6 +1309,9 @@ curl --compressed -X GET \
 
 #### Особенности поведения при изменении Вывода из оборота
 Изменение Вывода из оборота доступно только для документов со статусом **documentState** = **CREATED**, **CHECKED_NOT_OK**, **PROCESSING_ERROR**
+
+При обновлении документа проверяется допустимость комбинации trackingType и retireOrderType, если эти поля задаются или изменяются в запросе.<br>
+Если комбинация в документе была сохранена ранее и после изменения требований «Честного знака» стала недопустимой, пересохранение документа без изменения этой комбинации допускается.
 
 **Параметры**
 

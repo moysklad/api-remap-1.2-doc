@@ -964,6 +964,20 @@
       }
     ]
   },
+   {
+    "title": "MCP",
+    "level": 1,
+    "folderPath": "./mcp/_mcp_dev.md",
+    "children": [
+      {
+        "title": "MCP-dev",
+        "level": 2,
+        "folderPath": "./mcp/_mcp_dev.md",
+        "children": [
+        ]
+      }
+    ]
+  },
   {
     "title": "Список изменений",
     "level": 1,
