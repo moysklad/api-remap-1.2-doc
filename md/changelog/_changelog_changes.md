@@ -6,6 +6,12 @@
 **Изменено**
 - Расширен список допустимых способов вывода из оборота `retireOrderType` в зависимости от типа маркируемой продукции `trackingType` в документе [Вывод из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
 
+### 08-10-2026
+**Добавлено**
+- Поле `payments` в [Начисление зарплаты](#/documents/payroll#2-nachisleniya-zarplaty) для связи с документами [Расходного ордера](#/documents/cashout#2-rashodnyj-order) и [Исходящего платежа](#/documents/payment-out#2-ishodyashij-platezh)
+- Новый тип: Начисление зарплаты в массиве связей `operations` в [Расходном ордере](#/documents/cashout#2-rashodnyj-order)
+- Новый тип: Начисление зарплаты в массиве связей `operations` в [Исходящем платеже](#/documents/payment-out#2-ishodyashij-platezh)
+
 ### 06-10-2026
 **Добавлено**
 - Тип маркируемой продукции `FURSLP` (Натуральный мех) в документ [Вывод из оборота](#/documents/retireorder#4-tip-markiruemoj-produkcii)
