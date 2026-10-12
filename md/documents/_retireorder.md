@@ -108,6 +108,7 @@
 | Значение                 | Описание                                               |
 |--------------------------|:-------------------------------------------------------|
 | **BY_SAMPLES**           | Продажа по образцам                                    |
+| **CAR_SERVICE_USE**      | Использование при техобслуживании или ремонте          |
 | **CONFISCATE_SALE**      | Конфискация                                            |
 | **DAMAGE_AND_LOSS**      | Утрата                                                 |
 | **DESTRUCTION**          | Уничтожение                                            |
@@ -515,7 +516,7 @@ curl --compressed -X GET \
 | **VEGETABLE_OIL**                                               | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, PACKING, DISTANCE, BY_SAMPLES                                                             |
 | **PET_FOOD**                                                    | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, DISTANCE, BY_SAMPLES, PACKING                                                             |
 | **NABEER**                                                      | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, DISTANCE, BY_SAMPLES, OTHER_TYPE                                                          |
-| **AUTO_FLUIDS**                                                 | RETAIL_SALE, BY_SAMPLES, DISTANCE, DONATION, OWN_USE, PRODUCTION_USE, STATE_SECRET, STATE_CONTRACT, CONFISCATE_SALE, OTHER_TYPE, UTILIZATION, DESTRUCTION, DAMAGE_AND_LOSS, EXPIRATION, EXPORT_INSIDE_EEU, VENDING, EXPORT_OUTSIDE_EEU                                            |
+| **AUTO_FLUIDS**                                                 | RETAIL_SALE, BY_SAMPLES, DISTANCE, DONATION, OWN_USE, PRODUCTION_USE, STATE_SECRET, STATE_CONTRACT, CONFISCATE_SALE, OTHER_TYPE, UTILIZATION, DESTRUCTION, DAMAGE_AND_LOSS, EXPIRATION, EXPORT_INSIDE_EEU, VENDING, EXPORT_OUTSIDE_EEU, CAR_SERVICE_USE                           |
 | **GROCERY**                                                     | RETAIL_SALE, BY_SAMPLES, DISTANCE, DONATION, OWN_USE, PRODUCTION_USE, CONFISCATE_SALE, OTHER_TYPE, UTILIZATION, DESTRUCTION, DAMAGE_AND_LOSS, EXPIRATION, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU                                                                                   |
 | **CHEMISTRY**                                                   | RETAIL_SALE, BY_SAMPLES, DISTANCE, VENDING, PACKING, OWN_USE, PRODUCTION_USE, DONATION, STATE_SECRET, STATE_CONTRACT, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, RETURN_TO_INDIVIDUAL, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, OTHER_TYPE, UTILIZATION, RECALL, EXPIRATION     |
 | **TOYS**                                                        | DONATION, RETURN_TO_INDIVIDUAL, DISTANCE, OTHER_TYPE, PRODUCTION_USE, OWN_USE, CONFISCATE_SALE, RECALL, STATE_CONTRACT, BY_SAMPLES, STATE_SECRET, VENDING, RETAIL_SALE, EXPORT_INSIDE_EEU, DESTRUCTION, UTILIZATION, DAMAGE_AND_LOSS, EXPORT_OUTSIDE_EEU, EXPIRATION              |
@@ -531,6 +532,7 @@ curl --compressed -X GET \
 | **retireOrderType**      | **supportingTransaction**                            |
 |--------------------------|:-----------------------------------------------------|
 | **BY_SAMPLES**           | RECEIPT, SALES_RECEIPT, OTHER, CONSIGNMENT_NOTE, UTD |
+| **CAR_SERVICE_USE**      | OTHER                                                |
 | **CONFISCATE_SALE**      | OTHER, CONSIGNMENT_NOTE, UTD                         |
 | **DAMAGE_AND_LOSS**      | OTHER                                                |
 | **DESTRUCTION**          | CERTIFICATE_OF_DESTRUCTION, OTHER                    |

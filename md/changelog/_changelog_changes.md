@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 12-10-2026
+**Добавлено**
+- Способ вывода `CAR_SERVICE_USE` (Использование при техобслуживании или ремонте) в документ [Вывод из оборота](#/documents/retireorder#4-sposob-vyvoda-iz-oborota) для типа маркируемой продукции `AUTO_FLUIDS` (Моторные масла).
+
 ### 08-10-2026
 **Добавлено**
 - Поле `payments` в [Начисление зарплаты](#/documents/payroll#2-nachisleniya-zarplaty) для связи с документами [Расходного ордера](#/documents/cashout#2-rashodnyj-order) и [Исходящего платежа](#/documents/payment-out#2-ishodyashij-platezh)
