@@ -2,7 +2,7 @@
 
 Список последних изменений в API Remap 1.2
 
-### 12-10-2026
+### 13-10-2026
 **Добавлено**
 - Сущность `Подразделение юридического лица` [organizationbranch](#/dictionaries/organizationbranch#2-podrazdelenie-yuridicheskogo-lica)
 - Поле связи с `Подразделением юридического лица` (`organizationBranch`) для сущностей: [Точка продаж](#/dictionaries/retailstore#2-tochka-prodazh), [Розничная смена](#/documents/retailshift#2-roznichnaya-smena), [Розничная продажа](#/documents/retaildemand#2-roznichnaya-prodazha), [Розничный возврат](#/documents/retail-sales-return#2-roznichnyj-vozvrat), [Внесение денег](#/documents/retaildrawercashin#2-vnesenie-deneg), [Выплата денег](#/documents/retaildrawercashout#2-vyplata-deneg), [Предоплата](#/documents/prepayment#2-predoplata), [Возврат предоплаты](#/documents/prepayment-return#2-vozvrat-predoplaty) и [Вывод из оборота](#/documents/retireorder#2-vyvod-kodov-markirovki-iz-oborota)
