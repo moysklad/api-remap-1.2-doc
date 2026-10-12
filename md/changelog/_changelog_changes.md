@@ -2,16 +2,16 @@
 
 Список последних изменений в API Remap 1.2
 
+### 13-10-2026
+**Изменено**
+- Расширен список допустимых способов вывода из оборота `retireOrderType` в зависимости от типа маркируемой продукции `trackingType` в документе [Вывод из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
+
 ### 12-10-2026
 **Добавлено**
 - Сущность [Транспортная упаковка](#/dictionaries/handling-unit#2-transportnaya-upakovka)
 - Ошибка [78000](#/errors#3-kody-oshibok-dlya-shtrihkodov)
 - Ошибки [79000-79004](#/errors#3-kody-oshibok-dlya-serijnyh-nomerov)
 - Ошибки [80000-80005](#/errors#3-kody-oshibok-dlya-transportnyh-upakovok)
-
-### 08-10-2026
-**Изменено**
-- Расширен список допустимых способов вывода из оборота `retireOrderType` в зависимости от типа маркируемой продукции `trackingType` в документе [Вывод из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
 
 ### 08-10-2026
 **Добавлено**
