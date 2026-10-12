@@ -2,11 +2,13 @@
 
 Список последних изменений в API Remap 1.2
 
-### 21-09-2026
+### 12-10-2026
 **Добавлено**
 - Сущность `Подразделение юридического лица` [organizationbranch](#/dictionaries/organizationbranch#2-podrazdelenie-yuridicheskogo-lica)
+- Поле связи с `Подразделением юридического лица` (`organizationBranch`) для сущностей: [Точка продаж](#/dictionaries/retailstore#2-tochka-prodazh), [Розничная смена](#/documents/retailshift#2-roznichnaya-smena), [Розничная продажа](#/documents/retaildemand#2-roznichnaya-prodazha), [Розничный возврат](#/documents/retail-sales-return#2-roznichnyj-vozvrat), [Внесение денег](#/documents/retaildrawercashin#2-vnesenie-deneg), [Выплата денег](#/documents/retaildrawercashout#2-vyplata-deneg), [Предоплата](#/documents/prepayment#2-predoplata), [Возврат предоплаты](#/documents/prepayment-return#2-vozvrat-predoplaty) и [Вывод из оборота](#/documents/retireorder#2-vyvod-kodov-markirovki-iz-oborota)
+- Поле связи с `Подразделение грузополучателя` (`consigneeBranch`) для документов: [Отгрузка](#/documents/demand#2-otgruzka) и [Счет-фактура выданный](#/documents/factureout#2-schet-faktura-vydannyj)
+- Поле связи с `Подразделение грузоотправителя` (`consignorBranch`) для документа [Отгрузка](#/documents/demand#2-otgruzka)
 - Ошибка [74000](#/errors#3-kody-oshibok-dlya-podrazdeleniya-yuridicheskogo-lica)
-- Поле связи с `Подразделением юридического лица` (`organizationBranch`) для сущностей: [Точка продаж](#/dictionaries/retailstore#2-tochka-prodazh), [Розничная смена](#/documents/retailshift#2-roznichnaya-smena), [Розничная продажа](#/documents/retaildemand#2-roznichnaya-prodazha), [Розничный возврат](#/documents/retail-sales-return#2-roznichnyj-vozvrat), [Внесение денег](#/documents/retaildrawercashin#2-vnesenie-deneg), [Выплата денег](#/documents/retaildrawercashout#2-vyplata-deneg), [Предоплата](#/documents/prepayment#2-predoplata) и [Возврат предоплаты](#/documents/prepayment-return#2-vozvrat-predoplaty)
 
 ### 17-08-2026
 **Добавлено**
