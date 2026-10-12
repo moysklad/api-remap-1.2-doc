@@ -39,6 +39,17 @@
 восприниматься как "все позиции Начисления зарплаты" и полностью заменит уже существующую коллекцию при обновлении объекта - лишние
 позиции будут удалены, новые добавлены, существующие - изменены.
 
+#### Связи с другими документами
+
+| Название     | Описание                                                                          |
+|--------------|-----------------------------------------------------------------------------------|
+| **payments** | Массив ссылок на связанные платежи в формате [Метаданных](#/general#3-metadannye) |
+
+Разрешенные типы связанных платежей:
+
++ Исходящий платеж (paymentout) `+Только для чтения`
++ Расходный кассовый ордер (cashout) `+Только для чтения`
+
 #### Позиции Начисления зарплат
 Позиции Начисления зарплат - это список сотрудников, их оклада и сдельной оплаты.
 Объект позиции Начисления зарплаты содержит следующие поля:
@@ -169,7 +180,29 @@ curl --compressed -X GET \
         }
       },
       "startPayrollPeriod": "2026-03-03 00:00:00.000",
-      "endPayrollPeriod": "2026-03-04 23:59:59.000"
+      "endPayrollPeriod": "2026-03-04 23:59:59.000",
+      "payments": [
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/9eef43b1-afb4-11f1-22e8-2b0900000005",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/metadata",
+            "type": "paymentout",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#paymentout/edit?id=9eef43b1-afb4-11f1-22e8-2b0900000005"
+          },
+          "linkedSum": 3000.0
+        },
+        {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/cashout/a8d40998-afb4-11f1-22e8-2b090000000c",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/cashout/metadata",
+            "type": "cashout",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#cashout/edit?id=a8d40998-afb4-11f1-22e8-2b090000000c"
+          },
+          "linkedSum": 2000.0
+        }
+      ]
     }
   ]
 }
@@ -1147,6 +1180,26 @@ curl --compressed -X GET \
             "offset": 0
         }
     },
+    "payments": [
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/abe08a4a-1dfe-11f1-0a80-0c2500000001",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/paymentout/metadata",
+                "type": "paymentout",
+                "mediaType": "application/json"
+            },
+            "linkedSum": 30000.0
+        },
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/cashout/c238d5de-1dfe-11f1-0a80-0c2500000002",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/cashout/metadata",
+                "type": "cashout",
+                "mediaType": "application/json"
+            },
+            "linkedSum": 30000.0
+        }
+    ],
     "startPayrollPeriod": "2026-03-03 00:00:00.000",
     "endPayrollPeriod": "2026-03-04 23:59:59.000"
 }
