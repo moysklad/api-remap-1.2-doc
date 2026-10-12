@@ -3,36 +3,44 @@
 ### Списания 
 #### Атрибуты сущности
 
-| Название         | Тип                            | Фильтрация                                                             | Описание                                                                                                                                 |
-|------------------|:-------------------------------|:-----------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**    | UUID                           | `=` `!=`                                                               | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                   |
-| **applicable**   | Boolean                        | `=` `!=`                                                               | Отметка о проведении<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                  |
-| **attributes**   | Array(Object)                  | [Операторы доп. полей](#/general#4-filtraciya-po-dopolnitelnym-polyam) | Коллекция метаданных доп. полей. [Поля объекта](#/general#3-rabota-s-dopolnitelnymi-polyami)<br> `+Change-handler` `+Update-provider`    |
-| **code**         | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Код Списания                                                                                                                             |
-| **created**      | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Дата создания<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                       |
-| **deleted**      | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Момент последнего удаления Списания<br>`+Только для чтения`                                                                              |
-| **description**  | String(4096)                   | `=` `!=` `~` `~=` `=~`                                                 | Комментарий Списания<br>`+Change-handler` `+Update-provider`                                                                             |
-| **expenseItem**  | [Meta](#/general#3-metadannye) |                                                                        | Метаданные Статьи расходов<br>`+Только для чтения` `+Expand`                                                                             |
-| **externalCode** | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Внешний код Списания<br>`+Обязательное при ответе` `+Change-handler`                                                                     |
-| **files**        | MetaArray                      |                                                                        | Метаданные массива [Файлов](#/dictionaries/files#2-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand` |
-| **group**        | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                 |
-| **id**           | UUID                           | `=` `!=`                                                               | ID Списания<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                         |
-| **meta**         | [Meta](#/general#3-metadannye) |                                                                        | Метаданные Списания<br>`+Обязательное при ответе` `+Change-handler`                                                                      |
-| **moment**       | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Дата документа<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                        |
-| **name**         | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Наименование Списания<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                 |
-| **organization** | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler` `+Update-provider`                |
-| **owner**        | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Владелец (Сотрудник)<br>`+Expand`                                                                                                        |
-| **positions**    | MetaArray                      |                                                                        | Метаданные позиций Списания<br>`+Обязательное при ответе` `+Expand` `+Change-handler` `+Update-provider`                                 |
-| **printed**      | Boolean                        | `=` `!=`                                                               | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                 |
-| **project**      | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные проекта<br>`+Expand` `+Change-handler` `+Update-provider`                                                                     |
-| **published**    | Boolean                        | `=` `!=`                                                               | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                               |
+| Название         | Тип                            | Фильтрация                                                             | Описание                                                                                                                                   |
+|------------------|:-------------------------------|:-----------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**    | UUID                           | `=` `!=`                                                               | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                     |
+| **applicable**   | Boolean                        | `=` `!=`                                                               | Отметка о проведении<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                    |
+| **attributes**   | Array(Object)                  | [Операторы доп. полей](#/general#4-filtraciya-po-dopolnitelnym-polyam) | Коллекция метаданных доп. полей. [Поля объекта](#/general#3-rabota-s-dopolnitelnymi-polyami)<br> `+Change-handler` `+Update-provider`      |
+| **code**         | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Код Списания                                                                                                                               |
+| **created**      | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Дата создания<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                         |
+| **deleted**      | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Момент последнего удаления Списания<br>`+Только для чтения`                                                                                |
+| **description**  | String(4096)                   | `=` `!=` `~` `~=` `=~`                                                 | Комментарий Списания<br>`+Change-handler` `+Update-provider`                                                                               |
+| **expenseItem**  | [Meta](#/general#3-metadannye) |                                                                        | Метаданные Статьи расходов<br>`+Expand`                                                                                                    |
+| **externalCode** | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Внешний код Списания<br>`+Обязательное при ответе` `+Change-handler`                                                                       |
+| **files**        | MetaArray                      |                                                                        | Метаданные массива [Файлов](#/dictionaries/files#2-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand`   |
+| **group**        | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                   |
+| **id**           | UUID                           | `=` `!=`                                                               | ID Списания<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                           |
+| **meta**         | [Meta](#/general#3-metadannye) |                                                                        | Метаданные Списания<br>`+Обязательное при ответе` `+Change-handler`                                                                        |
+| **moment**       | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Дата документа<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                          |
+| **name**         | String(255)                    | `=` `!=` `~` `~=` `=~`                                                 | Наименование Списания<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                   |
+| **organization** | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler` `+Update-provider`                  |
+| **owner**        | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Владелец (Сотрудник)<br>`+Expand`                                                                                                          |
+| **positions**    | MetaArray                      |                                                                        | Метаданные позиций Списания<br>`+Обязательное при ответе` `+Expand` `+Change-handler` `+Update-provider`                                   |
+| **printed**      | Boolean                        | `=` `!=`                                                               | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                   |
+| **project**      | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные проекта<br>`+Expand` `+Change-handler` `+Update-provider`                                                                       |
+| **published**    | Boolean                        | `=` `!=`                                                               | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                 |
 | **rate**         | Object                         |                                                                        | Валюта. [Подробнее тут](#/documents/common-info#3-valyuta-v-dokumentah)<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider` |
-| **shared**       | Boolean                        | `=` `!=`                                                               | Общий доступ<br>`+Обязательное при ответе`                                                                                               |
-| **state**        | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные статуса Списания<br>`+Expand` `+Change-handler` `+Update-provider`                                                            |
-| **store**        | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler` `+Update-provider`                |
-| **sum**          | Float                          | `=` `!=` `<` `>` `<=` `>=`                                             | Сумма Списания в копейках<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                           |
-| **syncId**       | UUID                           | `=` `!=`                                                               | ID синхронизации. После заполнения недоступен для изменения                                                                              |
-| **updated**      | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Момент последнего обновления Списания<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                               |
+| **shared**       | Boolean                        | `=` `!=`                                                               | Общий доступ<br>`+Обязательное при ответе`                                                                                                 |
+| **state**        | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные статуса Списания<br>`+Expand` `+Change-handler` `+Update-provider`                                                              |
+| **store**        | [Meta](#/general#3-metadannye) | `=` `!=`                                                               | Метаданные склада<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании` `+Change-handler` `+Update-provider`                  |
+| **sum**          | Float                          | `=` `!=` `<` `>` `<=` `>=`                                             | Сумма Списания в копейках<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                             |
+| **syncId**       | UUID                           | `=` `!=`                                                               | ID синхронизации. После заполнения недоступен для изменения                                                                                |
+| **updated**      | DateTime                       | `=` `!=` `<` `>` `<=` `>=`                                             | Момент последнего обновления Списания<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                 |
+
+#### Статья расходов
+
+Поле **expenseItem** содержит ссылку на [Статью расходов](#/dictionaries/expenseitem#2-statya-rashodov) в формате метаданных с `meta.type`, равным `expenseitem`. При создании и изменении Списания можно передать системную или пользовательскую статью, включая архивную пользовательскую статью. Переданная статья сохраняется и возвращается в ответе и при последующем получении Списания.
+
+Если при создании поле **expenseItem** не передано, подставляется системная статья «Списания». При изменении без этого поля ранее установленная статья сохраняется. Для старого Списания без статьи расходов при сохранении подставляется системная статья «Списания»; до сохранения GET-запросы по-прежнему возвращают такой документ без поля **expenseItem**.
+
+Очистить статью расходов нельзя: явное `"expenseItem": null` при создании или изменении возвращает ошибку `3000`. Ссылка на несуществующую статью или статью другого аккаунта возвращает ошибку `1021`. Отсутствие права просмотра статьи своего аккаунта не препятствует её привязке; права на создание и изменение Списания остаются прежними.
 
 #### Связи с другими документами
 
@@ -429,6 +437,14 @@ curl --compressed -X GET \
     }
   },
   "sum": 50000,
+  "expenseItem": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/23f05a1e-0479-11e5-8bb9-448a5b426e7e",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+      "type": "expenseitem",
+      "mediaType": "application/json"
+    }
+  },
   "organization": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
@@ -489,6 +505,14 @@ curl --compressed -X GET \
                   "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/b72f4f02-9b8b-11e6-8af5-581e0000009b",
                   "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
                   "type": "store",
+                  "mediaType": "application/json"
+                }
+              },
+              "expenseItem": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+                  "type": "expenseitem",
                   "mediaType": "application/json"
                 }
               },
@@ -613,6 +637,14 @@ curl --compressed -X GET \
       }
     },
     "sum": 50000,
+    "expenseItem": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/1be2350e-0479-11e5-b03a-448a5b426e7e",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+        "type": "expenseitem",
+        "mediaType": "application/json"
+      }
+    },
     "organization": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
@@ -693,6 +725,14 @@ curl --compressed -X GET \
       }
     },
     "sum": 0,
+    "expenseItem": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/23f05a1e-0479-11e5-8bb9-448a5b426e7e",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+        "type": "expenseitem",
+        "mediaType": "application/json"
+      }
+    },
     "organization": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
@@ -1213,6 +1253,14 @@ curl --compressed -X GET \
             "moment": "2016-07-21 15:57:32",
             "applicable": true,
             "sum": 50000,
+            "expenseItem": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/23f05a1e-0479-11e5-8bb9-448a5b426e7e",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+                "type": "expenseitem",
+                "mediaType": "application/json"
+              }
+            },
             "organization": {
               "meta": {
                 "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
@@ -1287,6 +1335,14 @@ curl --compressed -X GET \
     }
   },
   "sum": 0,
+  "expenseItem": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/23f05a1e-0479-11e5-8bb9-448a5b426e7e",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+      "type": "expenseitem",
+      "mediaType": "application/json"
+    }
+  },
   "organization": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
@@ -1433,6 +1489,14 @@ curl --compressed -X GET \
     }
   },
   "sum": 0,
+  "expenseItem": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/23f05a1e-0479-11e5-8bb9-448a5b426e7e",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/expenseitem/metadata",
+      "type": "expenseitem",
+      "mediaType": "application/json"
+    }
+  },
   "organization": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
