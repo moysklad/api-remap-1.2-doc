@@ -908,9 +908,9 @@ curl --compressed -X GET \
 | **counterpartyAdjustment**    | DICTIONARY           | Все ALL                                     | [Корректировка взаиморасчетов](#/documents/counterpartyadjustment#2-korrektirovka-vzaimoraschetov)    |
 | **country**                   | BASE                 | Все ALL                                     | [Страны](#/dictionaries/country#2-strana)                                                             |
 | **crptCancellation**          | DICTIONARY           | Все NO                                      | Списание кодов маркировки                                                                             |
-| **crptPackageCreation**       | DICTIONARY           | Все NO                                      | Формирование упаковки                                                                                 |
-| **crptPackageDisaggregation** | DICTIONARY           | Все NO                                      | Расформирование упаковки                                                                              |
-| **crptPackageItemRemoval**    | DICTIONARY           | Все NO                                      | Изъятие из упаковки                                                                                   |
+| **crptPackageCreation**       | DICTIONARY           | Все NO                                      | Формирование фасовки                                                                                 |
+| **crptPackageDisaggregation** | DICTIONARY           | Все NO                                      | Расформирование фасовки                                                                              |
+| **crptPackageItemRemoval**    | DICTIONARY           | Все NO                                      | Изъятие из фасовки                                                                                   |
 | **currency**                  | BASE                 | Все ALL                                     | [Валюты](#/dictionaries/currency#2-valyuta)                                                           |
 | **customEntity**              | BASE                 | Все ALL                                     | [Элементы пользовательских справочников](#/dictionaries/customentity#2-polzovatelskij-spravochnik)    |
 | **customerOrder**             | OPERATION            | Все ALL                                     | [Заказ покупателям](#/documents/customerOrder#2-zakaz-pokupatelya)                                    |

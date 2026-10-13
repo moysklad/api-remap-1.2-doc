@@ -554,9 +554,9 @@ curl --compressed -X GET \
 | **cmlconnectorsettings**       | Настройка синхронизации (CML)           |
 | **crptcancellation**           | Списание кодов маркировки               |
 | **crptdemand**                 | Отгрузка маркированной продукции        |
-| **crptpackagecreation**        | Формирование упаковки                   |
-| **crptpackagedisaggregation**  | Расформирование упаковки                |
-| **crptpackageitemremoval**     | Изъятие из упаковки                     |
+| **crptpackagecreation**        | Формирование фасовки                   |
+| **crptpackagedisaggregation**  | Расформирование фасовки                |
+| **crptpackageitemremoval**     | Изъятие из фасовки                     |
 | **ecwidconnectorsettings**     | Настройка синхронизации (Ecwid)         |
 | **entitysettings**             | Настройки сущностей                     |
 | **evotorsetting**              | Настройка обмена с Эвотор               |

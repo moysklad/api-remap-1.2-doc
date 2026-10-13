@@ -35,106 +35,106 @@
 #### Стартовый экран 
 Допустимые значения стартового экрана:
 
-| Стартовый экран                        | Значение поля defaultScreen   |
-|----------------------------------------| :---------------------------- |
-| Аудит                                  | audit                         |
-| Валюты                                 | currency                      |
-| Ввод в оборот кодов маркировки         | enrollorder                   |
-| Взаиморасчеты                          | customersbalancelist          |
-| Внесения                               | retaildrawercashin            |
-| Внутренние заказы                      | internalorder                 |
-| Возврат в оборот                       | enrollreturn                  |
-| Возвраты                               | retailsalesreturn             |
-| Возвраты покупателей                   | salesreturn                   |
-| Возвраты поставщикам                   | purchasereturn                |
-| Возвраты предоплат                     | prepaymentreturn              |
-| Воронка продаж                         | purchasefunnel                |
-| Вывод из оборота                       | retireorder                   |
-| Выданные отчеты комиссионера           | commissionreportout           |
-| Выплаты                                | retaildrawercashout           |
-| Движение денежных средств              | cashflow                      |
-| Договоры                               | contract                      |
-| Документы                              | operation                     |
-| Единицы измерения                      | uom                           |
-| Журнал запросов в ИС МП                | crptlog                       |
-| Журнал запросов в систему лояльности   | loyaltylog                    |
-| Задачи                                 | purpose                       |
-| Заказ кодов маркировки                 | crptdemand                    |
-| Заказы на производство                 | processingorder               |
-| Заказы покупателей                     | customerorder                 |
-| Заказы поставщикам                     | purchaseorder                 |
-| Запросы                                | evotorrequest                 |
-| Звонки                                 | phonecall                     |
-| Изъятие из упаковки                    | crptpackageitemremoval        |
-| Импорт                                 | import                        |
-| Импорт из Excel                        | importgoods                   |
-| Импорт приемки                         | importedo                     |
-| Импорт справочника                     | importcustom                  |
-| Инвентаризации                         | inventory                     |
-| Контрагенты                            | company                       |
-| Корзина                                | recyclebin                    |
-| Корректировки                          | adjustment                    |
-| Массовое редактирование                | bulkEdit                      |
-| Настройка обмена с Эвотор              | evotormapping                 |
-| Настройки                              | companysettings               |
-| Начало работы                          | homepage                      |
-| Новости                                | feed                          |
-| Обороты                                | turnover                      |
-| Операции с баллами                     | bonustransaction              |
-| Описание остатков                      | remainsorder                  |
-| Оприходования                          | enter                         |
-| Остатки                                | stockreport                   |
-| Отгрузки                               | demand                        |
-| Отчеты комиссионера                    | commissionreport              |
-| Очередь облачных чеков                 | fiscalevent                   |
-| Очередь облачных чеков                 | fiscalqueue                   |
-| Перемаркировка                         | remarkingorder                |
-| Перемещения                            | move                          |
-| Платежи                                | finance                       |
-| Подписка                               | payments                      |
-| Показатели                             | dashboard                     |
-| Полученные отчеты комиссионера         | commissionreportin            |
-| Прайс-листы                            | pricelist                     |
-| Предоплаты                             | prepayment                    |
-| Прибыли и убытки                       | pnl3                          |
-| Прибыльность                           | pnl                           |
-| Приемки                                | supply                        |
-| Решения                             | apps                          |
-| Решения                             | embed-apps                    |
-| Проверка комплектации                  | checkequipment                |
-| Продажи                                | retaildemand                  |
-| Проекты                                | project                       |
-| Просмотр информации о КМ или ТУ        | trackingidentify              |
-| Расформирование упаковки               | crptpackagedisaggregation     |
-| Сбор заказа                            | orderassembly                 |
-| Сер. номера                            | serialnumbers                 |
-| Синхронизация                          | connectorsettings             |
-| Скидки                                 | discount                      |
-| Склады                                 | warehouse                     |
-| Смены                                  | retailshift                   |
-| События обмена с Эвотор                | evotorevent                   |
-| Сотрудники                             | employee                      |
-| Спецпредложения                        | specialoffers                 |
-| Списание кодов маркировки              | crptcancellation              |
-| Списания                               | loss                          |
-| Страны                                 | country                       |
-| Сценарии                               | scripttemplate                |
-| Счета покупателям                      | invoiceout                    |
-| Счета поставщиков                      | invoicein                     |
-| Счета-фактуры выданные                 | factureout                    |
-| Счета-фактуры полученные               | facturein                     |
-| Техкарты                               | processingplan                |
-| Техоперации                            | processing                    |
-| Товары и услуги                        | good                          |
-| Товары на реализации                   | commissiongoods               |
-| Точки продаж                           | retailstore                   |
-| Уведомления                            | notifications                 |
-| Управление закупками                   | purchasecontrol               |
-| Учетная запись                         | account                       |
-| Формирование упаковки                  | crptpackagecreation           |
-| Характеристика                         | feature                       |
-| Экспорт                                | export                        |
-| Юр. лица                               | mycompany                     |
+| Стартовый экран                      | Значение поля defaultScreen   |
+|--------------------------------------| :---------------------------- |
+| Аудит                                | audit                         |
+| Валюты                               | currency                      |
+| Ввод в оборот кодов маркировки       | enrollorder                   |
+| Взаиморасчеты                        | customersbalancelist          |
+| Внесения                             | retaildrawercashin            |
+| Внутренние заказы                    | internalorder                 |
+| Возврат в оборот                     | enrollreturn                  |
+| Возвраты                             | retailsalesreturn             |
+| Возвраты покупателей                 | salesreturn                   |
+| Возвраты поставщикам                 | purchasereturn                |
+| Возвраты предоплат                   | prepaymentreturn              |
+| Воронка продаж                       | purchasefunnel                |
+| Вывод из оборота                     | retireorder                   |
+| Выданные отчеты комиссионера         | commissionreportout           |
+| Выплаты                              | retaildrawercashout           |
+| Движение денежных средств            | cashflow                      |
+| Договоры                             | contract                      |
+| Документы                            | operation                     |
+| Единицы измерения                    | uom                           |
+| Журнал запросов в ИС МП              | crptlog                       |
+| Журнал запросов в систему лояльности | loyaltylog                    |
+| Задачи                               | purpose                       |
+| Заказ кодов маркировки               | crptdemand                    |
+| Заказы на производство               | processingorder               |
+| Заказы покупателей                   | customerorder                 |
+| Заказы поставщикам                   | purchaseorder                 |
+| Запросы                              | evotorrequest                 |
+| Звонки                               | phonecall                     |
+| Изъятие из фасовки                   | crptpackageitemremoval        |
+| Импорт                               | import                        |
+| Импорт из Excel                      | importgoods                   |
+| Импорт приемки                       | importedo                     |
+| Импорт справочника                   | importcustom                  |
+| Инвентаризации                       | inventory                     |
+| Контрагенты                          | company                       |
+| Корзина                              | recyclebin                    |
+| Корректировки                        | adjustment                    |
+| Массовое редактирование              | bulkEdit                      |
+| Настройка обмена с Эвотор            | evotormapping                 |
+| Настройки                            | companysettings               |
+| Начало работы                        | homepage                      |
+| Новости                              | feed                          |
+| Обороты                              | turnover                      |
+| Операции с баллами                   | bonustransaction              |
+| Описание остатков                    | remainsorder                  |
+| Оприходования                        | enter                         |
+| Остатки                              | stockreport                   |
+| Отгрузки                             | demand                        |
+| Отчеты комиссионера                  | commissionreport              |
+| Очередь облачных чеков               | fiscalevent                   |
+| Очередь облачных чеков               | fiscalqueue                   |
+| Перемаркировка                       | remarkingorder                |
+| Перемещения                          | move                          |
+| Платежи                              | finance                       |
+| Подписка                             | payments                      |
+| Показатели                           | dashboard                     |
+| Полученные отчеты комиссионера       | commissionreportin            |
+| Прайс-листы                          | pricelist                     |
+| Предоплаты                           | prepayment                    |
+| Прибыли и убытки                     | pnl3                          |
+| Прибыльность                         | pnl                           |
+| Приемки                              | supply                        |
+| Решения                              | apps                          |
+| Решения                              | embed-apps                    |
+| Проверка комплектации                | checkequipment                |
+| Продажи                              | retaildemand                  |
+| Проекты                              | project                       |
+| Просмотр информации о КМ или ТУ      | trackingidentify              |
+| Расформирование фасовки              | crptpackagedisaggregation     |
+| Сбор заказа                          | orderassembly                 |
+| Сер. номера                          | serialnumbers                 |
+| Синхронизация                        | connectorsettings             |
+| Скидки                               | discount                      |
+| Склады                               | warehouse                     |
+| Смены                                | retailshift                   |
+| События обмена с Эвотор              | evotorevent                   |
+| Сотрудники                           | employee                      |
+| Спецпредложения                      | specialoffers                 |
+| Списание кодов маркировки            | crptcancellation              |
+| Списания                             | loss                          |
+| Страны                               | country                       |
+| Сценарии                             | scripttemplate                |
+| Счета покупателям                    | invoiceout                    |
+| Счета поставщиков                    | invoicein                     |
+| Счета-фактуры выданные               | factureout                    |
+| Счета-фактуры полученные             | facturein                     |
+| Техкарты                             | processingplan                |
+| Техоперации                          | processing                    |
+| Товары и услуги                      | good                          |
+| Товары на реализации                 | commissiongoods               |
+| Точки продаж                         | retailstore                   |
+| Уведомления                          | notifications                 |
+| Управление закупками                 | purchasecontrol               |
+| Учетная запись                       | account                       |
+| Формирование фасовки                 | crptpackagecreation           |
+| Характеристика                       | feature                       |
+| Экспорт                              | export                        |
+| Юр. лица                             | mycompany                     |
 
 ### Получить Настройки пользователя 
 > Запрос на получение Настроек пользователя:
