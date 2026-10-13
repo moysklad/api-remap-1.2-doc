@@ -3751,5 +3751,5 @@ Href решения должен быть указан в виде:
 
 Сейчас заголовок используется в разделах:
 
-+ [Ассортимент](#/dictionaries/assortment#2-assortiment), значение `assortmentWithoutStock`
-+ [Транспортная упаковка](#/dictionaries/handling-unit#2-transportnaya-upakovka), значение `aggregatePackChildrenList`
++ [Ассортимент](#/dictionaries/assortment#2-assortiment)
++ [Транспортная упаковка](#/dictionaries/handling-unit#2-transportnaya-upakovka)
