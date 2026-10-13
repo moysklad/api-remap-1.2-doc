@@ -9,6 +9,7 @@
 - Поле связи с `Подразделение грузополучателя` (`consigneeBranch`) для документов: [Отгрузка](#/documents/demand#2-otgruzka) и [Счет-фактура выданный](#/documents/factureout#2-schet-faktura-vydannyj)
 - Поле связи с `Подразделение грузоотправителя` (`consignorBranch`) для документа [Отгрузка](#/documents/demand#2-otgruzka)
 - Ошибка [74000](#/errors#3-kody-oshibok-dlya-podrazdeleniya-yuridicheskogo-lica)
+- Информация по работе с заголовком [X-Lognex-Remap-Beta-Feature](#/general#3-zagolovok-x-lognex-remap-beta-feature)
 
 ### 12-10-2026
 **Добавлено**
