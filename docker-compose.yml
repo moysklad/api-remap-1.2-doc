@@ -1,10 +1,8 @@
 services:
   docs:
-    image: docker.infra.lognex/react-doc-engine:${REACT_DOC_ENGINE_VERSION:-AS-4800-483503}
+    image: docker.infra.lognex/react-doc-engine:${REACT_DOC_ENGINE_VERSION:-AS-4800-485320}
     ports:
       - "4568:4568"
-    environment:
-      DOC_CONTENT_ID: json-api
     volumes:
       - ./md:/src/assets/md:ro
       - ./config.json:/src/assets/config.json:ro

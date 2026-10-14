@@ -9,29 +9,23 @@
 - добавьте https://github.com/moysklad/api-remap-1.2-doc/commits/master.atom
 - при любом изменении документации придёт нотификация и можно посмотреть, что именно изменилось.
 
-## Описание репозитория и структуры документации
+## Структура документации
 
-Ветка `master` содержит контент для production-публикации через remap-deployer. Preview выбранной ветки и production-релиз выполняются отдельными pipeline.
+- `md/` — тексты документации 
+- `images/` — изображения, используемые в тексте
+- `config.json` — оглавление
+- `site.json` — конфигурация
+- `hash-redirect-map.json` — соответствие старых адресов новым маршрутам
 
-В папке `md` находятся .md-файлы документации.
-
-`site.json` задаёт название документации, `contentId=json-api` и видимость переключателя страны и уведомлений (`showCountryFilter=true`, `showNotifications=true`). Если поле `logo` не задано, используется встроенный логотип JSON API. `hash-redirect-map.json` сопоставляет прежние адреса новым маршрутам. Сборки должны копировать оба файла из той же ревизии, что и `md/` и `config.json`.
-
-## Локальный запуск
-
-Нужны Docker Compose и доступ к `docker.infra.lognex`.
+## Локальный запуск и проверки
 
 ```bash
 docker compose up
 ```
 
-Документация откроется по адресу http://localhost:4568. Compose документации Vendor использует порт 4567, поэтому оба проекта можно запускать одновременно.
-
-Изменения текстов в `md/` подхватываются без перезапуска. После изменения оглавления, настроек сайта, заголовков для поиска или уведомлений перезапустите сервис: `docker compose restart docs`.
-
-По умолчанию используется проверяемый в AS-4800 образ `AS-4800-483503`. После выпуска стабильной версии можно задать ее тег через переменную `REACT_DOC_ENGINE_VERSION`. Образ `1.18-release` не поддерживает новую конфигурацию оформления.
-
-## Проверки
+Документация после запуска контейнера доступна по адресу [http://localhost:4568](http://localhost:4568).
+Изменения текстов подхватываются автоматически. 
+После изменения оглавления, настроек сайта, заголовков для поиска или уведомлений выполните `docker compose restart docs`.
 
 ```bash
 docker compose run --rm docs npm run test:links
@@ -39,17 +33,21 @@ docker compose run --rm docs npm run test:md
 docker compose run --rm docs npm run build-full
 ```
 
-Команды проверяют внутренние ссылки, оформление Markdown и сборку. Результат последней команды остается внутри одноразового контейнера.
+Команды проверяют внутренние ссылки, Markdown и сборку. Результат сборки остаётся в одноразовом контейнере.
 
 ## Preview и публикация
 
-Preview запускается в remap-deployer с `api=remap_12` и `branch=<ветка документации>`.
+Сборка и публикация выполняются через [remap-deployer](https://git.company.lognex/moysklad/remap-deployer).
 
-[Проверить MC-100508 новым движком](https://git.company.lognex/moysklad/remap-deployer/-/pipelines/new?ref=AS-4800&var%5Bapi%5D=remap_12&var%5Bbranch%5D=MC-100508&var%5BREACT_DOC_ENGINE_VERSION%5D=AS-4800-483503).
+В remap-deployer используются параметры:
 
-Результат: `https://moysklad.pages.lognex/remap-deployer/remap_12/<ветка>/`.
+- Preview: `api=remap_12`, `branch=<ветка документации>`
+- Production: `release=yes`, `api=remap_12`, `branch=<ветка документации>`
+- `ENGINE_VERSION` — тег движка для сборки.
 
-Production продолжает использовать действующий процесс релиза JSON API: `release=yes`, `api=remap_12`, `branch=<ветка документации>`. Переключение production на новый стабильный движок выполняется после проверки preview и согласования команды JSON API. Подробности — в [README remap-deployer](https://git.company.lognex/moysklad/remap-deployer/-/blob/master/README.md).
+Preview публикуется по адресу `https://moysklad.pages.lognex/remap-deployer/remap_12/<ветка>/`.
+
+Подробности запуска и релиза — в [README remap-deployer](https://git.company.lognex/moysklad/remap-deployer/-/blob/master/README.md).
 
 ## Оформление нового раздела
 
