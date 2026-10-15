@@ -37,15 +37,8 @@
   {
     "title": "Сущности",
     "level": 1,
-    "folderPath": "./dictionaries/_alternatives.md",
+    "folderPath": "./dictionaries/_assortment.md",
     "children": [
-      {
-        "title": "Аналоги",
-        "level": 2,
-        "folderPath": "./dictionaries/_alternatives.md",
-        "children": [
-        ]
-      },
       {
         "title": "Ассортимент",
         "level": 2,
