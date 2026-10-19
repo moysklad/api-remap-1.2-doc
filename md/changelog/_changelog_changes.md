@@ -2,6 +2,13 @@
 
 Список последних изменений в API Remap 1.2
 
+### 21-10-2026
+**Добавлено**
+- Возможность использовать комплекты в позиции документа [Вывод из оборота](#/documents/retireorder)
+
+**Изменено**
+- Описание ошибки [57201](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota)
+
 ### 13-10-2026
 **Добавлено**
 - Сущность `Подразделение юридического лица` [organizationbranch](#/dictionaries/organizationbranch#2-podrazdelenie-yuridicheskogo-lica)
