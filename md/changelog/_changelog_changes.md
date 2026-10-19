@@ -4,7 +4,7 @@
 
 ### 21-10-2026
 **Добавлено**
-- Возможность использовать комплекты в позиции документа [Вывод из оборота](#/documents/retireorder)
+- Возможность использовать комплекты в позиции документа [Вывод из оборота](#/documents/retireorder#2-vyvod-kodov-markirovki-iz-oborota)
 
 **Изменено**
 - Описание ошибки [57201](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota)
