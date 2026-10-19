@@ -1,6 +1,6 @@
 services:
   docs:
-    image: docker.infra.lognex/react-doc-engine:${REACT_DOC_ENGINE_VERSION:-AS-4800-485320}
+    image: docker.infra.lognex/react-doc-engine:1.19-release
     ports:
       - "4568:4568"
     volumes:
