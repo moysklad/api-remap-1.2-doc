@@ -9,6 +9,10 @@
 **Изменено**
 - Описание ошибки [57201](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota)
 
+### 19-10-2026
+**Изменено**
+- Расширен список допустимых способов вывода из оборота `retireOrderType` в зависимости от типа маркируемой продукции `trackingType` в документе [Вывод из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
+
 ### 13-10-2026
 **Добавлено**
 - Сущность `Подразделение юридического лица` [organizationbranch](#/dictionaries/organizationbranch#2-podrazdelenie-yuridicheskogo-lica)
