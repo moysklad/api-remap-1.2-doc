@@ -10,20 +10,21 @@
 + по описанию Cтатьи расходов **description**
 
 #### Атрибуты сущности
-| Название         | Тип                                                       | Фильтрация                  | Описание                                                                                 |
-| ---------------- | :-------------------------------------------------------- | :-------------------------- | :--------------------------------------------------------------------------------------- |
-| **accountId**    | UUID                                                      | `=` `!=`                    | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                     |
-| **code**         | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Код Статьи расходов                                                                      |
-| **description**  | String(4096)                                              | `=` `!=` `~` `~=` `=~`      | Описание Статьи расходов                                                                 |
-| **externalCode** | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Внешний код Статьи расходов<br>`+Обязательное при ответе`                                |
-| **group**        | [Meta](#/general#3-metadannye) | `=` `!=`                    | Отдел сотрудника<br>`+Expand` `+Для пользовательских статей расходов`                    |
-| **id**           | UUID                                                      | `=` `!=`                    | ID Cтатьи расходов<br>`+Обязательное при ответе` `+Только для чтения`                             |
-| **meta**         | [Meta](#/general#3-metadannye) |                             | Метаданные о Статье расходов<br>`+Обязательное при ответе`                               |
-| **name**         | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Наименование Статьи расходов<br>`+Обязательное при ответе` `+Необходимо при создании`    |
-| **operatingExpenses** | Boolean                                               | `=` `!=`                    | Признак включения/исключения в учет прибыли. По умолчанию значение `true`.<br>`+Обязательное при ответе` |
-| **owner**        | [Meta](#/general#3-metadannye) | `=` `!=`                    | Владелец (Сотрудник)<br>`+Expand` `+Для пользовательских статей расходов`                |
-| **shared**       | Boolean                                                   | `=` `!=`                    | Общий доступ<br>`+Обязательное при ответе` `+Для пользовательских статей расходов`       |
-| **updated**      | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`  | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Только для чтения` |
+| Название              | Тип                            | Фильтрация                 | Описание                                                                                                 |
+|-----------------------|:-------------------------------|:---------------------------|:---------------------------------------------------------------------------------------------------------|
+| **accountId**         | UUID                           | `=` `!=`                   | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                     |
+| **code**              | String(255)                    | `=` `!=` `~` `~=` `=~`     | Код Статьи расходов                                                                                      |
+| **description**       | String(4096)                   | `=` `!=` `~` `~=` `=~`     | Описание Статьи расходов                                                                                 |
+| **externalCode**      | String(255)                    | `=` `!=` `~` `~=` `=~`     | Внешний код Статьи расходов<br>`+Обязательное при ответе`                                                |
+| **group**             | [Meta](#/general#3-metadannye) | `=` `!=`                   | Отдел сотрудника<br>`+Expand` `+Для пользовательских статей расходов`                                    |
+| **id**                | UUID                           | `=` `!=`                   | ID Cтатьи расходов<br>`+Обязательное при ответе` `+Только для чтения`                                    |
+| **meta**              | [Meta](#/general#3-metadannye) |                            | Метаданные о Статье расходов<br>`+Обязательное при ответе`                                               |
+| **name**              | String(255)                    | `=` `!=` `~` `~=` `=~`     | Наименование Статьи расходов<br>`+Обязательное при ответе` `+Необходимо при создании`                    |
+| **operatingExpenses** | Boolean                        | `=` `!=`                   | Признак включения/исключения в учет прибыли. По умолчанию значение `true`.<br>`+Обязательное при ответе` |
+| **owner**             | [Meta](#/general#3-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br>`+Expand` `+Для пользовательских статей расходов`                                |
+| **shared**            | Boolean                        | `=` `!=`                   | Общий доступ<br>`+Обязательное при ответе` `+Для пользовательских статей расходов`                       |
+| **updated**           | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Момент последнего обновления сущности<br>`+Обязательное при ответе` `+Только для чтения`                 |
+| **archived**          | Boolean                        | `=` `!=`                   | Добавлена ли статья расходов в архив. По умолчанию `false`.<br>`+Обязательное при ответе`                |
 
 ### Получить Статьи расходов
 
@@ -79,6 +80,7 @@ curl --compressed -X GET \
       "updated": "2015-05-27 17:03:10",
       "name": "Закупка товаров",
       "description": "Расходы на закупку товаров учитываются в отчете «Прибыли и убытки» как себестоимость проданных товаров",
+      "archived": false,
       "operatingExpenses": true,
       "code": "1",
       "externalCode": "1"
@@ -94,6 +96,7 @@ curl --compressed -X GET \
       "updated": "2015-05-27 17:03:10",
       "name": "Возврат",
       "description": "Расходы по возвратам не учитываются в отчете «Прибыли и убытки»",
+      "archived": false,
       "operatingExpenses": false,
       "code": "3",
       "externalCode": "3"
@@ -109,6 +112,7 @@ curl --compressed -X GET \
       "updated": "2015-05-27 17:03:10",
       "name": "Налоги и сборы",
       "description": "Расходы по налогам и сборам учитываются как отдельная статья, не включенная в операционные расходы",
+      "archived": false,
       "operatingExpenses": true,
       "code": "2",
       "externalCode": "2"
@@ -124,6 +128,7 @@ curl --compressed -X GET \
       "updated": "2015-05-27 17:03:24",
       "name": "Списания",
       "description": "Списания",
+      "archived": false,
       "operatingExpenses": true,
       "code": "4",
       "externalCode": "4"
@@ -139,6 +144,7 @@ curl --compressed -X GET \
       "updated": "2016-06-09 18:40:35",
       "name": "Перемещение",
       "description": "Перемещения денег между кассами не учитываются в отчете «Прибыли и убытки».",
+      "archived": false,
       "operatingExpenses": false,
       "code": "5",
       "externalCode": "5"
@@ -155,6 +161,7 @@ curl --compressed -X GET \
       "updated": "2016-06-09 18:43:58",
       "name": "Аренда",
       "description": "Аренда",
+      "archived": false,
       "operatingExpenses": true,
       "code": "Аренда",
       "externalCode": "IVslr34uhCUuglxPD7Idm0"
@@ -171,6 +178,7 @@ curl --compressed -X GET \
       "updated": "2016-06-09 18:43:58",
       "name": "Зарплата",
       "description": "Зарплата",
+      "archived": false,
       "operatingExpenses": true,
       "code": "Зарплата",
       "externalCode": "RY7G3TULiTyjqYRrzr3V03"
@@ -187,6 +195,7 @@ curl --compressed -X GET \
       "updated": "2016-06-09 18:43:58",
       "name": "Маркетинг и реклама",
       "description": "Маркетинг и реклама",
+      "archived": false,
       "operatingExpenses": true,
       "code": "Маркетинг и реклама",
       "externalCode": "1PMtKJq-jjVJQbu5OWqBG1"
@@ -231,6 +240,7 @@ curl --compressed -X GET \
   "updated": "2016-07-01 17:52:42",
   "name": "Налоги и не налоги",
   "description": "Статья расходов налоги",
+  "archived": false,
   "operatingExpenses": true,
   "code": "nalogi",
   "externalCode": "wwoaon21431"
@@ -267,6 +277,7 @@ curl --compressed -X GET \
               "name": "Дополнительные расходы",
               "description": "Еще дополнительные расходы",
               "code": "additional",
+              "archived": true,
               "externalCode": "sdeEfr32rfe"
             }
           ]'  
@@ -289,6 +300,7 @@ curl --compressed -X GET \
     "updated": "2016-07-01 17:52:42",
     "name": "Налоги и не налоги",
     "description": "Статья расходов налоги",
+    "archived": false,
     "operatingExpenses": true,
     "code": "nalogi",
     "externalCode": "wwoaon21431"
@@ -305,6 +317,7 @@ curl --compressed -X GET \
     "updated": "2016-07-01 17:52:42",
     "name": "Дополнительные расходы",
     "description": "Еще дополнительные расходы",
+    "archived": true,
     "operatingExpenses": false,
     "code": "additional",
     "externalCode": "sdeEfr32rfe"
@@ -416,6 +429,7 @@ curl --compressed -X GET \
   "updated": "2016-06-09 18:43:58",
   "name": "Аренда",
   "description": "Аренда",
+  "archived": false,
   "operatingExpenses": true,
   "code": "Аренда",
   "externalCode": "IVslr34uhCUuglxPD7Idm0"
@@ -442,6 +456,7 @@ curl --compressed -X GET \
       -d '{
             "name": "Не налоги и налоги",
             "description": "Налоги и не налоги. Такая вот статья",
+            "archived": true,
             "operatingExpenses": true,
             "code": "nalogi i net",
             "externalCode": "wwoa1142aon21431"
@@ -464,6 +479,7 @@ curl --compressed -X GET \
   "updated": "2016-07-01 17:52:42",
   "name": "Не налоги и налоги",
   "description": "Налоги и не налоги. Такая вот статья",
+  "archived": true,
   "operatingExpenses": true,
   "code": "nalogi i net",
   "externalCode": "wwoa1142aon21431"

@@ -243,6 +243,13 @@
         ]
       },
       {
+        "title": "Подразделение юридического лица",
+        "level": 2,
+        "folderPath": "./dictionaries/_organizationbranch.md",
+        "children": [
+        ]
+      },
+      {
         "title": "Пользовательские роли",
         "level": 2,
         "folderPath": "./dictionaries/_custom_role.md",
@@ -365,6 +372,13 @@
         "title": "Точка продаж",
         "level": 2,
         "folderPath": "./dictionaries/_retailstore.md",
+        "children": [
+        ]
+      },
+      {
+        "title": "Транспортная упаковка",
+        "level": 2,
+        "folderPath": "./dictionaries/_handling_unit.md",
         "children": [
         ]
       },
@@ -959,6 +973,20 @@
         "title": "Выгрузка статистики запросов к API",
         "level": 2,
         "folderPath": "./workbook/_workbook_api_statistics.md",
+        "children": [
+        ]
+      }
+    ]
+  },
+   {
+    "title": "MCP",
+    "level": 1,
+    "folderPath": "./mcp/_mcp_dev.md",
+    "children": [
+      {
+        "title": "MCP-dev",
+        "level": 2,
+        "folderPath": "./mcp/_mcp_dev.md",
         "children": [
         ]
       }

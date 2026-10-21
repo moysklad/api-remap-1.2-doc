@@ -56,6 +56,7 @@
 + Счет поставщика (invoicein)
 + Заказ поставщику (purchaseorder)
 + Выданный отчет комиссионера (commissionreportout)
++ Начисление зарплаты (payroll)
 
 О работе с доп. полями Исходящих  платежей  можно прочитать [здесь](#/general#3-rabota-s-dopolnitelnymi-polyami)
 
