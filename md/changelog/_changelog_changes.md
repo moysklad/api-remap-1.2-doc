@@ -2,12 +2,23 @@
 
 Список последних изменений в API Remap 1.2
 
-### 21-10-2026
+### 26-10-2026
 **Добавлено**
 - Возможность использовать комплекты в позиции документа [Вывод из оборота](#/documents/retireorder#2-vyvod-kodov-markirovki-iz-oborota)
 
 **Изменено**
 - Описание ошибки [57201](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota)
+
+### 21-10-2026
+**Добавлено**
+- Поле `accrualDate` (Дата начисления) для документов [Исходящего платежа](#/documents/payment-out#3-ishodyashie-platezhi) и [Расходного ордера](#/documents/cashout#3-rashodnye-ordera)
+- Ошибка [22005](#/errors#3-kody-oshibok-dlya-platezhej) при создании или изменении [Исходящего платежа](#/documents/payment-out#3-ishodyashie-platezhi) или [Расходного ордера](#/documents/cashout#3-rashodnye-ordera) при указании даты начисления, если статья расходов не относится к операционным расходам или не участвует в учете прибыли
+- Ошибка [22006](#/errors#3-kody-oshibok-dlya-platezhej) при создании или изменении [Исходящего платежа](#/documents/payment-out#3-ishodyashie-platezhi) или [Расходного ордера](#/documents/cashout#3-rashodnye-ordera) на основании Возврата покупателя, если указывать статью расходов, отличную от возврата
+- Ошибка [22007](#/errors#3-kody-oshibok-dlya-platezhej) при создании или изменении [Исходящего платежа](#/documents/payment-out#3-ishodyashie-platezhi) или [Расходного ордера](#/documents/cashout#3-rashodnye-ordera) с датой начисления без активной опции "Финансы"
+
+### 20-10-2026
+**Добавлено**
+- Поле `archived` в [Статьи расходов](#/dictionaries/expenseitem#3-stati-rashodov)
 
 ### 19-10-2026
 **Изменено**
