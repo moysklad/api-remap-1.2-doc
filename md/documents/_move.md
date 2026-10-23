@@ -452,7 +452,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Перемещений 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Перемещений.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Перемещений.
 В теле запроса нужно передать массив, содержащий JSON представления Перемещений, которые вы хотите создать или обновить.
 Обновляемые Перемещения должны содержать идентификатор в виде метаданных.
 
@@ -460,7 +460,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/move" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/move/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

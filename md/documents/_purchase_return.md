@@ -1127,7 +1127,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Возвратов поставщику 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Возвратов поставщику.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Возвратов поставщику.
 В теле запроса нужно передать массив, содержащий JSON представления Возвратов поставщику, которые вы хотите создать или обновить.
 Обновляемые Возвраты поставщику должны содержать идентификатор в виде метаданных.
 
@@ -1135,7 +1135,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/purchasereturn" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/purchasereturn/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

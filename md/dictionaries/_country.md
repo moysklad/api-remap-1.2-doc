@@ -248,7 +248,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Стран 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Стран.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Стран.
 В теле запроса нужно передать массив, содержащий JSON представления Стран, которые вы хотите создать или обновить.
 Обновляемые Страны должны содержать идентификатор в виде метаданных.
 
@@ -256,7 +256,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/country" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/country/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

@@ -238,7 +238,7 @@ curl --compressed -X GET \
 
 
 ### Массовое создание и обновление Каналов продаж
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Каналов продаж.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Каналов продаж.
 В теле запроса нужно передать массив, содержащий JSON представления Каналов продаж, которые вы хотите создать или обновить.
 Обновляемые Каналы продаж должны содержать идентификатор в виде метаданных. Для Каналов продаж, созданных при подключении интернет-магазина, нельзя обновить тип. При изменении наименования таких каналов продаж наименование связанного интернет-магазина изменится.
 
@@ -246,7 +246,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/saleschannel" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

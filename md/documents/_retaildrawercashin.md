@@ -346,7 +346,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Внесений денег 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Внесений денег.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Внесений денег.
 В теле запроса нужно передать массив, содержащий JSON представления Внесений денег, которые вы хотите создать или обновить.
 Обновляемые Внесения денег должны содержать идентификатор в виде метаданных.
 
@@ -354,7 +354,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

@@ -1187,7 +1187,7 @@ curl --compressed -X PUT \
 ```
 
 ### Массовое обновление округления копеек
-[Массовое обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) округления копеек.
+[Массовое обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) округления копеек.
 В теле запроса нужно передать массив, содержащий JSON представления округлений копеек, которые вы хотите обновить.
 Поддерживается только изменение существующих сущностей. Обновляемые сущности должны содержать идентификатор в виде метаданных.
 В теле запроса необходимо передать поля, которые будут обновлены (**name** или **active**). В ответе также будут приходить поля **agentTags** и **allAgents**, но их нельзя изменить.
@@ -1196,7 +1196,7 @@ curl --compressed -X PUT \
 
 ```shell
 curl --compressed -X POST \
-  "https://api.moysklad.ru/api/remap/1.2/entity/discount" \
+  "https://api.moysklad.ru/api/remap/1.2/entity/discount/batch" \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip" \
   -H "Content-Type: application/json" \

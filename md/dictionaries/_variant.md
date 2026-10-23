@@ -884,7 +884,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Модификаций 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Модификаций.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Модификаций.
 В теле запроса нужно передать массив, содержащий JSON представления Модификаций, которые вы хотите создать или обновить.
 Обновляемые Модификации должны содержать идентификатор в виде метаданных.
 
@@ -892,7 +892,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/variant" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/variant/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

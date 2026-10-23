@@ -287,14 +287,14 @@ curl --compressed -X POST \
 
 ### Массовое создание и обновление Ставок НДС
 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) ставок НДС. В теле запроса нужно передать массив, содержащий JSON представления ставок, которые вы хотите создать или обновить.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) ставок НДС. В теле запроса нужно передать массив, содержащий JSON представления ставок, которые вы хотите создать или обновить.
 Обновляемые ставки должны содержать идентификатор в виде метаданных.
 
 > Запрос на массовое обновление ставок НДС
 
 ```shell
 curl --compressed -X POST \
-  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate" \
+  "https://api.moysklad.ru/api/remap/1.2/entity/taxrate/batch" \
   -H 'Authorization: Basic <Credentials>' \
   -H 'Content-Type: application/json' \
   -d '[

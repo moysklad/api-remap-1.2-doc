@@ -361,7 +361,7 @@ curl --compressed -X POST \
 ```
 
 ### Массовое создание и обновление Карточек контента
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Карточек контента.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Карточек контента.
 В теле запроса нужно передать массив, содержащий JSON представления Карточек контента, которые вы хотите создать или обновить.
 Обновляемые Карточки контента должны содержать идентификатор в виде метаданных.
 
@@ -369,7 +369,7 @@ curl --compressed -X POST \
 
 ```shell
 curl --compressed -X POST \
-  "https://api.moysklad.ru/api/remap/1.2/entity/contentcard" \
+  "https://api.moysklad.ru/api/remap/1.2/entity/contentcard/batch" \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip" \
   -H "Content-Type: application/json" \
