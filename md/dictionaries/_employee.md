@@ -221,7 +221,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое обновление Сотрудников 
-[Массовое обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Сотрудников.
+[Массовое обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Сотрудников.
 В теле запроса нужно передать массив, содержащий JSON представления Сотрудников, которые вы хотите обновить.
 Обновляемые Сотрудники должны содержать идентификатор в виде метаданных.
 
@@ -229,7 +229,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/employee" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/employee/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

@@ -199,7 +199,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление этапов
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) этапов.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) этапов.
 В теле запроса нужно передать массив, содержащий JSON представления этапов, которые вы хотите создать или обновить.
 Обновляемые этапы должны содержать идентификатор в виде метаданных.
 
@@ -207,7 +207,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingstage" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingstage/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

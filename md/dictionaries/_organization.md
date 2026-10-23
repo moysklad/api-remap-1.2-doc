@@ -1172,7 +1172,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление юрлиц 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) юрлиц.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) юрлиц.
 В теле запроса нужно передать массив, содержащий JSON представления юрлиц, которые вы хотите создать или обновить.
 Обновляемые Юрлица должны содержать идентификатор в виде метаданных.
 
@@ -1180,7 +1180,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/organization" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/organization/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

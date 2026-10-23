@@ -1058,7 +1058,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Счетов поставщика 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Счетов поставщика.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Счетов поставщика.
 В теле запроса нужно передать массив, содержащий JSON представления Счетов поставщика, которые вы хотите создать или обновить.
 Обновляемые Счета поставщика должны содержать идентификатор в виде метаданных.
 
@@ -1066,7 +1066,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/invoicein" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/invoicein/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

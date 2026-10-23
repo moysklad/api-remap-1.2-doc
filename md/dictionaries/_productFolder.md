@@ -282,7 +282,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Групп товаров 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Групп товаров.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Групп товаров.
 В теле запроса нужно передать массив, содержащий JSON представления Групп товаров, которые вы хотите создать или обновить.
 Обновляемые Группы товаров должны содержать идентификатор в виде метаданных.
 
@@ -290,7 +290,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/productfolder" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/productfolder/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

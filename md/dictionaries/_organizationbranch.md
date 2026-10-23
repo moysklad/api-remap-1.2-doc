@@ -316,7 +316,7 @@ curl --compressed -X POST \
 ```
 
 ### Массовое создание и обновление Подразделений юридического лица
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Подразделений юридического лица.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Подразделений юридического лица.
 В теле запроса нужно передать массив, содержащий JSON представления Подразделений, которые вы хотите создать или обновить.
 Обновляемые Подразделения должны содержать идентификатор в виде метаданных.
 
@@ -324,7 +324,7 @@ curl --compressed -X POST \
 
 ```shell
 curl --compressed -X POST \
-  "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch" \
+  "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/batch" \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip" \
   -H "Content-Type: application/json" \

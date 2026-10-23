@@ -1037,7 +1037,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Услуг 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Услуг.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Услуг.
 В теле запроса нужно передать массив, содержащий JSON представления Услуг, которые вы хотите создать или обновить.
 Обновляемые Услуги должны содержать идентификатор в виде метаданных.
 
@@ -1045,7 +1045,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/service" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/service/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

@@ -1214,7 +1214,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Розничных возвратов 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Розничных возвратов.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Розничных возвратов.
 В теле запроса нужно передать массив, содержащий JSON представления Розничных возвратов, которые вы хотите создать или обновить.
 Обновляемые Розничные возвраты должны содержать идентификатор в виде метаданных.
 
@@ -1222,7 +1222,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/retailsalesreturn" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/retailsalesreturn/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

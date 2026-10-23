@@ -1269,7 +1269,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Техопераций 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Техопераций.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Техопераций.
 В теле запроса нужно передать массив, содержащий JSON представления Техопераций, которые вы хотите создать или обновить.
 Обновляемые Техоперации должны содержать идентификатор в виде метаданных.
 
@@ -1277,7 +1277,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/processing" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processing/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
