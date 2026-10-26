@@ -1948,7 +1948,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportin/7944ef04-f831-11e5-7a69-971500188b19/positions" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportin/7944ef04-f831-11e5-7a69-971500188b19/positions/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
@@ -2305,7 +2305,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportin/7944ef04-f831-11e5-7a69-971500188b19/returntocommissionerpositions" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportin/7944ef04-f831-11e5-7a69-971500188b19/returntocommissionerpositions/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

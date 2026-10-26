@@ -1597,8 +1597,7 @@ curl --compressed -X POST \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones \
-" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
@@ -1999,8 +1998,7 @@ curl --compressed -X POST \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots \
-" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

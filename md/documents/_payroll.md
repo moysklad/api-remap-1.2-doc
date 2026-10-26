@@ -1777,7 +1777,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/payroll/4ee9ddd8-285d-11f1-cc6f-b56e00000011/positions" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/payroll/4ee9ddd8-285d-11f1-cc6f-b56e00000011/positions/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

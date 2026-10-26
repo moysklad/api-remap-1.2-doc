@@ -544,7 +544,7 @@ curl --compressed -X GET \
 
 ```shell
 curl --compressed -X POST \
-"https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/1d4adde5-a6bb-11ed-ac12-00090000003f/positions" \
+"https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/1d4adde5-a6bb-11ed-ac12-00090000003f/positions/batch" \
 -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip" \
 -H "Content-Type: application/json" \

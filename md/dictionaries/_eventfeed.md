@@ -306,7 +306,7 @@ curl --compressed -X PUT \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

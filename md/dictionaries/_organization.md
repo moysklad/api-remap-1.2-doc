@@ -2339,7 +2339,7 @@ curl --compressed -X PUT \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/organization/7944ef04-f831-11e5-7a69-971500188b19/accounts" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/organization/7944ef04-f831-11e5-7a69-971500188b19/accounts/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

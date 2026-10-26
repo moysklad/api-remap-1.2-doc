@@ -975,7 +975,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/task/47bc1d9b-8b87-11e8-d9ce-84d900000017/notes" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/task/47bc1d9b-8b87-11e8-d9ce-84d900000017/notes/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
