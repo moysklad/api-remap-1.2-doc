@@ -298,7 +298,7 @@ curl --compressed -X PUT \
 
 ### Массовое создание и обновление Событий
 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Событий.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Событий.
 В теле запроса нужно передать массив, содержащий JSON представления Событий, которые вы хотите создать или обновить.
 Обновляемые События должны содержать идентификатор в виде метаданных.
 
@@ -306,7 +306,7 @@ curl --compressed -X PUT \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/e4609c69-00bc-11ef-ac12-00120000001a/notes/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

@@ -359,7 +359,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Счетов-фактур полученных 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Счетов-фактур полученных.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Счетов-фактур полученных.
 В теле запроса нужно передать массив, содержащий JSON представления Счетов-фактур полученных, которые вы хотите создать или обновить.
 Обновляемые Счета-фактуры полученные должны содержать идентификатор в виде метаданных.
 
@@ -367,7 +367,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/facturein" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/facturein/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

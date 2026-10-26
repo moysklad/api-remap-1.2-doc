@@ -838,7 +838,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Выполнений этапов производства
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Выполнений этапов производства.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Выполнений этапов производства.
 В теле запроса нужно передать массив, содержащий JSON представления Выполнений этапов производства, которые вы хотите создать или обновить.
 Обновляемые Выполненных этапов производства должны содержать идентификатор в виде метаданных.
 
@@ -846,7 +846,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/productionstagecompletion/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
@@ -878,8 +878,7 @@ curl --compressed -X GET \
                     "mediaType": "application/json"
                   }
                 },
-                "productionVolume": 15,
-              ]
+                "productionVolume": 15
             },
             {
               "meta": {

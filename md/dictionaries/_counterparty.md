@@ -2402,7 +2402,7 @@ curl --compressed -X POST \
 
 ```shell
 curl --compressed -X POST \
-  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty" \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/batch" \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip" \
   -H "Content-Type: application/json" \
@@ -2641,7 +2641,7 @@ curl --compressed -X POST \
 ]
 ```
 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Контрагентов.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Контрагентов.
 В теле запроса нужно передать массив, содержащий JSON представления Контрагентов, которые вы хотите создать или обновить.
 Обновляемые Контрагенты должны содержать идентификатор в виде метаданных.
 

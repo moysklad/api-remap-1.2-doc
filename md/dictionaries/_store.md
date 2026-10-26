@@ -725,7 +725,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Складов 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Складов.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Складов.
 В теле запроса нужно передать массив, содержащий JSON представления Складов, которые вы хотите создать или обновить.
 Обновляемые Склады должны содержать идентификатор в виде метаданных.
 
@@ -733,7 +733,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/store" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/store/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
@@ -1589,7 +1589,7 @@ curl --compressed -X POST \
 
 ### Массовое создание и обновление зон склада
 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Зон склада.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Зон склада.
 В теле запроса нужно передать массив, содержащий JSON представления Зон склада, которые вы хотите создать или обновить.
 Обновляемые Зоны склада должны содержать идентификатор в виде метаданных.
 
@@ -1597,8 +1597,7 @@ curl --compressed -X POST \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones \
-" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/zones/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
@@ -1991,7 +1990,7 @@ curl --compressed -X POST \
 
 ### Массовое создание и обновление ячеек склада
 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Ячеек склада.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Ячеек склада.
 В теле запроса нужно передать массив, содержащий JSON представления Ячеек склада, которые вы хотите создать или обновить.
 Обновляемые Ячейки склада должны содержать идентификатор в виде метаданных.
 
@@ -1999,8 +1998,7 @@ curl --compressed -X POST \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots \
-" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/store/7a6a11b6-12c5-11e6-9464-e4de00000006/slots/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

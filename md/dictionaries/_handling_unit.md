@@ -443,13 +443,13 @@ curl --compressed -X GET \
 
 ### Массовое создание и обновление Транспортных упаковок
 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Транспортных упаковок. В теле запроса нужно передать массив, содержащий JSON представления Транспортных упаковок, которые вы хотите создать или обновить. Обновляемые Транспортные упаковки должны содержать идентификатор в виде метаданных. 
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Транспортных упаковок. В теле запроса нужно передать массив, содержащий JSON представления Транспортных упаковок, которые вы хотите создать или обновить. Обновляемые Транспортные упаковки должны содержать идентификатор в виде метаданных.
 
 > Пример создания и обновления нескольких Транспортных упаковок
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
@@ -1013,7 +1013,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/aggregatepack/9497f3a3-bc09-11f1-0a82-14dc000065bb/positions/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

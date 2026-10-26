@@ -884,7 +884,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Комплектов
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Комплектов.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Комплектов.
 В теле запроса нужно передать массив, содержащий JSON представления Комплектов, которые вы хотите создать или обновить.
 Обновляемые Комплекты должны содержать идентификатор в виде метаданных.
 
@@ -892,7 +892,7 @@ curl --compressed -X GET \
 
   ```shell
     curl --compressed -X POST \
-      "https://api.moysklad.ru/api/remap/1.2/entity/bundle" \
+      "https://api.moysklad.ru/api/remap/1.2/entity/bundle/batch" \
       -H "Authorization: Basic <Credentials>" \
       -H "Accept-Encoding: gzip" \
       -H "Content-Type: application/json" \

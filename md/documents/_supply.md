@@ -1167,7 +1167,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Приемок 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Приемок.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Приемок.
 В теле запроса нужно передать массив, содержащий JSON представления Приемок, которые вы хотите создать или обновить.
 Обновляемые Приемки должны содержать идентификатор в виде метаданных.
 
@@ -1175,7 +1175,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/supply" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/supply/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
@@ -2938,7 +2938,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/supply/7944ef04-f831-11e5-7a69-971500188b19/positions" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/supply/7944ef04-f831-11e5-7a69-971500188b19/positions/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

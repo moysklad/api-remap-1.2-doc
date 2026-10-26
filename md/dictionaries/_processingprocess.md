@@ -544,7 +544,7 @@ curl --compressed -X GET \
 
 ```shell
 curl --compressed -X POST \
-"https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/1d4adde5-a6bb-11ed-ac12-00090000003f/positions" \
+"https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/1d4adde5-a6bb-11ed-ac12-00090000003f/positions/batch" \
 -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip" \
 -H "Content-Type: application/json" \
@@ -702,14 +702,14 @@ curl --compressed -X POST \
 Успешное массовое удаление позиций Техпроцесса
 
 ### Массовое создание и обновление Техпроцессов
-При [массовом создании и обновлении](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Техпроцессов в теле запроса нужно передать массив, 
+При [массовом создании и обновлении](#/general#4-massovoe-sozdanie-i-obnovlenie) Техпроцессов в теле запроса нужно передать массив,
 содержащий JSON представления Техпроцессов, которые вы хотите создать или обновить. Идентификатором у обновляемых Техпроцессов является [Meta](#/general#3-metadannye).
 
 > Запрос на создание и обновление нескольких Техпроцессов
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingprocess/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

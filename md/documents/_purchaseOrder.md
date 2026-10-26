@@ -921,7 +921,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Заказов поставщику 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Заказов поставщику.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Заказов поставщику.
 В теле запроса нужно передать массив, содержащий JSON представления Заказов поставщику, которые вы хотите создать или обновить.
 Обновляемые Заказы поставщику должны содержать идентификатор в виде метаданных.
 
@@ -929,7 +929,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
@@ -2708,7 +2708,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19/positions" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/7944ef04-f831-11e5-7a69-971500188b19/positions/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

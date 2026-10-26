@@ -877,7 +877,7 @@ curl --compressed -X POST \
 ```
 
 ### Массовое создание и обновление Техкарт 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Техкарт.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Техкарт.
 В теле запроса нужно передать массив, содержащий JSON представления Техкарт, которые вы хотите создать или обновить.
 Обновляемые Техкарты должны содержать идентификатор в виде метаданных.
 
@@ -889,7 +889,7 @@ curl --compressed -X POST \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
@@ -1852,7 +1852,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/materials" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/materials/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
@@ -1916,7 +1916,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/materials" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/materials/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
@@ -2362,7 +2362,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/parametricmaterials" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/parametricmaterials/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
@@ -2498,7 +2498,7 @@ curl --compressed -X GET \
 
 ```shell
 curl --compressed -X POST \
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/parametricmaterials" \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/parametricmaterials/batch" \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip" \
   -H "Content-Type: application/json" \
@@ -2588,7 +2588,7 @@ curl --compressed -X POST \
 
 ```shell
 curl --compressed -X POST \
-  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/parametricmaterials" \
+  "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/parametricmaterials/batch" \
   -H "Authorization: Basic <Credentials>" \
   -H "Accept-Encoding: gzip" \
   -H "Content-Type: application/json" \
@@ -2990,7 +2990,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/products" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/products/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
@@ -3047,7 +3047,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/products" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/processingplan/7944ef04-f831-11e5-7a69-971500188b19/products/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \

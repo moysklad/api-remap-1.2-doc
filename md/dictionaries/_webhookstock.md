@@ -181,7 +181,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление вебхуков на изменение остатков
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) вебхуков на изменение остатков.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) вебхуков на изменение остатков.
 В теле запроса нужно передать массив, содержащий JSON представления вебхуков на изменение остатков, которые вы хотите создать или обновить.
 Обновляемые вебхуки на изменение остатков должны содержать идентификатор в виде метаданных.
 
@@ -189,7 +189,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/webhookstock/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
@@ -197,7 +197,7 @@ curl --compressed -X GET \
             {
               "url": "https://www.example.com",
               "stockType": "stock",
-              "reportType": "all",
+              "reportType": "all"
             },
             {
               "meta": {
@@ -208,7 +208,7 @@ curl --compressed -X GET \
               },
               "url": "https://www.example.com",
               "stockType": "stock",
-              "reportType": "bystore",
+              "reportType": "bystore"
             }
           ]'  
 ```

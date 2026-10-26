@@ -356,7 +356,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Задач 
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Задач.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Задач.
 В теле запроса нужно передать массив, содержащий JSON представления Задач, которые вы хотите создать или обновить.
 Обновляемые Задачи должны содержать идентификатор в виде метаданных.
 
@@ -364,7 +364,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/task" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/task/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
@@ -975,7 +975,7 @@ curl --compressed -X GET \
 
 ```shell
   curl --compressed -X POST \
-    "https://api.moysklad.ru/api/remap/1.2/entity/task/47bc1d9b-8b87-11e8-d9ce-84d900000017/notes" \
+    "https://api.moysklad.ru/api/remap/1.2/entity/task/47bc1d9b-8b87-11e8-d9ce-84d900000017/notes/batch" \
     -H "Authorization: Basic <Credentials>" \
     -H "Accept-Encoding: gzip" \
     -H "Content-Type: application/json" \
@@ -1357,7 +1357,7 @@ curl --compressed -X GET \
 ```
 
 ### Массовое создание и обновление Типов задач
-[Массовое создание и обновление](#/general#3-sozdanie-i-obnovlenie-neskolkih-obuektov) Типов задач.
+[Массовое создание и обновление](#/general#4-massovoe-sozdanie-i-obnovlenie) Типов задач.
 В теле запроса нужно передать массив, содержащий JSON представления Типов, которые вы хотите создать или обновить.
 Обновляемые Типы должны содержать идентификатор в виде метаданных.
 
