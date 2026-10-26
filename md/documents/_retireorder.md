@@ -26,6 +26,7 @@
 | **moment**                      | DateTime                       | `=` `!=` `<` `>` `<=` `>=` | Дата документа<br>`+Обязательное при ответе`                                                                                                                                                           |
 | **name**                        | String(255)                    | `=` `!=` `~` `~=` `=~`     | Наименование Вывода из оборота<br>`+Обязательное при ответе`                                                                                                                                           |
 | **organization**                | [Meta](#/general#3-metadannye) | `=` `!=`                   | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                                                                                   |
+| **organizationBranch**          | [Meta](#/general#3-metadannye) | `=` `!=`                   | Метаданные подразделения юрлица<br>`+Expand`                                                                                                                                                           |
 | **owner**                       | [Meta](#/general#3-metadannye) | `=` `!=`                   | Владелец (Сотрудник)<br>`+Expand`                                                                                                                                                                      |
 | **positions**                   | MetaArray                      |                            | Метаданные позиций Вывода из оборота<br>`+Обязательное при ответе` `+Expand`                                                                                                                           |
 | **primaryDocumentName**         | String(255)                    |                            | Наименование первичного документа                                                                                                                                                                      |
@@ -147,19 +148,19 @@
 | **UTD**                        | Универсальный передаточный документ |
 
 #### Позиции Вывода из оборота
-Позиции Вывода из оборота - это список товаров/модификаций/партий.
+Позиции Вывода из оборота - это список товаров/модификаций/партий/комплектов.
 Объект позиции Вывода из оборота содержит следующие поля:
 
-| Название          | Тип                                                       | Описание                                                                                                                                                                                                                                                                   |
-|-------------------|:----------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**     | UUID                                                      | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                                                                                                     |
-| **assortment**    | [Meta](#/general#3-metadannye) | Метаданные товара/партии/модификации, которую представляет собой позиция<br>`+Обязательное при ответе` `+Необходимо при создании` `+Expand` `+Change-handler`                                                                                                               |
-| **id**            | UUID                                                      | ID позиции<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                                                                                                            |
-| **price**         | Float                                                     | Цена товара в копейках<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                                                                                                     |
-| **quantity**      | Float                                                     | Количество товаров данного вида в позиции <br>`+Обязательное при ответе` `+Change-handler`                                                                                                                                                                                 |
-| **trackingCodes** | Array(Object)                                             | Коды маркировки товаров. [Подробнее тут](#/dictionaries/tracking-code#2-kody-markirovki) <br> `+Обязательное при ответе` `+Необходимо при создании`                                                                                                                           |
-| **vat**           | Int                                                       | НДС, которым облагается текущая позиция<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                                                                                 |
-| **vatEnabled**    | Boolean                                                   | Включен ли НДС для позиции. С помощью этого флага для позиции можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider` |
+| Название          | Тип                              | Описание                                                                                                                                                                                                                                                                            |
+|-------------------|:---------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**     | UUID                             | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                                                                                                              |
+| **assortment**    | [Meta](#/general#3-metadannye)   | Метаданные товара/партии/модификации/комплекта, которую представляет собой позиция<br>`+Обязательное при ответе` `+Необходимо при создании` `+Expand` `+Change-handler`                                                                                                             |
+| **id**            | UUID                             | ID позиции<br>`+Обязательное при ответе` `+Только для чтения` `+Change-handler`                                                                                                                                                                                                     |
+| **price**         | Float                            | Цена товара в копейках<br>`+Обязательное при ответе` `+Change-handler`                                                                                                                                                                                                              |
+| **quantity**      | Float                            | Количество товаров данного вида в позиции <br>`+Обязательное при ответе` `+Change-handler`                                                                                                                                                                                          |
+| **trackingCodes** | Array(Object)                    | Коды маркировки товаров. [Подробнее тут](#/dictionaries/tracking-code#2-kody-markirovki) <br> `+Обязательное при ответе` `+Необходимо при создании`                                                                                                                                 |
+| **vat**           | Int                              | НДС, которым облагается текущая позиция<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`                                                                                                                                                                          |
+| **vatEnabled**    | Boolean                          | Включен ли НДС для позиции. С помощью этого флага для позиции можно выставлять НДС = 0 или НДС = "без НДС". (vat = 0, vatEnabled = false) -> vat = "без НДС", (vat = 0, vatEnabled = true) -> vat = 0%.<br>`+Обязательное при ответе` `+Change-handler` `+Update-provider`          |
 
 С позициями можно работать с помощью [специальных ресурсов для управления позициями Вывода из оборота](#/documents/retireorder#3-upravlenie-poziciyami-vyvoda-iz-oborota),
 а также в составе отдельного Вывода из оборота. При работе в составе отдельного Вывода из оборота,
@@ -276,6 +277,15 @@ curl --compressed -X GET \
           "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=972559f1-cbf3-11e1-9eb9-889ffa6f49fd"
         }
       },
+      "organizationBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+        }
+      },
       "created": "2024-11-22 13:37:51.431",
       "printed": false,
       "published": false,
@@ -352,6 +362,15 @@ curl --compressed -X GET \
           "type": "organization",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=972559f1-cbf3-11e1-9eb9-889ffa6f49fd"
+        }
+      },
+      "organizationBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
         }
       },
       "created": "2024-11-22 13:37:51.431",
@@ -459,6 +478,15 @@ curl --compressed -X GET \
       "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=972559f1-cbf3-11e1-9eb9-889ffa6f49fd"
     }
   },
+  "organizationBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+    }
+  },
   "created": "2024-11-22 13:37:51.431",
   "printed": false,
   "published": false,
@@ -503,26 +531,27 @@ curl --compressed -X GET \
 
 | **trackingType**                                                | **retireOrderType**                                                                                                                                                                                                                                                               |
 |-----------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **SHOES, LP_CLOTHES, LP_LINENS, PERFUMERY, ELECTRONICS, TIRES** | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, STATE_CONTRACT, RETURN_TO_INDIVIDUAL                                                                                               |
-| **MILK**                                                        | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, STATE_CONTRACT, PRODUCTION_USE, EXPIRATION, VENDING, PACKING                                                                       |
-| **FOOD_SUPPLEMENT, SANITIZER**                                  | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, STATE_CONTRACT                                                                                                                     |
-| **MEDICAL_DEVICES**                                             | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT                                                                                                        |
-| **BICYCLE**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, RETURN_TO_INDIVIDUAL, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE                                                                               |
-| **VETPHARMA**                                                   | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION, VENDING, DONATION, VETERINARY_USE                                                      |
-| **SOFT_DRINKS**                                                 | RETAIL_SALE, EXPORT_OUTSIDE_EEU, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, OWN_USE, PACKING, PRODUCTION_USE, STATE_CONTRACT, VENDING, DONATION                                                                                                                                     |
-| **WATER**                                                       | RETAIL_SALE, EXPORT_OUTSIDE_EEU, CONFISCATE_SALE, DESTRUCTION, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, DAMAGE_AND_LOSS, OWN_USE, PRODUCTION_USE, STATE_CONTRACT, VENDING, BY_SAMPLES, UTILIZATION, DONATION                                                                      |
-| **SEAFOOD**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION, VENDING                                                                                |
-| **BEER_ALCOHOL**                                                | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, MISMATCH                                                                                           |
-| **VEGETABLE_OIL**                                               | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, PACKING, DISTANCE, BY_SAMPLES                                                             |
-| **PET_FOOD**                                                    | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, DISTANCE, BY_SAMPLES, PACKING                                                             |
+| **SHOES, LP_CLOTHES, LP_LINENS, TIRES**                         | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, STATE_CONTRACT, RETURN_TO_INDIVIDUAL, DONATION, OTHER_TYPE, STATE_SECRET                                                            |
+| **PERFUMERY, ELECTRONICS**                                      | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, STATE_CONTRACT, RETURN_TO_INDIVIDUAL, DONATION, VENDING, OTHER_TYPE, STATE_SECRET                                                   |
+| **MILK**                                                        | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, STATE_CONTRACT, PRODUCTION_USE, EXPIRATION, VENDING, PACKING, DONATION, OTHER_TYPE, STATE_SECRET                                    |
+| **FOOD_SUPPLEMENT, SANITIZER**                                  | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, STATE_CONTRACT, DONATION, EXPIRATION, VENDING, OTHER_TYPE, STATE_SECRET                                                             |
+| **MEDICAL_DEVICES**                                             | RETAIL_SALE, BY_SAMPLES, DISTANCE, CONFISCATE_SALE, DESTRUCTION, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, DAMAGE_AND_LOSS, UTILIZATION, MEDICAL_USE, STATE_CONTRACT, DONATION, PRODUCTION_USE, EXPIRATION, VENDING, OTHER_TYPE, STATE_SECRET                                |
+| **BICYCLE**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, RETURN_TO_INDIVIDUAL, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, DONATION, OTHER_TYPE, STATE_SECRET                                            |
+| **VETPHARMA**                                                   | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION, VENDING, DONATION, VETERINARY_USE, OTHER_TYPE, STATE_SECRET                             |
+| **SOFT_DRINKS**                                                 | RETAIL_SALE, EXPORT_OUTSIDE_EEU, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, OWN_USE, PACKING, PRODUCTION_USE, STATE_CONTRACT, VENDING, DONATION, OTHER_TYPE, STATE_SECRET                                                                                                            |
+| **WATER**                                                       | RETAIL_SALE, EXPORT_OUTSIDE_EEU, CONFISCATE_SALE, DESTRUCTION, DISTANCE, EXPORT_INSIDE_EEU, EXPIRATION, DAMAGE_AND_LOSS, OWN_USE, PRODUCTION_USE, STATE_CONTRACT, VENDING, BY_SAMPLES, UTILIZATION, DONATION, OTHER_TYPE, STATE_SECRET                                             |
+| **SEAFOOD**                                                     | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, UTILIZATION, OWN_USE, PRODUCTION_USE, EXPIRATION, VENDING, DONATION, OTHER_TYPE, STATE_SECRET                                             |
+| **BEER_ALCOHOL**                                                | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, MISMATCH, OTHER_TYPE                                                                                |
+| **VEGETABLE_OIL**                                               | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, PACKING, DISTANCE, BY_SAMPLES, OTHER_TYPE, STATE_SECRET                                    |
+| **PET_FOOD**                                                    | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, DISTANCE, BY_SAMPLES, PACKING, OTHER_TYPE, STATE_SECRET                                    |
 | **NABEER**                                                      | RETAIL_SALE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, OWN_USE, PRODUCTION_USE, DONATION, STATE_CONTRACT, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, UTILIZATION, EXPIRATION, VENDING, DISTANCE, BY_SAMPLES, OTHER_TYPE                                                          |
-| **AUTO_FLUIDS**                                                 | RETAIL_SALE, BY_SAMPLES, DISTANCE, DONATION, OWN_USE, PRODUCTION_USE, STATE_SECRET, STATE_CONTRACT, CONFISCATE_SALE, OTHER_TYPE, UTILIZATION, DESTRUCTION, DAMAGE_AND_LOSS, EXPIRATION, EXPORT_INSIDE_EEU, VENDING, EXPORT_OUTSIDE_EEU, CAR_SERVICE_USE                           |
-| **GROCERY**                                                     | RETAIL_SALE, BY_SAMPLES, DISTANCE, DONATION, OWN_USE, PRODUCTION_USE, CONFISCATE_SALE, OTHER_TYPE, UTILIZATION, DESTRUCTION, DAMAGE_AND_LOSS, EXPIRATION, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU                                                                                   |
+| **AUTO_FLUIDS**                                                 | RETAIL_SALE, BY_SAMPLES, DISTANCE, DONATION, OWN_USE, PRODUCTION_USE, STATE_SECRET, STATE_CONTRACT, CONFISCATE_SALE, OTHER_TYPE, UTILIZATION, DESTRUCTION, DAMAGE_AND_LOSS, EXPIRATION, EXPORT_INSIDE_EEU, VENDING, EXPORT_OUTSIDE_EEU, CAR_SERVICE_USE                                            |
+| **GROCERY**                                                     | RETAIL_SALE, BY_SAMPLES, DISTANCE, DONATION, OWN_USE, PRODUCTION_USE, CONFISCATE_SALE, OTHER_TYPE, UTILIZATION, DESTRUCTION, DAMAGE_AND_LOSS, EXPIRATION, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, PACKING, STATE_SECRET                                                             |
 | **CHEMISTRY**                                                   | RETAIL_SALE, BY_SAMPLES, DISTANCE, VENDING, PACKING, OWN_USE, PRODUCTION_USE, DONATION, STATE_SECRET, STATE_CONTRACT, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, RETURN_TO_INDIVIDUAL, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, OTHER_TYPE, UTILIZATION, RECALL, EXPIRATION     |
 | **TOYS**                                                        | DONATION, RETURN_TO_INDIVIDUAL, DISTANCE, OTHER_TYPE, PRODUCTION_USE, OWN_USE, CONFISCATE_SALE, RECALL, STATE_CONTRACT, BY_SAMPLES, STATE_SECRET, VENDING, RETAIL_SALE, EXPORT_INSIDE_EEU, DESTRUCTION, UTILIZATION, DAMAGE_AND_LOSS, EXPORT_OUTSIDE_EEU, EXPIRATION              |
 | **CONSERVE**                                                    | DONATION, DISTANCE, OTHER_TYPE, PRODUCTION_USE, OWN_USE, EXPIRATION, CONFISCATE_SALE, STATE_CONTRACT, BY_SAMPLES, STATE_SECRET, VENDING, RETAIL_SALE, EXPORT_INSIDE_EEU, DESTRUCTION, UTILIZATION, DAMAGE_AND_LOSS, EXPORT_OUTSIDE_EEU                                            |
 | **CONSTRUCTION**                                                | DONATION, DISTANCE, OTHER_TYPE, PRODUCTION_USE, OWN_USE, EXPIRATION, CONFISCATE_SALE, RECALL, STATE_CONTRACT, BY_SAMPLES, STATE_SECRET, RETAIL_SALE, EXPORT_INSIDE_EEU, DESTRUCTION, UTILIZATION, DAMAGE_AND_LOSS, EXPORT_OUTSIDE_EEU                                             |
-| **RADIO**                                                       | DONATION, DISTANCE, OTHER_TYPE, PRODUCTION_USE, OWN_USE, CONFISCATE_SALE, STATE_CONTRACT, BY_SAMPLES, STATE_SECRET, RETAIL_SALE, EXPORT_INSIDE_EEU, DESTRUCTION, UTILIZATION, DAMAGE_AND_LOSS, EXPORT_OUTSIDE_EEU                                                                 |
+| **RADIO**                                                       | DONATION, DISTANCE, OTHER_TYPE, PRODUCTION_USE, OWN_USE, CONFISCATE_SALE, STATE_CONTRACT, BY_SAMPLES, STATE_SECRET, RETAIL_SALE, EXPORT_INSIDE_EEU, DESTRUCTION, UTILIZATION, DAMAGE_AND_LOSS, EXPORT_OUTSIDE_EEU, PACKING                                                         |
 | **GADGETS**                                                     | DONATION, OTHER_TYPE, PRODUCTION_USE, OWN_USE, CONFISCATE_SALE, STATE_CONTRACT, RETAIL_SALE, EXPORT_INSIDE_EEU, DESTRUCTION, UTILIZATION, DAMAGE_AND_LOSS, EXPORT_OUTSIDE_EEU, BY_SAMPLES, STATE_SECRET, DISTANCE                                                                 |
 | **TOBACCO, OTP, NCP**                                           | RETAIL_SALE, OWN_USE, EXPORT_OUTSIDE_EEU, EXPORT_INSIDE_EEU, DAMAGE_AND_LOSS, DESTRUCTION, CONFISCATE_SALE, OTHER_TYPE, UTILIZATION, RECALL, STATE_CONTRACT, STATE_SECRET                                                                                                         |
 | **FURSLP**                                                      | RETAIL_SALE, EXPORT_INSIDE_EEU, EXPORT_OUTSIDE_EEU, DAMAGE_AND_LOSS, DONATION, CONFISCATE_SALE, DESTRUCTION, STATE_CONTRACT, DISTANCE, BY_SAMPLES, PRODUCTION_USE, UTILIZATION, OWN_USE, OTHER_TYPE, STATE_SECRET                                                                 |
@@ -1105,6 +1134,15 @@ curl --compressed -X GET \
                           "mediaType": "application/json"
                       }
                   },
+                  "organizationBranch": {
+                      "meta": {
+                          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+                          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+                          "type": "organizationbranch",
+                          "mediaType": "application/json",
+                          "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+                      }
+                  },
                   "description": "Новый вывод из оборота",
                   "retireOrderType": "OWN_USE",
                   "supportingTransaction": "OTHER",
@@ -1277,6 +1315,15 @@ curl --compressed -X GET \
         "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=ace4017a-ad7d-11ef-ac12-000d0000009a"
       }
     },
+    "organizationBranch": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+        "type": "organizationbranch",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+      }
+    },
     "created": "2024-12-10 09:22:39.067",
     "printed": false,
     "published": false,
@@ -1391,6 +1438,15 @@ curl --compressed -X PUT \
           "type": "organization",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=972559f1-cbf3-11e1-9eb9-889ffa6f49fd"
+        }
+      },
+      "organizationBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
         }
       },
       "created": "2024-11-22 13:37:51.431",
@@ -1602,8 +1658,8 @@ curl --compressed -X GET \
 Запрос на создание новой позиции в Выводе из оборота.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
-+ **assortment** - Ссылка на товар/партию/модификацию, которую представляет собой позиция.
-+ **trackingCodes** - Коды маркировки товара/партии/модификации из assortment.
++ **assortment** - Ссылка на товар/партию/модификацию/комплект, которую представляет собой позиция.
++ **trackingCodes** - Коды маркировки товара/партии/модификации/комплекта из assortment.
 
 **Параметры**
 

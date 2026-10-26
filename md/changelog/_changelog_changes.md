@@ -2,9 +2,44 @@
 
 Список последних изменений в API Remap 1.2
 
+### 26-10-2026
+**Добавлено**
+- Возможность использовать комплекты в позиции документа [Вывод из оборота](#/documents/retireorder#2-vyvod-kodov-markirovki-iz-oborota)
+- Способ вывода `CAR_SERVICE_USE` (Использование при техобслуживании или ремонте) в документ [Вывод из оборота](#/documents/retireorder#4-sposob-vyvoda-iz-oborota) для типа маркируемой продукции `AUTO_FLUIDS` (Моторные масла).
+
+**Изменено**
+- Описание ошибки [57201](#/errors#3-kody-oshibok-dlya-vyvoda-iz-oborota)
+
+### 21-10-2026
+**Добавлено**
+- Поле `accrualDate` (Дата начисления) для документов [Исходящего платежа](#/documents/payment-out#3-ishodyashie-platezhi) и [Расходного ордера](#/documents/cashout#3-rashodnye-ordera)
+- Ошибка [22005](#/errors#3-kody-oshibok-dlya-platezhej) при создании или изменении [Исходящего платежа](#/documents/payment-out#3-ishodyashie-platezhi) или [Расходного ордера](#/documents/cashout#3-rashodnye-ordera) при указании даты начисления, если статья расходов не относится к операционным расходам или не участвует в учете прибыли
+- Ошибка [22006](#/errors#3-kody-oshibok-dlya-platezhej) при создании или изменении [Исходящего платежа](#/documents/payment-out#3-ishodyashie-platezhi) или [Расходного ордера](#/documents/cashout#3-rashodnye-ordera) на основании Возврата покупателя, если указывать статью расходов, отличную от возврата
+- Ошибка [22007](#/errors#3-kody-oshibok-dlya-platezhej) при создании или изменении [Исходящего платежа](#/documents/payment-out#3-ishodyashie-platezhi) или [Расходного ордера](#/documents/cashout#3-rashodnye-ordera) с датой начисления без активной опции "Финансы"
+
+### 20-10-2026
+**Добавлено**
+- Поле `archived` в [Статьи расходов](#/dictionaries/expenseitem#3-stati-rashodov)
+
+### 19-10-2026
+**Изменено**
+- Расширен список допустимых способов вывода из оборота `retireOrderType` в зависимости от типа маркируемой продукции `trackingType` в документе [Вывод из оборота](#/documents/retireorder#4-osobennosti-povedeniya-pri-sozdanii-vyvoda-iz-oborota)
+
+### 13-10-2026
+**Добавлено**
+- Сущность `Подразделение юридического лица` [organizationbranch](#/dictionaries/organizationbranch#2-podrazdelenie-yuridicheskogo-lica)
+- Поле связи с `Подразделением юридического лица` (`organizationBranch`) для сущностей: [Точка продаж](#/dictionaries/retailstore#2-tochka-prodazh), [Розничная смена](#/documents/retailshift#2-roznichnaya-smena), [Розничная продажа](#/documents/retaildemand#2-roznichnaya-prodazha), [Розничный возврат](#/documents/retail-sales-return#2-roznichnyj-vozvrat), [Внесение денег](#/documents/retaildrawercashin#2-vnesenie-deneg), [Выплата денег](#/documents/retaildrawercashout#2-vyplata-deneg), [Предоплата](#/documents/prepayment#2-predoplata), [Возврат предоплаты](#/documents/prepayment-return#2-vozvrat-predoplaty) и [Вывод из оборота](#/documents/retireorder#2-vyvod-kodov-markirovki-iz-oborota)
+- Поле связи с `Подразделение грузополучателя` (`consigneeBranch`) для документов: [Отгрузка](#/documents/demand#2-otgruzka) и [Счет-фактура выданный](#/documents/factureout#2-schet-faktura-vydannyj)
+- Поле связи с `Подразделение грузоотправителя` (`consignorBranch`) для документа [Отгрузка](#/documents/demand#2-otgruzka)
+- Ошибка [74000](#/errors#3-kody-oshibok-dlya-podrazdeleniya-yuridicheskogo-lica)
+- Информация по работе с заголовком [X-Lognex-Remap-Beta-Feature](#/general#3-zagolovok-x-lognex-remap-beta-feature)
+
 ### 12-10-2026
 **Добавлено**
-- Способ вывода `CAR_SERVICE_USE` (Использование при техобслуживании или ремонте) в документ [Вывод из оборота](#/documents/retireorder#4-sposob-vyvoda-iz-oborota) для типа маркируемой продукции `AUTO_FLUIDS` (Моторные масла).
+- Сущность [Транспортная упаковка](#/dictionaries/handling-unit#2-transportnaya-upakovka)
+- Ошибка [78000](#/errors#3-kody-oshibok-dlya-shtrihkodov)
+- Ошибки [79000-79004](#/errors#3-kody-oshibok-dlya-serijnyh-nomerov)
+- Ошибки [80000-80005](#/errors#3-kody-oshibok-dlya-transportnyh-upakovok)
 
 ### 08-10-2026
 **Добавлено**

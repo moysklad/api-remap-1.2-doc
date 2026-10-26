@@ -1,0 +1,24 @@
+name: Issue Events to Mattermost
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  notify-mattermost:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Отправка уведомления в Mattermost
+        env:
+          MATTERMOST_WEBHOOK_URL: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
+        run: |
+          MESSAGE="📢 Создана навая задача:
+          - Название задачи: ${{ github.event.issue.title }}
+          - Создатель: ${{ github.event.issue.user.login }}
+          - Ссылка на задачу: ${{ github.event.issue.html_url }}"
+          
+          curl -X POST -H 'Content-Type: application/json' \
+          -d "{\"text\": \"$MESSAGE\"}" \
+          $MATTERMOST_WEBHOOK_URL

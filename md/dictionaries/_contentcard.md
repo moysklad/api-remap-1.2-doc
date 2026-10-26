@@ -124,7 +124,7 @@ curl --compressed -X GET \
             "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/metadata",
             "type": "saleschannel",
             "mediaType": "application/json",
-            "uuidHref": "https://api.moysklad.ru/app/#saleschannel/edit?id=f26b01a3-dbdb-11f0-f406-77170000015d"
+            "uuidHref": "https://online.moysklad.ru/app/#saleschannel/edit?id=f26b01a3-dbdb-11f0-f406-77170000015d"
           }
         }
       ]
