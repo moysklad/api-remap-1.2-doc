@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 28-10-2026
+**Добавлено**
+- Для [массового создания и обновления](#/general#4-massovoe-sozdanie-i-obnovlenie) добавлены эндпоинты с `/batch` в пути: `/entity/{type}/batch` и `/entity/{type}/{uuid}/{childpath}/batch` для дочерних ресурсов, поддерживающих эти операции. Прежние эндпоинты без `/batch` остаются доступны.
+
 ### 21-10-2026
 **Добавлено**
 - Поле `accrualDate` (Дата начисления) для документов [Исходящего платежа](#/documents/payment-out#3-ishodyashie-platezhi) и [Расходного ордера](#/documents/cashout#3-rashodnye-ordera)
