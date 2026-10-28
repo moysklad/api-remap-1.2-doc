@@ -1465,6 +1465,347 @@ curl --compressed -X POST \
 ]
 ```
 
+### Аналоги
+
+Средствами JSON API можно получать и изменять список аналогов Товаров, Услуг, Комплектов и Модификаций.
+
+#### Атрибуты объекта
+
+| Название         | Тип                          | Фильтрация | Описание                                                         |
+| ---------------- | :--------------------------- | :--------- |:-----------------------------------------------------------------|
+| **assortment**   | [Meta](#/general#3-metadannye) | `=` `!=`   | Метаданные Ассортимента.<br>`+Expand` `+Обязательное при ответе` |
+| **alternatives** | Array(Object)                |            | Список аналогов Ассортимента.<br>`+Обязательное при ответе`      |
+
+Каждый элемент массива **alternatives** содержит следующие атрибуты:
+
+| Название       | Тип                          | Описание |
+| -------------- | :--------------------------- | :------- |
+| **assortment** | [Meta](#/general#3-metadannye) | Метаданные Ассортимента, указанного в качестве аналога.<br>`+Expand` `+Обязательное при ответе` |
+
+Список **alternatives** может содержать не более 10 аналогов. Он не может содержать саму позицию Ассортимента или несколько ссылок на один и тот же аналог.
+
+Связь позиции Ассортимента с её аналогами двусторонняя: если в списке **alternatives** позиции А есть позиция Б, то в списке **alternatives** позиции Б будет позиция А. Для создания такой связи достаточно указать аналог у одной из позиций.
+
+#### Особенности фильтрации
+
+Без фильтра возвращаются только позиции Ассортимента, у которых есть аналоги.
+
+- Фильтр применяется к позициям Ассортимента и не ограничивает содержимое их массивов **alternatives**.
+- При использовании `assortment=` возвращаются указанные позиции независимо от наличия аналогов. Для позиций без аналогов массив **alternatives** будет пустым.
+- При использовании `assortment!=` возвращаются позиции с аналогами, кроме указанных в фильтре. Указанная позиция может присутствовать в ответе в качестве аналога.
+
+### Получить аналоги
+
+Результат: объект JSON, включающий в себя поля:
+
+| Название    | Тип                          | Описание |
+| ----------- | :--------------------------- | :------- | 
+| **meta**    | [Meta](#/general#3-metadannye) | Метаданные о выдаче. |
+| **context** | [Meta](#/general#3-metadannye) | Метаданные о сотруднике, выполнившем запрос. |
+| **rows**    | Array(Object)                | Массив JSON объектов, представляющих Ассортимент с аналогами. |
+
+**Параметры**
+
+| Параметр   | Описание |
+| ---------- | :------- |
+| **limit**  | `number` (optional) **Default: 1000** *Example: 100* Максимальное количество позиций Ассортимента в ответе. Допустимые значения: `1–1000`. |
+| **offset** | `number` (optional) **Default: 0** *Example: 40* Отступ в списке позиций Ассортимента. |
+
+Применяются к позициям Ассортимента. Список `alternatives` каждой позиции возвращается полностью.
+
+> Получить аналоги
+
+```shell
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/assortment/alternatives" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json). Успешный запрос. Результат — JSON-представление позиций Ассортимента с аналогами.
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/assortment/alternatives",
+    "type": "assortmentalternatives",
+    "mediaType": "application/json",
+    "size": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "assortment": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d7",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      },
+      "alternatives": [
+        {
+          "assortment": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/437f2d67-36e7-11e7-8a7f-40d0000000df",
+              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+              "type": "product",
+              "mediaType": "application/json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "assortment": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/437f2d67-36e7-11e7-8a7f-40d0000000df",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      },
+      "alternatives": [
+        {
+          "assortment": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d7",
+              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+              "type": "product",
+              "mediaType": "application/json"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+#### Получить аналоги Товара
+
+Чтобы получить аналоги конкретного Товара, используйте фильтр `assortment`.
+
+> Получить аналоги Товара
+
+```shell
+curl --compressed -X GET \
+  "https://api.moysklad.ru/api/remap/1.2/entity/assortment/alternatives?filter=assortment=https://api.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d7" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip"
+```
+
+> Response 200 (application/json). Успешный запрос. Результат — JSON-представление Товара со списком его аналогов.
+
+```json
+{
+  "context": {
+    "employee": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type": "employee",
+        "mediaType": "application/json"
+      }
+    }
+  },
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/assortment/alternatives?filter=assortment=https://api.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d7",
+    "type": "assortmentalternatives",
+    "mediaType": "application/json",
+    "size": 1,
+    "limit": 1000,
+    "offset": 0
+  },
+  "rows": [
+    {
+      "assortment": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d7",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      },
+      "alternatives": [
+        {
+          "assortment": {
+            "meta": {
+              "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/437f2d67-36e7-11e7-8a7f-40d0000000df",
+              "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+              "type": "product",
+              "mediaType": "application/json"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Изменить аналоги
+
+В теле запроса нужно передать объект или массив объектов с обязательными полями **assortment** — метаданными позиции Ассортимента, для которой вы хотите изменить список аналогов, и **alternatives** — новым списком аналогов.
+
+Список **alternatives** полностью заменяет существующий. Для удаления всех аналогов передайте пустой массив в **alternatives**.
+
+#### Изменить аналоги Товара
+
+> Пример запроса на изменение аналогов Товара
+
+```shell
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/assortment/alternatives" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d7",
+      "type": "product",
+      "mediaType": "application/json"
+    }
+  },
+  "alternatives": [
+    {
+      "assortment": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/437f2d67-36e7-11e7-8a7f-40d0000000df",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      }
+    }
+  ]
+}'
+```
+
+> Response 200 (application/json). Успешный запрос. Результат — JSON-представление Товара с обновлённым списком аналогов.
+
+```json
+{
+  "assortment": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d7",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type": "product",
+      "mediaType": "application/json"
+    }
+  },
+  "alternatives": [
+    {
+      "assortment": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/437f2d67-36e7-11e7-8a7f-40d0000000df",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+          "type": "product",
+          "mediaType": "application/json"
+        }
+      }
+    }
+  ]
+}
+```
+
+#### Массовое изменение аналогов
+
+Для изменения аналогов нескольких позиций Ассортимента передайте в теле запроса массив объектов с полями **assortment** и **alternatives**.
+
+> Пример изменения списка аналогов одного Товара и удаления всех аналогов другого Товара
+
+```shell
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/assortment/alternatives" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -d '[
+  {
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d7",
+        "type": "product",
+        "mediaType": "application/json"
+      }
+    },
+    "alternatives": [
+      {
+        "assortment": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/437f2d67-36e7-11e7-8a7f-40d0000000df",
+            "type": "product",
+            "mediaType": "application/json"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/550e8400-e29b-41d4-a716-446655440000",
+        "type": "product",
+        "mediaType": "application/json"
+      }
+    },
+    "alternatives": []
+  }
+]'
+```
+
+> Response 200 (application/json). Успешный запрос. Результат — массив позиций Ассортимента с обновлёнными списками аналогов.
+
+```json
+[
+  {
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/35427052-36e7-11e7-8a7f-40d0000000d7",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json"
+      }
+    },
+    "alternatives": [
+      {
+        "assortment": {
+          "meta": {
+            "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/437f2d67-36e7-11e7-8a7f-40d0000000df",
+            "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+            "type": "product",
+            "mediaType": "application/json"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/550e8400-e29b-41d4-a716-446655440000",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json"
+      }
+    },
+    "alternatives": []
+  }
+]
+```
+
 ### Получить Настройки справочника товаров
 
 > Запрос на получение настроек справочника товаров
