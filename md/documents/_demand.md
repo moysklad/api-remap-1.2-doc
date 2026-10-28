@@ -72,7 +72,9 @@
 | **cargoName**               | String(255)                    | Наименование груза <br/>  `+Change-handler`                                              |
 | **carrier**                 | [Meta](#/general#3-metadannye) | Метаданные перевозчика (контрагент или юрлицо)<br>`+Expand`  `+Change-handler`           |
 | **consignee**               | [Meta](#/general#3-metadannye) | Метаданные грузополучателя (контрагент или юрлицо) <br/>`+Expand`  `+Change-handler`     |
+| **consigneeBranch**         | [Meta](#/general#3-metadannye) | Метаданные подразделения грузополучателя (подразделение юридического лица)<br>`+Expand`  |
 | **consignor**               | [Meta](#/general#3-metadannye) | Метаданные грузоотправителя (контрагент или юрлицо) <br/>`+Expand`  `+Change-handler`    |
+| **consignorBranch**         | [Meta](#/general#3-metadannye) | Метаданные подразделения грузоотправителя (подразделение юридического лица)<br>`+Expand` |
 | **goodPackQuantity**        | Int                            | Всего мест <br/>  `+Change-handler`                                                      |
 | **shippingInstructions**    | String(255)                    | Указания грузоотправителя   <br/>  `+Change-handler`                                     |
 | **stateContractId**         | String(255)                    | Идентификатор государственного контракта, договора (соглашения) <br/>  `+Change-handler` |
@@ -507,6 +509,42 @@ curl --compressed -X GET \
         }
       },
       "payedSum": 0,
+      "consignee": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/9ea602b5-b689-11f1-0a83-233b00002b67",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=9ea602b5-b689-11f1-0a83-233b00002b67"
+        }
+      },
+      "consigneeBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+        }
+      },
+      "consignor": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/e11c1979-b685-11f1-0a83-233b00002a97",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=e11c1979-b685-11f1-0a83-233b00002a97"
+        }
+      },
+      "consignorBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca21",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca21"
+        }
+      },
       "overhead": {
         "sum": 300,
         "distribution": "weight"
@@ -859,6 +897,14 @@ curl --compressed -X GET \
     }
   },
   "payedSum": 0,
+  "consignee": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/869d7628-6396-11e6-8a84-bae50000000a",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
   "stateContractId": "s11233dsasd233",
   "shipmentAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
   "shipmentAddressFull":{
@@ -930,6 +976,42 @@ curl --compressed -X GET \
                 "href": "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/c49e83b3-01af-11e6-9464-e4de00000026",
                 "type": "customerorder",
                 "mediaType": "application/json"
+              }
+            },
+            "consignee": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/9ea602b5-b689-11f1-0a83-233b00002b67",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "type": "organization",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=9ea602b5-b689-11f1-0a83-233b00002b67"
+              }
+            },
+            "consigneeBranch": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+                "type": "organizationbranch",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+              }
+            },
+            "consignor": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/e11c1979-b685-11f1-0a83-233b00002a97",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "type": "organization",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=e11c1979-b685-11f1-0a83-233b00002a97"
+              }
+            },
+            "consignorBranch": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca21",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+                "type": "organizationbranch",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca21"
               }
             },
             "attributes": [
@@ -1030,6 +1112,42 @@ curl --compressed -X GET \
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/9794d400-f689-11e5-8a84-bae500000078/accounts/9794f7a0-f689-11e5-8a84-bae500000079",
       "type": "account",
       "mediaType": "application/json"
+    }
+  },
+  "consignee": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/9ea602b5-b689-11f1-0a83-233b00002b67",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=9ea602b5-b689-11f1-0a83-233b00002b67"
+    }
+  },
+  "consigneeBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+    }
+  },
+  "consignor": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/e11c1979-b685-11f1-0a83-233b00002a97",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=e11c1979-b685-11f1-0a83-233b00002a97"
+    }
+  },
+  "consignorBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca21",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca21"
     }
   },
   "attributes": [
@@ -2344,10 +2462,38 @@ curl --compressed -X GET \
   },
   "consignee": {
     "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/869d7628-6396-11e6-8a84-bae50000000a",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-      "type": "counterparty",
-      "mediaType": "application/json"
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/9ea602b5-b689-11f1-0a83-233b00002b67",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=9ea602b5-b689-11f1-0a83-233b00002b67"
+    }
+  },
+  "consigneeBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+    }
+  },
+  "consignor": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/e11c1979-b685-11f1-0a83-233b00002a97",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=e11c1979-b685-11f1-0a83-233b00002a97"
+    }
+  },
+  "consignorBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca21",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca21"
     }
   },
   "transportFacilityNumber": "ло777v",
@@ -2706,10 +2852,38 @@ curl --compressed -X GET \
             ],
             "consignee": {
               "meta": {
-                "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/869d7628-6396-11e6-8a84-bae50000000a",
-                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-                "type": "counterparty",
-                "mediaType": "application/json"
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/9ea602b5-b689-11f1-0a83-233b00002b67",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "type": "organization",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=9ea602b5-b689-11f1-0a83-233b00002b67"
+              }
+            },
+            "consigneeBranch": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+                "type": "organizationbranch",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+              }
+            },
+            "consignor": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/e11c1979-b685-11f1-0a83-233b00002a97",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                "type": "organization",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=e11c1979-b685-11f1-0a83-233b00002a97"
+              }
+            },
+            "consignorBranch": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca21",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+                "type": "organizationbranch",
+                "mediaType": "application/json",
+                "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca21"
               }
             },
             "transportFacilityNumber": "МК2142",
@@ -2884,10 +3058,38 @@ curl --compressed -X GET \
   },
   "consignee": {
     "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/869d7628-6396-11e6-8a84-bae50000000a",
-      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
-      "type": "counterparty",
-      "mediaType": "application/json"
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/9ea602b5-b689-11f1-0a83-233b00002b67",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=9ea602b5-b689-11f1-0a83-233b00002b67"
+    }
+  },
+  "consigneeBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+    }
+  },
+  "consignor": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/e11c1979-b685-11f1-0a83-233b00002a97",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=e11c1979-b685-11f1-0a83-233b00002a97"
+    }
+  },
+  "consignorBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca21",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca21"
     }
   },
   "transportFacilityNumber": "МК2142",
