@@ -46,11 +46,12 @@
 | **returns**                    | Массив ссылок на связанные возвраты поставщикам в формате [Метаданных](#/general#3-metadannye) |
 
 ####  Другие поля 
-| Название          | Тип                                                       | Описание                                                        |
-| ----------------- | :-------------------------------------------------------- | :-------------------------------------------------------------- |
-| **consignee**     | [Meta](#/general#3-metadannye) | Метаданные грузополучателя (контрагент или юрлицо)<br>`+Expand` |
-| **paymentNumber** | String(255)                                               | Название платежного документа                                   |
-| **paymentDate**   | DateTime                                                  | Дата платежного документа                                       |
+| Название            | Тип                            | Описание                                                                                |
+|---------------------|:-------------------------------|:----------------------------------------------------------------------------------------|
+| **consignee**       | [Meta](#/general#3-metadannye) | Метаданные грузополучателя (контрагент или юрлицо)<br>`+Expand`                         |
+| **consigneeBranch** | [Meta](#/general#3-metadannye) | Метаданные подразделения грузополучателя (подразделение юридического лица)<br>`+Expand` |
+| **paymentNumber**   | String(255)                    | Название платежного документа                                                           |
+| **paymentDate**     | DateTime                       | Дата платежного документа                                                               |
 
 О работе с доп. полями Счетов-фактур можно прочитать [здесь](#/general#3-rabota-s-dopolnitelnymi-polyami)
 
@@ -206,6 +207,15 @@ curl --compressed -X GET \
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
           "type": "organization",
           "mediaType": "application/json"
+        }
+      },
+      "consigneeBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
         }
       },
       "demands": [
@@ -1192,6 +1202,15 @@ curl --compressed -X GET \
     }
   ],
   "stateContractId": "005674",
+  "consignee": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/e125ef4f-b685-11f1-0a83-233b00002a9d",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=e125ef4f-b685-11f1-0a83-233b00002a9d"
+    }
+  },
   "demands": [
     {
       "meta": {

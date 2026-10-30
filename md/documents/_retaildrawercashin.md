@@ -3,32 +3,33 @@
 ### Внесения денег 
 #### Атрибуты сущности
 
-| Название         | Тип                                                        | Фильтрация                                                                                                                                        | Описание                                                                                                                                 |
-| ---------------- |:-----------------------------------------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------ |:-----------------------------------------------------------------------------------------------------------------------------------------|
-| **accountId**    | UUID                                                       | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                     |
-| **agent**        | [Meta](#/general#3-metadannye)                             | `=` `!=`                                                                                                                                          | Метаданны сотрудника<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                  |
-| **applicable**   | Boolean                                                    | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе`                                                                                       |
-| **attributes**   | Array(Object)                                              | [Операторы доп. полей](#/general#4-filtraciya-po-dopolnitelnym-polyam) | Коллекция метаданных доп. полей. [Поля объекта](#/general#3-rabota-s-dopolnitelnymi-polyami)                                             |
-| **created**      | DateTime                                                   | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                         |
-| **deleted**      | DateTime                                                   | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Внесения денег<br>`+Только для чтения`                                                                        |
-| **description**  | String(4096)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Внесения денег                                                                                                               |
-| **externalCode** | String(255)                                                | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Внесения денег<br>`+Обязательное при ответе`                                                                                 |
-| **files**        | MetaArray                                                  |                                                                                                                                                   | Метаданные массива [Файлов](#/dictionaries/files#2-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand` |
-| **group**        | [Meta](#/general#3-metadannye)                             | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                 |
-| **id**           | UUID                                                       | `=` `!=`                                                                                                                                          | ID Внесения денег<br>`+Обязательное при ответе` `+Только для чтения`                                                                     |
-| **meta**         | [Meta](#/general#3-metadannye)                             |                                                                                                                                                   | Метаданные Внесения денег<br>`+Обязательное при ответе`                                                                                  |
-| **moment**       | DateTime                                                   | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе`                                                                                             |
-| **name**         | String(255)                                                | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Внесения денег<br>`+Обязательное при ответе`                                                                                |
-| **organization** | [Meta](#/general#3-metadannye)                             | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                     |
-| **owner**        | [Meta](#/general#3-metadannye)                             | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                        |
-| **printed**      | Boolean                                                    | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                 |
-| **published**    | Boolean                                                    | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                               |
-| **rate**         | Object                                                     |                                                                                                                                                   | Валюта. [Подробнее тут](#/documents/common-info#3-valyuta-v-dokumentah)<br>`+Обязательное при ответе`                                    |
-| **shared**       | Boolean                                                    | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                               |
-| **state**        | [Meta](#/general#3-metadannye)                             | `=` `!=`                                                                                                                                          | Метаданные статуса Внесения денег<br>`+Expand`                                                                                           |
-| **sum**          | Float                                                      | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Внесения денег в копейках<br>`+Обязательное при ответе` `+Только для чтения`                                                       |
-| **syncId**       | UUID                                                       | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                              |
-| **updated**      | DateTime                                                   | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Внесения денег<br>`+Обязательное при ответе` `+Только для чтения`                                           |
+| Название               | Тип                                                        | Фильтрация                                                                                                                                        | Описание                                                                                                                                 |
+|------------------------|:-----------------------------------------------------------| :------------------------------------------------------------------------------------------------------------------------------------------------ |:-----------------------------------------------------------------------------------------------------------------------------------------|
+| **accountId**          | UUID                                                       | `=` `!=`                                                                                                                                          | ID учетной записи<br>`+Обязательное при ответе` `+Только для чтения`                                                                     |
+| **agent**              | [Meta](#/general#3-metadannye)                             | `=` `!=`                                                                                                                                          | Метаданны сотрудника<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                  |
+| **applicable**         | Boolean                                                    | `=` `!=`                                                                                                                                          | Отметка о проведении<br>`+Обязательное при ответе`                                                                                       |
+| **attributes**         | Array(Object)                                              | [Операторы доп. полей](#/general#4-filtraciya-po-dopolnitelnym-polyam) | Коллекция метаданных доп. полей. [Поля объекта](#/general#3-rabota-s-dopolnitelnymi-polyami)                                             |
+| **created**            | DateTime                                                   | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                         |
+| **deleted**            | DateTime                                                   | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего удаления Внесения денег<br>`+Только для чтения`                                                                        |
+| **description**        | String(4096)                                               | `=` `!=` `~` `~=` `=~`                                                                                                                            | Комментарий Внесения денег                                                                                                               |
+| **externalCode**       | String(255)                                                | `=` `!=` `~` `~=` `=~`                                                                                                                            | Внешний код Внесения денег<br>`+Обязательное при ответе`                                                                                 |
+| **files**              | MetaArray                                                  |                                                                                                                                                   | Метаданные массива [Файлов](#/dictionaries/files#2-fajly) (Максимальное количество файлов - 100)<br>`+Обязательное при ответе` `+Expand` |
+| **group**              | [Meta](#/general#3-metadannye)                             | `=` `!=`                                                                                                                                          | Отдел сотрудника<br>`+Обязательное при ответе` `+Expand`                                                                                 |
+| **id**                 | UUID                                                       | `=` `!=`                                                                                                                                          | ID Внесения денег<br>`+Обязательное при ответе` `+Только для чтения`                                                                     |
+| **meta**               | [Meta](#/general#3-metadannye)                             |                                                                                                                                                   | Метаданные Внесения денег<br>`+Обязательное при ответе`                                                                                  |
+| **moment**             | DateTime                                                   | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Дата документа<br>`+Обязательное при ответе`                                                                                             |
+| **name**               | String(255)                                                | `=` `!=` `~` `~=` `=~`                                                                                                                            | Наименование Внесения денег<br>`+Обязательное при ответе`                                                                                |
+| **organization**       | [Meta](#/general#3-metadannye)                             | `=` `!=`                                                                                                                                          | Метаданные юрлица<br>`+Обязательное при ответе` `+Expand` `+Необходимо при создании`                                                     |
+| **organizationBranch** | [Meta](#/general#3-metadannye)                             | `=` `!=`                                                                                                                                          | Метаданные подразделения юрлица<br>`+Expand`                                                     |
+| **owner**              | [Meta](#/general#3-metadannye)                             | `=` `!=`                                                                                                                                          | Владелец (Сотрудник)<br>`+Expand`                                                                                                        |
+| **printed**            | Boolean                                                    | `=` `!=`                                                                                                                                          | Напечатан ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                                 |
+| **published**          | Boolean                                                    | `=` `!=`                                                                                                                                          | Опубликован ли документ<br>`+Обязательное при ответе` `+Только для чтения`                                                               |
+| **rate**               | Object                                                     |                                                                                                                                                   | Валюта. [Подробнее тут](#/documents/common-info#3-valyuta-v-dokumentah)<br>`+Обязательное при ответе`                                    |
+| **shared**             | Boolean                                                    | `=` `!=`                                                                                                                                          | Общий доступ<br>`+Обязательное при ответе`                                                                                               |
+| **state**              | [Meta](#/general#3-metadannye)                             | `=` `!=`                                                                                                                                          | Метаданные статуса Внесения денег<br>`+Expand`                                                                                           |
+| **sum**                | Float                                                      | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Сумма Внесения денег в копейках<br>`+Обязательное при ответе` `+Только для чтения`                                                       |
+| **syncId**             | UUID                                                       | `=` `!=`                                                                                                                                          | ID синхронизации. После заполнения недоступен для изменения                                                                              |
+| **updated**            | DateTime                                                   | `=` `!=` `<` `>` `<=` `>=`                                                                                                                        | Момент последнего обновления Внесения денег<br>`+Обязательное при ответе` `+Только для чтения`                                           |
 
 #### Связи с другими документами
 
@@ -135,6 +136,15 @@ curl --compressed -X GET \
           "mediaType": "application/json"
         }
       },
+      "organizationBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+        }
+      },
       "retailShift": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/131aaeb6-9603-11e6-8a84-bae500000072",
@@ -196,6 +206,15 @@ curl --compressed -X GET \
           "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
           "type": "organization",
           "mediaType": "application/json"
+        }
+      },
+      "organizationBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
         }
       },
       "retailShift": {
@@ -365,6 +384,15 @@ curl --compressed -X GET \
                   "mediaType": "application/json"
                 }
               },
+              "organizationBranch": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+                  "type": "organizationbranch",
+                  "mediaType": "application/json",
+                  "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+                }
+              },
               "sum": 100500,
               "description": "Новое внесение через API"
             },
@@ -441,6 +469,15 @@ curl --compressed -X GET \
         "mediaType": "application/json"
       }
     },
+    "organizationBranch": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+        "type": "organizationbranch",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+      }
+    },
     "retailShift": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/131aaeb6-9603-11e6-8a84-bae500000072",
@@ -502,6 +539,15 @@ curl --compressed -X GET \
         "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
         "type": "organization",
         "mediaType": "application/json"
+      }
+    },
+    "organizationBranch": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+        "type": "organizationbranch",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
       }
     },
     "retailShift": {
@@ -775,6 +821,15 @@ curl --compressed -X GET \
       "mediaType": "application/json"
     }
   },
+  "organizationBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
+    }
+  },
   "retailShift": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/131aaeb6-9603-11e6-8a84-bae500000072",
@@ -855,6 +910,15 @@ curl --compressed -X GET \
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
       "type": "organization",
       "mediaType": "application/json"
+    }
+  },
+  "organizationBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
     }
   },
   "retailShift": {
@@ -942,6 +1006,15 @@ curl --compressed -X GET \
       "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
       "type": "organization",
       "mediaType": "application/json"
+    }
+  },
+  "organizationBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompanybranch/edit?id=12854b0b-e03c-4e3e-bb37-296bdebeca20"
     }
   },
   "retailShift": {
