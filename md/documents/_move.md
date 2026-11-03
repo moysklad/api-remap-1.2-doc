@@ -239,6 +239,54 @@ curl --compressed -X GET \
           "mediaType": "application/json"
         }
       },
+      "consignee": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/9ea602b5-b689-11f1-0a83-233b00002b67",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json"
+        }
+      },
+      "consigneeBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json"
+        }
+      },
+      "consignor": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/e11c1979-b685-11f1-0a83-233b00002a97",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json"
+        }
+      },
+      "consignorBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca21",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json"
+        }
+      },
+      "transportFacilityNumber": "МК2142",
+      "shippingInstructions": "Огнеопасно",
+      "cargoName": "масло",
+      "transportFacility": "Камаз 2007",
+      "goodPackQuantity": 500,
+      "carrier": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/cffd2c81-62b4-11e6-8a84-bae500000053",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      },
+      "stateContractId": "s11233dsasd233",
+      "shippingDocumentNumber": "76543210",
+      "shippingDocumentDate": "2026-04-15 00:00:00.000",
       "targetStore": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/e94a6e65-4f64-11e6-8a84-bae500000066",
@@ -318,6 +366,54 @@ curl --compressed -X GET \
           "mediaType": "application/json"
         }
       },
+      "consignee": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/9ea602b5-b689-11f1-0a83-233b00002b67",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json"
+        }
+      },
+      "consigneeBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json"
+        }
+      },
+      "consignor": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/e11c1979-b685-11f1-0a83-233b00002a97",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+          "type": "organization",
+          "mediaType": "application/json"
+        }
+      },
+      "consignorBranch": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca21",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+          "type": "organizationbranch",
+          "mediaType": "application/json"
+        }
+      },
+      "transportFacilityNumber": "МК2142",
+      "shippingInstructions": "Огнеопасно",
+      "cargoName": "масло",
+      "transportFacility": "Камаз 2007",
+      "goodPackQuantity": 500,
+      "carrier": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/cffd2c81-62b4-11e6-8a84-bae500000053",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+          "type": "counterparty",
+          "mediaType": "application/json"
+        }
+      },
+      "stateContractId": "s11233dsasd233",
+      "shippingDocumentNumber": "76543210",
+      "shippingDocumentDate": "2026-04-15 00:00:00.000",
       "targetStore": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
@@ -491,6 +587,54 @@ curl --compressed -X GET \
                   "mediaType": "application/json"
                 }
               },
+              "consignee": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/9ea602b5-b689-11f1-0a83-233b00002b67",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                  "type": "organization",
+                  "mediaType": "application/json"
+                }
+              },
+              "consigneeBranch": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+                  "type": "organizationbranch",
+                  "mediaType": "application/json"
+                }
+              },
+              "consignor": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/e11c1979-b685-11f1-0a83-233b00002a97",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                  "type": "organization",
+                  "mediaType": "application/json"
+                }
+              },
+              "consignorBranch": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca21",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+                  "type": "organizationbranch",
+                  "mediaType": "application/json"
+                }
+              },
+              "transportFacilityNumber": "МК2142",
+              "shippingInstructions": "Огнеопасно",
+              "cargoName": "масло",
+              "transportFacility": "Камаз 2007",
+              "goodPackQuantity": 500,
+              "carrier": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/cffd2c81-62b4-11e6-8a84-bae500000053",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+                  "type": "counterparty",
+                  "mediaType": "application/json"
+                }
+              },
+              "stateContractId": "s11233dsasd233",
+              "shippingDocumentNumber": "76543210",
+              "shippingDocumentDate": "2026-04-15 00:00:00.000",
               "targetStore": {
                 "meta": {
                   "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
@@ -540,6 +684,54 @@ curl --compressed -X GET \
                   "mediaType": "application/json"
                 }
               },
+              "consignee": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/9ea602b5-b689-11f1-0a83-233b00002b67",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                  "type": "organization",
+                  "mediaType": "application/json"
+                }
+              },
+              "consigneeBranch": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+                  "type": "organizationbranch",
+                  "mediaType": "application/json"
+                }
+              },
+              "consignor": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/e11c1979-b685-11f1-0a83-233b00002a97",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+                  "type": "organization",
+                  "mediaType": "application/json"
+                }
+              },
+              "consignorBranch": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca21",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+                  "type": "organizationbranch",
+                  "mediaType": "application/json"
+                }
+              },
+              "transportFacilityNumber": "МК2142",
+              "shippingInstructions": "Огнеопасно",
+              "cargoName": "масло",
+              "transportFacility": "Камаз 2007",
+              "goodPackQuantity": 500,
+              "carrier": {
+                "meta": {
+                  "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/cffd2c81-62b4-11e6-8a84-bae500000053",
+                  "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+                  "type": "counterparty",
+                  "mediaType": "application/json"
+                }
+              },
+              "stateContractId": "s11233dsasd233",
+              "shippingDocumentNumber": "76543210",
+              "shippingDocumentDate": "2026-04-15 00:00:00.000",
               "targetStore": {
                 "meta": {
                   "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
@@ -655,6 +847,54 @@ curl --compressed -X GET \
         "mediaType": "application/json"
       }
     },
+    "consignee": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/9ea602b5-b689-11f1-0a83-233b00002b67",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json"
+      }
+    },
+    "consigneeBranch": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+        "type": "organizationbranch",
+        "mediaType": "application/json"
+      }
+    },
+    "consignor": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/e11c1979-b685-11f1-0a83-233b00002a97",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json"
+      }
+    },
+    "consignorBranch": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca21",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+        "type": "organizationbranch",
+        "mediaType": "application/json"
+      }
+    },
+    "transportFacilityNumber": "МК2142",
+    "shippingInstructions": "Огнеопасно",
+    "cargoName": "масло",
+    "transportFacility": "Камаз 2007",
+    "goodPackQuantity": 500,
+    "carrier": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/cffd2c81-62b4-11e6-8a84-bae500000053",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json"
+      }
+    },
+    "stateContractId": "s11233dsasd233",
+    "shippingDocumentNumber": "76543210",
+    "shippingDocumentDate": "2026-04-15 00:00:00.000",
     "targetStore": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
@@ -768,6 +1008,54 @@ curl --compressed -X GET \
         "mediaType": "application/json"
       }
     },
+    "consignee": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/9ea602b5-b689-11f1-0a83-233b00002b67",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json"
+      }
+    },
+    "consigneeBranch": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+        "type": "organizationbranch",
+        "mediaType": "application/json"
+      }
+    },
+    "consignor": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/e11c1979-b685-11f1-0a83-233b00002a97",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type": "organization",
+        "mediaType": "application/json"
+      }
+    },
+    "consignorBranch": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca21",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+        "type": "organizationbranch",
+        "mediaType": "application/json"
+      }
+    },
+    "transportFacilityNumber": "МК2142",
+    "shippingInstructions": "Огнеопасно",
+    "cargoName": "масло",
+    "transportFacility": "Камаз 2007",
+    "goodPackQuantity": 500,
+    "carrier": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/cffd2c81-62b4-11e6-8a84-bae500000053",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json"
+      }
+    },
+    "stateContractId": "s11233dsasd233",
+    "shippingDocumentNumber": "76543210",
+    "shippingDocumentDate": "2026-04-15 00:00:00.000",
     "targetStore": {
       "meta": {
         "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
@@ -1435,6 +1723,54 @@ curl --compressed -X GET \
       "mediaType": "application/json"
     }
   },
+  "consignee": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/9ea602b5-b689-11f1-0a83-233b00002b67",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "consigneeBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json"
+    }
+  },
+  "consignor": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/e11c1979-b685-11f1-0a83-233b00002a97",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "consignorBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca21",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json"
+    }
+  },
+  "transportFacilityNumber": "МК2142",
+  "shippingInstructions": "Огнеопасно",
+  "cargoName": "масло",
+  "transportFacility": "Камаз 2007",
+  "goodPackQuantity": 500,
+  "carrier": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/cffd2c81-62b4-11e6-8a84-bae500000053",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "stateContractId": "s11233dsasd233",
+  "shippingDocumentNumber": "76543210",
+  "shippingDocumentDate": "2026-04-15 00:00:00.000",
   "targetStore": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/e94a6e65-4f64-11e6-8a84-bae500000066",
@@ -1627,6 +1963,54 @@ curl --compressed -X GET \
       "mediaType": "application/json"
     }
   },
+  "consignee": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/9ea602b5-b689-11f1-0a83-233b00002b67",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "consigneeBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca20",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json"
+    }
+  },
+  "consignor": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/e11c1979-b685-11f1-0a83-233b00002a97",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json"
+    }
+  },
+  "consignorBranch": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/12854b0b-e03c-4e3e-bb37-296bdebeca21",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organizationbranch/metadata",
+      "type": "organizationbranch",
+      "mediaType": "application/json"
+    }
+  },
+  "transportFacilityNumber": "МК2142",
+  "shippingInstructions": "Огнеопасно",
+  "cargoName": "масло",
+  "transportFacility": "Камаз 2007",
+  "goodPackQuantity": 500,
+  "carrier": {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/cffd2c81-62b4-11e6-8a84-bae500000053",
+      "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json"
+    }
+  },
+  "stateContractId": "s11233dsasd233",
+  "shippingDocumentNumber": "76543210",
+  "shippingDocumentDate": "2026-04-15 00:00:00.000",
   "targetStore": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
