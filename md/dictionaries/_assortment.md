@@ -10,6 +10,8 @@
 
 `X-Lognex-Remap-Beta-Feature: assortmentWithoutStock`
 
+Подробнее о заголовке можно прочитать [здесь](#/general#3-zagolovok-x-lognex-remap-beta-feature).
+
 Если заголовок не передан, запрос обрабатывается [старым эндпоинтом ассортимента](#/dictionaries/assortment-legacy#2-assortiment-deprecated), который планируется к удалению.
 
 ### Отличия от старого эндпоинта
