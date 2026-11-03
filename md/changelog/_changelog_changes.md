@@ -2,6 +2,10 @@
 
 Список последних изменений в API Remap 1.2
 
+### 09-11-2026
+**Добавлено**
+- Раздел [Другие поля](#/documents/move#4-drugie-polya) для документа [Перемещение](#/documents/move#2-peremeshenie): `cargoName`, `carrier`, `consignee`, `consigneeBranch`, `consignor`, `consignorBranch`, `goodPackQuantity`, `shippingInstructions`, `stateContractId`, `transportFacility`, `transportFacilityNumber`, `shippingDocumentNumber` и `shippingDocumentDate`.
+
 ### 26-10-2026
 **Добавлено**
 - Возможность использовать комплекты в позиции документа [Вывод из оборота](#/documents/retireorder#2-vyvod-kodov-markirovki-iz-oborota)
