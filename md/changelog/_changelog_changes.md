@@ -5,7 +5,7 @@
 ### 02-10-2026
 **Добавлено**
 - Эндпоинт для работы с [Аналогами ассортимента](#/dictionaries/assortment#3-analogi)
-- Ошибки [81000-81003](#/errors#3-kody-oshibok-dlya-analogov)
+- Ошибки [81000-81002](#/errors#3-kody-oshibok-dlya-analogov)
 
 ### 26-10-2026
 **Добавлено**
