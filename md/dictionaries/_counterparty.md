@@ -44,7 +44,7 @@
 | **created**            | DateTime                                                  | `=` `!=` `<` `>` `<=` `>=`  | Момент создания<br>`+Обязательное при ответе` `+Только для чтения`                                                                                                                                                                                      |
 | **description**        | String(4096)                                              | `=` `!=` `~` `~=` `=~`      | Комментарий к Контрагенту                                                                                                                                                                                                               |
 | **discountCardNumber** | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Номер дисконтной карты Контрагента                                                                                                                                                                                                      |
-| **discounts**         | Array(Object) |                                                                                                                                                   | Массив скидок Контрагента. Массив может содержать персональные и накопительные скидки. Персональная скидка выводится, если хотя бы раз изменялся **процент скидки** для контрагента, значение будет указано в поле **personalDiscount** |
+| **discounts**         | Array(Object) |                                                                                                                                                   | Массив скидок Контрагента. [Подробнее тут](#/dictionaries/counterparty#5-skidki-kontragenta)                                                                                                                                                |
 | **email**              | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Адрес электронной почты                                                                                                                                                                                                                 |
 | **externalCode**       | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Внешний код Контрагента<br>`+Обязательное при ответе`                                                                                                                                                                                   |
 | **fax**                | String(255)                                               | `=` `!=` `~` `~=` `=~`      | Номер факса                                                                                                                                                                                                                             |
@@ -92,10 +92,6 @@
 Отсылка на типы юридических лиц `[Индивидуальный предприниматель, Физическое лицо, Юридическое лицо]` имеет обобщенный характер,
 подразумевая, в том числе, аналогичные регионоспецифичные типы, например, `Индивидуальный предприниматель, Узбекистан` и т.п.
 Подробнее о типах юридических лиц [тут](#/dictionaries/counterparty#4-tip-kontragenta).
-
-Накопительная скидка выводится, если для контрагента хотя бы раз устанавливалась **коррекция суммы накоплений по скидке**, значение будет указано в поле **demandSumCorrection** 
-или при выполнении условий накопительной скидки **Проценты скидок при определенной сумме продаж**, актуальное значение будет отображено в поле **accumulationDiscount**. 
-Формат вывода скидок можно посмотреть в разделе [Скидки](#/dictionaries/discount#2-skidki).
 
 #### Атрибуты вложенных сущностей
 ##### Адрес
@@ -187,6 +183,23 @@
 
 Поля вложены в объект **mod\_\_requisites\_\_kz**.  Конкретный набор полей, определяется типом юридического лица.
 Подробнее о типах юридических лиц [тут](#/dictionaries/counterparty#4-tip-kontragenta).
+
+##### Скидки Контрагента
+
+Массив discounts содержит персональные и накопительные скидки, назначенные контрагенту.
+
+Персональная скидка выводится, если хотя бы раз изменялся процент скидки для контрагента.
+
+Накопительная скидка выводится, если для контрагента хотя бы раз устанавливалась коррекция суммы накоплений по скидке или при выполнении условий накопительной скидки (проценты скидок при определенной сумме продаж).
+
+  Информацию о существующих скидках можно посмотреть в разделе [Скидки](#/dictionaries/discount#2-skidki).
+
+| Название                 | Тип                            | Описание                                                                                                                                                     |
+| ------------------------ | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **discount**             | [Meta](#/general#3-metadannye) | Метаданные скидки, назначенной контрагенту. В поле передаётся ссылка на персональную (`personaldiscount`) или накопительную (`accumulationdiscount`) скидку. |
+| **personalDiscount**     | Float                          | Процент персональной скидки контрагента. Обязательное при передаче меты персональной скидки.                                                                 |
+| **demandSumCorrection**  | Float                          | Коррекция суммы накоплений по скидке, в копейках. Обязательное при передаче меты накопительной скидки.                                                       |
+| **accumulationDiscount** | Float                          | Актуальный процент накопительной скидки при выполнении условий по сумме продаж `+Только для чтения`                                                          |
 
 
 #### Тип Контрагента
@@ -2396,6 +2409,89 @@ curl --compressed -X POST \
 }
 ```
 
+> Пример с передачей скидок в массиве discounts
+
+```shell
+curl --compressed -X POST \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -d '{
+        "name": "ООО Радуга",
+        "discounts": [
+          {
+            "discount": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/personaldiscount/0623d6b4-9ceb-11e6-8af5-581e00000003",
+                "type": "personaldiscount",
+                "mediaType": "application/json"
+              }
+            },
+            "personalDiscount": 10
+          },
+          {
+            "discount": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001",
+                "type": "accumulationdiscount",
+                "mediaType": "application/json"
+              }
+            },
+            "demandSumCorrection": 150000
+          }
+        ]
+      }'
+```
+
+> Response 200. Успешный запрос. Результат - JSON представление созданного Контрагента.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/c90ea81b-7058-11e6-8a84-bae500000010",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type": "counterparty",
+    "mediaType": "application/json"
+  },
+  "id": "c90ea81b-7058-11e6-8a84-bae500000010",
+  "accountId": "1185513e-692c-11e6-8a84-bae500000001",
+  "name": "ООО Радуга",
+  "externalCode": "o7732zkki541HDkZZD1Yt3",
+  "archived": false,
+  "created": "2007-02-07 17:16:41",
+  "updated": "2016-09-01 18:28:22",
+  "companyType": "legal",
+  "discounts": [
+    {
+      "discount": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/personaldiscount/0623d6b4-9ceb-11e6-8af5-581e00000003",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/personaldiscount/metadata",
+          "type": "personaldiscount",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=0623d6b4-9ceb-11e6-8af5-581e00000003"
+        }
+      },
+      "personalDiscount": 10.0
+    },
+    {
+      "discount": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/metadata",
+          "type": "accumulationdiscount",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+        }
+      },
+      "demandSumCorrection": 150000.0,
+      "accumulationDiscount": 10.0
+    }
+  ]
+}
+```
+
 ### Массовое создание и обновление Контрагентов
 
 > Массовое создание и обновление Контрагентов
@@ -3601,6 +3697,83 @@ curl --compressed -X PUT \
       "offset":0
     }
   }
+}
+```
+
+> Пример с массивом discounts
+
+```shell
+curl --compressed -X PUT \
+  "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19" \
+  -H "Authorization: Basic <Credentials>" \
+  -H "Accept-Encoding: gzip" \
+  -H "Content-Type: application/json" \
+  -d '{
+        "discounts": [
+          {
+            "discount": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/personaldiscount/0623d6b4-9ceb-11e6-8af5-581e00000003",
+                "type": "personaldiscount",
+                "mediaType": "application/json"
+              }
+            },
+            "personalDiscount": 15
+          },
+          {
+            "discount": {
+              "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001",
+                "type": "accumulationdiscount",
+                "mediaType": "application/json"
+              }
+            },
+            "demandSumCorrection": 500000
+          }
+        ]
+      }'
+```
+
+> Response 200 (application/json) Успешное обновление. Результат - JSON представление обновленного Контрагента.
+
+```json
+{
+  "meta": {
+    "href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7944ef04-f831-11e5-7a69-971500188b19",
+    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+    "type": "counterparty",
+    "mediaType": "application/json"
+  },
+  "id": "7944ef04-f831-11e5-7a69-971500188b19",
+  "accountId": "1185513e-692c-11e6-8a84-bae500000001",
+  "name": "ООО Радуга",
+  "discounts": [
+    {
+      "discount": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/personaldiscount/0623d6b4-9ceb-11e6-8af5-581e00000003",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/personaldiscount/metadata",
+          "type": "personaldiscount",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=0623d6b4-9ceb-11e6-8af5-581e00000003"
+        }
+      },
+      "personalDiscount": 15.0
+    },
+    {
+      "discount": {
+        "meta": {
+          "href": "https://api.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/8ae26646-b1aa-11ea-ac12-000b00000001",
+          "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/accumulationdiscount/metadata",
+          "type": "accumulationdiscount",
+          "mediaType": "application/json",
+          "uuidHref": "https://online.moysklad.ru/app/#discount/edit?id=8ae26646-b1aa-11ea-ac12-000b00000001"
+        }
+      },
+      "demandSumCorrection": 500000.0,
+      "accumulationDiscount": 10.0
+    }
+  ]
 }
 ```
 
