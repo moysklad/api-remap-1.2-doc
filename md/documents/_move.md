@@ -69,12 +69,12 @@
 | **consignor**               | [Meta](#/general#3-metadannye) | Метаданные грузоотправителя (юрлицо) <br/>`+Expand`  `+Change-handler`                   |
 | **consignorBranch**         | [Meta](#/general#3-metadannye) | Метаданные подразделения грузоотправителя (подразделение юридического лица)<br>`+Expand` |
 | **goodPackQuantity**        | Int                            | Всего мест <br/>  `+Change-handler`                                                      |
+| **shippingDocumentDate**    | DateTime                       | Дата перевозочного документа   <br/>  `+Change-handler`                                  |
+| **shippingDocumentNumber**  | String(255)                    | Номер перевозочного документа   <br/>  `+Change-handler`                                 |
 | **shippingInstructions**    | String(255)                    | Указания грузоотправителя   <br/>  `+Change-handler`                                     |
 | **stateContractId**         | String(255)                    | Идентификатор государственного контракта, договора (соглашения) <br/>  `+Change-handler` |
 | **transportFacility**       | String(255)                    | Транспортное средство  <br/>  `+Change-handler`                                          |
 | **transportFacilityNumber** | String(255)                    | Номер автомобиля   <br/>  `+Change-handler`                                              |
-| **shippingDocumentNumber**  | String(255)                    | Номер перевозочного документа   <br/>  `+Change-handler`                                 |
-| **shippingDocumentDate**    | DateTime                       | Дата перевозочного документа   <br/>  `+Change-handler`                                  |
 
 #### Позиции Перемещения
 Позиции Перемещения - это список товаров/модификаций/партий.
