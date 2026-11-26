@@ -4,6 +4,10 @@
 
 ### 16-11-2026
 **Изменено**
+- Добавлен фильтр по полю `acquire` в [Розничных сменах](#/documents/retailshift#3-roznichnye-smeny)
+
+### 16-11-2026
+**Изменено**
 - Максимальное значение для поля `quantity` увеличено до 15 000 в [Позиции Заказа кодов маркировки](#/documents/emissionorder#4-pozicii-zakaza-kodov-markirovki)
 
 ### 12-11-2026
