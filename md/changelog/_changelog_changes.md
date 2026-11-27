@@ -5,6 +5,7 @@
 ### 26-11-2026
 **Изменено**
 - Добавлен фильтр по полю `acquire` в [Розничных сменах](#/documents/retailshift#3-roznichnye-smeny)
+- Добавлен фильтр по полю `acquire` в [Точках продаж](#/dictionaries/retailstore#2-tochka-prodazh)
 
 ### 16-11-2026
 **Изменено**
